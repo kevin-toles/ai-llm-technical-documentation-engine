@@ -85,6 +85,124 @@ ENABLE_API_LOGGING = os.getenv("ENABLE_API_LOGGING", "true").lower() == "true"
 _api_call_count = 0
 
 
+# ============================================================================
+# Sprint 1 Critical Fixes (per REFACTORING_PLAN.md)
+# ============================================================================
+
+class FinishReason(Enum):
+    """
+    Enum for LLM finish_reason values.
+    
+    Per REFACTORING_PLAN.md section 1.3:
+    - Provides type safety for finish_reason validation
+    - Covers all possible Anthropic API stop_reason values
+    
+    Reference: Anthropic API docs - Message.stop_reason field
+    """
+    END_TURN = "end_turn"           # Normal completion
+    MAX_TOKENS = "max_tokens"       # Hit token limit (truncation)
+    STOP_SEQUENCE = "stop_sequence" # Hit custom stop sequence
+    TOOL_USE = "tool_use"           # Tool/function call (not used in our case)
+
+
+def _validate_json_response(response_text: str, finish_reason: str) -> Tuple[bool, Optional[str]]:
+    """
+    Validate JSON response completeness and structure.
+    
+    Per REFACTORING_PLAN.md section 1.1:
+    - Validates finish_reason (must be "end_turn")
+    - Validates JSON syntax
+    - Validates structure for Phase 1 responses
+    - Validates required fields
+    
+    Args:
+        response_text: Raw LLM response text
+        finish_reason: Stop reason from API response
+        
+    Returns:
+        Tuple of (is_valid, error_message)
+        - is_valid: True if response is complete and valid
+        - error_message: None if valid, description if invalid
+    
+    Example:
+        >>> is_valid, error = _validate_json_response('[{"book_title": "Test"}]', "end_turn")
+    """
+    # Check finish_reason first
+    if finish_reason != FinishReason.END_TURN.value:
+        return False, f"Incomplete response: {finish_reason}"
+    
+    # Attempt to parse JSON
+    try:
+        parsed = json.loads(response_text)
+    except json.JSONDecodeError as e:
+        return False, f"Invalid JSON: {e}"
+    
+    # Validate structure (for Phase 1 responses)
+    if isinstance(parsed, list):
+        # Phase 1: Array of content requests
+        for idx, item in enumerate(parsed):
+            if not isinstance(item, dict):
+                return False, f"Item {idx} is not a dict"
+            
+            required_fields = ["book_title", "chapter", "reason"]
+            missing = [f for f in required_fields if f not in item]
+            if missing:
+                return False, f"Item {idx} missing fields: {missing}"
+    
+    return True, None
+
+
+def _handle_truncated_response(
+    phase: str,
+    messages: List[Dict],
+    attempt: int,
+    max_retries: int = 2
+) -> Optional[str]:
+    """
+    Handle truncated responses with progressive constraint tightening.
+    
+    Per REFACTORING_PLAN.md section 1.1:
+    - Phase 1: Retryable with progressive constraints (15 -> 10 -> 5 -> 3 books)
+    - Phase 2: Not retryable (would lose actual content)
+    - Max retries limit to prevent infinite loops
+    
+    Args:
+        phase: "phase_1" or "phase_2"
+        messages: API messages array (will be modified with constraints)
+        attempt: Current retry attempt number (0-indexed)
+        max_retries: Maximum number of retries allowed
+        
+    Returns:
+        API response text if retry succeeded, None if cannot/should not retry
+    
+    Example:
+        >>> result = _handle_truncated_response("phase_1", messages, attempt=0)
+    """
+    # Import here to avoid circular dependency
+    from src.llm_integration import call_llm
+    
+    if phase == "phase_2":
+        print("Phase 2 truncated - cannot retry (would lose content)", flush=True)
+        return None
+    
+    if attempt >= max_retries:
+        print(f"Max retries ({max_retries}) exceeded", flush=True)
+        return None
+    
+    # Progressive limits: [10, 5, 3]
+    limits = [10, 5, 3]
+    new_limit = limits[min(attempt, len(limits) - 1)]
+    
+    print(f"Retry {attempt + 1}: Constraining to top {new_limit} books", flush=True)
+    
+    # Modify system message to add constraint
+    constraint_msg = f"\n\nIMPORTANT: Limit requests to TOP {new_limit} most relevant books only."
+    messages[0]["content"] += constraint_msg
+    
+    # Retry with modified messages
+    return call_llm(messages, phase=phase, _retry_attempt=attempt + 1)
+
+
 def _log_api_exchange(call_num: int, prompt: str, system_prompt: str, 
                       response: str, input_tokens: int, output_tokens: int, 
                       error: str = None):
