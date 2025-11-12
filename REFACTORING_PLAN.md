@@ -521,6 +521,90 @@ class Phase1Cache:
 
 **Deliverable**: Scalable architecture, optimized performance
 
+### Phase 4 (FINAL): Pipeline Integration
+**Purpose**: Integrate upstream document processing pipeline from tpm-job-finder-poc
+
+**Scope**: Add PDF-to-JSON-to-Summary processing stages before existing LLM enhancement workflow
+
+**Architecture Impact**: ✅ ADDITIVE ONLY - No refactoring of completed work required
+
+**Current Flow**:
+```
+Guideline.md → LLM Enhancement → Enhanced Guideline
+```
+
+**New Integrated Flow**:
+```
+PDF → JSON → Summaries → Metadata → LLM Enhancement → Enhanced Output
+     ↑        ↑           ↑            ↑
+  Stage 1  Stage 2     Stage 3    Existing (untouched)
+```
+
+**Files to Copy & Adapt**:
+1. `convert_pdf_to_json.py` - PDF to JSON conversion with metadata
+2. `chapter_generator_all_text.py` - Generate chapter summaries from JSON
+3. `generate_chapter_metadata.py` - Extract chapter metadata (summaries, keywords, concepts)
+
+**Integration Tasks**:
+
+#### 4.1 Copy Files
+```bash
+cd /Users/kevintoles/POC/llm-document-enhancer
+mkdir -p src/pipeline
+
+# Copy from tpm-job-finder-poc
+cp ../tpm-job-finder-poc/Python_References/convert_pdf_to_json.py src/pipeline/
+cp "../tpm-job-finder-poc/Chapter Summaries/chapter_generator_all_text.py" src/pipeline/
+cp "../tpm-job-finder-poc/Python_References/Document Generation_Validation Scripts/generate_chapter_metadata.py" src/pipeline/
+```
+
+#### 4.2 Adapt to Use New Infrastructure
+- **Configuration**: Update to use `config/settings.py` for paths, LLM settings
+- **Provider Abstraction**: Replace direct Anthropic calls with `src/providers/AnthropicProvider`
+- **Retry Logic**: Use `src/retry.py` for robust LLM calls
+- **Caching**: Use `src/cache.py` to cache expensive operations
+- **JSON Validation**: Use `src/json_parser.py` for JSON parsing
+
+#### 4.3 Path Updates
+```python
+# OLD (tpm-job-finder-poc)
+JSON_DIR = "Python_References/Engineering Practices/JSON"
+JSON_DIR = "Python_References/Architecture/JSON"
+
+# NEW (llm-document-enhancer)
+from config.settings import PathConfig
+JSON_DIR = PathConfig.json_output_dir()
+```
+
+#### 4.4 Testing
+- [ ] Unit tests for PDF conversion
+- [ ] Unit tests for chapter generation
+- [ ] Unit tests for metadata extraction
+- [ ] Integration test: PDF → Enhanced output (full pipeline)
+- [ ] Verify all 99 existing tests still pass
+
+#### 4.5 Sprint 4 Checklist (Week 4)
+- [ ] Day 1: Copy files, create src/pipeline/ directory
+- [ ] Day 2: Update paths to use PathConfig
+- [ ] Day 3: Replace LLM calls with src/providers/
+- [ ] Day 4: Add caching and retry logic
+- [ ] Day 5: Write unit tests (TDD for new functionality)
+- [ ] Day 6: Integration testing (full pipeline)
+- [ ] Day 7: Documentation and final validation
+
+**Deliverable**: Complete document processing pipeline from PDF to enhanced output
+
+**Compatibility Matrix**:
+| Component | Status | Integration Required |
+|-----------|--------|---------------------|
+| Configuration system | ✅ Compatible | Yes - update paths |
+| Phase separation | ✅ Compatible | No - upstream files don't touch |
+| Provider abstraction | ✅ Compatible | Yes - replace direct API calls |
+| JSON validation | ✅ Compatible | Yes - use src/json_parser.py |
+| Retry logic | ✅ Compatible | Yes - wrap LLM calls |
+| Caching | ✅ Compatible | Yes - cache chapter generation |
+| All 99 existing tests | ✅ Remain valid | No changes to tested code |
+
 ---
 
 ## IV. SUCCESS METRICS
