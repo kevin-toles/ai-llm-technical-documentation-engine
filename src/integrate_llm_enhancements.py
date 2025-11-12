@@ -82,9 +82,9 @@ except ImportError as e:
 # Global orchestrator (singleton pattern for efficiency)
 _orchestrator = None
 
-REPO_ROOT = Path(__file__).parent.parent.parent
-GUIDELINES_FILE = REPO_ROOT / "Python_References" / "PYTHON_GUIDELINES" / "PYTHON_GUIDELINES_Learning_Python_Ed6.md"
-JSON_DIR = REPO_ROOT / "Python_References" / "Textbooks_JSON"
+REPO_ROOT = Path(__file__).parent.parent
+GUIDELINES_FILE = REPO_ROOT / "guidelines" / "PYTHON_GUIDELINES_Learning_Python_Ed6.md"
+JSON_DIR = REPO_ROOT / "data" / "textbooks_json"
 
 def get_or_create_orchestrator() -> Optional[TwoPhaseOrchestrator]:
     """Get or create the global orchestrator instance (singleton pattern).
@@ -493,7 +493,8 @@ def main():
     
     # CRITICAL CHECK 7: Verify orchestrator can see books
     try:
-        books_metadata = orchestrator._build_books_metadata_only()
+        # Access the legacy orchestrator's method
+        books_metadata = orchestrator._legacy_orchestrator._build_books_metadata_only()
         if len(books_metadata) == 0:
             logger.error("✗ CRITICAL: Orchestrator loaded but found 0 books in metadata")
             print("❌ CRITICAL ERROR: Orchestrator found 0 books in metadata")

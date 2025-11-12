@@ -472,9 +472,9 @@ class MetadataServiceFactory:
     @staticmethod
     def create_default() -> MetadataExtractionService:
         """Create service with default directories."""
-        repo_root = Path(__file__).parent.parent.parent
+        repo_root = Path(__file__).parent.parent
         directories = [
-            repo_root / "Python_References" / "Textbooks_JSON"
+            repo_root / "data" / "textbooks_json"
         ]
         return MetadataServiceFactory.create_from_directories(directories)
 

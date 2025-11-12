@@ -853,8 +853,8 @@ Provide your comprehensive analysis now."""
         from pathlib import Path
         import json
         
-        # Load from Textbooks_JSON directory
-        json_dir = Path(__file__).parent.parent.parent / "Python_References" / "Textbooks_JSON"
+        # Load from Textbooks_JSON directory (updated to use actual data location)
+        json_dir = Path(__file__).parent.parent / "data" / "textbooks_json"
         
         # Filename is just book_name + .json (e.g., "Fluent Python 2nd.json")
         target_filename = f"{book_name}.json"

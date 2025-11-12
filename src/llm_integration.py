@@ -22,8 +22,9 @@ import json
 import sys
 import os
 from pathlib import Path
-from typing import Dict, List, Set, Any, Tuple
+from typing import Dict, List, Set, Any, Tuple, Optional
 from datetime import datetime
+from enum import Enum
 
 # Load environment variables
 try:

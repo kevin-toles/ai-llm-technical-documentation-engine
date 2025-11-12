@@ -1,0 +1,69 @@
+INFO: Logging initialized - log file: /Users/kevintoles/POC/logs/llm_enhancement_20251112_011131.log
+[llm_integration] Module loading started
+[llm_integration] Environment variables loaded
+[llm_integration] Basic imports done
+[llm_integration] Attempting openai import...
+[llm_integration] openai imported successfully
+[llm_integration] Attempting anthropic import...
+[llm_integration] anthropic imported successfully
+[llm_integration] Module loading complete
+[llm_integration] ✓ Anthropic configured - Model: claude-sonnet-4-5-20250929
+INFO: ✓ LLM integration loaded successfully
+/Users/kevintoles/POC/llm-document-enhancer/config/settings.py:260: UserWarning: TAXONOMY_MAX_BOOKS=10 may cause token issues. Estimated metadata tokens: 5000, max_tokens limit: 8192. Consider reducing TAXONOMY_MAX_BOOKS to 8 or less.
+  warnings.warn(
+INFO: ✓ Interactive system loaded successfully (using TwoPhaseOrchestrator)
+INFO: ==================================================================
+INFO: Starting LLM Enhancement Workflow
+INFO: ==================================================================
+INFO: Loading companion book JSON files from Textbooks_JSON:
+INFO: Loading companion books from: /Users/kevintoles/POC/llm-document-enhancer/data/textbooks_json
+INFO: ✓ Loaded 14 companion books successfully
+INFO: Successfully loaded 14 companion books with 8598 total pages
+INFO: Loading PYTHON_GUIDELINES_Learning_Python_Ed6.md...
+INFO: ✓ Loaded guidelines file: 1008967 characters
+INFO: Initializing two-phase orchestrator (refactored architecture)...
+INFO: ✓ TwoPhaseOrchestrator initialized successfully
+ERROR: ✗ CRITICAL: Orchestrator loaded but found 0 books in metadata
+
+======================================================================
+  LLM Cross-Referencing System - V2 Interactive Metadata-First
+======================================================================
+  Provider: ANTHROPIC
+  Model: claude-sonnet-4-5-20250929
+  Temperature: 0.2
+  Max Tokens: 8192
+  Target: PYTHON_GUIDELINES_Learning_Python_Ed6.md
+======================================================================
+
+==================================================================
+Comprehensive LLM Enhancement with All Companion Books
+==================================================================
+Loading companion book JSON files from Textbooks_JSON:
+Loading from: /Users/kevintoles/POC/llm-document-enhancer/data/textbooks_json
+  Loaded 497 pages from Architecture Patterns with Python
+  Loaded 595 pages from Python Architecture Patterns
+  Loaded 442 pages from Microservice APIs Using Python Flask FastAPI
+  Loaded 319 pages from Microservices Up and Running
+  Loaded 144 pages from Microservice Architecture
+  Loaded 355 pages from Python Distilled
+  Loaded 742 pages from Python Essential Reference 4th
+  Loaded 582 pages from Python Data Analysis 3rd
+  Loaded 1011 pages from Fluent Python 2nd
+  Loaded 1978 pages from Learning Python Ed6
+  Loaded 706 pages from Python Cookbook 3rd
+  Loaded 334 pages from Python Microservices Development
+  Loaded 420 pages from Building Python Microservices with FastAPI
+  Loaded 473 pages from Building Microservices
+
+📚 Successfully loaded 14 companion books with 8598 total pages
+Using ANTHROPIC for comprehensive analysis
+Loading PYTHON_GUIDELINES_Learning_Python_Ed6.md...
+
+Initializing LLM orchestrator (this validates book metadata loading)...
+Initializing two-phase orchestrator...
+Loading companion book metadata...
+✓ System ready (using refactored architecture)
+  Note: Chapter metadata not available, using basic book metadata only
+❌ CRITICAL ERROR: Orchestrator found 0 books in metadata
+   This is the issue you saw before: 'Book metadata for 0 books'
+   Check MetadataServiceFactory paths in metadata_extraction_system.py
