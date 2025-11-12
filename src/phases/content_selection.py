@@ -242,8 +242,13 @@ class ContentSelectionService:
     # SUPPORT METHODS - Metadata Building & Prompt Generation
     # ========================================================================
     
-    def _build_metadata_package(self, concepts: List[str]) -> Dict[str, Any]:
-        """Build metadata package using taxonomy-based scoring."""
+    def _build_metadata_package(self, _concepts: List[str]) -> Dict[str, Any]:
+        """Build metadata package using taxonomy-based scoring.
+        
+        Args:
+            _concepts: Unused in stub implementation. Real implementation would use
+                      these concepts for taxonomy-based book filtering.
+        """
         # This is a placeholder - the actual implementation would come from
         # the original AnalysisOrchestrator._build_metadata_package method
         # For now, return minimal structure
@@ -257,11 +262,19 @@ class ContentSelectionService:
         self,
         chapter_num: int,
         chapter_title: str,
-        concepts: List[str],
-        excerpt: str,
-        metadata_package: Dict[str, Any]
+        _concepts: List[str],
+        _excerpt: str,
+        _metadata_package: Dict[str, Any]
     ) -> str:
-        """Build Phase 1 prompt for python-guided analysis."""
+        """Build Phase 1 prompt for python-guided analysis.
+        
+        Args:
+            chapter_num: Chapter number for identification
+            chapter_title: Title of the chapter being analyzed
+            _concepts: Unused in stub. Real implementation uses for context.
+            _excerpt: Unused in stub. Real implementation includes in prompt.
+            _metadata_package: Unused in stub. Real implementation uses for book selection.
+        """
         # Placeholder - actual implementation from original code
         return f"Analyze chapter {chapter_num}: {chapter_title}"
     
@@ -273,16 +286,27 @@ class ContentSelectionService:
     def _build_comprehensive_phase1_prompt(
         self,
         chapter_num: int,
-        chapter_title: str,
-        chapter_full_text: str,
-        books_metadata: List[Dict[str, Any]]
+        _chapter_title: str,
+        _chapter_full_text: str,
+        _books_metadata: List[Dict[str, Any]]
     ) -> str:
-        """Build Phase 1 prompt for comprehensive LLM-driven analysis."""
+        """Build Phase 1 prompt for comprehensive LLM-driven analysis.
+        
+        Args:
+            chapter_num: Chapter number for identification
+            _chapter_title: Unused in stub. Real implementation includes in prompt.
+            _chapter_full_text: Unused in stub. Real implementation analyzes text.
+            _books_metadata: Unused in stub. Real implementation uses for selection.
+        """
         # Placeholder - actual implementation from original code
         return f"Comprehensive analysis of chapter {chapter_num}"
     
-    def _mock_metadata_response(self, concepts: List[str]) -> LLMMetadataResponse:
-        """Generate mock response when LLM unavailable."""
+    def _mock_metadata_response(self, _concepts: List[str]) -> LLMMetadataResponse:
+        """Generate mock response when LLM unavailable.
+        
+        Args:
+            _concepts: Unused in stub. Real implementation would use for book selection.
+        """
         # Placeholder - actual implementation from original code
         return LLMMetadataResponse(
             validation_summary="Mock validation",

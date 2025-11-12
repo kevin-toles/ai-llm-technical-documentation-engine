@@ -30,7 +30,7 @@ class TestLLMConfig:
         
         config = LLMConfig()
         assert config.provider == "anthropic"
-        assert config.temperature == 0.2
+        assert config.temperature == pytest.approx(0.2)
         assert config.max_tokens == 8192
     
     def test_env_override(self):
@@ -41,7 +41,7 @@ class TestLLMConfig:
         
         config = LLMConfig()
         assert config.max_tokens == 4096
-        assert config.temperature == 0.5
+        assert config.temperature == pytest.approx(0.5)
         
         # Cleanup
         os.environ.pop("LLM_MAX_TOKENS")
@@ -83,7 +83,7 @@ class TestTaxonomyConfig:
     def test_defaults(self):
         """Test default values."""
         config = TaxonomyConfig()
-        assert config.min_relevance == 0.3
+        assert config.min_relevance == pytest.approx(0.3)
         assert config.max_books == 10
         assert config.cascade_depth == 1
         assert config.enable_prefilter is True
@@ -94,7 +94,7 @@ class TestTaxonomyConfig:
         os.environ["TAXONOMY_MAX_BOOKS"] = "8"
         
         config = TaxonomyConfig()
-        assert config.min_relevance == 0.5
+        assert config.min_relevance == pytest.approx(0.5)
         assert config.max_books == 8
         
         # Cleanup
@@ -164,8 +164,8 @@ class TestRetryConfig:
         """Test default values (AC-3)."""
         config = RetryConfig()
         assert config.max_attempts == 2
-        assert config.backoff_factor == 0.8
-        assert config.constraint_factor == 0.5
+        assert config.backoff_factor == pytest.approx(0.8)
+        assert config.constraint_factor == pytest.approx(0.5)
     
     def test_env_override(self):
         """Test environment variable override."""
@@ -174,7 +174,7 @@ class TestRetryConfig:
         
         config = RetryConfig()
         assert config.max_attempts == 3
-        assert config.backoff_factor == 0.7
+        assert config.backoff_factor == pytest.approx(0.7)
         
         # Cleanup
         os.environ.pop("RETRY_MAX_ATTEMPTS")
@@ -224,7 +224,7 @@ class TestCacheConfig:
         os.environ["CACHE_ENABLED"] = "true"
         os.environ["CACHE_DIR"] = str(test_cache)
         
-        config = CacheConfig()
+        _ = CacheConfig()  # Create config to trigger directory creation
         assert test_cache.exists()
         assert test_cache.is_dir()
         

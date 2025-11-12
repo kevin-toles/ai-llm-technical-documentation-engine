@@ -65,18 +65,18 @@ def validate_data_files():
     if json_count != 14:
         errors.append(f"Expected 14 book JSONs, found {json_count}")
     else:
-        print(f"  ✅ 14 book JSONs found")
+        print("  ✅ 14 book JSONs found")
     
     metadata_count = len(list(Path("data/metadata").glob("*.json")))
     if metadata_count != 14:
         errors.append(f"Expected 14 metadata JSONs, found {metadata_count}")
     else:
-        print(f"  ✅ 14 metadata JSONs found")
+        print("  ✅ 14 metadata JSONs found")
     
     if not Path("data/chapter_metadata_cache.json").exists():
         errors.append("Missing chapter_metadata_cache.json")
     else:
-        print(f"  ✅ chapter_metadata_cache.json")
+        print("  ✅ chapter_metadata_cache.json")
     
     return errors
 
@@ -102,7 +102,7 @@ def validate_config():
     if not Path(".env").exists():
         print("  ⚠️  .env file not found (create from .env.example)")
     else:
-        print(f"  ✅ .env")
+        print("  ✅ .env")
     
     return errors
 

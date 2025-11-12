@@ -199,13 +199,13 @@ def _handle_truncated_response(
     constraint_msg = f"\n\nIMPORTANT: Limit requests to TOP {new_limit} most relevant books only."
     messages[0]["content"] += constraint_msg
     
-    # Retry with modified messages
-    return call_llm(messages, phase=phase, _retry_attempt=attempt + 1)
+    # Retry with modified messages (remove phase and _retry_attempt - not in signature)
+    return call_llm(messages)
 
 
 def _log_api_exchange(call_num: int, prompt: str, system_prompt: str, 
-                      response: str, input_tokens: int, output_tokens: int, 
-                      error: str = None):
+                      response: Optional[str], input_tokens: int, output_tokens: int, 
+                      error: Optional[str] = None):
     """Log detailed API request/response to file for debugging."""
     if not ENABLE_API_LOGGING:
         return
@@ -219,6 +219,12 @@ def _log_api_exchange(call_num: int, prompt: str, system_prompt: str,
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         log_file = log_dir / f"api_call_{call_num:03d}_{timestamp}.json"
         
+        # Format response text for logging
+        response_text = None
+        if response is not None:
+            truncated = response[:5000]
+            response_text = truncated + "..." if len(response) > 5000 else truncated
+        
         log_data = {
             "call_number": call_num,
             "timestamp": datetime.now().isoformat(),
@@ -230,7 +236,7 @@ def _log_api_exchange(call_num: int, prompt: str, system_prompt: str,
                 "system_length": len(system_prompt) if system_prompt else 0
             },
             "response": {
-                "text": response[:5000] + ("..." if len(response) > 5000 else "") if response else None,
+                "text": response_text,
                 "full_length": len(response) if response else 0,
                 "input_tokens": input_tokens,
                 "output_tokens": output_tokens
@@ -247,9 +253,56 @@ def _log_api_exchange(call_num: int, prompt: str, system_prompt: str,
         print(f"[LLM API] Warning: Could not write API log: {e}", file=sys.stderr, flush=True)
 
 
+def _log_request_details(call_num: int, prompt: str, system_prompt: Optional[str], max_tokens: int):
+    """Log request details before making API call."""
+    prompt_length = len(prompt)
+    system_length = len(system_prompt) if system_prompt else 0
+    estimated_input_tokens = (prompt_length + system_length) // 4
+    
+    print(f"\n[LLM API #{call_num}] Request: {estimated_input_tokens:,} estimated input tokens, {max_tokens:,} max output tokens", flush=True)
+    if prompt_length > 100000:
+        print(f"[LLM API #{call_num}] WARNING: Very large prompt ({prompt_length:,} chars)", flush=True)
+
+
+def _log_response_details(call_num: int, response_text: str, input_tokens: int, output_tokens: int):
+    """Log response details after receiving API response."""
+    response_length = len(response_text)
+    print(f"[LLM API #{call_num}] ✓ Response: {output_tokens:,} output tokens, {input_tokens:,} input tokens (actual)", flush=True)
+    print(f"[LLM API #{call_num}] Response length: {response_length:,} chars", flush=True)
+
+
+def _validate_response(call_num: int, response_text: str, prompt: str, system_prompt: Optional[str], 
+                       input_tokens: int, output_tokens: int):
+    """Validate response and log warnings."""
+    if not response_text or len(response_text.strip()) == 0:
+        print(f"[LLM API #{call_num}] ⚠️  WARNING: Empty response received!", file=sys.stderr, flush=True)
+        _log_api_exchange(call_num, prompt, system_prompt, response_text, 
+                        input_tokens, output_tokens, error="Empty response")
+        return
+    
+    if response_text.startswith("I cannot") or response_text.startswith("I apologize"):
+        print(f"[LLM API #{call_num}] ⚠️  WARNING: LLM refused or apologized - check prompt format", file=sys.stderr, flush=True)
+        print(f"[LLM API #{call_num}] Response preview: {response_text[:200]}", file=sys.stderr, flush=True)
+        _log_api_exchange(call_num, prompt, system_prompt, response_text, 
+                        input_tokens, output_tokens, error="LLM refusal detected")
+
+
+def _handle_anthropic_error(call_num: int, e: Exception, prompt: str, system_prompt: Optional[str]):
+    """Handle Anthropic API errors."""
+    error_msg = f"{type(e).__name__}: {str(e)}"
+    print(f"\n❌ [LLM API #{call_num}] Anthropic API Error: {type(e).__name__}", file=sys.stderr, flush=True)
+    print(f"   Error details: {str(e)}", file=sys.stderr, flush=True)
+    if hasattr(e, 'status_code'):
+        print(f"   HTTP Status: {e.status_code}", file=sys.stderr, flush=True)
+    if hasattr(e, 'response'):
+        print(f"   Response: {e.response}", file=sys.stderr, flush=True)
+    
+    _log_api_exchange(call_num, prompt, system_prompt, None, 0, 0, error=error_msg)
+
+
 def call_llm(prompt: str, system_prompt: str = None, max_tokens: int = 2000) -> str:
     """
-    Make automated LLM API call using Anthropic Claude (no user interaction).
+    Make automated LLM API call using Anthropic Claude (no user interaction). Refactored to reduce complexity.
     
     Args:
         prompt: User prompt
@@ -270,19 +323,13 @@ def call_llm(prompt: str, system_prompt: str = None, max_tokens: int = 2000) -> 
             if call_num == 1:
                 print(f"\n[LLM] Making API call with model: {ANTHROPIC_MODEL}", flush=True)
                 if ENABLE_API_LOGGING:
-                    print(f"[LLM] API logging enabled - saving to logs/llm_api/", flush=True)
+                    print("[LLM] API logging enabled - saving to logs/llm_api/", flush=True)
             
-            # Log request details
-            prompt_length = len(prompt)
-            system_length = len(system_prompt) if system_prompt else 0
-            estimated_input_tokens = (prompt_length + system_length) // 4  # Rough estimate
+            # Log request
+            _log_request_details(call_num, prompt, system_prompt, max_tokens)
             
-            print(f"\n[LLM API #{call_num}] Request: {estimated_input_tokens:,} estimated input tokens, {max_tokens:,} max output tokens", flush=True)
-            if prompt_length > 100000:
-                print(f"[LLM API #{call_num}] WARNING: Very large prompt ({prompt_length:,} chars)", flush=True)
-            
+            # Make API call
             client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
-            
             response = client.messages.create(
                 model=ANTHROPIC_MODEL,
                 max_tokens=max_tokens if max_tokens <= LLM_MAX_TOKENS else LLM_MAX_TOKENS,
@@ -291,48 +338,23 @@ def call_llm(prompt: str, system_prompt: str = None, max_tokens: int = 2000) -> 
                 messages=[{"role": "user", "content": prompt}]
             )
             
-            # Log response details
+            # Extract response
             response_text = response.content[0].text
-            response_length = len(response_text)
-            
-            # Extract actual token usage from response
             input_tokens = getattr(response.usage, 'input_tokens', 0)
             output_tokens = getattr(response.usage, 'output_tokens', 0)
             
-            print(f"[LLM API #{call_num}] ✓ Response: {output_tokens:,} output tokens, {input_tokens:,} input tokens (actual)", flush=True)
-            print(f"[LLM API #{call_num}] Response length: {response_length:,} chars", flush=True)
+            # Log response
+            _log_response_details(call_num, response_text, input_tokens, output_tokens)
+            _log_api_exchange(call_num, prompt, system_prompt, response_text, input_tokens, output_tokens)
             
-            # Save detailed log
-            _log_api_exchange(call_num, prompt, system_prompt, response_text, 
-                            input_tokens, output_tokens)
-            
-            # Validate response format
-            if not response_text or len(response_text.strip()) == 0:
-                print(f"[LLM API #{call_num}] ⚠️  WARNING: Empty response received!", file=sys.stderr, flush=True)
-                _log_api_exchange(call_num, prompt, system_prompt, response_text, 
-                                input_tokens, output_tokens, error="Empty response")
-            
-            # Check for common response issues
-            if response_text.startswith("I cannot") or response_text.startswith("I apologize"):
-                print(f"[LLM API #{call_num}] ⚠️  WARNING: LLM refused or apologized - check prompt format", file=sys.stderr, flush=True)
-                print(f"[LLM API #{call_num}] Response preview: {response_text[:200]}", file=sys.stderr, flush=True)
-                _log_api_exchange(call_num, prompt, system_prompt, response_text, 
-                                input_tokens, output_tokens, error="LLM refusal detected")
+            # Validate
+            _validate_response(call_num, response_text, prompt, system_prompt, input_tokens, output_tokens)
             
             return response_text
             
         except anthropic.APIError as e:
-            error_msg = f"{type(e).__name__}: {str(e)}"
-            print(f"\n❌ [LLM API #{call_num}] Anthropic API Error: {type(e).__name__}", file=sys.stderr, flush=True)
-            print(f"   Error details: {str(e)}", file=sys.stderr, flush=True)
-            if hasattr(e, 'status_code'):
-                print(f"   HTTP Status: {e.status_code}", file=sys.stderr, flush=True)
-            if hasattr(e, 'response'):
-                print(f"   Response: {e.response}", file=sys.stderr, flush=True)
-            
-            # Log error
-            _log_api_exchange(call_num, prompt, system_prompt, None, 0, 0, error=error_msg)
-            raise  # Re-raise to let caller handle
+            _handle_anthropic_error(call_num, e, prompt, system_prompt)
+            raise
             
         except Exception as e:
             error_msg = f"{type(e).__name__}: {str(e)}"
@@ -340,10 +362,8 @@ def call_llm(prompt: str, system_prompt: str = None, max_tokens: int = 2000) -> 
             print(f"   Error details: {str(e)}", file=sys.stderr, flush=True)
             import traceback
             traceback.print_exc()
-            
-            # Log error
             _log_api_exchange(call_num, prompt, system_prompt, None, 0, 0, error=error_msg)
-            raise  # Re-raise to let caller handle
+            raise
     
     # OpenAI GPT-5 - DISABLED (using Anthropic)
     # if LLM_PROVIDER == "openai" and OPENAI_AVAILABLE:
@@ -590,8 +610,8 @@ Respond with ONLY a JSON object:
         result = json.loads(response)
         print("✓")
         return result
-    except Exception as e:
-        print(f"✗ (using excerpt)", file=sys.stderr)
+    except Exception:
+        print("✗ (using excerpt)", file=sys.stderr)
         # Fallback: extract from content
         return {
             "summary": content[:max_length].strip() + ("..." if len(content) > max_length else ""),
@@ -607,7 +627,7 @@ if __name__ == "__main__":
     print(f"  LLM_PROVIDER: {LLM_PROVIDER}")
     print(f"  OpenAI available: {OPENAI_AVAILABLE}")
     print(f"  Anthropic available: {ANTHROPIC_AVAILABLE}")
-    print(f"\nEnvironment variables:")
+    print("\nEnvironment variables:")
     print(f"  OPENAI_API_KEY: {'✓ Set' if os.getenv('OPENAI_API_KEY') else '✗ Not set'}")
     print(f"  ANTHROPIC_API_KEY: {'✓ Set' if os.getenv('ANTHROPIC_API_KEY') else '✗ Not set'}")
     print("\nIntegration points:")

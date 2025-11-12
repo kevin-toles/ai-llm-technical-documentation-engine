@@ -73,10 +73,10 @@ class TwoPhaseOrchestrator:
             llm_available: Whether LLM is available
         """
         # Lazy load the legacy orchestrator class
-        LegacyOrchestrator, _ = _get_legacy_classes()
+        legacy_orchestrator_class, _ = _get_legacy_classes()
         
         # For now, delegate to legacy orchestrator
-        self._legacy_orchestrator = LegacyOrchestrator(
+        self._legacy_orchestrator = legacy_orchestrator_class(
             metadata_service=metadata_service,
             llm_available=llm_available
         )

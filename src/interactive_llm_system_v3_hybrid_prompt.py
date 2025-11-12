@@ -70,6 +70,13 @@ except ImportError:
     LLM_AVAILABLE = False
     print("Warning: LLM integration not available")
 
+# Book title constants (per SonarQube - avoid duplicated string literals)
+# These match the exact titles used in book_taxonomy.py and metadata JSON files
+PYTHON_ESSENTIAL_REF = "Python Essential Reference 4th"
+FLUENT_PYTHON = "Fluent Python 2nd"
+PYTHON_DISTILLED = "Python Distilled"
+PYTHON_DATA_ANALYSIS = "Python Data Analysis 3rd"
+
 
 # ============================================================================
 # STATE MACHINE - Analysis Workflow States
@@ -145,13 +152,13 @@ class LLMMetadataResponse:
             data = json.loads(cleaned_output)
             
             # DEBUG: Show parsed JSON structure
-            print(f"\n[DEBUG] JSON parsed successfully")
+            print("\n[DEBUG] JSON parsed successfully")
             print(f"[DEBUG] Keys in response: {list(data.keys())}")
             print(f"[DEBUG] content_requests field: {data.get('content_requests', 'MISSING')}")
             if 'content_requests' in data:
                 print(f"[DEBUG] Number of requests: {len(data.get('content_requests', []))}")
                 if len(data.get('content_requests', [])) == 0:
-                    print(f"[DEBUG] ⚠️ content_requests array is EMPTY!")
+                    print("[DEBUG] ⚠️ content_requests array is EMPTY!")
                 else:
                     print(f"[DEBUG] ✓ Found {len(data.get('content_requests', []))} content requests")
             
@@ -173,7 +180,7 @@ class LLMMetadataResponse:
             )
         except json.JSONDecodeError as e:
             print(f"[DEBUG] JSON parsing failed: {e}")
-            print(f"[DEBUG] Falling back to text format parsing")
+            print("[DEBUG] Falling back to text format parsing")
             # Fallback: parse text format
             return cls._parse_text_format(llm_output)
     
@@ -464,16 +471,16 @@ class AnalysisOrchestrator:
             
             if estimated_tokens >= truncation_threshold:
                 print(f"⚠️  WARNING: Response may be truncated (~{estimated_tokens:,} tokens, limit: {max_tokens_phase1:,})")
-                print(f"   This suggests LLM tried to request too many books.")
-                print(f"   Will attempt to parse and validate...")
+                print("   This suggests LLM tried to request too many books.")
+                print("   Will attempt to parse and validate...")
             
             response = LLMMetadataResponse.from_llm_output(llm_output)
             
             # BATCHING LOGIC: If we got 0 requests but response was near limit, it was likely truncated
             if len(response.content_requests) == 0 and estimated_tokens >= truncation_threshold:
                 print(f"\n❌ TRUNCATION DETECTED: Got 0 content requests but response was {estimated_tokens:,} tokens")
-                print(f"   LLM response was cut off before completing the content_requests array.")
-                print(f"   Re-prompting with constraint to limit to top 10 most relevant books...")
+                print("   LLM response was cut off before completing the content_requests array.")
+                print("   Re-prompting with constraint to limit to top 10 most relevant books...")
                 
                 # Re-prompt with constraint
                 constrained_prompt = prompt + f"""
@@ -493,7 +500,7 @@ Prioritize books that provide the most direct, substantial coverage of this chap
                 # Sort by priority (lower number = higher priority)
                 sorted_requests = sorted(response.content_requests, key=lambda r: r.priority)
                 response.content_requests = sorted_requests[:10]
-                print(f"✓ Truncated to top 10 highest-priority requests")
+                print("✓ Truncated to top 10 highest-priority requests")
             
             print(f"✓ LLM extracted concepts and identified {len(response.content_requests)} book chapters to review")
             for req in response.content_requests[:5]:
@@ -717,7 +724,7 @@ Prioritize books that provide the most direct, substantial coverage of this chap
             from chapter_metadata_manager import ChapterMetadataManager
             chapter_manager = ChapterMetadataManager()
             has_chapter_metadata = True
-        except:
+        except Exception:
             chapter_manager = None
             has_chapter_metadata = False
             print("  Note: Chapter metadata not available, using basic book metadata only")
@@ -766,6 +773,29 @@ Prioritize books that provide the most direct, substantial coverage of this chap
         
         return books_metadata
     
+    def _format_book_description(self, book: Dict[str, Any], index: int) -> str:
+        """Format a single book's metadata description with chapter details.
+        
+        Extracts book metadata formatting to reduce complexity of parent function.
+        """
+        book_desc = f"{index}. {book['title']}\n   Author(s): {book.get('author', 'Unknown')}\n   Full Title: {book.get('full_title', book['title'])}\n   Domain: {book['domain']}\n   Concepts: {', '.join(book['concepts_covered'][:8])}"
+        
+        # Add detailed chapter information if available
+        if book.get('has_chapter_metadata') and book.get('chapters'):
+            chapters_summary = "\n   Chapters:"
+            for ch in book['chapters'][:10]:  # Show first 10 chapters with full metadata
+                chapters_summary += f"\n     • Ch.{ch['number']}: {ch['title']} (pp.{ch['pages']})"
+                if ch.get('summary'):
+                    chapters_summary += f"\n       Summary: {ch['summary']}"
+                if ch.get('concepts'):
+                    chapters_summary += f"\n       Concepts: {', '.join(ch['concepts'][:5])}"
+            
+            if len(book['chapters']) > 10:
+                chapters_summary += f"\n     ... [{len(book['chapters'])} chapters total]"
+            book_desc += chapters_summary
+        
+        return book_desc
+    
     def _build_comprehensive_phase1_prompt(
         self,
         chapter_num: int,
@@ -775,26 +805,7 @@ Prioritize books that provide the most direct, substantial coverage of this chap
     ) -> str:
         """Build Phase 1 prompt for comprehensive LLM-driven analysis."""
         
-        books_list = []
-        for i, book in enumerate(books_metadata, 1):
-            book_desc = f"{i}. {book['title']}\n   Author(s): {book.get('author', 'Unknown')}\n   Full Title: {book.get('full_title', book['title'])}\n   Domain: {book['domain']}\n   Concepts: {', '.join(book['concepts_covered'][:8])}"
-            
-            # Add detailed chapter information if available
-            if book.get('has_chapter_metadata') and book.get('chapters'):
-                chapters_summary = "\n   Chapters:"
-                for ch in book['chapters'][:10]:  # Show first 10 chapters with full metadata
-                    chapters_summary += f"\n     • Ch.{ch['number']}: {ch['title']} (pp.{ch['pages']})"
-                    if ch.get('summary'):
-                        chapters_summary += f"\n       Summary: {ch['summary']}"
-                    if ch.get('concepts'):
-                        chapters_summary += f"\n       Concepts: {', '.join(ch['concepts'][:5])}"
-                
-                if len(book['chapters']) > 10:
-                    chapters_summary += f"\n     ... [{len(book['chapters'])} chapters total]"
-                book_desc += chapters_summary
-            
-            books_list.append(book_desc)
-        
+        books_list = [self._format_book_description(book, i) for i, book in enumerate(books_metadata, 1)]
         books_text = "\n\n".join(books_list)
         
         return f"""You are conducting a comprehensive scholarly cross-reference analysis for Learning Python Ed.6.
@@ -864,6 +875,127 @@ To ensure focused, high-quality cross-references, please limit your content_requ
 
 Provide your comprehensive analysis now."""
     
+    def _extract_chapter_numbers_from_rationale(self, rationale: str) -> List[int]:
+        """Extract chapter numbers from rationale text.
+        
+        Args:
+            rationale: Rationale text that may contain chapter references like "Chapter 5: Decorators"
+            
+        Returns:
+            List of unique chapter numbers found
+        """
+        import re
+        chapter_pattern = r'Chapter\s+(\d+)'
+        chapter_matches = re.findall(chapter_pattern, rationale, re.IGNORECASE)
+        return [int(num) for num in set(chapter_matches)]
+    
+    def _load_full_chapter_content(
+        self,
+        chapter_num: int,
+        chapter_info,
+        book_content: Dict,
+        book_name: str
+    ) -> Optional[Dict[str, Any]]:
+        """Load all pages for a specific chapter.
+        
+        Args:
+            chapter_num: Chapter number to load
+            chapter_info: Chapter metadata object with start_page, end_page, title
+            book_content: Full book JSON content dict
+            book_name: Human-readable book name for citation
+            
+        Returns:
+            Dict with chapter content and metadata, or None if no content found
+        """
+        chapter_content = []
+        for page_num in range(chapter_info.start_page, chapter_info.end_page + 1):
+            if str(page_num) in book_content:
+                page_text = book_content[str(page_num)].get('content', '')
+                chapter_content.append(page_text)
+        
+        if not chapter_content:
+            return None
+        
+        author, full_title = self._get_citation_info(book_name)
+        
+        print(f"    ✓ Loaded Chapter {chapter_num} from {book_name} ({len(chapter_content)} pages)")
+        
+        return {
+            'chapter': chapter_num,
+            'title': chapter_info.title,
+            'pages': f"{chapter_info.start_page}-{chapter_info.end_page}",
+            'content': '\n'.join(chapter_content),
+            'is_full_chapter': True,
+            'author': author,
+            'book_title': full_title,
+            'book_filename': book_name
+        }
+    
+    def _load_chapters_for_request(
+        self,
+        req: ContentRequest,
+        book_content: Dict,
+        chapter_manager
+    ) -> List[Dict[str, Any]]:
+        """Load full chapters based on request rationale.
+        
+        Args:
+            req: Content request with book name and rationale
+            book_content: Full book JSON content
+            chapter_manager: ChapterMetadataManager instance
+            
+        Returns:
+            List of chapter excerpt dicts with content and metadata
+        """
+        excerpts = []
+        
+        chapter_nums = self._extract_chapter_numbers_from_rationale(req.rationale)
+        if not chapter_nums:
+            return excerpts
+        
+        chapters = chapter_manager.get_chapters(req.book_name.replace(' ', '_') + '_Content.json')
+        
+        for chapter_num in chapter_nums:
+            chapter_info = next((ch for ch in chapters if ch.chapter_number == chapter_num), None)
+            if chapter_info:
+                chapter_data = self._load_full_chapter_content(
+                    chapter_num, chapter_info, book_content, req.book_name
+                )
+                if chapter_data:
+                    excerpts.append(chapter_data)
+        
+        return excerpts
+    
+    def _load_page_excerpts_for_request(
+        self,
+        req: ContentRequest,
+        book_content: Dict
+    ) -> List[Dict[str, Any]]:
+        """Load individual pages for a content request (fallback behavior).
+        
+        Args:
+            req: Content request with book name and pages
+            book_content: Full book JSON content
+            
+        Returns:
+            List of page excerpt dicts with content and metadata
+        """
+        excerpts = []
+        author, full_title = self._get_citation_info(req.book_name)
+        
+        for page_num in req.pages[:10]:  # Limit pages per book
+            if str(page_num) in book_content:
+                excerpts.append({
+                    'page': page_num,
+                    'content': book_content[str(page_num)].get('content', '')[:1000],
+                    'is_full_chapter': False,
+                    'author': author,
+                    'book_title': full_title,
+                    'book_filename': req.book_name
+                })
+        
+        return excerpts
+    
     def _lazy_load_requested_chapters(
         self,
         content_requests: List[ContentRequest]
@@ -889,12 +1021,11 @@ Provide your comprehensive analysis now."""
             from chapter_metadata_manager import ChapterMetadataManager
             chapter_manager = ChapterMetadataManager()
             has_chapter_metadata = True
-        except:
+        except Exception:
             chapter_manager = None
             has_chapter_metadata = False
         
         for req in content_requests[:10]:  # Limit to top 10 books
-            # Load this book's JSON file on-demand
             try:
                 book_content = self._load_book_json_by_name(req.book_name)
                 if not book_content:
@@ -902,66 +1033,15 @@ Provide your comprehensive analysis now."""
                 
                 excerpts = []
                 
-                # Check if request specified chapters (from rationale or pages)
+                # Try chapter-level loading if metadata available
                 if has_chapter_metadata and chapter_manager:
-                    # Try to extract chapter numbers from rationale
-                    # e.g., "Chapter 5: Decorators" or "Chapter 5"
-                    import re
-                    chapter_pattern = r'Chapter\s+(\d+)'
-                    chapter_matches = re.findall(chapter_pattern, req.rationale, re.IGNORECASE)
-                    
-                    if chapter_matches:
-                        # Load FULL CHAPTERS
-                        chapters = chapter_manager.get_chapters(req.book_name.replace(' ', '_') + '_Content.json')
-                        for chapter_num_str in set(chapter_matches):  # Unique chapters
-                            chapter_num = int(chapter_num_str)
-                            # Find the chapter
-                            chapter_info = next((ch for ch in chapters if ch.chapter_number == chapter_num), None)
-                            if chapter_info:
-                                # Load ALL pages in this chapter
-                                chapter_content = []
-                                for page_num in range(chapter_info.start_page, chapter_info.end_page + 1):
-                                    if str(page_num) in book_content:
-                                        page_text = book_content[str(page_num)].get('content', '')
-                                        chapter_content.append(page_text)
-                                
-                                if chapter_content:
-                                    # Get citation info for Chicago-style footnotes
-                                    author, full_title = self._get_citation_info(req.book_name)
-                                    
-                                    excerpts.append({
-                                        'chapter': chapter_num,
-                                        'title': chapter_info.title,
-                                        'pages': f"{chapter_info.start_page}-{chapter_info.end_page}",
-                                        'content': '\n'.join(chapter_content),  # Full chapter text
-                                        'is_full_chapter': True,
-                                        # Citation metadata for Chicago-style footnotes
-                                        'author': author,
-                                        'book_title': full_title,
-                                        'book_filename': req.book_name
-                                    })
-                                    print(f"    ✓ Loaded Chapter {chapter_num} from {req.book_name} ({len(chapter_content)} pages)")
-                        
-                        if excerpts:  # If we found chapters, use them instead of pages
-                            content_package[req.book_name] = excerpts
-                            continue
+                    excerpts = self._load_chapters_for_request(req, book_content, chapter_manager)
+                    if excerpts:
+                        content_package[req.book_name] = excerpts
+                        continue
                 
-                # Fallback: Load individual pages (old behavior)
-                for page_num in req.pages[:10]:  # Limit pages per book
-                    if str(page_num) in book_content:
-                        # Get citation info
-                        author, full_title = self._get_citation_info(req.book_name)
-                        
-                        excerpts.append({
-                            'page': page_num,
-                            'content': book_content[str(page_num)].get('content', '')[:1000],
-                            'is_full_chapter': False,
-                            # Citation metadata
-                            'author': author,
-                            'book_title': full_title,
-                            'book_filename': req.book_name
-                        })
-                
+                # Fallback: Load individual pages
+                excerpts = self._load_page_excerpts_for_request(req, book_content)
                 if excerpts:
                     content_package[req.book_name] = excerpts
                     
@@ -1031,11 +1111,11 @@ Provide your comprehensive analysis now."""
         citation_map = {
             # Python Language Books (keys match JSON filenames)
             "Learning Python Ed6": ("Lutz, Mark", "Learning Python Ed6"),
-            "Python Essential Reference 4th": ("Beazley, David", "Python Essential Reference 4th"),
-            "Fluent Python 2nd": ("Ramalho, Luciano", "Fluent Python 2nd"),
-            "Python Distilled": ("Beazley, David", "Python Distilled"),
+            PYTHON_ESSENTIAL_REF: ("Beazley, David", PYTHON_ESSENTIAL_REF),
+            FLUENT_PYTHON: ("Ramalho, Luciano", FLUENT_PYTHON),
+            PYTHON_DISTILLED: ("Beazley, David", PYTHON_DISTILLED),
             "Python Cookbook 3rd": ("Beazley, David and Jones, Brian K.", "Python Cookbook 3rd"),
-            "Python Data Analysis 3rd": ("McKinney, Wes", "Python Data Analysis 3rd"),
+            PYTHON_DATA_ANALYSIS: ("McKinney, Wes", PYTHON_DATA_ANALYSIS),
             
             # Architecture Books (keys match JSON filenames)
             "Architecture Patterns with Python": ("Percival, Harry and Gregory, Bob", "Architecture Patterns with Python"),
@@ -1120,11 +1200,19 @@ Provide your comprehensive analysis now."""
         self,
         chapter_num: int,
         chapter_title: str,
-        chapter_full_text: str,
+        _chapter_full_text: str,
         metadata_response: LLMMetadataResponse,
         content_package: Dict[str, List[Dict]]
     ) -> str:
-        """Build Phase 2 prompt for comprehensive synthesis."""
+        """Build Phase 2 prompt for comprehensive synthesis.
+        
+        Args:
+            chapter_num: Chapter number for identification
+            chapter_title: Title of the chapter
+            _chapter_full_text: Unused - Phase 2 works with requested excerpts from content_package
+            metadata_response: Phase 1 analysis results
+            content_package: Book excerpts requested in Phase 1
+        """
         
         content_sections = []
         for book_name, excerpts in content_package.items():
@@ -1206,6 +1294,107 @@ Generate the integrated scholarly annotation now (output only the annotation tex
     # SCENARIO 1 METHODS: Python-Guided Analysis (Original)
     # ========================================================================
     
+    def _get_taxonomy_recommendations(self, concepts: List[str]) -> tuple[List[str], Dict[str, List[str]]]:
+        """Get book recommendations and cascading relationships from taxonomy.
+        
+        Args:
+            concepts: List of concepts to match against taxonomy
+            
+        Returns:
+            Tuple of (recommended_books, cascading_info) where cascading_info maps book_name -> cascaded books
+        """
+        if not TAXONOMY_AVAILABLE:
+            return [], {}
+        
+        concept_set = set(concepts)
+        scored_books = score_books_for_concepts(concept_set)
+        recommended_books = [book_name for book_name, score in scored_books if score >= 0.2]
+        
+        # Build cascading relationships
+        cascading_info = {}
+        for book_name in recommended_books[:8]:
+            cascades = get_cascading_books(book_name, depth=1)
+            if cascades:
+                cascading_info[book_name] = cascades
+                for cascaded_book in cascades:
+                    if cascaded_book not in recommended_books:
+                        recommended_books.append(cascaded_book)
+        
+        return recommended_books, cascading_info
+    
+    def _calculate_relevance_boosts(
+        self,
+        book_file_name: str,
+        cascading_info: Dict[str, List[str]]
+    ) -> tuple[float, float]:
+        """Calculate tier and cascading boosts for a book.
+        
+        Args:
+            book_file_name: Book's canonical file name
+            cascading_info: Dict mapping source books to their cascaded books
+            
+        Returns:
+            Tuple of (tier_boost, cascading_boost)
+        """
+        tier_boost = 0.0
+        cascading_boost = 0.0
+        
+        if not TAXONOMY_AVAILABLE or book_file_name not in BOOK_REGISTRY:
+            return tier_boost, cascading_boost
+        
+        book_role = BOOK_REGISTRY[book_file_name]
+        
+        # Higher tier = higher priority
+        if book_role.tier == BookTier.ARCHITECTURE_SPINE:
+            tier_boost = 0.3
+        elif book_role.tier == BookTier.IMPLEMENTATION:
+            tier_boost = 0.2
+        else:  # ENGINEERING_PRACTICES
+            tier_boost = 0.1
+        
+        # Check if this book is recommended via cascading
+        for cascades in cascading_info.values():
+            if book_file_name in cascades:
+                cascading_boost = 0.2
+                break
+        
+        return tier_boost, cascading_boost
+    
+    def _build_book_metadata_entry(
+        self,
+        book: BookMetadata,
+        concept_map: Dict[str, List[ConceptMatch]],
+        cascading_info: Dict[str, List[str]]
+    ) -> Dict[str, Any]:
+        """Build metadata entry for a single book.
+        
+        Args:
+            book: BookMetadata object
+            concept_map: Concept to ConceptMatch mapping
+            cascading_info: Cascading relationships between books
+            
+        Returns:
+            Dict with book metadata including relevance scores
+        """
+        base_relevance = self._calculate_book_relevance(book, concept_map)
+        tier_boost, cascading_boost = self._calculate_relevance_boosts(book.file_name, cascading_info)
+        final_relevance = base_relevance + tier_boost + cascading_boost
+        
+        book_meta = {
+            'file_name': book.file_name,
+            'domain': book.domain,
+            'total_pages': book.total_pages,
+            'chapters_count': len(book.chapters),
+            'concepts_covered': sorted(book.concepts_covered),
+            'relevance_to_chapter': round(final_relevance, 2),
+            'tier': BOOK_REGISTRY[book.file_name].tier.value if TAXONOMY_AVAILABLE and book.file_name in BOOK_REGISTRY else 'Unknown'
+        }
+        
+        if book.file_name in cascading_info:
+            book_meta['cascades_to'] = cascading_info[book.file_name]
+        
+        return book_meta
+    
     def _build_metadata_package(self, concepts: List[str]) -> Dict[str, Any]:
         """Build comprehensive metadata package for Phase 1.
         
@@ -1213,97 +1402,35 @@ Generate the integrated scholarly annotation now (output only the annotation tex
         (Fluent Python Ch. 3 - Dictionaries and Sets)
         
         NOW WITH CASCADING LOGIC: Enhances concept mapping with tier-based recommendations
+        Refactored to reduce cognitive complexity.
         """
-        # Get all books
         all_books = self._metadata_service._repo.get_all()
-        
-        # Create concept mapping
         concept_map = self._metadata_service.create_concept_mapping(concepts)
         
-        # Get intelligent book recommendations using taxonomy (if available)
-        recommended_books = []
-        cascading_info = {}
+        # Get taxonomy-based recommendations
+        _recommended_books, cascading_info = self._get_taxonomy_recommendations(concepts)
         
-        if TAXONOMY_AVAILABLE:
-            # Convert concepts to set for taxonomy matching
-            concept_set = set(concepts)
-            
-            # Get scored recommendations
-            scored_books = score_books_for_concepts(concept_set)
-            recommended_books = [book_name for book_name, score in scored_books if score >= 0.2]
-            
-            # Build cascading relationships
-            for book_name in recommended_books[:8]:  # Cascade from top 8
-                cascades = get_cascading_books(book_name, depth=1)
-                if cascades:
-                    cascading_info[book_name] = cascades
-                    # Add cascaded books to recommendations if not already present
-                    for cascaded_book in cascades:
-                        if cascaded_book not in recommended_books:
-                            recommended_books.append(cascaded_book)
-        
-        # Build structured metadata
-        # NOTE: Only send file_name to LLM (not title) to ensure Claude uses canonical names
-        # Title is kept for human-readable citations in Phase 2 output
-        books_metadata = []
-        for book in all_books:
-            # Calculate base relevance from concept matches
-            base_relevance = self._calculate_book_relevance(book, concept_map)
-            
-            # Boost relevance if taxonomy recommends this book
-            tier_boost = 0.0
-            cascading_boost = 0.0
-            
-            if TAXONOMY_AVAILABLE and book.file_name in BOOK_REGISTRY:
-                book_role = BOOK_REGISTRY[book.file_name]
-                
-                # Higher tier = higher priority
-                if book_role.tier == BookTier.ARCHITECTURE_SPINE:
-                    tier_boost = 0.3
-                elif book_role.tier == BookTier.IMPLEMENTATION:
-                    tier_boost = 0.2
-                else:  # ENGINEERING_PRACTICES
-                    tier_boost = 0.1
-                
-                # Check if this book is recommended via cascading
-                for source_book, cascades in cascading_info.items():
-                    if book.file_name in cascades:
-                        cascading_boost = 0.2
-                        break
-            
-            final_relevance = base_relevance + tier_boost + cascading_boost
-            
-            book_meta = {
-                'file_name': book.file_name,  # Canonical identifier
-                'domain': book.domain,
-                'total_pages': book.total_pages,
-                'chapters_count': len(book.chapters),
-                'concepts_covered': sorted(book.concepts_covered),
-                'relevance_to_chapter': round(final_relevance, 2),
-                'tier': BOOK_REGISTRY[book.file_name].tier.value if TAXONOMY_AVAILABLE and book.file_name in BOOK_REGISTRY else 'Unknown'
-            }
-            
-            # Add cascading info if this book cascades to others
-            if book.file_name in cascading_info:
-                book_meta['cascades_to'] = cascading_info[book.file_name]
-            
-            books_metadata.append(book_meta)
+        # Build structured metadata for each book
+        books_metadata = [
+            self._build_book_metadata_entry(book, concept_map, cascading_info)
+            for book in all_books
+        ]
         
         # Sort by relevance
         books_metadata.sort(key=lambda b: b['relevance_to_chapter'], reverse=True)
         
-        # Store metadata package for fallback use
+        # Build complete metadata package
         metadata_package = {
             'books': books_metadata,
             'concept_mapping': {
                 concept: [
                     {
                         'book': match.book_name,
-                        'pages': match.pages[:5],  # Top 5 pages
+                        'pages': match.pages[:5],
                         'occurrences': match.total_occurrences,
                         'relevance': round(match.relevance_score, 2)
                     }
-                    for match in matches[:3]  # Top 3 books per concept
+                    for match in matches[:3]
                 ]
                 for concept, matches in concept_map.items()
             },
@@ -1599,9 +1726,15 @@ Generate the scholarly annotation now."""
         self,
         chapter_num: int,
         chapter_title: str,
-        concepts: List[str]
+        _concepts: List[str]
     ) -> ScholarlyAnnotation:
-        """Fallback when LLM requests fail."""
+        """Fallback when LLM requests fail.
+        
+        Args:
+            chapter_num: Chapter number for identification
+            chapter_title: Title of the chapter
+            _concepts: Unused - fallback provides minimal response without concept analysis
+        """
         return ScholarlyAnnotation(
             chapter_number=chapter_num,
             chapter_title=chapter_title,
@@ -1612,91 +1745,144 @@ Generate the scholarly annotation now."""
             metadata={'status': 'fallback'}
         )
     
+    def _get_recommended_books_from_taxonomy(
+        self,
+        concepts: List[str],
+        concept_mapping: Dict
+    ) -> List[str]:
+        """Get recommended books using taxonomy or fallback to concept mapping.
+        
+        Args:
+            concepts: List of concepts to match
+            concept_mapping: Dict mapping concepts to matched books/pages
+            
+        Returns:
+            List of recommended book names
+        """
+        try:
+            from book_taxonomy import get_recommended_books
+            concept_set = set(concepts)
+            return get_recommended_books(
+                concept_set,
+                min_relevance=0.3,
+                include_cascades=True,
+                max_books=12
+            )
+        except Exception:
+            # Fallback: use all books from concept_mapping
+            return list(concept_mapping.keys())[:12]
+    
+    def _calculate_request_priority(
+        self,
+        matched_concepts: set,
+        total_concepts: int,
+        book_name: str
+    ) -> int:
+        """Calculate priority for a content request.
+        
+        Args:
+            matched_concepts: Set of concepts matched in this book
+            total_concepts: Total number of concepts being searched
+            book_name: Name of the book
+            
+        Returns:
+            Priority score (1-5)
+        """
+        match_strength = len(matched_concepts) / max(total_concepts, 1)
+        base_priority = min(5, int(match_strength * 5) + 1)
+        
+        # Adjust by book tier if taxonomy available
+        try:
+            from book_taxonomy import BOOK_REGISTRY
+            if book_name in BOOK_REGISTRY:
+                tier = BOOK_REGISTRY[book_name].tier.value
+                if "Architecture" in tier:
+                    base_priority = min(5, base_priority + 1)
+        except Exception:
+            pass
+        
+        return base_priority
+    
+    def _build_content_request_from_matches(
+        self,
+        book_name: str,
+        matches: Dict,
+        concepts: List[str]
+    ) -> Optional[ContentRequest]:
+        """Build content request from concept matches for a book.
+        
+        Args:
+            book_name: Name of the book
+            matches: Dict mapping pages to matched concepts
+            concepts: Full list of concepts being searched
+            
+        Returns:
+            ContentRequest or None if no valid matches
+        """
+        if not matches:
+            return None
+        
+        # Get top matching pages (sorted by relevance)
+        sorted_matches = sorted(
+            matches.items(),
+            key=lambda x: len(x[1]),
+            reverse=True
+        )
+        
+        # Take top 5-8 pages with matches
+        top_pages = [int(page) for page, _ in sorted_matches[:8]]
+        if not top_pages:
+            return None
+        
+        # Build rationale from matched concepts
+        all_matched_concepts = set()
+        for _, matched_concepts in sorted_matches[:8]:
+            all_matched_concepts.update(matched_concepts)
+        
+        priority = self._calculate_request_priority(all_matched_concepts, len(concepts), book_name)
+        
+        rationale = f"Python keyword matches found for: {', '.join(list(all_matched_concepts)[:5])}"
+        if len(all_matched_concepts) > 5:
+            rationale += f" (and {len(all_matched_concepts) - 5} more)"
+        
+        return ContentRequest(
+            book_name=book_name,
+            pages=top_pages,
+            rationale=rationale,
+            priority=priority
+        )
+    
     def _mock_metadata_response(self, concepts: List[str]) -> LLMMetadataResponse:
         """Mock response for testing without LLM - uses ACTUAL Python keyword matching.
         
         This fallback now produces real annotations instead of 'Analysis unavailable'
         by leveraging the metadata_package concept_mapping results.
+        Refactored to reduce cognitive complexity.
         """
-        # Import book taxonomy for intelligent selection
-        try:
-            from book_taxonomy import get_recommended_books, BOOK_REGISTRY
-            has_taxonomy = True
-        except:
-            has_taxonomy = False
-        
         requests = []
-        
-        # Get metadata package if available
         metadata_package = getattr(self, '_last_metadata_package', None)
         
         if metadata_package and 'concept_mapping' in metadata_package:
-            # USE ACTUAL PYTHON KEYWORD MATCHING RESULTS
             concept_mapping = metadata_package['concept_mapping']
-            
-            # Get recommended books based on concepts (if taxonomy available)
-            if has_taxonomy:
-                concept_set = set(concepts)
-                recommended_books = get_recommended_books(
-                    concept_set,
-                    min_relevance=0.3,
-                    include_cascades=True,
-                    max_books=12
-                )
-            else:
-                # Fallback: use all books from concept_mapping
-                recommended_books = list(concept_mapping.keys())[:12]
+            recommended_books = self._get_recommended_books_from_taxonomy(concepts, concept_mapping)
             
             # Build content requests from actual keyword matches
             for book_name in recommended_books:
                 if book_name not in concept_mapping:
                     continue
                 
-                matches = concept_mapping[book_name]
-                if not matches:
-                    continue
-                
-                # Get top matching pages (sorted by relevance)
-                sorted_matches = sorted(
-                    matches.items(),
-                    key=lambda x: len(x[1]),  # Sort by number of matched concepts
-                    reverse=True
+                request = self._build_content_request_from_matches(
+                    book_name,
+                    concept_mapping[book_name],
+                    concepts
                 )
-                
-                # Take top 5-8 pages with matches
-                top_pages = [int(page) for page, _ in sorted_matches[:8]]
-                
-                if top_pages:
-                    # Build rationale from matched concepts
-                    all_matched_concepts = set()
-                    for _, matched_concepts in sorted_matches[:8]:
-                        all_matched_concepts.update(matched_concepts)
-                    
-                    # Calculate priority based on match count and book tier
-                    match_strength = len(all_matched_concepts) / max(len(concepts), 1)
-                    base_priority = min(5, int(match_strength * 5) + 1)
-                    
-                    # Adjust by book tier if taxonomy available
-                    if has_taxonomy and book_name in BOOK_REGISTRY:
-                        tier = BOOK_REGISTRY[book_name].tier.value
-                        if "Architecture" in tier:
-                            base_priority = min(5, base_priority + 1)
-                    
-                    rationale = f"Python keyword matches found for: {', '.join(list(all_matched_concepts)[:5])}"
-                    if len(all_matched_concepts) > 5:
-                        rationale += f" (and {len(all_matched_concepts) - 5} more)"
-                    
-                    requests.append(ContentRequest(
-                        book_name=book_name,
-                        pages=top_pages,
-                        rationale=rationale,
-                        priority=base_priority
-                    ))
+                if request:
+                    requests.append(request)
         
         # If no requests from metadata, provide minimal fallback
         if not requests:
             requests.append(ContentRequest(
-                book_name="Python Distilled",
+                book_name=PYTHON_DISTILLED,
                 pages=[1, 2, 3],
                 rationale="General Python concepts reference",
                 priority=3
@@ -1722,7 +1908,7 @@ Generate the scholarly annotation now."""
             chapter_number=chapter_num,
             chapter_title=chapter_title,
             annotation_text=annotation_text,
-            sources_cited=["Python Essential Reference 4th", "Fluent Python 2nd", "Python Data Analysis 3rd", "Python Distilled"],
+            sources_cited=[PYTHON_ESSENTIAL_REF, FLUENT_PYTHON, PYTHON_DATA_ANALYSIS, PYTHON_DISTILLED],
             concepts_validated=concepts,
             gaps_identified=[
                 "Decimal context management for precision control",

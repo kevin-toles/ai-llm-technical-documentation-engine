@@ -8,17 +8,6 @@ with citations from a curated library of Python programming books.
 __version__ = "1.0.0"
 __author__ = "Kevin Toles"
 
-# Lazy imports to avoid circular dependencies
-__all__ = [
-    "main",
-    "EnhancedLLMSystemV3",
-    "MetadataServiceFactory",
-    "MetadataExtractionService",
-    "ChapterMetadataManager",
-    "call_llm",
-    "get_recommended_books",
-    "get_cascading_books",
-    "score_books_for_concepts",
-    "BOOK_REGISTRY",
-    "BookTier",
-]
+# Note: These are lazily imported to avoid circular dependencies
+# Remove from __all__ list as they're not directly exported from __init__
+__all__ = []

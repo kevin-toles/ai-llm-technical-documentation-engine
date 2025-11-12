@@ -31,11 +31,13 @@ class TestSprint1Integration:
     
     def test_all_imports_successful(self):
         """Verify all Sprint 1 components are importable."""
-        assert FinishReason is not None
-        assert _validate_json_response is not None
-        assert _handle_truncated_response is not None
-        assert _extract_concepts_from_text is not None
-        assert _prefilter_books_by_taxonomy is not None
+        # Test that the imported objects exist and are callable/usable
+        assert callable(_validate_json_response)
+        assert callable(_handle_truncated_response)
+        assert callable(_extract_concepts_from_text)
+        assert callable(_prefilter_books_by_taxonomy)
+        # FinishReason is an Enum class, check it has expected attributes
+        assert hasattr(FinishReason, 'END_TURN')
     
     def test_finish_reason_enum_values(self):
         """Verify FinishReason enum has all required values."""

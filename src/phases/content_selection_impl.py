@@ -143,63 +143,93 @@ class ContentSelectionService:
     
     # Support methods (all real implementations from original)
     
+    def _get_taxonomy_recommendations(self, concepts: List[str]) -> tuple[List[str], Dict[str, List[str]]]:
+        """Get book recommendations and cascading relationships from taxonomy."""
+        if not TAXONOMY_AVAILABLE:
+            return [], {}
+        
+        concept_set = set(concepts)
+        scored_books = score_books_for_concepts(concept_set)
+        recommended_books = [book_name for book_name, score in scored_books if score >= settings.taxonomy.min_relevance]
+        
+        cascading_info = {}
+        for book_name in recommended_books[:8]:
+            cascades = get_cascading_books(book_name, depth=settings.taxonomy.cascade_depth)
+            if cascades:
+                cascading_info[book_name] = cascades
+                for cascaded_book in cascades:
+                    if cascaded_book not in recommended_books:
+                        recommended_books.append(cascaded_book)
+        
+        return recommended_books, cascading_info
+    
+    def _calculate_relevance_boosts(
+        self,
+        book_file_name: str,
+        cascading_info: Dict[str, List[str]]
+    ) -> tuple[float, float]:
+        """Calculate tier and cascading boosts for a book."""
+        tier_boost = 0.0
+        cascading_boost = 0.0
+        
+        if not TAXONOMY_AVAILABLE or book_file_name not in BOOK_REGISTRY:
+            return tier_boost, cascading_boost
+        
+        book_role = BOOK_REGISTRY[book_file_name]
+        if book_role.tier == BookTier.ARCHITECTURE_SPINE:
+            tier_boost = 0.3
+        elif book_role.tier == BookTier.IMPLEMENTATION:
+            tier_boost = 0.2
+        else:
+            tier_boost = 0.1
+        
+        for cascades in cascading_info.values():
+            if book_file_name in cascades:
+                cascading_boost = 0.2
+                break
+        
+        return tier_boost, cascading_boost
+    
+    def _build_book_metadata_entry(
+        self,
+        book: BookMetadata,
+        concept_map: Dict[str, List[ConceptMatch]],
+        cascading_info: Dict[str, List[str]]
+    ) -> Dict[str, Any]:
+        """Build metadata entry for a single book."""
+        base_relevance = self._calculate_book_relevance(book, concept_map)
+        tier_boost, cascading_boost = self._calculate_relevance_boosts(book.file_name, cascading_info)
+        final_relevance = base_relevance + tier_boost + cascading_boost
+        
+        book_meta = {
+            'file_name': book.file_name,
+            'domain': book.domain,
+            'total_pages': book.total_pages,
+            'chapters_count': len(book.chapters),
+            'concepts_covered': sorted(book.concepts_covered),
+            'relevance_to_chapter': round(final_relevance, 2),
+            'tier': BOOK_REGISTRY[book.file_name].tier.value if TAXONOMY_AVAILABLE and book.file_name in BOOK_REGISTRY else 'Unknown'
+        }
+        
+        if book.file_name in cascading_info:
+            book_meta['cascades_to'] = cascading_info[book.file_name]
+        
+        return book_meta
+    
     def _build_metadata_package(self, concepts: List[str]) -> Dict[str, Any]:
-        """Build metadata package using taxonomy scoring."""
+        """Build metadata package using taxonomy scoring.
+        
+        Refactored to reduce cognitive complexity by extracting helper methods.
+        """
         all_books = self._metadata_service._repo.get_all()
         concept_map = self._metadata_service.create_concept_mapping(concepts)
         
-        recommended_books = []
-        cascading_info = {}
+        _recommended_books, cascading_info = self._get_taxonomy_recommendations(concepts)
         
-        if TAXONOMY_AVAILABLE:
-            concept_set = set(concepts)
-            scored_books = score_books_for_concepts(concept_set)
-            recommended_books = [book_name for book_name, score in scored_books if score >= settings.taxonomy.min_relevance]
-            
-            for book_name in recommended_books[:8]:
-                cascades = get_cascading_books(book_name, depth=settings.taxonomy.cascade_depth)
-                if cascades:
-                    cascading_info[book_name] = cascades
-                    for cascaded_book in cascades:
-                        if cascaded_book not in recommended_books:
-                            recommended_books.append(cascaded_book)
-        
-        books_metadata = []
-        for book in all_books:
-            base_relevance = self._calculate_book_relevance(book, concept_map)
-            tier_boost = 0.0
-            cascading_boost = 0.0
-            
-            if TAXONOMY_AVAILABLE and book.file_name in BOOK_REGISTRY:
-                book_role = BOOK_REGISTRY[book.file_name]
-                if book_role.tier == BookTier.ARCHITECTURE_SPINE:
-                    tier_boost = 0.3
-                elif book_role.tier == BookTier.IMPLEMENTATION:
-                    tier_boost = 0.2
-                else:
-                    tier_boost = 0.1
-                
-                for source_book, cascades in cascading_info.items():
-                    if book.file_name in cascades:
-                        cascading_boost = 0.2
-                        break
-            
-            final_relevance = base_relevance + tier_boost + cascading_boost
-            
-            book_meta = {
-                'file_name': book.file_name,
-                'domain': book.domain,
-                'total_pages': book.total_pages,
-                'chapters_count': len(book.chapters),
-                'concepts_covered': sorted(book.concepts_covered),
-                'relevance_to_chapter': round(final_relevance, 2),
-                'tier': BOOK_REGISTRY[book.file_name].tier.value if TAXONOMY_AVAILABLE and book.file_name in BOOK_REGISTRY else 'Unknown'
-            }
-            
-            if book.file_name in cascading_info:
-                book_meta['cascades_to'] = cascading_info[book.file_name]
-            
-            books_metadata.append(book_meta)
+        books_metadata = [
+            self._build_book_metadata_entry(book, concept_map, cascading_info)
+            for book in all_books
+        ]
         
         books_metadata.sort(key=lambda b: b['relevance_to_chapter'], reverse=True)
         
@@ -293,7 +323,7 @@ CONSTRAINT: Limit to top {settings.constraints.max_content_requests} most releva
             from chapter_metadata_manager import ChapterMetadataManager
             chapter_manager = ChapterMetadataManager()
             has_chapter_metadata = True
-        except:
+        except Exception:
             chapter_manager = None
             has_chapter_metadata = False
         
@@ -372,68 +402,97 @@ REQUEST specific chapters/sections needed for cross-references.
 
 LIMIT: Top {settings.constraints.max_content_requests} most relevant books only."""
     
-    def _mock_metadata_response(self, concepts: List[str]) -> LLMMetadataResponse:
-        """Generate mock response using actual Python keyword matching."""
+    def _get_recommended_books_from_taxonomy(
+        self,
+        concepts: List[str],
+        concept_mapping: Dict
+    ) -> List[str]:
+        """Get recommended books using taxonomy or fallback to concept mapping."""
         try:
-            from book_taxonomy import get_recommended_books, BOOK_REGISTRY
-            has_taxonomy = True
-        except:
-            has_taxonomy = False
+            from book_taxonomy import get_recommended_books
+            concept_set = set(concepts)
+            return get_recommended_books(
+                concept_set,
+                min_relevance=settings.taxonomy.min_relevance,
+                include_cascades=settings.taxonomy.enable_prefilter,
+                max_books=settings.taxonomy.max_books
+            )
+        except Exception:
+            return list(concept_mapping.keys())[:settings.taxonomy.max_books]
+    
+    def _calculate_request_priority(
+        self,
+        matched_concepts: set,
+        total_concepts: int,
+        book_name: str
+    ) -> int:
+        """Calculate priority for a content request."""
+        match_strength = len(matched_concepts) / max(total_concepts, 1)
+        base_priority = min(5, int(match_strength * 5) + 1)
         
+        try:
+            from book_taxonomy import BOOK_REGISTRY
+            if book_name in BOOK_REGISTRY:
+                tier = BOOK_REGISTRY[book_name].tier.value
+                if "Architecture" in tier:
+                    base_priority = min(5, base_priority + 1)
+        except Exception:
+            pass
+        
+        return base_priority
+    
+    def _build_content_request_from_matches(
+        self,
+        book_name: str,
+        matches: Dict,
+        concepts: List[str]
+    ) -> Optional[ContentRequest]:
+        """Build content request from concept matches for a book."""
+        if not matches:
+            return None
+        
+        sorted_matches = sorted(
+            matches.items(),
+            key=lambda x: len(x[1]),
+            reverse=True
+        )
+        
+        top_pages = [int(page) for page, _ in sorted_matches[:8]]
+        if not top_pages:
+            return None
+        
+        all_matched_concepts = set()
+        for _, matched_concepts in sorted_matches[:8]:
+            all_matched_concepts.update(matched_concepts)
+        
+        priority = self._calculate_request_priority(all_matched_concepts, len(concepts), book_name)
+        
+        rationale = f"Keyword matches: {', '.join(list(all_matched_concepts)[:5])}"
+        
+        return ContentRequest(
+            book_name=book_name,
+            pages=top_pages,
+            rationale=rationale,
+            priority=priority
+        )
+    
+    def _mock_metadata_response(self, concepts: List[str]) -> LLMMetadataResponse:
+        """Generate mock response using actual Python keyword matching. Refactored to reduce cognitive complexity."""
         requests = []
         metadata_package = getattr(self, '_last_metadata_package', None)
         
         if metadata_package and 'concept_mapping' in metadata_package:
             concept_mapping = metadata_package['concept_mapping']
+            recommended_books = self._get_recommended_books_from_taxonomy(concepts, concept_mapping)
             
-            if has_taxonomy:
-                concept_set = set(concepts)
-                recommended_books = get_recommended_books(
-                    concept_set,
-                    min_relevance=settings.taxonomy.min_relevance,
-                    include_cascades=settings.taxonomy.enable_prefilter,
-                    max_books=settings.taxonomy.max_books
+            requests = [
+                req for req in (
+                    self._build_content_request_from_matches(book_name, concept_mapping.get(book_name, {}), concepts)
+                    for book_name in recommended_books
+                    if book_name in concept_mapping
                 )
-            else:
-                recommended_books = list(concept_mapping.keys())[:settings.taxonomy.max_books]
-            
-            for book_name in recommended_books:
-                if book_name not in concept_mapping:
-                    continue
-                
-                matches = concept_mapping[book_name]
-                if not matches:
-                    continue
-                
-                sorted_matches = sorted(
-                    matches.items(),
-                    key=lambda x: len(x[1]),
-                    reverse=True
-                )
-                
-                top_pages = [int(page) for page, _ in sorted_matches[:8]]
-                
-                if top_pages:
-                    all_matched_concepts = set()
-                    for _, matched_concepts in sorted_matches[:8]:
-                        all_matched_concepts.update(matched_concepts)
-                    
-                    match_strength = len(all_matched_concepts) / max(len(concepts), 1)
-                    base_priority = min(5, int(match_strength * 5) + 1)
-                    
-                    if has_taxonomy and book_name in BOOK_REGISTRY:
-                        tier = BOOK_REGISTRY[book_name].tier.value
-                        if "Architecture" in tier:
-                            base_priority = min(5, base_priority + 1)
-                    
-                    rationale = f"Keyword matches: {', '.join(list(all_matched_concepts)[:5])}"
-                    
-                    requests.append(ContentRequest(
-                        book_name=book_name,
-                        pages=top_pages,
-                        rationale=rationale,
-                        priority=base_priority
-                    ))
+                if req is not None
+            ]
         
         if not requests:
             requests.append(ContentRequest(

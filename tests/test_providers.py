@@ -60,7 +60,7 @@ class TestAnthropicProvider:
             mock_anthropic.Anthropic = Mock()
             
             with patch.dict(os.environ, {'ANTHROPIC_API_KEY': 'env-test-key'}):
-                provider = AnthropicProvider()
+                _ = AnthropicProvider()  # We just need to test initialization, not use the provider
                 
                 mock_anthropic.Anthropic.assert_called_once_with(api_key="env-test-key")
     

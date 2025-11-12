@@ -23,10 +23,10 @@ class TestRetryConfig:
         config = RetryConfig()
         
         assert config.max_attempts == 3
-        assert config.backoff_factor == 2.0
-        assert config.initial_delay == 1.0
-        assert config.max_delay == 60.0
-        assert config.constraint_tightening_factor == 0.8
+        assert config.backoff_factor == pytest.approx(2.0)
+        assert config.initial_delay == pytest.approx(1.0)
+        assert config.max_delay == pytest.approx(60.0)
+        assert config.constraint_tightening_factor == pytest.approx(0.8)
     
     def test_custom_config(self):
         """Test creating custom configuration."""
@@ -37,25 +37,25 @@ class TestRetryConfig:
         )
         
         assert config.max_attempts == 5
-        assert config.backoff_factor == 3.0
-        assert config.initial_delay == 0.5
+        assert config.backoff_factor == pytest.approx(3.0)
+        assert config.initial_delay == pytest.approx(0.5)
     
     def test_get_delay_exponential_backoff(self):
         """Test exponential backoff delay calculation."""
         config = RetryConfig(initial_delay=1.0, backoff_factor=2.0)
         
-        assert config.get_delay(0) == 1.0   # 1 * 2^0
-        assert config.get_delay(1) == 2.0   # 1 * 2^1
-        assert config.get_delay(2) == 4.0   # 1 * 2^2
-        assert config.get_delay(3) == 8.0   # 1 * 2^3
+        assert config.get_delay(0) == pytest.approx(1.0)   # 1 * 2^0
+        assert config.get_delay(1) == pytest.approx(2.0)   # 1 * 2^1
+        assert config.get_delay(2) == pytest.approx(4.0)   # 1 * 2^2
+        assert config.get_delay(3) == pytest.approx(8.0)   # 1 * 2^3
     
     def test_get_delay_max_cap(self):
         """Test that delay is capped at max_delay."""
         config = RetryConfig(initial_delay=10.0, backoff_factor=2.0, max_delay=15.0)
         
-        assert config.get_delay(0) == 10.0
-        assert config.get_delay(1) == 15.0  # Would be 20, capped at 15
-        assert config.get_delay(2) == 15.0  # Would be 40, capped at 15
+        assert config.get_delay(0) == pytest.approx(10.0)
+        assert config.get_delay(1) == pytest.approx(15.0)  # Would be 20, capped at 15
+        assert config.get_delay(2) == pytest.approx(15.0)  # Would be 40, capped at 15
     
     def test_get_adjusted_max_tokens_no_change_first_attempt(self):
         """Test that first attempt uses original max_tokens."""
@@ -233,7 +233,7 @@ class TestCallLLMWithRetry:
         )
         
         call_args = mock_provider.call.call_args[1]
-        assert call_args['temperature'] == 0.7
+        assert call_args['temperature'] == pytest.approx(0.7)
 
 
 class TestCallWithRetry:

@@ -86,6 +86,10 @@ REPO_ROOT = Path(__file__).parent.parent
 GUIDELINES_FILE = REPO_ROOT / "guidelines" / "PYTHON_GUIDELINES_Learning_Python_Ed6.md"
 JSON_DIR = REPO_ROOT / "data" / "textbooks_json"
 
+# Regex pattern constants (to avoid duplication)
+CHAPTER_TITLE_PATTERN = r'## Chapter \d+:\s*(.+)'
+CHAPTER_SUMMARY_PATTERN = r'### Chapter Summary\s*\n([^#]+)(?=\n###|\n##|$)'
+
 def get_or_create_orchestrator() -> Optional[TwoPhaseOrchestrator]:
     """Get or create the global orchestrator instance (singleton pattern).
     
@@ -141,8 +145,25 @@ def load_companion_books():
     logger.info(f"✓ Loaded {len(companion_data)} companion books successfully")
     return companion_data
 
+def _find_matching_concepts_in_content(chapter_concepts: List[str], content: str) -> List[Dict]:
+    """Find matching concepts in content and return match details."""
+    matching_concepts = []
+    content_lower = content.lower()
+    
+    for concept in chapter_concepts:
+        concept_lower = concept.lower()
+        if concept_lower in content_lower:
+            occurrences = content_lower.count(concept_lower)
+            matching_concepts.append({
+                'concept': concept,
+                'occurrences': occurrences
+            })
+    
+    return matching_concepts
+
+
 def find_relevant_sections(chapter_concepts: List[str], companion_data: Dict) -> Dict[str, List[Dict]]:
-    """Find all relevant sections from companion books based on chapter concepts."""
+    """Find all relevant sections from companion books based on chapter concepts. Refactored to reduce complexity."""
     
     relevant_sections = {}
     
@@ -159,17 +180,7 @@ def find_relevant_sections(chapter_concepts: List[str], companion_data: Dict) ->
                 continue
             
             # Find concept matches in this page
-            matching_concepts = []
-            content_lower = content.lower()
-            
-            for concept in chapter_concepts:
-                concept_lower = concept.lower()
-                if concept_lower in content_lower:
-                    occurrences = content_lower.count(concept_lower)
-                    matching_concepts.append({
-                        'concept': concept,
-                        'occurrences': occurrences
-                    })
+            matching_concepts = _find_matching_concepts_in_content(chapter_concepts, content)
             
             # If we found relevant concepts, include this section
             if matching_concepts:
@@ -224,14 +235,14 @@ def enhance_chapter_summary_with_llm(chapter_content: str, chapter_num: int) -> 
         return chapter_content
     
     # Extract current summary
-    summary_match = re.search(r'### Chapter Summary\s*\n([^#]+?)(?=\n###|\n##|$)', chapter_content, re.DOTALL)
+    summary_match = re.search(CHAPTER_SUMMARY_PATTERN, chapter_content, re.DOTALL)
     if not summary_match:
         return chapter_content
     
     current_summary = summary_match.group(1).strip()
     
     # Extract chapter title
-    title_match = re.search(r'## Chapter \d+:\s*(.+)', chapter_content)
+    title_match = re.search(CHAPTER_TITLE_PATTERN, chapter_content)
     chapter_title = title_match.group(1) if title_match else f"Chapter {chapter_num}"
     
     prompt = f"""
@@ -262,7 +273,7 @@ ENHANCED SUMMARY:
         if enhanced_summary and len(enhanced_summary) > len(current_summary) * 0.8:
             # Replace the summary in the content
             new_content = re.sub(
-                r'(### Chapter Summary\s*\n)([^#]+?)(?=\n###|\n##|$)',
+                r'(### Chapter Summary\s*\n)([^#]+)(?=\n###|\n##|$)',
                 f"\\1{enhanced_summary}\n\n",
                 chapter_content,
                 count=1,
@@ -276,7 +287,7 @@ ENHANCED SUMMARY:
     return chapter_content
 
 def find_relevant_sections(chapter_concepts: List[str], companion_data: Dict) -> Dict[str, List[Dict]]:
-    """Find all relevant sections from companion books based on chapter concepts."""
+    """Find all relevant sections from companion books based on chapter concepts. Refactored to reduce complexity."""
     
     relevant_sections = {}
     
@@ -293,17 +304,7 @@ def find_relevant_sections(chapter_concepts: List[str], companion_data: Dict) ->
                 continue
             
             # Find concept matches in this page
-            matching_concepts = []
-            content_lower = content.lower()
-            
-            for concept in chapter_concepts:
-                concept_lower = concept.lower()
-                if concept_lower in content_lower:
-                    occurrences = content_lower.count(concept_lower)
-                    matching_concepts.append({
-                        'concept': concept,
-                        'occurrences': occurrences
-                    })
+            matching_concepts = _find_matching_concepts_in_content(chapter_concepts, content)
             
             # If we found relevant concepts, include this section
             if matching_concepts:
@@ -325,7 +326,11 @@ def find_relevant_sections(chapter_concepts: List[str], companion_data: Dict) ->
     
     return relevant_sections
 
-def add_cross_reference_section_comprehensive(chapter_content: str, chapter_num: int, companion_data: Dict) -> str:
+def add_cross_reference_section_comprehensive(
+    chapter_content: str,
+    chapter_num: int,
+    _companion_data: Dict  # Unused - kept for API compatibility
+) -> str:
     """Add cross-reference section using V2 Interactive Metadata-First system.
     
     V2 MIGRATION: Replaces old comprehensive approach with two-phase orchestrated analysis.
@@ -344,7 +349,7 @@ def add_cross_reference_section_comprehensive(chapter_content: str, chapter_num:
         return chapter_content
     
     # Extract chapter metadata
-    title_match = re.search(r'## Chapter \d+:\s*(.+)', chapter_content)
+    title_match = re.search(CHAPTER_TITLE_PATTERN, chapter_content)
     chapter_title = title_match.group(1) if title_match else f"Chapter {chapter_num}"
     
     logger.info(f"Processing Chapter {chapter_num}: {chapter_title}")
@@ -412,15 +417,8 @@ def add_cross_reference_section_comprehensive(chapter_content: str, chapter_num:
     
     return chapter_content
 
-def main():
-    print("="*66)
-    print("Comprehensive LLM Enhancement with All Companion Books")
-    print("="*66)
-    
-    logger.info("="*66)
-    logger.info("Starting LLM Enhancement Workflow")
-    logger.info("="*66)
-    
+def _perform_critical_checks(companion_data: Dict, orchestrator) -> int:
+    """Perform all critical pre-flight checks. Returns 0 on success, 1 on failure."""
     # CRITICAL CHECK 1: LLM availability
     if not LLM_AVAILABLE:
         logger.error("✗ CRITICAL: LLM not available. Check API keys.")
@@ -434,11 +432,6 @@ def main():
         print("❌ CRITICAL ERROR: Interactive system not available")
         print("   Required modules: metadata_extraction_system, interactive_llm_system_v3_hybrid_prompt")
         return 1
-    
-    # Load companion book data from Textbooks_JSON directory
-    print("Loading companion book JSON files from Textbooks_JSON:")
-    logger.info("Loading companion book JSON files from Textbooks_JSON:")
-    companion_data = load_companion_books()
     
     # CRITICAL CHECK 3: Companion books loaded
     if not companion_data:
@@ -454,36 +447,7 @@ def main():
         print(f"   Check JSON directory: {JSON_DIR}")
         return 1
     
-    total_books = len(companion_data)
-    total_pages = sum(len(book_data.get('pages', [])) for book_data in companion_data.values())
-    logger.info(f"Successfully loaded {total_books} companion books with {total_pages} total pages")
-    print(f"\n📚 Successfully loaded {total_books} companion books with {total_pages} total pages")
-    print(f"Using {os.getenv('LLM_PROVIDER', 'anthropic').upper()} for comprehensive analysis")
-    
-    # Load the main guidelines document
-    logger.info(f"Loading {GUIDELINES_FILE.name}...")
-    print(f"Loading {GUIDELINES_FILE.name}...")
-    
-    # CRITICAL CHECK 5: Input file exists
-    if not GUIDELINES_FILE.exists():
-        logger.error(f"✗ CRITICAL: Guidelines file not found: {GUIDELINES_FILE}")
-        print(f"❌ CRITICAL ERROR: Guidelines file not found")
-        print(f"   Expected: {GUIDELINES_FILE}")
-        return 1
-    
-    try:
-        with open(GUIDELINES_FILE, 'r', encoding='utf-8') as f:
-            content = f.read()
-        logger.info(f"✓ Loaded guidelines file: {len(content)} characters")
-    except Exception as e:
-        logger.error(f"✗ CRITICAL: Failed to read guidelines file: {e}")
-        logger.debug(traceback.format_exc())
-        print(f"❌ CRITICAL ERROR: Failed to read guidelines file: {e}")
-        return 1
-    
     # CRITICAL CHECK 6: Orchestrator initialization
-    print("\nInitializing LLM orchestrator (this validates book metadata loading)...")
-    orchestrator = get_or_create_orchestrator()
     if not orchestrator:
         logger.error("✗ CRITICAL: Failed to initialize orchestrator")
         print("❌ CRITICAL ERROR: Failed to initialize orchestrator")
@@ -493,13 +457,12 @@ def main():
     
     # CRITICAL CHECK 7: Verify orchestrator can see books
     try:
-        # Access the legacy orchestrator's method
         books_metadata = orchestrator._legacy_orchestrator._build_books_metadata_only()
         if len(books_metadata) == 0:
             logger.error("✗ CRITICAL: Orchestrator loaded but found 0 books in metadata")
             print("❌ CRITICAL ERROR: Orchestrator found 0 books in metadata")
             print("   This is the issue you saw before: 'Book metadata for 0 books'")
-            print(f"   Check MetadataServiceFactory paths in metadata_extraction_system.py")
+            print("   Check MetadataServiceFactory paths in metadata_extraction_system.py")
             return 1
         logger.info(f"✓ Orchestrator can access {len(books_metadata)} books")
         print(f"✓ Orchestrator validated: {len(books_metadata)} books accessible")
@@ -509,17 +472,44 @@ def main():
         print(f"❌ CRITICAL ERROR: Failed to validate orchestrator: {e}")
         return 1
     
-    # For Chapter 35, we need to work with full content (not just chapters 1-10)
-    # Extract header (everything before Chapter 1)
-    header_match = re.search(r'(.*?)(?=## Chapter 1:)', content, re.DOTALL)
-    header = header_match.group(1) if header_match else ""
+    return 0
+
+
+def _load_and_validate_guidelines() -> tuple[Optional[str], int]:
+    """Load guidelines file and perform validation. Returns (content, exit_code)."""
+    logger.info(f"Loading {GUIDELINES_FILE.name}...")
+    print(f"Loading {GUIDELINES_FILE.name}...")
     
-    # Get all chapters content
+    # CRITICAL CHECK 5: Input file exists
+    if not GUIDELINES_FILE.exists():
+        logger.error(f"✗ CRITICAL: Guidelines file not found: {GUIDELINES_FILE}")
+        print("❌ CRITICAL ERROR: Guidelines file not found")
+        print(f"   Expected: {GUIDELINES_FILE}")
+        return None, 1
+    
+    try:
+        with open(GUIDELINES_FILE, 'r', encoding='utf-8') as f:
+            content = f.read()
+        logger.info(f"✓ Loaded guidelines file: {len(content)} characters")
+        return content, 0
+    except Exception as e:
+        logger.error(f"✗ CRITICAL: Failed to read guidelines file: {e}")
+        logger.debug(traceback.format_exc())
+        print(f"❌ CRITICAL ERROR: Failed to read guidelines file: {e}")
+        return None, 1
+
+
+def _extract_chapters_from_content(content: str) -> tuple[str, List[int], int]:
+    """Extract chapters from content. Returns (chapters_content, chapter_list, exit_code)."""
+    # Extract header (everything before Chapter 1)
+    header_match = re.search(r'(.*)(?=## Chapter 1:)', content, re.DOTALL)
+    header = header_match.group(1) if header_match else ""
     chapters_content = content[len(header):]
+    
     logger.info(f"Loaded full document: {len(content.split())} words")
     print(f"Loaded full document: {len(content.split())} words")
     
-    # Extract all chapter numbers from the document
+    # Extract all chapter numbers
     chapter_pattern = r'## Chapter (\d+):'
     all_chapters = sorted([int(m.group(1)) for m in re.finditer(chapter_pattern, chapters_content)])
     
@@ -528,7 +518,7 @@ def main():
         logger.error("✗ CRITICAL: No chapters found in document")
         print("❌ CRITICAL ERROR: No chapters found in document")
         print("   Check that the markdown file has chapters formatted as '## Chapter N:'")
-        return 1
+        return chapters_content, [], 1
     
     logger.info(f"Found {len(all_chapters)} chapters (Chapter {all_chapters[0]} - Chapter {all_chapters[-1]})")
     print(f"\n📋 Found {len(all_chapters)} chapters (Chapter {all_chapters[0]} - Chapter {all_chapters[-1]})")
@@ -538,68 +528,141 @@ def main():
     logger.info(f"LIMITING to chapters 1-10 for testing: {all_chapters}")
     print(f"⚠️  LIMITING to chapters 1-10 for testing: {all_chapters}")
     
-    # CRITICAL CHECK 9: Test first chapter BEFORE processing all
-    print(f"\n🧪 RUNNING TEST on Chapter {all_chapters[0]} to validate workflow...")
-    logger.info(f"Running test on Chapter {all_chapters[0]} to validate workflow before processing all chapters")
+    return chapters_content, all_chapters, 0
+
+
+def _test_first_chapter(orchestrator, chapters_content: str, test_chapter_num: int) -> int:
+    """Test first chapter to validate workflow. Returns 0 on success, 1 on failure."""
+    print(f"\n🧪 RUNNING TEST on Chapter {test_chapter_num} to validate workflow...")
+    logger.info(f"Running test on Chapter {test_chapter_num} to validate workflow before processing all chapters")
     
-    test_chapter_num = all_chapters[0]
     chapter_pattern = rf'(## Chapter {test_chapter_num}:.*?)(?=## Chapter {test_chapter_num + 1}:|$)'
     chapter_match = re.search(chapter_pattern, chapters_content, re.DOTALL)
     
-    if chapter_match:
-        test_chapter_content = chapter_match.group(1)
-        try:
-            print(f"   Testing LLM enhancement on Chapter {test_chapter_num}...")
-            logger.info(f"   Testing LLM enhancement on Chapter {test_chapter_num}...")
-            
-            # Extract chapter metadata
-            title_match = re.search(r'## Chapter \d+:\s*(.+)', test_chapter_content)
-            chapter_title = title_match.group(1) if title_match else f"Chapter {test_chapter_num}"
-            
-            # Extract full chapter text
-            chapter_pattern = rf'## Chapter {test_chapter_num}:.*?(?=## Chapter {test_chapter_num + 1}:|$)'
-            chapter_match = re.search(chapter_pattern, test_chapter_content, re.DOTALL)
-            full_chapter_text = chapter_match.group(0) if chapter_match else test_chapter_content
-            
-            # Try to run the analysis
-            annotation = orchestrator.analyze_chapter_comprehensive(
-                chapter_num=test_chapter_num,
-                chapter_title=chapter_title,
-                chapter_full_text=full_chapter_text
-            )
-            
-            if not annotation:
-                logger.error(f"✗ CRITICAL: Test chapter returned no annotation")
-                print(f"❌ CRITICAL ERROR: Test chapter returned no annotation")
-                print(f"   The LLM workflow is not working correctly")
-                return 1
-            
-            if len(annotation.annotation_text) < 100:
-                logger.error(f"✗ CRITICAL: Test annotation too short ({len(annotation.annotation_text)} chars)")
-                print(f"❌ CRITICAL ERROR: Test annotation too short ({len(annotation.annotation_text)} chars)")
-                print(f"   Expected substantial annotation, got: {annotation.annotation_text[:200]}")
-                return 1
-            
-            logger.info(f"✓ Test successful: Generated {len(annotation.annotation_text)} char annotation")
-            print(f"✓ TEST PASSED: Generated {len(annotation.annotation_text)} char annotation")
-            print(f"✓ Sources cited: {len(annotation.sources_cited)}")
-            print(f"✓ Ready to process all {len(all_chapters)} chapters")
-            
-        except Exception as e:
-            logger.error(f"✗ CRITICAL: Test chapter failed: {e}")
-            logger.debug(traceback.format_exc())
-            print(f"❌ CRITICAL ERROR: Test chapter failed")
-            print(f"   Error: {e}")
-            print(f"   Cannot proceed - would waste tokens on all chapters")
-            print(f"   Check the log file for details: {LOG_FILE}")
-            return 1
-    else:
+    if not chapter_match:
         logger.error(f"✗ CRITICAL: Could not extract test chapter {test_chapter_num}")
         print(f"❌ CRITICAL ERROR: Could not extract test chapter {test_chapter_num}")
         return 1
     
+    test_chapter_content = chapter_match.group(1)
+    
+    try:
+        print(f"   Testing LLM enhancement on Chapter {test_chapter_num}...")
+        logger.info(f"   Testing LLM enhancement on Chapter {test_chapter_num}...")
+        
+        # Extract chapter metadata
+        title_match = re.search(CHAPTER_TITLE_PATTERN, test_chapter_content)
+        chapter_title = title_match.group(1) if title_match else f"Chapter {test_chapter_num}"
+        
+        # Extract full chapter text
+        chapter_pattern = rf'## Chapter {test_chapter_num}:.*?(?=## Chapter {test_chapter_num + 1}:|$)'
+        chapter_match = re.search(chapter_pattern, test_chapter_content, re.DOTALL)
+        full_chapter_text = chapter_match.group(0) if chapter_match else test_chapter_content
+        
+        # Try to run the analysis
+        annotation = orchestrator.analyze_chapter_comprehensive(
+            chapter_num=test_chapter_num,
+            chapter_title=chapter_title,
+            chapter_full_text=full_chapter_text
+        )
+        
+        if not annotation:
+            logger.error("✗ CRITICAL: Test chapter returned no annotation")
+            print("❌ CRITICAL ERROR: Test chapter returned no annotation")
+            print("   The LLM workflow is not working correctly")
+            return 1
+        
+        if len(annotation.annotation_text) < 100:
+            logger.error(f"✗ CRITICAL: Test annotation too short ({len(annotation.annotation_text)} chars)")
+            print(f"❌ CRITICAL ERROR: Test annotation too short ({len(annotation.annotation_text)} chars)")
+            print(f"   Expected substantial annotation, got: {annotation.annotation_text[:200]}")
+            return 1
+        
+        logger.info(f"✓ Test successful: Generated {len(annotation.annotation_text)} char annotation")
+        print(f"✓ TEST PASSED: Generated {len(annotation.annotation_text)} char annotation")
+        print(f"✓ Sources cited: {len(annotation.sources_cited)}")
+        print("✓ Ready to process all chapters")
+        return 0
+        
+    except Exception as e:
+        logger.error(f"✗ CRITICAL: Test chapter failed: {e}")
+        logger.debug(traceback.format_exc())
+        print("❌ CRITICAL ERROR: Test chapter failed")
+        print(f"   Error: {e}")
+        print("   Cannot proceed - would waste tokens on all chapters")
+        print(f"   Check the log file for details: {LOG_FILE}")
+        return 1
+
+
+def main():
+    """Main entry point. Refactored to reduce cognitive complexity."""
+    print("="*66)
+    print("Comprehensive LLM Enhancement with All Companion Books")
+    print("="*66)
+    
+    logger.info("="*66)
+    logger.info("Starting LLM Enhancement Workflow")
+    logger.info("="*66)
+    
+    # Load companion book data
+    print("Loading companion book JSON files from Textbooks_JSON:")
+    logger.info("Loading companion book JSON files from Textbooks_JSON:")
+    companion_data = load_companion_books()
+    
+    total_books = len(companion_data)
+    total_pages = sum(len(book_data.get('pages', [])) for book_data in companion_data.values())
+    logger.info(f"Successfully loaded {total_books} companion books with {total_pages} total pages")
+    print(f"\n📚 Successfully loaded {total_books} companion books with {total_pages} total pages")
+    print(f"Using {os.getenv('LLM_PROVIDER', 'anthropic').upper()} for comprehensive analysis")
+    
+    # Load guidelines
+    content, exit_code = _load_and_validate_guidelines()
+    if exit_code != 0:
+        return exit_code
+    
+    # Initialize orchestrator
+    print("\nInitializing LLM orchestrator (this validates book metadata loading)...")
+    orchestrator = get_or_create_orchestrator()
+    
+    # Perform all critical checks
+    exit_code = _perform_critical_checks(companion_data, orchestrator)
+    if exit_code != 0:
+        return exit_code
+    
+    # Extract chapters
+    chapters_content, all_chapters, exit_code = _extract_chapters_from_content(content)
+    if exit_code != 0:
+        return exit_code
+    
+    # Test first chapter
+    exit_code = _test_first_chapter(orchestrator, chapters_content, all_chapters[0])
+    if exit_code != 0:
+        return exit_code
+    
+    # All critical checks passed
+    print("\n✅ ALL CRITICAL CHECKS PASSED")
+    print(f"🚀 Proceeding with full enhancement of {len(all_chapters)} chapters...")
+    logger.info("✅ ALL CRITICAL CHECKS PASSED - Proceeding with full enhancement")
+    
+    user_confirm = input(f"\n⚠️  This will make ~{len(all_chapters) * 2} API calls (~{len(all_chapters) * 60_000} tokens). Continue? [y/N]: ")
+    if user_confirm.lower() != 'y':
+        print("❌ Enhancement cancelled by user")
+        logger.info("Enhancement cancelled by user")
+        return 0
+    
+    print("🔄 Processing ALL chapters with LLM enhancement...")
+    
+        # Process each chapter
+    enhanced_content = chapters_content
+    chapters_with_cross_refs = 0
+    failed_chapters = []
+    consecutive_failures = 0
+    MAX_CONSECUTIVE_FAILURES = 3
+    
+    for chapter_num in all_chapters:
+    
     # If we get here, all critical checks passed!
-    print(f"\n✅ ALL CRITICAL CHECKS PASSED")
+    print("\n✅ ALL CRITICAL CHECKS PASSED")
     print(f"� Proceeding with full enhancement of {len(all_chapters)} chapters...")
     logger.info("✅ ALL CRITICAL CHECKS PASSED - Proceeding with full enhancement")
     
@@ -609,7 +672,7 @@ def main():
         logger.info("Enhancement cancelled by user")
         return 0
     
-    print(f"�🔄 Processing ALL chapters with LLM enhancement...")
+    print("🔄 Processing ALL chapters with LLM enhancement...")
     
     # Process each chapter
     enhanced_content = chapters_content
@@ -640,12 +703,12 @@ def main():
         try:
             # Enhance summary
             logger.info(f"  Enhancing summary for Chapter {chapter_num}...")
-            print(f"  Enhancing summary...")
+            print("  Enhancing summary...")
             enhanced_chapter = enhance_chapter_summary_with_llm(chapter_content, chapter_num)
             
             # Add cross-references with comprehensive analysis
             logger.info(f"  Performing comprehensive cross-text analysis for Chapter {chapter_num}...")
-            print(f"  Performing comprehensive cross-text analysis...")
+            print("  Performing comprehensive cross-text analysis...")
             enhanced_chapter = add_cross_reference_section_comprehensive(enhanced_chapter, chapter_num, companion_data)
             
             if "### Cross-Text Analysis" in enhanced_chapter:
@@ -672,7 +735,7 @@ def main():
                 logger.error(f"✗ CRITICAL: {MAX_CONSECUTIVE_FAILURES} consecutive failures - stopping to prevent token waste")
                 print(f"\n❌ CRITICAL: {MAX_CONSECUTIVE_FAILURES} consecutive failures detected")
                 print(f"   Failed chapters: {failed_chapters[-MAX_CONSECUTIVE_FAILURES:]}")
-                print(f"   Stopping to prevent wasting tokens")
+                print("   Stopping to prevent wasting tokens")
                 print(f"   Check the log file: {LOG_FILE}")
                 
                 # Save partial results if any were successful
@@ -709,7 +772,7 @@ def main():
         return 1
     
     print(f"\n{'='*70}")
-    print(f"✅ Enhancement complete!")
+    print("✅ Enhancement complete!")
     print(f"{'='*70}")
     logger.info(f"{'='*70}")
     logger.info("Enhancement Complete - Summary")
