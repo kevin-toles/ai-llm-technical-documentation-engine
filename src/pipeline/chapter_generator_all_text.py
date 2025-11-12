@@ -38,6 +38,24 @@ except ImportError:
 # Configuration
 # -------------------------------
 
+# Book author constants (to avoid duplicate string literals)
+AUTHOR_RAMALHO = "Ramalho, Luciano"
+AUTHOR_BEAZLEY_SHORT = "Beazley, David"
+AUTHOR_BEAZLEY = "Beazley, David M."
+AUTHOR_BEAZLEY_JONES = "Beazley, David M.; Jones, Brian K."
+
+# Book title constants (to avoid duplicate string literals)
+TITLE_FLUENT_PYTHON_2ND = "Fluent Python, 2nd Edition"
+TITLE_PYTHON_DISTILLED = "Python Distilled"
+TITLE_PYTHON_COOKBOOK_3RD = "Python Cookbook, 3rd Edition"
+TITLE_ARCHITECTURE_PATTERNS = "Architecture Patterns with Python"
+TITLE_BUILDING_MICROSERVICES = "Building Microservices"
+TITLE_FASTAPI_MICROSERVICES = "Building Python Microservices with FastAPI"
+TITLE_MICROSERVICE_ARCHITECTURE = "Microservice Architecture"
+TITLE_MICROSERVICES_UP_AND_RUNNING = "Microservices Up and Running"
+TITLE_PYTHON_ARCHITECTURE_PATTERNS = "Python Architecture Patterns"
+TITLE_PYTHON_MICROSERVICES_DEV = "Python Microservices Development"
+
 # Determine JSON directory paths (handle both relative and absolute execution)
 SCRIPT_DIR = Path(__file__).parent
 REPO_ROOT = SCRIPT_DIR.parent  # Chapter Summaries -> tpm-job-finder-poc
@@ -54,8 +72,8 @@ PRIMARY_BOOK = "Learning Python Ed6"
 # Book metadata - maps filename to (author, full_title, short_name)
 BOOK_METADATA = {
     "Fluent Python 2nd": {
-        "author": "Ramalho, Luciano",
-        "full_title": "Fluent Python, 2nd Edition",
+        "author": AUTHOR_RAMALHO,
+        "full_title": TITLE_FLUENT_PYTHON_2ND,
         "short_name": "Fluent Python 2nd"
     },
     "Learning Python Ed6": {
@@ -63,19 +81,19 @@ BOOK_METADATA = {
         "full_title": "Learning Python, 6th Edition",
         "short_name": "Learning Python Ed.6"
     },
-    "Python Distilled": {
-        "author": "Beazley, David",
-        "full_title": "Python Distilled",
-        "short_name": "Python Distilled"
+    TITLE_PYTHON_DISTILLED: {
+        "author": AUTHOR_BEAZLEY_SHORT,
+        "full_title": TITLE_PYTHON_DISTILLED,
+        "short_name": TITLE_PYTHON_DISTILLED
     },
     "Python Essential Reference 4th": {
-        "author": "Beazley, David",
+        "author": AUTHOR_BEAZLEY_SHORT,
         "full_title": "Python Essential Reference, 4th Edition",
         "short_name": "Python Essential Ref 4th"
     },
     "Python Cookbook 3rd": {
         "author": "Beazley, David and Jones, Brian K.",
-        "full_title": "Python Cookbook, 3rd Edition",
+        "full_title": TITLE_PYTHON_COOKBOOK_3RD,
         "short_name": "Python Cookbook 3rd"
     },
     "Python Data Analysis 3rd": {
@@ -83,19 +101,19 @@ BOOK_METADATA = {
         "full_title": "Python for Data Analysis, 3rd Edition",
         "short_name": "Python Data Analysis 3rd"
     },
-    "Architecture Patterns with Python": {
+    TITLE_ARCHITECTURE_PATTERNS: {
         "author": "Percival, Harry and Gregory, Bob",
-        "full_title": "Architecture Patterns with Python",
+        "full_title": TITLE_ARCHITECTURE_PATTERNS,
         "short_name": "Architecture Patterns"
     },
-    "Building Microservices": {
+    TITLE_BUILDING_MICROSERVICES: {
         "author": "Newman, Sam",
         "full_title": "Building Microservices, 2nd Edition",
-        "short_name": "Building Microservices"
+        "short_name": TITLE_BUILDING_MICROSERVICES
     },
-    "Building Python Microservices with FastAPI": {
+    TITLE_FASTAPI_MICROSERVICES: {
         "author": "Tragura, Sherwin John C.",
-        "full_title": "Building Python Microservices with FastAPI",
+        "full_title": TITLE_FASTAPI_MICROSERVICES,
         "short_name": "FastAPI Microservices"
     },
     "Microservice APIs Using Python Flask FastAPI": {
@@ -103,24 +121,24 @@ BOOK_METADATA = {
         "full_title": "Microservice APIs Using Python Flask FastAPI",
         "short_name": "Microservice APIs"
     },
-    "Microservice Architecture": {
+    TITLE_MICROSERVICE_ARCHITECTURE: {
         "author": "Nadareishvili, Irakli et al.",
-        "full_title": "Microservice Architecture",
-        "short_name": "Microservice Architecture"
+        "full_title": TITLE_MICROSERVICE_ARCHITECTURE,
+        "short_name": TITLE_MICROSERVICE_ARCHITECTURE
     },
-    "Microservices Up and Running": {
+    TITLE_MICROSERVICES_UP_AND_RUNNING: {
         "author": "Mitra, Ronnie and Nadareishvili, Irakli",
-        "full_title": "Microservices Up and Running",
-        "short_name": "Microservices Up and Running"
+        "full_title": TITLE_MICROSERVICES_UP_AND_RUNNING,
+        "short_name": TITLE_MICROSERVICES_UP_AND_RUNNING
     },
-    "Python Architecture Patterns": {
+    TITLE_PYTHON_ARCHITECTURE_PATTERNS: {
         "author": "Buelta, Jaime",
         "full_title": "Python Architecture Patterns: Master API Design, Event-driven Structures, and Package Management in Python",
-        "short_name": "Python Architecture Patterns"
+        "short_name": TITLE_PYTHON_ARCHITECTURE_PATTERNS
     },
-    "Python Microservices Development": {
+    TITLE_PYTHON_MICROSERVICES_DEV: {
         "author": "Ziadé, Tarek",
-        "full_title": "Python Microservices Development",
+        "full_title": TITLE_PYTHON_MICROSERVICES_DEV,
         "short_name": "Python Microservices Dev"
     },
 }
@@ -415,8 +433,17 @@ def extract_concept_context(content: str, concept: str, context_lines: int = 5) 
     
     return "\n".join(lines[:context_lines])
 
-def analyze_concept_relationship(concepts: List[str], content: str) -> str:
-    """Analyze how companion book relates to primary concepts."""
+def analyze_concept_relationship(_concepts: List[str], content: str) -> str:
+    """
+    Analyze how companion book relates to primary concepts.
+    
+    Args:
+        _concepts: List of concepts (reserved for future semantic matching)
+        content: Content to analyze for relationship type
+    
+    Returns:
+        Relationship type: implementation, architectural, advanced, reference, or complementary
+    """
     content_lower = content.lower()
     
     # Check for implementation patterns
@@ -468,22 +495,22 @@ def map_book_to_citation(book_name: str, book_disp: str) -> Tuple[str, str]:
     citation_map = {
         # Python Language Books
         "Learning_Python_Ed6_Content": ("Lutz, Mark", "Learning Python, 6th Edition"),
-        "Python_Essential_Reference_4th_Content": ("Beazley, David", "Python Essential Reference, 4th Edition"),
-        "Fluent_Python_2nd_Content": ("Ramalho, Luciano", "Fluent Python, 2nd Edition"),
-        "Python_Distilled_Content": ("Beazley, David", "Python Distilled"),
-        "Python_Cookbook_3rd_Content": ("Beazley, David & Jones, Brian K.", "Python Cookbook, 3rd Edition"),
+        "Python_Essential_Reference_4th_Content": (AUTHOR_BEAZLEY_SHORT, "Python Essential Reference, 4th Edition"),
+        "Fluent_Python_2nd_Content": (AUTHOR_RAMALHO, TITLE_FLUENT_PYTHON_2ND),
+        "Python_Distilled_Content": (AUTHOR_BEAZLEY_SHORT, TITLE_PYTHON_DISTILLED),
+        "Python_Cookbook_3rd_Content": ("Beazley, David & Jones, Brian K.", TITLE_PYTHON_COOKBOOK_3RD),
         "Python_Data_Analysis_3rd_Content": ("McKinney, Wes", "Python for Data Analysis, 3rd Edition"),
         "BANA320_Python_Data_Analysis_Content": ("Course Materials", "BANA 320 Python Data Analysis"),
         
         # Architecture Books
-        "Architecture_Patterns_with_Python_Content": ("Percival, Harry & Gregory, Bob", "Architecture Patterns with Python"),
-        "Python_Microservices_Dev_Content": ("Ziadé, Tarek", "Python Microservices Development"),
-        "Building_Microservices_Content": ("Newman, Sam", "Building Microservices"),
-        "Microservice_Architecture_Content": ("Dragoni, Nicola et al.", "Microservice Architecture"),
+        "Architecture_Patterns_with_Python_Content": ("Percival, Harry & Gregory, Bob", TITLE_ARCHITECTURE_PATTERNS),
+        "Python_Microservices_Dev_Content": ("Ziadé, Tarek", TITLE_PYTHON_MICROSERVICES_DEV),
+        "Building_Microservices_Content": ("Newman, Sam", TITLE_BUILDING_MICROSERVICES),
+        "Microservice_Architecture_Content": ("Dragoni, Nicola et al.", TITLE_MICROSERVICE_ARCHITECTURE),
         "Microservices___Up_and_Running_Content": ("Gammelgård, Ronnie & Hammarberg, Marcus", "Microservices – Up and Running"),
-        "Building_Python_Microservices_with_FastAPI_Content": ("Various", "Building Python Microservices with FastAPI"),
+        "Building_Python_Microservices_with_FastAPI_Content": ("Various", TITLE_FASTAPI_MICROSERVICES),
         "microservice_apis_using_python_flask_fastapi_open_Content": ("Various", "Microservice APIs Using Flask/FastAPI"),
-        "Python_Architecture_Patterns_Content": ("Buelta, Jaime", "Python Architecture Patterns"),
+        "Python_Architecture_Patterns_Content": ("Buelta, Jaime", TITLE_PYTHON_ARCHITECTURE_PATTERNS),
     }
     
     if book_name in citation_map:
@@ -535,36 +562,16 @@ def get_architecture_book_role(book_name: str) -> str:
     
     return architecture_roles.get(book_name, "")
 
-def build_extensive_annotation(book: str, concepts: List[str], relationship: str, count: int, 
-                              content: str = "", page_num: int = 0, primary_content: str = "") -> str:
-    """
-    Build comprehensive annotation explaining the cross-reference value.
-    Uses LLM to compare how primary text vs companion book treat the same concepts.
-    
-    CRITICAL: Annotations must be pedagogically valuable even for false positives.
-    When secondary source lacks technical content, provide meta-commentary about
-    the cross-reference system itself.
-    """
-    book_disp = book.replace("_Content", "").replace("_", " ")
-    
-    # Try LLM-generated annotation first
-    if USE_LLM_SEMANTIC_ANALYSIS and LLM_AVAILABLE and content:
-        try:
-            from llm_integration import call_llm
-            
-            # Check if this is an architecture book
-            arch_role = get_architecture_book_role(book)
-            arch_context = f"\n\nArchitectural Role: {arch_role}" if arch_role else ""
-            
-            # Build primary context if available
-            primary_context = ""
-            if primary_content:
-                primary_context = f"""
+def _build_llm_annotation_prompt(book_disp: str, concepts: List[str], relationship: str,
+                                 arch_role: str, primary_content: str, content: str, page_num: int) -> str:
+    """Build LLM prompt for annotation generation."""
+    arch_context = f"\n\nArchitectural Role: {arch_role}" if arch_role else ""
+    primary_context = f"""
 PRIMARY TEXT CONTEXT ({CURRENT_BOOK_META['short_name']}):
 {primary_content[:800]}
-"""
-            
-            prompt = f"""You are analyzing a cross-reference between two programming books for a scholarly hybrid document.
+""" if primary_content else ""
+    
+    return f"""You are analyzing a cross-reference between two programming books for a scholarly hybrid document.
 
 COMPANION BOOK: {book_disp} (page {page_num})
 MATCHED CONCEPTS: {', '.join(concepts[:5])}
@@ -593,28 +600,42 @@ All annotations fall under fair use for educational commentary.
 BE SPECIFIC. Reference actual content. NO generic phrases like "provides complementary perspectives."
 Respond with ONLY the annotation text (no preamble, no JSON)."""
 
-            system_prompt = "You are a technical educator performing comparative analysis between programming textbooks. When source material is non-technical (copyright pages, etc.), provide pedagogically valuable meta-commentary about the cross-reference system itself."
-            
-            annotation = call_llm(prompt, system_prompt, max_tokens=450)
-            annotation = annotation.strip().strip('"').strip("'")
-            
-            if len(annotation) > 50:  # Substantial response
-                return annotation
-                
-        except Exception as e:
-            print(f"  Warning: LLM annotation failed ({e}), using fallback")
-    
-    # Fallback: Improved template-based annotation
-    arch_role = get_architecture_book_role(book)
-    if arch_role:
-        return (
-            f"**Architectural Reference:** {book_disp} — {arch_role} "
-            f"This reference connects the Python language concepts ({', '.join(concepts[:3])}) "
-            f"to architectural patterns and microservice design principles. "
-            f"The companion book contains {count} page(s) addressing these topics from an architectural perspective, "
-            f"demonstrating how foundational Python features enable scalable system design."
-        )
-    
+
+def _try_llm_annotation(book: str, book_disp: str, concepts: List[str], relationship: str, 
+                       content: str, page_num: int, primary_content: str) -> Optional[str]:
+    """Attempt to generate annotation using LLM. Returns None if unsuccessful."""
+    if not (USE_LLM_SEMANTIC_ANALYSIS and LLM_AVAILABLE and content):
+        return None
+        
+    try:
+        from llm_integration import call_llm
+        arch_role = get_architecture_book_role(book)
+        prompt = _build_llm_annotation_prompt(book_disp, concepts, relationship, 
+                                             arch_role, primary_content, content, page_num)
+        system_prompt = "You are a technical educator performing comparative analysis between programming textbooks. When source material is non-technical (copyright pages, etc.), provide pedagogically valuable meta-commentary about the cross-reference system itself."
+        
+        annotation = call_llm(prompt, system_prompt, max_tokens=450)
+        annotation = annotation.strip().strip('"').strip("'")
+        
+        return annotation if len(annotation) > 50 else None
+    except Exception as e:
+        print(f"  Warning: LLM annotation failed ({e}), using fallback")
+        return None
+
+
+def _build_architectural_annotation(book_disp: str, concepts: List[str], count: int) -> str:
+    """Build annotation for architectural reference books."""
+    return (
+        f"**Architectural Reference:** {book_disp} — {get_architecture_book_role(book_disp)} "
+        f"This reference connects the Python language concepts ({', '.join(concepts[:3])}) "
+        f"to architectural patterns and microservice design principles. "
+        f"The companion book contains {count} page(s) addressing these topics from an architectural perspective, "
+        f"demonstrating how foundational Python features enable scalable system design."
+    )
+
+
+def _build_relationship_annotation(relationship: str, book_disp: str, concepts: List[str], count: int) -> str:
+    """Build fallback annotation based on relationship type."""
     relationship_text = {
         "implementation": "provides practical implementation examples and working code patterns for",
         "architectural": "offers architectural insights and design patterns related to",
@@ -624,7 +645,6 @@ Respond with ONLY the annotation text (no preamble, no JSON)."""
     }
     
     rel_desc = relationship_text.get(relationship, "discusses")
-    
     annotation = (
         f"This cross-reference to {book_disp} {rel_desc} the concepts: "
         f"{', '.join(concepts[:3])}{'...' if len(concepts) > 3 else ''}. "
@@ -653,11 +673,38 @@ Respond with ONLY the annotation text (no preamble, no JSON)."""
         )
     else:
         annotation += (
-            "alternative explanations, additional examples, and different pedagogical approaches "
-            "that reinforce and expand understanding of these core concepts."
+            "alternative explanations, additional examples, and broader context that enriches "
+            "understanding of these fundamental concepts."
         )
     
     return annotation
+
+
+def build_extensive_annotation(book: str, concepts: List[str], relationship: str, count: int, 
+                              content: str = "", page_num: int = 0, primary_content: str = "") -> str:
+    """
+    Build comprehensive annotation explaining the cross-reference value.
+    Uses LLM to compare how primary text vs companion book treat the same concepts.
+    
+    CRITICAL: Annotations must be pedagogically valuable even for false positives.
+    When secondary source lacks technical content, provide meta-commentary about
+    the cross-reference system itself.
+    """
+    book_disp = book.replace("_Content", "").replace("_", " ")
+    
+    # Try LLM annotation first
+    llm_annotation = _try_llm_annotation(book, book_disp, concepts, relationship, 
+                                         content, page_num, primary_content)
+    if llm_annotation:
+        return llm_annotation
+    
+    # Fallback: architectural annotation if applicable
+    arch_role = get_architecture_book_role(book)
+    if arch_role:
+        return _build_architectural_annotation(book_disp, concepts, count)
+    
+    # Final fallback: relationship-based annotation
+    return _build_relationship_annotation(relationship, book_disp, concepts, count)
 
 # -------------------------------
 # Self-Reference Functions
@@ -697,7 +744,7 @@ def find_self_references(concepts: Set[str], primary_book: Dict[str, Any],
             references.append({
                 "chapter_num": chap_num,
                 "chapter_title": chap_title,
-                "shared_concepts": sorted(list(shared))[:5],  # Limit to 5 most relevant
+                "shared_concepts": sorted(shared)[:5],  # Limit to 5 most relevant
                 "start_page": start_page,
                 "end_page": end_page
             })
@@ -708,6 +755,65 @@ def find_self_references(concepts: Set[str], primary_book: Dict[str, Any],
 # Summary Generation Functions
 # -------------------------------
 
+def _try_llm_summary(concepts: List[str], content: str, relationship: str,
+                    book_name: str, page_num: int) -> Optional[str]:
+    """Attempt to generate summary using LLM."""
+    if not (USE_LLM_SEMANTIC_ANALYSIS and LLM_AVAILABLE):
+        return None
+    
+    try:
+        llm_result = prompt_for_cross_reference_summary(
+            concepts=concepts,
+            content=content,
+            relationship=relationship,
+            book_name=book_name,
+            page_num=page_num,
+            max_length=300
+        )
+        return llm_result.get("summary")
+    except Exception as e:
+        print(f"  Warning: LLM summary failed ({e}), extracting from content")
+        return None
+
+
+def _extract_relevant_sentences(lines: List[str], concepts: List[str], max_sentences: int = 3) -> List[str]:
+    """Extract sentences that mention the concepts."""
+    relevant_sentences = []
+    for line in lines:
+        line_lower = line.lower()
+        if any(concept.lower() in line_lower for concept in concepts[:3]):
+            if len(line) > 20:
+                relevant_sentences.append(line)
+                if len(relevant_sentences) >= max_sentences:
+                    break
+    return relevant_sentences
+
+
+def _add_relationship_context(summary_base: str, relationship: str) -> str:
+    """Add relationship-specific context to summary."""
+    relationship_suffixes = {
+        "implementation": "The material provides practical code examples demonstrating these concepts in action.",
+        "architectural": "The text explores design patterns and architectural considerations for these features.",
+        "advanced": "This coverage delves into advanced implementation details and optimization techniques.",
+        "reference": "The reference provides technical specifications and formal definitions."
+    }
+    
+    suffix = relationship_suffixes.get(relationship, "")
+    return f"{summary_base} {suffix}" if suffix else summary_base
+
+
+def _extract_fallback_summary(content: str) -> str:
+    """Extract first substantial paragraph as fallback."""
+    paragraphs = content.split("\n\n")
+    for para in paragraphs:
+        if len(para.strip()) > 100:
+            summary = para.strip()[:400]
+            return summary + ("..." if len(para) > 400 else "")
+    
+    # Last resort
+    return content[:400].strip() + ("..." if len(content) > 400 else "")
+
+
 def generate_cross_reference_summary(concepts: List[str], content: str, relationship: str,
                                     book_name: str = "", page_num: int = 0) -> str:
     """
@@ -717,79 +823,23 @@ def generate_cross_reference_summary(concepts: List[str], content: str, relation
     If LLM is available, uses semantic analysis to generate actual content summaries.
     Otherwise falls back to extracting actual content.
     """
-    # Phase 2: LLM generates actual summary by reading the content
-    if USE_LLM_SEMANTIC_ANALYSIS and LLM_AVAILABLE:
-        try:
-            llm_result = prompt_for_cross_reference_summary(
-                concepts=concepts,
-                content=content,
-                relationship=relationship,
-                book_name=book_name,
-                page_num=page_num,
-                max_length=300
-            )
-            if llm_result.get("summary"):
-                return llm_result["summary"]
-        except Exception as e:
-            print(f"  Warning: LLM summary failed ({e}), extracting from content")
+    # Try LLM first
+    llm_summary = _try_llm_summary(concepts, content, relationship, book_name, page_num)
+    if llm_summary:
+        return llm_summary
     
-    # Phase 1: Extract actual content (not templates)
-    content_lower = content.lower()
+    # Extract from content
     lines = [line.strip() for line in content.split("\n") if line.strip()]
+    relevant_sentences = _extract_relevant_sentences(lines, concepts)
     
-    # Extract actual sentences that mention the concepts
-    relevant_sentences = []
-    for line in lines:
-        line_lower = line.lower()
-        if any(concept.lower() in line_lower for concept in concepts[:3]):
-            if len(line) > 20:  # Substantial line
-                relevant_sentences.append(line)
-                if len(relevant_sentences) >= 3:
-                    break
-    
-    # Build summary from actual content
     if relevant_sentences:
-        # Take first 2-3 relevant sentences and condense
         summary_base = " ".join(relevant_sentences[:2])
-        # Trim to reasonable length
         if len(summary_base) > 400:
             summary_base = summary_base[:400] + "..."
-        
-        # Add context about relationship
-        if relationship == "implementation":
-            return (
-                f"{summary_base} "
-                f"The material provides practical code examples demonstrating these concepts in action."
-            )
-        elif relationship == "architectural":
-            return (
-                f"{summary_base} "
-                f"The text explores design patterns and architectural considerations for these features."
-            )
-        elif relationship == "advanced":
-            return (
-                f"{summary_base} "
-                f"This coverage delves into advanced implementation details and optimization techniques."
-            )
-        elif relationship == "reference":
-            return (
-                f"{summary_base} "
-                f"The reference provides technical specifications and formal definitions."
-            )
-        else:
-            return summary_base
+        return _add_relationship_context(summary_base, relationship)
     
-    # Absolute fallback - extract first substantial paragraph
-    paragraphs = content.split("\n\n")
-    for para in paragraphs:
-        if len(para.strip()) > 100:
-            summary = para.strip()[:400]
-            if len(para) > 400:
-                summary += "..."
-            return summary
-    
-    # Last resort - just return first 400 chars
-    return content[:400].strip() + ("..." if len(content) > 400 else "")
+    # Fallback to first paragraph
+    return _extract_fallback_summary(content)
 
 # -------------------------------
 # TPM derivation utilities
@@ -802,7 +852,7 @@ def choose_tpm_source(other_books: Dict[str, Dict[str, Any]]) -> Optional[Tuple[
     Returns: (book_name, page_num, exact_code_slice, start_line, end_line)
     """
     # Greedy class block capture until a blank line or end
-    class_pat = re.compile(r"(?ms)^class\s+\w+\s*:\s*.*?(?:\n\s*\n|\Z)")
+    class_pat = re.compile(r"(?ms)^class\s+\w+\s*:(?:(?!\n\s*\n).)*(?:\n\s*\n|\Z)")
     for book in TPM_PREFERRED_BOOKS:
         data = other_books.get(book)
         if not data:
@@ -869,134 +919,106 @@ def adapt_tpm_code(source_code: str) -> str:
 # Generation steps
 # -------------------------------
 
-def generate_chapter_summary(pages: List[Dict[str, Any]], chapter_num: int = 1) -> str:
-    """
-    Get chapter summary from metadata file.
-    Falls back to generic summary if metadata not found.
-    """
+# Mapping from book name patterns to metadata filenames
+BOOK_METADATA_FILES = {
+    "Fluent Python": "fluent_python_metadata.json",
+    "Learning Python": "learning_python_metadata.json",
+    "Python Cookbook": "python_cookbook_metadata.json",
+    "Python Data Analysis": "python_data_analysis_metadata.json",
+    TITLE_PYTHON_DISTILLED: "python_distilled_metadata.json",
+    "Python Essential Reference": "python_essential_ref_metadata.json",
+    "Architecture Patterns": "architecture_patterns_metadata.json",
+    "Building Microservices": "building_microservices_metadata.json",
+    "Building Python Microservices with FastAPI": "fastapi_microservices_metadata.json",
+    "Microservice APIs": "microservice_apis_metadata.json",
+    "Microservice Architecture": "microservice_architecture_metadata.json",
+    "Microservices Up and Running": "microservices_up_running_metadata.json",
+    "Python Architecture Patterns": "python_architecture_patterns_metadata.json",
+    "Python Microservices Development": "python_microservices_dev_metadata.json",
+}
+
+
+def _get_metadata_filename(primary_book: str) -> Optional[str]:
+    """Determine which metadata file to use based on PRIMARY_BOOK."""
+    for pattern, filename in BOOK_METADATA_FILES.items():
+        if pattern in primary_book:
+            return filename
+    return None
+
+
+def _load_chapter_summary(metadata_file: str, chapter_num: int) -> Optional[str]:
+    """Load chapter summary from metadata file."""
     try:
-        # Determine which metadata file to use based on PRIMARY_BOOK
-        if "Fluent Python" in PRIMARY_BOOK:
-            metadata_file = "fluent_python_metadata.json"
-        elif "Learning Python" in PRIMARY_BOOK:
-            metadata_file = "learning_python_metadata.json"
-        elif "Python Cookbook" in PRIMARY_BOOK:
-            metadata_file = "python_cookbook_metadata.json"
-        elif "Python Data Analysis" in PRIMARY_BOOK:
-            metadata_file = "python_data_analysis_metadata.json"
-        elif "Python Distilled" in PRIMARY_BOOK:
-            metadata_file = "python_distilled_metadata.json"
-        elif "Python Essential Reference" in PRIMARY_BOOK:
-            metadata_file = "python_essential_ref_metadata.json"
-        elif "Architecture Patterns" in PRIMARY_BOOK:
-            metadata_file = "architecture_patterns_metadata.json"
-        elif "Building Microservices" == PRIMARY_BOOK:
-            metadata_file = "building_microservices_metadata.json"
-        elif "Building Python Microservices with FastAPI" in PRIMARY_BOOK:
-            metadata_file = "fastapi_microservices_metadata.json"
-        elif "Microservice APIs" in PRIMARY_BOOK:
-            metadata_file = "microservice_apis_metadata.json"
-        elif "Microservice Architecture" in PRIMARY_BOOK:
-            metadata_file = "microservice_architecture_metadata.json"
-        elif "Microservices Up and Running" in PRIMARY_BOOK:
-            metadata_file = "microservices_up_running_metadata.json"
-        elif "Python Architecture Patterns" in PRIMARY_BOOK:
-            metadata_file = "python_architecture_patterns_metadata.json"
-        elif "Python Microservices Development" in PRIMARY_BOOK:
-            metadata_file = "python_microservices_dev_metadata.json"
-        else:
-            return f"Chapter {chapter_num} content."
-        
-        # Load metadata
         metadata_path = Path(__file__).parent / metadata_file
         with open(metadata_path, 'r') as f:
             metadata = json.load(f)
         
-        # Find matching chapter
         for chapter in metadata:
             if chapter.get('chapter_number') == chapter_num:
-                return chapter.get('summary', f"Chapter {chapter_num} content.")
-        
-        # Fallback if chapter not found
-        return f"Chapter {chapter_num} content."
-        
+                return chapter.get('summary', None)
+        return None
     except (FileNotFoundError, json.JSONDecodeError):
-        # Fallback to generic summary if metadata file missing
+        return None
+
+
+def generate_chapter_summary(_pages: List[Dict[str, Any]], chapter_num: int = 1) -> str:
+    """
+    Get chapter summary from metadata file.
+    Falls back to generic summary if metadata not found.
+    
+    Args:
+        _pages: Pages for this chapter (reserved for future direct content analysis)
+        chapter_num: Chapter number to look up in metadata
+    """
+    metadata_file = _get_metadata_filename(PRIMARY_BOOK)
+    if not metadata_file:
         return f"Chapter {chapter_num} content."
-
-def build_concept_sections(primary_data: Dict[str, Any],
-                           chapter_pages: List[Dict[str, Any]],
-                           footnote_start: int,
-                           chapter_num: int,
-                           chapter_concepts: Optional[Set[str]] = None,
-                           occurrence_index: Optional[Dict[str, List[int]]] = None) -> Tuple[str, int, List[Dict[str, Any]]]:
-    """
-    Build concept sections by identifying and extracting passages for each detected concept.
-    Limits to 15 concepts per chapter for focused coverage.
-    """
-    out = []
-    foots: List[Dict[str, Any]] = []
-    n = footnote_start
-
-    # If concepts not provided, extract from chapter
-    if chapter_concepts is None:
-        chapter_text = "\n".join([p.get("content", "") for p in chapter_pages])
-        chapter_concepts = extract_concepts_from_text(chapter_text)
     
-    # Limit to 15 most significant concepts
-    selected_concepts = sorted(list(chapter_concepts))[:15]
+    summary = _load_chapter_summary(metadata_file, chapter_num)
+    return summary if summary else f"Chapter {chapter_num} content."
+
+
+def _find_best_page_for_concept(concept: str, chapter_pages: List[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
+    """Find page with most occurrences of given concept."""
+    best_page = None
+    best_count = 0
     
-    # For each concept, find best page and extract relevant passage
-    for concept in selected_concepts:
-        # Find page with most occurrences of this concept
-        best_page = None
-        best_count = 0
+    for page in chapter_pages:
+        content = page.get("content", "").lower()
+        count = content.count(concept.lower())
+        if count > best_count:
+            best_count = count
+            best_page = page
+    
+    return best_page
+
+
+def _extract_concept_passage(content: str, concept: str) -> Tuple[str, int, int]:
+    """Extract 8-line passage containing the concept."""
+    lines = content.split("\n")
+    concept_lower = concept.lower()
+    
+    # Find first line containing concept
+    start_idx = 0
+    for i, line in enumerate(lines):
+        if concept_lower in line.lower():
+            start_idx = max(0, i - 1)
+            break
+    
+    end_idx = min(len(lines), start_idx + 8)
+    excerpt = "\n".join(lines[start_idx:end_idx])
+    return excerpt, start_idx, end_idx
+
+
+def _generate_concept_annotation(concept: str, excerpt: str, page_num: int, best_count: int) -> str:
+    """Generate annotation explaining what the concept means."""
+    if not (USE_LLM_SEMANTIC_ANALYSIS and LLM_AVAILABLE):
+        return _get_fallback_annotation(concept, best_count)
+    
+    try:
+        from llm_integration import call_llm
         
-        for page in chapter_pages:
-            content = page.get("content", "").lower()
-            count = content.count(concept.lower())
-            if count > best_count:
-                best_count = count
-                best_page = page
-        
-        if not best_page:
-            continue
-            
-        page_num = best_page["page_number"]
-        content = best_page.get("content", "")
-        
-        # Extract passage containing the concept
-        lines = content.split("\n")
-        concept_lower = concept.lower()
-        
-        # Find first line containing concept
-        start_idx = 0
-        for i, line in enumerate(lines):
-            if concept_lower in line.lower():
-                start_idx = max(0, i - 1)  # Include one line before
-                break
-        
-        # Extract 8-line passage
-        end_idx = min(len(lines), start_idx + 8)
-        excerpt = "\n".join(lines[start_idx:end_idx])
-        
-        # Create concept-specific title
-        title = f"Concept: {concept.title()}"
-        
-        block = []
-        block.append(f"#### **{concept.title()}** *(p.{page_num})*\n")
-        block.append(f"**Verbatim Educational Excerpt** *({CURRENT_BOOK_META['short_name']}, p.{page_num}, lines {start_idx+1}–{end_idx})*:")
-        block.append("```")
-        block.append(excerpt)
-        block.append("```")
-        block.append(f"[^{n}]")
-        
-        # Generate LLM annotation about what this concept means
-        if USE_LLM_SEMANTIC_ANALYSIS and LLM_AVAILABLE:
-            try:
-                from llm_integration import call_llm
-                
-                prompt = f"""Analyze this excerpt and explain what '{concept}' means in this context.
+        prompt = f"""Analyze this excerpt and explain what '{concept}' means in this context.
 
 Excerpt from {CURRENT_BOOK_META['short_name']}, page {page_num}:
 {excerpt[:800]}
@@ -1009,40 +1031,84 @@ Write a 2-3 sentence annotation explaining:
 Be specific to THIS content - NO generic templates.
 Respond with ONLY the annotation text (no JSON, no preamble)."""
 
-                system_prompt = "You are a Python expert explaining concepts from educational text."
-                
-                annotation = call_llm(prompt, system_prompt, max_tokens=200)
-                annotation = annotation.strip().strip('"').strip("'")
-                
-                if len(annotation) > 50:
-                    block.append(emit_annotation(annotation))
-                else:
-                    # Fallback to default
-                    block.append(emit_annotation(
-                        f"This excerpt demonstrates '{concept}' as it appears in the primary text. "
-                        f"The concept occurs {best_count} time(s) on this page, making it a key anchor point for understanding "
-                        "how the text introduces and develops this topic. Use this passage to verify precise terminology, "
-                        "definitions, and contextual usage patterns."
-                    ))
-            except Exception as e:
-                print(f"  Warning: LLM concept annotation failed ({e})")
-                # Fallback to default
-                block.append(emit_annotation(
-                    f"This excerpt demonstrates '{concept}' as it appears in the primary text. "
-                    f"The concept occurs {best_count} time(s) on this page, making it a key anchor point for understanding "
-                    "how the text introduces and develops this topic. Use this passage to verify precise terminology, "
-                    "definitions, and contextual usage patterns."
-                ))
-        else:
-            # No LLM - use default template
-            block.append(emit_annotation(
-                f"This excerpt demonstrates '{concept}' as it appears in the primary text. "
-                f"The concept occurs {best_count} time(s) on this page, making it a key anchor point for understanding "
-                "how the text introduces and develops this topic. Use this passage to verify precise terminology, "
-                "definitions, and contextual usage patterns."
-            ))
-        block.append("")
+        system_prompt = "You are a Python expert explaining concepts from educational text."
+        annotation = call_llm(prompt, system_prompt, max_tokens=200)
+        annotation = annotation.strip().strip('"').strip("'")
+        
+        return annotation if len(annotation) > 50 else _get_fallback_annotation(concept, best_count)
+    except Exception as e:
+        print(f"  Warning: LLM concept annotation failed ({e})")
+        return _get_fallback_annotation(concept, best_count)
 
+
+def _get_fallback_annotation(concept: str, best_count: int) -> str:
+    """Get fallback annotation when LLM unavailable."""
+    return (
+        f"This excerpt demonstrates '{concept}' as it appears in the primary text. "
+        f"The concept occurs {best_count} time(s) on this page, making it a key anchor point for understanding "
+        "how the text introduces and develops this topic. Use this passage to verify precise terminology, "
+        "definitions, and contextual usage patterns."
+    )
+
+
+def _build_concept_block(concept: str, page_num: int, excerpt: str, start_idx: int, 
+                        end_idx: int, best_count: int, n: int) -> List[str]:
+    """Build formatted block for a single concept."""
+    block = []
+    block.append(f"#### **{concept.title()}** *(p.{page_num})*\n")
+    block.append(f"**Verbatim Educational Excerpt** *({CURRENT_BOOK_META['short_name']}, p.{page_num}, lines {start_idx+1}–{end_idx})*:")
+    block.append("```")
+    block.append(excerpt)
+    block.append("```")
+    block.append(f"[^{n}]")
+    
+    annotation = _generate_concept_annotation(concept, excerpt, page_num, best_count)
+    block.append(emit_annotation(annotation))
+    block.append("")
+    
+    return block
+
+
+def build_concept_sections(_primary_data: Dict[str, Any],
+                           chapter_pages: List[Dict[str, Any]],
+                           footnote_start: int,
+                           _chapter_num: int,
+                           chapter_concepts: Optional[Set[str]] = None,
+                           _occurrence_index: Optional[Dict[str, List[int]]] = None) -> Tuple[str, int, List[Dict[str, Any]]]:
+    """
+    Build concept sections by identifying and extracting passages for each detected concept.
+    Limits to 15 concepts per chapter for focused coverage.
+    
+    Args:
+        _primary_data: Primary book data (reserved for future metadata-driven selection)
+        chapter_pages: Pages belonging to this chapter
+        footnote_start: Starting footnote number
+        _chapter_num: Chapter number (reserved for future chapter-specific logic)
+        chapter_concepts: Optional predefined concepts to use instead of extracting
+        _occurrence_index: Page occurrence index (reserved for future frequency-based selection)
+    """
+    out = []
+    foots: List[Dict[str, Any]] = []
+    n = footnote_start
+
+    if not chapter_concepts:
+        return "", n, foots
+    
+    # Limit to 15 most significant concepts
+    selected_concepts = sorted(chapter_concepts)[:15]
+    
+    # For each concept, find best page and extract relevant passage
+    for concept in selected_concepts:
+        best_page = _find_best_page_for_concept(concept, chapter_pages)
+        if not best_page:
+            continue
+            
+        page_num = best_page["page_number"]
+        content = best_page.get("content", "")
+        best_count = content.lower().count(concept.lower())
+        
+        excerpt, start_idx, end_idx = _extract_concept_passage(content, concept)
+        block = _build_concept_block(concept, page_num, excerpt, start_idx, end_idx, best_count, n)
         out.append("\n".join(block))
 
         foots.append({
@@ -1057,6 +1123,71 @@ Respond with ONLY the annotation text (no JSON, no preamble)."""
         n += 1
 
     return "\n".join(out), n, foots
+
+def _build_companion_book_reference(book: str, pages: List[Dict[str, Any]], 
+                                     primary_content: str, n: int) -> Tuple[List[str], Dict[str, Any]]:
+    """Build a single companion book reference with summary and annotation."""
+    m = pages[0]
+    book_disp = book.replace("_Content", "").replace("_", " ")
+    page_num = m["page"]
+    content = m["content"]
+    concepts = m.get("concepts", [])
+    
+    relationship = analyze_concept_relationship(concepts, content)
+    summary = generate_cross_reference_summary(
+        concepts, content, relationship,
+        book_name=book, page_num=page_num
+    )
+    
+    lines = []
+    lines.append(f"**{book_disp}** *(p.{page_num})*:")
+    lines.append("")
+    lines.append(summary)
+    lines.append(f"[^{n}]")
+    lines.append("")
+    lines.append(emit_annotation(
+        build_extensive_annotation(book, concepts, relationship, len(pages), 
+                                 content=content, page_num=page_num, 
+                                 primary_content=primary_content)
+    ))
+    lines.append("")
+    
+    author, title = map_book_to_citation(book, book_disp)
+    footnote = {
+        "num": n,
+        "author": author,
+        "title": title,
+        "file": book,
+        "page": page_num,
+        "start_line": 1,
+        "end_line": 10
+    }
+    
+    return lines, footnote
+
+
+def _build_later_chapter_reference(ref: Dict[str, Any]) -> List[str]:
+    """Build a single later chapter reference."""
+    chap_num = ref["chapter_num"]
+    chap_title = ref["chapter_title"]
+    shared = ref["shared_concepts"]
+    
+    lines = []
+    lines.append(f"**Chapter {chap_num}: {chap_title}** *(pp.{ref['start_page']}–{ref['end_page']})*")
+    lines.append("")
+    lines.append(
+        f"This later chapter builds upon the concepts introduced here, particularly: "
+        f"{', '.join(shared[:3])}{'...' if len(shared) > 3 else ''}. "
+        f"The material extends the foundational understanding established in this chapter "
+        f"by exploring more advanced applications, deeper implementation details, or "
+        f"integration with other Python features. Readers seeking to deepen their "
+        f"mastery of these topics should plan to revisit this chapter after completing "
+        f"the later material."
+    )
+    lines.append("")
+    
+    return lines
+
 
 def build_see_also(cross_matches: List[Dict[str, Any]], 
                   footnote_start: int, 
@@ -1090,45 +1221,11 @@ def build_see_also(cross_matches: List[Dict[str, Any]],
             by_book[m["book"]].append(m)
 
         for book, pages in list(by_book.items())[:5]:
-            m = pages[0]
-            book_disp = book.replace("_Content", "").replace("_", " ")
-            page_num = m["page"]
-            content = m["content"]
-            concepts = m.get("concepts", [])
-
-            # Analyze relationship
-            relationship = analyze_concept_relationship(concepts, content)
-            
-            # Generate comprehensive summary (NOT excerpt)
-            summary = generate_cross_reference_summary(
-                concepts, content, relationship,
-                book_name=book, page_num=page_num
+            ref_lines, footnote = _build_companion_book_reference(
+                book, pages, primary_content, n
             )
-
-            out.append(f"**{book_disp}** *(p.{page_num})*:")
-            out.append("")
-            out.append(summary)
-            out.append(f"[^{n}]")
-            out.append("")
-            out.append(emit_annotation(
-                build_extensive_annotation(book, concepts, relationship, len(pages), 
-                                         content=content, page_num=page_num, 
-                                         primary_content=primary_content)
-            ))
-            out.append("")
-
-            # Get author/title for citation
-            author, title = map_book_to_citation(book, book_disp)
-
-            foots.append({
-                "num": n,
-                "author": author,
-                "title": title,
-                "file": book,
-                "page": page_num,
-                "start_line": 1,
-                "end_line": 10
-            })
+            out.extend(ref_lines)
+            foots.append(footnote)
             n += 1
     
     # Part 2: Self-References to Later Chapters
@@ -1140,27 +1237,13 @@ def build_see_also(cross_matches: List[Dict[str, Any]],
             out.append("")
             
             for ref in self_refs:
-                chap_num = ref["chapter_num"]
-                chap_title = ref["chapter_title"]
-                shared = ref["shared_concepts"]
-                
-                out.append(f"**Chapter {chap_num}: {chap_title}** *(pp.{ref['start_page']}–{ref['end_page']})*")
-                out.append("")
-                out.append(
-                    f"This later chapter builds upon the concepts introduced here, particularly: "
-                    f"{', '.join(shared[:3])}{'...' if len(shared) > 3 else ''}. "
-                    f"The material extends the foundational understanding established in this chapter "
-                    f"by exploring more advanced applications, deeper implementation details, or "
-                    f"integration with other Python features. Readers seeking to deepen their "
-                    f"mastery of these topics should plan to revisit this chapter after completing "
-                    f"the current material."
-                )
+                out.extend(_build_later_chapter_reference(ref))
                 out.append(f"[^{n}]")
                 out.append("")
                 out.append(emit_annotation(
-                    f"Forward reference: Chapter {chap_num} shares {len(shared)} concept(s) with this chapter, "
+                    f"Forward reference: Chapter {ref['chapter_num']} shares {len(ref['shared_concepts'])} concept(s) with this chapter, "
                     f"indicating topical continuity and progressive skill development. "
-                    f"The concepts {', '.join(shared[:2])} appear in both contexts, suggesting "
+                    f"The concepts {', '.join(ref['shared_concepts'][:2])} appear in both contexts, suggesting "
                     f"that understanding from this chapter will directly transfer to and be expanded upon "
                     f"in the later material."
                 ))
@@ -1179,13 +1262,18 @@ def build_see_also(cross_matches: List[Dict[str, Any]],
 
     return "\n".join(out), n, foots
 
-def build_tpm_section(other_books: Dict[str, Any], footnote_start: int, chapter_num: int) -> Tuple[str, int, Optional[Dict[str, Any]]]:
+def build_tpm_section(other_books: Dict[str, Any], footnote_start: int, _chapter_num: int) -> Tuple[str, int, Optional[Dict[str, Any]]]:
     """
     Build a TPM ORIGINAL section with ~50–65% overlap.
     Steps:
       1) pick a real class snippet from preferred books,
       2) adapt minimally to talent domain,
       3) cite exact JSON slice with Chicago footnote,
+    
+    Args:
+        other_books: Dictionary of supplementary book data
+        footnote_start: Starting footnote number
+        _chapter_num: Chapter number (reserved for future chapter-specific examples)
       4) append Annotation.
     """
     chosen = choose_tpm_source(other_books)
@@ -1201,11 +1289,11 @@ def build_tpm_section(other_books: Dict[str, Any], footnote_start: int, chapter_
 
     display_name = book_name.replace("_Content", "").replace("_", " ")
     if "Fluent" in book_name:
-        author, title = "Ramalho, Luciano", "Fluent Python, 2nd Edition"
+        author, title = AUTHOR_RAMALHO, TITLE_FLUENT_PYTHON_2ND
     elif "Distilled" in book_name and "Essential" not in book_name:
-        author, title = "Beazley, David M.", "Python Distilled"
+        author, title = AUTHOR_BEAZLEY, TITLE_PYTHON_DISTILLED
     elif "Cookbook" in book_name:
-        author, title = "Beazley, David M.; Jones, Brian K.", "Python Cookbook, 3rd Edition"
+        author, title = AUTHOR_BEAZLEY_JONES, TITLE_PYTHON_COOKBOOK_3RD
     else:
         author, title = "Various", display_name
 
@@ -1322,7 +1410,7 @@ def main():
         
         # Phase 2: LLM semantic analysis (if enabled)
         if USE_LLM_SEMANTIC_ANALYSIS and LLM_AVAILABLE:
-            print(f"  Phase 2: LLM semantic concept extraction...")
+            print("  Phase 2: LLM semantic concept extraction...")
             llm_result = prompt_for_semantic_concepts(
                 chapter_num, 
                 chapter_title,
@@ -1351,13 +1439,13 @@ def main():
             all_footnotes.append(tpm_foot)
         
         # Phase 1: Keyword-based cross-book matching
-        print(f"  Phase 1: Keyword-based cross-book matching...")
+        print("  Phase 1: Keyword-based cross-book matching...")
         keyword_xmatches = find_cross_book_matches(all_text, {k:v for k,v in companions.items() if k != PRIMARY_BOOK})
         print(f"  Phase 1: Found {len(keyword_xmatches)} cross-book matches")
         
         # Phase 2: LLM validates and enhances cross-references (if enabled)
         if USE_LLM_SEMANTIC_ANALYSIS and LLM_AVAILABLE:
-            print(f"  Phase 2: LLM scanning ALL companion books for semantic matches...")
+            print("  Phase 2: LLM scanning ALL companion books for semantic matches...")
             llm_xref_result = prompt_for_cross_reference_validation(
                 chapter_num,
                 chapter_title,

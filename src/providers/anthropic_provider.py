@@ -10,7 +10,7 @@ try:
 except ImportError:
     anthropic = None
 
-from .base import LLMProvider, LLMResponse, LLMError
+from .base import LLMResponse, LLMError
 
 
 class AnthropicProvider:

@@ -11,8 +11,7 @@ Expected token savings: 40% by reducing book metadata sent to LLM
 """
 
 import pytest
-from typing import List, Dict, Any
-from unittest.mock import Mock, patch, MagicMock
+from unittest.mock import Mock, patch
 
 # Note: Import will fail until we implement the functions
 # This is expected in TDD - write tests first, then make them pass

@@ -20,26 +20,17 @@ CONFIGURATION:
 - No hardcoded values (12-Factor App compliance)
 """
 
-from dataclasses import dataclass
-from typing import List, Dict, Any, Optional
-from pathlib import Path
+from typing import List, Dict, Any
 from config.settings import settings
 
 # Import shared dataclasses and services
 from ..interactive_llm_system_v3_hybrid_prompt import (
-    ContentRequest,
     LLMMetadataResponse,
-    AnalysisPhase,
 )
 
 try:
-    from ..book_taxonomy import (
-        get_recommended_books,
-        get_cascading_books,
-        score_books_for_concepts,
-        BOOK_REGISTRY,
-        BookTier
-    )
+    # Test if book_taxonomy module is available
+    import book_taxonomy  # noqa: F401
     TAXONOMY_AVAILABLE = True
 except ImportError:
     TAXONOMY_AVAILABLE = False

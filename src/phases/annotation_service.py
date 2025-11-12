@@ -7,7 +7,7 @@ Currently a placeholder for the full refactoring.
 Sprint 1 Day 1-2: Phase separation architecture
 """
 
-from typing import List, Dict, Any, TYPE_CHECKING
+from typing import List, Any, TYPE_CHECKING
 
 if TYPE_CHECKING:
     from ..interactive_llm_system_v3_hybrid_prompt import (
@@ -37,7 +37,6 @@ def _get_classes():
             interactive_llm_system_v3_hybrid_prompt.ScholarlyAnnotation
         )
 
-from config.settings import settings
 
 
 class AnnotationService:

@@ -18,38 +18,34 @@ Usage:
 import json
 import re
 from pathlib import Path
-from typing import List, Dict, Set, Any
+from typing import List, Dict, Any
 from collections import Counter
+
+# Directory path constants (to avoid duplicate string literals)
+DIR_ENGINEERING_PRACTICES_JSON = "Engineering Practices/JSON"
+DIR_ARCHITECTURE_JSON = "Architecture/JSON"
 
 # Book locations
 BOOK_PATHS = {
-    "Fluent Python 2nd.json": "Engineering Practices/JSON",
-    "Python Distilled.json": "Engineering Practices/JSON",
-    "Python Essential Reference 4th.json": "Engineering Practices/JSON",
-    "Python Cookbook 3rd.json": "Engineering Practices/JSON",
-    "Learning Python Ed6.json": "Engineering Practices/JSON",
-    "Python Data Analysis 3rd.json": "Engineering Practices/JSON",
-    "Architecture Patterns with Python.json": "Architecture/JSON",
-    "Python Architecture Patterns.json": "Architecture/JSON",
-    "Building Microservices.json": "Architecture/JSON",
-    "Microservice Architecture.json": "Architecture/JSON",
-    "Microservices Up and Running.json": "Architecture/JSON",
-    "Building Python Microservices with FastAPI.json": "Architecture/JSON",
-    "Microservice APIs Using Python Flask FastAPI.json": "Architecture/JSON",
-    "Python Microservices Development.json": "Architecture/JSON"
+    "Fluent Python 2nd.json": DIR_ENGINEERING_PRACTICES_JSON,
+    "Python Distilled.json": DIR_ENGINEERING_PRACTICES_JSON,
+    "Python Essential Reference 4th.json": DIR_ENGINEERING_PRACTICES_JSON,
+    "Python Cookbook 3rd.json": DIR_ENGINEERING_PRACTICES_JSON,
+    "Learning Python Ed6.json": DIR_ENGINEERING_PRACTICES_JSON,
+    "Python Data Analysis 3rd.json": DIR_ENGINEERING_PRACTICES_JSON,
+    "Architecture Patterns with Python.json": DIR_ARCHITECTURE_JSON,
+    "Python Architecture Patterns.json": DIR_ARCHITECTURE_JSON,
+    "Building Microservices.json": DIR_ARCHITECTURE_JSON,
+    "Microservice Architecture.json": DIR_ARCHITECTURE_JSON,
+    "Microservices Up and Running.json": DIR_ARCHITECTURE_JSON,
+    "Building Python Microservices with FastAPI.json": DIR_ARCHITECTURE_JSON,
+    "Microservice APIs Using Python Flask FastAPI.json": DIR_ARCHITECTURE_JSON,
+    "Python Microservices Development.json": DIR_ARCHITECTURE_JSON
 }
 
-def extract_keywords_from_text(text: str, max_keywords: int = 15) -> List[str]:
-    """
-    Extract meaningful keywords from chapter text.
-    
-    Identifies technical terms, Python concepts, and key topics.
-    """
-    # Convert to lowercase for analysis
-    text_lower = text.lower()
-    
-    # Expanded Python/programming keywords to look for
-    python_keywords = [
+def _get_python_keyword_list() -> List[str]:
+    """Return comprehensive list of Python and programming keywords to detect."""
+    return [
         # Core language
         'class', 'function', 'method', 'decorator', 'generator', 'iterator',
         'closure', 'lambda', 'comprehension', 'exception', 'inheritance',
@@ -109,11 +105,65 @@ def extract_keywords_from_text(text: str, max_keywords: int = 15) -> List[str]:
         'map', 'filter', 'reduce', 'zip', 'enumerate',
         'higher-order', 'immutable', 'pure function',
     ]
+
+
+def _extract_capitalized_terms(text: str, existing_keywords: List[tuple]) -> List[tuple]:
+    """Extract frequently occurring capitalized terms from text."""
+    cap_pattern = r'\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+)*\b'
+    capitalized = re.findall(cap_pattern, text)
+    cap_counter = Counter(capitalized)
     
-    # Find which keywords appear in the text
+    existing_kw_set = {k[0] for k in existing_keywords}
+    cap_keywords = []
+    
+    for term, count in cap_counter.most_common(15):
+        if count >= 2 and len(term) > 3 and term.lower() not in existing_kw_set:
+            cap_keywords.append((term.lower(), count))
+    
+    return cap_keywords
+
+
+def _get_stop_words() -> set:
+    """Return set of common English stop words to filter out."""
+    return {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 
+            'to', 'for', 'of', 'with', 'by', 'from', 'up', 'about',
+            'into', 'through', 'during', 'before', 'after', 'above',
+            'below', 'between', 'under', 'again', 'further', 'then',
+            'once', 'here', 'there', 'when', 'where', 'why', 'how',
+            'all', 'both', 'each', 'few', 'more', 'most', 'other',
+            'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same',
+            'so', 'than', 'too', 'very', 'can', 'will', 'just', 'should'}
+
+
+def _extract_frequent_words(text_lower: str, existing_keywords: List[tuple]) -> List[tuple]:
+    """Extract frequently occurring words when few keywords found."""
+    stop_words = _get_stop_words()
+    words = re.findall(r'\b[a-z]{4,}\b', text_lower)
+    word_counter = Counter(w for w in words if w not in stop_words)
+    
+    existing_kw_set = {k[0] for k in existing_keywords}
+    freq_keywords = []
+    
+    for word, count in word_counter.most_common(20):
+        if count >= 3 and word not in existing_kw_set:
+            freq_keywords.append((word, count))
+    
+    return freq_keywords
+
+
+def extract_keywords_from_text(text: str, max_keywords: int = 15) -> List[str]:
+    """
+    Extract meaningful keywords from chapter text.
+    
+    Identifies technical terms, Python concepts, and key topics.
+    """
+    text_lower = text.lower()
+    
+    # Find Python/programming keywords in text
+    python_keywords = _get_python_keyword_list()
     found_keywords = []
+    
     for keyword in python_keywords:
-        # Count occurrences (lower threshold to 1 for broader coverage)
         count = text_lower.count(keyword)
         if count >= 1:
             found_keywords.append((keyword, count))
@@ -121,34 +171,14 @@ def extract_keywords_from_text(text: str, max_keywords: int = 15) -> List[str]:
     # Sort by frequency
     found_keywords.sort(key=lambda x: x[1], reverse=True)
     
-    # Extract capitalized terms (likely important concepts like class names, etc.)
-    cap_pattern = r'\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+)*\b'
-    capitalized = re.findall(cap_pattern, text)
-    cap_counter = Counter(capitalized)
+    # Add capitalized terms (likely class names, concepts)
+    cap_keywords = _extract_capitalized_terms(text, found_keywords)
+    found_keywords.extend(cap_keywords)
     
-    # Add frequent capitalized terms (lower threshold)
-    for term, count in cap_counter.most_common(15):
-        if count >= 2 and len(term) > 3 and term.lower() not in [k[0] for k in found_keywords]:
-            found_keywords.append((term.lower(), count))
-    
-    # If still very few keywords, extract from word frequency
+    # Add frequent words if still few keywords
     if len(found_keywords) < 5:
-        # Remove common words
-        stop_words = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 
-                     'to', 'for', 'of', 'with', 'by', 'from', 'up', 'about',
-                     'into', 'through', 'during', 'before', 'after', 'above',
-                     'below', 'between', 'under', 'again', 'further', 'then',
-                     'once', 'here', 'there', 'when', 'where', 'why', 'how',
-                     'all', 'both', 'each', 'few', 'more', 'most', 'other',
-                     'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same',
-                     'so', 'than', 'too', 'very', 'can', 'will', 'just', 'should'}
-        
-        words = re.findall(r'\b[a-z]{4,}\b', text_lower)
-        word_counter = Counter(w for w in words if w not in stop_words)
-        
-        for word, count in word_counter.most_common(20):
-            if count >= 3 and word not in [k[0] for k in found_keywords]:
-                found_keywords.append((word, count))
+        freq_keywords = _extract_frequent_words(text_lower, found_keywords)
+        found_keywords.extend(freq_keywords)
     
     # Return top keywords
     return [kw[0] for kw in found_keywords[:max_keywords]]
@@ -304,6 +334,112 @@ def extract_concepts_from_text(text: str, max_concepts: int = 10) -> List[str]:
     return unique_concepts[:max_concepts]
 
 
+def _extract_sample_text(chapter_pages: List[Dict[str, Any]], num_pages: int = 5) -> str:
+    """Extract sample text from first N pages for analysis."""
+    sample_text = ""
+    for page in chapter_pages[:num_pages]:
+        sample_text += page.get('content', '') + " "
+    return sample_text
+
+
+def _find_introductory_sentences(sample_text: str, max_sentences: int = 20) -> List[str]:
+    """
+    Find sentences that introduce chapter topics.
+    
+    Returns:
+        List of meaningful introductory sentences
+    """
+    sentences = re.split(r'[.!?]+\s+', sample_text)
+    meaningful_sentences = []
+    
+    introductory_markers = [
+        'this chapter', 'we will', 'you will learn', 'introduces',
+        'covers', 'discusses', 'explores', 'examines', 'provides',
+        'focuses on', 'presents', 'demonstrates', 'explains'
+    ]
+    
+    for sent in sentences[:max_sentences]:
+        sent = sent.strip()
+        if any(marker in sent.lower() for marker in introductory_markers):
+            if 30 < len(sent) < 300:  # Reasonable length
+                meaningful_sentences.append(sent)
+    
+    return meaningful_sentences
+
+
+def _build_concept_summary(concepts: List[str]) -> str:
+    """Build summary sentence from top concepts."""
+    if not concepts:
+        return ""
+    
+    top_concepts = [c for c in concepts[:3] if len(c) > 3]
+    if not top_concepts:
+        return ""
+    
+    concept_str = ', '.join(top_concepts[:2])
+    if len(top_concepts) > 2:
+        concept_str += f', and {top_concepts[2]}'
+    
+    return f"Key topics include {concept_str}."
+
+
+def _categorize_keywords(keywords: List[str]) -> tuple[List[str], List[str]]:
+    """
+    Categorize keywords into implementation and conceptual.
+    
+    Returns:
+        (implementation_keywords, conceptual_keywords)
+    """
+    impl_keywords = [k for k in keywords[:10] if k in [
+        'class', 'function', 'method', 'decorator', 'generator',
+        'iterator', 'lambda', 'comprehension'
+    ]]
+    concept_keywords = [k for k in keywords[:10] if k in [
+        'exception', 'inheritance', 'testing', 'debugging',
+        'pattern', 'architecture', 'design', 'api'
+    ]]
+    
+    return impl_keywords, concept_keywords
+
+
+def _build_keyword_summary(keywords: List[str], max_parts: int) -> str:
+    """Build summary sentence from categorized keywords."""
+    if not keywords:
+        return ""
+    
+    impl_keywords, concept_keywords = _categorize_keywords(keywords)
+    
+    keyword_details = []
+    if impl_keywords:
+        keyword_details.append(', '.join(impl_keywords[:2]))
+    if concept_keywords:
+        keyword_details.append(', '.join(concept_keywords[:2]))
+    
+    if keyword_details and max_parts < 3:
+        return f"Covers {', '.join(keyword_details)}."
+    
+    return ""
+
+
+def _add_technical_context(summary: str, sentences: List[str], sample_text: str) -> str:
+    """Add additional technical context if summary is too short."""
+    if len(summary) >= 150 or not sample_text:
+        return summary
+    
+    technical_terms = [
+        'python', 'code', 'program', 'syntax', 'variable',
+        'function', 'class', 'method', 'object', 'data'
+    ]
+    
+    for sent in sentences[1:15]:
+        sent = sent.strip()
+        if any(tech_word in sent.lower() for tech_word in technical_terms):
+            if 40 < len(sent) < 250 and sent not in summary:
+                return f"{summary} {sent}."
+    
+    return summary
+
+
 def generate_chapter_summary(chapter_pages: List[Dict[str, Any]], 
                             chapter_title: str,
                             keywords: List[str],
@@ -317,83 +453,37 @@ def generate_chapter_summary(chapter_pages: List[Dict[str, Any]],
     - Identified concepts
     - First few pages of content
     """
-    # Get sample text from first 5 pages for better analysis
-    sample_text = ""
-    for page in chapter_pages[:5]:
-        sample_text += page.get('content', '') + " "
+    # Extract sample text from first pages
+    sample_text = _extract_sample_text(chapter_pages, num_pages=5)
     
-    # Extract meaningful sentences from the actual content
-    sentences = re.split(r'[.!?]+\s+', sample_text)
-    meaningful_sentences = []
+    # Find introductory sentences
+    meaningful_sentences = _find_introductory_sentences(sample_text, max_sentences=20)
     
-    for sent in sentences[:20]:  # Check first 20 sentences
-        sent = sent.strip()
-        # Look for sentences that introduce topics (common patterns)
-        if any(marker in sent.lower() for marker in [
-            'this chapter', 'we will', 'you will learn', 'introduces',
-            'covers', 'discusses', 'explores', 'examines', 'provides',
-            'focuses on', 'presents', 'demonstrates', 'explains'
-        ]):
-            if 30 < len(sent) < 300:  # Reasonable length
-                meaningful_sentences.append(sent)
-    
-    # Build summary
+    # Build summary parts
     summary_parts = []
     
     # Use meaningful sentence if found
     if meaningful_sentences:
         summary_parts.append(meaningful_sentences[0])
     else:
-        # Fallback: describe based on title
         summary_parts.append(f"This chapter covers {chapter_title.lower()}.")
     
-    # Add concepts if we found good ones
-    if concepts:
-        # Take top 3 most relevant concepts
-        top_concepts = [c for c in concepts[:3] if len(c) > 3]
-        if top_concepts:
-            concept_str = ', '.join(top_concepts[:2])
-            if len(top_concepts) > 2:
-                concept_str += f', and {top_concepts[2]}'
-            summary_parts.append(f"Key topics include {concept_str}.")
+    # Add concept summary
+    concept_summary = _build_concept_summary(concepts)
+    if concept_summary:
+        summary_parts.append(concept_summary)
     
-    # Add technical details from keywords
-    if keywords:
-        # Identify implementation vs conceptual keywords
-        impl_keywords = [k for k in keywords[:10] if k in [
-            'class', 'function', 'method', 'decorator', 'generator',
-            'iterator', 'lambda', 'comprehension'
-        ]]
-        concept_keywords = [k for k in keywords[:10] if k in [
-            'exception', 'inheritance', 'testing', 'debugging',
-            'pattern', 'architecture', 'design', 'api'
-        ]]
-        
-        keyword_details = []
-        if impl_keywords:
-            keyword_details.append(', '.join(impl_keywords[:2]))
-        if concept_keywords:
-            keyword_details.append(', '.join(concept_keywords[:2]))
-        
-        if keyword_details and len(summary_parts) < 3:
-            summary_parts.append(f"Covers {', '.join(keyword_details)}.")
+    # Add keyword-based summary if needed
+    keyword_summary = _build_keyword_summary(keywords, len(summary_parts))
+    if keyword_summary:
+        summary_parts.append(keyword_summary)
     
     # Combine summary parts
     summary = ' '.join(summary_parts)
     
-    # If summary is still too short or generic, add more context from actual text
-    if len(summary) < 150 and sample_text:
-        # Find sentences with technical content
-        for sent in sentences[1:15]:
-            sent = sent.strip()
-            # Look for sentences with code-related words
-            if any(tech_word in sent.lower() for tech_word in [
-                'python', 'code', 'program', 'syntax', 'variable',
-                'function', 'class', 'method', 'object', 'data'
-            ]):
-                if 40 < len(sent) < 250 and sent not in summary:
-                    summary += f" {sent}."
-                    break
+    # Add technical context if needed
+    sentences = re.split(r'[.!?]+\s+', sample_text)
+    summary = _add_technical_context(summary, sentences, sample_text)
     
     return summary[:600]  # Limit to 600 chars for reasonable length
 
@@ -407,12 +497,17 @@ def load_book_json(book_name: str) -> Dict[str, Any]:
         return json.load(f)
 
 
-def process_chapter_metadata(book_name: str, chapter: Dict[str, Any], 
+def process_chapter_metadata(_book_name: str, chapter: Dict[str, Any], 
                             book_data: Dict[str, Any]) -> Dict[str, Any]:
     """
     Process a single chapter and extract metadata.
     
     Returns updated chapter dict with summary, keywords, and concepts.
+    
+    Args:
+        _book_name: Book name (reserved for future use)
+        chapter: Chapter dictionary with metadata
+        book_data: Full book data with pages
     """
     chapter_num = chapter['chapter_number']
     start_page = chapter['start_page']
@@ -429,7 +524,7 @@ def process_chapter_metadata(book_name: str, chapter: Dict[str, Any],
             chapter_pages.append(page)
     
     if not chapter_pages:
-        print(f"    ⚠️  No pages found for this chapter range")
+        print("    ⚠️  No pages found for this chapter range")
         # Return chapter with empty metadata
         return {
             **chapter,
@@ -517,14 +612,14 @@ def main():
     with open(cache_path, 'w') as f:
         json.dump(cache, f, indent=2)
     
-    print(f"\n✅ SUCCESS!")
+    print("\n✅ SUCCESS!")
     print(f"   Processed {books_processed} books")
     print(f"   Updated {chapters_processed} chapters")
     print(f"   Saved to: {cache_path}")
-    print(f"\nAll chapters now have:")
-    print(f"  - summary (2-3 sentence overview)")
-    print(f"  - keywords (technical terms, max 15)")
-    print(f"  - concepts (key topics discussed, max 10)")
+    print("\nAll chapters now have:")
+    print("  - summary (2-3 sentence overview)")
+    print("  - keywords (technical terms, max 15)")
+    print("  - concepts (key topics discussed, max 10)")
 
 
 if __name__ == "__main__":

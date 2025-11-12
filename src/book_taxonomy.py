@@ -14,7 +14,7 @@ Architecture:
 """
 
 from dataclasses import dataclass
-from typing import List, Set, Dict, Optional
+from typing import List, Set, Dict
 from enum import Enum
 
 

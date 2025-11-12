@@ -8,7 +8,6 @@ import os
 import pytest
 from pathlib import Path
 from config.settings import (
-    Settings,
     LLMConfig,
     TaxonomyConfig,
     PromptConstraints,

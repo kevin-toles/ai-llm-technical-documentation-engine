@@ -28,16 +28,13 @@ ENGINEERING PRACTICES:
 - Functional composition (Fluent Python Ch. 7)
 """
 
-from dataclasses import dataclass, field, asdict
-from typing import Protocol, List, Dict, Set, Optional, Any, Tuple
-from pathlib import Path
+from dataclasses import dataclass, field
+from typing import List, Dict, Optional, Any
 from enum import Enum, auto
 import json
-from collections import defaultdict
 
 # Import our metadata extraction system
 from .metadata_extraction_system import (
-    MetadataServiceFactory,
     MetadataExtractionService,
     BookMetadata,
     ConceptMatch
@@ -45,10 +42,8 @@ from .metadata_extraction_system import (
 
 # Import book taxonomy for intelligent cascading selection
 try:
+    # Import module-level items that are used throughout
     from .book_taxonomy import (
-        get_recommended_books,
-        get_cascading_books,
-        score_books_for_concepts,
         BOOK_REGISTRY,
         BookTier
     )

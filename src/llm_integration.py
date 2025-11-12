@@ -37,11 +37,13 @@ except ImportError:
 print("[llm_integration] Basic imports done", flush=True)
 
 # Try to import LLM clients
+# Note: openai client is currently unused (commented out in legacy code)
+# Keeping OPENAI_AVAILABLE flag for potential future use
 try:
-    print("[llm_integration] Attempting openai import...", flush=True)
-    import openai
+    print("[llm_integration] Checking openai availability...", flush=True)
+    import openai  # noqa: F401
     OPENAI_AVAILABLE = True
-    print("[llm_integration] openai imported successfully", flush=True)
+    print("[llm_integration] openai available", flush=True)
 except ImportError:
     print("[llm_integration] openai not available", flush=True)
     OPENAI_AVAILABLE = False

@@ -11,8 +11,7 @@ Tests that all Sprint 1 components work together:
 Per REFACTORING_PLAN.md Sprint 1 requirements.
 """
 
-import pytest
-from unittest.mock import Mock, MagicMock
+from unittest.mock import Mock
 
 # Import Sprint 1 components
 from src.llm_integration import (

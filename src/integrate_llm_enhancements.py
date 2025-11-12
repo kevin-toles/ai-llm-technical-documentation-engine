@@ -21,7 +21,7 @@ import os
 import logging
 import traceback
 from pathlib import Path
-from typing import Dict, List, Tuple, Any, Optional
+from typing import Dict, List, Tuple, Optional
 from datetime import datetime
 
 # Load environment variables
@@ -68,10 +68,9 @@ except ImportError as e:
 # Import new interactive system (V3 with hybrid prompt quality enforcement)
 # UPDATED: Now using TwoPhaseOrchestrator from refactored phases package
 try:
-    from .metadata_extraction_system import MetadataServiceFactory, MetadataExtractionService
+    from .metadata_extraction_system import MetadataServiceFactory
     # REFACTORED: Use TwoPhaseOrchestrator instead of AnalysisOrchestrator
     from .phases import TwoPhaseOrchestrator
-    from .interactive_llm_system_v3_hybrid_prompt import ScholarlyAnnotation
     INTERACTIVE_SYSTEM_AVAILABLE = True
     logger.info("✓ Interactive system loaded successfully (using TwoPhaseOrchestrator)")
 except ImportError as e:
@@ -659,11 +658,9 @@ def main():
     consecutive_failures = 0
     MAX_CONSECUTIVE_FAILURES = 3
     
-    for chapter_num in all_chapters:
-    
     # If we get here, all critical checks passed!
     print("\n✅ ALL CRITICAL CHECKS PASSED")
-    print(f"� Proceeding with full enhancement of {len(all_chapters)} chapters...")
+    print(f"📋 Proceeding with full enhancement of {len(all_chapters)} chapters...")
     logger.info("✅ ALL CRITICAL CHECKS PASSED - Proceeding with full enhancement")
     
     user_confirm = input(f"\n⚠️  This will make ~{len(all_chapters) * 2} API calls (~{len(all_chapters) * 60_000} tokens). Continue? [y/N]: ")

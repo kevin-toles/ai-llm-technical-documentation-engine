@@ -4,9 +4,9 @@ Tests for LLM provider abstraction.
 
 import os
 import pytest
-from unittest.mock import Mock, patch, MagicMock
+from unittest.mock import Mock, patch
 
-from src.providers import LLMProvider, LLMResponse, LLMError, AnthropicProvider
+from src.providers import LLMResponse, LLMError, AnthropicProvider
 
 
 class TestLLMResponse:

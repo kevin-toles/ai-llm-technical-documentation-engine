@@ -17,12 +17,10 @@ ENGINEERING PRACTICES (from Engineering books):
 """
 
 from dataclasses import dataclass, field
-from typing import Protocol, List, Dict, Set, Optional, Iterator, Any
+from typing import Protocol, List, Dict, Set, Optional, Any
 from pathlib import Path
-from abc import ABC, abstractmethod
 import json
 from collections import defaultdict
-from contextlib import contextmanager
 
 # ============================================================================
 # DOMAIN MODELS (DDD - Domain-Driven Design)

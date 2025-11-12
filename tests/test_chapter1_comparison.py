@@ -47,7 +47,7 @@ def verify_sprint1_ready():
         from src.llm_integration import (
             FinishReason,
             _validate_json_response,
-            _handle_truncated_response
+            _handle_truncated_response  # noqa: F401 (Used in test verification below)
         )
         from src.interactive_llm_system_v3_hybrid_prompt import (
             _extract_concepts_from_text,

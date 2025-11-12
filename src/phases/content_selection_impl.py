@@ -27,7 +27,7 @@ from metadata_extraction_system import (
 )
 
 try:
-    from book_taxonomy import (
+    from book_taxonomy import (  # noqa: F401 (Used in _get_recommended_books_from_taxonomy and other methods)
         get_recommended_books,
         get_cascading_books,
         score_books_for_concepts,

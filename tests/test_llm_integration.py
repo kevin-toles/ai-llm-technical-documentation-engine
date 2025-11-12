@@ -11,8 +11,7 @@ Following TDD: Tests written BEFORE implementation.
 
 import json
 import pytest
-from typing import Tuple, Optional
-from unittest.mock import Mock, patch, MagicMock
+from unittest.mock import patch
 
 # Note: Import will fail until we implement the functions
 # This is expected in TDD - write tests first, then make them pass

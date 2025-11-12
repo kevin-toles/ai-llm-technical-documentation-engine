@@ -3,10 +3,7 @@ Tests for caching layer.
 """
 
 import pytest
-import json
 import time
-from pathlib import Path
-from unittest.mock import Mock, patch
 
 from src.cache import ChapterCache, CacheEntry
 

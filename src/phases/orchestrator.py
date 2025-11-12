@@ -13,7 +13,6 @@ from typing import List, Any, TYPE_CHECKING
 if TYPE_CHECKING:
     # Type hints only - not imported at runtime
     from ..interactive_llm_system_v3_hybrid_prompt import (
-        AnalysisOrchestrator,
         ScholarlyAnnotation
     )
 
@@ -41,7 +40,6 @@ def _get_legacy_classes():
             interactive_llm_system_v3_hybrid_prompt.ScholarlyAnnotation
         )
 
-from config.settings import settings
 
 
 class TwoPhaseOrchestrator:

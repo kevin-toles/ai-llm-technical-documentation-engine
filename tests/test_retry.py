@@ -3,8 +3,7 @@ Tests for retry logic.
 """
 
 import pytest
-import time
-from unittest.mock import Mock, patch
+from unittest.mock import Mock
 
 from src.retry import (
     RetryConfig,
