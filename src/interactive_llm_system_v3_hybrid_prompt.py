@@ -232,6 +232,135 @@ class ScholarlyAnnotation:
 
 
 # ============================================================================
+# SPRINT 1: TAXONOMY PRE-FILTERING FUNCTIONS
+# Per REFACTORING_PLAN.md section 1.2
+# ============================================================================
+
+def _extract_concepts_from_text(text: str) -> List[str]:
+    """Extract key programming concepts from chapter text.
+    
+    Per REFACTORING_PLAN.md section 1.2:
+    - Identifies Python-specific terms (decorators, generators, etc.)
+    - Extracts design patterns mentioned
+    - Captures architecture concepts
+    - Extracts capitalized terms (proper nouns/concepts)
+    
+    Args:
+        text: Chapter or guideline text to analyze
+        
+    Returns:
+        List of extracted concept strings
+        
+    Example:
+        >>> text = "This chapter covers decorators and generators."
+        >>> _extract_concepts_from_text(text)
+        ['decorator', 'decorators', 'generator', 'generators']
+    """
+    if not text:
+        return []
+    
+    import re
+    
+    # Keyword-based concept extraction
+    concept_keywords = [
+        # Python-specific
+        "decorator", "generator", "context manager", "metaclass",
+        "async", "await", "coroutine", "iterator", "comprehension",
+        "lambda", "closure", "descriptor", "property", "classmethod",
+        "staticmethod", "abstract", "protocol", "generic", "type hint",
+        
+        # Design patterns
+        "factory", "singleton", "observer", "strategy", "adapter",
+        "decorator pattern", "facade", "proxy", "builder", "prototype",
+        "command", "iterator", "template", "state", "visitor",
+        
+        # Architecture
+        "microservice", "api", "rest", "graphql", "gateway",
+        "repository", "service", "domain", "entity", "aggregate",
+        "event", "message", "queue", "cache", "ddd",
+        "architecture", "pattern", "solid", "dry", "testing",
+        
+        # Data structures & algorithms
+        "list", "dict", "set", "tuple", "array", "hash", "tree",
+        "graph", "algorithm", "data structure"
+    ]
+    
+    text_lower = text.lower()
+    found_concepts = [kw for kw in concept_keywords if kw in text_lower]
+    
+    # Also extract capitalized terms (likely proper nouns/concepts)
+    # Match: Single capitalized word or multiple capitalized words (e.g., "Domain Driven Design")
+    capitalized = re.findall(r'\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+)*\b', text)
+    
+    # Limit capitalized terms to avoid noise (max 10 per plan)
+    return found_concepts + capitalized[:10]
+
+
+def _prefilter_books_by_taxonomy(
+    orchestrator,
+    guideline_text: str,
+    max_books: int = 10
+) -> List[str]:
+    """Pre-filter books using taxonomy before sending to LLM.
+    
+    Per REFACTORING_PLAN.md section 1.2:
+    - Reduces token usage by ~40% by filtering books before Phase 1
+    - Uses book_taxonomy.py scoring for intelligent selection
+    - Matches books to extracted concepts from guideline text
+    
+    Args:
+        orchestrator: AnalysisOrchestrator instance with metadata_service
+        guideline_text: Text to extract concepts from
+        max_books: Maximum number of books to return
+        
+    Returns:
+        List of book titles (strings) to include in LLM analysis
+        
+    Example:
+        >>> books = _prefilter_books_by_taxonomy(
+        ...     orchestrator,
+        ...     "This chapter covers decorators",
+        ...     max_books=5
+        ... )
+        >>> "Fluent Python 2nd" in books
+        True
+    """
+    # Extract concepts from the guideline text
+    concepts = _extract_concepts_from_text(guideline_text)
+    concept_set = set(concepts)
+    
+    # Use book_taxonomy to score and rank books
+    try:
+        # Import book_taxonomy scoring function
+        from .book_taxonomy import score_books_for_concepts, ALL_BOOKS
+        
+        # If no concepts found, return top-ranked books by default
+        if not concept_set:
+            # Return first N books from ALL_BOOKS as fallback
+            return [book.book_name for book in ALL_BOOKS[:max_books]]
+        
+        # Score all books based on concept relevance
+        scored_books = score_books_for_concepts(concept_set)
+        
+        # Take top N books
+        top_books = [book_name for book_name, score in scored_books[:max_books]]
+        
+        return top_books
+        
+    except Exception as e:
+        # Fallback: Return all books if taxonomy scoring fails
+        print(f"Warning: Taxonomy scoring failed ({e}), using all books")
+        
+        # Get all book titles from metadata service
+        if hasattr(orchestrator, '_metadata_service'):
+            metadata = orchestrator._metadata_service.books_metadata
+            all_titles = [meta.get('title', '') for meta in metadata.values()]
+            return all_titles[:max_books]
+        
+        return []
+
+
+# ============================================================================
 # ORCHESTRATOR - Two-Phase Analysis Workflow
 # From: Microservice APIs Ch. 6 - Request/Response Patterns
 #       Building Microservices Ch. 4 - Orchestration
