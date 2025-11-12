@@ -36,6 +36,44 @@ cp .env.example .env
 # Edit .env and add your ANTHROPIC_API_KEY
 ```
 
+### Configuration
+
+The system uses a hybrid **`.env` + Python dataclasses** configuration approach:
+
+```bash
+# .env file (edit this)
+ANTHROPIC_API_KEY=your-api-key-here
+ANTHROPIC_MODEL=claude-sonnet-4-5-20250929
+LLM_MAX_TOKENS=8192
+TAXONOMY_MAX_BOOKS=10
+CACHE_ENABLED=true
+```
+
+All settings are documented in `.env.example`. Configuration is:
+- **Type-safe**: Python dataclasses provide validation and IDE autocomplete
+- **Secure**: API keys in `.env` (gitignored, never committed)
+- **Flexible**: Override any setting via environment variables
+
+#### Viewing Current Configuration
+
+```bash
+# Display all settings
+python3 -c "from config.settings import settings; settings.display()"
+```
+
+#### Configuration in Code
+
+```python
+from config.settings import settings
+
+# Type-safe access with autocomplete
+max_tokens = settings.llm.max_tokens
+cache_enabled = settings.cache.enabled
+min_relevance = settings.taxonomy.min_relevance
+```
+
+See `examples/config_usage.py` for more examples.
+
 ### Usage
 
 ```bash

@@ -66,15 +66,18 @@ except ImportError as e:
     logger.error(f"✗ LLM integration failed to load: {e}")
 
 # Import new interactive system (V3 with hybrid prompt quality enforcement)
+# UPDATED: Now using TwoPhaseOrchestrator from refactored phases package
 try:
     from .metadata_extraction_system import MetadataServiceFactory, MetadataExtractionService
-    from interactive_llm_system_v3_hybrid_prompt import AnalysisOrchestrator, ScholarlyAnnotation
+    # REFACTORED: Use TwoPhaseOrchestrator instead of AnalysisOrchestrator
+    from .phases import TwoPhaseOrchestrator
+    from .interactive_llm_system_v3_hybrid_prompt import ScholarlyAnnotation
     INTERACTIVE_SYSTEM_AVAILABLE = True
-    logger.info("✓ Interactive system loaded successfully")
+    logger.info("✓ Interactive system loaded successfully (using TwoPhaseOrchestrator)")
 except ImportError as e:
     INTERACTIVE_SYSTEM_AVAILABLE = False
     logger.error(f"✗ Interactive system failed to load: {e}")
-    print("Warning: Interactive system not available, will use fallback")
+    print(f"Warning: Interactive system not available, will use fallback: {e}")
 
 # Global orchestrator (singleton pattern for efficiency)
 _orchestrator = None
@@ -83,22 +86,24 @@ REPO_ROOT = Path(__file__).parent.parent.parent
 GUIDELINES_FILE = REPO_ROOT / "Python_References" / "PYTHON_GUIDELINES" / "PYTHON_GUIDELINES_Learning_Python_Ed6.md"
 JSON_DIR = REPO_ROOT / "Python_References" / "Textbooks_JSON"
 
-def get_or_create_orchestrator() -> Optional[AnalysisOrchestrator]:
+def get_or_create_orchestrator() -> Optional[TwoPhaseOrchestrator]:
     """Get or create the global orchestrator instance (singleton pattern).
     
     Pattern: Singleton (Python Essential Reference Ch. 7)
     Ensures we only initialize the metadata service once for efficiency.
+    
+    UPDATED: Now returns TwoPhaseOrchestrator (Sprint 1 Day 1-2 refactoring)
     """
     global _orchestrator
     
     if _orchestrator is None and INTERACTIVE_SYSTEM_AVAILABLE:
-        logger.info("Initializing interactive metadata-first analysis system...")
-        print("Initializing interactive metadata-first analysis system...")
+        logger.info("Initializing two-phase orchestrator (refactored architecture)...")
+        print("Initializing two-phase orchestrator...")
         try:
             metadata_service = MetadataServiceFactory.create_default()
-            _orchestrator = AnalysisOrchestrator(metadata_service)
-            logger.info("✓ Orchestrator initialized successfully")
-            print("✓ System ready")
+            _orchestrator = TwoPhaseOrchestrator(metadata_service)
+            logger.info("✓ TwoPhaseOrchestrator initialized successfully")
+            print("✓ System ready (using refactored architecture)")
         except Exception as e:
             logger.error(f"✗ Failed to initialize orchestrator: {e}")
             logger.debug(traceback.format_exc())
