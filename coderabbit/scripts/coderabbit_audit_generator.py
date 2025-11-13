@@ -8,7 +8,6 @@ import json
 import os
 from datetime import datetime
 from collections import defaultdict
-from operator import itemgetter
 
 def extract_service_name(file_path):
     """Extract component name from file path"""

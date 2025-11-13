@@ -184,6 +184,151 @@ def extract_keywords_from_text(text: str, max_keywords: int = 15) -> List[str]:
     return [kw[0] for kw in found_keywords[:max_keywords]]
 
 
+# Comprehensive list of technical concept patterns to detect
+CONCEPT_PATTERNS = [
+    # OOP Concepts
+    r'\b(object[- ]oriented programming)\b',
+    r'\b(class hierarchy)\b',
+    r'\b(inheritance)\b',
+    r'\b(polymorphism)\b',
+    r'\b(encapsulation)\b',
+    r'\b(multiple inheritance)\b',
+    r'\b(method resolution order)\b',
+    r'\b(abstract base class[es]*)\b',
+    
+    # Functional Programming
+    r'\b(functional programming)\b',
+    r'\b(higher[- ]order function[s]*)\b',
+    r'\b(first[- ]class function[s]*)\b',
+    r'\b(closure[s]*)\b',
+    r'\b(lambda function[s]*)\b',
+    
+    # Python Features
+    r'\b(list comprehension[s]*)\b',
+    r'\b(dict comprehension[s]*)\b',
+    r'\b(generator expression[s]*)\b',
+    r'\b(generator[s]*)\b',
+    r'\b(iterator[s]*)\b',
+    r'\b(decorator[s]*)\b',
+    r'\b(decorator pattern[s]*)\b',
+    r'\b(context manager[s]*)\b',
+    r'\b(special method[s]*)\b',
+    r'\b(magic method[s]*)\b',
+    r'\b(dunder method[s]*)\b',
+    r'\b(data model)\b',
+    r'\b(type hint[s]*)\b',
+    r'\b(type annotation[s]*)\b',
+    r'\b(duck typing)\b',
+    r'\b(dynamic typing)\b',
+    
+    # Async/Concurrency
+    r'\b(async[/ ]await)\b',
+    r'\b(coroutine[s]*)\b',
+    r'\b(asynchronous programming)\b',
+    r'\b(concurrency)\b',
+    r'\b(parallel processing)\b',
+    r'\b(threading)\b',
+    r'\b(multiprocessing)\b',
+    
+    # Architecture/Design
+    r'\b(design pattern[s]*)\b',
+    r'\b(architectural pattern[s]*)\b',
+    r'\b(dependency injection)\b',
+    r'\b(microservice[s]*)\b',
+    r'\b(service[- ]oriented architecture)\b',
+    r'\b(api design)\b',
+    r'\b(rest[ful]* api[s]*)\b',
+    r'\b(repository pattern)\b',
+    r'\b(factory pattern)\b',
+    r'\b(singleton pattern)\b',
+    
+    # Data Structures
+    r'\b(data structure[s]*)\b',
+    r'\b(linked list[s]*)\b',
+    r'\b(hash table[s]*)\b',
+    r'\b(binary tree[s]*)\b',
+    r'\b(graph[s]*)\b',
+    r'\b(queue[s]*)\b',
+    r'\b(stack[s]*)\b',
+    
+    # Testing/Debugging
+    r'\b(unit test[s]*)\b',
+    r'\b(integration test[s]*)\b',
+    r'\b(test[- ]driven development)\b',
+    r'\b(debugging)\b',
+    r'\b(profiling)\b',
+    
+    # Error Handling
+    r'\b(exception handling)\b',
+    r'\b(error handling)\b',
+    r'\b(exception[s]*)\b',
+    r'\b(try[- ]except)\b',
+    
+    # I/O and Data
+    r'\b(file handling)\b',
+    r'\b(file i[/]o)\b',
+    r'\b(input[/ ]output)\b',
+    r'\b(serialization)\b',
+    r'\b(deserialization)\b',
+    r'\b(json parsing)\b',
+    r'\b(xml processing)\b',
+    
+    # String/Text
+    r'\b(string manipulation)\b',
+    r'\b(regular expression[s]*)\b',
+    r'\b(text processing)\b',
+    r'\b(string formatting)\b',
+    
+    # Modules/Packages
+    r'\b(module[s]*)\b',
+    r'\b(package[s]*)\b',
+    r'\b(import system)\b',
+    r'\b(namespace[s]*)\b',
+]
+
+
+def _find_pattern_matches(text_lower: str) -> List[Tuple[str, int]]:
+    """Find all concept pattern matches in text."""
+    concept_counts = []
+    for pattern in CONCEPT_PATTERNS:
+        matches = re.findall(pattern, text_lower, re.IGNORECASE)
+        if matches:
+            concept = matches[0] if isinstance(matches[0], str) else matches[0][0]
+            count = len(matches)
+            if count >= 1:
+                concept_counts.append((concept.strip(), count))
+    return concept_counts
+
+
+def _extract_noun_phrases(text: str, existing_concepts: List[Tuple[str, int]]) -> List[Tuple[str, int]]:
+    """Extract noun phrases as fallback when few concepts found."""
+    noun_phrases = re.findall(r'\b([A-Z][a-z]+(?:\s+[a-z]+){0,2})\b', text)
+    phrase_counter = Counter(noun_phrases)
+    
+    additional_concepts = []
+    for phrase, count in phrase_counter.most_common(15):
+        if count >= 2 and len(phrase) > 3:
+            if not any(phrase.lower() in c[0].lower() for c in existing_concepts):
+                additional_concepts.append((phrase.lower(), count))
+    
+    return additional_concepts
+
+
+def _deduplicate_concepts(concept_counts: List[Tuple[str, int]], max_concepts: int) -> List[str]:
+    """Remove duplicates and return top concepts."""
+    concept_counts.sort(key=lambda x: x[1], reverse=True)
+    
+    seen = set()
+    unique_concepts = []
+    for concept, _count in concept_counts:
+        concept_clean = concept.strip().lower()
+        if concept_clean not in seen:
+            seen.add(concept_clean)
+            unique_concepts.append(concept)
+    
+    return unique_concepts[:max_concepts]
+
+
 def extract_concepts_from_text(text: str, max_concepts: int = 10) -> List[str]:
     """
     Extract key concepts discussed in the chapter.
@@ -192,146 +337,14 @@ def extract_concepts_from_text(text: str, max_concepts: int = 10) -> List[str]:
     """
     text_lower = text.lower()
     
-    # Extended list of multi-word concepts to search for
-    concept_patterns = [
-        # OOP Concepts
-        r'\b(object[- ]oriented programming)\b',
-        r'\b(class hierarchy)\b',
-        r'\b(inheritance)\b',
-        r'\b(polymorphism)\b',
-        r'\b(encapsulation)\b',
-        r'\b(multiple inheritance)\b',
-        r'\b(method resolution order)\b',
-        r'\b(abstract base class[es]*)\b',
-        
-        # Functional Programming
-        r'\b(functional programming)\b',
-        r'\b(higher[- ]order function[s]*)\b',
-        r'\b(first[- ]class function[s]*)\b',
-        r'\b(closure[s]*)\b',
-        r'\b(lambda function[s]*)\b',
-        
-        # Python Features
-        r'\b(list comprehension[s]*)\b',
-        r'\b(dict comprehension[s]*)\b',
-        r'\b(generator expression[s]*)\b',
-        r'\b(generator[s]*)\b',
-        r'\b(iterator[s]*)\b',
-        r'\b(decorator[s]*)\b',
-        r'\b(decorator pattern[s]*)\b',
-        r'\b(context manager[s]*)\b',
-        r'\b(special method[s]*)\b',
-        r'\b(magic method[s]*)\b',
-        r'\b(dunder method[s]*)\b',
-        r'\b(data model)\b',
-        r'\b(type hint[s]*)\b',
-        r'\b(type annotation[s]*)\b',
-        r'\b(duck typing)\b',
-        r'\b(dynamic typing)\b',
-        
-        # Async/Concurrency
-        r'\b(async[/ ]await)\b',
-        r'\b(coroutine[s]*)\b',
-        r'\b(asynchronous programming)\b',
-        r'\b(concurrency)\b',
-        r'\b(parallel processing)\b',
-        r'\b(threading)\b',
-        r'\b(multiprocessing)\b',
-        
-        # Architecture/Design
-        r'\b(design pattern[s]*)\b',
-        r'\b(architectural pattern[s]*)\b',
-        r'\b(dependency injection)\b',
-        r'\b(microservice[s]*)\b',
-        r'\b(service[- ]oriented architecture)\b',
-        r'\b(api design)\b',
-        r'\b(rest[ful]* api[s]*)\b',
-        r'\b(repository pattern)\b',
-        r'\b(factory pattern)\b',
-        r'\b(singleton pattern)\b',
-        
-        # Data Structures
-        r'\b(data structure[s]*)\b',
-        r'\b(linked list[s]*)\b',
-        r'\b(hash table[s]*)\b',
-        r'\b(binary tree[s]*)\b',
-        r'\b(graph[s]*)\b',
-        r'\b(queue[s]*)\b',
-        r'\b(stack[s]*)\b',
-        
-        # Testing/Debugging
-        r'\b(unit test[s]*)\b',
-        r'\b(integration test[s]*)\b',
-        r'\b(test[- ]driven development)\b',
-        r'\b(debugging)\b',
-        r'\b(profiling)\b',
-        
-        # Error Handling
-        r'\b(exception handling)\b',
-        r'\b(error handling)\b',
-        r'\b(exception[s]*)\b',
-        r'\b(try[- ]except)\b',
-        
-        # I/O and Data
-        r'\b(file handling)\b',
-        r'\b(file i[/]o)\b',
-        r'\b(input[/ ]output)\b',
-        r'\b(serialization)\b',
-        r'\b(deserialization)\b',
-        r'\b(json parsing)\b',
-        r'\b(xml processing)\b',
-        
-        # String/Text
-        r'\b(string manipulation)\b',
-        r'\b(regular expression[s]*)\b',
-        r'\b(text processing)\b',
-        r'\b(string formatting)\b',
-        
-        # Modules/Packages
-        r'\b(module[s]*)\b',
-        r'\b(package[s]*)\b',
-        r'\b(import system)\b',
-        r'\b(namespace[s]*)\b',
-    ]
+    # Find pattern-based concepts
+    concept_counts = _find_pattern_matches(text_lower)
     
-    # Find all concept matches
-    concept_counts = []
-    for pattern in concept_patterns:
-        matches = re.findall(pattern, text_lower, re.IGNORECASE)
-        if matches:
-            # Get the matched text (first capture group)
-            concept = matches[0] if isinstance(matches[0], str) else matches[0][0]
-            count = len(matches)
-            # Lower threshold - include if mentioned even once
-            if count >= 1:
-                concept_counts.append((concept.strip(), count))
-    
-    # If we found very few concepts, extract noun phrases as fallback
+    # Fallback to noun phrases if few concepts found
     if len(concept_counts) < 3:
-        # Extract important-looking noun phrases
-        # Pattern: Capitalized Word + optional lowercase words
-        noun_phrases = re.findall(r'\b([A-Z][a-z]+(?:\s+[a-z]+){0,2})\b', text)
-        phrase_counter = Counter(noun_phrases)
-        
-        for phrase, count in phrase_counter.most_common(15):
-            if count >= 2 and len(phrase) > 3:
-                # Don't add if it's already in concepts
-                if not any(phrase.lower() in c[0].lower() for c in concept_counts):
-                    concept_counts.append((phrase.lower(), count))
+        concept_counts.extend(_extract_noun_phrases(text, concept_counts))
     
-    # Sort by frequency
-    concept_counts.sort(key=lambda x: x[1], reverse=True)
-    
-    # Remove duplicates and return top concepts
-    seen = set()
-    unique_concepts = []
-    for concept, count in concept_counts:
-        concept_clean = concept.strip().lower()
-        if concept_clean not in seen:
-            seen.add(concept_clean)
-            unique_concepts.append(concept)
-    
-    return unique_concepts[:max_concepts]
+    return _deduplicate_concepts(concept_counts, max_concepts)
 
 
 def _extract_sample_text(chapter_pages: List[Dict[str, Any]], num_pages: int = 5) -> str:

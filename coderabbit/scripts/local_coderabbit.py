@@ -131,6 +131,42 @@ class LocalCodeRabbitAnalyzer:
         
         return issues
     
+    def _create_complexity_issue(self, file_path: str, metric: Dict) -> Optional[Dict]:
+        """Create a complexity issue from a single metric."""
+        complexity_score = metric.get('complexity', 0)
+        
+        if not isinstance(complexity_score, (int, float)) or complexity_score <= 10:
+            return None
+        
+        return {
+            'tool': 'radon',
+            'type': 'complexity',
+            'severity': 'high' if complexity_score > 15 else 'medium',
+            'file': file_path,
+            'line': metric.get('lineno', 1),
+            'message': f"High complexity: {complexity_score} (threshold: 10)",
+            'rule': 'complexity',
+            'complexity': complexity_score
+        }
+
+    def _parse_radon_metrics(self, complexity_data: Dict) -> List[Dict]:
+        """Parse radon complexity metrics into issues list."""
+        issues = []
+        
+        for file_path, metrics in complexity_data.items():
+            if not isinstance(metrics, list):
+                continue
+                
+            for metric in metrics:
+                if not isinstance(metric, dict) or 'complexity' not in metric:
+                    continue
+                
+                issue = self._create_complexity_issue(file_path, metric)
+                if issue:
+                    issues.append(issue)
+        
+        return issues
+
     def run_complexity_analysis(self) -> List[Dict]:
         """Run complexity analysis using radon"""
         print("🧮 Running complexity analysis...")
@@ -140,38 +176,19 @@ class LocalCodeRabbitAnalyzer:
                 'radon', 'cc', '.', '-j', '--exclude=__pycache__,.git,venv,env'
             ], capture_output=True, text=True)
             
-            if result.returncode == 0 and result.stdout.strip():
-                try:
-                    complexity_data = json.loads(result.stdout)
-                    issues = []
-                    
-                    for file_path, metrics in complexity_data.items():
-                        if isinstance(metrics, list):
-                            for metric in metrics:
-                                if isinstance(metric, dict) and 'complexity' in metric:
-                                    complexity_score = metric.get('complexity', 0)
-                                    if isinstance(complexity_score, (int, float)) and complexity_score > 10:
-                                        issues.append({
-                                            'tool': 'radon',
-                                            'type': 'complexity',
-                                            'severity': 'high' if complexity_score > 15 else 'medium',
-                                            'file': file_path,
-                                            'line': metric.get('lineno', 1),
-                                            'message': f"High complexity: {complexity_score} (threshold: 10)",
-                                            'rule': 'complexity',
-                                            'complexity': complexity_score
-                                        })
-                    
-                    return issues
-                except json.JSONDecodeError:
-                    print("⚠️  Radon output parsing failed")
-                    return []
+            if result.returncode != 0 or not result.stdout.strip():
+                return []
+            
+            try:
+                complexity_data = json.loads(result.stdout)
+                return self._parse_radon_metrics(complexity_data)
+            except json.JSONDecodeError:
+                print("⚠️  Radon output parsing failed")
+                return []
                 
         except FileNotFoundError:
             print("⚠️  Radon not installed. Install with: pip install radon")
             return []
-        
-        return []
     
     def run_type_checking(self) -> List[Dict]:
         """Run type checking using mypy"""

@@ -593,6 +593,117 @@ def _test_first_chapter(orchestrator, chapters_content: str, test_chapter_num: i
         return 1
 
 
+def _process_single_chapter(chapter_num: int, chapters_content: str, companion_data: Dict,
+                           all_chapters: List[int]) -> Tuple[Optional[str], bool]:
+    """
+    Process a single chapter with LLM enhancement.
+    
+    Returns:
+        (enhanced_chapter, success_flag) tuple
+    """
+    print(f"\n{'='*70}")
+    print(f"[Chapter {chapter_num}/{all_chapters[-1]}] Enhancing...")
+    print(f"{'='*70}")
+    logger.info(f"{'='*70}")
+    logger.info(f"Processing Chapter {chapter_num}/{all_chapters[-1]}")
+    logger.info(f"{'='*70}")
+    
+    # Extract individual chapter
+    chapter_pattern = rf'(## Chapter {chapter_num}:.*?)(?=## Chapter {chapter_num + 1}:|$)'
+    chapter_match = re.search(chapter_pattern, chapters_content, re.DOTALL)
+    
+    if not chapter_match:
+        logger.warning(f"  Could not find Chapter {chapter_num}")
+        print(f"  Warning: Could not find Chapter {chapter_num}")
+        return None, False
+    
+    chapter_content = chapter_match.group(1)
+    
+    try:
+        # Enhance summary
+        logger.info(f"  Enhancing summary for Chapter {chapter_num}...")
+        print("  Enhancing summary...")
+        enhanced_chapter = enhance_chapter_summary_with_llm(chapter_content, chapter_num)
+        
+        # Add cross-references
+        logger.info(f"  Performing comprehensive cross-text analysis for Chapter {chapter_num}...")
+        print("  Performing comprehensive cross-text analysis...")
+        enhanced_chapter = add_cross_reference_section_comprehensive(enhanced_chapter, chapter_num, companion_data)
+        
+        has_cross_refs = "### Cross-Text Analysis" in enhanced_chapter
+        if has_cross_refs:
+            logger.info(f"  ✓ Cross-references added to Chapter {chapter_num}")
+        else:
+            logger.warning(f"  No cross-references added to Chapter {chapter_num}")
+        
+        logger.info(f"✓ Chapter {chapter_num} processing complete")
+        return (chapter_content, enhanced_chapter), has_cross_refs
+        
+    except Exception as e:
+        logger.error(f"✗ Failed to process Chapter {chapter_num}: {e}")
+        logger.debug(traceback.format_exc())
+        print(f"  ERROR: Failed to process Chapter {chapter_num}: {e}")
+        return None, False
+
+
+def _process_all_chapters(chapters_content: str, all_chapters: List[int],
+                         companion_data: Dict) -> Tuple[str, int, List[int], int]:
+    """
+    Process all chapters with LLM enhancement.
+    
+    Returns:
+        (enhanced_content, chapters_with_cross_refs, failed_chapters, exit_code)
+    """
+    enhanced_content = chapters_content
+    chapters_with_cross_refs = 0
+    failed_chapters = []
+    consecutive_failures = 0
+    MAX_CONSECUTIVE_FAILURES = 3
+    
+    for chapter_num in all_chapters:
+        result, success = _process_single_chapter(chapter_num, chapters_content, companion_data, all_chapters)
+        
+        if result is None:
+            failed_chapters.append(chapter_num)
+            consecutive_failures += 1
+        else:
+            chapter_content, enhanced_chapter = result
+            enhanced_content = enhanced_content.replace(chapter_content, enhanced_chapter)
+            if success:
+                chapters_with_cross_refs += 1
+                consecutive_failures = 0
+            else:
+                consecutive_failures += 1
+        
+        # Check for too many consecutive failures
+        if consecutive_failures >= MAX_CONSECUTIVE_FAILURES:
+            logger.error(f"✗ CRITICAL: {MAX_CONSECUTIVE_FAILURES} consecutive failures - stopping")
+            print(f"\n❌ CRITICAL: {MAX_CONSECUTIVE_FAILURES} consecutive failures detected")
+            print(f"   Failed chapters: {failed_chapters[-MAX_CONSECUTIVE_FAILURES:]}")
+            print("   Stopping to prevent wasting tokens")
+            print(f"   Check the log file: {LOG_FILE}")
+            
+            # Save partial results if any were successful
+            if chapters_with_cross_refs > 0:
+                _save_partial_results(enhanced_content, chapters_with_cross_refs)
+            
+            return enhanced_content, chapters_with_cross_refs, failed_chapters, 1
+    
+    return enhanced_content, chapters_with_cross_refs, failed_chapters, 0
+
+
+def _save_partial_results(enhanced_content: str, chapters_with_cross_refs: int):
+    """Save partial results when processing is interrupted."""
+    enhanced_document = header + enhanced_content
+    output_filename = "PYTHON_GUIDELINES_Learning_Python_Ed6_LLM_ENHANCED_PARTIAL.md"
+    output_dir = REPO_ROOT / "Python_References" / "PYTHON_GUIDELINES"
+    partial_file = output_dir / output_filename
+    with open(partial_file, 'w', encoding='utf-8') as f:
+        f.write(enhanced_document)
+    print(f"   💾 Saved partial results ({chapters_with_cross_refs} chapters) to: {partial_file}")
+    logger.info(f"Saved partial results to: {partial_file}")
+
+
 def main():
     """Main entry point. Refactored to reduce cognitive complexity."""
     print("="*66)
@@ -651,102 +762,13 @@ def main():
     
     print("🔄 Processing ALL chapters with LLM enhancement...")
     
-        # Process each chapter
-    enhanced_content = chapters_content
-    chapters_with_cross_refs = 0
-    failed_chapters = []
-    consecutive_failures = 0
-    MAX_CONSECUTIVE_FAILURES = 3
+    # Process all chapters
+    enhanced_content, chapters_with_cross_refs, failed_chapters, exit_code = _process_all_chapters(
+        chapters_content, all_chapters, companion_data
+    )
     
-    # If we get here, all critical checks passed!
-    print("\n✅ ALL CRITICAL CHECKS PASSED")
-    print(f"📋 Proceeding with full enhancement of {len(all_chapters)} chapters...")
-    logger.info("✅ ALL CRITICAL CHECKS PASSED - Proceeding with full enhancement")
-    
-    user_confirm = input(f"\n⚠️  This will make ~{len(all_chapters) * 2} API calls (~{len(all_chapters) * 60_000} tokens). Continue? [y/N]: ")
-    if user_confirm.lower() != 'y':
-        print("❌ Enhancement cancelled by user")
-        logger.info("Enhancement cancelled by user")
-        return 0
-    
-    print("🔄 Processing ALL chapters with LLM enhancement...")
-    
-    # Process each chapter
-    enhanced_content = chapters_content
-    chapters_with_cross_refs = 0
-    failed_chapters = []
-    consecutive_failures = 0
-    MAX_CONSECUTIVE_FAILURES = 3
-    
-    for chapter_num in all_chapters:
-        print(f"\n{'='*70}")
-        print(f"[Chapter {chapter_num}/{all_chapters[-1]}] Enhancing...")
-        print(f"{'='*70}")
-        logger.info(f"{'='*70}")
-        logger.info(f"Processing Chapter {chapter_num}/{all_chapters[-1]}")
-        logger.info(f"{'='*70}")
-        
-        # Extract individual chapter
-        chapter_pattern = rf'(## Chapter {chapter_num}:.*?)(?=## Chapter {chapter_num + 1}:|$)'
-        chapter_match = re.search(chapter_pattern, chapters_content, re.DOTALL)
-        
-        if not chapter_match:
-            logger.warning(f"  Could not find Chapter {chapter_num}")
-            print(f"  Warning: Could not find Chapter {chapter_num}")
-            continue
-        
-        chapter_content = chapter_match.group(1)
-        
-        try:
-            # Enhance summary
-            logger.info(f"  Enhancing summary for Chapter {chapter_num}...")
-            print("  Enhancing summary...")
-            enhanced_chapter = enhance_chapter_summary_with_llm(chapter_content, chapter_num)
-            
-            # Add cross-references with comprehensive analysis
-            logger.info(f"  Performing comprehensive cross-text analysis for Chapter {chapter_num}...")
-            print("  Performing comprehensive cross-text analysis...")
-            enhanced_chapter = add_cross_reference_section_comprehensive(enhanced_chapter, chapter_num, companion_data)
-            
-            if "### Cross-Text Analysis" in enhanced_chapter:
-                chapters_with_cross_refs += 1
-                logger.info(f"  ✓ Cross-references added to Chapter {chapter_num}")
-                consecutive_failures = 0  # Reset counter on success
-            else:
-                logger.warning(f"  No cross-references added to Chapter {chapter_num}")
-                consecutive_failures += 1
-            
-            # Replace in the full chapters content
-            enhanced_content = enhanced_content.replace(chapter_content, enhanced_chapter)
-            logger.info(f"✓ Chapter {chapter_num} processing complete")
-            
-        except Exception as e:
-            logger.error(f"✗ Failed to process Chapter {chapter_num}: {e}")
-            logger.debug(traceback.format_exc())
-            print(f"  ERROR: Failed to process Chapter {chapter_num}: {e}")
-            failed_chapters.append(chapter_num)
-            consecutive_failures += 1
-            
-            # CRITICAL: Stop if too many consecutive failures
-            if consecutive_failures >= MAX_CONSECUTIVE_FAILURES:
-                logger.error(f"✗ CRITICAL: {MAX_CONSECUTIVE_FAILURES} consecutive failures - stopping to prevent token waste")
-                print(f"\n❌ CRITICAL: {MAX_CONSECUTIVE_FAILURES} consecutive failures detected")
-                print(f"   Failed chapters: {failed_chapters[-MAX_CONSECUTIVE_FAILURES:]}")
-                print("   Stopping to prevent wasting tokens")
-                print(f"   Check the log file: {LOG_FILE}")
-                
-                # Save partial results if any were successful
-                if chapters_with_cross_refs > 0:
-                    enhanced_document = header + enhanced_content
-                    output_filename = "PYTHON_GUIDELINES_Learning_Python_Ed6_LLM_ENHANCED_PARTIAL.md"
-                    output_dir = REPO_ROOT / "Python_References" / "PYTHON_GUIDELINES"
-                    partial_file = output_dir / output_filename
-                    with open(partial_file, 'w', encoding='utf-8') as f:
-                        f.write(enhanced_document)
-                    print(f"   💾 Saved partial results to: {partial_file}")
-                    logger.info(f"Saved partial results to: {partial_file}")
-                
-                return 1
+    if exit_code != 0:
+        return exit_code
     
     # Reconstruct the full document
     enhanced_document = header + enhanced_content
