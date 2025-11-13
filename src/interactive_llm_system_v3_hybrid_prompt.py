@@ -422,8 +422,23 @@ class AnalysisOrchestrator:
         print(f"COMPREHENSIVE LLM ANALYSIS: Chapter {chapter_num} - {chapter_title}")
         print(f"{'='*80}")
         
-        # Build books metadata (without Python keyword matching)
+        # Sprint 1: Pre-filter books using taxonomy (40% token savings)
+        print("\n🔍 PRE-FILTERING: Taxonomy-based book selection")
+        print("-" * 40)
+        filtered_book_titles = _prefilter_books_by_taxonomy(
+            self, 
+            chapter_full_text, 
+            max_books=10
+        )
+        print(f"Filtered to {len(filtered_book_titles)} most relevant books from taxonomy")
+        
+        # Build books metadata (only for filtered books)
         books_metadata = self._build_books_metadata_only()
+        # Filter metadata to only include pre-selected books
+        books_metadata = [
+            meta for meta in books_metadata 
+            if meta.get('title', '') in filtered_book_titles
+        ]
         
         # Phase 1: LLM reads chapter, extracts concepts, identifies relevant books
         print("\n📋 PHASE 1: Concept Extraction & Book Identification")

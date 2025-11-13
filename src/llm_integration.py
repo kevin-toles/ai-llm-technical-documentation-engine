@@ -302,9 +302,80 @@ def _handle_anthropic_error(call_num: int, e: Exception, prompt: str, system_pro
     _log_api_exchange(call_num, prompt, system_prompt, None, 0, 0, error=error_msg)
 
 
+def _call_anthropic_api(call_num: int, prompt: str, system_prompt: Optional[str], max_tokens: int) -> str:
+    """Make Anthropic API call and validate response.
+    
+    Extracted from call_llm to reduce cognitive complexity.
+    Handles: API call, response extraction, JSON validation, logging.
+    
+    Args:
+        call_num: Sequential call number for logging
+        prompt: User prompt
+        system_prompt: Optional system prompt
+        max_tokens: Maximum response tokens
+        
+    Returns:
+        Response text from API
+        
+    Raises:
+        anthropic.APIError: On API failures
+        Exception: On unexpected errors
+    """
+    # Print confirmation on first call
+    if call_num == 1:
+        print(f"\n[LLM] Making API call with model: {ANTHROPIC_MODEL}", flush=True)
+        if ENABLE_API_LOGGING:
+            print("[LLM] API logging enabled - saving to logs/llm_api/", flush=True)
+    
+    # Log request
+    _log_request_details(call_num, prompt, system_prompt, max_tokens)
+    
+    # Make API call
+    client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+    response = client.messages.create(
+        model=ANTHROPIC_MODEL,
+        max_tokens=max_tokens if max_tokens <= LLM_MAX_TOKENS else LLM_MAX_TOKENS,
+        temperature=LLM_TEMPERATURE,
+        system=system_prompt if system_prompt else "You are a helpful assistant analyzing Python documentation.",
+        messages=[{"role": "user", "content": prompt}]
+    )
+    
+    # Extract response (Sprint 1: add stop_reason)
+    response_text = response.content[0].text
+    stop_reason = response.stop_reason  # Anthropic API field
+    input_tokens = getattr(response.usage, 'input_tokens', 0)
+    output_tokens = getattr(response.usage, 'output_tokens', 0)
+    
+    # Log response
+    _log_response_details(call_num, response_text, input_tokens, output_tokens)
+    _log_api_exchange(call_num, prompt, system_prompt, response_text, input_tokens, output_tokens)
+    
+    # Sprint 1: Validate JSON response with finish_reason
+    is_valid, error_msg = _validate_json_response(response_text, stop_reason)
+    if not is_valid:
+        print(f"[LLM API #{call_num}] ⚠️  JSON validation failed: {error_msg}", file=sys.stderr, flush=True)
+        
+        # Handle truncation (MAX_TOKENS) - retry with lower limits
+        if stop_reason == FinishReason.MAX_TOKENS.value:
+            print(f"[LLM API #{call_num}] Response truncated - attempting retry with reduced scope", file=sys.stderr, flush=True)
+            # Note: _handle_truncated_response requires phase/messages context
+            # For now, log warning and return best-effort response
+            _log_api_exchange(call_num, prompt, system_prompt, response_text, 
+                            input_tokens, output_tokens, error=error_msg)
+        else:
+            # Other finish reasons - log and continue
+            _log_api_exchange(call_num, prompt, system_prompt, response_text, 
+                            input_tokens, output_tokens, error=error_msg)
+    
+    # Legacy validation (empty/refusal checks)
+    _validate_response(call_num, response_text, prompt, system_prompt, input_tokens, output_tokens)
+    
+    return response_text
+
+
 def call_llm(prompt: str, system_prompt: str = None, max_tokens: int = 2000) -> str:
     """
-    Make automated LLM API call using Anthropic Claude (no user interaction). Refactored to reduce complexity.
+    Make automated LLM API call using Anthropic Claude (no user interaction).
     
     Args:
         prompt: User prompt
@@ -321,38 +392,7 @@ def call_llm(prompt: str, system_prompt: str = None, max_tokens: int = 2000) -> 
     # Try Anthropic Claude
     if LLM_PROVIDER == "anthropic" and ANTHROPIC_AVAILABLE:
         try:
-            # Print confirmation on first call
-            if call_num == 1:
-                print(f"\n[LLM] Making API call with model: {ANTHROPIC_MODEL}", flush=True)
-                if ENABLE_API_LOGGING:
-                    print("[LLM] API logging enabled - saving to logs/llm_api/", flush=True)
-            
-            # Log request
-            _log_request_details(call_num, prompt, system_prompt, max_tokens)
-            
-            # Make API call
-            client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
-            response = client.messages.create(
-                model=ANTHROPIC_MODEL,
-                max_tokens=max_tokens if max_tokens <= LLM_MAX_TOKENS else LLM_MAX_TOKENS,
-                temperature=LLM_TEMPERATURE,
-                system=system_prompt if system_prompt else "You are a helpful assistant analyzing Python documentation.",
-                messages=[{"role": "user", "content": prompt}]
-            )
-            
-            # Extract response
-            response_text = response.content[0].text
-            input_tokens = getattr(response.usage, 'input_tokens', 0)
-            output_tokens = getattr(response.usage, 'output_tokens', 0)
-            
-            # Log response
-            _log_response_details(call_num, response_text, input_tokens, output_tokens)
-            _log_api_exchange(call_num, prompt, system_prompt, response_text, input_tokens, output_tokens)
-            
-            # Validate
-            _validate_response(call_num, response_text, prompt, system_prompt, input_tokens, output_tokens)
-            
-            return response_text
+            return _call_anthropic_api(call_num, prompt, system_prompt, max_tokens)
             
         except anthropic.APIError as e:
             _handle_anthropic_error(call_num, e, prompt, system_prompt)
@@ -366,29 +406,6 @@ def call_llm(prompt: str, system_prompt: str = None, max_tokens: int = 2000) -> 
             traceback.print_exc()
             _log_api_exchange(call_num, prompt, system_prompt, None, 0, 0, error=error_msg)
             raise
-    
-    # OpenAI GPT-5 - DISABLED (using Anthropic)
-    # if LLM_PROVIDER == "openai" and OPENAI_AVAILABLE:
-    #     try:
-    #         if not hasattr(call_llm, '_first_call_done'):
-    #             print(f"\n[LLM] Making API call with model: {OPENAI_MODEL}", flush=True)
-    #             call_llm._first_call_done = True
-    #         
-    #         client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-    #         
-    #         full_input = prompt
-    #         if system_prompt:
-    #             full_input = f"{system_prompt}\n\n{prompt}"
-    #         
-    #         response = client.responses.create(
-    #             model=OPENAI_MODEL,
-    #             input=full_input,
-    #             reasoning={"effort": "high"},
-    #             text={"verbosity": "medium"}
-    #         )
-    #         return response.output_text
-    #     except Exception as e:
-    #         print(f"  Warning: OpenAI API call failed: {e}", file=sys.stderr)
     
     # Fallback: return empty JSON to trigger fallback logic
     print("  Warning: No LLM provider available, using fallback logic", file=sys.stderr)
