@@ -108,5 +108,5 @@ def test_template_path_resolution():
     
     # Template should be in src/prompts/ directory
     # This test verifies path resolution works correctly
-    # Will fail until implementation exists
-    pass
+    template = load_template("test_template")
+    assert "test template" in template.lower()
