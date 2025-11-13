@@ -154,3 +154,83 @@ def format_comprehensive_phase1_prompt(
         books_count=len(books_metadata),
         books_text=books_text
     )
+
+
+def _format_excerpt_content(book_name: str, excerpts: List[Dict[str, Any]]) -> str:
+    """Format book excerpts (full chapters or page excerpts) with citation info.
+    
+    Extracted from interactive_llm_system_v3_hybrid_prompt.py::_build_comprehensive_phase2_prompt
+    
+    Args:
+        book_name: Name of the book
+        excerpts: List of excerpt dictionaries (each has either is_full_chapter or page)
+        
+    Returns:
+        Formatted excerpt sections with citations
+        
+    References:
+        - Source: interactive_llm_system_v3_hybrid_prompt.py lines 1153-1174
+    """
+    sections = [f"\n## {book_name}"]
+    
+    for exc in excerpts:
+        if exc.get('is_full_chapter'):
+            # Full chapter content with citation info
+            sections.append(
+                f"\n**Chapter {exc['chapter']}: {exc['title']}**\n"
+                f"Citation: {exc.get('author', 'Unknown')}, *{exc.get('book_title', book_name)}*, "
+                f"Chapter {exc['chapter']}, pages {exc['pages']}.\n"
+                f"Content:\n{exc['content'][:4000]}..."  # First 4000 chars of chapter
+            )
+        else:
+            # Page excerpt with citation info
+            sections.append(
+                f"\n**Page {exc['page']}**\n"
+                f"Citation: {exc.get('author', 'Unknown')}, *{exc.get('book_title', book_name)}*, {exc['page']}.\n"
+                f"Content: {exc['content'][:600]}..."
+            )
+    
+    return '\n'.join(sections)
+
+
+def format_comprehensive_phase2_prompt(
+    chapter_num: int,
+    chapter_title: str,
+    metadata_response: Any,  # MetadataExtractionResponse with validation_summary, analysis_strategy
+    content_package: Dict[str, Any]
+) -> str:
+    """Format Phase 2 comprehensive prompt for integrated scholarly annotation.
+    
+    Builds prompt for generating integrated scholarly annotations that synthesize
+    content from multiple companion books with Chicago-style citations.
+    
+    Args:
+        chapter_num: Chapter number
+        chapter_title: Chapter title
+        metadata_response: Object with .validation_summary and .analysis_strategy attributes
+        content_package: Dict mapping book_name -> list of excerpt dicts
+        
+    Returns:
+        Formatted prompt string ready for LLM
+        
+    References:
+        - Source: interactive_llm_system_v3_hybrid_prompt.py::_build_comprehensive_phase2_prompt
+        - Template: src/prompts/comprehensive_phase2.txt
+    """
+    template = load_template("comprehensive_phase2")
+    
+    # Build content sections from all books
+    content_sections = []
+    for book_name, excerpts in content_package.items():
+        content_sections.append(_format_excerpt_content(book_name, excerpts))
+    
+    content_text = '\n'.join(content_sections)
+    
+    return template.format(
+        chapter_num=chapter_num,
+        chapter_title=chapter_title,
+        metadata_response_validation_summary=metadata_response.validation_summary,
+        metadata_response_analysis_strategy=metadata_response.analysis_strategy,
+        content_package_count=len(content_package),
+        content_text=content_text[:15000]  # Limit to first 15000 chars
+    )
