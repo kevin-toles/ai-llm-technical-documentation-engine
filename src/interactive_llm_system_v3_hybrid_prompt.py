@@ -1354,107 +1354,37 @@ Prioritize books that provide the most direct, substantial coverage of this chap
         excerpt: str,
         metadata_package: Dict[str, Any]
     ) -> str:
-        """Build Phase 1 prompt for metadata analysis.
-        
-        Engineering: String formatting and template composition
-        (Python Distilled Ch. 2 - Operators and Expressions)
         """
-        return f"""You are conducting a comprehensive gap analysis for Learning Python Ed.6 cross-references.
-
-CHAPTER CONTEXT:
-- Chapter {chapter_num}: {chapter_title}
-- Key Concepts: {', '.join(concepts)}
-
-CHAPTER EXCERPT:
-{excerpt[:800]}
-
-PYTHON KEYWORD MATCHING RESULTS:
-{json.dumps(metadata_package['concept_mapping'], indent=2)}
-
-COMPANION BOOK METADATA ({metadata_package['total_books']} books, {metadata_package['total_pages']:,} pages):
-{json.dumps(metadata_package['books'], indent=2)}
-
-TASK: Analyze the metadata and identify what specific content you need to perform a thorough scholarly cross-text analysis.
-
-RESPOND IN JSON FORMAT:
-{{
-  "validation_summary": "Which Python matches look promising vs. superficial?",
-  "gap_analysis": "What concepts/areas might be missing from Python matching?",
-  "content_requests": [
-    {{
-      "book_name": "<<COPY EXACT file_name HERE>>",
-      "pages": [page numbers],
-      "rationale": "why needed",
-      "priority": 1-5
-    }}
-  ],
-  "analysis_strategy": "planned approach"
-}}
-
-CRITICAL: For book_name, copy the EXACT file_name value from metadata. Examples:
-✅ CORRECT: "Fluent Python 2nd" (matches file_name in metadata)
-✅ CORRECT: "Python Distilled" (matches file_name in metadata)  
-✅ CORRECT: "Architecture Patterns with Python" (matches file_name)
-❌ WRONG: "Fluent Python, 2nd Edition" (don't add commas or Edition)
-❌ WRONG: "Python Distilled Content" (don't add Content)
-
-Look at the file_name field in the metadata above and copy it character-for-character.
-
-GUIDELINES FOR ANALYZING PYTHON KEYWORD MATCHING RESULTS:
-1. EVALUATE MATCHES: Review the concept_mapping data showing which books/pages match each concept
-   - High relevance (>0.7): Strong indicator of substantive coverage
-   - Medium relevance (0.4-0.7): May be worth investigating
-   - Low relevance (<0.4): Likely superficial mentions
-
-2. VALIDATE PROMISING MATCHES: Request pages from high-relevance matches to verify they provide:
-   - Technical depth beyond simple keyword mentions
-   - Different perspectives or advanced treatment
-   - Architectural or implementation context
-
-3. IDENTIFY GAPS: Look for concepts that may need coverage beyond keyword matching:
-   - Abstract concepts that may appear under different terminology
-   - Architectural patterns that connect to the chapter's concepts
-   - Implementation techniques not directly named in the chapter
-
-4. APPLY BOOK TAXONOMY (evaluate ALL 15 books comprehensively):
-   
-   ARCHITECTURE SPINE BOOKS (foundational patterns):
-   - Architecture Patterns with Python: DDD/Event-Driven foundation, cascades to implementation
-   - Building Microservices: Conceptual rationale, organizational patterns
-   - Microservice Architecture: Academic theory, formal design patterns
-   - Python Architecture Patterns: Pattern catalog, architectural crosswalks
-   
-   IMPLEMENTATION LAYER BOOKS (practical application):
-   - Python Microservices Development: Docker, async, deployment scaffolding
-   - Building Python Microservices with FastAPI: Modern async, dependency injection
-   - Microservice APIs Using Python Flask FastAPI: API governance, versioning
-   - Microservices Up and Running: Operational lifecycle, observability
-   
-   ENGINEERING PRACTICES BOOKS (language and idioms):
-   - Python Essential Reference 4th: Language syntax and semantics foundation
-   - Fluent Python 2nd: Advanced Pythonic patterns, protocols, metaclasses
-   - Python Distilled: Concise best practices and core concepts
-   - Python Cookbook 3rd: Recipe-based practical solutions
-   - Python Data Analysis 3rd: Data structures and analysis patterns
-   - Learning Python Ed6: (Primary text - do not self-reference)
-
-5. USE CASCADING LOGIC: When a concept triggers matches in one tier, check related tiers:
-   - Engineering concept (e.g., "decorator") → Check Architecture books for decorator pattern
-   - Architecture pattern → Check Implementation books for practical applications
-   - Implementation technique → Check Engineering books for language fundamentals
-
-6. REQUEST STRATEGICALLY:
-   - Include ALL books with relevance > 0.3 (typically 8-15 books for comprehensive analysis)
-   - Organize requests by tier (Architecture → Implementation → Engineering)
-   - Request 3-8 pages per book focusing on highest-relevance matches
-   - Set priority 5 for foundational concepts, 3-4 for supporting context, 1-2 for peripheral references
-
-7. CROSS-TIER VALIDATION:
-   - If Engineering Practice book shows high relevance, check if Architecture books provide patterns
-   - If Architecture book matches, verify Implementation books show practical usage
-   - Build many-to-many mapping across all applicable books
-
-Provide your comprehensive analysis now."""
+        Build Phase 1 prompt for metadata analysis.
+        
+        REFACTORED: Now uses template system from src/prompts/
+        
+        Args:
+            chapter_num: Chapter number
+            chapter_title: Chapter title
+            concepts: List of key concepts from chapter
+            excerpt: Chapter text excerpt
+            metadata_package: Dict containing concept_mapping, total_books, total_pages, books
+            
+        Returns:
+            Formatted prompt string ready for LLM
+            
+        References:
+            - Template: src/prompts/phase1.txt
+            - Formatter: src/prompts/templates.format_phase1_prompt
+            - Sprint 2.13: TDD REFACTOR - Integrate Phase1
+            - BOOK_TAXONOMY_MATRIX.md: Taxonomy embedded in template
+            - PYTHON_GUIDELINES: String formatting, template composition
+        """
+        from src.prompts.templates import format_phase1_prompt
+        
+        return format_phase1_prompt(
+            chapter_num=chapter_num,
+            chapter_title=chapter_title,
+            concepts=concepts,
+            excerpt=excerpt,
+            metadata_package=metadata_package
+        )
     
     def _build_phase2_prompt(
         self,
