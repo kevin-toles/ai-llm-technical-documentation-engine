@@ -301,3 +301,81 @@ def format_phase1_prompt(
         total_pages=total_pages_formatted,
         books_metadata=books_metadata_json
     )
+
+
+def format_phase2_prompt(
+    chapter_num: int,
+    chapter_title: str,
+    concepts: List[str],
+    excerpt: str,
+    metadata_response: Any,  # LLMMetadataResponse with validation_summary, gap_analysis, analysis_strategy
+    content_package: Dict[str, List[Dict]]
+) -> str:
+    """Format Phase 2 prompt for deep scholarly cross-text analysis.
+    
+    Builds prompt for LLM to generate scholarly annotations by analyzing relationships
+    between primary text and companion book excerpts retrieved in Phase 1.
+    
+    Args:
+        chapter_num: Chapter number
+        chapter_title: Chapter title
+        concepts: List of key concepts from chapter
+        excerpt: Chapter text excerpt (will be truncated to 800 chars)
+        metadata_response: Object with attributes:
+            - validation_summary: Phase 1 validation of Python keyword matches
+            - gap_analysis: Identified gaps in keyword matching
+            - analysis_strategy: Planned approach for content retrieval
+        content_package: Dict mapping book_name -> list of page excerpt dicts
+            Each excerpt dict has: page, content
+        
+    Returns:
+        Formatted prompt string ready for LLM
+        
+    References:
+        - Source: interactive_llm_system_v3_hybrid_prompt.py::_build_phase2_prompt
+        - Template: src/prompts/phase2.txt
+        - ARCHITECTURE_GUIDELINES: Separation of concerns principle
+        - PYTHON_GUIDELINES: Template composition patterns
+        
+    Document Hierarchy Compliance:
+        - REFACTORING_PLAN.md: Sprint 2 template extraction (final prompt)
+        - Preserves critical analysis methodology from original
+    """
+    template = load_template("phase2")
+    
+    # Format concepts as comma-separated string
+    concepts_str = ', '.join(concepts)
+    
+    # Truncate excerpt to 800 chars (as per original)
+    excerpt_truncated = excerpt[:800]
+    
+    # Truncate metadata response fields to 200 chars (as per original)
+    validation_summary_truncated = metadata_response.validation_summary[:200]
+    gap_analysis_truncated = metadata_response.gap_analysis[:200]
+    analysis_strategy_truncated = metadata_response.analysis_strategy[:200]
+    
+    # Format content package into text sections
+    content_sections = []
+    for book_name, excerpts in content_package.items():
+        content_sections.append(f"\n## {book_name}")
+        for exc in excerpts:
+            content_sections.append(
+                f"\nPage {exc['page']}: {exc['content'][:500]}..."
+            )
+    
+    content_text = '\n'.join(content_sections)
+    
+    # Limit content to 8000 chars (as per original)
+    content_text_truncated = content_text[:8000]
+    
+    return template.format(
+        chapter_num=chapter_num,
+        chapter_title=chapter_title,
+        concepts=concepts_str,
+        excerpt=excerpt_truncated,
+        validation_summary=validation_summary_truncated,
+        gap_analysis=gap_analysis_truncated,
+        analysis_strategy=analysis_strategy_truncated,
+        content_package_count=len(content_package),
+        content_text=content_text_truncated
+    )
