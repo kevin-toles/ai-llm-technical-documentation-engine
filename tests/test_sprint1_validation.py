@@ -24,7 +24,7 @@ def test_sprint1_imports():
     print("\n=== Testing Sprint 1 Imports ===")
     
     try:
-        from src.llm_integration import (
+        from src.llm_integration import (  # noqa: F401
             FinishReason,
             _validate_json_response,
             _handle_truncated_response,
@@ -33,14 +33,14 @@ def test_sprint1_imports():
         )
         print("✅ llm_integration imports successful")
         
-        from src.interactive_llm_system_v3_hybrid_prompt import (
+        from src.interactive_llm_system_v3_hybrid_prompt import (  # noqa: F401
             _extract_concepts_from_text,
             _prefilter_books_by_taxonomy,
             AnalysisOrchestrator
         )
         print("✅ interactive_llm_system_v3_hybrid_prompt imports successful")
         
-        from src.book_taxonomy import (
+        from src.book_taxonomy import (  # noqa: F401
             score_books_for_concepts,
             get_cascading_books
         )
@@ -175,7 +175,7 @@ def test_book_prefiltering():
         for book in filtered_books
     )
     if relevant_found:
-        print(f"✅ Relevant microservices books found in top results")
+        print("✅ Relevant microservices books found in top results")
     
     return True
 
