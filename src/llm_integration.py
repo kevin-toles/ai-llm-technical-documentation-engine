@@ -468,7 +468,7 @@ Respond with ONLY a JSON object (no markdown, no explanation):
         if response.startswith("```"):
             # Remove markdown code fences
             lines = response.split("\n")
-            response = "\n".join([l for l in lines if not l.startswith("```")])
+            response = "\n".join([line for line in lines if not line.startswith("```")])
         
         result = json.loads(response)
         print(f"  LLM: Verified {len(result.get('verified_concepts', []))}, found {len(result.get('additional_concepts', []))} new concepts")
@@ -557,7 +557,7 @@ Respond with ONLY a JSON object:
         response = response.strip()
         if response.startswith("```"):
             lines = response.split("\n")
-            response = "\n".join([l for l in lines if not l.startswith("```")])
+            response = "\n".join([line for line in lines if not line.startswith("```")])
         
         result = json.loads(response)
         print(f"  LLM: Validated {len(result.get('validated_matches', []))}, found {len(result.get('additional_matches', []))} semantic matches")
@@ -624,7 +624,7 @@ Respond with ONLY a JSON object:
         response = response.strip()
         if response.startswith("```"):
             lines = response.split("\n")
-            response = "\n".join([l for l in lines if not l.startswith("```")])
+            response = "\n".join([line for line in lines if not line.startswith("```")])
         
         result = json.loads(response)
         print("✓")

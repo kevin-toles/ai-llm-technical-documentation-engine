@@ -45,7 +45,9 @@ try:
     # Import module-level items that are used throughout
     from .book_taxonomy import (
         BOOK_REGISTRY,
-        BookTier
+        BookTier,
+        score_books_for_concepts,
+        get_cascading_books
     )
     TAXONOMY_AVAILABLE = True
 except ImportError:
