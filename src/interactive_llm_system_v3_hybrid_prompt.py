@@ -785,29 +785,6 @@ Prioritize books that provide the most direct, substantial coverage of this chap
         
         return books_metadata
     
-    def _format_book_description(self, book: Dict[str, Any], index: int) -> str:
-        """Format a single book's metadata description with chapter details.
-        
-        Extracts book metadata formatting to reduce complexity of parent function.
-        """
-        book_desc = f"{index}. {book['title']}\n   Author(s): {book.get('author', 'Unknown')}\n   Full Title: {book.get('full_title', book['title'])}\n   Domain: {book['domain']}\n   Concepts: {', '.join(book['concepts_covered'][:8])}"
-        
-        # Add detailed chapter information if available
-        if book.get('has_chapter_metadata') and book.get('chapters'):
-            chapters_summary = "\n   Chapters:"
-            for ch in book['chapters'][:10]:  # Show first 10 chapters with full metadata
-                chapters_summary += f"\n     • Ch.{ch['number']}: {ch['title']} (pp.{ch['pages']})"
-                if ch.get('summary'):
-                    chapters_summary += f"\n       Summary: {ch['summary']}"
-                if ch.get('concepts'):
-                    chapters_summary += f"\n       Concepts: {', '.join(ch['concepts'][:5])}"
-            
-            if len(book['chapters']) > 10:
-                chapters_summary += f"\n     ... [{len(book['chapters'])} chapters total]"
-            book_desc += chapters_summary
-        
-        return book_desc
-    
     def _build_comprehensive_phase1_prompt(
         self,
         chapter_num: int,
@@ -815,77 +792,24 @@ Prioritize books that provide the most direct, substantial coverage of this chap
         chapter_full_text: str,
         books_metadata: List[Dict[str, Any]]
     ) -> str:
-        """Build Phase 1 prompt for comprehensive LLM-driven analysis."""
+        """
+        Build Phase 1 prompt for comprehensive LLM-driven analysis.
         
-        books_list = [self._format_book_description(book, i) for i, book in enumerate(books_metadata, 1)]
-        books_text = "\n\n".join(books_list)
+        REFACTORED: Now uses template system from src/prompts/
         
-        return f"""You are conducting a comprehensive scholarly cross-reference analysis for Learning Python Ed.6.
-
-CHAPTER {chapter_num}: {chapter_title}
-
-FULL CHAPTER TEXT ({len(chapter_full_text)} characters):
-{chapter_full_text[:8000]}
-{"... [truncated for prompt length]" if len(chapter_full_text) > 8000 else ""}
-
-COMPANION BOOKS AVAILABLE ({len(books_metadata)} books with chapter metadata):
-{books_text}
-
-NOTE: Book content is NOT loaded yet - only metadata is shown above.
-After you make your requests, the system will load ONLY the specific chapters you request.
-This saves memory and tokens, so feel free to request what you need!
-
-YOUR TASK:
-
-1. READ & ANALYZE THE CHAPTER:
-   - Extract ALL key concepts, techniques, and topics covered
-   - Identify main themes and learning objectives
-   - Note examples, code patterns, and pedagogical approaches
-
-2. CROSS-REFERENCE DISCOVERY:
-   - Review the 15 companion books above
-   - For each book, consider both:
-     * Overall concepts covered (shown in metadata)
-     * Specific chapters that might relate (when chapter metadata available)
-   - Use the book taxonomy:
-     * Architecture Spine books: Patterns, DDD, microservices theory
-     * Implementation Layer books: FastAPI, Flask, deployment, APIs
-     * Engineering Practices books: Python idioms, recipes, language reference
-
-3. REQUEST SPECIFIC CHAPTERS/SECTIONS:
-   - For books WITH chapter metadata: Request specific chapters by number/title
-     Example: "Chapter 5: Decorators" or "Chapter 8: Async Programming"
-   - For books WITHOUT chapter metadata: Request page ranges that likely contain relevant content
-   - Explain WHY each chapter/section would help build cross-references
-   - Prioritize books that offer different perspectives (architecture vs implementation vs idioms)
-
-RESPOND IN JSON FORMAT:
-{{
-  "concepts_extracted": ["list", "of", "all", "concepts", "found"],
-  "themes_identified": ["main", "themes"],
-  "content_requests": [
-    {{
-      "book_name": "exact book title",
-      "chapters_or_sections": ["Chapter 5: Decorators", "Chapter 8, Section 2"],
-      "pages": [145, 146, 147],
-      "rationale": "why this content will enhance cross-references",
-      "priority": 1-5
-    }}
-  ],
-  "analysis_strategy": "Your plan for synthesizing an integrated annotation"
-}}
-
-GUIDELINES:
-- Extract concepts comprehensively (don't rely on pre-defined keywords)
-- Request 6-12 books that offer substantive cross-references
-- Use chapter metadata when available for precise targeting
-- Build many-to-many mapping across multiple books
-- Consider cascading: Engineering concepts → Architecture patterns → Implementation examples
-
-IMPORTANT CONSTRAINT:
-To ensure focused, high-quality cross-references, please limit your content_requests to the TOP 10 most relevant books. Prioritize quality over quantity - select only those books that provide the most substantive connections to the current chapter's concepts.
-
-Provide your comprehensive analysis now."""
+        References:
+            - Template: src/prompts/comprehensive_phase1.txt
+            - Formatter: src/prompts/templates.format_comprehensive_phase1_prompt
+            - Sprint 2.11: TDD REFACTOR - Integrate Phase1
+        """
+        from src.prompts.templates import format_comprehensive_phase1_prompt
+        
+        return format_comprehensive_phase1_prompt(
+            chapter_num=chapter_num,
+            chapter_title=chapter_title,
+            chapter_full_text=chapter_full_text,
+            books_metadata=books_metadata
+        )
     
     def _extract_chapter_numbers_from_rationale(self, rationale: str) -> List[int]:
         """Extract chapter numbers from rationale text.
