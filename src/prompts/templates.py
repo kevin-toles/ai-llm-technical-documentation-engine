@@ -15,7 +15,7 @@ References:
 """
 
 from pathlib import Path
-from typing import Final
+from typing import Any, Dict, Final, List
 
 # Template directory is fixed relative to this module
 TEMPLATE_DIR: Final[Path] = Path(__file__).parent
@@ -57,3 +57,100 @@ def load_template(name: str) -> str:
     template_path = TEMPLATE_DIR / f"{name}.txt"
     with template_path.open('r', encoding='utf-8') as f:
         return f.read()
+
+
+def _format_book_description(book: Dict[str, Any], index: int) -> str:
+    """
+    Format a single book's metadata description with chapter details.
+    
+    Extracted from interactive_llm_system_v3_hybrid_prompt.py line 788
+    to support template formatting.
+    
+    Args:
+        book: Book metadata dict with keys: title, author, full_title, domain,
+              concepts_covered, has_chapter_metadata, chapters
+        index: Book number in list (1-based)
+        
+    Returns:
+        Formatted book description string
+        
+    References:
+        - Source: interactive_llm_system_v3_hybrid_prompt.py::_format_book_description
+    """
+    book_desc = (
+        f"{index}. {book['title']}\n"
+        f"   Author(s): {book.get('author', 'Unknown')}\n"
+        f"   Full Title: {book.get('full_title', book['title'])}\n"
+        f"   Domain: {book['domain']}\n"
+        f"   Concepts: {', '.join(book['concepts_covered'][:8])}"
+    )
+    
+    # Add detailed chapter information if available
+    if book.get('has_chapter_metadata') and book.get('chapters'):
+        chapters_summary = "\n   Chapters:"
+        for ch in book['chapters'][:10]:  # Show first 10 chapters with full metadata
+            chapters_summary += (
+                f"\n     • Ch.{ch['number']}: {ch['title']} (pp.{ch['pages']})"
+            )
+            if ch.get('summary'):
+                chapters_summary += f"\n       Summary: {ch['summary']}"
+            if ch.get('concepts'):
+                chapters_summary += f"\n       Concepts: {', '.join(ch['concepts'][:5])}"
+        
+        if len(book['chapters']) > 10:
+            chapters_summary += f"\n     ... [{len(book['chapters'])} chapters total]"
+        book_desc += chapters_summary
+    
+    return book_desc
+
+
+def format_comprehensive_phase1_prompt(
+    chapter_num: int,
+    chapter_title: str,
+    chapter_full_text: str,
+    books_metadata: List[Dict[str, Any]]
+) -> str:
+    """
+    Format comprehensive Phase 1 prompt with actual values.
+    
+    TDD GREEN: Minimal implementation to pass tests.
+    
+    Args:
+        chapter_num: Chapter number (e.g., 1, 2, 3)
+        chapter_title: Chapter title (e.g., "Introduction to Python")
+        chapter_full_text: Full chapter text content
+        books_metadata: List of book metadata dicts
+        
+    Returns:
+        Formatted prompt string ready for LLM
+        
+    References:
+        - Source: interactive_llm_system_v3_hybrid_prompt.py::_build_comprehensive_phase1_prompt
+        - Template: src/prompts/comprehensive_phase1.txt
+    """
+    template = load_template("comprehensive_phase1")
+    
+    # Format book metadata list
+    books_list = [
+        _format_book_description(book, i) 
+        for i, book in enumerate(books_metadata, 1)
+    ]
+    books_text = "\n\n".join(books_list)
+    
+    # Prepare text preview and truncation indicator
+    chapter_text_preview = chapter_full_text[:8000]
+    chapter_text_truncation = (
+        "... [truncated for prompt length]" 
+        if len(chapter_full_text) > 8000 
+        else ""
+    )
+    
+    return template.format(
+        chapter_num=chapter_num,
+        chapter_title=chapter_title,
+        chapter_text_length=len(chapter_full_text),
+        chapter_text_preview=chapter_text_preview,
+        chapter_text_truncation=chapter_text_truncation,
+        books_count=len(books_metadata),
+        books_text=books_text
+    )

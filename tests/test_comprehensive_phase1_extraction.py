@@ -8,8 +8,6 @@ References:
 - Sprint 2.9: TDD RED - Phase1 Template Tests
 """
 
-import pytest
-from pathlib import Path
 
 
 def test_comprehensive_phase1_template_file_exists():
@@ -95,22 +93,31 @@ def test_format_comprehensive_phase1_prompt_signature():
 
 def test_format_comprehensive_phase1_prompt_returns_string():
     """
-    TDD RED: Verify format function returns formatted string.
+    TDD GREEN: Verify format function returns formatted string.
     
-    Expected to FAIL: AttributeError
+    Uses proper book metadata structure matching actual system usage.
     
     References:
     - Source line 823: Returns f-string prompt
+    - Book metadata must include: title, author, full_title, domain, concepts_covered
     """
     from src.prompts.templates import format_comprehensive_phase1_prompt
     
-    # Sample data matching actual usage
+    # Sample data matching actual book metadata structure
     result = format_comprehensive_phase1_prompt(
         chapter_num=1,
         chapter_title="Test Chapter",
         chapter_full_text="This is test content for the chapter.",
         books_metadata=[
-            {'file_name': 'Test_Book.json', 'domain': 'testing', 'total_pages': 100}
+            {
+                'title': 'Test Book',
+                'author': 'Test Author',
+                'full_title': 'Test Book: Complete Guide',
+                'domain': 'testing',
+                'concepts_covered': ['testing', 'validation', 'TDD'],
+                'has_chapter_metadata': False,
+                'chapters': []
+            }
         ]
     )
     
