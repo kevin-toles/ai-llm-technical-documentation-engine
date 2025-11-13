@@ -1140,7 +1140,10 @@ Prioritize books that provide the most direct, substantial coverage of this chap
         metadata_response: LLMMetadataResponse,
         content_package: Dict[str, List[Dict]]
     ) -> str:
-        """Build Phase 2 prompt for comprehensive synthesis.
+        """
+        Build Phase 2 prompt for comprehensive synthesis.
+        
+        REFACTORED: Now uses template system from src/prompts/
         
         Args:
             chapter_num: Chapter number for identification
@@ -1148,83 +1151,23 @@ Prioritize books that provide the most direct, substantial coverage of this chap
             _chapter_full_text: Unused - Phase 2 works with requested excerpts from content_package
             metadata_response: Phase 1 analysis results
             content_package: Book excerpts requested in Phase 1
+            
+        Returns:
+            Formatted prompt string ready for LLM
+            
+        References:
+            - Template: src/prompts/comprehensive_phase2.txt
+            - Formatter: src/prompts/templates.format_comprehensive_phase2_prompt
+            - Sprint 2.12: TDD REFACTOR - Integrate Phase2
         """
+        from src.prompts.templates import format_comprehensive_phase2_prompt
         
-        content_sections = []
-        for book_name, excerpts in content_package.items():
-            content_sections.append(f"\n## {book_name}")
-            for exc in excerpts:
-                # Handle full chapters vs page excerpts
-                if exc.get('is_full_chapter'):
-                    # Full chapter content with citation info
-                    content_sections.append(
-                        f"\n**Chapter {exc['chapter']}: {exc['title']}**\n"
-                        f"Citation: {exc.get('author', 'Unknown')}, *{exc.get('book_title', book_name)}*, "
-                        f"Chapter {exc['chapter']}, pages {exc['pages']}.\n"
-                        f"Content:\n{exc['content'][:4000]}..."  # First 4000 chars of chapter
-                    )
-                else:
-                    # Page excerpt with citation info
-                    content_sections.append(
-                        f"\n**Page {exc['page']}**\n"
-                        f"Citation: {exc.get('author', 'Unknown')}, *{exc.get('book_title', book_name)}*, {exc['page']}.\n"
-                        f"Content: {exc['content'][:600]}..."
-                    )
-        
-        content_text = '\n'.join(content_sections)
-        
-        return f"""You are generating an integrated scholarly annotation for Learning Python Ed.6.
-
-CHAPTER {chapter_num}: {chapter_title}
-
-CONCEPTS YOU EXTRACTED:
-{metadata_response.validation_summary}
-
-YOUR ANALYSIS STRATEGY:
-{metadata_response.analysis_strategy}
-
-COMPANION CONTENT RETRIEVED (from {len(content_package)} books):
-NOTE: Some entries are FULL CHAPTERS, others are page excerpts.
-{content_text[:15000]}
-
-TASK: Write a comprehensive integrated annotation (8-12 sentences) that:
-
-1. BRIDGE CONCEPTS ACROSS TEXTS:
-   - Show how concepts in Learning Python connect to architectural patterns (Architecture books)
-   - Demonstrate how concepts are applied in real implementations (Implementation books)
-   - Highlight advanced techniques or idioms (Engineering Practices books)
-
-2. CREATE INTEGRATED ANALYSIS:
-   - Don't just list what each book says separately
-   - SYNTHESIZE: Show how ideas from different books reinforce/extend each other
-   - Example: "The decorator syntax (Learning Python) maps to the Decorator Pattern (Architecture Patterns) 
-     and is used for dependency injection in FastAPI (Implementation)"
-
-3. ACADEMIC RIGOR:
-   - Cite specific content from retrieved chapters/excerpts using Chicago-style footnotes
-   - For full chapters, cite the chapter title and key points
-   - **CHICAGO FOOTNOTE FORMAT**: Author(s), *Book Title*, Chapter/Section, page numbers.
-     Example: "Ramalho, Luciano, *Fluent Python, 2nd Edition*, Chapter 5, 145-167."
-   - Include inline citations in your annotation text
-   - Explain pedagogical value (why learners should consult these references)
-   - Note any gaps or areas needing further exploration
-
-4. TIER-BASED ORGANIZATION:
-   - Architecture Spine: Theoretical foundations, patterns, design principles
-   - Implementation Layer: Practical applications, deployments, real-world usage
-   - Engineering Practices: Language features, idioms, best practices
-
-5. CITATION REQUIREMENTS (Chicago Manual of Style, 17th Edition):
-   - Use footnote-style citations embedded in your annotation
-   - Format: Author(s), *Book Title*, edition/chapter info, page numbers.
-   - For chapters: Include chapter number and title when available
-   - Example for full chapter: "As Percival and Gregory demonstrate in *Architecture Patterns with Python*, 
-     Chapter 3, pages 45-67, the repository pattern provides..."
-   - Example for single page: "Ramalho notes (*Fluent Python, 2nd Edition*, 145) that..."
-   - When synthesizing multiple sources, cite each appropriately
-   - All citation metadata has been provided above for each excerpt
-
-Generate the integrated scholarly annotation now (output only the annotation text, no JSON)."""
+        return format_comprehensive_phase2_prompt(
+            chapter_num=chapter_num,
+            chapter_title=chapter_title,
+            metadata_response=metadata_response,
+            content_package=content_package
+        )
     
     # ========================================================================
     # SCENARIO 1 METHODS: Python-Guided Analysis (Original)
