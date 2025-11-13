@@ -1395,70 +1395,41 @@ Prioritize books that provide the most direct, substantial coverage of this chap
         metadata_response: LLMMetadataResponse,
         content_package: Dict[str, List[Dict]]
     ) -> str:
-        """Build Phase 2 prompt for deep scholarly analysis."""
+        """
+        Build Phase 2 prompt for deep scholarly analysis.
         
-        # Format retrieved content
-        content_sections = []
-        for book_name, excerpts in content_package.items():
-            content_sections.append(f"\n## {book_name}")
-            for exc in excerpts:
-                content_sections.append(
-                    f"\nPage {exc['page']}: {exc['content'][:500]}..."
-                )
+        REFACTORED: Now uses template system from src/prompts/
         
-        content_text = '\n'.join(content_sections)
+        Args:
+            chapter_num: Chapter number
+            chapter_title: Chapter title
+            concepts: List of key concepts from chapter
+            excerpt: Chapter text excerpt
+            metadata_response: Phase 1 analysis results with:
+                - validation_summary: Python keyword match validation
+                - gap_analysis: Identified gaps
+                - analysis_strategy: Planned approach
+            content_package: Retrieved book excerpts (dict of book_name -> excerpts list)
+            
+        Returns:
+            Formatted prompt string ready for LLM
+            
+        References:
+            - Template: src/prompts/phase2.txt
+            - Formatter: src/prompts/templates.format_phase2_prompt
+            - Sprint 2.14: TDD REFACTOR - Integrate Phase2 (FINAL)
+            - ARCHITECTURE_GUIDELINES: Separation of concerns principle
+        """
+        from src.prompts.templates import format_phase2_prompt
         
-        return f"""You are generating a scholarly cross-text annotation for Learning Python Ed.6.
-
-CHAPTER {chapter_num}: {chapter_title}
-KEY CONCEPTS: {', '.join(concepts)}
-
-PRIMARY TEXT EXCERPT:
-{excerpt[:800]}
-
-YOUR PHASE 1 ANALYSIS:
-- Validation: {metadata_response.validation_summary[:200]}
-- Gaps Identified: {metadata_response.gap_analysis[:200]}
-- Strategy: {metadata_response.analysis_strategy[:200]}
-
-COMPANION BOOKS CONTENT (from {len(content_package)} books):
-{content_text[:8000]}
-
-TASK: Write a scholarly annotation that analyzes the relationship between the primary text and companion book excerpts.
-
-ANALYSIS APPROACH:
-
-1. VALIDATE EACH EXCERPT: For each companion book page above, determine:
-   - Does it contain genuine technical/educational discussion of the matched concepts?
-   - Or is it metadata, forewords, prefaces, or keyword-match artifacts?
-
-2. FOR GENUINE TECHNICAL CONTENT:
-   - Identify specific concepts that appear in BOTH the primary text and companion excerpt
-   - Describe how the companion book treats these concepts differently (e.g., deeper implementation detail, alternative framing, architectural interpretation, formal description)
-   - Cite concrete elements FROM THE COMPANION EXCERPT ITSELF (terminology, definitions, behaviors, code patterns, rules)
-   - Explain the pedagogical reason a learner should consult this cross-reference (clarifies ambiguity, expands mechanics, formalizes definitions, offers advanced idioms)
-
-3. FOR NON-SUBSTANTIVE CONTENT:
-   - Acknowledge why the match occurred (token overlap or keyword similarity)
-   - State explicitly that the page does NOT provide substantive technical treatment
-   - Explain this is a limitation of keyword matching, not a conceptual relationship
-   - Direct the learner to rely on the primary text for this topic
-
-4. ORGANIZE BY TIER (when multiple genuine sources exist):
-   - Architecture Spine books: Patterns, DDD, theoretical frameworks
-   - Implementation Layer books: Practical applications, deployment, real-world usage
-   - Engineering Practices books: Language idioms, protocols, advanced techniques
-   - Show connections across tiers when applicable
-
-STRICT RULES:
-- BE SPECIFIC. Use actual phrasing or technical elements from the excerpts
-- DO NOT invent connections. Only describe relationships grounded in provided excerpts
-- DO NOT use generic filler: "complements," "broadens," "enhances," "deepens"
-- DO NOT summarize the books—analyze their relationship to the primary text
-- DO NOT exceed 10 sentences total (aim for 5-7)
-- OUTPUT ONLY the annotation text, no metadata or JSON
-
-Generate the scholarly annotation now."""
+        return format_phase2_prompt(
+            chapter_num=chapter_num,
+            chapter_title=chapter_title,
+            concepts=concepts,
+            excerpt=excerpt,
+            metadata_response=metadata_response,
+            content_package=content_package
+        )
     
     def _retrieve_requested_content(
         self,
