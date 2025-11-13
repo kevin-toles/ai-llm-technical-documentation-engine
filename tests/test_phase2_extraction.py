@@ -9,9 +9,7 @@ Document Hierarchy Compliance:
 These tests MUST FAIL initially (TDD RED), then pass after extraction (TDD GREEN).
 """
 from pathlib import Path
-from typing import Any, Dict, List
 
-import pytest
 
 
 def test_phase2_template_file_exists():

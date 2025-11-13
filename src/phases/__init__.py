@@ -29,7 +29,7 @@ ARCHITECTURE PATTERNS:
 try:
     from .orchestrator import TwoPhaseOrchestrator
     from .annotation_service import AnnotationService
-except ImportError as e:
+except ImportError:
     # Fallback for import issues
     import sys
     from pathlib import Path

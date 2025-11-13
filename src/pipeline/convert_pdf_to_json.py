@@ -24,7 +24,7 @@ def extract_text_from_page(page):
         # This is a simplified OCR approach - PyMuPDF doesn't have built-in OCR
         # In the original conversion, OCR was likely done with pytesseract or similar
         return text, "OCR"
-    except Exception as e:
+    except Exception:
         return "", "Failed"
 
 def convert_pdf_to_json(pdf_path, output_path=None):

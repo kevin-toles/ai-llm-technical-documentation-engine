@@ -1,0 +1,583 @@
+[
+  {
+    "cell": null,
+    "code": "F811",
+    "end_location": {
+      "column": 27,
+      "row": 288
+    },
+    "filename": "/Users/kevintoles/POC/llm-document-enhancer/src/integrate_llm_enhancements.py",
+    "fix": null,
+    "location": {
+      "column": 5,
+      "row": 288
+    },
+    "message": "Redefinition of unused `find_relevant_sections` from line 164",
+    "noqa_row": 288,
+    "url": "https://docs.astral.sh/ruff/rules/redefined-while-unused"
+  },
+  {
+    "cell": null,
+    "code": "F821",
+    "end_location": {
+      "column": 31,
+      "row": 697
+    },
+    "filename": "/Users/kevintoles/POC/llm-document-enhancer/src/integrate_llm_enhancements.py",
+    "fix": null,
+    "location": {
+      "column": 25,
+      "row": 697
+    },
+    "message": "Undefined name `header`",
+    "noqa_row": 697,
+    "url": "https://docs.astral.sh/ruff/rules/undefined-name"
+  },
+  {
+    "cell": null,
+    "code": "F821",
+    "end_location": {
+      "column": 31,
+      "row": 774
+    },
+    "filename": "/Users/kevintoles/POC/llm-document-enhancer/src/integrate_llm_enhancements.py",
+    "fix": null,
+    "location": {
+      "column": 25,
+      "row": 774
+    },
+    "message": "Undefined name `header`",
+    "noqa_row": 774,
+    "url": "https://docs.astral.sh/ruff/rules/undefined-name"
+  },
+  {
+    "cell": null,
+    "code": "F841",
+    "end_location": {
+      "column": 24,
+      "row": 32
+    },
+    "filename": "/Users/kevintoles/POC/llm-document-enhancer/src/phases/__init__.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 24,
+            "row": 32
+          },
+          "location": {
+            "column": 19,
+            "row": 32
+          }
+        }
+      ],
+      "message": "Remove assignment to unused variable `e`"
+    },
+    "location": {
+      "column": 23,
+      "row": 32
+    },
+    "message": "Local variable `e` is assigned to but never used",
+    "noqa_row": 32,
+    "url": "https://docs.astral.sh/ruff/rules/unused-variable"
+  },
+  {
+    "cell": null,
+    "code": "F841",
+    "end_location": {
+      "column": 12,
+      "row": 23
+    },
+    "filename": "/Users/kevintoles/POC/llm-document-enhancer/src/pipeline/convert_pdf_to_json.py",
+    "fix": {
+      "applicability": "unsafe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 15,
+            "row": 23
+          },
+          "location": {
+            "column": 9,
+            "row": 23
+          }
+        }
+      ],
+      "message": "Remove assignment to unused variable `pix`"
+    },
+    "location": {
+      "column": 9,
+      "row": 23
+    },
+    "message": "Local variable `pix` is assigned to but never used",
+    "noqa_row": 23,
+    "url": "https://docs.astral.sh/ruff/rules/unused-variable"
+  },
+  {
+    "cell": null,
+    "code": "F841",
+    "end_location": {
+      "column": 26,
+      "row": 27
+    },
+    "filename": "/Users/kevintoles/POC/llm-document-enhancer/src/pipeline/convert_pdf_to_json.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 26,
+            "row": 27
+          },
+          "location": {
+            "column": 21,
+            "row": 27
+          }
+        }
+      ],
+      "message": "Remove assignment to unused variable `e`"
+    },
+    "location": {
+      "column": 25,
+      "row": 27
+    },
+    "message": "Local variable `e` is assigned to but never used",
+    "noqa_row": 27,
+    "url": "https://docs.astral.sh/ruff/rules/unused-variable"
+  },
+  {
+    "cell": null,
+    "code": "F821",
+    "end_location": {
+      "column": 57,
+      "row": 290
+    },
+    "filename": "/Users/kevintoles/POC/llm-document-enhancer/src/pipeline/generate_chapter_metadata.py",
+    "fix": null,
+    "location": {
+      "column": 52,
+      "row": 290
+    },
+    "message": "Undefined name `Tuple`",
+    "noqa_row": 290,
+    "url": "https://docs.astral.sh/ruff/rules/undefined-name"
+  },
+  {
+    "cell": null,
+    "code": "F821",
+    "end_location": {
+      "column": 67,
+      "row": 303
+    },
+    "filename": "/Users/kevintoles/POC/llm-document-enhancer/src/pipeline/generate_chapter_metadata.py",
+    "fix": null,
+    "location": {
+      "column": 62,
+      "row": 303
+    },
+    "message": "Undefined name `Tuple`",
+    "noqa_row": 303,
+    "url": "https://docs.astral.sh/ruff/rules/undefined-name"
+  },
+  {
+    "cell": null,
+    "code": "F821",
+    "end_location": {
+      "column": 93,
+      "row": 303
+    },
+    "filename": "/Users/kevintoles/POC/llm-document-enhancer/src/pipeline/generate_chapter_metadata.py",
+    "fix": null,
+    "location": {
+      "column": 88,
+      "row": 303
+    },
+    "message": "Undefined name `Tuple`",
+    "noqa_row": 303,
+    "url": "https://docs.astral.sh/ruff/rules/undefined-name"
+  },
+  {
+    "cell": null,
+    "code": "F821",
+    "end_location": {
+      "column": 53,
+      "row": 317
+    },
+    "filename": "/Users/kevintoles/POC/llm-document-enhancer/src/pipeline/generate_chapter_metadata.py",
+    "fix": null,
+    "location": {
+      "column": 48,
+      "row": 317
+    },
+    "message": "Undefined name `Tuple`",
+    "noqa_row": 317,
+    "url": "https://docs.astral.sh/ruff/rules/undefined-name"
+  },
+  {
+    "cell": null,
+    "code": "F401",
+    "end_location": {
+      "column": 23,
+      "row": 11
+    },
+    "filename": "/Users/kevintoles/POC/llm-document-enhancer/tests/test_comprehensive_phase2_extraction.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 1,
+            "row": 12
+          },
+          "location": {
+            "column": 1,
+            "row": 11
+          }
+        }
+      ],
+      "message": "Remove unused import"
+    },
+    "location": {
+      "column": 20,
+      "row": 11
+    },
+    "message": "`typing.Any` imported but unused",
+    "noqa_row": 11,
+    "url": "https://docs.astral.sh/ruff/rules/unused-import"
+  },
+  {
+    "cell": null,
+    "code": "F401",
+    "end_location": {
+      "column": 29,
+      "row": 11
+    },
+    "filename": "/Users/kevintoles/POC/llm-document-enhancer/tests/test_comprehensive_phase2_extraction.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 1,
+            "row": 12
+          },
+          "location": {
+            "column": 1,
+            "row": 11
+          }
+        }
+      ],
+      "message": "Remove unused import"
+    },
+    "location": {
+      "column": 25,
+      "row": 11
+    },
+    "message": "`typing.Dict` imported but unused",
+    "noqa_row": 11,
+    "url": "https://docs.astral.sh/ruff/rules/unused-import"
+  },
+  {
+    "cell": null,
+    "code": "F401",
+    "end_location": {
+      "column": 14,
+      "row": 13
+    },
+    "filename": "/Users/kevintoles/POC/llm-document-enhancer/tests/test_comprehensive_phase2_extraction.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 1,
+            "row": 14
+          },
+          "location": {
+            "column": 1,
+            "row": 13
+          }
+        }
+      ],
+      "message": "Remove unused import: `pytest`"
+    },
+    "location": {
+      "column": 8,
+      "row": 13
+    },
+    "message": "`pytest` imported but unused",
+    "noqa_row": 13,
+    "url": "https://docs.astral.sh/ruff/rules/unused-import"
+  },
+  {
+    "cell": null,
+    "code": "F401",
+    "end_location": {
+      "column": 23,
+      "row": 12
+    },
+    "filename": "/Users/kevintoles/POC/llm-document-enhancer/tests/test_phase1_extraction.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 1,
+            "row": 13
+          },
+          "location": {
+            "column": 1,
+            "row": 12
+          }
+        }
+      ],
+      "message": "Remove unused import"
+    },
+    "location": {
+      "column": 20,
+      "row": 12
+    },
+    "message": "`typing.Any` imported but unused",
+    "noqa_row": 12,
+    "url": "https://docs.astral.sh/ruff/rules/unused-import"
+  },
+  {
+    "cell": null,
+    "code": "F401",
+    "end_location": {
+      "column": 29,
+      "row": 12
+    },
+    "filename": "/Users/kevintoles/POC/llm-document-enhancer/tests/test_phase1_extraction.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 1,
+            "row": 13
+          },
+          "location": {
+            "column": 1,
+            "row": 12
+          }
+        }
+      ],
+      "message": "Remove unused import"
+    },
+    "location": {
+      "column": 25,
+      "row": 12
+    },
+    "message": "`typing.Dict` imported but unused",
+    "noqa_row": 12,
+    "url": "https://docs.astral.sh/ruff/rules/unused-import"
+  },
+  {
+    "cell": null,
+    "code": "F401",
+    "end_location": {
+      "column": 35,
+      "row": 12
+    },
+    "filename": "/Users/kevintoles/POC/llm-document-enhancer/tests/test_phase1_extraction.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 1,
+            "row": 13
+          },
+          "location": {
+            "column": 1,
+            "row": 12
+          }
+        }
+      ],
+      "message": "Remove unused import"
+    },
+    "location": {
+      "column": 31,
+      "row": 12
+    },
+    "message": "`typing.List` imported but unused",
+    "noqa_row": 12,
+    "url": "https://docs.astral.sh/ruff/rules/unused-import"
+  },
+  {
+    "cell": null,
+    "code": "F401",
+    "end_location": {
+      "column": 14,
+      "row": 14
+    },
+    "filename": "/Users/kevintoles/POC/llm-document-enhancer/tests/test_phase1_extraction.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 1,
+            "row": 15
+          },
+          "location": {
+            "column": 1,
+            "row": 14
+          }
+        }
+      ],
+      "message": "Remove unused import: `pytest`"
+    },
+    "location": {
+      "column": 8,
+      "row": 14
+    },
+    "message": "`pytest` imported but unused",
+    "noqa_row": 14,
+    "url": "https://docs.astral.sh/ruff/rules/unused-import"
+  },
+  {
+    "cell": null,
+    "code": "F401",
+    "end_location": {
+      "column": 23,
+      "row": 12
+    },
+    "filename": "/Users/kevintoles/POC/llm-document-enhancer/tests/test_phase2_extraction.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 1,
+            "row": 13
+          },
+          "location": {
+            "column": 1,
+            "row": 12
+          }
+        }
+      ],
+      "message": "Remove unused import"
+    },
+    "location": {
+      "column": 20,
+      "row": 12
+    },
+    "message": "`typing.Any` imported but unused",
+    "noqa_row": 12,
+    "url": "https://docs.astral.sh/ruff/rules/unused-import"
+  },
+  {
+    "cell": null,
+    "code": "F401",
+    "end_location": {
+      "column": 29,
+      "row": 12
+    },
+    "filename": "/Users/kevintoles/POC/llm-document-enhancer/tests/test_phase2_extraction.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 1,
+            "row": 13
+          },
+          "location": {
+            "column": 1,
+            "row": 12
+          }
+        }
+      ],
+      "message": "Remove unused import"
+    },
+    "location": {
+      "column": 25,
+      "row": 12
+    },
+    "message": "`typing.Dict` imported but unused",
+    "noqa_row": 12,
+    "url": "https://docs.astral.sh/ruff/rules/unused-import"
+  },
+  {
+    "cell": null,
+    "code": "F401",
+    "end_location": {
+      "column": 35,
+      "row": 12
+    },
+    "filename": "/Users/kevintoles/POC/llm-document-enhancer/tests/test_phase2_extraction.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 1,
+            "row": 13
+          },
+          "location": {
+            "column": 1,
+            "row": 12
+          }
+        }
+      ],
+      "message": "Remove unused import"
+    },
+    "location": {
+      "column": 31,
+      "row": 12
+    },
+    "message": "`typing.List` imported but unused",
+    "noqa_row": 12,
+    "url": "https://docs.astral.sh/ruff/rules/unused-import"
+  },
+  {
+    "cell": null,
+    "code": "F401",
+    "end_location": {
+      "column": 14,
+      "row": 14
+    },
+    "filename": "/Users/kevintoles/POC/llm-document-enhancer/tests/test_phase2_extraction.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "",
+          "end_location": {
+            "column": 1,
+            "row": 15
+          },
+          "location": {
+            "column": 1,
+            "row": 14
+          }
+        }
+      ],
+      "message": "Remove unused import: `pytest`"
+    },
+    "location": {
+      "column": 8,
+      "row": 14
+    },
+    "message": "`pytest` imported but unused",
+    "noqa_row": 14,
+    "url": "https://docs.astral.sh/ruff/rules/unused-import"
+  }
+]

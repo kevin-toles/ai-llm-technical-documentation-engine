@@ -8,9 +8,7 @@ References:
 These tests MUST FAIL initially (TDD RED), then pass after extraction (TDD GREEN).
 """
 from pathlib import Path
-from typing import Any, Dict
 
-import pytest
 
 
 def test_comprehensive_phase2_template_file_exists():
