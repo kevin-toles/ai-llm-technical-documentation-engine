@@ -1,7 +1,7 @@
 """
 Template loader for LLM prompts.
 
-TDD GREEN Phase: Minimal implementation to pass tests.
+TDD REFACTOR Phase: Enhanced implementation with type safety and documentation.
 
 Architectural Patterns:
 - Separation of Concerns: Templates stored as .txt files, not embedded in code
@@ -15,6 +15,10 @@ References:
 """
 
 from pathlib import Path
+from typing import Final
+
+# Template directory is fixed relative to this module
+TEMPLATE_DIR: Final[Path] = Path(__file__).parent
 
 
 def load_template(name: str) -> str:
@@ -26,20 +30,30 @@ def load_template(name: str) -> str:
     It's better to let the operation fail and report an exception back to the caller."
     
     Args:
-        name: Template name (without .txt extension)
+        name: Template name (without .txt extension). Must be a valid filename.
+              Examples: "comprehensive_phase1", "phase2"
         
     Returns:
-        Template content as string
+        Template content as UTF-8 encoded string, ready for str.format() replacement.
         
     Raises:
-        FileNotFoundError: If template file doesn't exist
-        IOError: If file cannot be read
+        FileNotFoundError: If template file doesn't exist at {TEMPLATE_DIR}/{name}.txt
+        IOError: If file cannot be read (permissions, encoding errors)
+        ValueError: If name contains path separators (security check)
+        
+    Example:
+        >>> template = load_template("test_template")
+        >>> formatted = template.format(placeholder1="value1", placeholder2="value2")
         
     References:
         - PYTHON_GUIDELINES: "pathlib.Path for cross-platform file operations"
         - PYTHON_GUIDELINES: "with open() for context management"
         - PYTHON_GUIDELINES: "Explicit UTF-8 encoding for cross-platform compatibility"
     """
-    template_path = Path(__file__).parent / f"{name}.txt"
+    # Security: Prevent path traversal attacks
+    if '/' in name or '\\' in name:
+        raise ValueError(f"Template name cannot contain path separators: {name}")
+    
+    template_path = TEMPLATE_DIR / f"{name}.txt"
     with template_path.open('r', encoding='utf-8') as f:
         return f.read()

@@ -11,7 +11,6 @@ References:
 """
 
 import pytest
-from pathlib import Path
 
 
 def test_load_template_module_importable():
@@ -110,3 +109,21 @@ def test_template_path_resolution():
     # This test verifies path resolution works correctly
     template = load_template("test_template")
     assert "test template" in template.lower()
+
+
+def test_load_template_path_traversal_security():
+    """
+    TDD REFACTOR: Test that path traversal attacks are prevented.
+    
+    Security check added during REFACTOR phase.
+    
+    References:
+    - ARCHITECTURE_GUIDELINES: Security best practices
+    """
+    from src.prompts.templates import load_template
+    
+    with pytest.raises(ValueError, match="path separators"):
+        load_template("../../../etc/passwd")
+    
+    with pytest.raises(ValueError, match="path separators"):
+        load_template("subdir/template")
