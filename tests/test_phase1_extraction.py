@@ -143,7 +143,7 @@ def test_format_phase1_prompt_returns_string():
     
     assert isinstance(result, str)
     assert len(result) > 1000  # Should be substantial prompt
-    assert "CHAPTER 7: Function Decorators" in result
+    assert "Chapter 7: Function Decorators" in result
     assert "decorators, closures, scope" in result
 
 

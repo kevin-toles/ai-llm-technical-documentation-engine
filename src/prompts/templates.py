@@ -234,3 +234,70 @@ def format_comprehensive_phase2_prompt(
         content_package_count=len(content_package),
         content_text=content_text[:15000]  # Limit to first 15000 chars
     )
+
+
+def format_phase1_prompt(
+    chapter_num: int,
+    chapter_title: str,
+    concepts: List[str],
+    excerpt: str,
+    metadata_package: Dict[str, Any]
+) -> str:
+    """Format Phase 1 prompt for metadata analysis and gap identification.
+    
+    Builds prompt for LLM to analyze Python keyword matching results and request
+    specific book content needed for comprehensive cross-reference analysis.
+    
+    Args:
+        chapter_num: Chapter number
+        chapter_title: Chapter title
+        concepts: List of key concepts from chapter
+        excerpt: Chapter text excerpt (will be truncated to 800 chars)
+        metadata_package: Dict with keys:
+            - concept_mapping: Dict mapping concepts to book/page matches
+            - total_books: Total number of companion books
+            - total_pages: Total page count across all books
+            - books: List of book metadata dicts
+        
+    Returns:
+        Formatted prompt string ready for LLM
+        
+    References:
+        - Source: interactive_llm_system_v3_hybrid_prompt.py::_build_phase1_prompt
+        - Template: src/prompts/phase1.txt
+        - BOOK_TAXONOMY_MATRIX.md: Book tier classifications embedded in template
+        - PYTHON_GUIDELINES: json.dumps for structured data formatting
+        
+    Document Hierarchy Compliance:
+        - REFACTORING_PLAN.md: Sprint 2 template extraction
+        - ARCHITECTURE_GUIDELINES: Separation of concerns principle
+    """
+    import json
+    
+    template = load_template("phase1")
+    
+    # Format concepts as comma-separated string
+    concepts_str = ', '.join(concepts)
+    
+    # Truncate excerpt to 800 chars (as per original)
+    excerpt_truncated = excerpt[:800]
+    
+    # Format concept_mapping as JSON (with indentation for readability)
+    concept_mapping_json = json.dumps(metadata_package['concept_mapping'], indent=2)
+    
+    # Format books metadata as JSON
+    books_metadata_json = json.dumps(metadata_package['books'], indent=2)
+    
+    # Format total_pages with thousands separator
+    total_pages_formatted = f"{metadata_package['total_pages']:,}"
+    
+    return template.format(
+        chapter_num=chapter_num,
+        chapter_title=chapter_title,
+        concepts=concepts_str,
+        excerpt=excerpt_truncated,
+        concept_mapping=concept_mapping_json,
+        total_books=metadata_package['total_books'],
+        total_pages=total_pages_formatted,
+        books_metadata=books_metadata_json
+    )
