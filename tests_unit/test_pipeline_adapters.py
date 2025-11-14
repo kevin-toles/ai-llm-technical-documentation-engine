@@ -232,16 +232,15 @@ class TestChapterGeneratorAdapter:
         # Arrange
         import logging
         
+        def mock_main_side_effect():
+            """Simulate legacy main() writing output file"""
+            output_file = Path.cwd() / "PYTHON_GUIDELINES_Learning Python Ed6.md"
+            output_file.write_text("# Generated Guidelines\n\nChapter content...")
+        
         with caplog.at_level(logging.INFO):
-            with patch('src.pipeline.chapter_generator_all_text.main'):
-                expected_output = tmp_path / "PYTHON_GUIDELINES_Learning Python Ed6.md"
-                expected_output.write_text("# Guidelines")
-                
-                with patch('src.pipeline.adapters.chapter_generator.settings') as mock_settings:
-                    mock_settings.paths.textbooks_json_dir = tmp_path
-                    
-                    # Act
-                    adapter.generate()
+            with patch('src.pipeline.chapter_generator_all_text.main', side_effect=mock_main_side_effect):
+                # Act
+                adapter.generate()
         
         # Assert
         assert "Generating chapters" in caplog.text
@@ -256,15 +255,14 @@ class TestChapterGeneratorAdapter:
         - Type hints are properly enforced
         """
         # Arrange
-        with patch('src.pipeline.chapter_generator_all_text.main'):
-            output_file = tmp_path / "PYTHON_GUIDELINES_Learning Python Ed6.md"
-            output_file.write_text("# Guidelines")
-            
-            with patch('src.pipeline.adapters.chapter_generator.settings') as mock_settings:
-                mock_settings.paths.textbooks_json_dir = tmp_path
-                
-                # Act
-                result = adapter.generate()
+        def mock_main_side_effect():
+            """Simulate legacy main() writing output file"""
+            output_file = Path.cwd() / "PYTHON_GUIDELINES_Learning Python Ed6.md"
+            output_file.write_text("# Generated Guidelines")
+        
+        with patch('src.pipeline.chapter_generator_all_text.main', side_effect=mock_main_side_effect):
+            # Act
+            result = adapter.generate()
         
         # Assert
         assert isinstance(result, Path)
@@ -274,6 +272,109 @@ class TestChapterGeneratorAdapter:
 class TestMetadataExtractorAdapter:
     """Tests for MetadataExtractorAdapter (wraps generate_chapter_metadata)"""
     
-    def test_adapter_not_implemented_yet(self):
-        """Placeholder for Metadata Extractor adapter tests"""
-        pytest.skip("MetadataExtractorAdapter implementation comes after ChapterGeneratorAdapter")
+    @pytest.fixture
+    def adapter(self):
+        """Create adapter instance for testing"""
+        try:
+            from src.pipeline.adapters.metadata_extractor import MetadataExtractorAdapter
+            return MetadataExtractorAdapter()
+        except ImportError:
+            pytest.skip("MetadataExtractorAdapter not implemented yet (RED phase)")
+    
+    def test_extract_success(self, adapter, tmp_path):
+        """
+        RED: Test successful metadata extraction
+        
+        Validates:
+        - Adapter calls legacy main() function from generate_chapter_metadata
+        - Returns cache file path
+        - Verifies cache was updated
+        """
+        # Arrange - mock main() to simulate cache update
+        def mock_main_side_effect():
+            """Simulate legacy main() updating cache file"""
+            # Legacy function expects cache in script directory
+            cache_file = Path(__file__).parent.parent / "src" / "pipeline" / "chapter_metadata_cache.json"
+            cache_file.parent.mkdir(parents=True, exist_ok=True)
+            cache_file.write_text(json.dumps({
+                "Test Book": [
+                    {"title": "Chapter 1", "summary": "Updated summary", "keywords": ["test"], "concepts": ["testing"]}
+                ]
+            }))
+        
+        with patch('src.pipeline.generate_chapter_metadata.main', side_effect=mock_main_side_effect):
+            # Act
+            result = adapter.extract()
+        
+        # Assert
+        assert isinstance(result, Path)
+        assert result.exists()
+        assert "chapter_metadata_cache.json" in result.name
+    
+    def test_extract_failure_raises_exception(self, adapter):
+        """
+        RED: Test extraction failure raises MetadataExtractionError
+        
+        Validates:
+        - Exception raised when legacy function fails
+        - Exception message is descriptive
+        """
+        # Arrange
+        with patch('src.pipeline.generate_chapter_metadata.main', side_effect=Exception("Cache file not found")):
+            # Act & Assert
+            try:
+                from src.pipeline.adapters.metadata_extractor import MetadataExtractionError
+            except ImportError:
+                pytest.skip("MetadataExtractionError not implemented yet")
+            
+            with pytest.raises(MetadataExtractionError) as exc_info:
+                adapter.extract()
+            
+            assert "Failed to extract" in str(exc_info.value)
+    
+    def test_extract_logs_progress(self, adapter, tmp_path, caplog):
+        """
+        RED: Test adapter logs extraction progress
+        
+        Validates:
+        - Logs "Extracting chapter metadata" at start
+        - Logs "Extraction complete" at end
+        """
+        # Arrange
+        import logging
+        
+        def mock_main_side_effect():
+            cache_file = Path(__file__).parent.parent / "src" / "pipeline" / "chapter_metadata_cache.json"
+            cache_file.parent.mkdir(parents=True, exist_ok=True)
+            cache_file.write_text('{"test": []}')
+        
+        with caplog.at_level(logging.INFO):
+            with patch('src.pipeline.generate_chapter_metadata.main', side_effect=mock_main_side_effect):
+                # Act
+                adapter.extract()
+        
+        # Assert
+        assert "Extracting chapter metadata" in caplog.text
+        assert "Extraction complete" in caplog.text
+    
+    def test_extract_returns_path_not_string(self, adapter):
+        """
+        RED: Test adapter returns Path object (not string)
+        
+        Validates:
+        - Return type is pathlib.Path
+        - Type hints are properly enforced
+        """
+        # Arrange
+        def mock_main_side_effect():
+            cache_file = Path(__file__).parent.parent / "src" / "pipeline" / "chapter_metadata_cache.json"
+            cache_file.parent.mkdir(parents=True, exist_ok=True)
+            cache_file.write_text('{}')
+        
+        with patch('src.pipeline.generate_chapter_metadata.main', side_effect=mock_main_side_effect):
+            # Act
+            result = adapter.extract()
+        
+        # Assert
+        assert isinstance(result, Path)
+        assert not isinstance(result, str)

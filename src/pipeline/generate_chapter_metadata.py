@@ -18,7 +18,7 @@ Usage:
 import json
 import re
 from pathlib import Path
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Tuple
 from collections import Counter
 
 # Directory path constants (to avoid duplicate string literals)
