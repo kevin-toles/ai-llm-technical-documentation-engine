@@ -65,12 +65,10 @@ except ImportError:
     LLM_AVAILABLE = False
     print("Warning: LLM integration not available")
 
-# Book title constants (per SonarQube - avoid duplicated string literals)
-# These match the exact titles used in book_taxonomy.py and metadata JSON files
-PYTHON_ESSENTIAL_REF = "Python Essential Reference 4th"
-FLUENT_PYTHON = "Fluent Python 2nd"
-PYTHON_DISTILLED = "Python Distilled"
-PYTHON_DATA_ANALYSIS = "Python Data Analysis 3rd"
+# Sprint 3.3: Import centralized constants (eliminates duplication)
+# Per Quality Assessment: Fix 4 duplicate constants issue
+# Reference: REFACTORING_PLAN.md Sprint 3.3 - Constants extraction
+from .constants import BookTitles
 
 
 # ============================================================================
@@ -896,15 +894,16 @@ Prioritize books that provide the most direct, substantial coverage of this chap
             Tuple of (author, full_title) for citation formatting
             
         Note: Keys match JSON filenames exactly. Values provide formal citation details.
+        Sprint 3.3: Using centralized BookTitles constants (no duplication)
         """
         citation_map = {
             # Python Language Books (keys match JSON filenames)
             "Learning Python Ed6": ("Lutz, Mark", "Learning Python Ed6"),
-            PYTHON_ESSENTIAL_REF: ("Beazley, David", PYTHON_ESSENTIAL_REF),
-            FLUENT_PYTHON: ("Ramalho, Luciano", FLUENT_PYTHON),
-            PYTHON_DISTILLED: ("Beazley, David", PYTHON_DISTILLED),
+            BookTitles.PYTHON_ESSENTIAL_REF: ("Beazley, David", BookTitles.PYTHON_ESSENTIAL_REF),
+            BookTitles.FLUENT_PYTHON: ("Ramalho, Luciano", BookTitles.FLUENT_PYTHON),
+            BookTitles.PYTHON_DISTILLED: ("Beazley, David", BookTitles.PYTHON_DISTILLED),
             "Python Cookbook 3rd": ("Beazley, David and Jones, Brian K.", "Python Cookbook 3rd"),
-            PYTHON_DATA_ANALYSIS: ("McKinney, Wes", PYTHON_DATA_ANALYSIS),
+            BookTitles.PYTHON_DATA_ANALYSIS: ("McKinney, Wes", BookTitles.PYTHON_DATA_ANALYSIS),
             
             # Architecture Books (keys match JSON filenames)
             "Architecture Patterns with Python": ("Percival, Harry and Gregory, Bob", "Architecture Patterns with Python"),

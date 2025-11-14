@@ -31,14 +31,13 @@ import logging
 from pathlib import Path
 from typing import Dict, List, Optional, Any
 
+# Sprint 3.3: Import centralized constants (eliminates duplication)
+# Per Quality Assessment: Fix 4 duplicate constants issue
+# Reference: REFACTORING_PLAN.md Sprint 3.3 - Constants extraction
+from src.constants import BookTitles
+
 # Module-level logger
 logger = logging.getLogger(__name__)
-
-# Book name constants (from original file)
-PYTHON_ESSENTIAL_REF = "Python Essential Reference 4th"
-FLUENT_PYTHON = "Fluent Python 2nd"
-PYTHON_DISTILLED = "Python Distilled"
-PYTHON_DATA_ANALYSIS = "Python for Data Analysis 3rd"
 
 
 class BookContentRepository:
@@ -66,14 +65,15 @@ class BookContentRepository:
     
     # Class constant: Citation map for Chicago-style citations
     # Per PYTHON_GUIDELINES Ch. 6: Class constants for immutable data
+    # Sprint 3.3: Using centralized BookTitles constants (no duplication)
     CITATION_MAP = {
         # Python Language Books (keys match JSON filenames)
         "Learning Python Ed6": ("Lutz, Mark", "Learning Python Ed6"),
-        PYTHON_ESSENTIAL_REF: ("Beazley, David", PYTHON_ESSENTIAL_REF),
-        FLUENT_PYTHON: ("Ramalho, Luciano", FLUENT_PYTHON),
-        PYTHON_DISTILLED: ("Beazley, David", PYTHON_DISTILLED),
+        BookTitles.PYTHON_ESSENTIAL_REF: ("Beazley, David", BookTitles.PYTHON_ESSENTIAL_REF),
+        BookTitles.FLUENT_PYTHON: ("Ramalho, Luciano", BookTitles.FLUENT_PYTHON),
+        BookTitles.PYTHON_DISTILLED: ("Beazley, David", BookTitles.PYTHON_DISTILLED),
         "Python Cookbook 3rd": ("Beazley, David and Jones, Brian K.", "Python Cookbook 3rd"),
-        PYTHON_DATA_ANALYSIS: ("McKinney, Wes", PYTHON_DATA_ANALYSIS),
+        BookTitles.PYTHON_DATA_ANALYSIS: ("McKinney, Wes", BookTitles.PYTHON_DATA_ANALYSIS),
         
         # Architecture Books (keys match JSON filenames)
         "Architecture Patterns with Python": ("Percival, Harry and Gregory, Bob", "Architecture Patterns with Python"),
