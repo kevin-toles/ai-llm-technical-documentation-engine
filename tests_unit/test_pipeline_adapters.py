@@ -13,7 +13,7 @@ Tests for:
 import json
 import pytest
 from pathlib import Path
-from unittest.mock import Mock, patch, MagicMock
+from unittest.mock import patch
 
 # Import will fail initially (RED phase) - that's expected
 try:

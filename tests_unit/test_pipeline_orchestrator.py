@@ -8,10 +8,8 @@ Tests for:
 - PipelineOrchestrator: Coordinates PDF → Chapters → Metadata pipeline
 """
 
-import json
 import pytest
-from pathlib import Path
-from unittest.mock import Mock, patch, MagicMock
+from unittest.mock import Mock
 
 # Import will fail initially (RED phase) - that's expected
 try:

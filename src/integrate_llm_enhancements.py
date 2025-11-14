@@ -161,46 +161,8 @@ def _find_matching_concepts_in_content(chapter_concepts: List[str], content: str
     return matching_concepts
 
 
-def find_relevant_sections(chapter_concepts: List[str], companion_data: Dict) -> Dict[str, List[Dict]]:
-    """Find all relevant sections from companion books based on chapter concepts. Refactored to reduce complexity."""
-    
-    relevant_sections = {}
-    
-    for book_name, book_data in companion_data.items():
-        book_matches = []
-        pages = book_data.get('pages', [])
-        
-        for page_data in pages:
-            content = page_data.get('content', '')
-            page_num = page_data.get('page_number', 'Unknown')
-            
-            # Skip very short content (likely headers, footers, etc.)
-            if len(content.split()) < 30:
-                continue
-            
-            # Find concept matches in this page
-            matching_concepts = _find_matching_concepts_in_content(chapter_concepts, content)
-            
-            # If we found relevant concepts, include this section
-            if matching_concepts:
-                book_matches.append({
-                    'page': page_num,
-                    'content': content,
-                    'matching_concepts': matching_concepts,
-                    'word_count': len(content.split())
-                })
-        
-        # Sort by relevance (number of concepts + occurrences)
-        book_matches.sort(key=lambda x: (
-            len(x['matching_concepts']),
-            sum(mc['occurrences'] for mc in x['matching_concepts'])
-        ), reverse=True)
-        
-        if book_matches:
-            clean_book_name = book_name.replace('_', ' ').replace('Content', '').strip()
-            relevant_sections[clean_book_name] = book_matches[:5]  # Top 5 most relevant sections
-    
-    return relevant_sections
+# Removed unused find_relevant_sections function (dead code, never called)
+# Was causing F811 redefinition warning
 
 def extract_chapter_1_to_10(content: str) -> Tuple[str, str, str]:
     """Extract header, chapters 1-10, and remainder."""
@@ -285,45 +247,8 @@ ENHANCED SUMMARY:
     
     return chapter_content
 
-def find_relevant_sections(chapter_concepts: List[str], companion_data: Dict) -> Dict[str, List[Dict]]:
-    """Find all relevant sections from companion books based on chapter concepts. Refactored to reduce complexity."""
-    
-    relevant_sections = {}
-    
-    for book_name, book_data in companion_data.items():
-        book_matches = []
-        pages = book_data.get('pages', [])
-        
-        for page_data in pages:
-            content = page_data.get('content', '')
-            page_num = page_data.get('page_number', 'Unknown')
-            
-            # Skip very short content (likely headers, footers, etc.)
-            if len(content.split()) < 30:
-                continue
-            
-            # Find concept matches in this page
-            matching_concepts = _find_matching_concepts_in_content(chapter_concepts, content)
-            
-            # If we found relevant concepts, include this section
-            if matching_concepts:
-                book_matches.append({
-                    'page': page_num,
-                    'matching_concepts': matching_concepts,
-                    'word_count': len(content.split())
-                })
-        
-        # Sort by relevance (number of concepts + occurrences)
-        book_matches.sort(key=lambda x: (
-            len(x['matching_concepts']),
-            sum(mc['occurrences'] for mc in x['matching_concepts'])
-        ), reverse=True)
-        
-        if book_matches:
-            clean_book_name = book_name.replace('_', ' ').replace('Content', '').strip()
-            relevant_sections[clean_book_name] = book_matches[:10]  # Top 10 most relevant sections
-    
-    return relevant_sections
+# Removed duplicate unused find_relevant_sections function (F811)
+# Function was defined twice (lines 164 and 288) but never called
 
 def add_cross_reference_section_comprehensive(
     chapter_content: str,
@@ -498,8 +423,8 @@ def _load_and_validate_guidelines() -> tuple[Optional[str], int]:
         return None, 1
 
 
-def _extract_chapters_from_content(content: str) -> tuple[str, List[int], int]:
-    """Extract chapters from content. Returns (chapters_content, chapter_list, exit_code)."""
+def _extract_chapters_from_content(content: str) -> tuple[str, str, List[int], int]:
+    """Extract chapters from content. Returns (header, chapters_content, chapter_list, exit_code)."""
     # Extract header (everything before Chapter 1)
     header_match = re.search(r'(.*)(?=## Chapter 1:)', content, re.DOTALL)
     header = header_match.group(1) if header_match else ""
@@ -517,7 +442,7 @@ def _extract_chapters_from_content(content: str) -> tuple[str, List[int], int]:
         logger.error("✗ CRITICAL: No chapters found in document")
         print("❌ CRITICAL ERROR: No chapters found in document")
         print("   Check that the markdown file has chapters formatted as '## Chapter N:'")
-        return chapters_content, [], 1
+        return header, chapters_content, [], 1
     
     logger.info(f"Found {len(all_chapters)} chapters (Chapter {all_chapters[0]} - Chapter {all_chapters[-1]})")
     print(f"\n📋 Found {len(all_chapters)} chapters (Chapter {all_chapters[0]} - Chapter {all_chapters[-1]})")
@@ -527,7 +452,7 @@ def _extract_chapters_from_content(content: str) -> tuple[str, List[int], int]:
     logger.info(f"LIMITING to chapters 1-10 for testing: {all_chapters}")
     print(f"⚠️  LIMITING to chapters 1-10 for testing: {all_chapters}")
     
-    return chapters_content, all_chapters, 0
+    return header, chapters_content, all_chapters, 0
 
 
 def _test_first_chapter(orchestrator, chapters_content: str, test_chapter_num: int) -> int:
@@ -646,7 +571,7 @@ def _process_single_chapter(chapter_num: int, chapters_content: str, companion_d
         return None, False
 
 
-def _process_all_chapters(chapters_content: str, all_chapters: List[int],
+def _process_all_chapters(header: str, chapters_content: str, all_chapters: List[int],
                          companion_data: Dict) -> Tuple[str, int, List[int], int]:
     """
     Process all chapters with LLM enhancement.
@@ -685,14 +610,14 @@ def _process_all_chapters(chapters_content: str, all_chapters: List[int],
             
             # Save partial results if any were successful
             if chapters_with_cross_refs > 0:
-                _save_partial_results(enhanced_content, chapters_with_cross_refs)
+                _save_partial_results(header, enhanced_content, chapters_with_cross_refs)
             
             return enhanced_content, chapters_with_cross_refs, failed_chapters, 1
     
     return enhanced_content, chapters_with_cross_refs, failed_chapters, 0
 
 
-def _save_partial_results(enhanced_content: str, chapters_with_cross_refs: int):
+def _save_partial_results(header: str, enhanced_content: str, chapters_with_cross_refs: int):
     """Save partial results when processing is interrupted."""
     enhanced_document = header + enhanced_content
     output_filename = "PYTHON_GUIDELINES_Learning_Python_Ed6_LLM_ENHANCED_PARTIAL.md"
@@ -740,7 +665,7 @@ def main():
         return exit_code
     
     # Extract chapters
-    chapters_content, all_chapters, exit_code = _extract_chapters_from_content(content)
+    header, chapters_content, all_chapters, exit_code = _extract_chapters_from_content(content)
     if exit_code != 0:
         return exit_code
     
@@ -764,7 +689,7 @@ def main():
     
     # Process all chapters
     enhanced_content, chapters_with_cross_refs, failed_chapters, exit_code = _process_all_chapters(
-        chapters_content, all_chapters, companion_data
+        header, chapters_content, all_chapters, companion_data
     )
     
     if exit_code != 0:

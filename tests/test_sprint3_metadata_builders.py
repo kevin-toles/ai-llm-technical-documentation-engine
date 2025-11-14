@@ -28,7 +28,6 @@ Anti-Patterns to Avoid (per Quality Assessment):
     - NO missing imports
 """
 
-import pytest
 from pathlib import Path
 
 

@@ -1,227 +1,184 @@
 # CodeRabbit Local Analysis Report
-**Generated**: 2025-11-12 11:29:31
-**Total Issues**: 417
+**Generated**: 2025-11-14 12:31:18
+**Total Issues**: 713
 
 ## Summary
 | Severity | Count |
 |----------|-------|
 | 🚨 Critical | 0 |
-| 🔴 High | 5 |
-| 🟡 Medium | 96 |
-| 🔵 Low | 316 |
+| 🔴 High | 0 |
+| 🟡 Medium | 116 |
+| 🔵 Low | 597 |
 | ℹ️ Info | 0 |
 
 ## Recommendations
-- ⚡ Fix high-severity issues before deployment
 - 🔧 Consider refactoring to reduce medium-severity issues
 
-## 🔴 High Issues (5)
+## 🟡 Medium Issues (116)
 
 ### Issue 1
-- **File**: `src/pipeline/generate_chapter_metadata.py`
-- **Line**: 307
-- **Tool**: radon
-- **Type**: complexity
-- **Rule**: complexity
-- **Message**: High complexity: 28 (threshold: 10)
+- **File**: `src/book_taxonomy.py`
+- **Line**: 369
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: "add" of "set" does not return a value (it only ever returns None)  [func-returns-value]
 
 ### Issue 2
-- **File**: `src/pipeline/generate_chapter_metadata.py`
-- **Line**: 42
-- **Tool**: radon
-- **Type**: complexity
-- **Rule**: complexity
-- **Message**: High complexity: 16 (threshold: 10)
+- **File**: `src/book_taxonomy.py`
+- **Line**: 454
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: "add" of "set" does not return a value (it only ever returns None)  [func-returns-value]
 
 ### Issue 3
-- **File**: `src/pipeline/chapter_generator_all_text.py`
-- **Line**: 711
-- **Tool**: radon
-- **Type**: complexity
-- **Rule**: complexity
-- **Message**: High complexity: 22 (threshold: 10)
+- **File**: `src/chapter_metadata_manager.py`
+- **Line**: 29
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: Incompatible types in assignment (expression has type "None", variable has type "list[str]")  [assignment]
 
 ### Issue 4
-- **File**: `src/pipeline/chapter_generator_all_text.py`
-- **Line**: 1247
-- **Tool**: radon
-- **Type**: complexity
-- **Rule**: complexity
-- **Message**: High complexity: 20 (threshold: 10)
+- **File**: `src/chapter_metadata_manager.py`
+- **Line**: 54
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: Incompatible types in assignment (expression has type "Path", variable has type "str | None")  [assignment]
 
 ### Issue 5
-- **File**: `src/pipeline/chapter_generator_all_text.py`
-- **Line**: 872
-- **Tool**: radon
-- **Type**: complexity
-- **Rule**: complexity
-- **Message**: High complexity: 18 (threshold: 10)
-
-## 🟡 Medium Issues (96)
-
-### Issue 1
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/config/settings.py`
-- **Line**: 22
-- **Tool**: ruff
-- **Type**: code_quality
-- **Rule**: F401
-- **Message**: `typing.Optional` imported but unused
-
-### Issue 2
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/scripts/coderabbit_audit_generator.py`
-- **Line**: 103
-- **Tool**: ruff
-- **Type**: code_quality
-- **Rule**: F541
-- **Message**: f-string without any placeholders
-
-### Issue 3
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/scripts/coderabbit_audit_generator.py`
-- **Line**: 104
-- **Tool**: ruff
-- **Type**: code_quality
-- **Rule**: F541
-- **Message**: f-string without any placeholders
-
-### Issue 4
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/scripts/coderabbit_audit_generator.py`
-- **Line**: 106
-- **Tool**: ruff
-- **Type**: code_quality
-- **Rule**: F541
-- **Message**: f-string without any placeholders
-
-### Issue 5
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/scripts/validate_standalone.py`
-- **Line**: 115
-- **Tool**: ruff
-- **Type**: code_quality
-- **Rule**: F401
-- **Message**: `src.metadata_extraction_system.MetadataServiceFactory` imported but unused; consider using `importlib.util.find_spec` to test for availability
+- **File**: `src/chapter_metadata_manager.py`
+- **Line**: 56
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: Incompatible types in assignment (expression has type "Path", variable has type "str | None")  [assignment]
 
 ### Issue 6
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/scripts/validate_standalone.py`
-- **Line**: 121
-- **Tool**: ruff
-- **Type**: code_quality
-- **Rule**: F401
-- **Message**: `src.llm_integration.call_llm` imported but unused; consider using `importlib.util.find_spec` to test for availability
+- **File**: `src/chapter_metadata_manager.py`
+- **Line**: 58
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: Unsupported left operand type for / ("str")  [operator]
 
 ### Issue 7
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/scripts/validate_standalone.py`
-- **Line**: 127
-- **Tool**: ruff
-- **Type**: code_quality
-- **Rule**: F401
-- **Message**: `src.book_taxonomy.BOOK_REGISTRY` imported but unused; consider using `importlib.util.find_spec` to test for availability
+- **File**: `src/chapter_metadata_manager.py`
+- **Line**: 58
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: Unsupported left operand type for / ("None")  [operator]
 
 ### Issue 8
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/scripts/validate_standalone.py`
-- **Line**: 133
-- **Tool**: ruff
-- **Type**: code_quality
-- **Rule**: F401
-- **Message**: `src.interactive_llm_system_v3_hybrid_prompt.AnalysisOrchestrator` imported but unused; consider using `importlib.util.find_spec` to test for availability
+- **File**: `src/chapter_metadata_manager.py`
+- **Line**: 58
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: Left operand is of type "str | None"
 
 ### Issue 9
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/src/book_taxonomy.py`
-- **Line**: 17
-- **Tool**: ruff
-- **Type**: code_quality
-- **Rule**: F401
-- **Message**: `typing.Optional` imported but unused
+- **File**: `src/chapter_metadata_manager.py`
+- **Line**: 59
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: Unsupported left operand type for / ("str")  [operator]
 
 ### Issue 10
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/src/cache.py`
-- **Line**: 15
-- **Tool**: ruff
-- **Type**: code_quality
-- **Rule**: F401
-- **Message**: `datetime.datetime` imported but unused
+- **File**: `src/chapter_metadata_manager.py`
+- **Line**: 59
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: Unsupported left operand type for / ("None")  [operator]
 
 ### Issue 11
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/src/cache.py`
-- **Line**: 15
-- **Tool**: ruff
-- **Type**: code_quality
-- **Rule**: F401
-- **Message**: `datetime.timedelta` imported but unused
+- **File**: `src/chapter_metadata_manager.py`
+- **Line**: 59
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: Left operand is of type "str | None"
 
 ### Issue 12
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/src/integrate_llm_enhancements.py`
-- **Line**: 665
-- **Tool**: ruff
-- **Type**: code_quality
-- **Rule**: invalid-syntax
-- **Message**: Expected an indented block after `for` statement
+- **File**: `src/chapter_metadata_manager.py`
+- **Line**: 195
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: Need type annotation for "all_books" (hint: "all_books: set[<type>] = ...")  [var-annotated]
 
 ### Issue 13
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/src/interactive_llm_system_v3_hybrid_prompt.py`
-- **Line**: 31
-- **Tool**: ruff
-- **Type**: code_quality
-- **Rule**: F401
-- **Message**: `dataclasses.asdict` imported but unused
+- **File**: `src/pipeline/convert_pdf_to_json.py`
+- **Line**: 11
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: Skipping analyzing "fitz": module is installed, but missing library stubs or py.typed marker  [import-untyped]
 
 ### Issue 14
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/src/interactive_llm_system_v3_hybrid_prompt.py`
-- **Line**: 32
-- **Tool**: ruff
-- **Type**: code_quality
-- **Rule**: F401
-- **Message**: `typing.Protocol` imported but unused
+- **File**: `src/pipeline/chapter_generator_all_text.py`
+- **Line**: 27
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: Cannot find implementation or library stub for module named "llm_integration"  [import-not-found]
 
 ### Issue 15
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/src/interactive_llm_system_v3_hybrid_prompt.py`
-- **Line**: 32
-- **Tool**: ruff
-- **Type**: code_quality
-- **Rule**: F401
-- **Message**: `typing.Set` imported but unused
+- **File**: `src/pipeline/chapter_generator_all_text.py`
+- **Line**: 395
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: Need type annotation for "matches" (hint: "matches: list[<type>] = ...")  [var-annotated]
 
 ### Issue 16
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/src/interactive_llm_system_v3_hybrid_prompt.py`
-- **Line**: 32
-- **Tool**: ruff
-- **Type**: code_quality
-- **Rule**: F401
-- **Message**: `typing.Tuple` imported but unused
+- **File**: `src/pipeline/chapter_generator_all_text.py`
+- **Line**: 1376
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: Incompatible types in assignment (expression has type "list[Never]", variable has type "str")  [assignment]
 
 ### Issue 17
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/src/interactive_llm_system_v3_hybrid_prompt.py`
-- **Line**: 33
-- **Tool**: ruff
-- **Type**: code_quality
-- **Rule**: F401
-- **Message**: `pathlib.Path` imported but unused
+- **File**: `src/pipeline/chapter_generator_all_text.py`
+- **Line**: 1377
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: "str" has no attribute "append"  [attr-defined]
 
 ### Issue 18
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/src/interactive_llm_system_v3_hybrid_prompt.py`
-- **Line**: 36
-- **Tool**: ruff
-- **Type**: code_quality
-- **Rule**: F401
-- **Message**: `collections.defaultdict` imported but unused
+- **File**: `src/pipeline/chapter_generator_all_text.py`
+- **Line**: 1378
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: "str" has no attribute "append"  [attr-defined]
 
 ### Issue 19
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/src/interactive_llm_system_v3_hybrid_prompt.py`
-- **Line**: 40
-- **Tool**: ruff
-- **Type**: code_quality
-- **Rule**: F401
-- **Message**: `.metadata_extraction_system.MetadataServiceFactory` imported but unused
+- **File**: `src/pipeline/chapter_generator_all_text.py`
+- **Line**: 1383
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: "str" has no attribute "append"  [attr-defined]
 
 ### Issue 20
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/src/interactive_llm_system_v3_hybrid_prompt.py`
-- **Line**: 49
-- **Tool**: ruff
-- **Type**: code_quality
-- **Rule**: F401
-- **Message**: `.book_taxonomy.get_recommended_books` imported but unused; consider using `importlib.util.find_spec` to test for availability
+- **File**: `src/pipeline/chapter_generator_all_text.py`
+- **Line**: 1384
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: "str" has no attribute "append"  [attr-defined]
 
-... and 76 more issues
+... and 96 more issues
 
-## 🔵 Low Issues (316)
+## 🔵 Low Issues (597)
 
 ### Issue 1
 - **File**: `./coderabbit/scripts/local_coderabbit.py`
@@ -281,7 +238,7 @@
 
 ### Issue 8
 - **File**: `./coderabbit/scripts/local_coderabbit.py`
-- **Line**: 139
+- **Line**: 175
 - **Tool**: bandit
 - **Type**: security
 - **Rule**: B607
@@ -289,7 +246,7 @@
 
 ### Issue 9
 - **File**: `./coderabbit/scripts/local_coderabbit.py`
-- **Line**: 139
+- **Line**: 175
 - **Tool**: bandit
 - **Type**: security
 - **Rule**: B603
@@ -297,7 +254,7 @@
 
 ### Issue 10
 - **File**: `./coderabbit/scripts/local_coderabbit.py`
-- **Line**: 181
+- **Line**: 198
 - **Tool**: bandit
 - **Type**: security
 - **Rule**: B607
@@ -305,7 +262,7 @@
 
 ### Issue 11
 - **File**: `./coderabbit/scripts/local_coderabbit.py`
-- **Line**: 181
+- **Line**: 198
 - **Tool**: bandit
 - **Type**: security
 - **Rule**: B603
@@ -313,7 +270,7 @@
 
 ### Issue 12
 - **File**: `./coderabbit/scripts/local_coderabbit.py`
-- **Line**: 232
+- **Line**: 249
 - **Tool**: bandit
 - **Type**: security
 - **Rule**: B112
@@ -321,7 +278,7 @@
 
 ### Issue 13
 - **File**: `./src/interactive_llm_system_v3_hybrid_prompt.py`
-- **Line**: 1801
+- **Line**: 1307
 - **Tool**: bandit
 - **Type**: security
 - **Rule**: B110
@@ -337,7 +294,7 @@
 
 ### Issue 15
 - **File**: `./tests/test_cache.py`
-- **Line**: 26
+- **Line**: 23
 - **Tool**: bandit
 - **Type**: security
 - **Rule**: B101
@@ -345,7 +302,7 @@
 
 ### Issue 16
 - **File**: `./tests/test_cache.py`
-- **Line**: 27
+- **Line**: 24
 - **Tool**: bandit
 - **Type**: security
 - **Rule**: B101
@@ -353,7 +310,7 @@
 
 ### Issue 17
 - **File**: `./tests/test_cache.py`
-- **Line**: 28
+- **Line**: 25
 - **Tool**: bandit
 - **Type**: security
 - **Rule**: B101
@@ -361,7 +318,7 @@
 
 ### Issue 18
 - **File**: `./tests/test_cache.py`
-- **Line**: 39
+- **Line**: 36
 - **Tool**: bandit
 - **Type**: security
 - **Rule**: B101
@@ -369,7 +326,7 @@
 
 ### Issue 19
 - **File**: `./tests/test_cache.py`
-- **Line**: 51
+- **Line**: 48
 - **Tool**: bandit
 - **Type**: security
 - **Rule**: B101
@@ -377,10 +334,10 @@
 
 ### Issue 20
 - **File**: `./tests/test_cache.py`
-- **Line**: 63
+- **Line**: 60
 - **Tool**: bandit
 - **Type**: security
 - **Rule**: B101
 - **Message**: Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
 
-... and 296 more issues
+... and 577 more issues

@@ -1189,6 +1189,109 @@ def _build_later_chapter_reference(ref: Dict[str, Any]) -> List[str]:
     return lines
 
 
+def _build_companion_references_section(
+    cross_matches: List[Dict[str, Any]],
+    primary_content: str,
+    footnote_start: int
+) -> Tuple[List[str], List[Dict[str, Any]], int]:
+    """
+    Build companion book references section.
+    
+    Extracted from build_see_also to reduce complexity.
+    
+    Args:
+        cross_matches: List of cross-book matches
+        primary_content: Primary chapter content for comparison
+        footnote_start: Starting footnote number
+        
+    Returns:
+        Tuple of (output_lines, footnotes, next_footnote_num)
+        
+    Reference:
+        - Fluent Python Ch. 7: Extract Method pattern
+    """
+    out = ["\n#### **Companion Books**\n"]
+    foots: List[Dict[str, Any]] = []
+    n = footnote_start
+    
+    # Group matches by book and pick one page per book
+    by_book: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
+    for m in cross_matches:
+        by_book[m["book"]].append(m)
+
+    for book, pages in list(by_book.items())[:5]:
+        ref_lines, footnote = _build_companion_book_reference(
+            book, pages, primary_content, n
+        )
+        out.extend(ref_lines)
+        foots.append(footnote)
+        n += 1
+    
+    return out, foots, n
+
+
+def _build_self_references_section(
+    current_concepts: Set[str],
+    primary_book: Dict[str, Any],
+    chapter_num: int,
+    all_chapters: List[Tuple[int, str, int, int]],
+    footnote_start: int
+) -> Tuple[List[str], List[Dict[str, Any]], int]:
+    """
+    Build self-references to later chapters section.
+    
+    Extracted from build_see_also to reduce complexity.
+    
+    Args:
+        current_concepts: Set of concepts in current chapter
+        primary_book: Primary book JSON data
+        chapter_num: Current chapter number
+        all_chapters: List of all chapter definitions
+        footnote_start: Starting footnote number
+        
+    Returns:
+        Tuple of (output_lines, footnotes, next_footnote_num)
+        
+    Reference:
+        - Architecture Patterns Ch. 4: Service Layer pattern
+    """
+    out = []
+    foots: List[Dict[str, Any]] = []
+    n = footnote_start
+    
+    self_refs = find_self_references(current_concepts, primary_book, chapter_num, all_chapters)
+    
+    if self_refs:
+        out.append("\n#### **Later Chapters in This Book**\n")
+        out.append("")
+        
+        for ref in self_refs:
+            out.extend(_build_later_chapter_reference(ref))
+            out.append(f"[^{n}]")
+            out.append("")
+            out.append(emit_annotation(
+                f"Forward reference: Chapter {ref['chapter_num']} shares {len(ref['shared_concepts'])} concept(s) with this chapter, "
+                f"indicating topical continuity and progressive skill development. "
+                f"The concepts {', '.join(ref['shared_concepts'][:2])} appear in both contexts, suggesting "
+                f"that understanding from this chapter will directly transfer to and be expanded upon "
+                f"in the later material."
+            ))
+            out.append("")
+            
+            foots.append({
+                "num": n,
+                "author": CURRENT_BOOK_META['author'],
+                "title": CURRENT_BOOK_META['full_title'],
+                "file": PRIMARY_BOOK,
+                "page": ref['start_page'],
+                "start_line": 1,
+                "end_line": 1
+            })
+            n += 1
+    
+    return out, foots, n
+
+
 def build_see_also(cross_matches: List[Dict[str, Any]], 
                   footnote_start: int, 
                   chapter_num: int,
@@ -1201,6 +1304,12 @@ def build_see_also(cross_matches: List[Dict[str, Any]],
     - Cross-book references with SUMMARIES (not excerpts)
     - Self-references to later chapters
     - Extensive annotations comparing primary vs companion content
+    
+    Refactored to reduce complexity from 11 → <10.
+    
+    Reference:
+        - Fluent Python Ch. 7: Function decomposition
+        - Architecture Patterns Ch. 4: Service Layer orchestration
     """
     out = ["\n### **See Also: Cross-Book References & Forward Connections**\n"]
     n = footnote_start
@@ -1211,54 +1320,21 @@ def build_see_also(cross_matches: List[Dict[str, Any]],
     if chapter_pages:
         primary_content = "\n".join([p.get("content", "") for p in chapter_pages])
 
-    # Part 1: Companion Book References with Summaries
+    # Part 1: Companion Book References (extracted to helper)
     if cross_matches:
-        out.append("\n#### **Companion Books**\n")
-        
-        # Group matches by book and pick one page per book
-        by_book: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
-        for m in cross_matches:
-            by_book[m["book"]].append(m)
-
-        for book, pages in list(by_book.items())[:5]:
-            ref_lines, footnote = _build_companion_book_reference(
-                book, pages, primary_content, n
-            )
-            out.extend(ref_lines)
-            foots.append(footnote)
-            n += 1
+        companion_lines, companion_foots, n = _build_companion_references_section(
+            cross_matches, primary_content, n
+        )
+        out.extend(companion_lines)
+        foots.extend(companion_foots)
     
-    # Part 2: Self-References to Later Chapters
+    # Part 2: Self-References to Later Chapters (extracted to helper)
     if primary_book and current_concepts and all_chapters:
-        self_refs = find_self_references(current_concepts, primary_book, chapter_num, all_chapters)
-        
-        if self_refs:
-            out.append("\n#### **Later Chapters in This Book**\n")
-            out.append("")
-            
-            for ref in self_refs:
-                out.extend(_build_later_chapter_reference(ref))
-                out.append(f"[^{n}]")
-                out.append("")
-                out.append(emit_annotation(
-                    f"Forward reference: Chapter {ref['chapter_num']} shares {len(ref['shared_concepts'])} concept(s) with this chapter, "
-                    f"indicating topical continuity and progressive skill development. "
-                    f"The concepts {', '.join(ref['shared_concepts'][:2])} appear in both contexts, suggesting "
-                    f"that understanding from this chapter will directly transfer to and be expanded upon "
-                    f"in the later material."
-                ))
-                out.append("")
-                
-                foots.append({
-                    "num": n,
-                    "author": CURRENT_BOOK_META['author'],
-                    "title": CURRENT_BOOK_META['full_title'],
-                    "file": PRIMARY_BOOK,
-                    "page": ref['start_page'],
-                    "start_line": 1,
-                    "end_line": 1
-                })
-                n += 1
+        self_ref_lines, self_ref_foots, n = _build_self_references_section(
+            current_concepts, primary_book, chapter_num, all_chapters, n
+        )
+        out.extend(self_ref_lines)
+        foots.extend(self_ref_foots)
 
     return "\n".join(out), n, foots
 
@@ -1332,166 +1408,398 @@ def emit_footnotes(foots: List[Dict[str,Any]]) -> str:
     out.append("")
     return "\n".join(out)
 
-def main():
-    print("="*66)
-    print("Multi-Chapter Generator (Chapters 1-41)")
-    print("="*66)
+# ============================================================================
+# Helper Functions (Extracted to reduce main() complexity from 20 → <10)
+# Following Architecture Patterns Ch. 4 (Service Layer pattern)
+# Reference: Fluent Python Ch. 7 (Functions as First-Class Objects)
+# ============================================================================
 
-    # Load primary JSON
-    primary = load_json_book(PRIMARY_BOOK)
+def _extract_chapter_concepts(
+    chapter_text: str,
+    chapter_num: int,
+    chapter_title: str,
+    start_page: int,
+    end_page: int
+) -> Set[str]:
+    """
+    Extract concepts from chapter using keyword matching and optional LLM.
     
-    # Load companions once
+    Complexity reduced by extracting from _process_single_chapter.
+    
+    Args:
+        chapter_text: Full text of the chapter
+        chapter_num: Chapter number
+        chapter_title: Chapter title
+        start_page: Start page number
+        end_page: End page number
+        
+    Returns:
+        Set of concept strings
+        
+    Reference:
+        - Fluent Python Ch. 7: Extract function to reduce complexity
+    """
+    # Phase 1: Keyword matching
+    keyword_concepts = extract_concepts_from_text(chapter_text)
+    print(f"  Phase 1: Found {len(keyword_concepts)} concepts via keyword matching")
+    
+    # Phase 2: LLM semantic analysis (if enabled)
+    if USE_LLM_SEMANTIC_ANALYSIS and LLM_AVAILABLE:
+        print("  Phase 2: LLM semantic concept extraction...")
+        llm_result = prompt_for_semantic_concepts(
+            chapter_num, 
+            chapter_title,
+            (start_page, end_page),
+            chapter_text,
+            keyword_concepts
+        )
+        # Combine verified + additional concepts
+        chapter_concepts = set(llm_result.get("verified_concepts", []))
+        chapter_concepts.update(llm_result.get("additional_concepts", []))
+        print(f"  Phase 2: LLM verified {len(llm_result.get('verified_concepts', []))} and added {len(llm_result.get('additional_concepts', []))} concepts")
+        return chapter_concepts
+    else:
+        return keyword_concepts
+
+
+def _find_cross_references(
+    all_text: str,
+    chapter_num: int,
+    chapter_title: str,
+    chapter_concepts: Set[str],
+    companions: Dict[str, Dict[str, Any]]
+) -> List[Any]:
+    """
+    Find cross-references to companion books using keyword matching and optional LLM.
+    
+    Complexity reduced by extracting from _process_single_chapter.
+    
+    Args:
+        all_text: Full text to search
+        chapter_num: Chapter number
+        chapter_title: Chapter title
+        chapter_concepts: Set of extracted concepts
+        companions: Dictionary of companion book data
+        
+    Returns:
+        List of cross-reference matches
+        
+    Reference:
+        - Architecture Patterns Ch. 4: Service Layer pattern
+    """
+    # Phase 1: Keyword-based cross-book matching
+    print("  Phase 1: Keyword-based cross-book matching...")
+    non_primary_companions = {k: v for k, v in companions.items() if k != PRIMARY_BOOK}
+    keyword_xmatches = find_cross_book_matches(all_text, non_primary_companions)
+    print(f"  Phase 1: Found {len(keyword_xmatches)} cross-book matches")
+    
+    # Phase 2: LLM validates and enhances cross-references (if enabled)
+    if USE_LLM_SEMANTIC_ANALYSIS and LLM_AVAILABLE:
+        print("  Phase 2: LLM scanning ALL companion books for semantic matches...")
+        llm_xref_result = prompt_for_cross_reference_validation(
+            chapter_num,
+            chapter_title,
+            chapter_concepts,
+            keyword_xmatches,
+            companions
+        )
+        # Use LLM-validated matches
+        xmatches = llm_xref_result.get("validated_matches", keyword_xmatches)
+        xmatches.extend(llm_xref_result.get("additional_matches", []))
+        print(f"  Phase 2: LLM found {len(llm_xref_result.get('additional_matches', []))} additional semantic matches")
+        return xmatches
+    else:
+        return keyword_xmatches
+
+
+def _load_companion_books(book_list: List[str]) -> Dict[str, Dict[str, Any]]:
+    """
+    Load companion books from JSON files.
+    
+    Extracted from main() to reduce complexity.
+    Handles exceptions gracefully - returns successfully loaded books only.
+    
+    Args:
+        book_list: List of book names to load
+        
+    Returns:
+        Dictionary mapping book names to loaded JSON data
+        
+    Reference:
+        - Architecture Patterns Ch. 4: Service Layer separates concerns
+        - Python Distilled Ch. 5: Function organization best practices
+    """
     print("\nLoading companion books...")
     companions: Dict[str, Dict[str, Any]] = {}
-    for b in ALL_BOOKS:
+    for book_name in book_list:
         try:
-            companions[b] = load_json_book(b)
-            print(f"  ✓ {b}")
+            companions[book_name] = load_json_book(book_name)
+            print(f"  ✓ {book_name}")
         except Exception as e:
-            print(f"  ✗ {b}: {e}")
+            print(f"  ✗ {book_name}: {e}")
+    return companions
 
-    # Build complete document
-    all_docs = []
-    total_chapters = len(CHAPTERS)
-    all_docs.append(f"# Comprehensive Python Guidelines — {CURRENT_BOOK_META['full_title']} (Chapters 1-{total_chapters})")
-    all_docs.append("")
-    all_docs.append(f"*Source: {CURRENT_BOOK_META['full_title']}, Chapters 1-{total_chapters}*")
-    all_docs.append("")
-    all_docs.append("---")
-    all_docs.append("")
+
+def _build_document_header(total_chapters: int) -> List[str]:
+    """
+    Build document header lines.
     
-    # Global footnote counter across all chapters
-    global_footnote_num = 1
-    all_footnotes = []
+    Extracted from main() to reduce complexity.
+    Creates the title and metadata section.
     
-    # Generate each chapter
-    for chapter_num, chapter_title, start_page, end_page in CHAPTERS:
-        print(f"\n[Chapter {chapter_num}/{len(CHAPTERS)}] Generating: {chapter_title} (pages {start_page}-{end_page})")
+    Args:
+        total_chapters: Total number of chapters
         
-        chapter_pages = [
-            p for p in primary.get("pages", [])
-            if start_page <= p.get("page_number", 0) <= end_page
-        ]
-        print(f"  Found {len(chapter_pages)} pages")
+    Returns:
+        List of header lines
         
-        # Cross-book matches for this chapter
-        all_text = " ".join(p.get("content","") for p in chapter_pages)
-        xmatches = find_cross_book_matches(all_text, {k:v for k,v in companions.items() if k != PRIMARY_BOOK})
-        print(f"  Found {len(xmatches)} cross-book matches")
-        
-        # Build chapter document
-        doc = []
-        doc.append(f"## Chapter {chapter_num}: {chapter_title}")
-        doc.append("")
-        doc.append(f"*Source: {CURRENT_BOOK_META['full_title']}, pages {start_page}–{end_page}*")
-        doc.append("")
-        doc.append("### Chapter Summary")
-        doc.append(generate_chapter_summary(chapter_pages, chapter_num) + f" [^{global_footnote_num}]")
-        
-        # Summary footnote
-        all_footnotes.append({
-            "num": global_footnote_num,
-            "author": CURRENT_BOOK_META['author'],
-            "title": CURRENT_BOOK_META['full_title'],
-            "file": PRIMARY_BOOK,
-            "page": start_page,
-            "start_line": 1,
-            "end_line": 25
-        })
-        global_footnote_num += 1
-        
-        doc.append("")
-        doc.append("### Concept-by-Concept Breakdown")
-        
-        # Phase 1: Extract concepts using keyword matching
-        chapter_text = "\n".join([p.get("content", "") for p in chapter_pages])
-        keyword_concepts = extract_concepts_from_text(chapter_text)
-        print(f"  Phase 1: Found {len(keyword_concepts)} concepts via keyword matching")
-        
-        # Phase 2: LLM semantic analysis (if enabled)
-        if USE_LLM_SEMANTIC_ANALYSIS and LLM_AVAILABLE:
-            print("  Phase 2: LLM semantic concept extraction...")
-            llm_result = prompt_for_semantic_concepts(
-                chapter_num, 
-                chapter_title,
-                (start_page, end_page),
-                chapter_text,
-                keyword_concepts
-            )
-            # Combine verified + additional concepts
-            chapter_concepts = set(llm_result.get("verified_concepts", []))
-            chapter_concepts.update(llm_result.get("additional_concepts", []))
-            print(f"  Phase 2: LLM verified {len(llm_result.get('verified_concepts', []))} and added {len(llm_result.get('additional_concepts', []))} concepts")
-        else:
-            chapter_concepts = keyword_concepts
-        
-        concepts, global_footnote_num, new_foots = build_concept_sections(
-            primary, chapter_pages, global_footnote_num, chapter_num,
-            chapter_concepts=chapter_concepts
-        )
-        doc.append(concepts)
-        all_footnotes.extend(new_foots)
-        
-        # TPM at end
-        tpm_sec, global_footnote_num, tpm_foot = build_tpm_section({k:v for k,v in companions.items() if k != PRIMARY_BOOK}, global_footnote_num, chapter_num)
-        doc.append(tpm_sec)
-        if tpm_foot:
-            all_footnotes.append(tpm_foot)
-        
-        # Phase 1: Keyword-based cross-book matching
-        print("  Phase 1: Keyword-based cross-book matching...")
-        keyword_xmatches = find_cross_book_matches(all_text, {k:v for k,v in companions.items() if k != PRIMARY_BOOK})
-        print(f"  Phase 1: Found {len(keyword_xmatches)} cross-book matches")
-        
-        # Phase 2: LLM validates and enhances cross-references (if enabled)
-        if USE_LLM_SEMANTIC_ANALYSIS and LLM_AVAILABLE:
-            print("  Phase 2: LLM scanning ALL companion books for semantic matches...")
-            llm_xref_result = prompt_for_cross_reference_validation(
-                chapter_num,
-                chapter_title,
-                chapter_concepts,
-                keyword_xmatches,
-                companions
-            )
-            # Use LLM-validated matches
-            xmatches = llm_xref_result.get("validated_matches", keyword_xmatches)
-            xmatches.extend(llm_xref_result.get("additional_matches", []))
-            print(f"  Phase 2: LLM found {len(llm_xref_result.get('additional_matches', []))} additional semantic matches")
-        else:
-            xmatches = keyword_xmatches
-        
-        # See also - with comprehensive summaries and self-references
-        see_also, global_footnote_num, sal_foots = build_see_also(
-            xmatches, 
-            global_footnote_num, 
-            chapter_num,
-            primary_book=primary,
-            current_concepts=chapter_concepts,
-            all_chapters=CHAPTERS,
-            chapter_pages=chapter_pages
-        )
-        doc.append(see_also)
-        all_footnotes.extend(sal_foots)
-        
-        doc.append("")
-        doc.append("---")
-        doc.append("")
-        
-        all_docs.append("\n".join(doc))
+    Reference:
+        - Fluent Python Ch. 7: Function decomposition reduces complexity
+    """
+    header = []
+    header.append(f"# Comprehensive Python Guidelines — {CURRENT_BOOK_META['full_title']} (Chapters 1-{total_chapters})")
+    header.append("")
+    header.append(f"*Source: {CURRENT_BOOK_META['full_title']}, Chapters 1-{total_chapters}*")
+    header.append("")
+    header.append("---")
+    header.append("")
+    return header
+
+
+def _build_chapter_header(
+    chapter_num: int,
+    chapter_title: str,
+    start_page: int,
+    end_page: int,
+    chapter_pages: List[Dict[str, Any]],
+    global_footnote_num: int
+) -> Tuple[List[str], List[Dict[str, Any]], int]:
+    """
+    Build chapter header section with summary and footnote.
     
-    # Add all footnotes at the end
-    all_docs.append("\n---\n\n### **Footnotes**\n")
-    for f in all_footnotes:
-        all_docs.append(chicago_footnote(f["num"], f["author"], f["title"], f["file"], f["page"], f["start_line"], f["end_line"]))
-    all_docs.append("")
+    Extracted from _process_single_chapter to reduce complexity.
     
-    # Write complete document
-    out_path = Path(f"PYTHON_GUIDELINES_{PRIMARY_BOOK}.md")
+    Args:
+        chapter_num: Chapter number
+        chapter_title: Chapter title
+        start_page: Start page
+        end_page: End page
+        chapter_pages: List of page data
+        global_footnote_num: Current footnote number
+        
+    Returns:
+        Tuple of (header_lines, footnotes, updated_footnote_num)
+        
+    Reference:
+        - Fluent Python Ch. 7: Extract function pattern
+    """
+    doc = []
+    doc.append(f"## Chapter {chapter_num}: {chapter_title}")
+    doc.append("")
+    doc.append(f"*Source: {CURRENT_BOOK_META['full_title']}, pages {start_page}–{end_page}*")
+    doc.append("")
+    doc.append("### Chapter Summary")
+    doc.append(generate_chapter_summary(chapter_pages, chapter_num) + f" [^{global_footnote_num}]")
+    
+    # Summary footnote
+    footnotes = []
+    footnotes.append({
+        "num": global_footnote_num,
+        "author": CURRENT_BOOK_META['author'],
+        "title": CURRENT_BOOK_META['full_title'],
+        "file": PRIMARY_BOOK,
+        "page": start_page,
+        "start_line": 1,
+        "end_line": 25
+    })
+    
+    return doc, footnotes, global_footnote_num + 1
+
+
+def _process_single_chapter(
+    chapter_data: Tuple[int, str, int, int],
+    primary: Dict[str, Any],
+    companions: Dict[str, Dict[str, Any]],
+    global_footnote_num: int,
+    all_footnotes: List[Dict[str, Any]]
+) -> Dict[str, Any]:
+    """
+    Process a single chapter - extract content, concepts, cross-references.
+    
+    Extracted from main() to reduce complexity.
+    This is the core processing logic for one chapter.
+    
+    Args:
+        chapter_data: Tuple of (chapter_num, title, start_page, end_page)
+        primary: Primary book JSON data
+        companions: Dict of companion book data
+        global_footnote_num: Current footnote number
+        all_footnotes: List to accumulate footnotes
+        
+    Returns:
+        Dictionary with:
+            - chapter_doc: List of chapter document lines
+            - global_footnote_num: Updated footnote number
+            - new_footnotes: List of new footnotes for this chapter
+            
+    Reference:
+        - Architecture Patterns Ch. 3: Coupling and Abstractions
+        - Architecture Patterns Ch. 4: Service Layer orchestration
+    """
+    chapter_num, chapter_title, start_page, end_page = chapter_data
+    print(f"\n[Chapter {chapter_num}/{len(CHAPTERS)}] Generating: {chapter_title} (pages {start_page}-{end_page})")
+    
+    # Extract pages for this chapter
+    chapter_pages = [
+        p for p in primary.get("pages", [])
+        if start_page <= p.get("page_number", 0) <= end_page
+    ]
+    print(f"  Found {len(chapter_pages)} pages")
+    
+    # Build chapter header and initial footnote
+    doc, chapter_footnotes, global_footnote_num = _build_chapter_header(
+        chapter_num, chapter_title, start_page, end_page, 
+        chapter_pages, global_footnote_num
+    )
+    
+    # Prepare chapter text for analysis
+    all_text = " ".join(p.get("content","") for p in chapter_pages)
+    
+    doc.append("")
+    doc.append("### Concept-by-Concept Breakdown")
+    
+    # Extract concepts (keyword + optional LLM)
+    chapter_text = "\n".join([p.get("content", "") for p in chapter_pages])
+    chapter_concepts = _extract_chapter_concepts(
+        chapter_text, chapter_num, chapter_title, start_page, end_page
+    )
+    
+    concepts, global_footnote_num, new_foots = build_concept_sections(
+        primary, chapter_pages, global_footnote_num, chapter_num,
+        chapter_concepts=chapter_concepts
+    )
+    doc.append(concepts)
+    chapter_footnotes.extend(new_foots)
+    
+    # TPM at end
+    non_primary_companions = {k:v for k,v in companions.items() if k != PRIMARY_BOOK}
+    tpm_sec, global_footnote_num, tpm_foot = build_tpm_section(
+        non_primary_companions, global_footnote_num, chapter_num
+    )
+    doc.append(tpm_sec)
+    if tpm_foot:
+        chapter_footnotes.append(tpm_foot)
+    
+    # Find cross-references (keyword + optional LLM)
+    xmatches = _find_cross_references(
+        all_text, chapter_num, chapter_title, chapter_concepts, companions
+    )
+    
+    # See also - with comprehensive summaries and self-references
+    see_also, global_footnote_num, sal_foots = build_see_also(
+        xmatches, 
+        global_footnote_num, 
+        chapter_num,
+        primary_book=primary,
+        current_concepts=chapter_concepts,
+        all_chapters=CHAPTERS,
+        chapter_pages=chapter_pages
+    )
+    doc.append(see_also)
+    chapter_footnotes.extend(sal_foots)
+    
+    doc.append("")
+    doc.append("---")
+    doc.append("")
+    
+    return {
+        "chapter_doc": doc,
+        "global_footnote_num": global_footnote_num,
+        "new_footnotes": chapter_footnotes
+    }
+
+
+def _write_output_file(all_docs: List[str], book_name: str) -> None:
+    """
+    Write final document to output file.
+    
+    Extracted from main() to reduce complexity.
+    
+    Args:
+        all_docs: List of all document lines
+        book_name: Name of the book (for filename)
+        
+    Reference:
+        - Python Distilled Ch. 5: Single Responsibility Principle
+    """
+    out_path = Path(f"PYTHON_GUIDELINES_{book_name}.md")
     out_path.write_text("\n".join(all_docs), encoding="utf-8")
     print(f"\n{'='*66}")
     print(f"Complete! Wrote: {out_path.resolve()}")
     print(f"Total size: {len(''.join(all_docs)):,} characters")
     print(f"{'='*66}")
+
+
+def main():
+    """
+    Main orchestrator for generating comprehensive Python guidelines.
+    
+    Refactored from complexity 20 → <10 by extracting helper functions.
+    Follows Service Layer pattern (Architecture Patterns Ch. 4).
+    
+    Workflow:
+        1. Load primary and companion books
+        2. Build document header
+        3. Process each chapter (extracted to helper)
+        4. Add footnotes
+        5. Write output file (extracted to helper)
+        
+    Reference:
+        - Architecture Patterns Ch. 4: Service Layer orchestration
+        - Fluent Python Ch. 7: Function decomposition
+        - Python Distilled Ch. 5: Single Responsibility Principle
+    """
+    print("="*66)
+    print("Multi-Chapter Generator (Chapters 1-41)")
+    print("="*66)
+
+    # Step 1: Load primary and companion books
+    primary = load_json_book(PRIMARY_BOOK)
+    companions = _load_companion_books(ALL_BOOKS)
+
+    # Step 2: Build document header
+    total_chapters = len(CHAPTERS)
+    all_docs = _build_document_header(total_chapters)
+    
+    # Step 3: Process each chapter
+    global_footnote_num = 1
+    all_footnotes = []
+    
+    for chapter_data in CHAPTERS:
+        result = _process_single_chapter(
+            chapter_data=chapter_data,
+            primary=primary,
+            companions=companions,
+            global_footnote_num=global_footnote_num,
+            all_footnotes=all_footnotes
+        )
+        
+        # Update state
+        all_docs.append("\n".join(result["chapter_doc"]))
+        global_footnote_num = result["global_footnote_num"]
+        all_footnotes.extend(result["new_footnotes"])
+    
+    # Step 4: Add footnotes section
+    all_docs.append("\n---\n\n### **Footnotes**\n")
+    for f in all_footnotes:
+        all_docs.append(chicago_footnote(
+            f["num"], f["author"], f["title"], 
+            f["file"], f["page"], f["start_line"], f["end_line"]
+        ))
+    all_docs.append("")
+    
+    # Step 5: Write output file
+    _write_output_file(all_docs, PRIMARY_BOOK)
 
 if __name__ == "__main__":
     main()

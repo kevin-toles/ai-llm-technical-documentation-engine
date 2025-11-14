@@ -20,9 +20,10 @@ def extract_text_from_page(page):
     
     # If no text found, try OCR
     try:
-        pix = page.get_pixmap()
+        _ = page.get_pixmap()  # Pixmap generation for potential OCR (not yet implemented)
         # This is a simplified OCR approach - PyMuPDF doesn't have built-in OCR
         # In the original conversion, OCR was likely done with pytesseract or similar
+        # TODO: Implement actual OCR using pytesseract or similar library
         return text, "OCR"
     except Exception:
         return "", "Failed"

@@ -167,6 +167,110 @@ class TestGenerateChapterSummaryRefactored:
         pass
 
 
+class TestExtractedHelperFunctions:
+    """
+    TDD tests for extracted helper functions (RED phase).
+    
+    Following Architecture Patterns Ch. 4 (Service Layer pattern):
+    - Extract loading logic → _load_companion_books()
+    - Extract document building → _build_document_header()
+    - Extract chapter processing → _process_single_chapter()
+    - Extract file writing → _write_output_file()
+    
+    These functions don't exist yet - writing tests FIRST (RED phase).
+    """
+    
+    def test_load_companion_books_returns_dict(self):
+        """Test _load_companion_books() returns dictionary of loaded books."""
+        # This will FAIL until we implement the function (RED)
+        from chapter_generator_all_text import _load_companion_books
+        
+        with patch('chapter_generator_all_text.load_json_book') as mock_load:
+            mock_load.return_value = {"pages": []}
+            result = _load_companion_books(['Book1', 'Book2'])
+            
+            assert isinstance(result, dict)
+            assert 'Book1' in result
+            assert 'Book2' in result
+    
+    def test_load_companion_books_handles_exceptions(self):
+        """Test _load_companion_books() gracefully handles load failures."""
+        from chapter_generator_all_text import _load_companion_books
+        
+        with patch('chapter_generator_all_text.load_json_book') as mock_load:
+            mock_load.side_effect = [{"pages": []}, Exception("Load failed")]
+            result = _load_companion_books(['Book1', 'Book2'])
+            
+            # Should still return Book1, but not Book2
+            assert 'Book1' in result
+            assert 'Book2' not in result
+    
+    def test_build_document_header_returns_list(self):
+        """Test _build_document_header() returns list of header lines."""
+        from chapter_generator_all_text import _build_document_header
+        
+        result = _build_document_header(total_chapters=41)
+        
+        assert isinstance(result, list)
+        assert len(result) > 0
+        assert any("Comprehensive Python Guidelines" in line for line in result)
+    
+    def test_process_single_chapter_returns_structured_output(self):
+        """Test _process_single_chapter() returns chapter doc and updated footnotes."""
+        from chapter_generator_all_text import _process_single_chapter
+        
+        primary = {"pages": [{"page_number": 1, "content": "test"}]}
+        companions = {}
+        chapter_data = (1, "Test Chapter", 1, 5)
+        
+        result = _process_single_chapter(
+            chapter_data=chapter_data,
+            primary=primary,
+            companions=companions,
+            global_footnote_num=1,
+            all_footnotes=[]
+        )
+        
+        assert isinstance(result, dict)
+        assert 'chapter_doc' in result
+        assert 'global_footnote_num' in result
+        assert 'new_footnotes' in result
+    
+    def test_write_output_file_creates_file(self):
+        """Test _write_output_file() writes content to correct path."""
+        from chapter_generator_all_text import _write_output_file
+        
+        all_docs = ["# Test Document", "## Chapter 1"]
+        
+        with patch('pathlib.Path.write_text') as mock_write:
+            _write_output_file(all_docs, book_name="TestBook")
+            assert mock_write.called
+    
+    def test_process_single_chapter_extracts_pages(self):
+        """Test _process_single_chapter() correctly filters pages for chapter range."""
+        from chapter_generator_all_text import _process_single_chapter
+        
+        primary = {
+            "pages": [
+                {"page_number": 1, "content": "page 1"},
+                {"page_number": 5, "content": "page 5"},
+                {"page_number": 10, "content": "page 10"},
+            ]
+        }
+        chapter_data = (1, "Chapter 1", 1, 5)
+        
+        result = _process_single_chapter(
+            chapter_data=chapter_data,
+            primary=primary,
+            companions={},
+            global_footnote_num=1,
+            all_footnotes=[]
+        )
+        
+        # Should only process pages 1-5
+        assert result is not None
+
+
 class TestMainFunctionIntegration:
     """
     Integration tests for main() function in chapter_generator_all_text.py.

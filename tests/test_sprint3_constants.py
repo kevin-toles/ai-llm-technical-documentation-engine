@@ -25,7 +25,6 @@ Anti-Patterns to Avoid (from Quality Assessment):
     - Apply DRY (Don't Repeat Yourself) principle
 """
 
-import pytest
 from pathlib import Path
 
 

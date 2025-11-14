@@ -38,8 +38,8 @@ from .metadata_extraction_system import (
 
 # Import book taxonomy for intelligent cascading selection
 try:
-    # Import module-level items that are used throughout
-    from .book_taxonomy import score_books_for_concepts
+    # Book taxonomy will be imported locally where needed
+    from . import book_taxonomy  # noqa: F401 - Checked for availability
     TAXONOMY_AVAILABLE = True
 except ImportError:
     TAXONOMY_AVAILABLE = False
@@ -254,6 +254,95 @@ class AnalysisOrchestrator:
         if not lazy_load:
             print("Note: Lazy loading disabled - loading all books upfront")
     
+    def _execute_phase1_with_retry(
+        self,
+        prompt: str,
+        max_tokens: int,
+        books_count: int
+    ) -> LLMMetadataResponse:
+        """
+        Execute Phase 1 LLM call with truncation detection and retry logic.
+        
+        Extracted from analyze_chapter_comprehensive to reduce complexity.
+        
+        Args:
+            prompt: The prompt to send to LLM
+            max_tokens: Maximum tokens for response
+            books_count: Number of books in metadata (for constraint message)
+            
+        Returns:
+            LLMMetadataResponse with content requests
+            
+        Raises:
+            Exception if both initial and retry attempts fail
+            
+        Reference:
+            - Fluent Python Ch. 7: Extract Method pattern for complexity reduction
+            - Architecture Patterns Ch. 3: Error handling separation
+        """
+        llm_output = call_llm(prompt, max_tokens=max_tokens)
+        
+        # DEBUG: Show raw LLM response
+        print("\n" + "="*80)
+        print("DEBUG: Raw Claude Response (Phase 1)")
+        print("="*80)
+        print(llm_output[:2000])  # Show first 2000 chars
+        if len(llm_output) > 2000:
+            print(f"\n... (truncated, total length: {len(llm_output)} chars)")
+        print("="*80 + "\n")
+        
+        # Check if response was truncated
+        estimated_tokens = len(llm_output) // 3
+        truncation_threshold = max_tokens * 0.95
+        
+        if estimated_tokens >= truncation_threshold:
+            print(f"⚠️  WARNING: Response may be truncated (~{estimated_tokens:,} tokens, limit: {max_tokens:,})")
+            print("   This suggests LLM tried to request too many books.")
+            print("   Will attempt to parse and validate...")
+        
+        response = LLMMetadataResponse.from_llm_output(llm_output)
+        
+        # If truncated (0 requests but near token limit), retry with constraint
+        if len(response.content_requests) == 0 and estimated_tokens >= truncation_threshold:
+            print(f"\n❌ TRUNCATION DETECTED: Got 0 content requests but response was {estimated_tokens:,} tokens")
+            print("   Re-prompting with constraint to limit to top 10 most relevant books...")
+            
+            constrained_prompt = prompt + f"""
+
+IMPORTANT CONSTRAINT: You have access to {books_count} books, but please limit your content_requests 
+to ONLY the TOP 10 most relevant and high-priority books. Focus on quality over quantity. 
+Prioritize books that provide the most direct, substantial coverage of this chapter's core concepts."""
+            
+            llm_output = call_llm(constrained_prompt, max_tokens=max_tokens)
+            response = LLMMetadataResponse.from_llm_output(llm_output)
+            print(f"✓ Retry with constraint: Found {len(response.content_requests)} content requests")
+        
+        return response
+    
+    def _limit_content_requests(self, response: LLMMetadataResponse, max_requests: int = 10) -> LLMMetadataResponse:
+        """
+        Limit content requests to top N by priority.
+        
+        Extracted from analyze_chapter_comprehensive to reduce complexity.
+        
+        Args:
+            response: LLMMetadataResponse with content requests
+            max_requests: Maximum number of requests to keep (default 10)
+            
+        Returns:
+            Modified LLMMetadataResponse with limited requests
+            
+        Reference:
+            - Python Distilled Ch. 5: Function organization best practices
+        """
+        if len(response.content_requests) > max_requests + 5:  # Allow some buffer
+            print(f"\n⚠️  LLM requested {len(response.content_requests)} books - limiting to top {max_requests} by priority")
+            sorted_requests = sorted(response.content_requests, key=lambda r: r.priority)
+            response.content_requests = sorted_requests[:max_requests]
+            print(f"✓ Truncated to top {max_requests} highest-priority requests")
+        
+        return response
+    
     def analyze_chapter_comprehensive(
         self,
         chapter_num: int,
@@ -315,57 +404,12 @@ class AnalysisOrchestrator:
             return self._fallback_analysis(chapter_num, chapter_title, [])
         
         try:
-            # Phase 1 needs more tokens for complete JSON with all content_requests
-            # Increased from 3000 to 8000 to prevent JSON truncation
+            # Phase 1: Execute with retry logic (extracted to helper)
             max_tokens_phase1 = 8000
-            llm_output = call_llm(prompt, max_tokens=max_tokens_phase1)
+            response = self._execute_phase1_with_retry(prompt, max_tokens_phase1, len(books_metadata))
             
-            # DEBUG: Show raw LLM response
-            print("\n" + "="*80)
-            print("DEBUG: Raw Claude Response (Phase 1)")
-            print("="*80)
-            print(llm_output[:2000])  # Show first 2000 chars
-            if len(llm_output) > 2000:
-                print(f"\n... (truncated, total length: {len(llm_output)} chars)")
-            print("="*80 + "\n")
-            
-            # CRITICAL: Check if response was truncated (hit token limit)
-            # We can't get actual token count here, but we can estimate
-            estimated_tokens = len(llm_output) // 3  # Rough estimate: 3 chars per token
-            truncation_threshold = max_tokens_phase1 * 0.95  # 95% of max
-            
-            if estimated_tokens >= truncation_threshold:
-                print(f"⚠️  WARNING: Response may be truncated (~{estimated_tokens:,} tokens, limit: {max_tokens_phase1:,})")
-                print("   This suggests LLM tried to request too many books.")
-                print("   Will attempt to parse and validate...")
-            
-            response = LLMMetadataResponse.from_llm_output(llm_output)
-            
-            # BATCHING LOGIC: If we got 0 requests but response was near limit, it was likely truncated
-            if len(response.content_requests) == 0 and estimated_tokens >= truncation_threshold:
-                print(f"\n❌ TRUNCATION DETECTED: Got 0 content requests but response was {estimated_tokens:,} tokens")
-                print("   LLM response was cut off before completing the content_requests array.")
-                print("   Re-prompting with constraint to limit to top 10 most relevant books...")
-                
-                # Re-prompt with constraint
-                constrained_prompt = prompt + f"""
-
-IMPORTANT CONSTRAINT: You have access to {len(books_metadata)} books, but please limit your content_requests 
-to ONLY the TOP 10 most relevant and high-priority books. Focus on quality over quantity. 
-Prioritize books that provide the most direct, substantial coverage of this chapter's core concepts."""
-                
-                llm_output = call_llm(constrained_prompt, max_tokens=max_tokens_phase1)
-                response = LLMMetadataResponse.from_llm_output(llm_output)
-                
-                print(f"✓ Retry with constraint: Found {len(response.content_requests)} content requests")
-            
-            # SECONDARY BATCHING: If still getting too many requests (>15), truncate to top 10
-            if len(response.content_requests) > 15:
-                print(f"\n⚠️  LLM requested {len(response.content_requests)} books - limiting to top 10 by priority")
-                # Sort by priority (lower number = higher priority)
-                sorted_requests = sorted(response.content_requests, key=lambda r: r.priority)
-                response.content_requests = sorted_requests[:10]
-                print("✓ Truncated to top 10 highest-priority requests")
+            # Limit requests if too many (extracted to helper)
+            response = self._limit_content_requests(response, max_requests=10)
             
             print(f"✓ LLM extracted concepts and identified {len(response.content_requests)} book chapters to review")
             for req in response.content_requests[:5]:
@@ -1344,7 +1388,7 @@ Prioritize books that provide the most direct, substantial coverage of this chap
         # If no requests from metadata, provide minimal fallback
         if not requests:
             requests.append(ContentRequest(
-                book_name=PYTHON_DISTILLED,
+                book_name=BookTitles.PYTHON_DISTILLED,
                 pages=[1, 2, 3],
                 rationale="General Python concepts reference",
                 priority=3
@@ -1370,7 +1414,7 @@ Prioritize books that provide the most direct, substantial coverage of this chap
             chapter_number=chapter_num,
             chapter_title=chapter_title,
             annotation_text=annotation_text,
-            sources_cited=[PYTHON_ESSENTIAL_REF, FLUENT_PYTHON, PYTHON_DATA_ANALYSIS, PYTHON_DISTILLED],
+            sources_cited=[BookTitles.PYTHON_ESSENTIAL_REF, BookTitles.FLUENT_PYTHON, BookTitles.PYTHON_DATA_ANALYSIS, BookTitles.PYTHON_DISTILLED],
             concepts_validated=concepts,
             gaps_identified=[
                 "Decimal context management for precision control",
