@@ -1,0 +1,3 @@
+# Generated Guidelines
+
+Chapter content...

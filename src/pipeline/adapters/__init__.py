@@ -6,5 +6,11 @@ Pattern: Adapter Pattern (Architecture Patterns with Python Ch. 13)
 """
 
 from .pdf_converter import PdfConverterAdapter, PdfConversionError
+from .chapter_generator import ChapterGeneratorAdapter, ChapterGenerationError
 
-__all__ = ["PdfConverterAdapter", "PdfConversionError"]
+__all__ = [
+    "PdfConverterAdapter",
+    "PdfConversionError",
+    "ChapterGeneratorAdapter",
+    "ChapterGenerationError",
+]

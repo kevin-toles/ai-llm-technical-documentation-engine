@@ -162,11 +162,113 @@ class TestPdfConverterAdapter:
 
 
 class TestChapterGeneratorAdapter:
-    """Tests for ChapterGeneratorAdapter (wraps chapter_generator_all_text)"""
+    """Tests for ChapterGeneratorAdapter (wraps chapter_generator_all_text main function)"""
     
-    def test_adapter_not_implemented_yet(self):
-        """Placeholder for Chapter Generator adapter tests"""
-        pytest.skip("ChapterGeneratorAdapter implementation comes after PdfConverterAdapter")
+    @pytest.fixture
+    def adapter(self):
+        """Create adapter instance for testing"""
+        try:
+            from src.pipeline.adapters.chapter_generator import ChapterGeneratorAdapter
+            return ChapterGeneratorAdapter()
+        except ImportError:
+            pytest.skip("ChapterGeneratorAdapter not implemented yet (RED phase)")
+    
+    def test_generate_success(self, adapter, tmp_path):
+        """
+        RED: Test successful chapter generation
+        
+        Validates:
+        - Adapter calls legacy main() function from chapter_generator_all_text
+        - Returns output file path
+        - Verifies output file was created
+        """
+        # Arrange - create output file when main() is called
+        def mock_main_side_effect():
+            """Simulate legacy main() writing output file"""
+            output_file = Path.cwd() / "PYTHON_GUIDELINES_Learning Python Ed6.md"
+            output_file.write_text("# Generated Guidelines\n\nChapter content...")
+        
+        with patch('src.pipeline.chapter_generator_all_text.main', side_effect=mock_main_side_effect):
+            # Act
+            result = adapter.generate()
+        
+        # Assert
+        assert isinstance(result, Path)
+        assert result.exists()
+        assert "PYTHON_GUIDELINES" in result.name
+        assert result.read_text().startswith("# Generated Guidelines")
+    
+    def test_generate_failure_raises_exception(self, adapter, tmp_path):
+        """
+        RED: Test generation failure raises ChapterGenerationError
+        
+        Validates:
+        - Exception raised when legacy function fails
+        - Exception message is descriptive
+        """
+        # Arrange
+        with patch('src.pipeline.chapter_generator_all_text.main') as mock_main:
+            mock_main.side_effect = Exception("JSON file not found")
+            
+            # Act & Assert
+            try:
+                from src.pipeline.adapters.chapter_generator import ChapterGenerationError
+            except ImportError:
+                pytest.skip("ChapterGenerationError not implemented yet")
+            
+            with pytest.raises(ChapterGenerationError) as exc_info:
+                adapter.generate()
+            
+            assert "Failed to generate" in str(exc_info.value)
+    
+    def test_generate_logs_progress(self, adapter, tmp_path, caplog):
+        """
+        RED: Test adapter logs generation progress
+        
+        Validates:
+        - Logs "Generating chapters" at start
+        - Logs "Generation complete" at end
+        """
+        # Arrange
+        import logging
+        
+        with caplog.at_level(logging.INFO):
+            with patch('src.pipeline.chapter_generator_all_text.main'):
+                expected_output = tmp_path / "PYTHON_GUIDELINES_Learning Python Ed6.md"
+                expected_output.write_text("# Guidelines")
+                
+                with patch('src.pipeline.adapters.chapter_generator.settings') as mock_settings:
+                    mock_settings.paths.textbooks_json_dir = tmp_path
+                    
+                    # Act
+                    adapter.generate()
+        
+        # Assert
+        assert "Generating chapters" in caplog.text
+        assert "Generation complete" in caplog.text
+    
+    def test_generate_returns_path_not_string(self, adapter, tmp_path):
+        """
+        RED: Test adapter returns Path object (not string)
+        
+        Validates:
+        - Return type is pathlib.Path
+        - Type hints are properly enforced
+        """
+        # Arrange
+        with patch('src.pipeline.chapter_generator_all_text.main'):
+            output_file = tmp_path / "PYTHON_GUIDELINES_Learning Python Ed6.md"
+            output_file.write_text("# Guidelines")
+            
+            with patch('src.pipeline.adapters.chapter_generator.settings') as mock_settings:
+                mock_settings.paths.textbooks_json_dir = tmp_path
+                
+                # Act
+                result = adapter.generate()
+        
+        # Assert
+        assert isinstance(result, Path)
+        assert not isinstance(result, str)
 
 
 class TestMetadataExtractorAdapter:
