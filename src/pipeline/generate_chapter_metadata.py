@@ -13,34 +13,38 @@ For each chapter in each book:
 
 Usage:
     python3 generate_chapter_metadata.py
+
+Reference: 
+- Python Distilled Ch. 7 - Dataclass configuration patterns
+- Python Distilled Ch. 9 - pathlib.Path operations  
+- Microservices Up and Running Ch. 7 - 12-Factor App configuration
 """
 
 import json
 import re
-from pathlib import Path
 from typing import List, Dict, Any, Tuple
 from collections import Counter
 
-# Directory path constants (to avoid duplicate string literals)
-DIR_ENGINEERING_PRACTICES_JSON = "Engineering Practices/JSON"
-DIR_ARCHITECTURE_JSON = "Architecture/JSON"
+# Configuration management (12-Factor App pattern)
+from config.settings import settings
 
-# Book locations
+# Book locations (simplified - all books now in textbooks_json_dir root)
+# Reference: Microservices Ch. 7 - Externalized configuration
 BOOK_PATHS = {
-    "Fluent Python 2nd.json": DIR_ENGINEERING_PRACTICES_JSON,
-    "Python Distilled.json": DIR_ENGINEERING_PRACTICES_JSON,
-    "Python Essential Reference 4th.json": DIR_ENGINEERING_PRACTICES_JSON,
-    "Python Cookbook 3rd.json": DIR_ENGINEERING_PRACTICES_JSON,
-    "Learning Python Ed6.json": DIR_ENGINEERING_PRACTICES_JSON,
-    "Python Data Analysis 3rd.json": DIR_ENGINEERING_PRACTICES_JSON,
-    "Architecture Patterns with Python.json": DIR_ARCHITECTURE_JSON,
-    "Python Architecture Patterns.json": DIR_ARCHITECTURE_JSON,
-    "Building Microservices.json": DIR_ARCHITECTURE_JSON,
-    "Microservice Architecture.json": DIR_ARCHITECTURE_JSON,
-    "Microservices Up and Running.json": DIR_ARCHITECTURE_JSON,
-    "Building Python Microservices with FastAPI.json": DIR_ARCHITECTURE_JSON,
-    "Microservice APIs Using Python Flask FastAPI.json": DIR_ARCHITECTURE_JSON,
-    "Python Microservices Development.json": DIR_ARCHITECTURE_JSON
+    "Fluent Python 2nd.json": "",
+    "Python Distilled.json": "",
+    "Python Essential Reference 4th.json": "",
+    "Python Cookbook 3rd.json": "",
+    "Learning Python Ed6.json": "",
+    "Python Data Analysis 3rd.json": "",
+    "Architecture Patterns with Python.json": "",
+    "Python Architecture Patterns.json": "",
+    "Building Microservices.json": "",
+    "Microservice Architecture.json": "",
+    "Microservices Up and Running.json": "",
+    "Building Python Microservices with FastAPI.json": "",
+    "Microservice APIs Using Python Flask FastAPI.json": "",
+    "Python Microservices Development.json": ""
 }
 
 def _get_python_keyword_list() -> List[str]:
@@ -502,9 +506,20 @@ def generate_chapter_summary(chapter_pages: List[Dict[str, Any]],
 
 
 def load_book_json(book_name: str) -> Dict[str, Any]:
-    """Load a book's JSON file."""
-    base_path = Path("/Users/kevintoles/POC/tpm-job-finder-poc/Python_References")
-    json_path = base_path / BOOK_PATHS[book_name] / book_name
+    """
+    Load a book's JSON file using PathConfig.
+    
+    Reference: Python Distilled Ch. 9 - Path operations, file I/O
+    """
+    # Use PathConfig for centralized path management
+    json_dir = settings.paths.textbooks_json_dir
+    
+    # Build path: textbooks_json_dir / subdirectory / book_name
+    subdirectory = BOOK_PATHS.get(book_name, "")
+    if subdirectory:
+        json_path = json_dir / subdirectory / book_name
+    else:
+        json_path = json_dir / book_name
     
     with open(json_path, 'r') as f:
         return json.load(f)
@@ -571,10 +586,20 @@ def main():
     print("GENERATING CHAPTER METADATA FOR ALL 15 BOOKS")
     print("="*80)
     
-    # Load current metadata cache
-    cache_path = Path(__file__).parent / "chapter_metadata_cache.json"
-    with open(cache_path, 'r') as f:
-        cache = json.load(f)
+    # Load current metadata cache from configured metadata directory
+    # Reference: Python Distilled Ch. 9 p. 228 - mkdir(parents=True, exist_ok=True)
+    cache_path = settings.paths.metadata_dir / "chapter_metadata_cache.json"
+    
+    # Create metadata directory if it doesn't exist (12-Factor App - idempotent operations)
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
+    
+    # Load cache if exists, otherwise start with empty dict
+    if cache_path.exists():
+        with open(cache_path, 'r') as f:
+            cache = json.load(f)
+    else:
+        print(f"No existing cache found at {cache_path}, starting fresh")
+        cache = {}
     
     print(f"\nLoaded cache with {len(cache)} books\n")
     

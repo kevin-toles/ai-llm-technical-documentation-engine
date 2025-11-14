@@ -2,6 +2,8 @@
 """
 PDF to JSON converter using PyMuPDF with OCR fallback
 Converts PDF books to structured JSON format for chapter extraction
+
+Reference: Python Distilled Ch. 9 - pathlib.Path operations
 """
 
 import json
@@ -9,6 +11,9 @@ import sys
 from pathlib import Path
 from datetime import datetime
 import fitz  # PyMuPDF
+
+# Configuration management (Microservices Up and Running Ch. 7 - 12-Factor Config)
+from config.settings import settings
 
 def extract_text_from_page(page):
     """Extract text from a PDF page, trying direct extraction first, then OCR if needed"""
@@ -43,8 +48,10 @@ def convert_pdf_to_json(pdf_path, output_path=None):
         return False
     
     # Determine output path
+    # Reference: Python Distilled Ch. 9 pp. 225-230 - Path operations
     if output_path is None:
-        output_path = pdf_path.parent.parent / "JSON" / f"{pdf_path.stem}.json"
+        # Use PathConfig for centralized path management (12-Factor App)
+        output_path = settings.paths.textbooks_json_dir / f"{pdf_path.stem}.json"
     else:
         output_path = Path(output_path)
     
