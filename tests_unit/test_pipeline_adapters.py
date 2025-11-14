@@ -101,7 +101,7 @@ class TestPdfConverterAdapter:
             
             assert "bad_book.pdf" in str(exc_info.value)
     
-    def test_convert_logs_progress(self, adapter, tmp_path, caplog):
+    def test_convert_logs_progress(self, tmp_path, caplog):
         """
         RED: Test adapter logs conversion progress
         
@@ -109,20 +109,25 @@ class TestPdfConverterAdapter:
         - Logs "Converting PDF: <path>" at start
         - Logs "Conversion complete: <output>" at end
         """
-        # Arrange
-        pdf_path = tmp_path / "logged_book.pdf"
-        pdf_path.write_text("pdf content")
+        # Arrange - create adapter with explicit logging level
+        import logging
+        adapter = PdfConverterAdapter()
         
-        expected_json = {"metadata": {"title": "Logged"}}
-        
-        with patch('src.pipeline.convert_pdf_to_json.convert_pdf_to_json', return_value=True):
-            with patch.object(Path, 'read_text', return_value=json.dumps(expected_json)):
-                with patch('src.pipeline.adapters.pdf_converter.settings') as mock_settings:
-                    mock_settings.paths.textbooks_json_dir = tmp_path / "json_output"
-                    mock_settings.paths.textbooks_json_dir.mkdir(parents=True, exist_ok=True)
-                    
-                    # Act
-                    adapter.convert(pdf_path)
+        # Set logging level to capture INFO messages
+        with caplog.at_level(logging.INFO):
+            pdf_path = tmp_path / "logged_book.pdf"
+            pdf_path.write_text("pdf content")
+            
+            expected_json = {"metadata": {"title": "Logged"}}
+            
+            with patch('src.pipeline.convert_pdf_to_json.convert_pdf_to_json', return_value=True):
+                with patch.object(Path, 'read_text', return_value=json.dumps(expected_json)):
+                    with patch('src.pipeline.adapters.pdf_converter.settings') as mock_settings:
+                        mock_settings.paths.textbooks_json_dir = tmp_path / "json_output"
+                        mock_settings.paths.textbooks_json_dir.mkdir(parents=True, exist_ok=True)
+                        
+                        # Act
+                        adapter.convert(pdf_path)
         
         # Assert
         assert "Converting PDF" in caplog.text
