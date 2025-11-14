@@ -1,7 +1,7 @@
 """
 Analysis data models for two-phase LLM workflow.
 
-Sprint 3.1 - TDD GREEN: Extract data models from interactive_llm_system_v3_hybrid_prompt.py
+Sprint 3.1 - TDD REFACTOR: Optimized logging and code quality
 
 Following Document Hierarchy:
 - REFACTORING_PLAN.md: Sprint 3 - Extract classes to separate modules
@@ -22,16 +22,20 @@ Architectural Patterns Applied:
 - Data Transfer Object (Microservices Ch. 6): LLMMetadataResponse
 - Value Object (DDD): ScholarlyAnnotation
 
-TDD GREEN Phase:
-- Extracted from lines 83-236 of interactive_llm_system_v3_hybrid_prompt.py
-- Preserves all functionality exactly
-- Enables 6 failing tests to pass
+TDD Cycle Complete:
+- RED: 6 failing tests (commit 13ecb7b1)
+- GREEN: Models extracted from lines 83-236 (commit fee47ca1)
+- REFACTOR: Logging optimization, quality gates verified
 """
 
 import json
+import logging
 from dataclasses import dataclass, field
 from enum import Enum, auto
 from typing import Any, Dict, List
+
+# Module-level logger
+logger = logging.getLogger(__name__)
 
 
 class AnalysisPhase(Enum):
@@ -155,16 +159,18 @@ class LLMMetadataResponse:
             # Try to parse as JSON
             data = json.loads(cleaned_output)
             
-            # DEBUG: Show parsed JSON structure
-            print("\n[DEBUG] JSON parsed successfully")
-            print(f"[DEBUG] Keys in response: {list(data.keys())}")
-            print(f"[DEBUG] content_requests field: {data.get('content_requests', 'MISSING')}")
+            # Log parsed JSON structure for debugging
+            logger.debug("JSON parsed successfully")
+            logger.debug(f"Keys in response: {list(data.keys())}")
+            
             if 'content_requests' in data:
-                print(f"[DEBUG] Number of requests: {len(data.get('content_requests', []))}")
-                if len(data.get('content_requests', [])) == 0:
-                    print("[DEBUG] ⚠️ content_requests array is EMPTY!")
+                num_requests = len(data.get('content_requests', []))
+                if num_requests == 0:
+                    logger.warning("content_requests array is EMPTY")
                 else:
-                    print(f"[DEBUG] ✓ Found {len(data.get('content_requests', []))} content requests")
+                    logger.debug(f"Found {num_requests} content requests")
+            else:
+                logger.warning("content_requests field MISSING from response")
             
             requests = [
                 ContentRequest(
@@ -183,8 +189,8 @@ class LLMMetadataResponse:
                 analysis_strategy=data.get('analysis_strategy', '')
             )
         except json.JSONDecodeError as e:
-            print(f"[DEBUG] JSON parsing failed: {e}")
-            print("[DEBUG] Falling back to text format parsing")
+            logger.warning(f"JSON parsing failed: {e}")
+            logger.info("Falling back to text format parsing")
             # Fallback: parse text format
             return cls._parse_text_format(llm_output)
     
