@@ -1,28 +1,28 @@
 """
 Pipeline module for upstream document processing.
 
-This module contains the pipeline stages that process documents from
-PDF through to chapter summaries and metadata extraction, before the
-LLM enhancement workflow.
+This module contains:
+1. Legacy pipeline files (convert_pdf_to_json.py, etc.)
+2. Adapters (src/pipeline/adapters/) - Sprint 4 implementation
+3. Service Layer (orchestrator.py) - Coming soon
+4. Repositories (repositories/) - Coming soon
 
-Pipeline Flow:
-1. convert_pdf_to_json.py - PDF → JSON conversion
-2. chapter_generator_all_text.py - JSON → Chapter summaries
-3. generate_chapter_metadata.py - Summaries → Metadata extraction
+Pipeline Flow (Sprint 4):
+1. PdfConverterAdapter wraps convert_pdf_to_json.py
+2. ChapterGeneratorAdapter wraps chapter_generator_all_text.py
+3. MetadataExtractorAdapter wraps generate_chapter_metadata.py
+4. PipelineOrchestrator coordinates all stages
 
-These files were migrated from tpm-job-finder-poc as part of Phase 4
-(Pipeline Integration) per REFACTORING_PLAN.md.
-
-Future work: Adapt these files to use:
-- config/settings.py for paths and configuration
-- src/providers/ for LLM calls
-- src/retry.py for robust API calls
-- src/cache.py for caching expensive operations
-- src/json_parser.py for JSON validation
+Pattern: Adapter Pattern (Architecture Patterns with Python Ch. 13)
+Reference: docs/analysis/sprint4-pipeline-analysis.md
 """
+
+# Sprint 4: Expose adapters
+from . import adapters
 
 __all__ = [
     'convert_pdf_to_json',
     'chapter_generator_all_text',
-    'generate_chapter_metadata'
+    'generate_chapter_metadata',
+    'adapters'
 ]
