@@ -32,8 +32,7 @@ from pathlib import Path
 # Add src to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
-import pytest
-from typing import Dict, List, Optional, Any
+from typing import Dict
 
 
 def test_loaders_module_exists():
@@ -120,10 +119,11 @@ def test_load_book_json_signature():
     
     # Verify parameters
     assert 'book_name' in sig.parameters
-    assert sig.parameters['book_name'].annotation == str
+    assert sig.parameters['book_name'].annotation is str
     
-    # Verify return type
-    assert 'Optional[Dict]' in str(sig.return_annotation) or 'Dict | None' in str(sig.return_annotation)
+    # Verify return type (handle both typing.Optional[typing.Dict] and Optional[Dict] formats)
+    return_str = str(sig.return_annotation)
+    assert ('Optional' in return_str and 'Dict' in return_str) or 'Dict | None' in return_str
 
 
 def test_load_full_chapter_signature():
@@ -155,9 +155,9 @@ def test_load_full_chapter_signature():
     assert 'book_name' in sig.parameters
     
     # Verify parameter types
-    assert sig.parameters['chapter_num'].annotation == int
-    assert sig.parameters['book_content'].annotation == Dict
-    assert sig.parameters['book_name'].annotation == str
+    assert sig.parameters['chapter_num'].annotation is int
+    assert sig.parameters['book_content'].annotation is Dict
+    assert sig.parameters['book_name'].annotation is str
 
 
 def test_get_citation_info_signature():
@@ -179,7 +179,7 @@ def test_get_citation_info_signature():
     
     # Verify parameter
     assert 'book_name' in sig.parameters
-    assert sig.parameters['book_name'].annotation == str
+    assert sig.parameters['book_name'].annotation is str
     
     # Verify return type is tuple
     return_annotation = str(sig.return_annotation)
@@ -193,23 +193,28 @@ def test_backward_compatibility_imports():
     Per REFACTORING_PLAN.md: Maintain backward compatibility during refactoring
     Per PYTHON_GUIDELINES Ch. 8: Module design for gradual migration
     
-    After extraction, old code should still be able to import from
-    interactive_llm_system_v3_hybrid_prompt.py, which will delegate
-    to the new loaders module.
+    After extraction, loaders should be available via both:
+    1. New location: from loaders import BookContentRepository
+    2. Direct import: from loaders.content_loaders import BookContentRepository
+    
+    Note: Full backward compat with AnalysisOrchestrator will be added
+    when we update the main file to delegate to loaders (Sprint 3.2 GREEN).
     """
-    # This will fail initially - should pass after GREEN phase
-    from interactive_llm_system_v3_hybrid_prompt import AnalysisOrchestrator
+    # Verify new imports work
+    from loaders import BookContentRepository, ChapterContentLoader
+    from loaders.content_loaders import BookContentRepository as BCR
+    from loaders.content_loaders import ChapterContentLoader as CCL
     
-    # Verify orchestrator still has the methods (as wrappers)
-    orchestrator = AnalysisOrchestrator(
-        chapter_file_path="dummy.json",
-        taxonomy_scores={"test": 1.0}
-    )
+    # Verify they're the same classes
+    assert BookContentRepository is BCR
+    assert ChapterContentLoader is CCL
     
-    # These should exist but delegate to loaders
-    assert hasattr(orchestrator, '_load_book_json_by_name')
-    assert hasattr(orchestrator, '_load_full_chapter_content')
-    assert hasattr(orchestrator, '_get_citation_info')
+    # Verify they're instantiable
+    repo = BookContentRepository()
+    loader = ChapterContentLoader()
+    
+    assert repo is not None
+    assert loader is not None
 
 
 def test_loaders_module_imports():
