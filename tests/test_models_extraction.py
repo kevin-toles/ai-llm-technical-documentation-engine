@@ -34,36 +34,38 @@ def test_models_module_exists():
 
 def test_analysis_phase_enum_extracted():
     """
-    TDD RED: Verify AnalysisPhase enum is importable from models.
+    TDD GREEN: Verify AnalysisPhase enum is importable from models.
     
-    This test will FAIL until we extract the enum.
+    Updated to match actual enum values from extracted code.
     """
     from src.models.analysis_models import AnalysisPhase
     
-    # Verify enum values exist
-    assert hasattr(AnalysisPhase, 'COMPREHENSIVE_PHASE1')
-    assert hasattr(AnalysisPhase, 'COMPREHENSIVE_PHASE2')
-    assert hasattr(AnalysisPhase, 'PHASE1_METADATA')
-    assert hasattr(AnalysisPhase, 'PHASE2_CONTENT')
+    # Verify enum values exist (from actual implementation)
+    assert hasattr(AnalysisPhase, 'INITIAL')
+    assert hasattr(AnalysisPhase, 'METADATA_SENT')
+    assert hasattr(AnalysisPhase, 'CONTENT_REQUESTED')
+    assert hasattr(AnalysisPhase, 'ANALYSIS_COMPLETE')
+    assert hasattr(AnalysisPhase, 'FAILED')
 
 
 def test_content_request_extracted():
     """
-    TDD RED: Verify ContentRequest dataclass is importable.
+    TDD GREEN: Verify ContentRequest dataclass is importable.
     
-    This test will FAIL until we extract the class.
+    Updated to match actual ContentRequest signature.
     """
     from src.models.analysis_models import ContentRequest
     
-    # Verify can create instance
+    # Verify can create instance (using actual field names)
     request = ContentRequest(
-        book_title="Test Book",
-        chapters=[1, 2],
-        reason="test reason",
-        priority=1.0
+        book_name="Test Book",
+        pages=[1, 2],
+        rationale="test reason",
+        priority=1
     )
-    assert request.book_title == "Test Book"
-    assert request.chapters == [1, 2]
+    assert request.book_name == "Test Book"
+    assert request.pages == [1, 2]
+    assert request.rationale == "test reason"
     
 
 def test_llm_metadata_response_extracted():
@@ -86,20 +88,23 @@ def test_llm_metadata_response_extracted():
 
 def test_scholarly_annotation_extracted():
     """
-    TDD RED: Verify ScholarlyAnnotation dataclass is importable.
+    TDD GREEN: Verify ScholarlyAnnotation dataclass is importable.
     
-    This test will FAIL until we extract the class.
+    Updated to match actual ScholarlyAnnotation signature.
     """
     from src.models.analysis_models import ScholarlyAnnotation
     
-    # Verify can create instance
+    # Verify can create instance (using actual field names)
     annotation = ScholarlyAnnotation(
-        content="test content",
-        sources=["source1"],
-        relevance_score=0.8
+        chapter_number=1,
+        chapter_title="Test Chapter",
+        annotation_text="test content",
+        sources_cited=["source1"],
+        concepts_validated=["concept1"],
+        gaps_identified=[]
     )
-    assert annotation.content == "test content"
-    assert len(annotation.sources) == 1
+    assert annotation.annotation_text == "test content"
+    assert len(annotation.sources_cited) == 1
 
 
 def test_backward_compatibility():

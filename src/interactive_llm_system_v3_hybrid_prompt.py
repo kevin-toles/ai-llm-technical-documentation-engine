@@ -28,9 +28,7 @@ ENGINEERING PRACTICES:
 - Functional composition (Fluent Python Ch. 7)
 """
 
-from dataclasses import dataclass, field
 from typing import List, Dict, Optional, Any
-from enum import Enum, auto
 import json
 
 # Import our metadata extraction system
@@ -76,163 +74,19 @@ PYTHON_DATA_ANALYSIS = "Python Data Analysis 3rd"
 
 
 # ============================================================================
-# STATE MACHINE - Analysis Workflow States
-# From: Python Architecture Patterns Ch. 8 - State Management
+# DATA MODELS - Sprint 3.1 Architecture Refactoring
+# Extracted to src/models/analysis_models.py for better organization
+# Following: REFACTORING_PLAN.md Sprint 3, ARCHITECTURE_GUIDELINES Ch. 1
 # ============================================================================
 
-class AnalysisPhase(Enum):
-    """Analysis workflow states.
-    
-    Pattern: State Machine (Python Architecture Patterns Ch. 8)
-    """
-    INITIAL = auto()
-    METADATA_SENT = auto()
-    CONTENT_REQUESTED = auto()
-    ANALYSIS_COMPLETE = auto()
-    FAILED = auto()
-
-
-# ============================================================================
-# COMMAND PATTERN - LLM Request/Response
-# From: Architecture Patterns with Python Ch. 9 - Commands and Events
-# ============================================================================
-
-@dataclass(frozen=True)
-class ContentRequest:
-    """Command for requesting specific book content.
-    
-    Pattern: Command Pattern (Architecture Patterns Ch. 9)
-    Encapsulates all information needed to perform content retrieval.
-    """
-    book_name: str
-    pages: List[int]
-    rationale: str
-    priority: int = 1  # Higher = more important
-    
-    def __lt__(self, other: 'ContentRequest') -> bool:
-        """Enable priority queue sorting."""
-        return self.priority > other.priority  # Higher priority first
-
-
-@dataclass
-class LLMMetadataResponse:
-    """Structured response from Phase 1 metadata analysis.
-    
-    Pattern: Data Transfer Object (Microservices Ch. 6)
-    Engineering: Dataclass with validation (Python Distilled Ch. 7)
-    """
-    validation_summary: str
-    gap_analysis: str
-    content_requests: List[ContentRequest]
-    analysis_strategy: str
-    
-    @classmethod
-    def from_llm_output(cls, llm_output: str) -> 'LLMMetadataResponse':
-        """Parse LLM output into structured response.
-        
-        Engineering: Factory method pattern (Python Essential Reference Ch. 7)
-        """
-        try:
-            # Strip markdown code blocks if present (Claude often wraps JSON in ```json)
-            cleaned_output = llm_output.strip()
-            if cleaned_output.startswith('```'):
-                # Remove opening ```json or ``` 
-                lines = cleaned_output.split('\n')
-                if lines[0].startswith('```'):
-                    lines = lines[1:]
-                # Remove closing ```
-                if lines and lines[-1].strip() == '```':
-                    lines = lines[:-1]
-                cleaned_output = '\n'.join(lines)
-            
-            # Try to parse as JSON
-            data = json.loads(cleaned_output)
-            
-            # DEBUG: Show parsed JSON structure
-            print("\n[DEBUG] JSON parsed successfully")
-            print(f"[DEBUG] Keys in response: {list(data.keys())}")
-            print(f"[DEBUG] content_requests field: {data.get('content_requests', 'MISSING')}")
-            if 'content_requests' in data:
-                print(f"[DEBUG] Number of requests: {len(data.get('content_requests', []))}")
-                if len(data.get('content_requests', [])) == 0:
-                    print("[DEBUG] ⚠️ content_requests array is EMPTY!")
-                else:
-                    print(f"[DEBUG] ✓ Found {len(data.get('content_requests', []))} content requests")
-            
-            requests = [
-                ContentRequest(
-                    book_name=req['book_name'],
-                    pages=req['pages'],
-                    rationale=req['rationale'],
-                    priority=req.get('priority', 1)
-                )
-                for req in data.get('content_requests', [])
-            ]
-            
-            return cls(
-                validation_summary=data.get('validation_summary', ''),
-                gap_analysis=data.get('gap_analysis', ''),
-                content_requests=requests,
-                analysis_strategy=data.get('analysis_strategy', '')
-            )
-        except json.JSONDecodeError as e:
-            print(f"[DEBUG] JSON parsing failed: {e}")
-            print("[DEBUG] Falling back to text format parsing")
-            # Fallback: parse text format
-            return cls._parse_text_format(llm_output)
-    
-    @classmethod
-    def _parse_text_format(cls, text: str) -> 'LLMMetadataResponse':
-        """Parse text-based LLM response.
-        
-        Engineering: Robustness through multiple parsing strategies
-        (Python Cookbook Ch. 2 - Strings and Text)
-        """
-        # Simple text parsing - extract sections
-        sections = {
-            'validation': '',
-            'gaps': '',
-            'requests': [],
-            'strategy': ''
-        }
-        
-        # Basic section extraction
-        current_section = None
-        for line in text.split('\n'):
-            line_lower = line.lower()
-            if 'validation' in line_lower:
-                current_section = 'validation'
-            elif 'gap' in line_lower:
-                current_section = 'gaps'
-            elif 'request' in line_lower or 'content' in line_lower:
-                current_section = 'requests'
-            elif 'strategy' in line_lower:
-                current_section = 'strategy'
-            elif current_section:
-                sections[current_section] += line + '\n'
-        
-        # Create minimal response
-        return cls(
-            validation_summary=sections['validation'].strip(),
-            gap_analysis=sections['gaps'].strip(),
-            content_requests=[],  # Will need manual review
-            analysis_strategy=sections['strategy'].strip()
-        )
-
-
-@dataclass
-class ScholarlyAnnotation:
-    """Final scholarly annotation output.
-    
-    Pattern: Value Object (DDD)
-    """
-    chapter_number: int
-    chapter_title: str
-    annotation_text: str
-    sources_cited: List[str]
-    concepts_validated: List[str]
-    gaps_identified: List[str]
-    metadata: Dict[str, Any] = field(default_factory=dict)
+# Import data models from new models module (Sprint 3.1)
+# Maintains backward compatibility - existing code continues to work
+from .models.analysis_models import (
+    AnalysisPhase,
+    ContentRequest,
+    LLMMetadataResponse,
+    ScholarlyAnnotation
+)
 
 
 # ============================================================================
@@ -996,7 +850,6 @@ Prioritize books that provide the most direct, substantial coverage of this chap
             book_name: Human-readable book name (e.g., "Fluent Python 2nd")
         """
         from pathlib import Path
-        import json
         
         # Load from Textbooks_JSON directory (updated to use actual data location)
         json_dir = Path(__file__).parent.parent / "data" / "textbooks_json"
