@@ -64,6 +64,28 @@ class BookContentRepository:
         - Source: interactive_llm_system_v3_hybrid_prompt.py lines 844-936
     """
     
+    # Class constant: Citation map for Chicago-style citations
+    # Per PYTHON_GUIDELINES Ch. 6: Class constants for immutable data
+    CITATION_MAP = {
+        # Python Language Books (keys match JSON filenames)
+        "Learning Python Ed6": ("Lutz, Mark", "Learning Python Ed6"),
+        PYTHON_ESSENTIAL_REF: ("Beazley, David", PYTHON_ESSENTIAL_REF),
+        FLUENT_PYTHON: ("Ramalho, Luciano", FLUENT_PYTHON),
+        PYTHON_DISTILLED: ("Beazley, David", PYTHON_DISTILLED),
+        "Python Cookbook 3rd": ("Beazley, David and Jones, Brian K.", "Python Cookbook 3rd"),
+        PYTHON_DATA_ANALYSIS: ("McKinney, Wes", PYTHON_DATA_ANALYSIS),
+        
+        # Architecture Books (keys match JSON filenames)
+        "Architecture Patterns with Python": ("Percival, Harry and Gregory, Bob", "Architecture Patterns with Python"),
+        "Python Microservices Development": ("Ziadé, Tarek", "Python Microservices Development"),
+        "Building Microservices": ("Newman, Sam", "Building Microservices"),
+        "Microservice Architecture": ("Dragoni, Nicola et al.", "Microservice Architecture"),
+        "Microservices Up and Running": ("Gammelgård, Ronnie and Hammarberg, Marcus", "Microservices Up and Running"),
+        "Building Python Microservices with FastAPI": ("Sinha, Sherwin John", "Building Python Microservices with FastAPI"),
+        "Microservice APIs Using Python Flask FastAPI": ("Buelta, Jaime", "Microservice APIs Using Python Flask FastAPI"),
+        "Python Architecture Patterns": ("Buelta, Jaime", "Python Architecture Patterns"),
+    }
+    
     def __init__(self, data_dir: Optional[Path] = None):
         """
         Initialize repository with data directory.
@@ -138,32 +160,14 @@ class BookContentRepository:
             
         Note:
             Keys match JSON filenames exactly. Values provide formal citation details.
+            Uses class constant CITATION_MAP for better encapsulation.
             
         References:
+            - PYTHON_GUIDELINES Ch. 6: Class constants for immutable data
             - Source: interactive_llm_system_v3_hybrid_prompt.py lines 897-929
         """
-        citation_map = {
-            # Python Language Books (keys match JSON filenames)
-            "Learning Python Ed6": ("Lutz, Mark", "Learning Python Ed6"),
-            PYTHON_ESSENTIAL_REF: ("Beazley, David", PYTHON_ESSENTIAL_REF),
-            FLUENT_PYTHON: ("Ramalho, Luciano", FLUENT_PYTHON),
-            PYTHON_DISTILLED: ("Beazley, David", PYTHON_DISTILLED),
-            "Python Cookbook 3rd": ("Beazley, David and Jones, Brian K.", "Python Cookbook 3rd"),
-            PYTHON_DATA_ANALYSIS: ("McKinney, Wes", PYTHON_DATA_ANALYSIS),
-            
-            # Architecture Books (keys match JSON filenames)
-            "Architecture Patterns with Python": ("Percival, Harry and Gregory, Bob", "Architecture Patterns with Python"),
-            "Python Microservices Development": ("Ziadé, Tarek", "Python Microservices Development"),
-            "Building Microservices": ("Newman, Sam", "Building Microservices"),
-            "Microservice Architecture": ("Dragoni, Nicola et al.", "Microservice Architecture"),
-            "Microservices Up and Running": ("Gammelgård, Ronnie and Hammarberg, Marcus", "Microservices Up and Running"),
-            "Building Python Microservices with FastAPI": ("Sinha, Sherwin John", "Building Python Microservices with FastAPI"),
-            "Microservice APIs Using Python Flask FastAPI": ("Buelta, Jaime", "Microservice APIs Using Python Flask FastAPI"),
-            "Python Architecture Patterns": ("Buelta, Jaime", "Python Architecture Patterns"),
-        }
-        
-        if book_name in citation_map:
-            return citation_map[book_name]
+        if book_name in self.CITATION_MAP:
+            return self.CITATION_MAP[book_name]
         
         # Fallback: use the filename as-is (already human-readable)
         return ("Unknown", book_name)
