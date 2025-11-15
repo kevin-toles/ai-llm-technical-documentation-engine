@@ -26,12 +26,33 @@ from collections import defaultdict
 # Reference: Architecture Patterns with Python Ch. 13 - Dependency Injection
 try:
     from src.providers import create_llm_provider
+    from src.cache import ChapterCache
+    from src.retry import call_llm_with_retry, RetryConfig, RetryExhaustedError
     _llm_provider = create_llm_provider()
     LLM_AVAILABLE = True
 except Exception as e:
     _llm_provider = None
+    ChapterCache = None  # type: ignore
+    call_llm_with_retry = None  # type: ignore
+    RetryConfig = None  # type: ignore
+    RetryExhaustedError = None  # type: ignore
     LLM_AVAILABLE = False
     print(f"Warning: LLM provider initialization failed: {e}")
+
+# Initialize cache for LLM responses
+# Reference: Python Distilled Ch. 5 - Exception Handling
+# Building Microservices Ch. 11 - Resilience Patterns
+try:
+    from config.settings import settings
+    _chapter_cache = ChapterCache(
+        cache_dir=settings.paths.cache_dir / "llm_responses",
+        enabled=True,
+        phase1_ttl=604800,  # 7 days for LLM responses (expensive operations)
+        phase2_ttl=604800,
+    )
+except Exception as cache_error:
+    _chapter_cache = None
+    print(f"Warning: Cache initialization failed: {cache_error}")
 
 # Legacy LLM Integration Functions
 # TODO (Day 4): Migrate these to use provider abstraction

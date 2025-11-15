@@ -203,6 +203,7 @@ class PathConfig:
         GUIDELINES_DIR: Guidelines directory (default: {REPO_ROOT}/guidelines)
         OUTPUT_DIR: Output directory (default: {REPO_ROOT}/outputs)
         LOGS_DIR: Logs directory (default: {REPO_ROOT}/logs)
+        CACHE_DIR: Cache directory (default: {REPO_ROOT}/cache)
     """
     repo_root: Path = field(default_factory=lambda: Path(os.getenv("REPO_ROOT", Path(__file__).parent.parent)))
     
@@ -214,10 +215,12 @@ class PathConfig:
         self.guidelines_dir = Path(os.getenv("GUIDELINES_DIR", self.repo_root / "guidelines"))
         self.output_dir = Path(os.getenv("OUTPUT_DIR", self.repo_root / "outputs"))
         self.logs_dir = Path(os.getenv("LOGS_DIR", self.repo_root / "logs"))
+        self.cache_dir = Path(os.getenv("CACHE_DIR", self.repo_root / "cache"))
         
-        # Create output and logs directories
+        # Create output, logs, and cache directories
         self.output_dir.mkdir(parents=True, exist_ok=True)
         self.logs_dir.mkdir(parents=True, exist_ok=True)
+        self.cache_dir.mkdir(parents=True, exist_ok=True)
 
 
 @dataclass

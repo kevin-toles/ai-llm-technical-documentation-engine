@@ -91,8 +91,12 @@ class ChapterCache:
         
         # Create cache directory if needed
         if self.enabled:
-            self.cache_dir.mkdir(parents=True, exist_ok=True)
-            logger.info(f"Cache initialized at {self.cache_dir}")
+            try:
+                self.cache_dir.mkdir(parents=True, exist_ok=True)
+                logger.info(f"Cache initialized at {self.cache_dir}")
+            except OSError as e:
+                logger.warning(f"Failed to create cache directory: {e}. Disabling cache.")
+                self.enabled = False
     
     def _get_cache_key(self, content: str, phase: str, **kwargs: Any) -> str:
         """
@@ -126,6 +130,9 @@ class ChapterCache:
             return self.phase1_ttl
         elif phase == "phase2":
             return self.phase2_ttl
+        elif phase == "llm":
+            # Use phase1_ttl for LLM responses (will be customized later)
+            return self.phase1_ttl
         else:
             return 86400  # Default 24 hours
     
