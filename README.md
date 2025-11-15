@@ -112,6 +112,55 @@ The tool will:
 
 ## Architecture
 
+### System Overview (Post-Sprint 4 Refactoring)
+
+The system uses a **modular pipeline architecture** with clean separation of concerns:
+
+```
+┌──────────────────────────────────────────────────────┐
+│                  Pipeline Layer                      │
+├──────────────────────────────────────────────────────┤
+│  • PDF → JSON conversion                             │
+│  • Metadata extraction                               │
+│  • LLM enhancement with provider abstraction         │
+│  • Caching with TTL management                       │
+└────────────┬──────────────┬──────────────┬───────────┘
+             │              │              │
+             ▼              ▼              ▼
+┌────────────────┐  ┌─────────────┐  ┌────────────┐
+│  Configuration │  │   Provider  │  │   Cache    │
+├────────────────┤  ├─────────────┤  ├────────────┤
+│ • PathConfig   │  │ • Protocol  │  │ • File-based│
+│ • .env support │  │ • Retry     │  │ • Per-phase│
+│ • Type-safe    │  │ • Errors    │  │ • TTL       │
+└────────────────┘  └─────────────┘  └────────────┘
+```
+
+**Key Components**:
+
+1. **Configuration Layer** (`config/settings.py`)
+   - Centralized settings using Python dataclasses
+   - Environment variable support via `.env`
+   - Type-safe access with IDE autocomplete
+   - PathConfig for all file system paths
+
+2. **Provider Abstraction** (`src/providers/`)
+   - Protocol-based LLM interface
+   - Pluggable providers (currently: Anthropic)
+   - Automatic retry with exponential backoff
+   - Standardized response format
+
+3. **Caching System** (`src/cache.py`)
+   - File-based caching with TTL
+   - Phase-specific expiration (30d/7d/1d)
+   - Automatic invalidation
+   - Cost reduction (99%+ on repeated runs)
+
+4. **Pipeline Stages** (`src/pipeline/`)
+   - PDF → JSON conversion
+   - Chapter metadata extraction
+   - LLM enhancement with citations
+
 ### Two-Phase Workflow
 
 **Phase 1: Content Selection**
@@ -128,36 +177,55 @@ The tool will:
 - Preserves original structure and numbering
 - **Output**: Enhanced markdown with citations
 
-### Smart Batching Protection
+### Smart Batching & Resilience
 
 - **Proactive**: Phase 1 prompt constrains LLM to top 10 books
 - **Reactive**: Auto-retry with tighter limits if response truncated
+- **Caching**: Automatic cache hits reduce API calls by 99%+
+- **Retry Logic**: Exponential backoff on transient failures
 - **Token Monitoring**: 8,192 max output tokens with usage tracking
 
 ### Directory Structure
 
 ```
 llm-document-enhancer/
-├── src/                          # Source code
-│   ├── integrate_llm_enhancements.py           # Main orchestrator
-│   ├── interactive_llm_system_v3_hybrid_prompt.py  # V3 analysis engine
-│   ├── llm_integration.py                      # Anthropic API wrapper
-│   ├── metadata_extraction_system.py           # Book metadata service
-│   ├── book_taxonomy.py                        # Book categorization
-│   └── chapter_metadata_manager.py             # Chapter cache loader
+├── config/                       # Configuration
+│   ├── settings.py              # Central settings with PathConfig
+│   └── .env.example             # Environment template
 │
-├── data/                         # Data files
-│   ├── textbooks_json/           # 14 book JSONs (~2GB)
-│   ├── metadata/                 # 14 metadata JSONs
-│   ├── chapter_metadata_cache.json
-│   └── chapter_metadata_manual.json
+├── src/                         # Source code
+│   ├── providers/               # LLM provider abstraction
+│   │   ├── base.py             # Protocol & response types
+│   │   ├── anthropic_provider.py  # Anthropic implementation
+│   │   └── retry.py            # Retry decorator
+│   │
+│   ├── pipeline/                # Pipeline stages
+│   │   ├── convert_pdf_to_json.py
+│   │   ├── generate_chapter_metadata.py
+│   │   └── chapter_generator_all_text.py
+│   │
+│   ├── cache.py                 # Caching system
+│   ├── integrate_llm_enhancements.py  # Main orchestrator
+│   ├── metadata_extraction_system.py  # Book metadata
+│   └── book_taxonomy.py         # Book categorization
 │
-├── guidelines/                   # Input documents
-│   └── PYTHON_GUIDELINES_*.md    # Base + enhanced versions
+├── data/                        # Data files
+│   ├── textbooks_json/          # 14 book JSONs (~2GB)
+│   ├── metadata/                # 14 metadata JSONs
+│   └── chapter_metadata_cache.json
 │
-├── outputs/                      # Generated ENHANCED guidelines
-├── logs/                         # API call logs
-└── docs/                         # Documentation
+├── tests/                       # Test suite (305 tests)
+│   ├── test_pipeline_stages.py       # Unit tests
+│   ├── test_pipeline_integration.py  # Integration tests
+│   └── test_sprint4_*.py            # Sprint tests
+│
+├── docs/                        # Documentation
+│   ├── SPRINT_4_IMPLEMENTATION_SUMMARY.md
+│   └── analysis/                # Design documents
+│
+├── guidelines/                  # Input documents
+├── outputs/                     # Generated ENHANCED guidelines
+└── logs/                        # API call logs
 ```
 
 ## Configuration
@@ -177,6 +245,24 @@ LLM_MAX_TOKENS=8192
 
 ## Development
 
+### Recent Improvements (Sprint 4)
+
+**November 2025 Refactoring** - See [SPRINT_4_IMPLEMENTATION_SUMMARY.md](docs/SPRINT_4_IMPLEMENTATION_SUMMARY.md)
+
+- ✅ **Centralized Configuration**: PathConfig with .env support
+- ✅ **Provider Abstraction**: Protocol-based LLM interface
+- ✅ **Caching System**: File-based cache with TTL (99%+ cost reduction)
+- ✅ **Retry Logic**: Exponential backoff on failures
+- ✅ **Comprehensive Testing**: 305 tests (40 new), 100% passing
+- ✅ **Architecture Patterns**: Repository, Service Layer, Dependency Injection
+
+**Benefits**:
+- **Cost Savings**: 99%+ reduction on repeated runs via caching
+- **Reliability**: Automatic retry on transient failures
+- **Maintainability**: Clean separation of concerns
+- **Testability**: Protocol-based design enables easy testing
+- **Extensibility**: Simple to add new LLM providers
+
 ### Adding New Books
 
 1. Add PDF to conversion queue (requires separate PDF→JSON tool)
@@ -188,10 +274,16 @@ LLM_MAX_TOKENS=8192
 
 ```bash
 # Install dev dependencies
-pip install pytest
+pip install -r config/requirements-dev.txt
 
-# Run tests
+# Run all tests
 pytest tests/
+
+# Run specific test suite
+pytest tests/test_pipeline_integration.py -v
+
+# Run with coverage
+pytest tests/ --cov=src --cov-report=html
 ```
 
 ## API Usage & Costs

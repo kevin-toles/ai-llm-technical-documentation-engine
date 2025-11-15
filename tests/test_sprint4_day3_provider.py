@@ -22,7 +22,7 @@ Quality Gates:
 
 import os
 import pytest
-from unittest.mock import Mock, patch, MagicMock
+from unittest.mock import Mock, patch
 from pathlib import Path
 
 
@@ -49,7 +49,7 @@ class TestProviderFactory:
             Architecture Patterns Ch. 13 - DI container pattern
             Fluent Python Ch. 13 - Protocol compliance
         """
-        from src.providers import create_llm_provider, LLMProvider
+        from src.providers import create_llm_provider
         
         # Mock API key to avoid requiring real credentials
         env_vars = {
@@ -207,7 +207,7 @@ class TestProviderProtocolCompliance:
             Fluent Python Ch. 13 - Protocol compliance checking
             Python Distilled Ch. 7 - Interface contracts
         """
-        from src.providers import AnthropicProvider, LLMProvider
+        from src.providers import AnthropicProvider
         
         # Create instance
         # Note: This will fail until AnthropicProvider is updated to match protocol

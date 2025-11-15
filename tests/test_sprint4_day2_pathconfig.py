@@ -16,7 +16,7 @@ Date: November 14, 2025
 import pytest
 import sys
 from pathlib import Path
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
 
 # Add src to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
@@ -66,7 +66,6 @@ class TestConvertPDFUsesPathConfig:
                     pass  # Expected to fail on actual conversion
                 
                 # ASSERT: Output path should be in temp directory (proves PathConfig was used)
-                expected_output = Path(tmp_dir) / f"{tmp_pdf_path.stem}.json"
                 # If implementation used PathConfig, the output path would be in tmp_dir
                 # The fact that settings.paths.textbooks_json_dir was accessed proves usage
                 assert mock_settings.paths.textbooks_json_dir == Path(tmp_dir), \
