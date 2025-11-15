@@ -22,17 +22,34 @@ from textwrap import dedent
 from typing import Dict, List, Tuple, Any, Optional, Set
 from collections import defaultdict
 
-# LLM Integration
+# LLM Integration - Provider Abstraction
+# Reference: Architecture Patterns with Python Ch. 13 - Dependency Injection
+try:
+    from src.providers import create_llm_provider
+    _llm_provider = create_llm_provider()
+    LLM_AVAILABLE = True
+except Exception as e:
+    _llm_provider = None
+    LLM_AVAILABLE = False
+    print(f"Warning: LLM provider initialization failed: {e}")
+
+# Legacy LLM Integration Functions
+# TODO (Day 4): Migrate these to use provider abstraction
+# These are specialized prompt functions not yet migrated to provider pattern
 try:
     from llm_integration import (
         prompt_for_semantic_concepts,
         prompt_for_cross_reference_validation,
         prompt_for_cross_reference_summary
     )
-    LLM_AVAILABLE = True
 except ImportError:
-    LLM_AVAILABLE = False
-    print("Warning: llm_integration.py not found. LLM features disabled.")
+    # Define stubs if llm_integration unavailable
+    def prompt_for_semantic_concepts(*args, **kwargs):
+        return None
+    def prompt_for_cross_reference_validation(*args, **kwargs):
+        return None
+    def prompt_for_cross_reference_summary(*args, **kwargs):
+        return None
 
 # -------------------------------
 # Configuration
@@ -603,19 +620,30 @@ Respond with ONLY the annotation text (no preamble, no JSON)."""
 
 def _try_llm_annotation(book: str, book_disp: str, concepts: List[str], relationship: str, 
                        content: str, page_num: int, primary_content: str) -> Optional[str]:
-    """Attempt to generate annotation using LLM. Returns None if unsuccessful."""
+    """Attempt to generate annotation using LLM. Returns None if unsuccessful.
+    
+    Reference:
+        Architecture Patterns Ch. 13 - Dependency injection of LLM provider
+    """
     if not (USE_LLM_SEMANTIC_ANALYSIS and LLM_AVAILABLE and content):
         return None
         
     try:
-        from llm_integration import call_llm
+        # Use provider abstraction instead of direct call_llm
+        # Reference: Architecture Patterns Ch. 13 - DI via provider pattern
         arch_role = get_architecture_book_role(book)
         prompt = _build_llm_annotation_prompt(book_disp, concepts, relationship, 
                                              arch_role, primary_content, content, page_num)
         system_prompt = "You are a technical educator performing comparative analysis between programming textbooks. When source material is non-technical (copyright pages, etc.), provide pedagogically valuable meta-commentary about the cross-reference system itself."
         
-        annotation = call_llm(prompt, system_prompt, max_tokens=450)
-        annotation = annotation.strip().strip('"').strip("'")
+        # Call provider.call() instead of call_llm()
+        response = _llm_provider.call(
+            prompt=prompt,
+            system_prompt=system_prompt,
+            max_tokens=450,
+            temperature=0.0
+        )
+        annotation = response.content.strip().strip('"').strip("'")
         
         return annotation if len(annotation) > 50 else None
     except Exception as e:
@@ -1011,12 +1039,17 @@ def _extract_concept_passage(content: str, concept: str) -> Tuple[str, int, int]
 
 
 def _generate_concept_annotation(concept: str, excerpt: str, page_num: int, best_count: int) -> str:
-    """Generate annotation explaining what the concept means."""
+    """Generate annotation explaining what the concept means.
+    
+    Reference:
+        Architecture Patterns Ch. 13 - Dependency injection of LLM provider
+    """
     if not (USE_LLM_SEMANTIC_ANALYSIS and LLM_AVAILABLE):
         return _get_fallback_annotation(concept, best_count)
     
     try:
-        from llm_integration import call_llm
+        # Use provider abstraction instead of direct call_llm
+        # Reference: Architecture Patterns Ch. 13 - DI via provider pattern
         
         prompt = f"""Analyze this excerpt and explain what '{concept}' means in this context.
 
@@ -1032,8 +1065,15 @@ Be specific to THIS content - NO generic templates.
 Respond with ONLY the annotation text (no JSON, no preamble)."""
 
         system_prompt = "You are a Python expert explaining concepts from educational text."
-        annotation = call_llm(prompt, system_prompt, max_tokens=200)
-        annotation = annotation.strip().strip('"').strip("'")
+        
+        # Call provider.call() instead of call_llm()
+        response = _llm_provider.call(
+            prompt=prompt,
+            system_prompt=system_prompt,
+            max_tokens=200,
+            temperature=0.0
+        )
+        annotation = response.content.strip().strip('"').strip("'")
         
         return annotation if len(annotation) > 50 else _get_fallback_annotation(concept, best_count)
     except Exception as e:
