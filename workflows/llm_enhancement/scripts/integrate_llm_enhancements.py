@@ -626,7 +626,8 @@ def _save_partial_results(header: str, enhanced_content: str, chapters_with_cros
     """Save partial results when processing is interrupted."""
     enhanced_document = header + enhanced_content
     output_filename = "PYTHON_GUIDELINES_Learning_Python_Ed6_LLM_ENHANCED_PARTIAL.md"
-    output_dir = REPO_ROOT / "Python_References" / "PYTHON_GUIDELINES"
+    output_dir = REPO_ROOT / "workflows" / "llm_enhancement" / "output"
+    output_dir.mkdir(parents=True, exist_ok=True)
     partial_file = output_dir / output_filename
     with open(partial_file, 'w', encoding='utf-8') as f:
         f.write(enhanced_document)
@@ -703,9 +704,9 @@ def main():
     # Reconstruct the full document
     enhanced_document = header + enhanced_content
     
-    # Save enhanced version to PYTHON_GUIDELINES directory
+    # Save enhanced version to workflow output directory
     output_filename = "PYTHON_GUIDELINES_Learning_Python_Ed6_LLM_ENHANCED.md"
-    output_dir = REPO_ROOT / "Python_References" / "PYTHON_GUIDELINES"
+    output_dir = REPO_ROOT / "workflows" / "llm_enhancement" / "output"
     output_dir.mkdir(parents=True, exist_ok=True)
     enhanced_file = output_dir / output_filename
     

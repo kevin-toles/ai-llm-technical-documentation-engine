@@ -210,7 +210,7 @@ class MigrationValidator:
         all_moved = True
         for new_path, old_path in self.expected_data_moves.items():
             full_new_path = self.repo_root / new_path
-            full_old_path = self.repo_root / old_path
+            # Note: old_path used for error message only (Python Cookbook Ch. 5: Iteration)
             
             if full_new_path.exists():
                 print(f"  ✅ {new_path}")

@@ -15,6 +15,9 @@ import logging
 from pathlib import Path
 from typing import Optional
 
+# Constants (Python Distilled Ch. 2: Best Practices)
+CACHE_FILENAME = "chapter_metadata_cache.json"
+
 
 class MetadataExtractionError(Exception):
     """Raised when metadata extraction fails"""
@@ -71,9 +74,9 @@ class MetadataExtractorAdapter:
             
             # Try multiple possible locations for cache file
             possible_cache_paths = [
-                project_root / "tests" / "src" / "pipeline" / "chapter_metadata_cache.json",  # Test location
-                project_root / "workflows" / "metadata_cache_merge" / "output" / "chapter_metadata_cache.json",  # Output location
-                Path(__file__).parent.parent / "chapter_metadata_cache.json",  # Adjacent to scripts/
+                project_root / "tests" / "src" / "pipeline" / CACHE_FILENAME,  # Test location
+                project_root / "workflows" / "metadata_cache_merge" / "output" / CACHE_FILENAME,  # Output location
+                Path(__file__).parent.parent / CACHE_FILENAME,  # Adjacent to scripts/
             ]
             
             cache_path = None

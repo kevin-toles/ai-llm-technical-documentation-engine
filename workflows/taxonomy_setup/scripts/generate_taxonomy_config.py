@@ -269,7 +269,7 @@ class TaxonomyConfigGenerator:
         if dry_run:
             print(f"\n🔍 DRY RUN MODE - Would write to: {self.output_file}")
             print(f"   Format: {self.output_format.upper()}")
-            print(f"   Preview (first 500 chars):")
+            print("   Preview (first 500 chars):")
             print("-" * 80)
             print(content[:500])
             if len(content) > 500:
@@ -330,8 +330,8 @@ class TaxonomyConfigGenerator:
         return toml.dumps(toml_config)
     
     def _print_summary(self, config: Dict[str, Any]) -> None:
-        """Print summary statistics."""
-        print(f"\n   📊 TAXONOMY SUMMARY:")
+        """Print summary statistics (Python Distilled Ch. 5: Program Structure)."""
+        print("\n   📊 TAXONOMY SUMMARY:")
         print(f"   📚 Total books: {config['metadata']['total_books']}")
         
         # Tier breakdown
