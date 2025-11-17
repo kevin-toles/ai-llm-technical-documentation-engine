@@ -66,7 +66,7 @@ def verify_sprint1_ready():
     print("\n✅ Verifying system initialization...")
     try:
         from src.metadata_extraction_system import MetadataServiceFactory
-        from src.phases import TwoPhaseOrchestrator
+        from shared.phases import TwoPhaseOrchestrator
         
         metadata_service = MetadataServiceFactory.create_default()
         orchestrator = TwoPhaseOrchestrator(metadata_service)

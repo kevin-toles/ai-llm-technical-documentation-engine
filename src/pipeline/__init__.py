@@ -3,8 +3,8 @@ Pipeline module for upstream document processing.
 
 This module contains:
 1. Legacy pipeline files (convert_pdf_to_json.py, etc.)
-2. Adapters (src/pipeline/adapters/) - Sprint 4 Phase 1
-3. Service Layer (orchestrator.py) - Sprint 4 Phase 2
+2. Adapters (moved to workflow-specific folders in migration)
+3. Service Layer (moved to shared/pipeline/pipeline_orchestrator.py)
 4. Repositories (repositories/) - Coming soon
 
 Pipeline Flow (Sprint 4):
@@ -18,17 +18,15 @@ Reference:
 - Architecture Patterns with Python Ch. 4 (Service Layer)
 - Architecture Patterns with Python Ch. 13 (Adapter Pattern)
 - docs/analysis/sprint4-pipeline-analysis.md
+
+NOTE: After workflow reorganization migration:
+- PipelineOrchestrator moved to shared/pipeline/pipeline_orchestrator.py
+- Adapters moved to workflow-specific adapter folders
 """
 
-# Sprint 4: Expose adapters and orchestrator
-from . import adapters
-from .orchestrator import PipelineOrchestrator, PipelineOrchestrationError
-
-__all__ = [
-    'convert_pdf_to_json',
-    'chapter_generator_all_text',
-    'generate_chapter_metadata',
-    'adapters',
-    'PipelineOrchestrator',
-    'PipelineOrchestrationError',
-]
+# For backward compatibility during migration, expose orchestrator from new location
+try:
+    from shared.pipeline.pipeline_orchestrator import PipelineOrchestrator, PipelineOrchestrationError
+    __all__ = ['PipelineOrchestrator', 'PipelineOrchestrationError']
+except ImportError:
+    __all__ = []

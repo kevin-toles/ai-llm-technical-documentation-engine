@@ -203,7 +203,7 @@ class TestSprint1ComponentCompatibility:
         """Verify system can still import core modules with Sprint 1 changes."""
         # Import core system components
         from src.metadata_extraction_system import MetadataServiceFactory
-        from src.phases import TwoPhaseOrchestrator
+        from shared.phases import TwoPhaseOrchestrator
         
         # Should not raise
         metadata_service = MetadataServiceFactory.create_default()

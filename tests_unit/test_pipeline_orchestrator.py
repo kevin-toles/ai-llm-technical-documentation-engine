@@ -13,7 +13,7 @@ from unittest.mock import Mock
 
 # Import will fail initially (RED phase) - that's expected
 try:
-    from src.pipeline.orchestrator import PipelineOrchestrator, PipelineOrchestrationError
+    from shared.pipeline.pipeline_orchestrator import PipelineOrchestrator, PipelineOrchestrationError
 except ImportError:
     # Expected during RED phase
     PipelineOrchestrator = None

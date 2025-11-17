@@ -74,8 +74,8 @@ except ImportError as e:
 # UPDATED: Now using TwoPhaseOrchestrator from refactored phases package
 try:
     from workflows.w07_llm_enhancement.scripts.metadata_extraction_system import MetadataServiceFactory
-    # REFACTORED: Use TwoPhaseOrchestrator instead of AnalysisOrchestrator
-    from workflows.w07_llm_enhancement.scripts.phases import TwoPhaseOrchestrator
+    # REFACTORED: Use TwoPhaseOrchestrator from shared/phases (migrated location)
+    from shared.phases import TwoPhaseOrchestrator
     INTERACTIVE_SYSTEM_AVAILABLE = True
     logger.info("✓ Interactive system loaded successfully (using TwoPhaseOrchestrator)")
 except ImportError as e:
