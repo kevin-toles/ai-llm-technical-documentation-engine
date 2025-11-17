@@ -181,7 +181,7 @@ def _handle_truncated_response(
         >>> result = _handle_truncated_response("phase_1", messages, attempt=0)
     """
     # Import here to avoid circular dependency
-    from src.llm_integration import call_llm
+    from shared.llm_integration import call_llm
     
     if phase == "phase_2":
         print("Phase 2 truncated - cannot retry (would lose content)", flush=True)

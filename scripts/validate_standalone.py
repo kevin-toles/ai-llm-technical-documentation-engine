@@ -112,25 +112,25 @@ def validate_imports():
     errors = []
     
     try:
-        from src.metadata_extraction_system import MetadataServiceFactory  # noqa: F401
+        from workflows.w07_llm_enhancement.scripts.metadata_extraction_system import MetadataServiceFactory  # noqa: F401
         print("  ✅ metadata_extraction_system")
     except ImportError as e:
         errors.append(f"Import failed: metadata_extraction_system - {e}")
     
     try:
-        from src.llm_integration import call_llm  # noqa: F401
+        from shared.llm_integration import call_llm  # noqa: F401
         print("  ✅ llm_integration")
     except ImportError as e:
         errors.append(f"Import failed: llm_integration - {e}")
     
     try:
-        from src.book_taxonomy import BOOK_REGISTRY  # noqa: F401
+        from workflows.w01_taxonomy_setup.scripts.book_taxonomy import BOOK_REGISTRY  # noqa: F401
         print("  ✅ book_taxonomy")
     except ImportError as e:
         errors.append(f"Import failed: book_taxonomy - {e}")
     
     try:
-        from src.interactive_llm_system_v3_hybrid_prompt import AnalysisOrchestrator  # noqa: F401
+        from workflows.w07_llm_enhancement.scripts.interactive_llm_system_v3_hybrid_prompt import AnalysisOrchestrator  # noqa: F401
         print("  ✅ interactive_llm_system_v3_hybrid_prompt")
     except ImportError as e:
         errors.append(f"Import failed: interactive_llm_system_v3_hybrid_prompt - {e}")

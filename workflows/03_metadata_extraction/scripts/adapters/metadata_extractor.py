@@ -55,7 +55,7 @@ class MetadataExtractorAdapter:
         
         try:
             # Import legacy function (lazy import to avoid circular dependencies)
-            from src.pipeline.generate_chapter_metadata import main
+            from workflows.w03_metadata_extraction.scripts.generate_chapter_metadata import main
             
             # Call legacy function (returns None, updates cache file in-place)
             main()

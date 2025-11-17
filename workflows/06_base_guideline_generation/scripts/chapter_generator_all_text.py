@@ -25,9 +25,9 @@ from collections import defaultdict
 # LLM Integration - Provider Abstraction
 # Reference: Architecture Patterns with Python Ch. 13 - Dependency Injection
 try:
-    from src.providers import create_llm_provider
-    from src.cache import ChapterCache
-    from src.retry import call_llm_with_retry, RetryConfig, RetryExhaustedError
+    from shared.providers import create_llm_provider
+    from shared.cache import ChapterCache
+    from shared.retry import call_llm_with_retry, RetryConfig, RetryExhaustedError
     _llm_provider = create_llm_provider()
     LLM_AVAILABLE = True
 except Exception as e:

@@ -60,7 +60,7 @@ class PdfConverterAdapter:
             FileNotFoundError: If PDF file doesn't exist
         """
         # Import legacy function (lazy import to avoid circular dependencies)
-        from src.pipeline.convert_pdf_to_json import convert_pdf_to_json
+        from workflows.w02_pdf_to_json.scripts.convert_pdf_to_json import convert_pdf_to_json
         
         # Validate input
         if not pdf_path.exists():

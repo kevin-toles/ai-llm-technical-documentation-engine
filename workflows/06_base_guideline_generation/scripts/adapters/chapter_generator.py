@@ -59,7 +59,7 @@ class ChapterGeneratorAdapter:
         
         try:
             # Import legacy function (lazy import to avoid circular dependencies)
-            from src.pipeline.chapter_generator_all_text import main
+            from workflows.w06_base_guideline_generation.scripts.chapter_generator_all_text import main
             
             # Legacy function writes to current directory
             # Future enhancement: Accept output_dir parameter in legacy function
