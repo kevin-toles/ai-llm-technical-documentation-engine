@@ -183,14 +183,16 @@ class TestChapterGeneratorAdapter:
         - Verifies output file was created
         """
         # Arrange - create output file when main() is called
+        output_file = tmp_path / "PYTHON_GUIDELINES_Learning Python Ed6.md"
+        
         def mock_main_side_effect():
             """Simulate legacy main() writing output file"""
-            output_file = Path.cwd() / "PYTHON_GUIDELINES_Learning Python Ed6.md"
             output_file.write_text("# Generated Guidelines\n\nChapter content...")
         
         with patch('workflows.base_guideline_generation.scripts.chapter_generator_all_text.main', side_effect=mock_main_side_effect):
-            # Act
-            result = adapter.generate()
+            with patch('pathlib.Path.cwd', return_value=tmp_path):
+                # Act
+                result = adapter.generate()
         
         # Assert
         assert isinstance(result, Path)
@@ -231,16 +233,17 @@ class TestChapterGeneratorAdapter:
         """
         # Arrange
         import logging
+        output_file = tmp_path / "PYTHON_GUIDELINES_Learning Python Ed6.md"
         
         def mock_main_side_effect():
             """Simulate legacy main() writing output file"""
-            output_file = Path.cwd() / "PYTHON_GUIDELINES_Learning Python Ed6.md"
             output_file.write_text("# Generated Guidelines\n\nChapter content...")
         
         with caplog.at_level(logging.INFO):
             with patch('workflows.base_guideline_generation.scripts.chapter_generator_all_text.main', side_effect=mock_main_side_effect):
-                # Act
-                adapter.generate()
+                with patch('pathlib.Path.cwd', return_value=tmp_path):
+                    # Act
+                    adapter.generate()
         
         # Assert
         assert "Generating chapters" in caplog.text
@@ -255,14 +258,16 @@ class TestChapterGeneratorAdapter:
         - Type hints are properly enforced
         """
         # Arrange
+        output_file = tmp_path / "PYTHON_GUIDELINES_Learning Python Ed6.md"
+        
         def mock_main_side_effect():
             """Simulate legacy main() writing output file"""
-            output_file = Path.cwd() / "PYTHON_GUIDELINES_Learning Python Ed6.md"
             output_file.write_text("# Generated Guidelines")
         
         with patch('workflows.base_guideline_generation.scripts.chapter_generator_all_text.main', side_effect=mock_main_side_effect):
-            # Act
-            result = adapter.generate()
+            with patch('pathlib.Path.cwd', return_value=tmp_path):
+                # Act
+                result = adapter.generate()
         
         # Assert
         assert isinstance(result, Path)
