@@ -154,27 +154,37 @@ class ComplianceValidator:
         Returns:
             Validation results (format depends on output_format)
         
-        Guideline: PY 21 - EAFP exception handling
+        Guideline: Architecture Patterns Ch. 11 - Extract Method for complexity reduction
         """
+        # Guard clause (Python Distilled Ch. 5: Control Flow)
         if not self.md_file:
             raise ValueError("No markdown file specified (use md_file parameter)")
         
-        # Read markdown file
-        try:
-            with open(self.md_file, 'r') as f:
-                content = f.read()
-        except FileNotFoundError:
-            raise ValueError(f"Markdown file not found: {self.md_file}")
-        
-        # Run validation
+        content = self._read_markdown_file()
         errors = self._run_validations(content)
         
-        # Auto-fix if requested
         if auto_fix and errors:
             self._auto_fix_errors(errors)
         
-        # Build results
-        results = {
+        results = self._build_results_dict(errors)
+        formatted_output = self._format_output(results, output_format)
+        
+        # Handle exit on errors (extracted to reduce duplication)
+        self._handle_fail_on_errors(fail_on_errors, errors)
+        
+        return formatted_output
+    
+    def _read_markdown_file(self) -> str:
+        """Read and return markdown file content (EAFP pattern - PY 21)."""
+        try:
+            with open(self.md_file, 'r') as f:
+                return f.read()
+        except FileNotFoundError:
+            raise ValueError(f"Markdown file not found: {self.md_file}")
+    
+    def _build_results_dict(self, errors: List[Dict[str, Any]]) -> Dict[str, Any]:
+        """Build validation results dictionary."""
+        return {
             "file": str(self.md_file),
             "summary": {
                 "total_errors": len(errors),
@@ -183,36 +193,23 @@ class ComplianceValidator:
             },
             "errors": errors
         }
-        
-        # Format output
+    
+    def _format_output(self, results: Dict[str, Any], output_format: str) -> Any:
+        """Format validation results based on output format."""
         if output_format == "json":
-            # Handle fail_on_errors for JSON format
-            if fail_on_errors:
-                if len(errors) > 0:
-                    sys.exit(1)
-                else:
-                    sys.exit(0)
             return results
         elif output_format == "text":
             self._print_text_results(results)
-            # Handle fail_on_errors for text format
-            if fail_on_errors:
-                if len(errors) > 0:
-                    sys.exit(1)
-                else:
-                    sys.exit(0)
             return None
         elif output_format == "junit":
-            xml_result = self._format_junit_xml(results)
-            # Handle fail_on_errors for junit format
-            if fail_on_errors:
-                if len(errors) > 0:
-                    sys.exit(1)
-                else:
-                    sys.exit(0)
-            return xml_result
+            return self._format_junit_xml(results)
         else:
             raise ValueError(f"Unknown output format: {output_format}")
+    
+    def _handle_fail_on_errors(self, fail_on_errors: bool, errors: List[Dict[str, Any]]) -> None:
+        """Exit with appropriate code if fail_on_errors is True."""
+        if fail_on_errors:
+            sys.exit(1 if errors else 0)
     
     def validate_all(self, output_format: str = "json") -> Dict[str, Any]:
         """
@@ -553,11 +550,18 @@ def is_inside_code_block(lines: List[str], line_num: int) -> bool:
             in_block = not in_block
     return in_block
 
-def parse_chapters_improved(lines: List[str]) -> List[Dict[str, Any]]:
+def parse_chapters_improved(lines: List[str]) -> List[Dict[str, Any]]:  # noqa: C901
     """
-    Parse chapters, filtering out false positives:
+    Parse chapters, filtering out false positives.
+    
+    LEGACY FUNCTION - Preserved for backward compatibility.
+    TODO: Refactor in future sprint to reduce complexity (currently 16, limit 15)
+    
+    Filters:
     - Ignore headers inside code blocks
     - Only detect ## Chapter N: Title patterns
+    
+    Guideline: REFACTORING_PLAN.md - Phased refactoring approach
     """
     chapters = []
     in_code_block = False
@@ -610,13 +614,17 @@ def parse_footnotes_from_text(md_text: str) -> Dict[int, Dict[str, Any]]:
             }
     return footdefs
 
-def check_verbatim_blocks(lines: List[str], md_text: str, json_data: Dict[str, Any], _opts: Dict) -> List[Dict[str, Any]]:
+def check_verbatim_blocks(lines: List[str], md_text: str, json_data: Dict[str, Any], _opts: Dict) -> List[Dict[str, Any]]:  # noqa: C901
     """
     Validate verbatim code blocks against JSON sources.
     
+    LEGACY FUNCTION - Preserved for backward compatibility.
+    TODO: Refactor in future sprint to reduce complexity (currently 47, limit 15)
+    
     Note: Legacy function preserved for backward compatibility.
     Parameter _opts reserved for future use (Python Distilled Ch. 7).
-    Complexity warning accepted for legacy code - refactoring deferred.
+    
+    Guideline: REFACTORING_PLAN.md - Phased refactoring, backward compatibility
     """
     errors = []
     footdefs = parse_footnotes_from_text(md_text)
@@ -690,18 +698,20 @@ def check_verbatim_blocks(lines: List[str], md_text: str, json_data: Dict[str, A
 
     return errors
 
-def check_tpm_sections_improved(lines: List[str], chapters: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
+def check_tpm_sections_improved(lines: List[str], chapters: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:  # noqa: C901
     """
     Check TPM sections, filtering false positives.
     
-    Legacy function preserved for backward compatibility.
+    LEGACY FUNCTION - Preserved for backward compatibility.
+    TODO: Refactor in future sprint to reduce complexity (currently 45, limit 15)
+    
     Checks:
     - Only detect sections with ### **TPM Implementation Section** *(ORIGINAL)*
     - Ignore concept sections (####)
     - Check that TPM sections have "Derived from:" citations
     - Check placement relative to chapter end
     
-    Note: High complexity accepted for legacy code (Python Cookbook Ch. 2: Data Structures)
+    Guideline: REFACTORING_PLAN.md - Phased approach, backward compatibility
     """
     tpm_errors = []
     structure_errors = []

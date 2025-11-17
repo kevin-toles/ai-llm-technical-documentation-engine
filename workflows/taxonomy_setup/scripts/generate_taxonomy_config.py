@@ -192,54 +192,68 @@ class TaxonomyConfigGenerator:
         Args:
             config: Taxonomy configuration dictionary
         
-        Raises:
-            ValueError: If circular dependency detected
-        
-        Note: Currently logs warnings for cycles but doesn't fail validation
+        Note: Logs warnings for cycles but doesn't fail validation
         since some intentional cascade patterns may appear circular.
+        
+        Guideline: Architecture Patterns Ch. 11 - Extract Method to reduce complexity
         """
-        # Build dependency graph
-        graph: Dict[str, List[str]] = {}
-        for book in config["books"]:
-            graph[book["name"]] = book["cascades_to"]
-        
-        # DFS to detect cycles
-        visited: Set[str] = set()
-        rec_stack: Set[str] = set()
-        cycles_found: List[str] = []
-        
-        def has_cycle(node: str, path: List[str]) -> bool:
-            visited.add(node)
-            rec_stack.add(node)
-            path.append(node)
-            
-            for neighbor in graph.get(node, []):
-                if neighbor not in visited:
-                    if has_cycle(neighbor, path.copy()):
-                        return True
-                elif neighbor in rec_stack:
-                    # Found a cycle
-                    cycle_path = " -> ".join(path + [neighbor])
-                    if cycle_path not in cycles_found:
-                        cycles_found.append(cycle_path)
-                    return True
-            
-            rec_stack.remove(node)
-            return False
-        
-        # Check each book for cycles
-        for book_name in graph:
-            if book_name not in visited:
-                has_cycle(book_name, [])
+        graph = self._build_dependency_graph(config)
+        cycles_found = self._find_all_cycles(graph)
         
         if cycles_found:
-            # Log warning but don't fail (intentional cascades may exist)
-            print(f"   ⚠️  Warning: {len(cycles_found)} potential circular cascade(s) detected:")
-            for cycle in cycles_found[:3]:  # Show first 3
-                print(f"      - {cycle}")
-            if len(cycles_found) > 3:
-                print(f"      ... and {len(cycles_found) - 3} more")
-            # Don't raise error - cascades may be intentional
+            self._log_cycle_warnings(cycles_found)
+    
+    def _build_dependency_graph(self, config: Dict[str, Any]) -> Dict[str, List[str]]:
+        """Build graph of book cascade dependencies."""
+        return {book["name"]: book["cascades_to"] for book in config["books"]}
+    
+    def _find_all_cycles(self, graph: Dict[str, List[str]]) -> List[str]:
+        """Find all circular dependency cycles in graph."""
+        visited: Set[str] = set()
+        cycles_found: List[str] = []
+        
+        for book_name in graph:
+            if book_name not in visited:
+                self._dfs_find_cycles(book_name, graph, visited, set(), [], cycles_found)
+        
+        return cycles_found
+    
+    def _dfs_find_cycles(
+        self,
+        node: str,
+        graph: Dict[str, List[str]],
+        visited: Set[str],
+        rec_stack: Set[str],
+        path: List[str],
+        cycles_found: List[str]
+    ) -> None:
+        """
+        DFS traversal to find cycles.
+        
+        Guideline: Python Distilled Ch. 5 - Recursion for tree traversal
+        """
+        visited.add(node)
+        rec_stack.add(node)
+        path.append(node)
+        
+        for neighbor in graph.get(node, []):
+            if neighbor not in visited:
+                self._dfs_find_cycles(neighbor, graph, visited, rec_stack, path.copy(), cycles_found)
+            elif neighbor in rec_stack:
+                # Cycle detected
+                cycle_path = " -> ".join(path + [neighbor])
+                if cycle_path not in cycles_found:
+                    cycles_found.append(cycle_path)
+        
+        rec_stack.remove(node)
+    
+    def _log_cycle_warnings(self, cycles_found: List[str]) -> None:
+        """Log cycle warnings without failing validation."""
+        print(f"   ⚠️  Warning: {len(cycles_found)} potential circular cascade(s) detected:")
+        for cycle in cycles_found[:3]:  # Show first 3
+            print(f"      - {cycle}")
+        if len(cycles_found) > 3:
+            print(f"      ... and {len(cycles_found) - 3} more")
     
     def generate_and_save(self, dry_run: bool = False) -> None:
         """
