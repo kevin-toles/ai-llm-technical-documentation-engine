@@ -151,7 +151,7 @@ class TestHandleTruncatedResponse:
     """
     
     @pytest.mark.skipif(_handle_truncated_response is None, reason="Function not implemented yet")
-    @patch('src.llm_integration.call_llm')
+    @patch('shared.llm_integration.call_llm')
     def test_phase1_retry_with_constraint(self, mock_call_llm):
         """Test Phase 1 retry adds constraint to system message."""
         messages = [
@@ -196,7 +196,7 @@ class TestHandleTruncatedResponse:
         assert result is None  # Should not retry past limit
     
     @pytest.mark.skipif(_handle_truncated_response is None, reason="Function not implemented yet")
-    @patch('src.llm_integration.call_llm')
+    @patch('shared.llm_integration.call_llm')
     def test_progressive_constraints(self, mock_call_llm):
         """Test progressive constraint tightening (15 -> 10 -> 5)."""
         messages_template = [
