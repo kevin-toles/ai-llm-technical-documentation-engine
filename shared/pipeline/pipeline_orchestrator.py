@@ -23,15 +23,15 @@ PROJECT_ROOT = Path(__file__).parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 # Import adapters from their workflow-specific locations
-from workflows.w02_pdf_to_json.scripts.adapters import (
+from workflows.pdf_to_json.scripts.adapters import (
     PdfConverterAdapter,
     PdfConversionError,
 )
-from workflows.w03_metadata_extraction.scripts.adapters import (
+from workflows.metadata_extraction.scripts.adapters import (
     MetadataExtractorAdapter,
     MetadataExtractionError,
 )
-from workflows.w06_base_guideline_generation.scripts.adapters import (
+from workflows.base_guideline_generation.scripts.adapters import (
     ChapterGeneratorAdapter,
     ChapterGenerationError,
 )

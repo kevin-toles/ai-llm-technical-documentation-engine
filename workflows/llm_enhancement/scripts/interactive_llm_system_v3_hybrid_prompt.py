@@ -38,14 +38,14 @@ PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 # Import our metadata extraction system
-from workflows.w07_llm_enhancement.scripts.metadata_extraction_system import (
+from workflows.llm_enhancement.scripts.metadata_extraction_system import (
     MetadataExtractionService
 )
 
 # Import book taxonomy for intelligent cascading selection
 try:
     # Book taxonomy will be imported locally where needed
-    from workflows.w01_taxonomy_setup.scripts import book_taxonomy  # noqa: F401 - Checked for availability
+    from workflows.taxonomy_setup.scripts import book_taxonomy  # noqa: F401 - Checked for availability
     TAXONOMY_AVAILABLE = True
 except ImportError:
     TAXONOMY_AVAILABLE = False
@@ -72,7 +72,7 @@ from shared.constants import BookTitles
 # Sprint 3.4: Import metadata builder (extract builder pattern)
 # Per BOOK_TAXONOMY_MATRIX.md: Architecture Patterns with Python (Tier 1)
 # Reference: REFACTORING_PLAN.md Sprint 3.4 - Builder extraction
-from workflows.w07_llm_enhancement.scripts.builders.metadata_builder import MetadataBuilder
+from workflows.llm_enhancement.scripts.builders.metadata_builder import MetadataBuilder
 
 
 # ============================================================================
@@ -83,7 +83,7 @@ from workflows.w07_llm_enhancement.scripts.builders.metadata_builder import Meta
 
 # Import data models from new models module (Sprint 3.1)
 # Maintains backward compatibility - existing code continues to work
-from workflows.w07_llm_enhancement.scripts.models.analysis_models import (
+from workflows.llm_enhancement.scripts.models.analysis_models import (
     AnalysisPhase,
     ContentRequest,
     LLMMetadataResponse,
@@ -192,7 +192,7 @@ def _prefilter_books_by_taxonomy(
     # Use book_taxonomy to score and rank books
     try:
         # Import book_taxonomy scoring function
-        from workflows.w01_taxonomy_setup.scripts.book_taxonomy import score_books_for_concepts, ALL_BOOKS
+        from workflows.taxonomy_setup.scripts.book_taxonomy import score_books_for_concepts, ALL_BOOKS
         
         # If no concepts found, return top-ranked books by default
         if not concept_set:
@@ -636,7 +636,7 @@ Prioritize books that provide the most direct, substantial coverage of this chap
         
         # Try to load chapter metadata manager
         try:
-            from workflows.w05_metadata_enrichment.scripts.chapter_metadata_manager import ChapterMetadataManager
+            from workflows.metadata_enrichment.scripts.chapter_metadata_manager import ChapterMetadataManager
             chapter_manager = ChapterMetadataManager()
             has_chapter_metadata = True
         except Exception:
@@ -857,7 +857,7 @@ Prioritize books that provide the most direct, substantial coverage of this chap
         
         # Try to load chapter metadata manager for chapter-level retrieval
         try:
-            from workflows.w05_metadata_enrichment.scripts.chapter_metadata_manager import ChapterMetadataManager
+            from workflows.metadata_enrichment.scripts.chapter_metadata_manager import ChapterMetadataManager
             chapter_manager = ChapterMetadataManager()
             has_chapter_metadata = True
         except Exception:
@@ -1272,7 +1272,7 @@ Prioritize books that provide the most direct, substantial coverage of this chap
             List of recommended book names
         """
         try:
-            from workflows.w01_taxonomy_setup.scripts.book_taxonomy import get_recommended_books
+            from workflows.taxonomy_setup.scripts.book_taxonomy import get_recommended_books
             concept_set = set(concepts)
             return get_recommended_books(
                 concept_set,
@@ -1305,7 +1305,7 @@ Prioritize books that provide the most direct, substantial coverage of this chap
         
         # Adjust by book tier if taxonomy available
         try:
-            from workflows.w01_taxonomy_setup.scripts.book_taxonomy import BOOK_REGISTRY
+            from workflows.taxonomy_setup.scripts.book_taxonomy import BOOK_REGISTRY
             if book_name in BOOK_REGISTRY:
                 tier = BOOK_REGISTRY[book_name].tier.value
                 if "Architecture" in tier:

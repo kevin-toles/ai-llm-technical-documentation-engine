@@ -27,7 +27,7 @@ from typing import Dict, Any
 PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from workflows.w01_taxonomy_setup.scripts.book_taxonomy import ALL_BOOKS, BookTier
+from workflows.taxonomy_setup.scripts.book_taxonomy import ALL_BOOKS, BookTier
 
 
 def generate_taxonomy_config() -> Dict[str, Any]:

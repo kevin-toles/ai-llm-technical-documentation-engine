@@ -31,13 +31,13 @@ sys.path.insert(0, str(PROJECT_ROOT))
 from config.settings import settings
 
 # Import shared dataclasses and services
-from workflows.w07_llm_enhancement.scripts.interactive_llm_system_v3_hybrid_prompt import (
+from workflows.llm_enhancement.scripts.interactive_llm_system_v3_hybrid_prompt import (
     LLMMetadataResponse,
 )
 
 try:
     # Test if book_taxonomy module is available
-    from workflows.w01_taxonomy_setup.scripts import book_taxonomy  # noqa: F401
+    from workflows.taxonomy_setup.scripts import book_taxonomy  # noqa: F401
     TAXONOMY_AVAILABLE = True
 except ImportError:
     TAXONOMY_AVAILABLE = False

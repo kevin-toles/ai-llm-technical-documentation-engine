@@ -73,7 +73,7 @@ except ImportError as e:
 # Import new interactive system (V3 with hybrid prompt quality enforcement)
 # UPDATED: Now using TwoPhaseOrchestrator from refactored phases package
 try:
-    from workflows.w07_llm_enhancement.scripts.metadata_extraction_system import MetadataServiceFactory
+    from workflows.llm_enhancement.scripts.metadata_extraction_system import MetadataServiceFactory
     # REFACTORED: Use TwoPhaseOrchestrator from shared/phases (migrated location)
     from shared.phases import TwoPhaseOrchestrator
     INTERACTIVE_SYSTEM_AVAILABLE = True

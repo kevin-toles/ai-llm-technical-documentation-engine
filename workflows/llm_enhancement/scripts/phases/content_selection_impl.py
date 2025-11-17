@@ -19,18 +19,18 @@ sys.path.insert(0, str(PROJECT_ROOT))
 from config.settings import settings
 
 # Import shared dataclasses
-from workflows.w07_llm_enhancement.scripts.interactive_llm_system_v3_hybrid_prompt import (
+from workflows.llm_enhancement.scripts.interactive_llm_system_v3_hybrid_prompt import (
     ContentRequest,
     LLMMetadataResponse,
 )
 
-from workflows.w07_llm_enhancement.scripts.metadata_extraction_system import (
+from workflows.llm_enhancement.scripts.metadata_extraction_system import (
     BookMetadata,
     ConceptMatch
 )
 
 try:
-    from workflows.w01_taxonomy_setup.scripts.book_taxonomy import (  # noqa: F401 (Used in _get_recommended_books_from_taxonomy and other methods)
+    from workflows.taxonomy_setup.scripts.book_taxonomy import (  # noqa: F401 (Used in _get_recommended_books_from_taxonomy and other methods)
         get_recommended_books,
         get_cascading_books,
         score_books_for_concepts,
@@ -323,7 +323,7 @@ CONSTRAINT: Limit to top {settings.constraints.max_content_requests} most releva
         all_books = self._metadata_service._repo.get_all()
         
         try:
-            from workflows.w05_metadata_enrichment.scripts.chapter_metadata_manager import ChapterMetadataManager
+            from workflows.metadata_enrichment.scripts.chapter_metadata_manager import ChapterMetadataManager
             chapter_manager = ChapterMetadataManager()
             has_chapter_metadata = True
         except Exception:

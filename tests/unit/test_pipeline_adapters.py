@@ -17,7 +17,7 @@ from unittest.mock import patch
 
 # Import will fail initially (RED phase) - that's expected
 try:
-    from workflows.w02_pdf_to_json.scripts.adapters import PdfConverterAdapter, PdfConversionError
+    from workflows.pdf_to_json.scripts.adapters import PdfConverterAdapter, PdfConversionError
 except ImportError:
     # Expected during RED phase
     PdfConverterAdapter = None
@@ -53,12 +53,12 @@ class TestPdfConverterAdapter:
         }
         
         # Mock settings paths
-        with patch('src.pipeline.adapters.pdf_converter.settings') as mock_settings:
+        with patch('workflows.pdf_to_json.scripts.adapters.pdf_converter.settings') as mock_settings:
             mock_settings.paths.textbooks_json_dir = tmp_path / "json_output"
             mock_settings.paths.textbooks_json_dir.mkdir(parents=True, exist_ok=True)
             
             # Mock the legacy function where it's imported and used (inside convert method)
-            with patch('src.pipeline.convert_pdf_to_json.convert_pdf_to_json') as mock_convert:
+            with patch('workflows.pdf_to_json.scripts.convert_pdf_to_json.convert_pdf_to_json') as mock_convert:
                 mock_convert.return_value = True
                 
                 # Create the expected JSON file that the adapter will read
@@ -89,7 +89,7 @@ class TestPdfConverterAdapter:
         pdf_path = tmp_path / "bad_book.pdf"
         pdf_path.write_text("corrupted pdf")
         
-        with patch('src.pipeline.convert_pdf_to_json.convert_pdf_to_json') as mock_convert:
+        with patch('workflows.pdf_to_json.scripts.convert_pdf_to_json.convert_pdf_to_json') as mock_convert:
             mock_convert.return_value = False
             
             # Act & Assert
@@ -120,9 +120,9 @@ class TestPdfConverterAdapter:
             
             expected_json = {"metadata": {"title": "Logged"}}
             
-            with patch('src.pipeline.convert_pdf_to_json.convert_pdf_to_json', return_value=True):
+            with patch('workflows.pdf_to_json.scripts.convert_pdf_to_json.convert_pdf_to_json', return_value=True):
                 with patch.object(Path, 'read_text', return_value=json.dumps(expected_json)):
-                    with patch('src.pipeline.adapters.pdf_converter.settings') as mock_settings:
+                    with patch('workflows.pdf_to_json.scripts.adapters.pdf_converter.settings') as mock_settings:
                         mock_settings.paths.textbooks_json_dir = tmp_path / "json_output"
                         mock_settings.paths.textbooks_json_dir.mkdir(parents=True, exist_ok=True)
                         
@@ -146,9 +146,9 @@ class TestPdfConverterAdapter:
         pdf_path = tmp_path / "path_book.pdf"
         pdf_path.write_text("content")
         
-        with patch('src.pipeline.convert_pdf_to_json.convert_pdf_to_json', return_value=True) as mock_convert:
+        with patch('workflows.pdf_to_json.scripts.convert_pdf_to_json.convert_pdf_to_json', return_value=True) as mock_convert:
             with patch.object(Path, 'read_text', return_value='{"test": true}'):
-                with patch('src.pipeline.adapters.pdf_converter.settings') as mock_settings:
+                with patch('workflows.pdf_to_json.scripts.adapters.pdf_converter.settings') as mock_settings:
                     mock_settings.paths.textbooks_json_dir = tmp_path / "json_output"
                     mock_settings.paths.textbooks_json_dir.mkdir(parents=True, exist_ok=True)
                     
@@ -168,7 +168,7 @@ class TestChapterGeneratorAdapter:
     def adapter(self):
         """Create adapter instance for testing"""
         try:
-            from workflows.w06_base_guideline_generation.scripts.adapters import ChapterGeneratorAdapter
+            from workflows.base_guideline_generation.scripts.adapters import ChapterGeneratorAdapter
             return ChapterGeneratorAdapter()
         except ImportError:
             pytest.skip("ChapterGeneratorAdapter not implemented yet (RED phase)")
@@ -188,7 +188,7 @@ class TestChapterGeneratorAdapter:
             output_file = Path.cwd() / "PYTHON_GUIDELINES_Learning Python Ed6.md"
             output_file.write_text("# Generated Guidelines\n\nChapter content...")
         
-        with patch('src.pipeline.chapter_generator_all_text.main', side_effect=mock_main_side_effect):
+        with patch('workflows.base_guideline_generation.scripts.chapter_generator_all_text.main', side_effect=mock_main_side_effect):
             # Act
             result = adapter.generate()
         
@@ -207,12 +207,12 @@ class TestChapterGeneratorAdapter:
         - Exception message is descriptive
         """
         # Arrange
-        with patch('src.pipeline.chapter_generator_all_text.main') as mock_main:
+        with patch('workflows.base_guideline_generation.scripts.chapter_generator_all_text.main') as mock_main:
             mock_main.side_effect = Exception("JSON file not found")
             
             # Act & Assert
             try:
-                from workflows.w06_base_guideline_generation.scripts.adapters import ChapterGenerationError
+                from workflows.base_guideline_generation.scripts.adapters import ChapterGenerationError
             except ImportError:
                 pytest.skip("ChapterGenerationError not implemented yet")
             
@@ -238,7 +238,7 @@ class TestChapterGeneratorAdapter:
             output_file.write_text("# Generated Guidelines\n\nChapter content...")
         
         with caplog.at_level(logging.INFO):
-            with patch('src.pipeline.chapter_generator_all_text.main', side_effect=mock_main_side_effect):
+            with patch('workflows.base_guideline_generation.scripts.chapter_generator_all_text.main', side_effect=mock_main_side_effect):
                 # Act
                 adapter.generate()
         
@@ -260,7 +260,7 @@ class TestChapterGeneratorAdapter:
             output_file = Path.cwd() / "PYTHON_GUIDELINES_Learning Python Ed6.md"
             output_file.write_text("# Generated Guidelines")
         
-        with patch('src.pipeline.chapter_generator_all_text.main', side_effect=mock_main_side_effect):
+        with patch('workflows.base_guideline_generation.scripts.chapter_generator_all_text.main', side_effect=mock_main_side_effect):
             # Act
             result = adapter.generate()
         
@@ -276,7 +276,7 @@ class TestMetadataExtractorAdapter:
     def adapter(self):
         """Create adapter instance for testing"""
         try:
-            from workflows.w03_metadata_extraction.scripts.adapters import MetadataExtractorAdapter
+            from workflows.metadata_extraction.scripts.adapters import MetadataExtractorAdapter
             return MetadataExtractorAdapter()
         except ImportError:
             pytest.skip("MetadataExtractorAdapter not implemented yet (RED phase)")
@@ -302,7 +302,7 @@ class TestMetadataExtractorAdapter:
                 ]
             }))
         
-        with patch('src.pipeline.generate_chapter_metadata.main', side_effect=mock_main_side_effect):
+        with patch('workflows.metadata_enrichment.scripts.generate_chapter_metadata.main', side_effect=mock_main_side_effect):
             # Act
             result = adapter.extract()
         
@@ -320,10 +320,10 @@ class TestMetadataExtractorAdapter:
         - Exception message is descriptive
         """
         # Arrange
-        with patch('src.pipeline.generate_chapter_metadata.main', side_effect=Exception("Cache file not found")):
+        with patch('workflows.metadata_enrichment.scripts.generate_chapter_metadata.main', side_effect=Exception("Cache file not found")):
             # Act & Assert
             try:
-                from workflows.w03_metadata_extraction.scripts.adapters import MetadataExtractionError
+                from workflows.metadata_extraction.scripts.adapters import MetadataExtractionError
             except ImportError:
                 pytest.skip("MetadataExtractionError not implemented yet")
             
@@ -349,7 +349,7 @@ class TestMetadataExtractorAdapter:
             cache_file.write_text('{"test": []}')
         
         with caplog.at_level(logging.INFO):
-            with patch('src.pipeline.generate_chapter_metadata.main', side_effect=mock_main_side_effect):
+            with patch('workflows.metadata_enrichment.scripts.generate_chapter_metadata.main', side_effect=mock_main_side_effect):
                 # Act
                 adapter.extract()
         
@@ -371,7 +371,7 @@ class TestMetadataExtractorAdapter:
             cache_file.parent.mkdir(parents=True, exist_ok=True)
             cache_file.write_text('{}')
         
-        with patch('src.pipeline.generate_chapter_metadata.main', side_effect=mock_main_side_effect):
+        with patch('workflows.metadata_enrichment.scripts.generate_chapter_metadata.main', side_effect=mock_main_side_effect):
             # Act
             result = adapter.extract()
         

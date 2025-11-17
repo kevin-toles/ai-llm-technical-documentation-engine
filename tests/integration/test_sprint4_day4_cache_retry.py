@@ -33,7 +33,7 @@ class TestCacheIntegration:
     def test_cache_module_imported_in_pipeline(self):
         """Verify pipeline imports ChapterCache from shared.cache."""
         # TDD RED: This will fail until we add cache imports to pipeline
-        from workflows.w06_base_guideline_generation.scripts import chapter_generator_all_text
+        from workflows.base_guideline_generation.scripts import chapter_generator_all_text
         
         # Check that ChapterCache is imported
         assert hasattr(chapter_generator_all_text, 'ChapterCache'), \
@@ -167,7 +167,7 @@ class TestRetryIntegration:
     def test_retry_module_imported_in_pipeline(self):
         """Verify pipeline imports call_llm_with_retry from shared.retry."""
         # TDD RED: This will fail until we add retry imports to pipeline
-        from workflows.w06_base_guideline_generation.scripts import chapter_generator_all_text
+        from workflows.base_guideline_generation.scripts import chapter_generator_all_text
         
         # Check that retry functions are imported
         assert hasattr(chapter_generator_all_text, 'call_llm_with_retry'), \

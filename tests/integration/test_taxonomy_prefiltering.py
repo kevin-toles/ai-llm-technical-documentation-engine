@@ -16,7 +16,7 @@ from unittest.mock import Mock, patch
 # Note: Import will fail until we implement the functions
 # This is expected in TDD - write tests first, then make them pass
 try:
-    from workflows.w07_llm_enhancement.scripts.interactive_llm_system_v3_hybrid_prompt import (
+    from workflows.llm_enhancement.scripts.interactive_llm_system_v3_hybrid_prompt import (
         _extract_concepts_from_text,
         _prefilter_books_by_taxonomy
     )

@@ -38,7 +38,7 @@ def test_analysis_phase_enum_extracted():
     
     Updated to match actual enum values from extracted code.
     """
-    from workflows.w07_llm_enhancement.scripts.models.analysis_models import AnalysisPhase
+    from workflows.llm_enhancement.scripts.models.analysis_models import AnalysisPhase
     
     # Verify enum values exist (from actual implementation)
     assert hasattr(AnalysisPhase, 'INITIAL')
@@ -54,7 +54,7 @@ def test_content_request_extracted():
     
     Updated to match actual ContentRequest signature.
     """
-    from workflows.w07_llm_enhancement.scripts.models.analysis_models import ContentRequest
+    from workflows.llm_enhancement.scripts.models.analysis_models import ContentRequest
     
     # Verify can create instance (using actual field names)
     request = ContentRequest(
@@ -74,7 +74,7 @@ def test_llm_metadata_response_extracted():
     
     This test will FAIL until we extract the class.
     """
-    from workflows.w07_llm_enhancement.scripts.models.analysis_models import LLMMetadataResponse
+    from workflows.llm_enhancement.scripts.models.analysis_models import LLMMetadataResponse
     
     # Verify can create instance
     response = LLMMetadataResponse(
@@ -92,7 +92,7 @@ def test_scholarly_annotation_extracted():
     
     Updated to match actual ScholarlyAnnotation signature.
     """
-    from workflows.w07_llm_enhancement.scripts.models.analysis_models import ScholarlyAnnotation
+    from workflows.llm_enhancement.scripts.models.analysis_models import ScholarlyAnnotation
     
     # Verify can create instance (using actual field names)
     annotation = ScholarlyAnnotation(
@@ -115,7 +115,7 @@ def test_backward_compatibility():
     This test will FAIL until we update imports.
     """
     # Should be able to import from new location
-    from workflows.w07_llm_enhancement.scripts.models.analysis_models import (
+    from workflows.llm_enhancement.scripts.models.analysis_models import (
         AnalysisPhase,
         ContentRequest,
         LLMMetadataResponse,
@@ -123,7 +123,7 @@ def test_backward_compatibility():
     )
     
     # Should also work from original file (for backward compatibility)
-    from workflows.w07_llm_enhancement.scripts.interactive_llm_system_v3_hybrid_prompt import (
+    from workflows.llm_enhancement.scripts.interactive_llm_system_v3_hybrid_prompt import (
         AnalysisPhase as OldAnalysisPhase,
         ContentRequest as OldContentRequest,
         LLMMetadataResponse as OldLLMMetadataResponse,

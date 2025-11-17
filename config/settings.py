@@ -209,9 +209,19 @@ class PathConfig:
     
     def __post_init__(self):
         """Initialize derived paths."""
+        # Legacy data_dir for backward compatibility
         self.data_dir = Path(os.getenv("DATA_DIR", self.repo_root / "data"))
-        self.textbooks_json_dir = self.data_dir / "textbooks_json"
-        self.metadata_dir = self.data_dir / "metadata"
+        
+        # New workflow-based paths
+        self.textbooks_json_dir = Path(os.getenv(
+            "TEXTBOOKS_JSON_DIR", 
+            self.repo_root / "workflows" / "pdf_to_json" / "output" / "textbooks_json"
+        ))
+        self.metadata_dir = Path(os.getenv(
+            "METADATA_DIR",
+            self.repo_root / "workflows" / "metadata_extraction" / "output" / "metadata"
+        ))
+        
         self.guidelines_dir = Path(os.getenv("GUIDELINES_DIR", self.repo_root / "guidelines"))
         self.output_dir = Path(os.getenv("OUTPUT_DIR", self.repo_root / "outputs"))
         self.logs_dir = Path(os.getenv("LOGS_DIR", self.repo_root / "logs"))
