@@ -69,88 +69,46 @@ class UniversalMetadataGenerator:
     
     Extracts keywords, concepts, and generates summaries from chapter content.
     Can auto-detect chapters or accept explicit chapter definitions.
+    
+    Configuration via dependency injection (ARCH 5336):
+    - Keywords loaded from external config file
+    - Patterns loaded from external config file
     """
     
-    # Comprehensive keyword lists for different domains
-    PYTHON_KEYWORDS = {
-        # Core language
-        'class', 'function', 'method', 'decorator', 'generator', 'iterator',
-        'closure', 'lambda', 'comprehension', 'exception', 'inheritance',
-        'module', 'package', 'import', 'namespace', 'scope', 'variable',
-        'type', 'object', 'attribute', 'property', 'descriptor',
-        'metaclass', 'protocol', 'interface', 'abstract', 'polymorphism',
-        'encapsulation', 'composition', 'mixin',
-        
-        # Async/Concurrency
-        'threading', 'async', 'await', 'coroutine', 'asyncio',
-        'concurrent', 'parallel', 'multiprocessing', 'gil',
-        
-        # I/O and Data
-        'file', 'io', 'stream', 'context manager',
-        'serialization', 'pickle', 'json', 'xml', 'csv', 'database',
-        'encoding', 'decoding', 'buffer', 'unicode', 'bytes',
-        
-        # Data Structures
-        'list', 'dict', 'dictionary', 'set', 'tuple', 'string',
-        'array', 'queue', 'stack', 'sequence', 'collection',
-        'hash', 'mapping',
-        
-        # Types
-        'int', 'integer', 'float', 'bool', 'boolean', 'str',
-        'none', 'type hint', 'annotation', 'typing',
-        
-        # Advanced
-        'metaprogramming', 'reflection', 'introspection',
-        'special method', 'dunder', 'magic method',
-        'operator overloading', 'dataclass',
-        
-        # Control Flow
-        'if', 'elif', 'else', 'while', 'for', 'break', 'continue',
-        'pass', 'loop', 'iteration', 'conditional', 'statement',
-    }
-    
-    ARCHITECTURE_KEYWORDS = {
-        # Microservices
-        'microservice', 'service', 'distributed', 'resilience', 'scalability',
-        'deployment', 'monitoring', 'observability', 'circuit breaker',
-        'api gateway', 'service mesh', 'containerization', 'docker',
-        'orchestration', 'kubernetes', 'communication', 'rest', 'grpc',
-        'messaging', 'kafka', 'rabbitmq', 'fault tolerance', 'load balancing',
-        
-        # Architecture Patterns
-        'domain', 'aggregate', 'repository', 'unit of work', 'service layer',
-        'event', 'message bus', 'dependency injection', 'adapter', 'port',
-        'bounded context', 'entity', 'value object', 'architecture',
-        'hexagonal', 'clean architecture', 'domain-driven design',
-        'pattern', 'design pattern', 'singleton', 'factory',
-        'strategy', 'observer', 'command',
-        
-        # API & Web
-        'api', 'http', 'endpoint', 'request', 'response',
-        'fastapi', 'flask', 'django', 'authentication', 'authorization',
-        'oauth2', 'jwt', 'token', 'cors', 'webhook',
-    }
-    
-    DATA_SCIENCE_KEYWORDS = {
-        'pandas', 'numpy', 'dataframe', 'series', 'array',
-        'matplotlib', 'visualization', 'plot', 'chart',
-        'analysis', 'statistics', 'data cleaning', 'transformation',
-        'aggregation', 'groupby', 'merge', 'join', 'pivot',
-        'time series', 'missing data', 'indexing', 'selection',
-    }
-    
-    def __init__(self, json_path: Path, domain: str = "auto"):
+    def __init__(
+        self, 
+        json_path: Path, 
+        domain: str = "auto",
+        keywords_file: Optional[Path] = None,
+        patterns_file: Optional[Path] = None
+    ):
         """
         Initialize generator with JSON file.
         
         Args:
             json_path: Path to textbook JSON file
             domain: Domain of the book ("python", "architecture", "data_science", "auto")
+            keywords_file: Optional path to keywords JSON config (default: config/metadata_keywords.json)
+            patterns_file: Optional path to patterns JSON config (default: config/chapter_patterns.json)
+            
+        Raises:
+            ValueError: If config files have invalid schema or patterns
+            FileNotFoundError: If required files don't exist (EAFP - PY 21)
         """
         self.json_path = Path(json_path)
         self.domain = domain
         
-        # Load JSON
+        # Load configuration files (DI pattern - ARCH 5336)
+        self.keywords_file = Path(keywords_file) if keywords_file else Path(__file__).parent.parent.parent.parent / "config" / "metadata_keywords.json"
+        self.patterns_file = Path(patterns_file) if patterns_file else Path(__file__).parent.parent.parent.parent / "config" / "chapter_patterns.json"
+        
+        # Load and validate keywords config
+        self.keyword_config = self._load_and_validate_keywords()
+        
+        # Load and validate patterns config
+        self.pattern_config = self._load_and_validate_patterns()
+        
+        # Load JSON (using context manager - PY 32425)
         with open(self.json_path, 'r', encoding='utf-8') as f:
             self.book_data = json.load(f)
         
@@ -163,6 +121,76 @@ class UniversalMetadataGenerator:
         
         # Combine keyword sets based on domain
         self.keywords = self._get_keyword_set()
+        
+        # Compile chapter pattern for auto-detection
+        self.chapter_pattern = re.compile(self.pattern_config.get("chapter_heading", r'(?:chapter|ch\.?)\s+(\d+)[:\s]+(.+)'), re.IGNORECASE)
+        self.section_pattern = re.compile(self.pattern_config.get("section_heading", r'^(?:section|§)\s+(\d+(?:\.\d+)?)'), re.IGNORECASE) if "section_heading" in self.pattern_config else None
+    
+    def _load_and_validate_keywords(self) -> Dict[str, List[str]]:
+        """
+        Load and validate keywords config file.
+        
+        Returns:
+            Dictionary with domain keys and keyword lists
+            
+        Raises:
+            ValueError: If file has invalid schema
+            FileNotFoundError: If file doesn't exist
+        """
+        try:
+            with open(self.keywords_file, 'r', encoding='utf-8') as f:
+                config = json.load(f)
+        except FileNotFoundError:
+            raise FileNotFoundError(f"Keywords file not found: {self.keywords_file}")
+        except json.JSONDecodeError as e:
+            raise ValueError(f"Invalid JSON in keywords file: {e}")
+        
+        # Validate schema: must be dict with string keys and list values
+        if not isinstance(config, dict):
+            raise ValueError(f"Invalid keywords file schema: expected dict, got {type(config).__name__}")
+        
+        for domain, keywords in config.items():
+            if not isinstance(keywords, list):
+                raise ValueError(f"Invalid keywords file schema: domain '{domain}' must have list of keywords, got {type(keywords).__name__}")
+            if not all(isinstance(kw, str) for kw in keywords):
+                raise ValueError(f"Invalid keywords file schema: domain '{domain}' contains non-string keywords")
+        
+        return config
+    
+    def _load_and_validate_patterns(self) -> Dict[str, str]:
+        """
+        Load and validate patterns config file.
+        
+        Returns:
+            Dictionary with pattern names and regex strings
+            
+        Raises:
+            ValueError: If file has invalid schema or regex
+            FileNotFoundError: If file doesn't exist
+        """
+        try:
+            with open(self.patterns_file, 'r', encoding='utf-8') as f:
+                config = json.load(f)
+        except FileNotFoundError:
+            raise FileNotFoundError(f"Patterns file not found: {self.patterns_file}")
+        except json.JSONDecodeError as e:
+            raise ValueError(f"Invalid JSON in patterns file: {e}")
+        
+        # Validate schema and regex patterns
+        if not isinstance(config, dict):
+            raise ValueError(f"Invalid patterns file schema: expected dict, got {type(config).__name__}")
+        
+        for pattern_name, pattern_str in config.items():
+            if not isinstance(pattern_str, str):
+                raise ValueError(f"Invalid patterns file schema: pattern '{pattern_name}' must be string, got {type(pattern_str).__name__}")
+            
+            # Validate regex by attempting to compile
+            try:
+                re.compile(pattern_str)
+            except re.error as e:
+                raise ValueError(f"Invalid regex pattern '{pattern_name}': {e}")
+        
+        return config
     
     def _detect_domain(self) -> str:
         """Auto-detect book domain from title or content."""
@@ -177,12 +205,13 @@ class UniversalMetadataGenerator:
     
     def _get_keyword_set(self) -> Set[str]:
         """Get combined keyword set based on domain."""
-        keywords = set(self.PYTHON_KEYWORDS)  # Always include Python basics
+        # Start with Python keywords (always include basics)
+        keywords = set(self.keyword_config.get("python", []))
         
         if self.domain in ["architecture", "microservices"]:
-            keywords.update(self.ARCHITECTURE_KEYWORDS)
+            keywords.update(self.keyword_config.get("architecture", []))
         elif self.domain == "data_science":
-            keywords.update(self.DATA_SCIENCE_KEYWORDS)
+            keywords.update(self.keyword_config.get("data_science", []))
         
         return keywords
     
@@ -199,8 +228,6 @@ class UniversalMetadataGenerator:
             List of (chapter_num, title, start_page, end_page) tuples
         """
         chapters = []
-        chapter_pattern = re.compile(r'(?:chapter|ch\.?)\s+(\d+)[:\s]+(.+)', re.IGNORECASE)
-        
         current_chapter = None
         
         for idx, page in enumerate(self.pages, start=1):
@@ -208,7 +235,7 @@ class UniversalMetadataGenerator:
             lines = text.split('\n')[:10]  # Check first 10 lines
             
             for line in lines:
-                match = chapter_pattern.search(line)
+                match = self.chapter_pattern.search(line)
                 if match:
                     # Found a new chapter
                     if current_chapter:
@@ -357,6 +384,30 @@ class UniversalMetadataGenerator:
         
         return summary
     
+    def _validate_chapter_ranges(self, chapters: List[Tuple[int, str, int, int]]) -> None:
+        """
+        Validate that chapter page ranges don't overlap.
+        
+        Args:
+            chapters: List of (chapter_num, title, start_page, end_page) tuples
+            
+        Raises:
+            ValueError: If any chapters have overlapping page ranges
+        """
+        sorted_chapters = sorted(chapters, key=lambda c: c[2])  # Sort by start_page
+        
+        for i in range(len(sorted_chapters) - 1):
+            curr_num, _, _, curr_end = sorted_chapters[i]
+            next_num, _, next_start, _ = sorted_chapters[i + 1]
+            
+            # Check if current chapter's end overlaps with next chapter's start
+            # Adjacent chapters are OK (curr_end = next_start - 1), overlapping is not
+            if curr_end >= next_start:
+                raise ValueError(
+                    f"Chapters overlap: Chapter {curr_num} ends at page {curr_end}, "
+                    f"but Chapter {next_num} starts at page {next_start}"
+                )
+    
     def generate_metadata(
         self,
         chapters: List[Tuple[int, str, int, int]]
@@ -369,11 +420,20 @@ class UniversalMetadataGenerator:
             
         Returns:
             List of ChapterMetadata objects
+            
+        Raises:
+            ValueError: If chapters have overlapping page ranges
         """
-        metadata_list = []
+        # Validate chapters for overlaps (exception hierarchy - PY 32425)
+        self._validate_chapter_ranges(chapters)
         
-        for ch_num, title, start_page, end_page in chapters:
-            print(f"\nProcessing Chapter {ch_num}: {title}")
+        metadata_list = []
+        total_chapters = len(chapters)
+        
+        for idx, (ch_num, title, start_page, end_page) in enumerate(chapters, start=1):
+            # Progress indicator (for large books)
+            progress_pct = (idx / total_chapters) * 100
+            print(f"\n[{progress_pct:.1f}%] Processing Chapter {ch_num}: {title}")
             
             # Collect text from chapter pages
             chapter_text = ""
@@ -409,7 +469,8 @@ class UniversalMetadataGenerator:
     def save_metadata(
         self,
         metadata_list: List[ChapterMetadata],
-        output_path: Optional[Path] = None
+        output_path: Optional[Path] = None,
+        dry_run: bool = False
     ) -> Path:
         """
         Save metadata to JSON file.
@@ -417,19 +478,35 @@ class UniversalMetadataGenerator:
         Args:
             metadata_list: List of ChapterMetadata objects
             output_path: Optional custom output path
+            dry_run: If True, show what would be saved without writing file
             
         Returns:
-            Path where metadata was saved
+            Path where metadata was (or would be) saved
         """
         if output_path is None:
             output_path = DEFAULT_METADATA_DIR / f"{self.book_name}_metadata.json"
         
-        # Ensure output directory exists
-        output_path.parent.mkdir(parents=True, exist_ok=True)
-        
         # Convert to dictionaries for JSON
         metadata_dicts = [m.to_dict() for m in metadata_list]
         
+        if dry_run:
+            print("\n" + "="*60)
+            print("DRY RUN MODE - No files will be written")
+            print("="*60)
+            print(f"\nWould save to: {output_path}")
+            print(f"Chapters: {len(metadata_list)}")
+            print("\nPreview (first 500 chars):")
+            preview = json.dumps(metadata_dicts, indent=2, ensure_ascii=False)[:500]
+            print(preview)
+            if len(json.dumps(metadata_dicts)) > 500:
+                print("...")
+            print("\n" + "="*60)
+            return output_path
+        
+        # Ensure output directory exists
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        
+        # Write with context manager (PY 32425)
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(metadata_dicts, f, indent=2, ensure_ascii=False)
         
@@ -530,6 +607,22 @@ Examples:
         help='Book domain for keyword extraction (default: auto-detect)'
     )
     
+    parser.add_argument(
+        '--keywords-file',
+        help='Path to custom keywords JSON config file (default: config/metadata_keywords.json)'
+    )
+    
+    parser.add_argument(
+        '--patterns-file',
+        help='Path to custom chapter patterns JSON config file (default: config/chapter_patterns.json)'
+    )
+    
+    parser.add_argument(
+        '--dry-run',
+        action='store_true',
+        help='Show what would be saved without writing files'
+    )
+    
     args = parser.parse_args()
     
     # Initialize generator
@@ -538,7 +631,14 @@ Examples:
         print(f"❌ Error: File not found: {json_path}")
         sys.exit(1)
     
-    generator = UniversalMetadataGenerator(json_path, domain=args.domain)
+    # Prepare optional arguments
+    kwargs = {'domain': args.domain}
+    if args.keywords_file:
+        kwargs['keywords_file'] = Path(args.keywords_file)
+    if args.patterns_file:
+        kwargs['patterns_file'] = Path(args.patterns_file)
+    
+    generator = UniversalMetadataGenerator(json_path, **kwargs)
     print(f"📚 Loaded: {generator.book_name}")
     print(f"   Pages: {len(generator.pages)}")
     print(f"   Domain: {generator.domain}")
@@ -584,9 +684,12 @@ Examples:
     
     # Save metadata
     output_path = Path(args.output) if args.output else None
-    saved_path = generator.save_metadata(metadata_list, output_path)
+    saved_path = generator.save_metadata(metadata_list, output_path, dry_run=args.dry_run)
     
-    print(f"\n✨ Done! Metadata saved to: {saved_path}")
+    if not args.dry_run:
+        print(f"\n✨ Done! Metadata saved to: {saved_path}")
+    else:
+        print("\n✨ Done! (DRY RUN - no files written)")
 
 
 if __name__ == "__main__":

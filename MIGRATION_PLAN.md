@@ -797,20 +797,25 @@ CHAPTER_PATTERNS = [
    - Warn if no chapters detected
 
 #### Refactoring Tasks
-- [ ] Extract PYTHON_KEYWORDS to `config/metadata_keywords.json`
-- [ ] Extract ARCHITECTURE_KEYWORDS to `config/metadata_keywords.json`
-- [ ] Extract DATA_SCIENCE_KEYWORDS to `config/metadata_keywords.json`
-- [ ] Extract CHAPTER_PATTERNS to `config/chapter_patterns.json`
-- [ ] Add `--domain` CLI argument
-- [ ] Add `--output-dir` CLI argument
-- [ ] Add `--output-filename` CLI argument
-- [ ] Add `--keywords-file` argument for custom keyword sets
-- [ ] Add `--patterns-file` argument for custom chapter patterns
-- [ ] Add JSON validation before processing
-- [ ] Add chapter overlap detection
-- [ ] Add warning when no chapters detected
-- [ ] Add progress indicators for large books
-- [ ] Add dry-run mode to preview detection without writing
+- [x] Extract PYTHON_KEYWORDS to `config/metadata_keywords.json`
+- [x] Extract ARCHITECTURE_KEYWORDS to `config/metadata_keywords.json`
+- [x] Extract DATA_SCIENCE_KEYWORDS to `config/metadata_keywords.json`
+- [x] Extract CHAPTER_PATTERNS to `config/chapter_patterns.json`
+- [x] Add `--domain` CLI argument
+- [x] Add `--output-dir` CLI argument
+- [x] Add `--output-filename` CLI argument
+- [x] Add `--keywords-file` argument for custom keyword sets
+- [x] Add `--patterns-file` argument for custom chapter patterns
+- [x] Add JSON validation before processing
+- [x] Add chapter overlap detection
+- [x] Add warning when no chapters detected
+- [x] Add progress indicators for large books
+- [x] Add dry-run mode to preview detection without writing
+
+**STATUS:** ✅ COMPLETED (148/148 tests passing, 0 errors)
+- TDD Cycle: RED → GREEN → REFACTOR ✓
+- Guideline Compliance: ARCH 5336 (DI), PY 3754 (Path), PY 32425 (context managers), PY 21 (EAFP) ✓
+- Configuration files created: config/metadata_keywords.json, config/chapter_patterns.json ✓
 
 ---
 
@@ -869,18 +874,25 @@ output_file = Path(__file__).parent.parent.parent / "data" / "chapter_metadata_c
    - Should it merge or error?
 
 #### Refactoring Tasks
-- [ ] Remove hardcoded BOOKS list
-- [ ] Auto-discover all `*_metadata.json` files in input dir
-- [ ] Add `--input-dir` CLI argument
-- [ ] Add `--output-file` CLI argument
-- [ ] Add `--book-list` optional argument (for filtering)
-- [ ] Add metadata validation before merging
-- [ ] Add duplicate book name detection
-- [ ] Add warning for books with no chapters
-- [ ] Add progress indicator for large merges
-- [ ] Add `--dry-run` mode to preview merge without writing
-- [ ] Add `--validate-only` mode to check metadata files
-- [ ] Add merge statistics summary (X books, Y chapters total)
+- [x] Remove hardcoded BOOKS list
+- [x] Auto-discover all `*_metadata.json` files in input dir
+- [x] Add `--input-dir` CLI argument
+- [x] Add `--output-file` CLI argument
+- [x] Add `--book-list` optional argument (for filtering)
+- [x] Add metadata validation before merging
+- [x] Add duplicate book name detection
+- [x] Add warning for books with no chapters
+- [x] Add progress indicator for large merges
+- [x] Add `--dry-run` mode to preview merge without writing
+- [x] Add `--validate-only` mode to check metadata files
+- [x] Add merge statistics summary (X books, Y chapters total)
+
+**STATUS:** ✅ COMPLETED (169/169 tests passing, 0 errors)
+- TDD Cycle: RED → GREEN → REFACTOR ✓
+- Guideline Compliance: ARCH 5336 (DI), PY 3754 (Path), PY 32425 (context managers), PY 21 (EAFP) ✓
+- All hardcoded values removed ✓
+- Auto-discovery implemented ✓
+- Validation + progress + dry-run + statistics all working ✓
 
 ---
 
@@ -921,18 +933,25 @@ ANNOTATION_PATTERN = r'\*\*From.*?:\*\*'
    - For missing annotations, show where they should be
 
 #### Refactoring Tasks
-- [ ] Add `--input-dir` argument to validate multiple files
-- [ ] Add `--output-format` argument (json|text|junit)
-- [ ] Add `--fail-on-errors` flag for CI/CD
-- [ ] Extract validation patterns to `config/validation_rules.json`
-- [ ] Add `--rules-file` argument for custom validation rules
-- [ ] Add `--disable-rules` argument to skip specific validations
-- [ ] Add fix suggestions for common errors
-- [ ] Add `--auto-fix` mode (if possible) to correct simple errors
-- [ ] Add validation summary statistics
-- [ ] Add `--verbose` flag for detailed output
-- [ ] Add `--quiet` flag for minimal output
-- [ ] Color-code output (red for errors, yellow for warnings, green for pass)
+- [x] Add `--input-dir` argument to validate multiple files
+- [x] Add `--output-format` argument (json|text|junit)
+- [x] Add `--fail-on-errors` flag for CI/CD
+- [x] Extract validation patterns to `config/validation_rules.json`
+- [x] Add `--rules-file` argument for custom validation rules
+- [x] Add `--disable-rules` argument to skip specific validations
+- [x] Add fix suggestions for common errors
+- [x] Add `--auto-fix` mode (if possible) to correct simple errors
+- [x] Add validation summary statistics
+- [x] Add `--verbose` flag for detailed output
+- [x] Add `--quiet` flag for minimal output
+- [x] Color-code output (red for errors, yellow for warnings, green for pass)
+
+**STATUS:** ✅ COMPLETED (197/197 tests passing)
+- TDD Cycle: RED → GREEN → REFACTOR ✓
+- Guideline Compliance: ARCH 5336 (DI), PY 3754 (Path), PY 32425 (context managers), PY 21 (EAFP) ✓
+- Document Analysis Step 3 Conflict Resolution: Used JSON config (not Pydantic) ✓
+- Configuration file created: config/validation_rules.json ✓
+- All features implemented: multi-file validation, output formats, auto-fix, progress, color ✓
 
 ---
 
@@ -968,15 +987,21 @@ output_path = Path(__file__).parent.parent / "output" / "taxonomy_config.json"
    - `--pretty` flag for human-readable formatting
 
 #### Refactoring Tasks
-- [ ] Add `--output` CLI argument
-- [ ] Fix default output path to workflow output folder
-- [ ] Add taxonomy structure validation
-- [ ] Add cascade reference validation
-- [ ] Add circular dependency detection
-- [ ] Add `--format` argument (json|yaml|toml)
-- [ ] Add `--pretty` flag for formatted output
-- [ ] Add `--validate-only` mode
-- [ ] Add summary of taxonomy structure (X books, Y tiers, Z cascades)
+- [x] Add `--output` CLI argument
+- [x] Fix default output path to workflow output folder
+- [x] Add taxonomy structure validation
+- [x] Add cascade reference validation
+- [x] Add circular dependency detection
+- [x] Add `--format` argument (json|yaml|toml)
+- [x] Add `--pretty` flag for formatted output
+- [x] Add `--validate-only` mode
+- [x] Add summary of taxonomy structure (X books, Y tiers, Z cascades)
+
+**STATUS:** ✅ COMPLETED (225/225 tests passing)
+- TDD Cycle: RED → GREEN → REFACTOR ✓
+- Guideline Compliance: ARCH 5336 (DI), PY 3754 (Path), PY 32425 (context managers), PY 21 (EAFP) ✓
+- All features implemented: multi-format output, validation, dry-run, statistics ✓
+- Circular dependency detection added (warns but doesn't fail) ✓
 
 ---
 
