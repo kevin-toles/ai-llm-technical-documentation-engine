@@ -8,26 +8,29 @@ Sprint 1 Day 1-2: Separation of Concerns refactoring
 """
 
 import json
+import sys
 from typing import List, Dict, Any, Optional
 from pathlib import Path
+
+# Add project root to path
+PROJECT_ROOT = Path(__file__).parent.parent.parent.parent.parent
+sys.path.insert(0, str(PROJECT_ROOT))
+
 from config.settings import settings
 
 # Import shared dataclasses
-import sys
-sys.path.append(str(Path(__file__).parent.parent))
-
-from interactive_llm_system_v3_hybrid_prompt import (
+from workflows.w07_llm_enhancement.scripts.interactive_llm_system_v3_hybrid_prompt import (
     ContentRequest,
     LLMMetadataResponse,
 )
 
-from metadata_extraction_system import (
+from workflows.w07_llm_enhancement.scripts.metadata_extraction_system import (
     BookMetadata,
     ConceptMatch
 )
 
 try:
-    from book_taxonomy import (  # noqa: F401 (Used in _get_recommended_books_from_taxonomy and other methods)
+    from workflows.w01_taxonomy_setup.scripts.book_taxonomy import (  # noqa: F401 (Used in _get_recommended_books_from_taxonomy and other methods)
         get_recommended_books,
         get_cascading_books,
         score_books_for_concepts,
@@ -39,7 +42,7 @@ except ImportError:
     TAXONOMY_AVAILABLE = False
 
 try:
-    from llm_integration import call_llm
+    from shared.llm_integration import call_llm
     LLM_AVAILABLE = True
 except ImportError:
     LLM_AVAILABLE = False
@@ -320,7 +323,7 @@ CONSTRAINT: Limit to top {settings.constraints.max_content_requests} most releva
         all_books = self._metadata_service._repo.get_all()
         
         try:
-            from chapter_metadata_manager import ChapterMetadataManager
+            from workflows.w05_metadata_enrichment.scripts.chapter_metadata_manager import ChapterMetadataManager
             chapter_manager = ChapterMetadataManager()
             has_chapter_metadata = True
         except Exception:

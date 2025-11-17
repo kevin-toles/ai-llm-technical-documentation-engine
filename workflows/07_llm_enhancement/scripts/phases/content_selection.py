@@ -20,24 +20,31 @@ CONFIGURATION:
 - No hardcoded values (12-Factor App compliance)
 """
 
+import sys
+from pathlib import Path
 from typing import List, Dict, Any
+
+# Add project root to path
+PROJECT_ROOT = Path(__file__).parent.parent.parent.parent.parent
+sys.path.insert(0, str(PROJECT_ROOT))
+
 from config.settings import settings
 
 # Import shared dataclasses and services
-from ..interactive_llm_system_v3_hybrid_prompt import (
+from workflows.w07_llm_enhancement.scripts.interactive_llm_system_v3_hybrid_prompt import (
     LLMMetadataResponse,
 )
 
 try:
     # Test if book_taxonomy module is available
-    import book_taxonomy  # noqa: F401
+    from workflows.w01_taxonomy_setup.scripts import book_taxonomy  # noqa: F401
     TAXONOMY_AVAILABLE = True
 except ImportError:
     TAXONOMY_AVAILABLE = False
     print("Warning: book_taxonomy.py not available - cascading logic disabled")
 
 try:
-    from ..llm_integration import call_llm
+    from shared.llm_integration import call_llm
     LLM_AVAILABLE = True
 except ImportError:
     LLM_AVAILABLE = False
