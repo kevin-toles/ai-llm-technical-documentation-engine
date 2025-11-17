@@ -17,7 +17,7 @@ from unittest.mock import patch
 
 # Import will fail initially (RED phase) - that's expected
 try:
-    from src.pipeline.adapters.pdf_converter import PdfConverterAdapter, PdfConversionError
+    from workflows.w02_pdf_to_json.scripts.adapters import PdfConverterAdapter, PdfConversionError
 except ImportError:
     # Expected during RED phase
     PdfConverterAdapter = None
@@ -168,7 +168,7 @@ class TestChapterGeneratorAdapter:
     def adapter(self):
         """Create adapter instance for testing"""
         try:
-            from src.pipeline.adapters.chapter_generator import ChapterGeneratorAdapter
+            from workflows.w06_base_guideline_generation.scripts.adapters import ChapterGeneratorAdapter
             return ChapterGeneratorAdapter()
         except ImportError:
             pytest.skip("ChapterGeneratorAdapter not implemented yet (RED phase)")
@@ -212,7 +212,7 @@ class TestChapterGeneratorAdapter:
             
             # Act & Assert
             try:
-                from src.pipeline.adapters.chapter_generator import ChapterGenerationError
+                from workflows.w06_base_guideline_generation.scripts.adapters import ChapterGenerationError
             except ImportError:
                 pytest.skip("ChapterGenerationError not implemented yet")
             
@@ -276,7 +276,7 @@ class TestMetadataExtractorAdapter:
     def adapter(self):
         """Create adapter instance for testing"""
         try:
-            from src.pipeline.adapters.metadata_extractor import MetadataExtractorAdapter
+            from workflows.w03_metadata_extraction.scripts.adapters import MetadataExtractorAdapter
             return MetadataExtractorAdapter()
         except ImportError:
             pytest.skip("MetadataExtractorAdapter not implemented yet (RED phase)")
@@ -323,7 +323,7 @@ class TestMetadataExtractorAdapter:
         with patch('src.pipeline.generate_chapter_metadata.main', side_effect=Exception("Cache file not found")):
             # Act & Assert
             try:
-                from src.pipeline.adapters.metadata_extractor import MetadataExtractionError
+                from workflows.w03_metadata_extraction.scripts.adapters import MetadataExtractionError
             except ImportError:
                 pytest.skip("MetadataExtractionError not implemented yet")
             

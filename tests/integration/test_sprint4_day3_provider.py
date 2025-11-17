@@ -33,12 +33,12 @@ class TestProviderFactory:
     """
     
     def test_factory_function_exists(self):
-        """Verify create_llm_provider() can be imported from src.providers.
+        """Verify create_llm_provider() can be imported from shared.providers.
         
         Reference:
             Architecture Patterns Ch. 13 - Factory pattern implementation
         """
-        from src.providers import create_llm_provider
+        from shared.providers import create_llm_provider
         
         assert callable(create_llm_provider), "Factory function must be callable"
     
@@ -49,7 +49,7 @@ class TestProviderFactory:
             Architecture Patterns Ch. 13 - DI container pattern
             Fluent Python Ch. 13 - Protocol compliance
         """
-        from src.providers import create_llm_provider
+        from shared.providers import create_llm_provider
         
         # Mock API key to avoid requiring real credentials
         env_vars = {
@@ -71,7 +71,7 @@ class TestProviderFactory:
         Reference:
             Microservices Up and Running Ch. 7 - 12-Factor App config
         """
-        from src.providers import create_llm_provider
+        from shared.providers import create_llm_provider
         
         # Mock API key to avoid requiring real credentials
         env_vars = {
@@ -88,7 +88,7 @@ class TestProviderFactory:
         Reference:
             Architecture Patterns Ch. 13 - Sensible defaults in DI
         """
-        from src.providers import create_llm_provider
+        from shared.providers import create_llm_provider
         
         # Create env with only API key (no LLM_PROVIDER)
         env_copy = {"ANTHROPIC_API_KEY": "test-api-key-for-testing-only"}
@@ -106,7 +106,7 @@ class TestPipelineUsesProvider:
     """
     
     def test_pipeline_imports_provider_factory(self):
-        """Verify chapter_generator_all_text.py imports from src.providers.
+        """Verify chapter_generator_all_text.py imports from shared.providers.
         
         Reference:
             Architecture Patterns Ch. 13 - DI via imports
@@ -117,8 +117,8 @@ class TestPipelineUsesProvider:
         content = pipeline_file.read_text()
         
         # Should import from providers
-        assert "from src.providers import" in content or "import src.providers" in content, \
-            "Pipeline must import from src.providers"
+        assert "from shared.providers import" in content or "import shared.providers" in content, \
+            "Pipeline must import from shared.providers"
         
         # Should NOT directly import anthropic SDK
         assert "import anthropic" not in content or "# import anthropic" in content, \
@@ -167,7 +167,7 @@ class TestPipelineUsesProvider:
             Fluent Python Ch. 13 - Protocol return types
         """
         # This test verifies the integration by mocking the provider
-        from src.providers import LLMResponse
+        from shared.providers import LLMResponse
         
         # Mock provider that returns LLMResponse
         mock_provider = Mock()
@@ -207,7 +207,7 @@ class TestProviderProtocolCompliance:
             Fluent Python Ch. 13 - Protocol compliance checking
             Python Distilled Ch. 7 - Interface contracts
         """
-        from src.providers import AnthropicProvider
+        from shared.providers import AnthropicProvider
         
         # Create instance
         # Note: This will fail until AnthropicProvider is updated to match protocol
@@ -241,7 +241,7 @@ class TestProviderProtocolCompliance:
             Python Distilled Ch. 7 - Dataclass design
             Fluent Python Ch. 5 - Data class builders
         """
-        from src.providers import LLMResponse
+        from shared.providers import LLMResponse
         
         # Create sample response
         response = LLMResponse(

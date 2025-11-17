@@ -22,7 +22,7 @@ def test_load_template_module_importable():
     References:
     - REFACTORING_PLAN.md Section II.2.1: "Create src/prompts/templates.py"
     """
-    from src.prompts import templates
+    from shared.prompts import templates
     assert hasattr(templates, 'load_template')
 
 
@@ -36,7 +36,7 @@ def test_load_template_success():
     - PYTHON_GUIDELINES: "with open() for context management"
     - PYTHON_GUIDELINES: "pathlib.Path for cross-platform paths"
     """
-    from src.prompts.templates import load_template
+    from shared.prompts.templates import load_template
     
     # This will fail - template doesn't exist yet
     template_content = load_template("test_template")
@@ -56,7 +56,7 @@ def test_load_template_file_not_found():
       way to recover... It's better to let the operation fail and report 
       an exception back to the caller."
     """
-    from src.prompts.templates import load_template
+    from shared.prompts.templates import load_template
     
     with pytest.raises(FileNotFoundError):
         load_template("nonexistent_template")
@@ -71,7 +71,7 @@ def test_load_template_utf8_encoding():
     References:
     - PYTHON_GUIDELINES: "Explicit encoding for cross-platform compatibility"
     """
-    from src.prompts.templates import load_template
+    from shared.prompts.templates import load_template
     
     # Will test with actual template later
     # For now, just verify function exists and accepts name parameter
@@ -87,7 +87,7 @@ def test_load_template_returns_string():
     References:
     - REFACTORING_PLAN.md: "Extract prompts to .txt files"
     """
-    from src.prompts.templates import load_template
+    from shared.prompts.templates import load_template
     
     result = load_template("test_template")
     assert isinstance(result, str)
@@ -103,7 +103,7 @@ def test_template_path_resolution():
     - PYTHON_GUIDELINES: "pathlib.Path for cross-platform file operations"
     - Pattern: Path(__file__).parent / "template.txt"
     """
-    from src.prompts.templates import load_template
+    from shared.prompts.templates import load_template
     
     # Template should be in src/prompts/ directory
     # This test verifies path resolution works correctly
@@ -120,7 +120,7 @@ def test_load_template_path_traversal_security():
     References:
     - ARCHITECTURE_GUIDELINES: Security best practices
     """
-    from src.prompts.templates import load_template
+    from shared.prompts.templates import load_template
     
     with pytest.raises(ValueError, match="path separators"):
         load_template("../../../etc/passwd")

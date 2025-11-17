@@ -5,7 +5,7 @@ Tests for caching layer.
 import pytest
 import time
 
-from src.cache import ChapterCache, CacheEntry
+from shared.cache import ChapterCache, CacheEntry
 
 
 class TestCacheEntry:

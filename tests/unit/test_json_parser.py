@@ -6,7 +6,7 @@ import pytest
 import json
 import hashlib
 
-from src.json_parser import (
+from shared.json_parser import (
     parse_llm_json_response,
     create_json_response_with_checksum,
     ParsedResponse,

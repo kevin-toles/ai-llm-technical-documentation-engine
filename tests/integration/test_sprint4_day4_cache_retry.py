@@ -22,16 +22,16 @@ from unittest.mock import Mock, patch
 from pathlib import Path
 
 # Imports that should exist after implementation
-from src.cache import ChapterCache
-from src.retry import call_llm_with_retry, RetryConfig, RetryExhaustedError
-from src.providers import LLMProvider, LLMResponse, LLMError
+from shared.cache import ChapterCache
+from shared.retry import call_llm_with_retry, RetryConfig, RetryExhaustedError
+from shared.providers import LLMProvider, LLMResponse, LLMError
 
 
 class TestCacheIntegration:
     """Test cache integration with pipeline LLM calls."""
 
     def test_cache_module_imported_in_pipeline(self):
-        """Verify pipeline imports ChapterCache from src.cache."""
+        """Verify pipeline imports ChapterCache from shared.cache."""
         # TDD RED: This will fail until we add cache imports to pipeline
         from workflows.w06_base_guideline_generation.scripts import chapter_generator_all_text
         
@@ -165,7 +165,7 @@ class TestRetryIntegration:
     """Test retry logic integration with pipeline LLM calls."""
 
     def test_retry_module_imported_in_pipeline(self):
-        """Verify pipeline imports call_llm_with_retry from src.retry."""
+        """Verify pipeline imports call_llm_with_retry from shared.retry."""
         # TDD RED: This will fail until we add retry imports to pipeline
         from workflows.w06_base_guideline_generation.scripts import chapter_generator_all_text
         

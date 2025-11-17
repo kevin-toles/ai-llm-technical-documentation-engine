@@ -6,7 +6,7 @@ import os
 import pytest
 from unittest.mock import Mock, patch
 
-from src.providers import LLMResponse, LLMError, AnthropicProvider
+from shared.providers import LLMResponse, LLMError, AnthropicProvider
 
 
 class TestLLMResponse:

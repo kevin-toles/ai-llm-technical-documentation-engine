@@ -16,13 +16,13 @@ import json
 import pytest
 import fitz  # PyMuPDF
 
-from src.pipeline.convert_pdf_to_json import convert_pdf_to_json
-from src.pipeline.generate_chapter_metadata import (
+from workflows.w02_pdf_to_json.scripts.convert_pdf_to_json import convert_pdf_to_json
+from workflows.w05_metadata_enrichment.scripts.generate_chapter_metadata import (
     generate_chapter_summary,
     extract_keywords_from_text,
     extract_concepts_from_text,
 )
-from src.providers.base import LLMResponse
+from shared.providers.base import LLMResponse
 
 
 # ============================================================================

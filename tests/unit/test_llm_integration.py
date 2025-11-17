@@ -16,7 +16,7 @@ from unittest.mock import patch
 # Note: Import will fail until we implement the functions
 # This is expected in TDD - write tests first, then make them pass
 try:
-    from src.llm_integration import (
+    from shared.llm_integration import (
         _validate_json_response,
         _handle_truncated_response,
         FinishReason

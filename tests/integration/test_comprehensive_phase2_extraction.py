@@ -57,7 +57,7 @@ def test_format_comprehensive_phase2_prompt_function_exists():
     
     Expected to FAIL until GREEN phase implements formatter in templates.py.
     """
-    from src.prompts.templates import format_comprehensive_phase2_prompt
+    from shared.prompts.templates import format_comprehensive_phase2_prompt
     assert callable(format_comprehensive_phase2_prompt)
 
 
@@ -71,7 +71,7 @@ def test_format_comprehensive_phase2_prompt_signature():
     - metadata_response: MetadataExtractionResponse (has validation_summary, analysis_strategy)
     - content_package: Dict[str, Any]
     """
-    from src.prompts.templates import format_comprehensive_phase2_prompt
+    from shared.prompts.templates import format_comprehensive_phase2_prompt
     import inspect
     
     sig = inspect.signature(format_comprehensive_phase2_prompt)
@@ -88,7 +88,7 @@ def test_format_comprehensive_phase2_prompt_returns_string():
     
     Uses mock metadata response and content package.
     """
-    from src.prompts.templates import format_comprehensive_phase2_prompt
+    from shared.prompts.templates import format_comprehensive_phase2_prompt
     from typing import NamedTuple
     
     # Mock metadata response (has validation_summary, analysis_strategy)

@@ -24,7 +24,7 @@ def test_sprint1_imports():
     print("\n=== Testing Sprint 1 Imports ===")
     
     try:
-        from src.llm_integration import (  # noqa: F401
+        from shared.llm_integration import (  # noqa: F401
             FinishReason,
             _validate_json_response,
             _handle_truncated_response,
@@ -33,14 +33,14 @@ def test_sprint1_imports():
         )
         print("✅ llm_integration imports successful")
         
-        from src.interactive_llm_system_v3_hybrid_prompt import (  # noqa: F401
+        from workflows.w07_llm_enhancement.scripts.interactive_llm_system_v3_hybrid_prompt import (  # noqa: F401
             _extract_concepts_from_text,
             _prefilter_books_by_taxonomy,
             AnalysisOrchestrator
         )
         print("✅ interactive_llm_system_v3_hybrid_prompt imports successful")
         
-        from src.book_taxonomy import (  # noqa: F401
+        from workflows.w01_taxonomy_setup.scripts.book_taxonomy import (  # noqa: F401
             score_books_for_concepts,
             get_cascading_books
         )
@@ -56,7 +56,7 @@ def test_finish_reason_enum():
     """Test FinishReason enum functionality."""
     print("\n=== Testing FinishReason Enum ===")
     
-    from src.llm_integration import FinishReason
+    from shared.llm_integration import FinishReason
     
     # Test enum values
     assert FinishReason.END_TURN.value == "end_turn"
@@ -72,7 +72,7 @@ def test_json_validation():
     """Test _validate_json_response with various inputs."""
     print("\n=== Testing JSON Validation ===")
     
-    from src.llm_integration import _validate_json_response, FinishReason
+    from shared.llm_integration import _validate_json_response, FinishReason
     
     # Test 1: Valid complete response
     valid_response = '[{"book_title": "Test Book", "chapter": 1, "reason": "test"}]'
@@ -106,7 +106,7 @@ def test_concept_extraction():
     """Test concept extraction from text."""
     print("\n=== Testing Concept Extraction ===")
     
-    from src.interactive_llm_system_v3_hybrid_prompt import _extract_concepts_from_text
+    from workflows.w07_llm_enhancement.scripts.interactive_llm_system_v3_hybrid_prompt import _extract_concepts_from_text
     
     # Test with programming concepts
     text = """
@@ -133,11 +133,11 @@ def test_book_prefiltering():
     """Test book taxonomy pre-filtering."""
     print("\n=== Testing Book Pre-Filtering ===")
     
-    from src.interactive_llm_system_v3_hybrid_prompt import (
+    from workflows.w07_llm_enhancement.scripts.interactive_llm_system_v3_hybrid_prompt import (
         _prefilter_books_by_taxonomy,
         AnalysisOrchestrator
     )
-    from src.metadata_extraction_system import MetadataServiceFactory
+    from workflows.w07_llm_enhancement.scripts.metadata_extraction_system import MetadataServiceFactory
     
     # Create orchestrator
     metadata_service = MetadataServiceFactory.create_default()
@@ -184,8 +184,8 @@ def test_integration_wiring():
     """Verify Sprint 1 functions are properly integrated into workflow."""
     print("\n=== Testing Integration Wiring ===")
     
-    from src.llm_integration import _call_anthropic_api
-    from src.interactive_llm_system_v3_hybrid_prompt import AnalysisOrchestrator
+    from shared.llm_integration import _call_anthropic_api
+    from workflows.w07_llm_enhancement.scripts.interactive_llm_system_v3_hybrid_prompt import AnalysisOrchestrator
     import inspect
     
     # Verify _call_anthropic_api extracts stop_reason and calls _validate_json_response

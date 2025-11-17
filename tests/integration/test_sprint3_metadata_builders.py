@@ -66,7 +66,7 @@ class TestMetadataBuilderModule:
         
         Reference: ARCHITECTURE_GUIDELINES - Builder Pattern
         """
-        from src.builders.metadata_builder import MetadataBuilder
+        from workflows.w07_llm_enhancement.scripts.builders.metadata_builder import MetadataBuilder
         
         assert MetadataBuilder is not None
         assert hasattr(MetadataBuilder, '__name__')
@@ -85,7 +85,7 @@ class TestMetadataBuilderMethods:
         This method builds complete metadata package for Phase 1 LLM analysis.
         Extracted from: interactive_llm_system_v3_hybrid_prompt.py lines 1130-1177
         """
-        from src.builders.metadata_builder import MetadataBuilder
+        from workflows.w07_llm_enhancement.scripts.builders.metadata_builder import MetadataBuilder
         
         # Verify method exists
         assert hasattr(MetadataBuilder, 'build_metadata_package')
@@ -105,7 +105,7 @@ class TestMetadataBuilderMethods:
         
         Reference: ARCHITECTURE_GUIDELINES - Builder Pattern (incremental construction)
         """
-        from src.builders.metadata_builder import MetadataBuilder
+        from workflows.w07_llm_enhancement.scripts.builders.metadata_builder import MetadataBuilder
         
         assert hasattr(MetadataBuilder, 'build_book_metadata_entry')
         assert callable(getattr(MetadataBuilder, 'build_book_metadata_entry'))
@@ -122,7 +122,7 @@ class TestMetadataBuilderMethods:
         
         Reference: PYTHON_GUIDELINES - Scoring algorithms, functional programming
         """
-        from src.builders.metadata_builder import MetadataBuilder
+        from workflows.w07_llm_enhancement.scripts.builders.metadata_builder import MetadataBuilder
         
         assert hasattr(MetadataBuilder, 'calculate_book_relevance')
         assert callable(getattr(MetadataBuilder, 'calculate_book_relevance'))
@@ -140,7 +140,7 @@ class TestMetadataBuilderTypeHints:
         
         Quality gate: 100% type hint coverage (per Sprint 3 standards)
         """
-        from src.builders.metadata_builder import MetadataBuilder
+        from workflows.w07_llm_enhancement.scripts.builders.metadata_builder import MetadataBuilder
         import inspect
         
         method = getattr(MetadataBuilder, 'build_metadata_package')
@@ -160,7 +160,7 @@ class TestMetadataBuilderTypeHints:
         Quality gate: Single Responsibility Principle
         Reference: ARCHITECTURE_GUIDELINES - SRP, separation of concerns
         """
-        from src.builders.metadata_builder import MetadataBuilder
+        from workflows.w07_llm_enhancement.scripts.builders.metadata_builder import MetadataBuilder
         
         # Get all public methods (excluding __init__, __dunder__)
         public_methods = [
@@ -189,7 +189,7 @@ class TestMetadataBuilderIntegration:
         
         Reference: ARCHITECTURE_GUIDELINES - Dependency Injection
         """
-        from src.builders.metadata_builder import MetadataBuilder
+        from workflows.w07_llm_enhancement.scripts.builders.metadata_builder import MetadataBuilder
         import inspect
         
         # Check constructor signature

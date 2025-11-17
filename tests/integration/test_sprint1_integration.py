@@ -14,12 +14,12 @@ Per REFACTORING_PLAN.md Sprint 1 requirements.
 from unittest.mock import Mock
 
 # Import Sprint 1 components
-from src.llm_integration import (
+from shared.llm_integration import (
     FinishReason,
     _validate_json_response,
     _handle_truncated_response
 )
-from src.interactive_llm_system_v3_hybrid_prompt import (
+from shared.interactive_llm_system_v3_hybrid_prompt import (
     _extract_concepts_from_text,
     _prefilter_books_by_taxonomy
 )
@@ -202,7 +202,7 @@ class TestSprint1ComponentCompatibility:
     def test_system_imports_with_sprint1(self):
         """Verify system can still import core modules with Sprint 1 changes."""
         # Import core system components
-        from src.metadata_extraction_system import MetadataServiceFactory
+        from shared.metadata_extraction_system import MetadataServiceFactory
         from shared.phases import TwoPhaseOrchestrator
         
         # Should not raise

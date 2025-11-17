@@ -48,7 +48,7 @@ class TestBookTitlesConstants:
         Expected to FAIL initially.
         GREEN: Add BookTitles class to src/constants.py.
         """
-        from src.constants import BookTitles
+        from shared.constants import BookTitles
         
         # Verify it's a class with the expected name
         assert hasattr(BookTitles, '__name__')
@@ -68,7 +68,7 @@ class TestBookTitlesConstants:
         
         Reference: Quality Assessment Report - 4 duplicated constants
         """
-        from src.constants import BookTitles
+        from shared.constants import BookTitles
         
         # All 4 constants must exist
         assert hasattr(BookTitles, 'PYTHON_ESSENTIAL_REF')
@@ -95,7 +95,7 @@ class TestBookTitlesConstants:
         
         Resolution: Use canonical name from BOOK_TAXONOMY_MATRIX.md (Priority 2)
         """
-        from src.constants import BookTitles
+        from shared.constants import BookTitles
         
         # Canonical values from Book Taxonomy Matrix
         assert BookTitles.PYTHON_ESSENTIAL_REF == "Python Essential Reference 4th"
@@ -112,7 +112,7 @@ class TestBookTitlesConstants:
         
         Type safety per PYTHON_GUIDELINES: All constants should have type hints.
         """
-        from src.constants import BookTitles
+        from shared.constants import BookTitles
         
         assert isinstance(BookTitles.PYTHON_ESSENTIAL_REF, str)
         assert isinstance(BookTitles.FLUENT_PYTHON, str)
@@ -128,7 +128,7 @@ class TestNoDuplication:
         RED: Test that loaders/content_loaders.py imports BookTitles.
         
         Expected to FAIL until we refactor loaders to import constants.
-        GREEN: Update loaders to use 'from src.constants import BookTitles'.
+        GREEN: Update loaders to use 'from shared.constants import BookTitles'.
         
         Anti-pattern from Quality Assessment: Duplicate constants across files
         """
@@ -137,8 +137,8 @@ class TestNoDuplication:
         source = loaders_file.read_text()
         
         # Must import from constants
-        assert "from src.constants import BookTitles" in source, \
-            "loaders/content_loaders.py must import BookTitles from src.constants"
+        assert "from shared.constants import BookTitles" in source, \
+            "loaders/content_loaders.py must import BookTitles from shared.constants"
     
     def test_loaders_does_not_define_duplicate_constants(self):
         """
@@ -178,11 +178,11 @@ class TestNoDuplication:
         source = main_file.read_text()
         
         # Must import from constants (accept both absolute and relative forms)
-        has_absolute_import = "from src.constants import BookTitles" in source
+        has_absolute_import = "from shared.constants import BookTitles" in source
         has_relative_import = "from .constants import BookTitles" in source
         
         assert has_absolute_import or has_relative_import, \
-            "Main file must import BookTitles from constants (either 'from src.constants' or 'from .constants')"
+            "Main file must import BookTitles from constants (either 'from shared.constants' or 'from .constants')"
     
     def test_main_file_does_not_define_duplicate_constants(self):
         """
