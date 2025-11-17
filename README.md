@@ -1,14 +1,41 @@
 # LLM Document Enhancer
 
-Intelligent technical documentation enhancement using Claude AI. This tool analyzes programming guidelines and enriches them with precise citations from a curated library of 14 authoritative Python books.
+**A Pipeline-Based Document Processing Engine** for transforming technical books into enhanced, cross-referenced programming guidelines using LLM-powered analysis.
 
-## Features
+This system processes 14 authoritative Python programming books through a 7-stage workflow pipeline, generating comprehensive guidelines enriched with intelligent cross-references, scholarly annotations, and concept validations.
 
+## Architecture: Workflow-Based Pipeline
+
+This application implements a **7-stage document processing pipeline** with Domain-Driven Design principles:
+
+```
+Stage 1: Taxonomy Setup          → Configure book categorization system
+Stage 2: PDF to JSON              → Convert source PDFs to searchable JSON
+Stage 3: Metadata Extraction      → Extract chapter/page metadata from books
+Stage 4: Metadata Cache Merge     → Consolidate metadata for fast lookup
+Stage 5: Metadata Enrichment      → Add concept tags and keywords
+Stage 6: Base Guideline Generation → Generate foundational guideline structure
+Stage 7: LLM Enhancement          → Enhance with citations and annotations
+```
+
+**Architecture Type:** Modular Monolith with Pipeline Pattern
+- Each workflow stage is a **bounded context** (DDD concept)
+- Shared infrastructure layer for cross-cutting concerns
+- Sequential data transformation with clear input/output contracts
+- Not a microservices architecture (single deployable unit)
+- Not a traditional monolith (clear separation via workflows)
+
+## Key Features
+
+- **7-Stage Pipeline Architecture**: Progressive enhancement from raw PDFs to enriched guidelines
+- **Smart Book Taxonomy**: Three-tier categorization (Architecture Spine, Implementation, Engineering Practices)
 - **Two-Phase LLM Workflow**: Separates content selection from enhancement for optimal quality
-- **Smart Book Taxonomy**: Three-tier categorization system (Architecture Spine, Implementation, Engineering Practices)
-- **Intelligent Batching**: Automatic protection against token limits with proactive and reactive constraints
-- **Comprehensive Logging**: Full API call tracking with token usage analytics
-- **8,598 Pages**: Pre-indexed content from 14 Python programming books
+- **Provider Abstraction**: Protocol-based LLM interface (Anthropic, OpenAI-ready)
+- **Caching System**: File-based cache with TTL reduces costs by 99%+
+- **Retry Logic**: Exponential backoff with automatic constraint tightening
+- **Type-Safe Configuration**: Python dataclasses + .env for secure, validated settings
+- **Comprehensive Testing**: 137 unit tests, full pipeline validation
+- **8,598 Pages Indexed**: Pre-processed content from 14 Python books
 
 ## Quick Start
 
@@ -74,14 +101,22 @@ min_relevance = settings.taxonomy.min_relevance
 
 See `examples/config_usage.py` for more examples.
 
-### Usage
+### Running Workflows
+
+Each workflow stage can be run independently or as part of the full pipeline:
 
 ```bash
-# Run from repository root
-python3 -m src.integrate_llm_enhancements
+# Run full LLM enhancement workflow (Stages 6-7)
+python3 -m workflows.llm_enhancement.scripts.integrate_llm_enhancements
+
+# Run base guideline generation (Stage 6)
+python3 -m workflows.base_guideline_generation.scripts.chapter_generator_all_text
+
+# Run metadata extraction (Stage 3)
+python3 -m workflows.metadata_extraction.scripts.adapters.metadata_extractor
 ```
 
-The tool will:
+**LLM Enhancement Workflow** (Stages 6-7):
 1. Load 14 books (8,598 pages) and 277 chapter metadata entries
 2. Read the base guideline document
 3. Execute Phase 1: Analyze guideline and select relevant book content
@@ -110,56 +145,43 @@ The tool will:
 - Python Essential Reference 4th
 - Python Data Analysis 3rd
 
-## Architecture
+## Design Patterns & Principles
 
-### System Overview (Post-Sprint 4 Refactoring)
+This system implements several architectural patterns from **Architecture Patterns with Python** and **Domain-Driven Design**:
 
-The system uses a **modular pipeline architecture** with clean separation of concerns:
+### Patterns Used
 
-```
-┌──────────────────────────────────────────────────────┐
-│                  Pipeline Layer                      │
-├──────────────────────────────────────────────────────┤
-│  • PDF → JSON conversion                             │
-│  • Metadata extraction                               │
-│  • LLM enhancement with provider abstraction         │
-│  • Caching with TTL management                       │
-└────────────┬──────────────┬──────────────┬───────────┘
-             │              │              │
-             ▼              ▼              ▼
-┌────────────────┐  ┌─────────────┐  ┌────────────┐
-│  Configuration │  │   Provider  │  │   Cache    │
-├────────────────┤  ├─────────────┤  ├────────────┤
-│ • PathConfig   │  │ • Protocol  │  │ • File-based│
-│ • .env support │  │ • Retry     │  │ • Per-phase│
-│ • Type-safe    │  │ • Errors    │  │ • TTL       │
-└────────────────┘  └─────────────┘  └────────────┘
-```
+1. **Pipeline Pattern** (7 workflow stages)
+   - Sequential data transformation
+   - Clear stage boundaries
+   - Independent execution
 
-**Key Components**:
+2. **Repository Pattern** (`workflows/metadata_extraction/`)
+   - Abstracts book data access
+   - Encapsulates data retrieval logic
+   - Enables testing with mock data
 
-1. **Configuration Layer** (`config/settings.py`)
-   - Centralized settings using Python dataclasses
-   - Environment variable support via `.env`
-   - Type-safe access with IDE autocomplete
-   - PathConfig for all file system paths
+3. **Provider Pattern** (`workflows/shared/providers/`)
+   - Protocol-based abstraction for LLM APIs
+   - Pluggable implementations (Anthropic, OpenAI-ready)
+   - Dependency injection via protocols
 
-2. **Provider Abstraction** (`src/providers/`)
-   - Protocol-based LLM interface
-   - Pluggable providers (currently: Anthropic)
-   - Automatic retry with exponential backoff
-   - Standardized response format
+4. **Adapter Pattern** (Each workflow stage)
+   - Adapts different input/output formats
+   - Wraps external dependencies
+   - Clean integration boundaries
 
-3. **Caching System** (`src/cache.py`)
-   - File-based caching with TTL
-   - Phase-specific expiration (30d/7d/1d)
-   - Automatic invalidation
-   - Cost reduction (99%+ on repeated runs)
+5. **Template Pattern** (`workflows/shared/prompts/`)
+   - Reusable prompt templates
+   - Parameterized text generation
+   - Separation of logic and content
 
-4. **Pipeline Stages** (`src/pipeline/`)
-   - PDF → JSON conversion
-   - Chapter metadata extraction
-   - LLM enhancement with citations
+### DDD Concepts
+
+- **Bounded Contexts**: Each workflow stage is a bounded context
+- **Shared Kernel**: `workflows/shared/` provides common infrastructure
+- **Domain Events**: Pipeline stages communicate via well-defined contracts
+- **Value Objects**: Immutable data structures (PageReference, BookMetadata)
 
 ### Two-Phase Workflow
 
@@ -185,47 +207,100 @@ The system uses a **modular pipeline architecture** with clean separation of con
 - **Retry Logic**: Exponential backoff on transient failures
 - **Token Monitoring**: 8,192 max output tokens with usage tracking
 
+## System Architecture
+
+### Overview: Pipeline-Based Document Processing
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                   7-Stage Workflow Pipeline                      │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  [1] Taxonomy Setup    →  Configure book categorization         │
+│  [2] PDF to JSON       →  Convert source materials              │
+│  [3] Metadata Extract  →  Extract chapter/page metadata         │
+│  [4] Cache Merge       →  Consolidate for fast lookup           │
+│  [5] Enrichment        →  Add concepts and tags                 │
+│  [6] Base Generation   →  Generate guideline structure          │
+│  [7] LLM Enhancement   →  Add citations and annotations         │
+│                                                                  │
+└────────┬──────────────────┬─────────────────┬──────────────────┘
+         │                  │                 │
+         ▼                  ▼                 ▼
+┌─────────────────┐  ┌──────────────┐  ┌────────────────┐
+│ Shared Layer    │  │  Providers   │  │  Configuration │
+├─────────────────┤  ├──────────────┤  ├────────────────┤
+│ • Loaders       │  │ • LLM API    │  │ • Settings     │
+│ • Prompts       │  │ • Retry      │  │ • Paths        │
+│ • Pipeline      │  │ • Cache      │  │ • .env         │
+│ • Phases        │  │ • Protocols  │  │ • Type-safe    │
+└─────────────────┘  └──────────────┘  └────────────────┘
+```
+
+**Architecture Pattern:** Workflow-Based Pipeline with DDD
+
+Each stage is a **bounded context** that:
+- Has clear input/output contracts
+- Can be run independently
+- Shares infrastructure via `workflows/shared/`
+- Follows single responsibility principle
+
 ### Directory Structure
 
 ```
 llm-document-enhancer/
-├── config/                       # Configuration
-│   ├── settings.py              # Central settings with PathConfig
-│   └── .env.example             # Environment template
-│
-├── src/                         # Source code
-│   ├── providers/               # LLM provider abstraction
-│   │   ├── base.py             # Protocol & response types
-│   │   ├── anthropic_provider.py  # Anthropic implementation
-│   │   └── retry.py            # Retry decorator
+├── workflows/                    # 7-stage pipeline
+│   ├── taxonomy_setup/          # Stage 1: Book categorization
+│   ├── pdf_to_json/             # Stage 2: PDF conversion
+│   ├── metadata_extraction/     # Stage 3: Metadata extraction
+│   ├── metadata_cache_merge/    # Stage 4: Cache consolidation
+│   ├── metadata_enrichment/     # Stage 5: Concept tagging
+│   ├── base_guideline_generation/  # Stage 6: Base generation
+│   ├── llm_enhancement/         # Stage 7: LLM enhancement
+│   │   ├── scripts/             # Main workflow scripts
+│   │   └── phases/              # Phase 1/2 logic
 │   │
-│   ├── pipeline/                # Pipeline stages
-│   │   ├── convert_pdf_to_json.py
-│   │   ├── generate_chapter_metadata.py
-│   │   └── chapter_generator_all_text.py
-│   │
-│   ├── cache.py                 # Caching system
-│   ├── integrate_llm_enhancements.py  # Main orchestrator
-│   ├── metadata_extraction_system.py  # Book metadata
-│   └── book_taxonomy.py         # Book categorization
+│   └── shared/                  # Shared infrastructure
+│       ├── providers/           # LLM provider abstraction
+│       │   ├── base.py         # Protocol & response types
+│       │   ├── anthropic.py    # Anthropic implementation
+│       │   └── retry.py        # Retry decorator
+│       ├── loaders/            # Data loading utilities
+│       ├── prompts/            # LLM prompt templates
+│       │   ├── templates.py    # Template loader
+│       │   ├── phase1.txt      # Phase 1 prompt
+│       │   └── phase2.txt      # Phase 2 prompt
+│       ├── pipeline/           # Pipeline orchestration
+│       ├── phases/             # Phase management
+│       ├── cache.py            # Caching system
+│       ├── retry.py            # Retry logic
+│       └── llm_integration.py  # LLM integration
 │
-├── data/                        # Data files
-│   ├── textbooks_json/          # 14 book JSONs (~2GB)
-│   ├── metadata/                # 14 metadata JSONs
-│   └── chapter_metadata_cache.json
+├── config/                      # Configuration
+│   ├── settings.py             # Central settings (dataclasses)
+│   ├── requirements.txt        # Production dependencies
+│   └── requirements-dev.txt    # Development dependencies
 │
-├── tests/                       # Test suite (305 tests)
-│   ├── test_pipeline_stages.py       # Unit tests
-│   ├── test_pipeline_integration.py  # Integration tests
-│   └── test_sprint4_*.py            # Sprint tests
+├── tests/                       # Test suite (137 tests)
+│   ├── unit/                   # Unit tests
+│   ├── integration/            # Integration tests
+│   ├── e2e/                    # End-to-end tests
+│   └── fixtures/               # Test fixtures
+│
+├── data/                        # Data files (gitignored)
+│   ├── textbooks_json/         # 14 book JSONs (~2GB)
+│   └── metadata/               # Chapter metadata
 │
 ├── docs/                        # Documentation
-│   ├── SPRINT_4_IMPLEMENTATION_SUMMARY.md
-│   └── analysis/                # Design documents
+│   ├── architecture/           # Architecture docs
+│   ├── workflows/              # Workflow guides
+│   └── WORKFLOW_DECISION_FRAMEWORK.md
 │
-├── guidelines/                  # Input documents
-├── outputs/                     # Generated ENHANCED guidelines
-└── logs/                        # API call logs
+├── tools/                       # Repository validation tools
+├── examples/                    # Usage examples
+├── outputs/                     # Generated guidelines
+├── logs/                        # API call logs
+└── coderabbit/                 # Code quality tools
 ```
 
 ## Configuration
@@ -245,23 +320,25 @@ LLM_MAX_TOKENS=8192
 
 ## Development
 
-### Recent Improvements (Sprint 4)
+### Recent Migration (November 2025)
 
-**November 2025 Refactoring** - See [SPRINT_4_IMPLEMENTATION_SUMMARY.md](docs/SPRINT_4_IMPLEMENTATION_SUMMARY.md)
+**Workflow Reorganization** - See [MIGRATION_PLAN.md](MIGRATION_PLAN.md) and [REFACTORING_PLAN.md](REFACTORING_PLAN.md)
 
-- ✅ **Centralized Configuration**: PathConfig with .env support
-- ✅ **Provider Abstraction**: Protocol-based LLM interface
+- ✅ **7-Stage Pipeline Architecture**: Moved from `src/` to `workflows/` structure
+- ✅ **Shared Infrastructure Layer**: `workflows/shared/` for cross-cutting concerns
+- ✅ **Provider Abstraction**: Protocol-based LLM interface (Anthropic, OpenAI-ready)
 - ✅ **Caching System**: File-based cache with TTL (99%+ cost reduction)
-- ✅ **Retry Logic**: Exponential backoff on failures
-- ✅ **Comprehensive Testing**: 305 tests (40 new), 100% passing
-- ✅ **Architecture Patterns**: Repository, Service Layer, Dependency Injection
+- ✅ **Type-Safe Configuration**: Python dataclasses + .env
+- ✅ **Comprehensive Testing**: 137 unit tests (100% passing)
+- ✅ **Clean Separation**: Each workflow stage is independent bounded context
 
 **Benefits**:
+- **Modularity**: Each stage can be developed/tested independently
 - **Cost Savings**: 99%+ reduction on repeated runs via caching
-- **Reliability**: Automatic retry on transient failures
-- **Maintainability**: Clean separation of concerns
-- **Testability**: Protocol-based design enables easy testing
-- **Extensibility**: Simple to add new LLM providers
+- **Reliability**: Automatic retry with exponential backoff
+- **Maintainability**: Clear boundaries, single responsibility
+- **Testability**: Protocol-based design with dependency injection
+- **Extensibility**: Easy to add new stages or LLM providers
 
 ### Adding New Books
 
@@ -276,15 +353,22 @@ LLM_MAX_TOKENS=8192
 # Install dev dependencies
 pip install -r config/requirements-dev.txt
 
-# Run all tests
-pytest tests/
+# Run all tests (137 tests)
+ANTHROPIC_API_KEY=test_key python3 -m pytest tests/unit/
 
 # Run specific test suite
-pytest tests/test_pipeline_integration.py -v
+pytest tests/unit/test_providers.py -v
 
 # Run with coverage
-pytest tests/ --cov=src --cov-report=html
+pytest tests/unit/ --cov=workflows --cov-report=html
 ```
+
+**Test Coverage:**
+- 137 unit tests (100% passing)
+- Provider abstraction tests
+- Configuration validation tests
+- Pipeline adapter tests
+- Cache functionality tests
 
 ## API Usage & Costs
 
@@ -321,9 +405,9 @@ All API calls are logged to `logs/llm_api/` as JSON:
 
 ```bash
 # Ensure running as module from repo root
-python3 -m src.integrate_llm_enhancements
+python3 -m workflows.llm_enhancement.scripts.integrate_llm_enhancements
 
-# Not: python3 src/integrate_llm_enhancements.py
+# Not: python3 workflows/llm_enhancement/scripts/integrate_llm_enhancements.py
 ```
 
 ### Missing Data Files

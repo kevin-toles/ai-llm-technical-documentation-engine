@@ -9,9 +9,9 @@ Exports:
 - create_llm_provider: Factory function for creating providers
 """
 
-from shared.providers.base import LLMProvider, LLMResponse, LLMError
-from shared.providers.anthropic_provider import AnthropicProvider
-from shared.providers.factory import create_llm_provider
+from workflows.shared.providers.base import LLMProvider, LLMResponse, LLMError
+from workflows.shared.providers.anthropic_provider import AnthropicProvider
+from workflows.shared.providers.factory import create_llm_provider
 
 __all__ = [
     "LLMProvider",

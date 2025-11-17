@@ -34,7 +34,7 @@ from typing import Dict, List, Optional, Any
 # Sprint 3.3: Import centralized constants (eliminates duplication)
 # Per Quality Assessment: Fix 4 duplicate constants issue
 # Reference: REFACTORING_PLAN.md Sprint 3.3 - Constants extraction
-from shared.constants import BookTitles
+from workflows.shared.constants import BookTitles
 
 # Module-level logger
 logger = logging.getLogger(__name__)

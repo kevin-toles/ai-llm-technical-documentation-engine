@@ -44,7 +44,7 @@ except ImportError:
     print("Warning: book_taxonomy.py not available - cascading logic disabled")
 
 try:
-    from shared.llm_integration import call_llm
+    from workflows.shared.llm_integration import call_llm
     LLM_AVAILABLE = True
 except ImportError:
     LLM_AVAILABLE = False

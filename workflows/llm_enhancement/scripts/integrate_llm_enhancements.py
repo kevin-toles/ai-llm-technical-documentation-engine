@@ -63,7 +63,7 @@ logger.info(f"Logging initialized - log file: {LOG_FILE}")
 
 # Import simplified LLM function (still used for summary enhancement)
 try:
-    from shared.llm_integration import call_llm
+    from workflows.shared.llm_integration import call_llm
     LLM_AVAILABLE = True
     logger.info("✓ LLM integration loaded successfully")
 except ImportError as e:
@@ -75,7 +75,7 @@ except ImportError as e:
 try:
     from workflows.llm_enhancement.scripts.metadata_extraction_system import MetadataServiceFactory
     # REFACTORED: Use TwoPhaseOrchestrator from shared/phases (migrated location)
-    from shared.phases import TwoPhaseOrchestrator
+    from workflows.shared.phases import TwoPhaseOrchestrator
     INTERACTIVE_SYSTEM_AVAILABLE = True
     logger.info("✓ Interactive system loaded successfully (using TwoPhaseOrchestrator)")
 except ImportError as e:

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Standalone repo validation script - verify everything works.
-Run from repo root: python3 scripts/validate_standalone.py
+Run from repo root: python3 tools/validate_standalone.py
 """
 
 import sys
@@ -118,7 +118,7 @@ def validate_imports():
         errors.append(f"Import failed: metadata_extraction_system - {e}")
     
     try:
-        from shared.llm_integration import call_llm  # noqa: F401
+        from workflows.shared.llm_integration import call_llm  # noqa: F401
         print("  ✅ llm_integration")
     except ImportError as e:
         errors.append(f"Import failed: llm_integration - {e}")

@@ -19,7 +19,7 @@ def test_comprehensive_phase1_template_file_exists():
     References:
     - REFACTORING_PLAN.md: "Extract prompts to src/prompts/*.txt"
     """
-    from shared.prompts.templates import load_template
+    from workflows.shared.prompts.templates import load_template
     
     # This will fail - template not extracted yet
     template = load_template("comprehensive_phase1")
@@ -37,7 +37,7 @@ def test_comprehensive_phase1_has_required_placeholders():
     - Source code line 823-900: Uses chapter_num, chapter_title, 
       chapter_full_text, books_metadata
     """
-    from shared.prompts.templates import load_template
+    from workflows.shared.prompts.templates import load_template
     
     template = load_template("comprehensive_phase1")
     
@@ -65,7 +65,7 @@ def test_format_comprehensive_phase1_prompt_function_exists():
     References:
     - REFACTORING_PLAN.md: "Implement format_phase1_prompt()"
     """
-    from shared.prompts import templates
+    from workflows.shared.prompts import templates
     
     assert hasattr(templates, 'format_comprehensive_phase1_prompt')
     assert callable(templates.format_comprehensive_phase1_prompt)
@@ -82,7 +82,7 @@ def test_format_comprehensive_phase1_prompt_signature():
       chapter_full_text, books_metadata
     """
     import inspect
-    from shared.prompts.templates import format_comprehensive_phase1_prompt
+    from workflows.shared.prompts.templates import format_comprehensive_phase1_prompt
     
     sig = inspect.signature(format_comprehensive_phase1_prompt)
     params = list(sig.parameters.keys())
@@ -101,7 +101,7 @@ def test_format_comprehensive_phase1_prompt_returns_string():
     - Source line 823: Returns f-string prompt
     - Book metadata must include: title, author, full_title, domain, concepts_covered
     """
-    from shared.prompts.templates import format_comprehensive_phase1_prompt
+    from workflows.shared.prompts.templates import format_comprehensive_phase1_prompt
     
     # Sample data matching actual book metadata structure
     result = format_comprehensive_phase1_prompt(
@@ -135,7 +135,7 @@ def test_comprehensive_phase1_preserves_json_structure():
     References:
     - Source line 865-878: Requires JSON output with specific schema
     """
-    from shared.prompts.templates import load_template
+    from workflows.shared.prompts.templates import load_template
     
     template = load_template("comprehensive_phase1")
     

@@ -42,7 +42,7 @@ except ImportError:
     TAXONOMY_AVAILABLE = False
 
 try:
-    from shared.llm_integration import call_llm
+    from workflows.shared.llm_integration import call_llm
     LLM_AVAILABLE = True
 except ImportError:
     LLM_AVAILABLE = False

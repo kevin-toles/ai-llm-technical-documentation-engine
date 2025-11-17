@@ -44,12 +44,12 @@ def verify_sprint1_ready():
     # 2. Verify all Sprint 1 functions are importable
     print("\n✅ Verifying Sprint 1 components...")
     try:
-        from shared.llm_integration import (
+        from workflows.shared.llm_integration import (
             FinishReason,
             _validate_json_response,
             _handle_truncated_response  # noqa: F401 (Used in test verification below)
         )
-        from shared.interactive_llm_system_v3_hybrid_prompt import (
+        from workflows.shared.interactive_llm_system_v3_hybrid_prompt import (
             _extract_concepts_from_text,
             _prefilter_books_by_taxonomy
         )
@@ -65,8 +65,8 @@ def verify_sprint1_ready():
     # 3. Verify system can initialize
     print("\n✅ Verifying system initialization...")
     try:
-        from shared.metadata_extraction_system import MetadataServiceFactory
-        from shared.phases import TwoPhaseOrchestrator
+        from workflows.shared.metadata_extraction_system import MetadataServiceFactory
+        from workflows.shared.phases import TwoPhaseOrchestrator
         
         metadata_service = MetadataServiceFactory.create_default()
         orchestrator = TwoPhaseOrchestrator(metadata_service)

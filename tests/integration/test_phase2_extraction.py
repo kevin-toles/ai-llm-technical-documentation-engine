@@ -74,7 +74,7 @@ def test_format_phase2_prompt_function_exists():
     References:
     - ARCHITECTURE_GUIDELINES: Separation of concerns
     """
-    from shared.prompts.templates import format_phase2_prompt
+    from workflows.shared.prompts.templates import format_phase2_prompt
     assert callable(format_phase2_prompt)
 
 
@@ -93,7 +93,7 @@ def test_format_phase2_prompt_signature():
     References:
     - PYTHON_GUIDELINES: Type hints for function signatures
     """
-    from shared.prompts.templates import format_phase2_prompt
+    from workflows.shared.prompts.templates import format_phase2_prompt
     import inspect
     
     sig = inspect.signature(format_phase2_prompt)
@@ -113,7 +113,7 @@ def test_format_phase2_prompt_returns_string():
     References:
     - ARCHITECTURE_GUIDELINES: Test-driven development
     """
-    from shared.prompts.templates import format_phase2_prompt
+    from workflows.shared.prompts.templates import format_phase2_prompt
     from typing import NamedTuple
     
     # Mock metadata response (has validation_summary, gap_analysis, analysis_strategy)

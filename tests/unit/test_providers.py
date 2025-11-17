@@ -6,7 +6,7 @@ import os
 import pytest
 from unittest.mock import Mock, patch
 
-from shared.providers import LLMResponse, LLMError, AnthropicProvider
+from workflows.shared.providers import LLMResponse, LLMError, AnthropicProvider
 
 
 class TestLLMResponse:
@@ -45,7 +45,7 @@ class TestAnthropicProvider:
     
     def test_init_with_api_key(self):
         """Test initialization with explicit API key."""
-        with patch('shared.providers.anthropic_provider.anthropic') as mock_anthropic:
+        with patch('workflows.shared.providers.anthropic_provider.anthropic') as mock_anthropic:
             mock_anthropic.Anthropic = Mock()
             
             provider = AnthropicProvider(api_key="test-key", model="claude-3-opus-20240229")
@@ -56,7 +56,7 @@ class TestAnthropicProvider:
     
     def test_init_from_env_var(self):
         """Test initialization using ANTHROPIC_API_KEY environment variable."""
-        with patch('shared.providers.anthropic_provider.anthropic') as mock_anthropic:
+        with patch('workflows.shared.providers.anthropic_provider.anthropic') as mock_anthropic:
             mock_anthropic.Anthropic = Mock()
             
             with patch.dict(os.environ, {'ANTHROPIC_API_KEY': 'env-test-key'}):
@@ -66,20 +66,20 @@ class TestAnthropicProvider:
     
     def test_init_missing_api_key(self):
         """Test initialization fails without API key."""
-        with patch('shared.providers.anthropic_provider.anthropic'):
+        with patch('workflows.shared.providers.anthropic_provider.anthropic'):
             with patch.dict(os.environ, {}, clear=True):
                 with pytest.raises(LLMError, match="API key not provided"):
                     AnthropicProvider()
     
     def test_init_missing_anthropic_package(self):
         """Test initialization fails if anthropic package not installed."""
-        with patch('shared.providers.anthropic_provider.anthropic', None):
+        with patch('workflows.shared.providers.anthropic_provider.anthropic', None):
             with pytest.raises(LLMError, match="anthropic package not installed"):
                 _provider = AnthropicProvider(api_key="test-key")
     
     def test_call_basic(self):
         """Test basic LLM call."""
-        with patch('shared.providers.anthropic_provider.anthropic') as mock_anthropic:
+        with patch('workflows.shared.providers.anthropic_provider.anthropic') as mock_anthropic:
             # Setup mock response
             mock_response = Mock()
             mock_response.content = [Mock(text="Response text")]
@@ -117,7 +117,7 @@ class TestAnthropicProvider:
     
     def test_call_with_system_prompt(self):
         """Test LLM call with system prompt."""
-        with patch('shared.providers.anthropic_provider.anthropic') as mock_anthropic:
+        with patch('workflows.shared.providers.anthropic_provider.anthropic') as mock_anthropic:
             mock_response = Mock()
             mock_response.content = [Mock(text="Response")]
             mock_response.model = "claude-3-5-sonnet-20241022"
@@ -142,7 +142,7 @@ class TestAnthropicProvider:
     
     def test_call_api_error(self):
         """Test handling of Anthropic API errors."""
-        with patch('shared.providers.anthropic_provider.anthropic') as mock_anthropic:
+        with patch('workflows.shared.providers.anthropic_provider.anthropic') as mock_anthropic:
             # Create a proper exception class
             class MockAPIError(Exception):
                 pass
@@ -160,7 +160,7 @@ class TestAnthropicProvider:
     
     def test_call_unexpected_error(self):
         """Test handling of unexpected errors."""
-        with patch('shared.providers.anthropic_provider.anthropic') as mock_anthropic:
+        with patch('workflows.shared.providers.anthropic_provider.anthropic') as mock_anthropic:
             # Create a proper exception class for APIError (won't be raised)
             class MockAPIError(Exception):
                 pass
@@ -182,7 +182,7 @@ class TestProviderProtocol:
     
     def test_anthropic_provider_implements_protocol(self):
         """Verify AnthropicProvider has all required methods."""
-        with patch('shared.providers.anthropic_provider.anthropic') as mock_anthropic:
+        with patch('workflows.shared.providers.anthropic_provider.anthropic') as mock_anthropic:
             mock_anthropic.Anthropic = Mock()
             
             provider = AnthropicProvider(api_key="test-key")

@@ -55,7 +55,7 @@ except ImportError:
 import os
 
 try:
-    from shared.llm_integration import call_llm
+    from workflows.shared.llm_integration import call_llm
     # Check if API key is actually available
     LLM_AVAILABLE = bool(os.getenv("OPENAI_API_KEY") or os.getenv("ANTHROPIC_API_KEY"))
     if not LLM_AVAILABLE:
@@ -67,7 +67,7 @@ except ImportError:
 # Sprint 3.3: Import centralized constants (eliminates duplication)
 # Per Quality Assessment: Fix 4 duplicate constants issue
 # Reference: REFACTORING_PLAN.md Sprint 3.3 - Constants extraction
-from shared.constants import BookTitles
+from workflows.shared.constants import BookTitles
 
 # Sprint 3.4: Import metadata builder (extract builder pattern)
 # Per BOOK_TAXONOMY_MATRIX.md: Architecture Patterns with Python (Tier 1)
@@ -705,7 +705,7 @@ Prioritize books that provide the most direct, substantial coverage of this chap
             - Formatter: src/prompts/templates.format_comprehensive_phase1_prompt
             - Sprint 2.11: TDD REFACTOR - Integrate Phase1
         """
-        from shared.prompts.templates import format_comprehensive_phase1_prompt
+        from workflows.shared.prompts.templates import format_comprehensive_phase1_prompt
         
         return format_comprehensive_phase1_prompt(
             chapter_num=chapter_num,
@@ -1063,7 +1063,7 @@ Prioritize books that provide the most direct, substantial coverage of this chap
             - Formatter: src/prompts/templates.format_comprehensive_phase2_prompt
             - Sprint 2.12: TDD REFACTOR - Integrate Phase2
         """
-        from shared.prompts.templates import format_comprehensive_phase2_prompt
+        from workflows.shared.prompts.templates import format_comprehensive_phase2_prompt
         
         return format_comprehensive_phase2_prompt(
             chapter_num=chapter_num,
@@ -1108,7 +1108,7 @@ Prioritize books that provide the most direct, substantial coverage of this chap
             - BOOK_TAXONOMY_MATRIX.md: Taxonomy embedded in template
             - PYTHON_GUIDELINES: String formatting, template composition
         """
-        from shared.prompts.templates import format_phase1_prompt
+        from workflows.shared.prompts.templates import format_phase1_prompt
         
         return format_phase1_prompt(
             chapter_num=chapter_num,
@@ -1152,7 +1152,7 @@ Prioritize books that provide the most direct, substantial coverage of this chap
             - Sprint 2.14: TDD REFACTOR - Integrate Phase2 (FINAL)
             - ARCHITECTURE_GUIDELINES: Separation of concerns principle
         """
-        from shared.prompts.templates import format_phase2_prompt
+        from workflows.shared.prompts.templates import format_phase2_prompt
         
         return format_phase2_prompt(
             chapter_num=chapter_num,

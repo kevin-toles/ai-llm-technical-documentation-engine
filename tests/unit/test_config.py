@@ -7,6 +7,7 @@ Tests the hybrid .env + dataclasses configuration approach.
 import os
 import pytest
 from pathlib import Path
+from unittest.mock import patch
 from config.settings import (
     LLMConfig,
     TaxonomyConfig,
@@ -265,8 +266,9 @@ class TestSettings:
         # Get current settings
         current_max_tokens = settings.llm.max_tokens
         
-        # Reload should create new instance
-        new_settings = reload_settings()
+        # Reload should create new instance (ensure API key is in env)
+        with patch.dict(os.environ, {'ANTHROPIC_API_KEY': 'test_key'}):
+            new_settings = reload_settings()
         
         # Verify it's a new instance (not the same object)
         assert new_settings is not settings

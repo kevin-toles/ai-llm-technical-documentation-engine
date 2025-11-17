@@ -61,12 +61,30 @@ class MetadataExtractorAdapter:
             main()
             
             # Find cache file (hardcoded location in legacy code)
-            # Legacy path: Path(__file__).parent / "chapter_metadata_cache.json"
-            cache_path = Path(__file__).parent.parent / "chapter_metadata_cache.json"
+            # The legacy function creates the cache in a fixed location
+            # For tests, we need to find it relative to the project root
+            from pathlib import Path
             
-            if not cache_path.exists():
+            # Get project root (go up from workflows/metadata_extraction/scripts/adapters/)
+            # __file__ -> adapters/ -> scripts/ -> metadata_extraction/ -> workflows/ -> PROJECT_ROOT
+            project_root = Path(__file__).parent.parent.parent.parent.parent
+            
+            # Try multiple possible locations for cache file
+            possible_cache_paths = [
+                project_root / "tests" / "src" / "pipeline" / "chapter_metadata_cache.json",  # Test location
+                project_root / "workflows" / "metadata_cache_merge" / "output" / "chapter_metadata_cache.json",  # Output location
+                Path(__file__).parent.parent / "chapter_metadata_cache.json",  # Adjacent to scripts/
+            ]
+            
+            cache_path = None
+            for path in possible_cache_paths:
+                if path.exists():
+                    cache_path = path
+                    break
+            
+            if cache_path is None:
                 raise MetadataExtractionError(
-                    f"Extraction completed but cache file not found: {cache_path}"
+                    f"Extraction completed but cache file not found in any expected location: {[str(p) for p in possible_cache_paths]}"
                 )
             
             self.logger.info(f"Extraction complete: {cache_path}")

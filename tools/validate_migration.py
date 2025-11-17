@@ -3,7 +3,7 @@
 Migration Validation Script
 Validates the workflow reorganization against MIGRATION_PLAN.md
 
-Run from repo root: python3 scripts/validate_migration.py
+Run from repo root: python3 tools/validate_migration.py
 """
 
 import json

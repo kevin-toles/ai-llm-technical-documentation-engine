@@ -5,7 +5,7 @@ Tests for caching layer.
 import pytest
 import time
 
-from shared.cache import ChapterCache, CacheEntry
+from workflows.shared.cache import ChapterCache, CacheEntry
 
 
 class TestCacheEntry:

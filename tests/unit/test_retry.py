@@ -5,13 +5,13 @@ Tests for retry logic.
 import pytest
 from unittest.mock import Mock
 
-from shared.retry import (
+from workflows.shared.retry import (
     RetryConfig,
     call_llm_with_retry,
     call_with_retry,
     RetryExhaustedError,
 )
-from shared.providers.base import LLMError, LLMResponse
+from workflows.shared.providers.base import LLMError, LLMResponse
 
 
 class TestRetryConfig:

@@ -24,7 +24,7 @@ def test_sprint1_imports():
     print("\n=== Testing Sprint 1 Imports ===")
     
     try:
-        from shared.llm_integration import (  # noqa: F401
+        from workflows.shared.llm_integration import (  # noqa: F401
             FinishReason,
             _validate_json_response,
             _handle_truncated_response,
@@ -56,7 +56,7 @@ def test_finish_reason_enum():
     """Test FinishReason enum functionality."""
     print("\n=== Testing FinishReason Enum ===")
     
-    from shared.llm_integration import FinishReason
+    from workflows.shared.llm_integration import FinishReason
     
     # Test enum values
     assert FinishReason.END_TURN.value == "end_turn"
@@ -72,7 +72,7 @@ def test_json_validation():
     """Test _validate_json_response with various inputs."""
     print("\n=== Testing JSON Validation ===")
     
-    from shared.llm_integration import _validate_json_response, FinishReason
+    from workflows.shared.llm_integration import _validate_json_response, FinishReason
     
     # Test 1: Valid complete response
     valid_response = '[{"book_title": "Test Book", "chapter": 1, "reason": "test"}]'
@@ -184,7 +184,7 @@ def test_integration_wiring():
     """Verify Sprint 1 functions are properly integrated into workflow."""
     print("\n=== Testing Integration Wiring ===")
     
-    from shared.llm_integration import _call_anthropic_api
+    from workflows.shared.llm_integration import _call_anthropic_api
     from workflows.llm_enhancement.scripts.interactive_llm_system_v3_hybrid_prompt import AnalysisOrchestrator
     import inspect
     

@@ -22,7 +22,7 @@ from workflows.metadata_enrichment.scripts.generate_chapter_metadata import (
     extract_keywords_from_text,
     extract_concepts_from_text,
 )
-from shared.providers.base import LLMResponse
+from workflows.shared.providers.base import LLMResponse
 
 
 # ============================================================================
