@@ -22,8 +22,14 @@ Reference:
 
 import json
 import re
+import sys
+from pathlib import Path
 from typing import List, Dict, Any, Tuple
 from collections import Counter
+
+# Add project root to path for config access
+PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
+sys.path.insert(0, str(PROJECT_ROOT))
 
 # Configuration management (12-Factor App pattern)
 from config.settings import settings

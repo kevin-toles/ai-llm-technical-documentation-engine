@@ -23,11 +23,11 @@ import sys
 from pathlib import Path
 from typing import Dict, Any
 
-# Add src to path for imports
-repo_root = Path(__file__).parent.parent
-sys.path.insert(0, str(repo_root / "src"))
+# Add project root to path for imports
+PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
+sys.path.insert(0, str(PROJECT_ROOT))
 
-from book_taxonomy import ALL_BOOKS, BookTier
+from workflows.w01_taxonomy_setup.scripts.book_taxonomy import ALL_BOOKS, BookTier
 
 
 def generate_taxonomy_config() -> Dict[str, Any]:
@@ -119,14 +119,17 @@ def save_taxonomy_config(config: Dict[str, Any], output_path: Path) -> None:
 
 def main():
     """Main entry point for taxonomy config generation."""
+    # Default output to workflow output folder
+    default_output = Path(__file__).parent.parent / "output" / "taxonomy_config.json"
+    
     parser = argparse.ArgumentParser(
         description="Generate taxonomy configuration JSON from Python definitions"
     )
     parser.add_argument(
         "--output",
         type=Path,
-        default=repo_root / "config" / "taxonomy_config.json",
-        help="Output path for taxonomy_config.json (default: config/taxonomy_config.json)"
+        default=default_output,
+        help="Output path for taxonomy_config.json (default: ../output/taxonomy_config.json)"
     )
     parser.add_argument(
         "--validate",

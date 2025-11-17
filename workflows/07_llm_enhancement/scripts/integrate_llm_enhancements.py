@@ -20,9 +20,14 @@ import re
 import os
 import logging
 import traceback
+import sys
 from pathlib import Path
 from typing import Dict, List, Tuple, Optional
 from datetime import datetime
+
+# Add project root to path
+PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
+sys.path.insert(0, str(PROJECT_ROOT))
 
 # Load environment variables
 from dotenv import load_dotenv
@@ -58,7 +63,7 @@ logger.info(f"Logging initialized - log file: {LOG_FILE}")
 
 # Import simplified LLM function (still used for summary enhancement)
 try:
-    from .llm_integration import call_llm
+    from shared.llm_integration import call_llm
     LLM_AVAILABLE = True
     logger.info("✓ LLM integration loaded successfully")
 except ImportError as e:
@@ -68,9 +73,9 @@ except ImportError as e:
 # Import new interactive system (V3 with hybrid prompt quality enforcement)
 # UPDATED: Now using TwoPhaseOrchestrator from refactored phases package
 try:
-    from .metadata_extraction_system import MetadataServiceFactory
+    from workflows.w07_llm_enhancement.scripts.metadata_extraction_system import MetadataServiceFactory
     # REFACTORED: Use TwoPhaseOrchestrator instead of AnalysisOrchestrator
-    from .phases import TwoPhaseOrchestrator
+    from workflows.w07_llm_enhancement.scripts.phases import TwoPhaseOrchestrator
     INTERACTIVE_SYSTEM_AVAILABLE = True
     logger.info("✓ Interactive system loaded successfully (using TwoPhaseOrchestrator)")
 except ImportError as e:

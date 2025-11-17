@@ -12,6 +12,10 @@ from pathlib import Path
 from datetime import datetime
 import fitz  # PyMuPDF
 
+# Add project root to path for config access
+PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
+sys.path.insert(0, str(PROJECT_ROOT))
+
 # Configuration management (Microservices Up and Running Ch. 7 - 12-Factor Config)
 from config.settings import settings
 
