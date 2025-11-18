@@ -441,6 +441,63 @@ h2 {
     transform: translateY(0);
 }
 
+/* Status Panel */
+.status-panel {
+    margin-top: 20px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.status-header {
+    background: #007aff;
+    color: white;
+    padding: 10px 16px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.status-content {
+    padding: 16px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.status-content p {
+    margin-bottom: 8px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.status-content p:last-child {
+    margin-bottom: 0;
+}
+
+.status-content .error {
+    color: #ff3b30;
+    font-weight: 600;
+}
+
+.status-content .success {
+    color: #28ca42;
+}
+
+.progress-log {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 12px;
+    margin: 12px 0;
+    font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+    font-size: 12px;
+}
+
+.progress-log p {
+    margin-bottom: 4px;
+    line-height: 1.4;
+}
+
 /* Scrollbar styling */
 .file-selector::-webkit-scrollbar {
     width: 8px;

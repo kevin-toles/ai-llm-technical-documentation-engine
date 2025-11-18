@@ -55,6 +55,11 @@
                     <button class="btn btn-secondary" onclick="clearSelection('{{ tab_id }}')">Clear</button>
                     <button class="btn btn-primary" onclick="runWorkflow('{{ tab_id }}')">Run Workflow ▶</button>
                 </div>
+
+                <div class="status-panel" id="{{ tab_id }}-status" style="display: none;">
+                    <div class="status-header">Workflow Status</div>
+                    <div class="status-content" id="{{ tab_id }}-status-content"></div>
+                </div>
             </div>
             {% endfor %}
         </div>
@@ -373,31 +378,85 @@
                 payload = { files: selectedFiles };
             }
             
-            const response = await fetch(`/run/${tabId}`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            });
+            // Show status panel
+            const statusPanel = document.getElementById(`${tabId}-status`);
+            const statusContent = document.getElementById(`${tabId}-status-content`);
+            statusPanel.style.display = 'block';
+            statusContent.innerHTML = '<p>Starting workflow...</p>';
             
-            const result = await response.json();
-            
-            if (result.llm_config) {
-                // Show LLM config
-                alert(`${result.workflow}\n\nGuideline: ${result.llm_config.guideline}\nTaxonomy: ${result.llm_config.taxonomy}\nProvider: ${result.llm_config.provider}\nModel: ${result.llm_config.model}\n\n${result.message}`);
-            } else if (result.tiers) {
-                // Show tier summary
-                let msg = `${result.workflow}\n\n`;
-                Object.entries(result.tiers).forEach(([tier, files]) => {
-                    msg += `${tier}:\n`;
-                    files.forEach((file, idx) => {
-                        msg += `  ${idx + 1}. ${file}\n`;
-                    });
-                    msg += '\n';
+            try {
+                const response = await fetch(`/run/${tabId}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
                 });
-                alert(msg);
-            } else {
-                alert(`${result.workflow}\n${result.message}`);
+                
+                const result = await response.json();
+                
+                if (result.error) {
+                    statusContent.innerHTML = `<p class="error">Error: ${result.error}</p>`;
+                    return;
+                }
+                
+                // Start polling for status updates
+                if (result.workflow_id) {
+                    pollWorkflowStatus(tabId, result.workflow_id);
+                    statusContent.innerHTML = `<p>✓ ${result.message}</p><p>Monitoring progress...</p>`;
+                }
+            } catch (error) {
+                statusContent.innerHTML = `<p class="error">Failed to start workflow: ${error.message}</p>`;
             }
+        }
+
+        // Poll workflow status
+        async function pollWorkflowStatus(tabId, workflowId) {
+            const statusContent = document.getElementById(`${tabId}-status-content`);
+            
+            const interval = setInterval(async () => {
+                try {
+                    const response = await fetch(`/status/${workflowId}`);
+                    const status = await response.json();
+                    
+                    if (status.error) {
+                        clearInterval(interval);
+                        statusContent.innerHTML = `<p class="error">Error: ${status.error}</p>`;
+                        return;
+                    }
+                    
+                    // Build status display
+                    let html = `<p><strong>Status:</strong> ${status.status}</p>`;
+                    
+                    if (status.progress && status.progress.length > 0) {
+                        html += '<div class="progress-log">';
+                        status.progress.forEach(msg => {
+                            const isError = msg.includes('✗');
+                            const isSuccess = msg.includes('✓');
+                            const className = isError ? 'error' : (isSuccess ? 'success' : '');
+                            html += `<p class="${className}">${msg}</p>`;
+                        });
+                        html += '</div>';
+                    }
+                    
+                    if (status.summary) {
+                        html += `<p><strong>${status.summary}</strong></p>`;
+                    }
+                    
+                    if (status.output_file) {
+                        html += `<p>Output: ${status.output_file}</p>`;
+                    }
+                    
+                    statusContent.innerHTML = html;
+                    
+                    // Stop polling if completed or error
+                    if (status.status === 'completed' || status.status === 'error') {
+                        clearInterval(interval);
+                    }
+                    
+                } catch (error) {
+                    clearInterval(interval);
+                    statusContent.innerHTML += `<p class="error">Status check failed: ${error.message}</p>`;
+                }
+            }, 1000); // Poll every second
         }
 
         // Load initial files

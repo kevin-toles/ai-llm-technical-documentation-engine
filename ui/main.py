@@ -2,7 +2,7 @@
 Simple UI for LLM Document Enhancer workflows
 Each tab allows file selection and workflow execution
 """
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, BackgroundTasks
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -10,8 +10,14 @@ import uvicorn
 from pathlib import Path
 import os
 import httpx
+import asyncio
+import json
+from datetime import datetime
 
 app = FastAPI(title="LLM Document Enhancer")
+
+# Store workflow execution status
+workflow_status = {}
 
 # Mount static files
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -210,7 +216,7 @@ async def get_llm_providers():
 
 
 @app.post("/run/{tab_id}")
-async def run_workflow(tab_id: str, request: Request):
+async def run_workflow(tab_id: str, request: Request, background_tasks: BackgroundTasks):
     """Execute workflow with selected files"""
     data = await request.json()
     
@@ -218,41 +224,226 @@ async def run_workflow(tab_id: str, request: Request):
         return {"error": "Invalid tab"}
     
     workflow = WORKFLOWS[tab_id]
+    workflow_id = f"{tab_id}_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+    
+    # Initialize status
+    workflow_status[workflow_id] = {
+        "status": "starting",
+        "workflow": workflow["name"],
+        "started_at": datetime.now().isoformat(),
+        "progress": []
+    }
     
     # Handle LLM tab with configuration
     if tab_id == "tab7" and "llm_config" in data:
-        llm_config = data["llm_config"]
-        
+        background_tasks.add_task(execute_llm_enhancement, workflow_id, data["llm_config"], workflow)
         return {
-            "status": "ready",
+            "status": "started",
+            "workflow_id": workflow_id,
             "workflow": workflow["name"],
-            "llm_config": llm_config,
-            "message": f"Would enhance using {llm_config['provider']}/{llm_config['model']}"
+            "message": f"Started LLM enhancement with {data['llm_config']['provider']}/{data['llm_config']['model']}"
         }
     
     # Handle taxonomy tab with tiers
     if tab_id == "tab6" and "tiers" in data:
-        tier_data = data["tiers"]
-        total_files = sum(len(files) for files in tier_data.values())
-        tier_summary = ", ".join([f"{tier}: {len(files)}" for tier, files in tier_data.items()])
-        
+        background_tasks.add_task(execute_taxonomy_generation, workflow_id, data["tiers"], workflow)
+        total_files = sum(len(files) for files in data["tiers"].values())
         return {
-            "status": "ready",
+            "status": "started",
+            "workflow_id": workflow_id,
             "workflow": workflow["name"],
-            "tiers": tier_data,
-            "message": f"Would create taxonomy from {total_files} file(s)\n{tier_summary}"
+            "message": f"Started taxonomy generation with {total_files} file(s)"
         }
     
     # Regular file selection
     selected_files = data.get("files", [])
+    if not selected_files:
+        return {"error": "No files selected"}
+    
+    # Execute workflow in background
+    background_tasks.add_task(execute_workflow, workflow_id, tab_id, selected_files, workflow)
     
     return {
-        "status": "ready",
+        "status": "started",
+        "workflow_id": workflow_id,
         "workflow": workflow["name"],
-        "files": selected_files,
-        "script": str(workflow.get("script", "Not implemented")),
-        "message": f"Would process {len(selected_files)} file(s)"
+        "message": f"Started processing {len(selected_files)} file(s)"
     }
+
+
+@app.get("/status/{workflow_id}")
+async def get_workflow_status(workflow_id: str):
+    """Get status of a running workflow"""
+    if workflow_id not in workflow_status:
+        return {"error": "Workflow not found"}
+    
+    return workflow_status[workflow_id]
+
+
+async def execute_workflow(workflow_id: str, tab_id: str, files: list, workflow: dict):
+    """Execute a workflow with selected files"""
+    try:
+        workflow_status[workflow_id]["status"] = "running"
+        script_path = workflow.get("script")
+        
+        if not script_path or not Path(script_path).exists():
+            workflow_status[workflow_id]["status"] = "error"
+            workflow_status[workflow_id]["error"] = f"Script not found: {script_path}"
+            return
+        
+        input_dir = workflow["input_dir"]
+        output_dir = workflow["output_dir"]
+        output_dir.mkdir(parents=True, exist_ok=True)
+        
+        successful = []
+        failed = []
+        
+        # Process each file
+        for file in files:
+            try:
+                file_path = input_dir / file
+                workflow_status[workflow_id]["progress"].append(f"Processing: {file}")
+                
+                # Build command based on tab
+                if tab_id == "tab1":  # PDF to JSON
+                    cmd = ["python3", str(script_path), str(file_path)]
+                elif tab_id == "tab2":  # Metadata Extraction
+                    cmd = ["python3", str(script_path), "--input", str(file_path), "--auto-detect"]
+                elif tab_id in ["tab3", "tab4", "tab5"]:
+                    # These need more complex handling
+                    cmd = ["python3", str(script_path), str(file_path)]
+                else:
+                    continue
+                
+                # Execute command
+                process = await asyncio.create_subprocess_exec(
+                    *cmd,
+                    stdout=asyncio.subprocess.PIPE,
+                    stderr=asyncio.subprocess.PIPE,
+                    cwd=str(BASE_DIR)
+                )
+                
+                stdout, stderr = await process.communicate()
+                
+                if process.returncode == 0:
+                    successful.append(file)
+                    workflow_status[workflow_id]["progress"].append(f"✓ Completed: {file}")
+                else:
+                    failed.append(file)
+                    error_msg = stderr.decode() if stderr else "Unknown error"
+                    workflow_status[workflow_id]["progress"].append(f"✗ Failed: {file} - {error_msg[:100]}")
+                    
+            except Exception as e:
+                failed.append(file)
+                workflow_status[workflow_id]["progress"].append(f"✗ Error: {file} - {str(e)}")
+        
+        # Update final status
+        workflow_status[workflow_id]["status"] = "completed"
+        workflow_status[workflow_id]["successful"] = successful
+        workflow_status[workflow_id]["failed"] = failed
+        workflow_status[workflow_id]["completed_at"] = datetime.now().isoformat()
+        workflow_status[workflow_id]["summary"] = f"Completed: {len(successful)} successful, {len(failed)} failed"
+        
+    except Exception as e:
+        workflow_status[workflow_id]["status"] = "error"
+        workflow_status[workflow_id]["error"] = str(e)
+
+
+async def execute_taxonomy_generation(workflow_id: str, tiers: dict, workflow: dict):
+    """Generate taxonomy from tier data"""
+    try:
+        workflow_status[workflow_id]["status"] = "running"
+        workflow_status[workflow_id]["progress"].append("Building taxonomy structure...")
+        
+        # Create taxonomy JSON structure
+        taxonomy = {
+            "name": "Generated Taxonomy",
+            "created_at": datetime.now().isoformat(),
+            "tiers": {
+                "architecture": {"priority": 1, "books": tiers.get("architecture", [])},
+                "implementation": {"priority": 2, "books": tiers.get("implementation", [])},
+                "practices": {"priority": 3, "books": tiers.get("practices", [])}
+            }
+        }
+        
+        # Save taxonomy file
+        output_dir = workflow["output_dir"]
+        output_dir.mkdir(parents=True, exist_ok=True)
+        
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        output_file = output_dir / f"taxonomy_{timestamp}.json"
+        
+        with open(output_file, 'w') as f:
+            json.dump(taxonomy, f, indent=2)
+        
+        workflow_status[workflow_id]["status"] = "completed"
+        workflow_status[workflow_id]["output_file"] = str(output_file)
+        workflow_status[workflow_id]["progress"].append(f"✓ Taxonomy saved to: {output_file.name}")
+        workflow_status[workflow_id]["completed_at"] = datetime.now().isoformat()
+        
+    except Exception as e:
+        workflow_status[workflow_id]["status"] = "error"
+        workflow_status[workflow_id]["error"] = str(e)
+
+
+async def execute_llm_enhancement(workflow_id: str, llm_config: dict, workflow: dict):
+    """Execute LLM enhancement workflow"""
+    try:
+        workflow_status[workflow_id]["status"] = "running"
+        script_path = workflow.get("script")
+        
+        if not script_path or not Path(script_path).exists():
+            workflow_status[workflow_id]["status"] = "error"
+            workflow_status[workflow_id]["error"] = f"Script not found: {script_path}"
+            return
+        
+        # Build command with LLM config
+        guideline_path = workflow["input_dir"] / llm_config["guideline"]
+        taxonomy_path = INPUTS_DIR / "taxonomy" / llm_config["taxonomy"]
+        
+        workflow_status[workflow_id]["progress"].append(f"Guideline: {llm_config['guideline']}")
+        workflow_status[workflow_id]["progress"].append(f"Taxonomy: {llm_config['taxonomy']}")
+        workflow_status[workflow_id]["progress"].append(f"Provider: {llm_config['provider']}")
+        workflow_status[workflow_id]["progress"].append(f"Model: {llm_config['model']}")
+        
+        # Set environment variables for LLM
+        env = os.environ.copy()
+        env["LLM_PROVIDER"] = llm_config["provider"]
+        env["LLM_MODEL"] = llm_config["model"]
+        
+        cmd = [
+            "python3", str(script_path),
+            "--guideline", str(guideline_path),
+            "--taxonomy", str(taxonomy_path)
+        ]
+        
+        workflow_status[workflow_id]["progress"].append("Starting LLM enhancement...")
+        
+        # Execute command
+        process = await asyncio.create_subprocess_exec(
+            *cmd,
+            stdout=asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.PIPE,
+            env=env,
+            cwd=str(BASE_DIR)
+        )
+        
+        stdout, stderr = await process.communicate()
+        
+        if process.returncode == 0:
+            workflow_status[workflow_id]["status"] = "completed"
+            workflow_status[workflow_id]["progress"].append("✓ LLM enhancement completed")
+            workflow_status[workflow_id]["output"] = stdout.decode()[:500]  # First 500 chars
+        else:
+            workflow_status[workflow_id]["status"] = "error"
+            workflow_status[workflow_id]["error"] = stderr.decode()
+            workflow_status[workflow_id]["progress"].append(f"✗ Enhancement failed")
+        
+        workflow_status[workflow_id]["completed_at"] = datetime.now().isoformat()
+        
+    except Exception as e:
+        workflow_status[workflow_id]["status"] = "error"
+        workflow_status[workflow_id]["error"] = str(e)
 
 
 if __name__ == "__main__":

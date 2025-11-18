@@ -229,20 +229,27 @@ class UniversalMetadataGenerator:
         """
         chapters = []
         current_chapter = None
+        seen_chapters = set()  # Track chapter numbers to avoid duplicates
         
         for idx, page in enumerate(self.pages, start=1):
-            text = page.get('text', '')
+            text = page.get('content', page.get('text', ''))  # Support both 'content' and 'text' fields
             lines = text.split('\n')[:10]  # Check first 10 lines
             
             for line in lines:
                 match = self.chapter_pattern.search(line)
                 if match:
+                    chapter_num = int(match.group(1))
+                    
+                    # Skip if we've already seen this chapter (filters out headers/footers)
+                    if chapter_num in seen_chapters:
+                        continue
+                    
                     # Found a new chapter
                     if current_chapter:
                         # Close previous chapter
                         chapters.append((*current_chapter, idx - 1))
                     
-                    chapter_num = int(match.group(1))
+                    seen_chapters.add(chapter_num)
                     title = match.group(2).strip().rstrip('.')
                     current_chapter = (chapter_num, title, idx)
                     break
@@ -439,7 +446,7 @@ class UniversalMetadataGenerator:
             chapter_text = ""
             for page_idx in range(start_page - 1, min(end_page, len(self.pages))):
                 if page_idx < len(self.pages):
-                    chapter_text += self.pages[page_idx].get('text', '') + "\n"
+                    chapter_text += self.pages[page_idx].get('content', self.pages[page_idx].get('text', '')) + "\n"
             
             page_count = end_page - start_page + 1
             print(f"  Collected {len(chapter_text):,} characters from {page_count} pages")
