@@ -309,8 +309,11 @@ async def execute_workflow(workflow_id: str, tab_id: str, files: list, workflow:
                     cmd = ["python3", str(script_path), str(file_path)]
                 elif tab_id == "tab2":  # Metadata Extraction
                     cmd = ["python3", str(script_path), "--input", str(file_path), "--auto-detect"]
-                elif tab_id in ["tab3", "tab4", "tab5"]:
-                    # These need more complex handling
+                elif tab_id == "tab3":  # Metadata Enrichment
+                    cmd = ["python3", str(script_path), "--input", str(file_path)]
+                elif tab_id == "tab4":  # Cache Merge
+                    cmd = ["python3", str(script_path), "--input", str(file_path)]
+                elif tab_id == "tab5":  # Base Guideline
                     cmd = ["python3", str(script_path), str(file_path)]
                 else:
                     continue

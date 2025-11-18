@@ -53,10 +53,24 @@ class MetadataMerger:
         """
         metadata_files = list(self.input_dir.glob("*_metadata.json"))
         
+        # Filter by book_list if provided
+        if self.book_list:
+            filtered_files = []
+            for book_name in self.book_list:
+                # Try exact match first
+                exact_match = self.input_dir / f"{book_name}_metadata.json"
+                if exact_match.exists():
+                    filtered_files.append(exact_match)
+                else:
+                    # Fallback: search for files containing the book name
+                    matches = [f for f in metadata_files if book_name in f.stem]
+                    filtered_files.extend(matches)
+            metadata_files = filtered_files
+        
         if not metadata_files:
             print(f"⚠️  No metadata files found in {self.input_dir}")
         else:
-            print(f"📁 Found {len(metadata_files)} metadata files")
+            print(f"📁 Found {len(metadata_files)} metadata file(s)")
         
         return metadata_files
     
@@ -262,8 +276,13 @@ Examples:
     parser.add_argument(
         '--input-dir',
         type=Path,
-        default=Path(__file__).parent.parent / "input",
         help='Directory containing *_metadata.json files (default: ../input/)'
+    )
+    
+    parser.add_argument(
+        '--input',
+        type=Path,
+        help='Single metadata file to merge (alternative to --input-dir)'
     )
     
     parser.add_argument(
@@ -292,15 +311,33 @@ Examples:
     
     args = parser.parse_args()
     
+    # Handle single file vs directory input
+    if args.input and args.input_dir:
+        print("❌ Error: Cannot specify both --input and --input-dir")
+        return 1
+    
+    if args.input:
+        # Single file mode: use parent directory as input_dir
+        input_dir = args.input.parent
+        # Extract book name from filename (remove _metadata.json suffix)
+        book_name = args.input.stem.replace('_metadata', '')
+        book_list = [book_name]
+        print(f"📄 Processing single file: {args.input.name}")
+    else:
+        # Directory mode
+        input_dir = args.input_dir if args.input_dir else Path(__file__).parent.parent / "input"
+        book_list = args.book_list
+        print(f"📁 Processing directory: {input_dir}")
+    
     print("="*80)
     print("UNIVERSAL METADATA MERGER")
     print("="*80)
     
     # Create merger with injected dependencies
     merger = MetadataMerger(
-        input_dir=args.input_dir,
+        input_dir=input_dir,
         output_file=args.output_file,
-        book_list=args.book_list
+        book_list=book_list
     )
     
     # Execute based on mode
