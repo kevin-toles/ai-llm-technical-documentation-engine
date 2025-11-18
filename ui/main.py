@@ -65,7 +65,7 @@ WORKFLOWS = {
         "input_dir": WORKFLOWS_DIR / "pdf_to_json" / "output" / "textbooks_json",
         "input_ext": ".json",
         "output_dir": WORKFLOWS_DIR / "base_guideline_generation" / "output",
-        "script": BASE_DIR / "Chapter Summaries" / "chapter_generator_all_text.py",
+        "script": WORKFLOWS_DIR / "base_guideline_generation" / "scripts" / "chapter_generator_all_text.py",
         "requires_taxonomy": True
     },
     "tab6": {
