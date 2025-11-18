@@ -33,9 +33,12 @@ import re
 import argparse
 from pathlib import Path
 from typing import List, Dict, Set, Any, Tuple, Optional
-from collections import Counter
 from dataclasses import dataclass, asdict
 import sys
+
+# Import StatisticalExtractor for domain-agnostic metadata extraction
+# Per DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN Part 1.3
+from workflows.metadata_extraction.scripts.adapters.statistical_extractor import StatisticalExtractor
 
 # Try to use settings, fallback to defaults
 try:
@@ -79,34 +82,35 @@ class UniversalMetadataGenerator:
         self, 
         json_path: Path, 
         domain: str = "auto",
-        keywords_file: Optional[Path] = None,
-        patterns_file: Optional[Path] = None
+        keywords_file: Optional[Path] = None,  # Deprecated - kept for backward compatibility
+        patterns_file: Optional[Path] = None   # Deprecated - kept for backward compatibility
     ):
         """
         Initialize generator with JSON file.
         
         Args:
             json_path: Path to textbook JSON file
-            domain: Domain of the book ("python", "architecture", "data_science", "auto")
-            keywords_file: Optional path to keywords JSON config (default: config/metadata_keywords.json)
-            patterns_file: Optional path to patterns JSON config (default: config/chapter_patterns.json)
+            domain: Domain of the book (ignored - now domain-agnostic via StatisticalExtractor)
+            keywords_file: DEPRECATED - No longer used (statistical extraction is domain-agnostic)
+            patterns_file: DEPRECATED - No longer used (statistical extraction is domain-agnostic)
             
         Raises:
-            ValueError: If config files have invalid schema or patterns
-            FileNotFoundError: If required files don't exist (EAFP - PY 21)
+            FileNotFoundError: If JSON file doesn't exist (EAFP - PY 21)
+            
+        Document References:
+            - DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN: Part 1.3 (Integration)
+            - ARCHITECTURE_GUIDELINES Ch. 4: Adapter pattern for external libraries
         """
         self.json_path = Path(json_path)
         self.domain = domain
         
-        # Load configuration files (DI pattern - ARCH 5336)
-        self.keywords_file = Path(keywords_file) if keywords_file else Path(__file__).parent.parent.parent.parent / "config" / "metadata_keywords.json"
-        self.patterns_file = Path(patterns_file) if patterns_file else Path(__file__).parent.parent.parent.parent / "config" / "chapter_patterns.json"
+        # Initialize StatisticalExtractor for domain-agnostic extraction
+        # Per DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN Part 1.2
+        self.extractor = StatisticalExtractor()
         
-        # Load and validate keywords config
-        self.keyword_config = self._load_and_validate_keywords()
-        
-        # Load and validate patterns config
-        self.pattern_config = self._load_and_validate_patterns()
+        # Deprecated configuration paths (kept for backward compatibility)
+        if keywords_file or patterns_file:
+            print("Warning: keywords_file and patterns_file are deprecated. Using StatisticalExtractor instead.")
         
         # Load JSON (using context manager - PY 32425)
         with open(self.json_path, 'r', encoding='utf-8') as f:
@@ -115,105 +119,10 @@ class UniversalMetadataGenerator:
         self.pages = self.book_data.get('pages', [])
         self.book_name = self.json_path.stem
         
-        # Auto-detect domain if not specified
-        if self.domain == "auto":
-            self.domain = self._detect_domain()
-        
-        # Combine keyword sets based on domain
-        self.keywords = self._get_keyword_set()
-        
-        # Compile chapter pattern for auto-detection
-        self.chapter_pattern = re.compile(self.pattern_config.get("chapter_heading", r'(?:chapter|ch\.?)\s+(\d+)[:\s]+(.+)'), re.IGNORECASE)
-        self.section_pattern = re.compile(self.pattern_config.get("section_heading", r'^(?:section|§)\s+(\d+(?:\.\d+)?)'), re.IGNORECASE) if "section_heading" in self.pattern_config else None
-    
-    def _load_and_validate_keywords(self) -> Dict[str, List[str]]:
-        """
-        Load and validate keywords config file.
-        
-        Returns:
-            Dictionary with domain keys and keyword lists
-            
-        Raises:
-            ValueError: If file has invalid schema
-            FileNotFoundError: If file doesn't exist
-        """
-        try:
-            with open(self.keywords_file, 'r', encoding='utf-8') as f:
-                config = json.load(f)
-        except FileNotFoundError:
-            raise FileNotFoundError(f"Keywords file not found: {self.keywords_file}")
-        except json.JSONDecodeError as e:
-            raise ValueError(f"Invalid JSON in keywords file: {e}")
-        
-        # Validate schema: must be dict with string keys and list values
-        if not isinstance(config, dict):
-            raise ValueError(f"Invalid keywords file schema: expected dict, got {type(config).__name__}")
-        
-        for domain, keywords in config.items():
-            if not isinstance(keywords, list):
-                raise ValueError(f"Invalid keywords file schema: domain '{domain}' must have list of keywords, got {type(keywords).__name__}")
-            if not all(isinstance(kw, str) for kw in keywords):
-                raise ValueError(f"Invalid keywords file schema: domain '{domain}' contains non-string keywords")
-        
-        return config
-    
-    def _load_and_validate_patterns(self) -> Dict[str, str]:
-        """
-        Load and validate patterns config file.
-        
-        Returns:
-            Dictionary with pattern names and regex strings
-            
-        Raises:
-            ValueError: If file has invalid schema or regex
-            FileNotFoundError: If file doesn't exist
-        """
-        try:
-            with open(self.patterns_file, 'r', encoding='utf-8') as f:
-                config = json.load(f)
-        except FileNotFoundError:
-            raise FileNotFoundError(f"Patterns file not found: {self.patterns_file}")
-        except json.JSONDecodeError as e:
-            raise ValueError(f"Invalid JSON in patterns file: {e}")
-        
-        # Validate schema and regex patterns
-        if not isinstance(config, dict):
-            raise ValueError(f"Invalid patterns file schema: expected dict, got {type(config).__name__}")
-        
-        for pattern_name, pattern_str in config.items():
-            if not isinstance(pattern_str, str):
-                raise ValueError(f"Invalid patterns file schema: pattern '{pattern_name}' must be string, got {type(pattern_str).__name__}")
-            
-            # Validate regex by attempting to compile
-            try:
-                re.compile(pattern_str)
-            except re.error as e:
-                raise ValueError(f"Invalid regex pattern '{pattern_name}': {e}")
-        
-        return config
-    
-    def _detect_domain(self) -> str:
-        """Auto-detect book domain from title or content."""
-        title_lower = self.book_name.lower()
-        
-        if any(word in title_lower for word in ['microservice', 'architecture', 'api', 'fastapi', 'flask']):
-            return "architecture"
-        elif any(word in title_lower for word in ['data', 'analysis', 'pandas', 'numpy']):
-            return "data_science"
-        else:
-            return "python"
-    
-    def _get_keyword_set(self) -> Set[str]:
-        """Get combined keyword set based on domain."""
-        # Start with Python keywords (always include basics)
-        keywords = set(self.keyword_config.get("python", []))
-        
-        if self.domain in ["architecture", "microservices"]:
-            keywords.update(self.keyword_config.get("architecture", []))
-        elif self.domain == "data_science":
-            keywords.update(self.keyword_config.get("data_science", []))
-        
-        return keywords
+        # Compile chapter pattern for auto-detection (default pattern)
+        # Per DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN: Removed pattern config files
+        self.chapter_pattern = re.compile(r'(?:chapter|ch\.?)\s+(\d+)[:\s]+(.+)', re.IGNORECASE)
+        self.section_pattern = re.compile(r'^(?:section|§)\s+(\d+(?:\.\d+)?)', re.IGNORECASE)
     
     def auto_detect_chapters(self) -> List[Tuple[int, str, int, int]]:
         """
@@ -262,103 +171,51 @@ class UniversalMetadataGenerator:
     
     def extract_keywords(self, text: str, max_keywords: int = 15) -> List[str]:
         """
-        Extract meaningful keywords from chapter text.
+        Extract meaningful keywords from chapter text using statistical methods.
+        
+        Replaced hardcoded keyword matching with YAKE unsupervised extraction.
+        Now works across ANY domain (Python, biology, law, construction, etc.).
         
         Args:
             text: Chapter text content
             max_keywords: Maximum number of keywords to return
             
         Returns:
-            List of keywords sorted by frequency
+            List of keywords sorted by relevance (YAKE score)
+            
+        Document References:
+            - DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN Part 1.3: Integration with StatisticalExtractor
+            - ARCHITECTURE_GUIDELINES Ch. 4: Adapter pattern for NLP libraries
         """
-        text_lower = text.lower()
-        
-        keyword_counts = Counter()
-        for keyword in self.keywords:
-            count = text_lower.count(keyword)
-            if count > 0:
-                keyword_counts[keyword] = count
-        
-        return [kw for kw, _ in keyword_counts.most_common(max_keywords)]
+        keywords_with_scores = self.extractor.extract_keywords(text, top_n=max_keywords)
+        return [keyword for keyword, score in keywords_with_scores]
     
     def extract_concepts(self, text: str, max_concepts: int = 10) -> List[str]:
         """
-        Extract key concepts and topics from chapter text.
+        Extract key concepts and topics from chapter text using TextRank.
         
-        Uses pattern matching to find multi-word concepts and phrases.
+        Replaced 35+ hardcoded regex patterns with Summa statistical extraction.
+        Now works across ANY domain without hardcoded domain knowledge.
         
         Args:
             text: Chapter text content
             max_concepts: Maximum number of concepts to return
             
         Returns:
-            List of concepts
+            List of concepts (single-word terms)
+            
+        Document References:
+            - DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN Part 1.3: Remove hardcoded patterns
+            - ARCHITECTURE_GUIDELINES Ch. 5: Service layer orchestration
         """
-        text_lower = text.lower()
-        
-        concept_patterns = [
-            # OOP Concepts
-            r'\b(object[- ]oriented programming)\b',
-            r'\b(class hierarchi(?:es|y))\b',
-            r'\b(multiple inheritance)\b',
-            r'\b(method resolution order)\b',
-            r'\b(abstract base class(?:es)?)\b',
-            
-            # Functional Programming
-            r'\b(functional programming)\b',
-            r'\b(higher[- ]order function(?:s)?)\b',
-            r'\b(pure function(?:s)?)\b',
-            r'\b(immutabl(?:e|ility))\b',
-            
-            # Async/Concurrency
-            r'\b(asynchronous programming)\b',
-            r'\b(concurrent execution)\b',
-            r'\b(parallel processing)\b',
-            r'\b(event loop)\b',
-            r'\b(coroutine(?:s)?)\b',
-            
-            # Architecture
-            r'\b(microservices architecture)\b',
-            r'\b(domain[- ]driven design)\b',
-            r'\b(event[- ]driven architecture)\b',
-            r'\b(service[- ]oriented architecture)\b',
-            r'\b(repository pattern)\b',
-            r'\b(dependency injection)\b',
-            
-            # Data Structures
-            r'\b(data structure(?:s)?)\b',
-            r'\b(hash table(?:s)?)\b',
-            r'\b(linked list(?:s)?)\b',
-            r'\b(binary tree(?:s)?)\b',
-            
-            # General Programming
-            r'\b(design pattern(?:s)?)\b',
-            r'\b(code organization)\b',
-            r'\b(best practice(?:s)?)\b',
-            r'\b(error handling)\b',
-            r'\b(exception handling)\b',
-            r'\b(type system)\b',
-            r'\b(memory management)\b',
-        ]
-        
-        concepts = []
-        for pattern in concept_patterns:
-            matches = re.finditer(pattern, text_lower)
-            for match in matches:
-                concept = match.group(1)
-                if concept not in concepts:
-                    concepts.append(concept)
-                if len(concepts) >= max_concepts:
-                    return concepts
-        
-        return concepts[:max_concepts]
+        return self.extractor.extract_concepts(text, top_n=max_concepts)
     
     def generate_summary(self, text: str, title: str, chapter_num: int) -> str:
         """
-        Generate a summary for the chapter.
+        Generate an extractive summary for the chapter using Summa TextRank.
         
-        Uses heuristics to extract key sentences and topics.
-        For better summaries, integrate with LLM API.
+        Replaced basic heuristics (first 3 sentences) with Summa statistical summarization.
+        Preserves context and works across ANY domain.
         
         Args:
             text: Chapter text content
@@ -366,30 +223,22 @@ class UniversalMetadataGenerator:
             chapter_num: Chapter number
             
         Returns:
-            Generated summary string
+            Generated summary string (20% of original text)
+            
+        Document References:
+            - DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN Part 1.3: Replace summarization heuristics
+            - PYTHON_GUIDELINES Ch. 8: Error handling with EAFP
         """
-        # Extract first few paragraphs (likely intro/overview)
-        paragraphs = [p.strip() for p in text.split('\n\n') if len(p.strip()) > 100]
+        try:
+            summary = self.extractor.generate_summary(text, ratio=0.2)
+            if summary:
+                return summary
+        except Exception:
+            # Fallback for very short text that can't be summarized
+            pass
         
-        if not paragraphs:
-            return f"Chapter {chapter_num}: {title}"
-        
-        # Take first substantial paragraph as base
-        first_para = paragraphs[0]
-        
-        # Limit to reasonable summary length
-        sentences = first_para.split('. ')
-        summary_sentences = sentences[:3]  # First 3 sentences
-        
-        summary = '. '.join(summary_sentences)
-        if not summary.endswith('.'):
-            summary += '.'
-        
-        # Ensure reasonable length
-        if len(summary) > 500:
-            summary = summary[:497] + '...'
-        
-        return summary
+        # Fallback: return chapter title
+        return f"Chapter {chapter_num}: {title}"
     
     def _validate_chapter_ranges(self, chapters: List[Tuple[int, str, int, int]]) -> None:
         """
