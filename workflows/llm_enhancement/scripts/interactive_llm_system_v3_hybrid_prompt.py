@@ -42,15 +42,6 @@ from workflows.llm_enhancement.scripts.metadata_extraction_system import (
     MetadataExtractionService
 )
 
-# Import book taxonomy for intelligent cascading selection
-try:
-    # Book taxonomy will be imported locally where needed
-    from workflows.taxonomy_setup.scripts import book_taxonomy  # noqa: F401 - Checked for availability
-    TAXONOMY_AVAILABLE = True
-except ImportError:
-    TAXONOMY_AVAILABLE = False
-    print("Warning: book_taxonomy.py not available - cascading logic disabled")
-
 # Import LLM integration
 import os
 
@@ -154,70 +145,6 @@ def _extract_concepts_from_text(text: str) -> List[str]:
     
     # Limit capitalized terms to avoid noise (max 10 per plan)
     return found_concepts + capitalized[:10]
-
-
-def _prefilter_books_by_taxonomy(
-    orchestrator,
-    guideline_text: str,
-    max_books: int = 10
-) -> List[str]:
-    """Pre-filter books using taxonomy before sending to LLM.
-    
-    Per REFACTORING_PLAN.md section 1.2:
-    - Reduces token usage by ~40% by filtering books before Phase 1
-    - Uses book_taxonomy.py scoring for intelligent selection
-    - Matches books to extracted concepts from guideline text
-    
-    Args:
-        orchestrator: AnalysisOrchestrator instance with metadata_service
-        guideline_text: Text to extract concepts from
-        max_books: Maximum number of books to return
-        
-    Returns:
-        List of book titles (strings) to include in LLM analysis
-        
-    Example:
-        >>> books = _prefilter_books_by_taxonomy(
-        ...     orchestrator,
-        ...     "This chapter covers decorators",
-        ...     max_books=5
-        ... )
-        >>> "Fluent Python 2nd" in books
-        True
-    """
-    # Extract concepts from the guideline text
-    concepts = _extract_concepts_from_text(guideline_text)
-    concept_set = set(concepts)
-    
-    # Use book_taxonomy to score and rank books
-    try:
-        # Import book_taxonomy scoring function
-        from workflows.taxonomy_setup.scripts.book_taxonomy import score_books_for_concepts, ALL_BOOKS
-        
-        # If no concepts found, return top-ranked books by default
-        if not concept_set:
-            # Return first N books from ALL_BOOKS as fallback
-            return [book.book_name for book in ALL_BOOKS[:max_books]]
-        
-        # Score all books based on concept relevance
-        scored_books = score_books_for_concepts(concept_set)
-        
-        # Take top N books
-        top_books = [book_name for book_name, score in scored_books[:max_books]]
-        
-        return top_books
-        
-    except Exception as e:
-        # Fallback: Return all books if taxonomy scoring fails
-        print(f"Warning: Taxonomy scoring failed ({e}), using all books")
-        
-        # Get all book titles from metadata service
-        if hasattr(orchestrator, '_metadata_service'):
-            metadata = orchestrator._metadata_service.books_metadata
-            all_titles = [meta.get('title', '') for meta in metadata.values()]
-            return all_titles[:max_books]
-        
-        return []
 
 
 # ============================================================================
@@ -372,23 +299,8 @@ Prioritize books that provide the most direct, substantial coverage of this chap
         print(f"COMPREHENSIVE LLM ANALYSIS: Chapter {chapter_num} - {chapter_title}")
         print(f"{'='*80}")
         
-        # Sprint 1: Pre-filter books using taxonomy (40% token savings)
-        print("\n🔍 PRE-FILTERING: Taxonomy-based book selection")
-        print("-" * 40)
-        filtered_book_titles = _prefilter_books_by_taxonomy(
-            self, 
-            chapter_full_text, 
-            max_books=10
-        )
-        print(f"Filtered to {len(filtered_book_titles)} most relevant books from taxonomy")
-        
-        # Build books metadata (only for filtered books)
+        # Build books metadata (all books - using data-driven concept taxonomy)
         books_metadata = self._build_books_metadata_only()
-        # Filter metadata to only include pre-selected books
-        books_metadata = [
-            meta for meta in books_metadata 
-            if meta.get('title', '') in filtered_book_titles
-        ]
         
         # Phase 1: LLM reads chapter, extracts concepts, identifies relevant books
         print("\n📋 PHASE 1: Concept Extraction & Book Identification")
@@ -1262,56 +1174,42 @@ Prioritize books that provide the most direct, substantial coverage of this chap
         concepts: List[str],
         concept_mapping: Dict
     ) -> List[str]:
-        """Get recommended books using taxonomy or fallback to concept mapping.
+        """Get recommended books from concept mapping.
+        
+        Note: Previously used hardcoded book_taxonomy.py. Now uses data-driven
+        concept mapping from generate_concept_taxonomy.py (new system).
         
         Args:
-            concepts: List of concepts to match
+            concepts: List of concepts to match (for backward compatibility)
             concept_mapping: Dict mapping concepts to matched books/pages
             
         Returns:
-            List of recommended book names
+            List of recommended book names from concept mapping
         """
-        try:
-            from workflows.taxonomy_setup.scripts.book_taxonomy import get_recommended_books
-            concept_set = set(concepts)
-            return get_recommended_books(
-                concept_set,
-                min_relevance=0.3,
-                include_cascades=True,
-                max_books=12
-            )
-        except Exception:
-            # Fallback: use all books from concept_mapping
-            return list(concept_mapping.keys())[:12]
+        # Use all books from concept_mapping (data-driven approach)
+        return list(concept_mapping.keys())[:12]
     
     def _calculate_request_priority(
         self,
         matched_concepts: set,
         total_concepts: int,
-        book_name: str
+        book_name: str  # noqa: ARG002 - kept for API compatibility
     ) -> int:
         """Calculate priority for a content request.
         
         Args:
             matched_concepts: Set of concepts matched in this book
             total_concepts: Total number of concepts being searched
-            book_name: Name of the book
+            book_name: Name of the book (kept for API compatibility)
             
         Returns:
-            Priority score (1-5)
+            Priority score (1-5) based on match strength
         """
         match_strength = len(matched_concepts) / max(total_concepts, 1)
         base_priority = min(5, int(match_strength * 5) + 1)
         
-        # Adjust by book tier if taxonomy available
-        try:
-            from workflows.taxonomy_setup.scripts.book_taxonomy import BOOK_REGISTRY
-            if book_name in BOOK_REGISTRY:
-                tier = BOOK_REGISTRY[book_name].tier.value
-                if "Architecture" in tier:
-                    base_priority = min(5, base_priority + 1)
-        except Exception:
-            pass
+        # Priority is purely based on concept match strength (data-driven)
+        # No hardcoded tier adjustments
         
         return base_priority
     

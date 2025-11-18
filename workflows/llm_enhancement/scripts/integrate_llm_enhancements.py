@@ -21,6 +21,7 @@ import os
 import logging
 import traceback
 import sys
+import argparse
 from pathlib import Path
 from typing import Dict, List, Tuple, Optional
 from datetime import datetime
@@ -86,9 +87,10 @@ except ImportError as e:
 # Global orchestrator (singleton pattern for efficiency)
 _orchestrator = None
 
-REPO_ROOT = Path(__file__).parent.parent
-GUIDELINES_FILE = REPO_ROOT / "guidelines" / "PYTHON_GUIDELINES_Learning_Python_Ed6.md"
-JSON_DIR = REPO_ROOT / "data" / "textbooks_json"
+REPO_ROOT = Path(__file__).parent.parent.parent.parent
+GUIDELINES_FILE = REPO_ROOT / "workflows" / "base_guideline_generation" / "output" / "chapter_summaries" / "PYTHON_GUIDELINES_Learning_Python_Ed6.md"
+JSON_DIR = REPO_ROOT / "workflows" / "pdf_to_json" / "output" / "textbooks_json"
+TAXONOMY_DATA = None  # Will be loaded from --taxonomy argument
 
 # Regex pattern constants (to avoid duplication)
 CHAPTER_TITLE_PATTERN = r'## Chapter \d+:\s*(.+)'
@@ -211,6 +213,22 @@ def enhance_chapter_summary_with_llm(chapter_content: str, chapter_num: int) -> 
     title_match = re.search(CHAPTER_TITLE_PATTERN, chapter_content)
     chapter_title = title_match.group(1) if title_match else f"Chapter {chapter_num}"
     
+    # Build taxonomy context if available
+    taxonomy_context = ""
+    if TAXONOMY_DATA and 'tiers' in TAXONOMY_DATA:
+        taxonomy_context = "\n\nTAXONOMY STRUCTURE (concept hierarchy and relationships):\n"
+        for tier_name, tier_data in TAXONOMY_DATA['tiers'].items():
+            if isinstance(tier_data, dict):
+                priority = tier_data.get('priority', '?')
+                concepts = tier_data.get('concepts', [])
+                if concepts:
+                    taxonomy_context += f"\n{tier_name.title()} (Priority {priority}):\n"
+                    taxonomy_context += f"  Concepts: {', '.join(concepts[:10])}"
+                    if len(concepts) > 10:
+                        taxonomy_context += f" ... ({len(concepts)} total)"
+                    taxonomy_context += "\n"
+        taxonomy_context += "\nUse this taxonomy to identify which tier this chapter's concepts belong to and suggest appropriate cross-references within the same or related tiers.\n"
+    
     prompt = f"""
 You are enhancing a Python education document chapter summary. 
 
@@ -218,7 +236,7 @@ CURRENT SUMMARY:
 {current_summary}
 
 CHAPTER: {chapter_num} - {chapter_title}
-
+{taxonomy_context}
 TASK: Enhance this summary by adding 2-3 specific cross-references to related Python concepts that would appear in other parts of Learning Python or companion books. 
 
 GUIDELINES:
@@ -227,6 +245,7 @@ GUIDELINES:
 3. Add 1-2 practical applications or real-world connections
 4. Maintain the academic tone and reference style
 5. Keep the same footnote reference at the end
+6. If taxonomy is provided, use it to identify concept relationships and suggest cross-references within appropriate tiers
 
 ENHANCED SUMMARY:
 """
@@ -750,6 +769,50 @@ def main():
     return 0
 
 if __name__ == "__main__":
+    # Parse command-line arguments
+    parser = argparse.ArgumentParser(description='Integrate LLM enhancements with taxonomy-aware cross-referencing')
+    parser.add_argument(
+        '--guideline',
+        type=str,
+        help='Path to the base guideline file to enhance'
+    )
+    parser.add_argument(
+        '--taxonomy',
+        type=str,
+        help='Path to taxonomy JSON file (defines concept hierarchy and relationships)'
+    )
+    args = parser.parse_args()
+    
+    # Update global paths if provided
+    global GUIDELINES_FILE, TAXONOMY_DATA
+    
+    if args.guideline:
+        GUIDELINES_FILE = Path(args.guideline)
+        if not GUIDELINES_FILE.exists():
+            print(f"ERROR: Guideline file not found: {GUIDELINES_FILE}")
+            exit(1)
+    
+    # Load taxonomy if provided
+    TAXONOMY_DATA = None
+    if args.taxonomy:
+        taxonomy_path = Path(args.taxonomy)
+        if not taxonomy_path.exists():
+            print(f"ERROR: Taxonomy file not found: {taxonomy_path}")
+            exit(1)
+        
+        try:
+            with open(taxonomy_path, 'r', encoding='utf-8') as f:
+                TAXONOMY_DATA = json.load(f)
+            print(f"✓ Loaded taxonomy: {taxonomy_path.name}")
+            
+            # Extract tier information for display
+            if 'tiers' in TAXONOMY_DATA:
+                tier_count = len(TAXONOMY_DATA['tiers'])
+                print(f"  Tiers: {', '.join(TAXONOMY_DATA['tiers'].keys())} ({tier_count} total)")
+        except Exception as e:
+            print(f"ERROR: Failed to load taxonomy: {e}")
+            exit(1)
+    
     # Display startup banner
     print("\n" + "="*70)
     print("  LLM Cross-Referencing System - V2 Interactive Metadata-First")
@@ -761,6 +824,8 @@ if __name__ == "__main__":
     print(f"  Temperature: {os.getenv('LLM_TEMPERATURE', '0.2')}")
     print(f"  Max Tokens: {os.getenv('LLM_MAX_TOKENS', '4096')}")
     print(f"  Target: {GUIDELINES_FILE.name}")
+    if TAXONOMY_DATA:
+        print(f"  Taxonomy: {taxonomy_path.name}")
     print("="*70 + "\n")
     
     exit_code = main()

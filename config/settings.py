@@ -65,40 +65,6 @@ class LLMConfig:
 
 
 @dataclass
-class TaxonomyConfig:
-    """Book taxonomy settings.
-    
-    Environment Variables:
-        TAXONOMY_MIN_RELEVANCE: Minimum relevance score 0.0-1.0 (default: 0.3)
-        TAXONOMY_MAX_BOOKS: Maximum books to send to LLM (default: 10)
-        TAXONOMY_CASCADE_DEPTH: Cascading depth for book relationships (default: 1)
-        TAXONOMY_ENABLE_PREFILTER: Enable pre-filtering before Phase 1 (default: true)
-    """
-    min_relevance: float = field(default_factory=lambda: float(os.getenv("TAXONOMY_MIN_RELEVANCE", "0.3")))
-    max_books: int = field(default_factory=lambda: int(os.getenv("TAXONOMY_MAX_BOOKS", "10")))
-    cascade_depth: int = field(default_factory=lambda: int(os.getenv("TAXONOMY_CASCADE_DEPTH", "1")))
-    enable_prefilter: bool = field(default_factory=lambda: os.getenv("TAXONOMY_ENABLE_PREFILTER", "true").lower() == "true")
-    
-    def __post_init__(self):
-        """Validate configuration."""
-        if not 0.0 <= self.min_relevance <= 1.0:
-            raise ValueError(
-                f"TAXONOMY_MIN_RELEVANCE={self.min_relevance} must be between 0.0 and 1.0"
-            )
-        
-        if self.max_books < 1 or self.max_books > 14:
-            raise ValueError(
-                f"TAXONOMY_MAX_BOOKS={self.max_books} must be between 1 and 14 "
-                "(14 = total books in library)"
-            )
-        
-        if self.cascade_depth < 1 or self.cascade_depth > 3:
-            raise ValueError(
-                f"TAXONOMY_CASCADE_DEPTH={self.cascade_depth} must be between 1 and 3"
-            )
-
-
-@dataclass
 class PromptConstraints:
     """JSON response field constraints (Acceptance Criteria AC-2).
     
@@ -252,7 +218,6 @@ class Settings:
         test_settings.llm.max_tokens = 4096
     """
     llm: LLMConfig = field(default_factory=LLMConfig)
-    taxonomy: TaxonomyConfig = field(default_factory=TaxonomyConfig)
     constraints: PromptConstraints = field(default_factory=PromptConstraints)
     retry: RetryConfig = field(default_factory=RetryConfig)
     cache: CacheConfig = field(default_factory=CacheConfig)
@@ -263,18 +228,8 @@ class Settings:
         
         Validates relationships between different config sections.
         """
-        # Ensure max_books doesn't exceed what can fit in a response
-        estimated_tokens_per_book = 500  # Rough estimate for book metadata
-        total_metadata_tokens = self.taxonomy.max_books * estimated_tokens_per_book
-        
-        if total_metadata_tokens > self.llm.max_tokens * 0.5:
-            import warnings
-            warnings.warn(
-                f"TAXONOMY_MAX_BOOKS={self.taxonomy.max_books} may cause token issues. "
-                f"Estimated metadata tokens: {total_metadata_tokens}, "
-                f"max_tokens limit: {self.llm.max_tokens}. "
-                f"Consider reducing TAXONOMY_MAX_BOOKS to {self.llm.max_tokens // 1000} or less."
-            )
+        # Cross-config validation (if needed in future)
+        pass
     
     def display(self):
         """Display current configuration (useful for debugging)."""

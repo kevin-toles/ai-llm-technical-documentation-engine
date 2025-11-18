@@ -1930,17 +1930,28 @@ if __name__ == "__main__":
             
             # Extract all concepts from all tiers
             loaded_concepts = []
-            for tier_name, tier_data in taxonomy_data.items():
-                if isinstance(tier_data, dict) and 'concepts' in tier_data:
-                    loaded_concepts.extend(tier_data['concepts'])
-                elif isinstance(tier_data, list):
-                    # Handle direct list of concepts
-                    loaded_concepts.extend(tier_data)
+            
+            # Handle new taxonomy structure with 'tiers' key
+            if 'tiers' in taxonomy_data:
+                tier_data = taxonomy_data['tiers']
+                for tier_name, tier_content in tier_data.items():
+                    if isinstance(tier_content, dict) and 'concepts' in tier_content:
+                        loaded_concepts.extend(tier_content['concepts'])
+                        print(f"  ✓ Loaded {len(tier_content['concepts'])} concepts from '{tier_name}' tier")
+                    elif isinstance(tier_content, list):
+                        loaded_concepts.extend(tier_content)
+            # Handle legacy flat structure
+            else:
+                for tier_name, tier_data in taxonomy_data.items():
+                    if isinstance(tier_data, dict) and 'concepts' in tier_data:
+                        loaded_concepts.extend(tier_data['concepts'])
+                    elif isinstance(tier_data, list):
+                        loaded_concepts.extend(tier_data)
             
             if loaded_concepts:
                 # Override the global KEY_CONCEPTS
                 KEY_CONCEPTS = loaded_concepts  # type: ignore
-                print(f"✓ Loaded {len(loaded_concepts)} concepts from taxonomy")
+                print(f"✓ Total: {len(loaded_concepts)} concepts loaded from taxonomy")
             else:
                 print(f"⚠️  Warning: No concepts found in taxonomy file, using defaults")
         

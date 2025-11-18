@@ -26,8 +26,8 @@
                 <button class="tab" data-tab="tab2">2. Metadata Extract</button>
                 <button class="tab" data-tab="tab3">3. Metadata Enrich</button>
                 <button class="tab" data-tab="tab4">4. Cache Merge</button>
-                <button class="tab" data-tab="tab5">5. Base Guideline</button>
-                <button class="tab" data-tab="tab6">6. Taxonomy</button>
+                <button class="tab" data-tab="tab5">5. Taxonomy</button>
+                <button class="tab" data-tab="tab6">6. Base Guideline</button>
                 <button class="tab" data-tab="tab7">7. LLM Enhance</button>
             </div>
 
@@ -99,7 +99,7 @@
                 fileCount.textContent = `${data.files.length} files`;
                 
                 // Special handling for Base Guideline tab (requires taxonomy selection)
-                if (tabId === 'tab5' && data.taxonomy_files) {
+                if (tabId === 'tab6' && data.taxonomy_files) {
                     container.innerHTML = `
                         <div class="config-section" style="margin-bottom: 20px;">
                             <label class="config-label">Select Taxonomy (for cross-referencing):</label>
@@ -165,6 +165,29 @@
                 } else if (data.supports_tiers && data.tiers) {
                     // Taxonomy tab with tier builder (Trello-style drag & drop)
                     container.innerHTML = `
+                        <div class="taxonomy-guide">
+                            <h3>📚 Understanding the Three-Tier Taxonomy</h3>
+                            <div class="tier-descriptions">
+                                <div class="tier-desc">
+                                    <strong>🏛️ Architecture Spine (Priority 1) - Required</strong>
+                                    <p>Foundational concepts that form the structural backbone of the domain. These are high-level patterns, principles, and architectural decisions that guide everything else. Think: "What are the core mental models needed to understand this topic?"</p>
+                                    <em>Examples: Design patterns, system architecture, core paradigms</em>
+                                </div>
+                                <div class="tier-desc">
+                                    <strong>⚙️ Implementation (Priority 2) - Required</strong>
+                                    <p>Practical techniques and concrete implementations that build upon architectural concepts. These are the "how-to" specifics: APIs, algorithms, data structures, and coding techniques that developers use daily.</p>
+                                    <em>Examples: Language syntax, standard libraries, common algorithms</em>
+                                </div>
+                                <div class="tier-desc tier-optional">
+                                    <strong>✨ Engineering Practices (Priority 3) - Optional</strong>
+                                    <p>Professional methodologies, workflows, and best practices for building quality software. These are the soft skills and processes that separate hobbyists from professionals.</p>
+                                    <em>Examples: Testing strategies, code review, refactoring, team collaboration</em>
+                                </div>
+                            </div>
+                            <div class="tier-relationship">
+                                <p><strong>How they relate:</strong> Architecture provides the "why," Implementation provides the "how," and Practices provide the "right way." The first two tiers are required; Engineering Practices can be omitted if not relevant to your taxonomy.</p>
+                            </div>
+                        </div>
                         <div class="tier-builder">
                             <div class="available-files">
                                 <h3>Available Files</h3>
@@ -382,7 +405,7 @@
                 return;
             }
             
-            // For Base Guideline tab (tab5), clear dropdowns
+            // For Base Guideline tab (tab6), clear dropdowns
             const bookSelect = document.getElementById(`${tabId}-book`);
             if (bookSelect) {
                 bookSelect.value = '';
@@ -445,8 +468,8 @@
                 
                 llmConfig = { guideline, taxonomy, provider, model };
             } 
-            // Check if this is Base Guideline tab (tab5)
-            else if (tabId === 'tab5') {
+            // Check if this is Base Guideline tab (tab6)
+            else if (tabId === 'tab6') {
                 const bookSelect = document.getElementById(`${tabId}-book`);
                 const taxonomySelect = document.getElementById(`${tabId}-taxonomy`);
                 
@@ -496,7 +519,7 @@
                 payload = { tiers: tierData };
             } else {
                 payload = { files: selectedFiles };
-                // Add taxonomy if selected (for tab5)
+                // Add taxonomy if selected (for tab6)
                 if (taxonomyFile) {
                     payload.taxonomy = taxonomyFile;
                 }
