@@ -25,7 +25,6 @@ import re
 import sys
 from pathlib import Path
 from typing import List, Dict, Any, Tuple
-from collections import Counter
 
 # Add project root to path for config access
 PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
@@ -33,6 +32,13 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 # Configuration management (12-Factor App pattern)
 from config.settings import settings
+
+# Import StatisticalExtractor for domain-agnostic metadata extraction
+# Per DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN Part 1.4
+from workflows.metadata_extraction.scripts.adapters.statistical_extractor import StatisticalExtractor
+
+# Global extractor instance (initialized once, reused for all chapters)
+STATISTICAL_EXTRACTOR = StatisticalExtractor()
 
 # Book locations (simplified - all books now in textbooks_json_dir root)
 # Reference: Microservices Ch. 7 - Externalized configuration
@@ -53,308 +59,69 @@ BOOK_PATHS = {
     "Python Microservices Development.json": ""
 }
 
+# DEPRECATED: Hardcoded keyword list replaced by StatisticalExtractor
+# Per DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN Part 1.4
+# This function is kept for backward compatibility but no longer used
 def _get_python_keyword_list() -> List[str]:
-    """Return comprehensive list of Python and programming keywords to detect."""
-    return [
-        # Core language
-        'class', 'function', 'method', 'decorator', 'generator', 'iterator',
-        'closure', 'lambda', 'comprehension', 'exception', 'inheritance',
-        'module', 'package', 'import', 'namespace', 'scope', 'variable',
-        'type', 'object', 'attribute', 'property', 'descriptor',
-        'metaclass', 'protocol', 'interface', 'abstract', 'polymorphism',
-        'encapsulation', 'composition', 'mixin', 
-        
-        # Async/Concurrency
-        'threading', 'async', 'await', 'coroutine', 'asyncio',
-        'concurrent', 'parallel', 'multiprocessing',
-        
-        # I/O and Data
-        'file', 'io', 'stream', 'context manager',
-        'serialization', 'pickle', 'json', 'xml', 'csv', 'database',
-        'encoding', 'decoding', 'buffer',
-        
-        # Testing/Quality
-        'testing', 'unittest', 'pytest', 'debugging', 'profiling', 
-        'optimization', 'performance', 'benchmark',
-        
-        # Architecture/Design
-        'pattern', 'architecture', 'design', 'refactoring',
-        'microservice', 'api', 'rest', 'http', 'web', 'server',
-        'client', 'endpoint', 'route', 'middleware',
-        
-        # Data Structures
-        'data structure', 'algorithm', 'sorting', 'searching',
-        'list', 'dict', 'dictionary', 'set', 'tuple', 'string', 
-        'bytes', 'array', 'queue', 'stack', 'tree', 'graph', 
-        'hash', 'collection', 'sequence',
-        
-        # Types
-        'int', 'integer', 'float', 'bool', 'boolean', 'str',
-        'none', 'type hint', 'annotation', 'typing',
-        
-        # Advanced
-        'metaprogramming', 'reflection', 'introspection',
-        'bytecode', 'compilation', 'interpretation',
-        'memory management', 'garbage collection',
-        
-        # Common operations
-        'loop', 'iteration', 'recursion', 'conditional',
-        'expression', 'statement', 'operator', 'operand',
-        'assignment', 'comparison', 'logic', 'bitwise',
-        
-        # Error handling
-        'error', 'exception', 'traceback', 'assertion',
-        'validation', 'sanitization',
-        
-        # OOP specific
-        'constructor', 'destructor', 'instance', 'subclass',
-        'superclass', 'override', 'overload', 'static method',
-        'class method', 'instance method', 'property',
-        
-        # Functional
-        'map', 'filter', 'reduce', 'zip', 'enumerate',
-        'higher-order', 'immutable', 'pure function',
-    ]
-
-
-def _extract_capitalized_terms(text: str, existing_keywords: List[tuple]) -> List[tuple]:
-    """Extract frequently occurring capitalized terms from text."""
-    cap_pattern = r'\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+)*\b'
-    capitalized = re.findall(cap_pattern, text)
-    cap_counter = Counter(capitalized)
+    """
+    DEPRECATED: Return comprehensive list of Python and programming keywords.
     
-    existing_kw_set = {k[0] for k in existing_keywords}
-    cap_keywords = []
+    This function has been replaced by StatisticalExtractor's YAKE-based extraction.
+    The hardcoded keyword approach only worked for Python/software books.
     
-    for term, count in cap_counter.most_common(15):
-        if count >= 2 and len(term) > 3 and term.lower() not in existing_kw_set:
-            cap_keywords.append((term.lower(), count))
-    
-    return cap_keywords
-
-
-def _get_stop_words() -> set:
-    """Return set of common English stop words to filter out."""
-    return {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 
-            'to', 'for', 'of', 'with', 'by', 'from', 'up', 'about',
-            'into', 'through', 'during', 'before', 'after', 'above',
-            'below', 'between', 'under', 'again', 'further', 'then',
-            'once', 'here', 'there', 'when', 'where', 'why', 'how',
-            'all', 'both', 'each', 'few', 'more', 'most', 'other',
-            'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same',
-            'so', 'than', 'too', 'very', 'can', 'will', 'just', 'should'}
-
-
-def _extract_frequent_words(text_lower: str, existing_keywords: List[tuple]) -> List[tuple]:
-    """Extract frequently occurring words when few keywords found."""
-    stop_words = _get_stop_words()
-    words = re.findall(r'\b[a-z]{4,}\b', text_lower)
-    word_counter = Counter(w for w in words if w not in stop_words)
-    
-    existing_kw_set = {k[0] for k in existing_keywords}
-    freq_keywords = []
-    
-    for word, count in word_counter.most_common(20):
-        if count >= 3 and word not in existing_kw_set:
-            freq_keywords.append((word, count))
-    
-    return freq_keywords
+    Use extract_keywords_from_text() instead, which now uses domain-agnostic
+    statistical NLP that works across ANY domain (Python, biology, law, etc.).
+    """
+    return []  # Empty list - no longer used
 
 
 def extract_keywords_from_text(text: str, max_keywords: int = 15) -> List[str]:
     """
-    Extract meaningful keywords from chapter text.
+    Extract meaningful keywords from chapter text using statistical NLP.
     
-    Identifies technical terms, Python concepts, and key topics.
+    Replaced hardcoded Python keyword matching with YAKE unsupervised extraction.
+    Now works across ANY domain (Python, biology, law, construction, etc.).
+    
+    Args:
+        text: Chapter text content
+        max_keywords: Maximum number of keywords to return
+        
+    Returns:
+        List of keywords sorted by relevance (YAKE score)
+        
+    Document References:
+        - DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN Part 1.4: Metadata enrichment integration
+        - ARCHITECTURE_GUIDELINES Ch. 4: Adapter pattern for NLP libraries
     """
-    text_lower = text.lower()
-    
-    # Find Python/programming keywords in text
-    python_keywords = _get_python_keyword_list()
-    found_keywords = []
-    
-    for keyword in python_keywords:
-        count = text_lower.count(keyword)
-        if count >= 1:
-            found_keywords.append((keyword, count))
-    
-    # Sort by frequency
-    found_keywords.sort(key=lambda x: x[1], reverse=True)
-    
-    # Add capitalized terms (likely class names, concepts)
-    cap_keywords = _extract_capitalized_terms(text, found_keywords)
-    found_keywords.extend(cap_keywords)
-    
-    # Add frequent words if still few keywords
-    if len(found_keywords) < 5:
-        freq_keywords = _extract_frequent_words(text_lower, found_keywords)
-        found_keywords.extend(freq_keywords)
-    
-    # Return top keywords
-    return [kw[0] for kw in found_keywords[:max_keywords]]
+    keywords_with_scores = STATISTICAL_EXTRACTOR.extract_keywords(text, top_n=max_keywords)
+    return [keyword for keyword, score in keywords_with_scores]
 
 
-# Comprehensive list of technical concept patterns to detect
-CONCEPT_PATTERNS = [
-    # OOP Concepts
-    r'\b(object[- ]oriented programming)\b',
-    r'\b(class hierarchy)\b',
-    r'\b(inheritance)\b',
-    r'\b(polymorphism)\b',
-    r'\b(encapsulation)\b',
-    r'\b(multiple inheritance)\b',
-    r'\b(method resolution order)\b',
-    r'\b(abstract base class[es]*)\b',
-    
-    # Functional Programming
-    r'\b(functional programming)\b',
-    r'\b(higher[- ]order function[s]*)\b',
-    r'\b(first[- ]class function[s]*)\b',
-    r'\b(closure[s]*)\b',
-    r'\b(lambda function[s]*)\b',
-    
-    # Python Features
-    r'\b(list comprehension[s]*)\b',
-    r'\b(dict comprehension[s]*)\b',
-    r'\b(generator expression[s]*)\b',
-    r'\b(generator[s]*)\b',
-    r'\b(iterator[s]*)\b',
-    r'\b(decorator[s]*)\b',
-    r'\b(decorator pattern[s]*)\b',
-    r'\b(context manager[s]*)\b',
-    r'\b(special method[s]*)\b',
-    r'\b(magic method[s]*)\b',
-    r'\b(dunder method[s]*)\b',
-    r'\b(data model)\b',
-    r'\b(type hint[s]*)\b',
-    r'\b(type annotation[s]*)\b',
-    r'\b(duck typing)\b',
-    r'\b(dynamic typing)\b',
-    
-    # Async/Concurrency
-    r'\b(async[/ ]await)\b',
-    r'\b(coroutine[s]*)\b',
-    r'\b(asynchronous programming)\b',
-    r'\b(concurrency)\b',
-    r'\b(parallel processing)\b',
-    r'\b(threading)\b',
-    r'\b(multiprocessing)\b',
-    
-    # Architecture/Design
-    r'\b(design pattern[s]*)\b',
-    r'\b(architectural pattern[s]*)\b',
-    r'\b(dependency injection)\b',
-    r'\b(microservice[s]*)\b',
-    r'\b(service[- ]oriented architecture)\b',
-    r'\b(api design)\b',
-    r'\b(rest[ful]* api[s]*)\b',
-    r'\b(repository pattern)\b',
-    r'\b(factory pattern)\b',
-    r'\b(singleton pattern)\b',
-    
-    # Data Structures
-    r'\b(data structure[s]*)\b',
-    r'\b(linked list[s]*)\b',
-    r'\b(hash table[s]*)\b',
-    r'\b(binary tree[s]*)\b',
-    r'\b(graph[s]*)\b',
-    r'\b(queue[s]*)\b',
-    r'\b(stack[s]*)\b',
-    
-    # Testing/Debugging
-    r'\b(unit test[s]*)\b',
-    r'\b(integration test[s]*)\b',
-    r'\b(test[- ]driven development)\b',
-    r'\b(debugging)\b',
-    r'\b(profiling)\b',
-    
-    # Error Handling
-    r'\b(exception handling)\b',
-    r'\b(error handling)\b',
-    r'\b(exception[s]*)\b',
-    r'\b(try[- ]except)\b',
-    
-    # I/O and Data
-    r'\b(file handling)\b',
-    r'\b(file i[/]o)\b',
-    r'\b(input[/ ]output)\b',
-    r'\b(serialization)\b',
-    r'\b(deserialization)\b',
-    r'\b(json parsing)\b',
-    r'\b(xml processing)\b',
-    
-    # String/Text
-    r'\b(string manipulation)\b',
-    r'\b(regular expression[s]*)\b',
-    r'\b(text processing)\b',
-    r'\b(string formatting)\b',
-    
-    # Modules/Packages
-    r'\b(module[s]*)\b',
-    r'\b(package[s]*)\b',
-    r'\b(import system)\b',
-    r'\b(namespace[s]*)\b',
-]
-
-
-def _find_pattern_matches(text_lower: str) -> List[Tuple[str, int]]:
-    """Find all concept pattern matches in text."""
-    concept_counts = []
-    for pattern in CONCEPT_PATTERNS:
-        matches = re.findall(pattern, text_lower, re.IGNORECASE)
-        if matches:
-            concept = matches[0] if isinstance(matches[0], str) else matches[0][0]
-            count = len(matches)
-            if count >= 1:
-                concept_counts.append((concept.strip(), count))
-    return concept_counts
-
-
-def _extract_noun_phrases(text: str, existing_concepts: List[Tuple[str, int]]) -> List[Tuple[str, int]]:
-    """Extract noun phrases as fallback when few concepts found."""
-    noun_phrases = re.findall(r'\b([A-Z][a-z]+(?:\s+[a-z]+){0,2})\b', text)
-    phrase_counter = Counter(noun_phrases)
-    
-    additional_concepts = []
-    for phrase, count in phrase_counter.most_common(15):
-        if count >= 2 and len(phrase) > 3:
-            if not any(phrase.lower() in c[0].lower() for c in existing_concepts):
-                additional_concepts.append((phrase.lower(), count))
-    
-    return additional_concepts
-
-
-def _deduplicate_concepts(concept_counts: List[Tuple[str, int]], max_concepts: int) -> List[str]:
-    """Remove duplicates and return top concepts."""
-    concept_counts.sort(key=lambda x: x[1], reverse=True)
-    
-    seen = set()
-    unique_concepts = []
-    for concept, _count in concept_counts:
-        concept_clean = concept.strip().lower()
-        if concept_clean not in seen:
-            seen.add(concept_clean)
-            unique_concepts.append(concept)
-    
-    return unique_concepts[:max_concepts]
+# DEPRECATED: Hardcoded concept patterns replaced by StatisticalExtractor
+# Per DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN Part 1.4
+# This list is kept for documentation but no longer used
+CONCEPT_PATTERNS = []  # Empty list - no longer used
 
 
 def extract_concepts_from_text(text: str, max_concepts: int = 10) -> List[str]:
     """
-    Extract key concepts discussed in the chapter.
+    Extract key concepts from chapter text using TextRank.
     
-    Focuses on multi-word technical phrases and important topics.
+    Replaced 70+ hardcoded regex patterns with Summa statistical extraction.
+    Now works across ANY domain without hardcoded domain knowledge.
+    
+    Args:
+        text: Chapter text content
+        max_concepts: Maximum number of concepts to return
+        
+    Returns:
+        List of concepts (single-word terms)
+        
+    Document References:
+        - DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN Part 1.4: Remove hardcoded patterns
+        - ARCHITECTURE_GUIDELINES Ch. 5: Service layer orchestration
     """
-    text_lower = text.lower()
-    
-    # Find pattern-based concepts
-    concept_counts = _find_pattern_matches(text_lower)
-    
-    # Fallback to noun phrases if few concepts found
-    if len(concept_counts) < 3:
-        concept_counts.extend(_extract_noun_phrases(text, concept_counts))
-    
-    return _deduplicate_concepts(concept_counts, max_concepts)
+    return STATISTICAL_EXTRACTOR.extract_concepts(text, top_n=max_concepts)
 
 
 def _extract_sample_text(chapter_pages: List[Dict[str, Any]], num_pages: int = 5) -> str:
