@@ -349,8 +349,8 @@ def main():
     parser.add_argument(
         "--output",
         type=str,
-        required=True,
-        help="Output filename (e.g., 'python_taxonomy.json')"
+        required=False,
+        help="Output filename (optional - auto-generated from source book if not provided)"
     )
     
     args = parser.parse_args()
@@ -361,6 +361,24 @@ def main():
     except json.JSONDecodeError as e:
         print(f"❌ Error parsing --tiers JSON: {e}")
         return 1
+    
+    # Auto-generate output filename if not provided
+    if not args.output:
+        # Get first book from tiers to derive taxonomy name
+        all_books = []
+        for books in tier_books.values():
+            all_books.extend(books)
+        
+        if not all_books:
+            print("❌ Error: No books specified in tiers")
+            return 1
+        
+        # Use first book's name for taxonomy filename
+        # makinggames.json → makinggames_taxonomy.json
+        first_book = all_books[0]
+        base_name = first_book.replace('.json', '')
+        args.output = f"{base_name}_taxonomy.json"
+        print(f"📝 Auto-generated output filename: {args.output}")
     
     # Validate output filename
     if not args.output.endswith('.json'):
