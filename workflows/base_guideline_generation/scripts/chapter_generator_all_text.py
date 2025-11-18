@@ -17,6 +17,8 @@ Fixes vs prior generator:
 
 import json
 import re
+import sys
+import argparse
 from pathlib import Path
 from textwrap import dedent
 from typing import Dict, List, Tuple, Any, Optional, Set
@@ -339,8 +341,21 @@ TPM_MAX_TARGET = 0.65
 # Helpers for JSON
 # -------------------------------
 
-def load_json_book(filename: str) -> Dict[str, Any]:
-    """Load JSON from either Engineering Practices or Architecture directory."""
+def load_json_book(filename: str, custom_path: Optional[Path] = None) -> Dict[str, Any]:
+    """
+    Load JSON from either Engineering Practices or Architecture directory, or custom path.
+    
+    Args:
+        filename: Book filename (without .json extension)
+        custom_path: Optional full path to JSON file (overrides directory search)
+    """
+    # If custom path provided, use it directly
+    if custom_path:
+        if custom_path.exists():
+            with open(custom_path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        raise FileNotFoundError(f"Custom path not found: {custom_path}")
+    
     # Try Engineering Practices first
     path = JSON_DIR_ENGINEERING / f"{filename}.json"
     if path.exists():
@@ -1801,9 +1816,12 @@ def _write_output_file(all_docs: List[str], book_name: str) -> None:
     print(f"{'='*66}")
 
 
-def main():
+def main(custom_input_path: Optional[Path] = None):
     """
     Main orchestrator for generating comprehensive Python guidelines.
+    
+    Args:
+        custom_input_path: Optional path to input JSON file (overrides PRIMARY_BOOK directory search)
     
     Refactored from complexity 20 → <10 by extracting helper functions.
     Follows Service Layer pattern (Architecture Patterns Ch. 4).
@@ -1825,7 +1843,7 @@ def main():
     print("="*66)
 
     # Step 1: Load primary and companion books
-    primary = load_json_book(PRIMARY_BOOK)
+    primary = load_json_book(PRIMARY_BOOK, custom_path=custom_input_path)
     companions = _load_companion_books(ALL_BOOKS)
 
     # Step 2: Build document header
@@ -1863,4 +1881,71 @@ def main():
     _write_output_file(all_docs, PRIMARY_BOOK)
 
 if __name__ == "__main__":
-    main()
+    # Parse command-line arguments
+    parser = argparse.ArgumentParser(
+        description="Generate comprehensive guidelines from textbook JSON"
+    )
+    parser.add_argument(
+        'input_file',
+        nargs='?',
+        help='Path to input JSON file (e.g., workflows/pdf_to_json/output/textbooks_json/makinggames.json)'
+    )
+    parser.add_argument(
+        '--taxonomy',
+        type=str,
+        help='Path to taxonomy JSON file to use for cross-referencing (e.g., workflows/taxonomy_generation/output/python_taxonomy.json)'
+    )
+    args = parser.parse_args()
+    
+    # If input file provided, use it; otherwise use default PRIMARY_BOOK
+    custom_path = None
+    if args.input_file:
+        custom_path = Path(args.input_file)
+        
+        # Extract book name from filename (remove .json extension)
+        book_name = custom_path.stem
+        
+        # Update PRIMARY_BOOK global for this run
+        PRIMARY_BOOK = book_name  # type: ignore
+        
+        print(f"Processing book: {book_name}")
+        print(f"Input file: {custom_path}")
+        
+        if not custom_path.exists():
+            print(f"Error: File not found: {custom_path}")
+            sys.exit(1)
+    
+    # If taxonomy file provided, load it and override KEY_CONCEPTS
+    if args.taxonomy:
+        taxonomy_path = Path(args.taxonomy)
+        print(f"Loading taxonomy from: {taxonomy_path}")
+        
+        if not taxonomy_path.exists():
+            print(f"Error: Taxonomy file not found: {taxonomy_path}")
+            sys.exit(1)
+        
+        try:
+            with open(taxonomy_path, 'r', encoding='utf-8') as f:
+                taxonomy_data = json.load(f)
+            
+            # Extract all concepts from all tiers
+            loaded_concepts = []
+            for tier_name, tier_data in taxonomy_data.items():
+                if isinstance(tier_data, dict) and 'concepts' in tier_data:
+                    loaded_concepts.extend(tier_data['concepts'])
+                elif isinstance(tier_data, list):
+                    # Handle direct list of concepts
+                    loaded_concepts.extend(tier_data)
+            
+            if loaded_concepts:
+                # Override the global KEY_CONCEPTS
+                KEY_CONCEPTS = loaded_concepts  # type: ignore
+                print(f"✓ Loaded {len(loaded_concepts)} concepts from taxonomy")
+            else:
+                print(f"⚠️  Warning: No concepts found in taxonomy file, using defaults")
+        
+        except Exception as e:
+            print(f"Error loading taxonomy: {e}")
+            sys.exit(1)
+    
+    main(custom_input_path=custom_path)

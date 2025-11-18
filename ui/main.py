@@ -19,22 +19,22 @@ app = FastAPI(title="LLM Document Enhancer")
 # Store workflow execution status
 workflow_status = {}
 
+# Base paths
+UI_DIR = Path(__file__).parent
+BASE_DIR = UI_DIR.parent
+WORKFLOWS_DIR = BASE_DIR / "workflows"
+
 # Mount static files
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory=str(UI_DIR / "static")), name="static")
 
 # Setup templates
-templates = Jinja2Templates(directory="templates")
-
-# Base paths
-BASE_DIR = Path(__file__).parent.parent
-WORKFLOWS_DIR = BASE_DIR / "workflows"
-INPUTS_DIR = BASE_DIR / "inputs"
+templates = Jinja2Templates(directory=str(UI_DIR / "templates"))
 
 # Define workflow configurations
 WORKFLOWS = {
     "tab1": {
         "name": "PDF to JSON",
-        "input_dir": INPUTS_DIR / "pdfs",
+        "input_dir": WORKFLOWS_DIR / "pdf_to_json" / "input",
         "input_ext": ".pdf",
         "output_dir": WORKFLOWS_DIR / "pdf_to_json" / "output",
         "script": WORKFLOWS_DIR / "pdf_to_json" / "scripts" / "convert_pdf_to_json.py"
@@ -66,14 +66,13 @@ WORKFLOWS = {
         "input_ext": ".json",
         "output_dir": WORKFLOWS_DIR / "base_guideline_generation" / "output",
         "script": WORKFLOWS_DIR / "base_guideline_generation" / "scripts" / "chapter_generator_all_text.py",
-        "requires_taxonomy": True,
-        "batch_only": True  # This script processes all books at once, not per-file
+        "requires_taxonomy": True
     },
     "tab6": {
         "name": "Taxonomy Setup",
         "input_dir": WORKFLOWS_DIR / "pdf_to_json" / "output" / "textbooks_json",
         "input_ext": ".json",
-        "output_dir": INPUTS_DIR / "taxonomy",
+        "output_dir": WORKFLOWS_DIR / "taxonomy_setup" / "output",
         "script": None  # To be created
     },
     "tab7": {
@@ -112,6 +111,18 @@ async def get_files(tab_id: str):
     # Get all files with matching extension
     files = [f.name for f in input_dir.glob(f"*{workflow['input_ext']}")]
     
+    # Special handling for Base Guideline tab - include taxonomy files
+    if tab_id == "tab5":
+        taxonomy_dir = WORKFLOWS_DIR / "taxonomy_setup" / "output"
+        taxonomy_files = []
+        if taxonomy_dir.exists():
+            taxonomy_files = [f.name for f in taxonomy_dir.glob("*.json")]
+        return {
+            "files": sorted(files),
+            "input_dir": str(input_dir),
+            "taxonomy_files": sorted(taxonomy_files)
+        }
+    
     # Special handling for taxonomy tab - return with tier support
     if tab_id == "tab6":
         return {
@@ -119,15 +130,15 @@ async def get_files(tab_id: str):
             "input_dir": str(input_dir),
             "supports_tiers": True,
             "tiers": [
-                {"id": "architecture", "name": "Architecture Spine"},
-                {"id": "implementation", "name": "Implementation"},
-                {"id": "practices", "name": "Engineering Practices"}
+                {"id": "architecture", "name": "Architecture Spine", "priority": 1},
+                {"id": "implementation", "name": "Implementation", "priority": 2},
+                {"id": "practices", "name": "Engineering Practices", "priority": 3}
             ]
         }
     
     # Special handling for LLM tab - return taxonomy files and LLM options
     if tab_id == "tab7":
-        taxonomy_dir = INPUTS_DIR / "taxonomy"
+        taxonomy_dir = WORKFLOWS_DIR / "taxonomy_setup" / "output"
         taxonomy_files = []
         if taxonomy_dir.exists():
             taxonomy_files = [f.name for f in taxonomy_dir.glob("*.json")]
@@ -152,7 +163,7 @@ async def get_files(tab_id: str):
 @app.get("/taxonomy-files")
 async def get_taxonomy_files():
     """Get list of available taxonomy files"""
-    taxonomy_dir = INPUTS_DIR / "taxonomy"
+    taxonomy_dir = WORKFLOWS_DIR / "taxonomy_setup" / "output"
     
     if not taxonomy_dir.exists():
         return {"files": []}
@@ -261,8 +272,11 @@ async def run_workflow(tab_id: str, request: Request, background_tasks: Backgrou
     if not selected_files:
         return {"error": "No files selected"}
     
+    # Get taxonomy file if provided (for workflows that require it)
+    taxonomy_file = data.get("taxonomy")
+    
     # Execute workflow in background
-    background_tasks.add_task(execute_workflow, workflow_id, tab_id, selected_files, workflow)
+    background_tasks.add_task(execute_workflow, workflow_id, tab_id, selected_files, workflow, taxonomy_file)
     
     return {
         "status": "started",
@@ -281,19 +295,11 @@ async def get_workflow_status(workflow_id: str):
     return workflow_status[workflow_id]
 
 
-async def execute_workflow(workflow_id: str, tab_id: str, files: list, workflow: dict):
+async def execute_workflow(workflow_id: str, tab_id: str, files: list, workflow: dict, taxonomy_file: str = None):
     """Execute a workflow with selected files"""
     try:
         workflow_status[workflow_id]["status"] = "running"
         script_path = workflow.get("script")
-        
-        # Check if this is a batch-only workflow
-        if workflow.get("batch_only"):
-            workflow_status[workflow_id]["status"] = "error"
-            workflow_status[workflow_id]["error"] = "This workflow requires batch processing (not yet implemented in UI)"
-            workflow_status[workflow_id]["progress"].append("⚠️ This workflow processes all books at once, not individual files")
-            workflow_status[workflow_id]["progress"].append("Please run the script directly from the command line")
-            return
         
         if not script_path or not Path(script_path).exists():
             workflow_status[workflow_id]["status"] = "error"
@@ -324,6 +330,11 @@ async def execute_workflow(workflow_id: str, tab_id: str, files: list, workflow:
                     cmd = ["python3", str(script_path), "--input", str(file_path)]
                 elif tab_id == "tab5":  # Base Guideline
                     cmd = ["python3", str(script_path), str(file_path)]
+                    # Add taxonomy if provided
+                    if taxonomy_file:
+                        taxonomy_path = WORKFLOWS_DIR / "taxonomy_setup" / "output" / taxonomy_file
+                        cmd.extend(["--taxonomy", str(taxonomy_path)])
+                        workflow_status[workflow_id]["progress"].append(f"Using taxonomy: {taxonomy_file}")
                 else:
                     continue
                 
@@ -411,7 +422,7 @@ async def execute_llm_enhancement(workflow_id: str, llm_config: dict, workflow: 
         
         # Build command with LLM config
         guideline_path = workflow["input_dir"] / llm_config["guideline"]
-        taxonomy_path = INPUTS_DIR / "taxonomy" / llm_config["taxonomy"]
+        taxonomy_path = WORKFLOWS_DIR / "taxonomy_setup" / "output" / llm_config["taxonomy"]
         
         workflow_status[workflow_id]["progress"].append(f"Guideline: {llm_config['guideline']}")
         workflow_status[workflow_id]["progress"].append(f"Taxonomy: {llm_config['taxonomy']}")

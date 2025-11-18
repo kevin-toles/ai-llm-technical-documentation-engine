@@ -232,6 +232,13 @@ h2 {
     border: 1px solid #e0e0e0;
     border-radius: 6px;
     padding: 8px;
+    transition: all 0.2s;
+}
+
+.file-pool.drag-over {
+    background: #e3f2fd;
+    border-color: #007aff;
+    border-style: solid;
 }
 
 .pool-file {
@@ -240,16 +247,38 @@ h2 {
     background: white;
     border: 1px solid #ddd;
     border-radius: 4px;
-    cursor: pointer;
+    cursor: grab;
     font-size: 13px;
     transition: all 0.2s;
+    user-select: none;
 }
 
 .pool-file:hover {
-    background: #007aff;
-    color: white;
+    background: #f5f5f5;
     border-color: #007aff;
-    transform: translateX(4px);
+    transform: translateX(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pool-file:active {
+    cursor: grabbing;
+}
+
+.pool-file.dragging {
+    opacity: 0.5;
+    cursor: grabbing;
+}
+
+.draggable {
+    cursor: grab;
+}
+
+.draggable:active {
+    cursor: grabbing;
+}
+
+.draggable.dragging {
+    opacity: 0.5;
 }
 
 .tier-columns {
@@ -267,6 +296,12 @@ h2 {
     border-bottom: 2px solid #007aff;
 }
 
+.tier-priority {
+    font-size: 11px;
+    color: #666;
+    font-weight: 400;
+}
+
 .tier-list {
     background: #f9f9f9;
     border: 2px dashed #ddd;
@@ -275,18 +310,56 @@ h2 {
     min-height: 300px;
     max-height: 350px;
     overflow-y: auto;
+    transition: all 0.2s;
+}
+
+.tier-list.drag-over {
+    background: #e3f2fd;
+    border-color: #007aff;
+    border-style: solid;
+    box-shadow: inset 0 0 0 2px rgba(0, 122, 255, 0.2);
 }
 
 .tier-item {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 8px;
     padding: 8px;
     margin-bottom: 4px;
     background: white;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 12px;
+    cursor: grab;
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.tier-item:hover {
+    border-color: #007aff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.tier-item:active {
+    cursor: grabbing;
+}
+
+.tier-item.dragging {
+    opacity: 0.5;
+    cursor: grabbing;
+}
+
+.drag-handle {
+    color: #999;
+    cursor: grab;
+    font-size: 14px;
+    line-height: 1;
+    padding: 0 4px;
+}
+
+.tier-item:hover .drag-handle {
+    color: #007aff;
 }
 
 .tier-file-name {
@@ -294,7 +367,6 @@ h2 {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    margin-right: 8px;
 }
 
 .tier-controls {
@@ -318,18 +390,20 @@ h2 {
 }
 
 .tier-btn-remove {
-    padding: 2px 6px;
+    padding: 2px 8px;
     background: #ff3b30;
     color: white;
     border: none;
     border-radius: 3px;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: bold;
+    transition: all 0.2s;
 }
 
 .tier-btn-remove:hover {
     background: #cc0000;
+    transform: scale(1.1);
 }
 
 .empty-tier {
@@ -338,6 +412,7 @@ h2 {
     font-style: italic;
     text-align: center;
     padding: 40px 10px;
+    pointer-events: none;
 }
 
 /* Tier Selector (old design - keep for backward compat) */

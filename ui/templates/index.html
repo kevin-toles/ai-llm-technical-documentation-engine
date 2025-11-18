@@ -98,8 +98,30 @@
             if (data.files && data.files.length > 0) {
                 fileCount.textContent = `${data.files.length} files`;
                 
+                // Special handling for Base Guideline tab (requires taxonomy selection)
+                if (tabId === 'tab5' && data.taxonomy_files) {
+                    container.innerHTML = `
+                        <div class="config-section" style="margin-bottom: 20px;">
+                            <label class="config-label">Select Taxonomy (for cross-referencing):</label>
+                            <select id="${tabId}-taxonomy" class="config-select">
+                                <option value="">-- Optional: Select Taxonomy --</option>
+                                ${data.taxonomy_files.map(file => `<option value="${file}">${file}</option>`).join('')}
+                            </select>
+                            <p style="font-size: 11px; color: #666; margin-top: 5px;">
+                                Taxonomy defines concepts for cross-book referencing. Leave empty to use defaults.
+                            </p>
+                        </div>
+                        <div class="config-section" style="margin-bottom: 20px;">
+                            <label class="config-label">Select Book to Create Guideline From:</label>
+                            <select id="${tabId}-book" class="config-select">
+                                <option value="">-- Select Book --</option>
+                                ${data.files.map(file => `<option value="${file}">${file}</option>`).join('')}
+                            </select>
+                        </div>
+                    `;
+                } 
                 // Special handling for LLM tab
-                if (data.llm_providers) {
+                else if (data.llm_providers) {
                     container.innerHTML = `
                         <div class="llm-config">
                             <div class="config-section">
@@ -141,14 +163,14 @@
                     window.llmProviders = data.llm_providers;
                     
                 } else if (data.supports_tiers && data.tiers) {
-                    // Taxonomy tab with tier builder
+                    // Taxonomy tab with tier builder (Trello-style drag & drop)
                     container.innerHTML = `
                         <div class="tier-builder">
                             <div class="available-files">
                                 <h3>Available Files</h3>
-                                <div class="file-pool" id="${tabId}-pool">
+                                <div class="file-pool" id="${tabId}-pool" data-tier="pool">
                                     ${data.files.map(file => `
-                                        <div class="pool-file" data-file="${file}">
+                                        <div class="pool-file draggable" draggable="true" data-file="${file}">
                                             ${file}
                                         </div>
                                     `).join('')}
@@ -157,9 +179,9 @@
                             <div class="tier-columns">
                                 ${data.tiers.map(tier => `
                                     <div class="tier-column">
-                                        <h3>${tier.name}</h3>
-                                        <div class="tier-list" id="${tabId}-${tier.id}" data-tier="${tier.id}">
-                                            <p class="empty-tier">Drop files here or click → to add</p>
+                                        <h3>${tier.name} <span class="tier-priority">(Priority ${tier.priority})</span></h3>
+                                        <div class="tier-list drop-zone" id="${tabId}-${tier.id}" data-tier="${tier.id}" data-priority="${tier.priority}">
+                                            <p class="empty-tier">Drag files here</p>
                                         </div>
                                     </div>
                                 `).join('')}
@@ -198,54 +220,125 @@
             `;
         }
 
-        // Initialize tier builder with drag & drop and priority controls
+        // Initialize tier builder with Trello-style drag & drop
         function initTierBuilder(tabId, allFiles) {
-            const pool = document.getElementById(`${tabId}-pool`);
+            let draggedElement = null;
             
-            // Click on pool file to show tier selection
-            pool.addEventListener('click', (e) => {
-                const poolFile = e.target.closest('.pool-file');
-                if (!poolFile) return;
-                
-                const file = poolFile.dataset.file;
-                const tier = prompt('Add to which tier?\n1. Architecture\n2. Implementation\n3. Practices\n(Enter 1, 2, or 3)');
-                
-                const tierMap = {'1': 'architecture', '2': 'implementation', '3': 'practices'};
-                const tierId = tierMap[tier];
-                
-                if (tierId) {
-                    addFileToTier(tabId, file, tierId);
-                    poolFile.remove();
+            // Add drag event listeners to all draggable items
+            document.addEventListener('dragstart', (e) => {
+                if (e.target.classList.contains('draggable')) {
+                    draggedElement = e.target;
+                    e.target.classList.add('dragging');
+                    e.dataTransfer.effectAllowed = 'move';
                 }
             });
-        }
-
-        function addFileToTier(tabId, file, tierId) {
-            const tierList = document.getElementById(`${tabId}-${tierId}`);
-            const emptyMsg = tierList.querySelector('.empty-tier');
-            if (emptyMsg) emptyMsg.remove();
             
-            const item = document.createElement('div');
-            item.className = 'tier-item';
-            item.dataset.file = file;
-            item.innerHTML = `
-                <span class="tier-file-name">${file}</span>
-                <div class="tier-controls">
-                    <button onclick="moveTierItem(this, 'up')" class="tier-btn">↑</button>
-                    <button onclick="moveTierItem(this, 'down')" class="tier-btn">↓</button>
-                    <button onclick="removeTierItem('${tabId}', this)" class="tier-btn-remove">✕</button>
-                </div>
-            `;
-            tierList.appendChild(item);
+            document.addEventListener('dragend', (e) => {
+                if (e.target.classList.contains('draggable')) {
+                    e.target.classList.remove('dragging');
+                    // Remove all drag-over effects
+                    document.querySelectorAll('.drag-over').forEach(el => {
+                        el.classList.remove('drag-over');
+                    });
+                }
+            });
+            
+            // Add drop zone event listeners
+            document.querySelectorAll('.drop-zone, .file-pool').forEach(dropZone => {
+                dropZone.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    e.dataTransfer.dropEffect = 'move';
+                    
+                    if (!dropZone.classList.contains('dragging')) {
+                        dropZone.classList.add('drag-over');
+                    }
+                    
+                    // Get the draggable element being dragged over
+                    const afterElement = getDragAfterElement(dropZone, e.clientY);
+                    if (afterElement == null) {
+                        // Append at the end, but before empty message
+                        const emptyMsg = dropZone.querySelector('.empty-tier');
+                        if (draggedElement && draggedElement !== afterElement) {
+                            if (emptyMsg) {
+                                dropZone.insertBefore(draggedElement, emptyMsg);
+                            } else {
+                                dropZone.appendChild(draggedElement);
+                            }
+                        }
+                    } else {
+                        if (draggedElement && draggedElement !== afterElement) {
+                            dropZone.insertBefore(draggedElement, afterElement);
+                        }
+                    }
+                });
+                
+                dropZone.addEventListener('dragleave', (e) => {
+                    if (e.target === dropZone) {
+                        dropZone.classList.remove('drag-over');
+                    }
+                });
+                
+                dropZone.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    dropZone.classList.remove('drag-over');
+                    
+                    if (!draggedElement) return;
+                    
+                    const file = draggedElement.dataset.file;
+                    const fromTier = draggedElement.parentElement.dataset.tier;
+                    const toTier = dropZone.dataset.tier;
+                    
+                    // Remove empty message if present
+                    const emptyMsg = dropZone.querySelector('.empty-tier');
+                    if (emptyMsg) {
+                        emptyMsg.remove();
+                    }
+                    
+                    // If moving between different containers, transform the element
+                    if (fromTier !== toTier) {
+                        if (toTier === 'pool') {
+                            // Moving back to pool - convert to pool-file
+                            draggedElement.className = 'pool-file draggable';
+                            draggedElement.draggable = true;
+                            draggedElement.innerHTML = file;
+                        } else if (fromTier === 'pool') {
+                            // Moving from pool to tier - convert to tier-item
+                            draggedElement.className = 'tier-item draggable';
+                            draggedElement.draggable = true;
+                            draggedElement.innerHTML = `
+                                <span class="drag-handle">⋮⋮</span>
+                                <span class="tier-file-name">${file}</span>
+                                <button onclick="removeTierItem('${tabId}', this)" class="tier-btn-remove">✕</button>
+                            `;
+                        }
+                    }
+                    
+                    // Check if origin tier is now empty
+                    const originTier = document.querySelector(`[data-tier="${fromTier}"]`);
+                    if (originTier && originTier !== dropZone && fromTier !== 'pool') {
+                        const items = originTier.querySelectorAll('.tier-item');
+                        if (items.length === 0) {
+                            originTier.innerHTML = '<p class="empty-tier">Drag files here</p>';
+                        }
+                    }
+                });
+            });
         }
-
-        function moveTierItem(btn, direction) {
-            const item = btn.closest('.tier-item');
-            if (direction === 'up' && item.previousElementSibling) {
-                item.parentNode.insertBefore(item, item.previousElementSibling);
-            } else if (direction === 'down' && item.nextElementSibling) {
-                item.parentNode.insertBefore(item.nextElementSibling, item);
-            }
+        
+        // Get the element to insert after during drag
+        function getDragAfterElement(container, y) {
+            const draggableElements = [...container.querySelectorAll('.draggable:not(.dragging)')];
+            
+            return draggableElements.reduce((closest, child) => {
+                const box = child.getBoundingClientRect();
+                const offset = y - box.top - box.height / 2;
+                
+                if (offset < 0 && offset > closest.offset) {
+                    return { offset: offset, element: child };
+                } else {
+                    return closest;
+                }
+            }, { offset: Number.NEGATIVE_INFINITY }).element;
         }
 
         function removeTierItem(tabId, btn) {
@@ -259,14 +352,16 @@
             // Add back to pool
             const pool = document.getElementById(`${tabId}-pool`);
             const poolFile = document.createElement('div');
-            poolFile.className = 'pool-file';
+            poolFile.className = 'pool-file draggable';
+            poolFile.draggable = true;
             poolFile.dataset.file = file;
             poolFile.textContent = file;
             pool.appendChild(poolFile);
             
             // Show empty message if no files left
-            if (tierList.children.length === 0) {
-                tierList.innerHTML = '<p class="empty-tier">Drop files here or click → to add</p>';
+            const items = tierList.querySelectorAll('.tier-item');
+            if (items.length === 0) {
+                tierList.innerHTML = '<p class="empty-tier">Drag files here</p>';
             }
         }
 
@@ -274,15 +369,25 @@
         function clearSelection(tabId) {
             // For LLM tab, clear all dropdowns
             const guideline = document.getElementById(`${tabId}-guideline`);
-            const taxonomy = document.getElementById(`${tabId}-taxonomy`);
-            const provider = document.getElementById(`${tabId}-provider`);
-            const model = document.getElementById(`${tabId}-model`);
             
             if (guideline) {
+                const taxonomy = document.getElementById(`${tabId}-taxonomy`);
+                const provider = document.getElementById(`${tabId}-provider`);
+                const model = document.getElementById(`${tabId}-model`);
+                
                 guideline.value = '';
                 taxonomy.value = '';
                 provider.value = '';
                 model.innerHTML = '<option value="">-- Select Provider First --</option>';
+                return;
+            }
+            
+            // For Base Guideline tab (tab5), clear dropdowns
+            const bookSelect = document.getElementById(`${tabId}-book`);
+            if (bookSelect) {
+                bookSelect.value = '';
+                const taxonomySelect = document.getElementById(`${tabId}-taxonomy`);
+                if (taxonomySelect) taxonomySelect.value = '';
                 return;
             }
             
@@ -323,6 +428,7 @@
             let selectedFiles = [];
             let tierData = {};
             let llmConfig = {};
+            let taxonomyFile = null;
             
             // Check if this is LLM tab
             const guidelineSelect = document.getElementById(`${tabId}-guideline`);
@@ -338,7 +444,21 @@
                 }
                 
                 llmConfig = { guideline, taxonomy, provider, model };
-            } else {
+            } 
+            // Check if this is Base Guideline tab (tab5)
+            else if (tabId === 'tab5') {
+                const bookSelect = document.getElementById(`${tabId}-book`);
+                const taxonomySelect = document.getElementById(`${tabId}-taxonomy`);
+                
+                if (!bookSelect || !bookSelect.value) {
+                    alert('Please select a book to create guideline from');
+                    return;
+                }
+                
+                selectedFiles = [bookSelect.value];
+                taxonomyFile = taxonomySelect ? taxonomySelect.value : null;
+            }
+            else {
                 // Check if this is taxonomy tab with tiers
                 const pool = document.getElementById(`${tabId}-pool`);
                 
@@ -356,7 +476,7 @@
                     // Count total files
                     selectedFiles = Object.values(tierData).flat();
                 } else {
-                    // Regular file selection
+                    // Regular file selection with checkboxes
                     selectedFiles = Array.from(
                         document.querySelectorAll(`input[name="${tabId}-file"]:checked`)
                     ).map(cb => cb.value);
@@ -376,6 +496,10 @@
                 payload = { tiers: tierData };
             } else {
                 payload = { files: selectedFiles };
+                // Add taxonomy if selected (for tab5)
+                if (taxonomyFile) {
+                    payload.taxonomy = taxonomyFile;
+                }
             }
             
             // Show status panel
