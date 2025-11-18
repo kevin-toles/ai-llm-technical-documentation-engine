@@ -219,7 +219,7 @@ class PathConfig:
         ))
         self.metadata_dir = Path(os.getenv(
             "METADATA_DIR",
-            self.repo_root / "workflows" / "metadata_extraction" / "output" / "metadata"
+            self.repo_root / "workflows" / "metadata_extraction" / "output"
         ))
         
         self.guidelines_dir = Path(os.getenv("GUIDELINES_DIR", self.repo_root / "guidelines"))
