@@ -11,19 +11,11 @@ Total Extracted: ~210 lines
 import logging
 from typing import Dict, List, Any, Tuple
 
-# Import taxonomy components (conditional import handled at module level)
-try:
-    from book_taxonomy import (
-        score_books_for_concepts,
-        get_cascading_books,
-        BOOK_REGISTRY,
-        BookTier
-    )
-    TAXONOMY_AVAILABLE = True
-except ImportError:
-    TAXONOMY_AVAILABLE = False
-    BOOK_REGISTRY = {}
-    BookTier = None
+# Note: book_taxonomy.py deprecated - was hardcoded taxonomy system
+# New system uses data-driven concept taxonomy (generate_concept_taxonomy.py)
+TAXONOMY_AVAILABLE = False
+BOOK_REGISTRY = {}
+BookTier = None
 
 logger = logging.getLogger(__name__)
 

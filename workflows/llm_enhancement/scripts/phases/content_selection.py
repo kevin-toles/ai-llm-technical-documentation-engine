@@ -35,13 +35,9 @@ from workflows.llm_enhancement.scripts.interactive_llm_system_v3_hybrid_prompt i
     LLMMetadataResponse,
 )
 
-try:
-    # Test if book_taxonomy module is available
-    from workflows.taxonomy_setup.scripts import book_taxonomy  # noqa: F401
-    TAXONOMY_AVAILABLE = True
-except ImportError:
-    TAXONOMY_AVAILABLE = False
-    print("Warning: book_taxonomy.py not available - cascading logic disabled")
+# Note: book_taxonomy.py deprecated - was hardcoded taxonomy system
+# New system uses data-driven concept taxonomy (generate_concept_taxonomy.py)
+TAXONOMY_AVAILABLE = False
 
 try:
     from workflows.shared.llm_integration import call_llm
