@@ -66,7 +66,8 @@ WORKFLOWS = {
         "input_ext": ".json",
         "output_dir": WORKFLOWS_DIR / "base_guideline_generation" / "output",
         "script": WORKFLOWS_DIR / "base_guideline_generation" / "scripts" / "chapter_generator_all_text.py",
-        "requires_taxonomy": True
+        "requires_taxonomy": True,
+        "batch_only": True  # This script processes all books at once, not per-file
     },
     "tab6": {
         "name": "Taxonomy Setup",
@@ -285,6 +286,14 @@ async def execute_workflow(workflow_id: str, tab_id: str, files: list, workflow:
     try:
         workflow_status[workflow_id]["status"] = "running"
         script_path = workflow.get("script")
+        
+        # Check if this is a batch-only workflow
+        if workflow.get("batch_only"):
+            workflow_status[workflow_id]["status"] = "error"
+            workflow_status[workflow_id]["error"] = "This workflow requires batch processing (not yet implemented in UI)"
+            workflow_status[workflow_id]["progress"].append("⚠️ This workflow processes all books at once, not individual files")
+            workflow_status[workflow_id]["progress"].append("Please run the script directly from the command line")
+            return
         
         if not script_path or not Path(script_path).exists():
             workflow_status[workflow_id]["status"] = "error"
