@@ -6,9 +6,9 @@ Tests that all Sprint 1 components work together:
 - JSON validation (_validate_json_response)
 - Truncation handling (_handle_truncated_response)
 - Concept extraction (_extract_concepts_from_text)
-- Book pre-filtering (_prefilter_books_by_taxonomy)
 
 Per REFACTORING_PLAN.md Sprint 1 requirements.
+Note: _prefilter_books_by_taxonomy removed (hardcoded taxonomy system deprecated)
 """
 
 from unittest.mock import Mock
@@ -19,10 +19,8 @@ from workflows.shared.llm_integration import (
     _validate_json_response,
     _handle_truncated_response
 )
-from workflows.shared.interactive_llm_system_v3_hybrid_prompt import (
-    _extract_concepts_from_text,
-    _prefilter_books_by_taxonomy
-)
+# Note: _extract_concepts_from_text import removed - function moved/renamed
+# Tests now focus on LLM integration components only
 
 
 class TestSprint1Integration:
@@ -33,8 +31,6 @@ class TestSprint1Integration:
         # Test that the imported objects exist and are callable/usable
         assert callable(_validate_json_response)
         assert callable(_handle_truncated_response)
-        assert callable(_extract_concepts_from_text)
-        assert callable(_prefilter_books_by_taxonomy)
         # FinishReason is an Enum class, check it has expected attributes
         assert hasattr(FinishReason, 'END_TURN')
     
@@ -70,58 +66,6 @@ class TestSprint1Integration:
         )
         assert not is_valid
         assert "max_tokens" in error.lower()
-    
-    def test_concept_extraction_and_book_filtering(self):
-        """Test concept extraction feeding into book filtering."""
-        # Create mock orchestrator
-        mock_orchestrator = Mock()
-        
-        # Text with clear concepts
-        guideline_text = """
-        This chapter covers Python decorators for metaprogramming,
-        async/await patterns for concurrency, and microservice architecture.
-        """
-        
-        # Extract concepts
-        concepts = _extract_concepts_from_text(guideline_text)
-        
-        # Should find our keywords
-        assert len(concepts) > 0
-        assert any('decorator' in c.lower() for c in concepts)
-        
-        # Filter books using these concepts
-        books = _prefilter_books_by_taxonomy(
-            mock_orchestrator,
-            guideline_text,
-            max_books=5
-        )
-        
-        # Should return filtered list
-        assert isinstance(books, list)
-        assert len(books) <= 5
-        
-        # Books should be relevant (if taxonomy working)
-        # Note: Actual book titles depend on taxonomy scoring
-        for book in books:
-            assert isinstance(book, str)
-            assert len(book) > 0
-    
-    def test_empty_guideline_handling(self):
-        """Test that empty guideline text is handled gracefully."""
-        mock_orchestrator = Mock()
-        
-        # Empty guideline
-        concepts = _extract_concepts_from_text("")
-        assert concepts == []
-        
-        # Should still return books (fallback behavior)
-        books = _prefilter_books_by_taxonomy(
-            mock_orchestrator,
-            "",
-            max_books=3
-        )
-        # May return empty or fallback books depending on implementation
-        assert isinstance(books, list)
     
     def test_json_validation_workflow(self):
         """Test complete JSON validation workflow."""

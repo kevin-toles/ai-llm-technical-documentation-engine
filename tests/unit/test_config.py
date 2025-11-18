@@ -10,7 +10,6 @@ from pathlib import Path
 from unittest.mock import patch
 from config.settings import (
     LLMConfig,
-    TaxonomyConfig,
     PromptConstraints,
     RetryConfig,
     CacheConfig,
@@ -18,6 +17,9 @@ from config.settings import (
     reload_settings,
     settings  # Global singleton
 )
+
+# Note: TaxonomyConfig removed - was for hardcoded book_taxonomy.py system
+# New system uses data-driven concept taxonomy from generate_concept_taxonomy.py
 
 
 class TestLLMConfig:
@@ -76,50 +78,6 @@ class TestLLMConfig:
         with pytest.raises(ValueError, match="ANTHROPIC_API_KEY not set"):
             LLMConfig()
 
-
-class TestTaxonomyConfig:
-    """Test taxonomy configuration."""
-    
-    def test_defaults(self):
-        """Test default values."""
-        config = TaxonomyConfig()
-        assert config.min_relevance == pytest.approx(0.3)
-        assert config.max_books == 10
-        assert config.cascade_depth == 1
-        assert config.enable_prefilter is True
-    
-    def test_env_override(self):
-        """Test environment variable override."""
-        os.environ["TAXONOMY_MIN_RELEVANCE"] = "0.5"
-        os.environ["TAXONOMY_MAX_BOOKS"] = "8"
-        
-        config = TaxonomyConfig()
-        assert config.min_relevance == pytest.approx(0.5)
-        assert config.max_books == 8
-        
-        # Cleanup
-        os.environ.pop("TAXONOMY_MIN_RELEVANCE")
-        os.environ.pop("TAXONOMY_MAX_BOOKS")
-    
-    def test_validation_min_relevance(self):
-        """Test min_relevance validation."""
-        os.environ["TAXONOMY_MIN_RELEVANCE"] = "1.5"  # > 1.0
-        
-        with pytest.raises(ValueError, match="must be between 0.0 and 1.0"):
-            TaxonomyConfig()
-        
-        # Cleanup
-        os.environ.pop("TAXONOMY_MIN_RELEVANCE")
-    
-    def test_validation_max_books(self):
-        """Test max_books validation."""
-        os.environ["TAXONOMY_MAX_BOOKS"] = "20"  # > 14
-        
-        with pytest.raises(ValueError, match="must be between 1 and 14"):
-            TaxonomyConfig()
-        
-        # Cleanup
-        os.environ.pop("TAXONOMY_MAX_BOOKS")
 
 
 class TestPromptConstraints:
@@ -241,7 +199,6 @@ class TestSettings:
         from config.settings import settings
         
         assert settings.llm is not None
-        assert settings.taxonomy is not None
         assert settings.constraints is not None
         assert settings.retry is not None
         assert settings.cache is not None
