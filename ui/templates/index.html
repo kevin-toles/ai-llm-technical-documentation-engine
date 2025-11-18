@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Document Enhancer</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+</head>
+<body>
+    <div class="window">
+        <div class="window-controls">
+            <span class="control-button close"></span>
+            <span class="control-button minimize"></span>
+            <span class="control-button maximize"></span>
+        </div>
+
+        <div class="window-title">LLM Document Enhancer</div>
+
+        <div class="content">
+            <h1>Workflow Runner</h1>
+            
+            <!-- Tab Navigation -->
+            <div class="tabs">
+                <button class="tab active" data-tab="tab1">1. PDF → JSON</button>
+                <button class="tab" data-tab="tab2">2. Metadata Extract</button>
+                <button class="tab" data-tab="tab3">3. Metadata Enrich</button>
+                <button class="tab" data-tab="tab4">4. Cache Merge</button>
+                <button class="tab" data-tab="tab5">5. Base Guideline</button>
+                <button class="tab" data-tab="tab6">6. Taxonomy</button>
+                <button class="tab" data-tab="tab7">7. LLM Enhance</button>
+            </div>
+
+            <!-- Tab Content -->
+            {% for tab_id, workflow in workflows.items() %}
+            <div class="tab-content {{ 'active' if tab_id == 'tab1' else '' }}" id="{{ tab_id }}">
+                <h2>{{ workflow.name }}</h2>
+                
+                <div class="workflow-info">
+                    <div class="path-info">
+                        <strong>Input:</strong> <span id="{{ tab_id }}-input-dir">Loading...</span>
+                    </div>
+                    <div class="path-info">
+                        <strong>Found:</strong> <span id="{{ tab_id }}-file-count">0 files</span>
+                    </div>
+                </div>
+
+                <div class="file-selector">
+                    <div class="file-list" id="{{ tab_id }}-files">
+                        <p>Loading files...</p>
+                    </div>
+                </div>
+
+                <div class="button-row">
+                    <button class="btn btn-secondary" onclick="clearSelection('{{ tab_id }}')">Clear</button>
+                    <button class="btn btn-primary" onclick="runWorkflow('{{ tab_id }}')">Run Workflow ▶</button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script>
+        // Tab switching
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const tabId = tab.dataset.tab;
+                
+                // Update active tab
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                // Update active content
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                document.getElementById(tabId).classList.add('active');
+                
+                // Load files for this tab
+                loadFiles(tabId);
+            });
+        });
+
+        // Load files for a workflow
+        async function loadFiles(tabId) {
+            const response = await fetch(`/files/${tabId}`);
+            const data = await response.json();
+            
+            const container = document.getElementById(`${tabId}-files`);
+            const inputDir = document.getElementById(`${tabId}-input-dir`);
+            const fileCount = document.getElementById(`${tabId}-file-count`);
+            
+            inputDir.textContent = data.input_dir;
+            
+            if (data.files && data.files.length > 0) {
+                fileCount.textContent = `${data.files.length} files`;
+                
+                // Special handling for LLM tab
+                if (data.llm_providers) {
+                    container.innerHTML = `
+                        <div class="llm-config">
+                            <div class="config-section">
+                                <label class="config-label">Select Base Guideline:</label>
+                                <select id="${tabId}-guideline" class="config-select">
+                                    <option value="">-- Select Guideline --</option>
+                                    ${data.files.map(file => `<option value="${file}">${file}</option>`).join('')}
+                                </select>
+                            </div>
+                            
+                            <div class="config-section">
+                                <label class="config-label">Select Taxonomy:</label>
+                                <select id="${tabId}-taxonomy" class="config-select">
+                                    <option value="">-- Select Taxonomy --</option>
+                                    ${data.taxonomy_files.map(file => `<option value="${file}">${file}</option>`).join('')}
+                                </select>
+                            </div>
+                            
+                            <div class="config-section">
+                                <label class="config-label">LLM Provider:</label>
+                                <select id="${tabId}-provider" class="config-select" onchange="updateModelList('${tabId}', this.value)">
+                                    <option value="">-- Select Provider --</option>
+                                    ${Object.entries(data.llm_providers).map(([id, provider]) => 
+                                        `<option value="${id}">${provider.name}</option>`
+                                    ).join('')}
+                                </select>
+                            </div>
+                            
+                            <div class="config-section">
+                                <label class="config-label">Model:</label>
+                                <select id="${tabId}-model" class="config-select">
+                                    <option value="">-- Select Provider First --</option>
+                                </select>
+                            </div>
+                        </div>
+                    `;
+                    
+                    // Store provider data for model selection
+                    window.llmProviders = data.llm_providers;
+                    
+                } else if (data.supports_tiers && data.tiers) {
+                    // Taxonomy tab with tier builder
+                    container.innerHTML = `
+                        <div class="tier-builder">
+                            <div class="available-files">
+                                <h3>Available Files</h3>
+                                <div class="file-pool" id="${tabId}-pool">
+                                    ${data.files.map(file => `
+                                        <div class="pool-file" data-file="${file}">
+                                            ${file}
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            <div class="tier-columns">
+                                ${data.tiers.map(tier => `
+                                    <div class="tier-column">
+                                        <h3>${tier.name}</h3>
+                                        <div class="tier-list" id="${tabId}-${tier.id}" data-tier="${tier.id}">
+                                            <p class="empty-tier">Drop files here or click → to add</p>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                    initTierBuilder(tabId, data.files);
+                } else {
+                    // Regular file list
+                    container.innerHTML = data.files.map(file => `
+                        <label class="file-item">
+                            <input type="checkbox" name="${tabId}-file" value="${file}">
+                            ${file}
+                        </label>
+                    `).join('');
+                }
+            } else {
+                fileCount.textContent = '0 files';
+                container.innerHTML = '<p class="no-files">No files found</p>';
+            }
+        }
+
+        // Update model list when provider changes
+        function updateModelList(tabId, providerId) {
+            const modelSelect = document.getElementById(`${tabId}-model`);
+            
+            if (!providerId || !window.llmProviders || !window.llmProviders[providerId]) {
+                modelSelect.innerHTML = '<option value="">-- Select Provider First --</option>';
+                return;
+            }
+            
+            const provider = window.llmProviders[providerId];
+            modelSelect.innerHTML = `
+                <option value="">-- Select Model --</option>
+                ${provider.models.map(model => `<option value="${model}">${model}</option>`).join('')}
+            `;
+        }
+
+        // Initialize tier builder with drag & drop and priority controls
+        function initTierBuilder(tabId, allFiles) {
+            const pool = document.getElementById(`${tabId}-pool`);
+            
+            // Click on pool file to show tier selection
+            pool.addEventListener('click', (e) => {
+                const poolFile = e.target.closest('.pool-file');
+                if (!poolFile) return;
+                
+                const file = poolFile.dataset.file;
+                const tier = prompt('Add to which tier?\n1. Architecture\n2. Implementation\n3. Practices\n(Enter 1, 2, or 3)');
+                
+                const tierMap = {'1': 'architecture', '2': 'implementation', '3': 'practices'};
+                const tierId = tierMap[tier];
+                
+                if (tierId) {
+                    addFileToTier(tabId, file, tierId);
+                    poolFile.remove();
+                }
+            });
+        }
+
+        function addFileToTier(tabId, file, tierId) {
+            const tierList = document.getElementById(`${tabId}-${tierId}`);
+            const emptyMsg = tierList.querySelector('.empty-tier');
+            if (emptyMsg) emptyMsg.remove();
+            
+            const item = document.createElement('div');
+            item.className = 'tier-item';
+            item.dataset.file = file;
+            item.innerHTML = `
+                <span class="tier-file-name">${file}</span>
+                <div class="tier-controls">
+                    <button onclick="moveTierItem(this, 'up')" class="tier-btn">↑</button>
+                    <button onclick="moveTierItem(this, 'down')" class="tier-btn">↓</button>
+                    <button onclick="removeTierItem('${tabId}', this)" class="tier-btn-remove">✕</button>
+                </div>
+            `;
+            tierList.appendChild(item);
+        }
+
+        function moveTierItem(btn, direction) {
+            const item = btn.closest('.tier-item');
+            if (direction === 'up' && item.previousElementSibling) {
+                item.parentNode.insertBefore(item, item.previousElementSibling);
+            } else if (direction === 'down' && item.nextElementSibling) {
+                item.parentNode.insertBefore(item.nextElementSibling, item);
+            }
+        }
+
+        function removeTierItem(tabId, btn) {
+            const item = btn.closest('.tier-item');
+            const file = item.dataset.file;
+            const tierList = item.parentNode;
+            
+            // Remove from tier
+            item.remove();
+            
+            // Add back to pool
+            const pool = document.getElementById(`${tabId}-pool`);
+            const poolFile = document.createElement('div');
+            poolFile.className = 'pool-file';
+            poolFile.dataset.file = file;
+            poolFile.textContent = file;
+            pool.appendChild(poolFile);
+            
+            // Show empty message if no files left
+            if (tierList.children.length === 0) {
+                tierList.innerHTML = '<p class="empty-tier">Drop files here or click → to add</p>';
+            }
+        }
+
+        // Clear selection
+        function clearSelection(tabId) {
+            // For LLM tab, clear all dropdowns
+            const guideline = document.getElementById(`${tabId}-guideline`);
+            const taxonomy = document.getElementById(`${tabId}-taxonomy`);
+            const provider = document.getElementById(`${tabId}-provider`);
+            const model = document.getElementById(`${tabId}-model`);
+            
+            if (guideline) {
+                guideline.value = '';
+                taxonomy.value = '';
+                provider.value = '';
+                model.innerHTML = '<option value="">-- Select Provider First --</option>';
+                return;
+            }
+            
+            // For taxonomy tab, move all files back to pool
+            const pool = document.getElementById(`${tabId}-pool`);
+            if (pool) {
+                const allFiles = [];
+                ['architecture', 'implementation', 'practices'].forEach(tier => {
+                    const tierList = document.getElementById(`${tabId}-${tier}`);
+                    if (tierList) {
+                        const items = tierList.querySelectorAll('.tier-item');
+                        items.forEach(item => {
+                            allFiles.push(item.dataset.file);
+                            item.remove();
+                        });
+                        tierList.innerHTML = '<p class="empty-tier">Drop files here or click → to add</p>';
+                    }
+                });
+                
+                // Re-add all files to pool
+                allFiles.forEach(file => {
+                    const poolFile = document.createElement('div');
+                    poolFile.className = 'pool-file';
+                    poolFile.dataset.file = file;
+                    poolFile.textContent = file;
+                    pool.appendChild(poolFile);
+                });
+            } else {
+                // Regular checkboxes
+                document.querySelectorAll(`input[name="${tabId}-file"]`).forEach(cb => {
+                    cb.checked = false;
+                });
+            }
+        }
+
+        // Run workflow
+        async function runWorkflow(tabId) {
+            let selectedFiles = [];
+            let tierData = {};
+            let llmConfig = {};
+            
+            // Check if this is LLM tab
+            const guidelineSelect = document.getElementById(`${tabId}-guideline`);
+            if (guidelineSelect) {
+                const guideline = guidelineSelect.value;
+                const taxonomy = document.getElementById(`${tabId}-taxonomy`).value;
+                const provider = document.getElementById(`${tabId}-provider`).value;
+                const model = document.getElementById(`${tabId}-model`).value;
+                
+                if (!guideline || !taxonomy || !provider || !model) {
+                    alert('Please select all required fields:\n- Base Guideline\n- Taxonomy\n- LLM Provider\n- Model');
+                    return;
+                }
+                
+                llmConfig = { guideline, taxonomy, provider, model };
+            } else {
+                // Check if this is taxonomy tab with tiers
+                const pool = document.getElementById(`${tabId}-pool`);
+                
+                if (pool) {
+                    // Collect files by tier with priority order
+                    ['architecture', 'implementation', 'practices'].forEach(tier => {
+                        const tierList = document.getElementById(`${tabId}-${tier}`);
+                        const items = tierList.querySelectorAll('.tier-item');
+                        const tierFiles = Array.from(items).map(item => item.dataset.file);
+                        if (tierFiles.length > 0) {
+                            tierData[tier] = tierFiles;
+                        }
+                    });
+                    
+                    // Count total files
+                    selectedFiles = Object.values(tierData).flat();
+                } else {
+                    // Regular file selection
+                    selectedFiles = Array.from(
+                        document.querySelectorAll(`input[name="${tabId}-file"]:checked`)
+                    ).map(cb => cb.value);
+                }
+                
+                if (selectedFiles.length === 0 && Object.keys(tierData).length === 0) {
+                    alert('Please select at least one file');
+                    return;
+                }
+            }
+            
+            // Build payload
+            let payload;
+            if (llmConfig.guideline) {
+                payload = { llm_config: llmConfig };
+            } else if (Object.keys(tierData).length > 0) {
+                payload = { tiers: tierData };
+            } else {
+                payload = { files: selectedFiles };
+            }
+            
+            const response = await fetch(`/run/${tabId}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            
+            const result = await response.json();
+            
+            if (result.llm_config) {
+                // Show LLM config
+                alert(`${result.workflow}\n\nGuideline: ${result.llm_config.guideline}\nTaxonomy: ${result.llm_config.taxonomy}\nProvider: ${result.llm_config.provider}\nModel: ${result.llm_config.model}\n\n${result.message}`);
+            } else if (result.tiers) {
+                // Show tier summary
+                let msg = `${result.workflow}\n\n`;
+                Object.entries(result.tiers).forEach(([tier, files]) => {
+                    msg += `${tier}:\n`;
+                    files.forEach((file, idx) => {
+                        msg += `  ${idx + 1}. ${file}\n`;
+                    });
+                    msg += '\n';
+                });
+                alert(msg);
+            } else {
+                alert(`${result.workflow}\n${result.message}`);
+            }
+        }
+
+        // Load initial files
+        loadFiles('tab1');
+    </script>
+</body>
+</html>
