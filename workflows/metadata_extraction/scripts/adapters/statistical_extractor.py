@@ -1,0 +1,193 @@
+"""
+Statistical metadata extractor using YAKE, Summa, and scikit-learn.
+
+Domain-agnostic keyword extraction, concept identification, and summarization
+that works across Python, biology, law, construction, and other domains.
+
+Document References:
+- DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN.md: Part 1.2 (Statistical NLP integration)
+- ARCHITECTURE_GUIDELINES Ch. 4: Adapter pattern for external dependencies
+- PYTHON_GUIDELINES Ch. 7: Class design, single responsibility principle
+- BOOK_TAXONOMY_MATRIX: Architecture Patterns (Tier 1), Python Distilled (Tier 3)
+
+TDD Status: GREEN phase - Minimal implementation to pass tests
+"""
+
+from typing import List, Tuple
+import yake
+from summa import keywords as summa_keywords, summarizer
+
+
+# Constants - Per PYTHON_GUIDELINES Ch. 6: Class constants for validation messages
+_ERROR_EMPTY_TEXT = "Text cannot be empty"
+_ERROR_INVALID_TOP_N = "top_n must be positive"
+_ERROR_INVALID_RATIO = "ratio must be between 0.0 and 1.0"
+
+
+class StatisticalExtractor:
+    """
+    Adapter for statistical NLP libraries (YAKE, Summa, scikit-learn).
+    
+    Provides domain-agnostic metadata extraction without hardcoded keywords.
+    Per ARCHITECTURE_GUIDELINES Ch. 4: Adapters isolate external dependencies.
+    Per PYTHON_GUIDELINES Ch. 7: Single Responsibility - extraction only.
+    
+    Methods:
+        extract_keywords: Extract keywords using YAKE (unsupervised)
+        extract_concepts: Extract single-word concepts using Summa TextRank
+        generate_summary: Generate extractive summary using Summa TextRank
+    
+    Example:
+        >>> extractor = StatisticalExtractor()
+        >>> keywords = extractor.extract_keywords("Python programming text...", top_n=10)
+        >>> concepts = extractor.extract_concepts("Biology cell text...", top_n=5)
+        >>> summary = extractor.generate_summary("Law contract text...", ratio=0.3)
+    """
+    
+    def __init__(self):
+        """
+        Initialize YAKE keyword extractor with default parameters.
+        
+        YAKE Configuration (per research - see DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN):
+        - lan='en': English language
+        - n=3: Max n-gram size (1-3 words)
+        - dedupLim=0.9: Deduplication threshold
+        - top=20: Default number of keywords (overridden by top_n parameter)
+        
+        Per PYTHON_GUIDELINES Ch. 7: Initialize dependencies in __init__.
+        """
+        self.kw_extractor = yake.KeywordExtractor(
+            lan='en',
+            n=3,              # Max 3-word phrases
+            dedupLim=0.9,     # Remove near-duplicates
+            top=20,           # Default top N (overridden in method)
+            features=None
+        )
+    
+    def extract_keywords(self, text: str, top_n: int = 20) -> List[Tuple[str, float]]:
+        """
+        Extract keywords using YAKE (Yet Another Keyword Extractor).
+        
+        YAKE is unsupervised and domain-agnostic - works on Python, biology,
+        law, construction, and any other domain without training data.
+        
+        Args:
+            text: Input text to extract keywords from
+            top_n: Number of top keywords to return (default: 20)
+        
+        Returns:
+            List of (keyword, score) tuples sorted by score (ascending).
+            Lower YAKE scores indicate more important keywords.
+        
+        Raises:
+            ValueError: If text is empty or top_n is invalid
+        
+        Document References:
+        - DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN: Part 1.2.1 (YAKE integration)
+        - PYTHON_GUIDELINES Ch. 8: Input validation and error handling
+        
+        Example:
+            >>> extractor = StatisticalExtractor()
+            >>> keywords = extractor.extract_keywords("Python is a programming language", top_n=5)
+            >>> # Returns: [('programming language', 0.05), ('python', 0.12), ...]
+        """
+        # Input validation - Per PYTHON_GUIDELINES Ch. 8
+        if not text or not text.strip():
+            raise ValueError(_ERROR_EMPTY_TEXT)
+        
+        if top_n <= 0:
+            raise ValueError(_ERROR_INVALID_TOP_N)
+        
+        # Extract keywords using YAKE
+        keywords = self.kw_extractor.extract_keywords(text)
+        
+        # Return top N keywords (already sorted by score ascending)
+        return keywords[:top_n]
+    
+    def extract_concepts(self, text: str, top_n: int = 10) -> List[str]:
+        """
+        Extract single-word concepts using Summa TextRank keywords.
+        
+        TextRank is a graph-based algorithm that identifies important words
+        based on their connections to other words in the text.
+        
+        Args:
+            text: Input text to extract concepts from
+            top_n: Number of top concepts to return (default: 10)
+        
+        Returns:
+            List of concept strings (single words) sorted by importance.
+        
+        Raises:
+            ValueError: If text is empty or top_n is invalid
+        
+        Document References:
+        - DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN: Part 1.2.2 (Summa integration)
+        - PYTHON_GUIDELINES Ch. 8: Input validation
+        
+        Example:
+            >>> extractor = StatisticalExtractor()
+            >>> concepts = extractor.extract_concepts("Biology cell text", top_n=5)
+            >>> # Returns: ['cell', 'biology', 'protein', ...]
+        """
+        # Input validation
+        if not text or not text.strip():
+            raise ValueError(_ERROR_EMPTY_TEXT)
+        
+        if top_n <= 0:
+            raise ValueError(_ERROR_INVALID_TOP_N)
+        
+        # Extract keywords using Summa with split=True (returns list of words)
+        try:
+            concepts = summa_keywords.keywords(text, words=top_n, split=True)
+        except Exception:
+            # Summa can fail on very short text - return empty list
+            concepts = []
+        
+        # Summa may return more than requested - limit to top_n
+        # Per PYTHON_GUIDELINES Ch. 13: Ensure consistent behavior
+        return concepts[:top_n] if concepts else []
+    
+    def generate_summary(self, text: str, ratio: float = 0.2) -> str:
+        """
+        Generate extractive summary using Summa TextRank summarization.
+        
+        TextRank selects the most important sentences from the original text
+        to create a summary. This is domain-agnostic and preserves context.
+        
+        Args:
+            text: Input text to summarize
+            ratio: Proportion of text to keep (0.0-1.0, default: 0.2 = 20%)
+        
+        Returns:
+            Summary string containing complete sentences from original text.
+        
+        Raises:
+            ValueError: If text is empty or ratio is invalid
+        
+        Document References:
+        - DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN: Part 1.2.3 (Summarization)
+        - PYTHON_GUIDELINES Ch. 8: Error handling
+        
+        Example:
+            >>> extractor = StatisticalExtractor()
+            >>> summary = extractor.generate_summary("Long text...", ratio=0.3)
+            >>> # Returns: "Most important sentence. Another key point."
+        """
+        # Input validation
+        if not text or not text.strip():
+            raise ValueError(_ERROR_EMPTY_TEXT)
+        
+        if not 0.0 < ratio <= 1.0:
+            raise ValueError(_ERROR_INVALID_RATIO)
+        
+        # Generate summary using Summa
+        try:
+            summary = summarizer.summarize(text, ratio=ratio)
+        except Exception:
+            # Summa can fail on very short text - return first sentence
+            sentences = text.split('.')
+            summary = sentences[0] + '.' if sentences else text
+        
+        # Return summary (Summa returns string)
+        return summary if summary else text.split('.')[0] + '.'
