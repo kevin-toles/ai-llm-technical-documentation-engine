@@ -330,7 +330,7 @@ class TestStatisticalExtractor:
                 # Split multi-word keywords and add individual words
                 keyword_words.update(word.lower() for word in kw.split())
             
-            concept_terms = set([c.lower() for c in concepts])
+            concept_terms = {c.lower() for c in concepts}  # Set literal per SonarLint
             overlap = keyword_words.intersection(concept_terms)
             
             # At least 1 word should appear in both (validates consistency)
@@ -349,17 +349,11 @@ def test_tdd_status():
     GREEN phase: This test PASSES (minimal implementation added)
     REFACTOR phase: This test PASSES (code cleaned and optimized)
     """
-    if StatisticalExtractor is None:
-        pytest.fail(
-            "RED PHASE: StatisticalExtractor not implemented yet. "
-            "Next: Create workflows/metadata_extraction/scripts/adapters/statistical_extractor.py"
-        )
-    else:
-        # GREEN/REFACTOR phase - extractor exists
-        assert StatisticalExtractor is not None, "StatisticalExtractor should be implemented"
-        
-        # Validate class has required methods
-        extractor = StatisticalExtractor()
-        assert hasattr(extractor, 'extract_keywords'), "Missing extract_keywords method"
-        assert hasattr(extractor, 'extract_concepts'), "Missing extract_concepts method"
-        assert hasattr(extractor, 'generate_summary'), "Missing generate_summary method"
+    # GREEN/REFACTOR phase - extractor exists
+    assert StatisticalExtractor is not None, "StatisticalExtractor should be implemented"
+    
+    # Validate class has required methods
+    extractor = StatisticalExtractor()
+    assert hasattr(extractor, 'extract_keywords'), "Missing extract_keywords method"
+    assert hasattr(extractor, 'extract_concepts'), "Missing extract_concepts method"
+    assert hasattr(extractor, 'generate_summary'), "Missing generate_summary method"
