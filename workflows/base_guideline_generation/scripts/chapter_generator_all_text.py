@@ -2043,10 +2043,10 @@ def _write_output_file(all_docs: List[str], book_name: str, all_footnotes: List[
     try:
         guideline_json = _convert_markdown_to_json(all_docs, book_name, all_footnotes or [])
     except (AttributeError, ValueError, IndexError) as e:
-        print(f"⚠️  Warning: Failed to parse markdown for JSON conversion")
+        print("⚠️  Warning: Failed to parse markdown for JSON conversion")
         print(f"  Error: {e}")
-        print(f"  Markdown file created successfully, but JSON generation failed")
-        print(f"  Check markdown structure and retry if needed")
+        print("  Markdown file created successfully, but JSON generation failed")
+        print("  Check markdown structure and retry if needed")
         # Don't raise - allow MD-only output if JSON parsing fails
         return
     
@@ -2057,9 +2057,9 @@ def _write_output_file(all_docs: List[str], book_name: str, all_footnotes: List[
         json_size = json_path.stat().st_size
         print(f"✓ JSON file written: {json_path.name} ({json_size:,} bytes)")
     except TypeError as e:
-        print(f"✗ JSON serialization error: Data contains non-serializable types")
+        print("✗ JSON serialization error: Data contains non-serializable types")
         print(f"  Error: {e}")
-        print(f"  Markdown file created successfully, but JSON generation failed")
+        print("  Markdown file created successfully, but JSON generation failed")
         # Don't raise - allow MD-only output if JSON serialization fails
         return
     except PermissionError as e:
