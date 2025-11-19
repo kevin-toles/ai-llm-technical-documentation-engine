@@ -1795,11 +1795,97 @@ def _process_single_chapter(
     }
 
 
+def _extract_book_metadata(full_md: str, book_name: str) -> Dict[str, str]:
+    """
+    Extract book metadata from markdown header.
+    
+    Extracted helper following DRY principle and Extract Function pattern.
+    
+    Args:
+        full_md: Full markdown content
+        book_name: Book name fallback
+        
+    Returns:
+        Dictionary with title, source, book_name
+        
+    References:
+        - Fluent Python Ch. 7: Extract function pattern
+        - PYTHON_GUIDELINES: Single Responsibility Principle
+    """
+    title_match = re.search(r'^# (.+)$', full_md, re.MULTILINE)
+    source_match = re.search(r'\*Source: (.+?)\*', full_md)
+    
+    return {
+        "title": title_match.group(1).strip() if title_match else book_name,
+        "source": source_match.group(1).strip() if source_match else f"{book_name} (source unknown)",
+        "book_name": book_name
+    }
+
+
+def _extract_concept_data(chapter_content: str) -> List[Dict[str, Any]]:
+    """
+    Extract concept data from chapter content.
+    
+    Extracted helper following DRY principle. Parses concept-by-concept breakdown
+    sections to extract verbatim excerpts and annotations.
+    
+    Args:
+        chapter_content: Chapter markdown content
+        
+    Returns:
+        List of concept dictionaries with name, page, excerpt, annotation
+        
+    References:
+        - Python Cookbook 3rd Recipe 2.18: Tokenizing text
+        - ARCHITECTURE_GUIDELINES Ch. 3: Extract method refactoring
+    """
+    concepts = []
+    concept_pattern = r'#### \*\*(.+?)\*\* \*\(p\.(\d+)\)\*\n+\*\*Verbatim Educational Excerpt\*\*.*?\n```\n(.*?)\n```\n.*?\*\*Annotation:\*\* (.+?)(?=####|\Z)'
+    
+    for concept_match in re.finditer(concept_pattern, chapter_content, re.DOTALL):
+        concept = {
+            "name": concept_match.group(1),
+            "page": int(concept_match.group(2)),
+            "verbatim_excerpt": concept_match.group(3).strip(),
+            "annotation": concept_match.group(4).strip()
+        }
+        concepts.append(concept)
+    
+    return concepts
+
+
+def _extract_chapter_sections(chapter_content: str) -> Dict[str, str]:
+    """
+    Extract cross-text analysis and chapter summary sections.
+    
+    Extracted helper following DRY principle. Uses regex to locate
+    specific markdown sections within chapter content.
+    
+    Args:
+        chapter_content: Chapter markdown content
+        
+    Returns:
+        Dictionary with cross_text_analysis and chapter_summary
+        
+    References:
+        - Python Cookbook 3rd Recipe 2.18: Text parsing patterns
+        - Fluent Python Ch. 7: Extract function pattern
+    """
+    cross_text_match = re.search(r'### Cross-Text Analysis\n\n(.+?)(?=###|\Z)', chapter_content, re.DOTALL)
+    summary_match = re.search(r'### Chapter Summary\n(.+?)(?=###|\Z)', chapter_content, re.DOTALL)
+    
+    return {
+        "cross_text_analysis": cross_text_match.group(1).strip() if cross_text_match else "",
+        "chapter_summary": summary_match.group(1).strip() if summary_match else ""
+    }
+
+
 def _convert_markdown_to_json(all_docs: List[str], book_name: str, all_footnotes: List[Dict]) -> Dict[str, Any]:
     """
     Convert markdown guideline to JSON structure.
     
     Implements Tab 5 JSON generation requirement from CONSOLIDATED_IMPLEMENTATION_PLAN.
+    Refactored to use extracted helper functions following DRY principle.
     
     Args:
         all_docs: List of all document lines (markdown)
@@ -1813,13 +1899,13 @@ def _convert_markdown_to_json(all_docs: List[str], book_name: str, all_footnotes
         - CONSOLIDATED_IMPLEMENTATION_PLAN Tab 5: JSON output requirement
         - Python Cookbook 3rd Recipe 5.18: JSON handling
         - ARCHITECTURE_GUIDELINES Ch. 2: Repository pattern for data storage
+        - ARCHITECTURE_GUIDELINES Ch. 3: Extract method refactoring
     """
     # Join all docs and parse structure
     full_md = "\n".join(all_docs)
     
-    # Extract book metadata from header
-    title_match = re.search(r'^# (.+)$', full_md, re.MULTILINE)
-    source_match = re.search(r'\*Source: (.+?)\*', full_md)
+    # Extract book metadata using helper
+    book_metadata = _extract_book_metadata(full_md, book_name)
     
     # Parse chapters (sections starting with ## Chapter)
     chapters = []
@@ -1832,46 +1918,35 @@ def _convert_markdown_to_json(all_docs: List[str], book_name: str, all_footnotes
         # Extract chapter metadata
         page_range_match = re.search(r'pages (\d+)–(\d+)', chapter_content)
         
-        # Extract concepts from "Concept-by-Concept Breakdown"
-        concepts = []
-        concept_pattern = r'#### \*\*(.+?)\*\* \*\(p\.(\d+)\)\*\n+\*\*Verbatim Educational Excerpt\*\*.*?\n```\n(.*?)\n```\n.*?\n\*\*Annotation:\*\* (.+?)(?=####|\Z)'
-        for concept_match in re.finditer(concept_pattern, chapter_content, re.DOTALL):
-            concept = {
-                "name": concept_match.group(1),
-                "page": int(concept_match.group(2)),
-                "verbatim_excerpt": concept_match.group(3).strip(),
-                "annotation": concept_match.group(4).strip()
+        # Extract concepts using helper function
+        concepts = _extract_concept_data(chapter_content)
+        
+        # Extract chapter sections using helper function
+        sections = _extract_chapter_sections(chapter_content)
+        cross_text_analysis = sections["cross_text_analysis"]
+        chapter_summary = sections["chapter_summary"]
+        
+        # Build page range structure
+        page_range = None
+        if page_range_match:
+            page_range = {
+                "start": int(page_range_match.group(1)),
+                "end": int(page_range_match.group(2))
             }
-            concepts.append(concept)
-        
-        # Extract cross-text analysis
-        cross_text_match = re.search(r'### Cross-Text Analysis\n\n(.+?)(?=###|\Z)', chapter_content, re.DOTALL)
-        cross_text_analysis = cross_text_match.group(1).strip() if cross_text_match else ""
-        
-        # Extract chapter summary
-        summary_match = re.search(r'### Chapter Summary\n(.+?)(?=###|\Z)', chapter_content, re.DOTALL)
-        chapter_summary = summary_match.group(1).strip() if summary_match else ""
         
         chapter_data = {
             "chapter_number": chapter_num,
             "title": chapter_title,
-            "page_range": {
-                "start": int(page_range_match.group(1)) if page_range_match else None,
-                "end": int(page_range_match.group(2)) if page_range_match else None
-            } if page_range_match else None,
+            "page_range": page_range,
             "cross_text_analysis": cross_text_analysis,
             "chapter_summary": chapter_summary,
             "concepts": concepts
         }
         chapters.append(chapter_data)
     
-    # Build JSON structure
+    # Build JSON structure using extracted metadata
     guideline_json = {
-        "book_metadata": {
-            "title": title_match.group(1).strip() if title_match else book_name,
-            "source": source_match.group(1).strip() if source_match else f"{book_name} (source unknown)",
-            "book_name": book_name
-        },
+        "book_metadata": book_metadata,
         "source_info": {
             "generated_by": "chapter_generator_all_text.py",
             "generation_date": "2025-11-18",  # Could use datetime.now() if needed
@@ -1930,7 +2005,7 @@ def _write_output_file(all_docs: List[str], book_name: str, all_footnotes: List[
     
     # Display results
     print(f"\n{'='*66}")
-    print(f"Complete! Generated dual output:")
+    print("Complete! Generated dual output:")
     print(f"  MD:   {md_path.resolve()} ({md_size:,} bytes)")
     print(f"  JSON: {json_path.resolve()} ({json_size:,} bytes)")
     print(f"Total characters: {len(''.join(all_docs)):,}")
@@ -2074,7 +2149,7 @@ if __name__ == "__main__":
                 KEY_CONCEPTS = loaded_concepts  # type: ignore
                 print(f"✓ Total: {len(loaded_concepts)} concepts loaded from taxonomy")
             else:
-                print(f"⚠️  Warning: No concepts found in taxonomy file, using defaults")
+                print("⚠️  Warning: No concepts found in taxonomy file, using defaults")
         
         except Exception as e:
             print(f"Error loading taxonomy: {e}")
