@@ -1795,24 +1795,145 @@ def _process_single_chapter(
     }
 
 
-def _write_output_file(all_docs: List[str], book_name: str) -> None:
+def _convert_markdown_to_json(all_docs: List[str], book_name: str, all_footnotes: List[Dict]) -> Dict[str, Any]:
     """
-    Write final document to output file.
+    Convert markdown guideline to JSON structure.
     
-    Extracted from main() to reduce complexity.
+    Implements Tab 5 JSON generation requirement from CONSOLIDATED_IMPLEMENTATION_PLAN.
     
     Args:
-        all_docs: List of all document lines
-        book_name: Name of the book (for filename)
+        all_docs: List of all document lines (markdown)
+        book_name: Name of the book
+        all_footnotes: List of footnote dictionaries
         
-    Reference:
-        - Python Distilled Ch. 5: Single Responsibility Principle
+    Returns:
+        JSON-serializable dictionary mirroring MD content
+        
+    References:
+        - CONSOLIDATED_IMPLEMENTATION_PLAN Tab 5: JSON output requirement
+        - Python Cookbook 3rd Recipe 5.18: JSON handling
+        - ARCHITECTURE_GUIDELINES Ch. 2: Repository pattern for data storage
     """
-    out_path = Path(f"PYTHON_GUIDELINES_{book_name}.md")
-    out_path.write_text("\n".join(all_docs), encoding="utf-8")
+    # Join all docs and parse structure
+    full_md = "\n".join(all_docs)
+    
+    # Extract book metadata from header
+    title_match = re.search(r'^# (.+)$', full_md, re.MULTILINE)
+    source_match = re.search(r'\*Source: (.+?)\*', full_md)
+    
+    # Parse chapters (sections starting with ## Chapter)
+    chapters = []
+    chapter_pattern = r'## Chapter (\d+): (.+?)\n(.*?)(?=## Chapter|\Z)'
+    for match in re.finditer(chapter_pattern, full_md, re.DOTALL):
+        chapter_num = int(match.group(1))
+        chapter_title = match.group(2).strip()
+        chapter_content = match.group(3).strip()
+        
+        # Extract chapter metadata
+        page_range_match = re.search(r'pages (\d+)–(\d+)', chapter_content)
+        
+        # Extract concepts from "Concept-by-Concept Breakdown"
+        concepts = []
+        concept_pattern = r'#### \*\*(.+?)\*\* \*\(p\.(\d+)\)\*\n+\*\*Verbatim Educational Excerpt\*\*.*?\n```\n(.*?)\n```\n.*?\n\*\*Annotation:\*\* (.+?)(?=####|\Z)'
+        for concept_match in re.finditer(concept_pattern, chapter_content, re.DOTALL):
+            concept = {
+                "name": concept_match.group(1),
+                "page": int(concept_match.group(2)),
+                "verbatim_excerpt": concept_match.group(3).strip(),
+                "annotation": concept_match.group(4).strip()
+            }
+            concepts.append(concept)
+        
+        # Extract cross-text analysis
+        cross_text_match = re.search(r'### Cross-Text Analysis\n\n(.+?)(?=###|\Z)', chapter_content, re.DOTALL)
+        cross_text_analysis = cross_text_match.group(1).strip() if cross_text_match else ""
+        
+        # Extract chapter summary
+        summary_match = re.search(r'### Chapter Summary\n(.+?)(?=###|\Z)', chapter_content, re.DOTALL)
+        chapter_summary = summary_match.group(1).strip() if summary_match else ""
+        
+        chapter_data = {
+            "chapter_number": chapter_num,
+            "title": chapter_title,
+            "page_range": {
+                "start": int(page_range_match.group(1)) if page_range_match else None,
+                "end": int(page_range_match.group(2)) if page_range_match else None
+            } if page_range_match else None,
+            "cross_text_analysis": cross_text_analysis,
+            "chapter_summary": chapter_summary,
+            "concepts": concepts
+        }
+        chapters.append(chapter_data)
+    
+    # Build JSON structure
+    guideline_json = {
+        "book_metadata": {
+            "title": title_match.group(1).strip() if title_match else book_name,
+            "source": source_match.group(1).strip() if source_match else f"{book_name} (source unknown)",
+            "book_name": book_name
+        },
+        "source_info": {
+            "generated_by": "chapter_generator_all_text.py",
+            "generation_date": "2025-11-18",  # Could use datetime.now() if needed
+            "llm_enabled": USE_LLM_SEMANTIC_ANALYSIS
+        },
+        "chapters": chapters,
+        "footnotes": [
+            {
+                "number": f["num"],
+                "author": f["author"],
+                "title": f["title"],
+                "file": f["file"],
+                "page": f["page"],
+                "lines": {
+                    "start": f["start_line"],
+                    "end": f["end_line"]
+                }
+            }
+            for f in all_footnotes
+        ]
+    }
+    
+    return guideline_json
+
+
+def _write_output_file(all_docs: List[str], book_name: str, all_footnotes: List[Dict] = None) -> None:
+    """
+    Write final document to both MD and JSON output files.
+    
+    Implements dual output requirement from CONSOLIDATED_IMPLEMENTATION_PLAN Tab 5.
+    
+    Args:
+        all_docs: List of all document lines (markdown)
+        book_name: Name of the book (for filename)
+        all_footnotes: List of footnote dictionaries (for JSON generation)
+        
+    References:
+        - CONSOLIDATED_IMPLEMENTATION_PLAN Tab 5: Dual output (MD + JSON)
+        - Python Distilled Ch. 9 pp. 225-230: Path operations
+        - PYTHON_GUIDELINES: pathlib.Path, context managers, EAFP
+    """
+    # Write Markdown file (existing functionality)
+    md_path = Path(f"PYTHON_GUIDELINES_{book_name}.md")
+    md_path.write_text("\n".join(all_docs), encoding="utf-8")
+    md_size = md_path.stat().st_size
+    
+    # Write JSON file (NEW - Tab 5 requirement)
+    json_path = Path(f"PYTHON_GUIDELINES_{book_name}.json")
+    guideline_json = _convert_markdown_to_json(all_docs, book_name, all_footnotes or [])
+    
+    # Python Cookbook 3rd Recipe 5.18: JSON formatting
+    with open(json_path, "w", encoding="utf-8") as f:
+        json.dump(guideline_json, f, indent=2, ensure_ascii=False)
+    
+    json_size = json_path.stat().st_size
+    
+    # Display results
     print(f"\n{'='*66}")
-    print(f"Complete! Wrote: {out_path.resolve()}")
-    print(f"Total size: {len(''.join(all_docs)):,} characters")
+    print(f"Complete! Generated dual output:")
+    print(f"  MD:   {md_path.resolve()} ({md_size:,} bytes)")
+    print(f"  JSON: {json_path.resolve()} ({json_size:,} bytes)")
+    print(f"Total characters: {len(''.join(all_docs)):,}")
     print(f"{'='*66}")
 
 
@@ -1877,8 +1998,8 @@ def main(custom_input_path: Optional[Path] = None):
         ))
     all_docs.append("")
     
-    # Step 5: Write output file
-    _write_output_file(all_docs, PRIMARY_BOOK)
+    # Step 5: Write output files (MD + JSON)
+    _write_output_file(all_docs, PRIMARY_BOOK, all_footnotes)
 
 if __name__ == "__main__":
     # Parse command-line arguments
