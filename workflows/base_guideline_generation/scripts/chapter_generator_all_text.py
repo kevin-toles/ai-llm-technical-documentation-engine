@@ -1886,6 +1886,7 @@ def _convert_markdown_to_json(all_docs: List[str], book_name: str, all_footnotes
     
     Implements Tab 5 JSON generation requirement from CONSOLIDATED_IMPLEMENTATION_PLAN.
     Refactored to use extracted helper functions following DRY principle.
+    Follows EAFP pattern for error handling.
     
     Args:
         all_docs: List of all document lines (markdown)
@@ -1895,54 +1896,80 @@ def _convert_markdown_to_json(all_docs: List[str], book_name: str, all_footnotes
     Returns:
         JSON-serializable dictionary mirroring MD content
         
+    Raises:
+        ValueError: If markdown structure is invalid or unparseable
+        AttributeError: If required markdown elements are missing
+        
     References:
         - CONSOLIDATED_IMPLEMENTATION_PLAN Tab 5: JSON output requirement
         - Python Cookbook 3rd Recipe 5.18: JSON handling
         - ARCHITECTURE_GUIDELINES Ch. 2: Repository pattern for data storage
         - ARCHITECTURE_GUIDELINES Ch. 3: Extract method refactoring
+        - Fluent Python Ch. 18: EAFP error handling style
     """
-    # Join all docs and parse structure
-    full_md = "\n".join(all_docs)
+    # Join all docs and parse structure - validate input
+    if not all_docs:
+        raise ValueError("Cannot convert empty document to JSON")
     
-    # Extract book metadata using helper
-    book_metadata = _extract_book_metadata(full_md, book_name)
+    try:
+        full_md = "\n".join(all_docs)
+    except TypeError as e:
+        raise ValueError(f"Invalid markdown document format: {e}") from e
     
-    # Parse chapters (sections starting with ## Chapter)
+    # Extract book metadata using helper - EAFP style
+    try:
+        book_metadata = _extract_book_metadata(full_md, book_name)
+    except (AttributeError, IndexError) as e:
+        raise ValueError(f"Failed to extract book metadata: {e}") from e
+    
+    # Parse chapters (sections starting with ## Chapter) - EAFP style
     chapters = []
     chapter_pattern = r'## Chapter (\d+): (.+?)\n(.*?)(?=## Chapter|\Z)'
-    for match in re.finditer(chapter_pattern, full_md, re.DOTALL):
-        chapter_num = int(match.group(1))
-        chapter_title = match.group(2).strip()
-        chapter_content = match.group(3).strip()
-        
-        # Extract chapter metadata
-        page_range_match = re.search(r'pages (\d+)–(\d+)', chapter_content)
-        
-        # Extract concepts using helper function
-        concepts = _extract_concept_data(chapter_content)
-        
-        # Extract chapter sections using helper function
-        sections = _extract_chapter_sections(chapter_content)
-        cross_text_analysis = sections["cross_text_analysis"]
-        chapter_summary = sections["chapter_summary"]
-        
-        # Build page range structure
-        page_range = None
-        if page_range_match:
-            page_range = {
-                "start": int(page_range_match.group(1)),
-                "end": int(page_range_match.group(2))
-            }
-        
-        chapter_data = {
-            "chapter_number": chapter_num,
-            "title": chapter_title,
-            "page_range": page_range,
-            "cross_text_analysis": cross_text_analysis,
-            "chapter_summary": chapter_summary,
-            "concepts": concepts
-        }
-        chapters.append(chapter_data)
+    
+    try:
+        for match in re.finditer(chapter_pattern, full_md, re.DOTALL):
+            try:
+                chapter_num = int(match.group(1))
+                chapter_title = match.group(2).strip()
+                chapter_content = match.group(3).strip()
+                
+                # Extract chapter metadata
+                page_range_match = re.search(r'pages (\d+)–(\d+)', chapter_content)
+                
+                # Extract concepts using helper function - may return empty list
+                concepts = _extract_concept_data(chapter_content)
+                
+                # Extract chapter sections using helper function
+                sections = _extract_chapter_sections(chapter_content)
+                cross_text_analysis = sections["cross_text_analysis"]
+                chapter_summary = sections["chapter_summary"]
+                
+                # Build page range structure
+                page_range = None
+                if page_range_match:
+                    page_range = {
+                        "start": int(page_range_match.group(1)),
+                        "end": int(page_range_match.group(2))
+                    }
+                
+                chapter_data = {
+                    "chapter_number": chapter_num,
+                    "title": chapter_title,
+                    "page_range": page_range,
+                    "cross_text_analysis": cross_text_analysis,
+                    "chapter_summary": chapter_summary,
+                    "concepts": concepts
+                }
+                chapters.append(chapter_data)
+            except (ValueError, IndexError, AttributeError) as e:
+                # Log warning but continue processing other chapters
+                print(f"⚠️  Warning: Skipping malformed chapter {chapter_num if 'chapter_num' in locals() else 'unknown'}: {e}")
+                continue
+    except Exception as e:
+        raise ValueError(f"Failed to parse chapter structure: {e}") from e
+    
+    if not chapters:
+        raise ValueError("No chapters found in markdown document")
     
     # Build JSON structure using extracted metadata
     guideline_json = {
@@ -1977,31 +2004,72 @@ def _write_output_file(all_docs: List[str], book_name: str, all_footnotes: List[
     Write final document to both MD and JSON output files.
     
     Implements dual output requirement from CONSOLIDATED_IMPLEMENTATION_PLAN Tab 5.
+    Follows EAFP (Easier to Ask Forgiveness than Permission) error handling pattern.
     
     Args:
         all_docs: List of all document lines (markdown)
         book_name: Name of the book (for filename)
         all_footnotes: List of footnote dictionaries (for JSON generation)
         
+    Raises:
+        OSError: If file write fails due to permissions or disk space
+        TypeError: If JSON serialization fails due to non-serializable data
+        
     References:
         - CONSOLIDATED_IMPLEMENTATION_PLAN Tab 5: Dual output (MD + JSON)
         - Python Distilled Ch. 9 pp. 225-230: Path operations
         - PYTHON_GUIDELINES: pathlib.Path, context managers, EAFP
+        - Fluent Python Ch. 18: EAFP error handling style
+        - ARCHITECTURE_GUIDELINES Ch. 12: Exception handling patterns
     """
-    # Write Markdown file (existing functionality)
     md_path = Path(f"PYTHON_GUIDELINES_{book_name}.md")
-    md_path.write_text("\n".join(all_docs), encoding="utf-8")
-    md_size = md_path.stat().st_size
-    
-    # Write JSON file (NEW - Tab 5 requirement)
     json_path = Path(f"PYTHON_GUIDELINES_{book_name}.json")
-    guideline_json = _convert_markdown_to_json(all_docs, book_name, all_footnotes or [])
     
-    # Python Cookbook 3rd Recipe 5.18: JSON formatting
-    with open(json_path, "w", encoding="utf-8") as f:
-        json.dump(guideline_json, f, indent=2, ensure_ascii=False)
+    # Write Markdown file (existing functionality) - EAFP style
+    try:
+        md_path.write_text("\n".join(all_docs), encoding="utf-8")
+        md_size = md_path.stat().st_size
+        print(f"✓ Markdown file written: {md_path.name} ({md_size:,} bytes)")
+    except PermissionError as e:
+        print(f"✗ Permission denied writing MD file: {md_path}")
+        print(f"  Error: {e}")
+        raise
+    except OSError as e:
+        print(f"✗ OS error writing MD file: {md_path}")
+        print(f"  Error: {e}")
+        raise
     
-    json_size = json_path.stat().st_size
+    # Write JSON file (NEW - Tab 5 requirement) - EAFP style
+    try:
+        guideline_json = _convert_markdown_to_json(all_docs, book_name, all_footnotes or [])
+    except (AttributeError, ValueError, IndexError) as e:
+        print(f"⚠️  Warning: Failed to parse markdown for JSON conversion")
+        print(f"  Error: {e}")
+        print(f"  Markdown file created successfully, but JSON generation failed")
+        print(f"  Check markdown structure and retry if needed")
+        # Don't raise - allow MD-only output if JSON parsing fails
+        return
+    
+    # Python Cookbook 3rd Recipe 5.18: JSON formatting with error handling
+    try:
+        with open(json_path, "w", encoding="utf-8") as f:
+            json.dump(guideline_json, f, indent=2, ensure_ascii=False)
+        json_size = json_path.stat().st_size
+        print(f"✓ JSON file written: {json_path.name} ({json_size:,} bytes)")
+    except TypeError as e:
+        print(f"✗ JSON serialization error: Data contains non-serializable types")
+        print(f"  Error: {e}")
+        print(f"  Markdown file created successfully, but JSON generation failed")
+        # Don't raise - allow MD-only output if JSON serialization fails
+        return
+    except PermissionError as e:
+        print(f"✗ Permission denied writing JSON file: {json_path}")
+        print(f"  Error: {e}")
+        raise
+    except OSError as e:
+        print(f"✗ OS error writing JSON file: {json_path}")
+        print(f"  Error: {e}")
+        raise
     
     # Display results
     print(f"\n{'='*66}")
