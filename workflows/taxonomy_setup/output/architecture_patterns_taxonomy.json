@@ -1,0 +1,69 @@
+{
+  "name": "Architecture Patterns Taxonomy",
+  "description": "Architecture patterns and microservices concepts",
+  "created_at": "2025-11-19T00:00:00",
+  "tiers": {
+    "architecture_spine": {
+      "priority": 1,
+      "weight": 1.2,
+      "books": [
+        "Architecture Patterns with Python.json",
+        "Building Microservices.json",
+        "Microservice Architecture.json",
+        "Python Architecture Patterns.json"
+      ],
+      "concepts": [
+        "domain modeling",
+        "repository pattern",
+        "unit of work",
+        "service layer",
+        "event driven architecture",
+        "message bus",
+        "dependency injection",
+        "adapter pattern",
+        "bounded context",
+        "aggregate",
+        "entity",
+        "value object"
+      ]
+    },
+    "implementation": {
+      "priority": 2,
+      "weight": 1.0,
+      "books": [
+        "Building Python Microservices with FastAPI.json",
+        "Python Microservices Development.json",
+        "Microservices Up and Running.json"
+      ],
+      "concepts": [
+        "fastapi",
+        "async programming",
+        "api development",
+        "microservices",
+        "deployment",
+        "docker",
+        "kubernetes"
+      ]
+    },
+    "engineering_practices": {
+      "priority": 3,
+      "weight": 1.1,
+      "books": [
+        "Fluent Python 2nd.json",
+        "Python Distilled.json",
+        "Python Cookbook 3rd.json",
+        "Python Essential Reference 4th.json"
+      ],
+      "concepts": [
+        "pythonic patterns",
+        "protocols",
+        "metaclass",
+        "decorator",
+        "generator",
+        "async",
+        "type hints",
+        "best practices"
+      ]
+    }
+  }
+}
