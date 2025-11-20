@@ -57,8 +57,8 @@ except Exception as cache_error:
     print(f"Warning: Cache initialization failed: {cache_error}")
 
 # Legacy LLM Integration Functions
-# TODO (Day 4): Migrate these to use provider abstraction
-# These are specialized prompt functions not yet migrated to provider pattern
+# These are specialized prompt functions for semantic analysis
+# Not yet migrated to provider pattern - remain as standalone utilities
 try:
     from llm_integration import (
         prompt_for_semantic_concepts,
@@ -107,7 +107,8 @@ JSON_DIR_ARCHITECTURE = REPO_ROOT / "Python_References" / "Architecture" / "JSON
 # Set to False for keyword-only mode with intelligent content extraction
 USE_LLM_SEMANTIC_ANALYSIS = True  # ENABLED - Use LLM for enhanced content analysis
 
-PRIMARY_BOOK = "Learning Python Ed6"
+# PRIMARY_BOOK is set at runtime from command-line argument (no default)
+PRIMARY_BOOK = None  # Will be set by argparse - MUST be specified by user
 
 # Book metadata - maps filename to (author, full_title, short_name)
 BOOK_METADATA = {
@@ -1696,8 +1697,7 @@ def _process_single_chapter(
     chapter_data: Tuple[int, str, int, int],
     primary: Dict[str, Any],
     companions: Dict[str, Dict[str, Any]],
-    global_footnote_num: int,
-    all_footnotes: List[Dict[str, Any]]
+    global_footnote_num: int
 ) -> Dict[str, Any]:
     """
     Process a single chapter - extract content, concepts, cross-references.
@@ -1710,7 +1710,6 @@ def _process_single_chapter(
         primary: Primary book JSON data
         companions: Dict of companion book data
         global_footnote_num: Current footnote number
-        all_footnotes: List to accumulate footnotes
         
     Returns:
         Dictionary with:
@@ -1840,7 +1839,8 @@ def _extract_concept_data(chapter_content: str) -> List[Dict[str, Any]]:
         - ARCHITECTURE_GUIDELINES Ch. 3: Extract method refactoring
     """
     concepts = []
-    concept_pattern = r'#### \*\*(.+?)\*\* \*\(p\.(\d+)\)\*\n+\*\*Verbatim Educational Excerpt\*\*.*?\n```\n(.*?)\n```\n.*?\*\*Annotation:\*\* (.+?)(?=####|\Z)'
+    # Fixed regex: Use greedy quantifiers for annotation (last group) to capture full content until next heading
+    concept_pattern = r'#### \*\*(.+?)\*\* \*\(p\.(\d+)\)\*\n+\*\*Verbatim Educational Excerpt\*\*.*?\n```\n(.*?)\n```\n.*?\*\*Annotation:\*\* (.+)(?=####|\Z)'
     
     for concept_match in re.finditer(concept_pattern, chapter_content, re.DOTALL):
         concept = {
@@ -1871,8 +1871,9 @@ def _extract_chapter_sections(chapter_content: str) -> Dict[str, str]:
         - Python Cookbook 3rd Recipe 2.18: Text parsing patterns
         - Fluent Python Ch. 7: Extract function pattern
     """
-    cross_text_match = re.search(r'### Cross-Text Analysis\n\n(.+?)(?=###|\Z)', chapter_content, re.DOTALL)
-    summary_match = re.search(r'### Chapter Summary\n(.+?)(?=###|\Z)', chapter_content, re.DOTALL)
+    # Fixed regex: Use greedy quantifiers to capture full section content until next heading
+    cross_text_match = re.search(r'### Cross-Text Analysis\n\n(.+)(?=###|\Z)', chapter_content, re.DOTALL)
+    summary_match = re.search(r'### Chapter Summary\n(.+)(?=###|\Z)', chapter_content, re.DOTALL)
     
     return {
         "cross_text_analysis": cross_text_match.group(1).strip() if cross_text_match else "",
@@ -1924,7 +1925,8 @@ def _convert_markdown_to_json(all_docs: List[str], book_name: str, all_footnotes
     
     # Parse chapters (sections starting with ## Chapter) - EAFP style
     chapters = []
-    chapter_pattern = r'## Chapter (\d+): (.+?)\n(.*?)(?=## Chapter|\Z)'
+    # Fixed regex: Title uses non-greedy .+? (stops at newline), content uses greedy .* (captures everything until next chapter)
+    chapter_pattern = r'## Chapter (\d+): (.+?)\n(.*)(?=## Chapter|\Z)'
     
     try:
         for match in re.finditer(chapter_pattern, full_md, re.DOTALL):
@@ -2085,7 +2087,7 @@ def main(custom_input_path: Optional[Path] = None):
     Main orchestrator for generating comprehensive Python guidelines.
     
     Args:
-        custom_input_path: Optional path to input JSON file (overrides PRIMARY_BOOK directory search)
+        custom_input_path: Path to input JSON file (REQUIRED - no default)
     
     Refactored from complexity 20 → <10 by extracting helper functions.
     Follows Service Layer pattern (Architecture Patterns Ch. 4).
@@ -2102,8 +2104,14 @@ def main(custom_input_path: Optional[Path] = None):
         - Fluent Python Ch. 7: Function decomposition
         - Python Distilled Ch. 5: Single Responsibility Principle
     """
+    # Validate input path is provided
+    if custom_input_path is None:
+        print("Error: Input file path is required. No default book is configured.")
+        print("Usage: python chapter_generator_all_text.py <input_file.json> [--taxonomy <taxonomy.json>]")
+        sys.exit(1)
+    
     print("="*66)
-    print("Multi-Chapter Generator (Chapters 1-41)")
+    print("Multi-Chapter Generator - Tab 5: Guideline Generation")
     print("="*66)
 
     # Step 1: Load primary and companion books
@@ -2123,8 +2131,7 @@ def main(custom_input_path: Optional[Path] = None):
             chapter_data=chapter_data,
             primary=primary,
             companions=companions,
-            global_footnote_num=global_footnote_num,
-            all_footnotes=all_footnotes
+            global_footnote_num=global_footnote_num
         )
         
         # Update state
@@ -2151,7 +2158,6 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         'input_file',
-        nargs='?',
         help='Path to input JSON file (e.g., workflows/pdf_to_json/output/textbooks_json/makinggames.json)'
     )
     parser.add_argument(
@@ -2161,23 +2167,24 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
     
-    # If input file provided, use it; otherwise use default PRIMARY_BOOK
-    custom_path = None
-    if args.input_file:
-        custom_path = Path(args.input_file)
-        
-        # Extract book name from filename (remove .json extension)
-        book_name = custom_path.stem
-        
-        # Update PRIMARY_BOOK global for this run
-        PRIMARY_BOOK = book_name  # type: ignore
-        
-        print(f"Processing book: {book_name}")
-        print(f"Input file: {custom_path}")
-        
-        if not custom_path.exists():
-            print(f"Error: File not found: {custom_path}")
-            sys.exit(1)
+    # Require input file - no defaults
+    if not args.input_file:
+        parser.error("Input file is required. Please specify the path to a textbook JSON file.")
+    
+    custom_path = Path(args.input_file)
+    
+    # Extract book name from filename (remove .json extension)
+    book_name = custom_path.stem
+    
+    # Update PRIMARY_BOOK global for this run
+    PRIMARY_BOOK = book_name  # type: ignore
+    
+    print(f"Processing book: {book_name}")
+    print(f"Input file: {custom_path}")
+    
+    if not custom_path.exists():
+        print(f"Error: File not found: {custom_path}")
+        sys.exit(1)
     
     # If taxonomy file provided, load it and override KEY_CONCEPTS
     if args.taxonomy:
