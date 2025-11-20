@@ -1450,7 +1450,12 @@ What LLM adds:
 
 ### Tab 5: Guideline Generation - Detailed Implementation
 
-**Status**: To Implement ⚠️
+**Status**: ⚠️ PARTIAL COMPLETE (Date TBD)
+- **MD Output**: ✅ Complete (assumed based on existing guidelines)
+- **JSON Output**: ❌ NOT IMPLEMENTED - Critical blocker for Tab 7
+- **Impact**: Tab 7 LLM Enhancement cannot run end-to-end workflow (4/9 tests skipped)
+- **Required**: Implement dual MD+JSON output generation as originally specified
+- **Note**: Current implementation only generates MD files, JSON generation missing
 
 **Purpose**: Format enriched metadata into human and machine-readable guidelines (NO LLM)
 
@@ -1735,7 +1740,15 @@ What LLM adds:
 
 ### Tab 7: Phase 2 LLM Enhancement - Detailed Implementation
 
-**Status**: Update Required ⚠️
+**Status**: ⚠️ PARTIAL COMPLETE (November 20, 2025)
+- **Commit**: f552b274 - "feat: Tab 7 LLM Enhancement Complete - TDD RED→GREEN→REFACTOR"
+- **Implementation**: Complete with TDD methodology (Document Analysis → RED→GREEN→REFACTOR)
+- **Files**: 
+  * `workflows/llm_enhancement/scripts/llm_enhance_guideline.py` (820+ lines, 10 functions)
+  * `tests/integration/test_llm_enhancement.py` (650+ lines, 9 tests)
+- **Quality**: 0 SonarLint errors, 5/9 tests passing
+- **Blocker**: Tab 5 guideline JSON missing (only MD exists) - blocks 4 tests and full workflow
+- **TDD Phases**: Document Analysis (Steps 1-3, NO CONFLICTS) → RED (9 tests, 1 failing) → GREEN (5/9 passing) → REFACTOR (0 errors)
 
 **Purpose**: LLM-powered narrative enhancement using aggregate context (THE ONLY LLM WORKFLOW)
 
