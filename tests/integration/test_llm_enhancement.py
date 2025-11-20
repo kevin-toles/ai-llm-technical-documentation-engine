@@ -87,22 +87,24 @@ class TestLLMEnhancementScript:
         Tests requirement: Load guideline JSON
         Reference: CONSOLIDATED_IMPLEMENTATION_PLAN.md lines 1760-1763
         
-        Given: architecture_patterns_guideline.json exists
+        Given: Any *_guideline.json exists in Tab 5 output
         When: Script loads guideline
         Then: Should parse JSON and return structured guideline data
         """
         guideline_dir = PROJECT_ROOT / "workflows" / "base_guideline_generation" / "output"
-        guideline_file = guideline_dir / "architecture_patterns_guideline.json"
+        guideline_files = list(guideline_dir.glob("*_guideline.json"))
         
-        if not guideline_file.exists():
+        if not guideline_files:
             pytest.skip("Guideline JSON not found - run Tab 5 first")
         
+        # Test with first available guideline
+        guideline_file = guideline_files[0]
         with open(guideline_file, encoding='utf-8') as f:
             guideline = json.load(f)
         
         # Verify guideline structure (based on Tab 5 output)
-        assert "metadata" in guideline or "chapters" in guideline, \
-            "Guideline must have 'metadata' or 'chapters' key"
+        assert "book_metadata" in guideline or "chapters" in guideline, \
+            f"Guideline must have 'book_metadata' or 'chapters' key, got: {list(guideline.keys())}"
 
 
 class TestContextIndexBuilding:
