@@ -2007,6 +2007,7 @@ def _write_output_file(all_docs: List[str], book_name: str, all_footnotes: List[
     
     Implements dual output requirement from CONSOLIDATED_IMPLEMENTATION_PLAN Tab 5.
     Follows EAFP (Easier to Ask Forgiveness than Permission) error handling pattern.
+    Outputs to workflow output folder following repository conventions.
     
     Args:
         all_docs: List of all document lines (markdown)
@@ -2023,9 +2024,15 @@ def _write_output_file(all_docs: List[str], book_name: str, all_footnotes: List[
         - PYTHON_GUIDELINES: pathlib.Path, context managers, EAFP
         - Fluent Python Ch. 18: EAFP error handling style
         - ARCHITECTURE_GUIDELINES Ch. 12: Exception handling patterns
+        - WORKFLOW_OUTPUT_ANALYSIS.md: Output folder convention
     """
-    md_path = Path(f"PYTHON_GUIDELINES_{book_name}.md")
-    json_path = Path(f"PYTHON_GUIDELINES_{book_name}.json")
+    # Use workflow output folder (repository convention)
+    output_dir = Path(__file__).parent.parent / "output"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    
+    # Naming convention: {book}_guideline.{md|json}
+    md_path = output_dir / f"{book_name}_guideline.md"
+    json_path = output_dir / f"{book_name}_guideline.json"
     
     # Write Markdown file (existing functionality) - EAFP style
     try:
@@ -2079,6 +2086,7 @@ def _write_output_file(all_docs: List[str], book_name: str, all_footnotes: List[
     print(f"  MD:   {md_path.resolve()} ({md_size:,} bytes)")
     print(f"  JSON: {json_path.resolve()} ({json_size:,} bytes)")
     print(f"Total characters: {len(''.join(all_docs)):,}")
+    print(f"\nOutput location: {output_dir.resolve()}")
     print(f"{'='*66}")
 
 
