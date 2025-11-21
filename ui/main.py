@@ -54,20 +54,13 @@ WORKFLOWS = {
         "script": WORKFLOWS_DIR / "metadata_enrichment" / "scripts" / "generate_chapter_metadata.py"
     },
     "tab4": {
-        "name": "Cache Merge",
-        "input_dir": WORKFLOWS_DIR / "metadata_extraction" / "output",
-        "input_ext": ".json",
-        "output_dir": WORKFLOWS_DIR / "metadata_cache_merge" / "output",
-        "script": WORKFLOWS_DIR / "metadata_cache_merge" / "scripts" / "merge_metadata_to_cache.py"
-    },
-    "tab5": {
         "name": "Taxonomy Setup",
         "input_dir": WORKFLOWS_DIR / "pdf_to_json" / "output" / "textbooks_json",
         "input_ext": ".json",
         "output_dir": WORKFLOWS_DIR / "taxonomy_setup" / "output",
         "script": None  # To be created
     },
-    "tab6": {
+    "tab5": {
         "name": "Base Guideline",
         "input_dir": WORKFLOWS_DIR / "pdf_to_json" / "output" / "textbooks_json",
         "input_ext": ".json",
@@ -75,7 +68,7 @@ WORKFLOWS = {
         "script": WORKFLOWS_DIR / "base_guideline_generation" / "scripts" / "chapter_generator_all_text.py",
         "requires_taxonomy": True
     },
-    "tab7": {
+    "tab6": {
         "name": "LLM Enhancement",
         "input_dir": WORKFLOWS_DIR / "base_guideline_generation" / "output" / "chapter_summaries",
         "input_ext": ".md",
@@ -89,7 +82,7 @@ WORKFLOWS = {
 
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
-    """Main page with 7 workflow tabs"""
+    """Main page with 6 workflow tabs"""
     return templates.TemplateResponse("index.html", {
         "request": request,
         "workflows": WORKFLOWS
@@ -112,7 +105,7 @@ async def get_files(tab_id: str):
     files = [f.name for f in input_dir.glob(f"*{workflow['input_ext']}")]
     
     # Special handling for Base Guideline tab - include taxonomy files
-    if tab_id == "tab6":
+    if tab_id == "tab5":
         taxonomy_dir = WORKFLOWS_DIR / "taxonomy_setup" / "output"
         taxonomy_files = []
         if taxonomy_dir.exists():
@@ -138,7 +131,7 @@ async def get_files(tab_id: str):
         }
     
     # Special handling for taxonomy tab - return with tier support
-    if tab_id == "tab5":
+    if tab_id == "tab4":
         return {
             "files": sorted(files),
             "input_dir": str(input_dir),
@@ -151,7 +144,7 @@ async def get_files(tab_id: str):
         }
     
     # Special handling for LLM tab - return taxonomy files and LLM options
-    if tab_id == "tab7":
+    if tab_id == "tab6":
         taxonomy_dir = WORKFLOWS_DIR / "taxonomy_setup" / "output"
         taxonomy_files = []
         if taxonomy_dir.exists():
@@ -261,7 +254,7 @@ async def run_workflow(tab_id: str, request: Request, background_tasks: Backgrou
     }
     
     # Handle LLM tab with configuration
-    if tab_id == "tab7" and "llm_config" in data:
+    if tab_id == "tab6" and "llm_config" in data:
         background_tasks.add_task(execute_llm_enhancement, workflow_id, data["llm_config"], workflow)
         return {
             "status": "started",
@@ -271,7 +264,7 @@ async def run_workflow(tab_id: str, request: Request, background_tasks: Backgrou
         }
     
     # Handle taxonomy tab with tiers
-    if tab_id == "tab5" and "tiers" in data:
+    if tab_id == "tab4" and "tiers" in data:
         background_tasks.add_task(execute_taxonomy_generation, workflow_id, data["tiers"], workflow)
         total_files = sum(len(files) for files in data["tiers"].values())
         return {
@@ -340,9 +333,7 @@ async def execute_workflow(workflow_id: str, tab_id: str, files: list, workflow:
                     cmd = ["python3", str(script_path), "--input", str(file_path), "--auto-detect"]
                 elif tab_id == "tab3":  # Metadata Enrichment
                     cmd = ["python3", str(script_path), "--input", str(file_path)]
-                elif tab_id == "tab4":  # Cache Merge
-                    cmd = ["python3", str(script_path), "--input", str(file_path)]
-                elif tab_id == "tab6":  # Base Guideline
+                elif tab_id == "tab5":  # Base Guideline
                     cmd = ["python3", str(script_path), str(file_path)]
                     # Add taxonomy if provided
                     if taxonomy_file:

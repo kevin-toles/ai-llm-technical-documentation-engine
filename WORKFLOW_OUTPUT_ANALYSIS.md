@@ -12,8 +12,8 @@
 - **Output:** `output/textbooks_json/` (17 JSON files)
 - **Consumed By:**
   - Tab 2 (Metadata Extraction)
-  - Tab 4 (Metadata Enrichment)
-  - Tab 5 (Guideline Generation) - if needed
+  - Tab 3 (Metadata Enrichment)
+  - Tab 4 (Guideline Generation) - if needed
 - **Symlinked To:**
   - `workflows/metadata_extraction/input/textbooks_json` ✅
   - `workflows/base_guideline_generation/input/textbooks_json` ✅
@@ -35,9 +35,7 @@
   - `makinggames_metadata_new.json` (test)
   - `microservice_apis_metadata.json`
   - Plus others...
-- **Consumed By:**
-  - Tab 3 (Metadata Cache Merge)
-- **Symlinked To:**
+- **Consumed By:**- **Symlinked To:**
   - `workflows/metadata_cache_merge/input/metadata` ❌ **BROKEN** - should link to `../../metadata_extraction/output/`
 - **Status:** ⚠️ NEEDS FIX - symlink incorrect
 
@@ -52,41 +50,26 @@
   - `python_taxonomy.json`
   - `test_taxonomy.json`
 - **Consumed By:**
-  - Tab 6 (Aggregate Package Creation)
+  - Tab 5 (Aggregate Package Creation)
 - **Symlinked To:** ❌ **MISSING** - Tab 6 should have symlink
 - **Status:** ⚠️ NEEDS FIX - Tab 6 missing taxonomy input symlink
 
 ---
 
-### Tab 3b: Metadata Cache Merge
-- **Folder:** `workflows/metadata_cache_merge/`
-- **Output:** `output/chapter_metadata_cache.json` (210 KB)
-- **Consumed By:**
-  - Tab 4 (Metadata Enrichment)
-  - Tab 5 (Guideline Generation)
-  - Tab 7 (LLM Enhancement)
-- **Symlinked To:**
-  - `workflows/base_guideline_generation/input/chapter_metadata_cache.json` ✅
-  - `workflows/metadata_enrichment/input/chapter_metadata_cache.json` ✅
-  - `workflows/llm_enhancement/input/chapter_metadata_cache.json` ✅
-- **Status:** ✅ CORRECT - outputs to output folder, properly symlinked
-
----
-
-### Tab 4: Metadata Enrichment
+### Tab 3: Metadata Enrichment
 - **Folder:** `workflows/metadata_enrichment/`
 - **Output:** `output/` (enriched metadata JSON files)
   - `architecture_patterns_metadata_enriched.json` (44 KB)
   - `chapter_metadata_manual.json` (6.1 KB)
 - **Consumed By:**
-  - Tab 5 (Guideline Generation)
-  - Tab 6 (Aggregate Package Creation)
+  - Tab 4 (Guideline Generation)
+  - Tab 5 (Aggregate Package Creation)
 - **Symlinked To:** ❌ **MISSING** - Tab 5 and Tab 6 should have symlinks
 - **Status:** ⚠️ NEEDS FIX - Tab 5/Tab 6 missing enriched metadata symlinks
 
 ---
 
-### Tab 5: Guideline Generation (Base)
+### Tab 4: Guideline Generation (Base)
 - **Folder:** `workflows/base_guideline_generation/`
 - **Output:** `output/`
   - **Currently:** Only `chapter_summaries/` folder (16 MD files)
@@ -94,7 +77,7 @@
     - `{book}_guideline.md` (one per book)
     - `{book}_guideline.json` (one per book) ❌ **MISSING**
 - **Consumed By:**
-  - Tab 7 (LLM Enhancement) - needs JSON files
+  - Tab 6 (LLM Enhancement) - needs JSON files
 - **Symlinked To:**
   - `workflows/llm_enhancement/input/chapter_summaries` ✅ (partial)
   - `workflows/llm_enhancement/input/guidelines/` ❌ **MISSING**
@@ -106,18 +89,18 @@
 
 ---
 
-### Tab 6: Aggregate Package Creation
+### Tab 5: Aggregate Package Creation
 - **Folder:** `workflows/llm_enhancement/`
 - **Output:** `tmp/` (temporary aggregate packages)
   - `architecture_patterns_llm_package_20251119_220250.json` (55 KB)
 - **Consumed By:**
-  - Tab 7 (LLM Enhancement) - same workflow
+  - Tab 6 (LLM Enhancement) - same workflow
 - **Symlinked To:** N/A (internal tmp folder, not symlinked)
 - **Status:** ✅ CORRECT - outputs to tmp folder (appropriate for temporary aggregates)
 
 ---
 
-### Tab 7: LLM Enhancement
+### Tab 6: LLM Enhancement
 - **Folder:** `workflows/llm_enhancement/`
 - **Output:** `output/` (enhanced guidelines)
   - **Currently:** 
@@ -267,7 +250,7 @@ workflows/metadata_cache_merge/input/metadata → ../../metadata_extraction/outp
 ---
 
 ### Issue 5: Tab 6 Missing Inputs ⚠️
-**Problem:** Tab 6 (Aggregate Package) missing input symlinks
+**Problem:** Tab 5 (Aggregate Package) missing input symlinks
 
 **Currently:** Aggregate package script uses hardcoded paths or command-line args
 
@@ -308,13 +291,13 @@ workflows/metadata_cache_merge/
 ```
 **Consumers:** Tabs 4, 5, 7 (all have symlinks)
 
-### Tab 6 (Aggregate Package) ✅
+### Tab 5 (Aggregate Package) ✅
 ```
 workflows/llm_enhancement/
 └── tmp/
     └── architecture_patterns_llm_package_20251119_220250.json
 ```
-**Consumers:** Tab 7 (same workflow, uses glob pattern)
+**Consumers:** Tab 6 (same workflow, uses glob pattern)
 
 ---
 
@@ -324,7 +307,7 @@ workflows/llm_enhancement/
 1. Update `chapter_generator_all_text.py`:
    - Change output paths from CWD to `workflows/base_guideline_generation/output/`
    - Use naming: `{book}_guideline.md` and `{book}_guideline.json`
-2. Re-run Tab 5:
+2. Re-run Tab 4:
    ```bash
    python workflows/base_guideline_generation/scripts/chapter_generator_all_text.py \
      workflows/pdf_to_json/output/textbooks_json/architecture_patterns.json
@@ -375,10 +358,10 @@ python workflows/llm_enhancement/scripts/llm_enhance_guideline.py \
 - **Tab 2:** Metadata Extraction ✅ CORRECT (symlink consumer issue)
 - **Tab 3:** Taxonomy Setup ✅ CORRECT (missing consumer symlink)
 - **Tab 3b:** Metadata Cache Merge ⚠️ BROKEN INPUT SYMLINK
-- **Tab 4:** Metadata Enrichment ✅ CORRECT (missing consumer symlinks)
-- **Tab 5:** Guideline Generation ❌ BROKEN OUTPUT PATHS
-- **Tab 6:** Aggregate Package ✅ CORRECT (missing input symlinks)
-- **Tab 7:** LLM Enhancement ⚠️ MISSING INPUT SYMLINKS
+- **Tab 3:** Metadata Enrichment ✅ CORRECT (missing consumer symlinks)
+- **Tab 4:** Guideline Generation ❌ BROKEN OUTPUT PATHS
+- **Tab 5:** Aggregate Package ✅ CORRECT (missing input symlinks)
+- **Tab 6:** LLM Enhancement ⚠️ MISSING INPUT SYMLINKS
 
 ### Symlinks Status:
 - ✅ Correct: 8/12 (67%)

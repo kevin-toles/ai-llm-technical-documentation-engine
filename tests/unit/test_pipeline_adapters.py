@@ -274,6 +274,7 @@ class TestChapterGeneratorAdapter:
         assert not isinstance(result, str)
 
 
+@pytest.mark.skip(reason="Cache Merge workflow removed - chapter_metadata_cache.json obsolete")
 class TestMetadataExtractorAdapter:
     """Tests for MetadataExtractorAdapter (wraps generate_chapter_metadata)"""
     

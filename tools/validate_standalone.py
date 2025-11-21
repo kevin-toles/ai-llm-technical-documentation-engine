@@ -73,10 +73,8 @@ def validate_data_files():
     else:
         print("  ✅ 14 metadata JSONs found")
     
-    if not Path("data/chapter_metadata_cache.json").exists():
-        errors.append("Missing chapter_metadata_cache.json")
-    else:
-        print("  ✅ chapter_metadata_cache.json")
+    # Note: chapter_metadata_cache.json is obsolete (replaced by aggregate package approach)
+    # Not validated here
     
     return errors
 

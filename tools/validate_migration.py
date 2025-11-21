@@ -92,8 +92,6 @@ class MigrationValidator:
             "workflows/pdf_to_json/scripts/__init__.py",
             "workflows/metadata_extraction/__init__.py",
             "workflows/metadata_extraction/scripts/__init__.py",
-            "workflows/04_metadata_cache_merge/__init__.py",
-            "workflows/04_metadata_cache_merge/scripts/__init__.py",
             "workflows/metadata_enrichment/__init__.py",
             "workflows/metadata_enrichment/scripts/__init__.py",
             "workflows/base_guideline_generation/__init__.py",
@@ -112,7 +110,6 @@ class MigrationValidator:
         self.expected_data_moves = {
             "workflows/pdf_to_json/output/textbooks_json": "data/textbooks_json",
             "workflows/metadata_extraction/output/metadata": "data/metadata",
-            "workflows/04_metadata_cache_merge/output/chapter_metadata_cache.json": "data/chapter_metadata_cache.json",
             "workflows/metadata_enrichment/output/chapter_metadata_manual.json": "data/chapter_metadata_manual.json",
             "workflows/base_guideline_generation/output/chapter_summaries": "data/chapter_summaries",
         }
@@ -131,9 +128,6 @@ class MigrationValidator:
             "workflows/metadata_extraction/scripts",
             "workflows/metadata_extraction/input",
             "workflows/metadata_extraction/output",
-            "workflows/04_metadata_cache_merge/scripts",
-            "workflows/04_metadata_cache_merge/input",
-            "workflows/04_metadata_cache_merge/output",
             "workflows/metadata_enrichment/scripts",
             "workflows/metadata_enrichment/input",
             "workflows/metadata_enrichment/output",

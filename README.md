@@ -12,10 +12,9 @@ This application implements a **7-stage document processing pipeline** with Doma
 Stage 1: Taxonomy Setup          → Configure book categorization system
 Stage 2: PDF to JSON              → Convert source PDFs to searchable JSON
 Stage 3: Metadata Extraction      → Extract chapter/page metadata from books
-Stage 4: Metadata Cache Merge     → Consolidate metadata for fast lookup
-Stage 5: Metadata Enrichment      → Add concept tags and keywords
-Stage 6: Base Guideline Generation → Generate foundational guideline structure
-Stage 7: LLM Enhancement          → Enhance with citations and annotations
+Stage 4: Metadata Enrichment      → Add concept tags and keywords
+Stage 5: Base Guideline Generation → Generate foundational guideline structure
+Stage 6: LLM Enhancement          → Enhance with citations and annotations
 ```
 
 **Architecture Type:** Modular Monolith with Pipeline Pattern
@@ -27,7 +26,7 @@ Stage 7: LLM Enhancement          → Enhance with citations and annotations
 
 ## Key Features
 
-- **7-Stage Pipeline Architecture**: Progressive enhancement from raw PDFs to enriched guidelines
+- **6-Stage Pipeline Architecture**: Progressive enhancement from raw PDFs to enriched guidelines
 - **Smart Book Taxonomy**: Three-tier categorization (Architecture Spine, Implementation, Engineering Practices)
 - **Two-Phase LLM Workflow**: Separates content selection from enhancement for optimal quality
 - **Provider Abstraction**: Protocol-based LLM interface (Anthropic, OpenAI-ready)
@@ -219,7 +218,6 @@ This system implements several architectural patterns from **Architecture Patter
 │  [1] Taxonomy Setup    →  Configure book categorization         │
 │  [2] PDF to JSON       →  Convert source materials              │
 │  [3] Metadata Extract  →  Extract chapter/page metadata         │
-│  [4] Cache Merge       →  Consolidate for fast lookup           │
 │  [5] Enrichment        →  Add concepts and tags                 │
 │  [6] Base Generation   →  Generate guideline structure          │
 │  [7] LLM Enhancement   →  Add citations and annotations         │
@@ -253,7 +251,6 @@ llm-document-enhancer/
 │   ├── taxonomy_setup/          # Stage 1: Book categorization
 │   ├── pdf_to_json/             # Stage 2: PDF conversion
 │   ├── metadata_extraction/     # Stage 3: Metadata extraction
-│   ├── metadata_cache_merge/    # Stage 4: Cache consolidation
 │   ├── metadata_enrichment/     # Stage 5: Concept tagging
 │   ├── base_guideline_generation/  # Stage 6: Base generation
 │   ├── llm_enhancement/         # Stage 7: LLM enhancement
@@ -324,7 +321,7 @@ LLM_MAX_TOKENS=8192
 
 **Workflow Reorganization** - See [MIGRATION_PLAN.md](MIGRATION_PLAN.md) and [REFACTORING_PLAN.md](REFACTORING_PLAN.md)
 
-- ✅ **7-Stage Pipeline Architecture**: Moved from `src/` to `workflows/` structure
+- ✅ **6-Stage Pipeline Architecture**: Moved from `src/` to `workflows/` structure
 - ✅ **Shared Infrastructure Layer**: `workflows/shared/` for cross-cutting concerns
 - ✅ **Provider Abstraction**: Protocol-based LLM interface (Anthropic, OpenAI-ready)
 - ✅ **Caching System**: File-based cache with TTL (99%+ cost reduction)

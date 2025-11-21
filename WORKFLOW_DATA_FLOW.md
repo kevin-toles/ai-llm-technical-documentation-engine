@@ -42,24 +42,11 @@
                     │                               │
                     └───────────────┬───────────────┘
                                     ▼
-┌──────────────────────────────────────────────────────────────────┐
-│ Tab 3b: Metadata Cache Merge                                     │
-│ INPUT (symlinks):                                                │
-│  └── metadata/ → ../../metadata_extraction/output/              │
-│                                                                  │
-│ OUTPUT: workflows/metadata_cache_merge/output/                  │
-│         └── chapter_metadata_cache.json (210 KB)                │
-│             [Merged data from ALL books]                        │
-└──────────────────────────────────────────────────────────────────┘
-                                    │
-                    ┌───────────────┴───────────────┐
-                    ▼                               ▼
 ┌─────────────────────────────────┐  ┌────────────────────────────────────┐
-│ Tab 4: Metadata Enrichment      │  │ Tab 5: Guideline Generation        │
+│ Tab 3: Metadata Enrichment      │  │ Tab 4: Guideline Generation        │
 │ INPUT (symlinks):               │  │ INPUT (symlinks):                  │
 │  ├── chapter_metadata_cache.json│  │  ├── textbooks_json/               │
-│  └── textbooks_json/            │  │  └── chapter_metadata_cache.json   │
-│                                 │  │                                    │
+│  └── textbooks_json/            │  │                                 │  │                                    │
 │ OUTPUT: workflows/              │  │ OUTPUT: workflows/                 │
 │  metadata_enrichment/output/    │  │  base_guideline_generation/output/ │
 │  └── {book}_metadata_           │  │  ├── Architecture Patterns with    │
@@ -79,7 +66,7 @@
                     └───────────────┬───────────────┘
                                     ▼
                     ┌────────────────────────────────┐
-                    │ Tab 6: Aggregate Package       │
+                    │ Tab 5: Aggregate Package       │
                     │ INPUT (symlinks):              │
                     │  ├── taxonomy/                 │
                     │  └── enriched_metadata/        │
@@ -95,7 +82,7 @@
                                     │
                                     ▼
 ┌──────────────────────────────────────────────────────────────────┐
-│ Tab 7: LLM Enhancement (THE ONLY LLM WORKFLOW)                   │
+│ Tab 6: LLM Enhancement (THE ONLY LLM WORKFLOW)                   │
 │ INPUT (symlinks):                                                │
 │  ├── guidelines/ → Tab 5 output (JSON files)                    │
 │  ├── taxonomy/ → Tab 3 output                                   │
@@ -193,7 +180,7 @@
 
 ---
 
-### Tab 4: Metadata Enrichment
+### Tab 3: Metadata Enrichment
 **Type:** Enhancement (Statistical Analysis)  
 **Inputs (via symlinks):**
 - `chapter_metadata_cache.json` from Tab 3b
@@ -216,7 +203,7 @@
 
 ---
 
-### Tab 5: Guideline Generation (Base)
+### Tab 4: Guideline Generation (Base)
 **Type:** Formatting (Data → Documents)  
 **Inputs (via symlinks):**
 - `textbooks_json/` from Tab 1
@@ -243,7 +230,7 @@
 
 ---
 
-### Tab 6: Aggregate Package Creation
+### Tab 5: Aggregate Package Creation
 **Type:** Bundling (Multiple Sources → Single Package)  
 **Inputs (via symlinks):**
 - `taxonomy/` from Tab 3
@@ -266,7 +253,7 @@
 
 ---
 
-### Tab 7: LLM Enhancement
+### Tab 6: LLM Enhancement
 **Type:** AI Enhancement (THE ONLY LLM WORKFLOW)  
 **Inputs (via symlinks):**
 - `guidelines/` from Tab 5 (JSON files)
