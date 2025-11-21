@@ -223,7 +223,7 @@ async def get_llm_providers():
                 "claude-sonnet-4-5-20250929",  # Latest & Recommended
                 "claude-haiku-4-5-20251001",   # Fastest
                 "claude-opus-4-1-20250805",    # Most Powerful
-                # Legacy Models (Still Available)
+                # Previous Generation (Still Available)
                 "claude-sonnet-4-20250514",
                 "claude-opus-4-20250514", 
                 "claude-3-7-sonnet-20250219",

@@ -4,10 +4,14 @@ Unit tests for pipeline adapters (Sprint 4 - Phase 1)
 TDD Cycle: RED → GREEN → REFACTOR
 Pattern: Adapter Pattern (Architecture Patterns with Python Ch. 13)
 
-Tests for:
-- PdfConverterAdapter: Wraps legacy convert_pdf_to_json function
-- ChapterGeneratorAdapter: Wraps legacy chapter_generator_all_text
-- MetadataExtractorAdapter: Wraps legacy generate_chapter_metadata
+Tests for adapters wrapping monolithic code during migration:
+- PdfConverterAdapter: Wraps monolithic convert_pdf_to_json function
+- ChapterGeneratorAdapter: Wraps monolithic chapter_generator_all_text
+- MetadataExtractorAdapter: Wraps monolithic generate_chapter_metadata
+
+Note: These adapters are temporary wrappers during refactoring. The wrapped
+functions are considered 'legacy' because they haven't been refactored per
+REFACTORING_PLAN.md to follow the new architecture guidelines.
 """
 
 import json

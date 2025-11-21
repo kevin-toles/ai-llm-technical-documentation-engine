@@ -2169,10 +2169,108 @@ The plan is fundamentally sound and matches the reality of the system that produ
 
 ---
 
+## Legacy Code Inventory
+
+**Definition**: "Legacy" refers to code NOT refactored per REFACTORING_PLAN.md that doesn't follow architecture guidelines from `ARCHITECTURE_GUIDELINES_Architecture_Patterns_with_Python_LLM_ENHANCED.md` and `PYTHON_GUIDELINES_Learning_Python_Ed6_LLM_ENHANCED.md`.
+
+### Outstanding Legacy Components
+
+#### 1. Adapter-Wrapped Monolithic Functions (3 total)
+
+These adapters temporarily wrap OLD monolithic code during migration:
+
+| Adapter File | Wraps | Status | Refactoring Priority |
+|-------------|-------|--------|---------------------|
+| `workflows/pdf_to_json/scripts/adapters/pdf_converter.py` | `convert_pdf_to_json()` | Legacy wrapper | LOW - Working |
+| `workflows/metadata_extraction/scripts/adapters/metadata_extractor.py` | `generate_chapter_metadata()` | Legacy wrapper | MEDIUM - See cache issues |
+| `workflows/base_guideline_generation/scripts/adapters/chapter_generator.py` | `chapter_generator_all_text.main()` | Legacy wrapper | MEDIUM - Monolithic |
+
+**Action Required**: These are temporary shims during migration. Can remain until underlying functions are refactored to new architecture.
+
+#### 2. Old Orchestrator Delegation (1 component)
+
+| File | Issue | Status | Refactoring Priority |
+|------|-------|--------|---------------------|
+| `workflows/shared/phases/orchestrator.py` | Delegates to old `AnalysisOrchestrator` | Legacy delegation | HIGH - Blocks full refactor |
+| `workflows/llm_enhancement/scripts/integrate_llm_enhancements.py` | Uses `_legacy_orchestrator._build_books_metadata_only()` | Legacy dependency | HIGH - Blocks full refactor |
+
+**Action Required**: Complete Sprint 4 (Pipeline Integration) from REFACTORING_PLAN.md to eliminate delegation and implement proper Repository pattern.
+
+#### 3. Un-migrated LLM Helper Functions
+
+| File | Functions | Status | Issue |
+|------|-----------|--------|-------|
+| `workflows/base_guideline_generation/scripts/chapter_generator_all_text.py` (lines 59-70) | `prompt_for_semantic_concepts`, `prompt_for_cross_reference_validation` | Not migrated to provider pattern | Should use AnthropicProvider |
+
+**Comment in file**:
+```python
+# Legacy LLM Integration Functions
+# These are specialized prompt functions for semantic analysis
+# Not yet migrated to provider pattern - remain as standalone utilities
+```
+
+**Action Required**: 
+1. Migrate functions to use AnthropicProvider (from `shared/providers/`)
+2. Extract prompts to template files (per Sprint 2 pattern)
+3. Remove direct LLM API calls
+
+#### 4. Cache-Related Legacy Code (From Cache Merge Removal)
+
+| File | Lines | Issue | Status |
+|------|-------|-------|--------|
+| `workflows/metadata_enrichment/scripts/generate_chapter_metadata.py` | 6, 364 | References `chapter_metadata_cache.json` | Needs refactoring |
+| `workflows/metadata_enrichment/scripts/chapter_metadata_manager.py` | 47, 58 | Uses cache file | Needs refactoring |
+| `workflows/metadata_extraction/scripts/adapters/metadata_extractor.py` | 19, 52 | `CACHE_FILENAME` constant | Needs removal |
+
+**Action Required**: Refactor Tab 3 (Metadata Enrichment) to output per-book enriched files instead of central cache (per Cache Merge removal plan).
+
+### Non-Legacy Code (Already Refactored)
+
+These components follow new architecture and are NOT legacy:
+
+✅ **Modular workflow structure** (Tabs 1-6)
+✅ **Statistical extractors** (YAKE, Summa, scikit-learn)
+✅ **Provider pattern** (AnthropicProvider with protocol-based interface)
+✅ **Aggregate package creation** (Tab 6 - `create_aggregate_package.py`, 518 lines, 10 functions, 9/9 tests passing)
+✅ **LLM enhancement workflow** (Tab 7 - `llm_enhance_guideline.py`, 820 lines, 10 functions, 6/9 tests passing)
+✅ **UI system** (6-tab structure, FastAPI + Jinja2 + HTMX)
+✅ **Configuration system** (dataclasses + .env, proper separation)
+✅ **Testing infrastructure** (pytest + fixtures + mocks, 137+ tests)
+
+### Legacy Elimination Roadmap
+
+**Phase 1: Cache Removal** (COMPLETE ✅)
+- Remove Cache Merge workflow (Tab 4)
+- Remove symlinks and cache file
+- Update documentation to 6-tab structure
+
+**Phase 2: Cache Dependencies** (NEXT - HIGH PRIORITY)
+- Refactor `generate_chapter_metadata.py` to output per-book files
+- Update `chapter_metadata_manager.py` to read per-book files
+- Remove `CACHE_FILENAME` from metadata_extractor.py
+
+**Phase 3: LLM Helper Migration** (MEDIUM PRIORITY)
+- Migrate `prompt_for_semantic_concepts` to AnthropicProvider
+- Migrate `prompt_for_cross_reference_validation` to AnthropicProvider
+- Extract prompts to template files
+
+**Phase 4: Orchestrator Refactoring** (LONG-TERM)
+- Complete Sprint 4 from REFACTORING_PLAN.md
+- Eliminate delegation to old orchestrator
+- Implement proper Repository pattern throughout
+
+**Phase 5: Adapter Removal** (FUTURE)
+- Refactor underlying monolithic functions
+- Remove adapter wrappers once functions follow new architecture
+- Final cleanup
+
+---
+
 ## Revision History
 
 - **2025-11-18**: Initial consolidated plan created
-- Awaiting user approval before implementation
+- **2025-11-20**: Added Legacy Code Inventory section
+- **2025-11-20**: Updated status after Cache Merge removal (commit 71228f00)
 
 ---
 

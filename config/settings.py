@@ -175,7 +175,7 @@ class PathConfig:
     
     def __post_init__(self):
         """Initialize derived paths."""
-        # Legacy data_dir for backward compatibility
+        # Backward compatibility: data_dir for old code not yet refactored
         self.data_dir = Path(os.getenv("DATA_DIR", self.repo_root / "data"))
         
         # New workflow-based paths
