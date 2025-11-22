@@ -1,16 +1,33 @@
 #!/usr/bin/env python3
 """
-PDF to JSON converter using PyMuPDF with OCR fallback
-Converts PDF books to structured JSON format for chapter extraction
+PDF to JSON converter using PyMuPDF with intelligent chapter detection.
+
+Converts PDF books to structured JSON format using statistical NLP methods:
+- 3-pass chapter detection (regex → topic-shift → synthetic)
+- YAKE keyword validation for chapter boundaries
+- TF-IDF cosine similarity for topic shift detection
+- Guaranteed non-empty chapter list (Pass C fallback)
 
 Reference: Python Distilled Ch. 9 - pathlib.Path operations
+Reference: CONSOLIDATED_IMPLEMENTATION_PLAN.md - Tab 1 statistical methods only
 """
 
 import json
 import sys
 from pathlib import Path
 from datetime import datetime
+from typing import List, Dict, Tuple
+
 import fitz  # PyMuPDF
+
+# OCR support for scanned PDFs
+try:
+    import pytesseract
+    from PIL import Image
+    OCR_AVAILABLE = True
+except ImportError:
+    OCR_AVAILABLE = False
+    print("Warning: pytesseract not available. Install with: pip install pytesseract pillow")
 
 # Add project root to path for config access
 PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
@@ -19,22 +36,67 @@ sys.path.insert(0, str(PROJECT_ROOT))
 # Configuration management (Microservices Up and Running Ch. 7 - 12-Factor Config)
 from config.settings import settings
 
-def extract_text_from_page(page):
-    """Extract text from a PDF page, trying direct extraction first, then OCR if needed"""
-    # Try direct text extraction first
+# Import statistical chapter segmenter (NEW - replaces detect_chapters_intelligent)
+from workflows.pdf_to_json.scripts.chapter_segmenter import ChapterSegmenter
+
+
+def extract_text_from_page(page) -> Tuple[str, str]:
+    """
+    Extract text from a PDF page using direct extraction or OCR fallback.
+    
+    Handles both digital PDFs (with embedded text) and scanned PDFs (images).
+    Uses Tesseract OCR for scanned pages when pytesseract is available.
+    
+    Args:
+        page: PyMuPDF page object
+        
+    Returns:
+        Tuple of (text_content, extraction_method)
+        - text_content: Extracted text string
+        - extraction_method: "Direct", "OCR", or "Failed"
+        
+    Reference: Python Distilled Ch. 9 - I/O operations with fallback strategies
+    """
+    # Try direct text extraction first (fastest for digital PDFs)
     text = page.get_text()
     
     if text.strip():
         return text, "Direct"
     
-    # If no text found, try OCR
+    # No text found - likely a scanned page, try OCR
+    if not OCR_AVAILABLE:
+        return "", "Failed"
+    
     try:
-        _ = page.get_pixmap()  # Pixmap generation for potential OCR (not yet implemented)
-        # This is a simplified OCR approach - PyMuPDF doesn't have built-in OCR
-        # In the original conversion, OCR was likely done with pytesseract or similar
-        # TODO: Implement actual OCR using pytesseract or similar library
-        return text, "OCR"
-    except Exception:
+        # Convert PDF page to image
+        # Reference: PyMuPDF docs - higher DPI = better OCR accuracy
+        pix = page.get_pixmap(dpi=300)  # 300 DPI for good OCR quality
+        
+        # Convert to PIL Image for pytesseract
+        img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
+        
+        # Run OCR with English language model
+        # Reference: pytesseract docs - PSM 3 is more reliable than PSM 1 for batch processing
+        # PSM 1 (OSD) can hang on blank pages, rotated pages, or complex layouts
+        # PSM 3 (fully automatic) is faster and more robust for books
+        ocr_text = pytesseract.image_to_string(
+            img,
+            lang='eng',
+            config='--psm 3',  # PSM 3 = Fully automatic page segmentation (no OSD)
+            timeout=30  # 30 second timeout as safety net
+        )
+        
+        # Explicit cleanup to prevent resource leaks over hundreds of pages
+        del img
+        del pix
+        
+        return ocr_text.strip(), "OCR"
+        
+    except pytesseract.TesseractError as e:
+        print(f"Warning: Tesseract error for page {page.number + 1}: {e}")
+        return "", "Failed"
+    except Exception as e:
+        print(f"Warning: OCR failed for page {page.number + 1}: {e}")
         return "", "Failed"
 
 def convert_pdf_to_json(pdf_path, output_path=None):
@@ -95,9 +157,18 @@ def convert_pdf_to_json(pdf_path, output_path=None):
                 json_data['metadata']['title'] = metadata['title']
         
         # Extract text from each page
+        ocr_count = 0
+        direct_count = 0
+        
         for page_num in range(len(doc)):
             page = doc[page_num]
             text, method = extract_text_from_page(page)
+            
+            # Track extraction methods
+            if method == "OCR":
+                ocr_count += 1
+            elif method == "Direct":
+                direct_count += 1
             
             page_data = {
                 "page_number": page_num + 1,
@@ -109,9 +180,36 @@ def convert_pdf_to_json(pdf_path, output_path=None):
             
             json_data["pages"].append(page_data)
             
-            # Progress indicator
-            if (page_num + 1) % 10 == 0:
-                print(f"Processed {page_num + 1}/{len(doc)} pages...")
+            # Progress indicator (more frequent for OCR pages since they're slower)
+            if method == "OCR" or (page_num + 1) % 10 == 0:
+                progress = f"Processed {page_num + 1}/{len(doc)} pages"
+                if ocr_count > 0:
+                    progress += f" (OCR: {ocr_count}, Direct: {direct_count})"
+                print(progress)
+        
+        # Summary of extraction methods
+        print(f"\n📄 Extraction complete: {direct_count} direct, {ocr_count} OCR, {len(doc) - direct_count - ocr_count} failed")
+        
+        # Auto-detect chapters from page content using 3-pass statistical algorithm
+        print("\n🔍 Detecting chapters (3-pass: regex → topic-shift → synthetic)...")
+        segmenter = ChapterSegmenter(settings.chapter_segmentation)
+        detected_chapters = segmenter.segment_book(json_data["pages"])
+        
+        # ChapterSegmenter already returns dicts (converted internally)
+        json_data["chapters"] = detected_chapters
+        
+        print(f"✅ Detected {len(json_data['chapters'])} chapters:")
+        for ch in json_data["chapters"][:5]:
+            method_emoji = {
+                'regex_chapter': '📝', 
+                'regex_item': '📋',
+                'regex_numeric': '🔢',
+                'topic_boundary': '🎯',
+                'synthetic': '⚙️'
+            }.get(ch['detection_method'], '❓')
+            print(f"   {method_emoji} Chapter {ch['number']}: {ch['title'][:50]}... (pages {ch['start_page']}-{ch['end_page']})")
+        if len(json_data["chapters"]) > 5:
+            print(f"   ... and {len(json_data['chapters']) - 5} more chapters")
         
         # Save to JSON
         with open(output_path, 'w', encoding='utf-8') as f:

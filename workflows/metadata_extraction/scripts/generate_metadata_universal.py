@@ -36,6 +36,10 @@ from typing import List, Dict, Set, Any, Tuple, Optional
 from dataclasses import dataclass, asdict
 import sys
 
+# Add project root to path for imports
+PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
+sys.path.insert(0, str(PROJECT_ROOT))
+
 # Import StatisticalExtractor for domain-agnostic metadata extraction
 # Per DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN Part 1.3
 from workflows.metadata_extraction.scripts.adapters.statistical_extractor import StatisticalExtractor
@@ -126,16 +130,32 @@ class UniversalMetadataGenerator:
     
     def auto_detect_chapters(self) -> List[Tuple[int, str, int, int]]:
         """
-        Auto-detect chapters from page content.
+        Auto-detect chapters from page content or use pre-defined chapters from JSON.
         
         Looks for:
-        1. Pages with "Chapter N" headings
-        2. Clear topic changes
-        3. Page number breaks
+        1. Pre-defined chapters in JSON structure (from PDF conversion)
+        2. Pages with "Chapter N" headings (fallback)
+        3. Clear topic changes
+        4. Page number breaks
         
         Returns:
             List of (chapter_num, title, start_page, end_page) tuples
         """
+        # First, check if chapters are already defined in the JSON
+        if 'chapters' in self.book_data and self.book_data['chapters']:
+            print(f"   Using {len(self.book_data['chapters'])} pre-defined chapters from JSON")
+            chapters = []
+            for ch in self.book_data['chapters']:
+                chapters.append((
+                    ch['number'],
+                    ch['title'],
+                    ch['start_page'],
+                    ch['end_page']
+                ))
+            return chapters
+        
+        # Fallback: scan pages for chapter markers
+        print("   Scanning pages for chapter markers...")
         chapters = []
         current_chapter = None
         seen_chapters = set()  # Track chapter numbers to avoid duplicates

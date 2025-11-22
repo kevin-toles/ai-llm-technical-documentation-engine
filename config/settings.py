@@ -160,6 +160,71 @@ class CacheConfig:
 
 
 @dataclass
+class ChapterSegmentationConfig:
+    """Chapter segmentation configuration for PDF → JSON conversion (Tab 1).
+    
+    Controls the 3-pass chapter detection algorithm:
+    - Pass A: Regex-based pattern matching
+    - Pass B: Topic-shift detection using TF-IDF cosine similarity
+    - Pass C: Synthetic segmentation (guaranteed fallback)
+    
+    Environment Variables:
+        CHAPTER_MIN_PAGES: Minimum pages per chapter (default: 8)
+        CHAPTER_TARGET_PAGES: Target pages per chapter for synthetic segmentation (default: 20)
+        CHAPTER_SIM_THRESHOLD: Cosine similarity threshold for topic shifts (default: 0.25)
+        CHAPTER_MIN_CHAPTERS: Minimum chapters for valid segmentation (default: 3)
+        CHAPTER_MAX_CHAPTERS: Maximum chapters to prevent over-segmentation (default: 80)
+        CHAPTER_MIN_KEYWORDS: Minimum keywords for chapter validation (default: 3)
+        CHAPTER_TF_IDF_MAX_FEATURES: Max TF-IDF features (default: 5000)
+    
+    Reference Documents:
+        - CONSOLIDATED_IMPLEMENTATION_PLAN.md: Tab 1 statistical methods
+        - BOOK_TAXONOMY_MATRIX.md: Algorithm design patterns (Python Cookbook)
+        - docs/analysis/chapter_segmenter_conflict_assessment.md: Performance trade-offs
+    """
+    min_pages: int = field(default_factory=lambda: int(os.getenv("CHAPTER_MIN_PAGES", "8")))
+    target_pages: int = field(default_factory=lambda: int(os.getenv("CHAPTER_TARGET_PAGES", "20")))
+    similarity_threshold: float = field(default_factory=lambda: float(os.getenv("CHAPTER_SIM_THRESHOLD", "0.25")))
+    min_chapters: int = field(default_factory=lambda: int(os.getenv("CHAPTER_MIN_CHAPTERS", "3")))
+    max_chapters: int = field(default_factory=lambda: int(os.getenv("CHAPTER_MAX_CHAPTERS", "80")))
+    min_keywords: int = field(default_factory=lambda: int(os.getenv("CHAPTER_MIN_KEYWORDS", "3")))
+    tfidf_max_features: int = field(default_factory=lambda: int(os.getenv("CHAPTER_TF_IDF_MAX_FEATURES", "5000")))
+    
+    def __post_init__(self):
+        """Validate chapter segmentation configuration."""
+        if self.min_pages < 3:
+            raise ValueError(
+                f"CHAPTER_MIN_PAGES={self.min_pages} too small, must be >= 3"
+            )
+        
+        if self.target_pages < self.min_pages:
+            raise ValueError(
+                f"CHAPTER_TARGET_PAGES={self.target_pages} must be >= "
+                f"CHAPTER_MIN_PAGES={self.min_pages}"
+            )
+        
+        if not 0.1 <= self.similarity_threshold <= 0.5:
+            raise ValueError(
+                f"CHAPTER_SIM_THRESHOLD={self.similarity_threshold} must be between 0.1 and 0.5"
+            )
+        
+        if self.min_chapters < 1:
+            raise ValueError("CHAPTER_MIN_CHAPTERS must be >= 1")
+        
+        if self.max_chapters < self.min_chapters:
+            raise ValueError(
+                f"CHAPTER_MAX_CHAPTERS={self.max_chapters} must be >= "
+                f"CHAPTER_MIN_CHAPTERS={self.min_chapters}"
+            )
+        
+        if self.min_keywords < 2:
+            raise ValueError("CHAPTER_MIN_KEYWORDS must be >= 2")
+        
+        if self.tfidf_max_features < 1000:
+            raise ValueError("CHAPTER_TF_IDF_MAX_FEATURES must be >= 1000 for meaningful analysis")
+
+
+@dataclass
 class PathConfig:
     """File path configuration.
     
@@ -212,6 +277,7 @@ class Settings:
         # Access configuration
         max_tokens = settings.llm.max_tokens
         cache_enabled = settings.cache.enabled
+        chapter_min_pages = settings.chapter_segmentation.min_pages
         
         # Override in tests
         test_settings = Settings()
@@ -221,6 +287,7 @@ class Settings:
     constraints: PromptConstraints = field(default_factory=PromptConstraints)
     retry: RetryConfig = field(default_factory=RetryConfig)
     cache: CacheConfig = field(default_factory=CacheConfig)
+    chapter_segmentation: ChapterSegmentationConfig = field(default_factory=ChapterSegmentationConfig)
     paths: PathConfig = field(default_factory=PathConfig)
     
     def validate(self):
@@ -256,6 +323,15 @@ class Settings:
         print(f"  Max Sections/Request: {self.constraints.max_sections_per_request}")
         print(f"  Max Rationale Chars: {self.constraints.max_rationale_chars}")
         print(f"  Max Pages/Section: {self.constraints.max_pages_per_section}")
+        
+        print("\n[Chapter Segmentation]")
+        print(f"  Min Pages: {self.chapter_segmentation.min_pages}")
+        print(f"  Target Pages: {self.chapter_segmentation.target_pages}")
+        print(f"  Similarity Threshold: {self.chapter_segmentation.similarity_threshold}")
+        print(f"  Min Chapters: {self.chapter_segmentation.min_chapters}")
+        print(f"  Max Chapters: {self.chapter_segmentation.max_chapters}")
+        print(f"  Min Keywords: {self.chapter_segmentation.min_keywords}")
+        print(f"  TF-IDF Max Features: {self.chapter_segmentation.tfidf_max_features:,}")
         
         print("\n[Retry Policy]")
         print(f"  Max Attempts: {self.retry.max_attempts}")
