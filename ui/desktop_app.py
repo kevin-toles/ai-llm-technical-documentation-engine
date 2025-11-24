@@ -267,6 +267,10 @@ class API:
             
             taxonomy_file = data.get("taxonomy")
             
+            # Validate Tab 4 requires taxonomy selection
+            if tab_id == "tab4" and not taxonomy_file:
+                return {"error": "Taxonomy file is required for metadata enrichment. Please select a taxonomy."}
+            
             # Execute in background thread
             thread = Thread(target=self._execute_workflow, args=(workflow_id, tab_id, selected_files, workflow, taxonomy_file))
             thread.daemon = True
@@ -321,7 +325,14 @@ class API:
                     elif tab_id == "tab3":  # Taxonomy Setup (handled separately via tiers)
                         continue
                     elif tab_id == "tab4":  # Metadata Enrichment
-                        cmd = ["python3", str(script_path), "--input", str(file_path)]
+                        # Requires taxonomy file for scoped cross-book enrichment
+                        if not taxonomy_file:
+                            self.workflow_status[workflow_id]["status"] = "error"
+                            self.workflow_status[workflow_id]["error"] = "Taxonomy file is required for metadata enrichment"
+                            return
+                        
+                        taxonomy_path = WORKFLOWS_DIR / "taxonomy_setup" / "output" / taxonomy_file
+                        cmd = ["python3", str(script_path), "--input", str(file_path), "--taxonomy", str(taxonomy_path)]
                     elif tab_id == "tab5":  # Base Guideline
                         # Resolve to enriched metadata, fallback to metadata, then JSON
                         base_name = file.replace(".json", "")
