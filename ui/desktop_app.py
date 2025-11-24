@@ -134,12 +134,19 @@ class API:
             if taxonomy_dir.exists():
                 taxonomy_files = [f.name for f in taxonomy_dir.glob("*.json")]
             
+            # Get enriched metadata files from Tab 4 output
+            enriched_metadata_dir = WORKFLOWS_DIR / "metadata_enrichment" / "output"
+            enriched_metadata_files = []
+            if enriched_metadata_dir.exists():
+                enriched_metadata_files = [f.name for f in enriched_metadata_dir.glob("*_enriched_metadata.json")]
+            
             providers_data = self.get_llm_providers()
             
             return {
                 "files": sorted(files),
                 "input_dir": str(input_dir),
                 "taxonomy_files": sorted(taxonomy_files),
+                "enriched_metadata_files": sorted(enriched_metadata_files),
                 "llm_providers": providers_data
             }
         
