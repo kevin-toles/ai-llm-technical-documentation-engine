@@ -332,7 +332,12 @@ class API:
                             return
                         
                         taxonomy_path = WORKFLOWS_DIR / "taxonomy_setup" / "output" / taxonomy_file
-                        cmd = ["python3", str(script_path), "--input", str(file_path), "--taxonomy", str(taxonomy_path)]
+                        
+                        # Generate output path: input_metadata.json -> input_enriched_metadata.json
+                        base_name = file.replace("_metadata.json", "")
+                        output_path = output_dir / f"{base_name}_enriched_metadata.json"
+                        
+                        cmd = ["python3", str(script_path), "--input", str(file_path), "--taxonomy", str(taxonomy_path), "--output", str(output_path)]
                     elif tab_id == "tab5":  # Base Guideline
                         # Resolve to enriched metadata, fallback to metadata, then JSON
                         base_name = file.replace(".json", "")
