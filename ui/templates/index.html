@@ -122,7 +122,16 @@
                 // Special handling for Metadata Enrichment tab (tab4) - requires taxonomy selection
                 else if (tabId === 'tab4' && data.taxonomy_files) {
                     container.innerHTML = `
-                        <div style="display: grid; grid-template-columns: 300px 1fr; gap: 20px; align-items: start;">
+                        <div style="display: grid; grid-template-columns: 1fr 300px; gap: 20px; align-items: start;">
+                            <div class="file-list">
+                                <h4 style="margin-bottom: 10px;">Select Metadata Files to Enrich:</h4>
+                                ${data.files.map(file => `
+                                    <label class="file-item">
+                                        <input type="checkbox" name="${tabId}-file" value="${file}">
+                                        ${file}
+                                    </label>
+                                `).join('')}
+                            </div>
                             <div class="config-section">
                                 <label class="config-label">Select Taxonomy (required):</label>
                                 <select id="${tabId}-taxonomy" class="config-select">
@@ -132,15 +141,6 @@
                                 <p style="font-size: 11px; color: #666; margin-top: 5px;">
                                     Taxonomy scopes enrichment to specific book set
                                 </p>
-                            </div>
-                            <div class="file-list">
-                                <h4 style="margin-bottom: 10px;">Select Metadata Files to Enrich:</h4>
-                                ${data.files.map(file => `
-                                    <label class="file-item">
-                                        <input type="checkbox" name="${tabId}-file" value="${file}">
-                                        ${file}
-                                    </label>
-                                `).join('')}
                             </div>
                         </div>
                     `;
@@ -619,6 +619,12 @@
                     selectedFiles = Array.from(
                         document.querySelectorAll(`input[name="${tabId}-file"]:checked`)
                     ).map(cb => cb.value);
+                    
+                    // Check for taxonomy selector (tab4 or tab6)
+                    const taxonomySelect = document.getElementById(`${tabId}-taxonomy`);
+                    if (taxonomySelect) {
+                        taxonomyFile = taxonomySelect.value;
+                    }
                 }
                 
                 // Only validate if we're not in tier mode (pool doesn't exist)
