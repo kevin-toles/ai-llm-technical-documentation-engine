@@ -122,24 +122,26 @@
                 // Special handling for Metadata Enrichment tab (tab4) - requires taxonomy selection
                 else if (tabId === 'tab4' && data.taxonomy_files) {
                     container.innerHTML = `
-                        <div class="config-section" style="margin-bottom: 20px;">
-                            <label class="config-label">Select Taxonomy (required for enrichment):</label>
-                            <select id="${tabId}-taxonomy" class="config-select">
-                                <option value="">-- Select Taxonomy --</option>
-                                ${data.taxonomy_files.map(file => `<option value="${file}">${file}</option>`).join('')}
-                            </select>
-                            <p style="font-size: 11px; color: #666; margin-top: 5px;">
-                                Taxonomy is required to enrich metadata with cross-book concept relationships.
-                            </p>
-                        </div>
-                        <div class="file-list">
-                            <h4 style="margin-bottom: 10px;">Select Metadata Files to Enrich:</h4>
-                            ${data.files.map(file => `
-                                <label class="file-item">
-                                    <input type="checkbox" name="${tabId}-file" value="${file}">
-                                    ${file}
-                                </label>
-                            `).join('')}
+                        <div style="display: grid; grid-template-columns: 300px 1fr; gap: 20px; align-items: start;">
+                            <div class="config-section">
+                                <label class="config-label">Select Taxonomy (required):</label>
+                                <select id="${tabId}-taxonomy" class="config-select">
+                                    <option value="">-- Select Taxonomy --</option>
+                                    ${data.taxonomy_files.map(file => `<option value="${file}">${file}</option>`).join('')}
+                                </select>
+                                <p style="font-size: 11px; color: #666; margin-top: 5px;">
+                                    Taxonomy scopes enrichment to specific book set
+                                </p>
+                            </div>
+                            <div class="file-list">
+                                <h4 style="margin-bottom: 10px;">Select Metadata Files to Enrich:</h4>
+                                ${data.files.map(file => `
+                                    <label class="file-item">
+                                        <input type="checkbox" name="${tabId}-file" value="${file}">
+                                        ${file}
+                                    </label>
+                                `).join('')}
+                            </div>
                         </div>
                     `;
                 } 
