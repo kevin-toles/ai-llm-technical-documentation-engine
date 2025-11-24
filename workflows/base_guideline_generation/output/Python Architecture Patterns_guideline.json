@@ -1,8 +1,8 @@
 {
   "book_metadata": {
-    "title": "Comprehensive Python Guidelines — Architecture Patterns with Python (Chapters 1-13)",
-    "source": "Architecture Patterns with Python, Chapters 1-13",
-    "book_name": "Architecture Patterns with Python"
+    "title": "Comprehensive Python Guidelines — Python Architecture Patterns: Master API Design, Event-driven Structures, and Package Management in Python (Chapters 1-16)",
+    "source": "Python Architecture Patterns: Master API Design, Event-driven Structures, and Package Management in Python, Chapters 1-16",
+    "book_name": "Python Architecture Patterns"
   },
   "source_info": {
     "generated_by": "convert_md_to_json_guideline.py",
@@ -13,64 +13,64 @@
   "chapters": [
     {
       "chapter_number": 1,
-      "title": "Domain Modeling",
+      "title": "Introduction to Software Architecture",
       "page_range": {
         "start": 1,
-        "end": 24
+        "end": 13
       },
       "cross_text_analysis": "",
       "chapter_summary": "Introduces domain modeling and Domain-Driven Design (DDD) concepts including entities, value objects, and aggregates. Focuses on modeling business logic and domain concepts in Python with proper encapsulation and invariants. [^1]",
-      "concepts": []
+      "concepts": [
+        {
+          "name": "Abstraction",
+          "page": 6
+        }
+      ]
     },
     {
       "chapter_number": 2,
-      "title": "Repository Pattern",
+      "title": "API Design",
       "page_range": {
-        "start": 25,
-        "end": 46
+        "start": 17,
+        "end": 73
       },
       "cross_text_analysis": "",
       "chapter_summary": "Explores the Repository pattern for abstracting data persistence and database access. Covers implementing repositories with SQLAlchemy, the ports and adapters (hexagonal) architecture, and separating domain logic from infrastructure concerns. [^20]",
-      "concepts": [
-        {
-          "name": "Gil",
-          "page": 31
-        }
-      ]
-    },
-    {
-      "chapter_number": 3,
-      "title": "A Brief Interlude: On Coupling and Abstractions",
-      "page_range": {
-        "start": 47,
-        "end": 58
-      },
-      "cross_text_analysis": "",
-      "chapter_summary": "Discusses software coupling and abstractions as fundamental architectural concepts. Examines the tradeoffs between loose and tight coupling, dependency inversion principle, and designing clean interfaces and boundaries. [^39]",
       "concepts": []
     },
     {
-      "chapter_number": 4,
-      "title": "Our First Use Case: Flask API and Service Layer",
+      "chapter_number": 3,
+      "title": "Data Modeling",
       "page_range": {
-        "start": 59,
-        "end": 86
+        "start": 75,
+        "end": 110
       },
       "cross_text_analysis": "",
-      "chapter_summary": "Demonstrates building a Flask API with a service layer to orchestrate use cases. Shows how to separate API concerns from business logic, implement application services, and structure REST endpoints properly. [^58]",
+      "chapter_summary": "Discusses software coupling and abstractions as fundamental architectural concepts. Examines the tradeoffs between loose and tight coupling, dependency inversion principle, and designing clean interfaces and boundaries. [^39]",
       "concepts": [
         {
-          "name": "Gil",
-          "page": 76
+          "name": "Abstraction",
+          "page": 78
         }
       ]
     },
     {
-      "chapter_number": 5,
-      "title": "TDD in High Gear and Low Gear",
+      "chapter_number": 4,
+      "title": "The Data Layer",
       "page_range": {
-        "start": 87,
-        "end": 104
+        "start": 111,
+        "end": 143
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Demonstrates building a Flask API with a service layer to orchestrate use cases. Shows how to separate API concerns from business logic, implement application services, and structure REST endpoints properly. [^58]",
+      "concepts": []
+    },
+    {
+      "chapter_number": 5,
+      "title": "The Twelve-Factor App Methodology",
+      "page_range": {
+        "start": 147,
+        "end": 171
       },
       "cross_text_analysis": "",
       "chapter_summary": "Explores test-driven development practices at different levels (high gear vs low gear). Covers the test pyramid, balancing unit tests vs integration tests, and using pytest effectively with mocks and fixtures. [^77]",
@@ -78,37 +78,42 @@
     },
     {
       "chapter_number": 6,
-      "title": "Unit of Work Pattern",
+      "title": "Web Server Structures",
       "page_range": {
-        "start": 105,
-        "end": 132
+        "start": 173,
+        "end": 217
       },
       "cross_text_analysis": "",
       "chapter_summary": "Introduces the Unit of Work pattern for managing database transactions and ensuring atomic operations. Covers transaction boundaries, commit/rollback semantics, session management, and implementing UoW as a context manager. [^96]",
       "concepts": [
         {
           "name": "Gil",
-          "page": 126
+          "page": 210
         }
       ]
     },
     {
       "chapter_number": 7,
-      "title": "Aggregates and Consistency Boundaries",
+      "title": "Event-Driven Structures",
       "page_range": {
-        "start": 133,
-        "end": 154
+        "start": 219,
+        "end": 254
       },
       "cross_text_analysis": "",
       "chapter_summary": "Examines aggregates as consistency boundaries in domain-driven design. Discusses aggregate roots, enforcing invariants, transactional boundaries, and designing for consistency vs eventual consistency in distributed systems. [^115]",
-      "concepts": []
+      "concepts": [
+        {
+          "name": "Args",
+          "page": 230
+        }
+      ]
     },
     {
       "chapter_number": 8,
-      "title": "Events and the Message Bus",
+      "title": "Advanced Event-Driven Structures",
       "page_range": {
-        "start": 155,
-        "end": 188
+        "start": 255,
+        "end": 280
       },
       "cross_text_analysis": "",
       "chapter_summary": "Introduces domain events and the message bus pattern for decoupling components. Covers event publishing and subscribing, implementing an event-driven architecture, and using events to communicate domain state changes asynchronously. [^134]",
@@ -116,21 +121,26 @@
     },
     {
       "chapter_number": 9,
-      "title": "Going to Town on the Message Bus",
+      "title": "Microservices vs Monolith",
       "page_range": {
-        "start": 189,
-        "end": 214
+        "start": 281,
+        "end": 322
       },
       "cross_text_analysis": "",
       "chapter_summary": "Expands on the message bus implementation with advanced event handling patterns. Covers event dispatching, handler registration, message routing, and building robust event processing pipelines. [^153]",
-      "concepts": []
+      "concepts": [
+        {
+          "name": "Gil",
+          "page": 315
+        }
+      ]
     },
     {
       "chapter_number": 10,
-      "title": "Commands and Command Handler",
+      "title": "Testing and TDD",
       "page_range": {
-        "start": 215,
-        "end": 234
+        "start": 327,
+        "end": 379
       },
       "cross_text_analysis": "",
       "chapter_summary": "Introduces the Command pattern and command handlers as part of CQRS. Distinguishes commands (write operations) from queries, covers command validation, intent capture, and implementing a command bus for orchestrating business operations. [^172]",
@@ -138,35 +148,73 @@
     },
     {
       "chapter_number": 11,
-      "title": "Event-Driven Architecture: Using Events to Integrate Microservices",
+      "title": "Package Management",
       "page_range": {
-        "start": 235,
-        "end": 264
+        "start": 381,
+        "end": 419
       },
       "cross_text_analysis": "",
       "chapter_summary": "Explores event-driven architecture for integrating microservices. Covers distributed system patterns, async communication between services, eventual consistency, service choreography vs orchestration, and bounded contexts with anti-corruption layers. [^191]",
-      "concepts": []
+      "concepts": [
+        {
+          "name": "Gil",
+          "page": 387
+        }
+      ]
     },
     {
       "chapter_number": 12,
-      "title": "Command-Query Responsibility Segregation (CQRS)",
+      "title": "Logging",
       "page_range": {
-        "start": 265,
-        "end": 288
+        "start": 423,
+        "end": 439
       },
       "cross_text_analysis": "",
-      "chapter_summary": "Details Command-Query Responsibility Segregation (CQRS) pattern. Covers separating read and write models, building projections and materialized views, denormalization strategies, and optimizing for scalability with separate query and command sides. [^209]",
+      "chapter_summary": "Details Command-Query Responsibility Segregation (CQRS) pattern. Covers separating read and write models, building projections and materialized views, denormalization strategies, and optimizing for scalability with separate query and command sides. [^210]",
       "concepts": []
     },
     {
       "chapter_number": 13,
-      "title": "Dependency Injection (and Bootstrapping)",
+      "title": "Metrics",
       "page_range": {
-        "start": 289,
-        "end": 497
+        "start": 441,
+        "end": 461
       },
       "cross_text_analysis": "",
-      "chapter_summary": "Covers dependency injection and application bootstrapping. Discusses composition root pattern, IoC containers, factory patterns, managing dependencies for testability, and properly wiring up application components during initialization. [^226]",
+      "chapter_summary": "Covers dependency injection and application bootstrapping. Discusses composition root pattern, IoC containers, factory patterns, managing dependencies for testability, and properly wiring up application components during initialization. [^229]",
+      "concepts": []
+    },
+    {
+      "chapter_number": 14,
+      "title": "Profiling",
+      "page_range": {
+        "start": 463,
+        "end": 498
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Chapter 14 content. [^248]",
+      "concepts": []
+    },
+    {
+      "chapter_number": 15,
+      "title": "Debugging",
+      "page_range": {
+        "start": 501,
+        "end": 528
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Chapter 15 content. [^266]",
+      "concepts": []
+    },
+    {
+      "chapter_number": 16,
+      "title": "Ongoing Architecture",
+      "page_range": {
+        "start": 531,
+        "end": 557
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Chapter 16 content. [^283]",
       "concepts": []
     }
   ],

@@ -125,7 +125,16 @@ class UniversalMetadataGenerator:
         
         # Compile chapter pattern for auto-detection (default pattern)
         # Per DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN: Removed pattern config files
-        self.chapter_pattern = re.compile(r'(?:chapter|ch\.?)\s+(\d+)[:\s]+(.+)', re.IGNORECASE)
+        # Support multiple chapter heading formats:
+        # - "Chapter 1: Title" or "Chapter 1 Title"
+        # - "Ch. 1: Title" or "Ch 1 Title"
+        # - "1. Title" (numbered section)
+        # - "Part 1: Title"
+        # Exclude years (1900-2099) to avoid false positives
+        self.chapter_pattern = re.compile(
+            r'(?:chapter|ch\.?|part)\s+(\d+)[:\s]+(.+)|^(?!(?:19|20)\d{2}\b)(\d+)\.\s+([A-Z][^\.]+)$',
+            re.IGNORECASE | re.MULTILINE
+        )
         self.section_pattern = re.compile(r'^(?:section|§)\s+(\d+(?:\.\d+)?)', re.IGNORECASE)
     
     def auto_detect_chapters(self) -> List[Tuple[int, str, int, int]]:
@@ -146,8 +155,14 @@ class UniversalMetadataGenerator:
             print(f"   Using {len(self.book_data['chapters'])} pre-defined chapters from JSON")
             chapters = []
             for ch in self.book_data['chapters']:
+                # Handle both 'number' and 'chapter_number' field names (inconsistent JSON structures)
+                chapter_num = ch.get('number') or ch.get('chapter_number')
+                if chapter_num is None:
+                    print(f"   Warning: Chapter missing number field, skipping: {ch.get('title', 'Unknown')}")
+                    continue
+                
                 chapters.append((
-                    ch['number'],
+                    chapter_num,
                     ch['title'],
                     ch['start_page'],
                     ch['end_page']
@@ -162,12 +177,30 @@ class UniversalMetadataGenerator:
         
         for idx, page in enumerate(self.pages, start=1):
             text = page.get('content', page.get('text', ''))  # Support both 'content' and 'text' fields
-            lines = text.split('\n')[:10]  # Check first 10 lines
+            lines = text.split('\n')[:20]  # Check first 20 lines (increased from 10 for better detection)
             
             for line in lines:
                 match = self.chapter_pattern.search(line)
                 if match:
-                    chapter_num = int(match.group(1))
+                    # Handle different match groups from the regex
+                    if match.group(1):
+                        # Matched "Chapter N: Title" or "Ch. N: Title" or "Part N: Title"
+                        chapter_num = int(match.group(1))
+                        title = match.group(2).strip().rstrip('.')
+                    elif match.group(3):
+                        # Matched "N. Title" (numbered section)
+                        chapter_num = int(match.group(3))
+                        title = match.group(4).strip().rstrip('.')
+                    else:
+                        continue
+                    
+                    # Validate chapter number is reasonable (1-100)
+                    if chapter_num < 1 or chapter_num > 100:
+                        continue
+                    
+                    # Validate title is not empty
+                    if not title or len(title.strip()) == 0:
+                        continue
                     
                     # Skip if we've already seen this chapter (filters out headers/footers)
                     if chapter_num in seen_chapters:
@@ -179,7 +212,6 @@ class UniversalMetadataGenerator:
                         chapters.append((*current_chapter, idx - 1))
                     
                     seen_chapters.add(chapter_num)
-                    title = match.group(2).strip().rstrip('.')
                     current_chapter = (chapter_num, title, idx)
                     break
         
@@ -316,6 +348,13 @@ class UniversalMetadataGenerator:
             for page_idx in range(start_page - 1, min(end_page, len(self.pages))):
                 if page_idx < len(self.pages):
                     chapter_text += self.pages[page_idx].get('content', self.pages[page_idx].get('text', '')) + "\n"
+            
+            # Optimize for large chapters: limit text size to avoid timeouts
+            # StatisticalExtractor (YAKE + Summa) is expensive for >100K chars
+            MAX_CHAPTER_TEXT = 100000  # 100K chars (~50-60 pages of text)
+            if len(chapter_text) > MAX_CHAPTER_TEXT:
+                print(f"  Warning: Chapter text too large ({len(chapter_text):,} chars), truncating to {MAX_CHAPTER_TEXT:,} chars")
+                chapter_text = chapter_text[:MAX_CHAPTER_TEXT]
             
             page_count = end_page - start_page + 1
             print(f"  Collected {len(chapter_text):,} characters from {page_count} pages")

@@ -111,6 +111,9 @@ class StatisticalExtractor:
         TextRank is a graph-based algorithm that identifies important words
         based on their connections to other words in the text.
         
+        Fallback: If Summa fails (short text, code-heavy, poor OCR), extracts
+        concepts from keywords as a fallback to ensure metadata completeness.
+        
         Args:
             text: Input text to extract concepts from
             top_n: Number of top concepts to return (default: 10)
@@ -138,11 +141,36 @@ class StatisticalExtractor:
             raise ValueError(_ERROR_INVALID_TOP_N)
         
         # Extract keywords using Summa with split=True (returns list of words)
+        concepts = []
         try:
             concepts = summa_keywords.keywords(text, words=top_n, split=True)
         except Exception:
-            # Summa can fail on very short text - return empty list
-            concepts = []
+            # Summa can fail on very short text, code-heavy content, or poor OCR
+            pass
+        
+        # Fallback: Extract single-word concepts from keywords if Summa fails
+        if not concepts:
+            try:
+                # Use YAKE keywords and extract single words
+                keywords = self.kw_extractor.extract_keywords(text)
+                concept_set = set()
+                
+                for keyword, score in keywords:
+                    # Split multi-word keywords into single words
+                    words = keyword.lower().split()
+                    for word in words:
+                        # Filter: min 3 chars, alphabetic (exclude numbers/punctuation)
+                        if len(word) >= 3 and word.isalpha():
+                            concept_set.add(word)
+                            if len(concept_set) >= top_n:
+                                break
+                    if len(concept_set) >= top_n:
+                        break
+                
+                concepts = list(concept_set)[:top_n]
+            except Exception:
+                # Ultimate fallback: empty list
+                concepts = []
         
         # Summa may return more than requested - limit to top_n
         # Per PYTHON_GUIDELINES Ch. 13: Ensure consistent behavior

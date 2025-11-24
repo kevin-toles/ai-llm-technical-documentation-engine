@@ -110,17 +110,18 @@ def build_book_list_from_taxonomy(taxonomy: Dict[str, Any]) -> List[Dict[str, An
 def load_book_metadata(
     book_name: str,
     metadata_dir: Path,
-    enriched_dir: Path
+    specific_enriched_file: Optional[Path] = None
 ) -> tuple[Optional[Dict[str, Any]], Optional[str]]:
     """
     Load metadata for a book with graceful degradation.
     
-    Tries to load enriched metadata first, falls back to basic metadata.
+    If specific_enriched_file is provided and matches this book, uses it.
+    Otherwise falls back to basic metadata.
     
     Args:
         book_name: Name of the book (without extension)
         metadata_dir: Directory containing basic metadata files
-        enriched_dir: Directory containing enriched metadata files
+        specific_enriched_file: Specific enriched file to use (only for matching book)
         
     Returns:
         Tuple of (metadata_dict, note) where note indicates which file was used
@@ -128,26 +129,28 @@ def load_book_metadata(
         
     Reference: CONSOLIDATED_IMPLEMENTATION_PLAN.md lines 1588-1616
     """
-    # Try enriched metadata first
-    enriched_path = enriched_dir / f"{book_name}_metadata_enriched.json"
-    if enriched_path.exists():
-        try:
-            metadata = load_json(enriched_path)
-            return metadata, "using_enriched_metadata"
-        except (FileNotFoundError, json.JSONDecodeError) as e:
-            print(f"  ⚠️  Error loading enriched metadata for {book_name}: {e}")
+    # If specific enriched file provided, check if it matches this book
+    if specific_enriched_file and specific_enriched_file.exists():
+        # Extract book name from enriched file: "BookName_enr_metadata_*.json" -> "BookName"
+        enriched_book_name = specific_enriched_file.stem.split("_enr_metadata_")[0]
+        if enriched_book_name == book_name:
+            try:
+                metadata = load_json(specific_enriched_file)
+                return metadata, f"using_enriched_metadata ({specific_enriched_file.name})"
+            except (FileNotFoundError, json.JSONDecodeError) as e:
+                print(f"  ⚠️  Error loading specific enriched metadata for {book_name}: {e}")
     
     # Fallback to basic metadata
     basic_path = metadata_dir / f"{book_name}_metadata.json"
     if basic_path.exists():
         try:
             metadata = load_json(basic_path)
-            return metadata, "using_basic_metadata_fallback"
+            return metadata, "using_basic_metadata"
         except (FileNotFoundError, json.JSONDecodeError) as e:
             print(f"  ⚠️  Error loading basic metadata for {book_name}: {e}")
     
     # Neither file exists
-    return None, f"metadata_not_found (tried {enriched_path.name} and {basic_path.name})"
+    return None, f"metadata_not_found (tried {basic_path.name})"
 
 
 def load_book_guideline(book_name: str, guideline_dir: Path) -> Optional[Dict[str, Any]]:
@@ -175,8 +178,8 @@ def load_book_guideline(book_name: str, guideline_dir: Path) -> Optional[Dict[st
 def load_source_book(
     source_book: str,
     metadata_dir: Path,
-    enriched_dir: Path,
-    guideline_dir: Path
+    guideline_dir: Path,
+    specific_enriched_file: Optional[Path] = None
 ) -> Dict[str, Any]:
     """
     Load source book metadata and guideline.
@@ -184,8 +187,8 @@ def load_source_book(
     Args:
         source_book: Name of the source book
         metadata_dir: Directory with basic metadata files
-        enriched_dir: Directory with enriched metadata files
         guideline_dir: Directory with guideline JSON files
+        specific_enriched_file: Specific enriched file to use
         
     Returns:
         Source book data dictionary with metadata and optional guideline
@@ -197,7 +200,9 @@ def load_source_book(
     Pattern: Extract complex loading logic (REFACTOR phase)
     """
     print(f"\n📄 Loading source book: {source_book}...")
-    source_metadata, source_note = load_book_metadata(source_book, metadata_dir, enriched_dir)
+    source_metadata, source_note = load_book_metadata(
+        source_book, metadata_dir, specific_enriched_file
+    )
     source_guideline = load_book_guideline(source_book, guideline_dir)
     
     if source_metadata is None:
@@ -223,8 +228,8 @@ def load_companion_books(
     book_list: List[Dict[str, Any]],
     source_book: str,
     metadata_dir: Path,
-    enriched_dir: Path,
-    guideline_dir: Path
+    guideline_dir: Path,
+    specific_enriched_file: Optional[Path] = None
 ) -> tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
     """
     Load companion books with graceful degradation.
@@ -233,8 +238,8 @@ def load_companion_books(
         book_list: List of books from taxonomy
         source_book: Name of source book (to skip)
         metadata_dir: Directory with basic metadata files
-        enriched_dir: Directory with enriched metadata files
         guideline_dir: Directory with guideline JSON files
+        specific_enriched_file: Specific enriched file (will check if it matches each book)
         
     Returns:
         Tuple of (companion_books, missing_books)
@@ -253,8 +258,10 @@ def load_companion_books(
         if book_name == source_book or book_name == f"{source_book}.json":
             continue
         
-        # Load metadata
-        metadata, note = load_book_metadata(book_name, metadata_dir, enriched_dir)
+        # Load metadata (will use enriched if specific file matches this book)
+        metadata, note = load_book_metadata(
+            book_name, metadata_dir, specific_enriched_file
+        )
         
         if metadata is not None:
             book_data = {
@@ -337,9 +344,9 @@ def calculate_statistics(
 def create_aggregate_package(
     taxonomy_path: Path,
     metadata_dir: Path,
-    enriched_dir: Path,
     guideline_dir: Path,
-    output_dir: Path
+    output_dir: Path,
+    enriched_metadata_file: Optional[Path] = None
 ) -> Path:
     """
     Create aggregate package combining all sources.
@@ -349,9 +356,10 @@ def create_aggregate_package(
     Args:
         taxonomy_path: Path to taxonomy JSON file
         metadata_dir: Directory with basic metadata files
-        enriched_dir: Directory with enriched metadata files
         guideline_dir: Directory with guideline JSON files
         output_dir: Directory for output package
+        enriched_metadata_file: Optional specific enriched metadata file.
+                               Only used for the book that matches the filename.
         
     Returns:
         Path to created package file
@@ -361,6 +369,11 @@ def create_aggregate_package(
     """
     print("\n📦 Tab 6: Aggregate Package Creation")
     print(f"Taxonomy: {taxonomy_path.name}")
+    
+    # If enriched metadata provided, it will only be used for the matching book
+    if enriched_metadata_file:
+        print(f"Enriched metadata file: {enriched_metadata_file.name}")
+        print("Will use this enriched metadata for the matching book only")
     
     # 1. Load taxonomy
     print("\n📖 Loading taxonomy...")
@@ -374,11 +387,15 @@ def create_aggregate_package(
     print(f"  Found {len(book_list)} books across {len(taxonomy.get('tiers', {}))} tiers")
     
     # 3. Load source book (extracted to helper function)
-    source_book_data = load_source_book(source_book, metadata_dir, enriched_dir, guideline_dir)
+    source_book_data = load_source_book(
+        source_book, metadata_dir, guideline_dir,
+        specific_enriched_file=enriched_metadata_file
+    )
     
     # 4. Load companion books (extracted to helper function)
     companion_books, missing_books = load_companion_books(
-        book_list, source_book, metadata_dir, enriched_dir, guideline_dir
+        book_list, source_book, metadata_dir, guideline_dir,
+        specific_enriched_file=enriched_metadata_file
     )
     
     # 5. Calculate statistics (extracted to helper function)
@@ -429,12 +446,21 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  # Create package for architecture_patterns
+  # Create package with basic metadata
   python create_aggregate_package.py \\
     --taxonomy workflows/taxonomy_setup/output/architecture_patterns_taxonomy.json \\
     --metadata-dir workflows/metadata_extraction/output \\
     --enriched-dir workflows/metadata_enrichment/output \\
     --guideline-dir workflows/base_guideline_generation/output \\
+    --output-dir workflows/llm_enhancement/tmp
+
+  # Create package with enriched metadata (uses enriched for matching book only)
+  python create_aggregate_package.py \\
+    --taxonomy workflows/taxonomy_setup/output/architecture_patterns_taxonomy.json \\
+    --metadata-dir workflows/metadata_extraction/output \\
+    --enriched-dir workflows/metadata_enrichment/output \\
+    --guideline-dir workflows/base_guideline_generation/output \\
+    --enriched-metadata workflows/metadata_enrichment/output/Architecture_Patterns_enr_metadata_2024_01_15_14_30.json \\
     --output-dir workflows/llm_enhancement/tmp
 
 Reference: CONSOLIDATED_IMPLEMENTATION_PLAN.md Tab 6
@@ -458,8 +484,8 @@ Reference: CONSOLIDATED_IMPLEMENTATION_PLAN.md Tab 6
     parser.add_argument(
         "--enriched-dir",
         type=Path,
-        required=True,
-        help="Directory containing enriched metadata files (from Tab 4)"
+        required=False,
+        help="Directory containing enriched metadata files (from Tab 4) - not used if --enriched-metadata is specified"
     )
     
     parser.add_argument(
@@ -467,6 +493,13 @@ Reference: CONSOLIDATED_IMPLEMENTATION_PLAN.md Tab 6
         type=Path,
         required=True,
         help="Directory containing guideline JSON files (from Tab 5)"
+    )
+    
+    parser.add_argument(
+        "--enriched-metadata",
+        type=Path,
+        required=False,
+        help="Optional: Specific enriched metadata file. Only used for the book that matches the filename."
     )
     
     parser.add_argument(
@@ -487,21 +520,25 @@ Reference: CONSOLIDATED_IMPLEMENTATION_PLAN.md Tab 6
         print(f"❌ Error: Metadata directory not found: {args.metadata_dir}", file=sys.stderr)
         sys.exit(1)
     
-    if not args.enriched_dir.exists():
-        print(f"⚠️  Warning: Enriched metadata directory not found: {args.enriched_dir}")
-        print("   Will fall back to basic metadata where needed")
-    
     if not args.guideline_dir.exists():
         print(f"⚠️  Warning: Guideline directory not found: {args.guideline_dir}")
         print("   Package will be created without guideline data")
+    
+    # Validate optional enriched metadata file
+    enriched_metadata_file = None
+    if args.enriched_metadata:
+        if not args.enriched_metadata.exists():
+            print(f"❌ Error: Enriched metadata file not found: {args.enriched_metadata}", file=sys.stderr)
+            sys.exit(1)
+        enriched_metadata_file = args.enriched_metadata
     
     try:
         output_path = create_aggregate_package(
             args.taxonomy,
             args.metadata_dir,
-            args.enriched_dir,
             args.guideline_dir,
-            args.output_dir
+            args.output_dir,
+            enriched_metadata_file=enriched_metadata_file
         )
         
         print(f"\n✅ Success! Package created at: {output_path}")

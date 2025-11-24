@@ -134,11 +134,11 @@ class API:
             if taxonomy_dir.exists():
                 taxonomy_files = [f.name for f in taxonomy_dir.glob("*.json")]
             
-            # Get enriched metadata files from Tab 4 output
+            # Get enriched metadata files from Tab 4 output (new timestamped pattern)
             enriched_metadata_dir = WORKFLOWS_DIR / "metadata_enrichment" / "output"
             enriched_metadata_files = []
             if enriched_metadata_dir.exists():
-                enriched_metadata_files = [f.name for f in enriched_metadata_dir.glob("*_enriched_metadata.json")]
+                enriched_metadata_files = [f.name for f in enriched_metadata_dir.glob("*_enr_metadata_*.json")]
             
             providers_data = self.get_llm_providers()
             
@@ -319,10 +319,10 @@ class API:
             failed = []
             
             # Process each file
-            for file in files:
+            for idx, file in enumerate(files, 1):
                 try:
                     file_path = input_dir / file
-                    self.workflow_status[workflow_id]["progress"].append(f"Processing: {file}")
+                    self.workflow_status[workflow_id]["progress"].append(f"[{idx}/{len(files)}] Processing: {file}")
                     
                     # Build command based on tab
                     if tab_id == "tab1":  # PDF to JSON
@@ -340,9 +340,10 @@ class API:
                         
                         taxonomy_path = WORKFLOWS_DIR / "taxonomy_setup" / "output" / taxonomy_file
                         
-                        # Generate output path: input_metadata.json -> input_enriched_metadata.json
+                        # Generate output path with timestamp: input_metadata.json -> input_enr_metadata_YYYY_MM_DD_HH_MM.json
                         base_name = file.replace("_metadata.json", "")
-                        output_path = output_dir / f"{base_name}_enriched_metadata.json"
+                        timestamp = datetime.now().strftime("%Y_%m_%d_%H_%M")
+                        output_path = output_dir / f"{base_name}_enr_metadata_{timestamp}.json"
                         
                         cmd = ["python3", str(script_path), "--input", str(file_path), "--taxonomy", str(taxonomy_path), "--output", str(output_path)]
                     elif tab_id == "tab5":  # Base Guideline
@@ -467,22 +468,45 @@ class API:
                     
                     if returncode == 0:
                         successful.append(file)
-                        self.workflow_status[workflow_id]["progress"].append(f"✓ Completed: {file}")
+                        self.workflow_status[workflow_id]["progress"].append(f"✓ SUCCESS: {file}")
                     else:
                         failed.append(file)
-                        error_msg = stderr_output[:100] if stderr_output else "Unknown error"
-                        self.workflow_status[workflow_id]["progress"].append(f"✗ Failed: {file} - {error_msg}")
+                        error_msg = stderr_output.strip()[:200] if stderr_output else "Unknown error"
+                        # Extract key error message (last line of stderr is usually most relevant)
+                        if error_msg:
+                            error_lines = error_msg.strip().split('\n')
+                            key_error = error_lines[-1] if error_lines else error_msg
+                        else:
+                            key_error = "No error message available"
+                        self.workflow_status[workflow_id]["progress"].append(f"✗ FAILED: {file}")
+                        self.workflow_status[workflow_id]["progress"].append(f"  Error: {key_error}")
                         
                 except Exception as e:
                     failed.append(file)
-                    self.workflow_status[workflow_id]["progress"].append(f"✗ Error: {file} - {str(e)}")
+                    self.workflow_status[workflow_id]["progress"].append(f"✗ EXCEPTION: {file}")
+                    self.workflow_status[workflow_id]["progress"].append(f"  Error: {str(e)}")
             
-            # Update final status
+            # Update final status with detailed summary
             self.workflow_status[workflow_id]["status"] = "completed"
             self.workflow_status[workflow_id]["successful"] = successful
             self.workflow_status[workflow_id]["failed"] = failed
             self.workflow_status[workflow_id]["completed_at"] = datetime.now().isoformat()
-            self.workflow_status[workflow_id]["summary"] = f"Completed: {len(successful)} successful, {len(failed)} failed"
+            
+            # Build detailed summary message
+            total_files = len(files)
+            success_count = len(successful)
+            fail_count = len(failed)
+            success_rate = (success_count / total_files * 100) if total_files > 0 else 0
+            
+            summary_msg = f"✅ Completed: {success_count}/{total_files} files ({success_rate:.1f}% success rate)"
+            if fail_count > 0:
+                summary_msg += f" | ❌ Failed: {fail_count} files"
+            
+            self.workflow_status[workflow_id]["summary"] = summary_msg
+            self.workflow_status[workflow_id]["progress"].append("")
+            self.workflow_status[workflow_id]["progress"].append("=" * 60)
+            self.workflow_status[workflow_id]["progress"].append(summary_msg)
+            self.workflow_status[workflow_id]["progress"].append("=" * 60)
             
         except Exception as e:
             self.workflow_status[workflow_id]["status"] = "error"
@@ -586,36 +610,93 @@ class API:
         """Execute LLM enhancement (runs in background thread)"""
         try:
             self.workflow_status[workflow_id]["status"] = "running"
-            script_path = workflow.get("script")
             
-            if not script_path or not Path(script_path).exists():
+            # Step 1: Create aggregate package first
+            aggregate_script = WORKFLOWS_DIR / "llm_enhancement" / "scripts" / "create_aggregate_package.py"
+            if not aggregate_script.exists():
                 self.workflow_status[workflow_id]["status"] = "error"
-                self.workflow_status[workflow_id]["error"] = f"Script not found: {script_path}"
+                self.workflow_status[workflow_id]["error"] = f"Aggregate package script not found: {aggregate_script}"
                 return
             
-            # Build command with LLM config
-            guideline_path = workflow["input_dir"] / llm_config["guideline"]
+            # Build paths for aggregate package creation
             taxonomy_path = WORKFLOWS_DIR / "taxonomy_setup" / "output" / llm_config["taxonomy"]
+            metadata_dir = WORKFLOWS_DIR / "metadata_extraction" / "output"
+            guideline_dir = WORKFLOWS_DIR / "base_guideline_generation" / "output"
+            tmp_dir = WORKFLOWS_DIR / "llm_enhancement" / "tmp"
+            tmp_dir.mkdir(parents=True, exist_ok=True)
             
             self.workflow_status[workflow_id]["progress"].append(f"Guideline: {llm_config['guideline']}")
             self.workflow_status[workflow_id]["progress"].append(f"Taxonomy: {llm_config['taxonomy']}")
+            if llm_config.get("enriched_metadata"):
+                self.workflow_status[workflow_id]["progress"].append(f"Enriched Metadata: {llm_config['enriched_metadata']}")
             self.workflow_status[workflow_id]["progress"].append(f"Provider: {llm_config['provider']}")
             self.workflow_status[workflow_id]["progress"].append(f"Model: {llm_config['model']}")
+            
+            # Build aggregate package command
+            aggregate_cmd = [
+                "python3", str(aggregate_script),
+                "--taxonomy", str(taxonomy_path),
+                "--metadata-dir", str(metadata_dir),
+                "--guideline-dir", str(guideline_dir),
+                "--output-dir", str(tmp_dir)
+            ]
+            
+            # Add enriched metadata if selected (only used for the matching book)
+            if llm_config.get("enriched_metadata"):
+                enriched_dir = WORKFLOWS_DIR / "metadata_enrichment" / "output"
+                enriched_metadata_path = enriched_dir / llm_config["enriched_metadata"]
+                aggregate_cmd.extend(["--enriched-metadata", str(enriched_metadata_path)])
+            
+            self.workflow_status[workflow_id]["progress"].append("Creating aggregate package...")
+            
+            # Execute aggregate package creation
+            aggregate_result = subprocess.run(
+                aggregate_cmd,
+                cwd=str(BASE_DIR),
+                capture_output=True,
+                text=True
+            )
+            
+            if aggregate_result.returncode != 0:
+                self.workflow_status[workflow_id]["status"] = "error"
+                self.workflow_status[workflow_id]["error"] = f"Aggregate package creation failed: {aggregate_result.stderr}"
+                self.workflow_status[workflow_id]["progress"].append("✗ Aggregate package creation failed")
+                return
+            
+            self.workflow_status[workflow_id]["progress"].append("✓ Aggregate package created")
+            
+            # Step 2: Now call LLM enhancement script
+            script_path = workflow.get("script")
+            if not script_path or not Path(script_path).exists():
+                self.workflow_status[workflow_id]["status"] = "error"
+                self.workflow_status[workflow_id]["error"] = f"Enhancement script not found: {script_path}"
+                return
             
             # Set environment variables for LLM
             env = os.environ.copy()
             env["LLM_PROVIDER"] = llm_config["provider"]
             env["LLM_MODEL"] = llm_config["model"]
             
+            # Find the created aggregate package (most recent in tmp dir)
+            source_book = taxonomy_path.stem.replace("_taxonomy", "")
+            package_pattern = f"{source_book}_llm_package_*.json"
+            package_files = sorted(tmp_dir.glob(package_pattern), reverse=True)
+            
+            if not package_files:
+                self.workflow_status[workflow_id]["status"] = "error"
+                self.workflow_status[workflow_id]["error"] = "Aggregate package file not found"
+                return
+            
+            package_path = package_files[0]
+            
             cmd = [
                 "python3", str(script_path),
-                "--guideline", str(guideline_path),
-                "--taxonomy", str(taxonomy_path)
+                "--package", str(package_path)
             ]
             
             self.workflow_status[workflow_id]["progress"].append("Starting LLM enhancement...")
             
-            # Execute command
+            # Execute enhancement command
             result = subprocess.run(
                 cmd,
                 cwd=str(BASE_DIR),
