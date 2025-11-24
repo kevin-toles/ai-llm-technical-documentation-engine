@@ -27,10 +27,7 @@ from workflows.pdf_to_json.scripts.adapters import (
     PdfConverterAdapter,
     PdfConversionError,
 )
-from workflows.metadata_extraction.scripts.adapters import (
-    MetadataExtractorAdapter,
-    MetadataExtractionError,
-)
+# Note: MetadataExtractorAdapter removed - cache merge functionality obsolete
 from workflows.base_guideline_generation.scripts.adapters import (
     ChapterGeneratorAdapter,
     ChapterGenerationError,
@@ -46,10 +43,12 @@ class PipelineOrchestrator:
     """
     Service Layer: Orchestrates the document enhancement pipeline
     
-    Coordinates three adapters in sequence:
+    Coordinates two adapters in sequence:
     1. PdfConverterAdapter: PDF → JSON
     2. ChapterGeneratorAdapter: JSON → Enhanced Markdown
-    3. MetadataExtractorAdapter: JSON → Metadata Cache
+    
+    Note: MetadataExtractorAdapter removed - metadata extraction now happens
+    per-book via generate_metadata_universal.py, not via centralized cache.
     
     Pattern: Service Layer (acts as orchestration boundary)
     """
@@ -58,7 +57,6 @@ class PipelineOrchestrator:
         self,
         pdf_converter: Optional[PdfConverterAdapter] = None,
         chapter_generator: Optional[ChapterGeneratorAdapter] = None,
-        metadata_extractor: Optional[MetadataExtractorAdapter] = None,
         logger: Optional[logging.Logger] = None
     ):
         """
@@ -67,7 +65,6 @@ class PipelineOrchestrator:
         Args:
             pdf_converter: PDF conversion adapter (created if None)
             chapter_generator: Chapter generation adapter (created if None)
-            metadata_extractor: Metadata extraction adapter (created if None)
             logger: Optional logger instance. If None, creates default logger.
         """
         self.logger = logger or logging.getLogger(__name__)
@@ -75,14 +72,16 @@ class PipelineOrchestrator:
         # Initialize adapters (dependency injection pattern)
         self.pdf_converter = pdf_converter or PdfConverterAdapter(logger=self.logger)
         self.chapter_generator = chapter_generator or ChapterGeneratorAdapter(logger=self.logger)
-        self.metadata_extractor = metadata_extractor or MetadataExtractorAdapter(logger=self.logger)
     
     def run_full_pipeline(self, pdf_path: Path) -> Dict[str, Any]:
         """
-        Run complete pipeline: PDF → Chapters → Metadata
+        Run complete pipeline: PDF → Chapters
         
-        Orchestrates all three stages in sequence, handling errors
+        Orchestrates two stages in sequence, handling errors
         and logging progress at each step.
+        
+        Note: Metadata extraction removed - now handled per-book via
+        generate_metadata_universal.py workflow.
         
         Args:
             pdf_path: Path to input PDF file
@@ -91,8 +90,7 @@ class PipelineOrchestrator:
             Dict containing results from each stage:
             {
                 "pdf_conversion": {...},
-                "chapters": Path(...),
-                "metadata": Path(...)
+                "chapters": Path(...)
             }
         
         Raises:
@@ -104,27 +102,21 @@ class PipelineOrchestrator:
         
         try:
             # Stage 1: PDF Conversion
-            self.logger.info("Stage 1/3: Converting PDF to JSON...")
+            self.logger.info("Stage 1/2: Converting PDF to JSON...")
             pdf_result = self.pdf_converter.convert(pdf_path)
             results["pdf_conversion"] = pdf_result
             self.logger.info("✓ PDF conversion complete")
             
             # Stage 2: Chapter Generation
-            self.logger.info("Stage 2/3: Generating enhanced chapters...")
+            self.logger.info("Stage 2/2: Generating enhanced chapters...")
             chapters_result = self.chapter_generator.generate()
             results["chapters"] = chapters_result
             self.logger.info(f"✓ Chapter generation complete: {chapters_result}")
             
-            # Stage 3: Metadata Extraction
-            self.logger.info("Stage 3/3: Extracting chapter metadata...")
-            metadata_result = self.metadata_extractor.extract()
-            results["metadata"] = metadata_result
-            self.logger.info(f"✓ Metadata extraction complete: {metadata_result}")
-            
             self.logger.info("Pipeline complete!")
             return results
             
-        except (PdfConversionError, ChapterGenerationError, MetadataExtractionError) as e:
+        except (PdfConversionError, ChapterGenerationError) as e:
             error_msg = f"Pipeline failed during {self._get_current_stage(results)}: {str(e)}"
             self.logger.error(error_msg)
             raise PipelineOrchestrationError(error_msg) from e
@@ -179,29 +171,6 @@ class PipelineOrchestrator:
             return result
         except ChapterGenerationError as e:
             error_msg = f"Chapter generation failed: {str(e)}"
-            self.logger.error(error_msg)
-            raise PipelineOrchestrationError(error_msg) from e
-    
-    def run_metadata_extraction(self) -> Path:
-        """
-        Run only metadata extraction stage
-        
-        Assumes JSON files already exist (from previous PDF conversion).
-        
-        Returns:
-            Path: Path to updated metadata cache file
-        
-        Raises:
-            PipelineOrchestrationError: If extraction fails
-        """
-        self.logger.info("Running metadata extraction only")
-        
-        try:
-            result = self.metadata_extractor.extract()
-            self.logger.info(f"Metadata extraction complete: {result}")
-            return result
-        except MetadataExtractionError as e:
-            error_msg = f"Metadata extraction failed: {str(e)}"
             self.logger.error(error_msg)
             raise PipelineOrchestrationError(error_msg) from e
     

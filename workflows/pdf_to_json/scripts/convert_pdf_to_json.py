@@ -198,6 +198,26 @@ def convert_pdf_to_json(pdf_path, output_path=None):
         # ChapterSegmenter already returns dicts (converted internally)
         json_data["chapters"] = detected_chapters
         
+        # Populate chapter content from page ranges
+        print("\n📝 Extracting chapter content from pages...")
+        for chapter in json_data["chapters"]:
+            start_page = chapter.get("start_page", 1)
+            end_page = chapter.get("end_page", start_page)
+            
+            # Extract content from all pages in the chapter range
+            chapter_text = []
+            for page_num in range(start_page, end_page + 1):
+                # Pages are 1-indexed in chapter metadata, 0-indexed in array
+                page_idx = page_num - 1
+                if 0 <= page_idx < len(json_data["pages"]):
+                    page_content = json_data["pages"][page_idx].get("content", "")
+                    if page_content.strip():
+                        chapter_text.append(page_content)
+            
+            # Join all page content with double newline separator
+            chapter["content"] = "\n\n".join(chapter_text)
+            chapter["page_number"] = start_page  # Add page_number field for compatibility
+        
         print(f"✅ Detected {len(json_data['chapters'])} chapters:")
         for ch in json_data["chapters"][:5]:
             method_emoji = {

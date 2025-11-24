@@ -3,14 +3,17 @@
 generate_concept_taxonomy.py
 
 Generates a concept taxonomy by analyzing books organized into tiers.
-Extracts concepts from book content and metadata to create a holistic taxonomy.
+Extracts concepts from book text content using pattern matching.
 
 Flow:
 1. Load books from each tier (Architecture, Implementation, Practices)
-2. Extract concepts using same logic as guideline generator
-3. Enrich with metadata keywords/concepts if available
-4. Perform frequency analysis to determine tier-appropriate concepts
-5. Output structured taxonomy JSON for use by guideline generator
+2. Extract concepts using pattern matching against COMPREHENSIVE_CONCEPTS
+3. Perform frequency analysis to determine tier-appropriate concepts
+4. Output structured taxonomy JSON for use by metadata enrichment
+
+Dependencies:
+- Input: Book JSON files from Tab 1 (PDF → JSON)
+- Independent of Tab 2 (Metadata Extraction) to avoid circular dependencies
 
 Reference: workflows/base_guideline_generation/scripts/chapter_generator_all_text.py
 """
@@ -30,7 +33,6 @@ SCRIPT_DIR = Path(__file__).parent
 REPO_ROOT = SCRIPT_DIR.parent.parent.parent
 WORKFLOWS_DIR = REPO_ROOT / "workflows"
 JSON_DIR = WORKFLOWS_DIR / "pdf_to_json" / "output" / "textbooks_json"
-METADATA_DIR = WORKFLOWS_DIR / "metadata_extraction" / "output"
 OUTPUT_DIR = WORKFLOWS_DIR / "taxonomy_setup" / "output"
 
 # Comprehensive Python concepts (same as guideline generator)
@@ -127,68 +129,43 @@ def load_book_json(filepath: Path) -> Dict[str, Any]:
         return json.load(f)
 
 
-def load_book_metadata(book_name: str) -> Dict[str, Any]:
-    """
-    Load metadata file for a book if it exists.
-    Metadata contains pre-extracted keywords and concepts.
-    """
-    # Convert book.json to book_metadata.json
-    metadata_name = book_name.replace('.json', '_metadata.json')
-    metadata_path = METADATA_DIR / metadata_name
-    
-    if metadata_path.exists():
-        with open(metadata_path, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    return None
-
-
 def extract_concepts_from_book(book_path: Path) -> Tuple[Set[str], Dict[str, int]]:
     """
-    Extract concepts from a book using:
-    1. Content analysis (like guideline generator)
-    2. Metadata keywords/concepts (if available)
+    Extract concepts from a book using text content analysis.
+    
+    Supports both:
+    - Raw JSON book files (with 'pages' structure)
+    - Metadata files (with array of chapter objects containing 'concepts')
     
     Returns:
-        - Set of unique concepts
-        - Frequency count of each concept
+        - Set of unique concepts found in book
+        - Frequency count of each concept occurrence
     """
     book_data = load_book_json(book_path)
-    book_name = book_path.name
-    metadata = load_book_metadata(book_name)
     
     concept_freq = Counter()
     all_concepts = set()
     
-    # Extract from book content (pages)
-    pages = book_data.get('pages', [])
-    for page in pages:
-        content = page.get('content', '')
-        if content:
-            concepts = extract_concepts_from_text(content, COMPREHENSIVE_CONCEPTS)
-            all_concepts.update(concepts)
-            concept_freq.update(concepts)
-    
-    # Enrich with metadata if available
-    if metadata:
-        for chapter in metadata:
-            # Add keywords from metadata
-            keywords = chapter.get('keywords', [])
-            for keyword in keywords:
-                # Check if keyword matches any concept
-                matching = extract_concepts_from_text(keyword, COMPREHENSIVE_CONCEPTS)
-                if matching:
-                    all_concepts.update(matching)
-                    concept_freq.update(matching)
-                else:
-                    # Add the keyword itself if it doesn't match known concepts
-                    all_concepts.add(keyword)
-                    concept_freq[keyword] += 1
-            
-            # Add concepts from metadata
-            concepts = chapter.get('concepts', [])
-            for concept in concepts:
-                all_concepts.add(concept)
-                concept_freq[concept] += 1
+    # Detect file type and extract concepts accordingly
+    if isinstance(book_data, list):
+        # Metadata file: array of chapter objects with 'concepts' field
+        for chapter in book_data:
+            if 'concepts' in chapter and isinstance(chapter['concepts'], list):
+                # Metadata already has extracted concepts
+                concepts_list = chapter['concepts']
+                all_concepts.update(concepts_list)
+                concept_freq.update(concepts_list)
+    elif isinstance(book_data, dict) and 'pages' in book_data:
+        # Raw JSON book file: extract from page content
+        pages = book_data.get('pages', [])
+        for page in pages:
+            content = page.get('content', '')
+            if content:
+                concepts = extract_concepts_from_text(content, COMPREHENSIVE_CONCEPTS)
+                all_concepts.update(concepts)
+                concept_freq.update(concepts)
+    else:
+        print(f"Warning: Unknown file structure for {book_path.name}")
     
     return all_concepts, dict(concept_freq)
 

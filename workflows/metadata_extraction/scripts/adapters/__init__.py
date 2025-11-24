@@ -1,13 +1,10 @@
 """
-Pipeline adapters package - Metadata Extractor Adapter
+Pipeline adapters package - Metadata Extraction
 
-Wraps metadata extraction with clean adapter interface.
-Pattern: Adapter Pattern (Architecture Patterns with Python Ch. 13)
+Note: MetadataExtractorAdapter removed - cache merge functionality obsolete.
+Metadata extraction now operates directly on individual book JSON files using
+generate_metadata_universal.py.
 """
 
-from .metadata_extractor import MetadataExtractorAdapter, MetadataExtractionError
+__all__ = []
 
-__all__ = [
-    "MetadataExtractorAdapter",
-    "MetadataExtractionError",
-]

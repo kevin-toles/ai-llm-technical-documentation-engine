@@ -209,6 +209,44 @@ h2 {
 }
 
 /* Tier Builder (for Taxonomy tab) */
+.taxonomy-name-input {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+}
+
+.taxonomy-name-input label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.taxonomy-name-input input[type="text"] {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    transition: border-color 0.2s;
+}
+
+.taxonomy-name-input input[type="text"]:focus {
+    outline: none;
+    border-color: #007aff;
+}
+
+.taxonomy-name-input small {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    color: #666;
+    font-style: italic;
+}
+
 .taxonomy-guide {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     border-radius: 8px;

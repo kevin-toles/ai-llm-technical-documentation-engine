@@ -24,8 +24,8 @@
             <div class="tabs">
                 <button class="tab active" data-tab="tab1">1. PDF → JSON</button>
                 <button class="tab" data-tab="tab2">2. Metadata Extract</button>
-                <button class="tab" data-tab="tab3">3. Metadata Enrich</button>
-                <button class="tab" data-tab="tab4">4. Taxonomy Setup</button>
+                <button class="tab" data-tab="tab3">3. Taxonomy Setup</button>
+                <button class="tab" data-tab="tab4">4. Metadata Enrich</button>
                 <button class="tab" data-tab="tab5">5. Base Guideline</button>
                 <button class="tab" data-tab="tab6">6. LLM Enhancement</button>
             </div>
@@ -118,6 +118,30 @@
                             </select>
                         </div>
                     `;
+                }
+                // Special handling for Metadata Enrichment tab (tab4) - requires taxonomy selection
+                else if (tabId === 'tab4' && data.taxonomy_files) {
+                    container.innerHTML = `
+                        <div class="config-section" style="margin-bottom: 20px;">
+                            <label class="config-label">Select Taxonomy (required for enrichment):</label>
+                            <select id="${tabId}-taxonomy" class="config-select">
+                                <option value="">-- Select Taxonomy --</option>
+                                ${data.taxonomy_files.map(file => `<option value="${file}">${file}</option>`).join('')}
+                            </select>
+                            <p style="font-size: 11px; color: #666; margin-top: 5px;">
+                                Taxonomy is required to enrich metadata with cross-book concept relationships.
+                            </p>
+                        </div>
+                        <div class="file-list">
+                            <h4 style="margin-bottom: 10px;">Select Metadata Files to Enrich:</h4>
+                            ${data.files.map(file => `
+                                <label class="file-item">
+                                    <input type="checkbox" name="${tabId}-file" value="${file}">
+                                    ${file}
+                                </label>
+                            `).join('')}
+                        </div>
+                    `;
                 } 
                 // Special handling for LLM tab
                 else if (data.llm_providers) {
@@ -164,6 +188,11 @@
                 } else if (data.supports_tiers && data.tiers) {
                     // Taxonomy tab with tier builder (Trello-style drag & drop)
                     container.innerHTML = `
+                        <div class="taxonomy-name-input">
+                            <label for="${tabId}-taxonomy-name">Taxonomy Name (10-15 chars):</label>
+                            <input type="text" id="${tabId}-taxonomy-name" maxlength="15" placeholder="e.g., game_dev" />
+                            <small>File will be saved as: [name]_taxonomy_YYYYMMDD.json</small>
+                        </div>
                         <div class="taxonomy-guide">
                             <h3>📚 Understanding the Three-Tier Taxonomy</h3>
                             <div class="tier-descriptions">
@@ -245,28 +274,48 @@
         // Initialize tier builder with Trello-style drag & drop
         function initTierBuilder(tabId, allFiles) {
             let draggedElement = null;
+            const containerId = `${tabId}-pool`;
             
-            // Add drag event listeners to all draggable items
-            document.addEventListener('dragstart', (e) => {
+            // Initialize state tracking for this tab
+            if (!window.tierState) window.tierState = {};
+            if (!window.tierState[tabId]) {
+                window.tierState[tabId] = {
+                    architecture: [],
+                    implementation: [],
+                    practices: []
+                };
+            }
+            
+            console.log(`[TIER-INIT] Initialized state for ${tabId}:`, window.tierState[tabId]);
+            
+            // Get tab container for scoped event listeners
+            const tierTabContainer = document.getElementById(tabId);
+            if (!tierTabContainer) {
+                console.error(`Tab container not found: ${tabId}`);
+                return;
+            }
+            
+            // Add drag event listeners scoped to this tab
+            tierTabContainer.addEventListener('dragstart', function(e) {
                 if (e.target.classList.contains('draggable')) {
                     draggedElement = e.target;
                     e.target.classList.add('dragging');
                     e.dataTransfer.effectAllowed = 'move';
+                    console.log(`[DRAG-START] ${e.target.dataset.file}`);
                 }
             });
             
-            document.addEventListener('dragend', (e) => {
+            tierTabContainer.addEventListener('dragend', function(e) {
                 if (e.target.classList.contains('draggable')) {
                     e.target.classList.remove('dragging');
-                    // Remove all drag-over effects
-                    document.querySelectorAll('.drag-over').forEach(el => {
+                    tierTabContainer.querySelectorAll('.drag-over').forEach(el => {
                         el.classList.remove('drag-over');
                     });
                 }
             });
             
-            // Add drop zone event listeners
-            document.querySelectorAll('.drop-zone, .file-pool').forEach(dropZone => {
+            // Add drop zone event listeners - ONLY for this specific tab
+            tierTabContainer.querySelectorAll('.drop-zone, .file-pool').forEach(dropZone => {
                 dropZone.addEventListener('dragover', (e) => {
                     e.preventDefault();
                     e.dataTransfer.dropEffect = 'move';
@@ -304,11 +353,33 @@
                     e.preventDefault();
                     dropZone.classList.remove('drag-over');
                     
-                    if (!draggedElement) return;
+                    if (!draggedElement) {
+                        console.error('No dragged element!');
+                        return;
+                    }
                     
                     const file = draggedElement.dataset.file;
                     const fromTier = draggedElement.parentElement.dataset.tier;
                     const toTier = dropZone.dataset.tier;
+                    
+                    console.log(`Moving "${file}" from ${fromTier} to ${toTier}`);
+                    
+                    // Update state tracking
+                    if (fromTier !== 'pool' && window.tierState[tabId]) {
+                        const fromArray = window.tierState[tabId][fromTier];
+                        if (fromArray) {
+                            const index = fromArray.indexOf(file);
+                            if (index > -1) fromArray.splice(index, 1);
+                        }
+                    }
+                    
+                    if (toTier !== 'pool' && window.tierState[tabId]) {
+                        const toArray = window.tierState[tabId][toTier];
+                        if (toArray && !toArray.includes(file)) {
+                            toArray.push(file);
+                            console.log(`[STATE-UPDATE] Added "${file}" to ${toTier}. State:`, window.tierState[tabId]);
+                        }
+                    }
                     
                     // Remove empty message if present
                     const emptyMsg = dropZone.querySelector('.empty-tier');
@@ -323,15 +394,18 @@
                             draggedElement.className = 'pool-file draggable';
                             draggedElement.draggable = true;
                             draggedElement.innerHTML = file;
+                            console.log(`Converted to pool-file: ${file}`);
                         } else if (fromTier === 'pool') {
                             // Moving from pool to tier - convert to tier-item
                             draggedElement.className = 'tier-item draggable';
                             draggedElement.draggable = true;
+                            draggedElement.dataset.file = file;
                             draggedElement.innerHTML = `
                                 <span class="drag-handle">⋮⋮</span>
                                 <span class="tier-file-name">${file}</span>
                                 <button onclick="removeTierItem('${tabId}', this)" class="tier-btn-remove">✕</button>
                             `;
+                            console.log(`Converted to tier-item: ${file}, class=${draggedElement.className}`);
                         }
                     }
                     
@@ -367,6 +441,16 @@
             const item = btn.closest('.tier-item');
             const file = item.dataset.file;
             const tierList = item.parentNode;
+            const tier = tierList.dataset.tier;
+            
+            // Update state tracking
+            if (tier && window.tierState && window.tierState[tabId]) {
+                const tierArray = window.tierState[tabId][tier];
+                if (tierArray) {
+                    const index = tierArray.indexOf(file);
+                    if (index > -1) tierArray.splice(index, 1);
+                }
+            }
             
             // Remove from tier
             item.remove();
@@ -416,6 +500,16 @@
             // For taxonomy tab, move all files back to pool
             const pool = document.getElementById(`${tabId}-pool`);
             if (pool) {
+                // Reset state
+                if (window.tierState && window.tierState[tabId]) {
+                    window.tierState[tabId] = {
+                        architecture: [],
+                        implementation: [],
+                        practices: []
+                    };
+                    console.log(`[CLEAR] Reset state for ${tabId}`);
+                }
+                
                 const allFiles = [];
                 ['architecture', 'implementation', 'practices'].forEach(tier => {
                     const tierList = document.getElementById(`${tabId}-${tier}`);
@@ -451,6 +545,7 @@
             let tierData = {};
             let llmConfig = {};
             let taxonomyFile = null;
+            let pool = null;  // Declare pool at function scope
             
             // Check if this is LLM tab
             const guidelineSelect = document.getElementById(`${tabId}-guideline`);
@@ -482,21 +577,41 @@
             }
             else {
                 // Check if this is taxonomy tab with tiers
-                const pool = document.getElementById(`${tabId}-pool`);
+                pool = document.getElementById(`${tabId}-pool`);
                 
                 if (pool) {
-                    // Collect files by tier with priority order
-                    ['architecture', 'implementation', 'practices'].forEach(tier => {
-                        const tierList = document.getElementById(`${tabId}-${tier}`);
-                        const items = tierList.querySelectorAll('.tier-item');
-                        const tierFiles = Array.from(items).map(item => item.dataset.file);
-                        if (tierFiles.length > 0) {
-                            tierData[tier] = tierFiles;
-                        }
-                    });
+                    // Get taxonomy name
+                    const taxonomyNameInput = document.getElementById(`${tabId}-taxonomy-name`);
+                    const taxonomyName = taxonomyNameInput ? taxonomyNameInput.value.trim() : '';
+                    
+                    if (!taxonomyName || taxonomyName.length < 3) {
+                        alert('Please enter a taxonomy name (3-15 characters)');
+                        return;
+                    }
+                    
+                    // Get tier data from state (no DOM scraping!)
+                    tierData = window.tierState && window.tierState[tabId] ? 
+                               JSON.parse(JSON.stringify(window.tierState[tabId])) : 
+                               {architecture: [], implementation: [], practices: []};
+                    
+                    console.log('Tier data from state:', tierData);
+                    
+                    // Validate required tiers (Architecture and Implementation)
+                    const hasArchitecture = tierData.architecture && tierData.architecture.length > 0;
+                    const hasImplementation = tierData.implementation && tierData.implementation.length > 0;
+                    
+                    if (!hasArchitecture || !hasImplementation) {
+                        alert('The first two tiers are required:\n\n🏛️ Architecture Spine (Priority 1)\n⚙️ Implementation (Priority 2)\n\nEngineering Practices (Priority 3) is optional.');
+                        return;
+                    }
                     
                     // Count total files
                     selectedFiles = Object.values(tierData).flat();
+                    
+                    if (selectedFiles.length === 0) {
+                        alert('Please drag files into the Architecture and Implementation tiers before running the workflow.');
+                        return;
+                    }
                 } else {
                     // Regular file selection with checkboxes
                     selectedFiles = Array.from(
@@ -504,7 +619,9 @@
                     ).map(cb => cb.value);
                 }
                 
-                if (selectedFiles.length === 0 && Object.keys(tierData).length === 0) {
+                // Only validate if we're not in tier mode (pool doesn't exist)
+                // In tier mode, validation already happened above
+                if (!pool && selectedFiles.length === 0) {
                     alert('Please select at least one file');
                     return;
                 }
@@ -514,8 +631,11 @@
             let payload;
             if (llmConfig.guideline) {
                 payload = { llm_config: llmConfig };
-            } else if (Object.keys(tierData).length > 0) {
-                payload = { tiers: tierData };
+            } else if (pool) {
+                // Always send tiers payload if we're in tier mode (even if empty - backend will validate)
+                const taxonomyNameInput = document.getElementById(`${tabId}-taxonomy-name`);
+                const taxonomyName = taxonomyNameInput ? taxonomyNameInput.value.trim() : '';
+                payload = { tiers: tierData, taxonomy_name: taxonomyName };
             } else {
                 payload = { files: selectedFiles };
                 // Add taxonomy if selected (for tab6)
@@ -524,20 +644,55 @@
                 }
             }
             
+            console.log('Sending payload:', payload);
+            
+            // DIAGNOSTIC: Dump entire tab HTML
+            const tabElement = document.getElementById(tabId);
+            console.log('[DIAGNOSTIC] Tab element HTML:', tabElement ? tabElement.innerHTML : 'TAB NOT FOUND');
+            console.log('[DIAGNOSTIC] All elements with -status:', Array.from(document.querySelectorAll('[id$="-status"]')).map(el => el.id));
+            
             // Show status panel
             const statusPanel = document.getElementById(`${tabId}-status`);
             const statusContent = document.getElementById(`${tabId}-status-content`);
+            
+            console.log('[DEBUG] Looking for status elements:', {
+                tabId,
+                statusPanel,
+                statusContent,
+                statusPanelId: `${tabId}-status`,
+                statusContentId: `${tabId}-status-content`,
+                allStatusPanels: document.querySelectorAll('[id$="-status"]'),
+                parentElement: document.getElementById(tabId)
+            });
+            
+            if (!statusPanel || !statusContent) {
+                console.error(`[ERROR] Status panel elements not found! Looking for: ${tabId}-status and ${tabId}-status-content`);
+                console.error('Tab element exists:', !!document.getElementById(tabId));
+                console.error('DOM structure:', document.getElementById(tabId));
+                return;
+            }
+            
             statusPanel.style.display = 'block';
             statusContent.innerHTML = '<p>Starting workflow...</p>';
             
+            console.log('[DEBUG] Status panel shown:', statusPanel.style.display);
+            
             try {
+                console.log('[DEBUG] Entering fetch try block, about to call fetch');
                 const response = await fetch(`/run/${tabId}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
                 });
+                console.log('[DEBUG] Fetch returned:', {
+                    status: response.status,
+                    ok: response.ok,
+                    type: typeof response,
+                    hasJson: typeof response.json === 'function'
+                });
                 
                 const result = await response.json();
+                console.log('[DEBUG] Parsed JSON response:', result);
                 
                 if (result.error) {
                     statusContent.innerHTML = `<p class="error">Error: ${result.error}</p>`;
@@ -550,6 +705,7 @@
                     statusContent.innerHTML = `<p>✓ ${result.message}</p><p>Monitoring progress...</p>`;
                 }
             } catch (error) {
+                console.error('[DEBUG] Fetch error:', error);
                 statusContent.innerHTML = `<p class="error">Failed to start workflow: ${error.message}</p>`;
             }
         }
