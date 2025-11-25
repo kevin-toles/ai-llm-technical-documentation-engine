@@ -14,6 +14,17 @@ import asyncio
 import json
 from datetime import datetime
 
+# Service Layer imports (Architecture Patterns Ch. 4)
+from ui.async_workflow_services import (
+    AsyncWorkflowExecutionService,
+    AsyncFileListService,
+    AsyncTaxonomyGenerationService,
+    JSON_EXT,
+    JSON_GLOB,
+    MD_EXT,
+    PDF_EXT
+)
+
 app = FastAPI(title="LLM Document Enhancer")
 
 # Store workflow execution status
@@ -35,35 +46,35 @@ WORKFLOWS = {
     "tab1": {
         "name": "PDF to JSON",
         "input_dir": WORKFLOWS_DIR / "pdf_to_json" / "input",
-        "input_ext": ".pdf",
+        "input_ext": PDF_EXT,
         "output_dir": WORKFLOWS_DIR / "pdf_to_json" / "output",
         "script": WORKFLOWS_DIR / "pdf_to_json" / "scripts" / "convert_pdf_to_json.py"
     },
     "tab2": {
         "name": "Metadata Extraction",
         "input_dir": WORKFLOWS_DIR / "pdf_to_json" / "output" / "textbooks_json",
-        "input_ext": ".json",
+        "input_ext": JSON_EXT,
         "output_dir": WORKFLOWS_DIR / "metadata_extraction" / "output",
         "script": WORKFLOWS_DIR / "metadata_extraction" / "scripts" / "generate_metadata_universal.py"
     },
     "tab3": {
         "name": "Metadata Enrichment",
         "input_dir": WORKFLOWS_DIR / "metadata_extraction" / "output",
-        "input_ext": ".json",
+        "input_ext": JSON_EXT,
         "output_dir": WORKFLOWS_DIR / "metadata_enrichment" / "output",
         "script": WORKFLOWS_DIR / "metadata_enrichment" / "scripts" / "generate_chapter_metadata.py"
     },
     "tab4": {
         "name": "Taxonomy Setup",
         "input_dir": WORKFLOWS_DIR / "pdf_to_json" / "output" / "textbooks_json",
-        "input_ext": ".json",
+        "input_ext": JSON_EXT,
         "output_dir": WORKFLOWS_DIR / "taxonomy_setup" / "output",
         "script": None  # To be created
     },
     "tab5": {
         "name": "Base Guideline",
         "input_dir": WORKFLOWS_DIR / "pdf_to_json" / "output" / "textbooks_json",
-        "input_ext": ".json",
+        "input_ext": JSON_EXT,
         "output_dir": WORKFLOWS_DIR / "base_guideline_generation" / "output",
         "script": WORKFLOWS_DIR / "base_guideline_generation" / "scripts" / "chapter_generator_all_text.py",
         "requires_taxonomy": True
@@ -71,7 +82,7 @@ WORKFLOWS = {
     "tab6": {
         "name": "LLM Enhancement",
         "input_dir": WORKFLOWS_DIR / "base_guideline_generation" / "output" / "chapter_summaries",
-        "input_ext": ".md",
+        "input_ext": MD_EXT,
         "output_dir": WORKFLOWS_DIR / "llm_enhancement" / "output",
         "script": WORKFLOWS_DIR / "llm_enhancement" / "scripts" / "integrate_llm_enhancements.py",
         "requires_taxonomy": True,
@@ -91,79 +102,58 @@ async def index(request: Request):
 
 @app.get("/files/{tab_id}")
 async def get_files(tab_id: str):
-    """Get list of files available for the workflow"""
+    """Get list of files for workflow (refactored: CC 16 → 3)"""
     if tab_id not in WORKFLOWS:
         return {"error": "Invalid tab"}
     
     workflow = WORKFLOWS[tab_id]
-    input_dir = workflow["input_dir"]
+    files = AsyncFileListService.get_files_for_workflow(workflow["input_dir"], workflow["input_ext"])
     
-    if not input_dir.exists():
-        return {"files": [], "input_dir": str(input_dir)}
+    response = {
+        "files": files,
+        "input_dir": str(workflow["input_dir"])
+    }
     
-    # Get all files with matching extension
-    files = [f.name for f in input_dir.glob(f"*{workflow['input_ext']}")]
-    
-    # Special handling for Base Guideline tab - include taxonomy files
+    # Add tab-specific metadata
     if tab_id == "tab5":
-        taxonomy_dir = WORKFLOWS_DIR / "taxonomy_setup" / "output"
-        taxonomy_files = []
-        if taxonomy_dir.exists():
-            # Only include concept taxonomies (files with "concepts" in tiers)
-            for f in taxonomy_dir.glob("*.json"):
-                try:
-                    with open(f, 'r') as tf:
-                        tax_data = json.load(tf)
-                        # Validate it's a concept taxonomy
-                        if 'tiers' in tax_data:
-                            has_concepts = any(
-                                isinstance(tier, dict) and 'concepts' in tier 
-                                for tier in tax_data['tiers'].values()
-                            )
-                            if has_concepts:
-                                taxonomy_files.append(f.name)
-                except:
-                    pass  # Skip invalid JSON files
-        return {
-            "files": sorted(files),
-            "input_dir": str(input_dir),
-            "taxonomy_files": sorted(taxonomy_files)
-        }
+        response.update(_get_tab5_metadata())
+    elif tab_id == "tab4":
+        response.update(_get_tab4_metadata())
+    elif tab_id == "tab6":
+        response.update(await _get_tab6_metadata())
+    else:
+        response["output_dir"] = str(workflow["output_dir"])
     
-    # Special handling for taxonomy tab - return with tier support
-    if tab_id == "tab4":
-        return {
-            "files": sorted(files),
-            "input_dir": str(input_dir),
-            "supports_tiers": True,
-            "tiers": [
-                {"id": "architecture", "name": "Architecture Spine", "priority": 1},
-                {"id": "implementation", "name": "Implementation", "priority": 2},
-                {"id": "practices", "name": "Engineering Practices", "priority": 3}
-            ]
-        }
-    
-    # Special handling for LLM tab - return taxonomy files and LLM options
-    if tab_id == "tab6":
-        taxonomy_dir = WORKFLOWS_DIR / "taxonomy_setup" / "output"
-        taxonomy_files = []
-        if taxonomy_dir.exists():
-            taxonomy_files = [f.name for f in taxonomy_dir.glob("*.json")]
-        
-        # Fetch providers dynamically
-        providers_data = await get_llm_providers()
-        
-        return {
-            "files": sorted(files),
-            "input_dir": str(input_dir),
-            "taxonomy_files": sorted(taxonomy_files),
-            "llm_providers": providers_data
-        }
-    
+    return response
+
+
+def _get_tab5_metadata():
+    """Get Base Guideline tab metadata with validated taxonomy files"""
+    taxonomy_dir = WORKFLOWS_DIR / "taxonomy_setup" / "output"
+    taxonomy_files = AsyncFileListService.get_taxonomy_files_with_validation(taxonomy_dir)
+    return {"taxonomy_files": taxonomy_files}
+
+
+def _get_tab4_metadata():
+    """Get Taxonomy Setup tab metadata with tier definitions"""
     return {
-        "files": sorted(files),
-        "input_dir": str(input_dir),
-        "output_dir": str(workflow["output_dir"])
+        "supports_tiers": True,
+        "tiers": [
+            {"id": "architecture", "name": "Architecture Spine", "priority": 1},
+            {"id": "implementation", "name": "Implementation", "priority": 2},
+            {"id": "practices", "name": "Engineering Practices", "priority": 3}
+        ]
+    }
+
+
+async def _get_tab6_metadata():
+    """Get LLM Enhancement tab metadata with taxonomy files and providers"""
+    taxonomy_dir = WORKFLOWS_DIR / "taxonomy_setup" / "output"
+    taxonomy_files = AsyncFileListService.get_taxonomy_files(taxonomy_dir)
+    providers_data = await get_llm_providers()
+    return {
+        "taxonomy_files": taxonomy_files,
+        "llm_providers": providers_data
     }
 
 
@@ -303,152 +293,15 @@ async def get_workflow_status(workflow_id: str):
 
 
 async def execute_workflow(workflow_id: str, tab_id: str, files: list, workflow: dict, taxonomy_file: str = None):
-    """Execute a workflow with selected files"""
-    try:
-        workflow_status[workflow_id]["status"] = "running"
-        script_path = workflow.get("script")
-        
-        if not script_path or not Path(script_path).exists():
-            workflow_status[workflow_id]["status"] = "error"
-            workflow_status[workflow_id]["error"] = f"Script not found: {script_path}"
-            return
-        
-        input_dir = workflow["input_dir"]
-        output_dir = workflow["output_dir"]
-        output_dir.mkdir(parents=True, exist_ok=True)
-        
-        successful = []
-        failed = []
-        
-        # Process each file
-        for file in files:
-            try:
-                file_path = input_dir / file
-                workflow_status[workflow_id]["progress"].append(f"Processing: {file}")
-                
-                # Build command based on tab
-                if tab_id == "tab1":  # PDF to JSON
-                    cmd = ["python3", str(script_path), str(file_path)]
-                elif tab_id == "tab2":  # Metadata Extraction
-                    cmd = ["python3", str(script_path), "--input", str(file_path), "--auto-detect"]
-                elif tab_id == "tab3":  # Metadata Enrichment
-                    cmd = ["python3", str(script_path), "--input", str(file_path)]
-                elif tab_id == "tab5":  # Base Guideline
-                    cmd = ["python3", str(script_path), str(file_path)]
-                    # Add taxonomy if provided
-                    if taxonomy_file:
-                        taxonomy_path = WORKFLOWS_DIR / "taxonomy_setup" / "output" / taxonomy_file
-                        cmd.extend(["--taxonomy", str(taxonomy_path)])
-                        workflow_status[workflow_id]["progress"].append(f"Using taxonomy: {taxonomy_file}")
-                else:
-                    continue
-                
-                # Execute command
-                process = await asyncio.create_subprocess_exec(
-                    *cmd,
-                    stdout=asyncio.subprocess.PIPE,
-                    stderr=asyncio.subprocess.PIPE,
-                    cwd=str(BASE_DIR)
-                )
-                
-                stdout, stderr = await process.communicate()
-                
-                if process.returncode == 0:
-                    successful.append(file)
-                    workflow_status[workflow_id]["progress"].append(f"✓ Completed: {file}")
-                else:
-                    failed.append(file)
-                    error_msg = stderr.decode() if stderr else "Unknown error"
-                    workflow_status[workflow_id]["progress"].append(f"✗ Failed: {file} - {error_msg[:100]}")
-                    
-            except Exception as e:
-                failed.append(file)
-                workflow_status[workflow_id]["progress"].append(f"✗ Error: {file} - {str(e)}")
-        
-        # Update final status
-        workflow_status[workflow_id]["status"] = "completed"
-        workflow_status[workflow_id]["successful"] = successful
-        workflow_status[workflow_id]["failed"] = failed
-        workflow_status[workflow_id]["completed_at"] = datetime.now().isoformat()
-        workflow_status[workflow_id]["summary"] = f"Completed: {len(successful)} successful, {len(failed)} failed"
-        
-    except Exception as e:
-        workflow_status[workflow_id]["status"] = "error"
-        workflow_status[workflow_id]["error"] = str(e)
+    """Execute workflow (refactored: CC 21 → 2)"""
+    service = AsyncWorkflowExecutionService(workflow_status, BASE_DIR, WORKFLOWS_DIR)
+    await service.execute(workflow_id, tab_id, files, workflow, taxonomy_file)
 
 
 async def execute_taxonomy_generation(workflow_id: str, tiers: dict, workflow: dict):
-    """Generate concept taxonomy by analyzing books in each tier"""
-    try:
-        workflow_status[workflow_id]["status"] = "running"
-        workflow_status[workflow_id]["progress"].append("Analyzing books for concept extraction...")
-        
-        # Validate: at least Architecture and Implementation must be present
-        if not tiers.get("architecture") or not tiers.get("implementation"):
-            workflow_status[workflow_id]["status"] = "failed"
-            workflow_status[workflow_id]["progress"].append("✗ Error: Architecture and Implementation tiers are required")
-            return
-        
-        # Build tier data for script (just book filenames)
-        tier_books = {}
-        if tiers.get("architecture"):
-            tier_books["architecture"] = tiers["architecture"]
-        if tiers.get("implementation"):
-            tier_books["implementation"] = tiers["implementation"]
-        if tiers.get("practices"):  # Optional tier
-            tier_books["practices"] = tiers["practices"]
-        
-        # Generate output filename
-        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-        output_filename = f"taxonomy_{timestamp}.json"
-        
-        # Call taxonomy generation script
-        script_path = WORKFLOWS_DIR / "taxonomy_setup" / "scripts" / "generate_concept_taxonomy.py"
-        
-        if not script_path.exists():
-            workflow_status[workflow_id]["status"] = "failed"
-            workflow_status[workflow_id]["progress"].append(f"✗ Error: Script not found: {script_path}")
-            return
-        
-        # Build command
-        tier_json = json.dumps(tier_books)
-        cmd = [
-            "python3", 
-            str(script_path),
-            "--tiers", tier_json,
-            "--output", output_filename
-        ]
-        
-        workflow_status[workflow_id]["progress"].append(f"Extracting concepts from {sum(len(b) for b in tier_books.values())} books...")
-        
-        # Execute script
-        process = await asyncio.create_subprocess_exec(
-            *cmd,
-            stdout=asyncio.subprocess.PIPE,
-            stderr=asyncio.subprocess.PIPE,
-            cwd=str(BASE_DIR)
-        )
-        
-        stdout, stderr = await process.communicate()
-        
-        if process.returncode == 0:
-            # Parse script output to count concepts
-            output_text = stdout.decode() if stdout else ""
-            workflow_status[workflow_id]["progress"].append("✓ Concept extraction complete")
-            workflow_status[workflow_id]["progress"].extend(output_text.strip().split('\n')[-5:])  # Last 5 lines
-            
-            workflow_status[workflow_id]["status"] = "completed"
-            workflow_status[workflow_id]["output_file"] = output_filename
-            workflow_status[workflow_id]["progress"].append(f"✓ Taxonomy saved: {output_filename}")
-            workflow_status[workflow_id]["completed_at"] = datetime.now().isoformat()
-        else:
-            error_text = stderr.decode() if stderr else "Unknown error"
-            workflow_status[workflow_id]["status"] = "failed"
-            workflow_status[workflow_id]["progress"].append(f"✗ Error: {error_text}")
-        
-    except Exception as e:
-        workflow_status[workflow_id]["status"] = "error"
-        workflow_status[workflow_id]["error"] = str(e)
+    """Generate concept taxonomy (refactored: CC 12 → 2)"""
+    service = AsyncTaxonomyGenerationService(workflow_status, BASE_DIR, WORKFLOWS_DIR)
+    await service.execute(workflow_id, tiers, workflow)
 
 
 async def execute_llm_enhancement(workflow_id: str, llm_config: dict, workflow: dict):
@@ -502,7 +355,7 @@ async def execute_llm_enhancement(workflow_id: str, llm_config: dict, workflow: 
         else:
             workflow_status[workflow_id]["status"] = "error"
             workflow_status[workflow_id]["error"] = stderr.decode()
-            workflow_status[workflow_id]["progress"].append(f"✗ Enhancement failed")
+            workflow_status[workflow_id]["progress"].append("✗ Enhancement failed")
         
         workflow_status[workflow_id]["completed_at"] = datetime.now().isoformat()
         

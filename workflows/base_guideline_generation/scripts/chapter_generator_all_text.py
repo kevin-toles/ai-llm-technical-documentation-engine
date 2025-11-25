@@ -1925,15 +1925,23 @@ def _convert_markdown_to_json(all_docs: List[str], book_name: str, all_footnotes
     
     # Parse chapters (sections starting with ## Chapter) - EAFP style
     chapters = []
-    # Fixed regex: Title uses non-greedy .+? (stops at newline), content uses greedy .* (captures everything until next chapter)
-    chapter_pattern = r'## Chapter (\d+): (.+?)\n(.*)(?=## Chapter|\Z)'
+    # Split markdown into chapter sections
+    chapter_sections = re.split(r'(?=^## Chapter \d+:)', full_md, flags=re.MULTILINE)
     
     try:
-        for match in re.finditer(chapter_pattern, full_md, re.DOTALL):
+        for section in chapter_sections:
+            if not section.strip() or not section.startswith('## Chapter'):
+                continue
+                
             try:
-                chapter_num = int(match.group(1))
-                chapter_title = match.group(2).strip()
-                chapter_content = match.group(3).strip()
+                # Extract chapter number and title from header
+                header_match = re.match(r'## Chapter (\d+): ([^\n]+)', section)
+                if not header_match:
+                    continue
+                    
+                chapter_num = int(header_match.group(1))
+                chapter_title = header_match.group(2).strip()
+                chapter_content = section.strip()
                 
                 # Extract chapter metadata
                 page_range_match = re.search(r'pages (\d+)–(\d+)', chapter_content)
