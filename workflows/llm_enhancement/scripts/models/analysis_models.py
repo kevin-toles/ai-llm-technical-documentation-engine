@@ -124,14 +124,113 @@ class LLMMetadataResponse:
     content_requests: List[ContentRequest]
     analysis_strategy: str
     
+    @staticmethod
+    def _strip_markdown_wrapper(text: str) -> str:
+        """Remove markdown code block wrapper from text.
+        
+        Strategy Pattern: Encapsulates markdown stripping logic.
+        Handles both ```json and plain ``` formats.
+        
+        Args:
+            text: Text possibly wrapped in markdown code blocks
+            
+        Returns:
+            Cleaned text without markdown wrapper
+            
+        Reference: Architecture Patterns Ch. 13 - Strategy Pattern
+        """
+        cleaned = text.strip()
+        if cleaned.startswith('```'):
+            lines = cleaned.split('\n')
+            # Remove opening ```json or ```
+            if lines[0].startswith('```'):
+                lines = lines[1:]
+            # Remove closing ```
+            if lines and lines[-1].strip() == '```':
+                lines = lines[:-1]
+            cleaned = '\n'.join(lines)
+        return cleaned
+    
+    @staticmethod
+    def _create_content_requests(data: dict) -> List[ContentRequest]:
+        """Create ContentRequest objects from parsed JSON data.
+        
+        Service Layer Pattern: Encapsulates content request creation logic.
+        Includes validation logging.
+        
+        Args:
+            data: Parsed JSON dictionary
+            
+        Returns:
+            List of ContentRequest objects
+            
+        Reference: Architecture Patterns Ch. 4 - Service Layer
+        """
+        # Log validation diagnostics
+        if 'content_requests' in data:
+            num_requests = len(data.get('content_requests', []))
+            if num_requests == 0:
+                logger.warning("content_requests array is EMPTY")
+            else:
+                logger.debug(f"Found {num_requests} content requests")
+        else:
+            logger.warning("content_requests field MISSING from response")
+        
+        # Create ContentRequest objects
+        return [
+            ContentRequest(
+                book_name=req['book_name'],
+                pages=req['pages'],
+                rationale=req['rationale'],
+                priority=req.get('priority', 1)
+            )
+            for req in data.get('content_requests', [])
+        ]
+    
+    @classmethod
+    def _parse_json_to_response(cls, data: dict) -> 'LLMMetadataResponse':
+        """Convert parsed JSON dict to LLMMetadataResponse.
+        
+        Service Layer Pattern: Encapsulates response object creation.
+        Single responsibility: data mapping only.
+        
+        Args:
+            data: Parsed JSON dictionary
+            
+        Returns:
+            LLMMetadataResponse instance
+            
+        Reference: Architecture Patterns Ch. 4 - Service Layer
+        """
+        logger.debug("JSON parsed successfully")
+        logger.debug(f"Keys in response: {list(data.keys())}")
+        
+        requests = cls._create_content_requests(data)
+        
+        return cls(
+            validation_summary=data.get('validation_summary', ''),
+            gap_analysis=data.get('gap_analysis', ''),
+            content_requests=requests,
+            analysis_strategy=data.get('analysis_strategy', '')
+        )
+    
     @classmethod
     def from_llm_output(cls, llm_output: str) -> 'LLMMetadataResponse':
         """Parse LLM output into structured response.
+        
+        Orchestration Method (Service Layer Pattern): Coordinates parsing workflow
+        by delegating to specialized parsing functions. Reduced from CC 9 to CC <10
+        through Extract Method refactoring.
         
         Factory method that handles multiple output formats:
         1. JSON format (preferred)
         2. Markdown-wrapped JSON (```json ... ```)
         3. Text format (fallback)
+        
+        Architecture: Following Strategy + Service Layer patterns
+        - Thin orchestration layer
+        - Delegates to: _strip_markdown_wrapper, _parse_json_to_response, _create_content_requests
+        - Single responsibility: parsing strategy selection only
         
         Args:
             llm_output: Raw string output from LLM
@@ -142,52 +241,19 @@ class LLMMetadataResponse:
         References:
             - PYTHON_GUIDELINES Ch. 7: Factory method pattern
             - PYTHON_GUIDELINES Ch. 2: Robust string parsing
+            - Architecture Patterns Ch. 4 - Service Layer (thin orchestration)
+            - Architecture Patterns Ch. 13 - Strategy Pattern (multiple parsers)
         """
         try:
-            # Strip markdown code blocks if present (Claude often wraps JSON in ```json)
-            cleaned_output = llm_output.strip()
-            if cleaned_output.startswith('```'):
-                # Remove opening ```json or ``` 
-                lines = cleaned_output.split('\n')
-                if lines[0].startswith('```'):
-                    lines = lines[1:]
-                # Remove closing ```
-                if lines and lines[-1].strip() == '```':
-                    lines = lines[:-1]
-                cleaned_output = '\n'.join(lines)
+            # Strip markdown wrapper using strategy function
+            cleaned_output = cls._strip_markdown_wrapper(llm_output)
             
-            # Try to parse as JSON
+            # Parse JSON
             data = json.loads(cleaned_output)
             
-            # Log parsed JSON structure for debugging
-            logger.debug("JSON parsed successfully")
-            logger.debug(f"Keys in response: {list(data.keys())}")
+            # Convert to response object using service function
+            return cls._parse_json_to_response(data)
             
-            if 'content_requests' in data:
-                num_requests = len(data.get('content_requests', []))
-                if num_requests == 0:
-                    logger.warning("content_requests array is EMPTY")
-                else:
-                    logger.debug(f"Found {num_requests} content requests")
-            else:
-                logger.warning("content_requests field MISSING from response")
-            
-            requests = [
-                ContentRequest(
-                    book_name=req['book_name'],
-                    pages=req['pages'],
-                    rationale=req['rationale'],
-                    priority=req.get('priority', 1)
-                )
-                for req in data.get('content_requests', [])
-            ]
-            
-            return cls(
-                validation_summary=data.get('validation_summary', ''),
-                gap_analysis=data.get('gap_analysis', ''),
-                content_requests=requests,
-                analysis_strategy=data.get('analysis_strategy', '')
-            )
         except json.JSONDecodeError as e:
             logger.warning(f"JSON parsing failed: {e}")
             logger.info("Falling back to text format parsing")

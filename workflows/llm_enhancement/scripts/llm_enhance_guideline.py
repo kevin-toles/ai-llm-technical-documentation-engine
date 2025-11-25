@@ -237,9 +237,56 @@ OUTPUT FORMAT (Markdown only, no JSON):
     return prompt
 
 
+def _match_section_header(line: str, section_markers: Dict[str, str]) -> Optional[str]:
+    """Match line against known section markers.
+    
+    Strategy Pattern: Encapsulates section header detection logic.
+    Supports both ### and ** markdown header styles.
+    
+    Args:
+        line: Line of text to check
+        section_markers: Dict mapping display names to section keys
+        
+    Returns:
+        Section key if matched, None otherwise
+        
+    Reference: Architecture Patterns Ch. 13 - Strategy Pattern
+    """
+    for marker, section_key in section_markers.items():
+        if marker in line and ('###' in line or '**' in line):
+            return section_key
+    return None
+
+
+def _save_section_content(sections: Dict[str, str], section_name: str, content_lines: list) -> None:
+    """Save accumulated section content to sections dict.
+    
+    Service Layer Pattern: Encapsulates content persistence logic.
+    Single responsibility: content formatting and storage.
+    
+    Args:
+        sections: Dictionary to store section content
+        section_name: Key for this section
+        content_lines: Lines of content to save
+        
+    Reference: Architecture Patterns Ch. 4 - Service Layer
+    """
+    if section_name:
+        sections[section_name] = '\n'.join(content_lines).strip()
+
+
 def parse_llm_response(response: str) -> Dict[str, str]:
     """
     Parse LLM markdown response into structured sections.
+    
+    Orchestration Function (Service Layer Pattern): Coordinates parsing workflow
+    by delegating to specialized strategy functions. Reduced from CC 10 to CC <10
+    through Extract Method refactoring.
+    
+    Architecture: Following Strategy + Service Layer patterns
+    - Thin orchestration layer
+    - Delegates to: _match_section_header (Strategy), _save_section_content (Service)
+    - Single responsibility: parsing workflow coordination only
     
     Extracts Enhanced Summary, Key Takeaways, Best Practices, and Common Pitfalls
     sections from the LLM's markdown output.
@@ -252,6 +299,8 @@ def parse_llm_response(response: str) -> Dict[str, str]:
         
     Reference: CONSOLIDATED_IMPLEMENTATION_PLAN.md lines 1832-1836
     Reference: PYTHON_GUIDELINES - String processing, file iteration
+    Reference: Architecture Patterns Ch. 4 - Service Layer (thin orchestration)
+    Reference: Architecture Patterns Ch. 13 - Strategy Pattern (header matching)
     """
     sections = {}
     lines = response.strip().split('\n')
@@ -267,17 +316,12 @@ def parse_llm_response(response: str) -> Dict[str, str]:
     }
     
     for line in lines:
-        # Check for section headers (### or **)
-        matched_section = None
-        for marker, section_key in section_markers.items():
-            if marker in line and ('###' in line or '**' in line):
-                matched_section = section_key
-                break
+        # Use strategy function to detect section headers
+        matched_section = _match_section_header(line, section_markers)
         
         if matched_section:
-            # Save previous section
-            if current_section:
-                sections[current_section] = '\n'.join(current_content).strip()
+            # Save previous section using service function
+            _save_section_content(sections, current_section, current_content)
             # Start new section
             current_section = matched_section
             current_content = []
@@ -286,8 +330,7 @@ def parse_llm_response(response: str) -> Dict[str, str]:
             current_content.append(line)
     
     # Save last section
-    if current_section:
-        sections[current_section] = '\n'.join(current_content).strip()
+    _save_section_content(sections, current_section, current_content)
     
     return sections
 

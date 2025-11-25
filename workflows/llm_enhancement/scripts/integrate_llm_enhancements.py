@@ -197,38 +197,49 @@ def extract_chapter_1_to_10(content: str) -> Tuple[str, str, str]:
     
     return header, chapters_1_10, remainder
 
-def enhance_chapter_summary_with_llm(chapter_content: str, chapter_num: int) -> str:
-    """Use LLM to enhance a chapter summary with cross-references."""
-    if not LLM_AVAILABLE:
-        return chapter_content
+def _build_taxonomy_context() -> str:
+    """Extract taxonomy structure into formatted context string.
     
-    # Extract current summary
-    summary_match = re.search(CHAPTER_SUMMARY_PATTERN, chapter_content, re.DOTALL)
-    if not summary_match:
-        return chapter_content
+    Service Layer Pattern: Separates taxonomy formatting logic from orchestration.
+    Reduces complexity by extracting nested iteration logic.
     
-    current_summary = summary_match.group(1).strip()
+    Returns:
+        Formatted taxonomy context string, or empty string if unavailable
+    """
+    if not TAXONOMY_DATA or 'tiers' not in TAXONOMY_DATA:
+        return ""
     
-    # Extract chapter title
-    title_match = re.search(CHAPTER_TITLE_PATTERN, chapter_content)
-    chapter_title = title_match.group(1) if title_match else f"Chapter {chapter_num}"
+    context = "\n\nTAXONOMY STRUCTURE (concept hierarchy and relationships):\n"
+    for tier_name, tier_data in TAXONOMY_DATA['tiers'].items():
+        if isinstance(tier_data, dict):
+            priority = tier_data.get('priority', '?')
+            concepts = tier_data.get('concepts', [])
+            if concepts:
+                context += f"\n{tier_name.title()} (Priority {priority}):\n"
+                context += f"  Concepts: {', '.join(concepts[:10])}"
+                if len(concepts) > 10:
+                    context += f" ... ({len(concepts)} total)"
+                context += "\n"
     
-    # Build taxonomy context if available
-    taxonomy_context = ""
-    if TAXONOMY_DATA and 'tiers' in TAXONOMY_DATA:
-        taxonomy_context = "\n\nTAXONOMY STRUCTURE (concept hierarchy and relationships):\n"
-        for tier_name, tier_data in TAXONOMY_DATA['tiers'].items():
-            if isinstance(tier_data, dict):
-                priority = tier_data.get('priority', '?')
-                concepts = tier_data.get('concepts', [])
-                if concepts:
-                    taxonomy_context += f"\n{tier_name.title()} (Priority {priority}):\n"
-                    taxonomy_context += f"  Concepts: {', '.join(concepts[:10])}"
-                    if len(concepts) > 10:
-                        taxonomy_context += f" ... ({len(concepts)} total)"
-                    taxonomy_context += "\n"
-        taxonomy_context += "\nUse this taxonomy to identify which tier this chapter's concepts belong to and suggest appropriate cross-references within the same or related tiers.\n"
+    context += "\nUse this taxonomy to identify which tier this chapter's concepts belong to and suggest appropriate cross-references within the same or related tiers.\n"
+    return context
+
+
+def _build_enhancement_prompt(current_summary: str, chapter_num: int, chapter_title: str, taxonomy_context: str) -> str:
+    """Build LLM prompt for summary enhancement.
     
+    Service Layer Pattern: Encapsulates prompt construction logic.
+    Single responsibility: prompt formatting only.
+    
+    Args:
+        current_summary: Existing chapter summary text
+        chapter_num: Chapter number
+        chapter_title: Chapter title
+        taxonomy_context: Formatted taxonomy structure (may be empty)
+        
+    Returns:
+        Complete LLM prompt string
+    """
     prompt = f"""
 You are enhancing a Python education document chapter summary. 
 
@@ -249,22 +260,76 @@ GUIDELINES:
 
 ENHANCED SUMMARY:
 """
+    return prompt
 
+
+def _replace_summary_in_content(chapter_content: str, enhanced_summary: str) -> str:
+    """Replace chapter summary in content with enhanced version.
+    
+    Service Layer Pattern: Isolates regex replacement logic.
+    Single responsibility: summary substitution only.
+    
+    Args:
+        chapter_content: Full chapter content
+        enhanced_summary: Enhanced summary text from LLM
+        
+    Returns:
+        Chapter content with enhanced summary
+    """
+    new_content = re.sub(
+        r'(### Chapter Summary\s*\n)([^#]+)(?=\n###|\n##|$)',
+        f"\\1{enhanced_summary}\n\n",
+        chapter_content,
+        count=1,
+        flags=re.DOTALL
+    )
+    return new_content
+
+
+def enhance_chapter_summary_with_llm(chapter_content: str, chapter_num: int) -> str:
+    """Use LLM to enhance a chapter summary with cross-references.
+    
+    Orchestration Function (Service Layer Pattern): Coordinates enhancement workflow
+    by delegating to specialized service functions. Reduced from CC 13 to CC <10
+    through Extract Method refactoring.
+    
+    Architecture: Following Service Layer pattern (Architecture Patterns Ch. 4)
+    - Thin orchestration layer
+    - Delegates to domain services: _build_taxonomy_context, _build_enhancement_prompt, _replace_summary_in_content
+    - Single responsibility: workflow coordination only
+    
+    Args:
+        chapter_content: Full chapter markdown content
+        chapter_num: Chapter number for context
+        
+    Returns:
+        Enhanced chapter content, or original if enhancement fails
+    """
+    if not LLM_AVAILABLE:
+        return chapter_content
+    
+    # Extract current summary
+    summary_match = re.search(CHAPTER_SUMMARY_PATTERN, chapter_content, re.DOTALL)
+    if not summary_match:
+        return chapter_content
+    
+    current_summary = summary_match.group(1).strip()
+    
+    # Extract chapter title
+    title_match = re.search(CHAPTER_TITLE_PATTERN, chapter_content)
+    chapter_title = title_match.group(1) if title_match else f"Chapter {chapter_num}"
+    
+    # Build context and prompt using service functions
+    taxonomy_context = _build_taxonomy_context()
+    prompt = _build_enhancement_prompt(current_summary, chapter_num, chapter_title, taxonomy_context)
+    
     try:
         enhanced_summary = call_llm(prompt, max_tokens=500)
         
-        # Clean up the response
+        # Validate response quality
         enhanced_summary = enhanced_summary.strip()
         if enhanced_summary and len(enhanced_summary) > len(current_summary) * 0.8:
-            # Replace the summary in the content
-            new_content = re.sub(
-                r'(### Chapter Summary\s*\n)([^#]+)(?=\n###|\n##|$)',
-                f"\\1{enhanced_summary}\n\n",
-                chapter_content,
-                count=1,
-                flags=re.DOTALL
-            )
-            return new_content
+            return _replace_summary_in_content(chapter_content, enhanced_summary)
             
     except Exception as e:
         print(f"  LLM enhancement failed for Chapter {chapter_num}: {e}")
@@ -784,8 +849,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
     
     # Update global paths if provided
-    global GUIDELINES_FILE, TAXONOMY_DATA
-    
     if args.guideline:
         GUIDELINES_FILE = Path(args.guideline)
         if not GUIDELINES_FILE.exists():

@@ -384,38 +384,117 @@ class ComplianceValidator:
             if not self.quiet:
                 print(f"✅ Auto-fixed errors. Backup saved to: {backup_file}")
     
+    def _get_color_codes(self) -> Dict[str, str]:
+        """Get ANSI color codes based on color mode setting.
+        
+        Strategy Pattern: Encapsulates color code selection logic.
+        Returns color codes if enabled, empty strings if disabled.
+        
+        Returns:
+            Dict with RED, GREEN, YELLOW, RESET color codes
+            
+        Reference: Architecture Patterns Ch. 13 - Strategy Pattern
+        """
+        if self.color:
+            return {
+                'RED': '\033[91m',
+                'GREEN': '\033[92m',
+                'YELLOW': '\033[93m',
+                'RESET': '\033[0m'
+            }
+        return {'RED': '', 'GREEN': '', 'YELLOW': '', 'RESET': ''}
+    
+    def _format_summary_section(self, results: Dict[str, Any], colors: Dict[str, str]) -> str:
+        """Format validation summary section.
+        
+        Service Layer Pattern: Encapsulates summary formatting logic.
+        Single responsibility: summary text generation.
+        
+        Args:
+            results: Validation results dictionary
+            colors: Color code dictionary
+            
+        Returns:
+            Formatted summary string
+            
+        Reference: Architecture Patterns Ch. 4 - Service Layer
+        """
+        lines = []
+        lines.append(f"\n{'='*80}")
+        lines.append("VALIDATION SUMMARY")
+        lines.append(f"{'='*80}")
+        lines.append(f"File: {results['file']}")
+        lines.append(f"Rules checked: {results['summary']['rules_checked']}")
+        lines.append(f"Total errors: {results['summary']['total_errors']}")
+        
+        if results['summary']['passed']:
+            lines.append(f"{colors['GREEN']}✅ PASSED{colors['RESET']}")
+        else:
+            lines.append(f"{colors['RED']}❌ FAILED{colors['RESET']}")
+        
+        return '\n'.join(lines)
+    
+    def _format_error_section(self, results: Dict[str, Any], colors: Dict[str, str]) -> str:
+        """Format error details section.
+        
+        Service Layer Pattern: Encapsulates error formatting logic.
+        Handles verbose/quiet mode logic.
+        
+        Args:
+            results: Validation results dictionary
+            colors: Color code dictionary
+            
+        Returns:
+            Formatted error section string (may be empty)
+            
+        Reference: Architecture Patterns Ch. 4 - Service Layer
+        """
+        if not results['errors'] or (not self.verbose and self.quiet):
+            return ""
+        
+        lines = []
+        lines.append(f"\n{colors['YELLOW']}Errors:{colors['RESET']}")
+        
+        for error in results['errors']:
+            line_num = error.get('line', '?')
+            message = error.get('message', 'Unknown error')
+            lines.append(f"  {colors['RED']}●{colors['RESET']} Line {line_num}: {message}")
+            
+            if self.verbose and 'suggestion' in error:
+                lines.append(f"    💡 {error['suggestion']}")
+        
+        return '\n'.join(lines)
+    
     def _print_text_results(self, results: Dict[str, Any]) -> None:
         """
         Print validation results in human-readable text format.
         
+        Orchestration Method (Service Layer Pattern): Coordinates output workflow
+        by delegating to specialized formatting functions. Reduced from CC 12 to CC <10
+        through Extract Method refactoring.
+        
+        Architecture: Following Strategy + Service Layer patterns
+        - Thin orchestration layer
+        - Delegates to: _get_color_codes (Strategy), _format_summary_section, _format_error_section (Services)
+        - Single responsibility: output coordination only
+        
         Args:
             results: Validation results dictionary
+            
+        Reference: Architecture Patterns Ch. 4 - Service Layer (thin orchestration)
+        Reference: Architecture Patterns Ch. 13 - Strategy Pattern (color selection)
         """
-        # ANSI color codes
-        RED = '\033[91m' if self.color else ''
-        GREEN = '\033[92m' if self.color else ''
-        YELLOW = '\033[93m' if self.color else ''
-        RESET = '\033[0m' if self.color else ''
+        colors = self._get_color_codes()
         
-        print(f"\n{'='*80}")
-        print("VALIDATION SUMMARY")
-        print(f"{'='*80}")
-        print(f"File: {results['file']}")
-        print(f"Rules checked: {results['summary']['rules_checked']}")
-        print(f"Total errors: {results['summary']['total_errors']}")
+        # Print summary section
+        print(self._format_summary_section(results, colors))
         
-        if results['summary']['passed']:
-            print(f"{GREEN}✅ PASSED{RESET}")
-        else:
-            print(f"{RED}❌ FAILED{RESET}")
+        # Print error section if needed
+        error_output = self._format_error_section(results, colors)
+        if error_output:
+            print(error_output)
         
-        if results['errors'] and (self.verbose or not self.quiet):
-            print(f"\n{YELLOW}Errors:{RESET}")
-            for error in results['errors']:
-                print(f"  {RED}●{RESET} Line {error.get('line', '?')}: {error.get('message', 'Unknown error')}")
-                if self.verbose and 'suggestion' in error:
-                    print(f"    💡 {error['suggestion']}")
-        
+        # Print footer
         print(f"{'='*80}\n")
     
     def _format_junit_xml(self, results: Dict[str, Any]) -> str:

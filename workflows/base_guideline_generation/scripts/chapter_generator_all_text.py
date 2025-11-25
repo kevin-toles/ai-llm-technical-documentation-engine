@@ -1839,8 +1839,9 @@ def _extract_concept_data(chapter_content: str) -> List[Dict[str, Any]]:
         - ARCHITECTURE_GUIDELINES Ch. 3: Extract method refactoring
     """
     concepts = []
-    # Fixed regex: Use greedy quantifiers for annotation (last group) to capture full content until next heading
-    concept_pattern = r'#### \*\*(.+?)\*\* \*\(p\.(\d+)\)\*\n+\*\*Verbatim Educational Excerpt\*\*.*?\n```\n(.*?)\n```\n.*?\*\*Annotation:\*\* (.+)(?=####|\Z)'
+    # Fixed regex: Annotation should stop at next heading (####, ###) or end of string
+    # Using non-greedy match and proper lookahead
+    concept_pattern = r'#### \*\*(.+?)\*\* \*\(p\.(\d+)\)\*\n+\*\*Verbatim Educational Excerpt\*\*.*?\n```\n(.*?)\n```\n.*?\*\*Annotation:\*\* (.+?)(?=\n####|\n###|\Z)'
     
     for concept_match in re.finditer(concept_pattern, chapter_content, re.DOTALL):
         concept = {
@@ -1881,12 +1882,152 @@ def _extract_chapter_sections(chapter_content: str) -> Dict[str, str]:
     }
 
 
+def _parse_chapter_header(section: str) -> Optional[Tuple[int, str]]:
+    """
+    Parse chapter header to extract number and title.
+    
+    Extract Method refactoring from _convert_markdown_to_json (CC reduction).
+    
+    Args:
+        section: Markdown section text
+        
+    Returns:
+        Tuple of (chapter_number, chapter_title) or None if not found
+        
+    References:
+        - Architecture Patterns Ch. 3: Extract Method pattern
+    """
+    header_match = re.match(r'## Chapter (\d+): ([^\n]+)', section)
+    if not header_match:
+        return None
+    
+    chapter_num = int(header_match.group(1))
+    chapter_title = header_match.group(2).strip()
+    return (chapter_num, chapter_title)
+
+
+def _extract_page_range(chapter_content: str) -> Optional[Dict[str, int]]:
+    """
+    Extract page range from chapter content.
+    
+    Extract Method refactoring from _convert_markdown_to_json (CC reduction).
+    
+    Args:
+        chapter_content: Full chapter markdown content
+        
+    Returns:
+        Dictionary with start/end keys or None if not found
+        
+    References:
+        - Python Guidelines Ch. 4: Functions for code organization
+    """
+    page_range_match = re.search(r'pages (\d+)–(\d+)', chapter_content, re.IGNORECASE)
+    if not page_range_match:
+        # Try alternative format: **Pages**: 1–50
+        page_range_match = re.search(r'\*\*Pages\*\*:\s*(\d+)–(\d+)', chapter_content)
+    
+    if page_range_match:
+        return {
+            "start": int(page_range_match.group(1)),
+            "end": int(page_range_match.group(2))
+        }
+    return None
+
+
+def _build_chapter_data(chapter_num: int, chapter_title: str, chapter_content: str) -> Dict[str, Any]:
+    """
+    Build complete chapter data dictionary.
+    
+    Extract Method refactoring from _convert_markdown_to_json (CC reduction).
+    Consolidates all chapter data extraction into single function.
+    
+    Args:
+        chapter_num: Chapter number
+        chapter_title: Chapter title
+        chapter_content: Full chapter markdown content
+        
+    Returns:
+        Complete chapter data dictionary
+        
+    References:
+        - Architecture Patterns Ch. 3: Extract Method pattern
+        - Python Guidelines Ch. 2: Data structures
+    """
+    # Extract concepts using helper function - may return empty list
+    concepts = _extract_concept_data(chapter_content)
+    
+    # Extract chapter sections using helper function
+    sections = _extract_chapter_sections(chapter_content)
+    cross_text_analysis = sections["cross_text_analysis"]
+    chapter_summary = sections["chapter_summary"]
+    
+    # Extract page range
+    page_range = _extract_page_range(chapter_content)
+    
+    return {
+        "chapter_number": chapter_num,
+        "title": chapter_title,
+        "page_range": page_range,
+        "cross_text_analysis": cross_text_analysis,
+        "chapter_summary": chapter_summary,
+        "concepts": concepts
+    }
+
+
+def _parse_all_chapters(chapter_sections: List[str]) -> List[Dict[str, Any]]:
+    """
+    Parse all chapter sections into structured data.
+    
+    Extract Method refactoring from _convert_markdown_to_json (CC reduction).
+    Separates chapter parsing logic from main conversion function.
+    
+    Args:
+        chapter_sections: List of markdown chapter sections
+        
+    Returns:
+        List of parsed chapter dictionaries
+        
+    Raises:
+        ValueError: If chapter parsing fails critically
+        
+    References:
+        - Architecture Patterns Ch. 3: Extract Method pattern
+        - Python Guidelines Ch. 24: Error handling patterns
+    """
+    chapters = []
+    
+    for section in chapter_sections:
+        if not section.strip() or not section.startswith('## Chapter'):
+            continue
+        
+        try:
+            # Parse chapter header
+            header_info = _parse_chapter_header(section)
+            if not header_info:
+                continue
+            
+            chapter_num, chapter_title = header_info
+            chapter_content = section.strip()
+            
+            # Build complete chapter data
+            chapter_data = _build_chapter_data(chapter_num, chapter_title, chapter_content)
+            chapters.append(chapter_data)
+            
+        except (ValueError, IndexError, AttributeError) as e:
+            # Log warning but continue processing other chapters
+            chapter_id = header_info[0] if header_info else 'unknown'
+            print(f"⚠️  Warning: Skipping malformed chapter {chapter_id}: {e}")
+            continue
+    
+    return chapters
+
+
 def _convert_markdown_to_json(all_docs: List[str], book_name: str, all_footnotes: List[Dict]) -> Dict[str, Any]:
     """
-    Convert markdown guideline to JSON structure.
+    Convert markdown guideline to JSON structure (refactored: CC 14 → 8).
     
     Implements Tab 5 JSON generation requirement from CONSOLIDATED_IMPLEMENTATION_PLAN.
-    Refactored to use extracted helper functions following DRY principle.
+    Refactored using Extract Method pattern to reduce complexity.
     Follows EAFP pattern for error handling.
     
     Args:
@@ -1899,94 +2040,47 @@ def _convert_markdown_to_json(all_docs: List[str], book_name: str, all_footnotes
         
     Raises:
         ValueError: If markdown structure is invalid or unparseable
-        AttributeError: If required markdown elements are missing
         
     References:
         - CONSOLIDATED_IMPLEMENTATION_PLAN Tab 5: JSON output requirement
+        - Architecture Patterns Ch. 3: Extract Method refactoring (CC reduction)
         - Python Cookbook 3rd Recipe 5.18: JSON handling
-        - ARCHITECTURE_GUIDELINES Ch. 2: Repository pattern for data storage
-        - ARCHITECTURE_GUIDELINES Ch. 3: Extract method refactoring
         - Fluent Python Ch. 18: EAFP error handling style
     """
-    # Join all docs and parse structure - validate input
+    # Validate input
     if not all_docs:
         raise ValueError("Cannot convert empty document to JSON")
     
+    # Join all docs and validate format
     try:
         full_md = "\n".join(all_docs)
     except TypeError as e:
         raise ValueError(f"Invalid markdown document format: {e}") from e
     
-    # Extract book metadata using helper - EAFP style
+    # Extract book metadata
     try:
         book_metadata = _extract_book_metadata(full_md, book_name)
     except (AttributeError, IndexError) as e:
         raise ValueError(f"Failed to extract book metadata: {e}") from e
     
-    # Parse chapters (sections starting with ## Chapter) - EAFP style
-    chapters = []
     # Split markdown into chapter sections
     chapter_sections = re.split(r'(?=^## Chapter \d+:)', full_md, flags=re.MULTILINE)
     
+    # Parse all chapters using extracted method
     try:
-        for section in chapter_sections:
-            if not section.strip() or not section.startswith('## Chapter'):
-                continue
-                
-            try:
-                # Extract chapter number and title from header
-                header_match = re.match(r'## Chapter (\d+): ([^\n]+)', section)
-                if not header_match:
-                    continue
-                    
-                chapter_num = int(header_match.group(1))
-                chapter_title = header_match.group(2).strip()
-                chapter_content = section.strip()
-                
-                # Extract chapter metadata
-                page_range_match = re.search(r'pages (\d+)–(\d+)', chapter_content)
-                
-                # Extract concepts using helper function - may return empty list
-                concepts = _extract_concept_data(chapter_content)
-                
-                # Extract chapter sections using helper function
-                sections = _extract_chapter_sections(chapter_content)
-                cross_text_analysis = sections["cross_text_analysis"]
-                chapter_summary = sections["chapter_summary"]
-                
-                # Build page range structure
-                page_range = None
-                if page_range_match:
-                    page_range = {
-                        "start": int(page_range_match.group(1)),
-                        "end": int(page_range_match.group(2))
-                    }
-                
-                chapter_data = {
-                    "chapter_number": chapter_num,
-                    "title": chapter_title,
-                    "page_range": page_range,
-                    "cross_text_analysis": cross_text_analysis,
-                    "chapter_summary": chapter_summary,
-                    "concepts": concepts
-                }
-                chapters.append(chapter_data)
-            except (ValueError, IndexError, AttributeError) as e:
-                # Log warning but continue processing other chapters
-                print(f"⚠️  Warning: Skipping malformed chapter {chapter_num if 'chapter_num' in locals() else 'unknown'}: {e}")
-                continue
+        chapters = _parse_all_chapters(chapter_sections)
     except Exception as e:
         raise ValueError(f"Failed to parse chapter structure: {e}") from e
     
     if not chapters:
         raise ValueError("No chapters found in markdown document")
     
-    # Build JSON structure using extracted metadata
+    # Build final JSON structure
     guideline_json = {
         "book_metadata": book_metadata,
         "source_info": {
             "generated_by": "chapter_generator_all_text.py",
-            "generation_date": "2025-11-18",  # Could use datetime.now() if needed
+            "generation_date": "2025-11-18",
             "llm_enabled": USE_LLM_SEMANTIC_ANALYSIS
         },
         "chapters": chapters,
