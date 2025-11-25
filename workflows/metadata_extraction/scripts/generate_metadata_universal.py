@@ -44,6 +44,14 @@ sys.path.insert(0, str(PROJECT_ROOT))
 # Per DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN Part 1.3
 from workflows.metadata_extraction.scripts.adapters.statistical_extractor import StatisticalExtractor
 
+# Import chapter detection strategies for Strategy Pattern (TDD Iteration 3)
+# Reduces auto_detect_chapters() complexity from CC 18 to <10
+from workflows.metadata_extraction.scripts.strategies.predefined_strategy import PreDefinedStrategy
+from workflows.metadata_extraction.scripts.strategies.regex_pattern_strategy import RegexPatternStrategy
+from workflows.metadata_extraction.scripts.strategies.yake_validation_strategy import YAKEValidationStrategy
+from workflows.metadata_extraction.scripts.strategies.toc_filter_strategy import TOCFilterStrategy
+from workflows.metadata_extraction.scripts.strategies.duplicate_filter_strategy import DuplicateFilterStrategy
+
 # Try to use settings, fallback to defaults
 try:
     from config.settings import settings
@@ -124,102 +132,58 @@ class UniversalMetadataGenerator:
         self.book_name = self.json_path.stem
         
         # Compile chapter pattern for auto-detection (default pattern)
-        # Per DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN: Removed pattern config files
-        # Support multiple chapter heading formats:
-        # - "Chapter 1: Title" or "Chapter 1 Title"
-        # - "Ch. 1: Title" or "Ch 1 Title"
-        # - "1. Title" (numbered section)
-        # - "Part 1: Title"
-        # Exclude years (1900-2099) to avoid false positives
-        self.chapter_pattern = re.compile(
-            r'(?:chapter|ch\.?|part)\s+(\d+)[:\s]+(.+)|^(?!(?:19|20)\d{2}\b)(\d+)\.\s+([A-Z][^\.]+)$',
-            re.IGNORECASE | re.MULTILINE
-        )
-        self.section_pattern = re.compile(r'^(?:section|§)\s+(\d+(?:\.\d+)?)', re.IGNORECASE)
+        # Initialize StatisticalExtractor for domain-agnostic keyword extraction
+        # Per DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN Part 1.3
+        self.extractor = StatisticalExtractor()
     
     def auto_detect_chapters(self) -> List[Tuple[int, str, int, int]]:
         """
-        Auto-detect chapters from page content or use pre-defined chapters from JSON.
+        Auto-detect chapters using Strategy Pattern (CC: 18 → <10).
         
-        Looks for:
-        1. Pre-defined chapters in JSON structure (from PDF conversion)
-        2. Pages with "Chapter N" headings (fallback)
-        3. Clear topic changes
-        4. Page number breaks
+        Strategy Pipeline:
+        1. PreDefinedStrategy - Extract from JSON metadata (highest priority)
+        2. RegexPatternStrategy - Find "Chapter N:" markers (fallback)
+        3. YAKEValidationStrategy - Validate content quality via keywords
+        4. TOCFilterStrategy - Remove table-of-contents pages
+        5. DuplicateFilterStrategy - Remove duplicate chapter numbers
         
         Returns:
             List of (chapter_num, title, start_page, end_page) tuples
+            
+        Reference:
+            - Architecture Patterns Ch. 13 (Dependency Injection)
+            - TDD Iteration 3: Strategy Pattern implementation
         """
-        # First, check if chapters are already defined in the JSON
-        if 'chapters' in self.book_data and self.book_data['chapters']:
-            print(f"   Using {len(self.book_data['chapters'])} pre-defined chapters from JSON")
-            chapters = []
-            for ch in self.book_data['chapters']:
-                # Handle both 'number' and 'chapter_number' field names (inconsistent JSON structures)
-                chapter_num = ch.get('number') or ch.get('chapter_number')
-                if chapter_num is None:
-                    print(f"   Warning: Chapter missing number field, skipping: {ch.get('title', 'Unknown')}")
-                    continue
-                
-                chapters.append((
-                    chapter_num,
-                    ch['title'],
-                    ch['start_page'],
-                    ch['end_page']
-                ))
+        # Priority 1: Check for pre-defined chapters in JSON metadata
+        predefined = PreDefinedStrategy(self.book_data)
+        chapters = predefined.detect(self.pages)
+        
+        if chapters:
+            print(f"   Using {len(chapters)} pre-defined chapters from JSON")
             return chapters
         
-        # Fallback: scan pages for chapter markers
+        # Priority 2: Scan pages for chapter markers using regex patterns
         print("   Scanning pages for chapter markers...")
-        chapters = []
-        current_chapter = None
-        seen_chapters = set()  # Track chapter numbers to avoid duplicates
+        regex = RegexPatternStrategy()
+        candidates = regex.detect(self.pages)
         
-        for idx, page in enumerate(self.pages, start=1):
-            text = page.get('content', page.get('text', ''))  # Support both 'content' and 'text' fields
-            lines = text.split('\n')[:20]  # Check first 20 lines (increased from 10 for better detection)
-            
-            for line in lines:
-                match = self.chapter_pattern.search(line)
-                if match:
-                    # Handle different match groups from the regex
-                    if match.group(1):
-                        # Matched "Chapter N: Title" or "Ch. N: Title" or "Part N: Title"
-                        chapter_num = int(match.group(1))
-                        title = match.group(2).strip().rstrip('.')
-                    elif match.group(3):
-                        # Matched "N. Title" (numbered section)
-                        chapter_num = int(match.group(3))
-                        title = match.group(4).strip().rstrip('.')
-                    else:
-                        continue
-                    
-                    # Validate chapter number is reasonable (1-100)
-                    if chapter_num < 1 or chapter_num > 100:
-                        continue
-                    
-                    # Validate title is not empty
-                    if not title or len(title.strip()) == 0:
-                        continue
-                    
-                    # Skip if we've already seen this chapter (filters out headers/footers)
-                    if chapter_num in seen_chapters:
-                        continue
-                    
-                    # Found a new chapter
-                    if current_chapter:
-                        # Close previous chapter
-                        chapters.append((*current_chapter, idx - 1))
-                    
-                    seen_chapters.add(chapter_num)
-                    current_chapter = (chapter_num, title, idx)
-                    break
+        if not candidates:
+            return []
         
-        # Close last chapter
-        if current_chapter:
-            chapters.append((*current_chapter, len(self.pages)))
+        # Apply filtering strategies to clean up candidates
+        # Filter 1: Validate chapters have real content (not TOC entries)
+        yake = YAKEValidationStrategy(self.extractor, min_keywords=3, min_content_length=100)
+        validated = yake.validate(candidates, self.pages)
         
-        return chapters
+        # Filter 2: Remove table-of-contents pages (many isolated numbers)
+        toc_filter = TOCFilterStrategy(threshold=8)
+        filtered = toc_filter.filter(validated, self.pages)
+        
+        # Filter 3: Remove duplicate chapter numbers (headers/footers)
+        dedup = DuplicateFilterStrategy()
+        final_chapters = dedup.filter(filtered)
+        
+        return final_chapters
     
     def extract_keywords(self, text: str, max_keywords: int = 15) -> List[str]:
         """
@@ -563,11 +527,15 @@ Examples:
     
     if args.chapters:
         # Parse explicit chapter definitions
+        # SECURITY FIX: Use ast.literal_eval() instead of eval() to prevent arbitrary code execution
+        # Per OWASP A03:2021 – Injection: Never use eval() on untrusted input
+        # literal_eval() only evaluates Python literals (strings, numbers, tuples, lists, dicts)
         try:
-            chapters = eval(args.chapters)
+            chapters = literal_eval(args.chapters)
             print(f"\n✅ Using {len(chapters)} explicitly defined chapters")
-        except Exception as e:
+        except (ValueError, SyntaxError) as e:
             print(f"❌ Error parsing chapters: {e}")
+            print("   Expected format: \"[(1, 'Title', 1, 10), (2, 'Title2', 11, 20)]\"")
             sys.exit(1)
     
     elif args.auto_detect:

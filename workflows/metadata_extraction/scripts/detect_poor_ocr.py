@@ -45,24 +45,17 @@ class OCRQualityDetector:
         self.source_dir = source_dir
         self.sample_pages = sample_pages
     
-    def assess_text_quality(self, text: str) -> Tuple[float, List[str]]:
-        """
-        Assess text quality and return score (0-1) and list of issues.
-        
-        Returns:
-            (quality_score, issues_list)
-        """
-        issues = []
-        score = 1.0
-        
-        # Check 1: Insufficient text
+    def _check_insufficient_text(self, text: str, score: float) -> Tuple[float, List[str]]:
+        """Check 1: Insufficient text (<100 chars)"""
         if len(text) < 100:
-            issues.append("insufficient_text")
-            score -= 0.4
-            return max(0.0, score), issues
-        
-        # Check 2: Repetitive watermarks/noise
+            return score - 0.4, ["insufficient_text"]
+        return score, []
+    
+    def _check_watermark_repetition(self, text: str, score: float) -> Tuple[float, List[str]]:
+        """Check 2: Repetitive watermarks/noise (>50% same word)"""
+        issues = []
         words = text.split()
+        
         if len(words) > 10:
             word_counts = Counter(words)
             most_common = word_counts.most_common(1)[0]
@@ -75,7 +68,11 @@ class OCRQualityDetector:
                 issues.append(f"high_repetition ({repetition_ratio:.1%})")
                 score -= 0.2
         
-        # Check 3: Gibberish (high ratio of non-alphanumeric)
+        return score, issues
+    
+    def _check_gibberish_ratio(self, text: str, score: float) -> Tuple[float, List[str]]:
+        """Check 3: Gibberish (high ratio of non-alphanumeric)"""
+        issues = []
         alphanumeric = sum(c.isalnum() or c.isspace() for c in text)
         gibberish_ratio = 1 - (alphanumeric / len(text))
         
@@ -86,8 +83,13 @@ class OCRQualityDetector:
             issues.append(f"moderate_gibberish ({gibberish_ratio:.1%})")
             score -= 0.1
         
-        # Check 4: Poor language structure (vowel ratio)
+        return score, issues
+    
+    def _check_vowel_ratio(self, text: str, score: float) -> Tuple[float, List[str]]:
+        """Check 4: Poor language structure (abnormal vowel ratio)"""
+        issues = []
         text_no_spaces = text.replace(' ', '').replace('\n', '')
+        
         if len(text_no_spaces) > 0:
             vowels = sum(1 for c in text_no_spaces.lower() if c in 'aeiou')
             vowel_ratio = vowels / len(text_no_spaces)
@@ -97,14 +99,52 @@ class OCRQualityDetector:
                 issues.append(f"abnormal_vowel_ratio ({vowel_ratio:.1%})")
                 score -= 0.2
         
-        # Check 5: Average word length (too short or too long suggests OCR issues)
+        return score, issues
+    
+    def _check_word_length(self, text: str, score: float) -> Tuple[float, List[str]]:
+        """Check 5: Average word length (too short or too long suggests OCR issues)"""
+        issues = []
+        words = text.split()
+        
         if len(words) > 5:
             avg_word_len = sum(len(w) for w in words) / len(words)
             if avg_word_len < 2 or avg_word_len > 15:
                 issues.append(f"abnormal_word_length (avg: {avg_word_len:.1f})")
                 score -= 0.1
         
-        return max(0.0, score), issues
+        return score, issues
+    
+    def assess_text_quality(self, text: str) -> Tuple[float, List[str]]:
+        """
+        Assess text quality using 5 separate checks (CC: 16 → 2).
+        
+        Applies Extract Method pattern (Learning Python Ed6 Ch. 16) to reduce
+        cognitive complexity and improve testability.
+        
+        Returns:
+            (quality_score, issues_list)
+        """
+        score = 1.0
+        all_issues = []
+        
+        # Run all quality checks
+        score, issues = self._check_insufficient_text(text, score)
+        if issues:  # Early return if insufficient text
+            return max(0.0, score), issues
+        
+        score, issues = self._check_watermark_repetition(text, score)
+        all_issues.extend(issues)
+        
+        score, issues = self._check_gibberish_ratio(text, score)
+        all_issues.extend(issues)
+        
+        score, issues = self._check_vowel_ratio(text, score)
+        all_issues.extend(issues)
+        
+        score, issues = self._check_word_length(text, score)
+        all_issues.extend(issues)
+        
+        return max(0.0, score), all_issues
     
     def assess_book(self, book_file: Path) -> OCRQualityReport:
         """Assess OCR quality for a single book"""
@@ -217,8 +257,8 @@ class OCRQualityDetector:
                 print()
 
 
-def main():
-    """Main entry point"""
+def _parse_arguments() -> argparse.Namespace:
+    """Parse command-line arguments (extracted from main)"""
     parser = argparse.ArgumentParser(
         description="Detect poor OCR quality in source JSON files",
         formatter_class=argparse.RawDescriptionHelpFormatter
@@ -255,7 +295,54 @@ def main():
         help='Only show books that need re-OCR'
     )
     
-    args = parser.parse_args()
+    return parser.parse_args()
+
+
+def _assess_single_book(detector: OCRQualityDetector, book_file: Path) -> int:
+    """Assess and report on a single book (extracted from main)"""
+    report = detector.assess_book(book_file)
+    
+    print(f"\n=== {report.book_name} ===\n")
+    print(f"Total pages: {report.total_pages}")
+    print(f"Avg chars/page: {report.avg_chars_per_page:.1f}")
+    print(f"Quality score: {report.quality_score:.2f}/1.00")
+    print(f"Issues: {', '.join(report.quality_issues) if report.quality_issues else 'None'}")
+    print(f"Needs re-OCR: {'YES ❌' if report.needs_re_ocr else 'NO ✅'}")
+    print("\nSample content:")  # Fixed: removed unnecessary f-string
+    print(report.sample_content[:300])
+    
+    return 1 if report.needs_re_ocr else 0
+
+
+def _assess_all_books(detector: OCRQualityDetector, report_only: bool, show_good: bool) -> int:
+    """Assess all books and generate report (extracted from main)"""
+    reports = detector.assess_all_books()
+    
+    if report_only:
+        # Only show books needing re-OCR
+        needs_re_ocr = [r for r in reports if r.needs_re_ocr]
+        if needs_re_ocr:
+            print("BOOKS REQUIRING RE-OCR:\n")
+            for report in needs_re_ocr:
+                print(f"  • {report.book_name}")
+                print(f"    Issues: {', '.join(report.quality_issues)}")
+            print(f"\nTotal: {len(needs_re_ocr)} books need re-OCR")
+        else:
+            print("✅ All books have acceptable OCR quality")
+        return len(needs_re_ocr)
+    else:
+        detector.print_report(reports, show_good=show_good)
+        return 1 if any(r.needs_re_ocr for r in reports) else 0
+
+
+def main():
+    """
+    Main entry point (CC: 25 → 5).
+    
+    Refactored using Extract Method pattern (Python Distilled Ch. 16) to reduce
+    cognitive complexity and improve testability.
+    """
+    args = _parse_arguments()
     
     if not args.source_dir.exists():
         print(f"❌ Error: Source directory not found: {args.source_dir}")
@@ -264,45 +351,15 @@ def main():
     detector = OCRQualityDetector(args.source_dir, args.sample_pages)
     
     if args.book:
-        # Assess single book
+        # Single book workflow
         book_file = args.source_dir / f"{args.book}.json"
         if not book_file.exists():
             print(f"❌ Error: Book not found: {book_file}")
             return 1
-        
-        report = detector.assess_book(book_file)
-        
-        print(f"\n=== {report.book_name} ===\n")
-        print(f"Total pages: {report.total_pages}")
-        print(f"Avg chars/page: {report.avg_chars_per_page:.1f}")
-        print(f"Quality score: {report.quality_score:.2f}/1.00")
-        print(f"Issues: {', '.join(report.quality_issues) if report.quality_issues else 'None'}")
-        print(f"Needs re-OCR: {'YES ❌' if report.needs_re_ocr else 'NO ✅'}")
-        print(f"\nSample content:")
-        print(report.sample_content[:300])
-        
-        return 1 if report.needs_re_ocr else 0
-    
+        return _assess_single_book(detector, book_file)
     else:
-        # Assess all books
-        reports = detector.assess_all_books()
-        
-        if args.report_only:
-            # Only show books needing re-OCR
-            needs_re_ocr = [r for r in reports if r.needs_re_ocr]
-            if needs_re_ocr:
-                print("BOOKS REQUIRING RE-OCR:\n")
-                for report in needs_re_ocr:
-                    print(f"  • {report.book_name}")
-                    print(f"    Issues: {', '.join(report.quality_issues)}")
-                print(f"\nTotal: {len(needs_re_ocr)} books need re-OCR")
-            else:
-                print("✅ All books have acceptable OCR quality")
-            return len(needs_re_ocr)
-        
-        else:
-            detector.print_report(reports, show_good=args.show_good)
-            return 1 if any(r.needs_re_ocr for r in reports) else 0
+        # All books workflow
+        return _assess_all_books(detector, args.report_only, args.show_good)
 
 
 if __name__ == "__main__":

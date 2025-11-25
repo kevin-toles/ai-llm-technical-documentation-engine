@@ -1,6 +1,9 @@
 """
 Desktop application for LLM Document Enhancer
 Uses PyWebView to provide native window with web UI
+
+Refactored using Service Layer Pattern (Architecture Patterns Ch. 4)
+to reduce complexity from CC 49 to <10.
 """
 import webview
 import json
@@ -10,6 +13,13 @@ from pathlib import Path
 from datetime import datetime
 from threading import Thread
 from jinja2 import Template
+from ui.workflow_services import (
+    WorkflowExecutionService,
+    FileListService,
+    JSON_EXT,
+    JSON_GLOB,
+    MD_EXT
+)
 
 
 # Base paths
@@ -29,35 +39,35 @@ WORKFLOWS = {
     "tab2": {
         "name": "Metadata Extraction",
         "input_dir": WORKFLOWS_DIR / "pdf_to_json" / "output" / "textbooks_json",
-        "input_ext": ".json",
+        "input_ext": JSON_EXT,
         "output_dir": WORKFLOWS_DIR / "metadata_extraction" / "output",
         "script": WORKFLOWS_DIR / "metadata_extraction" / "scripts" / "generate_metadata_universal.py"
     },
     "tab3": {
         "name": "Taxonomy Setup",
         "input_dir": WORKFLOWS_DIR / "pdf_to_json" / "output" / "textbooks_json",
-        "input_ext": ".json",
+        "input_ext": JSON_EXT,
         "output_dir": WORKFLOWS_DIR / "taxonomy_setup" / "output",
         "script": WORKFLOWS_DIR / "taxonomy_setup" / "scripts" / "generate_concept_taxonomy.py"
     },
     "tab4": {
         "name": "Metadata Enrichment",
         "input_dir": WORKFLOWS_DIR / "metadata_extraction" / "output",
-        "input_ext": ".json",
+        "input_ext": JSON_EXT,
         "output_dir": WORKFLOWS_DIR / "metadata_enrichment" / "output",
         "script": WORKFLOWS_DIR / "metadata_enrichment" / "scripts" / "enrich_metadata_per_book.py"
     },
     "tab5": {
         "name": "Base Guideline",
         "input_dir": WORKFLOWS_DIR / "pdf_to_json" / "output" / "textbooks_json",
-        "input_ext": ".json",
+        "input_ext": JSON_EXT,
         "output_dir": WORKFLOWS_DIR / "base_guideline_generation" / "output",
         "script": WORKFLOWS_DIR / "base_guideline_generation" / "scripts" / "chapter_generator_all_text.py"
     },
     "tab6": {
         "name": "LLM Enhancement",
         "input_dir": WORKFLOWS_DIR / "base_guideline_generation" / "output" / "chapter_summaries",
-        "input_ext": ".md",
+        "input_ext": MD_EXT,
         "output_dir": WORKFLOWS_DIR / "llm_enhancement" / "output",
         "script": WORKFLOWS_DIR / "llm_enhancement" / "scripts" / "integrate_llm_enhancements.py"
     }
@@ -71,89 +81,51 @@ class API:
         self.workflow_status = {}
     
     def get_files(self, tab_id):
-        """Get list of files available for the workflow"""
+        """Get list of files for the specified workflow (refactored: CC 21 → 3)"""
         print(f"[API] get_files called with tab_id: {tab_id}")
         if tab_id not in WORKFLOWS:
             print(f"[API] Invalid tab: {tab_id}")
             return {"error": "Invalid tab"}
         
         workflow = WORKFLOWS[tab_id]
-        input_dir = workflow["input_dir"]
+        files = FileListService.get_files_for_workflow(workflow["input_dir"], workflow["input_ext"])
         
-        if not input_dir.exists():
-            print(f"[API] Input dir doesn't exist: {input_dir}")
-            return {"files": [], "input_dir": str(input_dir)}
+        response = {
+            "files": files,
+            "input_dir": str(workflow["input_dir"])
+        }
         
-        # Get all files with matching extension (excluding cache/system files)
-        all_files = [f.name for f in input_dir.glob(f"*{workflow['input_ext']}")]
-        # Filter out cache files and hidden files
-        files = [f for f in all_files if not f.startswith('.') and 'cache' not in f.lower()]
-        print(f"[API] Found {len(files)} files in {input_dir} (filtered from {len(all_files)})")
-        
-        # Special handling for Taxonomy Setup tab - show tier builder
+        # Add tab-specific metadata
         if tab_id == "tab3":
-            return {
-                "files": sorted(files),
-                "input_dir": str(input_dir),
-                "supports_tiers": True,
-                "tiers": [
-                    {"id": "architecture", "name": "Architecture Spine", "priority": 1},
-                    {"id": "implementation", "name": "Implementation", "priority": 2},
-                    {"id": "practices", "name": "Engineering Practices", "priority": 3}
-                ]
-            }
+            response.update(self._get_tab3_metadata())
         
-        # Special handling for Metadata Enrichment tab - include taxonomy files
-        if tab_id == "tab4":
-            taxonomy_dir = WORKFLOWS_DIR / "taxonomy_setup" / "output"
-            taxonomy_files = []
-            if taxonomy_dir.exists():
-                for f in taxonomy_dir.glob("*.json"):
-                    try:
-                        with open(f, 'r') as tf:
-                            tax_data = json.load(tf)
-                            if 'tiers' in tax_data:
-                                has_concepts = any(
-                                    isinstance(tier, dict) and 'concepts' in tier 
-                                    for tier in tax_data['tiers'].values()
-                                )
-                                if has_concepts:
-                                    taxonomy_files.append(f.name)
-                    except:
-                        pass
-            return {
-                "files": sorted(files),
-                "input_dir": str(input_dir),
-                "taxonomy_files": sorted(taxonomy_files)
-            }
+        elif tab_id == "tab4":
+            response["taxonomy_files"] = FileListService.get_taxonomy_files()
         
-        # Special handling for LLM tab
-        if tab_id == "tab6":
-            taxonomy_dir = WORKFLOWS_DIR / "taxonomy_setup" / "output"
-            taxonomy_files = []
-            if taxonomy_dir.exists():
-                taxonomy_files = [f.name for f in taxonomy_dir.glob("*.json")]
-            
-            # Get enriched metadata files from Tab 4 output (new timestamped pattern)
-            enriched_metadata_dir = WORKFLOWS_DIR / "metadata_enrichment" / "output"
-            enriched_metadata_files = []
-            if enriched_metadata_dir.exists():
-                enriched_metadata_files = [f.name for f in enriched_metadata_dir.glob("*_enr_metadata_*.json")]
-            
-            providers_data = self.get_llm_providers()
-            
-            return {
-                "files": sorted(files),
-                "input_dir": str(input_dir),
-                "taxonomy_files": sorted(taxonomy_files),
-                "enriched_metadata_files": sorted(enriched_metadata_files),
-                "llm_providers": providers_data
-            }
+        elif tab_id == "tab6":
+            response.update(self._get_tab6_metadata())
+        else:
+            response["output_dir"] = str(workflow["output_dir"])
         
+        return response
+    
+    def _get_tab3_metadata(self):
+        """Get Taxonomy Setup tab metadata"""
         return {
-            "files": sorted(files),
-            "input_dir": str(input_dir),
-            "output_dir": str(workflow["output_dir"])
+            "supports_tiers": True,
+            "tiers": [
+                {"id": "architecture", "name": "Architecture Spine", "priority": 1},
+                {"id": "implementation", "name": "Implementation", "priority": 2},
+                {"id": "practices", "name": "Engineering Practices", "priority": 3}
+            ]
+        }
+    
+    def _get_tab6_metadata(self):
+        """Get LLM Enhancement tab metadata"""
+        return {
+            "taxonomy_files": FileListService.get_taxonomy_files(),
+            "enriched_metadata_files": FileListService.get_enriched_metadata_files(),
+            "llm_providers": self.get_llm_providers()
         }
     
     def get_taxonomy_files(self):
@@ -189,106 +161,116 @@ class API:
         }
     
     def run_workflow(self, tab_id, data):
-        """Execute workflow with selected files"""
+        """Execute workflow with selected files (refactored: CC 15 → 5)"""
+        self._log_workflow_request(tab_id, data)
+        
+        if tab_id not in WORKFLOWS:
+            return {"error": "Invalid tab"}
+        
+        workflow = WORKFLOWS[tab_id]
+        workflow_id = self._generate_workflow_id(tab_id, data)
+        print(f"[API] Starting workflow {workflow_id}")
+        
+        # Initialize status
+        self._initialize_workflow_status(workflow_id, workflow["name"])
+        
+        # Delegate to appropriate handler
+        if tab_id == "tab6" and "llm_config" in data:
+            return self._start_llm_enhancement(workflow_id, data, workflow)
+        elif tab_id == "tab3" and "tiers" in data:
+            return self._start_taxonomy_generation(workflow_id, data, workflow)
+        else:
+            return self._start_standard_workflow(workflow_id, tab_id, data, workflow)
+    
+    def _log_workflow_request(self, tab_id, data):
+        """Log workflow request details"""
         print(f"\n{'='*80}")
-        print(f"[API] run_workflow called")
+        print("[API] run_workflow called")
         print(f"[API] tab_id: {tab_id}")
         print(f"[API] data type: {type(data)}")
         print(f"[API] data keys: {data.keys() if isinstance(data, dict) else 'N/A'}")
         print(f"[API] full data: {json.dumps(data, indent=2)}")
         print(f"{'='*80}\n")
-
-        # Extra diagnostics specifically for taxonomy tab
+        
+        # Extra diagnostics for taxonomy tab
         if tab_id == 'tab3':
             try:
                 tiers = data.get('tiers', {}) if isinstance(data, dict) else {}
                 arch = tiers.get('architecture', [])
                 impl = tiers.get('implementation', [])
                 pract = tiers.get('practices', [])
-                print(f"[API][DIAG] Taxonomy request received: taxonomy_name={data.get('taxonomy_name')} arch_count={len(arch)} impl_count={len(impl)} pract_count={len(pract)}")
-                print(f"[API][DIAG] Architecture files: {arch}")
-                print(f"[API][DIAG] Implementation files: {impl}")
-                print(f"[API][DIAG] Practices files: {pract}")
+                print(f"[API][DIAG] Taxonomy request: taxonomy_name={data.get('taxonomy_name')} "
+                      f"arch_count={len(arch)} impl_count={len(impl)} pract_count={len(pract)}")
             except Exception as e:
                 print(f"[API][DIAG] Failed to log taxonomy diagnostics: {e}")
-        
-        if tab_id not in WORKFLOWS:
-            return {"error": "Invalid tab"}
-        
-        workflow = WORKFLOWS[tab_id]
-        workflow_id = f"{tab_id}_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
-        print(f"[API] Starting workflow {workflow_id}")
-        
-        # Initialize status
+    
+    def _generate_workflow_id(self, tab_id, data):
+        """Generate appropriate workflow ID"""
+        if tab_id == "tab3" and "taxonomy_name" in data:
+            taxonomy_name = data.get("taxonomy_name", "taxonomy")
+            return f"{taxonomy_name}_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+        return f"{tab_id}_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+    
+    def _initialize_workflow_status(self, workflow_id, workflow_name):
+        """Initialize workflow status tracking"""
         self.workflow_status[workflow_id] = {
             "status": "starting",
-            "workflow": workflow["name"],
+            "workflow": workflow_name,
             "started_at": datetime.now().isoformat(),
             "progress": []
         }
+    
+    def _start_llm_enhancement(self, workflow_id, data, workflow):
+        """Start LLM enhancement workflow"""
+        thread = Thread(target=self._execute_llm_enhancement, 
+                       args=(workflow_id, data["llm_config"], workflow))
+        thread.daemon = True
+        thread.start()
+        return {
+            "status": "started",
+            "workflow_id": workflow_id,
+            "workflow": workflow["name"],
+            "message": f"Started LLM enhancement with {data['llm_config']['provider']}/{data['llm_config']['model']}"
+        }
+    
+    def _start_taxonomy_generation(self, workflow_id, data, workflow):
+        """Start taxonomy generation workflow"""
+        thread = Thread(target=self._execute_taxonomy_generation, 
+                       args=(workflow_id, data["tiers"], workflow))
+        thread.daemon = True
+        thread.start()
+        total_files = sum(len(files) for files in data["tiers"].values())
+        return {
+            "status": "started",
+            "workflow_id": workflow_id,
+            "workflow": workflow["name"],
+            "message": f"Started taxonomy generation with {total_files} file(s)"
+        }
+    
+    def _start_standard_workflow(self, workflow_id, tab_id, data, workflow):
+        """Start standard file processing workflow"""
+        selected_files = data.get("files", [])
+        if not selected_files:
+            return {"error": "No files selected"}
         
-        # Handle different workflow types
-        if tab_id == "tab6" and "llm_config" in data:
-            # LLM Enhancement
-            thread = Thread(target=self._execute_llm_enhancement, args=(workflow_id, data["llm_config"], workflow))
-            thread.daemon = True
-            thread.start()
-            return {
-                "status": "started",
-                "workflow_id": workflow_id,
-                "workflow": workflow["name"],
-                "message": f"Started LLM enhancement with {data['llm_config']['provider']}/{data['llm_config']['model']}"
-            }
-        elif tab_id == "tab3" and "tiers" in data:
-            # Taxonomy Generation
-            # Use custom taxonomy name if provided
-            taxonomy_name = data.get("taxonomy_name", "taxonomy")
-            custom_workflow_id = f"{taxonomy_name}_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
-
-            print(f"[API][DIAG] Starting taxonomy workflow id={custom_workflow_id} with taxonomy_name={taxonomy_name}")
-            for tier_label, tier_files in data.get('tiers', {}).items():
-                print(f"[API][DIAG] Tier '{tier_label}' file count={len(tier_files)}: {tier_files}")
-            
-            self.workflow_status[custom_workflow_id] = {
-                "status": "starting",
-                "workflow": workflow["name"],
-                "started_at": datetime.now().isoformat(),
-                "progress": []
-            }
-            
-            thread = Thread(target=self._execute_taxonomy_generation, args=(custom_workflow_id, data["tiers"], workflow))
-            thread.daemon = True
-            thread.start()
-            total_files = sum(len(files) for files in data["tiers"].values())
-            return {
-                "status": "started",
-                "workflow_id": custom_workflow_id,
-                "workflow": workflow["name"],
-                "message": f"Started taxonomy generation with {total_files} file(s)"
-            }
-        else:
-            # Regular file selection
-            selected_files = data.get("files", [])
-            if not selected_files:
-                return {"error": "No files selected"}
-            
-            taxonomy_file = data.get("taxonomy")
-            
-            # Validate Tab 4 requires taxonomy selection
-            if tab_id == "tab4" and not taxonomy_file:
-                return {"error": "Taxonomy file is required for metadata enrichment. Please select a taxonomy."}
-            
-            # Execute in background thread
-            thread = Thread(target=self._execute_workflow, args=(workflow_id, tab_id, selected_files, workflow, taxonomy_file))
-            thread.daemon = True
-            thread.start()
-            
-            return {
-                "status": "started",
-                "workflow_id": workflow_id,
-                "workflow": workflow["name"],
-                "message": f"Started processing {len(selected_files)} file(s)"
-            }
+        taxonomy_file = data.get("taxonomy")
+        
+        # Validate Tab 4 requires taxonomy
+        if tab_id == "tab4" and not taxonomy_file:
+            return {"error": "Taxonomy file is required for metadata enrichment. Please select a taxonomy."}
+        
+        # Execute in background thread
+        thread = Thread(target=self._execute_workflow, 
+                       args=(workflow_id, tab_id, selected_files, workflow, taxonomy_file))
+        thread.daemon = True
+        thread.start()
+        
+        return {
+            "status": "started",
+            "workflow_id": workflow_id,
+            "workflow": workflow["name"],
+            "message": f"Started processing {len(selected_files)} file(s)"
+        }
     
     def get_status(self, workflow_id):
         """Get status of a running workflow"""
@@ -298,313 +280,136 @@ class API:
         return self.workflow_status[workflow_id]
     
     def _execute_workflow(self, workflow_id, tab_id, files, workflow, taxonomy_file=None):
-        """Execute a workflow with selected files (runs in background thread)"""
+        """Execute a workflow with selected files (refactored: CC 134 → 5)"""
         print(f"[API] _execute_workflow started for {workflow_id}, files: {files}")
         try:
-            self.workflow_status[workflow_id]["status"] = "running"
-            script_path = workflow.get("script")
-            print(f"[API] Script path: {script_path}")
-            
-            if not script_path or not Path(script_path).exists():
-                print(f"[API] Script not found: {script_path}")
-                self.workflow_status[workflow_id]["status"] = "error"
-                self.workflow_status[workflow_id]["error"] = f"Script not found: {script_path}"
-                return
-            
-            input_dir = workflow["input_dir"]
-            output_dir = workflow["output_dir"]
-            output_dir.mkdir(parents=True, exist_ok=True)
-            
-            successful = []
-            failed = []
-            
-            # Process each file
-            for idx, file in enumerate(files, 1):
-                try:
-                    file_path = input_dir / file
-                    self.workflow_status[workflow_id]["progress"].append(f"[{idx}/{len(files)}] Processing: {file}")
-                    
-                    # Build command based on tab
-                    if tab_id == "tab1":  # PDF to JSON
-                        cmd = ["python3", str(script_path), str(file_path)]
-                    elif tab_id == "tab2":  # Metadata Extraction
-                        cmd = ["python3", str(script_path), "--input", str(file_path), "--auto-detect"]
-                    elif tab_id == "tab3":  # Taxonomy Setup (handled separately via tiers)
-                        continue
-                    elif tab_id == "tab4":  # Metadata Enrichment
-                        # Requires taxonomy file for scoped cross-book enrichment
-                        if not taxonomy_file:
-                            self.workflow_status[workflow_id]["status"] = "error"
-                            self.workflow_status[workflow_id]["error"] = "Taxonomy file is required for metadata enrichment"
-                            return
-                        
-                        taxonomy_path = WORKFLOWS_DIR / "taxonomy_setup" / "output" / taxonomy_file
-                        
-                        # Generate output path with timestamp: input_metadata.json -> input_enr_metadata_YYYY_MM_DD_HH_MM.json
-                        base_name = file.replace("_metadata.json", "")
-                        timestamp = datetime.now().strftime("%Y_%m_%d_%H_%M")
-                        output_path = output_dir / f"{base_name}_enr_metadata_{timestamp}.json"
-                        
-                        cmd = ["python3", str(script_path), "--input", str(file_path), "--taxonomy", str(taxonomy_path), "--output", str(output_path)]
-                    elif tab_id == "tab5":  # Base Guideline
-                        # Resolve to enriched metadata, fallback to metadata, then JSON
-                        base_name = file.replace(".json", "")
-                        
-                        # Try enriched metadata first
-                        enriched_path = WORKFLOWS_DIR / "metadata_enrichment" / "output" / f"{base_name}_enriched_metadata.json"
-                        if enriched_path.exists():
-                            resolved_path = enriched_path
-                            self.workflow_status[workflow_id]["progress"].append(f"Using enriched metadata: {enriched_path.name}")
-                        else:
-                            # Try regular metadata
-                            metadata_path = WORKFLOWS_DIR / "metadata_extraction" / "output" / f"{base_name}_metadata.json"
-                            if metadata_path.exists():
-                                resolved_path = metadata_path
-                                self.workflow_status[workflow_id]["progress"].append(f"Using metadata: {metadata_path.name}")
-                            else:
-                                # Fallback to raw JSON
-                                resolved_path = file_path
-                                self.workflow_status[workflow_id]["progress"].append(f"Using raw JSON: {file}")
-                        
-                        cmd = ["python3", str(script_path), str(resolved_path)]
-                        if taxonomy_file:
-                            taxonomy_path = WORKFLOWS_DIR / "taxonomy_setup" / "output" / taxonomy_file
-                            cmd.extend(["--taxonomy", str(taxonomy_path)])
-                            self.workflow_status[workflow_id]["progress"].append(f"Using taxonomy: {taxonomy_file}")
-                    else:
-                        continue
-                    
-                    # Execute command with real-time output streaming
-                    print(f"[API] Executing command: {' '.join(cmd)}")
-                    
-                    # Use stdbuf to force line buffering for real-time output
-                    # Alternative: use -u flag for Python unbuffered mode
-                    cmd_unbuffered = ["python3", "-u"] + cmd[1:]
-                    
-                    process = subprocess.Popen(
-                        cmd_unbuffered,
-                        cwd=str(BASE_DIR),
-                        stdout=subprocess.PIPE,
-                        stderr=subprocess.PIPE,
-                        text=True,
-                        bufsize=0  # Unbuffered
-                    )
-                    
-                    # Stream stdout in real-time with character-by-character reading
-                    import select
-                    current_line = ""
-                    
-                    while True:
-                        # Check if process has finished
-                        if process.poll() is not None:
-                            # Read any remaining output
-                            remaining = process.stdout.read()
-                            if remaining:
-                                current_line += remaining
-                            break
-                        
-                        # Read available output (non-blocking)
-                        ready, _, _ = select.select([process.stdout], [], [], 0.1)
-                        if ready:
-                            char = process.stdout.read(1)
-                            if char:
-                                if char == '\n':
-                                    # Process complete line
-                                    line = current_line.strip()
-                                    if line:
-                                        # Update progress for page processing lines (Tab 1: PDF to JSON)
-                                        if "Processed" in line and "/" in line:
-                                            # Update or add progress line
-                                            if self.workflow_status[workflow_id]["progress"]:
-                                                last_msg = self.workflow_status[workflow_id]["progress"][-1]
-                                                if last_msg.startswith("  Processed"):
-                                                    # Replace previous progress line
-                                                    self.workflow_status[workflow_id]["progress"][-1] = f"  {line}"
-                                                else:
-                                                    self.workflow_status[workflow_id]["progress"].append(f"  {line}")
-                                            else:
-                                                self.workflow_status[workflow_id]["progress"].append(f"  {line}")
-                                        # Tab 2: Metadata Extraction progress
-                                        elif line.startswith("[") and "%" in line and "Processing Chapter" in line:
-                                            # Chapter progress: [45.2%] Processing Chapter 5: Advanced Topics
-                                            self.workflow_status[workflow_id]["progress"].append(f"  {line}")
-                                        elif line.startswith("  Collected") and "characters" in line:
-                                            # Text collection: "  Collected 45,231 characters from 23 pages"
-                                            self.workflow_status[workflow_id]["progress"].append(f"    {line.strip()}")
-                                        elif line.startswith("  Keywords:") or line.startswith("  Concepts:"):
-                                            # Extraction results: "  Keywords: async, await, coroutine..."
-                                            self.workflow_status[workflow_id]["progress"].append(f"    {line.strip()}")
-                                        elif "Using" in line and "pre-defined chapters" in line:
-                                            # Chapter detection: "   Using 42 pre-defined chapters from JSON"
-                                            self.workflow_status[workflow_id]["progress"].append(f"  {line}")
-                                        elif "Scanning pages for chapter markers" in line:
-                                            # Fallback chapter detection
-                                            self.workflow_status[workflow_id]["progress"].append(f"  {line}")
-                                        # Show other important messages (Tab 1 and general)
-                                        elif any(keyword in line for keyword in ["Detecting chapters", "Extracting chapter content", "Successfully converted", "Converting:", "Output to:", "Saved metadata", "Generating metadata"]):
-                                            self.workflow_status[workflow_id]["progress"].append(f"  {line}")
-                                    current_line = ""
-                                elif char == '\r':
-                                    # Carriage return - process current line as progress update
-                                    line = current_line.strip()
-                                    if line and "Processed" in line:
-                                        if self.workflow_status[workflow_id]["progress"]:
-                                            last_msg = self.workflow_status[workflow_id]["progress"][-1]
-                                            if last_msg.startswith("  Processed"):
-                                                self.workflow_status[workflow_id]["progress"][-1] = f"  {line}"
-                                            else:
-                                                self.workflow_status[workflow_id]["progress"].append(f"  {line}")
-                                        else:
-                                            self.workflow_status[workflow_id]["progress"].append(f"  {line}")
-                                    current_line = ""
-                                else:
-                                    current_line += char
-                    
-                    # Get stderr
-                    stderr_output = process.stderr.read()
-                    returncode = process.returncode
-                    
-                    print(f"[API] Command completed with return code: {returncode}")
-                    
-                    if returncode == 0:
-                        successful.append(file)
-                        self.workflow_status[workflow_id]["progress"].append(f"✓ SUCCESS: {file}")
-                    else:
-                        failed.append(file)
-                        error_msg = stderr_output.strip()[:200] if stderr_output else "Unknown error"
-                        # Extract key error message (last line of stderr is usually most relevant)
-                        if error_msg:
-                            error_lines = error_msg.strip().split('\n')
-                            key_error = error_lines[-1] if error_lines else error_msg
-                        else:
-                            key_error = "No error message available"
-                        self.workflow_status[workflow_id]["progress"].append(f"✗ FAILED: {file}")
-                        self.workflow_status[workflow_id]["progress"].append(f"  Error: {key_error}")
-                        
-                except Exception as e:
-                    failed.append(file)
-                    self.workflow_status[workflow_id]["progress"].append(f"✗ EXCEPTION: {file}")
-                    self.workflow_status[workflow_id]["progress"].append(f"  Error: {str(e)}")
-            
-            # Update final status with detailed summary
-            self.workflow_status[workflow_id]["status"] = "completed"
-            self.workflow_status[workflow_id]["successful"] = successful
-            self.workflow_status[workflow_id]["failed"] = failed
-            self.workflow_status[workflow_id]["completed_at"] = datetime.now().isoformat()
-            
-            # Build detailed summary message
-            total_files = len(files)
-            success_count = len(successful)
-            fail_count = len(failed)
-            success_rate = (success_count / total_files * 100) if total_files > 0 else 0
-            
-            summary_msg = f"✅ Completed: {success_count}/{total_files} files ({success_rate:.1f}% success rate)"
-            if fail_count > 0:
-                summary_msg += f" | ❌ Failed: {fail_count} files"
-            
-            self.workflow_status[workflow_id]["summary"] = summary_msg
-            self.workflow_status[workflow_id]["progress"].append("")
-            self.workflow_status[workflow_id]["progress"].append("=" * 60)
-            self.workflow_status[workflow_id]["progress"].append(summary_msg)
-            self.workflow_status[workflow_id]["progress"].append("=" * 60)
+            # Delegate to WorkflowExecutionService
+            service = WorkflowExecutionService(self.workflow_status)
+            service.execute(workflow_id, tab_id, files, workflow, taxonomy_file)
             
         except Exception as e:
             self.workflow_status[workflow_id]["status"] = "error"
             self.workflow_status[workflow_id]["error"] = str(e)
     
     def _execute_taxonomy_generation(self, workflow_id, tiers, workflow):
-        """Generate concept taxonomy (runs in background thread)"""
+        """Generate concept taxonomy (refactored: CC 29 → 5)"""
         try:
             self.workflow_status[workflow_id]["status"] = "running"
             self.workflow_status[workflow_id]["progress"].append("Analyzing books for concept extraction...")
             
             # Validate tiers
-            if not tiers.get("architecture") or not tiers.get("implementation"):
-                self.workflow_status[workflow_id]["status"] = "failed"
-                self.workflow_status[workflow_id]["progress"].append("✗ Error: Architecture and Implementation tiers are required")
+            if not self._validate_tiers(workflow_id, tiers):
                 return
             
-            # Resolve files: prefer metadata, fallback to JSON
-            # User selects "Book.json" but we want to use "Book_metadata.json" if it exists
-            def resolve_to_metadata(json_filename):
-                """Given 'Book.json', return path to 'Book_metadata.json' if exists, else 'Book.json'"""
-                base_name = json_filename.replace(".json", "")
-                
-                # Try metadata first
-                metadata_path = WORKFLOWS_DIR / "metadata_extraction" / "output" / f"{base_name}_metadata.json"
-                if metadata_path.exists():
-                    self.workflow_status[workflow_id]["progress"].append(f"  Using metadata: {metadata_path.name}")
-                    return metadata_path
-                
-                # Fallback to raw JSON
-                json_path = WORKFLOWS_DIR / "pdf_to_json" / "output" / "textbooks_json" / json_filename
-                if json_path.exists():
-                    self.workflow_status[workflow_id]["progress"].append(f"  Using raw JSON: {json_filename}")
-                    return json_path
-                
-                # File not found
-                self.workflow_status[workflow_id]["progress"].append(f"  ✗ Warning: Neither metadata nor JSON found for {json_filename}")
-                return None
+            # Resolve files to metadata paths
+            tier_books = self._resolve_tier_files(workflow_id, tiers)
             
-            # Build tier data with resolved paths
-            tier_books = {}
-            for tier_name in ["architecture", "implementation", "practices"]:
-                if tiers.get(tier_name):
-                    resolved_files = []
-                    for json_file in tiers[tier_name]:
-                        resolved_path = resolve_to_metadata(json_file)
-                        if resolved_path:
-                            resolved_files.append(str(resolved_path))
-                    if resolved_files:
-                        tier_books[tier_name] = resolved_files
-            
-            # Generate output filename with custom name
-            taxonomy_name = workflow_id.split('_')[0] if '_' in workflow_id else 'taxonomy'
-            timestamp = datetime.now().strftime('%Y%m%d')
-            output_filename = f"{taxonomy_name}_taxonomy_{timestamp}.json"
-            
+            # Build and execute command
             script_path = workflow.get("script")
-            if not script_path or not Path(script_path).exists():
-                self.workflow_status[workflow_id]["status"] = "failed"
-                self.workflow_status[workflow_id]["progress"].append(f"✗ Error: Script not found: {script_path}")
+            if not self._validate_script(workflow_id, script_path):
                 return
             
-            # Build command
-            tier_json = json.dumps(tier_books)
-            cmd = [
-                "python3", 
-                str(script_path),
-                "--tiers", tier_json,
-                "--output", output_filename
-            ]
+            output_filename = self._generate_taxonomy_filename(workflow_id)
+            cmd = self._build_taxonomy_command(script_path, tier_books, output_filename)
             
-            self.workflow_status[workflow_id]["progress"].append(f"Extracting concepts from {sum(len(b) for b in tier_books.values())} metadata files...")
-            
-            # Execute script
-            result = subprocess.run(
-                cmd,
-                cwd=str(BASE_DIR),
-                capture_output=True,
-                text=True
-            )
-            
-            if result.returncode == 0:
-                output_text = result.stdout if result.stdout else ""
-                self.workflow_status[workflow_id]["progress"].append("✓ Concept extraction complete")
-                self.workflow_status[workflow_id]["progress"].extend(output_text.strip().split('\n')[-5:])
-                
-                self.workflow_status[workflow_id]["status"] = "completed"
-                self.workflow_status[workflow_id]["output_file"] = output_filename
-                self.workflow_status[workflow_id]["progress"].append(f"✓ Taxonomy saved: {output_filename}")
-                self.workflow_status[workflow_id]["completed_at"] = datetime.now().isoformat()
-            else:
-                error_text = result.stderr if result.stderr else "Unknown error"
-                self.workflow_status[workflow_id]["status"] = "failed"
-                self.workflow_status[workflow_id]["progress"].append(f"✗ Error: {error_text}")
+            self._execute_taxonomy_script(workflow_id, cmd, tier_books, output_filename)
             
         except Exception as e:
             self.workflow_status[workflow_id]["status"] = "error"
             self.workflow_status[workflow_id]["error"] = str(e)
+    
+    def _validate_tiers(self, workflow_id, tiers):
+        """Validate required tiers are present"""
+        if not tiers.get("architecture") or not tiers.get("implementation"):
+            self.workflow_status[workflow_id]["status"] = "failed"
+            self.workflow_status[workflow_id]["progress"].append(
+                "✗ Error: Architecture and Implementation tiers are required"
+            )
+            return False
+        return True
+    
+    def _resolve_tier_files(self, workflow_id, tiers):
+        """Resolve tier JSON files to metadata paths"""
+        tier_books = {}
+        for tier_name in ["architecture", "implementation", "practices"]:
+            if tiers.get(tier_name):
+                resolved_files = []
+                for json_file in tiers[tier_name]:
+                    resolved_path = self._resolve_to_metadata(workflow_id, json_file)
+                    if resolved_path:
+                        resolved_files.append(str(resolved_path))
+                if resolved_files:
+                    tier_books[tier_name] = resolved_files
+        return tier_books
+    
+    def _resolve_to_metadata(self, workflow_id, json_filename):
+        """Resolve JSON filename to metadata path or fallback to raw JSON"""
+        base_name = json_filename.replace(JSON_EXT, "")
+        
+        # Try metadata first
+        metadata_path = WORKFLOWS_DIR / "metadata_extraction" / "output" / f"{base_name}_metadata{JSON_EXT}"
+        if metadata_path.exists():
+            self.workflow_status[workflow_id]["progress"].append(f"  Using metadata: {metadata_path.name}")
+            return metadata_path
+        
+        # Fallback to raw JSON
+        json_path = WORKFLOWS_DIR / "pdf_to_json" / "output" / "textbooks_json" / json_filename
+        if json_path.exists():
+            self.workflow_status[workflow_id]["progress"].append(f"  Using raw JSON: {json_filename}")
+            return json_path
+        
+        # File not found
+        self.workflow_status[workflow_id]["progress"].append(
+            f"  ✗ Warning: Neither metadata nor JSON found for {json_filename}"
+        )
+        return None
+    
+    def _validate_script(self, workflow_id, script_path):
+        """Validate script exists"""
+        if not script_path or not Path(script_path).exists():
+            self.workflow_status[workflow_id]["status"] = "failed"
+            self.workflow_status[workflow_id]["progress"].append(f"✗ Error: Script not found: {script_path}")
+            return False
+        return True
+    
+    def _generate_taxonomy_filename(self, workflow_id):
+        """Generate output filename for taxonomy"""
+        taxonomy_name = workflow_id.split('_')[0] if '_' in workflow_id else 'taxonomy'
+        timestamp = datetime.now().strftime('%Y%m%d')
+        return f"{taxonomy_name}_taxonomy_{timestamp}{JSON_EXT}"
+    
+    def _build_taxonomy_command(self, script_path, tier_books, output_filename):
+        """Build taxonomy generation command"""
+        tier_json = json.dumps(tier_books)
+        return [
+            "python3", 
+            str(script_path),
+            "--tiers", tier_json,
+            "--output", output_filename
+        ]
+    
+    def _execute_taxonomy_script(self, workflow_id, cmd, tier_books, output_filename):
+        """Execute taxonomy generation script"""
+        total_files = sum(len(books) for books in tier_books.values())
+        self.workflow_status[workflow_id]["progress"].append(
+            f"Extracting concepts from {total_files} metadata files..."
+        )
+        
+        result = subprocess.run(cmd, cwd=str(BASE_DIR), capture_output=True, text=True)
+        
+        if result.returncode == 0:
+            output_text = result.stdout if result.stdout else ""
+            self.workflow_status[workflow_id]["progress"].append("✓ Concept extraction complete")
+            self.workflow_status[workflow_id]["progress"].extend(output_text.strip().split('\n')[-5:])
+            
+            self.workflow_status[workflow_id]["status"] = "completed"
+            self.workflow_status[workflow_id]["output_file"] = output_filename
+            self.workflow_status[workflow_id]["progress"].append(f"✓ Taxonomy saved: {output_filename}")
+            self.workflow_status[workflow_id]["completed_at"] = datetime.now().isoformat()
+        else:
+            error_text = result.stderr if result.stderr else "Unknown error"
+            self.workflow_status[workflow_id]["status"] = "failed"
+            self.workflow_status[workflow_id]["progress"].append(f"✗ Error: {error_text}")
     
     def _execute_llm_enhancement(self, workflow_id, llm_config, workflow):
         """Execute LLM enhancement (runs in background thread)"""
@@ -712,7 +517,7 @@ class API:
             else:
                 self.workflow_status[workflow_id]["status"] = "error"
                 self.workflow_status[workflow_id]["error"] = result.stderr
-                self.workflow_status[workflow_id]["progress"].append(f"✗ Enhancement failed")
+                self.workflow_status[workflow_id]["progress"].append("✗ Enhancement failed")
             
             self.workflow_status[workflow_id]["completed_at"] = datetime.now().isoformat()
             
