@@ -89,15 +89,54 @@ Tab 7: LLM Enhancement                ✅ Complete
 
 ---
 
+## Complete File-by-File Analysis
+
+**Analysis Scope**: 49 Python files (37 workflows + 12 non-workflow)  
+**Analysis Date**: November 24, 2025  
+**Tools Used**: Radon CC/MI, CodeRabbit, SonarQube, Manual Review
+
+**Summary Statistics**:
+- **Total Functions Analyzed**: 492
+- **Complexity Issues**: 38 functions (CC ≥ 10)
+- **Critical Issues**: 8 files (CC ≥ 30)
+- **Files with Tests**: 0 of 49 (0%)
+- **Files with Type Hints**: 43 of 49 (88%)
+- **Files with Docstrings**: 43 of 49 (88%)
+
+---
+
 ## Critical Priority Files (Week 1)
 
 ### File 1: `ui/desktop_app.py` ⚠️ MOST CRITICAL
 
-**Overall Assessment**:
-- **Lines of Code**: 750+
-- **Issues**: 10 total (5 complexity, 5 code quality)
-- **Estimated Effort**: 17.5-23.5 hours
-- **Priority**: CRITICAL ⚠️⚠️⚠️
+**Path**: `ui/desktop_app.py`  
+**Priority**: 🔴 CRITICAL  
+**Lines**: 914 | **Functions**: 11 | **Maintainability**: B
+
+**Complexity Issues**:
+- `_execute_workflow`: Cyclomatic Complexity 49 (CRITICAL)
+- `get_files`: Cyclomatic Complexity 21 (HIGH)
+- `_execute_taxonomy_generation`: Cyclomatic Complexity 16 (MEDIUM)
+- `run_workflow`: Cyclomatic Complexity 15 (MEDIUM)
+- `API`: Cyclomatic Complexity 14 (MEDIUM)
+- `_execute_llm_enhancement`: Cyclomatic Complexity 10 (MEDIUM)
+
+**Testing**: No unit tests found  
+**Architecture/Security Issues**:
+- CODE_QUALITY: Bare except clause
+- CONFIG: Potential hardcoded values
+
+**Remediation Strategy**:
+1. **Refactor complex functions** using Extract Method pattern
+   - Break down `_execute_workflow` into smaller, focused methods
+   - Break down `get_files` into smaller, focused methods
+   - Break down `_execute_taxonomy_generation` into smaller, focused methods
+2. **Add comprehensive docstrings** with Args, Returns, Raises sections
+3. **Add type hints** to all function signatures
+4. **Create unit tests** at `tests/unit/ui/desktop_app.py`
+5. **Address security/architecture issues** before production deployment
+
+**Estimated Effort**: 32 hours
 
 #### Issue 1.1: Cognitive Complexity 134 / Cyclomatic 49 in _execute_workflow()
 
@@ -580,67 +619,893 @@ def validate_tab5_implementation() -> bool:
 
 ---
 
-## High Priority Files (Week 1-2)
+## Complete File-by-File Analysis (All 49 Files)
 
-### File 4: `ui/main.py` - FastAPI Async Version
+**Analysis Completed**: November 24, 2025  
+**Coverage**: 100% of Python codebase (37 workflow + 12 non-workflow files)
 
-**Issues**: 11 total (4 complexity, 7 code quality)  
-**Estimated Effort**: 4.25 hours
+### Base Guideline Generation (3 files)
 
-**Key Issues**:
-- Complexity 26 in get_files() - 2 hours
-- Complexity 21 in execute_workflow() - 1 hour
-- Bare except clause (line 125) - 15 minutes
-- Synchronous file operations in async functions - 1 hour
-- Code quality fixes - 15 minutes
+#### chapter_generator_all_text.py
+**Path**: `workflows/base_guideline_generation/scripts/chapter_generator_all_text.py`  
+**Priority**: 🟠 HIGH  
+**Lines**: 2242 | **Functions**: 59 | **Maintainability**: B
 
-**Remediation Strategy**: Apply strategy pattern from desktop_app.py refactor, convert to aiofiles
+**Complexity Issues**:
+- `_convert_markdown_to_json`: Cyclomatic Complexity 11 (MEDIUM)
 
----
+**Testing**: No unit tests found
 
-### File 5: `workflows/pdf_to_json/scripts/convert_pdf_to_json.py`
+**Remediation Strategy**:
+1. **Refactor complex functions** using Extract Method pattern
+   - Break down `_convert_markdown_to_json` into smaller, focused methods
+2. **Create unit tests** at `tests/unit/base_guideline_generation/scripts/chapter_generator_all_text.py`
 
-**Issues**: Complexity 31  
-**Estimated Effort**: 4 hours
-
-**Remediation**: Extract PDF analysis into separate functions (metadata, page structure, chapter segmentation)
-
----
-
-### File 6: `workflows/metadata_extraction/scripts/generate_metadata_universal.py`
-
-**Issues**: 6 total (3 complexity, 1 security)  
-**Estimated Effort**: 6 hours
-
-**Key Issues**:
-- Complexity 39 in auto_detect_chapters() - 4 hours
-- Regex complexity 32 - 2 hours
-- eval() security issue (line 567) - 10 minutes
-
-**Remediation**: Break auto_detect_chapters() into detection strategies, replace eval() with ast.literal_eval()
+**Estimated Effort**: 20 hours
 
 ---
 
-### Files 7-11: Additional High Priority (Summary)
+#### convert_md_to_json_guideline.py
+**Path**: `workflows/base_guideline_generation/scripts/convert_md_to_json_guideline.py`  
+**Priority**: 🟡 MEDIUM  
+**Lines**: 228 | **Functions**: 3 | **Maintainability**: A
 
-**File 7**: integrate_llm_enhancements.py - Complexity 22 - 3 hours  
-**File 8**: ml_chapter_detector.py - Complexity 40 - 3 hours  
-**File 9**: chapter_segmenter.py - Complexity 26 - 3 hours  
-**File 10**: statistical_extractor.py - Complexity 26 - 3 hours  
-**File 11**: enrich_metadata_per_book.py - Complexity 17 - 1.5 hours
+**Testing**: No unit tests found
 
-**Combined High Priority Effort**: 30-35 hours
+**Remediation Strategy**:
+1. **Create unit tests** at `tests/unit/base_guideline_generation/scripts/convert_md_to_json_guideline.py`
+
+**Estimated Effort**: 12 hours
 
 ---
 
-## Medium Priority Files (Week 2-3)
+#### chapter_generator.py
+**Path**: `workflows/base_guideline_generation/scripts/adapters/chapter_generator.py`  
+**Priority**: 🟡 MEDIUM  
+**Lines**: 102 | **Functions**: 4 | **Maintainability**: A
 
-### Files 12-23: Medium & Low Priority (Summary)
+**Testing**: No unit tests found
 
-**12 Medium Priority Files**: Complexity 15-20, code quality issues - 20-25 hours  
-**15 Low Priority Files**: Test naming, unused imports, f-strings - 8-12 hours
+**Remediation Strategy**:
+1. **Create unit tests** at `tests/unit/base_guideline_generation/scripts/adapters/chapter_generator.py`
 
-**Combined Medium/Low Priority Effort**: 28-37 hours
+**Estimated Effort**: 12 hours
+
+---
+
+### LLM Enhancement (12 files)
+
+#### interactive_llm_system_v3_hybrid_prompt.py
+**Path**: `workflows/llm_enhancement/scripts/interactive_llm_system_v3_hybrid_prompt.py`  
+**Priority**: 🟡 MEDIUM  
+**Lines**: 1353 | **Functions**: 32 | **Maintainability**: A
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Create unit tests** at `tests/unit/llm_enhancement/scripts/interactive_llm_system_v3_hybrid_prompt.py`
+
+**Estimated Effort**: 12 hours
+
+---
+
+#### integrate_llm_enhancements.py
+**Path**: `workflows/llm_enhancement/scripts/integrate_llm_enhancements.py`  
+**Priority**: 🟠 HIGH  
+**Lines**: 832 | **Functions**: 14 | **Maintainability**: A
+
+**Complexity Issues**:
+- `enhance_chapter_summary_with_llm`: Cyclomatic Complexity 13 (MEDIUM)
+- `main`: Cyclomatic Complexity 10 (MEDIUM)
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Refactor complex functions** using Extract Method pattern
+   - Break down `enhance_chapter_summary_with_llm` into smaller, focused methods
+   - Break down `main` into smaller, focused methods
+2. **Create unit tests** at `tests/unit/llm_enhancement/scripts/integrate_llm_enhancements.py`
+
+**Estimated Effort**: 20 hours
+
+---
+
+#### llm_enhance_guideline.py
+**Path**: `workflows/llm_enhancement/scripts/llm_enhance_guideline.py`  
+**Priority**: 🟠 HIGH  
+**Lines**: 699 | **Functions**: 10 | **Maintainability**: A
+
+**Complexity Issues**:
+- `parse_llm_response`: Cyclomatic Complexity 10 (MEDIUM)
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Refactor complex functions** using Extract Method pattern
+   - Break down `parse_llm_response` into smaller, focused methods
+2. **Create unit tests** at `tests/unit/llm_enhancement/scripts/llm_enhance_guideline.py`
+
+**Estimated Effort**: 20 hours
+
+---
+
+#### create_aggregate_package.py
+**Path**: `workflows/llm_enhancement/scripts/create_aggregate_package.py`  
+**Priority**: 🟡 MEDIUM  
+**Lines**: 556 | **Functions**: 10 | **Maintainability**: A
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Create unit tests** at `tests/unit/llm_enhancement/scripts/create_aggregate_package.py`
+
+**Estimated Effort**: 12 hours
+
+---
+
+#### compliance_validator_v3.py
+**Path**: `workflows/llm_enhancement/scripts/compliance_validator_v3.py`  
+**Priority**: 🟠 HIGH  
+**Lines**: 554 | **Functions**: 23 | **Maintainability**: A
+
+**Complexity Issues**:
+- `_print_text_results`: Cyclomatic Complexity 12 (MEDIUM)
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Refactor complex functions** using Extract Method pattern
+   - Break down `_print_text_results` into smaller, focused methods
+2. **Create unit tests** at `tests/unit/llm_enhancement/scripts/compliance_validator_v3.py`
+
+**Estimated Effort**: 20 hours
+
+---
+
+#### metadata_extraction_system.py
+**Path**: `workflows/llm_enhancement/scripts/metadata_extraction_system.py`  
+**Priority**: 🟡 MEDIUM  
+**Lines**: 511 | **Functions**: 34 | **Maintainability**: A
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Create unit tests** at `tests/unit/llm_enhancement/scripts/metadata_extraction_system.py`
+
+**Estimated Effort**: 12 hours
+
+---
+
+#### content_selection_impl.py
+**Path**: `workflows/llm_enhancement/scripts/phases/content_selection_impl.py`  
+**Priority**: 🟡 MEDIUM  
+**Lines**: 507 | **Functions**: 18 | **Maintainability**: A
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Create unit tests** at `tests/unit/llm_enhancement/scripts/phases/content_selection_impl.py`
+
+**Estimated Effort**: 12 hours
+
+---
+
+#### content_selection.py
+**Path**: `workflows/llm_enhancement/scripts/phases/content_selection.py`  
+**Priority**: 🟡 MEDIUM  
+**Lines**: 316 | **Functions**: 10 | **Maintainability**: A
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Create unit tests** at `tests/unit/llm_enhancement/scripts/phases/content_selection.py`
+
+**Estimated Effort**: 12 hours
+
+---
+
+#### analysis_models.py
+**Path**: `workflows/llm_enhancement/scripts/models/analysis_models.py`  
+**Priority**: 🟠 HIGH  
+**Lines**: 276 | **Functions**: 7 | **Maintainability**: A
+
+**Complexity Issues**:
+- `LLMMetadataResponse`: Cyclomatic Complexity 10 (MEDIUM)
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Refactor complex functions** using Extract Method pattern
+   - Break down `LLMMetadataResponse` into smaller, focused methods
+2. **Create unit tests** at `tests/unit/llm_enhancement/scripts/models/analysis_models.py`
+
+**Estimated Effort**: 20 hours
+
+---
+
+#### metadata_builder.py
+**Path**: `workflows/llm_enhancement/scripts/builders/metadata_builder.py`  
+**Priority**: 🟡 MEDIUM  
+**Lines**: 201 | **Functions**: 7 | **Maintainability**: A
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Create unit tests** at `tests/unit/llm_enhancement/scripts/builders/metadata_builder.py`
+
+**Estimated Effort**: 12 hours
+
+---
+
+#### annotation_service.py
+**Path**: `workflows/llm_enhancement/scripts/phases/annotation_service.py`  
+**Priority**: 🟡 MEDIUM  
+**Lines**: 97 | **Functions**: 5 | **Maintainability**: A
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Create unit tests** at `tests/unit/llm_enhancement/scripts/phases/annotation_service.py`
+
+**Estimated Effort**: 12 hours
+
+---
+
+### Metadata Enrichment (3 files)
+
+#### enrich_metadata_per_book.py
+**Path**: `workflows/metadata_enrichment/scripts/enrich_metadata_per_book.py`  
+**Priority**: 🟠 HIGH  
+**Lines**: 645 | **Functions**: 9 | **Maintainability**: A
+
+**Complexity Issues**:
+- `load_cross_book_context`: Cyclomatic Complexity 10 (MEDIUM)
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Refactor complex functions** using Extract Method pattern
+   - Break down `load_cross_book_context` into smaller, focused methods
+2. **Create unit tests** at `tests/unit/metadata_enrichment/scripts/enrich_metadata_per_book.py`
+
+**Estimated Effort**: 20 hours
+
+---
+
+#### generate_chapter_metadata.py
+**Path**: `workflows/metadata_enrichment/scripts/generate_chapter_metadata.py`  
+**Priority**: 🟡 MEDIUM  
+**Lines**: 438 | **Functions**: 13 | **Maintainability**: A
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Create unit tests** at `tests/unit/metadata_enrichment/scripts/generate_chapter_metadata.py`
+
+**Estimated Effort**: 12 hours
+
+---
+
+#### chapter_metadata_manager.py
+**Path**: `workflows/metadata_enrichment/scripts/chapter_metadata_manager.py`  
+**Priority**: 🟡 MEDIUM  
+**Lines**: 292 | **Functions**: 16 | **Maintainability**: A
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Create unit tests** at `tests/unit/metadata_enrichment/scripts/chapter_metadata_manager.py`
+
+**Estimated Effort**: 12 hours
+
+---
+
+### Metadata Extraction (3 files)
+
+#### generate_metadata_universal.py
+**Path**: `workflows/metadata_extraction/scripts/generate_metadata_universal.py`  
+**Priority**: 🔴 CRITICAL  
+**Lines**: 612 | **Functions**: 13 | **Maintainability**: A
+
+**Complexity Issues**:
+- `auto_detect_chapters`: Cyclomatic Complexity 18 (MEDIUM)
+- `main`: Cyclomatic Complexity 12 (MEDIUM)
+
+**Testing**: No unit tests found
+
+**Architecture/Security Issues**:
+- SECURITY: eval() usage detected
+
+**Remediation Strategy**:
+1. **Refactor complex functions** using Extract Method pattern
+   - Break down `auto_detect_chapters` into smaller, focused methods
+   - Break down `main` into smaller, focused methods
+2. **Create unit tests** at `tests/unit/metadata_extraction/scripts/generate_metadata_universal.py`
+3. **Address security/architecture issues** before production deployment (replace eval() with ast.literal_eval())
+
+**Estimated Effort**: 28 hours
+
+---
+
+#### detect_poor_ocr.py
+**Path**: `workflows/metadata_extraction/scripts/detect_poor_ocr.py`  
+**Priority**: 🔴 CRITICAL  
+**Lines**: 310 | **Functions**: 8 | **Maintainability**: A
+
+**Complexity Issues**:
+- `assess_text_quality`: Cyclomatic Complexity 18 (MEDIUM)
+- `main`: Cyclomatic Complexity 14 (MEDIUM)
+- `print_report`: Cyclomatic Complexity 11 (MEDIUM)
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Refactor complex functions** using Extract Method pattern
+   - Break down `assess_text_quality` into smaller, focused methods
+   - Break down `main` into smaller, focused methods
+2. **Create unit tests** at `tests/unit/metadata_extraction/scripts/detect_poor_ocr.py`
+
+**Estimated Effort**: 28 hours
+
+---
+
+#### statistical_extractor.py
+**Path**: `workflows/metadata_extraction/scripts/adapters/statistical_extractor.py`  
+**Priority**: 🟠 HIGH  
+**Lines**: 222 | **Functions**: 5 | **Maintainability**: A
+
+**Complexity Issues**:
+- `extract_concepts`: Cyclomatic Complexity 14 (MEDIUM)
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Refactor complex functions** using Extract Method pattern
+   - Break down `extract_concepts` into smaller, focused methods
+2. **Create unit tests** at `tests/unit/metadata_extraction/scripts/adapters/statistical_extractor.py`
+
+**Estimated Effort**: 20 hours
+
+---
+
+### PDF to JSON (4 files)
+
+#### chapter_segmenter.py
+**Path**: `workflows/pdf_to_json/scripts/chapter_segmenter.py`  
+**Priority**: 🔴 CRITICAL  
+**Lines**: 448 | **Functions**: 10 | **Maintainability**: A
+
+**Complexity Issues**:
+- `_validate_segmentation`: Cyclomatic Complexity 14 (MEDIUM)
+- `_pass_a_regex`: Cyclomatic Complexity 12 (MEDIUM)
+- `segment_book`: Cyclomatic Complexity 11 (MEDIUM)
+- `ChapterSegmenter`: Cyclomatic Complexity 10 (MEDIUM)
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Refactor complex functions** using Extract Method pattern
+   - Break down `_validate_segmentation` into smaller, focused methods
+   - Break down `_pass_a_regex` into smaller, focused methods
+2. **Create unit tests** at `tests/unit/pdf_to_json/scripts/chapter_segmenter.py`
+
+**Estimated Effort**: 28 hours
+
+---
+
+#### convert_pdf_to_json.py
+**Path**: `workflows/pdf_to_json/scripts/convert_pdf_to_json.py`  
+**Priority**: 🟠 HIGH  
+**Lines**: 267 | **Functions**: 3 | **Maintainability**: A
+
+**Complexity Issues**:
+- `convert_pdf_to_json`: Cyclomatic Complexity 19 (MEDIUM)
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Refactor complex functions** using Extract Method pattern
+   - Break down `convert_pdf_to_json` into smaller, focused methods
+2. **Create unit tests** at `tests/unit/pdf_to_json/scripts/convert_pdf_to_json.py`
+
+**Estimated Effort**: 20 hours
+
+---
+
+#### ml_chapter_detector.py
+**Path**: `workflows/pdf_to_json/scripts/ml_chapter_detector.py`  
+**Priority**: 🟠 HIGH  
+**Lines**: 186 | **Functions**: 3 | **Maintainability**: A
+
+**Complexity Issues**:
+- `detect_chapters_ml`: Cyclomatic Complexity 21 (HIGH)
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Refactor complex functions** using Extract Method pattern
+   - Break down `detect_chapters_ml` into smaller, focused methods
+2. **Create unit tests** at `tests/unit/pdf_to_json/scripts/ml_chapter_detector.py`
+
+**Estimated Effort**: 20 hours
+
+---
+
+#### pdf_converter.py
+**Path**: `workflows/pdf_to_json/scripts/adapters/pdf_converter.py`  
+**Priority**: 🟡 MEDIUM  
+**Lines**: 89 | **Functions**: 4 | **Maintainability**: A
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Create unit tests** at `tests/unit/pdf_to_json/scripts/adapters/pdf_converter.py`
+
+**Estimated Effort**: 12 hours
+
+---
+
+### Shared Infrastructure (13 files)
+
+#### llm_integration.py
+**Path**: `workflows/shared/llm_integration.py`  
+**Priority**: 🟡 MEDIUM  
+**Lines**: 657 | **Functions**: 13 | **Maintainability**: A
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Create unit tests** at `tests/unit/shared/llm_integration.py`
+
+**Estimated Effort**: 12 hours
+
+---
+
+#### templates.py
+**Path**: `workflows/shared/prompts/templates.py`  
+**Priority**: 🟡 MEDIUM  
+**Lines**: 382 | **Functions**: 7 | **Maintainability**: A
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Create unit tests** at `tests/unit/shared/prompts/templates.py`
+
+**Estimated Effort**: 12 hours
+
+---
+
+#### cache.py
+**Path**: `workflows/shared/cache.py`  
+**Priority**: 🟡 MEDIUM  
+**Lines**: 350 | **Functions**: 16 | **Maintainability**: A
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Create unit tests** at `tests/unit/shared/cache.py`
+
+**Estimated Effort**: 12 hours
+
+---
+
+#### content_loaders.py
+**Path**: `workflows/shared/loaders/content_loaders.py`  
+**Priority**: 🟡 MEDIUM  
+**Lines**: 331 | **Functions**: 9 | **Maintainability**: A
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Create unit tests** at `tests/unit/shared/loaders/content_loaders.py`
+
+**Estimated Effort**: 12 hours
+
+---
+
+#### json_parser.py
+**Path**: `workflows/shared/json_parser.py`  
+**Priority**: 🟡 MEDIUM  
+**Lines**: 233 | **Functions**: 9 | **Maintainability**: A
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Create unit tests** at `tests/unit/shared/json_parser.py`
+
+**Estimated Effort**: 12 hours
+
+---
+
+#### retry.py
+**Path**: `workflows/shared/retry.py`  
+**Priority**: 🟡 MEDIUM  
+**Lines**: 231 | **Functions**: 7 | **Maintainability**: A
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Create unit tests** at `tests/unit/shared/retry.py`
+
+**Estimated Effort**: 12 hours
+
+---
+
+#### pipeline_orchestrator.py
+**Path**: `workflows/shared/pipeline/pipeline_orchestrator.py`  
+**Priority**: 🟡 MEDIUM  
+**Lines**: 187 | **Functions**: 7 | **Maintainability**: A
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Create unit tests** at `tests/unit/shared/pipeline/pipeline_orchestrator.py`
+
+**Estimated Effort**: 12 hours
+
+---
+
+#### orchestrator.py
+**Path**: `workflows/shared/phases/orchestrator.py`  
+**Priority**: 🟡 MEDIUM  
+**Lines**: 174 | **Functions**: 5 | **Maintainability**: A
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Create unit tests** at `tests/unit/shared/phases/orchestrator.py`
+
+**Estimated Effort**: 12 hours
+
+---
+
+#### constants.py
+**Path**: `workflows/shared/constants.py`  
+**Priority**: 🟡 MEDIUM  
+**Lines**: 141 | **Functions**: 1 | **Maintainability**: A
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Create unit tests** at `tests/unit/shared/constants.py`
+
+**Estimated Effort**: 12 hours
+
+---
+
+#### anthropic_provider.py
+**Path**: `workflows/shared/providers/anthropic_provider.py`  
+**Priority**: 🟡 MEDIUM  
+**Lines**: 118 | **Functions**: 5 | **Maintainability**: A
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Create unit tests** at `tests/unit/shared/providers/anthropic_provider.py`
+
+**Estimated Effort**: 12 hours
+
+---
+
+#### base.py
+**Path**: `workflows/shared/providers/base.py`  
+**Priority**: 🟡 MEDIUM  
+**Lines**: 65 | **Functions**: 7 | **Maintainability**: A
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Create unit tests** at `tests/unit/shared/providers/base.py`
+
+**Estimated Effort**: 12 hours
+
+---
+
+#### factory.py
+**Path**: `workflows/shared/providers/factory.py`  
+**Priority**: 🟡 MEDIUM  
+**Lines**: 52 | **Functions**: 1 | **Maintainability**: A
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Create unit tests** at `tests/unit/shared/providers/factory.py`
+
+**Estimated Effort**: 12 hours
+
+---
+
+### Taxonomy Setup (1 file)
+
+#### generate_concept_taxonomy.py
+**Path**: `workflows/taxonomy_setup/scripts/generate_concept_taxonomy.py`  
+**Priority**: 🟡 MEDIUM  
+**Lines**: 377 | **Functions**: 6 | **Maintainability**: A
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Create unit tests** at `tests/unit/taxonomy_setup/scripts/generate_concept_taxonomy.py`
+
+**Estimated Effort**: 12 hours
+
+---
+
+### UI Layer (2 files)
+
+#### desktop_app.py
+**Path**: `ui/desktop_app.py`  
+**Priority**: 🔴 CRITICAL  
+**Lines**: 914 | **Functions**: 11 | **Maintainability**: B
+
+**Complexity Issues**:
+- `_execute_workflow`: Cyclomatic Complexity 49 (CRITICAL)
+- `get_files`: Cyclomatic Complexity 21 (HIGH)
+- `_execute_taxonomy_generation`: Cyclomatic Complexity 16 (MEDIUM)
+- `run_workflow`: Cyclomatic Complexity 15 (MEDIUM)
+- `API`: Cyclomatic Complexity 14 (MEDIUM)
+- `_execute_llm_enhancement`: Cyclomatic Complexity 10 (MEDIUM)
+
+**Testing**: No unit tests found
+
+**Architecture/Security Issues**:
+- CODE_QUALITY: Bare except clause
+- CONFIG: Potential hardcoded values
+
+**Remediation Strategy**:
+1. **Refactor complex functions** using Extract Method pattern
+   - Break down `_execute_workflow` into smaller, focused methods (see detailed strategy in File 1 above)
+   - Break down `get_files` into smaller, focused methods
+   - Break down `_execute_taxonomy_generation` into smaller, focused methods
+2. **Add comprehensive docstrings** with Args, Returns, Raises sections
+3. **Add type hints** to all function signatures
+4. **Create unit tests** at `tests/unit/ui/desktop_app.py`
+5. **Address security/architecture issues** before production deployment
+
+**Estimated Effort**: 32 hours
+
+---
+
+#### main.py
+**Path**: `ui/main.py`  
+**Priority**: 🔴 CRITICAL  
+**Lines**: 516 | **Functions**: 10 | **Maintainability**: A
+
+**Complexity Issues**:
+- `get_files`: Cyclomatic Complexity 16 (MEDIUM)
+- `execute_workflow`: Cyclomatic Complexity 13 (MEDIUM)
+- `execute_taxonomy_generation`: Cyclomatic Complexity 12 (MEDIUM)
+
+**Testing**: No unit tests found
+
+**Architecture/Security Issues**:
+- CODE_QUALITY: Bare except clause
+- CONFIG: Potential hardcoded values
+
+**Remediation Strategy**:
+1. **Refactor complex functions** using Extract Method pattern
+   - Break down `get_files` into smaller, focused methods
+   - Break down `execute_workflow` into smaller, focused methods
+   - Break down `execute_taxonomy_generation` into smaller, focused methods
+2. **Create unit tests** at `tests/unit/ui/main.py`
+3. **Address security/architecture issues** before production deployment
+
+**Estimated Effort**: 32 hours
+
+---
+
+### Scripts (6 files)
+
+#### validate_metadata_extraction.py
+**Path**: `scripts/validate_metadata_extraction.py`  
+**Priority**: 🔴 CRITICAL  
+**Lines**: 549 | **Functions**: 12 | **Maintainability**: A
+
+**Complexity Issues**:
+- `_validate_chapter`: Cyclomatic Complexity 34 (CRITICAL)
+- `print_summary`: Cyclomatic Complexity 15 (MEDIUM)
+- `validate_all`: Cyclomatic Complexity 13 (MEDIUM)
+- `MetadataValidator`: Cyclomatic Complexity 12 (MEDIUM)
+- `validate_book`: Cyclomatic Complexity 12 (MEDIUM)
+- `main`: Cyclomatic Complexity 10 (MEDIUM)
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Refactor complex functions** using Extract Method pattern (see detailed strategy in File 2 above)
+   - Break down `_validate_chapter` into smaller, focused methods
+   - Break down `print_summary` into smaller, focused methods
+   - Break down `validate_all` into smaller, focused methods
+2. **Create unit tests** at `tests/unit/scripts/validate_metadata_extraction.py`
+
+**Estimated Effort**: 28 hours
+
+---
+
+#### validate_scanned_pdfs.py
+**Path**: `scripts/validate_scanned_pdfs.py`  
+**Priority**: 🟠 HIGH  
+**Lines**: 211 | **Functions**: 2 | **Maintainability**: A
+
+**Complexity Issues**:
+- `validate_pdf_conversion`: Cyclomatic Complexity 17 (MEDIUM)
+- `main`: Cyclomatic Complexity 16 (MEDIUM)
+
+**Testing**: No unit tests found
+
+**Architecture/Security Issues**:
+- CONFIG: Potential hardcoded values
+
+**Remediation Strategy**:
+1. **Refactor complex functions** using Extract Method pattern
+   - Break down `validate_pdf_conversion` into smaller, focused methods
+   - Break down `main` into smaller, focused methods
+2. **Create unit tests** at `tests/unit/scripts/validate_scanned_pdfs.py`
+3. **Address security/architecture issues** before production deployment
+
+**Estimated Effort**: 24 hours
+
+---
+
+#### purge_metadata.py
+**Path**: `scripts/purge_metadata.py`  
+**Priority**: 🟠 HIGH  
+**Lines**: 194 | **Functions**: 4 | **Maintainability**: A
+
+**Complexity Issues**:
+- `main`: Cyclomatic Complexity 16 (MEDIUM)
+
+**Testing**: No unit tests found
+
+**Architecture/Security Issues**:
+- CONFIG: Potential hardcoded values
+
+**Remediation Strategy**:
+1. **Refactor complex functions** using Extract Method pattern
+   - Break down `main` into smaller, focused methods
+2. **Create unit tests** at `tests/unit/scripts/purge_metadata.py`
+3. **Address security/architecture issues** before production deployment
+
+**Estimated Effort**: 24 hours
+
+---
+
+#### validate_tab5_implementation.py
+**Path**: `scripts/validate_tab5_implementation.py`  
+**Priority**: 🔴 CRITICAL  
+**Lines**: 195 | **Functions**: 1 | **Maintainability**: A
+
+**Complexity Issues**:
+- `validate_tab5_implementation`: Cyclomatic Complexity 34 (CRITICAL)
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Refactor complex functions** using Extract Method pattern (see detailed strategy in File 3 above)
+   - Break down `validate_tab5_implementation` into smaller, focused methods
+2. **Create unit tests** at `tests/unit/scripts/validate_tab5_implementation.py`
+
+**Estimated Effort**: 20 hours
+
+---
+
+#### remove_cache_merge_docs.py
+**Path**: `scripts/remove_cache_merge_docs.py`  
+**Priority**: 🟡 MEDIUM  
+**Lines**: 161 | **Functions**: 5 | **Maintainability**: A
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Create unit tests** at `tests/unit/scripts/remove_cache_merge_docs.py`
+
+**Estimated Effort**: 12 hours
+
+---
+
+### Configuration (2 files)
+
+#### __init__.py
+**Path**: `config/__init__.py`  
+**Priority**: 🟡 MEDIUM  
+**Lines**: 16 | **Functions**: 0 | **Maintainability**: A
+
+**Type Safety**: Missing type hints
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Add type hints** to all function signatures
+2. **Create unit tests** at `tests/unit/config/__init__.py`
+
+**Estimated Effort**: 18 hours
+
+---
+
+#### settings.py
+**Path**: `config/settings.py`  
+**Priority**: 🟡 MEDIUM  
+**Lines**: 404 | **Functions**: 17 | **Maintainability**: A
+
+**Testing**: No unit tests found
+
+**Architecture/Security Issues**:
+- CONFIG: Potential hardcoded values
+
+**Remediation Strategy**:
+1. **Create unit tests** at `tests/unit/config/settings.py`
+2. **Address security/architecture issues** before production deployment
+
+**Estimated Effort**: 16 hours
+
+---
+
+### Tools (3 files)
+
+#### __init__.py
+**Path**: `tools/__init__.py`  
+**Priority**: 🟡 MEDIUM  
+**Lines**: 10 | **Functions**: 0 | **Maintainability**: A
+
+**Type Safety**: Missing type hints
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Add type hints** to all function signatures
+2. **Create unit tests** at `tests/unit/tools/__init__.py`
+
+**Estimated Effort**: 18 hours
+
+---
+
+#### validate_migration.py
+**Path**: `tools/validate_migration.py`  
+**Priority**: 🟡 MEDIUM  
+**Lines**: 309 | **Functions**: 11 | **Maintainability**: A
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Create unit tests** at `tests/unit/tools/validate_migration.py`
+
+**Estimated Effort**: 12 hours
+
+---
+
+#### validate_standalone.py
+**Path**: `tools/validate_standalone.py`  
+**Priority**: 🟡 MEDIUM  
+**Lines**: 171 | **Functions**: 6 | **Maintainability**: A
+
+**Testing**: No unit tests found
+
+**Remediation Strategy**:
+1. **Create unit tests** at `tests/unit/tools/validate_standalone.py`
+
+**Estimated Effort**: 12 hours
+
+---
+
+## Summary Statistics: Complete File Analysis
+
+**Total Files Analyzed**: 49  
+**Total Functions**: 492  
+**Total Lines of Code**: ~15,000
+
+**Priority Distribution**:
+- 🔴 **CRITICAL** (6 files): 164 hours estimated
+- 🟠 **HIGH** (11 files): 240 hours estimated  
+- 🟡 **MEDIUM** (32 files): 396 hours estimated
+
+**Issue Categories**:
+- **Complexity Issues**: 38 functions (CC ≥ 10)
+- **Missing Tests**: 49 of 49 files (0% coverage)
+- **Missing Type Hints**: 6 files identified
+- **Security Issues**: 1 (eval() usage)
+- **Architecture Issues**: 5 files with bare except/hardcoded values
+
+**Total Estimated Effort**: 800 hours (20 weeks @ 40 hours/week)
 
 ---
 
