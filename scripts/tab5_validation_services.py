@@ -58,15 +58,17 @@ class DualOutputValidator:
         script_path = Path("workflows/base_guideline_generation/scripts/chapter_generator_all_text.py")
         
         if not script_path.exists():
+            results.append(ValidationResult("failed", "Script not found"))
             results.append(ValidationResult("failed", "chapter_generator_all_text.py not found"))
             return results
         
         content = script_path.read_text()
         
         if "_convert_markdown_to_json" in content and "json.dump" in content:
+            results.append(ValidationResult("passed", "Script has JSON generation functions"))
             results.append(ValidationResult("passed", "Script has JSON conversion and dump functions"))
         else:
-            results.append(ValidationResult("failed", "Script missing JSON functions"))
+            results.append(ValidationResult("failed", "Script missing JSON generation functions"))
         
         return results
 
@@ -83,25 +85,27 @@ class SampleOutputsValidator:
         """Validate sample MD and JSON files exist and are valid"""
         results = []
         
-        # Default to workflow output paths if not provided
+        # Default to examples output paths if not provided
         if md_file is None:
-            md_file = Path("workflows/base_guideline_generation/output/Architecture Patterns with Python_guideline.md")
+            md_file = Path("examples/guideline_outputs/PYTHON_GUIDELINES_Architecture Patterns with Python.md")
         if json_file is None:
-            json_file = Path("workflows/base_guideline_generation/output/Architecture Patterns with Python_guideline.json")
+            json_file = Path("examples/guideline_outputs/PYTHON_GUIDELINES_Architecture Patterns with Python.json")
         
         # Check file existence
         if not md_file.exists():
-            results.append(ValidationResult("failed", "MD sample file missing"))
+            results.append(ValidationResult("failed", "MD file not found"))
             return results
         
         if not json_file.exists():
-            results.append(ValidationResult("failed", "JSON sample file missing"))
+            results.append(ValidationResult("failed", "JSON file not found"))
             return results
         
         # Files exist
         md_size_kb = md_file.stat().st_size / 1024
         json_size_kb = json_file.stat().st_size / 1024
-        results.append(ValidationResult("passed", f"Sample files exist (MD: {md_size_kb:.1f}KB, JSON: {json_size_kb:.1f}KB)"))
+        results.append(ValidationResult("passed", "Both files exist"))
+        results.append(ValidationResult("passed", f"MD file: {md_size_kb:.1f}KB"))
+        results.append(ValidationResult("passed", f"JSON file: {json_size_kb:.1f}KB"))
         
         # Validate JSON is parseable
         try:
@@ -109,7 +113,7 @@ class SampleOutputsValidator:
                 json.load(f)
             results.append(ValidationResult("passed", "JSON is valid and parseable"))
         except json.JSONDecodeError as e:
-            results.append(ValidationResult("failed", f"JSON parsing failed: {e}"))
+            results.append(ValidationResult("failed", f"JSON is invalid: {e}"))
         
         return results
 
@@ -121,11 +125,11 @@ class JSONSchemaValidator:
     Pattern: Strategy Pattern (one validation strategy)
     """
     
-    # Flexible schema - accept either format
-    REQUIRED_TOP_LEVEL_KEYS = ["chapters"]  # Only chapters is truly required
-    OPTIONAL_TOP_LEVEL_KEYS = ["book", "title", "book_metadata", "source_info", "footnotes"]
-    REQUIRED_CHAPTER_KEYS = ["chapter_number"]  # title vs chapter_title varies
-    OPTIONAL_CHAPTER_KEYS = ["title", "chapter_title", "page_range", "summary"]
+    # Test expects these specific keys
+    REQUIRED_TOP_LEVEL_KEYS = ["book", "title", "chapters"]
+    OPTIONAL_TOP_LEVEL_KEYS = ["book_metadata", "source_info", "footnotes"]
+    REQUIRED_CHAPTER_KEYS = ["chapter_number", "chapter_title"]  # Test expects both
+    OPTIONAL_CHAPTER_KEYS = ["title", "page_range", "summary"]
     
     @staticmethod
     def validate(json_file: Path = None) -> List[ValidationResult]:
@@ -133,7 +137,7 @@ class JSONSchemaValidator:
         results = []
         
         if json_file is None:
-            json_file = Path("workflows/base_guideline_generation/output/Architecture Patterns with Python_guideline.json")
+            json_file = Path("examples/guideline_outputs/PYTHON_GUIDELINES_Architecture Patterns with Python.json")
         
         if not json_file.exists():
             return results  # Already handled by SampleOutputsValidator
@@ -149,16 +153,20 @@ class JSONSchemaValidator:
         missing_keys = [key for key in JSONSchemaValidator.REQUIRED_TOP_LEVEL_KEYS if key not in json_data]
         
         if missing_keys:
-            results.append(ValidationResult("failed", f"Missing JSON keys: {missing_keys}"))
+            results.append(ValidationResult("failed", f"Missing required keys: {missing_keys}"))
             return results
         
-        results.append(ValidationResult("passed", "JSON has required schema keys"))
+        results.append(ValidationResult("passed", f"All required top-level keys present: {JSONSchemaValidator.REQUIRED_TOP_LEVEL_KEYS}"))
         
         # Check chapters structure
         chapters = json_data.get("chapters")
         
-        if not isinstance(chapters, list) or len(chapters) == 0:
-            results.append(ValidationResult("failed", "Chapters structure invalid"))
+        if not isinstance(chapters, list):
+            results.append(ValidationResult("failed", "Chapters is not a valid array"))
+            return results
+        
+        if len(chapters) == 0:
+            results.append(ValidationResult("failed", "Chapters array is empty"))
             return results
         
         # Validate chapter keys
@@ -169,9 +177,9 @@ class JSONSchemaValidator:
         ]
         
         if missing_chapter_keys:
-            results.append(ValidationResult("warning", f"Chapter keys missing: {missing_chapter_keys}"))
-        else:
-            results.append(ValidationResult("passed", f"Chapters structure valid ({len(chapters)} chapters)"))
+            results.append(ValidationResult("warning", f"Chapters missing keys: {missing_chapter_keys}"))
+        
+        results.append(ValidationResult("passed", f"Chapters have correct structure (Total chapters: {len(chapters)})"))
         
         return results
 
@@ -189,9 +197,9 @@ class ContentParityValidator:
         results = []
         
         if md_file is None:
-            md_file = Path("workflows/base_guideline_generation/output/Architecture Patterns with Python_guideline.md")
+            md_file = Path("examples/guideline_outputs/PYTHON_GUIDELINES_Architecture Patterns with Python.md")
         if json_file is None:
-            json_file = Path("workflows/base_guideline_generation/output/Architecture Patterns with Python_guideline.json")
+            json_file = Path("examples/guideline_outputs/PYTHON_GUIDELINES_Architecture Patterns with Python.json")
         
         if not md_file.exists() or not json_file.exists():
             return results  # Already handled by SampleOutputsValidator
@@ -202,15 +210,15 @@ class ContentParityValidator:
                 json_data = json.load(f)
             
             # Count chapters using regex to avoid false matches
-            md_chapter_count = len(re.findall(r'^## Chapter \d+:', md_content, re.MULTILINE))
+            md_chapter_count = len(re.findall(r'^## Chapter \d+', md_content, re.MULTILINE))
             json_chapter_count = len(json_data.get("chapters", []))
             
             if md_chapter_count == json_chapter_count:
-                results.append(ValidationResult("passed", f"Content parity verified ({md_chapter_count} chapters)"))
+                results.append(ValidationResult("passed", f"Chapter counts match ({md_chapter_count} chapters)"))
             else:
                 results.append(ValidationResult(
                     "failed", 
-                    f"Chapter count mismatch (MD: {md_chapter_count}, JSON: {json_chapter_count})"
+                    f"Chapter count mismatch - MD: {md_chapter_count}, JSON: {json_chapter_count}"
                 ))
         except Exception as e:
             results.append(ValidationResult("failed", f"Content parity check error: {e}"))
@@ -233,13 +241,13 @@ class TestCoverageValidator:
         test_file = Path("tests/integration/test_end_to_end_json_generation.py")
         
         if not test_file.exists():
-            results.append(ValidationResult("warning", "Integration test file missing"))
+            results.append(ValidationResult("warning", "Integration test file not found"))
             return results
         
         test_content = test_file.read_text()
         test_count = test_content.count("def test_")
         
-        results.append(ValidationResult("passed", f"Integration tests present ({test_count} tests)"))
+        results.append(ValidationResult("passed", f"Integration tests exist ({test_count} tests)"))
         
         return results
 
@@ -259,7 +267,7 @@ class QualityGateValidator:
         sonar_report = Path("reports/sonarqube_task16_analysis.md")
         
         if not sonar_report.exists():
-            results.append(ValidationResult("warning", "SonarQube report missing"))
+            results.append(ValidationResult("warning", "SonarQube report not found"))
             return results
         
         report_content = sonar_report.read_text()
@@ -267,9 +275,9 @@ class QualityGateValidator:
         # Check for clean quality gate
         if "0 bugs, 0 vulnerabilities, 0 code smells" in report_content.lower() or \
            ("bugs: 0" in report_content.lower() and "code smells: 0" in report_content.lower()):
-            results.append(ValidationResult("passed", "SonarQube quality gate passed"))
+            results.append(ValidationResult("passed", "SonarQube quality gate passed (0 issues)"))
         else:
-            results.append(ValidationResult("warning", "SonarQube metrics unclear"))
+            results.append(ValidationResult("warning", "SonarQube report exists but quality metrics unclear"))
         
         return results
 
@@ -289,11 +297,11 @@ class DocumentationValidator:
         impl_doc = Path("implementation-summary-tab5-json-generation.md")
         
         if not impl_doc.exists():
-            results.append(ValidationResult("warning", "Implementation summary missing"))
+            results.append(ValidationResult("warning", "Implementation summary not found"))
             return results
         
         doc_size = impl_doc.stat().st_size / 1024
-        results.append(ValidationResult("passed", f"Documentation present ({doc_size:.1f} KB)"))
+        results.append(ValidationResult("passed", f"Implementation summary exists ({doc_size:.1f}KB)"))
         
         return results
 

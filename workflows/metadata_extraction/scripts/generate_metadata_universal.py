@@ -433,6 +433,67 @@ def interactive_chapter_definition(book_name: str, total_pages: int) -> List[Tup
     return chapters
 
 
+def _parse_explicit_chapters(chapters_arg: str):
+    """Parse explicit chapter definitions from command-line argument.
+    
+    Args:
+        chapters_arg: String representation of chapter list
+        
+    Returns:
+        List of chapter tuples or None on error
+    """
+    try:
+        chapters = literal_eval(chapters_arg)
+        print(f"\n✅ Using {len(chapters)} explicitly defined chapters")
+        return chapters
+    except (ValueError, SyntaxError) as e:
+        print(f"❌ Error parsing chapters: {e}")
+        print("   Expected format: \"[(1, 'Title', 1, 10), (2, 'Title2', 11, 20)]\"")
+        sys.exit(1)
+
+
+def _auto_detect_chapters(generator):
+    """Auto-detect chapters and display results.
+    
+    Args:
+        generator: UniversalMetadataGenerator instance
+        
+    Returns:
+        List of detected chapter tuples
+    """
+    print("\n🔍 Auto-detecting chapters...")
+    chapters = generator.auto_detect_chapters()
+    print(f"✅ Detected {len(chapters)} chapters")
+    
+    # Show detected chapters for confirmation
+    print("\nDetected chapters:")
+    for ch_num, title, start, end in chapters:
+        print(f"  {ch_num}. {title} (pages {start}-{end})")
+    
+    return chapters
+
+
+def _get_chapter_definitions(args, generator):
+    """Get chapter definitions based on command-line arguments.
+    
+    Args:
+        args: Parsed command-line arguments
+        generator: UniversalMetadataGenerator instance
+        
+    Returns:
+        List of chapter tuples
+    """
+    if args.chapters:
+        return _parse_explicit_chapters(args.chapters)
+    elif args.auto_detect:
+        return _auto_detect_chapters(generator)
+    elif args.interactive:
+        return interactive_chapter_definition(generator.book_name, len(generator.pages))
+    else:
+        print("❌ Error: Must specify --chapters, --auto-detect, or --interactive")
+        sys.exit(1)
+
+
 def main():
     """Main entry point for CLI usage."""
     parser = argparse.ArgumentParser(
@@ -522,40 +583,8 @@ Examples:
     print(f"   Pages: {len(generator.pages)}")
     print(f"   Domain: {generator.domain}")
     
-    # Get chapter definitions
-    chapters = None
-    
-    if args.chapters:
-        # Parse explicit chapter definitions
-        # SECURITY FIX: Use ast.literal_eval() instead of eval() to prevent arbitrary code execution
-        # Per OWASP A03:2021 – Injection: Never use eval() on untrusted input
-        # literal_eval() only evaluates Python literals (strings, numbers, tuples, lists, dicts)
-        try:
-            chapters = literal_eval(args.chapters)
-            print(f"\n✅ Using {len(chapters)} explicitly defined chapters")
-        except (ValueError, SyntaxError) as e:
-            print(f"❌ Error parsing chapters: {e}")
-            print("   Expected format: \"[(1, 'Title', 1, 10), (2, 'Title2', 11, 20)]\"")
-            sys.exit(1)
-    
-    elif args.auto_detect:
-        # Auto-detect chapters
-        print("\n🔍 Auto-detecting chapters...")
-        chapters = generator.auto_detect_chapters()
-        print(f"✅ Detected {len(chapters)} chapters")
-        
-        # Show detected chapters for confirmation
-        print("\nDetected chapters:")
-        for ch_num, title, start, end in chapters:
-            print(f"  {ch_num}. {title} (pages {start}-{end})")
-    
-    elif args.interactive:
-        # Interactive mode
-        chapters = interactive_chapter_definition(generator.book_name, len(generator.pages))
-    
-    else:
-        print("❌ Error: Must specify --chapters, --auto-detect, or --interactive")
-        sys.exit(1)
+    # Get chapter definitions using extracted helper
+    chapters = _get_chapter_definitions(args, generator)
     
     if not chapters:
         print("❌ Error: No chapters defined")

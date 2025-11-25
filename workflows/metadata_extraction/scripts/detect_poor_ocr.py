@@ -217,18 +217,18 @@ class OCRQualityDetector:
         
         return reports
     
-    def print_report(self, reports: List[OCRQualityReport], show_good: bool = False):
-        """Print formatted assessment report"""
-        print("╔══════════════════════════════════════════════════════════════════════════════╗")
-        print("║                      OCR QUALITY ASSESSMENT REPORT                           ║")
-        print("╚══════════════════════════════════════════════════════════════════════════════╝\n")
-        
+    def _print_summary_stats(self, reports: List[OCRQualityReport]):
+        """Print summary statistics for OCR quality assessment."""
         needs_re_ocr = [r for r in reports if r.needs_re_ocr]
         acceptable = [r for r in reports if not r.needs_re_ocr]
         
         print(f"Total books assessed: {len(reports)}")
         print(f"  ✅ Acceptable quality: {len(acceptable)} ({len(acceptable)/len(reports)*100:.1f}%)")
         print(f"  ❌ Needs re-OCR: {len(needs_re_ocr)} ({len(needs_re_ocr)/len(reports)*100:.1f}%)")
+    
+    def _print_books_needing_reocr(self, reports: List[OCRQualityReport]):
+        """Print details of books requiring re-OCR."""
+        needs_re_ocr = [r for r in reports if r.needs_re_ocr]
         
         if needs_re_ocr:
             print("\n" + "="*80)
@@ -243,8 +243,12 @@ class OCRQualityDetector:
                 print(f"   Issues: {', '.join(report.quality_issues)}")
                 print(f"   Sample: {report.sample_content[:100]}...")
                 print()
+    
+    def _print_acceptable_books(self, reports: List[OCRQualityReport]):
+        """Print details of books with acceptable OCR quality."""
+        acceptable = [r for r in reports if not r.needs_re_ocr]
         
-        if show_good and acceptable:
+        if acceptable:
             print("\n" + "="*80)
             print("BOOKS WITH ACCEPTABLE OCR:")
             print("="*80 + "\n")
@@ -255,6 +259,18 @@ class OCRQualityDetector:
                 if report.quality_issues:
                     print(f"   Minor issues: {', '.join(report.quality_issues)}")
                 print()
+    
+    def print_report(self, reports: List[OCRQualityReport], show_good: bool = False):
+        """Print formatted assessment report (refactored: CC 11 → <10)"""
+        print("╔══════════════════════════════════════════════════════════════════════════════╗")
+        print("║                      OCR QUALITY ASSESSMENT REPORT                           ║")
+        print("╚══════════════════════════════════════════════════════════════════════════════╝\n")
+        
+        self._print_summary_stats(reports)
+        self._print_books_needing_reocr(reports)
+        
+        if show_good:
+            self._print_acceptable_books(reports)
 
 
 def _parse_arguments() -> argparse.Namespace:
