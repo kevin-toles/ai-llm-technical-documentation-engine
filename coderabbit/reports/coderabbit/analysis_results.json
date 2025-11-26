@@ -1,17 +1,17 @@
 {
-  "timestamp": "2025-11-26T10:13:48.267926",
+  "timestamp": "2025-11-26T10:25:05.061686",
   "summary": {
-    "total_issues": 120,
+    "total_issues": 107,
     "by_severity": {
       "critical": 0,
       "high": 0,
-      "medium": 118,
+      "medium": 105,
       "low": 2,
       "info": 0
     },
     "by_type": {
       "code_quality": 1,
-      "type_safety": 117,
+      "type_safety": 104,
       "security": 2
     },
     "recommendations": [
@@ -63,51 +63,6 @@
         "type": "type_safety",
         "severity": "medium",
         "file": "taxonomy_setup/scripts/generate_concept_taxonomy.py",
-        "line": 148,
-        "message": "Need type annotation for \"concept_freq\"  [var-annotated]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "taxonomy_setup/scripts/generate_concept_taxonomy.py",
-        "line": 189,
-        "message": "Need type annotation for \"categorized\"  [var-annotated]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "taxonomy_setup/scripts/generate_concept_taxonomy.py",
-        "line": 196,
-        "message": "Need type annotation for \"all_concepts\" (hint: \"all_concepts: set[<type>] = ...\")  [var-annotated]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "taxonomy_setup/scripts/generate_concept_taxonomy.py",
-        "line": 252,
-        "message": "Need type annotation for \"tier_freq\"  [var-annotated]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "taxonomy_setup/scripts/generate_concept_taxonomy.py",
-        "line": 274,
-        "message": "Need type annotation for \"taxonomy\"  [var-annotated]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "taxonomy_setup/scripts/generate_concept_taxonomy.py",
         "line": 296,
         "message": "Incompatible types in assignment (expression has type \"list[str]\", variable has type \"set[str]\")  [assignment]",
         "rule": "type-check"
@@ -146,96 +101,6 @@
         "file": "metadata_enrichment/scripts/enrich_metadata_per_book.py",
         "line": 119,
         "message": "Unsupported operand types for + (\"object\" and \"int\")  [operator]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "metadata_enrichment/scripts/chapter_metadata_manager.py",
-        "line": 29,
-        "message": "Incompatible types in assignment (expression has type \"None\", variable has type \"list[str]\")  [assignment]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "metadata_enrichment/scripts/chapter_metadata_manager.py",
-        "line": 54,
-        "message": "Incompatible types in assignment (expression has type \"Path\", variable has type \"str | None\")  [assignment]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "metadata_enrichment/scripts/chapter_metadata_manager.py",
-        "line": 56,
-        "message": "Incompatible types in assignment (expression has type \"Path\", variable has type \"str | None\")  [assignment]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "metadata_enrichment/scripts/chapter_metadata_manager.py",
-        "line": 58,
-        "message": "Unsupported left operand type for / (\"str\")  [operator]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "metadata_enrichment/scripts/chapter_metadata_manager.py",
-        "line": 58,
-        "message": "Unsupported left operand type for / (\"None\")  [operator]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "metadata_enrichment/scripts/chapter_metadata_manager.py",
-        "line": 58,
-        "message": "Left operand is of type \"str | None\"",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "metadata_enrichment/scripts/chapter_metadata_manager.py",
-        "line": 59,
-        "message": "Unsupported left operand type for / (\"str\")  [operator]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "metadata_enrichment/scripts/chapter_metadata_manager.py",
-        "line": 59,
-        "message": "Unsupported left operand type for / (\"None\")  [operator]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "metadata_enrichment/scripts/chapter_metadata_manager.py",
-        "line": 59,
-        "message": "Left operand is of type \"str | None\"",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "metadata_enrichment/scripts/chapter_metadata_manager.py",
-        "line": 195,
-        "message": "Need type annotation for \"all_books\" (hint: \"all_books: set[<type>] = ...\")  [var-annotated]",
         "rule": "type-check"
       },
       {
@@ -846,6 +711,15 @@
         "type": "type_safety",
         "severity": "medium",
         "file": "llm_enhancement/scripts/interactive_llm_system_v3_hybrid_prompt.py",
+        "line": 588,
+        "message": "Value of type \"list[str] | None\" is not indexable  [index]",
+        "rule": "type-check"
+      },
+      {
+        "tool": "mypy",
+        "type": "type_safety",
+        "severity": "medium",
+        "file": "llm_enhancement/scripts/interactive_llm_system_v3_hybrid_prompt.py",
         "line": 701,
         "message": "Need type annotation for \"excerpts\" (hint: \"excerpts: list[<type>] = ...\")  [var-annotated]",
         "rule": "type-check"
@@ -947,6 +821,15 @@
         "file": "llm_enhancement/scripts/phases/content_selection_impl.py",
         "line": 283,
         "message": "\"Settings\" has no attribute \"taxonomy\"  [attr-defined]",
+        "rule": "type-check"
+      },
+      {
+        "tool": "mypy",
+        "type": "type_safety",
+        "severity": "medium",
+        "file": "llm_enhancement/scripts/phases/content_selection_impl.py",
+        "line": 340,
+        "message": "Value of type \"list[str] | None\" is not indexable  [index]",
         "rule": "type-check"
       },
       {

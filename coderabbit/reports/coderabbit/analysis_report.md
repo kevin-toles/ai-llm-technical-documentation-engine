@@ -1,20 +1,20 @@
 # CodeRabbit Local Analysis Report
-**Generated**: 2025-11-26 10:13:48
-**Total Issues**: 120
+**Generated**: 2025-11-26 10:25:05
+**Total Issues**: 107
 
 ## Summary
 | Severity | Count |
 |----------|-------|
 | 🚨 Critical | 0 |
 | 🔴 High | 0 |
-| 🟡 Medium | 118 |
+| 🟡 Medium | 105 |
 | 🔵 Low | 2 |
 | ℹ️ Info | 0 |
 
 ## Recommendations
 - 🔧 Consider refactoring to reduce medium-severity issues
 
-## 🟡 Medium Issues (118)
+## 🟡 Medium Issues (105)
 
 ### Issue 1
 - **File**: `/Users/kevintoles/POC/llm-document-enhancer/workflows/taxonomy_setup/scripts/generate_concept_taxonomy.py`
@@ -50,53 +50,13 @@
 
 ### Issue 5
 - **File**: `taxonomy_setup/scripts/generate_concept_taxonomy.py`
-- **Line**: 148
-- **Tool**: mypy
-- **Type**: type_safety
-- **Rule**: type-check
-- **Message**: Need type annotation for "concept_freq"  [var-annotated]
-
-### Issue 6
-- **File**: `taxonomy_setup/scripts/generate_concept_taxonomy.py`
-- **Line**: 189
-- **Tool**: mypy
-- **Type**: type_safety
-- **Rule**: type-check
-- **Message**: Need type annotation for "categorized"  [var-annotated]
-
-### Issue 7
-- **File**: `taxonomy_setup/scripts/generate_concept_taxonomy.py`
-- **Line**: 196
-- **Tool**: mypy
-- **Type**: type_safety
-- **Rule**: type-check
-- **Message**: Need type annotation for "all_concepts" (hint: "all_concepts: set[<type>] = ...")  [var-annotated]
-
-### Issue 8
-- **File**: `taxonomy_setup/scripts/generate_concept_taxonomy.py`
-- **Line**: 252
-- **Tool**: mypy
-- **Type**: type_safety
-- **Rule**: type-check
-- **Message**: Need type annotation for "tier_freq"  [var-annotated]
-
-### Issue 9
-- **File**: `taxonomy_setup/scripts/generate_concept_taxonomy.py`
-- **Line**: 274
-- **Tool**: mypy
-- **Type**: type_safety
-- **Rule**: type-check
-- **Message**: Need type annotation for "taxonomy"  [var-annotated]
-
-### Issue 10
-- **File**: `taxonomy_setup/scripts/generate_concept_taxonomy.py`
 - **Line**: 296
 - **Tool**: mypy
 - **Type**: type_safety
 - **Rule**: type-check
 - **Message**: Incompatible types in assignment (expression has type "list[str]", variable has type "set[str]")  [assignment]
 
-### Issue 11
+### Issue 6
 - **File**: `pdf_to_json/scripts/ml_chapter_detector.py`
 - **Line**: 39
 - **Tool**: mypy
@@ -104,7 +64,7 @@
 - **Rule**: type-check
 - **Message**: Need type annotation for "page_keywords" (hint: "page_keywords: list[<type>] = ...")  [var-annotated]
 
-### Issue 12
+### Issue 7
 - **File**: `metadata_enrichment/scripts/enrich_metadata_per_book.py`
 - **Line**: 46
 - **Tool**: mypy
@@ -112,7 +72,7 @@
 - **Rule**: type-check
 - **Message**: Incompatible types in assignment (expression has type "None", variable has type "StatisticalExtractor")  [assignment]
 
-### Issue 13
+### Issue 8
 - **File**: `metadata_enrichment/scripts/enrich_metadata_per_book.py`
 - **Line**: 118
 - **Tool**: mypy
@@ -120,7 +80,7 @@
 - **Rule**: type-check
 - **Message**: Unsupported target for indexed assignment ("object")  [index]
 
-### Issue 14
+### Issue 9
 - **File**: `metadata_enrichment/scripts/enrich_metadata_per_book.py`
 - **Line**: 119
 - **Tool**: mypy
@@ -128,55 +88,95 @@
 - **Rule**: type-check
 - **Message**: Unsupported operand types for + ("object" and "int")  [operator]
 
-### Issue 15
-- **File**: `metadata_enrichment/scripts/chapter_metadata_manager.py`
-- **Line**: 29
+### Issue 10
+- **File**: `base_guideline_generation/scripts/chapter_generator_all_text.py`
+- **Line**: 136
 - **Tool**: mypy
 - **Type**: type_safety
 - **Rule**: type-check
-- **Message**: Incompatible types in assignment (expression has type "None", variable has type "list[str]")  [assignment]
+- **Message**: No overload variant of "get" of "dict" matches argument types "None", "dict[str, str | None]"  [call-overload]
+
+### Issue 11
+- **File**: `base_guideline_generation/scripts/chapter_generator_all_text.py`
+- **Line**: 136
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: Possible overload variants:
+
+### Issue 12
+- **File**: `base_guideline_generation/scripts/chapter_generator_all_text.py`
+- **Line**: 136
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: def get(self, str, None = ..., /) -> dict[str, str] | None
+
+### Issue 13
+- **File**: `base_guideline_generation/scripts/chapter_generator_all_text.py`
+- **Line**: 136
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: def get(self, str, dict[str, str], /) -> dict[str, str]
+
+### Issue 14
+- **File**: `base_guideline_generation/scripts/chapter_generator_all_text.py`
+- **Line**: 136
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: def [_T] get(self, str, _T, /) -> dict[str, str] | _T
+
+### Issue 15
+- **File**: `base_guideline_generation/scripts/chapter_generator_all_text.py`
+- **Line**: 397
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: Need type annotation for "matches" (hint: "matches: list[<type>] = ...")  [var-annotated]
 
 ### Issue 16
-- **File**: `metadata_enrichment/scripts/chapter_metadata_manager.py`
-- **Line**: 54
+- **File**: `base_guideline_generation/scripts/chapter_generator_all_text.py`
+- **Line**: 934
 - **Tool**: mypy
 - **Type**: type_safety
 - **Rule**: type-check
-- **Message**: Incompatible types in assignment (expression has type "Path", variable has type "str | None")  [assignment]
+- **Message**: Argument 1 to "_get_metadata_filename" has incompatible type "None"; expected "str"  [arg-type]
 
 ### Issue 17
-- **File**: `metadata_enrichment/scripts/chapter_metadata_manager.py`
-- **Line**: 56
+- **File**: `base_guideline_generation/scripts/chapter_generator_all_text.py`
+- **Line**: 1298
 - **Tool**: mypy
 - **Type**: type_safety
 - **Rule**: type-check
-- **Message**: Incompatible types in assignment (expression has type "Path", variable has type "str | None")  [assignment]
+- **Message**: Incompatible types in assignment (expression has type "list[Never]", variable has type "str")  [assignment]
 
 ### Issue 18
-- **File**: `metadata_enrichment/scripts/chapter_metadata_manager.py`
-- **Line**: 58
+- **File**: `base_guideline_generation/scripts/chapter_generator_all_text.py`
+- **Line**: 1299
 - **Tool**: mypy
 - **Type**: type_safety
 - **Rule**: type-check
-- **Message**: Unsupported left operand type for / ("str")  [operator]
+- **Message**: "str" has no attribute "append"  [attr-defined]
 
 ### Issue 19
-- **File**: `metadata_enrichment/scripts/chapter_metadata_manager.py`
-- **Line**: 58
+- **File**: `base_guideline_generation/scripts/chapter_generator_all_text.py`
+- **Line**: 1300
 - **Tool**: mypy
 - **Type**: type_safety
 - **Rule**: type-check
-- **Message**: Unsupported left operand type for / ("None")  [operator]
+- **Message**: "str" has no attribute "append"  [attr-defined]
 
 ### Issue 20
-- **File**: `metadata_enrichment/scripts/chapter_metadata_manager.py`
-- **Line**: 58
+- **File**: `base_guideline_generation/scripts/chapter_generator_all_text.py`
+- **Line**: 1305
 - **Tool**: mypy
 - **Type**: type_safety
 - **Rule**: type-check
-- **Message**: Left operand is of type "str | None"
+- **Message**: "str" has no attribute "append"  [attr-defined]
 
-... and 98 more issues
+... and 85 more issues
 
 ## 🔵 Low Issues (2)
 

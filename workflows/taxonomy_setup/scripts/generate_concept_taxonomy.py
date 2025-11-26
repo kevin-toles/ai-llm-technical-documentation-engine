@@ -145,8 +145,8 @@ def extract_concepts_from_book(book_path: Path) -> Tuple[Set[str], Dict[str, int
     """
     book_data = load_book_json(book_path)
     
-    concept_freq = Counter()
-    all_concepts = set()
+    concept_freq: Counter[str] = Counter()
+    all_concepts: Set[str] = set()
     
     # Detect file type and extract concepts accordingly
     if isinstance(book_data, list):
@@ -186,14 +186,14 @@ def categorize_concepts_by_tier(
     
     Uses frequency analysis to determine tier membership.
     """
-    categorized = {
+    categorized: Dict[str, List[str]] = {
         "architecture": [],
         "implementation": [],
         "practices": []
     }
     
     # Collect all unique concepts across all tiers
-    all_concepts = set()
+    all_concepts: Set[str] = set()
     for tier_freq in tier_concepts.values():
         all_concepts.update(tier_freq.keys())
     
@@ -249,8 +249,8 @@ def generate_taxonomy(tier_books: Dict[str, List[str]], output_name: str) -> Non
         print(f"\n📚 Processing {tier_name} tier ({len(book_files)} books)...")
         tier_book_counts[tier_name] = len(book_files)
         
-        tier_freq = Counter()
-        tier_concepts_set = set()
+        tier_freq: Counter[str] = Counter()
+        tier_concepts_set: Set[str] = set()
         
         for book_file in book_files:
             book_path = JSON_DIR / book_file
@@ -271,7 +271,7 @@ def generate_taxonomy(tier_books: Dict[str, List[str]], output_name: str) -> Non
     categorized = categorize_concepts_by_tier(tier_concepts, tier_book_counts)
     
     # Build taxonomy structure
-    taxonomy = {
+    taxonomy: Dict[str, Any] = {
         "tiers": {}
     }
     

@@ -12,7 +12,7 @@ Usage:
 
 import json
 from pathlib import Path
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Union
 from dataclasses import dataclass
 
 
@@ -26,7 +26,7 @@ class ChapterInfo:
     page_count: int
     keywords: List[str]
     summary: str = ""  # 2-3 sentence chapter summary
-    concepts: List[str] = None  # Key concepts covered in chapter
+    concepts: Optional[List[str]] = None  # Key concepts covered in chapter
     
     def __post_init__(self):
         """Ensure concepts is always a list"""
@@ -49,11 +49,12 @@ class ChapterMetadataManager:
     3. Existing JSON metadata (chapters field in book JSONs)
     """
     
-    def __init__(self, scripts_dir: Optional[str] = None):
+    def __init__(self, scripts_dir: Optional[Union[str, Path]] = None):
         if scripts_dir is None:
             scripts_dir = Path(__file__).parent
-        else:
+        elif isinstance(scripts_dir, str):
             scripts_dir = Path(scripts_dir)
+        # else: scripts_dir is already a Path
         
         self.cache_file = scripts_dir / "chapter_metadata_cache.json"
         self.manual_file = scripts_dir / "chapter_metadata_manual.json"
@@ -192,12 +193,12 @@ class ChapterMetadataManager:
     
     def get_all_books_with_chapters(self) -> List[str]:
         """Get list of all book filenames that have chapter metadata"""
-        all_books = set()
+        all_books: set[str] = set()
         
         all_books.update(self.auto_detected.keys())
         all_books.update(self.manual_metadata.keys())
         
-        return sorted(list(all_books))
+        return sorted(all_books)
     
     def format_for_llm_prompt(self, filename: str, include_keywords: bool = False) -> str:
         """
