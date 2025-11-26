@@ -27,6 +27,7 @@ class DuplicateFilterStrategy:
     """
     
     def __init__(self):
+        # Empty init - no state needed for duplicate filtering
         pass
     
     def filter(self, candidate_chapters: List[Tuple]) -> List[Tuple]:

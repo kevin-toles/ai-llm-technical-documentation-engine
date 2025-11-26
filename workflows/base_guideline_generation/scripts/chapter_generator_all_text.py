@@ -663,15 +663,16 @@ def _build_relationship_annotation(relationship: str, book_disp: str, concepts: 
     return annotation
 
 
-def build_extensive_annotation(book: str, concepts: List[str], relationship: str, count: int, 
-                              content: str = "", page_num: int = 0, primary_content: str = "") -> str:
+def build_extensive_annotation(book: str, concepts: List[str], relationship: str, count: int) -> str:
     """
     Build comprehensive annotation explaining the cross-reference value.
-    Uses LLM to compare how primary text vs companion book treat the same concepts.
+    Tab 5: Statistical/template-based annotations only (no LLM).
     
-    CRITICAL: Annotations must be pedagogically valuable even for false positives.
-    When secondary source lacks technical content, provide meta-commentary about
-    the cross-reference system itself.
+    Args:
+        book: Book identifier
+        concepts: List of shared concepts
+        relationship: Type of relationship (implementation/architectural/etc)
+        count: Number of pages with matches
     """
     book_disp = book.replace("_Content", "").replace("_", " ")
     
@@ -776,16 +777,17 @@ def _extract_fallback_summary(content: str) -> str:
     return content[:400].strip() + ("..." if len(content) > 400 else "")
 
 
-def generate_cross_reference_summary(concepts: List[str], content: str, relationship: str,
-                                    book_name: str = "", page_num: int = 0) -> str:
+def generate_cross_reference_summary(concepts: List[str], content: str, relationship: str) -> str:
     """
     Generate a comprehensive summary of how companion book addresses the concepts.
     Returns a 2-3 sentence summary, NOT an excerpt.
     
-    If LLM is available, uses semantic analysis to generate actual content summaries.
-    Otherwise falls back to extracting actual content.
-    
     Tab 5: Statistical extraction only (no LLM - architecture boundary)
+    
+    Args:
+        concepts: List of concepts to summarize
+        content: Text content to extract from
+        relationship: Type of relationship for context
     """
     # Tab 5: Extract from content using statistical methods (no LLM)
     lines = [line.strip() for line in content.split("\n") if line.strip()]
@@ -1067,10 +1069,7 @@ def _build_companion_book_reference(book: str, pages: List[Dict[str, Any]],
     concepts = m.get("concepts", [])
     
     relationship = analyze_concept_relationship(concepts, content)
-    summary = generate_cross_reference_summary(
-        concepts, content, relationship,
-        book_name=book, page_num=page_num
-    )
+    summary = generate_cross_reference_summary(concepts, content, relationship)
     
     lines = []
     lines.append(f"**{book_disp}** *(p.{page_num})*:")
@@ -1079,9 +1078,7 @@ def _build_companion_book_reference(book: str, pages: List[Dict[str, Any]],
     lines.append(f"[^{n}]")
     lines.append("")
     lines.append(emit_annotation(
-        build_extensive_annotation(book, concepts, relationship, len(pages), 
-                                 content=content, page_num=page_num, 
-                                 primary_content=primary_content)
+        build_extensive_annotation(book, concepts, relationship, len(pages))
     ))
     lines.append("")
     
@@ -1347,30 +1344,20 @@ def emit_footnotes(foots: List[Dict[str,Any]]) -> str:
 # Reference: Fluent Python Ch. 7 (Functions as First-Class Objects)
 # ============================================================================
 
-def _extract_chapter_concepts(
-    chapter_text: str,
-    chapter_num: int,
-    chapter_title: str,
-    start_page: int,
-    end_page: int
-) -> Set[str]:
+def _extract_chapter_concepts(chapter_text: str) -> Set[str]:
     """
-    Extract concepts from chapter using keyword matching and optional LLM.
+    Extract concepts from chapter using keyword matching (YAKE + Summa).
     
-    Complexity reduced by extracting from _process_single_chapter.
+    Tab 5: Statistical methods only (no LLM - architecture boundary)
     
     Args:
         chapter_text: Full text of the chapter
-        chapter_num: Chapter number
-        chapter_title: Chapter title
-        start_page: Start page number
-        end_page: End page number
         
     Returns:
         Set of concept strings
         
     Reference:
-        - Fluent Python Ch. 7: Extract function to reduce complexity
+        - Architecture Patterns Ch. 4: Single Responsibility Principle
     """
     # Phase 1: Keyword matching
     # Extract concepts using keyword matching (YAKE + Summa)
@@ -1383,21 +1370,15 @@ def _extract_chapter_concepts(
 
 def _find_cross_references(
     all_text: str,
-    chapter_num: int,
-    chapter_title: str,
-    chapter_concepts: Set[str],
     companions: Dict[str, Dict[str, Any]]
 ) -> List[Any]:
     """
-    Find cross-references to companion books using keyword matching and optional LLM.
+    Find cross-references to companion books using keyword/concept overlap.
     
-    Complexity reduced by extracting from _process_single_chapter.
+    Tab 5: Statistical methods only (YAKE + TF-IDF) - no LLM.
     
     Args:
         all_text: Full text to search
-        chapter_num: Chapter number
-        chapter_title: Chapter title
-        chapter_concepts: Set of extracted concepts
         companions: Dictionary of companion book data
         
     Returns:
@@ -1572,9 +1553,7 @@ def _process_single_chapter(
     
     # Extract concepts (keyword + optional LLM)
     chapter_text = "\n".join([p.get("content", "") for p in chapter_pages])
-    chapter_concepts = _extract_chapter_concepts(
-        chapter_text, chapter_num, chapter_title, start_page, end_page
-    )
+    chapter_concepts = _extract_chapter_concepts(chapter_text)
     
     concepts, global_footnote_num, new_foots = build_concept_sections(
         primary, chapter_pages, global_footnote_num, chapter_num,
@@ -1593,9 +1572,7 @@ def _process_single_chapter(
         chapter_footnotes.append(tpm_foot)
     
     # Find cross-references (keyword + optional LLM)
-    xmatches = _find_cross_references(
-        all_text, chapter_num, chapter_title, chapter_concepts, companions
-    )
+    xmatches = _find_cross_references(all_text, companions)
     
     # See also - with comprehensive summaries and self-references
     see_also, global_footnote_num, sal_foots = build_see_also(
@@ -1668,7 +1645,7 @@ def _extract_concept_data(chapter_content: str) -> List[Dict[str, Any]]:
     concepts = []
     # Fixed regex: Annotation should stop at next heading (####, ###) or end of string
     # Using non-greedy match and proper lookahead
-    concept_pattern = r'#### \*\*(.+?)\*\* \*\(p\.(\d+)\)\*\n+\*\*Verbatim Educational Excerpt\*\*.*?\n```\n(.*?)\n```\n.*?\*\*Annotation:\*\* (.+?)(?=\n####|\n###|\Z)'
+    concept_pattern = r'#### \*\*(.+?)\*\* \*\(p\.(\d+)\)\*\n+\*\*Verbatim Educational Excerpt\*\*.*?\n```\n(.*?)\n```\n.*?\*\*Annotation:\*\* (.+)(?=\n####|\n###|\Z)'
     
     for concept_match in re.finditer(concept_pattern, chapter_content, re.DOTALL):
         concept = {

@@ -161,8 +161,10 @@ class TestMainFunctionCurrentBehavior:
         # Execute
         try:
             main()
-        except SystemExit:
-            pass  # main() calls sys.exit()
+        except SystemExit as e:
+            # Capture exit code and reraise
+            assert e.code == 1
+            raise
         
         # Verify generator was instantiated
         mock_generator_class.assert_called_once()

@@ -141,7 +141,7 @@ class AsyncWorkflowExecutionService:
                 cwd=str(self.base_dir)
             )
             
-            stdout, stderr = await process.communicate()
+            _, stderr = await process.communicate()
             
             return {
                 "success": process.returncode == 0,

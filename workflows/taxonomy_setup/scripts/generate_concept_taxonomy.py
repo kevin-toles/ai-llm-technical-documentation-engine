@@ -232,7 +232,7 @@ def generate_taxonomy(tier_books: Dict[str, List[str]], output_name: str) -> Non
         tier_books: Dict mapping tier name to list of book filenames
         output_name: Name for output taxonomy file
     """
-    print(f"\n🔍 Analyzing books for taxonomy generation...")
+    print("\n🔍 Analyzing books for taxonomy generation...")
     print(f"Output: {output_name}")
     
     # Track concepts and frequencies per tier
@@ -265,7 +265,7 @@ def generate_taxonomy(tier_books: Dict[str, List[str]], output_name: str) -> Non
         print(f"  ✓ Found {len(tier_concepts_set)} unique concepts")
     
     # Categorize concepts by tier
-    print(f"\n🎯 Categorizing concepts by tier...")
+    print("\n🎯 Categorizing concepts by tier...")
     categorized = categorize_concepts_by_tier(tier_concepts, tier_book_counts)
     
     # Build taxonomy structure
@@ -296,7 +296,7 @@ def generate_taxonomy(tier_books: Dict[str, List[str]], output_name: str) -> Non
             info = tier_info[tier_name]
             taxonomy["tiers"][tier_name] = {
                 "priority": info["priority"],
-                "concepts": sorted(list(set(concepts)))  # Deduplicate and sort
+                "concepts": sorted(concepts)  # Already deduplicated by set
             }
             print(f"  {info['name']}: {len(concepts)} concepts")
     
@@ -353,7 +353,7 @@ def main():
         # Use first book's name for taxonomy filename
         # makinggames.json → makinggames_taxonomy.json
         first_book = all_books[0]
-        base_name = first_book.replace('.json', '')
+        base_name = first_book.replace(JSON_EXT, '')
         args.output = f"{base_name}_taxonomy.json"
         print(f"📝 Auto-generated output filename: {args.output}")
     

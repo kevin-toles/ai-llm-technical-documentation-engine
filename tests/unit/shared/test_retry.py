@@ -86,7 +86,7 @@ class TestRetryConfig:
         )
         
         # Act & Assert
-        assert config.get_delay(0) == 1.0  # 1 * 2^0 = 1
+        assert math.isclose(config.get_delay(0), 1.0, abs_tol=1e-9)
         assert config.get_delay(1) == 2.0  # 1 * 2^1 = 2
         assert config.get_delay(2) == 4.0  # 1 * 2^2 = 4
         assert config.get_delay(3) == 8.0  # 1 * 2^3 = 8

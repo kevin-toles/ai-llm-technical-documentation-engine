@@ -219,4 +219,4 @@ class TestPrintReportCurrentBehavior:
         captured = capsys.readouterr()
         assert "OCR QUALITY ASSESSMENT REPORT" in captured.out
         assert "Bad_Book" in captured.out
-        assert "Good_Book" not in captured.out  # show_good=False
+        assert "Good_Book" not in captured.out

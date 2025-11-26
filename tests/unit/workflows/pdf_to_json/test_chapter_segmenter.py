@@ -87,7 +87,7 @@ def sample_pages_toc():
     # Real chapter
     pages.append({"page_number": 2, "content": "Chapter 1: Introduction\n" + "Real content. " * 100})
     for i in range(3, 10):
-        pages.append({"page_number": i, "content": f"Chapter 1 content. " * 50})
+        pages.append({"page_number": i, "content": "Chapter 1 content. " * 50})
     
     return pages
 
@@ -373,7 +373,7 @@ class TestPassCSynthetic:
         chapters = segmenter._pass_c_synthetic(pages, page_texts, page_numbers)
         
         # Check reasonable chapter count
-        expected_chapters = num_pages // segmenter.config.target_pages
+        _ = num_pages // segmenter.config.target_pages  # Expected chapters count
         assert len(chapters) >= segmenter.config.min_chapters
         assert len(chapters) <= segmenter.config.max_chapters
         
@@ -404,7 +404,7 @@ class TestPassCSynthetic:
         # Should prefer splitting near page 11 due to heading
         boundaries = [ch.start_page for ch in chapters[1:]]
         if 11 in boundaries or 10 in boundaries or 12 in boundaries:
-            assert True  # Boundary found near heading
+            pass  # Boundary found near heading
         else:
             # Fallback: at least created valid chapters
             assert len(chapters) >= 1

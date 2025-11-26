@@ -31,7 +31,7 @@ def parse_markdown_chapter(chapter_text: str) -> Optional[Dict[str, Any]]:
     ...
     """
     # Extract chapter number and title
-    chapter_match = re.search(r'^## Chapter (\d+):\s*(.+?)$', chapter_text, re.MULTILINE)
+    chapter_match = re.search(r'^## Chapter (\d+):\s*(.+)$', chapter_text, re.MULTILINE)
     if not chapter_match:
         return None
     
@@ -49,7 +49,7 @@ def parse_markdown_chapter(chapter_text: str) -> Optional[Dict[str, Any]]:
     
     # Extract chapter summary
     summary_match = re.search(
-        r'### Chapter Summary\s*\n(.+?)(?=\n###|\n##|$)',
+        r'### Chapter Summary\s*\n(.+)(?=\n###|\n##|$)',
         chapter_text,
         re.DOTALL
     )
@@ -60,7 +60,7 @@ def parse_markdown_chapter(chapter_text: str) -> Optional[Dict[str, Any]]:
     # Extract concepts from Concept-by-Concept Breakdown
     concepts = []
     concept_section = re.search(
-        r'### Concept-by-Concept Breakdown\s*\n(.+?)(?=\n##|$)',
+        r'### Concept-by-Concept Breakdown\s*\n(.+)(?=\n##|$)',
         chapter_text,
         re.DOTALL
     )
@@ -116,7 +116,7 @@ def convert_markdown_to_json(md_path: Path, output_dir: Path) -> Path:
         book_name = filename
     
     # Extract title from first line
-    title_match = re.search(r'^#\s+(.+?)$', content, re.MULTILINE)
+    title_match = re.search(r'^#\s+(.+)$', content, re.MULTILINE)
     title = title_match.group(1) if title_match else f"Comprehensive Guidelines — {book_name}"
     
     # Extract source info

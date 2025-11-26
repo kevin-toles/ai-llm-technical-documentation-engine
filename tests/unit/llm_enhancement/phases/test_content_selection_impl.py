@@ -125,7 +125,7 @@ class TestMockMetadataResponse:
         
         assert isinstance(result, LLMMetadataResponse)
         # Should still return valid response with default requests
-        assert len(result.content_requests) >= 0
+        assert len(result.content_requests) == 0  # No content requests by default
     
     def test_mock_response_includes_validation_summary(self, content_service):
         """Test that mock response includes validation summary."""

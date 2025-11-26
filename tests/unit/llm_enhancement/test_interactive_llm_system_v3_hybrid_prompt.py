@@ -196,7 +196,7 @@ class TestLazyLoadRequestedChapters:
                     {"page": 10, "text": "Page content"}
                 ]) as mock_load_pages:
                     
-                    result = orchestrator._lazy_load_requested_chapters(content_requests)
+                    _ = orchestrator._lazy_load_requested_chapters(content_requests)
                     
                     # Should fall back to page-level loading
                     assert mock_load_pages.called
@@ -382,7 +382,7 @@ class TestMockMetadataResponse:
         
         assert isinstance(result, LLMMetadataResponse)
         # Should still generate some default requests
-        assert len(result.content_requests) >= 0
+        assert len(result.content_requests) > 0  # Should have content requests
     
     def test_mock_response_rationale_includes_concepts(self, orchestrator):
         """Test that content request rationales reference concepts."""
