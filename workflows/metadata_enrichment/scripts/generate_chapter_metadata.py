@@ -31,11 +31,11 @@ PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 # Configuration management (12-Factor App pattern)
-from config.settings import settings
+from config.settings import settings  # noqa: E402
 
 # Import StatisticalExtractor for domain-agnostic metadata extraction
 # Per DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN Part 1.4
-from workflows.metadata_extraction.scripts.adapters.statistical_extractor import StatisticalExtractor
+from workflows.metadata_extraction.scripts.adapters.statistical_extractor import StatisticalExtractor  # noqa: E402
 
 # Global extractor instance (initialized once, reused for all chapters)
 STATISTICAL_EXTRACTOR = StatisticalExtractor()

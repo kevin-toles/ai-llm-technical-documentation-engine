@@ -1192,15 +1192,13 @@ Prioritize books that provide the most direct, substantial coverage of this chap
     def _calculate_request_priority(
         self,
         matched_concepts: set,
-        total_concepts: int,
-        book_name: str  # noqa: ARG002 - kept for API compatibility
+        total_concepts: int
     ) -> int:
         """Calculate priority for a content request.
         
         Args:
             matched_concepts: Set of concepts matched in this book
             total_concepts: Total number of concepts being searched
-            book_name: Name of the book (kept for API compatibility)
             
         Returns:
             Priority score (1-5) based on match strength
@@ -1249,7 +1247,7 @@ Prioritize books that provide the most direct, substantial coverage of this chap
         for _, matched_concepts in sorted_matches[:8]:
             all_matched_concepts.update(matched_concepts)
         
-        priority = self._calculate_request_priority(all_matched_concepts, len(concepts), book_name)
+        priority = self._calculate_request_priority(all_matched_concepts, len(concepts))
         
         rationale = f"Python keyword matches found for: {', '.join(list(all_matched_concepts)[:5])}"
         if len(all_matched_concepts) > 5:

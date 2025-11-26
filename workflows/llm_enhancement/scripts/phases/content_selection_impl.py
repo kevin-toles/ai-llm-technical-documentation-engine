@@ -409,22 +409,15 @@ LIMIT: Top {settings.constraints.max_content_requests} most relevant books only.
     def _calculate_request_priority(
         self,
         matched_concepts: set,
-        total_concepts: int,
-        book_name: str
+        total_concepts: int
     ) -> int:
         """Calculate priority for a content request."""
         match_strength = len(matched_concepts) / max(total_concepts, 1)
         base_priority = min(5, int(match_strength * 5) + 1)
         
-        try:
-            from book_taxonomy import BOOK_REGISTRY
-            if book_name in BOOK_REGISTRY:
-                tier = BOOK_REGISTRY[book_name].tier.value
-                if "Architecture" in tier:
-                    base_priority = min(5, base_priority + 1)
-        except Exception:
-            # Deprecated book_taxonomy module - ignore if not available
-            pass
+        # Deprecated: book_taxonomy tier-based priority boost removed
+        # Previously attempted to boost priority for Architecture-tier books
+        # Now using pure concept overlap for priority calculation
         
         return base_priority
     
@@ -452,7 +445,7 @@ LIMIT: Top {settings.constraints.max_content_requests} most relevant books only.
         for _, matched_concepts in sorted_matches[:8]:
             all_matched_concepts.update(matched_concepts)
         
-        priority = self._calculate_request_priority(all_matched_concepts, len(concepts), book_name)
+        priority = self._calculate_request_priority(all_matched_concepts, len(concepts))
         
         rationale = f"Keyword matches: {', '.join(list(all_matched_concepts)[:5])}"
         

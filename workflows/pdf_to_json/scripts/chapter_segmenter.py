@@ -33,14 +33,14 @@ PROJECT_ROOT = Path(__file__).parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 # Config and statistical extractor
-from config.settings import ChapterSegmentationConfig
-from workflows.metadata_extraction.scripts.adapters.statistical_extractor import StatisticalExtractor
+from config.settings import ChapterSegmentationConfig  # noqa: E402
+from workflows.metadata_extraction.scripts.adapters.statistical_extractor import StatisticalExtractor  # noqa: E402
 
 # Data models
-from workflows.pdf_to_json.scripts.chapter_models import Chapter
+from workflows.pdf_to_json.scripts.chapter_models import Chapter  # noqa: E402
 
 # Service layer imports (refactored for reduced complexity)
-from workflows.pdf_to_json.scripts.chapter_segmentation_services import (
+from workflows.pdf_to_json.scripts.chapter_segmentation_services import (  # noqa: E402
     SegmentationValidator,
     BoundaryScorer,
     TFIDFAnalyzer,

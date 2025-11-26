@@ -34,10 +34,10 @@ PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 # Configuration management (Microservices Up and Running Ch. 7 - 12-Factor Config)
-from config.settings import settings
+from config.settings import settings  # noqa: E402
 
 # Import statistical chapter segmenter (NEW - replaces detect_chapters_intelligent)
-from workflows.pdf_to_json.scripts.chapter_segmenter import ChapterSegmenter
+from workflows.pdf_to_json.scripts.chapter_segmenter import ChapterSegmenter  # noqa: E402
 
 
 def _extract_pdf_metadata(doc, pdf_path: Path) -> Dict:

@@ -43,19 +43,19 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 # Import StatisticalExtractor for domain-agnostic metadata extraction
 # Per DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN Part 1.3
-from workflows.metadata_extraction.scripts.adapters.statistical_extractor import StatisticalExtractor
+from workflows.metadata_extraction.scripts.adapters.statistical_extractor import StatisticalExtractor  # noqa: E402
 
 # Import chapter detection strategies for Strategy Pattern (TDD Iteration 3)
 # Reduces auto_detect_chapters() complexity from CC 18 to <10
-from workflows.metadata_extraction.scripts.strategies.predefined_strategy import PreDefinedStrategy
-from workflows.metadata_extraction.scripts.strategies.regex_pattern_strategy import RegexPatternStrategy
-from workflows.metadata_extraction.scripts.strategies.yake_validation_strategy import YAKEValidationStrategy
-from workflows.metadata_extraction.scripts.strategies.toc_filter_strategy import TOCFilterStrategy
-from workflows.metadata_extraction.scripts.strategies.duplicate_filter_strategy import DuplicateFilterStrategy
+from workflows.metadata_extraction.scripts.strategies.predefined_strategy import PreDefinedStrategy  # noqa: E402
+from workflows.metadata_extraction.scripts.strategies.regex_pattern_strategy import RegexPatternStrategy  # noqa: E402
+from workflows.metadata_extraction.scripts.strategies.yake_validation_strategy import YAKEValidationStrategy  # noqa: E402
+from workflows.metadata_extraction.scripts.strategies.toc_filter_strategy import TOCFilterStrategy  # noqa: E402
+from workflows.metadata_extraction.scripts.strategies.duplicate_filter_strategy import DuplicateFilterStrategy  # noqa: E402
 
 # Try to use settings, fallback to defaults
 try:
-    from config.settings import settings
+    from config.settings import settings  # noqa: E402
     DEFAULT_JSON_DIR = settings.paths.textbooks_json_dir
     DEFAULT_METADATA_DIR = settings.paths.metadata_dir
 except ImportError:

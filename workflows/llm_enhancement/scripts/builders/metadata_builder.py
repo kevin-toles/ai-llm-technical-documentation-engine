@@ -46,7 +46,7 @@ class MetadataBuilder:
         Source: interactive_llm_system_v3_hybrid_prompt.py lines 1029-1055
         """
         # TAXONOMY_AVAILABLE = False per line 16
-        # TODO(future): Integrate with data-driven taxonomy from generate_concept_taxonomy.py  # noqa: S101
+        # NOTE: Future enhancement - integrate with data-driven taxonomy from generate_concept_taxonomy.py
         return [], {}
     
     def _calculate_relevance_boosts(

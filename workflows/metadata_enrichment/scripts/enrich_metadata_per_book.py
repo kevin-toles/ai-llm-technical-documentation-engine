@@ -25,9 +25,8 @@ import argparse
 import json
 import sys
 from pathlib import Path
-from typing import List, Dict, Any, Tuple, Optional
+from typing import List, Dict, Any, Tuple
 from datetime import datetime
-from collections import defaultdict
 
 # scikit-learn imports for TF-IDF and cosine similarity
 from sklearn.feature_extraction.text import TfidfVectorizer

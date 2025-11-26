@@ -19,7 +19,7 @@ import json
 PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from workflows.metadata_extraction.scripts.adapters.statistical_extractor import StatisticalExtractor
+from workflows.metadata_extraction.scripts.adapters.statistical_extractor import StatisticalExtractor  # noqa: E402
 
 # Constants
 UNTITLED_CHAPTER = "Untitled Chapter"

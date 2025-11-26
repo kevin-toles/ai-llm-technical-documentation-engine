@@ -1,40 +1,99 @@
 {
-  "timestamp": "2025-11-26T00:27:46.424104",
+  "timestamp": "2025-11-26T00:42:47.657882",
   "summary": {
-    "total_issues": 42,
+    "total_issues": 48,
     "by_severity": {
       "critical": 0,
-      "high": 1,
-      "medium": 38,
-      "low": 3,
+      "high": 0,
+      "medium": 46,
+      "low": 2,
       "info": 0
     },
     "by_type": {
-      "complexity": 1,
-      "code_quality": 37,
+      "code_quality": 45,
       "type_safety": 1,
-      "security": 3
+      "security": 2
     },
     "recommendations": [
-      "\u26a1 Fix high-severity issues before deployment",
       "\ud83d\udd27 Consider refactoring to reduce medium-severity issues"
     ]
   },
   "issues": {
     "critical": [],
-    "high": [
-      {
-        "tool": "radon",
-        "type": "complexity",
-        "severity": "high",
-        "file": "pdf_to_json/scripts/ml_chapter_detector.py",
-        "line": 199,
-        "message": "High complexity: 17 (threshold: 10)",
-        "rule": "complexity",
-        "complexity": 17
-      }
-    ],
+    "high": [],
     "medium": [
+      {
+        "tool": "ruff",
+        "type": "code_quality",
+        "severity": "medium",
+        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/llm_enhancement/scripts/phases/content_selection_impl.py",
+        "line": 414,
+        "message": "Expected a newline after line continuation character",
+        "rule": "invalid-syntax"
+      },
+      {
+        "tool": "ruff",
+        "type": "code_quality",
+        "severity": "medium",
+        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/llm_enhancement/scripts/phases/content_selection_impl.py",
+        "line": 414,
+        "message": "missing closing quote in string literal",
+        "rule": "invalid-syntax"
+      },
+      {
+        "tool": "ruff",
+        "type": "code_quality",
+        "severity": "medium",
+        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/llm_enhancement/scripts/phases/content_selection_impl.py",
+        "line": 415,
+        "message": "Unexpected indentation",
+        "rule": "invalid-syntax"
+      },
+      {
+        "tool": "ruff",
+        "type": "code_quality",
+        "severity": "medium",
+        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/llm_enhancement/scripts/phases/content_selection_impl.py",
+        "line": 424,
+        "message": "unindent does not match any outer indentation level",
+        "rule": "invalid-syntax"
+      },
+      {
+        "tool": "ruff",
+        "type": "code_quality",
+        "severity": "medium",
+        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/llm_enhancement/scripts/phases/content_selection_impl.py",
+        "line": 459,
+        "message": "unindent does not match any outer indentation level",
+        "rule": "invalid-syntax"
+      },
+      {
+        "tool": "ruff",
+        "type": "code_quality",
+        "severity": "medium",
+        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/llm_enhancement/scripts/phases/content_selection_impl.py",
+        "line": 492,
+        "message": "unindent does not match any outer indentation level",
+        "rule": "invalid-syntax"
+      },
+      {
+        "tool": "ruff",
+        "type": "code_quality",
+        "severity": "medium",
+        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/llm_enhancement/scripts/phases/content_selection_impl.py",
+        "line": 497,
+        "message": "unindent does not match any outer indentation level",
+        "rule": "invalid-syntax"
+      },
+      {
+        "tool": "ruff",
+        "type": "code_quality",
+        "severity": "medium",
+        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/llm_enhancement/scripts/phases/content_selection_impl.py",
+        "line": 500,
+        "message": "Expected dedent, found end of file",
+        "rule": "invalid-syntax"
+      },
       {
         "tool": "ruff",
         "type": "code_quality",
@@ -372,23 +431,13 @@
         "tool": "mypy",
         "type": "type_safety",
         "severity": "medium",
-        "file": "metadata_extraction/scripts/strategies/predefined_strategy.py",
-        "line": 43,
-        "message": "Unexpected indent  [syntax]",
+        "file": "llm_enhancement/scripts/phases/content_selection_impl.py",
+        "line": 414,
+        "message": "Unexpected character after line continuation character  [syntax]",
         "rule": "type-check"
       }
     ],
     "low": [
-      {
-        "tool": "bandit",
-        "type": "security",
-        "severity": "low",
-        "file": "./llm_enhancement/scripts/phases/content_selection_impl.py",
-        "line": 428,
-        "message": "Try, Except, Pass detected.",
-        "rule": "B110",
-        "confidence": "HIGH"
-      },
       {
         "tool": "bandit",
         "type": "security",

@@ -29,6 +29,8 @@ from collections import Counter, defaultdict
 # Configuration
 # -------------------------------
 
+JSON_EXT = '.json'
+
 SCRIPT_DIR = Path(__file__).parent
 REPO_ROOT = SCRIPT_DIR.parent.parent.parent
 WORKFLOWS_DIR = REPO_ROOT / "workflows"
