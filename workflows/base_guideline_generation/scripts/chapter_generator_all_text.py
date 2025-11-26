@@ -24,59 +24,12 @@ from textwrap import dedent
 from typing import Dict, List, Tuple, Any, Optional, Set
 from collections import defaultdict
 
-# LLM Integration - Provider Abstraction
-# Reference: Architecture Patterns with Python Ch. 13 - Dependency Injection
-try:
-    from workflows.shared.providers import create_llm_provider
-    from workflows.shared.cache import ChapterCache
-    from workflows.shared.retry import call_llm_with_retry, RetryConfig, RetryExhaustedError
-    _llm_provider = create_llm_provider()
-    LLM_AVAILABLE = True
-except Exception as e:
-    _llm_provider = None
-    ChapterCache = None  # type: ignore
-    call_llm_with_retry = None  # type: ignore
-    RetryConfig = None  # type: ignore
-    RetryExhaustedError = None  # type: ignore
-    LLM_AVAILABLE = False
-    print(f"Warning: LLM provider initialization failed: {e}")
-
-# Initialize cache for LLM responses
-# Reference: Python Distilled Ch. 5 - Exception Handling
-# Building Microservices Ch. 11 - Resilience Patterns
-try:
-    from config.settings import settings
-    _chapter_cache = ChapterCache(
-        cache_dir=settings.paths.cache_dir / "llm_responses",
-        enabled=True,
-        phase1_ttl=604800,  # 7 days for LLM responses (expensive operations)
-        phase2_ttl=604800,
-    )
-except Exception as cache_error:
-    _chapter_cache = None
-    print(f"Warning: Cache initialization failed: {cache_error}")
-
-# Legacy LLM Integration Functions
-# These are specialized prompt functions for semantic analysis
-# Not yet migrated to provider pattern - remain as standalone utilities
-try:
-    from llm_integration import (
-        prompt_for_semantic_concepts,
-        prompt_for_cross_reference_validation,
-        prompt_for_cross_reference_summary
-    )
-except ImportError:
-    # Define stubs if llm_integration unavailable
-    def prompt_for_semantic_concepts(*args, **kwargs):
-        return None
-    def prompt_for_cross_reference_validation(*args, **kwargs):
-        return None
-    def prompt_for_cross_reference_summary(*args, **kwargs):
-        return None
-
 # -------------------------------
 # Configuration
 # -------------------------------
+# Tab 5: Statistical/Template-Based Guideline Generation
+# Architecture Boundary: NO LLM calls (LLM enhancement happens in Tab 6)
+# Methods: YAKE keywords, Summa concepts, TF-IDF similarity, template formatting
 
 # Book author constants (to avoid duplicate string literals)
 AUTHOR_RAMALHO = "Ramalho, Luciano"
@@ -101,11 +54,6 @@ SCRIPT_DIR = Path(__file__).parent
 REPO_ROOT = SCRIPT_DIR.parent  # Chapter Summaries -> tpm-job-finder-poc
 JSON_DIR_ENGINEERING = REPO_ROOT / "Python_References" / "Engineering Practices" / "JSON"
 JSON_DIR_ARCHITECTURE = REPO_ROOT / "Python_References" / "Architecture" / "JSON"
-
-# Enable LLM semantic analysis (Phase 2 after keyword matching)
-# Set to True for automated LLM API calls (requires OPENAI_API_KEY or ANTHROPIC_API_KEY)
-# Set to False for keyword-only mode with intelligent content extraction
-USE_LLM_SEMANTIC_ANALYSIS = True  # ENABLED - Use LLM for enhanced content analysis
 
 # PRIMARY_BOOK is set at runtime from command-line argument (no default)
 PRIMARY_BOOK = None  # Will be set by argparse - MUST be specified by user
@@ -655,37 +603,7 @@ BE SPECIFIC. Reference actual content. NO generic phrases like "provides complem
 Respond with ONLY the annotation text (no preamble, no JSON)."""
 
 
-def _try_llm_annotation(book: str, book_disp: str, concepts: List[str], relationship: str, 
-                       content: str, page_num: int, primary_content: str) -> Optional[str]:
-    """Attempt to generate annotation using LLM. Returns None if unsuccessful.
-    
-    Reference:
-        Architecture Patterns Ch. 13 - Dependency injection of LLM provider
-    """
-    if not (USE_LLM_SEMANTIC_ANALYSIS and LLM_AVAILABLE and content):
-        return None
-        
-    try:
-        # Use provider abstraction instead of direct call_llm
-        # Reference: Architecture Patterns Ch. 13 - DI via provider pattern
-        arch_role = get_architecture_book_role(book)
-        prompt = _build_llm_annotation_prompt(book_disp, concepts, relationship, 
-                                             arch_role, primary_content, content, page_num)
-        system_prompt = "You are a technical educator performing comparative analysis between programming textbooks. When source material is non-technical (copyright pages, etc.), provide pedagogically valuable meta-commentary about the cross-reference system itself."
-        
-        # Call provider.call() instead of call_llm()
-        response = _llm_provider.call(
-            prompt=prompt,
-            system_prompt=system_prompt,
-            max_tokens=450,
-            temperature=0.0
-        )
-        annotation = response.content.strip().strip('"').strip("'")
-        
-        return annotation if len(annotation) > 50 else None
-    except Exception as e:
-        print(f"  Warning: LLM annotation failed ({e}), using fallback")
-        return None
+# _try_llm_annotation removed - Tab 5 uses statistical methods only (LLM in Tab 6)
 
 
 def _build_architectural_annotation(book_disp: str, concepts: List[str], count: int) -> str:
@@ -757,13 +675,10 @@ def build_extensive_annotation(book: str, concepts: List[str], relationship: str
     """
     book_disp = book.replace("_Content", "").replace("_", " ")
     
-    # Try LLM annotation first
-    llm_annotation = _try_llm_annotation(book, book_disp, concepts, relationship, 
-                                         content, page_num, primary_content)
-    if llm_annotation:
-        return llm_annotation
+    # Tab 5: Statistical/template-based annotations only (no LLM)
+    # Architecture boundary: LLM enhancement happens in Tab 6
     
-    # Fallback: architectural annotation if applicable
+    # Use architectural annotation if applicable
     arch_role = get_architecture_book_role(book)
     if arch_role:
         return _build_architectural_annotation(book_disp, concepts, count)
@@ -820,25 +735,7 @@ def find_self_references(concepts: Set[str], primary_book: Dict[str, Any],
 # Summary Generation Functions
 # -------------------------------
 
-def _try_llm_summary(concepts: List[str], content: str, relationship: str,
-                    book_name: str, page_num: int) -> Optional[str]:
-    """Attempt to generate summary using LLM."""
-    if not (USE_LLM_SEMANTIC_ANALYSIS and LLM_AVAILABLE):
-        return None
-    
-    try:
-        llm_result = prompt_for_cross_reference_summary(
-            concepts=concepts,
-            content=content,
-            relationship=relationship,
-            book_name=book_name,
-            page_num=page_num,
-            max_length=300
-        )
-        return llm_result.get("summary")
-    except Exception as e:
-        print(f"  Warning: LLM summary failed ({e}), extracting from content")
-        return None
+# _try_llm_summary removed - Tab 5 uses statistical extraction only (LLM in Tab 6)
 
 
 def _extract_relevant_sentences(lines: List[str], concepts: List[str], max_sentences: int = 3) -> List[str]:
@@ -887,13 +784,10 @@ def generate_cross_reference_summary(concepts: List[str], content: str, relation
     
     If LLM is available, uses semantic analysis to generate actual content summaries.
     Otherwise falls back to extracting actual content.
-    """
-    # Try LLM first
-    llm_summary = _try_llm_summary(concepts, content, relationship, book_name, page_num)
-    if llm_summary:
-        return llm_summary
     
-    # Extract from content
+    Tab 5: Statistical extraction only (no LLM - architecture boundary)
+    """
+    # Tab 5: Extract from content using statistical methods (no LLM)
     lines = [line.strip() for line in content.split("\n") if line.strip()]
     relevant_sentences = _extract_relevant_sentences(lines, concepts)
     
@@ -1075,47 +969,8 @@ def _extract_concept_passage(content: str, concept: str) -> Tuple[str, int, int]
     return excerpt, start_idx, end_idx
 
 
-def _generate_concept_annotation(concept: str, excerpt: str, page_num: int, best_count: int) -> str:
-    """Generate annotation explaining what the concept means.
-    
-    Reference:
-        Architecture Patterns Ch. 13 - Dependency injection of LLM provider
-    """
-    if not (USE_LLM_SEMANTIC_ANALYSIS and LLM_AVAILABLE):
-        return _get_fallback_annotation(concept, best_count)
-    
-    try:
-        # Use provider abstraction instead of direct call_llm
-        # Reference: Architecture Patterns Ch. 13 - DI via provider pattern
-        
-        prompt = f"""Analyze this excerpt and explain what '{concept}' means in this context.
-
-Excerpt from {CURRENT_BOOK_META['short_name']}, page {page_num}:
-{excerpt[:800]}
-
-Write a 2-3 sentence annotation explaining:
-1. What '{concept}' means or how it's defined in this excerpt
-2. Why this concept matters (its purpose or use case)
-3. How this excerpt illustrates or teaches the concept
-
-Be specific to THIS content - NO generic templates.
-Respond with ONLY the annotation text (no JSON, no preamble)."""
-
-        system_prompt = "You are a Python expert explaining concepts from educational text."
-        
-        # Call provider.call() instead of call_llm()
-        response = _llm_provider.call(
-            prompt=prompt,
-            system_prompt=system_prompt,
-            max_tokens=200,
-            temperature=0.0
-        )
-        annotation = response.content.strip().strip('"').strip("'")
-        
-        return annotation if len(annotation) > 50 else _get_fallback_annotation(concept, best_count)
-    except Exception as e:
-        print(f"  Warning: LLM concept annotation failed ({e})")
-        return _get_fallback_annotation(concept, best_count)
+# _generate_concept_annotation removed - Tab 5 uses statistical methods only (LLM in Tab 6)
+# All annotations now use _get_fallback_annotation which is template-based
 
 
 def _get_fallback_annotation(concept: str, best_count: int) -> str:
@@ -1139,7 +994,8 @@ def _build_concept_block(concept: str, page_num: int, excerpt: str, start_idx: i
     block.append("```")
     block.append(f"[^{n}]")
     
-    annotation = _generate_concept_annotation(concept, excerpt, page_num, best_count)
+    # Tab 5: Template-based annotations only (no LLM - architecture boundary)
+    annotation = _get_fallback_annotation(concept, best_count)
     block.append(emit_annotation(annotation))
     block.append("")
     
@@ -1517,26 +1373,12 @@ def _extract_chapter_concepts(
         - Fluent Python Ch. 7: Extract function to reduce complexity
     """
     # Phase 1: Keyword matching
+    # Extract concepts using keyword matching (YAKE + Summa)
+    # Architecture: Domain-agnostic statistical methods only
     keyword_concepts = extract_concepts_from_text(chapter_text)
-    print(f"  Phase 1: Found {len(keyword_concepts)} concepts via keyword matching")
+    print(f"  Found {len(keyword_concepts)} concepts via keyword matching (YAKE + Summa)")
     
-    # Phase 2: LLM semantic analysis (if enabled)
-    if USE_LLM_SEMANTIC_ANALYSIS and LLM_AVAILABLE:
-        print("  Phase 2: LLM semantic concept extraction...")
-        llm_result = prompt_for_semantic_concepts(
-            chapter_num, 
-            chapter_title,
-            (start_page, end_page),
-            chapter_text,
-            keyword_concepts
-        )
-        # Combine verified + additional concepts
-        chapter_concepts = set(llm_result.get("verified_concepts", []))
-        chapter_concepts.update(llm_result.get("additional_concepts", []))
-        print(f"  Phase 2: LLM verified {len(llm_result.get('verified_concepts', []))} and added {len(llm_result.get('additional_concepts', []))} concepts")
-        return chapter_concepts
-    else:
-        return keyword_concepts
+    return keyword_concepts
 
 
 def _find_cross_references(
@@ -1564,29 +1406,14 @@ def _find_cross_references(
     Reference:
         - Architecture Patterns Ch. 4: Service Layer pattern
     """
-    # Phase 1: Keyword-based cross-book matching
-    print("  Phase 1: Keyword-based cross-book matching...")
+    # Cross-book matching using keyword/concept overlap (YAKE + TF-IDF)
+    # Architecture: Statistical methods only (no LLM)
+    print("  Keyword-based cross-book matching...")
     non_primary_companions = {k: v for k, v in companions.items() if k != PRIMARY_BOOK}
-    keyword_xmatches = find_cross_book_matches(all_text, non_primary_companions)
-    print(f"  Phase 1: Found {len(keyword_xmatches)} cross-book matches")
+    xmatches = find_cross_book_matches(all_text, non_primary_companions)
+    print(f"  Found {len(xmatches)} cross-book matches via keyword overlap")
     
-    # Phase 2: LLM validates and enhances cross-references (if enabled)
-    if USE_LLM_SEMANTIC_ANALYSIS and LLM_AVAILABLE:
-        print("  Phase 2: LLM scanning ALL companion books for semantic matches...")
-        llm_xref_result = prompt_for_cross_reference_validation(
-            chapter_num,
-            chapter_title,
-            chapter_concepts,
-            keyword_xmatches,
-            companions
-        )
-        # Use LLM-validated matches
-        xmatches = llm_xref_result.get("validated_matches", keyword_xmatches)
-        xmatches.extend(llm_xref_result.get("additional_matches", []))
-        print(f"  Phase 2: LLM found {len(llm_xref_result.get('additional_matches', []))} additional semantic matches")
-        return xmatches
-    else:
-        return keyword_xmatches
+    return xmatches
 
 
 def _load_companion_books(book_list: List[str]) -> Dict[str, Dict[str, Any]]:
@@ -2080,8 +1907,8 @@ def _convert_markdown_to_json(all_docs: List[str], book_name: str, all_footnotes
         "book_metadata": book_metadata,
         "source_info": {
             "generated_by": "chapter_generator_all_text.py",
-            "generation_date": "2025-11-18",
-            "llm_enabled": USE_LLM_SEMANTIC_ANALYSIS
+            "generation_date": "2025-11-25",
+            "method": "statistical (YAKE + Summa + TF-IDF)"
         },
         "chapters": chapters,
         "footnotes": [

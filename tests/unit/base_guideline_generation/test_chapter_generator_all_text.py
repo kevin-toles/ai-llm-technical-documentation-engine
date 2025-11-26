@@ -255,7 +255,9 @@ class TestConvertMarkdownToJson:
         assert "generated_by" in result["source_info"]
         assert "chapter_generator_all_text.py" in result["source_info"]["generated_by"]
         assert "generation_date" in result["source_info"]
-        assert "llm_enabled" in result["source_info"]
+        # Tab 5 architecture: statistical methods only (no LLM tracking needed)
+        assert "method" in result["source_info"]
+        assert "statistical" in result["source_info"]["method"].lower()
 
 
 class TestHelperFunctions:
