@@ -1,17 +1,17 @@
 {
-  "timestamp": "2025-11-26T10:25:05.061686",
+  "timestamp": "2025-11-26T11:25:09.048109",
   "summary": {
-    "total_issues": 107,
+    "total_issues": 68,
     "by_severity": {
       "critical": 0,
       "high": 0,
-      "medium": 105,
+      "medium": 66,
       "low": 2,
       "info": 0
     },
     "by_type": {
       "code_quality": 1,
-      "type_safety": 104,
+      "type_safety": 65,
       "security": 2
     },
     "recommendations": [
@@ -108,98 +108,8 @@
         "type": "type_safety",
         "severity": "medium",
         "file": "base_guideline_generation/scripts/chapter_generator_all_text.py",
-        "line": 136,
-        "message": "No overload variant of \"get\" of \"dict\" matches argument types \"None\", \"dict[str, str | None]\"  [call-overload]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "base_guideline_generation/scripts/chapter_generator_all_text.py",
-        "line": 136,
-        "message": "Possible overload variants:",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "base_guideline_generation/scripts/chapter_generator_all_text.py",
-        "line": 136,
-        "message": "def get(self, str, None = ..., /) -> dict[str, str] | None",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "base_guideline_generation/scripts/chapter_generator_all_text.py",
-        "line": 136,
-        "message": "def get(self, str, dict[str, str], /) -> dict[str, str]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "base_guideline_generation/scripts/chapter_generator_all_text.py",
-        "line": 136,
-        "message": "def [_T] get(self, str, _T, /) -> dict[str, str] | _T",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "base_guideline_generation/scripts/chapter_generator_all_text.py",
-        "line": 397,
-        "message": "Need type annotation for \"matches\" (hint: \"matches: list[<type>] = ...\")  [var-annotated]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "base_guideline_generation/scripts/chapter_generator_all_text.py",
-        "line": 934,
-        "message": "Argument 1 to \"_get_metadata_filename\" has incompatible type \"None\"; expected \"str\"  [arg-type]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "base_guideline_generation/scripts/chapter_generator_all_text.py",
-        "line": 1298,
-        "message": "Incompatible types in assignment (expression has type \"list[Never]\", variable has type \"str\")  [assignment]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "base_guideline_generation/scripts/chapter_generator_all_text.py",
-        "line": 1299,
-        "message": "\"str\" has no attribute \"append\"  [attr-defined]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "base_guideline_generation/scripts/chapter_generator_all_text.py",
-        "line": 1300,
-        "message": "\"str\" has no attribute \"append\"  [attr-defined]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "base_guideline_generation/scripts/chapter_generator_all_text.py",
-        "line": 1305,
-        "message": "\"str\" has no attribute \"append\"  [attr-defined]",
+        "line": 137,
+        "message": "Incompatible types in assignment (expression has type \"dict[str, str] | dict[str, str | None]\", variable has type \"dict[str, str | None]\")  [assignment]",
         "rule": "type-check"
       },
       {
@@ -208,7 +118,7 @@
         "severity": "medium",
         "file": "base_guideline_generation/scripts/chapter_generator_all_text.py",
         "line": 1306,
-        "message": "\"str\" has no attribute \"append\"  [attr-defined]",
+        "message": "Name \"section\" already defined on line 1287  [no-redef]",
         "rule": "type-check"
       },
       {
@@ -234,7 +144,7 @@
         "type": "type_safety",
         "severity": "medium",
         "file": "base_guideline_generation/scripts/chapter_generator_all_text.py",
-        "line": 1309,
+        "line": 1313,
         "message": "\"str\" has no attribute \"append\"  [attr-defined]",
         "rule": "type-check"
       },
@@ -243,8 +153,8 @@
         "type": "type_safety",
         "severity": "medium",
         "file": "base_guideline_generation/scripts/chapter_generator_all_text.py",
-        "line": 1902,
-        "message": "Incompatible default for argument \"all_footnotes\" (default has type \"None\", argument has type \"list[dict[Any, Any]]\")  [assignment]",
+        "line": 1314,
+        "message": "\"str\" has no attribute \"append\"  [attr-defined]",
         "rule": "type-check"
       },
       {
@@ -252,8 +162,8 @@
         "type": "type_safety",
         "severity": "medium",
         "file": "base_guideline_generation/scripts/chapter_generator_all_text.py",
-        "line": 1902,
-        "message": "PEP 484 prohibits implicit Optional. Accordingly, mypy has changed its default to no_implicit_optional=True",
+        "line": 1315,
+        "message": "\"str\" has no attribute \"append\"  [attr-defined]",
         "rule": "type-check"
       },
       {
@@ -261,8 +171,8 @@
         "type": "type_safety",
         "severity": "medium",
         "file": "base_guideline_generation/scripts/chapter_generator_all_text.py",
-        "line": 1902,
-        "message": "Use https://github.com/hauntsaninja/no_implicit_optional to automatically upgrade your codebase",
+        "line": 1316,
+        "message": "\"str\" has no attribute \"append\"  [attr-defined]",
         "rule": "type-check"
       },
       {
@@ -270,17 +180,8 @@
         "type": "type_safety",
         "severity": "medium",
         "file": "base_guideline_generation/scripts/chapter_generator_all_text.py",
-        "line": 2024,
-        "message": "Argument 1 to \"load_json_book\" has incompatible type \"None\"; expected \"str\"  [arg-type]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "base_guideline_generation/scripts/chapter_generator_all_text.py",
-        "line": 2058,
-        "message": "Argument 2 to \"_write_output_file\" has incompatible type \"None\"; expected \"str\"  [arg-type]",
+        "line": 1317,
+        "message": "\"str\" has no attribute \"append\"  [attr-defined]",
         "rule": "type-check"
       },
       {
@@ -495,97 +396,7 @@
         "type": "type_safety",
         "severity": "medium",
         "file": "shared/llm_integration.py",
-        "line": 205,
-        "message": "Argument 1 to \"call_llm\" has incompatible type \"list[dict[Any, Any]]\"; expected \"str\"  [arg-type]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "shared/llm_integration.py",
-        "line": 281,
-        "message": "Argument 3 to \"_log_api_exchange\" has incompatible type \"str | None\"; expected \"str\"  [arg-type]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "shared/llm_integration.py",
-        "line": 288,
-        "message": "Argument 3 to \"_log_api_exchange\" has incompatible type \"str | None\"; expected \"str\"  [arg-type]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "shared/llm_integration.py",
-        "line": 302,
-        "message": "Argument 3 to \"_log_api_exchange\" has incompatible type \"str | None\"; expected \"str\"  [arg-type]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "shared/llm_integration.py",
-        "line": 344,
-        "message": "Item \"ThinkingBlock\" of \"TextBlock | ThinkingBlock | RedactedThinkingBlock | ToolUseBlock | ServerToolUseBlock | WebSearchToolResultBlock\" has no attribute \"text\"  [union-attr]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "shared/llm_integration.py",
-        "line": 344,
-        "message": "Item \"RedactedThinkingBlock\" of \"TextBlock | ThinkingBlock | RedactedThinkingBlock | ToolUseBlock | ServerToolUseBlock | WebSearchToolResultBlock\" has no attribute \"text\"  [union-attr]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "shared/llm_integration.py",
-        "line": 344,
-        "message": "Item \"ToolUseBlock\" of \"TextBlock | ThinkingBlock | RedactedThinkingBlock | ToolUseBlock | ServerToolUseBlock | WebSearchToolResultBlock\" has no attribute \"text\"  [union-attr]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "shared/llm_integration.py",
-        "line": 344,
-        "message": "Item \"ServerToolUseBlock\" of \"TextBlock | ThinkingBlock | RedactedThinkingBlock | ToolUseBlock | ServerToolUseBlock | WebSearchToolResultBlock\" has no attribute \"text\"  [union-attr]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "shared/llm_integration.py",
-        "line": 344,
-        "message": "Item \"WebSearchToolResultBlock\" of \"TextBlock | ThinkingBlock | RedactedThinkingBlock | ToolUseBlock | ServerToolUseBlock | WebSearchToolResultBlock\" has no attribute \"text\"  [union-attr]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "shared/llm_integration.py",
-        "line": 351,
-        "message": "Argument 3 to \"_log_api_exchange\" has incompatible type \"str | None\"; expected \"str\"  [arg-type]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "shared/llm_integration.py",
-        "line": 354,
+        "line": 364,
         "message": "Argument 2 to \"_validate_json_response\" has incompatible type \"Literal['end_turn', 'max_tokens', 'stop_sequence', 'tool_use', 'pause_turn', 'refusal'] | None\"; expected \"str\"  [arg-type]",
         "rule": "type-check"
       },
@@ -594,52 +405,7 @@
         "type": "type_safety",
         "severity": "medium",
         "file": "shared/llm_integration.py",
-        "line": 363,
-        "message": "Argument 3 to \"_log_api_exchange\" has incompatible type \"str | None\"; expected \"str\"  [arg-type]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "shared/llm_integration.py",
-        "line": 367,
-        "message": "Argument 3 to \"_log_api_exchange\" has incompatible type \"str | None\"; expected \"str\"  [arg-type]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "shared/llm_integration.py",
-        "line": 376,
-        "message": "Incompatible default for argument \"system_prompt\" (default has type \"None\", argument has type \"str\")  [assignment]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "shared/llm_integration.py",
-        "line": 376,
-        "message": "PEP 484 prohibits implicit Optional. Accordingly, mypy has changed its default to no_implicit_optional=True",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "shared/llm_integration.py",
-        "line": 376,
-        "message": "Use https://github.com/hauntsaninja/no_implicit_optional to automatically upgrade your codebase",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "shared/llm_integration.py",
-        "line": 637,
+        "line": 647,
         "message": "Dict entry 1 has incompatible type \"str\": \"list[Never]\"; expected \"str\": \"str\"  [dict-item]",
         "rule": "type-check"
       },
@@ -758,123 +524,6 @@
         "file": "llm_enhancement/scripts/integrate_llm_enhancements.py",
         "line": 685,
         "message": "Cannot determine type of \"enhanced_chapter\"  [has-type]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/phases/content_selection_impl.py",
-        "line": 52,
-        "message": "Incompatible default for argument \"llm_available\" (default has type \"None\", argument has type \"bool\")  [assignment]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/phases/content_selection_impl.py",
-        "line": 52,
-        "message": "PEP 484 prohibits implicit Optional. Accordingly, mypy has changed its default to no_implicit_optional=True",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/phases/content_selection_impl.py",
-        "line": 52,
-        "message": "Use https://github.com/hauntsaninja/no_implicit_optional to automatically upgrade your codebase",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/phases/content_selection_impl.py",
-        "line": 165,
-        "message": "\"None\" has no attribute \"ARCHITECTURE_SPINE\"  [attr-defined]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/phases/content_selection_impl.py",
-        "line": 167,
-        "message": "\"None\" has no attribute \"IMPLEMENTATION\"  [attr-defined]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/phases/content_selection_impl.py",
-        "line": 241,
-        "message": "Incompatible types in assignment (expression has type \"dict[str, Any]\", variable has type \"None\")  [assignment]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/phases/content_selection_impl.py",
-        "line": 283,
-        "message": "\"Settings\" has no attribute \"taxonomy\"  [attr-defined]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/phases/content_selection_impl.py",
-        "line": 340,
-        "message": "Value of type \"list[str] | None\" is not indexable  [index]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/phases/content_selection_impl.py",
-        "line": 398,
-        "message": "Cannot find implementation or library stub for module named \"book_taxonomy\"  [import-not-found]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/phases/content_selection_impl.py",
-        "line": 402,
-        "message": "\"Settings\" has no attribute \"taxonomy\"  [attr-defined]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/phases/content_selection_impl.py",
-        "line": 403,
-        "message": "\"Settings\" has no attribute \"taxonomy\"  [attr-defined]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/phases/content_selection_impl.py",
-        "line": 404,
-        "message": "\"Settings\" has no attribute \"taxonomy\"  [attr-defined]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/phases/content_selection_impl.py",
-        "line": 407,
-        "message": "\"Settings\" has no attribute \"taxonomy\"  [attr-defined]",
         "rule": "type-check"
       },
       {

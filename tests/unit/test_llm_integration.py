@@ -167,9 +167,10 @@ class TestHandleTruncatedResponse:
         assert result == "Successful retry response"
         
         # Verify constraint was added to system message
-        call_args = mock_call_llm.call_args[0][0]  # First positional arg (messages)
-        system_msg = call_args[0]["content"]
-        assert "TOP 10" in system_msg or "10 most relevant" in system_msg.lower()
+        # call_llm now receives (user_prompt, system_prompt) not messages
+        call_args = mock_call_llm.call_args
+        system_prompt = call_args[0][1] if len(call_args[0]) > 1 else call_args[1].get('system_prompt')
+        assert "TOP 10" in system_prompt or "10 most relevant" in system_prompt.lower()
     
     @pytest.mark.skipif(_handle_truncated_response is None, reason="Function not implemented yet")
     def test_phase2_no_retry(self):
@@ -208,20 +209,23 @@ class TestHandleTruncatedResponse:
         # First retry: Should limit to 10 books
         messages_0 = [{"role": msg["role"], "content": msg["content"]} for msg in messages_template]
         _handle_truncated_response("phase_1", messages_0, attempt=0)
-        call_args_0 = mock_call_llm.call_args[0][0]
-        assert "10" in call_args_0[0]["content"]
+        call_args_0 = mock_call_llm.call_args
+        system_prompt_0 = call_args_0[0][1] if len(call_args_0[0]) > 1 else call_args_0[1].get('system_prompt')
+        assert "10" in system_prompt_0
         
         # Second retry: Should limit to 5 books
         messages_1 = [{"role": msg["role"], "content": msg["content"]} for msg in messages_template]
         _handle_truncated_response("phase_1", messages_1, attempt=1)
-        call_args_1 = mock_call_llm.call_args[0][0]
-        assert "5" in call_args_1[0]["content"]
+        call_args_1 = mock_call_llm.call_args
+        system_prompt_1 = call_args_1[0][1] if len(call_args_1[0]) > 1 else call_args_1[1].get('system_prompt')
+        assert "5" in system_prompt_1
         
         # Third retry: Should limit to 3 books (need max_retries=3 to allow attempt=2)
         messages_2 = [{"role": msg["role"], "content": msg["content"]} for msg in messages_template]
         _handle_truncated_response("phase_1", messages_2, attempt=2, max_retries=3)
-        call_args_2 = mock_call_llm.call_args[0][0]
-        assert "3" in call_args_2[0]["content"]
+        call_args_2 = mock_call_llm.call_args
+        system_prompt_2 = call_args_2[0][1] if len(call_args_2[0]) > 1 else call_args_2[1].get('system_prompt')
+        assert "3" in system_prompt_2
 
 
 class TestFinishReasonEnum:

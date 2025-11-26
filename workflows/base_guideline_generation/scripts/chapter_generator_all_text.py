@@ -56,7 +56,7 @@ JSON_DIR_ENGINEERING = REPO_ROOT / "Python_References" / "Engineering Practices"
 JSON_DIR_ARCHITECTURE = REPO_ROOT / "Python_References" / "Architecture" / "JSON"
 
 # PRIMARY_BOOK is set at runtime from command-line argument (no default)
-PRIMARY_BOOK = None  # Will be set by argparse - MUST be specified by user
+PRIMARY_BOOK: Optional[str] = None  # Will be set by argparse - MUST be specified by user
 
 # Book metadata - maps filename to (author, full_title, short_name)
 BOOK_METADATA = {
@@ -133,11 +133,15 @@ BOOK_METADATA = {
 }
 
 # Get current book metadata
-CURRENT_BOOK_META = BOOK_METADATA.get(PRIMARY_BOOK, {
-    "author": "Unknown",
-    "full_title": PRIMARY_BOOK,
-    "short_name": PRIMARY_BOOK
-})
+# Type annotation: Dict with string keys and Optional[str] values for proper type checking
+CURRENT_BOOK_META: Dict[str, Optional[str]] = BOOK_METADATA.get(
+    PRIMARY_BOOK if PRIMARY_BOOK is not None else "",
+    {
+        "author": "Unknown",
+        "full_title": PRIMARY_BOOK,
+        "short_name": PRIMARY_BOOK
+    }
+)
 
 # Chapters to generate (num, title, start_page, end_page)
 # Learning Python Ed6 - 41 Chapters
@@ -394,7 +398,7 @@ def group_concepts_by_category(concepts: Set[str]) -> Dict[str, List[str]]:
 # -------------------------------
 
 def find_cross_book_matches(primary_content: str, other_books: Dict[str, Dict[str, Any]]) -> List[Dict[str, Any]]:
-    matches = []
+    matches: List[Dict[str, Any]] = []
     primary_lower = primary_content.lower()
     primary_concepts = [c for c in KEY_CONCEPTS if c in primary_lower]
     if not primary_concepts:
@@ -931,6 +935,10 @@ def generate_chapter_summary(_pages: List[Dict[str, Any]], chapter_num: int = 1)
         _pages: Pages for this chapter (reserved for future direct content analysis)
         chapter_num: Chapter number to look up in metadata
     """
+    # Type guard: PRIMARY_BOOK can be None at module load time
+    if PRIMARY_BOOK is None:
+        return f"Chapter {chapter_num} content."
+    
     metadata_file = _get_metadata_filename(PRIMARY_BOOK)
     if not metadata_file:
         return f"Chapter {chapter_num} content."
@@ -1295,7 +1303,7 @@ def build_tpm_section(other_books: Dict[str, Any], footnote_start: int, _chapter
     else:
         author, title = "Various", display_name
 
-    section = []
+    section: List[str] = []
     section.append("\n### **TPM Implementation Section** *(ORIGINAL)*\n")
     section.append(
         "The following ORIGINAL implementation is a minimal-domain adaptation of a proven pattern. "
@@ -1899,7 +1907,7 @@ def _convert_markdown_to_json(all_docs: List[str], book_name: str, all_footnotes
     return guideline_json
 
 
-def _write_output_file(all_docs: List[str], book_name: str, all_footnotes: List[Dict] = None) -> None:
+def _write_output_file(all_docs: List[str], book_name: str, all_footnotes: Optional[List[Dict[Any, Any]]] = None) -> None:
     """
     Write final document to both MD and JSON output files.
     
@@ -2020,6 +2028,11 @@ def main(custom_input_path: Optional[Path] = None):
     print("Multi-Chapter Generator - Tab 5: Guideline Generation")
     print("="*66)
 
+    # Type guard: PRIMARY_BOOK must be set by argparse before reaching here
+    if PRIMARY_BOOK is None:
+        print("ERROR: PRIMARY_BOOK not set (should be set by argparse)")
+        sys.exit(1)
+
     # Step 1: Load primary and companion books
     primary = load_json_book(PRIMARY_BOOK, custom_path=custom_input_path)
     companions = _load_companion_books(ALL_BOOKS)
@@ -2055,7 +2068,9 @@ def main(custom_input_path: Optional[Path] = None):
     all_docs.append("")
     
     # Step 5: Write output files (MD + JSON)
-    _write_output_file(all_docs, PRIMARY_BOOK, all_footnotes)
+    # Type guard: PRIMARY_BOOK is already validated above
+    if PRIMARY_BOOK is not None:
+        _write_output_file(all_docs, PRIMARY_BOOK, all_footnotes)
 
 if __name__ == "__main__":
     # Parse command-line arguments

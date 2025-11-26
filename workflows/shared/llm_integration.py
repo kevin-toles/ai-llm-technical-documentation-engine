@@ -201,11 +201,14 @@ def _handle_truncated_response(
     constraint_msg = f"\n\nIMPORTANT: Limit requests to TOP {new_limit} most relevant books only."
     messages[0]["content"] += constraint_msg
     
-    # Retry with modified messages (remove phase and _retry_attempt - not in signature)
-    return call_llm(messages)
+    # Retry with modified messages - extract prompt from messages list
+    # messages[0] is system prompt, messages[1] is user prompt
+    system_prompt = messages[0]["content"] if messages and messages[0].get("role") == "system" else None
+    user_prompt = messages[1]["content"] if len(messages) > 1 else messages[0]["content"]
+    return call_llm(user_prompt, system_prompt)
 
 
-def _log_api_exchange(call_num: int, prompt: str, system_prompt: str, 
+def _log_api_exchange(call_num: int, prompt: str, system_prompt: Optional[str], 
                       response: Optional[str], input_tokens: int, output_tokens: int, 
                       error: Optional[str] = None):
     """Log detailed API request/response to file for debugging."""
@@ -341,7 +344,14 @@ def _call_anthropic_api(call_num: int, prompt: str, system_prompt: Optional[str]
     )
     
     # Extract response (Sprint 1: add stop_reason)
-    response_text = response.content[0].text
+    # Type guard: response.content can contain various block types, only TextBlock has .text
+    content_block = response.content[0]
+    if hasattr(content_block, 'text'):
+        response_text = content_block.text
+    else:
+        # Fallback for non-TextBlock types (shouldn't happen with basic API calls)
+        response_text = str(content_block)
+    
     stop_reason = response.stop_reason  # Anthropic API field
     input_tokens = getattr(response.usage, 'input_tokens', 0)
     output_tokens = getattr(response.usage, 'output_tokens', 0)
@@ -373,7 +383,7 @@ def _call_anthropic_api(call_num: int, prompt: str, system_prompt: Optional[str]
     return response_text
 
 
-def call_llm(prompt: str, system_prompt: str = None, max_tokens: int = 2000) -> str:
+def call_llm(prompt: str, system_prompt: Optional[str] = None, max_tokens: int = 2000) -> str:
     """
     Make automated LLM API call using Anthropic Claude (no user interaction).
     

@@ -1,20 +1,20 @@
 # CodeRabbit Local Analysis Report
-**Generated**: 2025-11-26 10:25:05
-**Total Issues**: 107
+**Generated**: 2025-11-26 11:25:09
+**Total Issues**: 68
 
 ## Summary
 | Severity | Count |
 |----------|-------|
 | 🚨 Critical | 0 |
 | 🔴 High | 0 |
-| 🟡 Medium | 105 |
+| 🟡 Medium | 66 |
 | 🔵 Low | 2 |
 | ℹ️ Info | 0 |
 
 ## Recommendations
 - 🔧 Consider refactoring to reduce medium-severity issues
 
-## 🟡 Medium Issues (105)
+## 🟡 Medium Issues (66)
 
 ### Issue 1
 - **File**: `/Users/kevintoles/POC/llm-document-enhancer/workflows/taxonomy_setup/scripts/generate_concept_taxonomy.py`
@@ -90,93 +90,93 @@
 
 ### Issue 10
 - **File**: `base_guideline_generation/scripts/chapter_generator_all_text.py`
-- **Line**: 136
+- **Line**: 137
 - **Tool**: mypy
 - **Type**: type_safety
 - **Rule**: type-check
-- **Message**: No overload variant of "get" of "dict" matches argument types "None", "dict[str, str | None]"  [call-overload]
+- **Message**: Incompatible types in assignment (expression has type "dict[str, str] | dict[str, str | None]", variable has type "dict[str, str | None]")  [assignment]
 
 ### Issue 11
 - **File**: `base_guideline_generation/scripts/chapter_generator_all_text.py`
-- **Line**: 136
+- **Line**: 1306
 - **Tool**: mypy
 - **Type**: type_safety
 - **Rule**: type-check
-- **Message**: Possible overload variants:
+- **Message**: Name "section" already defined on line 1287  [no-redef]
 
 ### Issue 12
 - **File**: `base_guideline_generation/scripts/chapter_generator_all_text.py`
-- **Line**: 136
+- **Line**: 1307
 - **Tool**: mypy
 - **Type**: type_safety
 - **Rule**: type-check
-- **Message**: def get(self, str, None = ..., /) -> dict[str, str] | None
+- **Message**: "str" has no attribute "append"  [attr-defined]
 
 ### Issue 13
 - **File**: `base_guideline_generation/scripts/chapter_generator_all_text.py`
-- **Line**: 136
+- **Line**: 1308
 - **Tool**: mypy
 - **Type**: type_safety
 - **Rule**: type-check
-- **Message**: def get(self, str, dict[str, str], /) -> dict[str, str]
+- **Message**: "str" has no attribute "append"  [attr-defined]
 
 ### Issue 14
 - **File**: `base_guideline_generation/scripts/chapter_generator_all_text.py`
-- **Line**: 136
+- **Line**: 1313
 - **Tool**: mypy
 - **Type**: type_safety
 - **Rule**: type-check
-- **Message**: def [_T] get(self, str, _T, /) -> dict[str, str] | _T
+- **Message**: "str" has no attribute "append"  [attr-defined]
 
 ### Issue 15
 - **File**: `base_guideline_generation/scripts/chapter_generator_all_text.py`
-- **Line**: 397
+- **Line**: 1314
 - **Tool**: mypy
 - **Type**: type_safety
 - **Rule**: type-check
-- **Message**: Need type annotation for "matches" (hint: "matches: list[<type>] = ...")  [var-annotated]
+- **Message**: "str" has no attribute "append"  [attr-defined]
 
 ### Issue 16
 - **File**: `base_guideline_generation/scripts/chapter_generator_all_text.py`
-- **Line**: 934
+- **Line**: 1315
 - **Tool**: mypy
 - **Type**: type_safety
 - **Rule**: type-check
-- **Message**: Argument 1 to "_get_metadata_filename" has incompatible type "None"; expected "str"  [arg-type]
+- **Message**: "str" has no attribute "append"  [attr-defined]
 
 ### Issue 17
 - **File**: `base_guideline_generation/scripts/chapter_generator_all_text.py`
-- **Line**: 1298
+- **Line**: 1316
 - **Tool**: mypy
 - **Type**: type_safety
 - **Rule**: type-check
-- **Message**: Incompatible types in assignment (expression has type "list[Never]", variable has type "str")  [assignment]
+- **Message**: "str" has no attribute "append"  [attr-defined]
 
 ### Issue 18
 - **File**: `base_guideline_generation/scripts/chapter_generator_all_text.py`
-- **Line**: 1299
+- **Line**: 1317
 - **Tool**: mypy
 - **Type**: type_safety
 - **Rule**: type-check
 - **Message**: "str" has no attribute "append"  [attr-defined]
 
 ### Issue 19
-- **File**: `base_guideline_generation/scripts/chapter_generator_all_text.py`
-- **Line**: 1300
+- **File**: `shared/retry.py`
+- **Line**: 173
 - **Tool**: mypy
 - **Type**: type_safety
 - **Rule**: type-check
-- **Message**: "str" has no attribute "append"  [attr-defined]
+- **Message**: Argument 2 to "RetryExhaustedError" has incompatible type "Exception | None"; expected "Exception"  [arg-type]
 
 ### Issue 20
-- **File**: `base_guideline_generation/scripts/chapter_generator_all_text.py`
-- **Line**: 1305
+- **File**: `shared/retry.py`
+- **Line**: 228
 - **Tool**: mypy
 - **Type**: type_safety
 - **Rule**: type-check
-- **Message**: "str" has no attribute "append"  [attr-defined]
+- **Message**: Argument 2 to "RetryExhaustedError" has incompatible type "Exception | None"; expected "Exception"  [arg-type]
 
-... and 85 more issues
+... and 46 more issues
 
 ## 🔵 Low Issues (2)
 

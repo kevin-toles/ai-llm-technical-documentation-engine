@@ -9,7 +9,7 @@ Sprint 1 Day 1-2: Separation of Concerns refactoring
 
 import json
 import sys
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Tuple
 from pathlib import Path
 
 # Add project root to path
@@ -49,10 +49,10 @@ class ContentSelectionService:
     Extracted from AnalysisOrchestrator to follow Single Responsibility Principle.
     """
     
-    def __init__(self, metadata_service: Any, llm_available: bool = None):
+    def __init__(self, metadata_service: Any, llm_available: Optional[bool] = None):
         self._metadata_service = metadata_service
         self._llm_available = llm_available if llm_available is not None else LLM_AVAILABLE
-        self._last_metadata_package = None
+        self._last_metadata_package: Optional[Dict[str, Any]] = None
         
     def select_content_python_guided(
         self,
@@ -153,18 +153,19 @@ class ContentSelectionService:
         self,
         book_file_name: str,
         cascading_info: Dict[str, List[str]]
-    ) -> tuple[float, float]:
-        """Calculate tier and cascading boosts for a book."""
-        tier_boost = 0.0
-        cascading_boost = 0.0
+    ) -> Tuple[float, float]:
+        """Calculate tier and cascaging relationship boosts."""
+        tier_boost: float = 0.0
+        cascading_boost: float = 0.0
         
         if not TAXONOMY_AVAILABLE or book_file_name not in BOOK_REGISTRY:
             return tier_boost, cascading_boost
         
         book_role = BOOK_REGISTRY[book_file_name]
-        if book_role.tier == BookTier.ARCHITECTURE_SPINE:
+        # Type guard: BookTier can be None when TAXONOMY_AVAILABLE is False
+        if BookTier is not None and book_role.tier == BookTier.ARCHITECTURE_SPINE:
             tier_boost = 0.3
-        elif book_role.tier == BookTier.IMPLEMENTATION:
+        elif BookTier is not None and book_role.tier == BookTier.IMPLEMENTATION:
             tier_boost = 0.2
         else:
             tier_boost = 0.1
@@ -280,7 +281,7 @@ PYTHON KEYWORD MATCHING RESULTS:
 {json.dumps(metadata_package.get('concept_mapping', {}), indent=2)}
 
 COMPANION BOOK METADATA ({metadata_package['total_books']} books):
-{json.dumps(metadata_package['books'][:settings.taxonomy.max_books], indent=2)}
+{json.dumps(metadata_package['books'][:settings.constraints.max_content_requests], indent=2)}
 
 TASK: Identify specific content needed for scholarly cross-text analysis.
 
@@ -331,13 +332,13 @@ CONSTRAINT: Limit to top {settings.constraints.max_content_requests} most releva
             if has_chapter_metadata and chapter_manager:
                 chapters = chapter_manager.get_chapters(book.file_name + '.json')
                 if chapters:
-                    book_meta['chapters'] = [
+                    book_meta['chapters_sample'] = [
                         {
                             'number': ch.chapter_number,
                             'title': ch.title,
                             'pages': f"{ch.start_page}-{ch.end_page}",
                             'summary': ch.summary,
-                            'concepts': ch.concepts[:10],
+                            'concepts': (ch.concepts[:10] if ch.concepts else []),
                             'keywords': ch.keywords[:10]
                         }
                         for ch in chapters[:15]
@@ -395,16 +396,16 @@ LIMIT: Top {settings.constraints.max_content_requests} most relevant books only.
     ) -> List[str]:
         """Get recommended books using taxonomy or fallback to concept mapping."""
         try:
-            from book_taxonomy import get_recommended_books
+            from book_taxonomy import get_recommended_books  # type: ignore[import-not-found]
             concept_set = set(concepts)
             return get_recommended_books(
                 concept_set,
-                min_relevance=settings.taxonomy.min_relevance,
-                include_cascades=settings.taxonomy.enable_prefilter,
-                max_books=settings.taxonomy.max_books
+                min_relevance=0.3,  # Default relevance threshold
+                include_cascades=True,  # Enable cascade relationships
+                max_books=settings.constraints.max_content_requests
             )
         except Exception:
-            return list(concept_mapping.keys())[:settings.taxonomy.max_books]
+            return list(concept_mapping.keys())[:settings.constraints.max_content_requests]
     
     def _calculate_request_priority(
         self,
