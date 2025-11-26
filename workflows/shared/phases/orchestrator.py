@@ -21,7 +21,7 @@ def _get_legacy_classes():
     """Lazy import to handle both module and package execution."""
     try:
         # Try relative import first (when run as package)
-        from ..interactive_llm_system_v3_hybrid_prompt import (
+        from ..interactive_llm_system_v3_hybrid_prompt import (  # type: ignore[import-not-found]
             AnalysisOrchestrator,
             ScholarlyAnnotation
         )
@@ -34,7 +34,7 @@ def _get_legacy_classes():
         if str(src_dir) not in sys.path:
             sys.path.insert(0, str(src_dir))
         
-        import interactive_llm_system_v3_hybrid_prompt
+        import interactive_llm_system_v3_hybrid_prompt  # type: ignore[import-not-found]
         return (
             interactive_llm_system_v3_hybrid_prompt.AnalysisOrchestrator,
             interactive_llm_system_v3_hybrid_prompt.ScholarlyAnnotation

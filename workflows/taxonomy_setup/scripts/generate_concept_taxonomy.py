@@ -293,14 +293,16 @@ def generate_taxonomy(tier_books: Dict[str, List[str]], output_name: str) -> Non
         }
     }
     
-    for tier_name, concepts in categorized.items():
-        if concepts:  # Only include tiers with concepts
+    # Iterate through categorized concepts with explicit typing
+    for tier_name, concepts_raw in categorized.items():
+        tier_concepts_list: list[str] = concepts_raw  # Explicit type annotation to help mypy
+        if tier_concepts_list:  # Only include tiers with concepts
             info = tier_info[tier_name]
             taxonomy["tiers"][tier_name] = {
                 "priority": info["priority"],
-                "concepts": sorted(set(concepts))  # type: ignore[assignment]  # Deduplicate and sort
+                "concepts": sorted(set(tier_concepts_list))  # Deduplicate and sort
             }
-            print(f"  {info['name']}: {len(concepts)} concepts")
+            print(f"  {info['name']}: {len(tier_concepts_list)} concepts")
     
     # Save taxonomy
     output_path = OUTPUT_DIR / output_name

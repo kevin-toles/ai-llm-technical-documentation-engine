@@ -1,83 +1,22 @@
 {
-  "timestamp": "2025-11-26T12:52:34.000109",
+  "timestamp": "2025-11-26T14:18:08.263228",
   "summary": {
-    "total_issues": 6,
+    "total_issues": 0,
     "by_severity": {
       "critical": 0,
       "high": 0,
-      "medium": 4,
-      "low": 2,
+      "medium": 0,
+      "low": 0,
       "info": 0
     },
-    "by_type": {
-      "type_safety": 4,
-      "security": 2
-    },
+    "by_type": {},
     "recommendations": []
   },
   "issues": {
     "critical": [],
     "high": [],
-    "medium": [
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "shared/phases/orchestrator.py",
-        "line": 37,
-        "message": "Cannot find implementation or library stub for module named \"interactive_llm_system_v3_hybrid_prompt\"  [import-not-found]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "taxonomy_setup/scripts/generate_concept_taxonomy.py",
-        "line": 296,
-        "message": "Incompatible types in assignment (expression has type \"list[str]\", variable has type \"set[str]\")  [assignment]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/phases/annotation_service.py",
-        "line": 34,
-        "message": "Cannot find implementation or library stub for module named \"interactive_llm_system_v3_hybrid_prompt\"  [import-not-found]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/phases/annotation_service.py",
-        "line": 34,
-        "message": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
-        "rule": "type-check"
-      }
-    ],
-    "low": [
-      {
-        "tool": "bandit",
-        "type": "security",
-        "severity": "low",
-        "file": "./metadata_extraction/scripts/generate_metadata_universal.py",
-        "line": 252,
-        "message": "Try, Except, Pass detected.",
-        "rule": "B110",
-        "confidence": "HIGH"
-      },
-      {
-        "tool": "bandit",
-        "type": "security",
-        "severity": "low",
-        "file": "./metadata_extraction/scripts/strategies/yake_validation_strategy.py",
-        "line": 74,
-        "message": "Try, Except, Continue detected.",
-        "rule": "B112",
-        "confidence": "HIGH"
-      }
-    ],
+    "medium": [],
+    "low": [],
     "info": []
   }
 }

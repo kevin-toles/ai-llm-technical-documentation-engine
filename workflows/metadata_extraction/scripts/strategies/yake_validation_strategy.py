@@ -71,8 +71,11 @@ class YAKEValidationStrategy:
                 if len(keywords) >= self.min_keywords:
                     validated.append((chapter_num, title, start_page, end_page))
             
-            except Exception:
+            except Exception as e:
                 # If keyword extraction fails (empty content, encoding issues), skip this candidate
+                # Log for debugging but continue validation
+                import logging
+                logging.debug(f"Keyword extraction failed for candidate {chapter_num} '{title}': {e}")
                 continue
         
         return validated

@@ -19,7 +19,7 @@ if TYPE_CHECKING:
 def _get_classes():
     """Lazy import to avoid import issues."""
     try:
-        from ..interactive_llm_system_v3_hybrid_prompt import (
+        from ..interactive_llm_system_v3_hybrid_prompt import (  # type: ignore[import-not-found]
             LLMMetadataResponse,
             ScholarlyAnnotation
         )
@@ -31,7 +31,7 @@ def _get_classes():
         if str(src_dir) not in sys.path:
             sys.path.insert(0, str(src_dir))
         
-        import interactive_llm_system_v3_hybrid_prompt
+        import interactive_llm_system_v3_hybrid_prompt  # type: ignore[import-not-found]
         return (
             interactive_llm_system_v3_hybrid_prompt.LLMMetadataResponse,
             interactive_llm_system_v3_hybrid_prompt.ScholarlyAnnotation

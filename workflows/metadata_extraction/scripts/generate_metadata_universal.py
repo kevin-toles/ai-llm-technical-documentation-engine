@@ -249,9 +249,11 @@ class UniversalMetadataGenerator:
             summary = self.extractor.generate_summary(text, ratio=0.2)
             if summary:
                 return summary
-        except Exception:
+        except Exception as e:
             # Fallback for very short text or empty content that can't be summarized
-            pass
+            # Log the exception for debugging but continue with fallback
+            import logging
+            logging.debug(f"Summary extraction failed for chapter {chapter_num}: {e}")
         
         # Fallback: return chapter title
         return f"Chapter {chapter_num}: {title}"
