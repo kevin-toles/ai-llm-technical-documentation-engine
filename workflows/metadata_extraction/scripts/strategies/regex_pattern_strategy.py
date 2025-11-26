@@ -127,7 +127,7 @@ class RegexPatternStrategy:
         """
         max_lines = kwargs.get('max_lines_to_scan', 25)
         candidates = []
-        seen_numbers = set()
+        seen_numbers: set[int] = set()
         
         # Extract chapter candidates from all pages
         for page in pages:

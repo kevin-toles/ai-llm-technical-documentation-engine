@@ -117,7 +117,7 @@ def _load_book_metadata(book_set: set, metadata_dir: Path) -> Dict[str, Any]:
                 book_metadata = json.load(f)
                 # Ensure context["metadata"] and context["corpus_size"] are properly typed
                 context["metadata"][book_name] = book_metadata  # type: ignore[index]
-                context["corpus_size"] += len(book_metadata)  # type: ignore[arg-type]
+                context["corpus_size"] += len(book_metadata)  # type: ignore[arg-type, operator]
         else:
             print(f"  ⚠️  Skipping {book_name} - metadata not found at {metadata_path}")
     

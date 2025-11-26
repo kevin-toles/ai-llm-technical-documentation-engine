@@ -170,7 +170,8 @@ def call_llm_with_retry(
             time.sleep(delay)
     
     # All attempts exhausted
-    raise RetryExhaustedError(config.max_attempts, last_error)
+    # Cast last_error to Exception (guaranteed non-None after loop)
+    raise RetryExhaustedError(config.max_attempts, last_error if last_error is not None else Exception("Unknown error"))
 
 
 def call_with_retry(
@@ -225,6 +226,7 @@ def call_with_retry(
                 
                 time.sleep(delay)
         
-        raise RetryExhaustedError(config.max_attempts, last_error)
+        # Cast last_error to Exception (guaranteed non-None after loop)
+        raise RetryExhaustedError(config.max_attempts, last_error if last_error is not None else Exception("Unknown error"))
     
     return wrapper

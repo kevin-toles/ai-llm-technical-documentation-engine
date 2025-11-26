@@ -100,7 +100,7 @@ def extract_keywords_from_text(text: str, max_keywords: int = 15) -> List[str]:
 # DEPRECATED: Hardcoded concept patterns replaced by StatisticalExtractor
 # Per DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN Part 1.4
 # This list is kept for documentation but no longer used
-CONCEPT_PATTERNS = []  # Empty list - no longer used
+CONCEPT_PATTERNS: list[str] = []  # Empty list - no longer used
 
 
 def extract_concepts_from_text(text: str, max_concepts: int = 10) -> List[str]:

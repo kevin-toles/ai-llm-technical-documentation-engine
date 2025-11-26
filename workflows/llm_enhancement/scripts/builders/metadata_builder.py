@@ -28,7 +28,7 @@ class MetadataBuilder:
     Pattern: Builder Pattern (Architecture Patterns with Python Ch. 9)
     """
     
-    def __init__(self, metadata_service):
+    def __init__(self, metadata_service: Any) -> None:
         """Initialize with metadata service dependency (Dependency Injection)."""
         self._metadata_service = metadata_service
         self._last_metadata_package: Dict[str, Any] = {}  # For mocking fallback
@@ -44,7 +44,7 @@ class MetadataBuilder:
         
         Returns: (recommended_books, cascading_info) - Currently returns empty
         Source: interactive_llm_system_v3_hybrid_prompt.py lines 1029-1055
-        """
+        """  # type: ignore[empty-body]
         # TAXONOMY_AVAILABLE = False per line 16
         # NOTE: Future enhancement - integrate with data-driven taxonomy from generate_concept_taxonomy.py
         return [], {}

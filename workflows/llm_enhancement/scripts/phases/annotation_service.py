@@ -10,7 +10,7 @@ Sprint 1 Day 1-2: Phase separation architecture
 from typing import List, Any, TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from ..interactive_llm_system_v3_hybrid_prompt import (
+    from workflows.llm_enhancement.scripts.interactive_llm_system_v3_hybrid_prompt import (  # type: ignore[import-not-found]
         LLMMetadataResponse,
         ScholarlyAnnotation
     )

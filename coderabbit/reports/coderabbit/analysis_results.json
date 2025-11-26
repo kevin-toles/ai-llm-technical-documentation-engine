@@ -1,54 +1,24 @@
 {
-  "timestamp": "2025-11-26T12:31:46.326262",
+  "timestamp": "2025-11-26T12:52:34.000109",
   "summary": {
-    "total_issues": 25,
+    "total_issues": 6,
     "by_severity": {
       "critical": 0,
       "high": 0,
-      "medium": 23,
+      "medium": 4,
       "low": 2,
       "info": 0
     },
     "by_type": {
-      "code_quality": 2,
-      "type_safety": 21,
+      "type_safety": 4,
       "security": 2
     },
-    "recommendations": [
-      "\ud83d\udd27 Consider refactoring to reduce medium-severity issues"
-    ]
+    "recommendations": []
   },
   "issues": {
     "critical": [],
     "high": [],
     "medium": [
-      {
-        "tool": "ruff",
-        "type": "code_quality",
-        "severity": "medium",
-        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/llm_enhancement/scripts/models/analysis_models.py",
-        "line": 290,
-        "message": "Undefined name `Optional`",
-        "rule": "F821"
-      },
-      {
-        "tool": "ruff",
-        "type": "code_quality",
-        "severity": "medium",
-        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/taxonomy_setup/scripts/generate_concept_taxonomy.py",
-        "line": 26,
-        "message": "`collections.defaultdict` imported but unused",
-        "rule": "F401"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "shared/phases/orchestrator.py",
-        "line": 15,
-        "message": "Cannot find implementation or library stub for module named \"workflows.shared.interactive_llm_system_v3_hybrid_prompt\"  [import-not-found]",
-        "rule": "type-check"
-      },
       {
         "tool": "mypy",
         "type": "type_safety",
@@ -62,153 +32,9 @@
         "tool": "mypy",
         "type": "type_safety",
         "severity": "medium",
-        "file": "metadata_extraction/scripts/strategies/regex_pattern_strategy.py",
-        "line": 130,
-        "message": "Need type annotation for \"seen_numbers\" (hint: \"seen_numbers: set[<type>] = ...\")  [var-annotated]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
         "file": "taxonomy_setup/scripts/generate_concept_taxonomy.py",
         "line": 296,
         "message": "Incompatible types in assignment (expression has type \"list[str]\", variable has type \"set[str]\")  [assignment]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "pdf_to_json/scripts/ml_chapter_detector.py",
-        "line": 39,
-        "message": "Need type annotation for \"page_keywords\" (hint: \"page_keywords: list[<type>] = ...\")  [var-annotated]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "metadata_enrichment/scripts/enrich_metadata_per_book.py",
-        "line": 120,
-        "message": "Unsupported operand types for + (\"object\" and \"int\")  [operator]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "metadata_enrichment/scripts/enrich_metadata_per_book.py",
-        "line": 120,
-        "message": "Error code \"operator\" not covered by \"type: ignore\" comment",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "shared/retry.py",
-        "line": 173,
-        "message": "Argument 2 to \"RetryExhaustedError\" has incompatible type \"Exception | None\"; expected \"Exception\"  [arg-type]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "shared/retry.py",
-        "line": 228,
-        "message": "Argument 2 to \"RetryExhaustedError\" has incompatible type \"Exception | None\"; expected \"Exception\"  [arg-type]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "shared/loaders/content_loaders.py",
-        "line": 279,
-        "message": "Need type annotation for \"excerpts\" (hint: \"excerpts: list[<type>] = ...\")  [var-annotated]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/models/analysis_models.py",
-        "line": 290,
-        "message": "Name \"Optional\" is not defined  [name-defined]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/models/analysis_models.py",
-        "line": 290,
-        "message": "Did you forget to import it from \"typing\"? (Suggestion: \"from typing import Optional\")",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/builders/metadata_builder.py",
-        "line": 34,
-        "message": "By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "metadata_enrichment/scripts/generate_chapter_metadata.py",
-        "line": 103,
-        "message": "Need type annotation for \"CONCEPT_PATTERNS\" (hint: \"CONCEPT_PATTERNS: list[<type>] = ...\")  [var-annotated]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "shared/llm_integration.py",
-        "line": 364,
-        "message": "Argument 2 to \"_validate_json_response\" has incompatible type \"Literal['end_turn', 'max_tokens', 'stop_sequence', 'tool_use', 'pause_turn', 'refusal'] | None\"; expected \"str\"  [arg-type]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "shared/llm_integration.py",
-        "line": 647,
-        "message": "Dict entry 1 has incompatible type \"str\": \"list[Never]\"; expected \"str\": \"str\"  [dict-item]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "shared/pipeline/pipeline_orchestrator.py",
-        "line": 113,
-        "message": "Incompatible types in assignment (expression has type \"Path\", target has type \"dict[str, Any]\")  [assignment]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/interactive_llm_system_v3_hybrid_prompt.py",
-        "line": 588,
-        "message": "Value of type \"list[str] | None\" is not indexable  [index]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/interactive_llm_system_v3_hybrid_prompt.py",
-        "line": 701,
-        "message": "Need type annotation for \"excerpts\" (hint: \"excerpts: list[<type>] = ...\")  [var-annotated]",
         "rule": "type-check"
       },
       {

@@ -36,7 +36,7 @@ def _extract_page_keywords(pages: List[dict], extractor: StatisticalExtractor) -
         List of keyword lists for each page
     """
     print("🤖 Using AI/ML to analyze content...")
-    page_keywords = []
+    page_keywords: list[list[tuple[str, float]]] = []
     for i, page in enumerate(pages, 1):
         text = page.get('content', '')
         

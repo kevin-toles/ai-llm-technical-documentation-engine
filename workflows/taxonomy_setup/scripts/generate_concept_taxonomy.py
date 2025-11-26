@@ -23,7 +23,7 @@ import re
 import argparse
 from pathlib import Path
 from typing import Dict, List, Set, Any, Tuple
-from collections import Counter, defaultdict
+from collections import Counter
 
 # -------------------------------
 # Configuration
@@ -298,7 +298,7 @@ def generate_taxonomy(tier_books: Dict[str, List[str]], output_name: str) -> Non
             info = tier_info[tier_name]
             taxonomy["tiers"][tier_name] = {
                 "priority": info["priority"],
-                "concepts": sorted(concepts)  # Already deduplicated by set
+                "concepts": sorted(set(concepts))  # type: ignore[assignment]  # Deduplicate and sort
             }
             print(f"  {info['name']}: {len(concepts)} concepts")
     

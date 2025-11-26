@@ -361,7 +361,8 @@ def _call_anthropic_api(call_num: int, prompt: str, system_prompt: Optional[str]
     _log_api_exchange(call_num, prompt, system_prompt, response_text, input_tokens, output_tokens)
     
     # Sprint 1: Validate JSON response with finish_reason
-    is_valid, error_msg = _validate_json_response(response_text, stop_reason)
+    # Cast stop_reason to str for type compatibility
+    is_valid, error_msg = _validate_json_response(response_text, str(stop_reason) if stop_reason else "")
     if not is_valid:
         print(f"[LLM API #{call_num}] ⚠️  JSON validation failed: {error_msg}", file=sys.stderr, flush=True)
         
@@ -644,7 +645,7 @@ Respond with ONLY a JSON object:
         # Fallback: extract from content
         return {
             "summary": content[:max_length].strip() + ("..." if len(content) > max_length else ""),
-            "key_points": []
+            "key_points": ""  # Changed from [] to "" for consistent string operations
         }
 
 

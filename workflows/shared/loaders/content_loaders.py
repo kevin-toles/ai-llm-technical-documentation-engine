@@ -276,7 +276,7 @@ class ChapterContentLoader:
         References:
             - Source: interactive_llm_system_v3_hybrid_prompt.py lines 724-756
         """
-        excerpts = []
+        excerpts: list[dict[str, Any]] = []
         
         chapter_nums = extract_chapter_numbers_func(req.rationale)
         if not chapter_nums:

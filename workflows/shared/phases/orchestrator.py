@@ -12,7 +12,7 @@ from typing import List, Any, TYPE_CHECKING
 
 if TYPE_CHECKING:
     # Type hints only - not imported at runtime
-    from ..interactive_llm_system_v3_hybrid_prompt import (
+    from workflows.shared.interactive_llm_system_v3_hybrid_prompt import (  # type: ignore[import-not-found]
         ScholarlyAnnotation
     )
 

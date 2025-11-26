@@ -585,7 +585,7 @@ Prioritize books that provide the most direct, substantial coverage of this chap
                             'title': ch.title,
                             'pages': f"{ch.start_page}-{ch.end_page}",
                             'summary': ch.summary,  # Full 2-3 sentence summary
-                            'concepts': ch.concepts[:10],  # Top 10 key concepts
+                            'concepts': (ch.concepts[:10] if ch.concepts else []),  # Top 10 key concepts
                             'keywords': ch.keywords[:10]  # Top 10 keywords (increased from 5)
                         }
                         for ch in chapters[:15]  # First 15 chapters
@@ -698,7 +698,7 @@ Prioritize books that provide the most direct, substantial coverage of this chap
         Returns:
             List of chapter excerpt dicts with content and metadata
         """
-        excerpts = []
+        excerpts: list[dict[str, Any]] = []
         
         chapter_nums = self._extract_chapter_numbers_from_rationale(req.rationale)
         if not chapter_nums:

@@ -98,7 +98,7 @@ class PipelineOrchestrator:
         """
         self.logger.info(f"Starting pipeline for: {pdf_path}")
         
-        results = {}
+        results: Dict[str, Any] = {}
         
         try:
             # Stage 1: PDF Conversion
@@ -110,7 +110,7 @@ class PipelineOrchestrator:
             # Stage 2: Chapter Generation
             self.logger.info("Stage 2/2: Generating enhanced chapters...")
             chapters_result = self.chapter_generator.generate()
-            results["chapters"] = chapters_result
+            results["chapters"] = str(chapters_result)  # Convert Path to str for dict consistency
             self.logger.info(f"✓ Chapter generation complete: {chapters_result}")
             
             self.logger.info("Pipeline complete!")

@@ -29,10 +29,10 @@ TDD Cycle Complete:
 """
 
 import json
+from typing import Dict, List, Optional, Any
 import logging
 from dataclasses import dataclass, field
 from enum import Enum, auto
-from typing import Any, Dict, List
 
 # Module-level logger
 logger = logging.getLogger(__name__)
