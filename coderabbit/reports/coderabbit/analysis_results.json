@@ -1,22 +1,20 @@
 {
-  "timestamp": "2025-11-26T00:42:47.657882",
+  "timestamp": "2025-11-26T00:49:07.077020",
   "summary": {
-    "total_issues": 48,
+    "total_issues": 20,
     "by_severity": {
       "critical": 0,
       "high": 0,
-      "medium": 46,
+      "medium": 18,
       "low": 2,
       "info": 0
     },
     "by_type": {
-      "code_quality": 45,
+      "code_quality": 17,
       "type_safety": 1,
       "security": 2
     },
-    "recommendations": [
-      "\ud83d\udd27 Consider refactoring to reduce medium-severity issues"
-    ]
+    "recommendations": []
   },
   "issues": {
     "critical": [],
@@ -26,118 +24,10 @@
         "tool": "ruff",
         "type": "code_quality",
         "severity": "medium",
-        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/llm_enhancement/scripts/phases/content_selection_impl.py",
-        "line": 414,
-        "message": "Expected a newline after line continuation character",
-        "rule": "invalid-syntax"
-      },
-      {
-        "tool": "ruff",
-        "type": "code_quality",
-        "severity": "medium",
-        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/llm_enhancement/scripts/phases/content_selection_impl.py",
-        "line": 414,
-        "message": "missing closing quote in string literal",
-        "rule": "invalid-syntax"
-      },
-      {
-        "tool": "ruff",
-        "type": "code_quality",
-        "severity": "medium",
-        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/llm_enhancement/scripts/phases/content_selection_impl.py",
-        "line": 415,
-        "message": "Unexpected indentation",
-        "rule": "invalid-syntax"
-      },
-      {
-        "tool": "ruff",
-        "type": "code_quality",
-        "severity": "medium",
-        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/llm_enhancement/scripts/phases/content_selection_impl.py",
-        "line": 424,
-        "message": "unindent does not match any outer indentation level",
-        "rule": "invalid-syntax"
-      },
-      {
-        "tool": "ruff",
-        "type": "code_quality",
-        "severity": "medium",
-        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/llm_enhancement/scripts/phases/content_selection_impl.py",
-        "line": 459,
-        "message": "unindent does not match any outer indentation level",
-        "rule": "invalid-syntax"
-      },
-      {
-        "tool": "ruff",
-        "type": "code_quality",
-        "severity": "medium",
-        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/llm_enhancement/scripts/phases/content_selection_impl.py",
-        "line": 492,
-        "message": "unindent does not match any outer indentation level",
-        "rule": "invalid-syntax"
-      },
-      {
-        "tool": "ruff",
-        "type": "code_quality",
-        "severity": "medium",
-        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/llm_enhancement/scripts/phases/content_selection_impl.py",
-        "line": 497,
-        "message": "unindent does not match any outer indentation level",
-        "rule": "invalid-syntax"
-      },
-      {
-        "tool": "ruff",
-        "type": "code_quality",
-        "severity": "medium",
-        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/llm_enhancement/scripts/phases/content_selection_impl.py",
-        "line": 500,
-        "message": "Expected dedent, found end of file",
-        "rule": "invalid-syntax"
-      },
-      {
-        "tool": "ruff",
-        "type": "code_quality",
-        "severity": "medium",
-        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/metadata_enrichment/scripts/enrich_metadata_per_book.py",
-        "line": 28,
-        "message": "`typing.Optional` imported but unused",
-        "rule": "F401"
-      },
-      {
-        "tool": "ruff",
-        "type": "code_quality",
-        "severity": "medium",
-        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/metadata_enrichment/scripts/enrich_metadata_per_book.py",
-        "line": 30,
-        "message": "`collections.defaultdict` imported but unused",
-        "rule": "F401"
-      },
-      {
-        "tool": "ruff",
-        "type": "code_quality",
-        "severity": "medium",
         "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/metadata_enrichment/scripts/generate_chapter_metadata.py",
         "line": 27,
         "message": "`typing.Tuple` imported but unused",
         "rule": "F401"
-      },
-      {
-        "tool": "ruff",
-        "type": "code_quality",
-        "severity": "medium",
-        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/metadata_enrichment/scripts/generate_chapter_metadata.py",
-        "line": 34,
-        "message": "Module level import not at top of file",
-        "rule": "E402"
-      },
-      {
-        "tool": "ruff",
-        "type": "code_quality",
-        "severity": "medium",
-        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/metadata_enrichment/scripts/generate_chapter_metadata.py",
-        "line": 38,
-        "message": "Module level import not at top of file",
-        "rule": "E402"
       },
       {
         "tool": "ruff",
@@ -165,60 +55,6 @@
         "line": 36,
         "message": "`typing.Set` imported but unused",
         "rule": "F401"
-      },
-      {
-        "tool": "ruff",
-        "type": "code_quality",
-        "severity": "medium",
-        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/metadata_extraction/scripts/generate_metadata_universal.py",
-        "line": 46,
-        "message": "Module level import not at top of file",
-        "rule": "E402"
-      },
-      {
-        "tool": "ruff",
-        "type": "code_quality",
-        "severity": "medium",
-        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/metadata_extraction/scripts/generate_metadata_universal.py",
-        "line": 50,
-        "message": "Module level import not at top of file",
-        "rule": "E402"
-      },
-      {
-        "tool": "ruff",
-        "type": "code_quality",
-        "severity": "medium",
-        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/metadata_extraction/scripts/generate_metadata_universal.py",
-        "line": 51,
-        "message": "Module level import not at top of file",
-        "rule": "E402"
-      },
-      {
-        "tool": "ruff",
-        "type": "code_quality",
-        "severity": "medium",
-        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/metadata_extraction/scripts/generate_metadata_universal.py",
-        "line": 52,
-        "message": "Module level import not at top of file",
-        "rule": "E402"
-      },
-      {
-        "tool": "ruff",
-        "type": "code_quality",
-        "severity": "medium",
-        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/metadata_extraction/scripts/generate_metadata_universal.py",
-        "line": 53,
-        "message": "Module level import not at top of file",
-        "rule": "E402"
-      },
-      {
-        "tool": "ruff",
-        "type": "code_quality",
-        "severity": "medium",
-        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/metadata_extraction/scripts/generate_metadata_universal.py",
-        "line": 54,
-        "message": "Module level import not at top of file",
-        "rule": "E402"
       },
       {
         "tool": "ruff",
@@ -323,91 +159,10 @@
         "tool": "ruff",
         "type": "code_quality",
         "severity": "medium",
-        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/pdf_to_json/scripts/chapter_segmenter.py",
-        "line": 36,
-        "message": "Module level import not at top of file",
-        "rule": "E402"
-      },
-      {
-        "tool": "ruff",
-        "type": "code_quality",
-        "severity": "medium",
-        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/pdf_to_json/scripts/chapter_segmenter.py",
-        "line": 37,
-        "message": "Module level import not at top of file",
-        "rule": "E402"
-      },
-      {
-        "tool": "ruff",
-        "type": "code_quality",
-        "severity": "medium",
-        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/pdf_to_json/scripts/chapter_segmenter.py",
-        "line": 40,
-        "message": "Module level import not at top of file",
-        "rule": "E402"
-      },
-      {
-        "tool": "ruff",
-        "type": "code_quality",
-        "severity": "medium",
-        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/pdf_to_json/scripts/chapter_segmenter.py",
-        "line": 43,
-        "message": "Module level import not at top of file",
-        "rule": "E402"
-      },
-      {
-        "tool": "ruff",
-        "type": "code_quality",
-        "severity": "medium",
-        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/pdf_to_json/scripts/convert_pdf_to_json.py",
-        "line": 37,
-        "message": "Module level import not at top of file",
-        "rule": "E402"
-      },
-      {
-        "tool": "ruff",
-        "type": "code_quality",
-        "severity": "medium",
-        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/pdf_to_json/scripts/convert_pdf_to_json.py",
-        "line": 40,
-        "message": "Module level import not at top of file",
-        "rule": "E402"
-      },
-      {
-        "tool": "ruff",
-        "type": "code_quality",
-        "severity": "medium",
         "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/pdf_to_json/scripts/ml_chapter_detector.py",
         "line": 15,
         "message": "`typing.Dict` imported but unused",
         "rule": "F401"
-      },
-      {
-        "tool": "ruff",
-        "type": "code_quality",
-        "severity": "medium",
-        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/pdf_to_json/scripts/ml_chapter_detector.py",
-        "line": 22,
-        "message": "Module level import not at top of file",
-        "rule": "E402"
-      },
-      {
-        "tool": "ruff",
-        "type": "code_quality",
-        "severity": "medium",
-        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/shared/pipeline/pipeline_orchestrator.py",
-        "line": 26,
-        "message": "Module level import not at top of file",
-        "rule": "E402"
-      },
-      {
-        "tool": "ruff",
-        "type": "code_quality",
-        "severity": "medium",
-        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/shared/pipeline/pipeline_orchestrator.py",
-        "line": 31,
-        "message": "Module level import not at top of file",
-        "rule": "E402"
       },
       {
         "tool": "ruff",
@@ -419,21 +174,12 @@
         "rule": "F401"
       },
       {
-        "tool": "ruff",
-        "type": "code_quality",
-        "severity": "medium",
-        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/taxonomy_setup/scripts/generate_concept_taxonomy.py",
-        "line": 356,
-        "message": "Undefined name `JSON_EXT`",
-        "rule": "F821"
-      },
-      {
         "tool": "mypy",
         "type": "type_safety",
         "severity": "medium",
-        "file": "llm_enhancement/scripts/phases/content_selection_impl.py",
-        "line": 414,
-        "message": "Unexpected character after line continuation character  [syntax]",
+        "file": "metadata_extraction/scripts/strategies/predefined_strategy.py",
+        "line": 43,
+        "message": "Unexpected indent  [syntax]",
         "rule": "type-check"
       }
     ],
