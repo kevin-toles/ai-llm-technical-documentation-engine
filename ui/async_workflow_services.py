@@ -341,7 +341,7 @@ class AsyncTaxonomyGenerationService:
             cwd=str(self.base_dir)
         )
         
-        stdout, stderr = await process.communicate()
+        _, stderr = await process.communicate()
         
         if process.returncode == 0:
             self._update_progress(workflow_id, "✓ Concept extraction complete")

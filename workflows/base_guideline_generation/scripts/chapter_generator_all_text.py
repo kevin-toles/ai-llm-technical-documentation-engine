@@ -1121,7 +1121,6 @@ def _build_later_chapter_reference(ref: Dict[str, Any]) -> List[str]:
 
 def _build_companion_references_section(
     cross_matches: List[Dict[str, Any]],
-    primary_content: str,
     footnote_start: int
 ) -> Tuple[List[str], List[Dict[str, Any]], int]:
     """
@@ -1131,7 +1130,6 @@ def _build_companion_references_section(
     
     Args:
         cross_matches: List of cross-book matches
-        primary_content: Primary chapter content for comparison
         footnote_start: Starting footnote number
         
     Returns:
@@ -1151,7 +1149,7 @@ def _build_companion_references_section(
 
     for book, pages in list(by_book.items())[:5]:
         ref_lines, footnote = _build_companion_book_reference(
-            book, pages, primary_content, n
+            book, pages, n
         )
         out.extend(ref_lines)
         foots.append(footnote)
@@ -1227,8 +1225,7 @@ def build_see_also(cross_matches: List[Dict[str, Any]],
                   chapter_num: int,
                   primary_book: Optional[Dict[str, Any]] = None,
                   current_concepts: Optional[Set[str]] = None,
-                  all_chapters: Optional[List[Tuple[int, str, int, int]]] = None,
-                  chapter_pages: Optional[List[Dict[str, Any]]] = None) -> Tuple[str, int, List[Dict[str, Any]]]:
+                  all_chapters: Optional[List[Tuple[int, str, int, int]]] = None) -> Tuple[str, int, List[Dict[str, Any]]]:
     """
     Build comprehensive See Also section with:
     - Cross-book references with SUMMARIES (not excerpts)
@@ -1245,15 +1242,10 @@ def build_see_also(cross_matches: List[Dict[str, Any]],
     n = footnote_start
     foots: List[Dict[str, Any]] = []
 
-    # Extract primary content for comparison
-    primary_content = ""
-    if chapter_pages:
-        primary_content = "\n".join([p.get("content", "") for p in chapter_pages])
-
     # Part 1: Companion Book References (extracted to helper)
     if cross_matches:
         companion_lines, companion_foots, n = _build_companion_references_section(
-            cross_matches, primary_content, n
+            cross_matches, n
         )
         out.extend(companion_lines)
         foots.extend(companion_foots)
@@ -1581,8 +1573,7 @@ def _process_single_chapter(
         chapter_num,
         primary_book=primary,
         current_concepts=chapter_concepts,
-        all_chapters=CHAPTERS,
-        chapter_pages=chapter_pages
+        all_chapters=CHAPTERS
     )
     doc.append(see_also)
     chapter_footnotes.extend(sal_foots)

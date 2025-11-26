@@ -92,7 +92,7 @@ def mock_manual_data():
 def chapter_manager(temp_cache_dir, mock_auto_detected_data):
     """Create ChapterMetadataManager with mock data."""
     cache_file = temp_cache_dir / "chapter_metadata_cache.json"
-    manual_file = temp_cache_dir / "chapter_metadata_manual.json"
+    _ = temp_cache_dir / "chapter_metadata_manual.json"  # Unused in this test
     
     # Write mock cache file
     with open(cache_file, 'w') as f:

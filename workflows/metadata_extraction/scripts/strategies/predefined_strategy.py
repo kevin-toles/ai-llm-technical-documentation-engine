@@ -38,6 +38,8 @@ class PreDefinedStrategy:
             >>> metadata = {"chapters": [{"number": 1, "title": "Intro", "start_page": 1, "end_page": 10}]}
             >>> strategy = PreDefinedStrategy(metadata)
             >>> chapters = strategy.detect([])
+        """
+        _ = pages  # Unused - metadata is self-contained
             >>> assert chapters[0] == (1, 'Intro', 1, 10)
         """
         chapters = self.metadata.get('chapters', [])

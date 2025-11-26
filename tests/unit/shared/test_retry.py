@@ -27,6 +27,7 @@ Test Coverage:
 
 import pytest
 import time
+import math
 from unittest.mock import Mock, patch, call
 from workflows.shared.retry import (
     RetryConfig,
@@ -87,9 +88,9 @@ class TestRetryConfig:
         
         # Act & Assert
         assert math.isclose(config.get_delay(0), 1.0, abs_tol=1e-9)
-        assert config.get_delay(1) == 2.0  # 1 * 2^1 = 2
-        assert config.get_delay(2) == 4.0  # 1 * 2^2 = 4
-        assert config.get_delay(3) == 8.0  # 1 * 2^3 = 8
+        assert math.isclose(config.get_delay(1), 2.0, abs_tol=1e-9)
+        assert math.isclose(config.get_delay(2), 4.0, abs_tol=1e-9)
+        assert math.isclose(config.get_delay(3), 8.0, abs_tol=1e-9)
     
     def test_backoff_respects_max_delay(self):
         """Delay should be capped at max_delay."""
@@ -104,7 +105,7 @@ class TestRetryConfig:
         delay_10 = config.get_delay(10)  # Would be 1024s without cap
         
         # Assert
-        assert delay_10 == 5.0
+        assert math.isclose(delay_10, 5.0, abs_tol=1e-9)
     
     def test_constraint_tightening_reduces_max_tokens(self):
         """max_tokens should decrease on each retry attempt."""
@@ -299,12 +300,12 @@ class TestExponentialBackoffTiming:
         # First retry: attempt=0, delay=0.1
         first_call = callback.call_args_list[0]
         assert first_call[0][0] == 0  # attempt
-        assert first_call[0][2] == 0.1  # delay
+        assert math.isclose(first_call[0][2], 0.1, abs_tol=1e-9)  # delay
         
         # Second retry: attempt=1, delay=0.2
         second_call = callback.call_args_list[1]
         assert second_call[0][0] == 1  # attempt
-        assert second_call[0][2] == 0.2  # delay
+        assert math.isclose(second_call[0][2], 0.2, abs_tol=1e-9)  # delay
 
 
 class TestConstraintTightening:

@@ -104,6 +104,58 @@ class StatisticalExtractor:
         # Return top N keywords (already sorted by score ascending)
         return keywords[:top_n]
     
+    def _extract_concepts_from_summa(self, text: str, top_n: int) -> List[str]:
+        """
+        Extract concepts using Summa TextRank.
+        
+        Helper method extracted to reduce cognitive complexity.
+        
+        Args:
+            text: Input text
+            top_n: Number of concepts to extract
+            
+        Returns:
+            List of concepts or empty list on failure
+        """
+        try:
+            concepts = summa_keywords.keywords(text, words=top_n, split=True)
+            return concepts if concepts else []
+        except Exception:
+            return []
+    
+    def _extract_concepts_from_keywords(self, text: str, top_n: int) -> List[str]:
+        """
+        Fallback: Extract single-word concepts from YAKE keywords.
+        
+        Helper method extracted to reduce cognitive complexity.
+        
+        Args:
+            text: Input text
+            top_n: Number of concepts to extract
+            
+        Returns:
+            List of concepts or empty list on failure
+        """
+        try:
+            keywords = self.kw_extractor.extract_keywords(text)
+            concept_set = set()
+            
+            for keyword, score in keywords:
+                # Split multi-word keywords into single words
+                words = keyword.lower().split()
+                for word in words:
+                    # Filter: min 3 chars, alphabetic (exclude numbers/punctuation)
+                    if len(word) >= 3 and word.isalpha():
+                        concept_set.add(word)
+                        if len(concept_set) >= top_n:
+                            break
+                if len(concept_set) >= top_n:
+                    break
+            
+            return list(concept_set)[:top_n]
+        except Exception:
+            return []
+    
     def extract_concepts(self, text: str, top_n: int = 10) -> List[str]:
         """
         Extract single-word concepts using Summa TextRank keywords.
@@ -140,40 +192,14 @@ class StatisticalExtractor:
         if top_n <= 0:
             raise ValueError(_ERROR_INVALID_TOP_N)
         
-        # Extract keywords using Summa with split=True (returns list of words)
-        concepts = []
-        try:
-            concepts = summa_keywords.keywords(text, words=top_n, split=True)
-        except Exception:
-            # Summa can fail on very short text, code-heavy content, or poor OCR
-            pass
+        # Try Summa first
+        concepts = self._extract_concepts_from_summa(text, top_n)
         
-        # Fallback: Extract single-word concepts from keywords if Summa fails
+        # Fallback to YAKE keywords if Summa fails
         if not concepts:
-            try:
-                # Use YAKE keywords and extract single words
-                keywords = self.kw_extractor.extract_keywords(text)
-                concept_set = set()
-                
-                for keyword, score in keywords:
-                    # Split multi-word keywords into single words
-                    words = keyword.lower().split()
-                    for word in words:
-                        # Filter: min 3 chars, alphabetic (exclude numbers/punctuation)
-                        if len(word) >= 3 and word.isalpha():
-                            concept_set.add(word)
-                            if len(concept_set) >= top_n:
-                                break
-                    if len(concept_set) >= top_n:
-                        break
-                
-                concepts = list(concept_set)[:top_n]
-            except Exception:
-                # Ultimate fallback: empty list
-                concepts = []
+            concepts = self._extract_concepts_from_keywords(text, top_n)
         
         # Summa may return more than requested - limit to top_n
-        # Per PYTHON_GUIDELINES Ch. 13: Ensure consistent behavior
         return concepts[:top_n] if concepts else []
     
     def generate_summary(self, text: str, ratio: float = 0.2) -> str:

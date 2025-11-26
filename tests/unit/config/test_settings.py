@@ -20,6 +20,7 @@ Coverage Target: ≥70%
 """
 
 import pytest
+import math
 import os
 from pathlib import Path
 from unittest.mock import patch
@@ -68,7 +69,7 @@ class TestEnvironmentVariableLoading:
         # Assert - Settings Pattern: Environment loading
         assert config.provider == "custom_provider"
         assert config.model == "test-model"
-        assert config.temperature == 0.5
+        assert math.isclose(config.temperature, 0.5, abs_tol=1e-9)
         assert config.max_tokens == 4096
         assert config.enable_logging is False
     
@@ -89,7 +90,7 @@ class TestEnvironmentVariableLoading:
         # Assert - Settings Pattern: Sensible defaults
         assert config.provider == "anthropic"
         assert config.model == "claude-sonnet-4-5-20250929"
-        assert config.temperature == 0.2
+        assert math.isclose(config.temperature, 0.2, abs_tol=1e-9)
         assert config.max_tokens == 8192
         assert config.enable_logging is True
     
@@ -182,13 +183,13 @@ class TestValidationOnLoad:
                 "LLM_TEMPERATURE": invalid_temp
             }):
                 with patch('os.getenv') as mock_getenv:
-                    def getenv_side_effect(key, default=None):
+                    def getenv_side_effect(key, default=None, temp_value=invalid_temp):
                         if key == "LLM_PROVIDER":
                             return "anthropic"
                         elif key == "ANTHROPIC_API_KEY":
                             return "test_key"
                         elif key == "LLM_TEMPERATURE":
-                            return invalid_temp
+                            return temp_value
                         return default
                     
                     mock_getenv.side_effect = getenv_side_effect
@@ -333,7 +334,7 @@ class TestDefaultsAndPrecedence:
         # Assert - Settings Pattern: Sensible defaults
         assert config.provider == "anthropic"
         assert config.model == "claude-sonnet-4-5-20250929"
-        assert config.temperature == 0.2
+        assert math.isclose(config.temperature, 0.2, abs_tol=1e-9)
         assert config.max_tokens == 8192
         assert config.enable_logging is True
     
@@ -346,8 +347,8 @@ class TestDefaultsAndPrecedence:
         
         # Assert - Settings Pattern: Sensible defaults
         assert config.max_attempts == 2
-        assert config.backoff_factor == 0.8
-        assert config.constraint_factor == 0.5
+        assert math.isclose(config.backoff_factor, 0.8, abs_tol=1e-9)
+        assert math.isclose(config.constraint_factor, 0.5, abs_tol=1e-9)
     
     def test_environment_overrides_defaults(self):
         """Test environment variables override default values."""
@@ -369,8 +370,8 @@ class TestDefaultsAndPrecedence:
         
         # Assert - Settings Pattern: Precedence
         assert config.max_attempts == 3  # Overridden
-        assert config.backoff_factor == 0.7  # Overridden
-        assert config.constraint_factor == 0.5  # Default
+        assert math.isclose(config.backoff_factor, 0.7, abs_tol=1e-9)  # Overridden
+        assert math.isclose(config.constraint_factor, 0.5, abs_tol=1e-9)  # Default
 
 
 # ============================================================================
@@ -617,7 +618,7 @@ class TestSettingsPatternCompliance:
         
         # Assert - Settings Pattern: Defaults work
         assert settings.llm.provider == "anthropic"
-        assert settings.llm.temperature == 0.2
+        assert math.isclose(settings.llm.temperature, 0.2, abs_tol=1e-9)
         assert settings.retry.max_attempts == 2
         assert settings.cache.enabled is True
     

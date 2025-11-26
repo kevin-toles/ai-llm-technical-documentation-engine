@@ -19,6 +19,7 @@ Coverage Target: ≥70%
 """
 
 import pytest
+import math
 from pathlib import Path
 from typing import List, Optional, Dict, Any
 from dataclasses import dataclass
@@ -263,9 +264,9 @@ class TestDomainModels:
         matches = sorted([match1, match2, match3], reverse=True)
         
         # Assert - Sorted by relevance_score
-        assert matches[0].relevance_score == 0.8
-        assert matches[1].relevance_score == 0.5
-        assert matches[2].relevance_score == 0.3
+        assert math.isclose(matches[0].relevance_score, 0.8, abs_tol=1e-9)
+        assert math.isclose(matches[1].relevance_score, 0.5, abs_tol=1e-9)
+        assert math.isclose(matches[2].relevance_score, 0.3, abs_tol=1e-9)
 
 
 # ============================================================================
@@ -544,7 +545,7 @@ class TestFactoryPattern:
         try:
             service = MetadataServiceFactory.create_default()
             assert isinstance(service, MetadataExtractionService)
-        except (FileNotFoundError, Exception):
+        except FileNotFoundError:
             # Expected if default directories don't exist in test environment
             pass
 
@@ -575,8 +576,8 @@ class TestBusinessLogic:
         score = service._calculate_relevance(occurrences, page_count, total_pages)
         
         # Assert - Business Logic: Weighted formula
-        density = occurrences / page_count  # 10/5 = 2.0
-        coverage = page_count / total_pages  # 5/100 = 0.05
+        density = occurrences / page_count
+        coverage = page_count / total_pages
         expected = (density * 0.6) + (coverage * 0.4)
         
         assert score == pytest.approx(expected)
@@ -587,7 +588,7 @@ class TestBusinessLogic:
         score = service._calculate_relevance(0, 0, 100)
         
         # Assert - Business Logic: Handles edge cases
-        assert score == 0.0
+        assert math.isclose(score, 0.0, abs_tol=1e-9)
     
     def test_targeted_content_sorts_by_concept_density(self, service):
         """Test targeted content extraction sorts by concept density."""

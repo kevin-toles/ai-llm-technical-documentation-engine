@@ -178,7 +178,7 @@ class TestEnrichSingleChapter:
                 with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book._enrich_concepts_from_related') as mock_enrich_concepts:
                     mock_enrich_concepts.return_value = []
                     
-                    result = _enrich_single_chapter(
+                    _ = _enrich_single_chapter(
                         sample_chapter,
                         "Fluent_Python_2nd",
                         sample_corpus,

@@ -47,6 +47,83 @@ except ImportError as e:
     STATISTICAL_EXTRACTOR = None
 
 
+def _extract_books_from_taxonomy(taxonomy: Dict[str, Any]) -> set:
+    """
+    Extract book names from taxonomy tiers.
+    
+    Helper function extracted to reduce cognitive complexity.
+    
+    Args:
+        taxonomy: Taxonomy dictionary from Tab 3
+        
+    Returns:
+        Set of book names found in taxonomy
+    """
+    book_set = set()
+    for tier_name, tier_data in taxonomy.get("tiers", {}).items():
+        if "books" in tier_data:
+            for book_file in tier_data.get("books", []):
+                # Clean filename: "Book_Name.json" -> "Book_Name"
+                book_name = book_file.replace(".json", "").replace("_metadata", "")
+                book_set.add(book_name)
+    return book_set
+
+
+def _scan_metadata_directory(metadata_dir: Path) -> set:
+    """
+    Scan metadata directory for all available books.
+    
+    Helper function extracted to reduce cognitive complexity.
+    
+    Args:
+        metadata_dir: Directory containing *_metadata.json files
+        
+    Returns:
+        Set of book names found in directory
+    """
+    book_set = set()
+    if metadata_dir.exists():
+        for meta_file in metadata_dir.glob("*_metadata.json"):
+            book_name = meta_file.stem.replace("_metadata", "")
+            book_set.add(book_name)
+            print(f"[INFO] Found book: {book_name}")
+    return book_set
+
+
+def _load_book_metadata(book_set: set, metadata_dir: Path) -> Dict[str, Any]:
+    """
+    Load metadata for each book in the book set.
+    
+    Helper function extracted to reduce cognitive complexity.
+    
+    Args:
+        book_set: Set of book names to load
+        metadata_dir: Directory containing *_metadata.json files
+        
+    Returns:
+        Dictionary with metadata and corpus_size
+    """
+    context = {
+        "books": list(book_set),
+        "metadata": {},
+        "corpus_size": 0
+    }
+    
+    for book_name in book_set:
+        metadata_filename = f"{book_name}_metadata.json"
+        metadata_path = metadata_dir / metadata_filename
+        
+        if metadata_path.exists():
+            with open(metadata_path, encoding='utf-8') as f:
+                book_metadata = json.load(f)
+                context["metadata"][book_name] = book_metadata
+                context["corpus_size"] += len(book_metadata)
+        else:
+            print(f"  ⚠️  Skipping {book_name} - metadata not found at {metadata_path}")
+    
+    return context
+
+
 def load_cross_book_context(taxonomy_path: Path, metadata_dir: Path) -> Dict[str, Any]:
     """
     Load metadata for all books listed in taxonomy.
@@ -75,51 +152,15 @@ def load_cross_book_context(taxonomy_path: Path, metadata_dir: Path) -> Dict[str
         taxonomy = json.load(f)
     
     # Extract book list from taxonomy tiers
-    # New taxonomy structure: { "tiers": { "tier_name": { "concepts": [...], "books": [...] } } }
-    # But actual structure from Tab 3 is: { "tiers": { "tier_name": { "priority": N, "concepts": [...] } } }
-    # So we need to find which metadata files were used to create this taxonomy
-    # We'll scan metadata_dir for all available metadata files as fallback
-    book_set = set()
-    
-    # First try to extract from taxonomy if books field exists
-    for tier_name, tier_data in taxonomy.get("tiers", {}).items():
-        if "books" in tier_data:
-            for book_file in tier_data.get("books", []):
-                # Clean filename: "Book_Name.json" -> "Book_Name"
-                book_name = book_file.replace(".json", "").replace("_metadata", "")
-                book_set.add(book_name)
+    book_set = _extract_books_from_taxonomy(taxonomy)
     
     # If no books found in taxonomy, scan metadata directory
-    # This happens with taxonomies from Tab 3 which only store concepts, not book lists
     if not book_set:
         print("[INFO] Taxonomy doesn't contain book list. Scanning metadata directory for all available books...")
-        if metadata_dir.exists():
-            for meta_file in metadata_dir.glob("*_metadata.json"):
-                book_name = meta_file.stem.replace("_metadata", "")
-                book_set.add(book_name)
-                print(f"[INFO] Found book: {book_name}")
+        book_set = _scan_metadata_directory(metadata_dir)
     
     # Load metadata for each book
-    context = {
-        "books": list(book_set),
-        "metadata": {},
-        "corpus_size": 0
-    }
-    
-    for book_name in book_set:
-        # book_name is already cleaned (e.g., "Architecture_Patterns" or "operating_systems_three_easy_pieces")
-        metadata_filename = f"{book_name}_metadata.json"
-        metadata_path = metadata_dir / metadata_filename
-        
-        if metadata_path.exists():
-            with open(metadata_path, encoding='utf-8') as f:
-                book_metadata = json.load(f)
-                context["metadata"][book_name] = book_metadata
-                context["corpus_size"] += len(book_metadata)
-        else:
-            print(f"  ⚠️  Skipping {book_name} - metadata not found at {metadata_path}")
-    
-    return context
+    return _load_book_metadata(book_set, metadata_dir)
 
 
 def build_chapter_corpus(context: Dict[str, Any]) -> Tuple[List[str], List[Dict[str, Any]]]:

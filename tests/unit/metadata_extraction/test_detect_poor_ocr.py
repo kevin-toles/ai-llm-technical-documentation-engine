@@ -8,6 +8,7 @@ Target: Reduce main() from CC 25 to <10
 Reference: BATCH1_CRITICAL_FILES_REMEDIATION_PLAN.md File #6
 """
 import pytest
+import math
 from pathlib import Path
 from workflows.metadata_extraction.scripts.detect_poor_ocr import (
     OCRQualityDetector,
@@ -135,7 +136,7 @@ class TestAssessBookCurrentBehavior:
         
         assert "failed_to_load" in report.quality_issues[0]
         assert report.needs_re_ocr is True
-        assert report.quality_score == 0.0
+        assert math.isclose(report.quality_score, 0.0, abs_tol=1e-9)
 
 
 class TestMainFunctionCurrentBehavior:

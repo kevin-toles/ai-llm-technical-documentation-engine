@@ -280,7 +280,7 @@ class TestBuildChapterCorpus:
         }
         
         # Act
-        corpus, index = build_chapter_corpus(context)
+        corpus, _ = build_chapter_corpus(context)
         
         # Assert - should contain all text features
         text = corpus[0]
