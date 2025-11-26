@@ -1636,7 +1636,8 @@ def _extract_concept_data(chapter_content: str) -> List[Dict[str, Any]]:
     concepts = []
     # Fixed regex: Annotation should stop at next heading (####, ###) or end of string
     # Security: Limit quantifiers to prevent ReDoS (max 10KB per field)
-    concept_pattern = r'#### \*\*([^\*]{1,200})\*\* \*\(p\.(\d{1,5})\)\*\s+\*\*Verbatim Educational Excerpt\*\*[^\n`]{0,50}\s+```\s+([^`]{1,5000})\s+```\s+[^\*]{0,50}\*\*Annotation:\*\* ([^\n#]{1,10000})(?=\n####|\n###|\Z)'
+    # Allow newlines between sections but limit overall length
+    concept_pattern = r'#### \*\*([^\*]{1,200})\*\* \*\(p\.(\d{1,5})\)\*[^\n]{0,100}\n\n\*\*Verbatim Educational Excerpt\*\*[^`]{0,100}```\n([^`]{1,5000})\n```\n\[[\^\d]{1,10}\]\n\*\*Annotation:\*\* ([^\n#]{1,10000})(?=\n\n####|\n\n###|\Z)'
     
     for concept_match in re.finditer(concept_pattern, chapter_content, re.DOTALL):
         concept = {

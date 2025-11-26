@@ -29,8 +29,8 @@ from typing import List, Dict, Any, Tuple
 from datetime import datetime
 
 # scikit-learn imports for TF-IDF and cosine similarity
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.feature_extraction.text import TfidfVectorizer  # type: ignore[import-untyped]
+from sklearn.metrics.pairwise import cosine_similarity  # type: ignore[import-untyped]
 
 # Project configuration and paths
 PROJECT_ROOT = Path(__file__).parent.parent.parent.parent

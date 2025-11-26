@@ -360,8 +360,8 @@ def main():
         print(f"📝 Auto-generated output filename: {args.output}")
     
     # Validate output filename
-    if not args.output.endswith('.json'):
-        args.output += '.json'
+    if not args.output.endswith(JSON_EXT):
+        args.output += JSON_EXT
     
     # Generate taxonomy
     try:

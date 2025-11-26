@@ -18,15 +18,9 @@ Document Cross-References:
     - Python Cookbook 3rd Ch. 1: Data structures, algorithms
 """
 
-import re
 from typing import List, Dict, Optional, Tuple
 import sys
 from pathlib import Path
-
-# Sklearn for TF-IDF and cosine similarity (Tab 4 already uses this)
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
-import numpy as np
 
 # Add project root for imports
 PROJECT_ROOT = Path(__file__).parent.parent.parent

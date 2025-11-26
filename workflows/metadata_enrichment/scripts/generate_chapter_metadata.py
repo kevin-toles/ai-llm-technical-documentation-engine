@@ -24,7 +24,7 @@ import json
 import re
 import sys
 from pathlib import Path
-from typing import List, Dict, Any, Tuple
+from typing import List, Dict, Any, Optional
 
 # Add project root to path for config access
 PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
@@ -211,7 +211,7 @@ def _build_keyword_summary(keywords: List[str], max_parts: int) -> str:
     return ""
 
 
-def _add_technical_context(summary: str, sentences: List[str], sample_text: str) -> str:
+def _add_technical_context(summary: str, sentences: List[str], sample_text: Optional[str]) -> str:
     """Add additional technical context if summary is too short."""
     if len(summary) >= 150 or not sample_text:
         return summary

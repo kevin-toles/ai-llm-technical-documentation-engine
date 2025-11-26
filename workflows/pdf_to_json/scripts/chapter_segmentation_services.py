@@ -16,10 +16,9 @@ References:
 """
 
 import re
-from typing import List, Dict, Optional, Tuple
-import numpy as np
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
+from typing import List, Optional, Tuple
+from sklearn.feature_extraction.text import TfidfVectorizer  # type: ignore[import-untyped]
+from sklearn.metrics.pairwise import cosine_similarity  # type: ignore[import-untyped]
 
 from workflows.pdf_to_json.scripts.chapter_models import Chapter
 from workflows.metadata_extraction.scripts.adapters.statistical_extractor import StatisticalExtractor

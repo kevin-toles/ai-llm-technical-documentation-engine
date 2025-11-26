@@ -14,8 +14,8 @@ TDD Status: GREEN phase - Minimal implementation to pass tests
 """
 
 from typing import List, Tuple
-import yake
-from summa import keywords as summa_keywords, summarizer
+import yake  # type: ignore[import-untyped]
+from summa import keywords as summa_keywords, summarizer  # type: ignore[import-untyped]
 
 
 # Constants - Per PYTHON_GUIDELINES Ch. 6: Class constants for validation messages

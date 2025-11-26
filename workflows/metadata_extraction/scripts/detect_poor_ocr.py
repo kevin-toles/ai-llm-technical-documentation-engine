@@ -21,7 +21,7 @@ Usage:
 import argparse
 import json
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import List, Tuple
 from collections import Counter
 from dataclasses import dataclass
 

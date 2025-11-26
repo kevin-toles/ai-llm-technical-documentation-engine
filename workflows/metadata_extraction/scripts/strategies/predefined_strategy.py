@@ -5,7 +5,7 @@ PRIORITY: Highest (try first)
 USE CASE: When JSON already contains chapter definitions
 """
 
-from typing import List, Dict, Tuple, Optional
+from typing import List, Dict, Tuple
 
 
 class PreDefinedStrategy:

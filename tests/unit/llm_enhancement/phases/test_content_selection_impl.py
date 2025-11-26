@@ -82,7 +82,7 @@ class TestMockMetadataResponse:
         assert isinstance(result, LLMMetadataResponse)
         assert hasattr(result, 'content_requests')
         assert hasattr(result, 'validation_summary')
-        assert hasattr(result, 'content_strategy')
+        assert hasattr(result, 'analysis_strategy')
     
     def test_mock_response_generates_content_requests(self, content_service):
         """Test that mock response includes content requests."""
