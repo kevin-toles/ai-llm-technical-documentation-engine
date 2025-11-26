@@ -28,10 +28,10 @@ from typing import List, Dict, Any
 PROJECT_ROOT = Path(__file__).parent.parent.parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from config.settings import settings
+from config.settings import settings  # noqa: E402
 
 # Import shared dataclasses and services
-from workflows.llm_enhancement.scripts.interactive_llm_system_v3_hybrid_prompt import (
+from workflows.llm_enhancement.scripts.interactive_llm_system_v3_hybrid_prompt import (  # noqa: E402
     LLMMetadataResponse,
 )
 

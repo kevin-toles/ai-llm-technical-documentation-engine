@@ -13,7 +13,7 @@ import json
 import re
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, List, Any, Optional
+from typing import Dict, Any, Optional
 
 
 def parse_markdown_chapter(chapter_text: str) -> Optional[Dict[str, Any]]:

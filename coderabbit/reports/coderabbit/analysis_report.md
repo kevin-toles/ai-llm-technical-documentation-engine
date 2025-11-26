@@ -1,474 +1,216 @@
 # CodeRabbit Local Analysis Report
-**Generated**: 2025-11-24 16:01:56
-**Total Issues**: 1496
+**Generated**: 2025-11-26 00:27:46
+**Total Issues**: 42
 
 ## Summary
 | Severity | Count |
 |----------|-------|
 | 🚨 Critical | 0 |
-| 🔴 High | 16 |
-| 🟡 Medium | 374 |
-| 🔵 Low | 1106 |
+| 🔴 High | 1 |
+| 🟡 Medium | 38 |
+| 🔵 Low | 3 |
 | ℹ️ Info | 0 |
 
 ## Recommendations
 - ⚡ Fix high-severity issues before deployment
 - 🔧 Consider refactoring to reduce medium-severity issues
 
-## 🔴 High Issues (16)
+## 🔴 High Issues (1)
 
 ### Issue 1
-- **File**: `ui/desktop_app.py`
-- **Line**: 300
-- **Tool**: radon
-- **Type**: complexity
-- **Rule**: complexity
-- **Message**: High complexity: 49 (threshold: 10)
-
-### Issue 2
-- **File**: `ui/desktop_app.py`
-- **Line**: 73
-- **Tool**: radon
-- **Type**: complexity
-- **Rule**: complexity
-- **Message**: High complexity: 21 (threshold: 10)
-
-### Issue 3
-- **File**: `ui/desktop_app.py`
-- **Line**: 515
-- **Tool**: radon
-- **Type**: complexity
-- **Rule**: complexity
-- **Message**: High complexity: 16 (threshold: 10)
-
-### Issue 4
-- **File**: `ui/main.py`
-- **Line**: 93
-- **Tool**: radon
-- **Type**: complexity
-- **Rule**: complexity
-- **Message**: High complexity: 16 (threshold: 10)
-
-### Issue 5
-- **File**: `tests_integration/test_pdf_to_json_integration.py`
-- **Line**: 27
-- **Tool**: radon
-- **Type**: complexity
-- **Rule**: complexity
-- **Message**: High complexity: 30 (threshold: 10)
-
-### Issue 6
-- **File**: `tests/integration/test_metadata_enrichment.py`
-- **Line**: 148
-- **Tool**: radon
-- **Type**: complexity
-- **Rule**: complexity
-- **Message**: High complexity: 20 (threshold: 10)
-
-### Issue 7
-- **File**: `tests/integration/test_aggregate_package.py`
-- **Line**: 149
-- **Tool**: radon
-- **Type**: complexity
-- **Rule**: complexity
-- **Message**: High complexity: 18 (threshold: 10)
-
-### Issue 8
-- **File**: `workflows/metadata_extraction/scripts/generate_metadata_universal.py`
-- **Line**: 140
-- **Tool**: radon
-- **Type**: complexity
-- **Rule**: complexity
-- **Message**: High complexity: 18 (threshold: 10)
-
-### Issue 9
-- **File**: `workflows/metadata_extraction/scripts/detect_poor_ocr.py`
-- **Line**: 48
-- **Tool**: radon
-- **Type**: complexity
-- **Rule**: complexity
-- **Message**: High complexity: 18 (threshold: 10)
-
-### Issue 10
-- **File**: `workflows/pdf_to_json/scripts/convert_pdf_to_json.py`
-- **Line**: 102
-- **Tool**: radon
-- **Type**: complexity
-- **Rule**: complexity
-- **Message**: High complexity: 19 (threshold: 10)
-
-### Issue 11
-- **File**: `workflows/pdf_to_json/scripts/ml_chapter_detector.py`
-- **Line**: 45
-- **Tool**: radon
-- **Type**: complexity
-- **Rule**: complexity
-- **Message**: High complexity: 21 (threshold: 10)
-
-### Issue 12
-- **File**: `scripts/validate_metadata_extraction.py`
-- **Line**: 167
-- **Tool**: radon
-- **Type**: complexity
-- **Rule**: complexity
-- **Message**: High complexity: 34 (threshold: 10)
-
-### Issue 13
-- **File**: `scripts/validate_tab5_implementation.py`
-- **Line**: 11
-- **Tool**: radon
-- **Type**: complexity
-- **Rule**: complexity
-- **Message**: High complexity: 34 (threshold: 10)
-
-### Issue 14
-- **File**: `scripts/purge_metadata.py`
-- **Line**: 85
-- **Tool**: radon
-- **Type**: complexity
-- **Rule**: complexity
-- **Message**: High complexity: 16 (threshold: 10)
-
-### Issue 15
-- **File**: `scripts/validate_scanned_pdfs.py`
-- **Line**: 34
+- **File**: `pdf_to_json/scripts/ml_chapter_detector.py`
+- **Line**: 199
 - **Tool**: radon
 - **Type**: complexity
 - **Rule**: complexity
 - **Message**: High complexity: 17 (threshold: 10)
 
-### Issue 16
-- **File**: `scripts/validate_scanned_pdfs.py`
-- **Line**: 142
-- **Tool**: radon
-- **Type**: complexity
-- **Rule**: complexity
-- **Message**: High complexity: 16 (threshold: 10)
-
-## 🟡 Medium Issues (374)
+## 🟡 Medium Issues (38)
 
 ### Issue 1
-- **File**: `./workflows/metadata_extraction/scripts/generate_metadata_universal.py`
-- **Line**: 567
-- **Tool**: bandit
-- **Type**: security
-- **Rule**: B307
-- **Message**: Use of possibly insecure function - consider using safer ast.literal_eval.
-
-### Issue 2
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/scripts/purge_metadata.py`
-- **Line**: 11
+- **File**: `/Users/kevintoles/POC/llm-document-enhancer/workflows/metadata_enrichment/scripts/enrich_metadata_per_book.py`
+- **Line**: 28
 - **Tool**: ruff
 - **Type**: code_quality
 - **Rule**: F401
-- **Message**: `os` imported but unused
+- **Message**: `typing.Optional` imported but unused
+
+### Issue 2
+- **File**: `/Users/kevintoles/POC/llm-document-enhancer/workflows/metadata_enrichment/scripts/enrich_metadata_per_book.py`
+- **Line**: 30
+- **Tool**: ruff
+- **Type**: code_quality
+- **Rule**: F401
+- **Message**: `collections.defaultdict` imported but unused
 
 ### Issue 3
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/scripts/purge_metadata.py`
-- **Line**: 109
+- **File**: `/Users/kevintoles/POC/llm-document-enhancer/workflows/metadata_enrichment/scripts/generate_chapter_metadata.py`
+- **Line**: 27
 - **Tool**: ruff
 - **Type**: code_quality
-- **Rule**: F541
-- **Message**: f-string without any placeholders
+- **Rule**: F401
+- **Message**: `typing.Tuple` imported but unused
 
 ### Issue 4
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/scripts/purge_metadata.py`
-- **Line**: 144
+- **File**: `/Users/kevintoles/POC/llm-document-enhancer/workflows/metadata_enrichment/scripts/generate_chapter_metadata.py`
+- **Line**: 34
 - **Tool**: ruff
 - **Type**: code_quality
-- **Rule**: F541
-- **Message**: f-string without any placeholders
+- **Rule**: E402
+- **Message**: Module level import not at top of file
 
 ### Issue 5
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/scripts/purge_metadata.py`
-- **Line**: 145
+- **File**: `/Users/kevintoles/POC/llm-document-enhancer/workflows/metadata_enrichment/scripts/generate_chapter_metadata.py`
+- **Line**: 38
 - **Tool**: ruff
 - **Type**: code_quality
-- **Rule**: F541
-- **Message**: f-string without any placeholders
+- **Rule**: E402
+- **Message**: Module level import not at top of file
 
 ### Issue 6
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/scripts/purge_metadata.py`
-- **Line**: 154
+- **File**: `/Users/kevintoles/POC/llm-document-enhancer/workflows/metadata_extraction/scripts/detect_poor_ocr.py`
+- **Line**: 24
 - **Tool**: ruff
 - **Type**: code_quality
-- **Rule**: F541
-- **Message**: f-string without any placeholders
+- **Rule**: F401
+- **Message**: `typing.Dict` imported but unused
 
 ### Issue 7
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/scripts/purge_metadata.py`
-- **Line**: 189
+- **File**: `/Users/kevintoles/POC/llm-document-enhancer/workflows/metadata_extraction/scripts/generate_metadata_universal.py`
+- **Line**: 32
 - **Tool**: ruff
 - **Type**: code_quality
-- **Rule**: F541
-- **Message**: f-string without any placeholders
+- **Rule**: F401
+- **Message**: `re` imported but unused
 
 ### Issue 8
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/scripts/validate_metadata_extraction.py`
-- **Line**: 537
+- **File**: `/Users/kevintoles/POC/llm-document-enhancer/workflows/metadata_extraction/scripts/generate_metadata_universal.py`
+- **Line**: 36
 - **Tool**: ruff
 - **Type**: code_quality
-- **Rule**: F541
-- **Message**: f-string without any placeholders
+- **Rule**: F401
+- **Message**: `typing.Set` imported but unused
 
 ### Issue 9
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/scripts/validate_scanned_pdfs.py`
-- **Line**: 20
+- **File**: `/Users/kevintoles/POC/llm-document-enhancer/workflows/metadata_extraction/scripts/generate_metadata_universal.py`
+- **Line**: 46
 - **Tool**: ruff
 - **Type**: code_quality
 - **Rule**: E402
 - **Message**: Module level import not at top of file
 
 ### Issue 10
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/scripts/validate_scanned_pdfs.py`
-- **Line**: 129
+- **File**: `/Users/kevintoles/POC/llm-document-enhancer/workflows/metadata_extraction/scripts/generate_metadata_universal.py`
+- **Line**: 50
 - **Tool**: ruff
 - **Type**: code_quality
-- **Rule**: F541
-- **Message**: f-string without any placeholders
+- **Rule**: E402
+- **Message**: Module level import not at top of file
 
 ### Issue 11
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/scripts/validate_tab5_implementation.py`
-- **Line**: 48
+- **File**: `/Users/kevintoles/POC/llm-document-enhancer/workflows/metadata_extraction/scripts/generate_metadata_universal.py`
+- **Line**: 51
 - **Tool**: ruff
 - **Type**: code_quality
-- **Rule**: F541
-- **Message**: f-string without any placeholders
+- **Rule**: E402
+- **Message**: Module level import not at top of file
 
 ### Issue 12
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/scripts/validate_tab5_implementation.py`
-- **Line**: 91
+- **File**: `/Users/kevintoles/POC/llm-document-enhancer/workflows/metadata_extraction/scripts/generate_metadata_universal.py`
+- **Line**: 52
 - **Tool**: ruff
 - **Type**: code_quality
-- **Rule**: F541
-- **Message**: f-string without any placeholders
+- **Rule**: E402
+- **Message**: Module level import not at top of file
 
 ### Issue 13
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/tests/integration/test_aggregate_package.py`
+- **File**: `/Users/kevintoles/POC/llm-document-enhancer/workflows/metadata_extraction/scripts/generate_metadata_universal.py`
+- **Line**: 53
+- **Tool**: ruff
+- **Type**: code_quality
+- **Rule**: E402
+- **Message**: Module level import not at top of file
+
+### Issue 14
+- **File**: `/Users/kevintoles/POC/llm-document-enhancer/workflows/metadata_extraction/scripts/generate_metadata_universal.py`
+- **Line**: 54
+- **Tool**: ruff
+- **Type**: code_quality
+- **Rule**: E402
+- **Message**: Module level import not at top of file
+
+### Issue 15
+- **File**: `/Users/kevintoles/POC/llm-document-enhancer/workflows/metadata_extraction/scripts/strategies/predefined_strategy.py`
+- **Line**: 43
+- **Tool**: ruff
+- **Type**: code_quality
+- **Rule**: invalid-syntax
+- **Message**: Unexpected indentation
+
+### Issue 16
+- **File**: `/Users/kevintoles/POC/llm-document-enhancer/workflows/metadata_extraction/scripts/strategies/predefined_strategy.py`
+- **Line**: 43
+- **Tool**: ruff
+- **Type**: code_quality
+- **Rule**: invalid-syntax
+- **Message**: Expected a statement
+
+### Issue 17
+- **File**: `/Users/kevintoles/POC/llm-document-enhancer/workflows/metadata_extraction/scripts/strategies/predefined_strategy.py`
+- **Line**: 43
+- **Tool**: ruff
+- **Type**: code_quality
+- **Rule**: invalid-syntax
+- **Message**: Expected a statement
+
+### Issue 18
+- **File**: `/Users/kevintoles/POC/llm-document-enhancer/workflows/metadata_extraction/scripts/strategies/predefined_strategy.py`
+- **Line**: 44
+- **Tool**: ruff
+- **Type**: code_quality
+- **Rule**: invalid-syntax
+- **Message**: missing closing quote in string literal
+
+### Issue 19
+- **File**: `/Users/kevintoles/POC/llm-document-enhancer/workflows/metadata_extraction/scripts/strategies/predefined_strategy.py`
+- **Line**: 67
+- **Tool**: ruff
+- **Type**: code_quality
+- **Rule**: invalid-syntax
+- **Message**: Expected a statement
+
+### Issue 20
+- **File**: `/Users/kevintoles/POC/llm-document-enhancer/workflows/pdf_to_json/scripts/chapter_segmentation_services.py`
 - **Line**: 19
 - **Tool**: ruff
 - **Type**: code_quality
 - **Rule**: F401
 - **Message**: `typing.Dict` imported but unused
 
-### Issue 14
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/tests/integration/test_aggregate_package.py`
-- **Line**: 19
-- **Tool**: ruff
-- **Type**: code_quality
-- **Rule**: F401
-- **Message**: `typing.List` imported but unused
+... and 18 more issues
 
-### Issue 15
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/tests/integration/test_aggregate_package.py`
-- **Line**: 19
-- **Tool**: ruff
-- **Type**: code_quality
-- **Rule**: F401
-- **Message**: `typing.Any` imported but unused
-
-### Issue 16
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/tests/integration/test_chapter_generator.py`
-- **Line**: 19
-- **Tool**: ruff
-- **Type**: code_quality
-- **Rule**: F401
-- **Message**: `pathlib.Path` imported but unused
-
-### Issue 17
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/tests/integration/test_chapter_generator.py`
-- **Line**: 43
-- **Tool**: ruff
-- **Type**: code_quality
-- **Rule**: F821
-- **Message**: Undefined name `generate_chapter_summary`
-
-### Issue 18
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/tests/integration/test_chapter_generator.py`
-- **Line**: 59
-- **Tool**: ruff
-- **Type**: code_quality
-- **Rule**: F821
-- **Message**: Undefined name `generate_chapter_summary`
-
-### Issue 19
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/tests/integration/test_chapter_generator.py`
-- **Line**: 67
-- **Tool**: ruff
-- **Type**: code_quality
-- **Rule**: F821
-- **Message**: Undefined name `generate_chapter_summary`
-
-### Issue 20
-- **File**: `/Users/kevintoles/POC/llm-document-enhancer/tests/integration/test_chapter_generator.py`
-- **Line**: 77
-- **Tool**: ruff
-- **Type**: code_quality
-- **Rule**: F821
-- **Message**: Undefined name `generate_chapter_summary`
-
-... and 354 more issues
-
-## 🔵 Low Issues (1106)
+## 🔵 Low Issues (3)
 
 ### Issue 1
-- **File**: `./coderabbit/scripts/local_coderabbit.py`
-- **Line**: 9
+- **File**: `./llm_enhancement/scripts/phases/content_selection_impl.py`
+- **Line**: 428
 - **Tool**: bandit
 - **Type**: security
-- **Rule**: B404
-- **Message**: Consider possible security implications associated with the subprocess module.
+- **Rule**: B110
+- **Message**: Try, Except, Pass detected.
 
 ### Issue 2
-- **File**: `./coderabbit/scripts/local_coderabbit.py`
-- **Line**: 48
+- **File**: `./metadata_extraction/scripts/generate_metadata_universal.py`
+- **Line**: 253
 - **Tool**: bandit
 - **Type**: security
-- **Rule**: B607
-- **Message**: Starting a process with a partial executable path
+- **Rule**: B110
+- **Message**: Try, Except, Pass detected.
 
 ### Issue 3
-- **File**: `./coderabbit/scripts/local_coderabbit.py`
-- **Line**: 48
-- **Tool**: bandit
-- **Type**: security
-- **Rule**: B603
-- **Message**: subprocess call - check for execution of untrusted input.
-
-### Issue 4
-- **File**: `./coderabbit/scripts/local_coderabbit.py`
-- **Line**: 92
-- **Tool**: bandit
-- **Type**: security
-- **Rule**: B607
-- **Message**: Starting a process with a partial executable path
-
-### Issue 5
-- **File**: `./coderabbit/scripts/local_coderabbit.py`
-- **Line**: 92
-- **Tool**: bandit
-- **Type**: security
-- **Rule**: B603
-- **Message**: subprocess call - check for execution of untrusted input.
-
-### Issue 6
-- **File**: `./coderabbit/scripts/local_coderabbit.py`
-- **Line**: 113
-- **Tool**: bandit
-- **Type**: security
-- **Rule**: B607
-- **Message**: Starting a process with a partial executable path
-
-### Issue 7
-- **File**: `./coderabbit/scripts/local_coderabbit.py`
-- **Line**: 113
-- **Tool**: bandit
-- **Type**: security
-- **Rule**: B603
-- **Message**: subprocess call - check for execution of untrusted input.
-
-### Issue 8
-- **File**: `./coderabbit/scripts/local_coderabbit.py`
-- **Line**: 175
-- **Tool**: bandit
-- **Type**: security
-- **Rule**: B607
-- **Message**: Starting a process with a partial executable path
-
-### Issue 9
-- **File**: `./coderabbit/scripts/local_coderabbit.py`
-- **Line**: 175
-- **Tool**: bandit
-- **Type**: security
-- **Rule**: B603
-- **Message**: subprocess call - check for execution of untrusted input.
-
-### Issue 10
-- **File**: `./coderabbit/scripts/local_coderabbit.py`
-- **Line**: 198
-- **Tool**: bandit
-- **Type**: security
-- **Rule**: B607
-- **Message**: Starting a process with a partial executable path
-
-### Issue 11
-- **File**: `./coderabbit/scripts/local_coderabbit.py`
-- **Line**: 198
-- **Tool**: bandit
-- **Type**: security
-- **Rule**: B603
-- **Message**: subprocess call - check for execution of untrusted input.
-
-### Issue 12
-- **File**: `./coderabbit/scripts/local_coderabbit.py`
-- **Line**: 249
+- **File**: `./metadata_extraction/scripts/strategies/yake_validation_strategy.py`
+- **Line**: 74
 - **Tool**: bandit
 - **Type**: security
 - **Rule**: B112
 - **Message**: Try, Except, Continue detected.
-
-### Issue 13
-- **File**: `./tests/integration/test_aggregate_package.py`
-- **Line**: 63
-- **Tool**: bandit
-- **Type**: security
-- **Rule**: B101
-- **Message**: Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-
-### Issue 14
-- **File**: `./tests/integration/test_aggregate_package.py`
-- **Line**: 78
-- **Tool**: bandit
-- **Type**: security
-- **Rule**: B101
-- **Message**: Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-
-### Issue 15
-- **File**: `./tests/integration/test_aggregate_package.py`
-- **Line**: 79
-- **Tool**: bandit
-- **Type**: security
-- **Rule**: B101
-- **Message**: Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-
-### Issue 16
-- **File**: `./tests/integration/test_aggregate_package.py`
-- **Line**: 105
-- **Tool**: bandit
-- **Type**: security
-- **Rule**: B101
-- **Message**: Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-
-### Issue 17
-- **File**: `./tests/integration/test_aggregate_package.py`
-- **Line**: 106
-- **Tool**: bandit
-- **Type**: security
-- **Rule**: B101
-- **Message**: Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-
-### Issue 18
-- **File**: `./tests/integration/test_aggregate_package.py`
-- **Line**: 121
-- **Tool**: bandit
-- **Type**: security
-- **Rule**: B101
-- **Message**: Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-
-### Issue 19
-- **File**: `./tests/integration/test_aggregate_package.py`
-- **Line**: 122
-- **Tool**: bandit
-- **Type**: security
-- **Rule**: B101
-- **Message**: Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-
-### Issue 20
-- **File**: `./tests/integration/test_aggregate_package.py`
-- **Line**: 131
-- **Tool**: bandit
-- **Type**: security
-- **Rule**: B101
-- **Message**: Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-
-... and 1086 more issues

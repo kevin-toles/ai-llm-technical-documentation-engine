@@ -34,33 +34,20 @@ class MetadataBuilder:
         self._last_metadata_package: Dict[str, Any] = {}  # For mocking fallback
     
     def _get_taxonomy_recommendations(
-        self,
-        concepts: List[str]
+        self
     ) -> Tuple[List[str], Dict[str, List[str]]]:
         """
         Get book recommendations and cascading relationships from taxonomy.
         
-        Returns: (recommended_books, cascading_info)
+        NOTE: Hardcoded taxonomy system deprecated per DEPRECATION_SUMMARY.md
+        This function kept as stub for future data-driven taxonomy implementation.
+        
+        Returns: (recommended_books, cascading_info) - Currently returns empty
         Source: interactive_llm_system_v3_hybrid_prompt.py lines 1029-1055
         """
-        if not TAXONOMY_AVAILABLE:
-            return [], {}
-        
-        concept_set = set(concepts)
-        scored_books = score_books_for_concepts(concept_set)
-        recommended_books = [book_name for book_name, score in scored_books if score >= 0.2]
-        
-        # Build cascading relationships
-        cascading_info = {}
-        for book_name in recommended_books[:8]:
-            cascades = get_cascading_books(book_name, depth=1)
-            if cascades:
-                cascading_info[book_name] = cascades
-                for cascaded_book in cascades:
-                    if cascaded_book not in recommended_books:
-                        recommended_books.append(cascaded_book)
-        
-        return recommended_books, cascading_info
+        # TAXONOMY_AVAILABLE = False per line 16
+        # TODO(future): Integrate with data-driven taxonomy from generate_concept_taxonomy.py  # noqa: S101
+        return [], {}
     
     def _calculate_relevance_boosts(
         self,
@@ -160,8 +147,8 @@ class MetadataBuilder:
         all_books = self._metadata_service._repo.get_all()
         concept_map = self._metadata_service.create_concept_mapping(concepts)
         
-        # Get taxonomy-based recommendations
-        _recommended_books, cascading_info = self._get_taxonomy_recommendations(concepts)
+        # Get taxonomy-based recommendations (deprecated - returns empty)
+        _recommended_books, cascading_info = self._get_taxonomy_recommendations()
         
         # Build structured metadata for each book
         books_metadata = [

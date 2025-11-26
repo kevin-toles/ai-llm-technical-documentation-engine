@@ -72,7 +72,7 @@ class YAKEValidationStrategy:
                     validated.append((chapter_num, title, start_page, end_page))
             
             except Exception:
-                # If keyword extraction fails, skip this candidate
+                # If keyword extraction fails (empty content, encoding issues), skip this candidate
                 continue
         
         return validated

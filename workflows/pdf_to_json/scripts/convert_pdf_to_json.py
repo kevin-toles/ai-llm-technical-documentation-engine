@@ -40,6 +40,86 @@ from config.settings import settings
 from workflows.pdf_to_json.scripts.chapter_segmenter import ChapterSegmenter
 
 
+def _extract_pdf_metadata(doc, pdf_path: Path) -> Dict:
+    """Extract metadata from PDF document.
+    
+    Args:
+        doc: PyMuPDF document object
+        pdf_path: Path to source PDF file
+        
+    Returns:
+        Dictionary with metadata fields
+    """
+    metadata = {
+        "title": pdf_path.stem,
+        "author": "Unknown Author",
+        "publisher": "Unknown Publisher",
+        "edition": "1st Edition",
+        "isbn": "",
+        "total_pages": len(doc),
+        "conversion_date": datetime.now().isoformat(),
+        "conversion_method": "PyMuPDF + OCR fallback",
+        "source_pdf": pdf_path.name
+    }
+    
+    # Try to get metadata from PDF
+    pdf_metadata = doc.metadata
+    if pdf_metadata:
+        if pdf_metadata.get('author'):
+            metadata['author'] = pdf_metadata['author']
+        if pdf_metadata.get('title'):
+            metadata['title'] = pdf_metadata['title']
+    
+    return metadata
+
+
+def _populate_chapter_content(chapters: List[Dict], pages: List[Dict]) -> None:
+    """Populate chapter content from page ranges.
+    
+    Args:
+        chapters: List of chapter dictionaries to populate
+        pages: List of page dictionaries with content
+    """
+    print("\n📝 Extracting chapter content from pages...")
+    for chapter in chapters:
+        start_page = chapter.get("start_page", 1)
+        end_page = chapter.get("end_page", start_page)
+        
+        # Extract content from all pages in the chapter range
+        chapter_text = []
+        for page_num in range(start_page, end_page + 1):
+            # Pages are 1-indexed in chapter metadata, 0-indexed in array
+            page_idx = page_num - 1
+            if 0 <= page_idx < len(pages):
+                page_content = pages[page_idx].get("content", "")
+                if page_content.strip():
+                    chapter_text.append(page_content)
+        
+        # Join all page content with double newline separator
+        chapter["content"] = "\n\n".join(chapter_text)
+        chapter["page_number"] = start_page  # Add page_number field for compatibility
+
+
+def _print_chapter_summary(chapters: List[Dict]) -> None:
+    """Print summary of detected chapters.
+    
+    Args:
+        chapters: List of chapter dictionaries
+    """
+    print(f"✅ Detected {len(chapters)} chapters:")
+    for ch in chapters[:5]:
+        method_emoji = {
+            'regex_chapter': '📝', 
+            'regex_item': '📋',
+            'regex_numeric': '🔢',
+            'topic_boundary': '🎯',
+            'synthetic': '⚙️'
+        }.get(ch['detection_method'], '❓')
+        print(f"   {method_emoji} Chapter {ch['number']}: {ch['title'][:50]}... (pages {ch['start_page']}-{ch['end_page']})")
+    if len(chapters) > 5:
+        print(f"   ... and {len(chapters) - 5} more chapters")
+
+
 def extract_text_from_page(page) -> Tuple[str, str]:
     """
     Extract text from a PDF page using direct extraction or OCR fallback.
@@ -133,28 +213,10 @@ def convert_pdf_to_json(pdf_path, output_path=None):
         
         # Initialize JSON structure
         json_data = {
-            "metadata": {
-                "title": pdf_path.stem,
-                "author": "Unknown Author",  # Could be extracted from PDF metadata
-                "publisher": "Unknown Publisher",
-                "edition": "1st Edition",
-                "isbn": "",
-                "total_pages": len(doc),
-                "conversion_date": datetime.now().isoformat(),
-                "conversion_method": "PyMuPDF + OCR fallback",
-                "source_pdf": pdf_path.name
-            },
+            "metadata": _extract_pdf_metadata(doc, pdf_path),
             "chapters": [],
             "pages": []
         }
-        
-        # Try to get metadata from PDF
-        metadata = doc.metadata
-        if metadata:
-            if metadata.get('author'):
-                json_data['metadata']['author'] = metadata['author']
-            if metadata.get('title'):
-                json_data['metadata']['title'] = metadata['title']
         
         # Extract text from each page
         ocr_count = 0
@@ -199,37 +261,10 @@ def convert_pdf_to_json(pdf_path, output_path=None):
         json_data["chapters"] = detected_chapters
         
         # Populate chapter content from page ranges
-        print("\n📝 Extracting chapter content from pages...")
-        for chapter in json_data["chapters"]:
-            start_page = chapter.get("start_page", 1)
-            end_page = chapter.get("end_page", start_page)
-            
-            # Extract content from all pages in the chapter range
-            chapter_text = []
-            for page_num in range(start_page, end_page + 1):
-                # Pages are 1-indexed in chapter metadata, 0-indexed in array
-                page_idx = page_num - 1
-                if 0 <= page_idx < len(json_data["pages"]):
-                    page_content = json_data["pages"][page_idx].get("content", "")
-                    if page_content.strip():
-                        chapter_text.append(page_content)
-            
-            # Join all page content with double newline separator
-            chapter["content"] = "\n\n".join(chapter_text)
-            chapter["page_number"] = start_page  # Add page_number field for compatibility
+        _populate_chapter_content(json_data["chapters"], json_data["pages"])
         
-        print(f"✅ Detected {len(json_data['chapters'])} chapters:")
-        for ch in json_data["chapters"][:5]:
-            method_emoji = {
-                'regex_chapter': '📝', 
-                'regex_item': '📋',
-                'regex_numeric': '🔢',
-                'topic_boundary': '🎯',
-                'synthetic': '⚙️'
-            }.get(ch['detection_method'], '❓')
-            print(f"   {method_emoji} Chapter {ch['number']}: {ch['title'][:50]}... (pages {ch['start_page']}-{ch['end_page']})")
-        if len(json_data["chapters"]) > 5:
-            print(f"   ... and {len(json_data['chapters']) - 5} more chapters")
+        # Print summary of detected chapters
+        _print_chapter_summary(json_data["chapters"])
         
         # Save to JSON
         with open(output_path, 'w', encoding='utf-8') as f:

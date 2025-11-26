@@ -16,15 +16,15 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).parent.parent.parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from config.settings import settings
+from config.settings import settings  # noqa: E402
 
 # Import shared dataclasses
-from workflows.llm_enhancement.scripts.interactive_llm_system_v3_hybrid_prompt import (
+from workflows.llm_enhancement.scripts.interactive_llm_system_v3_hybrid_prompt import (  # noqa: E402
     ContentRequest,
     LLMMetadataResponse,
 )
 
-from workflows.llm_enhancement.scripts.metadata_extraction_system import (
+from workflows.llm_enhancement.scripts.metadata_extraction_system import (  # noqa: E402
     BookMetadata,
     ConceptMatch
 )
@@ -32,9 +32,11 @@ from workflows.llm_enhancement.scripts.metadata_extraction_system import (
 # Note: Previously used hardcoded book_taxonomy.py
 # Now using data-driven concept taxonomy from generate_concept_taxonomy.py
 TAXONOMY_AVAILABLE = False
+BOOK_REGISTRY: Dict[str, Any] = {}  # type: ignore[misc]
+BookTier = None  # type: ignore[assignment]
 
 try:
-    from workflows.shared.llm_integration import call_llm
+    from workflows.shared.llm_integration import call_llm  # noqa: E402
     LLM_AVAILABLE = True
 except ImportError:
     LLM_AVAILABLE = False
@@ -138,14 +140,11 @@ class ContentSelectionService:
     
     # Support methods (all real implementations from original)
     
-    def _get_taxonomy_recommendations(self, concepts: List[str]) -> tuple[List[str], Dict[str, List[str]]]:  # noqa: ARG002
+    def _get_taxonomy_recommendations(self) -> tuple[List[str], Dict[str, List[str]]]:
         """Get book recommendations from concept mapping (data-driven approach).
         
         Note: Previously used hardcoded book_taxonomy.py. Now returns empty
         to use concept mapping instead (new system).
-        
-        Args:
-            concepts: Kept for API compatibility (not used in new system)
         """
         # Return empty - let concept mapping drive book selection
         return [], {}
@@ -211,7 +210,7 @@ class ContentSelectionService:
         all_books = self._metadata_service._repo.get_all()
         concept_map = self._metadata_service.create_concept_mapping(concepts)
         
-        _recommended_books, cascading_info = self._get_taxonomy_recommendations(concepts)
+        _recommended_books, cascading_info = self._get_taxonomy_recommendations()
         
         books_metadata = [
             self._build_book_metadata_entry(book, concept_map, cascading_info)
@@ -424,6 +423,7 @@ LIMIT: Top {settings.constraints.max_content_requests} most relevant books only.
                 if "Architecture" in tier:
                     base_priority = min(5, base_priority + 1)
         except Exception:
+            # Deprecated book_taxonomy module - ignore if not available
             pass
         
         return base_priority

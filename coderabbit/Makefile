@@ -72,7 +72,7 @@ coderabbit-precommit:
 # Directed scans for specific directories
 coderabbit-workflows:
 	@echo "🔍 Running CodeRabbit analysis on workflows/ directory..."
-	python scripts/local_coderabbit.py --path ../workflows --format both
+	python3 scripts/local_coderabbit.py --path ../workflows --format both
 	@echo "✅ Workflows analysis complete"
 	@echo "📋 Check reports/coderabbit/ for results"
 

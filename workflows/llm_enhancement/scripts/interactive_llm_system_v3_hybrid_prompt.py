@@ -38,15 +38,15 @@ PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 # Import our metadata extraction system
-from workflows.llm_enhancement.scripts.metadata_extraction_system import (
+from workflows.llm_enhancement.scripts.metadata_extraction_system import (  # noqa: E402
     MetadataExtractionService
 )
 
 # Import LLM integration
-import os
+import os  # noqa: E402
 
 try:
-    from workflows.shared.llm_integration import call_llm
+    from workflows.shared.llm_integration import call_llm  # noqa: E402
     # Check if API key is actually available
     LLM_AVAILABLE = bool(os.getenv("OPENAI_API_KEY") or os.getenv("ANTHROPIC_API_KEY"))
     if not LLM_AVAILABLE:
@@ -58,12 +58,12 @@ except ImportError:
 # Sprint 3.3: Import centralized constants (eliminates duplication)
 # Per Quality Assessment: Fix 4 duplicate constants issue
 # Reference: REFACTORING_PLAN.md Sprint 3.3 - Constants extraction
-from workflows.shared.constants import BookTitles
+from workflows.shared.constants import BookTitles  # noqa: E402
 
 # Sprint 3.4: Import metadata builder (extract builder pattern)
 # Per BOOK_TAXONOMY_MATRIX.md: Architecture Patterns with Python (Tier 1)
 # Reference: REFACTORING_PLAN.md Sprint 3.4 - Builder extraction
-from workflows.llm_enhancement.scripts.builders.metadata_builder import MetadataBuilder
+from workflows.llm_enhancement.scripts.builders.metadata_builder import MetadataBuilder  # noqa: E402
 
 
 # ============================================================================
@@ -74,7 +74,7 @@ from workflows.llm_enhancement.scripts.builders.metadata_builder import Metadata
 
 # Import data models from new models module (Sprint 3.1)
 # Maintains backward compatibility - existing code continues to work
-from workflows.llm_enhancement.scripts.models.analysis_models import (
+from workflows.llm_enhancement.scripts.models.analysis_models import (  # noqa: E402
     AnalysisPhase,
     ContentRequest,
     LLMMetadataResponse,

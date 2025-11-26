@@ -251,7 +251,7 @@ class UniversalMetadataGenerator:
             if summary:
                 return summary
         except Exception:
-            # Fallback for very short text that can't be summarized
+            # Fallback for very short text or empty content that can't be summarized
             pass
         
         # Fallback: return chapter title
