@@ -27,10 +27,11 @@ class RegexPatternStrategy:
     
     def __init__(self):
         # Compile regex patterns for performance
+        # Security: Limit quantifiers to prevent ReDoS attacks
         self.patterns = [
-            (re.compile(r'(?:Chapter|CHAPTER)\s+(\d+)[\s\.:]+([^\n]+)', re.MULTILINE), "chapter"),
-            (re.compile(r'^\s*Item\s+(\d+)\s*[:.-]\s+(.+)$', re.MULTILINE), "item"),
-            (re.compile(r'^(\d+)\s+([A-Z][A-Z\s]{10,})', re.MULTILINE), "numeric"),
+            (re.compile(r'(?:Chapter|CHAPTER)\s+(\d{1,3})[\s\.:]+([^\n]{1,200})', re.MULTILINE), "chapter"),
+            (re.compile(r'^\s{0,10}Item\s+(\d{1,3})\s*[:.-]\s+([^\n]{1,200})$', re.MULTILINE), "item"),
+            (re.compile(r'^(\d{1,3})\s+([A-Z][A-Z\s]{10,100})', re.MULTILINE), "numeric"),
         ]
     
     def _extract_chapter_from_page(self, page: Dict, max_lines: int, seen_numbers: set) -> Optional[Tuple]:

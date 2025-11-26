@@ -9,11 +9,19 @@ Reference: BATCH1_CRITICAL_FILES_REMEDIATION_PLAN.md File #6
 """
 import pytest
 import math
+import tempfile
 from pathlib import Path
 from workflows.metadata_extraction.scripts.detect_poor_ocr import (
     OCRQualityDetector,
     OCRQualityReport
 )
+
+
+@pytest.fixture
+def temp_detector():
+    """Create OCRQualityDetector with secure temporary directory."""
+    with tempfile.TemporaryDirectory() as tmpdir:
+        yield OCRQualityDetector(Path(tmpdir))
 
 
 class TestAssessTextQualityCurrentBehavior:
@@ -26,18 +34,18 @@ class TestAssessTextQualityCurrentBehavior:
     - Score ranges from 0.0 to 1.0
     """
     
-    def test_detects_insufficient_text(self):
+    def test_detects_insufficient_text(self, temp_detector):
         """Test: Detects text with <100 chars"""
-        detector = OCRQualityDetector(Path("/tmp"))
+        detector = temp_detector
         
         score, issues = detector.assess_text_quality("Short")
         
         assert "insufficient_text" in issues
         assert score < 1.0
     
-    def test_detects_watermark_repetition(self):
+    def test_detects_watermark_repetition(self, temp_detector):
         """Test: Detects >50% repetition of same word"""
-        detector = OCRQualityDetector(Path("/tmp"))
+        detector = temp_detector
         
         # Create text with 60% repetition
         text = "WATERMARK " * 12 + "other text words"
@@ -47,9 +55,9 @@ class TestAssessTextQualityCurrentBehavior:
         assert any("watermark_repetition" in issue for issue in issues)
         assert score <= 0.5  # Changed from < to <=
     
-    def test_detects_high_gibberish(self):
+    def test_detects_high_gibberish(self, temp_detector):
         """Test: Detects >40% non-alphanumeric characters"""
-        detector = OCRQualityDetector(Path("/tmp"))
+        detector = temp_detector
         
         text = "Valid text " + "@#$%^&*()!~`" * 20
         
@@ -58,9 +66,9 @@ class TestAssessTextQualityCurrentBehavior:
         assert any("gibberish" in issue for issue in issues)
         assert score < 1.0
     
-    def test_detects_abnormal_vowel_ratio(self):
+    def test_detects_abnormal_vowel_ratio(self, temp_detector):
         """Test: Detects abnormal vowel ratios (<15% or >65%)"""
-        detector = OCRQualityDetector(Path("/tmp"))
+        detector = temp_detector
         
         # Text with very few vowels (<15%)
         text = "bcdfghjklmnpqrstvwxyz " * 10
@@ -70,9 +78,9 @@ class TestAssessTextQualityCurrentBehavior:
         assert any("abnormal_vowel_ratio" in issue for issue in issues)
         assert score < 1.0
     
-    def test_detects_abnormal_word_length(self):
+    def test_detects_abnormal_word_length(self, temp_detector):
         """Test: Detects avg word length <2 or >15"""
-        detector = OCRQualityDetector(Path("/tmp"))
+        detector = temp_detector
         
         # Very long words
         text = "supercalifragilisticexpialidocious " * 10
@@ -82,9 +90,9 @@ class TestAssessTextQualityCurrentBehavior:
         assert any("abnormal_word_length" in issue for issue in issues)
         assert score < 1.0
     
-    def test_returns_perfect_score_for_good_text(self):
+    def test_returns_perfect_score_for_good_text(self, temp_detector):
         """Test: Normal text gets high score"""
-        detector = OCRQualityDetector(Path("/tmp"))
+        detector = temp_detector
         
         text = """
         This is a normal paragraph of text with good OCR quality.
@@ -190,9 +198,9 @@ class TestPrintReportCurrentBehavior:
     - Optionally shows acceptable books
     """
     
-    def test_prints_report_with_issues(self, capsys):
+    def test_prints_report_with_issues(self, capsys, temp_detector):
         """Test: Prints formatted report"""
-        detector = OCRQualityDetector(Path("/tmp"))
+        detector = temp_detector
         
         reports = [
             OCRQualityReport(

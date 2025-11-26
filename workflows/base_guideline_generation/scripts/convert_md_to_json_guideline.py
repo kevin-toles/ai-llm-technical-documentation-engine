@@ -31,7 +31,8 @@ def parse_markdown_chapter(chapter_text: str) -> Optional[Dict[str, Any]]:
     ...
     """
     # Extract chapter number and title
-    chapter_match = re.search(r'^## Chapter (\d+):\s*(.+)$', chapter_text, re.MULTILINE)
+    # Security: Use atomic grouping and limit quantifiers to prevent ReDoS
+    chapter_match = re.search(r'^## Chapter (\d{1,3}):\s*([^\n]{1,200})$', chapter_text, re.MULTILINE)
     if not chapter_match:
         return None
     
@@ -116,11 +117,13 @@ def convert_markdown_to_json(md_path: Path, output_dir: Path) -> Path:
         book_name = filename
     
     # Extract title from first line
-    title_match = re.search(r'^#\s+(.+)$', content, re.MULTILINE)
+    # Security: Limit quantifier to prevent ReDoS
+    title_match = re.search(r'^#\s+([^\n]{1,200})$', content, re.MULTILINE)
     title = title_match.group(1) if title_match else f"Comprehensive Guidelines — {book_name}"
     
     # Extract source info
-    source_match = re.search(r'\*Source:\s*(.+?)\*', content)
+    # Security: Limit quantifier to prevent ReDoS
+    source_match = re.search(r'\*Source:\s*([^*\n]{1,200})\*', content)
     source = source_match.group(1) if source_match else book_name
     
     # Split into chapters

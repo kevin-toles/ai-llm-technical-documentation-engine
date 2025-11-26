@@ -97,17 +97,21 @@ class TestEnvironmentVariableLoading:
     def test_cache_config_loads_from_environment(self):
         """Test CacheConfig loads values from environment."""
         # Arrange & Act
-        with patch.dict(os.environ, {
-            "CACHE_ENABLED": "false",
-            "CACHE_DIR": "/tmp/test_cache",
-            "CACHE_PHASE1_TTL_DAYS": "7",
-            "CACHE_PHASE2_TTL_DAYS": "14"
-        }):
-            config = CacheConfig()
-        
-        # Assert - Settings Pattern: Environment loading
-        assert config.enabled is False
-        assert str(config.cache_dir) == "/tmp/test_cache"
+        # Security: Use tempfile for secure temporary directory
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmpdir:
+            test_cache_dir = os.path.join(tmpdir, "test_cache")
+            with patch.dict(os.environ, {
+                "CACHE_ENABLED": "false",
+                "CACHE_DIR": test_cache_dir,
+                "CACHE_PHASE1_TTL_DAYS": "7",
+                "CACHE_PHASE2_TTL_DAYS": "14"
+            }):
+                config = CacheConfig()
+            
+            # Assert - Settings Pattern: Environment loading
+            assert config.enabled is False
+            assert str(config.cache_dir) == test_cache_dir
         assert config.phase1_ttl_days == 7
         assert config.phase2_ttl_days == 14
 

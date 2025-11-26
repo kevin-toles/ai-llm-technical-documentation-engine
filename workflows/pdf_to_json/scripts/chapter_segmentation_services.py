@@ -276,10 +276,11 @@ class RegexMatcher:
     
     def __init__(self):
         """Initialize regex patterns"""
+        # Security: Limit quantifiers to prevent ReDoS attacks
         self.patterns = [
-            (re.compile(r'(?:Chapter|CHAPTER)\s+(\d+)[\s\.:]+([^\n]+)', re.MULTILINE), "chapter"),
-            (re.compile(r'^\s*Item\s+(\d+)\s*[:.-]\s+(.+)$', re.MULTILINE), "item"),
-            (re.compile(r'^(\d+)\s+([A-Z][A-Z\s]{10,})', re.MULTILINE), "numeric"),
+            (re.compile(r'(?:Chapter|CHAPTER)\s+(\d{1,3})[\s\.:]+([^\n]{1,200})', re.MULTILINE), "chapter"),
+            (re.compile(r'^\s{0,10}Item\s+(\d{1,3})\s*[:.-]\s+([^\n]{1,200})$', re.MULTILINE), "item"),
+            (re.compile(r'^(\d{1,3})\s+([A-Z][A-Z\s]{10,100})', re.MULTILINE), "numeric"),
         ]
     
     def find_chapter_marker(self, text: str) -> Optional[Tuple[int, str, str]]:
