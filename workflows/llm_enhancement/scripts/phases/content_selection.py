@@ -22,7 +22,7 @@ CONFIGURATION:
 
 import sys
 from pathlib import Path
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 
 # Add project root to path
 PROJECT_ROOT = Path(__file__).parent.parent.parent.parent.parent
@@ -67,7 +67,7 @@ class ContentSelectionService:
     def __init__(
         self,
         metadata_service: Any,  # MetadataExtractionService
-        llm_available: bool = None
+        llm_available: Optional[bool] = None
     ):
         """
         Initialize content selection service.

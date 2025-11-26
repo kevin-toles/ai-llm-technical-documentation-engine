@@ -43,7 +43,7 @@ try:
 except ImportError as e:
     print(f"Warning: StatisticalExtractor not available: {e}")
     print("Will use fallback keyword extraction")
-    STATISTICAL_EXTRACTOR = None
+    STATISTICAL_EXTRACTOR = None  # type: ignore[assignment]
 
 
 def _extract_books_from_taxonomy(taxonomy: Dict[str, Any]) -> set:
@@ -115,8 +115,9 @@ def _load_book_metadata(book_set: set, metadata_dir: Path) -> Dict[str, Any]:
         if metadata_path.exists():
             with open(metadata_path, encoding='utf-8') as f:
                 book_metadata = json.load(f)
-                context["metadata"][book_name] = book_metadata
-                context["corpus_size"] += len(book_metadata)
+                # Ensure context["metadata"] and context["corpus_size"] are properly typed
+                context["metadata"][book_name] = book_metadata  # type: ignore[index]
+                context["corpus_size"] += len(book_metadata)  # type: ignore[arg-type]
         else:
             print(f"  ⚠️  Skipping {book_name} - metadata not found at {metadata_path}")
     

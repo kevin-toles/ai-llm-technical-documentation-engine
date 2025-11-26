@@ -608,12 +608,12 @@ def _test_first_chapter(orchestrator, chapters_content: str, test_chapter_num: i
 
 
 def _process_single_chapter(chapter_num: int, chapters_content: str, companion_data: Dict,
-                           all_chapters: List[int]) -> Tuple[Optional[str], bool]:
+                           all_chapters: List[int]) -> Tuple[Optional[Tuple[str, str]], bool]:
     """
     Process a single chapter with LLM enhancement.
     
     Returns:
-        (enhanced_chapter, success_flag) tuple
+        ((original_chapter, enhanced_chapter), success_flag) tuple, or (None, False) on failure
     """
     print(f"\n{'='*70}")
     print(f"[Chapter {chapter_num}/{all_chapters[-1]}] Enhancing...")
@@ -681,6 +681,9 @@ def _process_all_chapters(header: str, chapters_content: str, all_chapters: List
             failed_chapters.append(chapter_num)
             consecutive_failures += 1
         else:
+            # Unpack the tuple of (original_chapter, enhanced_chapter)
+            chapter_content: str
+            enhanced_chapter: str
             chapter_content, enhanced_chapter = result
             enhanced_content = enhanced_content.replace(chapter_content, enhanced_chapter)
             if success:

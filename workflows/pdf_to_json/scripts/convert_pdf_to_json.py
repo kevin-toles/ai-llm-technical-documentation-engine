@@ -18,11 +18,11 @@ from pathlib import Path
 from datetime import datetime
 from typing import List, Dict, Tuple
 
-import fitz  # PyMuPDF
+import fitz  # type: ignore[import-untyped]  # PyMuPDF
 
 # OCR support for scanned PDFs
 try:
-    import pytesseract
+    import pytesseract  # type: ignore[import-untyped]
     from PIL import Image
     OCR_AVAILABLE = True
 except ImportError:
@@ -153,7 +153,7 @@ def extract_text_from_page(page) -> Tuple[str, str]:
         pix = page.get_pixmap(dpi=300)  # 300 DPI for good OCR quality
         
         # Convert to PIL Image for pytesseract
-        img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
+        img = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
         
         # Run OCR with English language model
         # Reference: pytesseract docs - PSM 3 is more reliable than PSM 1 for batch processing

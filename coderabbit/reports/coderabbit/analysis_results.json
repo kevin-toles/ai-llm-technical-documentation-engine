@@ -1,17 +1,17 @@
 {
-  "timestamp": "2025-11-26T12:12:20.520936",
+  "timestamp": "2025-11-26T12:31:46.326262",
   "summary": {
-    "total_issues": 39,
+    "total_issues": 25,
     "by_severity": {
       "critical": 0,
       "high": 0,
-      "medium": 37,
+      "medium": 23,
       "low": 2,
       "info": 0
     },
     "by_type": {
       "code_quality": 2,
-      "type_safety": 35,
+      "type_safety": 21,
       "security": 2
     },
     "recommendations": [
@@ -90,26 +90,17 @@
         "type": "type_safety",
         "severity": "medium",
         "file": "metadata_enrichment/scripts/enrich_metadata_per_book.py",
-        "line": 46,
-        "message": "Incompatible types in assignment (expression has type \"None\", variable has type \"StatisticalExtractor\")  [assignment]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "metadata_enrichment/scripts/enrich_metadata_per_book.py",
-        "line": 118,
-        "message": "Unsupported target for indexed assignment (\"object\")  [index]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "metadata_enrichment/scripts/enrich_metadata_per_book.py",
-        "line": 119,
+        "line": 120,
         "message": "Unsupported operand types for + (\"object\" and \"int\")  [operator]",
+        "rule": "type-check"
+      },
+      {
+        "tool": "mypy",
+        "type": "type_safety",
+        "severity": "medium",
+        "file": "metadata_enrichment/scripts/enrich_metadata_per_book.py",
+        "line": 120,
+        "message": "Error code \"operator\" not covered by \"type: ignore\" comment",
         "rule": "type-check"
       },
       {
@@ -170,63 +161,9 @@
         "tool": "mypy",
         "type": "type_safety",
         "severity": "medium",
-        "file": "metadata_extraction/scripts/generate_metadata_universal.py",
-        "line": 411,
-        "message": "Need type annotation for \"chapters\" (hint: \"chapters: list[<type>] = ...\")  [var-annotated]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "metadata_extraction/scripts/generate_metadata_universal.py",
-        "line": 419,
-        "message": "Incompatible types in assignment (expression has type \"int\", variable has type \"str\")  [assignment]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "metadata_extraction/scripts/generate_metadata_universal.py",
-        "line": 433,
-        "message": "Incompatible return value type (got \"list[tuple[str, str, int, int]]\", expected \"list[tuple[int, str, int, int]]\")  [return-value]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
         "file": "metadata_enrichment/scripts/generate_chapter_metadata.py",
         "line": 103,
         "message": "Need type annotation for \"CONCEPT_PATTERNS\" (hint: \"CONCEPT_PATTERNS: list[<type>] = ...\")  [var-annotated]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "pdf_to_json/scripts/convert_pdf_to_json.py",
-        "line": 21,
-        "message": "Skipping analyzing \"fitz\": module is installed, but missing library stubs or py.typed marker  [import-untyped]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "pdf_to_json/scripts/convert_pdf_to_json.py",
-        "line": 25,
-        "message": "Skipping analyzing \"pytesseract\": module is installed, but missing library stubs or py.typed marker  [import-untyped]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "pdf_to_json/scripts/convert_pdf_to_json.py",
-        "line": 156,
-        "message": "Argument 2 to \"frombytes\" has incompatible type \"list[Any]\"; expected \"tuple[int, int]\"  [arg-type]",
         "rule": "type-check"
       },
       {
@@ -272,69 +209,6 @@
         "file": "llm_enhancement/scripts/interactive_llm_system_v3_hybrid_prompt.py",
         "line": 701,
         "message": "Need type annotation for \"excerpts\" (hint: \"excerpts: list[<type>] = ...\")  [var-annotated]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/integrate_llm_enhancements.py",
-        "line": 654,
-        "message": "Incompatible return value type (got \"tuple[tuple[str | Any, str], bool]\", expected \"tuple[str | None, bool]\")  [return-value]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/integrate_llm_enhancements.py",
-        "line": 684,
-        "message": "Unpacking a string is disallowed  [misc]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/integrate_llm_enhancements.py",
-        "line": 685,
-        "message": "Cannot determine type of \"chapter_content\"  [has-type]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/integrate_llm_enhancements.py",
-        "line": 685,
-        "message": "Cannot determine type of \"enhanced_chapter\"  [has-type]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/phases/content_selection.py",
-        "line": 70,
-        "message": "Incompatible default for argument \"llm_available\" (default has type \"None\", argument has type \"bool\")  [assignment]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/phases/content_selection.py",
-        "line": 70,
-        "message": "PEP 484 prohibits implicit Optional. Accordingly, mypy has changed its default to no_implicit_optional=True",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/phases/content_selection.py",
-        "line": 70,
-        "message": "Use https://github.com/hauntsaninja/no_implicit_optional to automatically upgrade your codebase",
         "rule": "type-check"
       },
       {

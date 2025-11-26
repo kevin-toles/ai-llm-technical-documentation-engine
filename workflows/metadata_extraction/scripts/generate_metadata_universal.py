@@ -408,15 +408,15 @@ def interactive_chapter_definition(book_name: str, total_pages: int) -> List[Tup
     print(f"Total pages: {total_pages}")
     print("\nEnter chapters one at a time. Press Ctrl+C or enter blank to finish.\n")
     
-    chapters = []
+    chapters: List[Tuple[int, str, int, int]] = []
     
     while True:
         try:
-            chapter_num = input(f"Chapter {len(chapters) + 1} number (or blank to finish): ").strip()
-            if not chapter_num:
+            chapter_num_str = input(f"Chapter {len(chapters) + 1} number (or blank to finish): ").strip()
+            if not chapter_num_str:
                 break
             
-            chapter_num = int(chapter_num)
+            chapter_num = int(chapter_num_str)
             title = input("  Title: ").strip()
             start_page = int(input("  Start page: ").strip())
             end_page = int(input("  End page: ").strip())

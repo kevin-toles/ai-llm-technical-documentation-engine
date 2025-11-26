@@ -1,20 +1,20 @@
 # CodeRabbit Local Analysis Report
-**Generated**: 2025-11-26 12:12:20
-**Total Issues**: 39
+**Generated**: 2025-11-26 12:31:46
+**Total Issues**: 25
 
 ## Summary
 | Severity | Count |
 |----------|-------|
 | 🚨 Critical | 0 |
 | 🔴 High | 0 |
-| 🟡 Medium | 37 |
+| 🟡 Medium | 23 |
 | 🔵 Low | 2 |
 | ℹ️ Info | 0 |
 
 ## Recommendations
 - 🔧 Consider refactoring to reduce medium-severity issues
 
-## 🟡 Medium Issues (37)
+## 🟡 Medium Issues (23)
 
 ### Issue 1
 - **File**: `/Users/kevintoles/POC/llm-document-enhancer/workflows/llm_enhancement/scripts/models/analysis_models.py`
@@ -74,29 +74,21 @@
 
 ### Issue 8
 - **File**: `metadata_enrichment/scripts/enrich_metadata_per_book.py`
-- **Line**: 46
-- **Tool**: mypy
-- **Type**: type_safety
-- **Rule**: type-check
-- **Message**: Incompatible types in assignment (expression has type "None", variable has type "StatisticalExtractor")  [assignment]
-
-### Issue 9
-- **File**: `metadata_enrichment/scripts/enrich_metadata_per_book.py`
-- **Line**: 118
-- **Tool**: mypy
-- **Type**: type_safety
-- **Rule**: type-check
-- **Message**: Unsupported target for indexed assignment ("object")  [index]
-
-### Issue 10
-- **File**: `metadata_enrichment/scripts/enrich_metadata_per_book.py`
-- **Line**: 119
+- **Line**: 120
 - **Tool**: mypy
 - **Type**: type_safety
 - **Rule**: type-check
 - **Message**: Unsupported operand types for + ("object" and "int")  [operator]
 
-### Issue 11
+### Issue 9
+- **File**: `metadata_enrichment/scripts/enrich_metadata_per_book.py`
+- **Line**: 120
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: Error code "operator" not covered by "type: ignore" comment
+
+### Issue 10
 - **File**: `shared/retry.py`
 - **Line**: 173
 - **Tool**: mypy
@@ -104,7 +96,7 @@
 - **Rule**: type-check
 - **Message**: Argument 2 to "RetryExhaustedError" has incompatible type "Exception | None"; expected "Exception"  [arg-type]
 
-### Issue 12
+### Issue 11
 - **File**: `shared/retry.py`
 - **Line**: 228
 - **Tool**: mypy
@@ -112,7 +104,7 @@
 - **Rule**: type-check
 - **Message**: Argument 2 to "RetryExhaustedError" has incompatible type "Exception | None"; expected "Exception"  [arg-type]
 
-### Issue 13
+### Issue 12
 - **File**: `shared/loaders/content_loaders.py`
 - **Line**: 279
 - **Tool**: mypy
@@ -120,7 +112,7 @@
 - **Rule**: type-check
 - **Message**: Need type annotation for "excerpts" (hint: "excerpts: list[<type>] = ...")  [var-annotated]
 
-### Issue 14
+### Issue 13
 - **File**: `llm_enhancement/scripts/models/analysis_models.py`
 - **Line**: 290
 - **Tool**: mypy
@@ -128,7 +120,7 @@
 - **Rule**: type-check
 - **Message**: Name "Optional" is not defined  [name-defined]
 
-### Issue 15
+### Issue 14
 - **File**: `llm_enhancement/scripts/models/analysis_models.py`
 - **Line**: 290
 - **Tool**: mypy
@@ -136,7 +128,7 @@
 - **Rule**: type-check
 - **Message**: Did you forget to import it from "typing"? (Suggestion: "from typing import Optional")
 
-### Issue 16
+### Issue 15
 - **File**: `llm_enhancement/scripts/builders/metadata_builder.py`
 - **Line**: 34
 - **Tool**: mypy
@@ -144,31 +136,7 @@
 - **Rule**: type-check
 - **Message**: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
 
-### Issue 17
-- **File**: `metadata_extraction/scripts/generate_metadata_universal.py`
-- **Line**: 411
-- **Tool**: mypy
-- **Type**: type_safety
-- **Rule**: type-check
-- **Message**: Need type annotation for "chapters" (hint: "chapters: list[<type>] = ...")  [var-annotated]
-
-### Issue 18
-- **File**: `metadata_extraction/scripts/generate_metadata_universal.py`
-- **Line**: 419
-- **Tool**: mypy
-- **Type**: type_safety
-- **Rule**: type-check
-- **Message**: Incompatible types in assignment (expression has type "int", variable has type "str")  [assignment]
-
-### Issue 19
-- **File**: `metadata_extraction/scripts/generate_metadata_universal.py`
-- **Line**: 433
-- **Tool**: mypy
-- **Type**: type_safety
-- **Rule**: type-check
-- **Message**: Incompatible return value type (got "list[tuple[str, str, int, int]]", expected "list[tuple[int, str, int, int]]")  [return-value]
-
-### Issue 20
+### Issue 16
 - **File**: `metadata_enrichment/scripts/generate_chapter_metadata.py`
 - **Line**: 103
 - **Tool**: mypy
@@ -176,7 +144,39 @@
 - **Rule**: type-check
 - **Message**: Need type annotation for "CONCEPT_PATTERNS" (hint: "CONCEPT_PATTERNS: list[<type>] = ...")  [var-annotated]
 
-... and 17 more issues
+### Issue 17
+- **File**: `shared/llm_integration.py`
+- **Line**: 364
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: Argument 2 to "_validate_json_response" has incompatible type "Literal['end_turn', 'max_tokens', 'stop_sequence', 'tool_use', 'pause_turn', 'refusal'] | None"; expected "str"  [arg-type]
+
+### Issue 18
+- **File**: `shared/llm_integration.py`
+- **Line**: 647
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: Dict entry 1 has incompatible type "str": "list[Never]"; expected "str": "str"  [dict-item]
+
+### Issue 19
+- **File**: `shared/pipeline/pipeline_orchestrator.py`
+- **Line**: 113
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: Incompatible types in assignment (expression has type "Path", target has type "dict[str, Any]")  [assignment]
+
+### Issue 20
+- **File**: `llm_enhancement/scripts/interactive_llm_system_v3_hybrid_prompt.py`
+- **Line**: 588
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: Value of type "list[str] | None" is not indexable  [index]
+
+... and 3 more issues
 
 ## 🔵 Low Issues (2)
 
