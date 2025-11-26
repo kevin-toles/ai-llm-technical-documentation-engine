@@ -1,17 +1,17 @@
 {
-  "timestamp": "2025-11-26T12:06:38.872060",
+  "timestamp": "2025-11-26T12:12:20.520936",
   "summary": {
-    "total_issues": 48,
+    "total_issues": 39,
     "by_severity": {
       "critical": 0,
       "high": 0,
-      "medium": 46,
+      "medium": 37,
       "low": 2,
       "info": 0
     },
     "by_type": {
-      "code_quality": 1,
-      "type_safety": 45,
+      "code_quality": 2,
+      "type_safety": 35,
       "security": 2
     },
     "recommendations": [
@@ -22,6 +22,15 @@
     "critical": [],
     "high": [],
     "medium": [
+      {
+        "tool": "ruff",
+        "type": "code_quality",
+        "severity": "medium",
+        "file": "/Users/kevintoles/POC/llm-document-enhancer/workflows/llm_enhancement/scripts/models/analysis_models.py",
+        "line": 290,
+        "message": "Undefined name `Optional`",
+        "rule": "F821"
+      },
       {
         "tool": "ruff",
         "type": "code_quality",
@@ -135,8 +144,8 @@
         "type": "type_safety",
         "severity": "medium",
         "file": "llm_enhancement/scripts/models/analysis_models.py",
-        "line": 301,
-        "message": "Unsupported left operand type for + (\"Sequence[str]\")  [operator]",
+        "line": 290,
+        "message": "Name \"Optional\" is not defined  [name-defined]",
         "rule": "type-check"
       },
       {
@@ -144,35 +153,8 @@
         "type": "type_safety",
         "severity": "medium",
         "file": "llm_enhancement/scripts/models/analysis_models.py",
-        "line": 305,
-        "message": "\"Sequence[str]\" has no attribute \"strip\"  [attr-defined]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/models/analysis_models.py",
-        "line": 306,
-        "message": "\"Sequence[str]\" has no attribute \"strip\"  [attr-defined]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/models/analysis_models.py",
-        "line": 308,
-        "message": "\"Sequence[str]\" has no attribute \"strip\"  [attr-defined]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/builders/metadata_builder.py",
-        "line": 17,
-        "message": "Need type annotation for \"BOOK_REGISTRY\" (hint: \"BOOK_REGISTRY: dict[<type>, <type>] = ...\")  [var-annotated]",
+        "line": 290,
+        "message": "Did you forget to import it from \"typing\"? (Suggestion: \"from typing import Optional\")",
         "rule": "type-check"
       },
       {
@@ -182,24 +164,6 @@
         "file": "llm_enhancement/scripts/builders/metadata_builder.py",
         "line": 34,
         "message": "By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/builders/metadata_builder.py",
-        "line": 72,
-        "message": "\"None\" has no attribute \"ARCHITECTURE_SPINE\"  [attr-defined]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/builders/metadata_builder.py",
-        "line": 74,
-        "message": "\"None\" has no attribute \"IMPLEMENTATION\"  [attr-defined]",
         "rule": "type-check"
       },
       {
@@ -389,51 +353,6 @@
         "file": "llm_enhancement/scripts/phases/annotation_service.py",
         "line": 34,
         "message": "See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/llm_enhance_guideline.py",
-        "line": 304,
-        "message": "Need type annotation for \"sections\" (hint: \"sections: dict[<type>, <type>] = ...\")  [var-annotated]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/llm_enhance_guideline.py",
-        "line": 307,
-        "message": "Need type annotation for \"current_content\" (hint: \"current_content: list[<type>] = ...\")  [var-annotated]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/llm_enhance_guideline.py",
-        "line": 323,
-        "message": "Argument 2 to \"_save_section_content\" has incompatible type \"None\"; expected \"str\"  [arg-type]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/llm_enhance_guideline.py",
-        "line": 323,
-        "message": "Argument 2 to \"_save_section_content\" has incompatible type \"str | None\"; expected \"str\"  [arg-type]",
-        "rule": "type-check"
-      },
-      {
-        "tool": "mypy",
-        "type": "type_safety",
-        "severity": "medium",
-        "file": "llm_enhancement/scripts/llm_enhance_guideline.py",
-        "line": 332,
-        "message": "Argument 2 to \"_save_section_content\" has incompatible type \"str | None\"; expected \"str\"  [arg-type]",
         "rule": "type-check"
       }
     ],

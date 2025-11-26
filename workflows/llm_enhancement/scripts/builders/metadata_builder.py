@@ -14,8 +14,8 @@ from typing import Dict, List, Any, Tuple
 # Note: book_taxonomy.py deprecated - was hardcoded taxonomy system
 # New system uses data-driven concept taxonomy (generate_concept_taxonomy.py)
 TAXONOMY_AVAILABLE = False
-BOOK_REGISTRY = {}
-BookTier = None
+BOOK_REGISTRY: Dict[str, Any] = {}
+BookTier = None  # type: ignore[assignment]
 
 logger = logging.getLogger(__name__)
 
@@ -69,9 +69,10 @@ class MetadataBuilder:
         book_role = BOOK_REGISTRY[book_file_name]
         
         # Higher tier = higher priority
-        if book_role.tier == BookTier.ARCHITECTURE_SPINE:
+        # Type guard: BookTier can be None when TAXONOMY_AVAILABLE is False
+        if BookTier is not None and book_role.tier == BookTier.ARCHITECTURE_SPINE:
             tier_boost = 0.3
-        elif book_role.tier == BookTier.IMPLEMENTATION:
+        elif BookTier is not None and book_role.tier == BookTier.IMPLEMENTATION:
             tier_boost = 0.2
         else:  # ENGINEERING_PRACTICES
             tier_boost = 0.1

@@ -278,15 +278,16 @@ class LLMMetadataResponse:
             - Pattern: Multiple parsing strategies for resilience
         """
         # Simple text parsing - extract sections
-        sections = {
+        # Type annotation: All values should be strings for consistent += operations
+        sections: Dict[str, str] = {
             'validation': '',
             'gaps': '',
-            'requests': [],
+            'requests': '',  # Changed from [] to '' for consistent string operations
             'strategy': ''
         }
         
         # Basic section extraction
-        current_section = None
+        current_section: Optional[str] = None
         for line in text.split('\n'):
             line_lower = line.lower()
             if 'validation' in line_lower:

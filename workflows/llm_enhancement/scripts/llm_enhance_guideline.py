@@ -257,7 +257,7 @@ def _match_section_header(line: str, section_markers: Dict[str, str]) -> Optiona
     return None
 
 
-def _save_section_content(sections: Dict[str, str], section_name: str, content_lines: list) -> None:
+def _save_section_content(sections: Dict[str, str], section_name: Optional[str], content_lines: list) -> None:
     """Save accumulated section content to sections dict.
     
     Service Layer Pattern: Encapsulates content persistence logic.
@@ -265,7 +265,7 @@ def _save_section_content(sections: Dict[str, str], section_name: str, content_l
     
     Args:
         sections: Dictionary to store section content
-        section_name: Key for this section
+        section_name: Key for this section (can be None)
         content_lines: Lines of content to save
         
     Reference: Architecture Patterns Ch. 4 - Service Layer
@@ -301,10 +301,10 @@ def parse_llm_response(response: str) -> Dict[str, str]:
     Reference: Architecture Patterns Ch. 4 - Service Layer (thin orchestration)
     Reference: Architecture Patterns Ch. 13 - Strategy Pattern (header matching)
     """
-    sections = {}
+    sections: Dict[str, str] = {}
     lines = response.strip().split('\n')
-    current_section = None
-    current_content = []
+    current_section: Optional[str] = None
+    current_content: List[str] = []
     
     # Section headers to look for
     section_markers = {
