@@ -133,8 +133,8 @@ BOOK_METADATA = {
 }
 
 # Get current book metadata
-# Type annotation: Dict with string keys and Optional[str] values for proper type checking
-CURRENT_BOOK_META: Dict[str, Optional[str]] = BOOK_METADATA.get(
+# Type annotation: Dict with string keys and string or None values for proper type checking
+CURRENT_BOOK_META: Dict[str, Any] = BOOK_METADATA.get(
     PRIMARY_BOOK if PRIMARY_BOOK is not None else "",
     {
         "author": "Unknown",
@@ -1284,11 +1284,11 @@ def build_tpm_section(other_books: Dict[str, Any], footnote_start: int, _chapter
     """
     chosen = choose_tpm_source(other_books)
     if not chosen:
-        section = (
-            "\n### **TPM Implementation Section** *(ORIGINAL)*\n\n"
+        section_lines: List[str] = [
+            "\n### **TPM Implementation Section** *(ORIGINAL)*\n\n",
             "_Not enough source material found to derive implementation._\n"
-        )
-        return section, footnote_start, None
+        ]
+        return "\n".join(section_lines), footnote_start, None
 
     book_name, page_num, source_class, start_line, end_line = chosen
     adapted = adapt_tpm_code(source_class)

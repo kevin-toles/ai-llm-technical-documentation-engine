@@ -3,12 +3,12 @@ Anthropic Claude LLM provider implementation.
 """
 
 import os
-from typing import Optional
+from typing import Optional, Any
 
 try:
     import anthropic
 except ImportError:
-    anthropic = None
+    anthropic = None  # type: ignore[assignment]
 
 from .base import LLMResponse, LLMError
 
@@ -71,8 +71,8 @@ class AnthropicProvider:
             LLMError: If the API call fails
         """
         try:
-            # Build message parameters
-            message_params = {
+            # Build message parameters with proper typing for Anthropic API
+            message_params: dict[str, Any] = {
                 "model": self._model,
                 "max_tokens": max_tokens,
                 "temperature": temperature,

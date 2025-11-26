@@ -176,6 +176,8 @@ class ComplianceValidator:
     
     def _read_markdown_file(self) -> str:
         """Read and return markdown file content (EAFP pattern - PY 21)."""
+        if self.md_file is None:
+            raise ValueError("No markdown file specified")
         try:
             with open(self.md_file, 'r') as f:
                 return f.read()
@@ -232,7 +234,7 @@ class ComplianceValidator:
         if not self.quiet:
             print(f"📁 Found {len(md_files)} markdown files in {self.input_dir}")
         
-        all_results = {"files": {}}
+        all_results: Dict[str, Any] = {"files": {}}
         
         for idx, md_file in enumerate(md_files):
             if self.verbose or not self.quiet:
@@ -567,10 +569,9 @@ def _create_validator_from_args(args) -> ComplianceValidator:
         md_file=Path(args.md) if args.md else None,
         input_dir=Path(args.input_dir) if args.input_dir else None,
         rules_file=Path(args.rules_file) if args.rules_file else None,
-        disabled_rules=args.disable_rules or [],
+        disable_rules=args.disable_rules or [],
         verbose=args.verbose,
-        quiet=args.quiet,
-        auto_fix=args.auto_fix
+        quiet=args.quiet
     )
 
 def _run_validation(validator: ComplianceValidator, args) -> Any:

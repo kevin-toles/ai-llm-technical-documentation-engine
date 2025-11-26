@@ -1,20 +1,20 @@
 # CodeRabbit Local Analysis Report
-**Generated**: 2025-11-26 11:25:09
-**Total Issues**: 68
+**Generated**: 2025-11-26 12:06:38
+**Total Issues**: 48
 
 ## Summary
 | Severity | Count |
 |----------|-------|
 | 🚨 Critical | 0 |
 | 🔴 High | 0 |
-| 🟡 Medium | 66 |
+| 🟡 Medium | 46 |
 | 🔵 Low | 2 |
 | ℹ️ Info | 0 |
 
 ## Recommendations
 - 🔧 Consider refactoring to reduce medium-severity issues
 
-## 🟡 Medium Issues (66)
+## 🟡 Medium Issues (46)
 
 ### Issue 1
 - **File**: `/Users/kevintoles/POC/llm-document-enhancer/workflows/taxonomy_setup/scripts/generate_concept_taxonomy.py`
@@ -89,78 +89,6 @@
 - **Message**: Unsupported operand types for + ("object" and "int")  [operator]
 
 ### Issue 10
-- **File**: `base_guideline_generation/scripts/chapter_generator_all_text.py`
-- **Line**: 137
-- **Tool**: mypy
-- **Type**: type_safety
-- **Rule**: type-check
-- **Message**: Incompatible types in assignment (expression has type "dict[str, str] | dict[str, str | None]", variable has type "dict[str, str | None]")  [assignment]
-
-### Issue 11
-- **File**: `base_guideline_generation/scripts/chapter_generator_all_text.py`
-- **Line**: 1306
-- **Tool**: mypy
-- **Type**: type_safety
-- **Rule**: type-check
-- **Message**: Name "section" already defined on line 1287  [no-redef]
-
-### Issue 12
-- **File**: `base_guideline_generation/scripts/chapter_generator_all_text.py`
-- **Line**: 1307
-- **Tool**: mypy
-- **Type**: type_safety
-- **Rule**: type-check
-- **Message**: "str" has no attribute "append"  [attr-defined]
-
-### Issue 13
-- **File**: `base_guideline_generation/scripts/chapter_generator_all_text.py`
-- **Line**: 1308
-- **Tool**: mypy
-- **Type**: type_safety
-- **Rule**: type-check
-- **Message**: "str" has no attribute "append"  [attr-defined]
-
-### Issue 14
-- **File**: `base_guideline_generation/scripts/chapter_generator_all_text.py`
-- **Line**: 1313
-- **Tool**: mypy
-- **Type**: type_safety
-- **Rule**: type-check
-- **Message**: "str" has no attribute "append"  [attr-defined]
-
-### Issue 15
-- **File**: `base_guideline_generation/scripts/chapter_generator_all_text.py`
-- **Line**: 1314
-- **Tool**: mypy
-- **Type**: type_safety
-- **Rule**: type-check
-- **Message**: "str" has no attribute "append"  [attr-defined]
-
-### Issue 16
-- **File**: `base_guideline_generation/scripts/chapter_generator_all_text.py`
-- **Line**: 1315
-- **Tool**: mypy
-- **Type**: type_safety
-- **Rule**: type-check
-- **Message**: "str" has no attribute "append"  [attr-defined]
-
-### Issue 17
-- **File**: `base_guideline_generation/scripts/chapter_generator_all_text.py`
-- **Line**: 1316
-- **Tool**: mypy
-- **Type**: type_safety
-- **Rule**: type-check
-- **Message**: "str" has no attribute "append"  [attr-defined]
-
-### Issue 18
-- **File**: `base_guideline_generation/scripts/chapter_generator_all_text.py`
-- **Line**: 1317
-- **Tool**: mypy
-- **Type**: type_safety
-- **Rule**: type-check
-- **Message**: "str" has no attribute "append"  [attr-defined]
-
-### Issue 19
 - **File**: `shared/retry.py`
 - **Line**: 173
 - **Tool**: mypy
@@ -168,7 +96,7 @@
 - **Rule**: type-check
 - **Message**: Argument 2 to "RetryExhaustedError" has incompatible type "Exception | None"; expected "Exception"  [arg-type]
 
-### Issue 20
+### Issue 11
 - **File**: `shared/retry.py`
 - **Line**: 228
 - **Tool**: mypy
@@ -176,7 +104,79 @@
 - **Rule**: type-check
 - **Message**: Argument 2 to "RetryExhaustedError" has incompatible type "Exception | None"; expected "Exception"  [arg-type]
 
-... and 46 more issues
+### Issue 12
+- **File**: `shared/loaders/content_loaders.py`
+- **Line**: 279
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: Need type annotation for "excerpts" (hint: "excerpts: list[<type>] = ...")  [var-annotated]
+
+### Issue 13
+- **File**: `llm_enhancement/scripts/models/analysis_models.py`
+- **Line**: 301
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: Unsupported left operand type for + ("Sequence[str]")  [operator]
+
+### Issue 14
+- **File**: `llm_enhancement/scripts/models/analysis_models.py`
+- **Line**: 305
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: "Sequence[str]" has no attribute "strip"  [attr-defined]
+
+### Issue 15
+- **File**: `llm_enhancement/scripts/models/analysis_models.py`
+- **Line**: 306
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: "Sequence[str]" has no attribute "strip"  [attr-defined]
+
+### Issue 16
+- **File**: `llm_enhancement/scripts/models/analysis_models.py`
+- **Line**: 308
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: "Sequence[str]" has no attribute "strip"  [attr-defined]
+
+### Issue 17
+- **File**: `llm_enhancement/scripts/builders/metadata_builder.py`
+- **Line**: 17
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: Need type annotation for "BOOK_REGISTRY" (hint: "BOOK_REGISTRY: dict[<type>, <type>] = ...")  [var-annotated]
+
+### Issue 18
+- **File**: `llm_enhancement/scripts/builders/metadata_builder.py`
+- **Line**: 34
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+
+### Issue 19
+- **File**: `llm_enhancement/scripts/builders/metadata_builder.py`
+- **Line**: 72
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: "None" has no attribute "ARCHITECTURE_SPINE"  [attr-defined]
+
+### Issue 20
+- **File**: `llm_enhancement/scripts/builders/metadata_builder.py`
+- **Line**: 74
+- **Tool**: mypy
+- **Type**: type_safety
+- **Rule**: type-check
+- **Message**: "None" has no attribute "IMPLEMENTATION"  [attr-defined]
+
+... and 26 more issues
 
 ## 🔵 Low Issues (2)
 
