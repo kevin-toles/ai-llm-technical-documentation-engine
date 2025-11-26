@@ -80,10 +80,10 @@ class TestTab5NoLLMCalls:
         for forbidden_import in forbidden:
             # Check it's not in actual import statements
             assert f"import {forbidden_import}" not in tab5_source, (
-                f"Found Anthropic import in Tab 5 - architectural violation"
+                "Found Anthropic import in Tab 5 - architectural violation"
             )
-            assert f"from anthropic" not in tab5_source, (
-                f"Found Anthropic import in Tab 5 - architectural violation"
+            assert "from anthropic" not in tab5_source, (
+                "Found Anthropic import in Tab 5 - architectural violation"
             )
     
     def test_statistical_methods_present(self, tab5_source):

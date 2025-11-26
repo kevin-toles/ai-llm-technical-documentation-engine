@@ -20,6 +20,9 @@ import re
 from pathlib import Path
 from typing import Dict, List
 
+# Constants
+EXAMPLE_JSON_PATH = "examples/guideline_outputs/PYTHON_GUIDELINES_Architecture Patterns with Python.json"
+
 
 class ValidationResult:
     """Result of a single validation check"""
@@ -89,7 +92,7 @@ class SampleOutputsValidator:
         if md_file is None:
             md_file = Path("examples/guideline_outputs/PYTHON_GUIDELINES_Architecture Patterns with Python.md")
         if json_file is None:
-            json_file = Path("examples/guideline_outputs/PYTHON_GUIDELINES_Architecture Patterns with Python.json")
+            json_file = Path(EXAMPLE_JSON_PATH)
         
         # Check file existence
         if not md_file.exists():
@@ -137,7 +140,7 @@ class JSONSchemaValidator:
         results = []
         
         if json_file is None:
-            json_file = Path("examples/guideline_outputs/PYTHON_GUIDELINES_Architecture Patterns with Python.json")
+            json_file = Path(EXAMPLE_JSON_PATH)
         
         if not json_file.exists():
             return results  # Already handled by SampleOutputsValidator
@@ -199,7 +202,7 @@ class ContentParityValidator:
         if md_file is None:
             md_file = Path("examples/guideline_outputs/PYTHON_GUIDELINES_Architecture Patterns with Python.md")
         if json_file is None:
-            json_file = Path("examples/guideline_outputs/PYTHON_GUIDELINES_Architecture Patterns with Python.json")
+            json_file = Path(EXAMPLE_JSON_PATH)
         
         if not md_file.exists() or not json_file.exists():
             return results  # Already handled by SampleOutputsValidator

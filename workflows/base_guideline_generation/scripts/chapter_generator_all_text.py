@@ -1060,7 +1060,7 @@ def build_concept_sections(_primary_data: Dict[str, Any],
     return "\n".join(out), n, foots
 
 def _build_companion_book_reference(book: str, pages: List[Dict[str, Any]], 
-                                     primary_content: str, n: int) -> Tuple[List[str], Dict[str, Any]]:
+                                     n: int) -> Tuple[List[str], Dict[str, Any]]:
     """Build a single companion book reference with summary and annotation."""
     m = pages[0]
     book_disp = book.replace("_Content", "").replace("_", " ")
