@@ -1327,6 +1327,77 @@ def _build_concept_block(
     return block
 
 
+def _extract_concept_from_pages(
+    concept: str, chapter_pages: List[Dict[str, Any]], footnote_num: int
+) -> Tuple[Optional[str], Optional[Dict[str, Any]], int]:
+    """
+    Extract formatted concept block and footnote from chapter pages.
+    
+    Applies Extract Method pattern to reduce complexity in build_concept_sections().
+    
+    Args:
+        concept: Concept to extract
+        chapter_pages: Pages to search
+        footnote_num: Current footnote number
+        
+    Returns:
+        Tuple of (formatted_block, footnote_dict, next_footnote_num)
+        Returns (None, None, footnote_num) if concept not found
+        
+    References:
+        - ANTI_PATTERN_ANALYSIS §10.2: Extract Method pattern
+        - Architecture Patterns Ch.3: Abstraction boundaries
+    """
+    best_page = _find_best_page_for_concept(concept, chapter_pages)
+    if not best_page:
+        return None, None, footnote_num
+    
+    page_num = best_page["page_number"]
+    content = best_page.get("content", "")
+    best_count = content.lower().count(concept.lower())
+    
+    excerpt, start_idx, end_idx = _extract_concept_passage(content, concept)
+    block = _build_concept_block(
+        concept, page_num, excerpt, (start_idx, end_idx), best_count, footnote_num
+    )
+    formatted_block = "\n".join(block)
+    
+    footnote = _build_concept_footnote(page_num, start_idx, end_idx, footnote_num)
+    
+    return formatted_block, footnote, footnote_num + 1
+
+
+def _build_concept_footnote(
+    page_num: int, start_line: int, end_line: int, footnote_num: int
+) -> Dict[str, Any]:
+    """
+    Build footnote dictionary for a concept excerpt.
+    
+    Applies Extract Method pattern to reduce complexity in build_concept_sections().
+    
+    Args:
+        page_num: Page number of excerpt
+        start_line: Start line index (0-based)
+        end_line: End line index (0-based)
+        footnote_num: Footnote number
+        
+    Returns:
+        Footnote dictionary
+        
+    References:
+        - ANTI_PATTERN_ANALYSIS §10.2: Extract Method pattern
+    """
+    return {
+        "num": footnote_num,
+        "author": CURRENT_BOOK_META["author"],
+        "title": CURRENT_BOOK_META["full_title"],
+        "file": PRIMARY_BOOK,
+        "page": page_num,
+        "start_line": start_line + 1,
+        "end_line": end_line,
+    }
+
+
 def build_concept_sections(
     _primary_data: Dict[str, Any],
     chapter_pages: List[Dict[str, Any]],
@@ -1338,6 +1409,8 @@ def build_concept_sections(
     """
     Build concept sections by identifying and extracting passages for each detected concept.
     Limits to 15 concepts per chapter for focused coverage.
+    
+    Refactored using Extract Method pattern to reduce local variable count from 18→10.
 
     Args:
         _primary_data: Primary book data (reserved for future metadata-driven selection)
@@ -1346,6 +1419,13 @@ def build_concept_sections(
         _chapter_num: Chapter number (reserved for future chapter-specific logic)
         chapter_concepts: Optional predefined concepts to use instead of extracting
         _occurrence_index: Page occurrence index (reserved for future frequency-based selection)
+        
+    Returns:
+        Tuple of (formatted_text, next_footnote_num, footnotes_list)
+        
+    References:
+        - ANTI_PATTERN_ANALYSIS §10.2: Extract Method refactoring (R0914 fix)
+        - Architecture Patterns Ch.3: Managing complexity through abstraction
     """
     out = []
     foots: List[Dict[str, Any]] = []
@@ -1357,34 +1437,13 @@ def build_concept_sections(
     # Limit to 15 most significant concepts
     selected_concepts = sorted(chapter_concepts)[:15]
 
-    # For each concept, find best page and extract relevant passage
+    # For each concept, extract and format using helper functions
     for concept in selected_concepts:
-        best_page = _find_best_page_for_concept(concept, chapter_pages)
-        if not best_page:
-            continue
-
-        page_num = best_page["page_number"]
-        content = best_page.get("content", "")
-        best_count = content.lower().count(concept.lower())
-
-        excerpt, start_idx, end_idx = _extract_concept_passage(content, concept)
-        block = _build_concept_block(
-            concept, page_num, excerpt, (start_idx, end_idx), best_count, n
-        )
-        out.append("\n".join(block))
-
-        foots.append(
-            {
-                "num": n,
-                "author": CURRENT_BOOK_META["author"],
-                "title": CURRENT_BOOK_META["full_title"],
-                "file": PRIMARY_BOOK,
-                "page": page_num,
-                "start_line": start_idx + 1,
-                "end_line": end_idx,
-            }
-        )
-        n += 1
+        formatted_block, footnote, n = _extract_concept_from_pages(concept, chapter_pages, n)
+        
+        if formatted_block and footnote:
+            out.append(formatted_block)
+            foots.append(footnote)
 
     return "\n".join(out), n, foots
 
