@@ -876,53 +876,7 @@ def get_architecture_book_role(book_name: str) -> str:
     return architecture_roles.get(book_name, "")
 
 
-def _build_llm_annotation_prompt(context: AnnotationContext) -> str:
-    """
-    Build LLM prompt for annotation generation.
-
-    Args:
-        context: AnnotationContext object with all required context data
-    """
-    arch_context = f"\n\nArchitectural Role: {context.arch_role}" if context.arch_role else ""
-    primary_context = (
-        f"""
-PRIMARY TEXT CONTEXT ({CURRENT_BOOK_META['short_name']}):
-{context.primary_content[:800]}
-"""
-        if context.primary_content
-        else ""
-    )
-
-    return f"""You are analyzing a cross-reference between two programming books for a scholarly hybrid document.
-
-COMPANION BOOK: {context.book_display} (page {context.page_num})
-MATCHED CONCEPTS: {', '.join(context.concepts[:5])}
-RELATIONSHIP TYPE: {context.relationship}{arch_context}
-{primary_context}
-COMPANION BOOK EXCERPT (page {context.page_num}):
-{context.content[:1200]}
-
-TASK: Write a 3-5 sentence annotation that is pedagogically valuable.
-
-IF the companion excerpt contains technical/educational content about the matched concepts:
-1. NAME the specific concepts being discussed
-2. EXPLAIN how the companion book treats these concepts differently than the primary text
-3. PROVIDE specific examples from the excerpt itself
-4. JUSTIFY why a learner should consult this cross-reference
-
-IF the companion excerpt is copyright/metadata/non-technical content:
-1. ACKNOWLEDGE why the match occurred (concept token overlap in metadata)
-2. EXPLAIN that this page lacks substantive technical treatment of the concepts
-3. PROVIDE meta-commentary about JSON-driven cross-reference constraints
-4. GUIDE the learner to rely on the primary text for this topic
-
-FAIR USE PRINCIPLE: We are creating scholarly annotations and summaries, not copying content.
-All annotations fall under fair use for educational commentary.
-
-BE SPECIFIC. Reference actual content. NO generic phrases like "provides complementary perspectives."
-Respond with ONLY the annotation text (no preamble, no JSON)."""
-
-
+# _build_llm_annotation_prompt removed - Tab 5 uses statistical methods only (LLM in Tab 7)
 # _try_llm_annotation removed - Tab 5 uses statistical methods only (LLM in Tab 6)
 
 

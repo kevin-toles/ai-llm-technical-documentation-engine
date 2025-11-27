@@ -231,6 +231,42 @@ class TestLegacyLLMCodeRemoval:
             "Legacy LLM functions must be removed from Tab 5."
         )
     
+    def test_no_llm_helper_functions_including_prompt_builders(self):
+        """
+        RED: This test will FAIL until _build_llm_annotation_prompt is removed.
+        
+        Task 1.2: Remove ALL legacy LLM helper functions including prompt builders.
+        Dead code that builds LLM prompts but never calls LLM is still dead code.
+        
+        References:
+            - MASTER_IMPLEMENTATION_GUIDE Task 1.2
+            - ANTI_PATTERN_ANALYSIS §7.2: Dead Code Removal
+        """
+        file_path = Path("workflows/base_guideline_generation/scripts/chapter_generator_all_text.py")
+        content = file_path.read_text()
+        
+        # Check for any LLM-related helper functions (prompt builders, etc.)
+        forbidden_patterns = [
+            (r'def _build_llm.*\(', '_build_llm_* functions'),
+            (r'def .*_llm_.*\(', '*_llm_* functions'),
+            (r'def call_anthropic', 'call_anthropic function'),
+            (r'def call_claude', 'call_claude function')
+        ]
+        
+        violations: List[Tuple[str, str]] = []
+        for pattern, desc in forbidden_patterns:
+            matches = re.findall(pattern, content, re.MULTILINE)
+            if matches:
+                for match in matches:
+                    violations.append((match, desc))
+        
+        assert len(violations) == 0, (
+            f"Found {len(violations)} LLM helper function definitions:\n" +
+            "\n".join([f"  - {match} ({desc})" for match, desc in violations]) +
+            "\n\nAll LLM-related functions must be removed from Tab 5 per Task 1.2. "
+            "LLM functionality belongs only in Tab 7."
+        )
+    
     def test_removal_comments_present(self):
         """
         RED: This test SHOULD PASS (comments exist).
