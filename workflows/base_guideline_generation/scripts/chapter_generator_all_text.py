@@ -19,10 +19,63 @@ import json
 import re
 import sys
 import argparse
+from dataclasses import dataclass
 from pathlib import Path
 from textwrap import dedent
 from typing import Dict, List, Tuple, Any, Optional, Set
 from collections import defaultdict
+
+# -------------------------------
+# Data Classes for Parameter Objects
+# -------------------------------
+
+
+@dataclass
+class CitationInfo:
+    """Parameter object for citation/footnote data."""
+
+    num: int
+    author: str
+    title: str
+    file_stub: str
+    page: int
+    start_line: int
+    end_line: int
+
+
+@dataclass
+class AnnotationContext:
+    """Parameter object for LLM annotation generation context."""
+
+    book_display: str
+    concepts: List[str]
+    relationship: str
+    arch_role: str
+    primary_content: str
+    content: str
+    page_num: int
+
+
+@dataclass
+class ChapterContext:
+    """Parameter object for chapter reference context."""
+
+    current_concepts: Set[str]
+    primary_book: Dict[str, Any]
+    chapter_num: int
+    all_chapters: List[Tuple[int, str, int, int]]
+
+
+@dataclass
+class CrossRefData:
+    """Parameter object for cross-reference data."""
+
+    target_chapter: int
+    shared_concepts: List[str]
+    book_name: str
+    page_range: Tuple[int, int]
+    citation_num: int
+
 
 # -------------------------------
 # Configuration
@@ -500,15 +553,18 @@ def exact_slice(content: str, start_line: int, end_line: int) -> str:
 # -------------------------------
 
 
-def chicago_footnote(
-    num: int, author: str, title: str, file_stub: str, page: int, start: int, end: int
-) -> str:
+def chicago_footnote(citation: CitationInfo) -> str:
     """
     Chicago-style note, placed in footnotes section:
     [^N]: Author. *Title*. (JSON `File.json`, p. X, lines A–B).
+    
+    Args:
+        citation: CitationInfo object with all citation data
     """
     return (
-        f"[^{num}]: {author}. *{title}*. (JSON `{file_stub}.json`, p. {page}, lines {start}–{end})."
+        f"[^{citation.num}]: {citation.author}. *{citation.title}*. "
+        f"(JSON `{citation.file_stub}.json`, p. {citation.page}, "
+        f"lines {citation.start_line}–{citation.end_line})."
     )
 
 
@@ -779,34 +835,31 @@ def get_architecture_book_role(book_name: str) -> str:
     return architecture_roles.get(book_name, "")
 
 
-def _build_llm_annotation_prompt(
-    book_disp: str,
-    concepts: List[str],
-    relationship: str,
-    arch_role: str,
-    primary_content: str,
-    content: str,
-    page_num: int,
-) -> str:
-    """Build LLM prompt for annotation generation."""
-    arch_context = f"\n\nArchitectural Role: {arch_role}" if arch_role else ""
+def _build_llm_annotation_prompt(context: AnnotationContext) -> str:
+    """
+    Build LLM prompt for annotation generation.
+    
+    Args:
+        context: AnnotationContext object with all required context data
+    """
+    arch_context = f"\n\nArchitectural Role: {context.arch_role}" if context.arch_role else ""
     primary_context = (
         f"""
 PRIMARY TEXT CONTEXT ({CURRENT_BOOK_META['short_name']}):
-{primary_content[:800]}
+{context.primary_content[:800]}
 """
-        if primary_content
+        if context.primary_content
         else ""
     )
 
     return f"""You are analyzing a cross-reference between two programming books for a scholarly hybrid document.
 
-COMPANION BOOK: {book_disp} (page {page_num})
-MATCHED CONCEPTS: {', '.join(concepts[:5])}
-RELATIONSHIP TYPE: {relationship}{arch_context}
+COMPANION BOOK: {context.book_display} (page {context.page_num})
+MATCHED CONCEPTS: {', '.join(context.concepts[:5])}
+RELATIONSHIP TYPE: {context.relationship}{arch_context}
 {primary_context}
-COMPANION BOOK EXCERPT (page {page_num}):
-{content[:1200]}
+COMPANION BOOK EXCERPT (page {context.page_num}):
+{context.content[:1200]}
 
 TASK: Write a 3-5 sentence annotation that is pedagogically valuable.
 
@@ -1242,9 +1295,20 @@ def _get_fallback_annotation(concept: str, best_count: int) -> str:
 
 
 def _build_concept_block(
-    concept: str, page_num: int, excerpt: str, start_idx: int, end_idx: int, best_count: int, n: int
+    concept: str, page_num: int, excerpt: str, line_range: Tuple[int, int], best_count: int, n: int
 ) -> List[str]:
-    """Build formatted block for a single concept."""
+    """
+    Build formatted block for a single concept.
+    
+    Args:
+        concept: Concept name
+        page_num: Page number
+        excerpt: Text excerpt
+        line_range: Tuple of (start_line, end_line)
+        best_count: Number of occurrences
+        n: Footnote number
+    """
+    start_idx, end_idx = line_range
     block = []
     block.append(f"#### **{concept.title()}** *(p.{page_num})*\n")
     block.append(
@@ -1304,7 +1368,9 @@ def build_concept_sections(
         best_count = content.lower().count(concept.lower())
 
         excerpt, start_idx, end_idx = _extract_concept_passage(content, concept)
-        block = _build_concept_block(concept, page_num, excerpt, start_idx, end_idx, best_count, n)
+        block = _build_concept_block(
+            concept, page_num, excerpt, (start_idx, end_idx), best_count, n
+        )
         out.append("\n".join(block))
 
         foots.append(
@@ -1423,11 +1489,7 @@ def _build_companion_references_section(
 
 
 def _build_self_references_section(
-    current_concepts: Set[str],
-    primary_book: Dict[str, Any],
-    chapter_num: int,
-    all_chapters: List[Tuple[int, str, int, int]],
-    footnote_start: int,
+    chapter_ctx: ChapterContext, footnote_start: int
 ) -> Tuple[List[str], List[Dict[str, Any]], int]:
     """
     Build self-references to later chapters section.
@@ -1435,10 +1497,7 @@ def _build_self_references_section(
     Extracted from build_see_also to reduce complexity.
 
     Args:
-        current_concepts: Set of concepts in current chapter
-        primary_book: Primary book JSON data
-        chapter_num: Current chapter number
-        all_chapters: List of all chapter definitions
+        chapter_ctx: ChapterContext with current chapter info and concepts
         footnote_start: Starting footnote number
 
     Returns:
@@ -1451,7 +1510,12 @@ def _build_self_references_section(
     foots: List[Dict[str, Any]] = []
     n = footnote_start
 
-    self_refs = find_self_references(current_concepts, primary_book, chapter_num, all_chapters)
+    self_refs = find_self_references(
+        chapter_ctx.current_concepts,
+        chapter_ctx.primary_book,
+        chapter_ctx.chapter_num,
+        chapter_ctx.all_chapters,
+    )
 
     if self_refs:
         out.append("\n#### **Later Chapters in This Book**\n")
@@ -1520,9 +1584,13 @@ def build_see_also(
 
     # Part 2: Self-References to Later Chapters (extracted to helper)
     if primary_book and current_concepts and all_chapters:
-        self_ref_lines, self_ref_foots, n = _build_self_references_section(
-            current_concepts, primary_book, chapter_num, all_chapters, n
+        chapter_ctx = ChapterContext(
+            current_concepts=current_concepts,
+            primary_book=primary_book,
+            chapter_num=chapter_num,
+            all_chapters=all_chapters,
         )
+        self_ref_lines, self_ref_foots, n = _build_self_references_section(chapter_ctx, n)
         out.extend(self_ref_lines)
         foots.extend(self_ref_foots)
 
