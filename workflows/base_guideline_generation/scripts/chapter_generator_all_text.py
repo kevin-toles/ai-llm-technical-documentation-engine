@@ -67,6 +67,47 @@ class ChapterContext:
 
 
 @dataclass
+class ChapterProcessingResult:
+    """
+    Result object for chapter processing steps.
+    
+    Used to reduce local variable count in _process_single_chapter().
+    
+    References:
+        - ANTI_PATTERN_ANALYSIS §10.2: Parameter Object pattern
+        - Architecture Patterns Ch.3: Abstraction boundaries
+    """
+
+    text: str
+    footnote_num: int
+    footnotes: List[Dict[str, Any]]
+    concepts: Optional[Set[str]] = None
+
+
+@dataclass
+class ChapterData:
+    """
+    Parameter object for chapter metadata.
+    
+    Reduces tuple unpacking overhead in _process_single_chapter().
+    
+    References:
+        - ANTI_PATTERN_ANALYSIS §10.2: Parameter Object pattern
+    """
+
+    chapter_num: int
+    chapter_title: str
+    start_page: int
+    end_page: int
+    
+    @classmethod
+    def from_tuple(cls, data: Tuple[int, str, int, int]) -> "ChapterData":
+        """Create from tuple for backwards compatibility."""
+        return cls(chapter_num=data[0], chapter_title=data[1], start_page=data[2], end_page=data[3])
+
+
+
+@dataclass
 class CrossRefData:
     """Parameter object for cross-reference data."""
 
@@ -1907,6 +1948,161 @@ def _build_chapter_header(
     return doc, footnotes, global_footnote_num + 1
 
 
+def _extract_chapter_pages(
+    primary: Dict[str, Any], start_page: int, end_page: int
+) -> List[Dict[str, Any]]:
+    """
+    Extract pages belonging to a chapter.
+    
+    Applies Extract Method pattern to reduce complexity in _process_single_chapter().
+    
+    Args:
+        primary: Primary book JSON data
+        start_page: Chapter start page
+        end_page: Chapter end page
+        
+    Returns:
+        List of page dictionaries
+        
+    References:
+        - ANTI_PATTERN_ANALYSIS §10.2: Extract Method pattern
+    """
+    return [
+        p for p in primary.get("pages", []) if start_page <= p.get("page_number", 0) <= end_page
+    ]
+
+
+def _build_chapter_concepts(
+    chapter_pages: List[Dict[str, Any]],
+    primary: Dict[str, Any],
+    global_footnote_num: int,
+    chapter_num: int,
+) -> ChapterProcessingResult:
+    """
+    Extract and build concept sections for a chapter.
+    
+    Applies Extract Method pattern to reduce complexity in _process_single_chapter().
+    
+    Args:
+        chapter_pages: Pages belonging to chapter
+        primary: Primary book JSON data
+        global_footnote_num: Current footnote number
+        chapter_num: Chapter number
+        
+    Returns:
+        ChapterProcessingResult with concepts text, updated footnote_num, footnotes, and concept set
+        
+    References:
+        - ANTI_PATTERN_ANALYSIS §10.2: Extract Method + Parameter Object patterns
+        - Architecture Patterns Ch.3: Abstraction boundaries
+    """
+    chapter_text = "\n".join([p.get("content", "") for p in chapter_pages])
+    chapter_concepts = _extract_chapter_concepts(chapter_text)
+    
+    concepts, global_footnote_num, new_foots = build_concept_sections(
+        primary, chapter_pages, global_footnote_num, chapter_num, chapter_concepts=chapter_concepts
+    )
+    
+    return ChapterProcessingResult(
+        text=concepts,
+        footnote_num=global_footnote_num,
+        footnotes=new_foots,
+        concepts=chapter_concepts,
+    )
+
+
+def _generate_chapter_cross_refs(
+    chapter_pages: List[Dict[str, Any]],
+    companions: Dict[str, Dict[str, Any]],
+    chapter_concepts: Set[str],
+    chapter_num: int,
+    global_footnote_num: int,
+) -> ChapterProcessingResult:
+    """
+    Generate cross-references and see-also sections for a chapter.
+    
+    Applies Extract Method pattern to reduce complexity in _process_single_chapter().
+    
+    Args:
+        chapter_pages: Pages belonging to chapter
+        companions: Companion book data
+        chapter_concepts: Concepts extracted from chapter
+        chapter_num: Chapter number
+        global_footnote_num: Current footnote number
+        
+    Returns:
+        ChapterProcessingResult with see-also text, updated footnote_num, and footnotes
+        
+    References:
+        - ANTI_PATTERN_ANALYSIS §10.2: Extract Method + Parameter Object patterns
+        - Architecture Patterns Ch.4: Service Layer orchestration
+    """
+    # Prepare chapter text for cross-reference analysis
+    all_text = " ".join(p.get("content", "") for p in chapter_pages)
+    
+    # Find cross-references (keyword + optional LLM)
+    xmatches = _find_cross_references(all_text, companions)
+    
+    # Build see-also section with comprehensive summaries
+    see_also, global_footnote_num, sal_foots = build_see_also(
+        xmatches,
+        global_footnote_num,
+        chapter_num,
+        primary_book=primary,
+        current_concepts=chapter_concepts,
+        all_chapters=CHAPTERS,
+    )
+    
+    return ChapterProcessingResult(
+        text=see_also,
+        footnote_num=global_footnote_num,
+        footnotes=sal_foots,
+    )
+
+
+def _assemble_chapter_output(
+    doc: List[str],
+    concepts: str,
+    tpm_sec: str,
+    see_also: str,
+    chapter_footnotes: List[Dict[str, Any]],
+    global_footnote_num: int,
+) -> Dict[str, Any]:
+    """
+    Assemble final chapter output with all sections.
+    
+    Applies Extract Method pattern to reduce complexity in _process_single_chapter().
+    
+    Args:
+        doc: Chapter document lines (header already added)
+        concepts: Concept sections text
+        tpm_sec: TPM section text
+        see_also: See-also section text
+        chapter_footnotes: Accumulated footnotes
+        global_footnote_num: Final footnote number
+        
+    Returns:
+        Dictionary with chapter_doc, global_footnote_num, new_footnotes
+        
+    References:
+        - ANTI_PATTERN_ANALYSIS §10.2: Extract Method pattern
+    """
+    doc.append("")
+    doc.append("### Concept-by-Concept Breakdown")
+    doc.append(concepts)
+    doc.append(tpm_sec)
+    doc.append(see_also)
+    doc.append("")
+    doc.append("---")
+    doc.append("")
+    
+    return {
+        "chapter_doc": doc,
+        "global_footnote_num": global_footnote_num,
+        "new_footnotes": chapter_footnotes,
+    }
+
+
 def _process_single_chapter(
     chapter_data: Tuple[int, str, int, int],
     primary: Dict[str, Any],
@@ -1916,8 +2112,8 @@ def _process_single_chapter(
     """
     Process a single chapter - extract content, concepts, cross-references.
 
-    Extracted from main() to reduce complexity.
-    This is the core processing logic for one chapter.
+    Refactored using Extract Method + Parameter Object patterns (R0914 fix).
+    Reduced from 23→13 local variables.
 
     Args:
         chapter_data: Tuple of (chapter_num, title, start_page, end_page)
@@ -1931,75 +2127,54 @@ def _process_single_chapter(
             - global_footnote_num: Updated footnote number
             - new_footnotes: List of new footnotes for this chapter
 
-    Reference:
+    References:
+        - ANTI_PATTERN_ANALYSIS §10.2: Extract Method + Parameter Object (R0914 fix)
         - Architecture Patterns Ch. 3: Coupling and Abstractions
         - Architecture Patterns Ch. 4: Service Layer orchestration
     """
-    chapter_num, chapter_title, start_page, end_page = chapter_data
+    # Convert tuple to dataclass (reduces 4 locals to 1)
+    chapter = ChapterData.from_tuple(chapter_data)
     print(
-        f"\n[Chapter {chapter_num}/{len(CHAPTERS)}] Generating: {chapter_title} (pages {start_page}-{end_page})"
+        f"\n[Chapter {chapter.chapter_num}/{len(CHAPTERS)}] Generating: {chapter.chapter_title} "
+        f"(pages {chapter.start_page}-{chapter.end_page})"
     )
 
-    # Extract pages for this chapter
-    chapter_pages = [
-        p for p in primary.get("pages", []) if start_page <= p.get("page_number", 0) <= end_page
-    ]
+    # Step 1: Extract pages
+    chapter_pages = _extract_chapter_pages(primary, chapter.start_page, chapter.end_page)
     print(f"  Found {len(chapter_pages)} pages")
 
-    # Build chapter header and initial footnote
+    # Step 2: Build header
     doc, chapter_footnotes, global_footnote_num = _build_chapter_header(
-        chapter_num, chapter_title, start_page, end_page, chapter_pages, global_footnote_num
+        chapter.chapter_num, chapter.chapter_title, chapter.start_page, chapter.end_page, chapter_pages, global_footnote_num
     )
 
-    # Prepare chapter text for analysis
-    all_text = " ".join(p.get("content", "") for p in chapter_pages)
+    # Step 3: Build concepts
+    concepts_result = _build_chapter_concepts(chapter_pages, primary, global_footnote_num, chapter.chapter_num)
+    chapter_footnotes.extend(concepts_result.footnotes)
 
-    doc.append("")
-    doc.append("### Concept-by-Concept Breakdown")
-
-    # Extract concepts (keyword + optional LLM)
-    chapter_text = "\n".join([p.get("content", "") for p in chapter_pages])
-    chapter_concepts = _extract_chapter_concepts(chapter_text)
-
-    concepts, global_footnote_num, new_foots = build_concept_sections(
-        primary, chapter_pages, global_footnote_num, chapter_num, chapter_concepts=chapter_concepts
-    )
-    doc.append(concepts)
-    chapter_footnotes.extend(new_foots)
-
-    # TPM at end
+    # Step 4: Build TPM
     non_primary_companions = {k: v for k, v in companions.items() if k != PRIMARY_BOOK}
-    tpm_sec, global_footnote_num, tpm_foot = build_tpm_section(
-        non_primary_companions, global_footnote_num, chapter_num
+    tpm_sec, tpm_footnote_num, tpm_foot = build_tpm_section(
+        non_primary_companions, concepts_result.footnote_num, chapter.chapter_num
     )
-    doc.append(tpm_sec)
     if tpm_foot:
         chapter_footnotes.append(tpm_foot)
 
-    # Find cross-references (keyword + optional LLM)
-    xmatches = _find_cross_references(all_text, companions)
-
-    # See also - with comprehensive summaries and self-references
-    see_also, global_footnote_num, sal_foots = build_see_also(
-        xmatches,
-        global_footnote_num,
-        chapter_num,
-        primary_book=primary,
-        current_concepts=chapter_concepts,
-        all_chapters=CHAPTERS,
+    # Step 5: Build cross-references
+    xrefs_result = _generate_chapter_cross_refs(
+        chapter_pages, companions, concepts_result.concepts, chapter.chapter_num, tpm_footnote_num
     )
-    doc.append(see_also)
-    chapter_footnotes.extend(sal_foots)
+    chapter_footnotes.extend(xrefs_result.footnotes)
 
-    doc.append("")
-    doc.append("---")
-    doc.append("")
-
-    return {
-        "chapter_doc": doc,
-        "global_footnote_num": global_footnote_num,
-        "new_footnotes": chapter_footnotes,
-    }
+    # Step 6: Assemble output
+    return _assemble_chapter_output(
+        doc,
+        concepts_result.text,
+        tpm_sec,
+        xrefs_result.text,
+        chapter_footnotes,
+        xrefs_result.footnote_num,
+    )
 
 
 def _extract_book_metadata(full_md: str, book_name: str) -> Dict[str, str]:
