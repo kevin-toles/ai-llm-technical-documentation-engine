@@ -312,12 +312,6 @@ class Settings:
         print(f"  Max Tokens: {self.llm.max_tokens:,}")
         print(f"  Logging Enabled: {self.llm.enable_logging}")
         
-        print("\n[Taxonomy]")
-        print(f"  Min Relevance: {self.taxonomy.min_relevance}")
-        print(f"  Max Books: {self.taxonomy.max_books}")
-        print(f"  Cascade Depth: {self.taxonomy.cascade_depth}")
-        print(f"  Pre-filter Enabled: {self.taxonomy.enable_prefilter}")
-        
         print("\n[Constraints]")
         print(f"  Max Content Requests: {self.constraints.max_content_requests}")
         print(f"  Max Sections/Request: {self.constraints.max_sections_per_request}")

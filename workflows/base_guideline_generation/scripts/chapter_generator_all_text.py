@@ -1615,7 +1615,7 @@ def _extract_book_metadata(full_md: str, book_name: str) -> Dict[str, str]:
         - PYTHON_GUIDELINES: Single Responsibility Principle
     """
     title_match = re.search(r'^# (.+)$', full_md, re.MULTILINE)
-    source_match = re.search(r'\*Source: (.+?)\*', full_md)
+    source_match = re.search(r'\*Source: (.+)\*', full_md)
     
     return {
         "title": title_match.group(1).strip() if title_match else book_name,

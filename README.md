@@ -95,7 +95,7 @@ from config.settings import settings
 # Type-safe access with autocomplete
 max_tokens = settings.llm.max_tokens
 cache_enabled = settings.cache.enabled
-min_relevance = settings.taxonomy.min_relevance
+min_pages = settings.chapter_segmentation.min_pages
 ```
 
 See `examples/config_usage.py` for more examples.

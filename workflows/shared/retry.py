@@ -174,6 +174,35 @@ def call_llm_with_retry(
     raise RetryExhaustedError(config.max_attempts, last_error if last_error is not None else Exception("Unknown error"))
 
 
+def _handle_retry_failure(
+    func: Callable[..., Any],
+    attempt: int,
+    error: Exception,
+    delay: float,
+    on_retry: Optional[Callable[[int, Exception, float], None]]
+) -> None:
+    """
+    Handle retry failure by logging and optionally calling retry callback.
+    
+    Extracted to reduce cognitive complexity of call_with_retry.
+    
+    Args:
+        func: Function being retried
+        attempt: Current attempt number
+        error: Exception that occurred
+        delay: Delay before next retry
+        on_retry: Optional callback to invoke
+    """
+    func_name = getattr(func, '__name__', 'function')
+    logger.warning(
+        f"Function {func_name} failed (attempt {attempt + 1}): {error}. "
+        f"Retrying in {delay:.1f}s..."
+    )
+    
+    if on_retry:
+        on_retry(attempt, error, delay)
+
+
 def call_with_retry(
     func: Callable[..., T],
     config: Optional[RetryConfig] = None,
@@ -214,16 +243,7 @@ def call_with_retry(
                     break
                 
                 delay = config.get_delay(attempt)
-                
-                func_name = getattr(func, '__name__', 'function')
-                logger.warning(
-                    f"Function {func_name} failed (attempt {attempt + 1}): {e}. "
-                    f"Retrying in {delay:.1f}s..."
-                )
-                
-                if on_retry:
-                    on_retry(attempt, e, delay)
-                
+                _handle_retry_failure(func, attempt, e, delay, on_retry)
                 time.sleep(delay)
         
         # Cast last_error to Exception (guaranteed non-None after loop)

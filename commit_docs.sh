@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /Users/kevintoles/POC/llm-document-enhancer
+cd /Users/kevintoles/POC/llm-document-enhancer || exit 1
 
 git add CONSOLIDATED_IMPLEMENTATION_PLAN.md
 git add TAB4_IMPLEMENTATION_PLAN.md
