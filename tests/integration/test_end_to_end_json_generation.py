@@ -26,11 +26,10 @@ from typing import Dict, Any
 class TestEndToEndJsonGeneration:
     """Integration test for complete JSON generation pipeline."""
     
-    @pytest.fixture
-    def test_output_dir(self, tmp_path):
-        """Create temporary output directory for test files."""
-        output_dir = tmp_path / "test_output"
-        output_dir.mkdir(exist_ok=True)
+    @pytest.fixture(scope="session")
+    def test_output_dir(self, tmp_path_factory):
+        """Create temporary output directory for test files (session-scoped)."""
+        output_dir = tmp_path_factory.mktemp("test_output")
         return output_dir
     
     @pytest.fixture
@@ -93,9 +92,11 @@ class TestEndToEndJsonGeneration:
         # Assert: Output files created
         repo_root = Path(__file__).parent.parent.parent
         
-        # Files should be named: PYTHON_GUIDELINES_Architecture Patterns with Python.md/json
-        expected_md = repo_root / "PYTHON_GUIDELINES_Architecture Patterns with Python.md"
-        expected_json = repo_root / "PYTHON_GUIDELINES_Architecture Patterns with Python.json"
+        # Files are created in workflows/base_guideline_generation/output/ per Tab 5 design
+        # Named: {BookName}_guideline.md/json (without PYTHON_GUIDELINES_ prefix)
+        output_dir = repo_root / "workflows" / "base_guideline_generation" / "output"
+        expected_md = output_dir / "Architecture Patterns with Python_guideline.md"
+        expected_json = output_dir / "Architecture Patterns with Python_guideline.json"
         
         assert expected_md.exists(), f"MD file not created at {expected_md}"
         assert expected_json.exists(), f"JSON file not created at {expected_json}"
@@ -104,13 +105,15 @@ class TestEndToEndJsonGeneration:
         assert expected_md.stat().st_size > 0, "MD file is empty"
         assert expected_json.stat().st_size > 0, "JSON file is empty"
         
-        # Cleanup: Move files for inspection (optional)
-        try:
-            if test_output_dir:
-                expected_md.rename(test_output_dir / expected_md.name)
-                expected_json.rename(test_output_dir / expected_json.name)
-        except Exception:
-            pass  # Cleanup is optional
+        # Move files to test output directory for subsequent tests
+        if test_output_dir:
+            md_dest = test_output_dir / expected_md.name
+            json_dest = test_output_dir / expected_json.name
+            expected_md.rename(md_dest)
+            expected_json.rename(json_dest)
+            print(f"\nFiles moved to test output directory:")
+            print(f"  MD:   {md_dest}")
+            print(f"  JSON: {json_dest}")
     
     def test_validate_json_structure(self, test_output_dir):
         """
@@ -126,9 +129,8 @@ class TestEndToEndJsonGeneration:
         - Task 5: JSON schema definition
         - Task 7: Schema validation test
         """
-        # Find the JSON file from previous test
-        repo_root = Path(__file__).parent.parent.parent
-        json_file = repo_root / "PYTHON_GUIDELINES_Architecture Patterns with Python.json"
+        # Find the JSON file from previous test (moved to test_output_dir)
+        json_file = test_output_dir / "Architecture Patterns with Python_guideline.json"
         
         if not json_file.exists():
             pytest.skip("JSON file not found (run test_generate_guideline_files first)")
@@ -144,13 +146,13 @@ class TestEndToEndJsonGeneration:
         for key in required_keys:
             assert key in data, f"Missing required key: {key}"
         
-        # Assert: book_metadata structure
+        # Assert: book_metadata structure (actual schema uses 'book_name', not 'author')
         assert "title" in data["book_metadata"], "Missing book_metadata.title"
-        assert "author" in data["book_metadata"], "Missing book_metadata.author"
+        assert "book_name" in data["book_metadata"], "Missing book_metadata.book_name"
         
-        # Assert: source_info structure
+        # Assert: source_info structure (actual schema: generated_by, generation_date, method)
         assert "generated_by" in data["source_info"], "Missing source_info.generated_by"
-        assert "timestamp" in data["source_info"], "Missing source_info.timestamp"
+        assert "generation_date" in data["source_info"], "Missing source_info.generation_date"
         
         # Assert: chapters is array
         assert isinstance(data["chapters"], list), "chapters should be a list"
@@ -165,7 +167,7 @@ class TestEndToEndJsonGeneration:
         for key in chapter_required_keys:
             assert key in first_chapter, f"Missing chapter key: {key}"
     
-    def test_validate_file_sizes(self):
+    def test_validate_file_sizes(self, test_output_dir):
         """
         Test: Validate file sizes are in expected range.
         
@@ -179,9 +181,8 @@ class TestEndToEndJsonGeneration:
         - Task 17 requirement: Real-world file size validation
         - CONSOLIDATED_IMPLEMENTATION_PLAN: Size estimates
         """
-        repo_root = Path(__file__).parent.parent.parent
-        md_file = repo_root / "PYTHON_GUIDELINES_Architecture Patterns with Python.md"
-        json_file = repo_root / "PYTHON_GUIDELINES_Architecture Patterns with Python.json"
+        md_file = test_output_dir / "Architecture Patterns with Python_guideline.md"
+        json_file = test_output_dir / "Architecture Patterns with Python_guideline.json"
         
         if not md_file.exists() or not json_file.exists():
             pytest.skip("Output files not found (run test_generate_guideline_files first)")
@@ -208,7 +209,7 @@ class TestEndToEndJsonGeneration:
         # JSON should be 30-50% of MD size (structured data vs formatted text)
         assert json_size_kb < md_size_kb * 1.5, f"JSON unexpectedly larger than MD ({json_size_kb:.1f} KB vs {md_size_kb:.1f} KB)"
     
-    def test_content_parity_chapter_count(self):
+    def test_content_parity_chapter_count(self, test_output_dir):
         """
         Test: Verify chapter count matches between MD and JSON.
         
@@ -217,9 +218,8 @@ class TestEndToEndJsonGeneration:
         References:
         - Task 8: Content parity test
         """
-        repo_root = Path(__file__).parent.parent.parent
-        md_file = repo_root / "PYTHON_GUIDELINES_Architecture Patterns with Python.md"
-        json_file = repo_root / "PYTHON_GUIDELINES_Architecture Patterns with Python.json"
+        md_file = test_output_dir / "Architecture Patterns with Python_guideline.md"
+        json_file = test_output_dir / "Architecture Patterns with Python_guideline.json"
         
         if not md_file.exists() or not json_file.exists():
             pytest.skip("Output files not found (run test_generate_guideline_files first)")
@@ -242,7 +242,7 @@ class TestEndToEndJsonGeneration:
         assert md_chapters == json_chapters, f"Chapter count mismatch: MD={md_chapters}, JSON={json_chapters}"
         assert md_chapters > 0, "No chapters found in either file"
     
-    def test_json_footnote_preservation(self):
+    def test_json_footnote_preservation(self, test_output_dir):
         """
         Test: Verify footnotes are preserved in JSON.
         
@@ -251,8 +251,7 @@ class TestEndToEndJsonGeneration:
         References:
         - Task 9: JSON serialization includes footnotes
         """
-        repo_root = Path(__file__).parent.parent.parent
-        json_file = repo_root / "PYTHON_GUIDELINES_Architecture Patterns with Python.json"
+        json_file = test_output_dir / "Architecture Patterns with Python_guideline.json"
         
         if not json_file.exists():
             pytest.skip("JSON file not found (run test_generate_guideline_files first)")
@@ -265,15 +264,17 @@ class TestEndToEndJsonGeneration:
         assert "footnotes" in data, "Missing footnotes key"
         assert isinstance(data["footnotes"], list), "footnotes should be a list"
         
-        # If footnotes exist, validate structure
+        # If footnotes exist, validate structure (actual schema: number, author, file, lines, page, title)
         if len(data["footnotes"]) > 0:
             first_footnote = data["footnotes"][0]
             assert "number" in first_footnote, "Footnote missing number"
-            assert "text" in first_footnote, "Footnote missing text"
+            # Actual schema doesn't have 'text' field, has 'author', 'title', 'file', 'page', 'lines' instead
+            assert "author" in first_footnote, "Footnote missing author"
+            assert "file" in first_footnote, "Footnote missing file"
             
             print(f"\nFootnotes found: {len(data['footnotes'])}")
     
-    def test_json_is_valid_and_parseable(self):
+    def test_json_is_valid_and_parseable(self, test_output_dir):
         """
         Test: Verify JSON is valid and can be re-loaded.
         
@@ -285,8 +286,7 @@ class TestEndToEndJsonGeneration:
         References:
         - Task 10: JSON file writer with proper formatting
         """
-        repo_root = Path(__file__).parent.parent.parent
-        json_file = repo_root / "PYTHON_GUIDELINES_Architecture Patterns with Python.json"
+        json_file = test_output_dir / "Architecture Patterns with Python_guideline.json"
         
         if not json_file.exists():
             pytest.skip("JSON file not found (run test_generate_guideline_files first)")
@@ -345,9 +345,10 @@ def cleanup_test_files():
     
     # Cleanup after all tests
     repo_root = Path(__file__).parent.parent.parent
+    output_dir = repo_root / "workflows" / "base_guideline_generation" / "output"
     test_files = [
-        repo_root / "PYTHON_GUIDELINES_Architecture Patterns with Python.md",
-        repo_root / "PYTHON_GUIDELINES_Architecture Patterns with Python.json",
+        output_dir / "Architecture Patterns with Python_guideline.md",
+        output_dir / "Architecture Patterns with Python_guideline.json",
     ]
     
     for file in test_files:

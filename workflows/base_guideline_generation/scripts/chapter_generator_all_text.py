@@ -2722,17 +2722,16 @@ def main(custom_input_path: Optional[Path] = None):
     # Step 4: Add footnotes section
     all_docs.append("\n---\n\n### **Footnotes**\n")
     for f in all_footnotes:
-        all_docs.append(
-            chicago_footnote(
-                f["num"],
-                f["author"],
-                f["title"],
-                f["file"],
-                f["page"],
-                f["start_line"],
-                f["end_line"],
-            )
+        citation = CitationInfo(
+            num=f["num"],
+            author=f["author"],
+            title=f["title"],
+            file_stub=f["file"],
+            page=f["page"],
+            start_line=f["start_line"],
+            end_line=f["end_line"],
         )
+        all_docs.append(chicago_footnote(citation))
     all_docs.append("")
 
     # Step 5: Write output files (MD + JSON)
