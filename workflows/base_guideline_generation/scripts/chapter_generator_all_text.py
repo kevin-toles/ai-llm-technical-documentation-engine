@@ -70,9 +70,9 @@ class ChapterContext:
 class ChapterProcessingResult:
     """
     Result object for chapter processing steps.
-    
+
     Used to reduce local variable count in _process_single_chapter().
-    
+
     References:
         - ANTI_PATTERN_ANALYSIS §10.2: Parameter Object pattern
         - Architecture Patterns Ch.3: Abstraction boundaries
@@ -88,9 +88,9 @@ class ChapterProcessingResult:
 class ChapterData:
     """
     Parameter object for chapter metadata.
-    
+
     Reduces tuple unpacking overhead in _process_single_chapter().
-    
+
     References:
         - ANTI_PATTERN_ANALYSIS §10.2: Parameter Object pattern
     """
@@ -99,7 +99,7 @@ class ChapterData:
     chapter_title: str
     start_page: int
     end_page: int
-    
+
     @classmethod
     def from_tuple(cls, data: Tuple[int, str, int, int]) -> "ChapterData":
         """Create from tuple for backwards compatibility."""
@@ -598,7 +598,7 @@ def chicago_footnote(citation: CitationInfo) -> str:
     """
     Chicago-style note, placed in footnotes section:
     [^N]: Author. *Title*. (JSON `File.json`, p. X, lines A–B).
-    
+
     Args:
         citation: CitationInfo object with all citation data
     """
@@ -879,7 +879,7 @@ def get_architecture_book_role(book_name: str) -> str:
 def _build_llm_annotation_prompt(context: AnnotationContext) -> str:
     """
     Build LLM prompt for annotation generation.
-    
+
     Args:
         context: AnnotationContext object with all required context data
     """
@@ -916,7 +916,7 @@ IF the companion excerpt is copyright/metadata/non-technical content:
 3. PROVIDE meta-commentary about JSON-driven cross-reference constraints
 4. GUIDE the learner to rely on the primary text for this topic
 
-FAIR USE PRINCIPLE: We are creating scholarly annotations and summaries, not copying content. 
+FAIR USE PRINCIPLE: We are creating scholarly annotations and summaries, not copying content.
 All annotations fall under fair use for educational commentary.
 
 BE SPECIFIC. Reference actual content. NO generic phrases like "provides complementary perspectives."
@@ -1340,7 +1340,7 @@ def _build_concept_block(
 ) -> List[str]:
     """
     Build formatted block for a single concept.
-    
+
     Args:
         concept: Concept name
         page_num: Page number
@@ -1373,18 +1373,18 @@ def _extract_concept_from_pages(
 ) -> Tuple[Optional[str], Optional[Dict[str, Any]], int]:
     """
     Extract formatted concept block and footnote from chapter pages.
-    
+
     Applies Extract Method pattern to reduce complexity in build_concept_sections().
-    
+
     Args:
         concept: Concept to extract
         chapter_pages: Pages to search
         footnote_num: Current footnote number
-        
+
     Returns:
         Tuple of (formatted_block, footnote_dict, next_footnote_num)
         Returns (None, None, footnote_num) if concept not found
-        
+
     References:
         - ANTI_PATTERN_ANALYSIS §10.2: Extract Method pattern
         - Architecture Patterns Ch.3: Abstraction boundaries
@@ -1392,19 +1392,19 @@ def _extract_concept_from_pages(
     best_page = _find_best_page_for_concept(concept, chapter_pages)
     if not best_page:
         return None, None, footnote_num
-    
+
     page_num = best_page["page_number"]
     content = best_page.get("content", "")
     best_count = content.lower().count(concept.lower())
-    
+
     excerpt, start_idx, end_idx = _extract_concept_passage(content, concept)
     block = _build_concept_block(
         concept, page_num, excerpt, (start_idx, end_idx), best_count, footnote_num
     )
     formatted_block = "\n".join(block)
-    
+
     footnote = _build_concept_footnote(page_num, start_idx, end_idx, footnote_num)
-    
+
     return formatted_block, footnote, footnote_num + 1
 
 
@@ -1413,18 +1413,18 @@ def _build_concept_footnote(
 ) -> Dict[str, Any]:
     """
     Build footnote dictionary for a concept excerpt.
-    
+
     Applies Extract Method pattern to reduce complexity in build_concept_sections().
-    
+
     Args:
         page_num: Page number of excerpt
         start_line: Start line index (0-based)
         end_line: End line index (0-based)
         footnote_num: Footnote number
-        
+
     Returns:
         Footnote dictionary
-        
+
     References:
         - ANTI_PATTERN_ANALYSIS §10.2: Extract Method pattern
     """
@@ -1450,7 +1450,7 @@ def build_concept_sections(
     """
     Build concept sections by identifying and extracting passages for each detected concept.
     Limits to 15 concepts per chapter for focused coverage.
-    
+
     Refactored using Extract Method pattern to reduce local variable count from 18→10.
 
     Args:
@@ -1460,10 +1460,10 @@ def build_concept_sections(
         _chapter_num: Chapter number (reserved for future chapter-specific logic)
         chapter_concepts: Optional predefined concepts to use instead of extracting
         _occurrence_index: Page occurrence index (reserved for future frequency-based selection)
-        
+
     Returns:
         Tuple of (formatted_text, next_footnote_num, footnotes_list)
-        
+
     References:
         - ANTI_PATTERN_ANALYSIS §10.2: Extract Method refactoring (R0914 fix)
         - Architecture Patterns Ch.3: Managing complexity through abstraction
@@ -1481,7 +1481,7 @@ def build_concept_sections(
     # For each concept, extract and format using helper functions
     for concept in selected_concepts:
         formatted_block, footnote, n = _extract_concept_from_pages(concept, chapter_pages, n)
-        
+
         if formatted_block and footnote:
             out.append(formatted_block)
             foots.append(footnote)
@@ -1953,17 +1953,17 @@ def _extract_chapter_pages(
 ) -> List[Dict[str, Any]]:
     """
     Extract pages belonging to a chapter.
-    
+
     Applies Extract Method pattern to reduce complexity in _process_single_chapter().
-    
+
     Args:
         primary: Primary book JSON data
         start_page: Chapter start page
         end_page: Chapter end page
-        
+
     Returns:
         List of page dictionaries
-        
+
     References:
         - ANTI_PATTERN_ANALYSIS §10.2: Extract Method pattern
     """
@@ -1980,29 +1980,29 @@ def _build_chapter_concepts(
 ) -> ChapterProcessingResult:
     """
     Extract and build concept sections for a chapter.
-    
+
     Applies Extract Method pattern to reduce complexity in _process_single_chapter().
-    
+
     Args:
         chapter_pages: Pages belonging to chapter
         primary: Primary book JSON data
         global_footnote_num: Current footnote number
         chapter_num: Chapter number
-        
+
     Returns:
         ChapterProcessingResult with concepts text, updated footnote_num, footnotes, and concept set
-        
+
     References:
         - ANTI_PATTERN_ANALYSIS §10.2: Extract Method + Parameter Object patterns
         - Architecture Patterns Ch.3: Abstraction boundaries
     """
     chapter_text = "\n".join([p.get("content", "") for p in chapter_pages])
     chapter_concepts = _extract_chapter_concepts(chapter_text)
-    
+
     concepts, global_footnote_num, new_foots = build_concept_sections(
         primary, chapter_pages, global_footnote_num, chapter_num, chapter_concepts=chapter_concepts
     )
-    
+
     return ChapterProcessingResult(
         text=concepts,
         footnote_num=global_footnote_num,
@@ -2021,9 +2021,9 @@ def _generate_chapter_cross_refs(
 ) -> ChapterProcessingResult:
     """
     Generate cross-references and see-also sections for a chapter.
-    
+
     Applies Extract Method pattern to reduce complexity in _process_single_chapter().
-    
+
     Args:
         chapter_pages: Pages belonging to chapter
         primary: Primary book data (for see-also references)
@@ -2031,20 +2031,20 @@ def _generate_chapter_cross_refs(
         chapter_concepts: Concepts extracted from chapter
         chapter_num: Chapter number
         global_footnote_num: Current footnote number
-        
+
     Returns:
         ChapterProcessingResult with see-also text, updated footnote_num, and footnotes
-        
+
     References:
         - ANTI_PATTERN_ANALYSIS §10.2: Extract Method + Parameter Object patterns
         - Architecture Patterns Ch.4: Service Layer orchestration
     """
     # Prepare chapter text for cross-reference analysis
     all_text = " ".join(p.get("content", "") for p in chapter_pages)
-    
+
     # Find cross-references (keyword + optional LLM)
     xmatches = _find_cross_references(all_text, companions)
-    
+
     # Build see-also section with comprehensive summaries
     see_also, global_footnote_num, sal_foots = build_see_also(
         xmatches,
@@ -2054,7 +2054,7 @@ def _generate_chapter_cross_refs(
         current_concepts=chapter_concepts,
         all_chapters=CHAPTERS,
     )
-    
+
     return ChapterProcessingResult(
         text=see_also,
         footnote_num=global_footnote_num,
@@ -2072,9 +2072,9 @@ def _assemble_chapter_output(
 ) -> Dict[str, Any]:
     """
     Assemble final chapter output with all sections.
-    
+
     Applies Extract Method pattern to reduce complexity in _process_single_chapter().
-    
+
     Args:
         doc: Chapter document lines (header already added)
         concepts: Concept sections text
@@ -2082,10 +2082,10 @@ def _assemble_chapter_output(
         see_also: See-also section text
         chapter_footnotes: Accumulated footnotes
         global_footnote_num: Final footnote number
-        
+
     Returns:
         Dictionary with chapter_doc, global_footnote_num, new_footnotes
-        
+
     References:
         - ANTI_PATTERN_ANALYSIS §10.2: Extract Method pattern
     """
@@ -2097,7 +2097,7 @@ def _assemble_chapter_output(
     doc.append("")
     doc.append("---")
     doc.append("")
-    
+
     return {
         "chapter_doc": doc,
         "global_footnote_num": global_footnote_num,
@@ -2499,26 +2499,26 @@ def _convert_markdown_to_json(
 def _prepare_output_paths(book_name: str) -> Tuple[Path, Path]:
     """
     Prepare output directory and file paths.
-    
+
     Pipeline Step 1: Setup output infrastructure.
     Applies Pipeline Pattern to reduce complexity in _write_output_file().
-    
+
     Args:
         book_name: Book name for filename generation
-        
+
     Returns:
         Tuple of (md_path, json_path)
-        
+
     References:
         - ANTI_PATTERN_ANALYSIS §10.3: Pipeline Pattern
         - Python Distilled Ch.9: Path operations
     """
     output_dir = Path(__file__).parent.parent / "output"
     output_dir.mkdir(parents=True, exist_ok=True)
-    
+
     md_path = output_dir / f"{book_name}_guideline.md"
     json_path = output_dir / f"{book_name}_guideline.json"
-    
+
     return md_path, json_path
 
 
@@ -2527,18 +2527,18 @@ def _convert_to_json(
 ) -> Optional[Dict[str, Any]]:
     """
     Convert markdown to JSON structure with error handling.
-    
+
     Pipeline Step 2: MD → JSON conversion.
     Applies Pipeline Pattern to reduce complexity in _write_output_file().
-    
+
     Args:
         all_docs: Markdown document lines
         book_name: Book name
         all_footnotes: Footnote data
-        
+
     Returns:
         JSON dictionary or None if conversion fails
-        
+
     References:
         - ANTI_PATTERN_ANALYSIS §10.3: Pipeline Pattern
         - Fluent Python Ch.18: EAFP error handling
@@ -2556,20 +2556,20 @@ def _convert_to_json(
 def _write_markdown_file(md_path: Path, all_docs: List[str]) -> bool:
     """
     Write markdown file with error handling.
-    
+
     Pipeline Step 3: Write MD output.
     Applies Pipeline Pattern to reduce complexity in _write_output_file().
-    
+
     Args:
         md_path: Path to markdown file
         all_docs: Markdown document lines
-        
+
     Returns:
         True if successful
-        
+
     Raises:
         OSError: If file write fails
-        
+
     References:
         - ANTI_PATTERN_ANALYSIS §10.3: Pipeline Pattern
         - Python Distilled Ch.9: File I/O
@@ -2592,20 +2592,20 @@ def _write_markdown_file(md_path: Path, all_docs: List[str]) -> bool:
 def _write_json_file(json_path: Path, guideline_json: Dict[str, Any]) -> bool:
     """
     Write JSON file with error handling.
-    
+
     Pipeline Step 4: Write JSON output.
     Applies Pipeline Pattern to reduce complexity in _write_output_file().
-    
+
     Args:
         json_path: Path to JSON file
         guideline_json: JSON data structure
-        
+
     Returns:
         True if successful, False if serialization fails (non-raising)
-        
+
     Raises:
         OSError: If file write fails
-        
+
     References:
         - ANTI_PATTERN_ANALYSIS §10.3: Pipeline Pattern
         - Python Cookbook 3rd Recipe 5.18: JSON handling
@@ -2634,14 +2634,14 @@ def _write_json_file(json_path: Path, guideline_json: Dict[str, Any]) -> bool:
 def _log_output_summary(md_path: Path, json_path: Path) -> None:
     """
     Log final output summary.
-    
+
     Pipeline Step 5: Display results.
     Applies Pipeline Pattern to reduce complexity in _write_output_file().
-    
+
     Args:
         md_path: Path to markdown file
         json_path: Path to JSON file
-        
+
     References:
         - ANTI_PATTERN_ANALYSIS §10.3: Pipeline Pattern
     """
@@ -2685,18 +2685,18 @@ def _write_output_file(
     """
     # Pipeline Step 1: Prepare paths
     md_path, json_path = _prepare_output_paths(book_name)
-    
+
     # Pipeline Step 2: Write markdown (always succeeds or raises)
     _write_markdown_file(md_path, all_docs)
-    
+
     # Pipeline Step 3: Convert to JSON (may return None on failure)
     guideline_json = _convert_to_json(all_docs, book_name, all_footnotes or [])
     if not guideline_json:
         return  # MD written, JSON conversion failed gracefully
-    
+
     # Pipeline Step 4: Write JSON (may fail gracefully)
     _write_json_file(json_path, guideline_json)
-    
+
     # Pipeline Step 5: Display results
     _log_output_summary(md_path, json_path)
 
