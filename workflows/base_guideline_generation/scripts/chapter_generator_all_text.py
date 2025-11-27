@@ -2013,6 +2013,7 @@ def _build_chapter_concepts(
 
 def _generate_chapter_cross_refs(
     chapter_pages: List[Dict[str, Any]],
+    primary: Dict[str, Any],
     companions: Dict[str, Dict[str, Any]],
     chapter_concepts: Set[str],
     chapter_num: int,
@@ -2025,6 +2026,7 @@ def _generate_chapter_cross_refs(
     
     Args:
         chapter_pages: Pages belonging to chapter
+        primary: Primary book data (for see-also references)
         companions: Companion book data
         chapter_concepts: Concepts extracted from chapter
         chapter_num: Chapter number
@@ -2161,8 +2163,9 @@ def _process_single_chapter(
         chapter_footnotes.append(tpm_foot)
 
     # Step 5: Build cross-references
+    chapter_concepts_set = concepts_result.concepts if concepts_result.concepts else set()
     xrefs_result = _generate_chapter_cross_refs(
-        chapter_pages, companions, concepts_result.concepts, chapter.chapter_num, tpm_footnote_num
+        chapter_pages, primary, companions, chapter_concepts_set, chapter.chapter_num, tpm_footnote_num
     )
     chapter_footnotes.extend(xrefs_result.footnotes)
 
@@ -2493,11 +2496,171 @@ def _convert_markdown_to_json(
     return guideline_json
 
 
+def _prepare_output_paths(book_name: str) -> Tuple[Path, Path]:
+    """
+    Prepare output directory and file paths.
+    
+    Pipeline Step 1: Setup output infrastructure.
+    Applies Pipeline Pattern to reduce complexity in _write_output_file().
+    
+    Args:
+        book_name: Book name for filename generation
+        
+    Returns:
+        Tuple of (md_path, json_path)
+        
+    References:
+        - ANTI_PATTERN_ANALYSIS §10.3: Pipeline Pattern
+        - Python Distilled Ch.9: Path operations
+    """
+    output_dir = Path(__file__).parent.parent / "output"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    
+    md_path = output_dir / f"{book_name}_guideline.md"
+    json_path = output_dir / f"{book_name}_guideline.json"
+    
+    return md_path, json_path
+
+
+def _convert_to_json(
+    all_docs: List[str], book_name: str, all_footnotes: List[Dict]
+) -> Optional[Dict[str, Any]]:
+    """
+    Convert markdown to JSON structure with error handling.
+    
+    Pipeline Step 2: MD → JSON conversion.
+    Applies Pipeline Pattern to reduce complexity in _write_output_file().
+    
+    Args:
+        all_docs: Markdown document lines
+        book_name: Book name
+        all_footnotes: Footnote data
+        
+    Returns:
+        JSON dictionary or None if conversion fails
+        
+    References:
+        - ANTI_PATTERN_ANALYSIS §10.3: Pipeline Pattern
+        - Fluent Python Ch.18: EAFP error handling
+    """
+    try:
+        return _convert_markdown_to_json(all_docs, book_name, all_footnotes)
+    except (AttributeError, ValueError, IndexError) as e:
+        print("⚠️  Warning: Failed to parse markdown for JSON conversion")
+        print(f"  Error: {e}")
+        print("  Markdown file created successfully, but JSON generation failed")
+        print("  Check markdown structure and retry if needed")
+        return None
+
+
+def _write_markdown_file(md_path: Path, all_docs: List[str]) -> bool:
+    """
+    Write markdown file with error handling.
+    
+    Pipeline Step 3: Write MD output.
+    Applies Pipeline Pattern to reduce complexity in _write_output_file().
+    
+    Args:
+        md_path: Path to markdown file
+        all_docs: Markdown document lines
+        
+    Returns:
+        True if successful
+        
+    Raises:
+        OSError: If file write fails
+        
+    References:
+        - ANTI_PATTERN_ANALYSIS §10.3: Pipeline Pattern
+        - Python Distilled Ch.9: File I/O
+    """
+    try:
+        md_path.write_text("\n".join(all_docs), encoding="utf-8")
+        md_size = md_path.stat().st_size
+        print(f"✓ Markdown file written: {md_path.name} ({md_size:,} bytes)")
+        return True
+    except PermissionError as e:
+        print(f"✗ Permission denied writing MD file: {md_path}")
+        print(f"  Error: {e}")
+        raise
+    except OSError as e:
+        print(f"✗ OS error writing MD file: {md_path}")
+        print(f"  Error: {e}")
+        raise
+
+
+def _write_json_file(json_path: Path, guideline_json: Dict[str, Any]) -> bool:
+    """
+    Write JSON file with error handling.
+    
+    Pipeline Step 4: Write JSON output.
+    Applies Pipeline Pattern to reduce complexity in _write_output_file().
+    
+    Args:
+        json_path: Path to JSON file
+        guideline_json: JSON data structure
+        
+    Returns:
+        True if successful, False if serialization fails (non-raising)
+        
+    Raises:
+        OSError: If file write fails
+        
+    References:
+        - ANTI_PATTERN_ANALYSIS §10.3: Pipeline Pattern
+        - Python Cookbook 3rd Recipe 5.18: JSON handling
+    """
+    try:
+        with open(json_path, "w", encoding="utf-8") as f:
+            json.dump(guideline_json, f, indent=2, ensure_ascii=False)
+        json_size = json_path.stat().st_size
+        print(f"✓ JSON file written: {json_path.name} ({json_size:,} bytes)")
+        return True
+    except TypeError as e:
+        print("✗ JSON serialization error: Data contains non-serializable types")
+        print(f"  Error: {e}")
+        print("  Markdown file created successfully, but JSON generation failed")
+        return False
+    except PermissionError as e:
+        print(f"✗ Permission denied writing JSON file: {json_path}")
+        print(f"  Error: {e}")
+        raise
+    except OSError as e:
+        print(f"✗ OS error writing JSON file: {json_path}")
+        print(f"  Error: {e}")
+        raise
+
+
+def _log_output_summary(md_path: Path, json_path: Path) -> None:
+    """
+    Log final output summary.
+    
+    Pipeline Step 5: Display results.
+    Applies Pipeline Pattern to reduce complexity in _write_output_file().
+    
+    Args:
+        md_path: Path to markdown file
+        json_path: Path to JSON file
+        
+    References:
+        - ANTI_PATTERN_ANALYSIS §10.3: Pipeline Pattern
+    """
+    print("\n" + "=" * 70)
+    print("📄 Guideline Generation Complete")
+    print("=" * 70)
+    print(f"  Markdown: {md_path}")
+    print(f"  JSON:     {json_path}")
+    print("=" * 70 + "\n")
+
+
 def _write_output_file(
     all_docs: List[str], book_name: str, all_footnotes: Optional[List[Dict[Any, Any]]] = None
 ) -> None:
     """
     Write final document to both MD and JSON output files.
+
+    Refactored using Pipeline Pattern to reduce statement count from 51→17.
+    Orchestrates 5-step pipeline: prepare → write MD → convert → write JSON → log.
 
     Implements dual output requirement from CONSOLIDATED_IMPLEMENTATION_PLAN Tab 5.
     Follows EAFP (Easier to Ask Forgiveness than Permission) error handling pattern.
@@ -2510,78 +2673,32 @@ def _write_output_file(
 
     Raises:
         OSError: If file write fails due to permissions or disk space
-        TypeError: If JSON serialization fails due to non-serializable data
 
     References:
+        - ANTI_PATTERN_ANALYSIS §10.3: Pipeline Pattern (R0915 fix)
         - CONSOLIDATED_IMPLEMENTATION_PLAN Tab 5: Dual output (MD + JSON)
         - Python Distilled Ch. 9 pp. 225-230: Path operations
         - PYTHON_GUIDELINES: pathlib.Path, context managers, EAFP
         - Fluent Python Ch. 18: EAFP error handling style
-        - ARCHITECTURE_GUIDELINES Ch. 12: Exception handling patterns
+        - ARCHITECTURE_GUIDELINES Ch. 4: Service Layer orchestration
         - WORKFLOW_OUTPUT_ANALYSIS.md: Output folder convention
     """
-    # Use workflow output folder (repository convention)
-    output_dir = Path(__file__).parent.parent / "output"
-    output_dir.mkdir(parents=True, exist_ok=True)
-
-    # Naming convention: {book}_guideline.{md|json}
-    md_path = output_dir / f"{book_name}_guideline.md"
-    json_path = output_dir / f"{book_name}_guideline.json"
-
-    # Write Markdown file (existing functionality) - EAFP style
-    try:
-        md_path.write_text("\n".join(all_docs), encoding="utf-8")
-        md_size = md_path.stat().st_size
-        print(f"✓ Markdown file written: {md_path.name} ({md_size:,} bytes)")
-    except PermissionError as e:
-        print(f"✗ Permission denied writing MD file: {md_path}")
-        print(f"  Error: {e}")
-        raise
-    except OSError as e:
-        print(f"✗ OS error writing MD file: {md_path}")
-        print(f"  Error: {e}")
-        raise
-
-    # Write JSON file (NEW - Tab 5 requirement) - EAFP style
-    try:
-        guideline_json = _convert_markdown_to_json(all_docs, book_name, all_footnotes or [])
-    except (AttributeError, ValueError, IndexError) as e:
-        print("⚠️  Warning: Failed to parse markdown for JSON conversion")
-        print(f"  Error: {e}")
-        print("  Markdown file created successfully, but JSON generation failed")
-        print("  Check markdown structure and retry if needed")
-        # Don't raise - allow MD-only output if JSON parsing fails
-        return
-
-    # Python Cookbook 3rd Recipe 5.18: JSON formatting with error handling
-    try:
-        with open(json_path, "w", encoding="utf-8") as f:
-            json.dump(guideline_json, f, indent=2, ensure_ascii=False)
-        json_size = json_path.stat().st_size
-        print(f"✓ JSON file written: {json_path.name} ({json_size:,} bytes)")
-    except TypeError as e:
-        print("✗ JSON serialization error: Data contains non-serializable types")
-        print(f"  Error: {e}")
-        print("  Markdown file created successfully, but JSON generation failed")
-        # Don't raise - allow MD-only output if JSON serialization fails
-        return
-    except PermissionError as e:
-        print(f"✗ Permission denied writing JSON file: {json_path}")
-        print(f"  Error: {e}")
-        raise
-    except OSError as e:
-        print(f"✗ OS error writing JSON file: {json_path}")
-        print(f"  Error: {e}")
-        raise
-
-    # Display results
-    print(f"\n{'='*66}")
-    print("Complete! Generated dual output:")
-    print(f"  MD:   {md_path.resolve()} ({md_size:,} bytes)")
-    print(f"  JSON: {json_path.resolve()} ({json_size:,} bytes)")
-    print(f"Total characters: {len(''.join(all_docs)):,}")
-    print(f"\nOutput location: {output_dir.resolve()}")
-    print(f"{'='*66}")
+    # Pipeline Step 1: Prepare paths
+    md_path, json_path = _prepare_output_paths(book_name)
+    
+    # Pipeline Step 2: Write markdown (always succeeds or raises)
+    _write_markdown_file(md_path, all_docs)
+    
+    # Pipeline Step 3: Convert to JSON (may return None on failure)
+    guideline_json = _convert_to_json(all_docs, book_name, all_footnotes or [])
+    if not guideline_json:
+        return  # MD written, JSON conversion failed gracefully
+    
+    # Pipeline Step 4: Write JSON (may fail gracefully)
+    _write_json_file(json_path, guideline_json)
+    
+    # Pipeline Step 5: Display results
+    _log_output_summary(md_path, json_path)
 
 
 def main(custom_input_path: Optional[Path] = None):
