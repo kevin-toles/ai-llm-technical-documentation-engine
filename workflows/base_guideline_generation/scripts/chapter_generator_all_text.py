@@ -28,8 +28,11 @@ from collections import defaultdict
 # Configuration
 # -------------------------------
 # Tab 5: Statistical/Template-Based Guideline Generation
-# Architecture Boundary: NO LLM calls (LLM enhancement happens in Tab 6)
+# Architecture Boundary: NO LLM calls (LLM enhancement happens in Tab 7)
 # Methods: YAKE keywords, Summa concepts, TF-IDF similarity, template formatting
+
+# LLM Architecture Boundary Enforcement
+USE_LLM_SEMANTIC_ANALYSIS: bool = False  # LLM calls ONLY in Tab 7, NOT Tab 5
 
 # Book author constants (to avoid duplicate string literals)
 AUTHOR_RAMALHO = "Ramalho, Luciano"
