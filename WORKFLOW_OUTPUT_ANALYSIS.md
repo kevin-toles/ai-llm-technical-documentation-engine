@@ -107,7 +107,7 @@
     - `ARCHITECTURE_GUIDELINES_Architecture_Patterns_with_Python_LLM_ENHANCED.md` (365 KB, OLD)
     - `PYTHON_GUIDELINES_Learning_Python_Ed6_LLM_ENHANCED.md` (2.0 MB, OLD)
   - **Should Have:**
-    - `{book}_guideline_enhanced.md` (per Tab 7 spec)
+    - `{book}_guideline_enhanced.md` (per Tab 6 spec)
     - `{book}_guideline_enhanced.json` (optional)
 - **Consumed By:** None (final output)
 - **Status:** ⚠️ NEEDS UPDATE - old files present, new script not yet run
@@ -132,7 +132,7 @@ workflows/metadata_enrichment/input/textbooks_json → ../../pdf_to_json/output/
 workflows/base_guideline_generation/input/chapter_metadata_cache.json → ../../metadata_cache_merge/output/chapter_metadata_cache.json
 workflows/base_guideline_generation/input/textbooks_json → ../../pdf_to_json/output/textbooks_json
 
-# Tab 7 inputs (partial)
+# Tab 6 inputs (partial)
 workflows/llm_enhancement/input/chapter_metadata_cache.json → ../../metadata_cache_merge/output/chapter_metadata_cache.json
 workflows/llm_enhancement/input/chapter_summaries → ../../base_guideline_generation/output/chapter_summaries
 workflows/llm_enhancement/input/textbooks_json → ../../pdf_to_json/output/textbooks_json
@@ -152,7 +152,7 @@ workflows/base_guideline_generation/input/enriched_metadata/ → ../../metadata_
 workflows/llm_enhancement/input/taxonomy/ → ../../taxonomy_setup/output/
 workflows/llm_enhancement/input/enriched_metadata/ → ../../metadata_enrichment/output/
 
-# Tab 7 inputs - MISSING
+# Tab 6 inputs - MISSING
 workflows/llm_enhancement/input/guidelines/ → ../../base_guideline_generation/output/
 workflows/llm_enhancement/input/aggregate_packages/ → ./tmp/  # Internal link to tmp folder
 ```
@@ -179,7 +179,7 @@ json_path = output_dir / f"{book_name}_guideline.json"
 
 **Impact:**
 - Old files scattered in `workflows/llm_enhancement/output/` and `outputs/`
-- Tab 7 cannot find guideline JSON files
+- Tab 6 cannot find guideline JSON files
 - Violates output folder convention
 
 **Fix Required:** Update `_write_output_file()` function in `chapter_generator_all_text.py`
@@ -195,7 +195,7 @@ json_path = output_dir / f"{book_name}_guideline.json"
 - ❌ No `*_guideline.json` files exist in any output folder
 
 **Impact:**
-- Tab 7 tests remain skipped (4/9)
+- Tab 6 tests remain skipped (4/9)
 - Cannot run LLM enhancement end-to-end
 
 **Fix Required:** 
@@ -204,8 +204,8 @@ json_path = output_dir / f"{book_name}_guideline.json"
 
 ---
 
-### Issue 3: Tab 7 Missing Input Symlinks ⚠️
-**Problem:** Tab 7 input folder missing symlinks to Tab 5 guideline outputs
+### Issue 3: Tab 6 Missing Input Symlinks ⚠️
+**Problem:** Tab 6 input folder missing symlinks to Tab 5 guideline outputs
 
 **Current:**
 ```bash
@@ -221,7 +221,7 @@ workflows/llm_enhancement/input/guidelines/ → ../../base_guideline_generation/
 ```
 
 **Impact:**
-- Tab 7 script expects guideline JSON in Tab 5 output folder
+- Tab 6 script expects guideline JSON in Tab 5 output folder
 - No convenient symlink to access them
 
 **Fix Required:** Create symlink after Tab 5 outputs are fixed
@@ -321,7 +321,7 @@ workflows/llm_enhancement/
    ls -lh workflows/base_guideline_generation/output/*.md
    ```
 
-### Priority 2: Create Tab 7 Input Symlinks
+### Priority 2: Create Tab 6 Input Symlinks
 ```bash
 cd workflows/llm_enhancement/input
 ln -s ../../base_guideline_generation/output guidelines
@@ -341,7 +341,7 @@ ln -s ../../taxonomy_setup/output taxonomy
 ln -s ../../metadata_enrichment/output enriched_metadata
 ```
 
-### Priority 5: Test Tab 7 End-to-End
+### Priority 5: Test Tab 6 End-to-End
 ```bash
 python workflows/llm_enhancement/scripts/llm_enhance_guideline.py \
   --aggregate "workflows/llm_enhancement/tmp/*_llm_package_*.json" \
@@ -371,7 +371,7 @@ python workflows/llm_enhancement/scripts/llm_enhance_guideline.py \
 ### Critical Blockers:
 1. ❌ Tab 5 outputs to wrong location (CWD instead of output/)
 2. ❌ Tab 5 JSON files never generated
-3. ⚠️ Tab 7 cannot run end-to-end without Tab 5 JSON
+3. ⚠️ Tab 6 cannot run end-to-end without Tab 5 JSON
 
 ---
 
@@ -391,9 +391,9 @@ workflows/{workflow_name}/
 ### ❌ Anti-Patterns (to be fixed):
 - Writing to CWD instead of output/ (Tab 5)
 - Old files in wrong locations (`workflows/llm_enhancement/output/` has Tab 5 files)
-- Missing consumer symlinks (Tab 7 → Tab 5)
+- Missing consumer symlinks (Tab 6 → Tab 5)
 - Broken self-referential symlinks (Tab 3b input)
 
 ---
 
-**Next Steps:** Fix Tab 5 output paths → Re-run Tab 5 → Create missing symlinks → Test Tab 7 end-to-end
+**Next Steps:** Fix Tab 5 output paths → Re-run Tab 5 → Create missing symlinks → Test Tab 6 end-to-end

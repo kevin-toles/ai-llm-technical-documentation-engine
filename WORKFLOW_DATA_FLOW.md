@@ -249,7 +249,7 @@
 - Cross-book context for LLM
 - Statistics (book count, chapter count, missing data)
 
-**Consumed By:** Tab 7 (same workflow, internal)
+**Consumed By:** Tab 6 (same workflow, internal)
 
 ---
 
@@ -313,7 +313,7 @@
    - Formats: Markdown (human) + JSON (machine)
    - Output: Dual format per book
 
-6. **Guidelines → Enhanced** (Tab 7)
+6. **Guidelines → Enhanced** (Tab 6)
    - Base guidelines → LLM-enhanced guidelines
    - Adds: Deeper insights, best practices, pitfalls
    - Output: Enhanced markdown
@@ -333,7 +333,7 @@
 | **Tab 5: Guidelines MD** | Output | 2+ | ~914 KB | ~457 KB |
 | **Tab 5: Guidelines JSON** | Output | 2+ | ~2.1 MB | ~1.05 MB |
 | **Tab 6: Packages** | Output | 1+ | ~55 KB | ~55 KB |
-| **Tab 7: Enhanced** | Output | 0* | ~0 | ~600 KB** |
+| **Tab 6: Enhanced** | Output | 0* | ~0 | ~600 KB** |
 
 *Not yet generated  
 **Expected size based on specification
@@ -363,7 +363,7 @@ Initial PDFs (external)
                                     │               │
                                     └─→ Tab 6 (Aggregate) ─┐
                                             │               │
-                                            └─→ Tab 7 (LLM Enhancement) ←┘
+                                            └─→ Tab 6 (LLM Enhancement) ←┘
                                                     │
                                                     └─→ Final Output
 ```
@@ -390,7 +390,7 @@ Initial PDFs (external)
    - Status: ✅ Present (2+ files)
 
 4. **`*_guideline.json`** (Tab 5 output)
-   - Used by: Tab 7
+   - Used by: Tab 6
    - Purpose: Machine-readable guidelines for LLM input
    - Status: ✅ Present (2 files, 509 KB + 1.6 MB)
 
@@ -412,12 +412,12 @@ Initial PDFs (external)
 **Enrich:** Tab 4 (Statistical Analysis)  
 **Format:** Tab 5 (Data → Documents)  
 **Bundle:** Tab 6 (Multiple → Package)  
-**Enhance:** Tab 7 (AI Processing)
+**Enhance:** Tab 6 (AI Processing)
 
 ### By LLM Usage:
 
 **NO LLM (Tabs 1-6):** Pure data processing, statistical methods  
-**LLM ONLY (Tab 7):** AI-powered enhancement via Claude Sonnet 4.5
+**LLM ONLY (Tab 6):** AI-powered enhancement via Claude Sonnet 4.5
 
 ---
 
@@ -430,7 +430,7 @@ Initial PDFs (external)
 - [x] Tab 4 outputs to `workflows/metadata_enrichment/output/`
 - [x] Tab 5 outputs to `workflows/base_guideline_generation/output/`
 - [x] Tab 6 outputs to `workflows/llm_enhancement/tmp/`
-- [x] Tab 7 outputs to `workflows/llm_enhancement/output/`
+- [x] Tab 6 outputs to `workflows/llm_enhancement/output/`
 - [x] All cross-workflow dependencies use symlinks
 - [x] All symlinks point to output folders (12/12 correct)
 - [x] No workflows write to CWD or wrong locations
@@ -440,7 +440,7 @@ Initial PDFs (external)
 ## 📈 Current Status
 
 **Workflows Complete:** 6/7 (Tabs 1-6)  
-**Workflows Partial:** 1/7 (Tab 7 - implementation ready, not run)
+**Workflows Partial:** 1/6 (Tab 6 - implementation ready, not run)
 
 **Data Generated:**
 - ✅ 17 JSON textbooks
@@ -451,4 +451,4 @@ Initial PDFs (external)
 - ✅ 1 aggregate package
 - ⏸️ 0 enhanced guidelines (pending LLM execution)
 
-**Next Action:** Run Tab 7 with LLM API to generate enhanced guidelines
+**Next Action:** Run Tab 6 with LLM API to generate enhanced guidelines

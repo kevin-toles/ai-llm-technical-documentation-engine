@@ -174,7 +174,7 @@ Output File: [/Users/.../inputs/taxonomy/taxonomy.json]
 
 ---
 
-### Tab 7: LLM Enhancement
+### Tab 6: LLM Enhancement
 **Input:**  
 1. Base guideline (from Tab 5)  
 2. **Taxonomy file** (from Tab 6) - MISSING IN MY ORIGINAL DESIGN!  
@@ -229,24 +229,23 @@ Output File: [/Users/.../workflows/llm_enhancement/output/PYTHON_GUIDELINES_LLM_
 2. Extract Metadata (Tab 2)  
 3. Enrich Metadata (Tab 3) - OPTIONAL?
 4. Merge Cache (Tab 4)
-5. **CREATE TAXONOMY** (Tab 6) ← Must happen before Tab 5!
-6. Generate Base Guideline (Tab 5) - needs taxonomy from Tab 6
-7. LLM Enhancement (Tab 7) - needs taxonomy from Tab 6 + base from Tab 5
+5. Generate Base Guideline (Tab 5) - needs taxonomy from Tab 3
+6. LLM Enhancement (Tab 6) - needs taxonomy from Tab 3 + base from Tab 5
 ```
 
 ---
 
 ## Key Missing Elements in Original Design:
 
-### 1. **Taxonomy File Selection Missing in Tab 7**
+### 1. **Taxonomy File Selection Missing in Tab 6**
 LLM enhancement NEEDS the taxonomy to know which books to cite!
 
 ### 2. **Dynamic Model Selection**
 When user selects OpenAI → show OpenAI models  
 When user selects Anthropic → show Anthropic models
 
-### 3. **Tab 6 Must Run Before Tab 5**
-Base guideline generation needs the taxonomy!
+### 3. **Tab 3 Must Run Before Tab 5**
+Taxonomy setup needs to happen before base guideline generation!
 
 ### 4. **Multiple Taxonomy Support**
 Users could have:
@@ -254,7 +253,7 @@ Users could have:
 - `cpp_game_dev.json`  
 - `ml_data_science.json`
 
-UI should let them SELECT which taxonomy to use for Tab 5 and Tab 7.
+UI should let them SELECT which taxonomy to use for Tab 5 and Tab 6.
 
 ### 5. **File Validation**
 Each tab should show:
@@ -291,7 +290,7 @@ At the top of UI, show which tabs feed into others:
 
 1. **Create new taxonomy generation script** (Tab 6 backend)
 2. **Update Tab 5 UI** to require taxonomy file selection
-3. **Update Tab 7 UI** to require taxonomy file selection + dynamic model dropdown
+3. **Update Tab 6 UI** to require taxonomy file selection + dynamic model dropdown
 4. **Add file validation** across all tabs
 5. **Test complete workflow** with new domain (not Python)
 
