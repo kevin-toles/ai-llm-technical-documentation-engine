@@ -212,31 +212,75 @@ class TestAddRelationshipContext:
         assert "practical code examples" in result.lower()
 
 
-# TODO: Implement _extract_first_substantial_paragraph in chapter_generator_all_text.py
-# Tests are defined and ready - need implementation (F821 undefined name)
-@pytest.mark.skip(reason="Missing _extract_first_substantial_paragraph implementation")
+# Implementation complete! Tests moved to test_extract_first_substantial_paragraph.py
+# Following TDD RED → GREEN → REFACTOR cycle (Phase 5 Task 5.1)
 class TestExtractFirstSubstantialParagraph:
     """Test suite for _extract_first_substantial_paragraph helper function."""
     
     def test_extracts_first_paragraph_over_threshold(self):
         """Test extraction of first paragraph exceeding length threshold."""
-        pass  # Implementation pending
+        from chapter_generator_all_text import _extract_first_substantial_paragraph
+        
+        text = """Short intro.
+
+This is the first substantial paragraph that contains enough text to exceed 
+the one hundred character threshold requirement."""
+
+        result = _extract_first_substantial_paragraph(text, min_length=100, max_length=500)
+        
+        assert result is not None
+        assert len(result) >= 100
+        assert "first substantial paragraph" in result
     
     def test_truncates_to_max_length(self):
         """Test that long paragraphs are truncated to max_length."""
-        pass  # Implementation pending
+        from chapter_generator_all_text import _extract_first_substantial_paragraph
+        
+        long_text = "This is a very long paragraph. " * 20
+        
+        result = _extract_first_substantial_paragraph(long_text, min_length=100, max_length=200)
+        
+        assert result is not None
+        assert len(result) <= 203  # max_length + "..."
+        assert result.endswith("...")
     
     def test_no_truncation_ellipsis_when_under_limit(self):
         """Test that ellipsis not added when content under max_length."""
-        pass  # Implementation pending
+        from chapter_generator_all_text import _extract_first_substantial_paragraph
+        
+        text = "This paragraph has exactly one hundred and twenty characters to test the case where no truncation needed at all."
+        
+        result = _extract_first_substantial_paragraph(text, min_length=100, max_length=500)
+        
+        assert result == text
+        assert not result.endswith("...")
     
     def test_skips_short_paragraphs(self):
         """Test that paragraphs under 100 chars are skipped."""
-        pass  # Implementation pending
+        from chapter_generator_all_text import _extract_first_substantial_paragraph
+        
+        text = """Short.
+
+Also short.
+
+This third paragraph is finally long enough to meet the one hundred character 
+minimum threshold requirement."""
+
+        result = _extract_first_substantial_paragraph(text, min_length=100, max_length=500)
+        
+        assert result is not None
+        assert "third paragraph" in result
     
     def test_handles_no_paragraph_breaks(self):
         """Test handling of content without paragraph breaks."""
-        pass  # Implementation pending
+        from chapter_generator_all_text import _extract_first_substantial_paragraph
+        
+        text = "This is continuous text without any paragraph breaks but it is long enough to meet the one hundred character threshold."
+        
+        result = _extract_first_substantial_paragraph(text, min_length=100, max_length=500)
+        
+        assert result == text
+
 
 
 class TestTryLLMSummary:

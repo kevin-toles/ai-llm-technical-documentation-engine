@@ -773,6 +773,79 @@ def extract_concept_explanation(content: str, concept: str) -> str:
     return paragraphs[0][:500] if paragraphs else content[:500]
 
 
+def _extract_first_substantial_paragraph(
+    text: str, min_length: int = 100, max_length: int = 500
+) -> Optional[str]:
+    """
+    Extract first paragraph from text that meets minimum length threshold.
+    
+    Helper function following Extract Method pattern to reduce duplication
+    in paragraph extraction logic across the codebase.
+    
+    Args:
+        text: Source text to extract from
+        min_length: Minimum character length for a paragraph to be considered (default: 100)
+        max_length: Maximum character length before truncation (default: 500)
+    
+    Returns:
+        First paragraph meeting min_length, truncated to max_length if needed,
+        or None if no paragraph meets threshold
+    
+    Algorithm:
+        1. Split text into paragraphs (double newline separator)
+        2. Find first paragraph >= min_length
+        3. If found and <= max_length: return as-is
+        4. If found and > max_length: truncate at last sentence boundary + "..."
+        5. If not found: return None
+    
+    References:
+        - MASTER_IMPLEMENTATION_GUIDE Phase 5 Task 5.1
+        - ANTI_PATTERN_ANALYSIS §10.2: Extract Method pattern
+        - Architecture Patterns Ch. 3: Extract Method refactoring
+        - Python Guidelines Ch. 7: String slicing and text processing
+    
+    Example:
+        >>> text = "Short.\\n\\nThis is a substantial paragraph with enough content."
+        >>> _extract_first_substantial_paragraph(text)
+        'This is a substantial paragraph with enough content.'
+    """
+    if not text or not text.strip():
+        return None
+    
+    # Split into paragraphs (separated by one or more empty lines)
+    paragraphs = [p.strip() for p in text.split('\n\n') if p.strip()]
+    
+    # If no paragraph breaks, treat entire text as single paragraph
+    if not paragraphs:
+        paragraphs = [text.strip()]
+    
+    # Find first paragraph meeting minimum length
+    for paragraph in paragraphs:
+        if len(paragraph) >= min_length:
+            # If under max_length, return as-is
+            if len(paragraph) <= max_length:
+                return paragraph
+            
+            # Truncate at last sentence boundary before max_length
+            truncated = paragraph[:max_length]
+            
+            # Try to find last sentence boundary (period, question mark, exclamation)
+            last_sentence_end = max(
+                truncated.rfind('. '),
+                truncated.rfind('? '),
+                truncated.rfind('! ')
+            )
+            
+            if last_sentence_end > 0:
+                # Truncate at sentence boundary
+                truncated = truncated[:last_sentence_end + 1]
+            
+            return truncated + "..."
+    
+    # No paragraph met minimum length
+    return None
+
+
 def map_book_to_citation(book_name: str, book_disp: str) -> Tuple[str, str]:
     """Map book filename to proper citation format."""
     citation_map = {
