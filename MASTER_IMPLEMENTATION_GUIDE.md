@@ -2960,11 +2960,12 @@ Updated documentation to reflect actual 6-tab architecture:
 
 ---
 
-### Phase 5: Legacy Cleanup (Week 5)
+### Phase 5: Legacy Cleanup (Week 5) 🔄 IN PROGRESS
 
 **Duration**: 5 days  
 **Effort**: 12-16 hours  
-**Priority**: LOW
+**Priority**: LOW  
+**Start Date**: November 27, 2025
 
 **Goals**:
 1. Eliminate cache dependencies
@@ -2972,9 +2973,91 @@ Updated documentation to reflect actual 6-tab architecture:
 3. Multi-domain validation
 
 **Deliverables**:
-- ✅ No cache file dependencies
-- ✅ All TODOs complete
-- ✅ Multi-domain validation passing
+- ⏳ No cache file dependencies (Task 5.2 pending)
+- ✅ All TODOs complete (Task 5.1 ✅ COMPLETE Nov 27)
+- ⏳ Multi-domain validation passing (Task 5.3 pending)
+
+**Detailed Task Breakdown**:
+
+#### Task 5.1: Complete TODO Implementations ✅ COMPLETE
+**Estimated Effort**: 3-4 hours (Actual: ~2.5 hours)  
+**Description**: Remove or implement all TODO placeholders in test files  
+**Completed**: November 27, 2025  
+**Commits**: 12ed030a, d7f2c08f
+
+**What Was Done**:
+1. ✅ Implemented `_extract_first_substantial_paragraph()` function (TDD RED→GREEN→REFACTOR)
+   - Created comprehensive test suite: 9 tests, 100% passing
+   - Function extracts first paragraph ≥100 chars with intelligent truncation
+   - Aligns with Extract Method pattern (ANTI_PATTERN_ANALYSIS §10.2)
+   - File: `workflows/base_guideline_generation/scripts/chapter_generator_all_text.py` (line ~775)
+   - Test file: `tests/integration/test_extract_first_substantial_paragraph.py` (197 lines)
+
+2. ✅ Removed obsolete TODO placeholders (3 TODOs)
+   - Investigated `test_chapter_generator_refactoring.py` TODOs at lines 155, 161, 167
+   - Confirmed TODOs were for refactoring work **already completed** (Nov 16-18, 2025)
+   - Refactoring used different naming: `BOOK_METADATA_FILES` (not `BOOK_METADATA_MAP`), 
+     `_load_chapter_summary()` (not `_load_chapter_metadata()`)
+   - Removed entire `TestGenerateChapterSummaryRefactored` class
+   - Cross-referenced against DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN.md: **no connection** (different scope)
+
+**Results**:
+- ✅ All TODOs in test files resolved: 4 → 0 (100% complete)
+- ✅ Test Results: 9/9 tests passing (test_extract_first_substantial_paragraph.py)
+- ✅ No new errors introduced (verified via get_errors)
+- ✅ Files changed: +339 lines, -39 lines (net: +300 lines quality code)
+
+**Quality Gate Results**:
+- ✅ New function: No SonarLint/SonarQube errors
+- ✅ New tests: No errors, 100% passing
+- ✅ Modified files: No regressions
+
+**References**:
+- MASTER_IMPLEMENTATION_GUIDE Phase 5 Task 5.1
+- ANTI_PATTERN_ANALYSIS §10.2 (Extract Method Pattern)
+- Architecture Patterns Ch. 3 (Refactoring)
+- Python Guidelines Ch. 7 (String processing)
+- docs/CODERABBIT_REFACTORING_IMPLEMENTATION_PLAN.md (lines 80-140)
+
+---
+
+#### Task 5.2: Cache Dependency Analysis ⏳ PENDING
+**Estimated Effort**: 4-5 hours  
+**Description**: Analyze and decide on cache file dependencies  
+**Files to Analyze**:
+- `workflows/shared/cache.py`
+- `data/metadata/chapter_metadata_cache.json`
+- `cache/llm_responses/` directory
+
+**Options**:
+1. Remove completely (if unused)
+2. Make optional with config flag
+3. Document as required dependency
+
+**Deliverables**:
+- Analysis report documenting cache usage patterns
+- Recommendation: Remove vs Make Optional vs Keep
+- Implementation plan if changes needed
+
+---
+
+#### Task 5.3: Multi-Domain Validation ⏳ PENDING
+**Estimated Effort**: 5-7 hours  
+**Description**: Validate YAKE keyword extraction works across domains  
+**Test Domains**:
+- Software/Python (baseline - already works)
+- Biology
+- Law
+- Construction
+- Design thinking
+
+**Acceptance Criteria**:
+- ✅ YAKE extracts meaningful keywords from 3+ non-Python domains
+- ✅ Full workflow runs successfully on 2+ domain books
+- ✅ Validation report created: `reports/phase5_multi_domain_validation.md`
+
+**Note**: This validates the domain-agnostic extraction capabilities needed for 
+future DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN.md implementation.
 
 ---
 
