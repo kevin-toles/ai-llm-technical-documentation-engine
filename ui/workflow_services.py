@@ -9,6 +9,12 @@ Reference: BATCH1_CRITICAL_FILES_REMEDIATION_PLAN.md File #3
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 import subprocess
+import sys
+
+# Add project root to path for imports
+PROJECT_ROOT = Path(__file__).parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 
 # Constants (DRY principle - no magic strings)
@@ -78,10 +84,11 @@ class WorkflowExecutionService:
     def _execute_file_workflow(self, workflow_id: str, tab_id: str, 
                                 files: List[str], workflow: Dict, 
                                 script_path: Path, taxonomy_file: Optional[str]) -> None:
-        """Execute workflow for each file"""
+        """Execute workflow for each file with post-execution validation"""
         input_dir = workflow["input_dir"]
         successful = []
         failed = []
+        validation_warnings = []
         
         for idx, file in enumerate(files, 1):
             try:
@@ -94,8 +101,20 @@ class WorkflowExecutionService:
                 if cmd:
                     result = self._run_subprocess(cmd)
                     if result["success"]:
-                        successful.append(file)
-                        self._update_progress(workflow_id, f"✓ {file}")
+                        # Run post-execution validation for ALL tabs
+                        validation_result = self._validate_workflow_output(tab_id, file, workflow)
+                        
+                        if validation_result["errors"]:
+                            failed.append(file)
+                            self._update_progress(workflow_id, 
+                                f"✗ Validation failed: {file} - {validation_result['errors'][0]}")
+                        else:
+                            successful.append(file)
+                            if validation_result["warnings"]:
+                                validation_warnings.extend(validation_result["warnings"])
+                                self._update_progress(workflow_id, f"✓ {file} (with warnings)")
+                            else:
+                                self._update_progress(workflow_id, f"✓ {file}")
                     else:
                         failed.append(file)
                         self._update_progress(workflow_id, f"✗ {file}: {result['error']}")
@@ -103,6 +122,54 @@ class WorkflowExecutionService:
             except Exception as e:
                 failed.append(file)
                 self._update_progress(workflow_id, f"✗ {file}: {str(e)}")
+        
+        self.workflow_status[workflow_id]["successful"] = successful
+        self.workflow_status[workflow_id]["failed"] = failed
+        if validation_warnings:
+            self.workflow_status[workflow_id]["validation_warnings"] = validation_warnings
+    
+    def _validate_workflow_output(self, tab_id: str, filename: str, 
+                                   workflow: Dict) -> Dict[str, List[str]]:
+        """
+        Validate workflow output based on tab type.
+        
+        Returns dict with 'errors' and 'warnings' lists.
+        """
+        try:
+            from scripts.workflow_validation_services import WorkflowValidationFacade
+            
+            # Get workflows_dir from workflow paths
+            workflows_dir = workflow["output_dir"].parent.parent
+            facade = WorkflowValidationFacade(workflows_dir)
+            
+            if tab_id == "tab1":
+                # PDF to JSON conversion
+                result = facade.validate_pdf_conversion(filename)
+            elif tab_id == "tab2":
+                # Metadata extraction
+                result = facade.validate_metadata_extraction(filename)
+            elif tab_id == "tab4":
+                # Metadata enrichment
+                result = facade.validate_metadata_enrichment(filename)
+            elif tab_id == "tab5":
+                # Base guideline generation
+                result = facade.validate_base_guideline(filename)
+            elif tab_id == "tab6":
+                # LLM enhancement - validate output
+                result = facade.validate_llm_output(filename)
+            else:
+                # Unknown tab - skip validation
+                return {"errors": [], "warnings": []}
+            
+            return {
+                "errors": result.get("errors", []),
+                "warnings": result.get("warnings", [])
+            }
+            
+        except ImportError as e:
+            return {"errors": [], "warnings": [f"Validation skipped: {e}"]}
+        except Exception as e:
+            return {"errors": [], "warnings": [f"Validation error: {str(e)}"]}
     
     def _build_command(self, tab_id: str, script_path: Path, 
                       file_path: Path, taxonomy_file: Optional[str]) -> Optional[List[str]]:

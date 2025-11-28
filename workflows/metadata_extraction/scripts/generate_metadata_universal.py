@@ -323,10 +323,16 @@ class UniversalMetadataGenerator:
             print(f"\n[{progress_pct:.1f}%] Processing Chapter {ch_num}: {title}")
             
             # Collect text from chapter pages
+            # BUG FIX: Use page_number field instead of array index
+            # The pages array may not start at page 1 (e.g., cover pages skipped)
+            # So we need to find pages by their page_number, not by array position
             chapter_text = ""
-            for page_idx in range(start_page - 1, min(end_page, len(self.pages))):
-                if page_idx < len(self.pages):
-                    chapter_text += self.pages[page_idx].get('content', self.pages[page_idx].get('text', '')) + "\n"
+            pages_found = 0
+            for page in self.pages:
+                page_num = page.get('page_number', 0)
+                if start_page <= page_num <= end_page:
+                    chapter_text += page.get('content', page.get('text', '')) + "\n"
+                    pages_found += 1
             
             # Optimize for large chapters: limit text size to avoid timeouts
             # StatisticalExtractor (YAKE + Summa) is expensive for >100K chars
@@ -335,7 +341,7 @@ class UniversalMetadataGenerator:
                 print(f"  Warning: Chapter text too large ({len(chapter_text):,} chars), truncating to {MAX_CHAPTER_TEXT:,} chars")
                 chapter_text = chapter_text[:MAX_CHAPTER_TEXT]
             
-            page_count = end_page - start_page + 1
+            page_count = pages_found if pages_found > 0 else (end_page - start_page + 1)
             print(f"  Collected {len(chapter_text):,} characters from {page_count} pages")
             
             # Guard against empty text (scanned/image pages with no extracted text)

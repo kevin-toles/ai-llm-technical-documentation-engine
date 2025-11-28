@@ -425,6 +425,100 @@ class SourceValidator:
         return results
 
 
+class ContentCaptureValidator:
+    """
+    Validates that metadata extraction actually captured content from source pages.
+    
+    This catches bugs like page indexing issues where extraction reports 0 characters
+    even though the source JSON has content on those pages.
+    
+    Pattern: Strategy Pattern (content validation strategy)
+    """
+    
+    MIN_CHARS_PER_PAGE = 100  # Minimum expected chars per page (excluding index/cover)
+    
+    @staticmethod
+    def validate(metadata: List[Dict], source_pages: List[Dict]) -> List[ValidationResult]:
+        """
+        Validate that each chapter's page range has content in the source JSON.
+        
+        Checks:
+        1. Source pages in the chapter's range actually have content
+        2. If source has content but metadata shows empty extraction, flag as error
+        """
+        results = []
+        
+        if not source_pages:
+            return results
+        
+        # Build page_number -> page content map
+        page_map = {}
+        for page in source_pages:
+            page_num = page.get('page_number')
+            if page_num is not None:
+                content = page.get('content', '')
+                page_map[page_num] = len(content) if content else 0
+        
+        for chapter in metadata:
+            chapter_num = chapter.get('chapter_number', '?')
+            start_page = chapter.get('start_page')
+            end_page = chapter.get('end_page')
+            
+            if start_page is None or end_page is None:
+                continue
+            
+            # Calculate total source content for this chapter's page range
+            source_chars = 0
+            pages_with_content = 0
+            pages_checked = 0
+            
+            for page_num in range(start_page, end_page + 1):
+                if page_num in page_map:
+                    pages_checked += 1
+                    if page_map[page_num] > 0:
+                        source_chars += page_map[page_num]
+                        pages_with_content += 1
+            
+            # Check if extraction captured the content
+            # Look for signs of empty extraction in the metadata
+            summary = chapter.get('summary', '')
+            keywords = chapter.get('keywords', [])
+            concepts = chapter.get('concepts', [])
+            
+            # Detect empty/minimal extraction
+            is_empty_extraction = (
+                len(summary) < 50 and 
+                len(keywords) == 0 and 
+                len(concepts) == 0
+            )
+            
+            # If source has substantial content but extraction is empty, that's a bug
+            if source_chars > 500 and is_empty_extraction:
+                results.append(ValidationResult(
+                    False,
+                    f"Chapter {chapter_num}: Source has {source_chars:,} chars on pages {start_page}-{end_page} "
+                    f"but extraction appears empty (summary: {len(summary)} chars, "
+                    f"keywords: {len(keywords)}, concepts: {len(concepts)})",
+                    "error"
+                ))
+            elif source_chars == 0 and pages_checked > 0:
+                # Source pages genuinely have no content
+                results.append(ValidationResult(
+                    True,
+                    f"Chapter {chapter_num}: Source pages {start_page}-{end_page} have no content (valid empty)",
+                    "info"
+                ))
+            elif pages_checked == 0:
+                # Page numbers don't exist in source - possible page numbering issue
+                results.append(ValidationResult(
+                    False,
+                    f"Chapter {chapter_num}: Pages {start_page}-{end_page} not found in source JSON",
+                    "warning"
+                ))
+        
+        return results
+
+
 class BookMetadataLoader:
     """
     Loads and validates book metadata files.
@@ -473,27 +567,29 @@ class BookMetadataLoader:
         return results, metadata
     
     @staticmethod
-    def load_source_json(source_dir: Path, book_name: str) -> Tuple[List[ValidationResult], List[Dict], int]:
+    def load_source_json(source_dir: Path, book_name: str) -> Tuple[List[ValidationResult], List[Dict], int, List[Dict]]:
         """
         Load source JSON for cross-reference.
         
         Returns:
-            (results, source_chapters, source_pages)
+            (results, source_chapters, source_page_count, source_pages)
         """
         results = []
         source_file = source_dir / f"{book_name}.json"
         source_chapters = []
-        source_pages = 0
+        source_pages = []
+        source_page_count = 0
         
         if source_file.exists():
             try:
                 with open(source_file) as f:
                     source_data = json.load(f)
                     source_chapters = source_data.get('chapters', [])
-                    source_pages = len(source_data.get('pages', []))
+                    source_pages = source_data.get('pages', [])
+                    source_page_count = len(source_pages)
                 results.append(ValidationResult(
                     True, 
-                    f"Source JSON found: {len(source_chapters)} chapters, {source_pages} pages", 
+                    f"Source JSON found: {len(source_chapters)} chapters, {source_page_count} pages", 
                     "info"
                 ))
             except Exception as e:
@@ -501,7 +597,7 @@ class BookMetadataLoader:
         else:
             results.append(ValidationResult(False, f"Source JSON not found: {source_file}", "warning"))
         
-        return results, source_chapters, source_pages
+        return results, source_chapters, source_page_count, source_pages
 
 
 class BookValidator:
@@ -530,8 +626,8 @@ class BookValidator:
         if not metadata:
             return results
         
-        # Load source JSON
-        source_results, source_chapters, source_pages = BookMetadataLoader.load_source_json(
+        # Load source JSON (now includes full pages array)
+        source_results, source_chapters, source_page_count, source_pages = BookMetadataLoader.load_source_json(
             self.source_dir, book_name
         )
         results.extend(source_results)
@@ -541,7 +637,7 @@ class BookValidator:
         page_ranges = []
         
         for idx, chapter in enumerate(metadata):
-            chapter_results = self.chapter_validator.validate(chapter, idx + 1, source_pages)
+            chapter_results = self.chapter_validator.validate(chapter, idx + 1, source_page_count)
             results.extend(chapter_results)
             
             # Collect for cross-chapter validation
@@ -557,6 +653,10 @@ class BookValidator:
         # Cross-reference with source
         if source_chapters:
             results.extend(SourceValidator.validate(metadata, source_chapters))
+        
+        # Content capture validation - ensures extraction actually got the content
+        if source_pages:
+            results.extend(ContentCaptureValidator.validate(metadata, source_pages))
         
         return results
 
