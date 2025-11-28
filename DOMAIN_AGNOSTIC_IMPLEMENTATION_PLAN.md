@@ -648,16 +648,49 @@ def generate_chapter_summary(chapter_text: str) -> str:
 
 ---
 
-## Part 2: Pre-LLM Statistical Filtering
+## Part 2: Pre-LLM Statistical Filtering with Dual Cache System
 
 ### Objective
-Add statistical pre-filtering to LLM cross-referencing to reduce costs by 70-80% while maintaining quality.
+Add statistical pre-filtering to LLM cross-referencing with **dual cache system** to reduce costs by 70-80% while maintaining quality. Implements **Option D-2** from Task 5.2.
+
+### Architecture Overview
+
+**Pattern**: **Repository Pattern** + **Cache-Aside Pattern**  
+**References**: 
+- *Architecture Patterns with Python* Ch. 2 (Repository Pattern)
+- *Architecture Patterns with Python* Ch. 12 (Cache-Aside Pattern) 
+- *Python Architecture Patterns* Ch. 3 (Data Modeling for caching systems)
+- *Learning Python Ed6* Ch. 28-31 (Dataclass design patterns)
+- *Learning Python Ed6* Ch. 9 (File I/O operations)
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                DUAL CACHE SYSTEM (Option D-2)                   │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  ┌───────────────────────────────────────────────────────────┐ │
+│  │  1. STATISTICAL PRE-FILTER CACHE (7-day TTL)             │ │
+│  │     Location: workflows/llm_enhancement/intermediate/     │ │
+│  │     Purpose: Cache YAKE + TF-IDF results                  │ │
+│  │     Format: StatisticalPrefilterOutput (JSON)            │ │
+│  │     Cost: Free (cheap to regenerate)                      │ │
+│  └───────────────────────────────────────────────────────────┘ │
+│                              ↓                                  │
+│  ┌───────────────────────────────────────────────────────────┐ │
+│  │  2. LLM RESPONSE CACHE (30-day TTL)                      │ │
+│  │     Location: cache/llm_responses/                        │ │
+│  │     Purpose: Cache expensive LLM API responses            │ │
+│  │     Format: LLMResponseEntry (JSON)                      │ │
+│  │     Cost: $0.60/chapter savings per cache hit            │ │
+│  └───────────────────────────────────────────────────────────┘ │
+└─────────────────────────────────────────────────────────────────┘
+```
 
 ### File Structure
 
 ```
 workflows/
-├── 07_llm_enhancement/
+├── llm_enhancement/
 │   ├── scripts/
 │   │   ├── integrate_llm_enhancements.py           # MODIFY
 │   │   ├── interactive_llm_system_v3_hybrid_prompt.py  # MODIFY
@@ -666,18 +699,29 @@ workflows/
 │   │   │   ├── similarity_filter.py                # TF-IDF + Cosine
 │   │   │   ├── concept_extractor.py                # YAKE wrapper
 │   │   │   └── json_interchange.py                 # JSON format specs
+│   │   ├── cache/                                  # NEW
+│   │   │   ├── __init__.py
+│   │   │   ├── prefilter_cache.py                  # Statistical cache
+│   │   │   ├── llm_cache.py                        # LLM response cache
+│   │   │   └── base_cache.py                       # Abstract cache (Repository)
 │   │   └── config/                                 # NEW
-│   │       └── llm_modes.json                      # Mode configurations
-│   └── intermediate/                               # NEW
-│       └── statistical_prefilter/                  # JSON outputs
-│           ├── chapter_1_candidates.json
-│           └── chapter_2_candidates.json
+│   │       └── cache_config.py                     # Cache configurations
+│   └── intermediate/                               # Cache storage
+│       └── statistical_prefilter/                  # Statistical cache files
 │
-└── tests_unit/
-    └── llm_enhancement/                            # NEW
-        ├── __init__.py
-        ├── test_similarity_filter.py
-        └── test_json_interchange.py
+├── cache/
+│   └── llm_responses/                              # LLM cache storage
+│       ├── phase1/                                 # Content selection responses
+│       └── phase2/                                 # Citation responses
+│
+└── tests/
+    └── unit/
+        └── llm_enhancement/                        # NEW
+            ├── __init__.py
+            ├── test_similarity_filter.py
+            ├── test_json_interchange.py
+            ├── test_prefilter_cache.py             # Statistical cache tests
+            └── test_llm_cache.py                   # LLM cache tests
 ```
 
 ### JSON Interchange Format
@@ -753,6 +797,543 @@ class StatisticalPrefilterOutput:
         data['candidates'] = candidates
         
         return cls(**data)
+```
+
+###  Dual Cache Architecture (Option D-2)
+
+#### Cache Design Philosophy
+
+**Pattern**: Repository Pattern + Cache-Aside Pattern  
+**References**:
+- *Architecture Patterns with Python* Ch. 2 - Repository Pattern
+- *Python Architecture Patterns* Ch. 3 - Data Modeling (cache systems, pg. 99)
+- *Learning Python Ed6* Ch. 28-31 - Dataclass design patterns
+
+**Key Principles**:
+1. **Single Responsibility**: Each cache handles one concern (statistical vs LLM)
+2. **Repository Abstraction**: Abstract storage details behind clean interface
+3. **Dataclass-based Entries**: Type-safe, serializable cache entries
+4. **TTL Management**: Automatic expiration based on regeneration cost
+5. **Fail-Safe**: Cache misses don't break workflow (graceful degradation)
+
+#### Cache 1: Statistical Pre-Filter Cache
+
+**File**: `workflows/llm_enhancement/scripts/cache/prefilter_cache.py`
+
+```python
+#!/usr/bin/env python3
+"""
+Statistical Pre-Filter Cache - Repository Pattern Implementation
+
+Caches YAKE keyword extraction + TF-IDF similarity ranking results.
+Uses Cache-Aside pattern: check cache first, compute on miss, store result.
+
+Pattern: Repository Pattern (Architecture Patterns Ch. 2)
+- Abstracts file system storage
+- Returns domain objects (StatisticalPrefilterOutput)
+- Handles errors gracefully
+
+TTL: 7 days (cheap to regenerate - no API costs)
+Location: workflows/llm_enhancement/intermediate/statistical_prefilter/
+
+References:
+- Architecture Patterns with Python Ch. 2 (Repository Pattern)
+- Python Architecture Patterns Ch. 3 (Cache design, pg. 99)
+- Learning Python Ed6 Ch. 9 (File I/O), Ch. 28 (Dataclasses)
+"""
+
+from pathlib import Path
+from typing import Optional, Dict, Any
+from dataclasses import dataclass, asdict
+import json
+import time
+import hashlib
+from datetime import datetime, timedelta
+
+from ..statistical_filters.json_interchange import StatisticalPrefilterOutput
+
+
+@dataclass
+class CacheEntry:
+    """
+    Cache entry metadata.
+    
+    Pattern: Value Object (Architecture Patterns Ch. 1)
+    Immutable data structure representing cache metadata.
+    """
+    key: str
+    created_at: float              # Unix timestamp
+    ttl_seconds: int               # Time to live
+    content_hash: str              # For cache invalidation
+    
+    def is_expired(self) -> bool:
+        """Check if entry has exceeded TTL."""
+        age_seconds = time.time() - self.created_at
+        return age_seconds > self.ttl_seconds
+    
+    def to_dict(self) -> Dict[str, Any]:
+        """Serialize to dict for JSON storage."""
+        return asdict(self)
+    
+    @classmethod
+    def from_dict(cls, data: Dict[str, Any]) -> 'CacheEntry':
+        """Deserialize from dict."""
+        return cls(**data)
+
+
+class PrefilterCacheRepository:
+    """
+    Repository for statistical pre-filter cache.
+    
+    Pattern: Repository Pattern (Architecture Patterns Ch. 2)
+    Provides abstract interface for cache storage/retrieval.
+    
+    Implements Cache-Aside pattern:
+    1. Client requests data
+    2. Check cache first (get())
+    3. On miss: compute, store (set()), return
+    4. On hit: return cached data
+    
+    Example:
+        >>> cache = PrefilterCacheRepository()
+        >>> 
+        >>> # Try to get cached results
+        >>> cached = cache.get(chapter_num=1, content_hash="abc123")
+        >>> if cached is None:
+        >>>     # Cache miss: compute results
+        >>>     results = compute_statistical_prefilter(chapter_text)
+        >>>     cache.set(results)
+        >>>     return results
+        >>> else:
+        >>>     # Cache hit: use cached results
+        >>>     return cached
+    """
+    
+    def __init__(
+        self,
+        cache_dir: Optional[Path] = None,
+        ttl_days: int = 7
+    ):
+        """
+        Initialize cache repository.
+        
+        Args:
+            cache_dir: Directory for cache storage (default: workflows/llm_enhancement/intermediate/statistical_prefilter/)
+            ttl_days: Time to live in days (default: 7)
+        """
+        if cache_dir is None:
+            # Default location per Task 5.2
+            cache_dir = Path(__file__).parent.parent.parent / "intermediate" / "statistical_prefilter"
+        
+        self.cache_dir = cache_dir
+        self.cache_dir.mkdir(parents=True, exist_ok=True)
+        
+        self.ttl_seconds = ttl_days * 24 * 60 * 60
+    
+    def _get_cache_key(self, chapter_num: int, content_hash: str) -> str:
+        """Generate cache key from chapter number and content hash."""
+        return f"chapter_{chapter_num}_{content_hash[:8]}"
+    
+    def _get_cache_path(self, cache_key: str) -> Path:
+        """Get file path for cache entry."""
+        return self.cache_dir / f"{cache_key}.json"
+    
+    def _compute_content_hash(self, text: str) -> str:
+        """Compute hash of chapter content for cache invalidation."""
+        return hashlib.sha256(text.encode('utf-8')).hexdigest()
+    
+    def get(
+        self,
+        chapter_num: int,
+        content_hash: str
+    ) -> Optional[StatisticalPrefilterOutput]:
+        """
+        Retrieve cached statistical pre-filter results.
+        
+        Args:
+            chapter_num: Chapter number
+            content_hash: Hash of chapter content (for cache invalidation)
+            
+        Returns:
+            StatisticalPrefilterOutput if cache hit and not expired, None otherwise
+            
+        Example:
+            >>> cache = PrefilterCacheRepository()
+            >>> cached = cache.get(chapter_num=1, content_hash="abc123")
+            >>> if cached:
+            >>>     print(f"Cache hit! Found {len(cached.candidates)} candidates")
+        """
+        cache_key = self._get_cache_key(chapter_num, content_hash)
+        cache_path = self._get_cache_path(cache_key)
+        
+        if not cache_path.exists():
+            return None  # Cache miss
+        
+        try:
+            with open(cache_path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            
+            # Check metadata
+            metadata = CacheEntry.from_dict(data['_metadata'])
+            
+            # Check expiration
+            if metadata.is_expired():
+                print(f"⏱️  Cache expired: {cache_key}")
+                cache_path.unlink()  # Delete expired entry
+                return None
+            
+            # Check content hash (cache invalidation)
+            if metadata.content_hash != content_hash:
+                print(f"🔄 Content changed: {cache_key}")
+                cache_path.unlink()  # Delete invalidated entry
+                return None
+            
+            # Cache hit: deserialize and return
+            print(f"✅ Cache hit: {cache_key}")
+            return StatisticalPrefilterOutput.from_dict(data['data'])
+            
+        except (json.JSONDecodeError, KeyError, OSError) as e:
+            print(f"⚠️  Cache read error: {e}")
+            return None  # Treat errors as cache miss
+    
+    def set(
+        self,
+        output: StatisticalPrefilterOutput,
+        content_hash: str
+    ) -> None:
+        """
+        Store statistical pre-filter results in cache.
+        
+        Args:
+            output: Statistical pre-filter results
+            content_hash: Hash of chapter content
+            
+        Example:
+            >>> cache = PrefilterCacheRepository()
+            >>> results = StatisticalPrefilterOutput(...)
+            >>> content_hash = hashlib.sha256(chapter_text.encode()).hexdigest()
+            >>> cache.set(results, content_hash)
+        """
+        cache_key = self._get_cache_key(
+            output.source_chapter_number,
+            content_hash
+        )
+        cache_path = self._get_cache_path(cache_key)
+        
+        # Create cache entry with metadata
+        metadata = CacheEntry(
+            key=cache_key,
+            created_at=time.time(),
+            ttl_seconds=self.ttl_seconds,
+            content_hash=content_hash
+        )
+        
+        cache_data = {
+            '_metadata': metadata.to_dict(),
+            'data': output.to_dict()
+        }
+        
+        try:
+            with open(cache_path, 'w', encoding='utf-8') as f:
+                json.dump(cache_data, f, indent=2)
+            
+            print(f"💾 Cached: {cache_key} (TTL: {self.ttl_seconds // 86400} days)")
+            
+        except (OSError, TypeError) as e:
+            print(f"⚠️  Cache write error: {e}")
+            # Fail gracefully - don't break workflow
+    
+    def clear(self) -> int:
+        """
+        Clear all cache entries.
+        
+        Returns:
+            Number of entries deleted
+        """
+        count = 0
+        for cache_file in self.cache_dir.glob("*.json"):
+            try:
+                cache_file.unlink()
+                count += 1
+            except OSError:
+                pass
+        
+        print(f"🗑️  Cleared {count} cache entries")
+        return count
+    
+    def clear_expired(self) -> int:
+        """
+        Delete only expired cache entries.
+        
+        Returns:
+            Number of expired entries deleted
+        """
+        count = 0
+        for cache_file in self.cache_dir.glob("*.json"):
+            try:
+                with open(cache_file, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                
+                metadata = CacheEntry.from_dict(data['_metadata'])
+                
+                if metadata.is_expired():
+                    cache_file.unlink()
+                    count += 1
+                    
+            except (json.JSONDecodeError, KeyError, OSError):
+                # Invalid cache file - delete it
+                cache_file.unlink()
+                count += 1
+        
+        print(f"🗑️  Cleared {count} expired entries")
+        return count
+```
+
+#### Cache 2: LLM Response Cache
+
+**File**: `workflows/llm_enhancement/scripts/cache/llm_cache.py`
+
+```python
+#!/usr/bin/env python3
+"""
+LLM Response Cache - Repository Pattern Implementation
+
+Caches expensive LLM API responses for Phase 1 (content selection) and
+Phase 2 (citation generation).
+
+Pattern: Repository Pattern (Architecture Patterns Ch. 2)
+- Abstracts file system storage
+- Returns domain objects (LLMResponse)
+- Handles errors gracefully
+
+TTL: 30 days (expensive to regenerate - ~$0.60 per chapter)
+Location: cache/llm_responses/
+
+Cost Savings:
+- Cache hit: $0 (free)
+- Cache miss: $0.60 (Claude API cost)
+- ROI: 100% cost reduction on repeated runs
+
+References:
+- Architecture Patterns with Python Ch. 2 (Repository Pattern)
+- Python Architecture Patterns Ch. 3 (Cache design)
+- Learning Python Ed6 Ch. 9 (File I/O), Ch. 28 (Dataclasses)
+"""
+
+from pathlib import Path
+from typing import Optional, Dict, Any, List
+from dataclasses import dataclass, asdict
+import json
+import time
+import hashlib
+
+from ..cache.prefilter_cache import CacheEntry  # Reuse metadata structure
+
+
+@dataclass
+class LLMResponse:
+    """
+    LLM API response data.
+    
+    Pattern: Data Transfer Object (DTO)
+    Simple data structure for passing LLM responses between layers.
+    """
+    phase: str                     # "phase1" or "phase2"
+    chapter_num: int
+    prompt_hash: str               # Hash of prompt sent to LLM
+    response_text: str             # Raw LLM response
+    parsed_data: Dict[str, Any]    # Parsed/structured data
+    model: str                     # e.g., "claude-sonnet-4"
+    tokens_used: int               # For cost tracking
+    
+    def to_dict(self) -> Dict[str, Any]:
+        """Serialize to dict for JSON storage."""
+        return asdict(self)
+    
+    @classmethod
+    def from_dict(cls, data: Dict[str, Any]) -> 'LLMResponse':
+        """Deserialize from dict."""
+        return cls(**data)
+
+
+class LLMCacheRepository:
+    """
+    Repository for LLM response cache.
+    
+    Pattern: Repository Pattern (Architecture Patterns Ch. 2)
+    Provides abstract interface for cache storage/retrieval.
+    
+    Implements Cache-Aside pattern for expensive LLM calls:
+    1. Check cache before calling LLM (get())
+    2. On miss: call LLM, cache response (set()), return
+    3. On hit: return cached response (saves $0.60)
+    
+    Example:
+        >>> cache = LLMCacheRepository()
+        >>> 
+        >>> # Try to get cached LLM response
+        >>> cached = cache.get_phase1(chapter_num=1, prompt_hash="abc123")
+        >>> if cached is None:
+        >>>     # Cache miss: call LLM ($0.30)
+        >>>     response = call_llm_phase1(prompt)
+        >>>     cache.set_phase1(response)
+        >>>     return response
+        >>> else:
+        >>>     # Cache hit: saved $0.30!
+        >>>     return cached
+    """
+    
+    def __init__(
+        self,
+        cache_dir: Optional[Path] = None,
+        ttl_days: int = 30
+    ):
+        """
+        Initialize LLM cache repository.
+        
+        Args:
+            cache_dir: Directory for cache storage (default: cache/llm_responses/)
+            ttl_days: Time to live in days (default: 30)
+        """
+        if cache_dir is None:
+            # Default location per Task 5.2
+            from pathlib import Path
+            cache_dir = Path(__file__).parent.parent.parent.parent.parent / "cache" / "llm_responses"
+        
+        self.cache_dir = cache_dir
+        self.phase1_dir = cache_dir / "phase1"
+        self.phase2_dir = cache_dir / "phase2"
+        
+        self.phase1_dir.mkdir(parents=True, exist_ok=True)
+        self.phase2_dir.mkdir(parents=True, exist_ok=True)
+        
+        self.ttl_seconds = ttl_days * 24 * 60 * 60
+    
+    def _get_cache_key(self, chapter_num: int, prompt_hash: str) -> str:
+        """Generate cache key from chapter number and prompt hash."""
+        return f"chapter_{chapter_num}_{prompt_hash[:8]}"
+    
+    def _get_cache_path(self, phase: str, cache_key: str) -> Path:
+        """Get file path for cache entry."""
+        phase_dir = self.phase1_dir if phase == "phase1" else self.phase2_dir
+        return phase_dir / f"{cache_key}.json"
+    
+    def _compute_prompt_hash(self, prompt: str) -> str:
+        """Compute hash of prompt for cache key."""
+        return hashlib.sha256(prompt.encode('utf-8')).hexdigest()
+    
+    def get(
+        self,
+        phase: str,
+        chapter_num: int,
+        prompt_hash: str
+    ) -> Optional[LLMResponse]:
+        """
+        Retrieve cached LLM response.
+        
+        Args:
+            phase: "phase1" or "phase2"
+            chapter_num: Chapter number
+            prompt_hash: Hash of prompt sent to LLM
+            
+        Returns:
+            LLMResponse if cache hit and not expired, None otherwise
+        """
+        cache_key = self._get_cache_key(chapter_num, prompt_hash)
+        cache_path = self._get_cache_path(phase, cache_key)
+        
+        if not cache_path.exists():
+            return None  # Cache miss
+        
+        try:
+            with open(cache_path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            
+            # Check metadata
+            metadata = CacheEntry.from_dict(data['_metadata'])
+            
+            # Check expiration
+            if metadata.is_expired():
+                print(f"⏱️  LLM cache expired: {cache_key}")
+                cache_path.unlink()
+                return None
+            
+            # Cache hit: return response
+            print(f"✅ LLM cache hit: {cache_key} (saved $0.30)")
+            return LLMResponse.from_dict(data['data'])
+            
+        except (json.JSONDecodeError, KeyError, OSError) as e:
+            print(f"⚠️  LLM cache read error: {e}")
+            return None
+    
+    def set(
+        self,
+        response: LLMResponse
+    ) -> None:
+        """
+        Store LLM response in cache.
+        
+        Args:
+            response: LLM API response
+        """
+        cache_key = self._get_cache_key(
+            response.chapter_num,
+            response.prompt_hash
+        )
+        cache_path = self._get_cache_path(response.phase, cache_key)
+        
+        # Create cache entry with metadata
+        metadata = CacheEntry(
+            key=cache_key,
+            created_at=time.time(),
+            ttl_seconds=self.ttl_seconds,
+            content_hash=response.prompt_hash  # Use prompt hash
+        )
+        
+        cache_data = {
+            '_metadata': metadata.to_dict(),
+            'data': response.to_dict()
+        }
+        
+        try:
+            with open(cache_path, 'w', encoding='utf-8') as f:
+                json.dump(cache_data, f, indent=2)
+            
+            print(f"💾 LLM cached: {cache_key} (TTL: {self.ttl_seconds // 86400} days)")
+            
+        except (OSError, TypeError) as e:
+            print(f"⚠️  LLM cache write error: {e}")
+    
+    def get_phase1(self, chapter_num: int, prompt_hash: str) -> Optional[LLMResponse]:
+        """Convenience method for Phase 1 cache retrieval."""
+        return self.get("phase1", chapter_num, prompt_hash)
+    
+    def get_phase2(self, chapter_num: int, prompt_hash: str) -> Optional[LLMResponse]:
+        """Convenience method for Phase 2 cache retrieval."""
+        return self.get("phase2", chapter_num, prompt_hash)
+    
+    def set_phase1(self, response: LLMResponse) -> None:
+        """Convenience method for Phase 1 cache storage."""
+        response.phase = "phase1"
+        self.set(response)
+    
+    def set_phase2(self, response: LLMResponse) -> None:
+        """Convenience method for Phase 2 cache storage."""
+        response.phase = "phase2"
+        self.set(response)
+    
+    def clear(self) -> int:
+        """Clear all LLM cache entries."""
+        count = 0
+        for cache_file in self.phase1_dir.glob("*.json"):
+            cache_file.unlink()
+            count += 1
+        for cache_file in self.phase2_dir.glob("*.json"):
+            cache_file.unlink()
+            count += 1
+        
+        print(f"🗑️  Cleared {count} LLM cache entries")
+        return count
 ```
 
 ### Implementation Plan: Part 2
