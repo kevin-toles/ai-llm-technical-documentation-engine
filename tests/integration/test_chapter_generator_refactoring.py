@@ -136,37 +136,23 @@ class TestGenerateChapterSummary:
         assert len(result) > 0
 
 
-class TestGenerateChapterSummaryRefactored:
-    """
-    Tests for the refactored version of generate_chapter_summary.
-    
-    After refactoring, the function should:
-    1. Use a dictionary mapping instead of if-elif chain
-    2. Extract metadata loading to helper
-    3. Extract chapter lookup to helper
-    4. Main function orchestrates only
-    """
-    
-    # These tests will be written after we understand the refactored structure
-    # They will verify the same behavior with cleaner implementation
-    
-    def test_book_metadata_mapping_uses_dictionary(self):
-        """Verify refactored version uses dictionary for book-to-metadata mapping."""
-        # TODO: Write after refactoring
-        # Will check that BOOK_METADATA_MAP exists and is used
-        pass
-    
-    def test_metadata_loading_extracted_to_helper(self):
-        """Verify metadata loading is in separate helper function."""
-        # TODO: Write after refactoring
-        # Will check that _load_chapter_metadata() exists and is called
-        pass
-    
-    def test_chapter_lookup_extracted_to_helper(self):
-        """Verify chapter lookup logic is in separate helper function."""
-        # TODO: Write after refactoring
-        # Will check that _find_chapter_in_metadata() exists and is called
-        pass
+# NOTE: TestGenerateChapterSummaryRefactored class removed (Nov 27, 2025)
+# The refactoring work this class was designed to test was ALREADY COMPLETED (Nov 16-18, 2025).
+# 
+# Completed refactoring (see chapter_generator_all_text.py lines 1258-1315):
+# - BOOK_METADATA_FILES dictionary exists (line 1258) - replaces if-elif chain ✓
+# - _get_metadata_filename() helper exists (line 1273) - extracts mapping logic ✓
+# - _load_chapter_summary() helper exists (line 1281) - extracts loading logic ✓
+# - generate_chapter_summary() complexity reduced from CC 18 → ~5 ✓
+#
+# The test placeholders expected different names (BOOK_METADATA_MAP, _load_chapter_metadata,
+# _find_chapter_in_metadata) that don't exist because refactoring used different naming.
+# These TODOs were never updated post-refactoring and became obsolete.
+#
+# References:
+# - Original refactoring plan: docs/CODERABBIT_REFACTORING_IMPLEMENTATION_PLAN.md (lines 80-140)
+# - Refactoring completed: commit 00653209 (Nov 16, 2025)
+# - NOT related to: DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN.md (different scope/files)
 
 
 class TestExtractedHelperFunctions:
