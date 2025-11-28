@@ -96,9 +96,9 @@ def sample_phase1_response() -> LLMResponse:
         parsed_data={
             "selected_guidelines": [1, 5, 12],
             "relevance": {
-                1: {"score": 0.95, "reason": "Repository pattern discussion"},
-                5: {"score": 0.89, "reason": "ORM abstraction"},
-                12: {"score": 0.82, "reason": "Database persistence"}
+                "1": {"score": 0.95, "reason": "Repository pattern discussion"},
+                "5": {"score": 0.89, "reason": "ORM abstraction"},
+                "12": {"score": 0.82, "reason": "Database persistence"}
             }
         },
         model="claude-sonnet-4",
