@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
 """
-PDF to JSON converter using PyMuPDF with intelligent chapter detection.
+PDF to JSON converter using Unstructured library with PyMuPDF fallback.
 
-Converts PDF books to structured JSON format using statistical NLP methods:
+Converts PDF books to structured JSON format using:
+- Unstructured library for semantic element extraction (titles, paragraphs, tables)
+- PyMuPDF/OCR fallback for scanned or problematic PDFs
 - 3-pass chapter detection (regex → topic-shift → synthetic)
 - YAKE keyword validation for chapter boundaries
 - TF-IDF cosine similarity for topic shift detection
-- Guaranteed non-empty chapter list (Pass C fallback)
 
 Reference: Python Distilled Ch. 9 - pathlib.Path operations
 Reference: CONSOLIDATED_IMPLEMENTATION_PLAN.md - Tab 1 statistical methods only
+Reference: DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN.md - Unstructured integration
 """
 
 import json
@@ -38,6 +40,13 @@ from config.settings import settings  # noqa: E402
 
 # Import statistical chapter segmenter (NEW - replaces detect_chapters_intelligent)
 from workflows.pdf_to_json.scripts.chapter_segmenter import ChapterSegmenter  # noqa: E402
+
+# Import Unstructured extractor for enhanced PDF parsing
+from workflows.pdf_to_json.scripts.adapters.unstructured_extractor import (  # noqa: E402
+    UnstructuredExtractor,
+    ExtractionConfig,
+    UNSTRUCTURED_AVAILABLE,
+)
 
 
 def _extract_pdf_metadata(doc, pdf_path: Path) -> Dict:
@@ -179,13 +188,17 @@ def extract_text_from_page(page) -> Tuple[str, str]:
         print(f"Warning: OCR failed for page {page.number + 1}: {e}")
         return "", "Failed"
 
-def convert_pdf_to_json(pdf_path, output_path=None):
+def convert_pdf_to_json(pdf_path, output_path=None, use_unstructured=True):
     """
-    Convert a PDF file to JSON format
+    Convert a PDF file to JSON format.
+    
+    Uses Unstructured library for enhanced semantic extraction (titles, paragraphs,
+    tables) with PyMuPDF fallback for scanned or problematic PDFs.
     
     Args:
         pdf_path: Path to input PDF file
         output_path: Optional path for output JSON file (defaults to same directory as PDF)
+        use_unstructured: Whether to try Unstructured first (default: True)
     """
     pdf_path = Path(pdf_path)
     
@@ -200,6 +213,9 @@ def convert_pdf_to_json(pdf_path, output_path=None):
         output_path = settings.paths.textbooks_json_dir / f"{pdf_path.stem}.json"
     else:
         output_path = Path(output_path)
+        # If output_path is a directory, append the filename
+        if output_path.is_dir():
+            output_path = output_path / f"{pdf_path.stem}.json"
     
     # Ensure output directory exists
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -208,49 +224,32 @@ def convert_pdf_to_json(pdf_path, output_path=None):
     print(f"Output to: {output_path}")
     
     try:
-        # Open PDF
+        # Try Unstructured extraction first (better semantic parsing)
+        if use_unstructured and UNSTRUCTURED_AVAILABLE:
+            print("\n📚 Using Unstructured library for enhanced PDF parsing...")
+            pages, extraction_method = _extract_with_unstructured(pdf_path)
+        else:
+            # Fall back to PyMuPDF extraction
+            if use_unstructured:
+                print("\n⚠️ Unstructured not available, falling back to PyMuPDF...")
+            else:
+                print("\n📄 Using PyMuPDF for PDF extraction...")
+            pages, extraction_method = _extract_with_pymupdf(pdf_path)
+        
+        # Open PDF for metadata extraction (always use PyMuPDF for this)
         doc = fitz.open(str(pdf_path))
         
         # Initialize JSON structure
         json_data = {
             "metadata": _extract_pdf_metadata(doc, pdf_path),
             "chapters": [],
-            "pages": []
+            "pages": pages
         }
         
-        # Extract text from each page
-        ocr_count = 0
-        direct_count = 0
+        # Update metadata with extraction method
+        json_data["metadata"]["extraction_method"] = extraction_method
         
-        for page_num in range(len(doc)):
-            page = doc[page_num]
-            text, method = extract_text_from_page(page)
-            
-            # Track extraction methods
-            if method == "OCR":
-                ocr_count += 1
-            elif method == "Direct":
-                direct_count += 1
-            
-            page_data = {
-                "page_number": page_num + 1,
-                "chapter": None,
-                "content": text,
-                "content_length": len(text),
-                "extraction_method": method
-            }
-            
-            json_data["pages"].append(page_data)
-            
-            # Progress indicator (more frequent for OCR pages since they're slower)
-            if method == "OCR" or (page_num + 1) % 10 == 0:
-                progress = f"Processed {page_num + 1}/{len(doc)} pages"
-                if ocr_count > 0:
-                    progress += f" (OCR: {ocr_count}, Direct: {direct_count})"
-                print(progress)
-        
-        # Summary of extraction methods
-        print(f"\n📄 Extraction complete: {direct_count} direct, {ocr_count} OCR, {len(doc) - direct_count - ocr_count} failed")
+        doc.close()
         
         # Auto-detect chapters from page content using 3-pass statistical algorithm
         print("\n🔍 Detecting chapters (3-pass: regex → topic-shift → synthetic)...")
@@ -270,11 +269,10 @@ def convert_pdf_to_json(pdf_path, output_path=None):
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(json_data, f, indent=2, ensure_ascii=False)
         
-        print(f"\n✅ Successfully converted {len(doc)} pages")
+        print(f"\n✅ Successfully converted {len(pages)} pages")
         print(f"   Output: {output_path}")
         print(f"   Size: {output_path.stat().st_size / 1024:.1f} KB")
         
-        doc.close()
         return True
         
     except Exception as e:
@@ -282,6 +280,91 @@ def convert_pdf_to_json(pdf_path, output_path=None):
         import traceback
         traceback.print_exc()
         return False
+
+
+def _extract_with_unstructured(pdf_path: Path) -> Tuple[List[Dict], str]:
+    """
+    Extract pages using Unstructured library for enhanced semantic parsing.
+    
+    Args:
+        pdf_path: Path to PDF file
+        
+    Returns:
+        Tuple of (pages list, extraction_method string)
+    """
+    config = ExtractionConfig(
+        strategy="fast",  # Use fast strategy for quicker processing
+        extract_tables=True,
+        extract_images=False,  # Skip image extraction for speed
+        ocr_enabled=False,  # Disable OCR for speed (use PyMuPDF fallback for scanned PDFs)
+        fallback_to_pymupdf=True
+    )
+    extractor = UnstructuredExtractor(config=config)
+    
+    # Get pages with combined element content
+    pages = extractor.extract_to_pages(pdf_path)
+    
+    # Determine extraction method from first page metadata
+    if pages and pages[0].get("extraction_method") == "PyMuPDF_fallback":
+        print(f"   ✅ Fallback successful: Extracted {len(pages)} pages with PyMuPDF")
+        return pages, "PyMuPDF_fallback (Unstructured failed)"
+    elif not pages:
+        print("   ⚠️ Warning: No pages extracted from PDF")
+        return pages, "Failed - No content extracted"
+    else:
+        print(f"   📄 Extracted {len(pages)} pages with Unstructured")
+        return pages, "Unstructured"
+
+
+def _extract_with_pymupdf(pdf_path: Path) -> Tuple[List[Dict], str]:
+    """
+    Extract pages using PyMuPDF with OCR fallback for scanned pages.
+    
+    Args:
+        pdf_path: Path to PDF file
+        
+    Returns:
+        Tuple of (pages list, extraction_method string)
+    """
+    doc = fitz.open(str(pdf_path))
+    pages = []
+    ocr_count = 0
+    direct_count = 0
+    
+    for page_num in range(len(doc)):
+        page = doc[page_num]
+        text, method = extract_text_from_page(page)
+        
+        # Track extraction methods
+        if method == "OCR":
+            ocr_count += 1
+        elif method == "Direct":
+            direct_count += 1
+        
+        page_data = {
+            "page_number": page_num + 1,
+            "chapter": None,
+            "content": text,
+            "content_length": len(text),
+            "extraction_method": method
+        }
+        
+        pages.append(page_data)
+        
+        # Progress indicator (more frequent for OCR pages since they're slower)
+        if method == "OCR" or (page_num + 1) % 10 == 0:
+            progress = f"Processed {page_num + 1}/{len(doc)} pages"
+            if ocr_count > 0:
+                progress += f" (OCR: {ocr_count}, Direct: {direct_count})"
+            print(progress)
+    
+    doc.close()
+    
+    # Summary of extraction methods
+    failed_count = len(pages) - direct_count - ocr_count
+    print(f"\n📄 Extraction complete: {direct_count} direct, {ocr_count} OCR, {failed_count} failed")
+    
+    return pages, f"PyMuPDF (Direct: {direct_count}, OCR: {ocr_count})"
 
 def main():
     if len(sys.argv) < 2:

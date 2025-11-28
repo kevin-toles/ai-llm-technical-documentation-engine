@@ -13,15 +13,185 @@ Document References:
 TDD Status: GREEN phase - Minimal implementation to pass tests
 """
 
-from typing import List, Tuple
+import re
+from typing import List, Tuple, Set
 import yake  # type: ignore[import-untyped]
 from summa import keywords as summa_keywords, summarizer  # type: ignore[import-untyped]
+
+# Try to import WordNet for dictionary validation
+try:
+    from nltk.corpus import wordnet
+    _HAS_WORDNET = True
+except ImportError:
+    _HAS_WORDNET = False
+    wordnet = None  # type: ignore
 
 
 # Constants - Per PYTHON_GUIDELINES Ch. 6: Class constants for validation messages
 _ERROR_EMPTY_TEXT = "Text cannot be empty"
 _ERROR_INVALID_TOP_N = "top_n must be positive"
 _ERROR_INVALID_RATIO = "ratio must be between 0.0 and 1.0"
+
+# Technical term patterns that are valid even if not in WordNet
+# These capture compound technical terms like "microservices", "asyncio", etc.
+_TECHNICAL_SUFFIXES = frozenset([
+    'api', 'apis', 'io', 'db', 'sql', 'orm', 'ui', 'ux', 'ml', 'ai', 'llm',
+    'service', 'services', 'server', 'servers', 'client', 'clients',
+    'handler', 'handlers', 'manager', 'managers', 'factory', 'factories',
+    'pattern', 'patterns', 'model', 'models', 'view', 'views',
+    'controller', 'controllers', 'adapter', 'adapters', 'wrapper', 'wrappers',
+    'config', 'configs', 'setting', 'settings', 'option', 'options',
+    'async', 'sync', 'thread', 'threads', 'process', 'processes',
+    'queue', 'queues', 'cache', 'caches', 'pool', 'pools',
+    'hook', 'hooks', 'callback', 'callbacks', 'listener', 'listeners',
+    'parser', 'parsers', 'builder', 'builders', 'loader', 'loaders',
+    'encoder', 'encoders', 'decoder', 'decoders', 'serializer', 'serializers',
+])
+
+# Known valid technical terms not in WordNet
+_TECHNICAL_TERMS = frozenset([
+    # Python/Programming
+    'python', 'pythonic', 'microservices', 'microservice', 'asyncio', 'fastapi',
+    'django', 'flask', 'sqlalchemy', 'pydantic', 'pytest', 'numpy', 'pandas',
+    'tensorflow', 'pytorch', 'kubernetes', 'docker', 'redis', 'mongodb',
+    'postgresql', 'graphql', 'restful', 'websocket', 'grpc', 'protobuf',
+    # Architecture
+    'refactoring', 'codebase', 'backend', 'frontend', 'middleware', 'endpoint',
+    'api', 'sdk', 'cli', 'gui', 'orm', 'crud', 'mvc', 'mvvm',
+    # Data/ML
+    'dataset', 'dataframe', 'embeddings', 'vectorization', 'tokenization',
+    'llm', 'llms', 'rag', 'langchain', 'openai', 'anthropic',
+])
+
+# Noise patterns to filter from YAKE/Summa extraction
+# These are common artifacts from OCR, source watermarks, and code snippets
+_NOISE_PATTERNS = [
+    r'^_',              # Leading underscore (private variables like _add, _name)
+    r'^[a-z]$',         # Single letters (a, b, c, n, o)
+    r'^\d+$',           # Pure numbers
+    r'^[A-Z]$',         # Single capital letters
+    r'_$',              # Trailing underscore
+    r'^__',             # Dunder prefixes
+    r'__$',             # Dunder suffixes
+]
+
+# Known noise terms from OCR artifacts and book sources
+_NOISE_TERMS = frozenset([
+    # PDF/source watermarks
+    'oceanofpdf', 'ebscohost', 'packt', 'manning', 'oreilly', 'springer',
+    'wiley', 'apress', 'pragprog', 'nostarch', 'informit', 'pearson',
+    # Common OCR artifacts
+    'www', 'http', 'https', 'com', 'org', 'edu', 'gov', 'net',
+    # Python builtins that are too generic
+    'self', 'cls', 'def', 'class', 'return', 'import', 'from', 'none',
+    'true', 'false', 'print', 'pass', 'break', 'continue', 'elif',
+    # Test artifacts  
+    'test', 'tests', 'testing', 'fixture', 'mock',
+    # Generic noise
+    'chapter', 'page', 'figure', 'table', 'example', 'note', 'see',
+    'also', 'using', 'used', 'use', 'like', 'new', 'get', 'set',
+    'one', 'two', 'first', 'second', 'next', 'following', 'previous',
+])
+
+
+def _is_in_dictionary(word: str) -> bool:
+    """Check if word exists in WordNet dictionary."""
+    if not _HAS_WORDNET or wordnet is None:
+        return True  # If WordNet not available, allow all
+    return bool(wordnet.synsets(word.lower()))
+
+
+def _is_technical_term(word: str) -> bool:
+    """Check if word is a known technical term or matches technical patterns."""
+    word_lower = word.lower()
+    
+    # Check known technical terms
+    if word_lower in _TECHNICAL_TERMS:
+        return True
+    
+    # Check technical suffixes (e.g., "microservices" ends with "services")
+    for suffix in _TECHNICAL_SUFFIXES:
+        if word_lower.endswith(suffix) and len(word_lower) > len(suffix):
+            return True
+    
+    return False
+
+
+def _is_valid_keyword(keyword: str) -> bool:
+    """
+    Filter out noisy keywords from YAKE extraction.
+    
+    Valid keywords should be:
+    - At least 2 characters
+    - Not match noise patterns (underscores, single chars, etc.)
+    - Not be known noise terms (watermarks, builtins, etc.)
+    
+    Args:
+        keyword: Keyword string to validate
+        
+    Returns:
+        True if keyword is valid, False otherwise
+    """
+    if not keyword or len(keyword) < 2:
+        return False
+    
+    keyword_lower = keyword.lower().strip()
+    
+    # Check against noise terms
+    if keyword_lower in _NOISE_TERMS:
+        return False
+    
+    # Check noise patterns
+    for pattern in _NOISE_PATTERNS:
+        if re.search(pattern, keyword_lower):
+            return False
+    
+    return True
+
+
+def _is_valid_concept(concept: str) -> bool:
+    """
+    Filter out noisy concepts from extraction.
+    
+    Valid concepts must:
+    - Be at least 3 characters
+    - Be alphabetic (no numbers, underscores)
+    - Not be known noise terms
+    - Not match noise patterns
+    - Be either: in WordNet dictionary OR a known technical term
+    
+    This filters out proper nouns like "Valentina", "Paestum" that are
+    statistically significant but not meaningful technical concepts.
+    
+    Args:
+        concept: Concept string to validate
+        
+    Returns:
+        True if concept is valid, False otherwise
+    """
+    if not concept or len(concept) < 3:
+        return False
+    
+    concept_lower = concept.lower().strip()
+    
+    # Must be alphabetic
+    if not concept_lower.isalpha():
+        return False
+    
+    # Check against noise terms
+    if concept_lower in _NOISE_TERMS:
+        return False
+    
+    # Check noise patterns
+    for pattern in _NOISE_PATTERNS:
+        if re.search(pattern, concept_lower):
+            return False
+    
+    # Must be a real word: in dictionary OR known technical term
+    if not _is_in_dictionary(concept_lower) and not _is_technical_term(concept_lower):
+        return False
+    
+    return True
 
 
 class StatisticalExtractor:
@@ -101,8 +271,11 @@ class StatisticalExtractor:
         # Extract keywords using YAKE
         keywords = self.kw_extractor.extract_keywords(text)
         
+        # Filter out noisy keywords
+        filtered_keywords = [(kw, score) for kw, score in keywords if _is_valid_keyword(kw)]
+        
         # Return top N keywords (already sorted by score ascending)
-        return keywords[:top_n]
+        return filtered_keywords[:top_n]
     
     def _extract_concepts_from_summa(self, text: str, top_n: int) -> List[str]:
         """
@@ -118,8 +291,12 @@ class StatisticalExtractor:
             List of concepts or empty list on failure
         """
         try:
-            concepts = summa_keywords.keywords(text, words=top_n, split=True)
-            return concepts if concepts else []
+            # Request more than needed to account for filtering
+            concepts = summa_keywords.keywords(text, words=top_n * 2, split=True)
+            if not concepts:
+                return []
+            # Filter noisy concepts
+            return [c for c in concepts if _is_valid_concept(c)][:top_n]
         except Exception:
             return []
     
@@ -144,8 +321,8 @@ class StatisticalExtractor:
                 # Split multi-word keywords into single words
                 words = keyword.lower().split()
                 for word in words:
-                    # Filter: min 3 chars, alphabetic (exclude numbers/punctuation)
-                    if len(word) >= 3 and word.isalpha():
+                    # Use semantic filter instead of basic length/alpha check
+                    if _is_valid_concept(word):
                         concept_set.add(word)
                         if len(concept_set) >= top_n:
                             break

@@ -12,6 +12,25 @@ Reference Documents:
 
 from typing import Protocol, List, Dict, Tuple
 
+# Export all strategies for convenience
+from .predefined_strategy import PreDefinedStrategy
+from .toc_parser_strategy import TOCParserStrategy
+from .regex_pattern_strategy import RegexPatternStrategy
+from .yake_validation_strategy import YAKEValidationStrategy
+from .toc_filter_strategy import TOCFilterStrategy
+from .duplicate_filter_strategy import DuplicateFilterStrategy
+
+
+__all__ = [
+    'ChapterDetectionStrategy',
+    'PreDefinedStrategy',
+    'TOCParserStrategy',
+    'RegexPatternStrategy',
+    'YAKEValidationStrategy',
+    'TOCFilterStrategy',
+    'DuplicateFilterStrategy',
+]
+
 
 class ChapterDetectionStrategy(Protocol):
     """

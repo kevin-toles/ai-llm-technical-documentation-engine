@@ -130,8 +130,8 @@ class TestPDFToJSONIntegration:
         with open(output_path) as f:
             data = json.load(f)
         
-        # ChapterSegmenter should return at least 1 synthetic chapter for empty books
-        assert len(data['chapters']) >= 1
+        # Empty PDF (0 pages) should have 0 chapters - nothing to segment
+        assert len(data['chapters']) == 0
         assert len(data['pages']) == 0
     
     def test_single_page_pdf(self, tmp_path):

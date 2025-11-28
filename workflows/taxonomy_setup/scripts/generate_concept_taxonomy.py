@@ -110,6 +110,46 @@ COMPREHENSIVE_CONCEPTS = [
 ]
 
 
+# Filter patterns for noisy YAKE concepts
+NOISE_PATTERNS = [
+    r'^_',           # Leading underscore (private vars)
+    r'^[a-z]$',      # Single letters
+    r'^\d+$',        # Pure numbers
+    r'oceanofpdf',   # Source artifacts
+    r'ebscohost',
+    r'packt',
+    r'manning',
+    r'oreilly',
+    r'^ch$',         # Abbreviations
+    r'^def$',
+    r'^cls$',
+    r'^self$',
+    r'_name$',       # Variable suffixes
+    r'_id$',
+    r'^test_',       # Test prefixes
+]
+
+def is_valid_concept(concept: str) -> bool:
+    """
+    Filter out noisy concepts from YAKE extraction.
+    
+    Valid concepts should be:
+    - At least 2 characters
+    - Not match noise patterns
+    - Not be common stopwords or artifacts
+    """
+    if len(concept) < 2:
+        return False
+    
+    concept_lower = concept.lower().strip()
+    
+    for pattern in NOISE_PATTERNS:
+        if re.search(pattern, concept_lower):
+            return False
+    
+    return True
+
+
 def extract_concepts_from_text(text: str, concept_list: List[str]) -> Set[str]:
     """
     Extract concepts found in text using pattern matching.
@@ -153,8 +193,8 @@ def extract_concepts_from_book(book_path: Path) -> Tuple[Set[str], Dict[str, int
         # Metadata file: array of chapter objects with 'concepts' field
         for chapter in book_data:
             if 'concepts' in chapter and isinstance(chapter['concepts'], list):
-                # Metadata already has extracted concepts
-                concepts_list = chapter['concepts']
+                # Filter YAKE concepts to remove noise
+                concepts_list = [c for c in chapter['concepts'] if is_valid_concept(c)]
                 all_concepts.update(concepts_list)
                 concept_freq.update(concepts_list)
     elif isinstance(book_data, dict) and 'pages' in book_data:
@@ -226,6 +266,20 @@ def categorize_concepts_by_tier(
     return categorized
 
 
+def normalize_book_name(filepath: str) -> str:
+    """
+    Normalize book filepath to just the book name.
+    
+    Examples:
+        '/path/to/Architecture Patterns_metadata.json' -> 'Architecture Patterns.json'
+        'Learning Python Ed6.json' -> 'Learning Python Ed6.json'
+    """
+    name = Path(filepath).name
+    # Remove _metadata suffix if present
+    name = name.replace('_metadata.json', '.json')
+    return name
+
+
 def generate_taxonomy(tier_books: Dict[str, List[str]], output_name: str) -> None:
     """
     Generate taxonomy from books organized into tiers.
@@ -240,6 +294,8 @@ def generate_taxonomy(tier_books: Dict[str, List[str]], output_name: str) -> Non
     # Track concepts and frequencies per tier
     tier_concepts = {}
     tier_book_counts = {}
+    # Track normalized book names per tier for output
+    tier_book_names: Dict[str, List[str]] = {}
     
     # Process each tier
     for tier_name, book_files in tier_books.items():
@@ -248,17 +304,24 @@ def generate_taxonomy(tier_books: Dict[str, List[str]], output_name: str) -> Non
             
         print(f"\n📚 Processing {tier_name} tier ({len(book_files)} books)...")
         tier_book_counts[tier_name] = len(book_files)
+        tier_book_names[tier_name] = []
         
         tier_freq: Counter[str] = Counter()
         tier_concepts_set: Set[str] = set()
         
         for book_file in book_files:
-            book_path = JSON_DIR / book_file
+            # Try to find the file - could be full path or just filename
+            book_path = Path(book_file)
+            if not book_path.exists():
+                book_path = JSON_DIR / Path(book_file).name
             if not book_path.exists():
                 print(f"  ⚠️  Book not found: {book_file}")
                 continue
             
-            print(f"  📖 Analyzing: {book_file}")
+            # Track normalized book name for output
+            tier_book_names[tier_name].append(normalize_book_name(book_file))
+            
+            print(f"  📖 Analyzing: {book_path.name}")
             concepts, freq = extract_concepts_from_book(book_path)
             tier_concepts_set.update(concepts)
             tier_freq.update(freq)
@@ -296,13 +359,16 @@ def generate_taxonomy(tier_books: Dict[str, List[str]], output_name: str) -> Non
     # Iterate through categorized concepts with explicit typing
     for tier_name, concepts_raw in categorized.items():
         tier_concepts_list: list[str] = concepts_raw  # Explicit type annotation to help mypy
-        if tier_concepts_list:  # Only include tiers with concepts
+        books_in_tier = tier_book_names.get(tier_name, [])
+        
+        if tier_concepts_list or books_in_tier:  # Include tier if it has concepts or books
             info = tier_info[tier_name]
             taxonomy["tiers"][tier_name] = {
                 "priority": info["priority"],
+                "books": books_in_tier,  # Include books for cross-referencing
                 "concepts": sorted(set(tier_concepts_list))  # Deduplicate and sort
             }
-            print(f"  {info['name']}: {len(tier_concepts_list)} concepts")
+            print(f"  {info['name']}: {len(books_in_tier)} books, {len(tier_concepts_list)} concepts")
     
     # Save taxonomy
     output_path = OUTPUT_DIR / output_name

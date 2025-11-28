@@ -47,6 +47,7 @@ from workflows.metadata_extraction.scripts.adapters.statistical_extractor import
 # Import chapter detection strategies for Strategy Pattern (TDD Iteration 3)
 # Reduces auto_detect_chapters() complexity from CC 18 to <10
 from workflows.metadata_extraction.scripts.strategies.predefined_strategy import PreDefinedStrategy  # noqa: E402
+from workflows.metadata_extraction.scripts.strategies.toc_parser_strategy import TOCParserStrategy  # noqa: E402
 from workflows.metadata_extraction.scripts.strategies.regex_pattern_strategy import RegexPatternStrategy  # noqa: E402
 from workflows.metadata_extraction.scripts.strategies.yake_validation_strategy import YAKEValidationStrategy  # noqa: E402
 from workflows.metadata_extraction.scripts.strategies.toc_filter_strategy import TOCFilterStrategy  # noqa: E402
@@ -142,10 +143,11 @@ class UniversalMetadataGenerator:
         
         Strategy Pipeline:
         1. PreDefinedStrategy - Extract from JSON metadata (highest priority)
-        2. RegexPatternStrategy - Find "Chapter N:" markers (fallback)
-        3. YAKEValidationStrategy - Validate content quality via keywords
-        4. TOCFilterStrategy - Remove table-of-contents pages
-        5. DuplicateFilterStrategy - Remove duplicate chapter numbers
+        2. TOCParserStrategy - Parse Table of Contents (handles page offset issues)
+        3. RegexPatternStrategy - Find "Chapter N:" markers (fallback)
+        4. YAKEValidationStrategy - Validate content quality via keywords
+        5. TOCFilterStrategy - Remove table-of-contents pages
+        6. DuplicateFilterStrategy - Remove duplicate chapter numbers
         
         Returns:
             List of (chapter_num, title, start_page, end_page) tuples
@@ -162,7 +164,18 @@ class UniversalMetadataGenerator:
             print(f"   Using {len(chapters)} pre-defined chapters from JSON")
             return chapters
         
-        # Priority 2: Scan pages for chapter markers using regex patterns
+        # Priority 2: Parse Table of Contents (handles books with page offset issues)
+        # This strategy is especially effective for books like "Python Microservices Development"
+        # where TOC page numbers don't match physical page numbers
+        print("   Attempting TOC parsing strategy...")
+        toc_parser = TOCParserStrategy(yake_extractor=self.extractor, min_keywords=3)
+        chapters = toc_parser.detect(self.pages)
+        
+        if chapters:
+            print(f"   Found {len(chapters)} chapters via TOC parsing")
+            return chapters
+        
+        # Priority 3: Scan pages for chapter markers using regex patterns
         print("   Scanning pages for chapter markers...")
         regex = RegexPatternStrategy()
         candidates = regex.detect(self.pages)
