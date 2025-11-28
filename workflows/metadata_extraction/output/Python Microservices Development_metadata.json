@@ -29,10 +29,10 @@
       "applicative",
       "application",
       "applications",
-      "like",
       "code",
-      "coding",
-      "coded"
+      "coded",
+      "service",
+      "services"
     ]
   },
   {
@@ -60,15 +60,15 @@
     ],
     "concepts": [
       "flask",
-      "flask_something",
-      "app",
-      "apps",
       "python",
-      "to_python",
-      "requests",
       "request",
       "requested",
-      "before_request"
+      "likely",
+      "code",
+      "uses",
+      "useful",
+      "responses",
+      "response"
     ]
   },
   {
@@ -79,10 +79,7 @@
     "summary": "Coding, Testing, and\ntests.\nCoding, Testing, and Documenting - the Virtuous Cycle\nWriting tests is time-consuming at first, but in the long run, it's often the best approach to\nresults, or create a test suite that's horrible to maintain and takes too long to run.\nWriting tests is also a good way to get some perspective on your code.\nHow to run tests or add\nCoding, Testing, and Documenting - the Virtuous Cycle\nextracts in the documentation could be part of the test suite to make sure they work.\nIn any case, no matter how much energy you spend on tests and documentation, there's one\ngolden rule: testing, documenting, and coding your projects should be done continuously.\nwords, changes in the code should ideally be reflected in the tests and documentation as\ntesting and documentation tools can be used in the context of building microservices with\ndifferent kinds of tests depending on the project's nature.\nUnit tests: Make sure a class or a function works as expected in isolation\nFunctional tests: Verify that the microservice does what it says from the\nIntegration tests: Verify how a microservice integrates with all its network\nLoad tests: Measure the microservice performances\nCoding, Testing, and Documenting - the Virtuous Cycle\nUnit tests\nUnit tests are the simplest tests to add to a project, and the standard library comes with\nthe views, some functions and classes, which can be unit-tested in isolation.\nTesting in isolation in Python usually means that you instantiate a class or call a function\nresource (socket, files, and so on), and you can't run them from within your tests\nSpecific behaviors to reproduce: When you want to write a test to try out your\nAPI, using the requests (h t t p ://d o c s .\np y t h o n - r e q u e s t s .\nCoding, Testing, and Documenting - the Virtuous Cycle\nThis class has a bug_link() method, which we can test in isolation, and one\ncomplicated to run our Bugzilla server when the test is executed, so we can mock the calls\nThis technique is used in the following example with request_mock (h t t p ://r e q u e s t s - m o\nr e a d t h e d o c s .\ndef test_bug_id(self):\ndef test_get_new_bugs(self, mocker):\nCoding, Testing, and Documenting - the Virtuous Cycle\ndef test_network_error(self, mocked):\nAPI, and the server your project uses is updated, your tests will happily\nThis test ensures\nThis kind of unit test is usually enough to cover most of your classes' and functions'\nThis test class will probably cover more cases as the project grows and new situations occur.\nCoding, Testing, and Documenting - the Virtuous Cycle\nmicroservice project, unit tests are not a priority, and aiming at 100% test coverage (where\nevery line of your code is called somewhere in your tests) in your unit tests will add a lot of \nFunctional tests\nFunctional tests for a microservice project are all the tests that interact with the published\n(you send gibberish to your app and see what happens) to penetration tests (you try to break\nAs developers, the two most important kinds of functional tests we should focus on are\nTests that verify that the application does what it was built for\nThe way those scenarios are organized in the tests class is up to the developers, but the\ngeneral pattern is to create an instance of the application in the test class and then interact\ntests, but the same request-response cycle happens, so it's realistic enough.\nfrom the app object via its test_client() method.\nThe following is an example of a test against the first app we showed in this chapter, which\nfrom flask_basic import app as tested_app\ndef test_help(self):\nCoding, Testing, and Documenting - the Virtuous Cycle\napp = tested_app.test_client()\nThere's a testing flag in the Flask class, which you can use to propagate exceptions to the\ntest, but some prefer not to use it by default to get back from the app what a real client\nfrom flask_error import app as tested_app\nself.app = tested_app.test_client()\ndef test_raise(self):\ndef test_proper_404(self):\nCoding, Testing, and Documenting - the Virtuous Cycle\nIntegration tests\nUnit tests and functional tests focus on testing your service code without calling other\nIntegration tests are functional tests without any mocking, and should be able to run on a\nRabbitMQ, they will be called by your service as normal when the integration tests are run.\nThe caveat is that running tests against an actual deployment makes it harder to set up tests\nservice, but if it's easy to do, you can also have a dedicated testing deployment, which will\nCoding, Testing, and Documenting - the Virtuous Cycle\nYou can use whatever tool you want to write your integration test.\nBut it's nicer if integration tests can be written in Python, and can be part of your project's\ntests collection.\nway to test it.\ntests that can either be run on a local Flask application or against an actual\nLoad tests\nWriting load tests can help you answer the following questions:\nCoding, Testing, and Documenting - the Virtuous Cycle\nFor performing a simple load test that does not require any particular scenario, Boom (h t t p\nIn the following example, Boom performs a 10-second load test against a Flask web server\nBut this small test alone can often catch problems early on, in particular when your code is\nCoding, Testing, and Documenting - the Virtuous Cycle\nc o m /t a r e k z i a d e /m o l o t o v ), which gives you the ability to write Python \nFor instance, the test itself will\nWhen performing a load test, it's better to add some metrics on the server side.\nlevel, you can use a small tool like flask-profiler (h t t p s ://g i t h u b .\nr e a d t h e d o c s .\nCoding, Testing, and Documenting - the Virtuous Cycle\nThe test needs to behave like a real client, and call the system through the\nCoding, Testing, and Documenting - the Virtuous Cycle\nside, you will need to use a tool like Selenium (h t t p ://d o c s .\nFunctional tests are the most important tests to write, and it's easy to do it in\nFlask by instantiating the app in the tests and interacting with it\nIntegration tests are like functional tests, but against a real deployment\nLoad tests are useful to learn about your microservice bottlenecks and plan for\nEnd-to-end tests require using the same UI that the client would normally use\nKnowing when you will need to write integration, load, or end-to-end tests depends on\nhow your project is managed--but both unit and functional tests should be written every\nUnit tests can be written using vanilla Python, thanks to the excellent unittest package\nincluded in the standard library--and we will see later how the pytest (h t t p ://d o c s .\nFor functional tests, we'll look in the next section at WebTest.\nCoding, Testing, and Documenting - the Virtuous Cycle\nr e a d t h e d o c s .\no r g ) project, which provides a Request and Response class similar (but\nTo use it with Flask, you can install the flask-webtest package (h t t p s ://f l a s k - w e b t e s t\n. r e a d t h e d o c s .\nfrom flask_basic import app as tested_app\ndef test_help(self):\napp = TestApp(tested_app)\nCoding, Testing, and Documenting - the Virtuous Cycle\ndef test_help(self):\nWhen this last test is executed with HTTP_SERVER=http://myservice/, it performs all its\nhaving to write two distinct tests.\ndeployed service works as expected directly from your test suite, just by flipping an option.\nAs your project grows, you will have more and more tests\nTo automatically discover and run all the tests in a project, the unittest package has\nintroduced a Test Discovery feature in Python 3.2, which finds and runs tests given a few\nThis feature has been around for a while in projects like Nose (h t t p s ://n o s e .\nCoding, Testing, and Documenting - the Virtuous Cycle\nWhich runner to use is a matter of taste, and as long as you stick to writing your tests in\n$ pytest test_*\ntest_app.py .\ntest_app_webtest.py .\ntest_bugzilla.py ...\ntest_error.py ..\nThe pytest package comes with a lot of extensions, which are listed at h t t p ://p l u g i n c o m p\nh e r o k u a p p .\n(h t t p s ://c o v e r a g e .\nr e a d t h e d o c s .\ni o ) to display the test coverage of your project, and the\nc o m /p y c q a /f l a k e 8) linter to make sure that\n$ pytest --cov=flask_basic --flake8 test_*\ntest_app.py F.\ntest_app_webtest.py F.\ntest_bugzilla.py F...\nCoding, Testing, and Documenting - the Virtuous Cycle\ntest_app.py:18:1: E305 expected 2 blank lines after class or function\ntest_app.py:21:1: W391 blank line at end of file\ntest_app_webtest.py:29:1: W391 blank line at end of file\ntest_bugzilla.py:26:80: E501 line too long (80 > 79 characters)\ntest_bugzilla.py:28:80: E501 line too long (82 > 79 characters)\ntest_bugzilla.py:40:1: W391 blank line at end of file\nAnother useful tool that can be used in conjunction with pytest is Tox (h t t p ://t o x .\nIf your projects need to run on several version of Python, or if you only want to make sure\ncreation of separate environments to run your tests.\nThe tox.ini file contains the command lines to run the tests along with the Python\ncommands =  pytest --cov=flask_basic --flake8 test_*\nCoding, Testing, and Documenting - the Virtuous Cycle\neach Python version, deploy your package and its dependencies in it, and run the tests in it\nthe tests quickly.\nFor instance, tox -e py35 will just run pytest under Python 3.5.\nHow to run the tests\ns p h i n x - d o c .\nCoding, Testing, and Documenting - the Virtuous Cycle\nThe content of the documentation must be written in reStructuredText (reST) (h t t p ://d o c u\ns p h i n x - d o c .\nMarkdown (h t t p s ://d a r i n g f i r e b a l l .\nn e t /p r o j e c t s /m a r k d o w n /) is\nCoding, Testing, and Documenting - the Virtuous Cycle\ns p h i n x - d o c .\nThis is how Python documents its standard library at h t t p s ://d o c s .\nCoding, Testing, and Documenting - the Virtuous Cycle\ncan be included in the test suite to make sure it works.\nThe following is a full example of a project documentation using Sphinx:\nCoding, Testing, and Documenting - the Virtuous Cycle\nCoding, Testing, and Documenting - the Virtuous Cycle\nrunning tests on various Python interpreters, verifying coverage and PEP 8 conformance,\nc o m ), GitLab (h t t p ://g i t l a b .\nCoding, Testing, and Documenting - the Virtuous Cycle\nMozilla uses GitHub for its Rust project (h t t p s ://g i t h u b .\no r g /), which runs for free for open source projects.\nCoding, Testing, and Documenting - the Virtuous Cycle\nTravis also has support for setting up specific services like databases (refer to h t t p s ://d o c s\nc o m /u s e r /d a t a b a s e - s e t u p /), which can get deployed for your projects via the\nThe Travis documentation (h t t p s ://d o c s .\nrepository is ReadTheDocs (RTD) (h t t p s ://d o c s .\nr e a d t h e d o c s .\nCoding, Testing, and Documenting - the Virtuous Cycle\nor Bitbucket is Coveralls (h t t p s ://c o v e r a l l s .\nThis service displays your test code \ni o directly from Travis-CI by instructing Tox to ping to h t t p ://c o v e r a l l s .\ni o after the tests are run.\nCoding, Testing, and Documenting - the Virtuous Cycle\nCoding, Testing, and Documenting - the Virtuous Cycle\nCoding, Testing, and Documenting - the Virtuous Cycle\nFunctional tests are the tests you will write more often, and WebTest\nTo run the tests, pytest combined with Tox will make your\nNow that we've covered how a Flask project can be continuously developed, tested, and",
     "keywords": [
       "Virtuous Cycle",
-      "tests",
-      "test",
       "Python",
-      "Testing",
       "functional tests",
       "Documenting",
       "Virtuous",
@@ -92,19 +89,22 @@
       "Flask",
       "Tox",
       "code",
-      "documentation"
+      "documentation",
+      "def test",
+      "run",
+      "app"
     ],
     "concepts": [
-      "testing",
-      "test",
-      "tests",
-      "test_",
       "tested",
       "coding",
       "code",
       "codes",
-      "h",
-      "like"
+      "project",
+      "projects",
+      "python",
+      "important",
+      "imports",
+      "imported"
     ]
   },
   {
@@ -136,11 +136,11 @@
       "runs",
       "running",
       "run",
-      "app",
-      "apps",
-      "_app",
       "designing",
-      "design"
+      "design",
+      "designed",
+      "forms",
+      "form"
     ]
   },
   {
@@ -151,7 +151,6 @@
     "summary": "When a user looks at the main web view, the application needs to fetch the list of runs and\nThe network calls that are triggered by that request\nThere are also cases where a mix of synchronous and asynchronous calls are useful.\nIn any case, the bottom line is that we need to interact with other services through the\nHow a service can make asynchronous calls and communicate with other services\ncan be done via RESTful HTTP APIs using JSON payloads.\nIf your web service implements an HTTP API that accepts JSON, any developer using any\nSending and receiving JSON payloads is the simplest way for a microservice to interact\npass using HTTP requests.\nTo do this, you just need to use an HTTP client.\nhttp.client module, but the Requests library (h t t p s ://d o c s .\nHTTP requests in the requests library are built around the concept of session, and the best\nway to use it is to create a Session object that is reused every time you interact with any\ndefault headers you want to set for all requests your application will make.\nfrom requests import Session\ns.headers['Content-Type'] = 'application/json'\ns.get('http://localhost:5000/api').json()\ns.get('http://localhost:5000/api2').json()\nLet's see how we can generalize this pattern in a Flask app that needs to interact with other\nUsing Session in a Flask app\nfrom requests import Session\ndef setup_connector(app, name='default', **options):\nheaders['Content-Type'] = 'application/json'\napp.extensions['connectors'][name] = session\nIn this example, the setup_connector() function will create a Session object and store it\nThe created Session will set the Content-Type header to\napplication/json by default, so it's suitable for sending data to JSON-based\nIn the following example, a Flask app running on port 5001\nsub_result = conn.get('http://localhost:5000/api').json()\nwhen making a request, it will raise a ReadTimeout in case the remote server fails to\nconn.get('http://localhost:5000/api',timeout=2.0).json()\nSince it's good practice to always use the timeout option, a better way would be to set a\nTo do this, the requests library has a way to set up custom transport adapters, where you\nfrom requests.adapters import HTTPAdapter\ndef send(self, request, **kw):\nreturn super().send(request, **kw)\ndef setup_connector(app, name='default', **options):\nheaders['Content-Type'] = 'application/json'\nsession.mount('http://', adapter)\napp.extensions['connectors'][name] = session\nThe session.mount(host, adapter) call will tell requests to use the\nHTTPTimeoutAdapter every time a request for any HTTP service is made.\nsession.mount('http://myspecial.service', adapter2)\nThanks to this pattern, a single request Session object can be instantiated into your\napplication to interact with many other HTTP services.\nRequests use urllib3 under the hood, which will create one pool of connectors per host\nIn other words, if your service calls several other services, you don't need to worry about\nrecycling connections made to those services; requests should handle it for you.\ndefault behavior, then the requests library's connection pooling doesn't help you much.\nconnections are made to other services.\neach thread gets its version of flask.g (the global), flask.request or flask.response,\nIf you don't share any states outside flask.g and just calling the Request session, it\neach process will execute a Request session that has a single connection to the external\nservice, and that will serialize the calls.\nOne way to speed up your application for calls to other services, is to make sure it uses\nand HEADs. The simplest way to implement it is to return along with a result an ETag header in the\nWhen making a new request, the client can look up the dictionary and pass along a stored\nThere's a project called CacheControl (h t t p ://c a c h e c o n t r o l .\nbe used with the Request session, which implements this behavior for you fairly\nOf course, this means the services that you are calling should implement this caching\nIn the following example, the Flask app uses the current server time to create ETag\nheader to compare it to the user's modified field, and returns a 304 response if it matches:\nfrom flask import Flask, jsonify, request, Response, abort\n@app.route('/api/user/<user_id>', methods=['POST'])\nuser = request.json\n@app.route('/api/user/<user_id>')\nif user['modified'] in request.if_none_match:\nThe change_user() view sets a new modified value when the client POST a user.\nfollowing client session, we're changing the user and making sure we get a 304 response\n$ curl -H \"Content-Type: application/json\" -X POST -d\n'{\"name\":\"Tarek\",\"age\":40}' http://127.0.0.1:5000/api/user/1\nhttp://127.0.0.1:5000/api/user/1\nThere's also the problem of race conditions if two requests change the same entry within the\nBut sending HTTP requests and responses with JSON payloads can add some bandwidth\nSerializing and deserializing data from Python objects to JSON\nproduced by the Flask app on port 5000, with an application/json content type:\ngzip_types application/json;\nFrom the client-side, making an HTTP request to the nginx server at localhost:8080\n$ curl http://localhost:8080/api -H \"Accept-Encoding: gzip\"\nIn Python, request responses will automatically decompress responses that are gzip\n>>> import requests\n>>> requests.get('http://localhost:8080/api', headers={'Accept-Encoding':\nTo compress the data you're sending to the server, you can use the gzip module and\n>>> import gzip, json, requests\n>>> requests.post('http://localhost:8080/api',\nTo summarize, setting up GZIP compression for all your service responses is a no-brainer\nHandling GZIP compression in HTTP requests is a little trickier because if you don't\nuse Apache, you need to implement decompression of incoming data in Python code or\nIf you want to further reduce the size on HTTP request/response payloads, another option\nif your JSON contains a lot of strings--which is often the case in microservices--GZIP will do\n>>> len(json.dumps(python_data))\n>>> len(gzip.compress(bytes(json.dumps(data), 'utf8')))\nserializable in JSON and MessagePack, so you need to make sure you convert them.\nIn any case, in a world of microservices where JSON is the most accepted standard, sticking\nRequests can be used as the HTTP client to call other services.\ncalling other services, since Flask is a synchronous framework, but it's dangerous.\nImplementing HTTP cache headers is a great way to speed up repeated requests\nGZIP compression is an efficient way to lessen the size of requests and responses\ngoes beyond the request-response pattern.\nAsynchronous calls can be as simple as a separate thread or process within a microservice\napp, that's getting some work to be done and perform it without interfering with the HTTP\ngets some work from a message broker like Redis or RabbitMQ.\nworker blocks until a new message is added to the Redis queue.\nBut there are other ways to exchange messages between services that are not necessarily a\nThe pattern used by Celery workers is a push-pull tasks queue.\nmessages into a specific queue, and some workers pick them up from the other end and \nworkers go offline, we don't loose the messages that are in the queue.\nworkers blindly picking every message that is added to one or several queues, they subscribe\nmessages they pick from the queue so that they match the topic.\nCelery is an excellent tool for building tasks queues, however, for more complex messaging,\nTo implement complex messaging pattern, the good news is that we can use a Rabbit MQ\nmessage broker who still works with Celery and interacts with another library.\nA binding defines how messages are routed from exchanges to queues\nFor our topic queue, we need to set one exchange, so RabbitMQ accepts new messages, and\nall the queues we want for workers to pick messages.\nmessages to the different queues depending on the topics, using a binding.\nLet's say we have two workers, one that wants to receive messages about races and another\nIn this setup, every message is sent to RabbitMQ, wherein, if the topic starts with race., it\nTo interact with RabbitMQ in the code, we can use Pika (h t t p s ://p i k a .\nPython RPC client that implements all the RPC endpoints a Rabbit service publishes.\nsend and receive messages, and check what's in a queue.\n# sending a message about race 34\nmessage('race.34', 'We have some results!')\nmessage('training.12', \"It's time to do your long run\")\nThese RPC calls will end up adding one message respectively in the race and training\ndef on_message(channel, method_frame, header_frame, body):\nchannel.basic_consume(on_message, queue='race')\nNotice that Pika is sends back an ACK to RabbitMQ about the message, so it can be safely\nYour Flask application can create a synchronous connection to RabbitMQ using\npika.BlockingConnection and send messages through it.\nc o m /b n i n j a /p i k a - p o o l ) implement simple connection pools so you can\napplication, and trigger a function when a message is received.\nasynchronous framework, but for a Flask application, you will need to execute the code that\nwould be blocked every time a request is received in Flask.\nstandalone Python application that consumes messages on behalf of your Flask\nmicroservice and performs synchronous HTTP calls.\nimport requests\ndef on_message(channel, method_frame, header_frame, body):\nres = requests.post(FLASK_ENDPOINT, json=message,\nchannel.basic_consume(on_message, queue='race')\nThis script will perform HTTP calls on Flask with the messages delivered in the queue.\nmessages to HTTP endpoints, but isolating this bridge into our little script\nfrom flask import Flask, jsonify, request\nmessage = request.json['message']\nThe previous pattern has workers that handle specific topics of messages, and the messages\nmessage.\nWith a pubsub in place, you can broadcast messages to all your microservices if you need\nAMQP also implements a synchronous request/response pattern, which means that we\ncould use RabbitMQ instead of the usual HTTP JSON calls to have our microservice directly\nAsynchronous calls should be used every time a microservice can execute some\nmicroservices interact with each other via messages.\nchallenge when writing functional tests for a service that calls other services is to isolate all\nIn this section, we'll see how we can mock synchronous calls made with Requests, and\nasynchronous calls for Celery workers and other asynchronous processes.\nIf you are using Requests to perform all the calls--or you are using a library that is based on\nThe requests-mock project (h t t p s ://r e q u e s t s - m o c k .\nadapter that will let you mock network calls in your tests.\nEarlier in this chapter, we saw an example of a Flask app that was an HTTP endpoint to\nThat application used a Request session that was created by a setup_connector()\nIn the following test, we're mounting the requests_mock adapter into that session by\ncalling session.mount() with a fresh requests_mock.Adapter() instance:\nfrom flask_application import app, get_connector\nimport requests_mock\n# mocking the request calls\nsession = get_connector(app)\nself.adapter = requests_mock.Adapter()\nsession.mount('http://', self.adapter)\nmocked_value = json.dumps({'some': 'data'})\nself.assertEqual(res.json['result']['some'], 'data')\nIn the test_api() test, it will let us try out the application view and make sure it uses the\nprovided JSON data when it calls the external service.\nThat said, mocking responses from other services is still a fair amount of work and quite\ndoing integration tests as well, where the service is tested in a deployment where it calls\nIf your application sends or receives calls asynchronously, setting up some testing is a little\nAsynchronous calls mean that the application is sending something somewhere and don't\nIf you are building tests for Celery workers, the simplest way to run your tests is to use a\nUsing a real broker means that you can run your Celery worker in your test, just to validate\nconfigure pytest to use it, you need to implement the celery_config and\nFrom there, your tests can use the echo task, and have the worker get called for real:\nfrom celery.execute import send_task\nThe reason is that when a microservice wants to run a task from a worker that is its\nmicroservice, we don't want to have to import that worker code just to get the task function.\nIn the following example, the echo task is running in a standalone microservice and we can\ntrigger it via a send_task() call just by knowing the task name--no need to import the\n>>> f = app.send_task('echo', ['meh'])\nBack to your testing, if your tests are mocking some Celery workers, make sure the remote\nthe application you are testing uses send_task() throughout its code.\nThat way, your Celery fixtures will magically mock the workers for your app.\nLastly, the application will probably not wait for the Celery worker to return the result\nsynchronously--so you will need to inspect what the test worker has done after the API call.\nIf you do some messaging with Pika and RabbitMQ, the Pika library directly uses the socket\nLike for Celery, you could just run a local RabbitMQ server for your tests--Travis-CI also\nSending messages, in that case, is done as usual, and you can create a script that picks them\nWhen you need to test a process where an event is received from RabbitMQ, if that happens\nWhat's important is to make sure you can run your tests without depending on other\nBut dependencies on messaging servers such as Redis or RabbitMQ are not a\nsynchronously, by using a Requests session, and asynchronously, by using Celery workers\nWe've also looked at ways to test a service in isolation by mocking other services, but\nwithout mocking the message brokers themselves.",
     "keywords": [
       "Services",
-      "HTTP",
       "service",
       "JSON",
       "flask import Flask",
@@ -164,19 +163,20 @@
       "calls",
       "data",
       "HTTP requests",
-      "HTTP JSON calls"
+      "HTTP JSON calls",
+      "request"
     ],
     "concepts": [
       "messaging",
       "message",
       "messages",
-      "on_message",
       "services",
       "service",
-      "json",
-      "http",
-      "app",
-      "request"
+      "request",
+      "requests",
+      "important",
+      "interacting",
+      "interactions"
     ]
   },
   {
@@ -193,26 +193,26 @@
       "service",
       "UDP",
       "metrics",
-      "import",
       "flask import Flask",
       "Monitoring",
       "Flask",
       "graylog graylog",
       "log",
       "handler",
-      "Graylog service"
+      "Graylog service",
+      "server"
     ],
     "concepts": [
       "logs",
       "logging",
       "log",
       "logged",
-      "graylog",
-      "h",
-      "app",
       "services",
       "service",
-      "important"
+      "important",
+      "time",
+      "times",
+      "timed"
     ]
   },
   {
@@ -241,14 +241,14 @@
     "concepts": [
       "token",
       "tokens",
-      "get_token",
-      "_token",
       "securing",
       "secure",
       "security",
       "secures",
       "securely",
-      "services"
+      "services",
+      "service",
+      "request"
     ]
   },
   {
@@ -280,11 +280,11 @@
       "runs",
       "run",
       "running",
-      "_runs",
-      "app",
-      "apps",
       "dashboard",
-      "js"
+      "react",
+      "calling",
+      "called",
+      "calls"
     ]
   },
   {
@@ -315,12 +315,12 @@
       "packages",
       "packaged",
       "package",
-      "find_packages",
       "files",
       "file",
       "versions",
       "version",
-      "versioning"
+      "python",
+      "projects"
     ]
   },
   {
@@ -355,8 +355,8 @@
       "containers",
       "contains",
       "python",
-      "like",
-      "nginx"
+      "services",
+      "service"
     ]
   },
   {
@@ -390,9 +390,9 @@
       "deployed",
       "deploy",
       "deployment",
-      "aws",
       "instance",
-      "instances"
+      "instances",
+      "ecs"
     ]
   },
   {
@@ -413,22 +413,22 @@
       "yield",
       "project",
       "asyncio",
-      "def",
       "coroutines",
       "coroutine",
-      "request"
+      "request",
+      "call"
     ],
     "concepts": [
       "urls",
       "url",
-      "url_for",
       "python",
       "pythonic",
       "services",
       "service",
       "projects",
-      "microservice project",
-      "request"
+      "request",
+      "requests",
+      "asynchronous"
     ]
   }
 ]

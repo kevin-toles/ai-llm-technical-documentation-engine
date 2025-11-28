@@ -49,26 +49,26 @@
       "Model",
       "quantity",
       "allocate",
-      "def",
       "SKU",
       "def test",
-      "test",
       "order line",
       "stock",
       "Domain Model pattern",
-      "’re"
+      "’re",
+      "order",
+      "object"
     ],
     "concepts": [
       "batches",
       "batch",
-      "def",
       "allocating",
       "allocation",
       "allocate",
       "allocated",
-      "can_allocate",
       "allocations",
-      "_allocations"
+      "allocates",
+      "model",
+      "modeling"
     ]
   },
   {
@@ -124,23 +124,23 @@
       "domain model classes",
       "order",
       "batch",
-      "tests",
       "’ll",
       "SQLAlchemy",
       "Pattern",
-      "’re"
+      "’re",
+      "domain model objects"
     ],
     "concepts": [
-      "model",
       "modeling",
       "models",
       "sqlalchemy",
-      "class",
       "classes",
       "orm",
-      "orms",
-      "tests",
-      "test"
+      "batches",
+      "batch",
+      "session",
+      "orders",
+      "order"
     ]
   },
   {
@@ -154,29 +154,29 @@
       "source",
       "path",
       "hashes",
-      "test",
       "Repository",
       "file",
-      "tests",
-      "def",
       "def test",
       "code",
       "Repository pattern",
       "paths",
       "dst",
-      "ORM"
+      "ORM",
+      "src",
+      "batch",
+      "abstraction"
     ],
     "concepts": [
-      "test",
-      "tests",
       "tested",
-      "testing",
       "paths",
       "path",
-      "def",
       "batch",
       "batches",
-      "abstractions"
+      "abstractions",
+      "abstraction",
+      "abstract",
+      "abstracting",
+      "dest"
     ]
   },
   {
@@ -187,32 +187,32 @@
     "summary": "We avoid using mocks in this book and in our production code too.\nobjects that are easy to replace with a test double.\nYou can see an example in Chapter 8, where we mock.patch() out an email-\nunit test the code, but it does nothing to improve the design.\nUsing mock.patch won’t let your code work with a --dry-\nTests that use mocks tend to be more coupled to the\nbetween code and test tends to make tests more brittle, in our\nOveruse of mocks leads to complicated test suites that fail to\nMOCKS VERSUS FAKES; CLASSIC-STYLE VERSUS LONDON-\nFakes are working implementations of the thing they’re replacing, but they’re designed\nfor use only in tests.\nBut you can use them to make assertions about the end state of a\nWe’re slightly conflating mocks with spies and fakes with stubs here, and you can read the long,\nThere, we promise we’re done with the test double terminology nitpicks now.\nWe like to build our tests around\nstate both in setup and in assertions, and we like to work at the highest level of abstraction\nWe view TDD as a design practice first and a testing practice second.\nTests that use too many mocks get overwhelmed with setup code that\nSteve Freeman has a great example of overmocked tests in his talk\nIn this chapter, we’ve spent a lot of time replacing end-to-end tests with unit tests.\nThat doesn’t mean we think you should never use E2E tests!\nedge, and we use dependency injection to provide those services with stateful components, so\nwe can still unit test them.",
     "keywords": [
       "’re",
-      "Tests",
       "mocks",
       "TDD",
-      "test",
       "Holy War",
       "code",
-      "Chapter",
       "n’t",
       "book",
       "FAKES",
       "production code",
       "make",
       "system",
-      "read"
+      "read",
+      "dependency",
+      "VERSUS",
+      "unit"
     ],
     "concepts": [
-      "test",
-      "tests",
-      "testing",
       "mocks",
       "mocking",
-      "mock",
       "code",
-      "example",
       "practice",
-      "design"
+      "design",
+      "designing",
+      "designed",
+      "objects",
+      "object",
+      "talk"
     ]
   },
   {
@@ -225,7 +225,6 @@
       "sku",
       "Service Layer",
       "Service",
-      "test",
       "Flask",
       "Layer",
       "api def test",
@@ -234,21 +233,22 @@
       "random",
       "orderid",
       "batchref",
-      "tests",
-      "def",
-      "url"
+      "url",
+      "allocate",
+      "session",
+      "def test"
     ],
     "concepts": [
-      "testing",
-      "tests",
-      "test",
-      "test_",
       "tested",
       "batches",
       "batch",
-      "def",
-      "sku",
-      "repository"
+      "repository",
+      "repositories",
+      "session",
+      "service",
+      "services",
+      "line",
+      "layer"
     ]
   },
   {
@@ -265,14 +265,14 @@
       "domain service",
       "adapters",
       "domain model",
-      "tests",
-      "test",
-      "figure",
       "EXERCISE",
       "READER",
       "’ll",
       "model",
-      "flask"
+      "flask",
+      "application",
+      "init",
+      "adapter"
     ],
     "concepts": [
       "service",
@@ -280,11 +280,11 @@
       "adapter",
       "adapters",
       "layer",
-      "test",
-      "tests",
       "thing",
       "things",
-      "figure"
+      "dependencies",
+      "dependency",
+      "model"
     ]
   },
   {
@@ -294,9 +294,7 @@
     "end_page": 162,
     "summary": "a nice way of writing tests at a \nwe can test more of our \nuse integration tests \nThe service layer is still tightly coupled to the domain,\nThe service layer is tightly coupled to a session object.\ninvolved in moving those tests up to the service-layer level, and some\nOnce you implement domain modeling and the service layer, you really actually can get to a\nhigh gear versus low gear way of thinking really changed my testing life.\nlayer tests, does to our test pyramid:\ntests/unit/test_allocate.py:4 \ntests/unit/test_batches.py:8 \ntests/unit/test_services.py:3 \ntests/e2e/test_api.py:2\nend tests.\nShould Domain Layer Tests Move to the\nService Layer?\nSince we can test\nour software against the service layer, we don’t really need tests for\ndomain-level tests from Chapter 1 in terms of the service layer:\nRewriting a domain test at the service layer\n(tests/unit/test_services.py)\n# domain-layer test:\ndef test_prefers_current_stock_batches_to_shipments(): \n# service-layer test:\ndef test_prefers_warehouse_batches_to_shipments(): \nwe see teams writing too many tests against their domain model.\ntests.\nWe use tests to check that the API\nTesting\nonly against the service layer, we won’t have any tests that directly\nIs it wrong to write tests against the domain model?” To answer those\nwe’re writing tests, we might find that the code is hard to use or notice\ntests guided us to a design that makes sense and reads in the domain\nWhen our tests read in the domain language, we feel\ncode, though, we will need to replace or delete these tests, because\ncases, we prefer to write tests against services because of the lower\ntests against the service layer.\nproblem, we will drop back down to writing tests against the domain\nFully Decoupling the Service-Layer Tests\nWe still have direct dependencies on the domain in our service-layer\ntests, because we use domain objects to set up our test data and to\nTo have a service layer that’s fully decoupled from the domain, we\nOur service layer currently takes an OrderLine domain object:\nBefore: allocate takes a domain object (service_layer/services.py)\nTests now use primitives in function call (tests/unit/test_services.py)\ndef test_returns_allocation(): \nBut our tests still depend on the domain, because we still manually\ntests.\nour tests.\n(tests/unit/test_services.py)\ndef test_returns_allocation(): \nAt least that would move all of our tests’ dependencies on the domain\nwe could use that and make our service-layer tests fully expressed in\nTest for new add_batch service (tests/unit/test_services.py)\ndef test_add_batch(): \nservices.add_batch(\"b1\", \"CRUNCHY-ARMCHAIR\", 100, None, repo, session) \nservice-layer tests, it may be an indication that your service layer is incomplete.\nA new service for add_batch (service_layer/services.py)\nrepo.add(model.Batch(ref, sku, qty, eta)) \nfrom your tests?\nan add_batch service one day anyway.\nThat now allows us to rewrite all of our service-layer tests purely in\nServices tests now use only services (tests/unit/test_services.py)\ndef test_allocate_returns_allocation(): \nservices.add_batch(\"batch1\", \"COMPLICATED-LAMP\", 100, None, repo, session) \ndef test_allocate_errors_for_invalid_sku():\nservices.add_batch(\"b1\", \"AREALSKU\", 100, None, repo, session) \nOur service-layer tests depend on\nE2E Tests\nIn the same way that adding add_batch helped decouple our service-\nlayer tests from the model, adding an API endpoint to add a batch\nservices.add_batch( \nAPI tests can now add their own batches (tests/e2e/test_api.py)\ndef test_happy_path_returns_201_and_allocated_batch(): \nOnce you have a service layer in place, you really can move the\nWrite the bulk of your tests against the service layer\nMaintain a small core of tests written against your domain model\nthe service layer.\nThis means you need to test only the",
     "keywords": [
-      "tests",
       "service layer",
-      "test",
       "service",
       "layer",
       "batch",
@@ -308,19 +306,21 @@
       "add",
       "session",
       "eta",
-      "sku"
+      "sku",
+      "Service-Layer Tests",
+      "domain model"
     ],
     "concepts": [
-      "tests",
-      "test",
-      "testing",
-      "test_",
-      "domain",
       "service",
       "services",
       "layer",
-      "def",
-      "repo"
+      "batch",
+      "batches",
+      "session",
+      "eta",
+      "api",
+      "models",
+      "model"
     ]
   },
   {
@@ -351,12 +351,12 @@
       "batch",
       "event",
       "events",
-      "uow",
-      "def",
       "session",
       "sessions",
       "allocate",
-      "allocations"
+      "allocations",
+      "allocated",
+      "allocating"
     ]
   },
   {
@@ -368,31 +368,31 @@
     "keywords": [
       "events",
       "product",
-      "def",
       "message bus",
       "sku",
       "model.Product",
       "message",
       "bus",
       "add",
-      "set",
       "commit",
       "Domain events",
       "event",
       "self.",
-      "init"
+      "init",
+      "service layer",
+      "repository"
     ],
     "concepts": [
       "events",
       "event",
       "add",
-      "_add",
       "adds",
       "way",
       "product",
       "products",
-      "class",
-      "handling"
+      "handling",
+      "handle",
+      "bus"
     ]
   },
   {
@@ -409,26 +409,26 @@
       "Message",
       "Handler",
       "Bus",
-      "def",
       "batch",
       "event handlers",
       "sku",
       "handlers",
       "unit",
       "quantity",
-      "API"
+      "API",
+      "batchref"
     ],
     "concepts": [
       "events",
       "event",
-      "def",
       "handler",
       "handlers",
       "batch",
-      "uow",
       "allocated",
       "allocation",
-      "allocate"
+      "allocate",
+      "allocations",
+      "classes"
     ]
   },
   {
@@ -450,21 +450,21 @@
       "Redis",
       "Event Handlers",
       "Model",
-      "test",
-      "def",
-      "commands"
+      "commands",
+      "system",
+      "order"
     ],
     "concepts": [
       "event",
       "events",
-      "def",
       "message",
       "messages",
       "messaging",
-      "uow",
       "commands",
       "command",
-      "handler"
+      "handler",
+      "handlers",
+      "allocate"
     ]
   }
 ]

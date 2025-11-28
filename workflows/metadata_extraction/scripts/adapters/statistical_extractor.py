@@ -422,3 +422,147 @@ class StatisticalExtractor:
         
         # Return summary (Summa returns string)
         return summary if summary else text.split('.')[0] + '.'
+
+    # =========================================================================
+    # Safe Methods - Graceful degradation without exceptions
+    # =========================================================================
+    # 
+    # These methods wrap the original extraction methods with try/except
+    # to return empty results instead of raising exceptions on invalid input.
+    # 
+    # Use Case: Per-chapter processing in generate_metadata_universal.py
+    # where a single bad chapter should not crash the entire book.
+    #
+    # Document References:
+    # - ANTI_PATTERN_ANALYSIS.md: Section 1.3 (Missing Type Guards)
+    # - ARCHITECTURE_GUIDELINES Ch. 8: Graceful degradation pattern
+    # - PYTHON_GUIDELINES Ch. 8: EAFP error handling
+    # =========================================================================
+
+    def safe_extract_keywords(
+        self, 
+        text: str | None, 
+        top_n: int = 20
+    ) -> List[Tuple[str, float]]:
+        """
+        Safely extract keywords - returns empty list on invalid input.
+        
+        This method never raises exceptions. It returns an empty list for:
+        - None input
+        - Empty string input
+        - Whitespace-only input
+        - Any extraction failure
+        
+        Args:
+            text: Input text (can be None, empty, or whitespace)
+            top_n: Number of top keywords to return (default: 20)
+        
+        Returns:
+            List of (keyword, score) tuples, or empty list on failure.
+            
+        Example:
+            >>> extractor = StatisticalExtractor()
+            >>> extractor.safe_extract_keywords("")  # Returns []
+            >>> extractor.safe_extract_keywords(None)  # Returns []
+            >>> extractor.safe_extract_keywords("Valid text")  # Returns keywords
+        """
+        # Guard: None or empty input
+        if text is None or not text.strip():
+            return []
+        
+        # Guard: Invalid top_n
+        if top_n <= 0:
+            return []
+        
+        try:
+            return self.extract_keywords(text, top_n=top_n)
+        except (ValueError, Exception):
+            # Any failure returns empty list
+            return []
+
+    def safe_extract_concepts(
+        self, 
+        text: str | None, 
+        top_n: int = 10
+    ) -> List[str]:
+        """
+        Safely extract concepts - returns empty list on invalid input.
+        
+        This method never raises exceptions. It returns an empty list for:
+        - None input
+        - Empty string input
+        - Whitespace-only input
+        - Any extraction failure
+        
+        Args:
+            text: Input text (can be None, empty, or whitespace)
+            top_n: Number of top concepts to return (default: 10)
+        
+        Returns:
+            List of concept strings, or empty list on failure.
+            
+        Example:
+            >>> extractor = StatisticalExtractor()
+            >>> extractor.safe_extract_concepts("")  # Returns []
+            >>> extractor.safe_extract_concepts(None)  # Returns []
+            >>> extractor.safe_extract_concepts("Valid text")  # Returns concepts
+        """
+        # Guard: None or empty input
+        if text is None or not text.strip():
+            return []
+        
+        # Guard: Invalid top_n
+        if top_n <= 0:
+            return []
+        
+        try:
+            return self.extract_concepts(text, top_n=top_n)
+        except (ValueError, Exception):
+            # Any failure returns empty list
+            return []
+
+    def safe_generate_summary(
+        self, 
+        text: str | None, 
+        ratio: float = 0.2,
+        fallback: str = ""
+    ) -> str:
+        """
+        Safely generate summary - returns fallback on invalid input.
+        
+        This method never raises exceptions. It returns the fallback for:
+        - None input
+        - Empty string input
+        - Whitespace-only input
+        - Any summarization failure
+        
+        Args:
+            text: Input text (can be None, empty, or whitespace)
+            ratio: Proportion of text to keep (default: 0.2)
+            fallback: String to return on failure (default: "")
+                      Typically: f"Chapter {num}: {title}"
+        
+        Returns:
+            Summary string, or fallback on failure.
+            
+        Example:
+            >>> extractor = StatisticalExtractor()
+            >>> extractor.safe_generate_summary("")  # Returns ""
+            >>> extractor.safe_generate_summary("", fallback="Chapter 1: Intro")
+            'Chapter 1: Intro'
+            >>> extractor.safe_generate_summary("Valid long text...")  # Returns summary
+        """
+        # Guard: None or empty input
+        if text is None or not text.strip():
+            return fallback
+        
+        # Guard: Invalid ratio
+        if not 0.0 < ratio <= 1.0:
+            return fallback
+        
+        try:
+            summary = self.generate_summary(text, ratio=ratio)
+            return summary if summary else fallback
+        except (ValueError, Exception):
+            # Any failure returns fallback
+            return fallback

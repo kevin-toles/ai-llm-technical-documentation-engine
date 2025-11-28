@@ -63,12 +63,12 @@
       "pythons",
       "coded",
       "coding",
-      "run code",
       "programs",
       "programming",
       "program",
       "files",
-      "file"
+      "file",
+      "runs"
     ]
   },
   {
@@ -104,7 +104,7 @@
       "module",
       "imports",
       "importing",
-      "import"
+      "importers"
     ]
   },
   {
@@ -134,13 +134,13 @@
       "python",
       "pythonic",
       "objects",
-      "object types",
-      "x",
       "type",
       "typed",
       "typing",
       "lists",
-      "list"
+      "list",
+      "string",
+      "strings"
     ]
   },
   {
@@ -153,18 +153,18 @@
       "Python",
       "object",
       "objects",
-      "Chapter",
       "Python string object",
       "Python code",
       "type",
-      "True",
       "string",
-      "set",
       "References",
       "strings",
       "PYTHON REFERENCES",
       "reference",
-      "code"
+      "code",
+      "sets",
+      "Python language",
+      "string object"
     ],
     "concepts": [
       "python",
@@ -176,7 +176,7 @@
       "type",
       "typed",
       "typing",
-      "types like"
+      "sets"
     ]
   },
   {
@@ -193,14 +193,14 @@
       "Python strings",
       "format string",
       "method",
-      "chapter",
       "code",
       "Python string formatting",
       "string formatting",
       "string object",
       "format",
       "methods",
-      "formatting"
+      "formatting",
+      "object"
     ],
     "concepts": [
       "string",
@@ -230,13 +230,13 @@
       "keys",
       "dictionary",
       "code",
-      "Chapter",
       "method",
       "Python expression code",
       "Python list objects",
       "Python list",
       "dictionaries",
-      "object"
+      "object",
+      "list methods"
     ],
     "concepts": [
       "dictionary",
@@ -247,8 +247,8 @@
       "lists",
       "keys",
       "key",
-      "d",
-      "_d"
+      "python",
+      "pythons"
     ]
   },
   {
@@ -263,7 +263,6 @@
       "file",
       "object",
       "objects",
-      "Chapter",
       "list",
       "files",
       "Python file object",
@@ -272,7 +271,8 @@
       "tuple",
       "text file",
       "tuples",
-      "object types"
+      "object types",
+      "Python object types"
     ],
     "concepts": [
       "files",
@@ -303,24 +303,24 @@
       "assignment",
       "Python statement",
       "Python assignment statement",
-      "Chapter",
       "assignment statements",
       "line",
       "equivalent Python statement",
       "Python language",
-      "list"
+      "list",
+      "object"
     ],
     "concepts": [
       "pythonic",
-      "pythoneers",
       "pythons",
       "statement",
       "statements",
       "coding",
       "code",
       "coded",
-      "python objects",
-      "assigns"
+      "assigns",
+      "assigning",
+      "assign"
     ]
   },
   {
@@ -331,11 +331,9 @@
     "summary": "choice match statement; the latter is used by a type statement that creates type\nchange might impact existing code, Python often makes it an option and\nExpression Statements\nIn Python, you can use any expression as a statement, too—which usually means\nwith expression statements.\nFor printing values at the interactive prompt\nexpression statements, too; they serve as a shorthand for typing print\nstatements.\nTable 11-4 lists some common expression statement forms in Python.\nCommon Python expression statements\nPrinting operations (a special function call)\nlater in this chapter, printing in Python is a function call usually coded as a\nregularly coded as statements as well.\nFor instance, though you normally run a print call on a line by itself as an\nexpression statement, it actually returns a value like any other function call—the\n>>> x = print('code')         # print is a function-call expression\n>>> print(x)                  # But is usually coded as an expression statement\nAlso keep in mind that although expressions can appear as statements in Python,\nA statement\nFor example, Python doesn’t allow you to embed basic assignment statements\nExpression Statements and In-Place Changes\nstatements are often used to run list methods that change a list in place:\nIt’s not unusual, though, for Python newcomers to code this as an assignment\n>>> print(L)                  # So we lose our list!\nPrint Operations\nIn Python, print prints things—it’s simply a programmer-friendly interface to\nhere because it’s so pervasive and is usually coded as a statement.\nTechnically, printing converts one or more objects to their textual\nIn a bit more detail, print is\nIn Chapter 9, we explored file object methods that write text (e.g.,\nwhereas file write methods write strings to arbitrary files, print writes\nobjects to strings when using print operations.\nBecause the standard output stream is available in Python as the stdout file\nprint with file write method calls.\nuse in most roles and makes it easy to print text to other files and streams.\nBlast from the past: Printing is also one of the most visible places where Python 3.X and 2.X\n(and in the muscle memory of Python coders who still type print x unconsciously!).\nThe print Function\nStrictly speaking, printing is not a separate statement form.\nprint built-in function is normally called on a line of its own, because it doesn’t\nSyntactically, calls to the print function have the following form:\nprint([object, …][, sep=' '][, end='\\n'][, file=sys.stdout][, flush=False])\nbuilt-in function prints the textual representation of one or more objects,\nthis call may appear in any left-to-right order following the objects to be printed,\nand they control the print operation:\nend is a string added at the end of the printed text, which defaults to a\ndropping down to the next output line at the end of the printed text—the\nnext print will keep adding to the end of the current output line.\noutput stream if not passed, but any object with a file-like\nThe print function in action\nThe following prints a variety of object types\n>>> print()                                      # Display a blank line\n>>> print(x, y, z)                               # Print objects per defaults\nBy default, print calls add a space between the objects printed.\n>>> print(x, y, z, sep='')                       # Suppress separator\n>>> print(x, y, z, sep=', ')                     # Custom separator\nAlso by default, print adds an end-of-line character to terminate the output line.\nsecond of the following is two statements on one line, separated by a semicolon\n>>> print(x, y, z, end='')                        # Suppress line break (see >>>)\n>>> print(x, y, z, end=''); print(x, y, z)        # Two prints, same output line\n>>> print(x, y, z, end='...\\n')                   # Custom line end\nbeing printed:\n>>> print(x, y, z, sep='...', end='!\\n')          # Multiple keywords\n>>> print(x, y, z, end='!\\n', sep='...')          # Order doesn't matter\nHere is how the file keyword argument is used—it directs the printed text to an\nopen output file or other compatible object for the duration of the single print\n>>> print(x, y, z, sep='...', file=open('data.txt', 'w'))      # Print to a file\n>>> print(x, y, z)                                             # Back to stdout\n>>> print(open('data.txt').read())                             # Display file text\nFinally, keep in mind that the separator and end-of-line options provided by print\nformatting, don’t print this way.\nahead of time or within the print itself, using the string tools we mastered in\nChapter 7—and print the string all at once.\n>>> print(text)\n>>> print(f'{x}: {y:-0.4f}, {int(z[0][-2]):05d}')\nyou’re simply trying to print objects separated by spaces:\n>>> print(f'{a} {b} {c}')\n>>> print(a, b, c)\nPrint Stream Redirection\nAs we’ve seen, print sends text to the standard output stream by default.\n> file, per “Command-Line Usage Variations”), this is not a Python tool, and\nit’s just as easy to redirect a script’s streams from Python code.\nTo print a “hello world” message in Python, simply print\nthe string with print:\n>>> print('hello world')               # Print a string object\nyou often don’t even need to use a print statement there—simply type the\nexpressions you’d like to have printed, and their results are echoed back:\nTechnically, though, the print operation is just an\nyou must (or are pining for your Java coding days) you can also code print\n>>> import sys                         # Printing the hard way\nwhen Python starts up to an open file object connected to the output stream.\nprinting tasks.\nprint turns out to be the basis of a common technique in Python.\nprint and sys.stdout are directly related as follows.\nThis statement:\nprint(X, Y)\nthe print does.\nuseful to know that this is exactly what print operations do because it is\nIn other words, this equivalence provides a way of making your print\nsys.stdout = open('log.txt', 'a')       # Redirects prints to a file\nprint(x, y, x)                          # Now printed text shows up in log.txt\nAfter the reset, every print operation anywhere in\nThe print operations are happy to keep calling\nassigning sys.stdout this way will redirect every print anywhere in your\nexpected interface: a method named write to receive the printed text-string\nWhen that object is a class, printed text can be routed and processed\noriginally coded with print statements.\noutput of a print-based program, though, resetting sys.stdout provides a\nconvenient alternative to changing every print statement or using system shell-\nAlthough redirecting printed text by assigning sys.stdout is a useful tool, a\nrestore the original output stream should you need to switch back after printing\n>>> sys.stdout = open('log.txt', 'a')   # Redirect prints to a file\n>>> print('lp6e was here')              # Prints go to file, not here\n>>> print(1, 2, 3)\nAs introduced earlier, the file keyword allows a single print call to send its\nprinting to the original output stream.\nsnippet again sends printed text to a file named log.txt:\nprint(x, y, z, file=log)                # Print to a file-like object\nprint(a, b, c)                          # Print to original stdout\nThese redirected forms of print are handy if you need to print to both files and\n>>> print(1, 2, 3, file=log)\n>>> print(4, 5, 6, file=log)\n>>> print(7, 8, 9)\nmanually, or print with redirection syntax:\n>>> print('Bad!' * 8, file=sys.stderr)\nThe following demo prints both ways,\nthen redirects the output to an external file to verify that the same text is printed\n>>> print(X, Y)                                            # Print: the easy way\n>>> sys.stdout.write(str(X) + ' ' + str(Y) + '\\n')         # Print: the hard way\n>>> print(X, Y, file=open('temp1', 'w'))                   # Redirect text to file\nprints and file writes, watch for a print function emulation example in\nChapter 18; it uses the coding patterns here to provide a print equivalent that\nIn this chapter, we began our in-depth look at Python statements by exploring\nassignments, expressions, and print operations.\nwell as the redirection form of print operations, allow us to avoid some manual\nthe if statement, Python’s main selection tool; there, we’ll also revisit Python’s\nwell as the match multiple-choice statement.\n4. How might you use the print operation to send text to an external file?\nassignment (A, B, C = 0, 0, 0), or multiple assignment statements\nseparate statements together on the same line by separating them with\n4. To print to a file for a single print operation, you can use the print(X,\nredirect all of a program’s printed text to a file with special syntax in the\nWHY YOU WILL CARE: PRINT AND STDOUT\nThe equivalence between the print operation and writing to sys.stdout\nBecause the print statement just\nsends text to the sys.stdout.write method, you can capture printed text in\nyour programs by assigning sys.stdout to an object whose write method\n# Do something with the printed text in string\nprint(someObjects)              # Sends text to class write method\nThis works because print is what we will call in the next part of this book a\neven simpler with the file keyword argument of print, because we don’t\nneed to reset sys.stdout explicitly—normal prints will still be routed to the\nmyobj = FileFaker()             # Redirect to object for one print\nprint(someObjects, file=myobj)  # Does not reset sys.stdout\nPython’s built-in input function reads from the sys.stdin file, so you can\nNotice that because printed text goes to the stdout stream, it’s also the way\nPython’s print operation redirection tools are essentially pure-Python\n1  C/C++ programmers also take note: although Python now supports statements like X += Y, it still\n4  Technically, printing uses the equivalent of str in the internal implementation of Python, but the\nThis chapter presents Python’s two statements used for selecting from alternative\nPython statement syntax model here in more detail than we did in the\nif Statements\nIn simple terms, the Python if statement selects actions to perform.\nThe Python if is typical of if statements in most procedural languages.\nan associated block of nested statements, indented under a header line.\nif statement runs, Python executes the block of code associated with the first\nprint('true')\nprint('true')\nprint('false')\nprint('macOS')\nprint('Linux')\nprint('unknown?')\nThis multiline statement extends from the if line through the block nested under\nWhen it’s run, Python executes the statements nested under the first\nThe if statement\nprint('Linux')\nprint('macOS')\nUntil Python’s version 3.10, it had no multiple-choice selection statement similar\nAs you’ll learn ahead, Python today has sprouted a match statement that\nAn almost equivalent but more verbose Python if statement might\nprint(2001)\nprint(1991)\nprint(1985)\nprint('Bad choice')\nhere to code a default action in a dictionary-based multiple choice.\n>>> print(branch.get('Windows', 'Bad choice'))\nprint(branch[choice])\nprint('Bad choice')\nAnd the try statement is a general way to handle dictionary-based defaults by\nprint(branch[choice])\nprint('Bad choice')\nabout the more complicated actions you can code in the statement blocks\nAnd the punch line here, of course, is that the match statement may handle basic\nmatch Statements\nselection statement, in large part because of all the options for coding such logic\nto use in Python code written today.\nstatement to Python.\nform, match works the same as both an if statement and a dictionary index—\nprint('green')\nprint('red')\nprint('yellow')\nThe equivalent match statement provides explicit syntax for such multiple-\nprint('green')                       # match-based multiple choice: 3.10+\nprint('red')\nprint('yellow')\nThis statement works like this: match first evaluates the expression given in its\nstatement either runs the block under the case with value _ (which provides a\nAs usual, case blocks can contain multiple statements and nesting, and match\nmatches (and hence ends the statement, much like the anonymous _):\nprint('green')                    # First left-to-right match wins\nprint('means go')\nprint('red')                      # what outlives match if assigned\nprint('means', what)\nprint('catchall', other)          # other outlives match if assigned\nheaders and assigned during a successful match outlive the match statement\nAs a live match example, the following maps statements to categories and\nprint('logic')\nprint('loop')\nprint('tbd')\nprint('logic')\nprint('loop')\nprint('tbd')\nWatch for more basic match statements to show up later in this book (e.g., in\nCapture patterns: variable X matches anything, and will be assigned to it\nprint('or', what)\nprint('list', what)\nprint('list', what)\nprint('dict', what)\nprint('dict', what)\nprint('tuple', what)\nprint('tuple', what)\nprint('other', what)\nprint('attr', what)\nprint('instance', what)\nprint(f'case1 {a=} {b=}')        \nprint(f'case2 {a=} {what=}')\nprint(f'case3 {a=} {what=}')\nmatch, including all the gory details of its special-case patterns, consult Python’s\nlanguages heap without a match statement.\nchoose between if, dictionaries fetches, and match when coding multiple-choice\nup to larger statements like if and match, this section reviews and expands on\nIn general, Python has a simple, statement-\nPython normally runs statements in a file or nested block in order from\nof code in Python; instead, Python uses the indentation of statements\nPython statements are not normally terminated with semicolons; rather,\nthe end of a line usually marks the end of the statement coded on that\nAs special cases you’ll meet later, statements can both span lines\nor more nested statements, usually indented under the header.\nindented statements are called a block (or sometimes, a suite).\ntop of program files and some statements.\nIn other words, the statements within a block line up vertically, as\nprint('block2')\nprint('block1')\nprint('block0')\nspaces, and the third (the print statement under the nested if) is indented eight\nprint(x * 8)\nprint(x)                # Error: inconsistent indentation\nprint(x * 8)                    # Prints 8 Hack\nPython syntax, not just a stylistic suggestion: all the statements within any given\nas Pythoneers do and use consistent indentation instead of block delimiters.\nStatement Delimiters: Lines and Continuations\nWhile blocks are indented, a statement in Python normally ends at the end of the\nStatements may span multiple lines if you’re continuing an “open\npair.” The code of a statement can always be continued on the next line\nStatements may span multiple lines if they end in a backslash.\nsometimes used to squeeze more than one statement onto a single line\nstatement by itself).\nstatement per line for most of your work:\nx = 1; y = 2; print(x)           # More than one simple statement\nFinally, and also as a review, Python lets you move a compound statement’s",
     "keywords": [
       "Python",
-      "print",
       "statement",
       "statements",
       "match",
-      "Chapter",
       "File",
       "code",
       "match statement",
@@ -344,19 +342,21 @@
       "Python expression statements",
       "Bad",
       "Print Operations",
-      "print statement"
+      "print statement",
+      "object",
+      "Python statements"
     ],
     "concepts": [
       "printing",
-      "print",
       "prints",
       "printed",
       "python",
       "pythons",
       "pythonic",
-      "pythoneers",
       "statement",
-      "statements"
+      "statements",
+      "coded",
+      "coding"
     ]
   }
 ]

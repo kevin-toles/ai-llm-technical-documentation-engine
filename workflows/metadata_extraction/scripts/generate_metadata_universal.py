@@ -338,25 +338,68 @@ class UniversalMetadataGenerator:
             page_count = end_page - start_page + 1
             print(f"  Collected {len(chapter_text):,} characters from {page_count} pages")
             
-            # Extract metadata
-            keywords = self.extract_keywords(chapter_text)
-            concepts = self.extract_concepts(chapter_text)
-            summary = self.generate_summary(chapter_text, title, ch_num)
+            # Guard against empty text (scanned/image pages with no extracted text)
+            if not chapter_text or not chapter_text.strip():
+                print(f"  ⚠️ Warning: Chapter has no text content, using title only")
+                chapter_meta = ChapterMetadata(
+                    chapter_number=ch_num,
+                    title=title,
+                    start_page=start_page,
+                    end_page=end_page,
+                    summary=f"Chapter {ch_num}: {title}",
+                    keywords=[],
+                    concepts=[]
+                )
+                metadata_list.append(chapter_meta)
+                continue
             
-            print(f"  Keywords: {', '.join(keywords[:5])}...")
-            print(f"  Concepts: {', '.join(concepts[:5]) if concepts else 'none detected'}...")
-            
-            chapter_meta = ChapterMetadata(
-                chapter_number=ch_num,
-                title=title,
-                start_page=start_page,
-                end_page=end_page,
-                summary=summary,
-                keywords=keywords,
-                concepts=concepts
-            )
-            
-            metadata_list.append(chapter_meta)
+            # Per-chapter try/except: skip failed chapters, don't crash entire book
+            # Per ANTI_PATTERN_ANALYSIS.md Section 1.3: Graceful degradation
+            # Per ARCHITECTURE_GUIDELINES Ch. 8: Fault tolerance in pipelines
+            try:
+                # Use safe_* methods that return empty on failure instead of raising
+                keywords_with_scores = self.extractor.safe_extract_keywords(chapter_text, top_n=15)
+                keywords = [kw for kw, _ in keywords_with_scores]
+                concepts = self.extractor.safe_extract_concepts(chapter_text, top_n=10)
+                fallback_summary = f"Chapter {ch_num}: {title}"
+                summary = self.extractor.safe_generate_summary(
+                    chapter_text, 
+                    ratio=0.2, 
+                    fallback=fallback_summary
+                )
+                
+                print(f"  Keywords: {', '.join(keywords[:5])}..." if keywords else "  Keywords: (none extracted)")
+                print(f"  Concepts: {', '.join(concepts[:5])}..." if concepts else "  Concepts: (none extracted)")
+                
+                chapter_meta = ChapterMetadata(
+                    chapter_number=ch_num,
+                    title=title,
+                    start_page=start_page,
+                    end_page=end_page,
+                    summary=summary,
+                    keywords=keywords,
+                    concepts=concepts
+                )
+                
+                metadata_list.append(chapter_meta)
+                
+            except Exception as e:
+                # Log error but continue with other chapters - don't kill entire book
+                print(f"  ❌ Error extracting metadata: {e}")
+                print(f"  ⚠️ Skipping chapter {ch_num}, continuing with next chapter...")
+                
+                # Create minimal metadata entry so chapter is tracked
+                chapter_meta = ChapterMetadata(
+                    chapter_number=ch_num,
+                    title=title,
+                    start_page=start_page,
+                    end_page=end_page,
+                    summary=f"Chapter {ch_num}: {title} (metadata extraction failed)",
+                    keywords=[],
+                    concepts=[]
+                )
+                metadata_list.append(chapter_meta)
+                continue
         
         return metadata_list
     

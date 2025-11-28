@@ -6,7 +6,6 @@
     "end_page": 23,
     "summary": "simple API, and explains how to design a microservices platform:\nChapter 1 introduces the main concepts of the book: microservices and APIs. It\nIt also explains what APIs\nChapter 3 explains how to design a microservices platform.\nPart 2 explains how to design, document, and build REST APIs, and how to build a\nChapter 4 explains the design principles of REST APIs. It introduces the six\nChapter 5 explains how to document a REST API using the OpenAPI specifica-\nChapter 6 explains how to build REST APIs using two popular Python frame-\nPart 3 explains how to design, consume, and build GraphQL APIs:\nChapter 8 explains how to design GraphQL APIs and how the Schema Defini-",
     "keywords": [
-      "Chapter",
       "explains",
       "REST APIs",
       "APIs",
@@ -20,19 +19,20 @@
       "BOOK xxi",
       "build",
       "’ll",
-      "learn"
+      "learn",
+      "REST API"
     ],
     "concepts": [
       "apis",
       "api",
       "chapters",
-      "chapter",
       "microservices",
-      "microservice",
       "schema",
       "schemas",
       "design",
-      "tion"
+      "models",
+      "model",
+      "rest"
     ]
   },
   {
@@ -42,7 +42,6 @@
     "end_page": 28,
     "summary": "Chapter 9 explains how to consume GraphQL APIs. You’ll learn to run a mock\nChapter 10 explains how to build GraphQL APIs using Python’s Ariadne frame-\nYou’ll learn to leverage the API documentation to automatically load data\nPart 4 explains how to test, secure, and deploy your microservice APIs:\nChapter 11 explains how to add authentication and authorization to your APIs\nChapter 12 explains how to test and validate your APIs. You’ll learn what property-\nbased testing is and how to use it to test your APIs, and you’ll also learn to use\nChapter 13 explains how to Dockerize your microservice APIs, how to run them\nChapter 14 explains how to deploy your microservice APIs to AWS using Kuber-\nand in chapter 3, we break the platform down into microservices.\ncation and authorization to your APIs, you can jump straight into chapter 11, or if you\nwant to learn how to test APIs, you can go directly to chapter 12.\nAPIs, you should be able to skip directly to chapter 12.\nchapters in part 4.\nAbout the code\nThis book contains many examples of source code both in numbered listings and in\nlight code that has changed from previous steps in the chapter, such as when a new\nExcept for chapters 1, 3, and 4, every chapter of the book is full of coding exam-\nthe coding examples are in Python, except in chapters 5, 8, and 9, which focus on API\nbook at https://livebook.manning.com/book/microservice-apis.\nfor the examples in the book is available for download from the Manning website at\ngithub.com/abunuwas/microservice-apis.\nThe GitHub repository for this book shows the final state of the code in every\nchapter.\nthose cases, the version of the code you’ll find on GitHub matches the final version of\nthe code in the chapter.\nThe Python code examples in the book have been tested with Python 3.10, although\nThe code and the com-\nIn each chapter’s\nthat I used to run the code examples.\nPurchase of Microservice APIs includes free access to liveBook, Manning’s online reading\nTo access the forum, go to https://livebook.manning.com/book/microservice\nIf you want to learn more about microservice APIs, you can check out my blog, https://",
     "keywords": [
-      "Chapter",
       "’ll learn",
       "APIs",
       "BOOK",
@@ -56,19 +55,20 @@
       "explains",
       "Python",
       "microservice",
-      "source code"
+      "source code",
+      "build GraphQL APIs"
     ],
     "concepts": [
       "apis",
       "api",
-      "chapter",
       "chapters",
       "book",
       "code",
       "coding",
       "build",
       "builds",
-      "building"
+      "building",
+      "discussion"
     ]
   },
   {
@@ -101,10 +101,10 @@
       "microservices",
       "orders",
       "order",
-      "get_orders",
-      "get_order",
       "services",
-      "service"
+      "service",
+      "applications",
+      "application"
     ]
   },
   {
@@ -133,14 +133,14 @@
     "concepts": [
       "service",
       "services",
-      "subdomains",
-      "subdomain",
       "products",
       "production",
       "product",
       "customers",
       "customer",
-      "microservice"
+      "microservice",
+      "steps",
+      "step"
     ]
   },
   {
@@ -156,7 +156,6 @@
       "HTTP status codes",
       "API",
       "orders API",
-      "HTTP",
       "HTTP status",
       "orders",
       "order",
@@ -164,19 +163,20 @@
       "HTTP methods",
       "APIs",
       "API design",
-      "REST"
+      "REST",
+      "status code"
     ],
     "concepts": [
       "apis",
       "orders",
-      "order",
       "ordering",
       "ordered",
-      "api design",
       "resource",
       "resources",
       "designing",
-      "designs"
+      "designs",
+      "designed",
+      "status"
     ]
   },
   {
@@ -248,7 +248,7 @@
       "validation",
       "validating",
       "validate",
-      "validator"
+      "validates"
     ]
   },
   {
@@ -277,14 +277,14 @@
     "concepts": [
       "orders",
       "order",
-      "order_",
-      "get_order",
-      "get_orders",
       "database",
       "databases",
       "list",
       "listing",
-      "listed"
+      "listed",
+      "layers",
+      "classes",
+      "services"
     ]
   },
   {
@@ -347,16 +347,16 @@
       "Python"
     ],
     "concepts": [
-      "resolver",
-      "resolvers",
-      "resolve_",
       "resolve",
-      "resolv",
       "resolving",
       "products",
       "product",
-      "types",
-      "type"
+      "type",
+      "queries",
+      "query",
+      "implementing",
+      "implement",
+      "implementation"
     ]
   },
   {
@@ -387,12 +387,12 @@
       "api",
       "orders",
       "order",
-      "order_",
-      "get_orders",
-      "get_order",
       "tokens",
       "token",
-      "users"
+      "users",
+      "user",
+      "requesting",
+      "request"
     ]
   },
   {
@@ -411,24 +411,24 @@
       "orders endpoint",
       "post",
       "APIs",
-      "test",
       "REST APIs",
       "API testing",
       "Dredd hooks",
       "test REST APIs",
-      "schemathesis"
+      "schemathesis",
+      "API specification"
     ],
     "concepts": [
-      "testing",
-      "test",
-      "tests",
       "tested",
       "apis",
       "api",
       "orders",
       "order",
-      "order_",
-      "before_get_order"
+      "ordered",
+      "responses",
+      "response",
+      "listing",
+      "list"
     ]
   },
   {
@@ -455,8 +455,6 @@
       "Kubernetes"
     ],
     "concepts": [
-      "dockerizing",
-      "dockerize",
       "docker",
       "order",
       "running",
@@ -464,7 +462,9 @@
       "runs",
       "container",
       "containers",
-      "contains"
+      "contains",
+      "contain",
+      "database"
     ]
   },
   {
@@ -492,15 +492,15 @@
     ],
     "concepts": [
       "services",
-      "orders service",
-      "aws",
       "kubernetes",
       "create",
       "creating",
       "created",
       "creates",
       "order",
-      "deploying"
+      "deploying",
+      "deploy",
+      "deployment"
     ]
   },
   {
@@ -585,7 +585,6 @@
       "REST APIs",
       "REST",
       "REST API",
-      "HTTP",
       "API",
       "orders",
       "APIs",
@@ -596,7 +595,8 @@
       "REST API responses",
       "payload",
       "order",
-      "HTTP status"
+      "HTTP status",
+      "Good REST API"
     ],
     "concepts": [
       "apis",
@@ -604,11 +604,11 @@
       "orders",
       "order",
       "ordered",
-      "http",
       "rest",
       "resources",
       "resource",
-      "use"
+      "graphql",
+      "payloads"
     ]
   },
   {
@@ -629,10 +629,10 @@
       "data",
       "clients",
       "GraphQL API",
-      "figure",
       "requests",
       "API client requests",
-      "Products API"
+      "Products API",
+      "REST APIs"
     ],
     "concepts": [
       "graphql",
@@ -640,11 +640,11 @@
       "api",
       "ingredients",
       "ingredient",
-      "ingredi",
       "clients",
       "client",
       "products",
-      "product"
+      "product",
+      "request"
     ]
   },
   {
@@ -671,16 +671,16 @@
       "make"
     ],
     "concepts": [
-      "expose new",
       "apis",
       "api",
       "change",
       "changes",
       "changing",
-      "capabil ities",
       "introduce",
       "create",
-      "entities"
+      "entities",
+      "fields",
+      "field"
     ]
   },
   {
@@ -711,12 +711,12 @@
       "version",
       "api",
       "apis",
-      "calendar versioning",
       "strategy",
       "strategies",
-      "use",
       "uses",
-      "useful"
+      "useful",
+      "accept",
+      "accepts"
     ]
   },
   {
@@ -750,9 +750,9 @@
       "deprecations",
       "authentication",
       "authenticating",
-      "deprecation header",
-      "auth",
-      "managing"
+      "managing",
+      "management",
+      "status"
     ]
   },
   {
@@ -763,7 +763,6 @@
     "summary": "API authorization using an identity provider\nwe can focus our time and efforts on building our APIs. Good IDaaS providers are built\nOnce you’ve created the API, go to Permissions and add a permission scope to the\nAPI, as shown in figure C.2.\nYour APIs page\nThis API’s permissions tab\nTo add permission scopes to the API, click on the Permissions tab, and fill in the Add a \nTo find out your tenant’s default domain, go to the tenant’s settings page and click the ",
     "keywords": [
       "API",
-      "figure",
       "provider",
       "IDaaS",
       "tenant",
@@ -776,19 +775,20 @@
       "Custom Domains",
       "add",
       "tab",
-      "IDaaS provider"
+      "IDaaS provider",
+      "Add permission"
     ],
     "concepts": [
       "api",
       "apis",
-      "idaas",
       "provider",
       "providers",
-      "c",
       "security",
       "domains",
       "domain",
-      "page"
+      "user",
+      "users",
+      "signing"
     ]
   },
   {
@@ -815,16 +815,14 @@
       "template"
     ],
     "concepts": [
-      "c",
       "keys",
       "key",
-      "x",
-      "auth",
-      "q",
       "kid",
-      "n",
       "certificates",
-      "certificate"
+      "certificate",
+      "api",
+      "important",
+      "function"
     ]
   },
   {
@@ -854,13 +852,13 @@
       "key",
       "keys",
       "certificate",
-      "c",
       "token",
       "tokens",
       "kid",
       "application",
-      "x",
-      "https"
+      "orders",
+      "function",
+      "returns"
     ]
   },
   {
@@ -891,12 +889,12 @@
       "application",
       "applications",
       "flow",
-      "auth",
-      "auth_on",
       "accessing",
       "access",
       "authorize",
-      "authorizing"
+      "authorizing",
+      "server",
+      "apis"
     ]
   },
   {
@@ -916,11 +914,11 @@
       "authorization",
       "access",
       "requests",
-      "test",
       "orders",
       "authorize",
       "test your API",
-      "APPENDIX"
+      "APPENDIX",
+      "request"
     ],
     "concepts": [
       "order",
@@ -928,11 +926,11 @@
       "authorizing",
       "authorized",
       "authorize",
-      "c",
-      "api authorization",
-      "e",
       "requests",
-      "request"
+      "request",
+      "token",
+      "flow",
+      "flows"
     ]
   },
   {

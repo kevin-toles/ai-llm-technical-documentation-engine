@@ -7,7 +7,6 @@
     "summary": "using Python 3.\nbut be aware that the print statement turned into a function in Python 3.\nparentheses around the items to be printed in the examples that follow.\nPutting parentheses around the item to be printed also works in Python 2 as long as\nyou are printing just a single item.\nPython’s interactive mode is one of its most useful features.\nWhen you use Python interactively, the special variable _ holds the result of the last\nIf you want to create a program that you can run repeatedly, put statements in a file\nPython source files are ordinary text files and normally have a .py suffix.The # charac-\nOn Windows, Python programs can be started by double-clicking a .py file or typing\non the first line of the program, like this:\nThe program in Listing 1.1 shows the use of variables and expressions by performing a\nListing 1.1\nprint year, principal     # Reminder: print(year, principal) in Python 3 \nPython is a dynamically typed language where variable names are bound to different\nvalues, possibly of varying types, during program execution.The assignment operator\nvalue is stored.The dynamic behavior of Python can be seen in Listing 1.1 with the\nstatements on the same line, as shown here:\napproach is to use the string formatting operator (%) like this:\nprint \"%3d %0.2f\" % (year, principal)\nprint(\"%3d %0.2f\" % (year, principal))   # Python 3\n\"%d\", \"%s\", and \"%f\".These sequences specify the formatting of a particular type of\ndata such as an integer, string, or floating-point number, respectively.The special-\nexample, \"%3d\" formats an integer right-aligned in a column of width 3, and \"%0.2f\"\nThe behavior of format strings is almost identical to the C printf() function and is\nprint format(year,\"3d\"),format(principal,\"0.2f\")\nprint(format(year,\"3d\"),format(principal,\"0.2f\")) # Python 3\nStrings also have a format() method that can be used to format many values at\nprint \"{0:3d} {1:0.2f}\".format(year,principal)\nprint(\"{0:3d} {1:0.2f}\".format(year,principal)) # Python 3\nTo create an empty clause, use the pass statement, as follows:\nPython does not have a special switch or case statement for testing values.To handle\nmultiple-test cases, use the elif statement, like this:\nof another object such as a string, list, or dictionary.\nThe following program opens a file and reads its contents line by line:\nf = open(\"foo.txt\")           # Returns a file object\nline = f.readline()           # Invokes readline() method on file\nwhile line:\nprint line,               # trailing ',' omits newline character\n# print(line,end='')      # Use in Python 3\nline = f.readline()\nThe open() function returns a new file object.\nyou can perform various file operations.The readline() method reads a single line of\nIn the example, the program is simply looping over all the lines in the file foo.txt.\nWhenever a program loops over a collection of data like this (for instance input lines,\nmon operation, Python provides a dedicated statement, for, that is used to iterate over\nprint line,\nTo make the output of a program go to a file, you can supply a file to the print state-\nprint >>f,\"%3d %0.2f\" % (year,principal)\nIf you are using Python 3, change the print\nprint(\"%3d %0.2f\" % (year,principal),file=f)\nFor example, the print statement in the previous example could have been written this\nproduced by the print statement.\nIn Python 2, this code can also be shortened to the following:\nIn Python 3, the raw_input() function is called input(), but it works in exactly the\nline.Triple-quoted strings are useful when the contents of a string literal span multiple\nlines of text such as the following:\nPython never implicitly interprets the contents of a string as numerical data (i.e., as in\nvalue using a function such as int() or float().\ns = \"The value of x is \" + format(x,\"4d\")\nstr() produces the output that you get when you use the print statement,\nwhereas repr() creates a string that you type into a program to exactly represent the\nThe format() function is used to convert a value to a string with a specific format-\nLists\nLists are sequences of arbitrary objects.You create a list by enclosing values in square\na = names[2]             # Returns the third item of the list, \"Ann\"\nTo append new items to the end of a list, use the append() method:\nTo insert an item into the middle of a list, use the insert() method:\nUse the plus (+) operator to concatenate lists:\nAn empty list is created in one of two ways:\nLists\nLists can contain any kind of Python object, including other lists, as in the following\nItems contained in nested lists are accessed by applying more than one indexing opera-\nlist of numbers from a file specified on the command line and outputting the minimum\nListing 1.2\nf = open(sys.argv[1])            # Filename on the command line\nlines = f.readlines()            # Read all lines into a list\n# Convert all of the input values from strings to floats\n# Print min and max values\nprint \"The minimum value is \", min(fvalues)\nprint \"The maximum value is \", max(fvalues)\nThe first line of this program uses the import statement to load the sys module from\nthe Python library.This module is being loaded in order to obtain command-line argu-\nThe open() function uses a filename that has been supplied as a command-line\nlines into a list of strings.\nThe expression [float(line) for line in lines] constructs a new list by\nlooping over all the strings in the list lines and applying the function float() to each\nBecause the lines in a file can also be read using a for loop, the program can\nbe shortened by converting values using a single statement like this:\nAfter the input lines have been converted into a list of floating-point numbers, the\ngle object using a tuple.You create a tuple by enclosing a group of values in parentheses\nThe values in a tuple can be extracted by numerical index just like a list.\nAlthough tuples support most of the same operations as lists (such as indexing, slicing,\ninclined to ignore tuples altogether and simply use lists because they seem to be more\nTuples and lists are often used together to represent data.\n# File containing lines of the form \"name,shares,price\"\nfields = line.split(\",\")       # Split each line into a list\nstock  = (name,shares,price)   # Create a tuple (name, shares, price)\ndelimiter character.The resulting portfolio data structure created by this program\nA set is used to contain an unordered collection of objects.To create a set, use the\nset() function and supply a sequence of items such as follows:\nUnlike lists and tuples, sets are unordered and cannot be indexed by numbers.\nYou create a dictionary by enclosing the values in curly braces ({ }), like this:\nTo access members of a dictionary, use the key-indexing operator as follows:\nvalue = stock[\"shares\"] * shares[\"price\"]\nAlthough strings are the most common type of key, you can use many other Python\nSome objects, including lists and dictionaries,\nA dictionary is a useful way to define an object that consists of named fields as\nFor example, here’s a dictionary of stock prices:\nDictionary membership is tested with the in operator, as in the following example:\nsyms = list(prices)         # syms = [\"AAPL\", \"MSFT\", \"IBM\", \"GOOG\"]\nDictionaries are probably the most finely tuned data type in the Python interpreter.\nsuch as a string, list, or tuple.\nIn this example, the variable n will be assigned successive items from the list\nThe range(i,j [,stride]) function creates an object that represents a range of inte-\nOne caution with range() is that in Python 2, the value it creates is a fully populated\nlist with all of the integer values.\nThe object created by xrange() computes the values it represents on demand when\nIn Python 3, the xrange() function has been renamed to\nover many kinds of objects including strings, lists, dictionaries, and files.\nprint c\n# Print out the members of a list\nprint name\n# Print all of the lines in a file\nfor line in f:\nprint line,\nate custom iterator objects and generator functions that supply it with sequences of val-\nYou use the def statement to create a function, as shown in the following example:\nTo invoke a function, simply use the name of the function followed by its arguments\nreturn multiple values from a function, as shown here:\nTo assign a default value to a function parameter, use assignment:\nquent function calls.When omitted, the argument will simply take on the default value.\ntion returns.To modify the value of a global variable from inside a function, use the\nInstead of returning a single value, a function can generate an entire sequence of results\nif it uses the yield statement.\nAny function that uses yield is known as a generator.\nment.At this point, the value passed to yield is returned by next(), and the function\nsuspends execution.The function resumes execution on the statement following yield\nprint i,\nFor example, the following generator function mimics\nline = f.readline()     # Try reading a new line of text\nprint line,\nobjects such as lists or files.\nin s, s could represent a list of items, the lines of a file, the result of a generator func-\nNormally, functions operate on a single set of input arguments.\ntype of function is known as a coroutine and is created by using the yield statement as\nprint line\nTo use this function, you first call it, advance it to the first (yield), and then start\n>>> matcher = print_matches(\"python\")\nthat value is returned by the (yield) expression inside the coroutine and is processed\nfunction returns or close() is called on it as shown in the previous example.\nprint_matches(\"python\"),",
     "keywords": [
       "Python",
-      "print",
       "line",
       "function",
       "list",
@@ -20,7 +19,8 @@
       "Tutorial Introduction",
       "Lib",
       "strings",
-      "print statement"
+      "print statement",
+      "Format"
     ],
     "concepts": [
       "python",
@@ -28,11 +28,11 @@
       "functions",
       "functionality",
       "functional",
-      "print",
       "printed",
       "printing",
-      "f",
-      "line"
+      "line",
+      "lines",
+      "listing"
     ]
   },
   {
@@ -43,20 +43,20 @@
     "summary": "Objects and Classes\nObjects and Classes\nAll values used in a program are objects.An object consists of internal data and methods\nobjects and methods when working with the built-in types such as strings and lists.\nitems = [37, 42]    # Create a list object\nThe dir() function lists the methods available on an object and is a useful tool for\nWhen inspecting objects, you will see familiar methods such as append() and\nexample, the _ _add_ _() method implements the + operator:\nThe class statement is used to define new types of objects and for object-oriented\nFor example, the following class defines a simple stack with push(),\nclass Stack(object):\ndef push(self,object):\nself.stack.append(object)\nreturn self.stack.pop()\nIn the first line of the class definition, the statement class Stack(object) declares\nStack to be an object.The use of parentheses is how Python specifies inheritance—in\nthis case, Stack inherits from object, which is the root of all Python types.\nclass definition, methods are defined using the def statement.The first argument in each\nmethod always refers to the object itself.\nFor example, _ _init_ _ is used to initialize an object after it’s created.\nTo use a class, write code such as the following:\nIn this example, an entirely new object was created to implement the stack.\nstack is almost identical to the built-in list object.Therefore, an alternative approach\nclass Stack(list):\n# Add push() method for stack interface\ndef push(self,object):\nself.append(object)\n(that is, the objects that are created).\nclass EventHandler(object):\nIf an error occurs in your program, an exception is raised and a traceback message such\nFile \"foo.py\", line 12, in <module>\nexceptions using try and except statements, like this:\nexcept block is ignored.When an exception is handled, program execution resumes\nwith the statement that immediately follows the last except block.The program does\nprogramming, you can use the with statement with certain kinds of objects.\nexample of writing code that uses a mutex lock:\nIn this example, the message_lock object is automatically acquired when the with\nstatement executes.When execution leaves the context of the with block, the lock is\nFor example, if an exception occurs, the lock is released when control\nThe with statement is normally only compatible with objects related to system\nas a module that can be imported into other programs and scripts.To create a module,\nput the relevant statements and definitions into a file that has the same name as the\nTo use your module in other programs, you can use the import statement:\nThe import statement creates a new namespace and executes all the statements in the\nimport, simply use the name of the module as a prefix, as in div.divide() in the pre-\nIf you want to import a module using a different name, supply the import statement\nTo import specific definitions into the current namespace, use the from statement:\nAs with objects, the dir() function lists the contents of a module and is a useful tool\nTo denote an empty body or block, use the pass statement.",
     "keywords": [
       "object",
-      "class",
       "stack",
       "statement",
       "Python",
       "Objects",
       "methods",
       "method",
-      "import",
       "class Stack",
       "module",
       "statement class Stack",
       "file",
       "program",
-      "block"
+      "block",
+      "statements",
+      "exception"
     ],
     "concepts": [
       "objects",
@@ -64,11 +64,11 @@
       "methods",
       "method",
       "statements",
-      "class statement",
       "classes",
-      "_class_",
       "stack",
-      "file"
+      "file",
+      "files",
+      "imported"
     ]
   },
   {
@@ -90,21 +90,21 @@
       "Literals",
       "Unicode string literal",
       "code",
-      "Chapter",
       "literal",
-      "objects"
+      "objects",
+      "escape"
     ],
     "concepts": [
       "characters",
       "character",
       "string",
       "strings",
-      "python",
-      "u",
       "code",
       "codes",
       "coding",
-      "unicode"
+      "objects",
+      "object",
+      "literals"
     ]
   },
   {
@@ -127,8 +127,8 @@
       "returns",
       "string",
       "string object types",
-      "Table",
-      "Python object"
+      "Python object",
+      "items"
     ],
     "concepts": [
       "types",
@@ -136,11 +136,11 @@
       "methods",
       "objects",
       "object",
-      "type returns",
-      "f",
       "function",
       "functions",
-      "functional"
+      "functional",
+      "strings",
+      "string"
     ]
   },
   {
@@ -157,26 +157,26 @@
       "Special Methods",
       "Python",
       "objects",
-      "Table",
       "Object Behavior",
       "Attribute",
       "Special",
       "Lib",
-      "Chapter",
       "slice",
-      "Behavior"
+      "Behavior",
+      "returns",
+      "format"
     ],
     "concepts": [
-      "self",
       "object",
       "objects",
-      "methods",
       "method",
-      "x",
       "operators",
       "operations",
       "operator",
-      "operation"
+      "operation",
+      "types",
+      "type",
+      "values"
     ]
   },
   {
@@ -203,16 +203,16 @@
       "Advanced String Formatting"
     ],
     "concepts": [
-      "x",
       "operators",
       "operation",
       "operator",
       "operations",
-      "oper",
       "strings",
       "string",
       "value",
-      "values"
+      "values",
+      "formatting",
+      "formatted"
     ]
   },
   {
@@ -223,32 +223,32 @@
     "summary": "available.The for statement works with any object that supports iteration.This obvi-\niteration of the loop, it receives a new value from s.The scope of the iteration variable\nvalues into individual iteration variables using a statement such as the following:\nPython provides a built-in function, enumerate(), that can be used to simplify this\nThis code can be simplified using the zip() function.\ncontaining a large amount of data, this may not be what you want.The function \nIn Python 3, the zip() function\nFor example, this code reads lines\nThe primary use case for the looping else clause is in code that iterates over data\nFor example, if you didn’t use else, the previous code might have to be\nExceptions indicate errors and break out of the normal control flow of a program.An\nment is raise Exception([value]), where Exception is the exception type and\nIf the raise statement is used by itself, the last exception generated is raised again\nTo catch an exception, use the try and except statements, as shown here:\nWhen an exception occurs, the interpreter stops executing statements in the try block\nuncaught exceptions can also be passed to a user-defined function, sys.excepthook(),\nable in which an instance of the exception type supplied to the raise statement is\nTo ignore an exception, use the pass statement as follows:\nTo catch all exceptions except those related to program exit, use Exception like this:\nFor example, in the previous code, an error message and the associated\nexception value is being logged.\nclause.This code is executed if the code in the try block doesn’t raise an exception.\nThe finally statement defines a cleanup action for code contained in a try block.\nIf an exception occurs, control is first passed to the first statement of the\nfinally clause.After this code has executed, the exception is re-raised to be caught by\nPython defines the built-in exceptions listed in Table 5.1.\nRaised by .close() method on a generator.\nBase class for all non-exiting exceptions.\nIn Python 3, all exceptions below are\nAll the built-in exceptions are defined in terms of classes.To create a new exception,\ncreate a new class definition that inherits from Exception, such as the following:\nclass NetworkError(Exception): pass\nTo use your new exception, use it with the raise statement as follows:\nWhen raising an exception, the optional values supplied with the raise statement are\nused as the arguments to the exception’s class constructor.\ncan be written to take one or more exception values as shown in this example:\nclass DeviceError(Exception):\ndef __init__(self,errno,msg):\nWhen you create a custom exception class that redefines __init_ _(), it is important to\nassign a tuple containing the arguments to _ _init_ _() to the attribute self.args as\nshown.This attribute is used when printing exception traceback messages.\nNetworkError exception defined earlier could serve as a base class for a variety of\ndef error1():\ndef error2():\nthe execution value with type().Alternatively, the sys.exc_info() function can be\nFor example, a raised exception can\nIn the first example, the with statement automatically causes the opened file to be\ntype, value, and traceback associated with the exception that has caused control-flow to\nthe raised exception was handled or not (if False is returned, any exceptions raised are\nUser-defined classes can imple-\nclass ListTransaction(object):\ndef __init__(self,thelist):\ndef __enter__(self):\nreturn self.workingcopy\ndef __exit__(self,type,value,tb):\nThis class allows one to make a sequence of modifications to an existing list.\nmented by placing a wrapper around a generator function.\nIn this example, the value passed to yield is used as the return value from\ngenerator function.\nThe assert statement should not be used for code that must be executed to make the\nFor example, if the function write_data(), shown previously, were intended for use\nFunctions and Functional\nPython makes it easy to define functions but also incorporates a surprising\nnumber of features from functional programming languages.This chapter describes\nfunctions, scoping rules, closures, decorators, generators, coroutines, and other functional\nFunctions\nFunctions are defined with the def statement:\ndef add(x,y):\nThe body of a function is simply a sequence of statements that execute when the func-\ntion is called.You invoke a function by writing the function name followed by a tuple\nYou can attach default arguments to function parameters by assigning values in the\nfunction definition.\nWhen a function defines a parameter with a default value, that parameter and all the\nters in the function definition, a SyntaxError exception is raised.\nDefault parameter values are always set to the objects that were supplied as values\nwhen the function was defined.\ndef foo(x=a):\nfoo()               # returns 10 (default value not changed)\nChapter 6 Functions and Functional Programming\nIn addition, the use of mutable objects as default values may lead to unintended \ndef foo(x, items=[]):\ndef foo(x, items=None):\nA function can accept a variable number of parameters if an asterisk (*) is added to the\npass a tuple args to a function as if they were parameters, the *args syntax can be used\nin a function call as follows:\n# Call another function and pass along args\nFunction arguments can also be supplied by explicitly naming each parameter and spec-\ndef foo(w,x,y,z):\nthere are default values, you must explicitly name all of the required function parame-\nmatch any of the parameter names in the function definition, a TypeError exception is\nraised.Also, since any Python function can be called using the keyword calling style, it is\ngenerally a good idea to define functions with descriptive argument names.\nParameter Passing and Return Values\nIf the last argument of a function definition begins with **, all the additional keyword\ndictionary and passed to the function.This can be a useful way to write functions that\nKeyword arguments can also be passed to another function using the **kwargs syntax:\nother functions.\nParameter Passing and Return Values\nFor example, if you pass an immutable value,\n(such as a list or dictionary) is passed to a function where it’s then modified, those\nFunctions that mutate their input values or change the state of other parts of the pro-\nChapter 6 Functions and Functional Programming\nprogramming style that is best avoided because such functions can become a source of\nSuch functions\nThe return statement returns a value from a function.\nyou omit the return statement, the None object is returned.To return multiple values,\nMultiple return values returned in a tuple can be assigned to individual variables:\nx, y = factor(1243)    # Return values placed in x and y.\nEach time a function executes, a new local namespace is created.This namespace repre-\nsents a local environment that contains the names of the function parameters, as well as\nthe names of variables that are assigned inside the function body.When resolving names,\nfunction was defined.\nWhen this code executes, a returns its value of 42, despite the appearance that we\nmight be modifying the variable a inside the function foo.When variables are assigned\nvariable a in the function body refers to an entirely new object containing the value\n13, not the outer variable.To alter this behavior, use the global statement.\nPython supports nested function definitions.\ndef display():            # Nested function definition\nVariables in nested functions are bound using lexical scoping.That is, names are resolved\nvariables) and the global namespace (using global).Therefore, an inner function can’t\nreassign the value of a local variable defined in an outer function.\nIn Python 2, you can work around this by placing values you want to change in a list or\nChapter 6 Functions and Functional Programming\nIn this function, the variable i is defined as a local variable (because it is being assigned\ninside the function and there is no global statement).\nthough there is a global variable i in this example, it is not used to supply a value here.\nVariables are determined to be either local or global at the time of function definition\nFunctions as Objects and Closures\nFunctions are first-class objects in Python.This means that they can be passed as argu-\nments to other functions, placed in data structures, and returned by a function as a\nHere is an example of a function that accepts another function as input and \nHere is an example of using the above function:\n# Pass a function as an argument\nWhen a function is handled as data, it implicitly carries information related to the sur-\nrounding environment where the function was defined.This affects how free variables\nin the function are bound.As an example, consider this modified version foo.py that\n# Pass a function as an argument\nFunctions as Objects and Closures\nIn this example, notice how the function helloworld() uses the value of x that’s\nbeing called, that value of x is not the one that’s used when helloworld() executes.\nWhen the statements that make up a function are packaged together with the envi-\nof the previous example is explained by the fact that all functions have a _ _globals_ _\nattribute that points to the global namespace in which the function was defined.This\nalways corresponds to the enclosing module in which a function was defined.\ninner function to execute.\nClosures and nested functions are especially useful if you want to write code based on\ndef get():\nIn this example, the page() function doesn’t actually carry out any interesting compu-\nInstead, it merely creates and returns a function get() that will fetch the con-\n<function get at 0x9735f0>\nIn this example, the two variables python and jython are actually two different ver-\nsions of the get() function.\nEven though the page() function that created these values\nis no longer executing, both get() functions implicitly carry the values of the outer\nvariables that were defined when the get() function was created.Thus, when get()\nChapter 6 Functions and Functional Programming\ndef next():\n# Example use\nfunction next() updates and returns the previous value of this counter variable each\nment similar functionality using a class such as this:\nclass Countdown(object):\ndef __init__(self,n):\ndef next(self):\nself.n -= 1\n# Example use\nuseful for applications where you want to wrap existing functions in order to add extra\nA decorator is a function whose primary purpose is to wrap another function or class.\ndef square(x):\ndef square(x):\nIn the example, a function square() is defined.\ntion, the function object itself is passed to the function trace(), which returns an\nIn this code, trace() creates a wrapper function that writes some debugging output\nand then calls the original function object.Thus, if you call square(), you will see the\noutput of the write() methods in the wrapper.The function callf that is returned\ntrace() decorator simply returns the original function unmodified.Thus, when tracing\na function or class definition.\nChapter 6 Functions and Functional Programming\nhandle_button = temp(handle_button)  # Call the function returned by the decorator\nIn this case, the decorator function only accepts the arguments supplied with the @\nIt then returns a function that is called with the function as an argument.\ndef register_function(f):\nreturn register_function\nclass Bar(object):\ndef __init__(self,x):\ndef spam(self):\nFor class decorators, you should always have the decorator function return a class object\nCode that expects to work with the original class definition may want to ref-\ndecorator function foo() returns a function.\ndocumentation strings, and function attributes.These issues are described later in this\nIf a function uses the yield keyword, it defines an object known as a generator.A gener-\nator is a function that produces a sequence of values for use in iteration.\nIf you call this function, you will find that none of its code starts executing.\nInstead, a generator object is returned.The generator object, in turn, executes the func-\n# Use c.__next__() in Python 3\nWhen next() is invoked, the generator function executes statements until it reaches a\nA generator function signals completion by returning or raising StopIteration, at\nIt is never legal for a generator to return a value other than\nA subtle problem with generators concerns the case where a generator function is\nIn this example, the for loop aborts by calling break, and the associated generator\nnever runs to full completion.To handle this case, generator objects have a method\nChapter 6 Functions and Functional Programming\nInside the generator function, close() is signaled by a GeneratorExit exception\noccurring on the yield statement.You can optionally catch this exception to perform\nAlthough it is possible to catch GeneratorExit, it is illegal for a generator function to\nhandle the exception and produce another output value using yield.\nInside a function, the yield statement can also be used as an expression that appears on\nA function that uses yield in this manner is known as a coroutine, and it executes in\nwaiting for a value to be sent to it using the send() method of the associated generator\nobject r.The value passed to send() is returned by the (yield) expression in the\nUpon receiving a value, a coroutine executes statements until the next yield\n# Example use\nits own.To close the stream of input values, use the close() method like this:\nOnce closed, a StopIteration exception will be raised if further values are sent to a\nExceptions can be raised inside a coroutine using the throw(exctype [, value [,\ntb]]) method where exctype is an exception type, value is the exception value, and\nExceptions raised in this manner will originate at the currently executing yield state-\nA coroutine may simultaneously receive and emit return values using yield if values\nChapter 6 Functions and Functional Programming\nthe coroutine to (yield result), which returns None, the initial value of result.\nsubsequent send() calls, the received value is placed in line and split into result.The\nvalue returned by send() is the value passed to the next yield statement encountered.\nIn other words, the value returned by send() comes from the next yield expression,\nIf a coroutine returns values, some care is required if exceptions raised with throw()\nIf you raise an exception in a coroutine using throw(), the value\nFor example, generator functions are useful if you want to set up a\nfunctions related to finding, opening, reading, and processing files:\nHere is an example of using these functions to set up a processing pipeline:\nIn this example, the program is processing all lines in all \"access-log*\" files found\nsequence of generator functions using a for loop, you send values into a collection of\nHere is an example of coroutine functions written to mimic the gen-\nChapter 6 Functions and Functional Programming\nshown.The resulting list contains successive values of expressions.The if clause is\nFinally, it is important to note that in Python 2, the iteration variables defined within\nvariable x overwrites any previously defined value of x and is set to the value of the last\nA generator expression is an object that carries out the same computation as a list compre-\nChapter 6 Functions and Functional Programming\nobject that produces the values on demand via iteration.\nlist comprehension, Python actually creates a list that contains the resulting data.With a\nIn this example, the generator expression that extracts lines and strips whitespace does\nUnlike a list comprehension, a generator expression does not create an object that\na list using the built-in list() function:\nFor example, when you write a statement such as [x*x for x\nInstead of writing programs that manually iterate over data, you can use these declar-\nChapter 6 Functions and Functional Programming\nAnonymous functions in the form of an expression can be created using the lambda\nlambda expressions follow the same scoping rules as functions.\nThe primary use of lambda is in specifying short callback functions.\nRecursive functions are easily defined.\nfunction sys.getrecursionlimit() returns the current maximum recursion depth,\nand the function sys.setrecursionlimit() can be used to change the value.The\nRecursion does not work as you might expect in generator functions and corou-\nFor example, this code prints all items in a nested collection of lists:\nIt is common practice for the first statement of function to be a documentation string\nThe documentation string is stored in the _ _doc_ _ attribute of the function that is\nChapter 6 Functions and Functional Programming\nTo fix this, write decorator functions so that they propagate the function name and\nto the wrapper function that is being defined.\nFunction Attributes\nFunctions can have arbitrary attributes attached to them.\nFunction attributes are stored in a dictionary that is available as the __dict__ attribute\nof a function.\nThe primary use of function attributes is in highly specialized applications such as\nmation to function objects.\nAs with documentation strings, care should be given if mixing function attributes\nIf a function is wrapped by a decorator, access to the attributes will\nactually take place on the decorator function, not the original implementation.This may\ndefined function attributes to a decorator function, use the following template or the\nThe eval(str [,globals [,locals]]) function executes an expression string and\nSimilarly, the exec(str [, globals [, locals]]) function executes a string con-\nOne caution with exec is that in Python 2, exec is actually defined as a statement.\nModern programs should use exec() as a function.\nBoth of these functions execute within the namespace of the caller (which is used to\na function body may result in a SyntaxError exception if that function also contains\nnested function definitions or uses the lambda operator.\nwhich the string is defined (for use in traceback generation).The kind argument speci-\nset of statements, or 'eval' for an expression.The code object returned by the \ncompile() function can also be passed to the eval() function and exec() statement.\nClasses and Object-Oriented\nClasses are the mechanism used to create new kinds of objects.This chapter covers\nThe class Statement\nA class defines a set of attributes that are associated with, and shared by, a collection of\nobjects known as instances.A class is most commonly a collection of functions (known\nas methods), variables (which are known as class variables), and computed attributes\nA class is defined using the class statement.The body of a class contains a series of\nstatements that execute during class definition.\nclass Account(object):\ndef __init__(self,name,balance):\ndef __del__(self):\ndef deposit(self,amt):\ndef withdraw(self,amt):\ndef inquiry(self):\nreturn self.balance\nThe values created during the execution of the class body are placed into a class object\nAccount class are accessed as follows:\nChapter 7 Classes and Object-Oriented Programming\nIt’s important to note that a class statement by itself doesn’t create any instances of the\nclass (for example, no accounts are actually created in the preceding example).\nclass merely sets up the attributes that will be common to all the instances that will be\nThe functions defined inside a class are known as instance methods.An instance\nmethod is a function that operates on an instance of the class, which is passed as the first\nare examples of instance methods.\nClass variables such as num_accounts are values that are shared among all instances\nClass Instances\nInstances of a class are created by calling a class object as a function.This creates a new\ninstance that is then passed to the __init__() method of the class.The arguments to\n__init__() consist of the newly created instance self along with the arguments sup-\nplied when calling the class object.\nInside __init__(), attributes are saved in the instance by assigning to self.\nexample, self.name = name is saving a name attribute in the instance.\nnewly created instance has been returned to the user, these attributes as well as attrib-\nutes of the class are accessed using the dot (.) operator as follows:\nprevious example returns the name attribute of the instance a.\nreturns the deposit attribute (a method) of the Account class.When you access an\nAlthough classes define a namespace, classes do not create a scope for names used inside\nthe bodies of methods.Therefore, when you’re implementing a class, references to\nerence attributes of the instance through self.\nThus, in the example you use\nanother method, as shown in the following example:\nclass Foo(object):\ndef bar(self):\ndef spam(self):\nThe lack of scoping in classes is one area where Python differs from C++ or Java.\npointer.The explicit use of self is required because Python does not provide a means\nThe explicit use of self fixes this—all values stored on self are part of the instance\nInheritance is a mechanism for creating a new class that specializes or modifies the\nbehavior of an existing class.The original class is called a base class or a superclass.The\nnew class is called a derived class or a subclass.When a class is created via inheritance, it\n“inherits” the attributes defined by its base classes.\nInheritance is specified with a comma-separated list of base-class names in the class\nIf there is no logical base class, a class inherits from object, as has been\nobject is a class which is the root of all Python objects and\nclass EvilAccount(Account):\ndef inquiry(self):\nreturn self.balance\ninstance’s class, the search moves on to the base class.This process continues until there\nc.deposit() calls the implementation of deposit() defined in the Account class.\nChapter 7 Classes and Object-Oriented Programming\nclass EvilAccount(Account):\ndef __init__(self,name,balance,evilfactor):\ndef inquiry(self):\nreturn self.balance\nWhen a derived class defines __init__(), the __init__() methods of base classes are\ninitialization of the base classes by calling their __init__() methods.\nexample, this is shown in the statement that calls Account.__init__().\nIf a base class\nbase class defines __init__(), it is always safe to call it without any arguments because\nOccasionally, a derived class will reimplement a method but also want to call the\nthe base class, passing the instance self as the first parameter as shown here:\ndef deposit(self,amount):\nA subtlety in this example is that the class EvilAccount doesn’t actually implement the\nInstead, it is implemented in the Account class.Although this code\nsuper() function as follows:\ndef deposit(self,amount):\nsuper(cls, instance) returns a special object that lets you perform attribute\nIf you use this, Python will search for an attribute using the\nusing Python 3, you can use the simplified statement super().deposit(amount) to\nPython supports multiple inheritance.This is specified by having a class list multiple\nbase classes.\nFor example, here are a collection of classes:\nclass DepositCharge(object):\ndef deposit_fee(self):\nclass WithdrawCharge(object):\ndef withdraw_fee(self):\ndef deposit(self,amt):\ndef withdraw(self,amt):\ninitialized in its own class.What has happened is that the attribute fee is a class variable\ndefined in two different base classes.\nTo find attributes with multiple inheritance, all base classes are ordered in a list from\nIn the example, the class EvilAccount is more specialized than Account because it\nof base classes.\nIn most cases, this list is based on rules that “make sense.”That is, a derived class is\nare always checked in the same order as listed in the class definition.\nChapter 7 Classes and Object-Oriented Programming\nclass X(object): pass\nclass Y(X): pass\nclass Z(X,Y): pass  # TypeError.\nFor example, the class X appears before\nclass Y in the inheritance list, so it must be checked first.\ntypically defines a set of methods that are meant to be “mixed in” to other classes in\norder to add extra functionality (almost like a macro).Typically, the methods in a \nDepositCharge and WithdrawCharge classes in the earlier example illustrate this.\nThese classes add new methods such as deposit_fee() to classes that include them as\none of the base classes.\nchanged to refer to the attribute directly using the class name instead of self (for\nStatic Methods and Class Methods\nStatic Methods and Class Methods\nIn a class definition, all functions are assumed to operate on an instance, which is always\nA static method is an ordinary function that just happens to live in the namespace\ndefined by a class.\nclass Foo(object):\ndef add(x,y):\nTo call a static method, you just prefix it by the class name.You do not pass it any addi-\nA common use of static methods is in writing classes where you might have many dif-\ntion, alternative creation functions are often defined as shown here:\nclass Date(object):\ndef now():\nClass methods are methods that operate on the class itself as an object.\n@classmethod decorator, a class method is different than an instance method in that\nthe class is passed as the first argument which is named cls by convention.\nclass Times(object):\nChapter 7 Classes and Object-Oriented Programming\nIn this example, notice how the class TwoTimes is passed to mul() as an object.\nAlthough this example is esoteric, there are practical, but subtle, uses of class methods.\nAs an example, suppose that you defined a class that inherited from the Date class\ndef __str__(self):\nEuroDate.now(), a Date object is returned instead of a EuroDate object.A class\nclass Date(object):\nOne caution about static and class methods is that Python does not manage these meth-\nthose languages, class methods are strictly separate from instance methods.\nNormally, when you access an attribute of an instance or a class, the associated value\nthat is stored is returned.A property is a special kind of attribute that computes its value\nclass Circle(object):\ndef __init__(self,radius):\ndef area(self):\ndef perimeter(self):\nIn this example, Circle instances have an instance variable c.radius that is stored.\nan object would be accessed as a simple attribute such as c.radius whereas other\nattributes would be accessed as methods such as c.area().\nclass Foo(object):\ndef __init__(self,name):\ndef spam(self,x):\nprint(\"%s, %s\" % (self.name, x)\nthe original function object spam is not returned.\nfunction where the self parameter has already been filled in, but the additional argu-\nbound method object is silently handled through a property function that executes\nbehind the scenes.When you define static and class methods using @staticmethod and\n@classmethod, you are actually specifying the use of a different property function \n@staticmethod simply returns the method function back “as is” without any special\nChapter 7 Classes and Object-Oriented Programming\nclass Foo(object):\ndef __init__(self,name):\ndef name(self):\nreturn self.__name\ndef name(self,value):\nself.__name = value\ndef name(self):\nn = f.name         # calls f.name() - get function\nIn this example, the attribute name is first defined as a read-only property using the\nsetf=None, delf=None, doc=None) function with a set of uniquely named methods\nclass Foo(object):\ndef getname(self):\nreturn self.__name\ndef setname(self,value):\nself.__name = value\ndef delname(self):\nFor example, if you use decorators, the get, set, and\ndelete functions aren’t also visible as methods.\nand delete functions.This sort of attribute control can be further generalized through\nthe use of a descriptor object.A descriptor is simply an object that represents the value of\nclass TypedProperty(object):\ndef __init__(self,name,type,default=None):\ndef __get__(self,instance,cls):\nreturn getattr(instance,self.name,self.default)\ndef __set__(self,instance,value):\nif not isinstance(value,self.type):\nraise TypeError(\"Must be a %s\" % self.type)\nsetattr(instance,self.name,value)\ndef __delete__(self,instance):\nclass Foo(object):\nIn this example, the class TypedProperty defines a descriptor where type checking is\nmethods.Also, the attribute name used by the class to hold a descriptor takes prece-\nBy default, all attributes and methods of a class are “public.”This means that they are all\nIt also implies that everything defined in a base class\nand can lead to namespace conflicts between objects defined in a derived class and those\ndefined in a base class.\n__Foo, are automatically mangled to form a new name of the form _Classname__Foo. This effectively provides a way for a class to have private attributes and methods because\na base class.\nclass A(object):\ndef __init__(self):\ndef bar(self):\nChapter 7 Classes and Object-Oriented Programming\nclass B(A):\ndef __init__(self):\ndef __spam(self):       # Mangled to _B__spam()\nplace to actually prevent access to the “private” attributes of a class.\nname of the class and corresponding private attribute are known, they can be accessed\nusing the mangled name.A class can make these attributes less visible by redefining the\n__dir__() method, which supplies the list of names returned by the dir() function\nprocess actually only occurs once at the time a class is defined.",
     "keywords": [
       "function",
-      "class",
-      "def",
       "exception",
       "Functions",
       "Python",
       "Lib",
       "statement",
       "object",
-      "return",
       "statements",
       "call",
       "Exceptions",
       "functional programming",
-      "methods"
+      "methods",
+      "calls",
+      "attribute",
+      "generator function"
     ],
     "concepts": [
-      "def",
       "function",
       "functions",
       "functional",
       "functionality",
-      "class",
       "classes",
-      "f",
       "statement",
-      "statements"
+      "statements",
+      "exceptions",
+      "exception",
+      "object"
     ]
   },
   {
@@ -260,7 +260,6 @@
     "keywords": [
       "module",
       "Python",
-      "import",
       "Modules",
       "file",
       "package",
@@ -272,19 +271,20 @@
       "Python modules",
       "directory",
       "module import",
-      "import module"
+      "import module",
+      "spam import foo"
     ],
     "concepts": [
       "modules",
       "module",
       "important",
-      "import",
       "imported",
       "importing",
       "imports",
       "python",
-      "py",
-      "packages"
+      "packages",
+      "package",
+      "packaging"
     ]
   },
   {
@@ -308,19 +308,19 @@
       "characters",
       "strings",
       "Unicode files",
-      "print"
+      "Input"
     ],
     "concepts": [
-      "f",
       "encodings",
       "encoding",
-      "encod",
       "encoded",
       "encode",
-      "encoders",
-      "encoder",
       "files",
-      "file"
+      "file",
+      "characters",
+      "strings",
+      "string",
+      "python"
     ]
   },
   {
@@ -340,11 +340,11 @@
       "directory",
       "Environment",
       "Python interpreter",
-      "import",
       "files",
       "Python installation",
       "interactive",
-      "option"
+      "option",
+      "site module"
     ],
     "concepts": [
       "python",
@@ -369,7 +369,6 @@
       "function",
       "module",
       "Python",
-      "Testing",
       "program",
       "Debugger",
       "Lib",
@@ -377,22 +376,23 @@
       "functions",
       "run",
       "pdb Module",
-      "tests",
       "line",
       "test failure",
-      "pdb"
+      "pdb",
+      "timeit",
+      "FAST"
     ],
     "concepts": [
       "function",
       "functions",
-      "call_function",
       "functionality",
       "functional",
-      "testing",
-      "tests",
-      "test",
       "python",
-      "use"
+      "useful",
+      "uses",
+      "module",
+      "modules",
+      "runs"
     ]
   },
   {
@@ -426,9 +426,9 @@
       "exceptions",
       "exception",
       "python",
-      "x",
       "type",
-      "types"
+      "types",
+      "returns"
     ]
   },
   {
@@ -457,14 +457,14 @@
     "concepts": [
       "objects",
       "object",
-      "get_objects",
       "module",
       "modules",
       "functions",
       "function",
       "returns",
       "returned",
-      "return"
+      "types",
+      "type"
     ]
   },
   {
@@ -488,19 +488,19 @@
       "random number generator",
       "Fraction",
       "current decimal context",
-      "class"
+      "rounded"
     ],
     "concepts": [
-      "x",
       "decimal",
       "contexts",
-      "n",
       "random",
       "randomly",
       "randomize",
       "numbers",
       "number",
-      "context value"
+      "classes",
+      "values",
+      "rounding"
     ]
   },
   {
@@ -521,10 +521,10 @@
       "Data Structures",
       "Lib",
       "Creates",
-      "class",
       "Code Simplification",
       "tuple",
-      "object"
+      "object",
+      "Data"
     ],
     "concepts": [
       "item",
@@ -533,10 +533,10 @@
       "functions",
       "functionality",
       "functional",
-      "iterable",
       "iteration",
-      "_iter_",
-      "iterator"
+      "iterate",
+      "iterations",
+      "list"
     ]
   },
   {
@@ -567,12 +567,12 @@
       "strings",
       "characters",
       "character",
-      "matching",
       "matches",
       "matched",
       "match",
-      "m",
-      "f"
+      "format",
+      "formatting",
+      "formats"
     ]
   },
   {
@@ -594,21 +594,21 @@
       "object",
       "Python",
       "function",
-      "table",
       "database file",
-      "modules"
+      "modules",
+      "data"
     ],
     "concepts": [
       "database",
       "databases",
-      "c",
       "cur",
       "modules",
       "module",
-      "table",
       "tables",
       "data",
-      "values"
+      "values",
+      "value",
+      "object"
     ]
   },
   {
@@ -631,20 +631,20 @@
       "object",
       "data",
       "filename",
-      "True",
-      "Directory Handling"
+      "Directory Handling",
+      "temporary file"
     ],
     "concepts": [
       "file",
       "files",
       "returns",
       "returned",
-      "return",
       "returning",
-      "ti",
-      "d",
       "compressed",
-      "compress"
+      "compress",
+      "compression",
+      "compresses",
+      "filenames"
     ]
   },
   {
@@ -680,7 +680,7 @@
       "returned",
       "returns",
       "returning",
-      "return"
+      "object"
     ]
   },
   {
@@ -695,7 +695,6 @@
       "process",
       "lock",
       "queue",
-      "True",
       "Returns True",
       "item",
       "Lib",
@@ -704,7 +703,8 @@
       "object",
       "items",
       "shared",
-      "Process item print"
+      "Process item print",
+      "objects"
     ],
     "concepts": [
       "threads",
@@ -714,9 +714,9 @@
       "processes",
       "process",
       "processing",
-      "processe",
       "processed",
-      "object"
+      "object",
+      "objects"
     ]
   },
   {
@@ -726,7 +726,6 @@
     "end_page": 556,
     "summary": "port is the integer port number of the FTP server and defaults to port 21.\nRemoves the file filename from the server.\nLogs in to the server using the specified username, password, and account.\nthe password and defaults to the empty string ''.\nCreates a new directory on the server.\nReturns a string containing the current working directory on the server.\nCloses the FTP connection by sending the 'QUIT' command to the server.\nRenames a file on the server.\nReturns the results of executing a command on the server using binary transfer mode.\nwhich is the received data in the form of a string.\nis not supported by all FTP servers so this may result in an error_reply exception.\nReturns the results of executing a command on the server using text transfer mode.\nreceived.This callback function is called with a single argument which is a string con-\nSends a simple command to the server and returns the server response.\nstring containing the command.This method should only be used for commands that\nExecutes a command on the server and transmits data using binary transfer mode.\nserver.\nfile is an open file-object from which data will be read using\nfile.read(blocksize) and transferred to the server.\nExecutes a command on the server and transfers data using text transfer mode.\nfile is an open file-object from which data will be read using file.readline() and\nsent to the server.\na 'PORT' or 'EPRT' command and accepts the resulting connection from the server.\nconnection to the server.\nresponding to the open data connection.The optional rest parameter specifies a start-\ning byte offset into files requested on the server.\nservers and could result in an error_reply exception.\nThe following example shows how to use this module to upload a file to a FTP server:\n# Send it to the FTP server\nTo fetch documents from an FTP server, use the urllib package.\nfrom urllib.request import urlopen   # Python 3\nThe http package consists of modules for writing HTTP clients and servers as well as\nsupport for state management (cookies).The Hypertext Transfer Protocol (HTTP) is a\n1. A client makes a connection to an HTTP server and sends a request header of\nGET /document.html HTTP/1.0\nThe first line defines the request type, document (the selector), and protocol ver-\nFollowing the request line is a series of header lines containing various\nthe header lines.After the header, data may appear in the event that the request is\n2. The server sends a response of the following form:\nHeader: data\nThe first line of the server response indicates the HTTP protocol version, a suc-\ndocument size, web server software, cookies, and so forth.The header is terminat-\ned by a single blank line followed by the raw data of the requested document.\nThe following request methods are the most common:\nReturn header information only.\nUpload data to the server.\nThe response codes detailed in Table 22.1 are most commonly returned by servers.The\nResponse Codes Commonly Returned by Servers\nServer Error (5xx)\nInternal server error\nINTERNAL_SERVER_ERROR\nThe headers that appear in both requests and responses are encoded in a format widely\nThe http.client module provides low-level support for the client side of HTTP.\nThe module supports both HTTP/1.0 and HTTP/1.1 and additionally allows connec-\nexample, if you wanted to send requests with commands other than GET or POST.\n(HTTP/1.0).\nThe following classes can be used to establish an HTTP connection with a server:\nCreates an HTTP connection.\nCreates an HTTP connection but uses a secure socket.The default port is 443.\nSends a byte string, bytes, to the server.\nused to send data to the server after h.endheaders() has been called.\nSends a request to the server.\nmethod is the HTTP method, such as 'GET' or 'POST'.\nAccept-Encoding: headers in the HTTP request.\nBecause the HTTP/1.1 protocol allows multiple requests to be sent over a\nSends an RFC-822–style header to the server.\nIt sends a line to the server, consisting of\nthe header, a colon and a space, and the value.Additional arguments are encoded as\nSends a blank line to the server, indicating the end of the header lines.\nh.request(method, url [, body [, headers]])\nSends a complete HTTP request to the server.\nbody is an optional string containing data to upload to the\nserver after the request has been sent.\nheader:value pairs to be given to the h.putheader() method.\nGets a response from the server and returns an HTTPResponse instance that can be used\nAn HTTPResponse instance, r, as returned by the getresponse() method, supports\nReads up to size bytes from the server.\nIf size is omitted, all the data for this request\nreturn if the header is not found.\nReturns a list of (header, value) tuples.\nHTTP version used by the server.\nHTTP status code returned by the server.\nHTTP error message returned by the server.\nThe following exceptions may be raised in the course of handling HTTP connections:\nBase class of all HTTP-related errors.\nRequest was made but not connected.\nThe following exceptions are related to the state of HTTP/1.1 connections.\nHTTP/1.1 allows multiple requests/responses to be sent over a single connection, extra\nBase class of all HTTP-connection state errors.\na memory-efficient file upload to a server using a POST request—something that is not\nfrom http.client import HTTPConnection  # Python 3\n# Create the HTTP headers for each file\n# 'file_1','file_2', and so forth are what the remote server\nserver      = ('localhost', 8080)\nresp = upload(server, url,formfields,filefields)\nhttp.server (BaseHTTPServer, CGIHTTPServer,\nThe http.server module provides various classes for implementing HTTP servers.\nThe following class implements a basic HTTP server.\nHTTPServer(server_address, request_handler)\nserver_address is a tuple of the form (host,\nport) on which the server will listen.\nule.Thus, if you want to customize the operation of the HTTP server in any way, you\nHTTP server that only accepts connections from a specific subnet:\nfrom http.server import HTTPServer         # Python 3\nreturn HTTPServer.verify_request(self,request,client_address)\n# Example of how the server runs\nThe HTTPServer class only deals with the low-level HTTP protocol.To get the server\nTwo prebuilt web server handler classes can be used if you want to quickly set up a\nCGIHTTPRequestHandler(request, client_address, server)\ndefault).The handler supports GET, HEAD, and POST methods.\nport HTTP redirects (HTTP code 302), which limits its use to only more simple CGI\nSimpleHTTPRequestHandler(request, client_address, server)\nhandler.server_version\nServer version string returned to clients.\nBy default, this is set to a string such as\nHere is an example of using these handler classes to run a stand-alone web server\nfrom http.server import HTTPServer, CGIHTTPRequestHandler  # Python 3\ndefine your own custom HTTP server handling.The prebuilt handlers such as\nBaseHTTPRequestHandler(request, client_address, server)\nBase handler class used to handle HTTP requests.When a connection is received, the\nrequest and HTTP headers are parsed.An attempt is then made to execute a method of\nBaseHTTPRequestHandler.server_version\nSpecifies the server software version string that the server reports to clients—for exam-\nFormat string used to build error messages sent to the client.The format string is\nHTTP protocol version used in responses.The default is 'HTTP/1.0'.\nMapping of integer HTTP error codes to two-element tuples (message, explain)\nHTTP version string from the request, such as 'HTTP/1.0'.\nHTTP headers stored in a mapping object.\nwhen a client is uploading data (for example, during a POST\nrequest).\nSends a response for an unsuccessful request.\nmethod creates a complete error response using the error_message_format class vari-\nSends a response for a successful request.The HTTP response line is sent, followed by\nServer and Date headers.\ncode is an HTTP response code, and message is an optional\nb.send_header(keyword, value)\nb.log_request([code [, size]])\nHere is an example of creating a custom HTTP server that runs in a separate thread\nfrom http.server import BaseHTTPRequestHandler, HTTPServer      # Py 3\nself.send_header('content-type','text/plain')\nTo test this example, run the server and then enter a URL such as http://localhost:\n9000/name or http://localhost:9000/values into a browser.\nThis example also shows a technique for how to get servers to instantiate handler\nNormally, servers create handlers using a predefined set of\nThe http.cookies module provides server-side support for working with HTTP\nIn Python 2, the module is called Cookie.\nCookies are used to provide state management in servers that implement sessions,\nuser logins, and related features.To drop a cookie on a user’s browser, an HTTP server\ntypically adds an HTTP header similar to the following to an HTTP response:\nThe http.cookies module simplifies the task of generating cookie values by providing\n\"path\".The value is usually a short string.To create a cookie, simply create a cookie\nTo create output representing the cookie data as a set of HTTP headers, use the\nWhen a browser sends a cookie back to an HTTP server, it is encoded as a string of\nsuch as expires, path, and domain are not returned.The cookie string can usually be\nfound in the HTTP_COOKIE environment variable, which can be read by CGI applica-\ntions.To recover cookie values, use code similar to the following:\nDefines a cookie object in which cookie values are stored as simple strings.\nA cookie instance, c, provides the following methods:\nGenerates a string suitable for use in setting cookie values in HTTP headers.\nheader is the HTTP header\nto use ('Set-Cookie:' by default).\nGenerates a string containing JavaScript code that will set the cookie if executed on a\nA string containing the raw value of the cookie.\nA string containing the encoded value of the cookie that would be sent to or received\nProduces the HTTP header string for this morsel.\nstring to use ('Set-Cookie:' by default).\nReturns the cookie string without any HTTP headers or JavaScript code.\nThe http.cookiejar module provides client-side support for storing and managing\nHTTP cookies.\nThe primary role of this module is to provide objects in which HTTP cookies can\nFor instance, the http.cookiejar module\nrequests.\nIt can also be used to work with files containing cookie data such as files creat-\nAn object that manages HTTP cookie values, storing cookies received as a result of\nHTTP requests, and adding cookies to outgoing HTTP requests.\nCreates a FileCookieJar instance that retrieves and stores cookie information to a file.\nCreates an object representing a connection to an SMTP server.\nspecifies the name of the SMTP server.\nConnects to the SMTP server on host.\nTerminates the session by sending a 'QUIT' command to the server.\nSends a mail message to the server.\nThe following example shows how the module can be used to send a message:\nserver.quit()\ninteract with HTTP servers, FTP servers, and local files.Typical applications include\nThe urllib.request module provides functions and classes to open and fetch data\nfrom URLs. In Python 2, this functionality is found in a module urllib2.\nThe most common use of this module is to fetch data from web servers using\nHTTP.\nfrom urllib.request import urlopen    # Python 3\nu = urlopen(\"http://docs.python.org/3.0/library/urllib.request.html\")\nexample, you might have to worry about proxy servers, authentication, cookies, user\nThe most straightforward way to make a request is to use the urlopen() function.\nOpens the URL url and returns a file-like object that can be used to read the returned\nurl may either be a string containing a URL or an instance of the Request class,\ndata is a URL-encoded string containing form data to be uploaded\nto the server.When supplied, the HTTP 'POST' method is used instead of \nThe file-like object u returned by urlopen() supports the following methods:\nReads nbytes of data as a byte string.\nFor HTTP, the HTTP headers included with the\nserver response are returned.\nReturns the HTTP response code as an integer—for example,\nerrors related to the HTTP protocol itself such as forbidden access or requests for\nFor these kinds of errors, a server typically returns content that gives\nu = urlopen(\"http://www.python.org/perl.html\")\nproxy server.\nFor example, os.environ['HTTP_PROXY'] =\n'http://example.com:12345'.\nFor simple requests, the url parameter to urlopen() is a string such as\n'http://www.python.org'.\nmake modifications to HTTP request headers, create a Request instance and use that as\nRequest(url [, data [, headers [, origin_req_host [, unverifiable]]]])\nCreates a new Request instance.\ndata is URL-encoded data to be uploaded to\nthe server in HTTP requests.When this is supplied, it changes the HTTP request type\nheaders is a dictionary containing key-value mappings repre-\nsenting the contents of the HTTP headers.\nunverifiable is set to True if the request is for an unverifiable URL.An unverifiable\nAn instance r of Request has the following methods:\nAdds data to a request.\nIf the request is an HTTP request, the method is changed to\ndata is URL-encoded data as described for Request().This does not append\nr.add_header(key, val)\nAdds header information to the request.\nAdds header information to a request that will not be added to redirected requests.\nr.get_data()\nReturns the request data (if any).\nr.get_full_url()\nReturns the full URL of a request.\nReturns the host to which the request will be sent.\nReturns the HTTP method, which is either 'GET' or 'POST'.\nReturns the request-host of the originating transaction.\nReturns the selector part of the URL (for example, '/index.html').\nReturns the URL type (for example, 'http').\nr.has_data()\nReturns True if data is part of the request.\nReturns True if the request is unverifiable.\nReturns True if the request has header header.\nr.set_proxy(host, type)\nPrepares the request for connecting to a proxy server.This replaces the original host\nHere is an example that uses a Request object to change the 'User-Agent' header\nused by urlopen().You might use this if you wanted a server to think you were mak-\nr = Request(\"http://somedomain.com/\",headers=headers)\nBuilds a custom opener object for opening URLs.The arguments handler1,\nhandlers is to add various capabilities to the resulting opener object.The following lists\nProcessing of HTTP cookies\nHandles HTTP errors by raising an HTTPError excep-\nOpens URLs via HTTP\nOpens URLs via secure HTTP\nHTTPRedirectHandler, FTPHandler, FileHandler, and HTTPErrorProcessor.These\nThe object returned by build_opener() has a method, open(url [, data [,\nTo handle requests involving password authentication, you create an opener with \nthese handlers has the following method which can be used to set password:\nIts value depends on the remote server.\nu = opener.open(\"http://www.secretlair.com/evilplan.html\")\nHTTP Cookies\nTo manage HTTP cookies, create an opener object with an HTTPCookieProcessor\nu = opener.open(\"http://www.example.com/\")\nhttp.cookiejar module.\nu = opener.open(\"http://www.example.com/\")\nIf requests need to be redirected through a proxy, create an instance of ProxyHandler.\nCreates a proxy handler that routes requests through a proxy.The argument proxies is\na dictionary that maps protocol names (for example, 'http', 'ftp', and so on) to the\nURLs of the corresponding proxy server.\nu = opener.open(\"http://www.example.com/doc.html\")\nThis is an internal module that implements the file-like objects returned by functions in\nThe urllib.parse module is used to manipulate URL strings such as\n\"http://www.python.org\".\nURL Parsing (urlparse Module in Python 2)\nsuch as \"user:pass@hostname\".The following function is used to parse a URL:\nParses the URL in urlstring and returns a ParseResult instance.\nParseResult instance r is a named tuple the form (scheme, netloc, path,\nURL scheme specifier (for example, 'http')\nA ParseResult instance can be turned back into a URL string using r.geturl().\nConstructs a URL string from a tuple-representation of a URL as returned by \nURL scheme specifier (for example, 'http')\nA SplitResult instance can be turned back into a URL string using r.geturl().\nParses a URL-encoded (MIME type application/x-www-form-urlencoded) query\nstring qs and returns a dictionary where the keys are the query variable names and the\nwith a value set to the empty string.\nURL Encoding (urllib Module in Python 2)\nThe following functions are used to encode and decode data that make up URLs. quote(string [, safe [, encoding [, errors]]])\nThe same as quote() but accepts a byte-string and performs no encoding.The return\nunquote(string [, encoding [, errors]])\nConverts query values in query to a URL-encoded string suitable for inclusion as the\nquery parameter of a URL or for uploading as part of a POST request.\ndictionary or a sequence of (key, value) pairs.The resulting string is a series of\nsuitable for use in an HTTP GET request and how you can parse a URL:\n# Example of creating a URL with properly encoded query varibles\nurl = \"http://www.somehost.com/cgi-bin/view.py?\"+form_data\nprint(r.scheme)       # 'http'\nread the data returned by the server that’s associated with the error.This is a subclass of\nway imaginable.This includes creating new kinds of openers, handlers, requests,\nprovides the same functionality as urllib.request.urlopen() described here.\nThe xmlrpc package contains modules for implement XML-RPC servers and clients.\nXML-RPC is a remote procedure call mechanism that uses XML for data encoding and\nMore information about XML-RPC can be obtained at http://www.\nmodule is called xmlrpclib.To operate as a client, you create an instance of\nuri is the location of the remote XML-RPC server—for example, \"http://www.\nusing the format \"http://user:pass@host:port/path\", where user:pass is the\nif XML-RPC is being used over some kind of connection other than HTTP or\nallows the value None to be sent to remote servers.\nserver.The methods are accessed as attributes of s.\n>>> s = ServerProxy(\"http://www.xmlrpc.com/RPC2\")\nlimited number of argument types and return values are supported by the XML-RPC\nDictionary containing string keys and values of valid types\nThe d.value attribute contains the date as an ISO 8601 time/date string.To convert it\ndata is received, it is stored in an xmlrpc.client.Binary instance b.The b.data\nattribute contains the data as a byte string.\nPython 2 byte strings will work if they contain ASCII but will break otherwise.To deal\nIf the remote XML-RPC server supports introspection, the following methods may\nReturns a list of strings listing all the methods provided by the XML-RPC server.\nexample, 'string, int, int'), where the first item is the return type and the\nIn XML-RPC servers implemented in Python, signatures are typically empty\nGiven the name of a method, name, returns a documentation string describing the use\nCreates an XML-RPC Boolean object from value.This function predates the exis-\nCreates an XML-RPC object containing binary data.\ndata is a string containing the\nCreates an XML-RPC object containing a date.\nConverts params into an XML-RPC request or response, where params is either a\nthe method as a string.\nexplicitly mentioned by the XML-RPC specification, but many servers support it.\nConverts data containing an XML-RPC request or response into a tuple (params,\nMultiCall(server)\nCreates a MultiCall object that allows multiple XML-RPC requests to be packaged\nmany different RPC requests need to be made on the same server.\nserver is an\ninstance of ServerProxy, representing a connection to a remote server.The returned\nserver provides a system.multicall() method.\n# Now, actually send the XML-RPC request and get return results\nIndicates an XML-RPC fault.The faultCode attribute contains a string with the fault\na descriptive string.The headers attribute contains all the HTTP headers of the request\nxmlrpc.server (SimpleXMLRPCServer,\nThe xmlrpc.server module contains classes for implementing different variants of\nXML-RPC servers.\nCreates an XML-RPC server listening on the socket address addr (for example,\nrequest objects when connections are received.\nCreates a documenting XML-RPC that additionally responds to HTTP GET requests\nIf received, the server generates documentation from the\ndocumentation strings found in all of the registered methods and objects.The arguments\nRegisters a new function, func, with the XML-RPC server.\nthe name of the method, and params is a tuple containing arguments.The return value of\nFor example, if a request for method 'foo.bar.spam' is received, this\nsystem.methodHelp(), and system.methodSignature() to the XML-RPC server.\nsystem.methodHelp() returns the documentation string for a method (if any).The\nfunction to the server.\nSets the title of the server in HTML documentation.The string is placed in the HTML\ns.set_server_name(server_name)\nSets the name of the server in HTML documentation.The string appears at the top of\ns.set_server_documentation(server_documentation)\nafter the server name, but before a description of the XML-RPC functions.\nAlthough it is common for an XML-RPC server to operate as a stand-alone process,\nA CGI Request handler that operates in the same manner as SimpleXMLRPCServer.\nAn instance, c, of either CGI handler has the same methods as a normal XML-RPC\nserver for registering functions and instances.\nProcesses an XML-RPC request.\nBy default, the request is read from standard input.\nrequest_text is supplied, it contains the request data in the form received by an\nHTTP POST request.\nHere is a very simple example of writing a standalone server.\nfrom xmlrpc.server import SimpleXMLRPCServer      # Python 3\nfrom xmlrpc.server import CGIXMLRPCRequestHandler      # Python 3\nTo access XML-RPC functions from other Python programs, use the xmlrpc.client\nThe XML-RPC server modules are easy to use for basic kinds of distributed comput-\nserver.\nBy default, an XML-RPC server\nservers place no limit on the amount of data that can be sent in a request.An attacker\ncould potentially crash the server by sending an HTTP POST request with a payload so\nRPC server classes or request handlers.All of the server classes inherit from TCPServer\nin the socketserver module.Thus, the servers can be customized in the same manner\nas other socket server classes (for example, adding threading, forking, or validating client\nfrom xmlrpc.server import (SimpleXMLRPCServer,\nself.send_error(400,\"Bad request\")\nto dynamically handle certain kinds of requests.This use of Python is primarily associat-\na specific document element, a JavaScript function might execute and send an HTTP\nFor example, a server might return data as plaintext, XML, JSON, or any",
     "keywords": [
-      "http",
       "Internet Application Programming",
       "server",
       "HTTP server",
@@ -740,19 +739,20 @@
       "string",
       "data",
       "Internet Application",
-      "Application Programming"
+      "Application Programming",
+      "HTTP cookies"
     ],
     "concepts": [
       "server",
       "servers",
-      "http",
-      "f",
-      "requested",
       "requests",
-      "do_request",
-      "r",
-      "request header",
-      "url"
+      "url",
+      "urls",
+      "data",
+      "headers",
+      "string",
+      "strings",
+      "returned"
     ]
   },
   {
@@ -766,7 +766,6 @@
       "WSGI",
       "server",
       "CGI scripts",
-      "HTTP",
       "html",
       "WSGI application",
       "Web Programming",
@@ -776,19 +775,20 @@
       "Web",
       "cgi module",
       "Python",
-      "CGI programming"
+      "CGI programming",
+      "HTTP header"
     ],
     "concepts": [
-      "f",
-      "cgi",
-      "wsgi",
       "form",
       "data",
       "environment",
       "environ",
       "function",
       "functions",
-      "value"
+      "value",
+      "values",
+      "programming",
+      "programs"
     ]
   },
   {
@@ -820,11 +820,11 @@
       "modules",
       "module",
       "python",
-      "c",
       "function",
       "functionality",
       "functions",
-      "protocols"
+      "protocols",
+      "protocol"
     ]
   },
   {
@@ -855,12 +855,12 @@
       "functionality",
       "function",
       "functions",
-      "example",
-      "_example",
       "examples",
-      "return",
       "returned",
-      "returns"
+      "returns",
+      "returning",
+      "char",
+      "modules"
     ]
   }
 ]

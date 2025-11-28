@@ -12,7 +12,6 @@
       "Edition Ben Auffarth",
       "Ben Auffarth",
       "Leonid Kuligin",
-      "packt",
       "production-ready LLM applications",
       "Google",
       "LangChain",
@@ -20,19 +19,20 @@
       "Generative",
       "book",
       "Google Cloud Consulting",
-      "LLM applications"
+      "LLM applications",
+      "LangChain Build production-ready"
     ],
     "concepts": [
-      "ai",
       "langchain",
-      "applications",
-      "packt",
       "max",
       "systems",
       "ben",
       "manager",
       "management",
-      "agents"
+      "agents",
+      "agent",
+      "lead",
+      "leads"
     ]
   },
   {
@@ -49,26 +49,26 @@
       "Evaluation",
       "Model",
       "Contents",
-      "Table",
       "LLM applications",
       "agent",
       "Evaluating LLM agents",
       "LLM agents",
       "Evaluating RAG systems",
       "LangChain",
-      "Evaluating"
+      "Evaluating",
+      "Building Intelligent RAG"
     ],
     "concepts": [
       "evaluation",
       "evaluate",
       "evaluating",
-      "agentic",
       "agents",
       "agent",
       "model",
       "models",
       "rag",
-      "tool"
+      "tool",
+      "tools"
     ]
   },
   {
@@ -81,7 +81,6 @@
       "LLM",
       "book",
       "’ll",
-      "Chapter",
       "LLM applications",
       "applications",
       "LLMs",
@@ -92,19 +91,20 @@
       "LangChain",
       "practical LLM applications",
       "generative",
-      "LLM application development"
+      "LLM application development",
+      "agent"
     ],
     "concepts": [
       "llm",
       "agents",
       "agent",
-      "agentic",
-      "chapter",
       "chapters",
-      "ai",
       "implementation",
       "implementing",
-      "implementations"
+      "implementations",
+      "implement",
+      "providers",
+      "provides"
     ]
   },
   {
@@ -133,14 +133,14 @@
     "concepts": [
       "models",
       "model",
-      "ai",
       "performance",
       "perform",
       "agents",
       "agent",
-      "agentic",
       "llms",
-      "capabilities"
+      "capabilities",
+      "capable",
+      "capability"
     ]
   },
   {
@@ -162,21 +162,21 @@
       "models",
       "tools",
       "workflows",
-      "Chapter",
       "complex",
-      "framework"
+      "framework",
+      "Rise of Generative"
     ],
     "concepts": [
-      "agentic",
       "agents",
       "agent",
-      "ai",
-      "langchain",
       "llms",
       "applications",
       "application",
       "developing",
-      "development"
+      "development",
+      "developers",
+      "developer",
+      "develop"
     ]
   },
   {
@@ -191,7 +191,6 @@
       "LLM",
       "LLM applications",
       "LLMs",
-      "Chapter",
       "development",
       "integrations",
       "packages",
@@ -200,7 +199,8 @@
       "building",
       "ecosystem",
       "GitHub",
-      "’ll"
+      "’ll",
+      "LangChain ecosystem"
     ],
     "concepts": [
       "langchain",
@@ -235,8 +235,8 @@
       "model",
       "Google",
       "factorial",
-      "set",
-      "function"
+      "function",
+      "API key setup"
     ],
     "concepts": [
       "model",
@@ -246,9 +246,9 @@
       "provide",
       "provides",
       "providing",
-      "import",
       "langchain",
-      "google"
+      "google",
+      "openai"
     ]
   },
   {
@@ -266,25 +266,25 @@
       "output",
       "Runnable",
       "template",
-      "import",
       "model",
       "question",
       "applications",
       "Claude",
       "response",
-      "thinking"
+      "thinking",
+      "tokens"
     ],
     "concepts": [
-      "lcel",
       "prompts",
       "prompt",
       "model",
       "models",
-      "model_name",
       "chain",
       "chains",
       "output",
-      "outputs"
+      "outputs",
+      "applications",
+      "application"
     ]
   },
   {
@@ -308,7 +308,7 @@
       "topic",
       "chain analyzes",
       "LCEL chain",
-      "print"
+      "LCEL"
     ],
     "concepts": [
       "models",
@@ -320,7 +320,7 @@
       "run",
       "running",
       "runs",
-      "import"
+      "prompt"
     ]
   },
   {
@@ -348,15 +348,15 @@
     ],
     "concepts": [
       "image",
-      "generating images",
       "models",
       "model",
-      "model_name",
       "text",
-      "import",
       "langchain",
       "generate",
-      "generation"
+      "generation",
+      "generated",
+      "generator",
+      "generates"
     ]
   },
   {
@@ -373,14 +373,14 @@
       "workflow",
       "node",
       "workflows",
-      "Chapter",
       "applications",
       "nodes",
       "’ll",
       "Graph",
       "model",
       "LLMs",
-      "complex workflows"
+      "complex workflows",
+      "Building Workflows"
     ],
     "concepts": [
       "model",
@@ -392,7 +392,7 @@
       "application",
       "workflows",
       "workflow",
-      "langgraph"
+      "buildings"
     ]
   },
   {
@@ -415,12 +415,10 @@
       "nodes",
       "Workflows",
       "graph",
-      "import",
-      "str"
+      "str",
+      "Building Workflows"
     ],
     "concepts": [
-      "langgraph",
-      "import",
       "important",
       "state",
       "output",
@@ -428,7 +426,9 @@
       "graph",
       "graphs",
       "node",
-      "nodes"
+      "nodes",
+      "reducers",
+      "reduce"
     ]
   },
   {
@@ -447,12 +447,12 @@
       "LangChain",
       "LLMs",
       "analyze",
-      "Chapter",
       "retry",
       "END",
       "fake",
       "prompt engineering",
-      "Error"
+      "Error",
+      "messages"
     ],
     "concepts": [
       "prompt",
@@ -461,10 +461,10 @@
       "llm",
       "langchain",
       "important",
-      "import",
       "errors",
       "error",
-      "retries"
+      "retries",
+      "retry"
     ]
   },
   {
@@ -495,12 +495,12 @@
       "prompt",
       "prompts",
       "examples",
-      "example",
       "answer",
-      "full_answer",
       "answering",
       "state",
-      "cot"
+      "cot",
+      "templates",
+      "template"
     ]
   },
   {
@@ -522,9 +522,9 @@
       "config",
       "length",
       "message",
-      "Chapter",
       "memory",
-      "session"
+      "session",
+      "input"
     ],
     "concepts": [
       "history",
@@ -536,7 +536,7 @@
       "langchain",
       "memory",
       "important",
-      "import"
+      "importance"
     ]
   },
   {
@@ -605,10 +605,10 @@
       "searching",
       "embeddings",
       "embedding",
-      "similarity searches",
       "store",
       "stores",
-      "storing"
+      "storing",
+      "similar"
     ]
   },
   {
@@ -640,11 +640,11 @@
       "vector",
       "vectors",
       "searches",
-      "like",
       "likely",
-      "search index",
       "important",
-      "import"
+      "content",
+      "data",
+      "loaders"
     ]
   },
   {
@@ -675,12 +675,12 @@
       "retrieved",
       "retriever",
       "retrievers",
-      "as_retriever",
       "document",
       "documents",
       "documentation",
-      "chunking",
-      "chunk"
+      "chunk",
+      "chunks",
+      "semantic"
     ]
   },
   {
@@ -697,14 +697,14 @@
       "Intelligent RAG",
       "document",
       "query",
-      "import",
       "retriever",
       "Vector",
       "retrieval",
       "RAG",
       "source",
       "LangChain",
-      "Building Intelligent"
+      "Building Intelligent",
+      "sources"
     ],
     "concepts": [
       "retrieval",
@@ -744,15 +744,15 @@
     ],
     "concepts": [
       "document",
-      "retrieving relevant documents",
-      "retrieved context",
       "generate",
       "generating",
       "generative",
       "generated",
-      "generated_",
       "generation",
-      "generator"
+      "generator",
+      "important",
+      "importance",
+      "verification"
     ]
   },
   {
@@ -781,14 +781,14 @@
     "concepts": [
       "document",
       "documentation",
-      "retrieved documents",
       "rag",
       "retrieval",
       "retrievers",
-      "retrieve",
       "retrieves",
       "complex",
-      "complexity"
+      "complexity",
+      "important",
+      "imports"
     ]
   },
   {
@@ -804,7 +804,6 @@
       "Intelligent RAG Systems",
       "Building Intelligent RAG",
       "issues",
-      "import",
       "list",
       "graph",
       "RAG Systems",
@@ -812,19 +811,20 @@
       "Intelligent RAG",
       "vector store",
       "store",
-      "vector"
+      "vector",
+      "Building Intelligent"
     ],
     "concepts": [
       "imports",
-      "import",
       "document",
-      "documentation",
       "documents",
-      "state",
       "retrieval",
       "retriever",
       "retrieved",
-      "retrieve"
+      "retrieve",
+      "message",
+      "messages",
+      "doc"
     ]
   },
   {
@@ -848,19 +848,19 @@
       "Systems",
       "documentation",
       "messages",
-      "Chapter"
+      "Documentation Manager"
     ],
     "concepts": [
       "retrieving",
       "retriever",
       "retrieved",
-      "document retrieval",
       "documentation",
       "documents",
       "rag",
-      "st",
       "message",
-      "messages"
+      "messages",
+      "user",
+      "users"
     ]
   },
   {
@@ -888,15 +888,15 @@
     ],
     "concepts": [
       "tools",
-      "tool_call",
-      "tool calling",
       "query",
       "search",
       "question",
       "questions",
       "llms",
       "llm",
-      "langchain"
+      "langchain",
+      "agents",
+      "agent"
     ]
   },
   {
@@ -925,14 +925,14 @@
     "concepts": [
       "tools",
       "tool",
-      "call_tools",
-      "tool_call",
-      "tool_call_",
-      "tool_",
       "message",
       "messages",
-      "last_message",
-      "import"
+      "important",
+      "search",
+      "query",
+      "queries",
+      "google",
+      "llm"
     ]
   },
   {
@@ -961,14 +961,14 @@
     "concepts": [
       "tool",
       "tools",
-      "tool_call",
       "calculator",
       "calculates",
       "expression",
       "description",
       "descriptions",
       "agents",
-      "agent"
+      "agent",
+      "function"
     ]
   },
   {
@@ -997,14 +997,14 @@
     "concepts": [
       "tool",
       "tools",
-      "tool_",
       "message",
       "messages",
       "date",
       "dates",
-      "get_date",
       "models",
-      "model"
+      "model",
+      "important",
+      "type"
     ]
   },
   {
@@ -1015,7 +1015,6 @@
     "summary": "Building Intelligent Agents\nWe learned how to use tools, or function calls, to enhance LLMs’ performance on complex tasks.\nwhat an agent is.\nWhat are agents?\nbut there are many different definitions of what an agent is.\nLangChain itself defines an agent \nthat concept in mind, let’s describe some properties of an agent in the context of generative AI:\nAgents help a user solve complex non-deterministic tasks without being given an explicit \nTo solve a task, agents typically perform multiple steps and iterations.\nAgents utilize LLMs for reasoning (and solving tasks).\nLet’s start with an example and develop our agent.\nPlan-and-solve agent\ndemonstrated that plan-and-solve prompting improves LLM reasoning.\nFaced with a complex task, let’s first ask the LLM to come up with a detailed plan to solve this \ntask, and then use the same LLM to execute on every step.\n\"For the given task, come up with a step by step plan.\\n\"\n\"This plan should involve individual tasks, that if executed correctly \nBuilding Intelligent Agents\n(\"user\", \"Prepare a plan how to solve the following task:\\\nFor a step execution, let’s use a ReACT agent with built-in tools—DuckDuckGo search, retrievers \nfrom langchain.agents import load_tools\nerated plan, and let’s add past_steps and final_response to the state:\n\"\"\"Returns formatted plan with step numbers and past results.\"\"\"\nfor i, step in enumerate(state[\"plan\"]):\nPlanned step: {step}\\n\"\nplan = await planner.ainvoke(state[\"task\"])\nstep = await execution_agent.ainvoke({\"plan\": get_full_plan(plan), \n\"step\": plan.steps[current_step], \"task\": state[\"task\"]})\nfinal_response = await (final_prompt | llm).ainvoke({\"task\": \nstate[\"task\"], \"plan\": get_full_plan(state)})\nBuilding Intelligent Agents\nFigure 5.3: Plan-and-solve agentic workflow\nLLM prompt with a given task.\nWe started by building a ReACT agent from scratch and \nan LLM to call any tool or a specific one, and instructing it to return responses in structured \nFinally, we built our first plan-and-solve agent with LangGraph, applying all the concepts we’ve \ntinue discussing how to develop agents and look into more advanced architectural patterns.\nHow would you define a generative AI agent?\nBuilding Intelligent Agents\nIn the previous chapter, we defined what an agent is.\ning effective agents involves several distinct design patterns every developer should be familiar \nIn this chapter, we’re going to discuss key architectural patterns behind agentic AI.\nWe will develop an advanced agent with self-reflection that uses tools to answer complex exam \nimplementing agentic architectures, such as details about LangGraph streaming and ways to \nWe will also look into the Tree-of-Thoughts (ToT) pattern and develop a ToT agent ourselves, \nAdvanced Applications and Multi-Agent Systems\nAgentic architectures\nMulti-agent architectures\nAgent memory\nAgentic architectures\nAs we learned in Chapter 5, agents help humans solve tasks.\nAs we discussed in Chapter 5, agents don’t have a specific algorithm to follow.\nLet’s recall the ReACT agent we learned about in Chapter 5, an example of a tool-calling pattern:\nagents.\nYou will see these patterns in various combinations across different domains and agentic \nwith few-shot examples and split complex tasks into smaller steps.\npartial control over the task decomposition and planning process, managing the flow by \nsolve agent.\nduce cooperation between multiple instances of LLM-enabled agents.\nskill sets by initiating your agents with different system prompts, available toolsets, etc.\nAdvanced Applications and Multi-Agent Systems\ntasks and expected outputs, and simulators, a safe way for LLMs to interact with tools, are key \nto building really complex and effective agents.\nprinciples by discussing various agentic architectures and looking at examples.\nenhancing the RAG architecture we discussed in Chapter 4 with an agentic approach.\nAgentic RAG\nLLMs enable the development of intelligent agents capable of tackling complex, non-repetitive \nask an LLM to generate an answer given a system prompt, combined context, and the question.\nQuery expansion tasks an LLM to generate multiple queries based on initial ones, and \nof context in front of an LLM, you perform many smaller reasoning steps in parallel first.\nReflection steps and iterations task LLMs to dynamically iterate on retrieval and query \nBased on our definition from the previous chapters, RAG becomes agentic RAG when you have \nit becomes agentic RAG.\nMulti-agent architectures\nWe built a plan-and-solve agent that goes a step further than CoT and \nencourages the LLM to generate a plan and follow it.\nmulti-agent one since the research agent (which was responsible for generating and following \nthe plan) invoked another agent that focused on a different type of task – solving very specific ",
     "keywords": [
       "LLM",
-      "Chapter",
       "plan",
       "Agents",
       "task",
@@ -1028,19 +1027,20 @@
       "state",
       "Intelligent Agents",
       "tools",
-      "final"
+      "final",
+      "tool"
     ],
     "concepts": [
       "agents",
       "agent",
-      "agentic",
       "tasks",
       "task",
       "steps",
       "step",
-      "full_step",
       "plan",
-      "get_full_plan"
+      "planned",
+      "planning",
+      "tools"
     ]
   },
   {
@@ -1057,26 +1057,26 @@
       "prompt",
       "Multi-Agent Systems",
       "specialized agents",
-      "chapter",
       "consensus mechanism",
       "Systems",
       "mechanism",
       "tools",
       "LLM",
       "Advanced Applications",
-      "messages"
+      "messages",
+      "consensus"
     ],
     "concepts": [
-      "agentic",
       "agents",
       "agent",
       "prompts",
       "prompting",
       "prompt",
-      "system_prompt",
       "question",
       "questions",
-      "important"
+      "important",
+      "importance",
+      "useful"
     ]
   },
   {
@@ -1107,12 +1107,12 @@
       "states",
       "answer",
       "answers",
-      "agent",
       "agents",
       "event",
       "events",
       "streaming",
-      "stream"
+      "stream",
+      "streams"
     ]
   },
   {
@@ -1128,7 +1128,6 @@
       "state",
       "agents",
       "question",
-      "Chapter",
       "graph",
       "Command",
       "research agent",
@@ -1136,19 +1135,20 @@
       "node",
       "human",
       "user",
-      "research"
+      "research",
+      "prompt"
     ],
     "concepts": [
       "agents",
-      "agent",
-      "agentic",
       "messages",
       "message",
       "state",
       "step",
       "steps",
-      "langgraph",
-      "builder"
+      "builder",
+      "graph",
+      "chapters",
+      "result"
     ]
   },
   {
@@ -1168,23 +1168,23 @@
       "candidates",
       "queue",
       "max",
-      "return",
       "current",
       "Optional",
       "PlanState",
-      "builder.add"
+      "builder.add",
+      "Advanced Applications"
     ],
     "concepts": [
       "step",
-      "steps",
-      "next_step",
       "state",
       "node",
-      "next_node",
       "nodes",
-      "my_node",
       "candidates",
-      "candidate"
+      "candidate",
+      "plan",
+      "planned",
+      "planning",
+      "returns"
     ]
   },
   {
@@ -1204,23 +1204,23 @@
       "development",
       "traditional programming languages",
       "programming languages",
-      "Chapter",
       "agents",
       "LangGraph",
       "data",
-      "programming"
+      "programming",
+      "code"
     ],
     "concepts": [
       "developed",
       "develop",
       "developers",
       "developer",
-      "code development",
       "cache",
       "caching",
       "cached",
       "caches",
-      "coding"
+      "coding",
+      "agent"
     ]
   },
   {
@@ -1252,11 +1252,11 @@
       "development",
       "developers",
       "developer",
-      "generation models",
-      "ai coding",
       "generated",
       "generative",
-      "generate"
+      "generate",
+      "generating",
+      "security"
     ]
   },
   {
@@ -1286,13 +1286,13 @@
       "model",
       "models",
       "data",
-      "secure coding",
-      "llm code",
-      "import",
       "imports",
       "imported",
       "importantly",
-      "security"
+      "security",
+      "validation",
+      "langchain",
+      "requirements"
     ]
   },
   {
@@ -1310,16 +1310,15 @@
       "RAG",
       "list",
       "code",
-      "import",
       "prime numbers primes",
       "python",
       "agent",
       "Software Development",
       "primes",
-      "Create"
+      "Create",
+      "LLM"
     ],
     "concepts": [
-      "import",
       "code",
       "coding",
       "documentation",
@@ -1328,7 +1327,8 @@
       "model",
       "models",
       "python",
-      "agents"
+      "agents",
+      "agent"
     ]
   },
   {
@@ -1359,12 +1359,12 @@
       "agents",
       "agent",
       "model",
-      "models",
       "task",
       "tasks",
       "code",
       "coding",
-      "train"
+      "train",
+      "training"
     ]
   },
   {
@@ -1387,20 +1387,20 @@
       "petal length",
       "dataset",
       "petal width",
-      "Chapter",
-      "Analysis Agents"
+      "Analysis Agents",
+      "evaluation"
     ],
     "concepts": [
       "agent",
       "agents",
-      "agentic",
       "evaluation",
       "evaluating",
       "evaluate",
       "evaluations",
       "evaluates",
       "code",
-      "coding"
+      "coding",
+      "different"
     ]
   },
   {
@@ -1428,15 +1428,15 @@
     ],
     "concepts": [
       "evaluation",
-      "evalu",
       "evaluates",
       "evaluations",
       "evaluated",
       "evaluating",
-      "users evaluate",
-      "agents",
       "agent",
-      "user"
+      "user",
+      "tools",
+      "tool",
+      "systems"
     ]
   },
   {
@@ -1465,14 +1465,14 @@
     "concepts": [
       "evaluating",
       "evaluation",
-      "evaluates",
       "evaluate",
       "evaluator",
       "evaluations",
-      "evaluators assessing",
       "agents",
       "agent",
-      "approach"
+      "approach",
+      "approaches",
+      "assesses"
     ]
   },
   {
@@ -1505,10 +1505,10 @@
       "evaluators",
       "evaluating",
       "trajectories",
-      "agent trajectory",
       "reasoning",
       "output",
-      "outputs"
+      "outputs",
+      "agents"
     ]
   },
   {
@@ -1532,7 +1532,7 @@
       "information",
       "evaluate",
       "systems",
-      "Testing"
+      "context"
     ],
     "concepts": [
       "evaluation",
@@ -1543,8 +1543,8 @@
       "evaluators",
       "information",
       "llm",
-      "testing",
-      "test"
+      "dataset",
+      "documents"
     ]
   },
   {
@@ -1566,9 +1566,9 @@
       "Policy Number",
       "synthetic insurance claim",
       "description",
-      "Chapter",
       "insurance claim extraction",
-      "claim text"
+      "claim text",
+      "Field"
     ],
     "concepts": [
       "evaluation",
@@ -1579,8 +1579,8 @@
       "evaluated",
       "security",
       "extraction",
-      "extract",
-      "extracted"
+      "extracted",
+      "llm"
     ]
   },
   {
@@ -1604,7 +1604,7 @@
       "applications",
       "chunks",
       "deploying LLM applications",
-      "print"
+      "FastAPI"
     ],
     "concepts": [
       "deployment",
@@ -1614,9 +1614,9 @@
       "ray",
       "models",
       "model",
-      "model_name",
       "index",
-      "print"
+      "chunks",
+      "llm"
     ]
   },
   {
@@ -1647,12 +1647,12 @@
       "deploying",
       "deploy",
       "deployments",
-      "applications",
       "application",
-      "langgraph",
-      "app",
-      "apps",
-      "secret"
+      "secret",
+      "secrets",
+      "resource",
+      "resources",
+      "configurations"
     ]
   },
   {
@@ -1681,14 +1681,14 @@
     "concepts": [
       "model",
       "models",
-      "model_name",
       "deployment",
       "deployed",
       "deploy",
       "deploying",
       "deployments",
       "data",
-      "langchain"
+      "langchain",
+      "tools"
     ]
   },
   {
@@ -1719,12 +1719,12 @@
       "token",
       "tokens",
       "important",
-      "import",
       "monitor",
       "monitoring",
       "metrics",
       "agents",
-      "agentic"
+      "agent",
+      "tools"
     ]
   },
   {
@@ -1747,8 +1747,8 @@
       "Deployment",
       "LangChain",
       "Observability",
-      "chapter",
-      "Production-Ready LLM"
+      "Production-Ready LLM",
+      "response"
     ],
     "concepts": [
       "model",
@@ -1787,7 +1787,6 @@
       "human cognition"
     ],
     "concepts": [
-      "ai",
       "reason",
       "reasoning",
       "reasoners",
@@ -1796,7 +1795,8 @@
       "capabilities",
       "capability",
       "capable",
-      "human"
+      "human",
+      "humans"
     ]
   },
   {
@@ -1826,13 +1826,13 @@
       "models",
       "model",
       "modeling",
-      "ai",
       "data",
       "approach",
       "approaches",
       "scaling",
       "scale",
-      "scaled"
+      "scaled",
+      "train"
     ]
   },
   {
@@ -1859,7 +1859,6 @@
       "Impact"
     ],
     "concepts": [
-      "ai",
       "automating",
       "automation",
       "automated",
@@ -1868,7 +1867,8 @@
       "potentially",
       "potential",
       "scaling",
-      "scale"
+      "scale",
+      "systems"
     ]
   },
   {
@@ -1895,7 +1895,6 @@
       "OpenAI API key"
     ],
     "concepts": [
-      "ai",
       "models",
       "model",
       "api",
@@ -1904,7 +1903,8 @@
       "developers",
       "development",
       "developing",
-      "develop"
+      "develop",
+      "develops"
     ]
   },
   {
@@ -1921,26 +1921,26 @@
       "int",
       "Agents",
       "Python function",
-      "test",
       "books",
       "LLM",
       "final",
       "Python",
       "long videos",
       "reduce",
-      "list"
+      "list",
+      "summarize long videos"
     ],
     "concepts": [
       "summaries",
       "summary",
       "apply",
-      "appli",
-      "x",
-      "ai",
-      "sub_summaries",
-      "sub_summary",
       "tasked",
-      "tasks"
+      "tasks",
+      "piece",
+      "pieces",
+      "prompt",
+      "prompts",
+      "video"
     ]
   },
   {
@@ -1970,13 +1970,13 @@
       "model",
       "models",
       "modeling",
-      "agentic",
       "agent",
       "agents",
       "retrieval",
       "retrievers",
       "retriever",
-      "langchain"
+      "langchain",
+      "llm"
     ]
   },
   {
@@ -2009,10 +2009,10 @@
       "index",
       "indexing",
       "retrievers",
-      "rerankers",
-      "rerank",
       "free",
-      "link"
+      "link",
+      "search",
+      "scaling"
     ]
   }
 ]

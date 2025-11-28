@@ -25,14 +25,14 @@
     "concepts": [
       "method",
       "methods",
-      "self",
       "function",
       "functions",
       "functionality",
       "functional",
-      "x",
       "iteration",
-      "iterator"
+      "iterating",
+      "slicing",
+      "slices"
     ]
   },
   {
@@ -47,28 +47,28 @@
       "generator function",
       "yield",
       "function",
-      "def",
       "Enhanced Generators",
       "Python",
-      "print",
       "line",
       "code",
       "generator function executes",
       "yield statement",
       "Enhanced",
-      "File"
+      "File",
+      "exception",
+      "functions"
     ],
     "concepts": [
       "generators",
-      "generator function",
-      "def",
       "yield",
       "iteration",
-      "__iter__",
       "iterate",
-      "iterables",
-      "iterators",
-      "iterable"
+      "functions",
+      "functionality",
+      "line",
+      "lines",
+      "code",
+      "file"
     ]
   },
   {
@@ -78,33 +78,33 @@
     "end_page": 240,
     "summary": "Classes and Object-Oriented Programming\n<class 'list'>\nThe class Statement\nNew objects are defined using the class statement.\nclass Account:\ndef __init__(self, owner, balance):\nreturn f'Account({self.owner!r}, {self.balance!r})'\ndef withdraw(self, amount):\nreturn self.balance\nIt’s important to note that a class statement by itself doesn’t create any instances of the\nclass.\nclass merely holds the methods that will be available on the instances created later.\nThe functions defined inside a class are known as methods.\nAn instance method is a\nfunction that operates on an instance of the class, which is passed as the first argument.\nwithdraw(), and inquiry() are examples of instance methods.\nThe __init__() and __repr__() methods of the class are examples of so-called special\nThe __init__() method is used to initialize state when a new instance is created.\n__repr__() method returns a string for viewing an object.\nA class definition may optionally include a documentation string and type hints.\nclass Account:\ndef __init__(self, owner, balance):\nreturn f'Account({self.owner!r}, {self.balance!r})'\ndef withdraw(self, amount):\nreturn self.balance\nType hints do not change any aspect of how a class works—that is, they do not\nInstances of a class are created by calling a class object as a function.\ninstance that is then passed to the __init__() method.\nconsist of the newly created instance self along with the arguments supplied in calling the\nclass object.\nClasses and Object-Oriented Programming\nInside __init__(), attributes are saved on the instance by assigning to self.\nexample, self.owner = owner is saving an attribute on the instance.\ncreated instance has been returned, these attributes, as well as methods of the class, are\nThe methods are found on the class\nEvery instance keeps a link to its class via its associated type.\n<class 'Account'>\n<class 'Account'>\nrelationship between instances and classes.\nAttributeError: 'Account' object has no attribute 'balance'\n# Method call\nmethod.\nClasses and Object-Oriented Programming\nWhen you access a method as an attribute, you get an object known as a bound method.\nA bound method is an object that contains both an instance (the self) and the function\nAlthough classes define an isolated namespace for the methods, that namespace does\nimplementing a class, references to attributes and methods must be fully qualified.\nexample, in methods you always reference attributes of the instance through self.\nanother method.\nclass Account:\ndef __init__(self, owner, balance):\nreturn f'Account({self.owner!r}, {self.balance!r})'\ndef withdraw(self, amount):\nreturn self.balance\nWhen defining new classes, it is common to define some of these methods.\n__repr__() method in the Account class was one such method for improving debugging\nclass AccountPortfolio:\ndef __init__(self):\nself.accounts = []\ndef add_account(self, account):\nreturn sum(account.inquiry() for account in self)\nreturn len(self.accounts)\nreturn self.accounts[index]\nreturn iter(self.accounts)\nClasses and Object-Oriented Programming\nthis by having your class implement predefined special methods as described in Chapter 4.\nInheritance is a mechanism for creating a new class that specializes or modifies the\nbehavior of an existing class.\nThe original class is called a base class, superclass, or parent\nclass.\nWhen a class\nis created via inheritance, it inherits the attributes defined by its base classes.\nderived class may redefine any of these attributes and add new attributes of its own.\nInheritance is specified with a comma-separated list of base-class names in the class\nIf there is no specified base class, a class implicitly inherits from object.\nis a class that is the root of all Python objects; it provides the default implementation of\nOne use of inheritance is to extend an existing class with new methods.\nclass MyAcount(Account):\nclass EvilAccount(Account):\nreturn self.balance * 1.10\nreturn self.balance\nOccasionally, a derived class would reimplement a method but also need to call the\nclass EvilAccount(Account):\nIn this example, super() allows you to access a method as it was previously defined.\nclass EvilAccount(Account):\ndef __init__(self, owner, balance, factor):\nClasses and Object-Oriented Programming\nAccount class:\nclass Account:\ndef __init__(self, owner, balance):\nreturn f'Account({self.owner!r}, {self.balance!r})'\nthe method is hardcoded to use the name Account.\n>>> class EvilAccount(Account):\n<class 'EvilAccount'>\nclass Account:\nreturn f'{type(self).__name__}({self.owner!r}, {self.balance!r})'\nInheritance is not used with every class, but if it’s\nan anticipated use case of the class you’re writing, you need to pay attention to details like\nInheritance establishes a relationship in the type system where any child class will\ntype-check as the parent class.\n<class 'EvilAccount'>\nclass Food:\nTo do that, list more than one class as a parent.\nThe resulting child class will\nclass Stack(list):\nClasses and Object-Oriented Programming\nclass Stack:\ndef __init__(self):\nA slight extension of this implementation might accept the internal list class as an\nclass Stack:\ndef __init__(self, *, container=None):\nclass Stack:\ndef __init__(self):\nClasses and Object-Oriented Programming\nthe object you’re building is a specialized version of the parent class or if you are merely\nSometimes you might find yourself writing classes with just a single method that needs to\nFor example, maybe you wrote a data parsing class like this:\nclass DataParser:\nclasses, consider using functions instead.\nHowever, none of these inherit from any kind of special Iterable base class.\nClasses and Object-Oriented Programming\nclass udict(dict):\nclass above.\nclass udict(UserDict):\n7.12 Class Variables and Methods\nStack class in Section 7.8.\nClass Variables and Methods\nIn a class definition, all functions are assumed to operate on an instance, which is always\nHowever, the class itself is also an object that can carry\nbeen created using a class variable num_accounts:\nclass Account:\ndef __init__(self, owner, balance):\nreturn f'{type(self).__name__}({self.owner!r}, {self.balance!r})'\ndef withdraw(self, amount):\nreturn self.balance\nClass variables are defined outside the normal __init__() method.\nuse the class, not self.\nIt’s a bit unusual, but class variables can also be accessed via instances.\nClasses and Object-Oriented Programming\nThis works because attribute lookup on instances checks the associated class if there’s no\nIt is also possible to define what’s known as a class method.\nA class method is a method\napplied to the class itself, not to instances.\nA common use of class methods is to define\nclass Account:\ndef __init__(self, owner, balance):\n7.12 Class Variables and Methods\nThe first argument of a class method is always the class itself.\nclass method is to create a new instance, explicit steps must be taken to do so.\nThe fact that the class is passed as argument solves an important problem related to\nof that class.\nclass EvilAccount(Account):\nClass variables and class methods are sometimes used together to configure and control\nAs another example, consider the following Date class:\nclass Date:\nmethod.\nClasses and Object-Oriented Programming\nclass MDYDate(Date):\nclass DMYDate(Date):\nConfiguration via class variables and inheritance like this is a common tool for adjusting\nThe use of class methods is critical to making it work since they\nAlternate construction of instances is, by far, the most common use of class methods.\nYou will see this naming convention used in class methods\na class method for creating a preinitialized dictionary from a set of keys:\nOne caution about class methods is that Python does not manage them in a namespace\nSometimes a class is merely used as a namespace for functions declared as static methods\nUnlike a normal method or class method, a static method does not\nhappens to be defined inside a class.\nclass Ops:\nYou don’t normally create instances of such a class.\nthrough the class:\nSometimes other classes will use a collection of static methods like this to implement\nConsider the use of inheritance in the earlier Account example:\nclass Account:\ndef __init__(self, owner, balance):\nreturn f'{type(self).__name__}({self.owner!r}, {self.balance!r})'\ndef withdraw(self, amount):\nreturn self.balance\nclass EvilAccount(Account):\nClasses and Object-Oriented Programming\nreturn 1.10 * self.balance\nreturn self.balance\nclass StandardPolicy:\nclass Account:\ndef __init__(self, owner, balance, *, policy=StandardPolicy):\nreturn f'Account({self.policy}, {self.owner!r}, {self.balance!r})'\ndef withdraw(self, amount):\nIn this reformulation, there is only one type of instance that gets created, Account.\nmethods.\n<class 'StandardPolicy'>\nThe main purpose of these classes is to\ndef deposit(self, account, amount):\naccount.balance += self.deposit_factor * amount\ndef inquiry(self, account):\nreturn self.inquiry_factor * account.balance\nClasses and Object-Oriented Programming\nThis approach of delegating methods to supporting classes is a common\ncan be encapsulated into its own class of methods (often static).\nwriting classes with useful __repr__() methods, preferring composition over inheritance,\nIn Python, all attributes and methods of a class are public, that is, accessible without any\nAccount class where the balance has been turned into a “private” attribute:\nclass Account:\ndef __init__(self, owner, balance):\nreturn f'Account({self.owner!r}, {self._balance!r})'\ndef withdraw(self, amount):\nreturn self._balance\nAccount.inquiry() method.\nclass EvilAccount(Account):\nreturn 1.10 * self._balance\nreturn self._balance\nclass A:\ndef __init__(self):\nClasses and Object-Oriented Programming\nclass B(A):\ndef __init__(self):\nprint('B.__spam', self.__x)\nappears that class B is trying to override the __spam() method via inheritance.\nplace to actually prevent access to the “private” attributes of a class.\nnames of the class and the corresponding private attribute are known, they can still be\nmangling process actually only occurs once when the class is defined.\nAttributes of user-defined classes have no constraints on their type or value.\nclasses allow optional type hints to be specified for selected attributes.\nclass Account:\ndef __init__(self, owner, balance):\nClasses and Object-Oriented Programming\nFor example, does the Account class\nattribute access and handles it via user-defined methods.\nclass Account:\ndef __init__(self, owner, balance):\ndef owner(self):\nreturn self._owner\ndef owner(self, value):\nHere is how it works when you try to use the class:\nis used to optionally implement a method for setting the attribute value.\nThis method\nAccount.__init__() method.\nClasses and Object-Oriented Programming\nimplement methods for getting, setting, or deleting the attribute value.\nclass SomeClass:\nclass Box(object):\n7.18 Types, Interfaces, and Abstract Base Classes\nOne thing to think about when defining a class is making the programming interface to\nattributes such as b.width or b.height whereas other values would be accessed as methods\nConsider this class:\nclass SomeClass:\nWhen you define static and class methods\nClasses\nWhen you create an instance of a class, the type of that instance is the class itself.\nfor membership in a class, use the built-in function isinstance(obj, cls).\nreturns True if an object, obj, belongs to the class cls or any class derived from cls.\nclass A:\nclass B(A):\nClasses and Object-Oriented Programming\nclass C:\n# Returns the class object A\nSimilarly, the built-in function issubclass(A, B) returns True if the class A is a subclass\nof class B.\nA common use of class typing relations is the specification of programming interfaces.\nAs an example, a top-level base class might be implemented to specify the requirements\nThat base class might then be used for type hinting or for\nclass Stream:\nclasses would inherit from Stream and implement the required functionality.\ninstantiate one of those classes instead.\nclass SocketStream(Stream):\n7.18 Types, Interfaces, and Abstract Base Classes\nclass PipeStream(Stream):\nThis use of interface classes is more common in the organization of large frameworks\nTo prevent this problem, it is common for interfaces to be defined as abstract base classes\nThis module defines a base class (ABC) and a decorator\nclass Stream(ABC):\nClasses and Object-Oriented Programming\nTypeError: Can't instantiate abstract class Stream with abstract methods\nclass SocketStream(Stream):\nAlthough an abstract class cannot be instantiated, it can define methods and properties\nIf a child class lists more than one parent, the child\nclass Duck:\nclass Trombonist:\ndef noise(self):\nclasses and combining them together with multiple inheritance to create weird mutant\nFor example, the last section introduced the concept of an abstract base class.\nvarious abstract classes like this:\nclass Stream(ABC):\nClasses and Object-Oriented Programming\nclass Iterable(ABC):\nWith these classes, multiple inheritance might be used to specify which interfaces have\nbeen implemented by a child class:\nFor example, none of the inherited methods even do anything in this example.\nThe other use of multiple inheritance is to define mixin classes.\nthat modifies or extends the functionality of other classes.\nclass Duck:\ndef noise(self):\nclass Trombonist:\ndef noise(self):\nclass Cyclist:\ndef noise(self):\nThese classes are completely unrelated to each other.\ndefine the following classes:\nclass LoudMixin:\ndef noise(self):\nclass AnnoyingMixin:\ndef noise(self):\nsuper() to delegate to a nonexistent parent class.\nThe classes don’t even work:\nThese are mixin classes.\nclasses that implement the missing functionality.\nClasses and Object-Oriented Programming\nFirst, whenever you use inheritance, Python builds a linear chain of classes known as\non a class.\nclass Base:\nclass A(Base):\nclass B(A):\nBase.__mro__ # -> (<class 'Base'>, <class 'object'>)\n# -> (<class 'A'>, <class 'Base'>, <class 'object'>)\n# -> (<class 'B'>, <class 'A'>, <class 'Base'>, <class 'object'>)\nsearch for an attribute on an instance or class, each class on the MRO is checked in the\nThe object class is listed in\nthe MRO because all classes inherit from object, whether or not it’s listed as a parent.\nmultiple inheritance.” With cooperative inheritance, all of the classes are placed on the\nThe first rule states that a child class\nclass X: pass\nclass Y(X): pass\nIn this case, the method resolution algorithm rejects class Z because it can’t determine\nan ordering of the base classes that makes sense.\nHowever, class Y inherits from X, so if X is\nclass shown earlier:\n<class 'LoudMixin'>, <class 'Cyclist'>, <class 'object'>)\nSpecifically, any child class is always\nThe object class is listed last because it is the parent of all other\nclasses.\nrole is to delegate attributes to the next class on the MRO.\nThis is based upon the class\nFor example, when the AnnoyingMixin class uses super(), it looks\nlookup to the next class.\nclass invokes LoudMixin.noise().\nThis is because LoudMixin is the next class listed on the\nThe super().noise() operation in the LoudMixin class\nthen delegates to the Cyclist class.\nFor any use of super(), the choice of the next class\nFirst, child classes are always checked before any base class in the\nIf multiple mixin classes are used at the\nclass NoiseMixin:\ndef noise(self):\nClasses and Object-Oriented Programming\ndef noise(self):\ndef noise(self):\nencounter a class that makes a direct call to its parent:\nclass Base:\nclass A(Base):\nclass B(Base):\nclass C(A, B):\nSuch classes are not safe to use with multiple inheritance.\nSometimes dispatching is implemented through a class-based interface using getattr()\nclass Dispatcher:\nClasses and Object-Oriented Programming\nThis last example of using getattr() to dispatch onto methods of a class is a fairly\nClass Decorators\nclass decorator.\nA class decorator is a function that takes a class as input and returns a class\nIn this example, the register_decoder() function looks inside a class for a mimetypes\nIf found, it’s used to add the class to a dictionary mapping MIME types to class\nTo use this function, you apply it as a decorator right before the class definition:\nclass TextDecoder:\n7.21 Class Decorators\nclass HTMLDecoder:\nclass ImageDecoder:\nThis is a common alternative to mixin classes or\ndef noise(self):\ndef noise(self):\nclass Cyclist(object):\ndef noise(self):\nClasses and Object-Oriented Programming\nClass decorators can also be used to create entirely new code.\ntask when writing a class is to write a useful __repr__() method for improved debugging:\nclass Point:\ndef __init__(self, x, y):\nPerhaps a class decorator could create the\nmethod for you?\nclass Point:\nThat function is attached to the class.\nclass Point:\nclass type hints.\nHere’s how the resulting Point class works:\nThe examples shown in this section illustrate common uses of class decorators—\nOne issue with class\nmanipulation of classes.\nA class decorator is one mechanism for doing this.\nimplementing an __init_subclass__(cls) class method.\nclass Base:\n# Example (should see 'Initializing' message for each class)\nclass A(Base):\nclass B(A):\ndefinition of any child class.\nFor example, class registration:\nClasses and Object-Oriented Programming\nclass DecoderBase:\nHere is an example of a class that automatically creates a __repr__() method from the\nsignature of the class __init__() method:\nclass Base:\nclass Point(Base):\nIf multiple inheritance is being used, you should use super() to make sure all classes\nclass A:\nclass B:\n# Should see output from both classes here\nclass C(A, B):\ncan register classes, rewrite methods, perform validation, and more.\nWhen a class is defined, the resulting class is a factory for creating new instances.\nclass Account:\ndef __init__(self, owner, balance):\nClasses and Object-Oriented Programming\nExcept for the first argument which is the class instead of an instance, __new__()\nclass methods.\nclass Date:\nreturn self\nSometimes a class will define __new__() if it wants to alter some aspect of instance\nexample, you might want Date class to perform date interning—that is, caching and\nclass Date:\nif not self:\nreturn self\nIn this example, the class keeps an internal dictionary of previously created Date\nexample, one belonging to a different class.\nclass Account(object):\ndef __init__(self, owner, balance):\ndef __del__(self):\nClasses and Object-Oriented Programming\nIn practice, it’s rarely necessary for a class to define a __del__() method.\nclass SomeClass:\ndef __init__(self):\ndef __del__(self):\nreturn self\nAgain, it should be emphasized that writing a __del__() in a class is almost never\nclass SomeClass:\ndef __del__(self):\nClasses and Object-Oriented Programming\nexample, a Date class was shown with internal caching of instances.\nclass Date:\nreturn self\ndef __del__(self):\nClasses and Object-Oriented Programming\nAs previously noted, the __del__() method of a class is only invoked when the\nInstances of user-defined classes normally have such an attribute by default.\nbuilt-in types and certain kinds of special data structures—named tuples, classes with\nclass wdict(dict):\nInstances are linked back to their class by a special attribute __class__.\nThe class itself is\nclass dictionary is where you find the methods.\n>>> a.__class__\n<class '__main__.Account'>\nClasses are linked to their base classes by a special attribute __bases__, which is a tuple\nof the base classes.\nimplementation of inheritance uses the __mro__ attribute which is a tuple of all parent\nclasses listed in search order.\nWhenever an attribute is set using obj.name = value, the special method\nchecking the class dictionary, and searching the MRO.\nfind the attribute is made by invoking the obj.__getattr__('name') method of the class\nUser-defined classes can implement their own versions of the attribute access functions,\nFor example, here’s a class that restricts the attribute names that can be set:\nclass Account:\ndef __init__(self, owner, balance):\nA class that reimplements these methods should rely upon the default implementation\nClasses and Object-Oriented Programming\nSometimes classes implement a wrapper layer around another object to create a kind of\nclass A:\nclass LoggedA:\ndef __init__(self):\nself._a = A()\nclass A:\nclass B:\ndef __init__(self):\nself._a = A()\nIn this example, it appears as if class B might be inheriting from class A and redefining a\nmethods.\nFor example, consider this class:\nclass ListLike:\ndef __init__(self):\nClasses and Object-Oriented Programming\nHere, the class successfully forwards all of the standard list methods (list.sort(),\nmethods.\nclass ListLike:\ndef __init__(self):\nnames are fixed, you can specify the names in a special class variable called __slots__.\nclass Account(object):\nInstances of a class with __slots__ no longer use\nproperties, class variables, or any other class-level attributes.\nIf a class inherits\nfrom a base class that uses __slots__, it also needs to define __slots__ for storing its own\nIf you forget this, the derived class will run slower—and use even more memory than if\n__slots__ had not been used on any of the classes!\nIf multiple base classes are\nclass.\nA descriptor is a class-level object that\nclass Typed:\ndef __set_name__(self, cls, name):\ndef __get__(self, instance, cls):\nreturn instance.__dict__[self.key]\nreturn self\ndef __set__(self, instance, value):\ninstance.__dict__[self.key] = value\nClasses and Object-Oriented Programming\ndef __delete__(self,instance):\nclass Integer(Typed):\nclass Float(Typed):\nclass String(Typed):\nclass Account:\ndef __init__(self, owner, balance):\nIn this example, the class Typed defines a descriptor where type checking is performed\nThe use of these classes in another class (such as Account) makes those attributes\nmethods.\nThe __set_name__() method of a descriptor is invoked after a class has been\nthat has been used within the class.\nFloat.__set_name__(Account, 'balance') to inform the descriptor of the class and\nThe __get__(instance, cls) method of a descriptor takes arguments for both the\ninstance and the class.\nmethods, class methods, and static methods.\nclass classmethod:\ndef __init__(self, func):\ndef __get__(self, instance, cls):\nreturn types.MethodType(self.__func__, cls)\nclass staticmethod:\ndef __init__(self, func):\ndef __get__(self, instance, cls):\nClasses and Object-Oriented Programming\nclass Lazy:\ndef __init__(self, func):\ndef __set_name__(self, cls, name):\ndef __get__(self, instance, cls):\nvalue = self.func(instance)\ninstance.__dict__[self.key] = value\nreturn self\nclass Rectangle:\n7.29 Class Definition Process\nClass Definition Process\nWhen you define a class using the class\nstatement, a new dictionary is created that serves as the local class namespace.\nbecomes the __dict__ attribute of the resulting class object.\nAny legal Python statement is allowed in the body of a class.\nfunctions and variables, but control flow, imports, nested classes, and everything else is\nFor example, here is a class that conditionally defines methods:\nclass Account:\ndef __init__(self, owner, balance):\ndef withdraw(self, amount):\ndef withdraw(self, amount):\nabout the class name and enclosing module.\nThese can be used by statements in the class",
     "keywords": [
-      "class",
       "Account",
       "class Account",
-      "def",
       "method",
       "methods",
       "Guido",
-      "return",
       "instance",
       "attribute",
       "Account class",
       "Classes",
       "Object-Oriented Programming",
       "object",
-      "init"
+      "init",
+      "class methods",
+      "Inheritance",
+      "Object-Oriented Programming class"
     ],
     "concepts": [
       "classes",
-      "class",
-      "__class__",
-      "self",
-      "account def",
       "methods",
       "method",
       "object",
       "objects",
-      "type"
+      "type",
+      "typed",
+      "types",
+      "typing",
+      "attributes"
     ]
   },
   {
@@ -116,7 +116,6 @@
     "keywords": [
       "module",
       "file",
-      "import",
       "module import",
       "Python",
       "data",
@@ -128,19 +127,20 @@
       "output",
       "text",
       "module import func",
-      "import module"
+      "import module",
+      "library modules"
     ],
     "concepts": [
       "file",
       "files",
-      "__file__",
-      "import",
       "imported",
       "imports",
       "importing",
       "important",
       "modules",
-      "module"
+      "module",
+      "data",
+      "python"
     ]
   },
   {
@@ -173,10 +173,10 @@
       "function",
       "module",
       "modules",
-      "__module__",
       "exception",
       "exceptions",
-      "class"
+      "classes",
+      "attributes"
     ]
   }
 ]

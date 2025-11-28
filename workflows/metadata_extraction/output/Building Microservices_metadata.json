@@ -27,12 +27,12 @@
       "service",
       "microservices",
       "microservice",
-      "new",
       "technologies",
       "technology",
       "architecture",
       "architectures",
-      "architectural"
+      "architectural",
+      "make"
     ]
   },
   {
@@ -68,7 +68,7 @@
       "sharing",
       "erlang",
       "process",
-      "decompositional"
+      "technology"
     ]
   },
   {
@@ -101,10 +101,10 @@
       "direction",
       "programming",
       "program",
-      "programs",
       "different",
       "work",
-      "working"
+      "working",
+      "far"
     ]
   },
   {
@@ -124,11 +124,11 @@
       "make",
       "services",
       "goals",
-      "set",
       "principle",
       "change",
       "n’t",
-      "organization"
+      "organization",
+      "architect"
     ],
     "concepts": [
       "service",
@@ -171,12 +171,12 @@
       "services",
       "codes",
       "code",
-      "like",
       "technical",
       "people",
       "making",
       "make",
-      "needs"
+      "needs",
+      "need"
     ]
   },
   {
@@ -199,20 +199,20 @@
       "Bounded",
       "system",
       "context",
-      "Figure",
-      "technology"
+      "technology",
+      "client"
     ],
     "concepts": [
       "services",
       "service",
       "making",
-      "make",
       "makes",
       "different",
       "differently",
       "difference",
       "customer",
-      "customers"
+      "customers",
+      "implementation"
     ]
   },
   {
@@ -222,7 +222,6 @@
     "end_page": 110,
     "summary": "REST and HTTP\nHTTP itself defines some useful capabilities that play very well with the REST style.\nexample, the HTTP verbs (e.g., GET, POST, and PUT) already have well-understood\nmeanings in the HTTP specification as to how they should work with resources.\nresources, and the HTTP specification happens to define a bunch of methods we can use.\nHTTP also brings a large ecosystem of supporting tools and technology.\nmonitoring tools already have lots of support for HTTP out of the box.\nblocks allow us to handle large volumes of HTTP traffic and route them smartly, in a fairly\nWe also get to use all the available security controls with HTTP to secure\nFrom basic auth to client certs, the HTTP ecosystem gives us lots of\nThat said, to get these benefits, you have to use HTTP well.\nNote that HTTP can be used to implement RPC too.\nHTTP, but unfortunately uses very little of the specification.\nsimple things like HTTP error codes.\nAnother principle introduced in REST that can help us avoid the coupling between client\nof hypermedia controls, to see related content.\nserver by knowing which URI to hit; instead, the client looks for and navigates links to\ncontrol used to represent it has changed.\nthe control we want to interact with.\nWith hypermedia controls, we are trying to achieve the same level of smarts for our\nLet’s look at a hypermedia control that we might have for\ncontrols.\nHypermedia controls used on an album listing\nThis hypermedia control shows us where to find information about the artist.\nIn this document, we have two hypermedia controls.\nneeds to know that a control with a relation of artist is where it needs to navigate to get\nsame way as a human being needs to understand that on a shopping website the cart is\nAs a client, I don’t need to know which URI scheme to access to buy the album, I just\nneed to access the resource, find the buy control, and navigate to that.\nimplementation of how the control is presented as long as the client can still find a control\nconsumers only if we fundamentally changed the semantics of one of the controls so it\nUsing these controls to decouple the client and server yields significant benefits over time\nOne of the downsides is that this navigation of controls can be quite chatty, as the client\nneeds to follow links to find the operation it wants to perform.\nI would suggest you start with having your clients navigate these controls first, then\nThe use of standard textual formats gives clients a lot of flexibility as to how they\nconsume resources, and REST over HTTP lets us use a variety of formats.\nfor services that work over HTTP.\nXML defines the link control we used earlier\nas a hypermedia control.\nhyperlinking for JSON (and XML too, although arguably XML needs less help).\nfollow the HAL standard, you can use tools like the web-based HAL browser for\nexploring hypermedia controls, which can make the task of creating a client much easier.\nHTTP if we want, even binary.\nit is nice and lightweight, then try and push concepts into it like hypermedia controls that\nThis ensured that how the consumers wanted to use the service drove the design\nDownsides to REST Over HTTP\nover HTTP application protocol like you can with RPC.\nused means that you get to take advantage of all the excellent HTTP client libraries out\nthere, but if you want to implement and use hypermedia controls as a client you are pretty\nincreased complexity result in people backsliding into smuggling RPC over HTTP or\nHTTP verbs well.\nProper REST frameworks like Jersey don’t have this problem, and you can\nlimit what style of REST you can use.\nREST over HTTP payloads can actually be more\nHTTP for each request may also be a concern for low-latency requirements.\nTransmission Control Protocol (TCP) or other networking technology.\nWebSockets, for example, has very little to do with the Web. After the initial HTTP\nnote that you aren’t really using much of HTTP, let alone anything to do with REST.\nimportant, HTTP communications in general may not be a good idea.\nThese can become a coupling point in their own right between client and server, as\nDespite these disadvantages, REST over HTTP is a sensible default choice for service-to-\nwhich covers the topic of REST over HTTP in depth.\nTraditionally, message brokers like RabbitMQ try to handle both problems.\nof consumers, for example by helping keep track of what messages they have seen before.\nAnother approach is to try to use HTTP as a way of propagating events.\nMany client libraries exist that allow us to create and consume these feeds.\nuseful, and we know that HTTP handles scale very well.\nHowever, HTTP is not good at\nlow latency (where some message brokers excel), and we still need to deal with the fact\nthat the consumers need to keep track of what messages they have seen and manage their\nget out of the box with an appropriate message broker to make ATOM work for some use\nthe case where two or more workers see the same message, as we’ll end up doing the same\nWith a message broker, a standard queue will handle this.\nATOM, we now need to manage our own shared state among all the workers to try to\nand more of the support that a message broker gives you, at a certain point you might want\nWe would look at market events, and work out which items in a portfolio needed to\nwe needed a way to view, and potentially replay, these bad messages.\nWe also created a UI to view those messages and retry them if needed.",
     "keywords": [
-      "HTTP",
       "hypermedia controls",
       "client",
       "REST",
@@ -236,11 +235,10 @@
       "message",
       "XML",
       "HTTP application protocol",
-      "HTTP client"
+      "HTTP client",
+      "HTTP specification"
     ],
     "concepts": [
-      "http",
-      "like",
       "message",
       "messages",
       "controls",
@@ -248,7 +246,9 @@
       "client",
       "clients",
       "useful",
-      "use"
+      "uses",
+      "service",
+      "services"
     ]
   },
   {
@@ -282,9 +282,9 @@
       "customer",
       "customers",
       "custom",
-      "customizations",
-      "customization",
-      "customized"
+      "customized",
+      "customize",
+      "likely"
     ]
   },
   {
@@ -300,27 +300,27 @@
       "database",
       "Reporting",
       "data pump",
-      "Figure",
       "reporting system",
       "system",
-      "table",
       "customer",
       "Reporting Database",
       "services",
       "transaction",
-      "customer service"
+      "customer service",
+      "systems",
+      "change"
     ],
     "concepts": [
       "data",
       "code",
-      "codes",
       "service",
       "services",
       "transactions",
-      "transactional",
       "transaction",
       "reporting",
-      "reports"
+      "reports",
+      "report",
+      "database"
     ]
   },
   {
@@ -330,7 +330,6 @@
     "end_page": 188,
     "summary": "In this chapter, we’re going to look at some techniques and technology that can\nWe’re going to start off, though, by taking a look at continuous integration and continuous",
     "keywords": [
-      "Chapter",
       "’re",
       "Deployment",
       "Deploying",
@@ -344,19 +343,20 @@
       "fairly straightforward",
       "fish altogether",
       "process",
-      "deploying microservices"
+      "deploying microservices",
+      "approach deployment"
     ],
     "concepts": [
       "deployment",
       "deploying",
       "deploy",
-      "fairly straightforward",
-      "chapter",
       "approach",
       "right",
       "process",
       "microservices",
-      "continuous"
+      "architectures",
+      "fine",
+      "delivery"
     ]
   },
   {
@@ -366,33 +366,33 @@
     "end_page": 410,
     "summary": "verification like making sure the code compiles and that tests pass.\nas deploying a running service to run tests against it.\nartifacts once and once only, and use them for all deployments of that version of the code.\nconfirm that the artifact we deployed is the one we tested.\nlook in depth at testing in Chapter 7.\ndepending on the capabilities of the CI tool itself, can see what tests were run on the code\nI really like Jez Humble’s three questions he asks people to test if they really understand\nDo you have a suite of tests to validate your changes?\nWithout tests, we just know that syntactically our integration has worked, but we\nensure that we can make a change to a single service and deploy it independently of the\nUsing a single source code repository and CI build for all microservices\nIf I have to work on multiple services at\nyou don’t mind deploying multiple services at once.\nservice — for example, changing the behavior in the user service in Figure 6-1 — all the\nwaiting for things that probably don’t need to be tested.\ndeploy all the build services to push my small change into production?\nFurthermore, if my one-line change to the user service breaks the build, no other changes\ncan be made to the other services until that break is fixed.\nsource code for multiple services at once, which can make it equally easy to slip into\nmaking changes that couple services together.\nhowever, over having a single build for multiple services.\nmicroservice, to allow us to quickly make and validate a change prior to deployment into\nWhen making a change, I run only the build and\ntests I need to.\nI get a single artifact to deploy.\nIf you own the service, you own the repository and the build.\nThe tests for a given microservice should live in source control with the microservice’s\nsource code too, to ensure we always know what tests should be run against a given\nservice.\nWe’ll use the CI build process to create our deployable artifacts too in a fully\nTests are a very common case where this comes into play.\nmay have a lot of fast, small-scoped tests, and a small number of large-scoped, slow tests.\nIf we run all the tests together, we may not be able to get fast feedback when our fast tests\nAnd if the fast tests\nfail, there probably isn’t much sense in running the slower tests anyway!\ntesting (UAT) process I should be able to use a CD tool to model it.\nIn a microservices world, where we want to ensure we can release our services\nindependently of each other, it follows that as with CI, we’ll want one pipeline per service.\nlikely that there will be a large amount of churn in terms of working out where the service\nDuring this time of churn, changes across service boundaries are more likely, and what is\nin or not in a given service is likely to change frequently.\nservices in a single build to reduce the cost of cross-service changes may make sense.\nIt does follow, though, that in this case you need to buy into releasing all the services as a\nThink of it from the point of view of someone trying to deploy multiple services together.\nThey could be a developer or tester wanting to test some functionality, or it could be\nNow imagine that those services use three\ndeploying tools and services, which is much more like the package managers in the Linux\nchange, new versions of your service can continue to use the same base image.\nThis means that for developers you may want to support other ways of deploying\nservices to ensure they don’t have to wait half an hour just to create a binary deployment.\ncould create an image for deployment on your production AWS environment and a\nmatching Vagrant image for local development and test, all from the same configuration.\nthe model of our service artifact being an image.\nservice is there ready to go.\nadopted the model of baking its own services as AWS AMIs. Just as with OS-specific packages, these VM images become a nice way of abstracting out\nthe differences in the technology stacks used to create the services.\nservice running on the image is written in Ruby or Java, and uses a gem or JAR file?\nwe run our slow tests, another for UAT, another for performance, and a final one for\nenvironment for our service might consist of multiple load-balanced hosts spread across\ntwo data centers, whereas our test environment might just have everything running on a\nWe were deploying a Java web service into\nThis meant that in our test environment, our software\nThe service we want to deploy is the same in all these different environments, but each of\ndeploy the service, potentially against stubbed collaborators, to run tests or carry out some\nmay want to deploy multiple copies of my service in a load-balanced fashion, perhaps split\ndeploying your service into a local Vagrant instance, for example.\nshortly at some different deployment platforms that can make this much easier for us.\nService Configuration\nOur services need some configuration.\nSo if we have some configuration for our service that does change from one environment\nCustomer-Service-Test and Customer-Service-Prod artifacts.\nIf my Customer-Service-Test\nartifact passes the tests, but it’s the Customer-Service-Prod artifact that I actually deploy,\nproduction passwords checked in with my source code, but if it is needed at build time to\nService-to-Host Mapping\nmy services.\nvirtualization, a single physical machine can map to multiple independent hosts, each of\nwhich could hold one or more services.\nSo when thinking of different deployment models, we’ll talk about hosts.\nmany services per host should we have?\nMultiple Services Per Host\nHaving multiple services per host, as shown in Figure 6-6, is attractive for a number of\nIf more services are packed on to a single host, the host management workload doesn’t\nservices.\nmultiple-services-per-host model, so we’ll look into that separately.\nDeploying multiple services to a single host in\nproduction is synonymous with deploying multiple services to a local dev workstation or\nFor example, when tracking CPU, do I need to track the CPU of one service\nInitially it coexisted many services on a single box, but\nDeployment of services can be somewhat more complex too, as ensuring one deployment\nprepare a host, but each service has different (and potentially contradictory) dependencies,\nservice deployments together, deploying multiple different services to a single host in one\nstep, to try to simplify the deployment of multiple services to one host.\nIf you do adopt the multiple-services-per-host model, make sure you keep hold\nof the idea that each service should be deployed independently.\nIf services for different teams are installed\non the same host, who gets to configure the host for their services?\nservices deployed.\ndeployments are out, as are immutable servers unless you tie multiple different services\nThe fact that we have multiple services on a single host means that efforts to target scaling\nto the service most in need of it can be complicated.\nHaving everything on one host means we might end up having to treat all services the\nservices or applications sit inside a single application container, which in turn sits on a\nservices live in gives you benefits in terms of improved manageability, such as clustering\nConsider running five Java services in a single Java servlet container.\nimplementation of the service itself, but also the options you have in terms of automation\nservices.\nWhether you decide to have multiple services per host\nSingle Service Per Host\nWith a single-service-per-host model shown in Figure 6-8, we avoid side effects of\nconcerns more easily by focusing our attention only on the service and host that requires\nHaving a single-service-per-host model is significantly easier to\nPlatform as a Service\nWhen using a platform as a service (PaaS), you are working at a higher-level abstraction\nwill allow you some control over how many nodes your service might run on, but it\nhosts and deployments of individual services.\nI remember running a small set of production machines, and I would collect logs, deploy\nOne of the pushbacks against the single-service-per-host setup is the perception that the\ncontrol of our hosts, and deployment of the services, then there is no reason why adding\nBut even if we keep the number of hosts small, we still are going to have lots of services.\nThat means multiple deployments to handle, services to monitor, logs to collect.\nthe same tool chain as is used for deployment of our production services so as to ensure\njourney it had to spend a lot of time getting the tooling around the services just right —\nmaking it easy for developers to provision machines, to deploy their code, or monitor\nentire build, deployment, and support of the services.\nover 60–70 services.\nservice-per-host model is probably right for you, although don’t be surprised if this\nseparate hosts, each of which can run different things.\nSo if we want one service per host,\nVagrant is a very useful deployment platform, which is normally used for dev and test\nThis makes it easier for you to create production-like environments on your local machine.\nYou can spin up multiple VMs at a time, shut individual ones to test failure modes, and\nto ensure that the development and test experience is a good one.\non the same hardware than would be possible with VMs. By deploying one service per\nwanted to run each service in its own VM.\nRunning services in separate containers\nmicroservices running in their own containers on a host.\nbuilds for our services create Docker applications, and store them in the Docker registry,\nDocker can also alleviate some of the downsides of running lots of services locally for dev\nand test purposes.\ncontaining its own service, we can host a single VM in Vagrant that runs a Docker\nstripped-down Linux OS that provides only the essential services to allow Docker to run.\nIf you want tools to help you manage services across multiple Docker\nplatform for all sorts of deployments over the next few years for all sorts of different use\nPaaS solutions — the term containers as a service (CaaS) is already being used to\nWe’ll want to trigger deployment of a microservice on demand in a\nvariety of different situations, from deployments locally for dev and test to production\nproduction because deployment uses a completely different process!\nWhen testing, you’ll\nOr when testing/diagnosing issues, we may want to deploy an exact\ndeveloping locally and want to deploy our catalog service into our local environment.\nOnce I’ve checked in, our CI build service picks up the change and creates a new build\nWhen our test stage gets triggered, the CI stage will run:\n$ deploy artifact=catalog environment=ci version=b456\nintegrated test environment to do some exploratory testing, and to help with a showcase.\nlook like, and what our service looks like in a given environment.\ncatalog-service:\nbalancers if a service had more than one instance (something that AWS’s ELBs make\nability to release one service independently from another, and make sure that whatever\nmicroservice, but am firmer still that you need one CI build per microservice if you want\nNext, if possible, move to a single-service per host/container.\nCreating tools that let you self-service-deploy any given\nservice into a number of different environments is really important, and will help\nhow do we test our microservices to make sure they actually work?\nTesting\nThe world of automated testing has advanced significantly since I first started writing\ntesting finer-grained systems and presents some solutions to help you make sure you can\nTesting covers a lot of ground.\nEven when we are just talking about automated tests, there\nUnderstanding what different types of tests we can run is important to help us\nTypes of Tests\nWesley) that helps categorize the different types of tests.\nPerformance tests and small-scoped\nThese could be large-scoped, end-to-end tests, as shown in the top-left\nExactly how much of each test you\nthat you have multiple choices in terms of how to test your system.\nbeen away from any large-scale manual testing, in favor of automating as much as\ntesting can be very useful and certainly has its part to play, the differences with testing a\ntests, so that is where we will focus our time.\nBut when it comes to automated tests, how many of each test do we want?\nTest Scope\nthe Test Pyramid to help explain what types of automated tests you need.\nhelps us think about the scopes the tests should cover, but also the proportions of different\ntypes of tests we should aim for.\nCohn’s original model split automated tests into Unit,\nIs it still a unit test if I\ntest multiple functions or classes?\nwith the Unit and Service names despite their ambiguity, but much prefer calling UI tests\nend-to-end tests, which we’ll do from now on.\ndive into a few different scenarios we may want to test.\nPart of our music shop under test\nUnit Tests\nThese are tests that typically test a single function or method call.\nThe tests generated as a\nlarge number of these sorts of tests.\nThese are tests that help us developers and so would be technology-facing, not business-\nSo, in our example, when we think about the customer service, unit tests would cover\nScope of unit tests on our example system\nTests can be important to support refactoring of code, allowing us to\nrestructure our code as we go, knowing that our small-scoped tests will catch us if we\nService Tests\nService tests are designed to bypass the user interface and test services directly.\nservice to the UI.\nFor a system comprising a number of services, a service test would test\nThe reason we want to test a single service by itself is to improve the isolation of the test\nScope of service tests on our example system\ndatabase, or go over networks to stubbed downstream collaborators, test times can\nEnd-to-End Tests\nEnd-to-end tests are tests run against your entire system.\nThese tests cover a lot of production code, as we see in Figure 7-6 .\nyou feel good: you have a high degree of confidence that the code being tested will work\nScope of end-to-end tests on our example system\npyramid, the test scope increases, as does our confidence that the functionality being\ntested works.\nOn the other hand, the feedback cycle time increases as the tests take longer\nto run, and when a test fails it can be harder to determine which functionality has broken.\nAs you go down the pyramid, in general the tests become much faster, so we get much\nWhen those smaller-scoped tests fail, we also tend to know what\nthat our system as a whole works if we’ve only tested one line of code!\nWhen broader-scoped tests like our service or end-to-end tests fail, we will try to write a\nfast unit test to catch that problem in the future.\nWhatever you call them, the key takeaway is that you will want tests\nSo if these tests all have trade-offs, how many of each type do you want?\ntests and understanding if your current balance gives you a problem!\nI worked on one monolithic system, for example, where we had 4,000 unit tests, 1,000\nservice tests, and 60 end-to-end tests.\nhad way too many service and end-to-end tests (the latter of which were the worst\noffenders in impacting feedback loops), so we worked hard to replace the test coverage\nwith smaller-scoped tests.\nscoped tests.\nThese projects often have glacially slow test runs, and very long feedback\nIf these tests are run as part of continuous integration, you won’t get many builds,\nImplementing Service Tests\nThe service and end-to-\nend tests are the ones that are more interesting.\nOur service tests want to test a slice of functionality across the whole service, but to\nisolate ourselves from other services we need to find some way to stub out all of our\nSo, if we wanted to write a test like this for the customer service from\nFigure 7-3, we would deploy an instance of the customer service, and as discussed earlier\nwe would want to stub out any downstream services.\nfor our service, so deploying that is pretty straightforward.\nOur service test suite needs to launch stub services for any downstream collaborators (or\nensure they are running), and configure the service under test to connect to the stub\nservices.\nworld services.\nWhen I talk about stubbing downstream collaborators, I mean that we create a stub service\nthat responds with canned responses to known requests from the service under test.\nThe test doesn’t care if the stub is called 0, 1, or 100 times.\ncall is not made, the test fails.\ndelicate one, and is just as fraught in service tests as in unit tests.\nstubs far more than mocks for service tests.\nIn general, I rarely use mocks for this sort of testing.\nmocks, test doubles.\nused to launch stub servers for such test cases.\ncalling service.\nSo, if we want to run our service tests for just our customer service we can launch the\nthose tests pass, I can deploy the customer service straightaway!\nThose Tricky End-to-End Tests\nby a number of services.\nThe point of the end-to-end tests as outlined in Mike Cohn’s\nSo, to implement an end-to-end test we need to deploy multiple services together, then run\na test against all of them.\nObviously, this test has much more scope, resulting in more\nexample to see how these tests can fit in.\nImagine we want to push out a new version of the customer service.\nlet’s deploy all of our services together, and run some tests against the helpdesk and web\ntests onto the end of our customer service pipeline, as in Figure 7-7.\nAdding our end-to-end tests stage: the right approach?\nother services should we use?\nShould we run our tests against the versions of helpdesk and\nAnother problem: if we have a set of customer service tests that deploy lots of services\nand run tests against them, what about the end-to-end tests that the other services run?\nthey are testing the same thing, we may find ourselves covering lots of the same ground,\nand may duplicate a lot of the effort to deploy all those services in the first place.\nsingle, end-to-end test stage.\nHere, whenever a new build of one of our services is\ntriggered, we run our end-to-end tests, an example of which we can see in Figure 7-8.\nSome CI tools with better build pipeline support will enable fan-in models like this out of\nA standard way to handle end-to-end tests across services\nSo any time any of our services changes, we run the tests local to that service.\nDownsides to End-to-End Testing\nAs test scope increases, so too do the number of moving parts.\nAs an example, if we have a test to verify that we can\nplace an order for a single CD, but we are running that test against four or five services, if\ntest itself.\nanything about the functionality under test.\nIf you have tests that sometimes fail, but everyone just re-runs them because they may\nIt isn’t only tests covering lots of different\nTests that cover functionality being exercised on multiple\nneed to find and eliminate these tests as soon as we can before we start to assume that\nfailing tests are OK.\ntesting code running on multiple threads.\nIn some cases, changing the software under test to make\nit easier to test can also be the right way forward.\nWho Writes These Tests?\nWith the tests that run as part of the pipeline for a specific service, the sensible starting\npoint is that the team that owns that service should write those tests (we’ll talk more about\ninvolved, and the end-to-end-tests step is now effectively shared between the teams, who\nwrites and looks after these tests?\nThese tests become a free-for-all, with\nall teams granted access to add tests without any understanding of the health of the whole\nassumes it is someone else’s problem, so they don’t care whether the tests are passing.\nSometimes organizations react by having a dedicated team write these tests.\nThe team developing the software becomes increasingly distant from the tests\nCycle times increase, as service owners end up waiting for the test team to\nwrite end-to-end tests for the functionality they just wrote.\nthese tests, the team that wrote the service is less involved with, and therefore less likely\nto know, how to run and fix these tests.\nwriting tests for the code it wrote in the first place.\nto completely centralize this to the extent that the teams building services are too far\nservices themselves.\nIf you want to make extensive use of end-to-end tests with multiple\nThese end-to-end tests can take a while.\nteams actually curate their end-to-end test suites to reduce overlap in test coverage, or\nWe can ameliorate some of this by running tests in parallel — for example, making use of\nunderstanding what needs to be tested and actively removing tests that are no longer\nthanked if you remove a test?\nWhen it comes to the larger-scoped test suites, however, this\ntests, perhaps we can get rid of half of them, as those 20 tests take 10 minutes to run!\nThe long feedback cycles associated with end-to-end tests aren’t just a problem when it\nWith a long test suite, any breaks take a while to fix,\nwhich reduces the amount of time that the end-to-end tests can be expected to be passing.\nIf we deploy only software that has passed through all our tests successfully (which we\nshould!), this means fewer of our services get through to the point of being deployable\nWhile a broken integration test stage is being fixed, more\nbuild harder, it means the scope of changes to be deployed increases.\nthis is to not let people check in if the end-to-end tests are failing, but given a long test\nWith the end-to-end test step, it is easy to start thinking, So, I know all these services at\nBy versioning together changes made to multiple services, we effectively embrace the idea\nthat changing and deploying multiple services at once is acceptable.\nability to deploy one service by itself, independently of other services.\nAll too often, the approach of accepting multiple services being deployed together drifts\ndeployment of multiple services at once, and as we discussed previously, this sort of\nmanageable with one or two services, and in these situations still make a lot of sense.\nwhat happens with 3, 4, 10, or 20 services?\nVery quickly these test suites become hugely\ntest.\nThe best way to counter this is to focus on a small number of core journeys to test for the\ntests that analyze services in isolation from each other.\ncomplex systems) of tests we can reduce the downsides of integration tests, but we cannot\nWhat is one of the key problems we are trying to address when we use the integration tests\nWe are trying to ensure that when we deploy a new service to\nThe expectations of the consumers are captured in code form as tests, which are then run\nimportantly from a test feedback point of view, these tests need to be run only against a\nsingle producer in isolation, so can be faster and more reliable than the end-to-end tests\nAs an example, let’s revisit our customer service scenario.\nThe customer service has two\nBoth these consuming services have\nsets of tests: one for each consumer representing the helpdesk’s and web shop’s use of the\ncustomer service.\nconsumer teams collaborate on creating the tests, so perhaps people from the web shop\nand helpdesk teams pair with people from the customer service team.\ncan be run against the customer service by itself with any of its downstream dependencies\nthe test pyramid as service tests, albeit with a very different focus, as shown in Figure 7-\nThese tests are focused on how a consumer will use the service, and the trigger if they\nbreak is very different when compared with service tests.\nduring a build of the customer service, it becomes obvious which consumer would be\nhaving to use a potentially expensive end-to-end test.\nConsumer-driven testing in the context of our customer service example\nPact is a consumer-driven testing tool that was originally developed in-house at\nbe used for further isolated tests of the consumer.",
     "keywords": [
-      "tests",
       "service",
-      "test",
       "services",
       "Service Tests",
       "multiple services",
       "build",
       "customer service",
-      "Figure",
       "n’t",
       "host",
       "multiple",
       "deployment",
       "run",
-      "single"
+      "single",
+      "system",
+      "code",
+      "Docker"
     ],
     "concepts": [
-      "tests",
       "tested",
-      "testing",
-      "test",
       "service",
       "services",
       "deploying",
       "deployments",
       "deployed",
-      "deploy"
+      "deploy",
+      "deployment",
+      "likely",
+      "builds"
     ]
   },
   {
@@ -412,23 +412,23 @@
       "services",
       "Implementing Service Tests",
       "service tests",
-      "Tests",
       "multiple services",
       "shared",
       "Service Calls service",
-      "data"
+      "data",
+      "Backup Data Pump"
     ],
     "concepts": [
       "services",
       "service",
-      "testing",
-      "tests",
-      "test",
       "microservices",
       "microservice",
       "summary",
       "systems",
-      "shared"
+      "shared",
+      "share",
+      "sharing",
+      "uses"
     ]
   }
 ]
