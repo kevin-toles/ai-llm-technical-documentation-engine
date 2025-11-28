@@ -225,7 +225,7 @@ class LLMCacheRepository:
             
             return result
         
-        except (json.JSONDecodeError, KeyError, IOError, OSError) as e:
+        except (json.JSONDecodeError, KeyError, IOError, OSError):
             # Graceful degradation: Cache errors return None
             # Workflow continues by calling LLM API ($0.30 cost acceptable)
             return None
@@ -270,7 +270,7 @@ class LLMCacheRepository:
             with open(cache_file, 'w', encoding='utf-8') as f:
                 json.dump(cache_data, f, indent=2)
         
-        except (IOError, OSError) as e:
+        except (IOError, OSError):
             # Graceful failure: Cache write errors don't break workflow
             pass
     
