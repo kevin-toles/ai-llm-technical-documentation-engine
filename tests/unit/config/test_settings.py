@@ -30,7 +30,7 @@ from config.settings import (
     LLMConfig,
     PromptConstraints,
     RetryConfig,
-    CacheConfig,
+    # CacheConfig removed (Task 5.2) - see DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN.md Part 2
     ChapterSegmentationConfig,
     PathConfig,
     Settings,
@@ -94,26 +94,9 @@ class TestEnvironmentVariableLoading:
         assert config.max_tokens == 8192
         assert config.enable_logging is True
     
-    def test_cache_config_loads_from_environment(self):
-        """Test CacheConfig loads values from environment."""
-        # Arrange & Act
-        # Security: Use tempfile for secure temporary directory
-        import tempfile
-        with tempfile.TemporaryDirectory() as tmpdir:
-            test_cache_dir = os.path.join(tmpdir, "test_cache")
-            with patch.dict(os.environ, {
-                "CACHE_ENABLED": "false",
-                "CACHE_DIR": test_cache_dir,
-                "CACHE_PHASE1_TTL_DAYS": "7",
-                "CACHE_PHASE2_TTL_DAYS": "14"
-            }):
-                config = CacheConfig()
-            
-            # Assert - Settings Pattern: Environment loading
-            assert config.enabled is False
-            assert str(config.cache_dir) == test_cache_dir
-        assert config.phase1_ttl_days == 7
-        assert config.phase2_ttl_days == 14
+    # test_cache_config_loads_from_environment removed (Task 5.2)
+    # CacheConfig deleted - old cache implementation removed
+    # New cache system will be implemented in DOMAIN_AGNOSTIC Part 2
 
 
 # ============================================================================
@@ -295,16 +278,9 @@ class TestTypeSafety:
         assert isinstance(config.max_rationale_chars, int)
         assert isinstance(config.max_pages_per_section, int)
     
-    def test_cache_config_uses_path_type(self):
-        """Test CacheConfig uses Path type for directories."""
-        # Arrange & Act
-        with patch('os.getenv') as mock_getenv:
-            mock_getenv.side_effect = lambda key, default=None: default
-            with patch.object(Path, 'mkdir'):  # Prevent directory creation
-                config = CacheConfig()
-        
-        # Assert - Settings Pattern: Proper types
-        assert isinstance(config.cache_dir, Path)
+    # test_cache_config_uses_path_type removed (Task 5.2)
+    # CacheConfig deleted - old cache implementation removed
+    # New cache system will be implemented in DOMAIN_AGNOSTIC Part 2
 
 
 # ============================================================================
@@ -423,7 +399,7 @@ class TestPathConfiguration:
         # Assert - Settings Pattern: Directory creation
         assert config.output_dir.exists()
         assert config.logs_dir.exists()
-        assert config.cache_dir.exists()
+        # CacheConfig removed (Task 5.2) - cache_dir assertion removed
     
     def test_path_config_derived_paths(self, tmp_path):
         """Test PathConfig sets up derived paths correctly."""
@@ -474,7 +450,7 @@ class TestSettingsAggregation:
         assert hasattr(settings, 'llm')
         assert hasattr(settings, 'constraints')
         assert hasattr(settings, 'retry')
-        assert hasattr(settings, 'cache')
+        # CacheConfig removed (Task 5.2)
         assert hasattr(settings, 'chapter_segmentation')
         assert hasattr(settings, 'paths')
         
@@ -482,7 +458,7 @@ class TestSettingsAggregation:
         assert isinstance(settings.llm, LLMConfig)
         assert isinstance(settings.constraints, PromptConstraints)
         assert isinstance(settings.retry, RetryConfig)
-        assert isinstance(settings.cache, CacheConfig)
+        # CacheConfig removed (Task 5.2)
         assert isinstance(settings.chapter_segmentation, ChapterSegmentationConfig)
         assert isinstance(settings.paths, PathConfig)
     
@@ -606,7 +582,7 @@ class TestSettingsPatternCompliance:
         
         # Assert - Settings Pattern: Environment loading
         assert settings.llm.max_tokens == 4096
-        assert settings.cache.enabled is False
+        # CacheConfig removed (Task 5.2) - cache.enabled assertion removed
     
     def test_sensible_defaults_provided(self):
         """
@@ -624,7 +600,7 @@ class TestSettingsPatternCompliance:
         assert settings.llm.provider == "anthropic"
         assert math.isclose(settings.llm.temperature, 0.2, abs_tol=1e-9)
         assert settings.retry.max_attempts == 2
-        assert settings.cache.enabled is True
+        # CacheConfig removed (Task 5.2) - cache.enabled assertion removed
     
     def test_validation_on_load(self):
         """
@@ -666,7 +642,7 @@ class TestSettingsPatternCompliance:
         assert isinstance(settings.llm.max_tokens, int)
         assert isinstance(settings.llm.temperature, float)
         assert isinstance(settings.llm.enable_logging, bool)
-        assert isinstance(settings.cache.cache_dir, Path)
+        # CacheConfig removed (Task 5.2) - cache.cache_dir assertion removed
     
     def test_immutability_at_runtime(self):
         """
@@ -749,17 +725,9 @@ class TestErrorHandling:
             assert "1.5" in error_msg
             assert "0.0 and 1.0" in error_msg
     
-    def test_cache_config_handles_invalid_ttl(self):
-        """Test CacheConfig validates TTL values."""
-        # Act & Assert
-        with patch('os.getenv') as mock_getenv:
-            mock_getenv.side_effect = lambda key, default=None: "0" if key == "CACHE_PHASE1_TTL_DAYS" else default
-            
-            with pytest.raises(ValueError) as exc_info:
-                CacheConfig()
-            
-            assert "CACHE_PHASE1_TTL_DAYS" in str(exc_info.value)
-            assert ">= 1" in str(exc_info.value)
+    # test_cache_config_handles_invalid_ttl removed (Task 5.2)
+    # CacheConfig deleted - old cache implementation removed
+    # New cache system will be implemented in DOMAIN_AGNOSTIC Part 2
     
     def test_prompt_constraints_validates_min_values(self):
         """Test PromptConstraints validates minimum values."""

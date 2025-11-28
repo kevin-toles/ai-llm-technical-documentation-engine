@@ -131,32 +131,11 @@ class RetryConfig:
             )
 
 
-@dataclass
-class CacheConfig:
-    """Caching configuration (Acceptance Criteria AC-4).
-    
-    Environment Variables:
-        CACHE_ENABLED: Enable caching (default: true)
-        CACHE_DIR: Cache directory path (default: cache)
-        CACHE_PHASE1_TTL_DAYS: Phase 1 cache TTL in days (default: 30)
-        CACHE_PHASE2_TTL_DAYS: Phase 2 cache TTL in days (default: 30)
-    """
-    enabled: bool = field(default_factory=lambda: os.getenv("CACHE_ENABLED", "true").lower() == "true")
-    cache_dir: Path = field(default_factory=lambda: Path(os.getenv("CACHE_DIR", "cache")))
-    phase1_ttl_days: int = field(default_factory=lambda: int(os.getenv("CACHE_PHASE1_TTL_DAYS", "30")))
-    phase2_ttl_days: int = field(default_factory=lambda: int(os.getenv("CACHE_PHASE2_TTL_DAYS", "30")))
-    
-    def __post_init__(self):
-        """Validate and setup cache directory."""
-        if self.phase1_ttl_days < 1:
-            raise ValueError("CACHE_PHASE1_TTL_DAYS must be >= 1")
-        
-        if self.phase2_ttl_days < 1:
-            raise ValueError("CACHE_PHASE2_TTL_DAYS must be >= 1")
-        
-        # Create cache directory if enabled
-        if self.enabled:
-            self.cache_dir.mkdir(parents=True, exist_ok=True)
+# CacheConfig removed - old cache implementation deleted (Task 5.2)
+# New cache system will be implemented in DOMAIN_AGNOSTIC Part 2 with:
+#   - Statistical Pre-Filter Cache (workflows/llm_enhancement/cache/prefilter/)
+#   - LLM Response Cache (workflows/llm_enhancement/cache/llm_responses/)
+# See: DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN.md Part 2
 
 
 @dataclass
@@ -286,7 +265,7 @@ class Settings:
     llm: LLMConfig = field(default_factory=LLMConfig)
     constraints: PromptConstraints = field(default_factory=PromptConstraints)
     retry: RetryConfig = field(default_factory=RetryConfig)
-    cache: CacheConfig = field(default_factory=CacheConfig)
+    # cache: CacheConfig removed (Task 5.2 - see DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN.md Part 2)
     chapter_segmentation: ChapterSegmentationConfig = field(default_factory=ChapterSegmentationConfig)
     paths: PathConfig = field(default_factory=PathConfig)
     
@@ -332,11 +311,7 @@ class Settings:
         print(f"  Backoff Factor: {self.retry.backoff_factor}")
         print(f"  Constraint Factor: {self.retry.constraint_factor}")
         
-        print("\n[Cache]")
-        print(f"  Enabled: {self.cache.enabled}")
-        print(f"  Directory: {self.cache.cache_dir}")
-        print(f"  Phase 1 TTL: {self.cache.phase1_ttl_days} days")
-        print(f"  Phase 2 TTL: {self.cache.phase2_ttl_days} days")
+        # Cache config removed (Task 5.2) - see DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN.md Part 2
         
         print("\n[Paths]")
         print(f"  Repo Root: {self.paths.repo_root}")

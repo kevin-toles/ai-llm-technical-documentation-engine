@@ -12,7 +12,7 @@ from config.settings import (
     LLMConfig,
     PromptConstraints,
     RetryConfig,
-    CacheConfig,
+    # CacheConfig removed (Task 5.2)
     PathConfig,
     reload_settings,
     settings  # Global singleton
@@ -149,46 +149,9 @@ class TestRetryConfig:
         os.environ.pop("RETRY_MAX_ATTEMPTS")
 
 
-class TestCacheConfig:
-    """Test cache configuration."""
-    
-    def test_defaults(self):
-        """Test default values (AC-4)."""
-        config = CacheConfig()
-        assert config.enabled is True
-        assert config.cache_dir == Path("cache")
-        assert config.phase1_ttl_days == 30
-        assert config.phase2_ttl_days == 30
-    
-    def test_env_override(self):
-        """Test environment variable override."""
-        os.environ["CACHE_ENABLED"] = "false"
-        os.environ["CACHE_DIR"] = "test_cache"
-        os.environ["CACHE_PHASE1_TTL_DAYS"] = "7"
-        
-        config = CacheConfig()
-        assert config.enabled is False
-        assert config.cache_dir == Path("test_cache")
-        assert config.phase1_ttl_days == 7
-        
-        # Cleanup
-        os.environ.pop("CACHE_ENABLED")
-        os.environ.pop("CACHE_DIR")
-        os.environ.pop("CACHE_PHASE1_TTL_DAYS")
-    
-    def test_cache_dir_creation(self, tmp_path):
-        """Test cache directory is created."""
-        test_cache = tmp_path / "test_cache"
-        os.environ["CACHE_ENABLED"] = "true"
-        os.environ["CACHE_DIR"] = str(test_cache)
-        
-        _ = CacheConfig()  # Create config to trigger directory creation
-        assert test_cache.exists()
-        assert test_cache.is_dir()
-        
-        # Cleanup
-        os.environ.pop("CACHE_ENABLED")
-        os.environ.pop("CACHE_DIR")
+# TestCacheConfig removed (Task 5.2)
+# CacheConfig deleted - old cache implementation removed
+# New cache system will be implemented in DOMAIN_AGNOSTIC Part 2
 
 
 class TestSettings:
@@ -201,7 +164,7 @@ class TestSettings:
         assert settings.llm is not None
         assert settings.constraints is not None
         assert settings.retry is not None
-        assert settings.cache is not None
+        # CacheConfig removed (Task 5.2)
         assert settings.paths is not None
     
     def test_type_safety(self):
@@ -211,7 +174,7 @@ class TestSettings:
         # These should have correct types
         assert isinstance(settings.llm.max_tokens, int)
         assert isinstance(settings.llm.temperature, float)
-        assert isinstance(settings.cache.enabled, bool)
+        # CacheConfig removed (Task 5.2)
         assert isinstance(settings.paths.repo_root, Path)
     
     def test_reload_settings(self):
