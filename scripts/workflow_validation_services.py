@@ -589,7 +589,9 @@ class WorkflowValidationFacade:
     def validate_metadata_enrichment(self, metadata_filename: str) -> Dict[str, Any]:
         """Validate Tab 4: Metadata enrichment."""
         source_metadata = self.workflows_dir / "metadata_extraction" / "output" / metadata_filename
-        enriched_json = self.workflows_dir / "metadata_enrichment" / "output" / f"{Path(metadata_filename).stem}_enriched.json"
+        # Output filename: remove _metadata suffix, add _enriched
+        base_name = Path(metadata_filename).stem.replace("_metadata", "")
+        enriched_json = self.workflows_dir / "metadata_enrichment" / "output" / f"{base_name}_enriched.json"
         
         result = MetadataEnrichmentValidator.validate(source_metadata, enriched_json)
         return result.to_dict()

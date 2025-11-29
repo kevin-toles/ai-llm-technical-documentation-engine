@@ -1,0 +1,2560 @@
+{
+  "book": "AntiPatterns",
+  "enrichment_metadata": {
+    "generated": "2025-11-28T17:48:53.358085",
+    "method": "statistical",
+    "libraries": {
+      "yake": "0.4.8",
+      "summa": "1.2.0",
+      "scikit-learn": "1.3.2"
+    },
+    "corpus_size": 25,
+    "total_chapters_analyzed": 649
+  },
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "title": "Segment 1 (pages 2-12)",
+      "start_page": 2,
+      "end_page": 12,
+      "summary": "AntiPatterns clearly define software mistakes that most of us make frequently.\nSee the AntiPatterns\nAntiPatterns clarify the negative patterns that cause development roadblocks, and include proven solutions for transforming software development problems into opportunities.\nAntiPatterns serve two important purposes: to help identify problems and to help implement solutions.\nAntiPatterns are closely related to another important software concept: design patterns, which document recurring solutions.\nA design pattern becomes an AntiPattern when it causes more problems than it solves.\nThere are situations when a pattern is a good solution to a problem and other situations when it becomes an AntiPattern.\nIf you are new to design patterns or AntiPatterns, we provide introductory material in\nFor design patterns practitioners, the AntiPatterns reference model is explained in Chapter 2; the template is explained in Chapter 3.\nAntiPatterns\n− Introduction to Patterns and AntiPatterns\n− Templates for Patterns and AntiPatterns\n− Software Development AntiPatterns\n− Software Architecture AntiPatterns\n− Software Project Management AntiPatterns\nChapter 1: Introduction to Patterns and AntiPatterns\nChapter 3: Templates for Patterns and AntiPatterns\nChapter 1: Introduction to Patterns and AntiPatterns\nOverview AntiPatterns represent the latest concept in a series of revolutionary changes in computer science and software engineering thinking.\nAntiPatterns: AntiHype Software was supposed to make digital hardware much more flexible.\nThere are several things that we (application developers and managers) can do to mitigate software problems.\nWhat Is an AntiPattern?\nAn AntiPattern is a literary form that describes a commonly occurring solution to a problem that generates decidedly negative consequences.\nThe AntiPattern may be the result of a manager or developer not knowing any better, not having sufficient knowledge or experience in solving a particular type of problem, or having applied a perfectly good pattern in the wrong context.\nAntiPatterns provide real−world experience in recognizing recurring problems in the software industry and provide a detailed remedy for the most common predicaments.\nAntiPatterns highlight the most common problems that face the software industry and provide the tools to enable you to recognize these problems and to determine their underlying causes.\nAntiPatterns effectively describe the measures that can be taken at several levels to improve the developing of applications, the designing of software systems, and the effective management of software projects.\nAntiPatterns provide a common vocabulary for identifying problems and discussing solutions.\nAntiPatterns, like their design pattern counterparts, define an industry vocabulary for the common defective processes and implementations within organizations.\nAntiPatterns provide stress release in the form of shared misery for the most common pitfalls in the software industry.\nDesign pattern languages have taken the programming community by storm, and reflect an intense desire from software professionals to improve the quality and standards of the industry.\nIn order to fully grasp its significance in software development, it’s important to understand its origins and how the current design pattern phenomenom has given rise to the AntiPattern.\nFurthermore, the academic community failed in providing the detailed knowledge in problem solving and in engineering dynamic software solutions that could cope with the changing requirements, which were commonplace in the industry.\nIt wasn’t until 1994 that design patterns entered the mainstream of the object−oriented software development community.\nIn mid−1994, the Hillside Group hosted the first, and now historic, industry conference on software design patterns, Pattern Languages of Program Design (PLoP), which featured several patterns and pattern languages for developing software applications.\nSoftware developers frequently organized grassroots groups that applied design patterns in their software development projects and championed their use by others.\nDesign pattern study groups were organized around the world to discuss using software design patterns as the basis for improving software quality.\nFor a brief shining moment, it appeared that design patterns were a step toward revolutionizing the entire software industry to focus on design reuse and engineering software for more effectively dealing with changing requirements.\nThis is the antithesis of the “Gang of Four (GoF)” patterns that emphasize the use of proven good designs, which can be applied in constructing new software.\nRather, AntiPatterns are a natural step in complementing the work of the design pattern movement, and extending the design pattern model.\nOur AntiPatterns attempt to bridge the gap between the academic formalisms of the GoF design patterns and the fledging software developers who need more contextual information in order to evaluate and determine whether a particular technique is appropriate to their particular situation.\nThe concept of AntiPatterns is the first major software research initiative to focus on negative solutions.\nWith each AntiPattern, we attach one or more design patterns that provide constructive alternatives for resolving the root causes.\nDevelopment AntiPatterns comprise technical problems and solutions that are encountered by programmers.\nArchitectural AntiPatterns identify and resolve common problems in how systems are structured.\nManagerial AntiPatterns address common problems in software processes and development organizations.\nAntiPatterns: The Book This chapter delineated the evolution of AntiPatterns and how they relate to improving the software industry.\nAntiPatterns provides an effective way to describe the problematic development and organizational issues found in software development, and details a course for resolution.\nChapter 4 explains the implications of AntiPatterns in the software organization.\nChapter 5 defines software development AntiPatterns.\nChapter 6 defines software architecture AntiPatterns.\nChapter 7 defines software project management AntiPatterns.\nPatterns and AntiPatterns are related concepts, as shown in Figure 2.1.\nThe essence of a design pattern is a problem and a solution.\nFigure 2.1 Design pattern and AntiPattern concepts.\nWhat distinguishes a design pattern from other forms of software knowledge is the use of a template, a consistent outline for the pattern documentation that ensures consistent and adequate coverage of the solution, design forces, and other consequences.\nThe essence of an AntiPattern is two solutions, instead of a problem and a solution for ordinary design patterns.\nPatterns and AntiPatterns are related.\nDesign patterns can often evolve into an AntiPattern.\nThe difference between patterns solutions and AntiPatterns solutions is that of context: An AntiPattern is a pattern in an inappropriate context.\nWhen a pattern becomes an AntiPattern, it is useful to have an approach for evolving the solution into a better one.\nBoth design patterns and AntiPatterns are written by starting with the solution.\nThe context, problem, and forces in a design pattern are written to lead uniquely to one solution.\nIn practice, we have found AntiPatterns to be a much more powerful and effective form for describing recurring solutions than design patterns.\nAn AntiPattern starts with an existing solution (or legacy approach), where most patterns assume a green−field problem (from−scratch programming).\nViewpoints This book presents AntiPatterns from three major viewpoints: the software developer, the software architect, and the software manager (Figure 2.2).\nDevelopment AntiPatterns describe situations encountered by the programmer when solving programming problems (Chapter 5).\nArchitectural AntiPatterns focus on common problems in system structure, their consequences, and solutions (Chapter 6).\nManagement AntiPatterns describe common problems and solutions due to the software organization (Chapter 7).\nManagement AntiPatterns affect people in all software roles, and their solutions directly affect the technical success of the project.",
+      "keywords": [
+        "design patterns",
+        "software",
+        "AntiPatterns",
+        "software design patterns",
+        "AntiPatterns Chapter",
+        "patterns",
+        "software development",
+        "design",
+        "pattern",
+        "software design",
+        "Software Development AntiPatterns",
+        "software projects",
+        "solution",
+        "problems",
+        "solutions"
+      ],
+      "concepts": [
+        "software",
+        "antipatterns",
+        "antipattern",
+        "patterns",
+        "pattern",
+        "design",
+        "designing",
+        "designs",
+        "solutions",
+        "solution"
+      ],
+      "related_chapters": [
+        {
+          "book": "AntiPatterns",
+          "chapter": 1,
+          "title": "Segment 1 (pages 2-12)",
+          "relevance_score": 1.0,
+          "method": "cosine_similarity"
+        },
+        {
+          "book": "AntiPatterns",
+          "chapter": 5,
+          "title": "Segment 5 (pages 38-47)",
+          "relevance_score": 0.87,
+          "method": "cosine_similarity"
+        }
+      ],
+      "keywords_enriched": [
+        {
+          "term": "design patterns",
+          "score": 0.001,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "software design patterns",
+          "score": 0.001,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "software",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Software Development AntiPatterns",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "AntiPatterns",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "software development",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "patterns",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "design",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Development AntiPatterns",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "antipattern patterns pattern",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        }
+      ],
+      "concepts_enriched": [
+        {
+          "concept": "antipatterns",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "antipattern",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "software",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "design",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "designing",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "designs",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "designation",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "designers",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "solutions",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "solution",
+          "source": "cross_book_summa"
+        }
+      ]
+    },
+    {
+      "chapter_number": 2,
+      "title": "Segment 2 (pages 13-21)",
+      "start_page": 13,
+      "end_page": 21,
+      "summary": "Metadata is self−descriptive information in a software system that enables the system to change dynamically.\nSloth Sloth is the “healthy sign” of a lazy developer or manager, who makes poor decisions based upon an “easy answer” (Figure 2.6).\nDistributed object technology enables application developers to define system−level interfaces quickly using the ISO Interface Definition Language (ISO IDL).\nIdeally, system−level interfaces are kept stable during active software development and modified only infrequently.\nStable interfaces enable parallel development, effective documentation, and reduced software obsolescence.\nAvarice Greed can take many forms, but it leads to inappropriate software development decisions.\nExcess complexity leads to many software problems and project challenges.\nNew architecture must be prototyped and evolved before it is proven to provide software benefits.\nPrimal Forces Software design involves making choices.\nFor example, some of the key choices that present themselves when designing software architecture include:\nSoftware design choices are often complex, with numerous issues (or forces) to consider, such as security, cost, adaptability, reliability, and so on.\nPartitions in a software architecture are used to allocate and delineate the boundaries of concerns.\nRisk is a force that is always present in software decisions.\nWe believe that significant changes are necessary in the way that software systems are architected and the way that risks are managed.\nFor any given software problem, there are a number of forces that can influence a given solution.\nThe application of a design pattern leads to a solution that resolves the forces in a particular way.\nSince vertical forces are unique (or local) to one software situation, resolution of vertical forces usually results in unique solutions for each software problem.\nHorizontal forces are those that influence design choices across several software modules or components.\nFor example, if the horizontal force is “design consistency,” it is necessary to coordinate software designs across multiple\nA certain class of horizontal forces are pervasive in software architecture and development.\nOne role of the primal forces is to keep architecture and development on track.\nFor example, a software decision that seems to be local can have a cumulative impact when there are other software groups making conflicting choices elsewhere in the same enterprise.\nThe primal forces represent the pervasive forces, which arise from the interrelatedness of software decisions.\nEach primal force is horizontally applicable across many domains of software architecture and development.\nThe primal forces represent the common−sense basic considerations, which are necessary for successful software architecture and development.\nPrimal forces comprise a fundamental value system for software architects and developers that are independent of particular situational forces.\nManagement of change: controlling evolution of software.\nManagement of technology transfer: controlling technology change.\nFunctionality and performance are critical forces at application−level and finer grains, whereas management of IT resources and technology transfer are enterprise and global in scope.\nManagement of Change\nManagement of functionality is a force best addressed at the application level.\nManagement of performance is best addressed at both the application and the system levels.\nManagement of change is critical at the enterprise and system levels, where the rate of change of individual products is moderate.\nTherefore, it is important at the system and enterprise levels to plan an adaptable system capable of managing change.\nIt’s also important at a system level to ensure that major software developments are successful.\nManagement of technology transfer is important at the global industry level so as to stay abreast of technology advancements and be able to reuse experience and knowledge across organizational boundaries.\nIt is important at the enterprise level to make the most of the available resources within an organization and at a system level to gain tactical advantages of software advancements.\nTable 2.2 identifies the roles in the software development and the level of their responsibility for each scale.\nHowever, if a software project is going to be successful, the primal force of management of change must\nAt the architect level, the same concerns are shared as the developer level, with the additional force of managing the complexity of the overall system.\nThe architect must design the system such that the system interfaces are manageable, regardless of the complexity of its parts.\nA project manager has to aid the architect in the management of complexity and change and successfully deal with the management of IT resources, such as people, time, and budgets.\nFinally, at the CIO level, a plan must be in place for managing internal IT resources and for managing the technology transfer to and from other organizations in the industry.\nManaging functionality is making sure that software meets end−user requirements.\nThe functionality of the software provides the mechanism for this mapping and for all of the operations performed on technology objects.\nInteroperability is an important part of management of functionality, comprising the exchange of information and services between software modules.\nThe second primal force, and the one sometimes overlooked by software architects, is the management of performance.\nIt is not sufficient for software to meet only its functionality requirements; the system must also meet performance needs.\nThe ORB’s built−in client−service decoupling enables the astute developer to perform many performance enhancements without changing application software.\nBecause the performance enhancements are transparent to application software, they may be phased in over time, or added as needed as determined by the growth of the system.\nManaging performance also involves application software optimizations.\nIn developing systems, it is important not to lose sight of the value of good software abstractions.\nWithout proper design abstraction, needless component differences are created, resulting in redundant software and multiple points of maintenance for fundamentally similar code.\nManaging complexity is a matter of analyzing a design and properly identifying the hot spots and problem areas that may be most affected by future changes; for example, the anticipation of changes that have the potential for a performance bottleneck in an implementation.\nA good set of IDL interfaces specifies the exposed functionality of a software component in order to make multiple implementations capable of satisfying the constraints of the interfaces.\nIt is in the software interfaces where system stability and adaptability are realized.\nMinimizing the dependency of clients to particular component implementations is the role of the software architect.\nPortability is an important aspect of management of change, for it is the ability to migrate application software from one product or platform to another.\nManaging the large volume of machines and software in a changing organization becomes a major issue in its own right.\nThe management of IT resources involves many aspects, such as hardware/software acquisition, inventory, training, maintenance, upgrade, and support.\nManagement of technology transfer comprises some of the key forces at the external boundary of the enterprise.\nIt includes the formal and informal relationships established by the use and transfer of software and other technologies.\nManagement of technology transfer is also an issue impacting many software developers because of the popularity and the availability of the Internet.",
+      "keywords": [
+        "software",
+        "management",
+        "system",
+        "Forces",
+        "System Application Management",
+        "important",
+        "Primal Forces",
+        "application",
+        "Enterprise System Application",
+        "level",
+        "architecture",
+        "technology transfer",
+        "interfaces",
+        "design",
+        "change"
+      ],
+      "concepts": [
+        "software",
+        "manager",
+        "managed",
+        "management",
+        "managing",
+        "manageable",
+        "manage",
+        "interfaces",
+        "interface",
+        "forces"
+      ],
+      "related_chapters": [
+        {
+          "book": "AntiPatterns",
+          "chapter": 2,
+          "title": "Segment 2 (pages 13-21)",
+          "relevance_score": 1.0,
+          "method": "cosine_similarity"
+        }
+      ],
+      "keywords_enriched": [
+        {
+          "term": "software",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Forces",
+          "score": 0.007,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "system",
+          "score": 0.008,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Management",
+          "score": 0.008,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Primal Forces",
+          "score": 0.01,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "application software",
+          "score": 0.011,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "software management system",
+          "score": 0.013,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "software architecture",
+          "score": 0.014,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "system Forces System",
+          "score": 0.015,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "application",
+          "score": 0.015,
+          "source": "cross_book_yake"
+        }
+      ],
+      "concepts_enriched": [
+        {
+          "concept": "software",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "manager",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "managed",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "management",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "managing",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "manageable",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "manage",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "forces",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "force",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "interfaces",
+          "source": "cross_book_summa"
+        }
+      ]
+    },
+    {
+      "chapter_number": 3,
+      "title": "Segment 3 (pages 22-29)",
+      "start_page": 22,
+      "end_page": 29,
+      "summary": "The model clarifies the key levels inherent in software systems and the problems and solutions available at each level.\nThe first is the external model (or application level), which directly addresses the end−user requirements.\nFigure 2.10 The existence of both external and internal models in software systems illustrates the need for multiple levels of software concerns.\nThe system level provides an architecture for the software system.\nThe pattern language is organized by architectural levels, which define a comprehensive framework in which to examine the patterns and principles of object−oriented architecture.\nUntil now, the higher architectural levels have been mostly neglected, and as a result, general interoperability principles across applications, systems, and organizational enterprises have suffered from proprietary solutions and nonreusable, unscalable technological solutions.\nFigure 2.11 shows the seven architectural levels: global, enterprise, system, application, macro−component, micro−component, and object.\nThe global level contains the design issues that are globally applicable across all systems.\nThe application level is focused upon the organization of applications developed to meet a set of user requirements.\nThe macro−component levels are focused on the organization and development of application frameworks.\nThis level is concerned with the development of small designs used to tackle a limited problem with a software application.\nThe Gamma Pattern Language was primarily concerned with the development of effective design patterns for applications at this level.\nFramework Level The framework level is concerned with the development of design patterns at the macro−component level, involving one or more micro−architectures.\nAt the framework level, the goal is to allow the reuse of both software code and the design used in writing the code.\nPatterns, which are unique to a specific framework model or macro−component architecture, would be included at this level.\nEffective patterns at this level can reduce the cost of building applications, which share the framework’s domain, and their maintenance costs.\nApplication Level The application level is the next scale above frameworks.\nThe application level is concerned with the design patterns used in a single application program.\nOften, a single developer has control over how an application (at this level) is structured, controlled, and managed.\nAt the application level, the primary goal is to implement a specific set of functionalities defined by the software requirements.\nBecause the scope is limited to a single program, there is far less risk involved in experimentation at this level than at larger scales (which impact multiple applications, systems, or enterprises).\nThe application level contains programs that implement the external model of a software system; that is, an operational model of the real world.\nSpecifically, the external requirements of the end user are satisfied at the application level; this includes issues relating to user interface and visible system functionality.\nSince the finer−grain levels are covered adequately by other works, the pattern language is focused only upon the problem sets that occur at the application and larger scales.\nThe work in design patterns at the application and higher levels has been minimal until now; however, it is precisely at these levels where object−oriented architecture is most important.\nApplication patterns cover a diverse set of solutions, and innovation at the application level in COTS software and development support environments is occurring rapidly.\nManaging functionality and performance have more importance at the application level where they are directly controlled.\nThe system level implements the system’s internal model and provides the cohesiveness needed to allow applications to interoperate effectively with one another (refer back toFigure 2.10).\nStructural design patterns at the system level include gateways, a repository, and component and domain object−oriented architecture.\nEnterprise Level The enterprise level is the largest architectural scale within an organization.\nThe goal of the enterprise level is to provide software access and minimize costs through a consistent set of polices and services usable throughout the organization.\nFigure 2.14 The enterprise architecture defines the technology utilization policies, including the standards reference model, the common operating environment, and the application profiles.\nIncluded at the enterprise level are the various organizational models, which direct an organization as to how to utilize various standards, for example, organizational policies, security and data access policies, and organizational infrastructures issues, such as the available communication protocols or the location of shared resources.\nThe global level includes languages, standards, and policies that affect multiple enterprises.\nFor example, the global level may provide a set of leveragable standards and protocols that benefit organizations by allowing a general means of interoperability and communicating across different enterprises.\nAlso included at the global level are the software standards.\nThe application level is where the functionality and performance that meet user requirements occurs.\nAt the next larger scale, the system level defines the software interconnections between applications.\nThe development of vertical interfaces and horizontal interfaces for interoperability between applications occurs at the system level.\nOn an application level, software developers are concerned primarily with managing functionality and performance when developing software to meet the functional needs of their user base.\nThe system level is focused on developing an infrastructure that can effectively manage complexity and change in order to reduce the overall life−cycle costs of developing and maintaining an organization’s software system.",
+      "keywords": [
+        "Level",
+        "system level",
+        "application level",
+        "system",
+        "enterprise level",
+        "software",
+        "levels",
+        "application",
+        "global level",
+        "object level",
+        "Design",
+        "patterns",
+        "systems",
+        "design patterns",
+        "enterprise"
+      ],
+      "concepts": [
+        "levels",
+        "level",
+        "application",
+        "applications",
+        "applicable",
+        "object",
+        "objects",
+        "architecture",
+        "architectural",
+        "architectures"
+      ],
+      "related_chapters": [
+        {
+          "book": "AntiPatterns",
+          "chapter": 3,
+          "title": "Segment 3 (pages 22-29)",
+          "relevance_score": 1.0,
+          "method": "cosine_similarity"
+        }
+      ],
+      "keywords_enriched": [
+        {
+          "term": "application level",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "level",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "system level",
+          "score": 0.005,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "level application level",
+          "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "levels level application",
+          "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "application",
+          "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Level system level",
+          "score": 0.007,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "levels",
+          "score": 0.009,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "level application applications",
+          "score": 0.009,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "level software levels",
+          "score": 0.009,
+          "source": "cross_book_yake"
+        }
+      ],
+      "concepts_enriched": [
+        {
+          "concept": "levels",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "level",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "application",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "applications",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "applicable",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "software",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "architecture",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "architectural",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "architectures",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "pattern",
+          "source": "cross_book_summa"
+        }
+      ]
+    },
+    {
+      "chapter_number": 4,
+      "title": "Segment 4 (pages 30-37)",
+      "start_page": 30,
+      "end_page": 37,
+      "summary": "The pattern language will examine the recurring structures at each level and present detailed solutions for the major problems inherent at each architectural scale.\nChapter 3: Templates for Patterns and AntiPatterns\nOverview The use of templates is what makes design patterns and AntiPatterns different from other forms of technical discussion.\nIt’s part of a technical line of reasoning, and each section answers some key questions about the pattern involved.\nDegenerate Form Degenerate patterns are without discernible templates.\nCompared to templated patterns, a degenerate pattern contains only a single content section.\nHere is an example of a degenerate pattern form.\nDegenerate Pattern Form Technical Discussion: What does the author have to say about this set of concepts?\nIs it a pattern?\nAlexanderian Form Christopher Alexander’s traditional template comprises three sections: name, problem, and solution.\nHere is an example of an Alexanderian pattern form.\nAlexanderian Pattern Form\nMinimal Template (Micro−Pattern) The minimal, rhetorical structure of a software−engineering design pattern includes name, problem, and solution.\nThe name defines unique terminology; the problem lists the context, forces, and/or applicability; and the solution is the pattern content (what to do about solving the problem).\nProblem: What is motivating us to apply this pattern?\nMost important, these sections answer the why questions about the solution, as well as provide information about when to use the pattern.\nProblem: What is motivating us to apply this pattern?\nFormal Templates There are many other potential sections added to a pattern and AntiPattern write−up.\nCitations that include reference to other related patterns and nonpattern technical concepts are also useful and necessary for a full formal treatment.\nIntent: What problem does this pattern solve?\nName: What is this pattern called?\nProblem: What is the problem solved by this pattern?\nSolution: What is the underlying principal underlying this pattern?\nSee Also: What are related patterns and how do they differ?\nInstead of having each pattern be completely independent (in terms of context and forces), the CORBA Design Patterns reference model allowed us to define the horizontal (common) context and forces that occur at each scale of software design.\nGiven that there are many patterns to learn and assimilate, and most practitioners are under extreme time pressures on the job, we organized the template sections to enable readers to learn a great deal about a pattern, before being subjected to a rambling, free−text discussion.\nThe CORBA Design Patterns template is organized so that the most concise information−packed sections are first and the free−form sections are last.\nThe solution summary explains the patterns’ technical approach crisply.\nAnother section that covers alternative software scale describes the patterns’ differences when applied at another level of software design.\nCORBA Design Pattern Template\nSolution Type: Is it a software pattern, technology pattern, process pattern, or role pattern (keyword only)?\nSolution Summary: What is the pattern solution and approach (stated clearly, without verbose embellishment)?\nRescaling this Solution to Other Levels: How does this pattern differ if applied at other software scales?\nRelated Solutions: Cross−references and citations to other patterns (including other patterns from other pattern publications) and other technology examples, publication citations, and resources.\nAntiPattern Templates AntiPatterns are a new form of patterns.\nA fundamental difference between a pattern and an AntiPattern is that with an AntiPattern a solution has negative consequences.\nTo be useful, AntiPatterns also include a solution.\nSo another way to differentiate between a pattern and an AntiPattern is that there are two solutions (instead of a problem and a solution).\nIn an ordinary design pattern, the convention is that at least three known uses of the solution must exist.\nBecause there are two solutions, the “rule of three” for AntiPatterns is different from patterns.\nSince no three solutions are identical, the pattern solution is a best−practices abstraction of the known uses.\nAntiPatterns are different because they have two solutions.\nThe first solution, “the AntiPattern,” must conform to the rule−of−three occurrences just as with ordinary patterns.\nMini−AntiPattern As we discussed, an AntiPattern template differs from a pattern in that it presents two solutions.\nThe first solution is called the AntiPattern problem; the second solution is called the refactored solution.\nAntiPattern Problem: What is the recurrent solution that causes negative consequences?\nRefactored Solution: How do we avoid, minimize, or refactor the AntiPattern problem?\nThe core sections are thegeneral form of the AntiPattern and the refactored solution.\nThe solution name of the pattern introduces new terminology.\nThis section identifies where this AntiPattern fits into the software design−level model (refer back to Figure 2.7).\nEach pattern is logically placed where the AntiPattern is most applicable.\nSome patterns define useful solutions at several scales.\nThis identifies the refactored solution pattern.\n1. Software patterns comprise the overwhelming majority of the patterns included in the AntiPatterns catalog.\nTechnology patterns are also design patterns in that they result in software design and implementation, although the method of acquisition is different.\n3. Process patterns provide the definition of activities that are consistently repeatable for a given solution.\n4. Role patterns solve software problems by allocating clear responsibilities to organizational stakeholders.\nProcess and role patterns are included because of the significant effect that communication and the human organization have upon software problem solving.\nThe refactored solution resolves the general AntiPattern posed by this section.\nThis section explains a refactored solution that resolves the forces in the AntiPattern identified in the general form section.\nThe references to related patterns are an important aspect of the AntiPatterns.\nThe new forces can be resolved by related patterns, either at the same or another level.\nThis section also highlights differences between similar patterns.\nSome key questions addressed in this section include: What happens when the AntiPattern is applied at different levels?\nThe AntiPatterns in Chapters 5–7 utilize this template to document the common dysfunctional practices in the software industry and suggests practical solutions that have been proven effective on at least three known occasions.\nWhen the technical knowledge is not sufficient to fully implement an AntiPattern solution, the cure can cause problems that are as bad or worse than the original malady.",
+      "keywords": [
+        "pattern",
+        "solution",
+        "patterns",
+        "AntiPattern",
+        "template",
+        "pattern template",
+        "Design patterns",
+        "Design Pattern Template",
+        "Pattern Template Solution",
+        "AntiPattern Template",
+        "software",
+        "section",
+        "Alexanderian pattern form",
+        "pattern form",
+        "problem"
+      ],
+      "concepts": [
+        "pattern",
+        "antipatterns",
+        "antipattern",
+        "solutions",
+        "solution",
+        "section",
+        "sections",
+        "templates",
+        "template",
+        "software"
+      ],
+      "related_chapters": [
+        {
+          "book": "AntiPatterns",
+          "chapter": 4,
+          "title": "Segment 4 (pages 30-37)",
+          "relevance_score": 1.0,
+          "method": "cosine_similarity"
+        }
+      ],
+      "keywords_enriched": [
+        {
+          "term": "pattern",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "template pattern template",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Patterns",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Design Pattern Template",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "solution",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Pattern Template Pattern",
+          "score": 0.005,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "pattern solution patterns",
+          "score": 0.005,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "pattern form",
+          "score": 0.005,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "patterns Design Pattern",
+          "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "design patterns",
+          "score": 0.006,
+          "source": "cross_book_yake"
+        }
+      ],
+      "concepts_enriched": [
+        {
+          "concept": "pattern",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "patterns",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "solutions",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "solution",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "antipatterns",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "antipattern",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "templates",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "template",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "section",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "sections",
+          "source": "cross_book_summa"
+        }
+      ]
+    },
+    {
+      "chapter_number": 5,
+      "title": "Segment 5 (pages 38-47)",
+      "start_page": 38,
+      "end_page": 47,
+      "summary": "Therefore, it’s helpful to read all of the solutions, even if the AntiPattern’s general form may not seem immediately applicable at first glance.\nFixed and Improvisational Responses Patterns and AntiPatterns document some of the known alternative solutions.\nIt is a pattern or AntiPattern.\nThe analysis in Chapters 5–7, while reasonably comprehensive, barely scratches the surface of the number of AntiPatterns in the software development culture.\nIt’s important that AntiPattern identification and documentation, along with a prescribed solution, be performed by software practitioners throughout the industry.\nAntiPatterns are an attempt to discuss the material appropriate for design patterns in a form much more palatable to the reader.\nThe AntiPattern starts with a commonly recurring design or practice.\nAntiPattern.\nIt is useful to discuss a written description of the AntiPattern and its refactored solution in a group environment; writer’s workshops are one form.\nFrom our experience reviewing many design patterns and AntiPatterns in group situations, we find AntiPatterns much more fun!\nNew AntiPattern authors can focus on recurring problems that are observed in several distinct contexts (at least three, similar to the rationale for describing software design patterns).\nTo fully describe an AntiPattern, it’s important to supplement the AntiPattern problem description and solution with a discussion of causes, symptoms, and one or more concrete examples to provide a clear context.\nDescriptions of related AntiPatterns and alternative solutions are included in the Variations section of each AntiPattern.\nIn CORBA Design Patterns [Mowbray 97c], we found it useful to separate the variations in order to clarify the solution; in this way, the refactored solution is presented without caveats that can cause confusion.\nSummary Software AntiPatterns comprise a new research area, which is a derivative of design patterns.\nWe believe AntiPatterns are a more effective way to communicate software knowledge than ordinary design patterns because:\nAntiPatterns clarify problems for software developers, architects, and managers by identifying the symptoms and consequences that lead to the dysfunctional software development processes.\nAntiPatterns convey the motivation for change and the need for refactoring poor processes.\nAntiPatterns are necessary to gain an understanding of common problems faced by most software developers.\nChapter 5: Software Development AntiPatterns\nChapter 6: Software Architecture AntiPatterns\nChapter 7: Software Project Management AntiPatterns\nChapter 5: Software Development AntiPatterns\nThe Akroyd AntiPatterns define classic problems in object−oriented software design.\nProper AntiPatterns define a migration (or refactoring) from negative solutions to positive solutions.\nAntiPatterns that describe only the negative solution are called pseudo−AntiPatterns.\nSoftware Refactoring A key goal of development AntiPatterns is to describe useful forms of software refactoring.\nSoftware development is a chaotic activity, therefore the implemented structure of systems tends to stray from the planned structure as determined by architecture, analysis, and design.\nFor example, the solution for the Spaghetti Code AntiPattern discussed later in this chapter defines a software development process that incorporates refactoring.\nDevelopment AntiPattern Summaries Development AntiPatterns utilize various formal and informal refactoring approaches.\nThe following summaries provide an overview of the Development AntiPatterns found in this chapter and focus on the development AntiPattern problem.\nThe refactored solutions appear in the appropriate AntiPattern templates that follow the summaries.\nThe Blob: Procedural−style design leads to one object with a lion’s share of the responsibilities, while most other objects only hold data or execute simple processes.\nThe solution includes refactoring the design to distribute responsibilities more uniformly and isolating the effect of changes.\nThe refactored solution includes a configuration management process that eliminates dead code and evolves or refactors design toward increasing quality.\nFunctional Decomposition: This AntiPattern is the output of experienced, nonobject−oriented developers who design and implement an application in an object−oriented language.\nFrequent code refactoring can improve software structure, support software maintenance, and enable iterative development.\nIn addition to the preceding AntiPatterns, this chapter includes a number of mini−AntiPatterns that represent other common problems and solutions.\nAntiPattern Name: The Blob\nRefactored Solution Type: Software\nThe movie is a good analogy for the Blob AntiPattern, which has been known to consume entire object−oriented architectures (see Figure 5.1).\nThe Blob is found in designs where one class monopolizes the processing, and other classes primarily encapsulate data.\nThis AntiPattern is characterized by a class diagram composed of a single complex controller class surrounded by simple data classes, as shown in Figure 5.2.\nIn general, the Blob is a procedural design even though it may be represented using object notations and implemented in object−oriented languages.\nThe Blob is often accompanied by unnecessary code, making it hard to differentiate between the useful functionality of the Blob Class and no−longer−used code (see the Lava Flow AntiPattern).\nA program main loop inside the Blob class associated with relatively passive data objects.\nDefining system architecture as part of requirements analysis is usually inappropriate, and often leads to the Blob AntiPattern, or worse.\nAs with most of the AntiPatterns in this section, the solution involves a form of refactoring.\nFor example, a library system architecture diagram is represented with a potential Blob class called LIBRARY.\nSometimes, with a system composed of the Blob class and its supporting data objects, too much work has been invested to enable a refactoring of the class architecture.\nThe original Blob class manages the system’s functionality; the data classes are extended with some of their own processing.\nThis process may allow the retention of the original class hierarchy, except for the migrations of processing functionality from the Blob class to some of the encapsulated data classes.\nRiel identifies two major forms of the Blob AntiPattern.\nRiel introduces a number of object−oriented heuristics for detect ing and refactoring God Class designs.\nBoth architectural and managerial viewpoints play key roles in the initial prevention of the Blob AntiPattern.\nWith a mature object−oriented analysis and design process, and an alert manager who understands the design, developers can prevent the cultivation of a Blob.\nUp−front investment in good architecture and team education can ensure a project against the Blob and most other AntiPatterns.",
+      "keywords": [
+        "Blob",
+        "Blob Class",
+        "Blob AntiPattern",
+        "AntiPatterns",
+        "software",
+        "Software Development AntiPatterns",
+        "Design",
+        "Design patterns",
+        "solution",
+        "Development AntiPatterns",
+        "software development",
+        "refactoring",
+        "object",
+        "software AntiPatterns",
+        "Code"
+      ],
+      "concepts": [
+        "antipatterns",
+        "classes",
+        "software",
+        "designation",
+        "design",
+        "designs",
+        "designers",
+        "code",
+        "coded",
+        "refactoring"
+      ],
+      "related_chapters": [
+        {
+          "book": "AntiPatterns",
+          "chapter": 5,
+          "title": "Segment 5 (pages 38-47)",
+          "relevance_score": 1.0,
+          "method": "cosine_similarity"
+        },
+        {
+          "book": "AntiPatterns",
+          "chapter": 1,
+          "title": "Segment 1 (pages 2-12)",
+          "relevance_score": 0.87,
+          "method": "cosine_similarity"
+        }
+      ],
+      "keywords_enriched": [
+        {
+          "term": "Software Development AntiPatterns",
+          "score": 0.001,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "software development",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "AntiPatterns",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "software",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "design patterns",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Development AntiPatterns",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Blob AntiPattern",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "software design patterns",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Blob Blob Class",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Blob Class Blob",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        }
+      ],
+      "concepts_enriched": [
+        {
+          "concept": "antipattern",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "antipatterns",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "design",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "designs",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "designation",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "designers",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "designing",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "solutions",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "solution",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "developers",
+          "source": "cross_book_summa"
+        }
+      ]
+    },
+    {
+      "chapter_number": 6,
+      "title": "Segment 6 (pages 48-55)",
+      "start_page": 48,
+      "end_page": 55,
+      "summary": "4. The developer then gets new requirements to:\nTechnology is changing so rapidly that developers have trouble keeping up with the current versions of software and finding combinations of product releases that work together.\nAntiPattern Name: Lava Flow\nAs we delved into it, we interviewed many of the developers concerning certain components of the massive number of pages of code printed out for us.\nOver and over, we got the same answer: “I don’t know what that class is for; it was written before I got here.” We gradually realized that between 30 and 50 percent of the actual code that comprised this complex system was not understood or documented by any one currently working on it.\nFurthermore, as we analyzed it, we learned that the questionable code really served no purpose in the current system; rather, it was there from previous attempts or approaches by long−gone developers.\nNearly a year later, and after several more data−mining expeditions and interface design efforts, we had encountered the same pattern so frequently that we were routinely referring to Lava Flow throughout the department (see Figure 5.10).\nFigure 5.10 The Lava Flow of obsolete technologies and forgotten extensions leaves hardened globules of dead code in its wake.\nThe Lava Flow AntiPattern is commonly found in systems that originated as research but ended up in production.\nThis is the result of earlier (perhaps Jurassic) developmental times when, while in a research mode, developers tried out several ways of accomplishing things, typically in a rush to deliver some kind of demonstration, thereby casting sound design practices to the winds and sacrificing documentation.\nFigure 5.11 Lava Flow source code listing.\nSometimes, an old, gray−haired hermit developer can remember certain details, but typically, everyone has decided to “leave well enough alone” since the code in question “doesn’t really cause any harm, and might actually be critical, and we just don’t have time to mess with it.”\nThis AntiPattern is, however, incredibly common in innovative design shops where proof−of−concept or prototype code rapidly moves into production.\nLava Flow code can be expensive to load into memory, wasting important resources and impacting performance.\nUndocumented complex, important−looking functions, classes, or segments that don’t clearly relate to the system architecture.\nIf existing Lava Flow code is not removed, it can continue to proliferate as code is reused in other areas.\nIf the process that leads to Lava Flow is not checked, there can be exponential growth as succeeding developers, too rushed or intimidated to analyze the original flows, continue to produce new, secondary flows as they try to work around the original ones, this compounds the problem.\nAs the flows compound and harden, it rapidly becomes impossible to document the code or understand its architecture enough to make improvements.\nR&D code placed into production without thought toward configuration management.\nLack of architecture, or non−architecture−driven development.\nThe code is never cleaned up, leaving architectural consideration and documentation postponed indefinitely.\nSometimes, architectural commitments that are made during requirements analysis are found not to work after some amount of development.\nIt may not even be feasible to comment−out unnecessary code, especially in modern development environments where hundreds of individual files comprise the code of a system.\nSmall−scale, throwaway prototypes in an R&D environment are ideally suited for implementing the Lava Flow AntiPattern.\nThere is only one sure−fire way to prevent the Lava Flow AntiPattern: Ensure that sound architecture precedes production code development.\nThis architecture must be backed up by a configuration management process that ensures architectural compliance and accommodates “mission creep” (changing requirements).\nIf architectural consideration is shortchanged up front, ultimately, code is developed that is not a part of the target architecture, and is therefore redundant or dead.\nAn important principle is to avoid architecture changes during active development.\nIn particular, this applies to computational architecture, the software interfaces defining the systems integration solution.\nManagement must postpone development until a clear architecture has been defined and disseminated to developers.\nTo avoid Lava Flow, it is important to establish system−level software interfaces that are stable, well−defined, and clearly documented.\nInvestment up front in quality software interfaces can produce big dividends in the long run compared to the cost of jackhammering away hardened globules of Lava Flow code.\nThe system we mined was targeted because the developers had utilized our initial architecture in a unique way that fascinated us: Essentially, they constructed a quasi−event service out of our generic interapplication framework.\nAfter two days of code examination, we realized that the majority of the code that comprised the system was most likely similar to that code that we already examined: completely Lava Flow in nature.\nAt this point, we essentially gave up trying to mine the code and instead focused on the current developer’s explanations of what was “really” going on, hoping to somehow codify their work into interface extensions that we could incorporate into our upcoming revisions to our generic interapplication framework.\nBy utilizing the Fire Drill Mini−AntiPattern, we were able to get the systems developers to validate our IDL by using it to rapidly build a CORBA wrapper for their product for the demonstration.\nWhere this is the case, inoculation against Lava Flow can sometimes be found in a customized configuration−management (CM) process that puts certain limiting controls in place at the prototyping stage, similar to “hooks” into a real, production−class develop ment without the full restraining impact on the experimental nature of R&D.\nThis approach can be facilitated by periodic mapping of a prototyping system into an updated system architecture, including limited, but standardized inline documentation of the code.\nThe architectural viewpoint plays a key role in preventing Lava Flows initially.\nThese managers must also have the authority to put the brakes on when Lava Flow is first identified, postponing further development until a clear architecture can be defined and disseminated.\nTo be an accurate model of the software, design models must be maintained continuously as the software is developed and modified.\nThis AntiPattern is the result of experienced, nonobject−oriented developers who design and implement an application in an object−oriented language.\nIt can be incredibly complex, as smart procedural developers devise very clever ways to replicate their time−tested methods in an object−oriented architecture.\nThe implementers didn’t “get it.” This is fairly common when developers switch from programming in a nonobject−oriented programming language to an object−oriented programming language.\nBecause there are architecture, design, and implementation paradigm changes, object−orientation can take up to three years for a company to fully achieve.\nWhen the implementers are clueless about object orientation, it doesn’t matter how well the architecture has been designed; they simply won’t understand what they’re doing.\nIf the system they specify makes architectural commitments prior to requirements analysis, it can and often does lead to AntiPatterns such as Functional Decomposition.\nThe Functional Decomposition AntiPattern is fine when an object−oriented solution is not required.\nThis exception can be extended to deal with solutions that are purely functional in nature but wrapped to provide an object−oriented interface to the implementation code.",
+      "keywords": [
+        "Lava Flow",
+        "Lava Flow code",
+        "Lava Flow AntiPattern",
+        "Code",
+        "Lava Flows",
+        "Lava",
+        "system",
+        "Flow",
+        "Flow code",
+        "Architecture",
+        "Flow AntiPattern",
+        "flows",
+        "object",
+        "Lava Flow source",
+        "Refactored Solution"
+      ],
+      "concepts": [
+        "code",
+        "developer",
+        "development",
+        "developing",
+        "developed",
+        "developers",
+        "develop",
+        "architectural",
+        "architecture",
+        "architectures"
+      ],
+      "related_chapters": [
+        {
+          "book": "AntiPatterns",
+          "chapter": 6,
+          "title": "Segment 6 (pages 48-55)",
+          "relevance_score": 1.0,
+          "method": "cosine_similarity"
+        }
+      ],
+      "keywords_enriched": [
+        {
+          "term": "Lava Flow",
+          "score": 0.0,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Lava Flow code",
+          "score": 0.0,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Flow Lava Flow",
+          "score": 0.001,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Lava Flow AntiPattern",
+          "score": 0.001,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Lava Flow Lava",
+          "score": 0.001,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Flow Flow code",
+          "score": 0.001,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Flow code Lava",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "code Lava Flow",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "system Flow Flow",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Flow AntiPattern flows",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        }
+      ],
+      "concepts_enriched": [
+        {
+          "concept": "architecture",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "architectural",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "architectures",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "developer",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "developers",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "development",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "developed",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "develop",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "developing",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "code",
+          "source": "cross_book_summa"
+        }
+      ]
+    },
+    {
+      "chapter_number": 7,
+      "title": "Segment 7 (pages 56-65)",
+      "start_page": 56,
+      "end_page": 65,
+      "summary": "For all of the steps in the Functional Decomposition AntiPattern solution, provide detailed documentation of the processes used as the basis for future maintenance efforts.\nDeveloping a design model for an existing code base is enlightening; it provides insight as to how the overall system fits together.\n2. Attempt to combine several classes into a new class that satisfies a design objective.\nFor example, rather than have classes to manage device access, to filter information to and from the devices, and to control the device, combine them into a single device controller object with methods that perform the activities previously spread out among several classes.\nAs part of program maintenance, engage in refactoring of the code base to reuse code between similar subsystems (see the Spaghetti Code solution for a detailed description of software refactoring).\nInstead of a bottom−up refactoring of the whole class hierarchy, you may be able to extend the “main routine” class to a “coordinator” class that manages all or most of the system’s functionality.\nBoth architectural and managerial viewpoints play key roles in either initial prevention or ongoing policing against the Functional Decomposition AntiPattern.\nIf a correct object−oriented architecture was initially planned and the problem occurred in the development stages, then it is a management challenge to enforce the initial architecture.\nAntiPattern Name: Poltergeists\nWhen Michael Akroyd presented the Gypsy AntiPattern at Object World West in 1996, he likened the transient appearance and then discrete vanishing of the gypsy class to a “Gypsy\nThus, we felt that since poltergeists represent “restless ghosts” that cause “bump−in−the−night types of phenomena,” that term better represented the “pop in to make something happen” concept of this AntiPattern while retaining the “here now then suddenly vanished” flavor of the initial Gypsy name (see Figure 5.14).\nLike the Poltergeist “controller” class, the use of “side effects” to accomplish any principle task in an implementation is an incorrect utilization of the language or architecture tool, and should be avoided.\nThis AntiPattern is typical in cases where designers familiar with process modeling but new to object−oriented design define architectures.\nThe “coordinator” class presented still manages all or most of the system’s functionality and typically exhibits many of the features of a Poltergeist.\nWe elected to place this AntiPattern in the development chapter, rather than with the architectural AntiPatterns, because it usually occurs when developers are designing a system as they implement it (typically by the seat of their pants!) although certainly it may come as a result of failure to properly architect a system.\nAs with most development AntiPatterns, both architectural and managerial viewpoints play key roles in initial prevention and ongoing policing against them.\nManagers should take great care to ensure that object−oriented architectures are evaluated by qualified object−oriented architects as early as possible and then on an ongoing basis to prevent novice−induced errors such as this AntiPattern.\nThe consequences for managers and software developers are that significant effort may have to be devoted to making the product work.\nRational decision making is explained in the solution to the Irrational Management AntiPattern.\nThe solution to the Smoke and Mirrors AntiPattern describes the practices for prepurchase technology evaluation, including review of product documentation and train−before−you−buy.\nFrequently, a vendor, specifically a database vendor, will advocate using its growing product suite as a solution to most of the needs of an organization.\nGiven the initial expense of adopting a specific database solution, such a vendor often provides extensions to the technology that are proven to work well with its deployed products at greatly reduced prices.\nA software development team has gained a high level of competence in a particular solution or vendor product, referred to here as the Golden Hammer.\nAs a result, every new product or development effort is viewed as something that is best solved with it.\nDevelopers and managers are comfortable with an existing approach and unwilling to learn and apply one that is better suited.\nFrequently, an advocate will propose the Golden Hammer and its associated product suite as a solution to most of the needs of an organization.\nGiven the initial expense of adopting a specific solution, Golden Hammer advocates will argue that future extensions to the technology, which are designed to work with their existing products, will minimize risk and cost.\nSystem architecture is best described by a particular product, application suite, or vendor tool set.\nExisting products dictate design and system architecture.\nNew development relies heavily on a specific vendor product or technology.\nIf the product that defines the architectural constraints is the intended strategic solution for the long term; for example, using an Oracle database for persistent storage and wrapped stored procedures for secure access to data.\nIf the product is part of a vendor suite that provides for most of the software needs.\nThis solution requires a two−pronged approach: A greater commitment by management in the professional development of their developers, along with a development strategy that requires explicit software boundaries to enable technology migration.\nSoftware systems need to be designed and developed with well−defined boundaries that facilitate the replaceability of individual software components.\nIn addition, software developers need to be up to date on technology trends, both within the organization’s domain and in the software industry at large.\nFor example, developers can establish groups to discuss technical developments (design patterns, emerging standards, new products) that may impact the organization in the future.\nThey can also form book study clubs to track and discuss new publications that describe innovative approaches to software development.\nEven without full management buyin, developers can establish informal networks of technology−minded people to investigate and track new technologies and solutions.\nIndustry conferences are also a great way to contact people and vendors and stay informed as to where the industries are headed and what new solutions are available to developers.\nAlso, the danger of overreliance on a specific technology or vendor tool set is a potential risk in the product or project development.\nFinally, management must actively invest in the professional development of software developers, as well as reward developers who take initiative in improving their own work.\nA common variation of Golden Hammer occurs when a developer uses a favorite software concept obsessively.\nFor example, some developers learn one or two of the GoF patterns [Gamma 94] and apply them to all phases of software analysis, design, and implementation.\nDiscussions about intent or purpose are insufficient to sway them from recognizing the applicability of the design pattern’s structure and force−fitting its use throughout the entire development process.\nA common example of the Golden Hammer AntiPattern is a database−centric environment with no additional architecture except that which is provided by the database vendor.\nThis is frequently destructive, because the E−R diagram ultimately is used to specify the database requirements; and detailing the structure of a subsystem before understanding and modeling the system presumes that the impact of the actual customer requirements on the system design is minimal.\nOver time, the organization may develop several database−centric products that could have been implemented as independent systems.\nIn addition, many implementation problems are addressed through using database proprietary features that commit future migrations to parallel the development of a technology of the implementation database.\nIf, however, some thought is given to the problem before the situation gets too far out of hand, a common framework can be developed, where products chosen for particular areas are selected based on standard interface specifications, such as CORBA, DCOM, or TCP/IP.\nThereafter, the system’s future was fully constrained by the development path of the database product because of a bad architecture decision.\nDevelopers become reluctant to modify these sections, which build up over time and add to the overall size of the application while implementing functions that are seldom, if ever, used by the customer.\nVendor Lock−In. Vendor lock−in is when developers actively receive vendor support and encouragement in applying the Golden Hammer AntiPattern.\nA software project is actively committed to relying upon a single vendor’s approach in designing and implementing an object−oriented system.\nThe supplier may be a commercial vendor, in which case this AntiPattern is also known as COTS Customization.\nRefactored Solution Name: Software Refactoring, Code Cleanup\nWhat a mess!” “You do realize that the language supports more than one function, right?” “It’s easier to rewrite this code than to attempt to modify it.” “Software engineers don’t write spaghetti code.” “The quality of your software structure is an investment for future modification and extension.”\nNonobject−oriented languages appear to be more susceptible to this AntiPattern, but it is fairly common among developers who have yet to fully master the advanced concepts underlying object orientation.\nCoding and progressive extensions compromise the software structure to such an extent that the structure lacks clarity, even to the original developer, if he or she is away from the software for any length of time.\nIf developed using an object−oriented language, the software may include a small number of objects that contain methods with very large implementations that invoke a single, multistage process flow.",
+      "keywords": [
+        "Golden Hammer AntiPattern",
+        "Golden Hammer",
+        "Refactored Solution",
+        "software",
+        "Solution",
+        "AntiPattern",
+        "system",
+        "Hammer AntiPattern",
+        "Application Refactored Solution",
+        "object",
+        "Refactored Solution Type",
+        "classes",
+        "Hammer",
+        "product",
+        "Golden"
+      ],
+      "concepts": [
+        "classes",
+        "developing",
+        "development",
+        "developers",
+        "develop",
+        "developed",
+        "developments",
+        "developer",
+        "software",
+        "antipattern"
+      ],
+      "related_chapters": [
+        {
+          "book": "AntiPatterns",
+          "chapter": 7,
+          "title": "Segment 7 (pages 56-65)",
+          "relevance_score": 1.0,
+          "method": "cosine_similarity"
+        }
+      ],
+      "keywords_enriched": [
+        {
+          "term": "Golden Hammer AntiPattern",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Golden Hammer",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "software",
+          "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Hammer AntiPattern Golden",
+          "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "AntiPattern Golden Hammer",
+          "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Hammer product Golden",
+          "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Solution software Solution",
+          "score": 0.007,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Hammer AntiPattern",
+          "score": 0.007,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "solution",
+          "score": 0.007,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Golden Hammer Refactored",
+          "score": 0.007,
+          "source": "cross_book_yake"
+        }
+      ],
+      "concepts_enriched": [
+        {
+          "concept": "developing",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "development",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "developers",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "developed",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "developments",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "developer",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "develop",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "software",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "product",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "products",
+          "source": "cross_book_summa"
+        }
+      ]
+    },
+    {
+      "chapter_number": 8,
+      "title": "Segment 8 (pages 66-73)",
+      "start_page": 66,
+      "end_page": 73,
+      "summary": "Software quickly reaches a point of diminishing returns; the effort involved in maintaining an existing code base is greater than the cost of developing a new solution from the ground up.\nThe Spaghetti Code AntiPattern is reasonably acceptable when the interfaces are coherent and only the implementation is spaghetti.\nIf the domain is not familiar to the software architects and developers, it may be better to develop products to gain an understanding of the domain with the intention of designing products with an improved architecture at some later date [Foote 97].\nSoftware refactoring (or code cleanup) is an essential part of software development [Opdyke 92].\nUnfortunately, the term “code cleanup” does not appeal to pointy−haired managers, so it may be best to discuss this issue using an alternative term such as “software investment.” After all, in a very real sense, code cleanup is the maintenance of software investment.\nFor single−subsystem or application programming, performance optimization often involves compromises to code structure.\nThe best way to resolve the Spaghetti Code AntiPattern is through prevention; that is, to think, then develop a plan of action before writing.\nIf, however, the code base has already degenerated to the point that it is unmaintainable, and if reengineering the software is not an option, there are still steps that can be taken to avoid compounding the problem.\nFirst, in the maintenance process, whenever new features are added to the Spaghetti Code code base, do not modify the Spaghetti Code simply by adding code in a similar style to minimally meet the new requirement.\nInstead, always spend time refactoring the existing software into a more maintainable form.\nRefactoring the software includes performing the following operations on the existing code:\nWrite new and refactored code to use the accessor functions.\nIt’s extremely useful to apply unit and system testing tools and applications to ascertain that refactoring does not immediately introduce any new defects into the code base.\nEmpirical evidence suggests that the benefits of refactoring the software greatly outweigh the risk that the extra modifications may generate new defects.\nProperly performed, it establishes the bounds for software implementation.\nImplementation should be performed only in order to satisfy system requirements, either explicitly indicated by the domain model or anticipated by the system architect or senior developers.\nIt is the developers, not the designers, who must believe the software modules are easy to implement.\nThe design does not have to be complete; the goal is that the implementation of software components should\nAgain, Spaghetti Code is far less likely to occur if there is an overall software process in which the requirements and design are specified in advance of the implementation, instead of occurring concurrently.\nThis is a frequent problem demonstrated by people new to object−oriented development, who map system requirements directly to functions, using objects as a place to group related functions.\nFor example, the code segment that follows contains functions such as initMenus(), getConnection(), and executeQuery(), which completely execute the specified operation.\nLINES_1–16 public class Showcase extends Applet implements EventOutObserver { //Globals String homeUrl=\"http://www.webserver.com /images/\" ; int caseState; String url=\"jdbc:odbc:WebApp\"; Driver theDriver; Connection con=null; ResultSet rs,counter; int theLevel; int count=0; String tino; • LINES_17–32 int [] clickx; int [] clicky; String [] actions; String [] images; String [] spectra; String showcaseQuery=null; TextArea output=null; Browser browser=null; Node material=null; EventInSFColor diffuseColor=null; EventOutSFColor outputColor=null; EventOutSFTime touchTime=null; boolean error=false; EventInMFNode addChildren; Node mainGroup=null; EventOutSFVec2f coord=null; • LINES_33–80 EventInSFVec3f translation=null;\" EventOutSFTime theClick=null; Image test; int rx,ry; float arx,ary; int b=0; Graphics gg=null; //Initialize applet\nsymantec.itools.awt.ImageButton[6]; 11=new symantec.itools.awt.shape.Horizontal Line(); 12=new symantec.itools.awt.shape.Horizontal Line(); v1=new symantec.itools.awt.shape.Vertical Line(); v2=new symantec.itools.awt.shape.Vertical Line(); bigspectralabel=new java.awt.Label(\"Spectra\"); gtruthlabel=new java.awt.Label(\"GroundTruth\"); clickx=new int[6]; clicky=new int[6]; actions=new String[6]; images=new String[6]; spectra=new String[6]; imageLabels =?new java.awt.Label[6]; for (int I=0; i<6 ; i++) { • LINES_129–176\nRather than developing code ad hoc without a design to guide the overall structure of the code, Analysis Paralysis produces a detailed design without ever reaching a point at which implementation can commence.\nThis AntiPattern frequently contains several examples of Spaghetti Code that discourage the refactoring of the existing code base.\nSoftware that fails straightforward behavioral tests may be an example of an Input Kludge, which occurs when ad hoc algorithms are employed for handling program input.\nEmploying these technologies for production−quality software is recommended to ensure proper handling of unexpected inputs.\nAfter attending the “crashing labs,” we wondered whether the release was robust enough to enable any kind of sophisticated software development.\nNumerous bugs occur in released software products; in fact, experts estimate that original source code contains two to five bugs per line of code.\nProper investment in software testing is required to make systems relatively bug−free.\nTest software is often more complex than production software because it involves the explicit management of execution timing to detect many bugs.\nWhen test software detects a bug, it is more likely to be the result of a bug in the test than in the code being tested.\nConfiguration control enables the management of test software assets; for example, to support regression testing.",
+      "keywords": [
+        "Spaghetti Code",
+        "code",
+        "Spaghetti Code code",
+        "Software",
+        "Spaghetti Code AntiPattern",
+        "code base",
+        "Code code base",
+        "add",
+        "code cleanup",
+        "String",
+        "domain model",
+        "Spaghetti",
+        "system",
+        "imageButtons",
+        "imageLabels"
+      ],
+      "concepts": [
+        "software",
+        "code",
+        "input",
+        "inputs",
+        "line",
+        "antipattern",
+        "developing",
+        "developers",
+        "develop",
+        "development"
+      ],
+      "related_chapters": [
+        {
+          "book": "AntiPatterns",
+          "chapter": 8,
+          "title": "Segment 8 (pages 66-73)",
+          "relevance_score": 1.0,
+          "method": "cosine_similarity"
+        }
+      ],
+      "keywords_enriched": [
+        {
+          "term": "Spaghetti Code code",
+          "score": 0.001,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Spaghetti Code",
+          "score": 0.001,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Code code Spaghetti",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "code Spaghetti Code",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "code",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Code code",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Spaghetti Code AntiPattern",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Code code Software",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Code code base",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "code Software Spaghetti",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        }
+      ],
+      "concepts_enriched": [
+        {
+          "concept": "software",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "code",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "string",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "line",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "tested",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "developing",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "developers",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "develop",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "development",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "properly",
+          "source": "cross_book_summa"
+        }
+      ]
+    },
+    {
+      "chapter_number": 9,
+      "title": "Segment 9 (pages 74-81)",
+      "start_page": 74,
+      "end_page": 81,
+      "summary": "Software inspection is an alternative approach that has been shown to be effective in a wide range of organizations [Gilb 95].\nSoftware inspection is a formal process for review of code and documentation products.\nSoftware inspection is a particularly useful process because it can be applied at any phase of development, from the writing of initial requirements documents through coding.\nAlso Known As: Clipboard Coding, Software Cloning, Software Propagation\nRefactored Solution Type: Software\nCut−and−Paste Programming is a very common, but degenerate form of software reuse which creates maintenance nightmares.\nThis AntiPattern is identified by the presence of several similar segments of code interspersed throughout the software project.\nUsually, the project contains many programmers who are learning how to develop software by following the examples of more experienced developers.\nFurthermore, it’s easy to extend the code as the developer has full control over the code used in his or her application and can quickly meet short−term modifications to satisfy new requirements.\nThis AntiPattern leads to excessive software maintenance costs.\nCut−and−Paste Programming form of reuse deceptively inflates the number of lines of code developed without the expected reduction in maintenance costs associated with other forms of reuse.\nThe context or intent behind a software module is not preserved along with the code.\nRestructuring software to reduce or eliminate cloning requires modifying code to emphasize black−box reuse of duplicated software segments.\nIn the case where Cut−and−Paste Programming has been used extensively throughout the lifetime of a software project, the most effective method of recovering your investment is to refactor the code base into reusable libraries or components that focus on black−box reuse of functionality.\nIf performed as a single project, this refactoring process is typically difficult, long, and costly, and requires a strong system architect to oversee and execute the process and to mediate discussions on the merits and limitations of the various extended versions of software modules.\nEffective refactoring to eliminate multiple versions involves three stages: code mining, refactoring, and configuration management.\nCode mining is the systematic identification of multiple versions of the same software segment.\nThe refactoring process involves developing a standard version of the code segment and reinserting it into the code base.\nBecause Spaghetti Code is not structured for easy component reuse, in many cases, Cut−and−Paste Programming is the only means available for reusing existing segments of code.\nCloning can be minimized in new development through the implementation of a software reuse process or organization [Jacobson 97].\nSome degree of cloning is inevitable in large software development; however, when it occurs, there must be a formalized process for merging clones into a common baseline [Kane 97].\nAlso known as Pseudo−Analysis and Blind Development, Mushroom Management is often described by this phrase: “Keep your developers in the dark and feed them fertilizer.” An experienced system architect recently stated, “Never let software developers talk to end users.” Furthermore, without end−user participation, “The risk is that you end up building the wrong system.”\nIn some architecture and management circles, there is an explicit policy to isolate system developers from the system’s end users.\nMushroom Management assumes that requirements are well understood by both end users and the software project at project inception.\nWhen developers don’t understand the overall requirements of a product, they rarely understand the required component interaction and necessary interfaces.\nBecause of this, poor design decisions are made and often result in stovepipe components with weak interfaces that do not fulfill the functional requirements.\nBecause the project frequently assesses user acceptance, and uses this input to influence the software, the risk of user rejection is minimized.\nChapter 6: Software Architecture AntiPatterns\nAlthough the engineering discipline of software architecture is relatively immature [Shaw 96], what has been determined repeatedly by software research and experience is the overarching importance of architecture in software development:\nArchitecture−driven software development is the most effective approach to building systems [Booch 96, Horowitz 93].\nSoftware architecture is a subset of the overall system architecture, which includes all design and implementation aspects, including hardware and technology selection.\nSoftware architecture is distinguished from programming in several ways.\nComplexity is viewed by many in the architecture, management, and metrics fields as the key architecture design force [Shaw 96], and software complexity is related to software cost [Horowitz 93].\nSoftware architecture focuses on three aspects of software design [Shaw 96]:\nThe software interfaces between modules.\nThe selection and characteristics of the technology used to implement the interface connections between software modules.\nSome examples include: communicating the design to developers, achieving buy in from managers and developers, and managing the implementation and extension of the design.\nLack of commonality between systems in terms of design and technology is the cause of much frustration and the inability to provide interoperability and reuse between related systems.\nAutogenerated Stovepipe: This AntiPattern occurs when migrating an existing software system to a distributed infrastructure.\nAn Autogenerated Stovepipe arises when converting the existing software interfaces to distributed interfaces.\nStovepipe Enterprise: A Stovepipe System is characterized by a software structure that inhibits change.\nThe intermingling of horizontal and vertical design elements limits the reusability and robustness of the architecture and the system software components.\nCover Your Assets: Document−driven software processes often produce less−than−useful requirements and specifications because the authors evade making important decisions.\nWarm Bodies: Software projects are often staffed with programmers with widely varying skills and productivity levels.\nReinvent the Wheel: The pervasive lack of technology transfer between software projects leads to substantial reinvention.\nThis AntiPattern occurs when migrating an existing software system to a distributed infrastructure.\nAn Autogenerated Stovepipe arises when converting the existing software interfaces to distributed interfaces.\nWhen designing distributed interfaces for existing software, the interfaces should be reengineered.\nThe stability of the new interfaces is very important, given that separately compiled software will be dependent upon these new designs.\nStovepipe is a popular term used to describe software systems with ad hoc architectures.\nOften, the pipes are repaired with any materials at hand, thus wood−burning stovepipes quickly become a hodgepodge of ad hoc repairs—hence, the reference is used to describe the ad hoc structure of many software systems.\nLack of commonality inhibits interoperability between systems, prevents reuse, and drives up cost; in addition, reinvented system architecture and services lack quality structure supporting adaptability.\nThese work like architectural building codes and zoning laws across enterprise systems.\nLack of software reuse between enterprise systems.",
+      "keywords": [
+        "software",
+        "Paste Programming",
+        "code",
+        "system",
+        "Paste Programming AntiPattern",
+        "architecture",
+        "Mushroom Management",
+        "Software Architecture",
+        "systems",
+        "Management",
+        "stovepipe",
+        "Stovepipe Enterprise",
+        "development",
+        "Programming",
+        "Stovepipe Enterprise AntiPattern"
+      ],
+      "concepts": [
+        "software",
+        "architecture",
+        "architectures",
+        "architectural",
+        "code",
+        "coding",
+        "codes",
+        "development",
+        "develop",
+        "developers"
+      ],
+      "related_chapters": [
+        {
+          "book": "AntiPatterns",
+          "chapter": 9,
+          "title": "Segment 9 (pages 74-81)",
+          "relevance_score": 1.0,
+          "method": "cosine_similarity"
+        },
+        {
+          "book": "AntiPatterns",
+          "chapter": 13,
+          "title": "Segment 13 (pages 106-113)",
+          "relevance_score": 0.77,
+          "method": "cosine_similarity"
+        }
+      ],
+      "keywords_enriched": [
+        {
+          "term": "Software",
+          "score": 0.001,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Software Architecture",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "software architecture architectures",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "architecture",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Paste Programming",
+          "score": 0.005,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "software Paste Programming",
+          "score": 0.005,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "software interfaces",
+          "score": 0.005,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Software Architecture systems",
+          "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "software development",
+          "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Management Software Architecture",
+          "score": 0.007,
+          "source": "cross_book_yake"
+        }
+      ],
+      "concepts_enriched": [
+        {
+          "concept": "software",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "design",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "designing",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "designs",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "designer",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "architecture",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "architectures",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "architectural",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "systems",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "process",
+          "source": "cross_book_summa"
+        }
+      ]
+    },
+    {
+      "chapter_number": 10,
+      "title": "Segment 10 (pages 82-89)",
+      "start_page": 82,
+      "end_page": 89,
+      "summary": "The Stovepipe Enterprise AntiPattern is unacceptable for new systems at an enterprise level in this day and age, particularly when most companies are facing the need to extend their business systems.\nAnother exception is when a common service layer is implemented across the enterprise systems.\nCoordination of technologies at several levels is essential to avoid a Stovepipe Enterprise, as shown in Figure 6.3.\nThe standards reference model defines the common standards and a migration direction for enterprise systems.\nA key challenge of large−scale architecture is to define detailed interoperability conventions across systems while addressing technology strategy and requirements.\nFor very large enterprises, experience has shown that four requirements models and four specification models are necessary to properly scope and resolve interoperability challenges, as shown in Figure 6.4.\nFigure 6.4 Multiple levels of coordination: Technology policies, requirements, and specifications may be necessary in large enterprises.\nAn open systems reference model contains a high−level architecture diagram and a list of target standards for system development projects.\nA key problem is that reference models define future architecture goals with an unspecified time frame for implementation.\nTechnology profiles were invented to define the short−term standards plan for systems developers.\nA technology profile is a concise list of standards drawn from a reference model, which is considered a set of flexible guidelines; but technology profiles often mandate standards for current and new systems development projects.\nwhat the developer has to do about the reference model standards; for example, the US−DOD Joint Technical Architecture is a technical profile that identifies standards for current implementation.\nMost large enterprises have heterogeneous hardware and software architectures, but even with a consistent infrastructure, varying installation practices can cause serious problems for enterprise interoperability, software reuse, security, and systems management.\nAn operating environment defines product releases and installation conventions that are supported by the enterprise, and establishes guidelines that must be flexible locally, to support R&D and unique systems requirements.\nIdeally, this document is only a few dozen pages in length, written to clarify the intended implementation goals for component systems and application development projects.\nThe balance of the enterprise planning models are architecture and design specifications (described in subsequent sections), which are expressed through object−oriented models and comprise a set of object−oriented software architectures.\nAn enterprise architecture is a set of diagrams and tables that define a system or family of systems from various stakeholder viewpoints; thus, the enterprise architecture comprises views of the entire system.\nEach of the remaining specifications detail the computational architecture that defines interfaces for interoperability and reuse.\nA computational facilities architecture (CFA) identifies and defines key points of interoperability for a family of systems.\nEach facility identifies a set of application program interfaces (APIs) and common data objects that are defined in detail in the interoperability specifications.\nA CFA partitions the enterprise’s interoperability needs into manageable specifications; it also defines a road map of priorities and schedules for the facilities.\nA development profile records the implementation plans and developer agreements that are necessary to assure interoperability and successful integration.\nA development profile identifies the parts of API specifications that are used, local extensions to the specification, and conventions that coordinate integration.\nMultiple development profiles may exist for a single API specification, each of which addresses the integration needs of a particular domain or family of systems.\nSystem 1 and System 2 in Figure 6.5 represent two Stovepipe Systems in the same enterprise.\nWhile similar in many ways, these systems lack commonality; they use different database products, different office automation tools, have different software interfaces, and use unique graphical user interfaces (GUIs).\nFigure 6.5 Stovepipe Enterprise with two systems.\nTo resolve the AntiPattern, the enterprise starts by defining a standards reference model.\nThis level also defines profiles for use of these technologies and common interfaces with reusable service implementations.\nStandards reference model, operating environment, and profile are solutions from the book CORBA Design Patterns [Mowbray 97a].\nThey are all important components in the solution of Stovepipe Enterprises.\nExamples of standards reference models include the IEEE POSIX.0, NIST Application Portability Profile (APP), and volume 7 of the U.S. Department of Defense’sTechnical Architecture Framework for Information Management (TAFIM).\nThe impact of the Stovepipe Enterprise AntiPattern on management is that every system development involves significant but unnecessary risk and cost.\nAn emerging requirement for enterprises is called agile systems, which are able to accommodate changes in business processes because they already support interoperability across most or all enterprise systems.\nDevelopers, too, are affected by the Stovepipe Enterprise because they are often asked to create brittle solutions to bridge independently architected systems.\nHorizontal design elements are those that are common across applications and specific implementations.\nThen use the horizontal elements to capture the common interoperability functionality in the architecture.\nThe Stovepipe System AntiPattern is the single−system analogy of Stovepipe Enterprise, which involves a lack of coordination and planning across a set of systems.\nThe key problem in this AntiPattern is the lack of common subsystem abstractions, whereas in a Stovepipe Enterprise, the key problem is the absence of common multisystem conventions.\nResearch and development software production often institute the Stovepipe System AntiPattern to achieve a rapid solution.\nThe refactored solution to the Stovepipe System AntiPattern is a component architecture that provides for flexible substitution of software modules.\nFigure 6.8 Component architectures model interoperability needs with common interfaces.\nClients that require only the base level of functionality can be written to the horizontal interfaces, which should be more stable and easily supported by new or other existing applications.",
+      "keywords": [
+        "Stovepipe System AntiPattern",
+        "system",
+        "Stovepipe System",
+        "Stovepipe Enterprise",
+        "systems",
+        "System Requirements Profile",
+        "enterprise",
+        "Stovepipe",
+        "Systems Reference Model",
+        "architecture",
+        "Stovepipe Enterprise AntiPattern",
+        "enterprise systems",
+        "reference model",
+        "interoperability",
+        "Enterprise architecture"
+      ],
+      "concepts": [
+        "architectures",
+        "architecture",
+        "architectural",
+        "interoperability",
+        "specifically",
+        "specification",
+        "specifications",
+        "specific",
+        "software",
+        "systems"
+      ],
+      "related_chapters": [
+        {
+          "book": "AntiPatterns",
+          "chapter": 10,
+          "title": "Segment 10 (pages 82-89)",
+          "relevance_score": 1.0,
+          "method": "cosine_similarity"
+        }
+      ],
+      "keywords_enriched": [
+        {
+          "term": "Stovepipe Enterprise",
+          "score": 0.001,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Stovepipe System Stovepipe",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Stovepipe System AntiPattern",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Stovepipe Enterprise AntiPattern",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Stovepipe Enterprise systems",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "enterprise Stovepipe Systems",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "System Stovepipe Enterprise",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Stovepipe System",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "system Stovepipe System",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Enterprise",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        }
+      ],
+      "concepts_enriched": [
+        {
+          "concept": "systems",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "architecture",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "architectures",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "architectural",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "interoperability",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "enterprise",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "enterprises",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "models",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "standards",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "software",
+          "source": "cross_book_summa"
+        }
+      ]
+    },
+    {
+      "chapter_number": 11,
+      "title": "Segment 11 (pages 90-97)",
+      "start_page": 90,
+      "end_page": 97,
+      "summary": "In early development, developers have a great deal of freedom to choose implementation strategies with minimal architectural guidance, but as the complexity of the stovepipe interfaces supercedes the documentation, the system becomes increasingly complex and brittle.\nArchitecture blueprints are abstractions of information systems that facilitate communication of requirements and technical plans between the users and developers [Blueprint 97].\nArchitecture blueprints are particularly useful in an enterprise with multiple information systems.\nAnecdotal Evidence: We have often encountered software projects that claim their architecture is based upon a particular vendor or product line.\nOther anecdotal evidence occurs around the time of product upgrades and new application installations: “When I try to read the new data files into the old version of the application, it crashes my system.” “Once you read data into the new application, you can never get it out again.” “The old software acts like it has a virus, but it’s probably just the new application data.” “Our architecture is ...\nDocuments from different versions of the same Microsoft product can cause support problems on corporate networks and system crashes.\nA software project adopts a product technology and becomes completely dependent upon the vendor’s implementation.\nIn addition, expected new product features are often delayed, causing schedule slips and an inability to complete desired application software features.\nCommercial product upgrades drive the application software maintenance cycle.\nThere is no technical approach for isolating application software from direct dependency upon the product.\nApplication programming requires in−depth product knowledge.\nThe complexity and generality of the product technology greatly exceeds that of the application needs; direct dependence upon the product results in failure to manage the complexity of the application system architecture.\nThe refactioned solution to the Vendor Lock−In AntiPattern is called isolation layer.\nAn isolation layer separates software packages and technology, as shown in Figure 6.12.\nIsolation of application software from lower−level infrastructure.\nChanges to the underlying infrastructure are anticipated within the life cycle of the affected software; for example, new product releases or planned migration to new infrastructure.\nFigure 6.12 The isolation layer separates application software from product−dependent interfaces, which may change.\nThe solution entails creating a layer of software that abstracts the underlying infrastructure or product−dependent software interfaces.\nThis layer provides an application interface that completely isolates the application software from the underlying interfaces.\nThe layering software should ensure default handling of some infrastructure calls and\nThis isolation layer is used across multiple system development projects to assure interoperability, consistency, and isolation.\nTo implement it, migrate the isolation to new infrastructures as necessary; also, update the isolation layer when the infrastructure is updated.\nIn all cases, maintain the same application software interface, regardless of infrastructure changes.\nSeparation of infrastructure knowledge from application knowledge, thereby enabling a small team of infrastructure developers to maintain the isolation layer, while the majority of programmers have a customized interface to the layering software.\nThe isolation layer must be migrated and maintained, potentially on multiple platforms and infrastructures.\nThe developers who define the initial isolation layer interfaces must be coordinated.\nThis solution is often used at the global level in commercial products and technologies.\nTypically, the isolation layer enables the vendor to provide a convenient language−specific interface to a lower−level technology.\nFor example, the HP Object−Oriented Distributed Computing Environment (OO DCE) product comprises an isolation layer, and presents a C++ interface to application developers.\nUnderlying this interface is an isolation layer of software that is built upon the C language DCE environment.\nThe isolation layer solution is most applicable at the enterprise level.\nHowever, individual systems have applied this solution to provide middleware isolation; for example, the Paragon Electronic Light Table (ELT) product uses an isolation layer above the Common Desktop Environment (CDE) middleware infrastructure, called ToolTalk.\nBy isolating ToolTalk, Paragon can easily migrate its product to a CORBA infrastructure and support both CORBA and ToolTalk infrastructures.\nThe following examples are three known uses of the isolation layer solution:\nThe EOSDIS middleware abstraction layer was used to isolate application software and evolving middleware.\nThe situation was resolved through the addition of a middleware abstraction layer that masked the choice of middleware from EOSDIS application software; it hid differences in object creation, object activation, and object invocation.\nThis pattern is related to the Object Wrapper pattern [Mowbray 97c], which provides isolation to and from a single application to a single object infrastructure.\nThe isolation layer pattern provides insulation of multiple applications from multiple infrastructures.\nTypically, an isolation layer serves only as a proxy for integrating clients and services with one or more infrastructures.\nThe impact of Vendor Lock−In on management is a loss of control of the technology, IT functionality, and O&M budgets to the dictates of vendor product releases.\nVendor Lock−In affects developers by requiring they have in−depth product knowledge.\nThe products are delivered with proprietary interfaces that may vary significantly from the published standard.\nUnfortunately, some de facto standards have no effective specification; for example, a nascent database technology that is commercially available with multiple proprietary interfaces, unique to each vendor, has become a de facto standard.\nThe closing of these gaps is necessary to enable the delivery of whole products, those comprising the infrastructure and services necessary for the realization of useful systems.\nIn the 1960s, a sophisticated user group called SHAPE advised the industry to stabilize technology and create whole products for the computer mainframe market, required for the realization of successful nonstovepipe systems.\nA whole product that enables the construction of any mission−critical system has five key services: naming, trading, database access, transactions, and system management.\nBecause today, developers cannot buy these whole products in a robust, interworking form, developers are forced to re−create these services or build stovepipe systems.\nMost vendors track the support issues and incorporate relevant changes into their products in future releases.\nA group of CEOs from DoD Systems integration firms was formed to answer the question, “Wherefore art thou architecture?” The goal was to reflect on the changing nature of systems development, which has evolved into the reuse of existing legacy components and commercial software, and away from greenfield, custom code development (see the Reinvent the Wheel AntiPattern in this chapter).",
+      "keywords": [
+        "Isolation Layer",
+        "system",
+        "Product",
+        "Systems",
+        "Vendor Lock",
+        "software",
+        "isolation layer solution",
+        "application software",
+        "System Refactored Solution",
+        "Isolation",
+        "application",
+        "Layer",
+        "refactored solution",
+        "stovepipe system",
+        "architecture"
+      ],
+      "concepts": [
+        "product",
+        "products",
+        "productivity",
+        "service",
+        "services",
+        "software",
+        "applicability",
+        "application",
+        "applicable",
+        "applications"
+      ],
+      "related_chapters": [
+        {
+          "book": "AntiPatterns",
+          "chapter": 11,
+          "title": "Segment 11 (pages 90-97)",
+          "relevance_score": 1.0,
+          "method": "cosine_similarity"
+        }
+      ],
+      "keywords_enriched": [
+        {
+          "term": "isolation layer",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "application software",
+          "score": 0.005,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "isolation",
+          "score": 0.005,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "layer",
+          "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "isolation layer solution",
+          "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "product",
+          "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "application",
+          "score": 0.007,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "software",
+          "score": 0.007,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Isolation Layer system",
+          "score": 0.011,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Layer system Product",
+          "score": 0.012,
+          "source": "cross_book_yake"
+        }
+      ],
+      "concepts_enriched": [
+        {
+          "concept": "product",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "products",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "productivity",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "applicable",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "applications",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "applicability",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "software",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "infrastructure",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "infrastructures",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "interfaces",
+          "source": "cross_book_summa"
+        }
+      ]
+    },
+    {
+      "chapter_number": 12,
+      "title": "Segment 12 (pages 98-105)",
+      "start_page": 98,
+      "end_page": 105,
+      "summary": "Figure 6.13 Architecture by Implementation often involves coding without architecture planning.\nSoftware architecture and specifications that include language use, library use, coding standards, memory management, and so forth.\nSystems management architecture.\nLack of architecture planning and specification; insufficient definition of architecture for software, hardware, communications, persistence, security, and systems management.\nImplicit and unresolved architecture issues caused by gaps in systems engineering.\nThe Architecture by Implication AntiPattern is acceptable for a repeated solution, where there are minor differences in the code, such as installation scripts.\nThe refactored solution to the Architecture by Implication AntiPattern entails an organized approach to systems architecture definition, and relies on multiple views of the system.\nThe purpose of the architecture documentation is to communicate architecture decisions and other issues resolutions.\nThat said, the only people who can define and implement a successful architecture are those who already fully understand it.\nTherefore, developing a good architecture from scratch is an iterative process and should be recognized as such.\nAn initial reference architecture should have strong strategies that can be implemented within the time period of the first product development.\nThe steps to define a system architecture using viewpoints are as follows [Hilliard 96]:\n1. Define the architecture goals.\nEach view will represent a blueprint of the system architecture.\nDetail the architecture definition from each viewpoint.\nVerify that the views present a consistent architecture definition.\nThe views should address the known questions and issues to discover any gaps not addressed by the architecture specifications.\nMake an explicit effort to communicate the architecture to key stakeholders, particularly the system developers.\nWe refer to this method as the goal−question architecture (GQA), analogous to the goal−question metric approach in software metrics [Kitchenham 96].\nA number of approaches consider the system architecture using viewpoints; in some, the viewpoints are predefined.\nThe Reference Model for Open Distributed Process (RM−ODP) is a popular, useful standard for distributed architectures.\nEnterprise Architecture Planning is an approach based upon the Zachman Framework for large−scale systems [Spewak 92].\nA fourth, the 4 + 1 Model View, is a viewpoint−based architecture approach supported by software engineering tools, such as Rational Rose [Kruchten 95].\nThe viewpoints include logical, use−case, process, implementation, and deployment.\nISO IDL is one important notation that is strictly limited to defining interface information and excludes implementation specifics.\nComplex implementation structures are beneficially augmented with object−oriented design models to help current and future developers and maintainers understand the code.\nAnother example of the Architecture by Implication AntiPattern is the following, where the key stakeholders did not have collective experience in what was built.\nHowever, the manager was a good software engineer with no distributed object technology (DOT) experience and the architect was a “dyed−in−the−wool” CORBA addict who helped the OMG derive its Object Management Architecture.\nIn addition, the architecture and subsequent design were based on the OMA view of the DOT world, rather than DCOM.\nIn contrast, the Architecture by Implication AntiPattern involves planning gaps constituted of multiple architecture viewpoints.\nThey are given de facto responsibility for key architectural decisions\nSystemwide consequences of interface design decisions should be considered; in particular: system adaptability, consistent interface abstractions, metadata availability, and management of complexity.\nThere are approximately two million working software managers and developers in America.\nSystem requirements always change and increase during development; so there is little risk involved if the project is underbid initially; the contractor can grow the staff to meet inevitable problems and new requirements.\nSoftware projects are subject to the same group dynamics as committee meetings (see the Design by Committee AntiPattern, described next).\nThese contract programmers can produce significant software products for reasonable rates, compared to the project failures and overruns that result from the Warm Bodies mini−AntiPattern.\nAntiPattern Name: Design by Committee\nA complex software design is the product of a committee process.\nIt has so many features and variations that it is infeasible for any group of developers to realize the specifications in a reasonable time frame.\nThe environment is politically changed, and few decisions and actions can be undertaken outside of the meeting; and the meeting process precludes reaching timely decisions.\nNo designated project architect.\nBad meeting processes, marked by lack of facilitation or ineffective facilitation.\nDesign and editing is attempted during meetings with more than five people.\nThere are few exceptions to the Design by Committee AntiPattern, and they occur when the committee is small: approximately 6 to 10 people; more than that and consensus becomes unlikely; fewer than six people and the breadth of understanding and experience become insufficient.\nAlso, committees should often be tiger teams, a small group of “experts” in a particular problem domain, organized for the duration of the solution for a specific problem or issue.\nThe essence of the solution to Design by Committee is to reform the meeting process.\nSecond, in all meetings it’s important that group members answer two questions: “Why are we here?” and “What outcomes do we want?” When no meeting plan is prepared, it is particularly important that the group start with these two questions, and then work on generating the desired outcomes.\nAnother important reform is to assign explicit roles in the software process: owner, facilitator, architect, developers, testers, and domain experts.\nThe owner is the manager responsible for the software development.\nHe or she makes strategic decisions about the overall software process, and invites and organizes the participants.\nThe domain experts input key requirements to the process, but may not be involved in all aspects of development.\nThe number of people involved in each meeting process is managed by the facilitator.\nHighly productive meetings involve many parallel processes, and frequent iterations of breakout and review groups.\nA general problem−solving approach begins with a convergent process: The problem is defined and scoped for the group to resolve.\nOne highly effective meeting process is called Spitwads [Herrington 91].\nThe Railroad (also known as Rubber Stamp) AntiPattern is a variation of Design by Committee, whereby a political coalition dominates the process and forces the adoption of designs with serious defects.\nIn this way, software from a coalition developer becomes the de facto standard, as opposed to the written specifications.\nTwo classic examples of Design by Committee come from the domain of software standardization: the Structured Query Language (SQL) and Common Object Request Broker Architecture (CORBA).\nThe standards committee responsible for the design is adding a smorgasbord of new features that extend the concept well beyond the original intent.\nIn this classic Design by Committee, the SQL standard has become a dumping ground for advanced database features.\nThe Common Object Request Broker Architecture (CORBA) standard was adopted by the industry in 1991.\nThe original document—fewer than 200 pages—was easily readable by outsiders to the Object Management Group (OMG) process.\nThe C++ mapping in CORBA2, in particular, contained complex details that could not be implemented consistently by Object Request Broker (ORB) vendors, some of whom changed the APIs generated by their IDL/C++ compilers repeatedly.",
+      "keywords": [
+        "Architecture",
+        "design",
+        "system",
+        "process",
+        "Software",
+        "system architecture",
+        "committee",
+        "object",
+        "Systems management architecture",
+        "Object Management Architecture",
+        "project",
+        "Meeting",
+        "meeting process",
+        "group",
+        "specification"
+      ],
+      "concepts": [
+        "architecture",
+        "architectures",
+        "architectural",
+        "software",
+        "specifications",
+        "specification",
+        "specific",
+        "specifics",
+        "process",
+        "processes"
+      ],
+      "related_chapters": [
+        {
+          "book": "AntiPatterns",
+          "chapter": 12,
+          "title": "Segment 12 (pages 98-105)",
+          "relevance_score": 1.0,
+          "method": "cosine_similarity"
+        }
+      ],
+      "keywords_enriched": [
+        {
+          "term": "Architecture",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Object Management Architecture",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "architecture committee object",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Systems management architecture",
+          "score": 0.005,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Architecture design system",
+          "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Request Broker Architecture",
+          "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "system architecture committee",
+          "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "management architecture",
+          "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "system architecture",
+          "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "specification architecture architectures",
+          "score": 0.006,
+          "source": "cross_book_yake"
+        }
+      ],
+      "concepts_enriched": [
+        {
+          "concept": "architecture",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "architectures",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "architectural",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "software",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "process",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "processes",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "designated",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "designs",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "group",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "groups",
+          "source": "cross_book_summa"
+        }
+      ]
+    },
+    {
+      "chapter_number": 13,
+      "title": "Segment 13 (pages 106-113)",
+      "start_page": 106,
+      "end_page": 113,
+      "summary": "An alternative process used by OMG to identify and define technologies for adoption was used by the OMG to produce the CORBAfacilities Architecture.\nThis process was reused by other task forces and end−user enterprises to define their architectures and road maps.\nInterested parties from any organization are asked to submit their requirements, architectural input, and descriptions of relevant technologies to assist in the planning process.\nOnce the task force has reviewed this input, it becomes the responsibility of the people in the room to define the architecture.\nThe RFI process is an important step psychologically, because it transforms an undefined set of stakeholders and implicit requirements into the responsibility of the meeting participants to define the architecture and draw the road map.\nThis architecture reference diagram is a useful abstraction of the listed services, and will be an important illustration in the architecture document.\nAfter several iterations of the review process, a motion is made to release the architecture and road map as version 1.0.\nThe impact of the Design by Committee AntiPattern on developers is that they are expected to implement a highly complex and ambiguous design, which is a stressful situation.\nThe designer may not have a clear abstraction or purpose for the class, which is represented by the lack of focus in the interface.\nSwiss Army Knives are prevalent in commercial software interfaces, where vendors are attempting to make their products applicable to all possible applications.\nOften, complex interfaces and standards are encountered that must be utilized in a software development project; therefore, it is important to define conventions for using these technologies so that management of the application’s complex architecture is not compromised.\nWith profiles, two independent developers can use the same technology, with the likelihood of achieving interoperable software.\nA profile of a software interface defines the subset of the signatures that are utilized, and should include conventions for the parameter values.\nAnecdotal Evidence: “Our problem is unique.” Software developers generally have minimal knowledge of each other’s code.\nSoftware and design reuse are significantly different paradigms.\nThe typical result is a modest amount of reuse around the periphery of the system and additional software development to integrate the components.\nDesign reuse involves the reuse of architecture and software interfaces in multiple application systems.\nDesign reuse also supports software reuse of the\nThe software process assumes “greenfield” (build from scratch) development of a single system.\nBecause top−down analysis and design lead to new architectures and custom software, software reuse is limited and interoperability is accommodated after the fact.\nGreenfield assumptions are mismatched to most real−world software development problems, where legacy systems exist, and interoperation with them is an important requirement for many new systems.\nn No communication and technology transfer between software development projects.\nn Absence of an explicit architecture process that includes architecture mining and domain\nsoftware interfaces in each system.\nThe Reinvent the Wheel AntiPattern is suitable for a research environment and in general software development to minimize coordination costs where developers with different skills work at logistically remote sites.\nMost object−oriented design approaches assume that design information is invented as the process proceeds.\ntop−down process, design information is generated from requirements, which may be represented as use cases and object−oriented analysis models.\nIn a spiral process, design information is invented during each iteration.\nAs the spiral process proceeds, architects derive new design information as they learn more about the application problem.\nPrecursor designs exist for most information systems applications and problems.\nMining may be applicable at the application level for certain complex design problems.\nMining can incorporate design input from top−down design processes, too, so that there can be both top−down traceability and bottom−up realism.\nBefore mining starts, it is necessary to identify a set of representative technologies that are relevant to the design problem.\nThe first mining step is to model each representative technology, to produce specifications of relevant software interfaces.\nFrequently, relevant design information is not documented as software interfaces.\nIn the second mining step, the designs are generalized to create a common interface specification.\nThe final step in the mining process is to refine the design.\nArchitecture mining requires the study of existing software architectures.\nOf particular interest are the software interfaces of extant systems.\nIn our training courses on distributed object design patterns, we use the following example to illustrate the techniques and trade−offs required for architecture mining.\nThe impact upon management of complexity of architecture mining and the generalization to common interfaces is analyzed in Mowbray 95.\nArchitecture mining is a recurring solution that addresses many of the problems caused by Stovepipe Systems.\nExperts report that only 1 in 5 software developers is able to define good abstractions [Mowbray 95].\nIn our connotation, an abstractionist is an architect or software developer who has the architecture instinct.\nAbstractionists are comfortable discussing software design concepts without delving into implementation details.\nAs stated, they possess the architecture instinct, the ability to define and explain good software abstractions.\nMany object−oriented processes are egalitarian; design decisions made in meeting processes are approved by consensus (see the Design by Committee AntiPattern earlier in this chapter).\nThe primary consequence is software designs with excessive complexity, which make the system difficult to develop, modify, extend, document, and test.",
+      "keywords": [
+        "query",
+        "software",
+        "Architecture",
+        "Design",
+        "Swiss Army Knife",
+        "system",
+        "query results",
+        "software interfaces",
+        "Lost Architecture Process",
+        "Swiss Army",
+        "process",
+        "Architecture Mining",
+        "systems",
+        "Boolean Query",
+        "Boolean Query Syntax"
+      ],
+      "concepts": [
+        "design",
+        "designer",
+        "designers",
+        "designed",
+        "designs",
+        "software",
+        "architecture",
+        "architectures",
+        "architectural",
+        "process"
+      ],
+      "related_chapters": [
+        {
+          "book": "AntiPatterns",
+          "chapter": 13,
+          "title": "Segment 13 (pages 106-113)",
+          "relevance_score": 1.0,
+          "method": "cosine_similarity"
+        },
+        {
+          "book": "AntiPatterns",
+          "chapter": 9,
+          "title": "Segment 9 (pages 74-81)",
+          "relevance_score": 0.77,
+          "method": "cosine_similarity"
+        }
+      ],
+      "keywords_enriched": [
+        {
+          "term": "software",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "software architecture architectures",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Architecture",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "software Architecture",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Design",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "software interfaces",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "designs software architecture",
+          "score": 0.005,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "software Architecture Design",
+          "score": 0.005,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "architecture mining",
+          "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "software development",
+          "score": 0.007,
+          "source": "cross_book_yake"
+        }
+      ],
+      "concepts_enriched": [
+        {
+          "concept": "software",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "design",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "designer",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "designs",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "designing",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "architecture",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "architectures",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "process",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "processes",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "systems",
+          "source": "cross_book_summa"
+        }
+      ]
+    },
+    {
+      "chapter_number": 14,
+      "title": "Segment 14 (pages 114-126)",
+      "start_page": 114,
+      "end_page": 126,
+      "summary": "They facilitate communication between end users and developers; they are responsible for managing the complexity and ensuring the adaptability of systems.\nChapter 7: Software Project Management AntiPatterns\nThe management AntiPatterns identify some of the key scenarios in which these issues are destructive to software processes.\nIn software development, however, managers still play several important roles, in the areas of:\nSoftware process management.\nThe more people involved in a product development, the more complexity this adds to the tasks of error identification (process, role, software defects, etc.) and error rectification.\nManagement AntiPatterns describe how software projects are impaired by people issues, processes, resources, and external relationships.\nWe have compassion for developers who suffer through stressful software projects.\nWe have even greater compassion for software managers, the people who suffer the dire consequences of project failure [Yourdon 97].\nIn addition to the AntiPattern solutions discussed here, we recommend time−management training as an effective way for software professionals to learn how to manage stress.\nAnalysis Paralysis: Striving for perfection and completeness in the analysis phase often leads to project gridlock and excessive thrashing of requirements/models.\nThe refactored solution includes a description of incremental, iterative development processes that defer detailed analysis until the knowledge is needed.\nViewgraph Engineering: On some projects, developers become stuck preparing viewgraphs and documents instead of developing software.\nManagement never obtains the proper development tools, and engineers have no alternative but to use office automation software to produce psuedo−technical diagrams and papers.\nDeath by Planning: Excessive planning for software projects leads to complex schedules that cause downstream problems.\nWe explain how to plan a reasonable software development process that includes incorporating known facts and incremental replanning.\nCorncob: Difficult people frequently obstruct and divert the software development process.\nProject Mismanagement: Inattention to the management of software development processes can cause directionlessness and other symptoms.\nProper monitoring and control of software projects is necessary to successful development activities.\nRunning a product development is as complex an activity as creating the project plan, and developing software is as complex as building skyscrapers, involving as many steps and processes, including checks and balances.\nThrow It over the Wall: Object−oriented methods, design patterns, and implementation plans intended as flexible guidelines are too often taken literally by the downstream managers and object−oriented developers.\nFire Drill: Airline pilots describe flying as “hours of boredom followed by 15 seconds of sheer terror.” Many software projects resemble this situation: “Months of boredom followed by demands for immediate delivery.” The months of boredom may include protracted requirements analysis, replanning, waiting for funding, waiting for approval, or any number of technopolitical reasons.\nAnecdotal Evidence: “We need to redo this analysis to make it more object−oriented, and use much more inheritance to get lots of reuse.” “We need to complete object−oriented analysis, and design before we can begin any coding.” “Well, what if the user wants to create the employee list based on the fourth and fifth letters of their first name combined with the project they charged the most hours to between Thanksgiving and Memorial Day of the preceding four years?” “If you treat each object attribute as an object, you can reuse field formatting between unrelated classes.”\nAnalysis Paralysis is one of the classic AntiPatterns in object−oriented software development.\nFrequently, the focus is shifted from decomposing to a level where the problem can be easily understood by the designers to applying the techniques to achieve the mythical “completeness.” Also, system developers often willingly fall prey to Analysis Paralysis, as “designs never fail, only implementations.” By prolonging the analysis and design phases, they avoid risking accountability for results.\nMany developers new to object−oriented methods do too much up−front analysis and design.\nOne of the benefits of object−oriented methods is developing analysis models with the participation of domain experts.\nObject−oriented development is poorly matched to waterfall analysis, design, and implementation processes.\nprocess during which incremental and iterative results of analysis are validated through design and implementation and used as feedback into later system analysis.\nThe complexity of the analysis models results in intricate implementations, making the system difficult to develop, document, and test.\nManagement insists on completing all analysis before the design phase begins.\nPlanning or leadership lapses when moving past the analysis phase.\nWhereas a waterfall process assumes a priori knowledge of the problem, incremental development processes assume that details of the problem and its solution will be learned in the course of the development process.\nIn incremental development, all phases of the object−oriented process occur with each iteration—analysis, design, coding, test, and validation.\nIt’s the prerogative of the project manager to select the increments that balance the forces of project survival, user validation, and minimal cost.\nFrequently, when performing object−oriented analysis, it’s easier to continue the analysis than to end it and move on to the design of the software.\nOn some projects, developers become stuck preparing viewgraphs and documents instead of developing software.\nManagement never obtains the proper development tools, and engineers have no alternative but to use office automation software to produce psuedo−technical diagrams and papers.\nIn many organizational cultures, detailed planning is an assumed activity for any project.\nDeath by Planning occurs when detailed plans for software projects are taken too seriously.\nMany projects fail from over planning.\nThe Glass Case Plan is a subset of the Detailitis Plan in that (over) planning ceases once the project starts.\nIn the Detailitis Plan, over planning continues until the project ceases to exist, for a variety of unfulfilling reasons.\nOften, a plan produced at the start of a project is always referenced as if it’s an accurate, current view of the project even if it’s never updated.\nThis practice gives management a “comfortable view” of delivery before the project starts.\nHowever, when the plan is never tracked against, nor updated, it becomes increasingly inaccurate as the project progresses.\nFigure 7.1 shows a project plan created prior to project launch.\nManagement assumes that the plan guarantees delivery automatically—exactly as specified with no intervention (or management) necessary.\nDetailitis Plan\nSometimes the solution to effective delivery is regarded as a high degree of control via a continuous planning exercise that involves most of the senior developers, as well as the managers.\nIgnorance of the status of the project’s development.\nCrisis project management.\nDetailitis Plan\nSpending more time planning, detailing progress, and replanning than on delivering software:\n— Project manager plans the project’s activities.\n— Team leaders plan the team’s activities and the developers’ activities.\nProject developers break down their activities into tasks.\nIn both cases, Glass Case Plan and Detailitis Plan the primary cause is lack of a pragmatic, common−sense approach to planning, schedules, and capture of progress.\nNo up−to−date project plan that shows the software component deliverables and their dates.\nDetailitis Plan\nOverzealous continual planning to attempt to enforce absolute control of development.\nPlanning as the primary project activity.\nThe solution is the same for both the Glass Case and Detailitis Plans.\nA project plan should show primarily deliverables (regardless of how many teams are working on the project).\nThe deliverable plans should be updated weekly to ensure appropriate planning and controls that reduce project risks.\nThe Death by Planning variations are in levels of detail, and can go from identifying major milestones, which are usually tied to funding/approval stages, to micro−deliverables within the project delivery stages for each team (see Figure 7.4).\nThe systems integrator agrees to a detailed delivery plan in advance of starting any project work in order to obtain a funding source.\nThe plan is based upon estimates from staff who have not yet delivered software “in anger.” The plan is highly specific technically, and the estimates are very optimistic; and it is continually referenced by the project manager, but never updated to reflect any actual effort.\nThe plan shown in Figure 7.6 is an extract from such a development project.\nFigure 7.6 Glass Case Plan example.\nDetailitis Plan\nIn an attempt to control development to ensure that full control is established, an end−user company produces a plan that has three levels:\nFigure 7.7 Detailitis Plan example.\nPlan management quickly becomes unrealistic due to complexity.\nThe solution is to replace the detailed plan with one that shows key deliverables against dates, with dependencies and constraints.\nThe Analysis Paralysis AntiPattern can exacerbate the consequences of Death by Planning.\nDeath by Planning cannot match the chaotic (white−water) nature of software development, because it creates a significant disparity between the management’s planning models and actual development activities.\nArchitects and developers often have to live double lives: On one hand, they must visibly cooperate with management’s plan for the project; at the same time, they have to confront the actual status of the software, which may not resemble the management model.\nFor example, the plan may be used to pressure developers into declaring software modules complete before they are mature.\nOne important action that management can take near the end of a project is todeclare success.\nStatements by management that support the successful outcome of the project are needed, even if the actual outcome is ambiguous.",
+      "keywords": [
+        "Glass Case Plan",
+        "plan",
+        "Case Plan",
+        "Detailitis Plan",
+        "Project",
+        "Analysis Paralysis",
+        "Analysis",
+        "Glass Case",
+        "software projects",
+        "software",
+        "Management",
+        "Analysis Paralysis AntiPattern",
+        "project plan",
+        "development",
+        "software development"
+      ],
+      "concepts": [
+        "project",
+        "projects",
+        "managing",
+        "manage",
+        "management",
+        "manager",
+        "managers",
+        "planning",
+        "plan",
+        "plans"
+      ],
+      "related_chapters": [
+        {
+          "book": "AntiPatterns",
+          "chapter": 14,
+          "title": "Segment 14 (pages 114-126)",
+          "relevance_score": 1.0,
+          "method": "cosine_similarity"
+        },
+        {
+          "book": "AntiPatterns",
+          "chapter": 16,
+          "title": "Segment 16 (pages 135-143)",
+          "relevance_score": 0.73,
+          "method": "cosine_similarity"
+        }
+      ],
+      "keywords_enriched": [
+        {
+          "term": "Glass Case Plan",
+          "score": 0.001,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Project",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "plan",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "project plan",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Detailitis Plan",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Software",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "software development",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "software projects",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Case Plan plan",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Plan plan Case",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        }
+      ],
+      "concepts_enriched": [
+        {
+          "concept": "project",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "projects",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "managing",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "management",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "managers",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "manage",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "manager",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "developers",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "development",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "developing",
+          "source": "cross_book_summa"
+        }
+      ]
+    },
+    {
+      "chapter_number": 15,
+      "title": "Segment 15 (pages 127-134)",
+      "start_page": 127,
+      "end_page": 134,
+      "summary": "Refactored Solution Name: Corncob Removal Service\nUnbalanced Forces: Management of Resources, Technology Transfer\nAnecdotal Evidence: “Why is Bill so difficult to work with?” “Management always listens to whomever shouts longest and loudest.” “I own development and I have made a decision that you will follow.” “We need to change the build process and accept that we will delay delivery a month or two.”\nCorncobs are difficult people who can be prevalent in the software development business.\n“Corncob” is a slang term frequently used at Object Management Group, a software consortium, to describe difficult people.\nA difficult person (the Corncob) causes problems through destructive behaviors for a software development team or, even worse, throughout an enterprise.\nThis person may be a member of the team or a member of external senior staff (such as a technical architect or development manager) who adversely impacts the team through various means: technical, political, and personal.\nA development team or project is unable to make progress because someone disagrees with their key objectives or essential processes and continually tries to change them.\nThe destructive behavior is well known to many people in the enterprise, but it’s tolerated and supported (in some way) by management because they are unaware of, or unwilling to address, the damage it causes.\nOften, the destructive person is a manager who is not under the direct authority of a senior software development manager or project manager.\nManagement supports the Corncob’s destructive behavior, by virtue of not acknowledging the impact of the Corncob’s actions.\nManagement’s view of the situation is often supplied from the Corncob.\nManagement doesn’t isolate the group from internal and external forces, and has inappropriately allocated roles to staff, who abuse them for their own ends; even worse, management has failed to allocate accountability at all.\nThe Corncob AntiPattern is acceptable when a company or product development manager is willing to live with the actions of the Corncob.\nIn projects that involve multiple organizations, it’s sometimes useful to have a designated Corncob, whose role is to defend an existing architecture from inappropriate changes.\nSolutions to the Corncob AntiPattern are applied at several levels of authority, including strategic, operational, and tactical.\nIn all cases, the key action lever is management support for the destructive behaviors.\nBy eliminating management support at the aforementioned levels, the Corncob loses support, and the best interests of the software development team can dominate.\nManagement meets individually with the person causing the problems, and explains the impact of his or her behavior.\nIf there are several Corncobs in an organization, management can transfer them into the same group.\nshe has to work with such difficult people, giving the manager the opening to explain that the person is him− or herself described as difficult by others.\nManagers who are themselves difficult can be transferred to departments in which they are the only employee.\nAs Dr. Oakes points out, helping the person manage his or her stress levels can lead to trust, friendship, and more open−mindedness.\nA Corporate Shark is an experienced manager whose career consists of managing relationships rather than his or her technical expertise, which may, as a result, be long neglected.\nThe Corporate Shark knows how to “work the system,” and can easily create difficult political situations for those focused on technical issues.\nThe best way to manage a relationship with Corporate Sharks is to avoid them altogether, because the only likely outcomes are negative.\nA remedy for senior managers who are Egomaniacs is to transfer them to an empty department.\nIn meetings, Egomaniacs can be managed by publicly recognizing their expertise and importance.\nTheir actions can have destructive effects on the project’s image and morale; for example, indiscrete disclosures of information and insensitivity to important organizational relationships.\nThe most effective way to deal with Loose Cannons is to alert management, who should conduct a corrective interview.\nA Technology Bigot is a Loose Cannon who promulgates marketing hype and refuses to consider other viewpoints; for example, people who insist that all information technology will become Microsoft−based, or that CORBA is the only true way to implement distributed objects.\nWhen a particularly difficult or stressful situation arises such as serious project problems or impending layoffs, some Corncobs amplify their behavior.\nInstead of making the process more balanced, by taking into consideration all of the significant forces, the Corncob tends to bias the discussion and decision making toward selected forces, which may not be the most significant.\nIrrational Management\nAntipattern Name: Irrational Management\nAlso Known As: Pathological Supervisor, Short−Term Thinking, Managing by Reaction, Decision Phobia, Managers Playing with Technical Toys\nRefactored Solution Name: Rational Decision Making\nUnbalanced Forces: Management of Resources\nAnecdotal Evidence: “Who’s running this project?” “I wish he’d make up his bloody mind!” “What do we do now?” “We better clear this with management before we get started.” “Don’t bother asking; they’ll just say no.”\nIrrational Management covers a range of commonly occurring software project problems that can be traced back to the personalities of the person(s) running the project.\nFor example, the manager may have obsessive interests in some aspect of the technology or personality limitations that cause them to become ineffective or irrational managers.\nIrrational management can be viewed as a skewed set of priorities where the manager’s personal priorities, no matter how nonsensible, guide the software project in irrational directions.\nThe manager (or management team) of one or more development projects cannot make decisions.\nThe details may be personal interests or behaviors of the manager, such as technical “toys” or micromanagement.\nWhen faced with a crisis, the manager’s decisions are knee−jerk reactions rather than carefully thought−out strategies or tactical actions.\nThe Irrational Management AntiPattern is significantly compounded by a manager’s inability to direct development staff.\nThe primary symptom of the Irrational Management AntiPattern is project thrashing, an ongoing debate on a critical topic.\nOther managers.\nThere should never be any exceptions to the Irrational Management AntiPattern.\nFollow these guidelines to resolve the Irrational Management AntiPattern:\nWhen managers suffer from one or more of the typical causes, they must first recognize that they have a problem.\nAssuming that they are unaware of their situation, the first step is to identify key indicators, the most common of which is that of “finding out the hard way.” For example, rather than technical staff addressing a growing problem and asking for help in dealing with it, the irrational manager finds out only after a problem has reached crisis stage; no one is willing to discuss problems, because doing so never helps.\nManagers must surround themselves with talented staff (or consultants) who share the complex job of managing and are willing to listen to them.\nManagers need to understand both the technical skills and the personality traits of their staff members.\nAwareness of technical skills helps a manager delegate work; awareness of personalities helps a manager designate working relationships.\nA manager must ensure that short−term, highly specific objectives are set and that staff understands how they can be achieved.\nRecognizing that every project is slightly different from the previous one, a manager must monitor the development processes and improve them where and when necessary.\n7. Manage communication mechanisms.\n8. Manage by exception.\nDaily meetings and weekly reviews that require a manager’s involvement in all threads of a project are examples of over− or micromanagement.\nTwo rational management techniques from Kepner−Tregoe are particularly effective in software decision making.\nThe manager must make the best match of staff resources to the concerns that must be resolved.\nUsing situation analysis, the manager can effectively address the most important issues from among the confusing list of concerns confronting software projects.\nIdentify alternative solutions for resolving the decision.\nUse the priority assignment process from situation analysis for this purpose, then assign the desirable alternatives a weight.\nExperiment with the weights on the desirable criteria, and add new criteria until the decision analysis selects the acceptable alternative.",
+      "keywords": [
+        "Corncob Removal Service",
+        "Removal Service Refactored",
+        "Corncob",
+        "Removal Service",
+        "Irrational Management Antipattern",
+        "Corncobs",
+        "Service Refactored Solution",
+        "Management",
+        "Corncob Removal",
+        "Irrational Management",
+        "manager",
+        "Refactored Solution",
+        "Solution",
+        "project",
+        "Territorial Corncobs"
+      ],
+      "concepts": [
+        "management",
+        "manager",
+        "managers",
+        "manage",
+        "managing",
+        "managed",
+        "corncob",
+        "corncobs",
+        "personality",
+        "personal"
+      ],
+      "related_chapters": [
+        {
+          "book": "AntiPatterns",
+          "chapter": 15,
+          "title": "Segment 15 (pages 127-134)",
+          "relevance_score": 1.0,
+          "method": "cosine_similarity"
+        }
+      ],
+      "keywords_enriched": [
+        {
+          "term": "Irrational Management AntiPattern",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Irrational Management",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Corncob Removal Service",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Corncobs management manager",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Management",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Management Corncob Removal",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Solution Management Corncob",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Irrational Management manager",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Corncob",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "management manager managers",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        }
+      ],
+      "concepts_enriched": [
+        {
+          "concept": "management",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "manager",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "managers",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "manage",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "managing",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "managed",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "corncob",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "corncobs",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "person",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "personal",
+          "source": "cross_book_summa"
+        }
+      ]
+    },
+    {
+      "chapter_number": 16,
+      "title": "Segment 16 (pages 135-143)",
+      "start_page": 135,
+      "end_page": 143,
+      "summary": "Consultants can play three key roles in a software project.\nA manager we worked with came into a project at the halfway point.\nIn another situation, a project architect (a Corncob) voiced his opinions on C++ coding standards via e−mail to all project staff.\nThe project had several guru−level C++ developers who took exception to some of the architect’s statements.\nThis resulted in a two−month e−mail and newsgroup “war.” The eventual solution was that the project manager appointed a “tiger team” to resolve the issue.\nIn a third example, a system’s integrator project had an irrational management team.\nA management team, eager for new business, sometimes (inadvertently) encourage these misperceptions and makes commitments beyond the capabilities of the organization to deliver operational technology.\nWhen the development project fails to deliver, the project is considered unsuccessful, and the development organization loses credibility.\nAnother rule, supported by survey evidence, is that any software development will take about twice as long and cost twice as much as expected [Johnson 95].\nBut competent engineers can determine the product’s true capabilities and report back to the development team.\nRefactored Solution Name: Risk Management\nThis AntiPattern concerns the monitoring and controlling of software projects.\nThe timeframe for this occurs after planning activities, and during the actual analysis, design, construction, and testing of the software system.\nRunning a project is as complex an activity as creating the project plan, and developing software is as complex as building skyscrapers, involving as many steps and processes, including checks and balances.\nIn particular, basic mistakes include: inadequate architecture definition, insufficient code review (software inspection), and inadequate test coverage.\nArchitecture establishes the detailed technology plan for the project, including the criteria for inspection and testing.\nIn the integration and system testing phases, there is much project “thrashing” due to a large number of defects that should have been eliminated in earlier phases such as architecture, design, inspection, and unit testing.\nCode reviews and software inspections do not evaluate design defects, which then must be addressed in more expensive phases such as acceptance testing.\nProper risk management is an effective means of resolving predictable symptoms and consequences of the Project Mismanagement AntiPattern.\nRisks are categorized in several useful ways: managerial, common project failure points [Moynihan 89], and quality.\nProgram and project management.\nOften, a theme of risk management is the absence of a common understanding, resulting in an inconsistent view of development, which leads to the risk of the solution not meeting the scope of the problem requirements.\nA company must understand its software developments across all sites and all projects.\nEvery project must share common knowledge about its development.\nIdeally, all (or most) development staff on a project will have a reasonable, overall comprehension of the problem requirements and the intended solution.\nThis leads to software development under “good intentions,” without any requirement or need ever being clearly established.\nThe refactored solution entails activities at the architectural and design stages of development.\nA formal risk management activity is one way to document and plan for risk mitigation.\nFormal risk management entails the identification and documentation of project risks, usually in a tabular format, which includes columns for risk severity, risk description, and risk mitigation.\nRisk management plans are often produced with the formal documentation of projects, but are rarely translated into funded project activities.\nA software development does not manage it’s code delivery.\nThis means that they each have to deal with quality and process issues via self−derived mechanisms and manage their own activities.\nThe appointment of a new project manager results in quality/process improvements.\nEach emissary group consists of a facilitator from product support and a development team owner (for each team) for that part of the process:\nA variation of the Smoke and Mirrors mini−AntiPattern describes the incorporation of technical backups into the project plan and activities.\nThis is an important complement to risk management, and mitigates key strategic errors introduced by Project Mismanagement.\nBrad Appleton presents an excellent design pattern language for improving software development processes in his paper on process improvement [Appleton 97].\nImplementing process improvement is a key element in resolving project mismanagement.\nObject−oriented methods, design patterns, and implementation plans intended as flexible guidelines are too often taken literally by downstream managers and OO developers.\nIt may, however, be useful to conduct the session in two parts: a management introduction and a technical briefing for developers, as these two different audiences have substantially different needs.\nA Fire Drill is a recurring scenario in many software development organizations.\nA project is initiated, but the staff delays design and development activities for several months while various technopolitical issues are resolved at a management level.\n(One software developer described strategies for on−the−job software delivery as: “Wait until management is desperate, and they will accept anything you give them.”) Management prevents the development staff from making progress either by telling them to wait or by giving uncertain and conflicting directions.\nA few months into the project schedule, it becomes clear to management that development must progress immediately.\nThis situation is announced at an “all hands” Fire Drill launch meeting for development staff, during which management makes ambitious (or unrealistic) demands for software delivery.\nA typical example is a project that spends six months performing requirements analysis and planning, and then endeavors to design, implement, and demonstrate the software in less than four weeks.\nBecause the entire project is pressed for time, compromises are willingly made in software quality and testing.\nIn a perverse way, the emergency situation makes the job easier for some software developers, as management will accept almost any software (or documentation) product with few questions if it is behind schedule.\nHowever, conscientious developers who deliver products before their deadlines are often compelled by management to rework their solutions.\nAn effective solution that project management can implement is called sheltering.\nProject management is responsible for delivering a software product, regardless of the unresolved management−level issues.\nThe work environment required for quality software development differs significantly from the Fire Drill environment.\nIn contrast, Fire Drill environments preclude staff retention, an important issue for software managers today.\nIn the sheltering solution, management creates and maintains two alternative project environments: internal and external.\nThe majority of the software development staff operate in the internal environment, where the focus is long term and encourages continual progress toward software delivery.\nBuilding internal increments is also the most efficient use of software development resources in iterative−incremental projects [Korson 97].\nThe external environment is also called the project’s “public image.” Its purpose is to maintain relationships with outside entities: upper management, customers, and peer projects (with which resource competition and reuse opportunities exist).\nIn a Fire Drill culture, emergency scenarios may be seen as the equivalent of assertiveness, when projects compete for management attention and resources.\nA small number of managers and development staff can maintain the external environment.\nThe Fire Drill mini−AntiPattern is related to several other key AntiPatterns, including: Analysis Paralysis, Viewgraph Engineering, and Mushroom Management.\nIn Viewgraph Engineering, an organization never makes the transition from paper−based analysis to software development; the work environment is very similar to the situation preceding the Fire Drill launch−meeting.\nIn Mushroom Management, the developers are isolated unnecessarily from the real end users (not the end−user management).\nThe Mushroom Management solution favors constructive interchanges between operational end users and developers, whereas the Fire Drill solution favors destructive interchanges between developers and end−user management, when changes in direction and uncertainties can derail the software process.\nConsequently, software developers suffer from a lack of productive communications, and a general lack of cooperation inhibits any form of useful technology transfer.\nE−mail is an important communication medium for software developers.\nProductivity and morale of a software project can quickly degenerate when other staff members get caught up in lengthy e−mail confrontations.",
+      "keywords": [
+        "project",
+        "Management",
+        "software",
+        "development",
+        "Fire Drill",
+        "software development",
+        "Risk Management",
+        "solution",
+        "Project Mismanagement Antipattern",
+        "Project Mismanagement",
+        "project management",
+        "Refactored Solution",
+        "mail",
+        "AntiPattern",
+        "Risk"
+      ],
+      "concepts": [
+        "management",
+        "manager",
+        "managers",
+        "managing",
+        "manage",
+        "project",
+        "projects",
+        "developer",
+        "developers",
+        "development"
+      ],
+      "related_chapters": [
+        {
+          "book": "AntiPatterns",
+          "chapter": 16,
+          "title": "Segment 16 (pages 135-143)",
+          "relevance_score": 1.0,
+          "method": "cosine_similarity"
+        },
+        {
+          "book": "AntiPatterns",
+          "chapter": 14,
+          "title": "Segment 14 (pages 114-126)",
+          "relevance_score": 0.73,
+          "method": "cosine_similarity"
+        }
+      ],
+      "keywords_enriched": [
+        {
+          "term": "project",
+          "score": 0.001,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "software development",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "management",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Fire Drill",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "software",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "project management",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Risk Management",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "development",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "project Management software",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "software projects",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        }
+      ],
+      "concepts_enriched": [
+        {
+          "concept": "project",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "projects",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "manager",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "management",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "manage",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "managers",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "managing",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "developers",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "development",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "developing",
+          "source": "cross_book_summa"
+        }
+      ]
+    },
+    {
+      "chapter_number": 17,
+      "title": "Segment 17 (pages 144-151)",
+      "start_page": 144,
+      "end_page": 151,
+      "summary": "Chapter 5: software developer viewpoint\nAntiPattern Solution\nSystem developed without a documented architecture, often due to overconfidence based on recent success.\nDifficult people obstruct and divert the software development process.\nExcessive preplanning of software projects leads to postponement of development work and useless plans.\nPursue iterative software development process, which includes modest planning with known facts and incremental replanning\nCommittee designs are overly complex and lack a common architectural vision.\nAssign proper facilitation and software development roles for more effective committee−based processes.\nmanagement of software development process can cause indirection and other symptoms.\narchitectures do not manage complexity and lead to out−of−control architecture and maintenance costs.\nAntiPattern Solution\nInstall configuration control processes to eliminate dead code, and evolve/refactor design toward increasing quality.\nMonitor and control software projects to conduct successful development activities.\nUse architecture mining and “best of breed” generalization to define a common interface; then use object wrapping to integrate.\nRefactor code frequently to improve software structure; support software maintenance and iterative development.\nInstall an isolation layer between product−dependent interfaces and the majority of application software to enable management of complexity and architecture.\nA costly technology is purchased by a systems development project, but goes unused.\nDocument−driven software processes often employ authors who list alternatives instead of making decisions.\nPeople (software developers included) do crazy things when a project is near successful completion.\nManagement waits until the last possible moment to allow developers to proceed with design and\nDesignate project team architects who are abstractionists—that is, who possess the architecture instinct.\nPartition architectural designs with respect to horizontal, vertical, and metadata elements.\nLarge software project teams make for ineffective organizations and overruns.\nPlan small projects (four people in four months); they are much more likely to produce software success.\nAlso Known As An AntiPattern template section, which includes additional common names and phrases that are popularly used or descriptive of the AntiPattern.\nAnecdotal Evidence An AntiPattern template section.\nAntiPattern A commonly occuring pattern or solution that generates decidedly negative consequences.\nWhen properly documented, an AntiPattern comprises a paired AntiPattern solution with a refactored solution.\nApplicability to Other Viewpoints and Scales An AntiPattern template section that defines how the AntiPattern impacts other viewpoints: managerial, architectural, or developer.\nOptionally, this section includes interesting implications of the AntiPattern to other scales of development.\nArchitectural Benefits The positive outcomes that result from the design and utilization of good architecture and associated software interfaces.\nArchitectural Characteristics Characteristics associated with a design artifact that affect its usage and placement within architectural partitions; for example, maturity, domain specificity, flexibility, constraint, implementation dependence, complexity, stability, and so forth.\nArchitectural Partition Architecture defines boundaries between categories of design artifacts.\nArchitectural Placement Criteria Design patterns reside at a level where the problem statement is most applicable and the boundaries of the solution are within the scope of the level.\nThe scalability section of the pattern template addresses the use of the pattern at alternative levels.\nAn architecture comprises various views from each of the potential stakeholders in the system, such as end users, developers, software architects, specialists, and managers.\nBackground An AntiPattern template section.\nDesign Pattern A problem statement and solution that explains a predefined common−sense approach to solving a design problem.\nA design point is one of these choices, which resolves the forces and achieves the right balance of benefits and consequences; for example, choosing a string data type as opposed to an enumeration in an IDL parameter specification.\nExample An AntiPattern template section, giving an example of the AntiPattern and its refactored solution.\nForces are identified in the applicability section of the design pattern template, and are resolved in the solution section of the template.\nGeneral Form An AntiPattern template section identifying the generic characteristics of the AntiPattern.\nThe refactored solution resolves the general AntiPattern posed by this section.\nHorizontal Forces Forces applicable across multiple domains or problems and that influence design choices across several software modules or components.\nImplementation The code (or software) comprising the mechanism that provides services conforming to an interface.\nMost Frequent Scale An AntiPattern template section.\nFrom the Software Design−Level Model (SDLM), the scale of software development at which the AntiPattern usually occurs.\nName An AntiPattern template section; a unique noun or noun phrase, intended to be pejorative.\nPrimal Forces A class of horizontal forces that are pervasive in software architecture and development.\nPrimal forces are present in most design situations, and should be considered part of the contextual forces driving most solutions.\nRefactored Solution An AntiPattern template section, where the solution for the AntiPattern is described.\nRelated Solutions An AntiPattern template section identifying any citations or cross−references that are appropriate to explain differences between the AntiPattern and others.\nRoot Causes An AntiPattern template section listing the general causes for the AntiPattern.\nSolution Type An AntiPattern template section based on the Software Design−Level Model (SDLM) that identifies the type of action that results from the AntiPattern solution.\nChoices are: Software, Technology, Process, or Role.\nThe choice “Software” indicates that new software is created by the solution.\nSymptoms and Consequences An AntiPattern template section listing symptoms and consequences resulting from the AntiPattern.\nTemplate The outline used to define the explanatory sections of a design pattern or AntiPattern.\nEach template section answers important questions about the pattern or AntiPattern.\nTypical Causes An AntiPattern template section where the unique causes of the AntiPattern are identified, along with its root causes.\nUnbalanced Forces An AntiPattern template section based on the Software Design−Level Model (SDLM) that lists the general forces ignored, misused, or overused in the AntiPattern.\nChoices are: Management of Functionality, Performance, Complexity, Change, IT Resources, Technology Transfer.\nVariations An AntiPattern template section listing any known major variations of the AntiPattern.\nBecause vertical forces are unique (or local) to one software situation, resolution of vertical forces usually results in unique solutions for each software problem.\nObject Management Architecture",
+      "keywords": [
+        "AntiPattern template section",
+        "software",
+        "AntiPattern template",
+        "AntiPattern",
+        "design",
+        "template section",
+        "AntiPatterns Synopsis Overview",
+        "Solution",
+        "object",
+        "forces",
+        "section",
+        "architecture",
+        "template",
+        "AntiPattern Solution",
+        "software development process"
+      ],
+      "concepts": [
+        "architecture",
+        "architectural",
+        "architectures",
+        "design",
+        "designs",
+        "designate",
+        "object",
+        "objects",
+        "developed",
+        "developers"
+      ],
+      "related_chapters": [
+        {
+          "book": "AntiPatterns",
+          "chapter": 17,
+          "title": "Segment 17 (pages 144-151)",
+          "relevance_score": 1.0,
+          "method": "cosine_similarity"
+        }
+      ],
+      "keywords_enriched": [
+        {
+          "term": "AntiPattern template section",
+          "score": 0.001,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "AntiPattern template",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "AntiPattern",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "template section",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "software",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "template",
+          "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "AntiPattern Solution",
+          "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "section",
+          "score": 0.007,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Solution",
+          "score": 0.007,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "design",
+          "score": 0.008,
+          "source": "cross_book_yake"
+        }
+      ],
+      "concepts_enriched": [
+        {
+          "concept": "architecture",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "architectures",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "developed",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "development",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "developers",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "antipattern",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "antipatterns",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "designs",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "design",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "designate",
+          "source": "cross_book_summa"
+        }
+      ]
+    },
+    {
+      "chapter_number": 18,
+      "title": "Segment 18 (pages 152-157)",
+      "start_page": 152,
+      "end_page": 157,
+      "summary": "[Beck 96] Beck, Kent, “Guest Editor’s Introduction to Special Issue on Design Patterns,” OBJECT Magazine, SIGS Publications, January 1996, pp 23–63.\n[Beizer 97b] Beizer, Boris, “Foundations of Testing Computer Software,” Workshop, 14th International Conference and Exposition on Testing Computer Software, Vienna, VA, July 1997.\n[Bowen 97] Bowen, Jonathan P., and Hinchey, Michael G., “The Use of Industrial−Strength Formal Methods,” Proceedings of the Twenty−First Annual Computer Software and Applications Conference (COMPSAC 97), IEEE, August 1997.\n[Brown 96] Brown, William J., “Leading a Successful Migration,” Object Magazine, October 1996, pp.\nArchitecture: A System of Patterns, New York: John Wiley & Sons, Inc., 1996.\n[Coplien 94] Coplien, James O., “A Development Process Generative Pattern Language,” PLoP, 1994.\n[Dikel 97] Dikel, David; Hermansen, Christy; Kane, David; and Malveau, Raphael; “Organizational Patterns for Software Architecture,” PLoP, 1997.\n[Duell 97] Duell, M., “Resign Patterns: Ailments of Unsuitable Project−Disoriented Software,” The Software Practioner, vol.\n[Foote 97] Foote, Brian and Yoder, Joseph, “Big Ball of Mud,” Proceedings of Pattern Languages of Programming, PLoP, 1997.\n[Griss 97] Griss, Martin, “Software Reuse: Architecture, Process, and Organization for Business Success,” Object World, San Francisco, 1997.\n[Jacobson 92] Jacobson, Ivar, Object−Oriented Software Engineering, Reading, MA: Addison−Wesley, 1992.\nSoftware Reuse: Architecture Process and Organization for Business Success, Reading, MA: Addison−Wesley, 1997.\n[Jacobson 91] Jacobson, Ivar and Lindstrom, F., “Reengineering of Old Systems to an Object−Oriented Architecture,” OOPSLA Conference Proceedings, 1991.\n[Katz 93] Katz, Melony; Cornwell, Donna; and Mowbray, Thomas J; “System Integration with Minimal Object Wrappers,” Proceedings of TOOLS ’93, August 1993.\n[Korson 97] Korson, Timothy, “Process for the Development of Object−Oriented Systems,” Tutorial Notes, Object World West Conference, July 1997.\nJordan, and Vlissides, John, Object−Oriented Patterns and Frameworks, IBM International Conference on Object Technology, San Francisco, CA, 1995.\n[McCarthy 95] McCarthy, J., “Dynamics of Software Development,” Redmond, WA:_Microsoft Press, 1995.\n[Mowbray 97a] Mowbray, Thomas J., “The Seven Deadly Sins of Object−Oriented Architecture,” OBJECT Magazine, March 1997, pp.\n[Mowbray 97b] Mowbray, Thomas J., “What Is Architecture?” OBJECT Magazine, Architecture column, September 1997.\n[Mowbray 97c] Mowbray, Thomas J., and Malveau, Raphael C., CORBA Design Patterns, New York: John Wiley & Sons, Inc., 1997.\n[Moynihan 89] Moynihan, T.; McCluskey, G.; and Verbruggen, R.; “Riskman1: A Prototype Tool for Risk Analysis for Computer Software,” Third International Conference on Computer−Aided Software Engineering, London, 1989.\n[Pree 95] Pree, Wolfgang, Design Patterns for Object−Oriented Software Development, Reading, MA: Addison−Wesley, 1995.\n[Schmidt 95] Schmidt, Douglas, “Using Design Patterns to Develop Reusable Object−Oriented Communication Software,” Communications of the ACM, October 1995, pp 65–74.\n[Schmidt 95] Schmidt, Douglas C., and Coplien, James O., Pattern Languages of Program Design, Reading, MA: Addison−Wesley, 1995.\n“Software Architecture for Shared Information Systems,” Carnegie Mellon University, Software Engineering Institute, Technical Report No. CMU/SEI−−TR−, ESC−TR−−, March 1993.\n[Taylor 92] Taylor, D.A., Object−Oriented Information Systems, New York: John Wiley & Sons, Inc., 1992.\n[Vlissides 96] Vlissides, John M.; Coplien, James O.; and Kerth, Norman L.,Pattern Languages of Program Design, Reading, MA: Addison−Wesley, 1996.",
+      "keywords": [
+        "Comment RFP Request",
+        "Internet Protocol TWIT",
+        "Transmission Control Protocol",
+        "Troubles URL Universal",
+        "URL Universal Resource",
+        "Universal Resource Locator",
+        "Resource Locator WAIS",
+        "Locator WAIS Wide",
+        "WAIS Wide Area",
+        "SPC Software Productivity",
+        "Software Productivity Consortium",
+        "Conference RFC Request",
+        "General Markup Language",
+        "Markup Language SPC",
+        "Query Language SYSMAN"
+      ],
+      "concepts": [
+        "software",
+        "object",
+        "objects",
+        "architecture",
+        "architectures",
+        "architectural",
+        "systems",
+        "pattern",
+        "patterns",
+        "conference"
+      ],
+      "related_chapters": [
+        {
+          "book": "AntiPatterns",
+          "chapter": 18,
+          "title": "Segment 18 (pages 152-157)",
+          "relevance_score": 1.0,
+          "method": "cosine_similarity"
+        }
+      ],
+      "keywords_enriched": [
+        {
+          "term": "software object objects",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Testing Computer Software",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Software",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "pattern patterns conference",
+          "score": 0.005,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "systems pattern patterns",
+          "score": 0.005,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Oriented Software Development",
+          "score": 0.005,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Computer Software",
+          "score": 0.005,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Design Patterns",
+          "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "object objects architecture",
+          "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "OBJECT",
+          "score": 0.006,
+          "source": "cross_book_yake"
+        }
+      ],
+      "concepts_enriched": [
+        {
+          "concept": "software",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "object",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "objects",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "patterns",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "pattern",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "conference",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "architecture",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "systems",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "language",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "languages",
+          "source": "cross_book_summa"
+        }
+      ]
+    }
+  ]
+}
