@@ -178,7 +178,23 @@ class AsyncWorkflowExecutionService:
     def _build_metadata_enrichment_command(self, script_path: Path, file_path: Path,
                                            taxonomy_file: Optional[str]) -> List[str]:
         """Build command for metadata enrichment"""
-        return ["python3", str(script_path), "--input", str(file_path)]
+        if not taxonomy_file:
+            raise ValueError("Taxonomy file required for metadata enrichment")
+        
+        # Build taxonomy path
+        taxonomy_path = self.workflows_dir / "taxonomy_setup" / "output" / taxonomy_file
+        
+        # Compute output path: input_metadata.json -> input_enriched.json
+        input_name = Path(file_path).stem  # e.g., "AI Engineering Building Applications_metadata"
+        output_name = input_name.replace("_metadata", "") + "_enriched.json"
+        output_path = self.workflows_dir / "metadata_enrichment" / "output" / output_name
+        
+        return [
+            "python3", str(script_path),
+            "--input", str(file_path),
+            "--taxonomy", str(taxonomy_path),
+            "--output", str(output_path)
+        ]
     
     def _build_base_guideline_command(self, script_path: Path, file_path: Path,
                                       taxonomy_file: Optional[str]) -> List[str]:

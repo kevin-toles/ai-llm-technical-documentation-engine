@@ -33,6 +33,7 @@ class WorkflowExecutionService:
     
     def __init__(self, workflow_status: Dict[str, Any]):
         self.workflow_status = workflow_status
+        self.workflows_dir = PROJECT_ROOT / "workflows"
         self.command_builders = {
             "tab1": self._build_pdf_to_json_command,
             "tab2": self._build_metadata_extraction_command,
@@ -197,10 +198,19 @@ class WorkflowExecutionService:
         if not taxonomy_file:
             raise ValueError("Taxonomy file required for metadata enrichment")
         
+        # Build taxonomy path
+        taxonomy_path = self.workflows_dir / "taxonomy_setup" / "output" / taxonomy_file
+        
+        # Compute output path: input_metadata.json -> input_enriched.json
+        input_name = Path(file_path).stem  # e.g., "AI Engineering Building Applications_metadata"
+        output_name = input_name.replace("_metadata", "") + "_enriched.json"
+        output_path = self.workflows_dir / "metadata_enrichment" / "output" / output_name
+        
         return [
             "python3", str(script_path),
-            "--metadata-file", str(file_path),
-            "--taxonomy-file", str(taxonomy_file)
+            "--input", str(file_path),
+            "--taxonomy", str(taxonomy_path),
+            "--output", str(output_path)
         ]
     
     def _build_base_guideline_command(self, script_path: Path, file_path: Path, 
