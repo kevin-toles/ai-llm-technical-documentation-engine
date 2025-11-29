@@ -61,7 +61,12 @@ def _extract_books_from_taxonomy(taxonomy: Dict[str, Any]) -> set:
     book_set = set()
     for tier_name, tier_data in taxonomy.get("tiers", {}).items():
         if "books" in tier_data:
-            for book_file in tier_data.get("books", []):
+            for book_entry in tier_data.get("books", []):
+                # Handle both old format (string) and new format (dict with 'name' key)
+                if isinstance(book_entry, dict):
+                    book_file = book_entry.get("name", "")
+                else:
+                    book_file = book_entry
                 # Clean filename: "Book_Name.json" -> "Book_Name"
                 book_name = book_file.replace(".json", "").replace("_metadata", "")
                 book_set.add(book_name)
