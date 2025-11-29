@@ -15,6 +15,7 @@ References:
     - CONSOLIDATED_IMPLEMENTATION_PLAN.md: Tab 4 requirements
     - TAB4_IMPLEMENTATION_PLAN.md: Detailed implementation
     - Architecture Patterns with Python Ch. 13: Dependency Injection patterns
+    - BERTOPIC_SENTENCE_TRANSFORMERS_DESIGN.md: Option C Architecture
     
 Test-Driven Development:
     - Tests: tests/integration/test_metadata_enrichment.py
@@ -25,7 +26,7 @@ import argparse
 import json
 import sys
 from pathlib import Path
-from typing import List, Dict, Any, Tuple
+from typing import List, Dict, Any, Tuple, Optional
 from datetime import datetime
 
 # scikit-learn imports for TF-IDF and cosine similarity
@@ -44,6 +45,39 @@ except ImportError as e:
     print(f"Warning: StatisticalExtractor not available: {e}")
     print("Will use fallback keyword extraction")
     STATISTICAL_EXTRACTOR = None  # type: ignore[assignment]
+
+# BERTopic/Sentence Transformers integration (Option C Architecture)
+try:
+    from workflows.metadata_enrichment.scripts.topic_clusterer import (
+        TopicClusterer,
+        TopicResults,
+        TopicInfo,
+        BERTOPIC_AVAILABLE,
+    )
+    TOPIC_CLUSTERER_AVAILABLE = True
+except ImportError as e:
+    print(f"Warning: TopicClusterer not available: {e}")
+    print("Topic clustering will be skipped")
+    TOPIC_CLUSTERER_AVAILABLE = False
+    TopicClusterer = None  # type: ignore[misc, assignment]
+    TopicResults = None  # type: ignore[misc, assignment]
+    TopicInfo = None  # type: ignore[misc, assignment]
+    BERTOPIC_AVAILABLE = False
+
+try:
+    from workflows.metadata_enrichment.scripts.semantic_similarity_engine import (
+        SemanticSimilarityEngine,
+        SimilarityConfig,
+        SENTENCE_TRANSFORMERS_AVAILABLE,
+    )
+    SEMANTIC_ENGINE_AVAILABLE = True
+except ImportError as e:
+    print(f"Warning: SemanticSimilarityEngine not available: {e}")
+    print("Semantic similarity will use TF-IDF fallback")
+    SEMANTIC_ENGINE_AVAILABLE = False
+    SemanticSimilarityEngine = None  # type: ignore[misc, assignment]
+    SimilarityConfig = None  # type: ignore[misc, assignment]
+    SENTENCE_TRANSFORMERS_AVAILABLE = False
 
 
 def _extract_books_from_taxonomy(taxonomy: Dict[str, Any]) -> set:
@@ -425,12 +459,16 @@ def _enrich_single_chapter(
     book_name: str,
     corpus: List[str],
     index: List[Dict[str, Any]],
-    similarity_matrix: Any
+    similarity_matrix: Any,
+    topic_clusterer: Optional[Any] = None,
+    semantic_engine: Optional[Any] = None,
+    semantic_embeddings: Optional[Any] = None,
 ) -> Dict[str, Any]:
     """
     Helper function to enrich a single chapter (reduces cognitive complexity).
     
     Pattern: Extract Method refactoring (reduce complexity)
+    Reference: BERTOPIC_SENTENCE_TRANSFORMERS_DESIGN.md - Option C Architecture
     
     Args:
         chapter: Chapter metadata dict from Tab 2
@@ -438,9 +476,12 @@ def _enrich_single_chapter(
         corpus: Full chapter corpus
         index: Chapter index
         similarity_matrix: Precomputed similarity matrix
+        topic_clusterer: Optional TopicClusterer instance (fitted)
+        semantic_engine: Optional SemanticSimilarityEngine instance
+        semantic_embeddings: Optional precomputed semantic embeddings
         
     Returns:
-        Enriched chapter dict with related_chapters, keywords_enriched, concepts_enriched
+        Enriched chapter dict with topic_id, related_chapters, keywords_enriched, concepts_enriched
     """
     chapter_num = chapter.get("chapter_number")
     print(f"  Chapter {chapter_num}: {chapter.get('title', 'Untitled')}")
@@ -457,15 +498,63 @@ def _enrich_single_chapter(
         print("    ⚠️  Chapter not found in corpus, skipping enrichment")
         return chapter
     
-    # Find related chapters using cosine similarity
-    related = find_related_chapters(
-        chapter_idx,
-        similarity_matrix,
-        index,
-        f"{book_name}.json",
-        threshold=0.7,
-        top_n=5
-    )
+    # Get topic_id from TopicClusterer (Option C Architecture)
+    topic_id: Optional[int] = None
+    if topic_clusterer is not None:
+        try:
+            topic_info = topic_clusterer.get_topic_for_chapter(chapter_idx)
+            topic_id = topic_info.topic_id
+            if topic_id is not None and topic_id >= 0:
+                print(f"    Topic ID: {topic_id} ({topic_info.topic_name})")
+        except Exception as e:
+            print(f"    ⚠️  Could not get topic_id: {e}")
+    
+    # Find related chapters using cosine similarity (or semantic similarity)
+    if semantic_engine is not None and semantic_embeddings is not None:
+        # Use SemanticSimilarityEngine for better similarity detection
+        try:
+            related_results = semantic_engine.find_similar(
+                query_idx=chapter_idx,
+                embeddings=semantic_embeddings,
+                index=index,
+                top_k=5,
+                threshold=0.1,  # Lower threshold for semantic similarity
+            )
+            # Convert SimilarityResult to expected format
+            related = []
+            for r in related_results:
+                # Skip chapters from same book (cross-book analysis only)
+                if r.book == f"{book_name}.json":
+                    continue
+                related.append({
+                    "book": r.book,
+                    "chapter": r.chapter,
+                    "title": r.title,
+                    "relevance_score": round(r.score, 2),
+                    "method": r.method,
+                })
+            # Limit to top 5
+            related = related[:5]
+        except Exception as e:
+            print(f"    ⚠️  Semantic similarity failed, using TF-IDF: {e}")
+            related = find_related_chapters(
+                chapter_idx,
+                similarity_matrix,
+                index,
+                f"{book_name}.json",
+                threshold=0.7,
+                top_n=5
+            )
+    else:
+        # Fallback to original TF-IDF similarity
+        related = find_related_chapters(
+            chapter_idx,
+            similarity_matrix,
+            index,
+            f"{book_name}.json",
+            threshold=0.7,
+            top_n=5
+        )
     print(f"    Related chapters found: {len(related)}")
     
     # Get related chapter texts for keyword/concept enrichment
@@ -500,12 +589,18 @@ def _enrich_single_chapter(
     )
     
     # Build enriched chapter (preserve all original fields + add enrichments)
-    return {
+    enriched = {
         **chapter,  # Preserve all Tab 2 fields
         "related_chapters": related,
         "keywords_enriched": keywords_enriched,
         "concepts_enriched": concepts_enriched
     }
+    
+    # Add topic_id if available (Option C Architecture)
+    if topic_id is not None:
+        enriched["topic_id"] = topic_id
+    
+    return enriched
 
 
 def enrich_metadata(
@@ -548,6 +643,7 @@ def enrich_metadata(
             "chapters": [
                 {
                     ... (all original Tab 2 fields preserved),
+                    "topic_id": int (optional, from BERTopic clustering),
                     "related_chapters": [...],
                     "keywords_enriched": [...],
                     "concepts_enriched": [...]
@@ -595,10 +691,45 @@ def enrich_metadata(
     similarity_matrix = compute_similarity_matrix(corpus)
     print(f"  Matrix shape: {similarity_matrix.shape}")
     
+    # 4b. Run BERTopic clustering (Option C Architecture)
+    topic_results: Optional[TopicResults] = None
+    topic_clusterer: Optional[TopicClusterer] = None
+    if TOPIC_CLUSTERER_AVAILABLE and TopicClusterer is not None:
+        print("\n🔍 Running topic clustering (BERTopic/fallback)...")
+        try:
+            topic_clusterer = TopicClusterer()
+            # Pass corpus (list of strings) and index (list of dicts)
+            topic_results = topic_clusterer.cluster_chapters(corpus, index)
+            print(f"  Topics discovered: {topic_results.topic_count}")
+            print(f"  Using BERTopic: {BERTOPIC_AVAILABLE}")
+        except Exception as e:
+            print(f"  ⚠️  Topic clustering failed: {e}")
+            topic_results = None
+            topic_clusterer = None
+    
+    # 4c. Initialize SemanticSimilarityEngine for enhanced similarity
+    semantic_engine: Optional[SemanticSimilarityEngine] = None
+    semantic_embeddings = None
+    if SEMANTIC_ENGINE_AVAILABLE and SemanticSimilarityEngine is not None:
+        print("\n🔗 Initializing semantic similarity engine...")
+        try:
+            semantic_engine = SemanticSimilarityEngine()
+            semantic_embeddings = semantic_engine.compute_embeddings(corpus)
+            print(f"  Embeddings computed: {semantic_embeddings.shape}")
+            print(f"  Using fallback (TF-IDF): {semantic_engine.is_using_fallback}")
+        except Exception as e:
+            print(f"  ⚠️  Semantic engine initialization failed: {e}")
+            semantic_engine = None
+    
     # 5. Enrich each chapter using helper function
     print("\nEnriching chapters with cross-book analysis...")
     enriched_chapters = [
-        _enrich_single_chapter(chapter, book_name, corpus, index, similarity_matrix)
+        _enrich_single_chapter(
+            chapter, book_name, corpus, index, similarity_matrix,
+            topic_clusterer=topic_clusterer,
+            semantic_engine=semantic_engine,
+            semantic_embeddings=semantic_embeddings,
+        )
         for chapter in book_metadata
     ]
     
@@ -611,10 +742,17 @@ def enrich_metadata(
             "libraries": {
                 "yake": "0.4.8",
                 "summa": "1.2.0",
-                "scikit-learn": "1.3.2"
+                "scikit-learn": "1.3.2",
+                "bertopic": "available" if BERTOPIC_AVAILABLE else "unavailable",
+                "sentence_transformers": "available" if SENTENCE_TRANSFORMERS_AVAILABLE else "unavailable",
             },
             "corpus_size": len(context["books"]),
-            "total_chapters_analyzed": context["corpus_size"]
+            "total_chapters_analyzed": context["corpus_size"],
+            "topic_clustering": {
+                "enabled": topic_results is not None,
+                "num_topics": topic_results.topic_count if topic_results else 0,
+                "using_bertopic": BERTOPIC_AVAILABLE,
+            },
         },
         "chapters": enriched_chapters
     }

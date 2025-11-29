@@ -1269,6 +1269,13 @@ BOOK_METADATA_FILES = {
     "Python Microservices Development": "python_microservices_dev_metadata.json",
 }
 
+# Mapping for enriched metadata files (Tab 4 output with topic_id)
+# Reference: BERTOPIC_SENTENCE_TRANSFORMERS_DESIGN.md - Option C Architecture
+BOOK_ENRICHED_METADATA_FILES = {
+    pattern: filename.replace("_metadata.json", "_metadata_enriched.json")
+    for pattern, filename in BOOK_METADATA_FILES.items()
+}
+
 
 def _get_metadata_filename(primary_book: str) -> Optional[str]:
     """Determine which metadata file to use based on PRIMARY_BOOK."""
@@ -1276,6 +1283,91 @@ def _get_metadata_filename(primary_book: str) -> Optional[str]:
         if pattern in primary_book:
             return filename
     return None
+
+
+def _get_enriched_metadata_filename(primary_book: str) -> Optional[str]:
+    """Determine which enriched metadata file to use based on PRIMARY_BOOK.
+    
+    Option C Architecture: Tab 5 consumes topic_id from Tab 4 enriched output.
+    Reference: BERTOPIC_SENTENCE_TRANSFORMERS_DESIGN.md
+    """
+    for pattern, filename in BOOK_ENRICHED_METADATA_FILES.items():
+        if pattern in primary_book:
+            return filename
+    return None
+
+
+def _load_enriched_metadata(enriched_file: str) -> Optional[Dict[str, Any]]:
+    """Load enriched metadata from Tab 4 output.
+    
+    Returns:
+        Enriched metadata dict with 'chapters' containing topic_id and related_chapters,
+        or None if file not found.
+    
+    Reference: BERTOPIC_SENTENCE_TRANSFORMERS_DESIGN.md - Option C Architecture
+    """
+    try:
+        # Try Tab 4 output directory first
+        enriched_path = Path(__file__).parent.parent.parent / "metadata_enrichment" / "output" / enriched_file
+        if not enriched_path.exists():
+            # Fallback to local directory
+            enriched_path = Path(__file__).parent / enriched_file
+        
+        if not enriched_path.exists():
+            return None
+            
+        with open(enriched_path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError) as e:
+        print(f"  Note: Enriched metadata not available: {e}")
+        return None
+
+
+def _get_chapter_topic_id(enriched_metadata: Optional[Dict[str, Any]], chapter_num: int) -> Optional[int]:
+    """Get topic_id for a chapter from enriched metadata.
+    
+    Args:
+        enriched_metadata: Loaded enriched metadata or None
+        chapter_num: Chapter number to look up
+        
+    Returns:
+        topic_id (int) or None if not available
+        
+    Reference: BERTOPIC_SENTENCE_TRANSFORMERS_DESIGN.md - Option C Architecture
+    """
+    if enriched_metadata is None:
+        return None
+    
+    for chapter in enriched_metadata.get("chapters", []):
+        if chapter.get("chapter_number") == chapter_num:
+            return chapter.get("topic_id")
+    
+    return None
+
+
+def _get_related_chapters_by_topic(
+    enriched_metadata: Optional[Dict[str, Any]], 
+    chapter_num: int
+) -> List[Dict[str, Any]]:
+    """Get pre-computed related chapters from enriched metadata.
+    
+    Args:
+        enriched_metadata: Loaded enriched metadata or None
+        chapter_num: Chapter number to look up
+        
+    Returns:
+        List of related_chapters dicts with book, chapter, title, relevance_score, method
+        
+    Reference: BERTOPIC_SENTENCE_TRANSFORMERS_DESIGN.md - Option C Architecture
+    """
+    if enriched_metadata is None:
+        return []
+    
+    for chapter in enriched_metadata.get("chapters", []):
+        if chapter.get("chapter_number") == chapter_num:
+            return chapter.get("related_chapters", [])
+    
+    return []
 
 
 def _load_chapter_summary(metadata_file: str, chapter_num: int) -> Optional[str]:
@@ -1792,24 +1884,6 @@ def build_tpm_section(
     return "\n".join(section) + "\n", footnote_start + 1, foot
 
 
-def emit_footnotes(foots: List[Dict[str, Any]]) -> str:
-    out = ["\n---\n\n### **Footnotes**\n"]
-    for f in foots:
-        out.append(
-            chicago_footnote(
-                f["num"],
-                f["author"],
-                f["title"],
-                f["file"],
-                f["page"],
-                f["start_line"],
-                f["end_line"],
-            )
-        )
-    out.append("")
-    return "\n".join(out)
-
-
 # ============================================================================
 # Helper Functions (Extracted to reduce main() complexity from 20 → <10)
 # Following Architecture Patterns Ch. 4 (Service Layer pattern)
@@ -1841,23 +1915,60 @@ def _extract_chapter_concepts(chapter_text: str) -> Set[str]:
     return keyword_concepts
 
 
-def _find_cross_references(all_text: str, companions: Dict[str, Dict[str, Any]]) -> List[Any]:
+def _find_cross_references(
+    all_text: str, 
+    companions: Dict[str, Dict[str, Any]],
+    chapter_num: Optional[int] = None,
+    enriched_metadata: Optional[Dict[str, Any]] = None,
+) -> List[Any]:
     """
     Find cross-references to companion books using keyword/concept overlap.
+    
+    Enhanced with Option C Architecture: Uses pre-computed related_chapters
+    from Tab 4 enriched metadata when available, falls back to keyword overlap.
 
     Tab 5: Statistical methods only (YAKE + TF-IDF) - no LLM.
 
     Args:
         all_text: Full text to search
         companions: Dictionary of companion book data
+        chapter_num: Current chapter number (for enriched metadata lookup)
+        enriched_metadata: Optional enriched metadata from Tab 4 (with topic_id)
 
     Returns:
         List of cross-reference matches
 
     Reference:
         - Architecture Patterns Ch. 4: Service Layer pattern
+        - BERTOPIC_SENTENCE_TRANSFORMERS_DESIGN.md: Option C Architecture
     """
-    # Cross-book matching using keyword/concept overlap (YAKE + TF-IDF)
+    # Option C: Use pre-computed related_chapters from Tab 4 if available
+    if enriched_metadata is not None and chapter_num is not None:
+        related = _get_related_chapters_by_topic(enriched_metadata, chapter_num)
+        topic_id = _get_chapter_topic_id(enriched_metadata, chapter_num)
+        
+        if related:
+            print("  Using pre-computed cross-references from Tab 4 enriched metadata")
+            if topic_id is not None:
+                print(f"  Chapter topic_id: {topic_id}")
+            print(f"  Found {len(related)} related chapters from enrichment")
+            
+            # Convert related_chapters format to xmatches format
+            xmatches = []
+            for rel in related:
+                xmatches.append({
+                    "book": rel.get("book", "").replace(".json", ""),
+                    "page": 1,  # Placeholder - actual page from related chapter
+                    "concepts": [],  # Could extract from enriched keywords
+                    "content": f"Related via {rel.get('method', 'similarity')} (score: {rel.get('relevance_score', 0):.2f})",
+                    "title": rel.get("title", ""),
+                    "chapter": rel.get("chapter", 0),
+                    "relevance_score": rel.get("relevance_score", 0),
+                    "method": rel.get("method", "cosine_similarity"),
+                })
+            return xmatches
+    
+    # Fallback: Cross-book matching using keyword/concept overlap (YAKE + TF-IDF)
     # Architecture: Statistical methods only (no LLM)
     print("  Keyword-based cross-book matching...")
     non_primary_companions = {k: v for k, v in companions.items() if k != PRIMARY_BOOK}
@@ -2045,11 +2156,15 @@ def _generate_chapter_cross_refs(
     chapter_concepts: Set[str],
     chapter_num: int,
     global_footnote_num: int,
+    enriched_metadata: Optional[Dict[str, Any]] = None,
 ) -> ChapterProcessingResult:
     """
     Generate cross-references and see-also sections for a chapter.
 
     Applies Extract Method pattern to reduce complexity in _process_single_chapter().
+    
+    Enhanced with Option C Architecture: Uses pre-computed related_chapters
+    and topic_id from Tab 4 enriched metadata when available.
 
     Args:
         chapter_pages: Pages belonging to chapter
@@ -2058,6 +2173,7 @@ def _generate_chapter_cross_refs(
         chapter_concepts: Concepts extracted from chapter
         chapter_num: Chapter number
         global_footnote_num: Current footnote number
+        enriched_metadata: Optional enriched metadata from Tab 4 (with topic_id)
 
     Returns:
         ChapterProcessingResult with see-also text, updated footnote_num, and footnotes
@@ -2065,12 +2181,18 @@ def _generate_chapter_cross_refs(
     References:
         - ANTI_PATTERN_ANALYSIS §10.2: Extract Method + Parameter Object patterns
         - Architecture Patterns Ch.4: Service Layer orchestration
+        - BERTOPIC_SENTENCE_TRANSFORMERS_DESIGN.md: Option C Architecture
     """
     # Prepare chapter text for cross-reference analysis
     all_text = " ".join(p.get("content", "") for p in chapter_pages)
 
-    # Find cross-references (keyword + optional LLM)
-    xmatches = _find_cross_references(all_text, companions)
+    # Find cross-references (keyword + optional enriched metadata)
+    xmatches = _find_cross_references(
+        all_text, 
+        companions,
+        chapter_num=chapter_num,
+        enriched_metadata=enriched_metadata,
+    )
 
     # Build see-also section with comprehensive summaries
     see_also, global_footnote_num, sal_foots = build_see_also(
@@ -2137,18 +2259,23 @@ def _process_single_chapter(
     primary: Dict[str, Any],
     companions: Dict[str, Dict[str, Any]],
     global_footnote_num: int,
+    enriched_metadata: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
     """
     Process a single chapter - extract content, concepts, cross-references.
 
     Refactored using Extract Method + Parameter Object patterns (R0914 fix).
     Reduced from 23→13 local variables.
+    
+    Enhanced with Option C Architecture: Optionally uses enriched metadata
+    from Tab 4 for topic_id and pre-computed related_chapters.
 
     Args:
         chapter_data: Tuple of (chapter_num, title, start_page, end_page)
         primary: Primary book JSON data
         companions: Dict of companion book data
         global_footnote_num: Current footnote number
+        enriched_metadata: Optional enriched metadata from Tab 4 (with topic_id)
 
     Returns:
         Dictionary with:
@@ -2160,6 +2287,7 @@ def _process_single_chapter(
         - ANTI_PATTERN_ANALYSIS §10.2: Extract Method + Parameter Object (R0914 fix)
         - Architecture Patterns Ch. 3: Coupling and Abstractions
         - Architecture Patterns Ch. 4: Service Layer orchestration
+        - BERTOPIC_SENTENCE_TRANSFORMERS_DESIGN.md: Option C Architecture
     """
     # Convert tuple to dataclass (reduces 4 locals to 1)
     chapter = ChapterData.from_tuple(chapter_data)
@@ -2189,10 +2317,16 @@ def _process_single_chapter(
     if tpm_foot:
         chapter_footnotes.append(tpm_foot)
 
-    # Step 5: Build cross-references
+    # Step 5: Build cross-references (with optional enriched metadata)
     chapter_concepts_set = concepts_result.concepts if concepts_result.concepts else set()
     xrefs_result = _generate_chapter_cross_refs(
-        chapter_pages, primary, companions, chapter_concepts_set, chapter.chapter_num, tpm_footnote_num
+        chapter_pages, 
+        primary, 
+        companions, 
+        chapter_concepts_set, 
+        chapter.chapter_num, 
+        tpm_footnote_num,
+        enriched_metadata=enriched_metadata,
     )
     chapter_footnotes.extend(xrefs_result.footnotes)
 
@@ -2737,9 +2871,13 @@ def main(custom_input_path: Optional[Path] = None):
 
     Refactored from complexity 20 → <10 by extracting helper functions.
     Follows Service Layer pattern (Architecture Patterns Ch. 4).
+    
+    Enhanced with Option C Architecture: Optionally loads enriched metadata
+    from Tab 4 for topic_id and pre-computed related_chapters.
 
     Workflow:
         1. Load primary and companion books
+        1b. Load enriched metadata (if available)
         2. Build document header
         3. Process each chapter (extracted to helper)
         4. Add footnotes
@@ -2749,6 +2887,7 @@ def main(custom_input_path: Optional[Path] = None):
         - Architecture Patterns Ch. 4: Service Layer orchestration
         - Fluent Python Ch. 7: Function decomposition
         - Python Distilled Ch. 5: Single Responsibility Principle
+        - BERTOPIC_SENTENCE_TRANSFORMERS_DESIGN.md: Option C Architecture
     """
     # Validate input path is provided
     if custom_input_path is None:
@@ -2770,6 +2909,18 @@ def main(custom_input_path: Optional[Path] = None):
     # Step 1: Load primary and companion books
     primary = load_json_book(PRIMARY_BOOK, custom_path=custom_input_path)
     companions = _load_companion_books(ALL_BOOKS)
+    
+    # Step 1b: Load enriched metadata from Tab 4 (Option C Architecture)
+    enriched_metadata: Optional[Dict[str, Any]] = None
+    enriched_file = _get_enriched_metadata_filename(PRIMARY_BOOK)
+    if enriched_file:
+        print("\nLoading enriched metadata (Tab 4 output)...")
+        enriched_metadata = _load_enriched_metadata(enriched_file)
+        if enriched_metadata:
+            topic_info = enriched_metadata.get("enrichment_metadata", {}).get("topic_clustering", {})
+            print(f"  ✓ Loaded enriched metadata with {topic_info.get('num_topics', 0)} topics")
+        else:
+            print("  Note: Enriched metadata not found, using keyword-based cross-referencing")
 
     # Step 2: Build document header
     total_chapters = len(CHAPTERS)
@@ -2785,6 +2936,7 @@ def main(custom_input_path: Optional[Path] = None):
             primary=primary,
             companions=companions,
             global_footnote_num=global_footnote_num,
+            enriched_metadata=enriched_metadata,
         )
 
         # Update state

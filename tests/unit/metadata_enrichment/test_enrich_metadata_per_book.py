@@ -10,6 +10,9 @@ Architecture Patterns Applied:
 - Strategy Pattern: Test similarity-based enrichment strategy
 
 Sprint: Batch #2 Files 6-11 (HIGH priority, CC 8-9, tests only)
+
+Updated: Now uses rescore_keywords_cross_book and extract_concepts_cross_book
+Reference: BERTOPIC_SENTENCE_TRANSFORMERS_DESIGN.md - Option C Architecture
 """
 
 import pytest
@@ -112,11 +115,11 @@ class TestEnrichSingleChapter:
                 {"book": "Architecture_Patterns.json", "chapter": 8, "similarity": 0.8}
             ]
             
-            with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book._enrich_keywords_from_related') as mock_enrich_kw:
-                mock_enrich_kw.return_value = ["decorator", "closure", "design pattern"]
+            with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book.rescore_keywords_cross_book') as mock_rescore_kw:
+                mock_rescore_kw.return_value = ["decorator", "closure", "design pattern"]
                 
-                with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book._enrich_concepts_from_related') as mock_enrich_concepts:
-                    mock_enrich_concepts.return_value = [
+                with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book.extract_concepts_cross_book') as mock_extract_concepts:
+                    mock_extract_concepts.return_value = [
                         {"concept": "decorator pattern", "source": "cross_book"}
                     ]
                     
@@ -172,11 +175,11 @@ class TestEnrichSingleChapter:
         with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book.find_related_chapters') as mock_find:
             mock_find.return_value = []
             
-            with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book._enrich_keywords_from_related') as mock_enrich_kw:
-                mock_enrich_kw.return_value = sample_chapter["keywords"]
+            with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book.rescore_keywords_cross_book') as mock_rescore_kw:
+                mock_rescore_kw.return_value = sample_chapter["keywords"]
                 
-                with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book._enrich_concepts_from_related') as mock_enrich_concepts:
-                    mock_enrich_concepts.return_value = []
+                with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book.extract_concepts_cross_book') as mock_extract_concepts:
+                    mock_extract_concepts.return_value = []
                     
                     _ = _enrich_single_chapter(
                         sample_chapter,
@@ -203,11 +206,11 @@ class TestEnrichSingleChapter:
                 {"book": "Architecture_Patterns.json", "chapter": 8, "similarity": 0.8}
             ]
             
-            with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book._enrich_keywords_from_related') as mock_enrich_kw:
-                mock_enrich_kw.return_value = ["decorator"]
+            with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book.rescore_keywords_cross_book') as mock_rescore_kw:
+                mock_rescore_kw.return_value = ["decorator"]
                 
-                with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book._enrich_concepts_from_related') as mock_enrich_concepts:
-                    mock_enrich_concepts.return_value = []
+                with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book.extract_concepts_cross_book') as mock_extract_concepts:
+                    mock_extract_concepts.return_value = []
                     
                     _enrich_single_chapter(
                         sample_chapter,
@@ -233,11 +236,11 @@ class TestEnrichSingleChapter:
         with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book.find_related_chapters') as mock_find:
             mock_find.return_value = []
             
-            with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book._enrich_keywords_from_related') as mock_enrich_kw:
-                mock_enrich_kw.return_value = []
+            with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book.rescore_keywords_cross_book') as mock_rescore_kw:
+                mock_rescore_kw.return_value = []
                 
-                with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book._enrich_concepts_from_related') as mock_enrich_concepts:
-                    mock_enrich_concepts.return_value = []
+                with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book.extract_concepts_cross_book') as mock_extract_concepts:
+                    mock_extract_concepts.return_value = []
                     
                     _enrich_single_chapter(
                         sample_chapter,
@@ -263,11 +266,11 @@ class TestEnrichSingleChapter:
         with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book.find_related_chapters') as mock_find:
             mock_find.return_value = []  # No related chapters
             
-            with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book._enrich_keywords_from_related') as mock_enrich_kw:
-                mock_enrich_kw.return_value = sample_chapter["keywords"]
+            with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book.rescore_keywords_cross_book') as mock_rescore_kw:
+                mock_rescore_kw.return_value = sample_chapter["keywords"]
                 
-                with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book._enrich_concepts_from_related') as mock_enrich_concepts:
-                    mock_enrich_concepts.return_value = []
+                with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book.extract_concepts_cross_book') as mock_extract_concepts:
+                    mock_extract_concepts.return_value = []
                     
                     result = _enrich_single_chapter(
                         sample_chapter,
@@ -291,11 +294,11 @@ class TestEnrichSingleChapter:
         with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book.find_related_chapters') as mock_find:
             mock_find.return_value = []
             
-            with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book._enrich_keywords_from_related') as mock_enrich_kw:
-                mock_enrich_kw.return_value = ["new_keyword"]
+            with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book.rescore_keywords_cross_book') as mock_rescore_kw:
+                mock_rescore_kw.return_value = ["new_keyword"]
                 
-                with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book._enrich_concepts_from_related') as mock_enrich_concepts:
-                    mock_enrich_concepts.return_value = []
+                with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book.extract_concepts_cross_book') as mock_extract_concepts:
+                    mock_extract_concepts.return_value = []
                     
                     result = _enrich_single_chapter(
                         sample_chapter,
@@ -329,11 +332,11 @@ class TestEnrichSingleChapter:
         with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book.find_related_chapters') as mock_find:
             mock_find.return_value = []
             
-            with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book._enrich_keywords_from_related') as mock_enrich_kw:
-                mock_enrich_kw.return_value = ["context"]
+            with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book.rescore_keywords_cross_book') as mock_rescore_kw:
+                mock_rescore_kw.return_value = ["context"]
                 
-                with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book._enrich_concepts_from_related') as mock_enrich_concepts:
-                    mock_enrich_concepts.return_value = []
+                with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book.extract_concepts_cross_book') as mock_extract_concepts:
+                    mock_extract_concepts.return_value = []
                     
                     result = _enrich_single_chapter(
                         chapter,
@@ -368,11 +371,11 @@ class TestEnrichmentIntegration:
                 {"book": "Learning_Python_Ed6.json", "chapter": 12, "similarity": 0.75}
             ]
             
-            with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book._enrich_keywords_from_related') as mock_enrich_kw:
-                mock_enrich_kw.return_value = ["decorator", "closure", "design pattern", "metaclass"]
+            with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book.rescore_keywords_cross_book') as mock_rescore_kw:
+                mock_rescore_kw.return_value = ["decorator", "closure", "design pattern", "metaclass"]
                 
-                with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book._enrich_concepts_from_related') as mock_enrich_concepts:
-                    mock_enrich_concepts.return_value = [
+                with patch('workflows.metadata_enrichment.scripts.enrich_metadata_per_book.extract_concepts_cross_book') as mock_extract_concepts:
+                    mock_extract_concepts.return_value = [
                         {"concept": "decorator pattern", "source": "cross_book"},
                         {"concept": "closure scope", "source": "cross_book"}
                     ]
