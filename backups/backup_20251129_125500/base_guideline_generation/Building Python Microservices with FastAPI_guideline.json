@@ -1,0 +1,175 @@
+{
+  "book_metadata": {
+    "title": "Comprehensive Python Guidelines — Building Python Microservices with FastAPI (Chapters 1-14)",
+    "source": "Building Python Microservices with FastAPI, Chapters 1-14",
+    "book_name": "Building Python Microservices with FastAPI"
+  },
+  "source_info": {
+    "generated_by": "convert_md_to_json_guideline.py",
+    "generation_date": "2025-11-24",
+    "llm_enabled": false,
+    "conversion_source": "markdown_chapter_summaries"
+  },
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "title": "Setting Up FastAPI for Starters",
+      "page_range": {
+        "start": 1,
+        "end": 26
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Introduces FastAPI framework fundamentals including installation, setup, and basic configuration. Covers Uvicorn ASGI server, Pydantic integration, Starlette foundation, and creating first REST API endpoints with async support. [^1]",
+      "concepts": []
+    },
+    {
+      "chapter_number": 2,
+      "title": "Exploring the Core Features",
+      "page_range": {
+        "start": 27,
+        "end": 60
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Explores FastAPI's core features including path operations, routing, request/response handling, Pydantic validation and schemas, HTTP methods, query and path parameters, request bodies, and status code management. [^20]",
+      "concepts": []
+    },
+    {
+      "chapter_number": 3,
+      "title": "Investigating Dependency Injection",
+      "page_range": {
+        "start": 61,
+        "end": 88
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Details dependency injection system in FastAPI using Depends. Covers creating reusable dependencies, managing database sessions, implementing security dependencies, middleware patterns, and understanding dependency scopes and context management. [^39]",
+      "concepts": []
+    },
+    {
+      "chapter_number": 4,
+      "title": "Building the Microservice Application",
+      "page_range": {
+        "start": 89,
+        "end": 130
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Demonstrates building complete microservice applications with proper architectural patterns. Covers layered architecture, repository pattern, service layer design, business logic separation, API controllers, and organizing modular microservice code. [^58]",
+      "concepts": []
+    },
+    {
+      "chapter_number": 5,
+      "title": "Connecting to a Relational Database",
+      "page_range": {
+        "start": 131,
+        "end": 162
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Focuses on integrating relational databases with FastAPI using SQLAlchemy ORM. Covers database connections, session management, defining database models, migrations with Alembic, implementing CRUD operations, and handling transactions. [^77]",
+      "concepts": []
+    },
+    {
+      "chapter_number": 6,
+      "title": "Using a Non-Relational Database",
+      "page_range": {
+        "start": 163,
+        "end": 192
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Explores non-relational databases including MongoDB and Redis integration. Covers PyMongo usage, document databases, key-value stores, caching strategies, schema-less design, working with collections, and async database operations. [^96]",
+      "concepts": []
+    },
+    {
+      "chapter_number": 7,
+      "title": "Securing the Backend and API Endpoints",
+      "page_range": {
+        "start": 193,
+        "end": 232
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Addresses security concerns for FastAPI applications including authentication and authorization mechanisms. Covers OAuth2 implementation, JWT tokens, password hashing with bcrypt, CORS configuration, API keys, and bearer token authentication. [^115]",
+      "concepts": []
+    },
+    {
+      "chapter_number": 8,
+      "title": "Creating Coroutines, Events, and Message-Driven Transactions",
+      "page_range": {
+        "start": 233,
+        "end": 268
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Examines asynchronous programming with coroutines, asyncio, and event-driven architecture. Covers background tasks, message queues, Celery integration, RabbitMQ and Kafka messaging, implementing producers and consumers, and event-driven transaction patterns. [^134]",
+      "concepts": []
+    },
+    {
+      "chapter_number": 9,
+      "title": "Utilizing Other Advanced Features",
+      "page_range": {
+        "start": 269,
+        "end": 300
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Covers advanced FastAPI features including custom middleware, CORS configuration, WebSocket support, GraphQL integration, file uploads, streaming responses, exception handlers, custom configurations, logging, and Jinja2 template rendering. [^153]",
+      "concepts": []
+    },
+    {
+      "chapter_number": 10,
+      "title": "Solving Numerical, Symbolic, and Graphical Problems",
+      "page_range": {
+        "start": 301,
+        "end": 328
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Demonstrates integrating scientific computing libraries with FastAPI for numerical, symbolic, and graphical problems. Covers NumPy for calculations, Pandas for data analysis, Matplotlib for visualization, dataframes, and serving computational results via APIs. [^172]",
+      "concepts": []
+    },
+    {
+      "chapter_number": 11,
+      "title": "Adding Other Microservice Features",
+      "page_range": {
+        "start": 329,
+        "end": 360
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Explores additional microservice features including caching with Redis, rate limiting and throttling, pagination strategies, API versioning, health check endpoints, monitoring solutions, logging practices, and OpenAPI/Swagger documentation. [^191]",
+      "concepts": []
+    },
+    {
+      "chapter_number": 12,
+      "title": "Deploying FastAPI Applications in the Cloud",
+      "page_range": {
+        "start": 361,
+        "end": 386
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Details deploying FastAPI applications to cloud platforms. Covers Docker containerization, Kubernetes orchestration, deployment to AWS/Azure/GCP, Heroku, setting up CI/CD pipelines, managing production environments, scaling strategies, and infrastructure configuration. [^210]",
+      "concepts": []
+    },
+    {
+      "chapter_number": 13,
+      "title": "Converting APIs and Microservices",
+      "page_range": {
+        "start": 387,
+        "end": 404
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Covers converting existing APIs and microservices to FastAPI. Discusses migrating from Flask and Django, refactoring legacy applications, implementing API gateways, service integration patterns, modernization strategies, ensuring compatibility, and migration best practices. [^228]",
+      "concepts": []
+    },
+    {
+      "chapter_number": 14,
+      "title": "Assessment Answers",
+      "page_range": {
+        "start": 405,
+        "end": 420
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Provides assessment answers and solutions to chapter exercises. Includes detailed explanations for practice questions, reviews key concepts from each chapter, reinforces learning objectives, and serves as a reference guide for self-evaluation. [^245]",
+      "concepts": [
+        {
+          "name": "Array",
+          "page": 405
+        }
+      ]
+    }
+  ],
+  "footnotes": []
+}

@@ -1,2 +1,25 @@
 anthropic==0.39.0
 python-dotenv==1.0.0
+
+# Statistical NLP for domain-agnostic metadata extraction
+yake==0.4.8
+summa==1.2.0
+scikit-learn>=1.3.0
+
+# PDF parsing with Unstructured library
+# unstructured[pdf] provides enhanced PDF parsing with:
+# - Element detection (titles, paragraphs, tables, lists)
+# - Table structure extraction
+# - OCR support for scanned documents
+# - Image/figure extraction
+unstructured[pdf]>=0.16.0
+
+# PyMuPDF for fallback PDF extraction
+pymupdf>=1.24.0
+
+# OCR support (optional, for scanned PDFs)
+pytesseract>=0.3.10
+pillow>=10.0.0
+
+# NLTK for WordNet dictionary validation
+nltk>=3.8.0

@@ -10,6 +10,7 @@ help:
 	@echo "  make coderabbit-full      - Run comprehensive CodeRabbit analysis (manual)"
 	@echo "  make coderabbit-security  - Run security-focused analysis (manual)"
 	@echo "  make coderabbit-manual    - Run manual analysis via script"
+	@echo "  make coderabbit-workflows - Scan workflows/ directory only"
 	@echo "  make clean-reports        - Clean analysis reports"
 	@echo ""
 	@echo "🎯 Manual Trigger Design: CodeRabbit runs only when explicitly requested"
@@ -67,6 +68,13 @@ coderabbit-pr: clean-reports
 coderabbit-precommit:
 	@echo "🔧 Running pre-commit CodeRabbit checks..."
 	pre-commit run --all-files
+
+# Directed scans for specific directories
+coderabbit-workflows:
+	@echo "🔍 Running CodeRabbit analysis on workflows/ directory..."
+	python3 scripts/local_coderabbit.py --path ../workflows --format both
+	@echo "✅ Workflows analysis complete"
+	@echo "📋 Check reports/coderabbit/ for results"
 
 # Clean reports
 clean-reports:

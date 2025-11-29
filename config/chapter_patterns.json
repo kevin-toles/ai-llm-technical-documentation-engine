@@ -1,0 +1,6 @@
+{
+  "chapter_heading": "(?:chapter|ch\\.?)\\s+(\\d+)[:\\s]+(.+)",
+  "section_heading": "^(?:section|§)\\s+(\\d+(?:\\.\\d+)?)",
+  "part_heading": "^part\\s+(\\d+|[ivxlcdm]+)[:\\s]+(.+)",
+  "appendix_heading": "^appendix\\s+([a-z])[:\\s]+(.+)"
+}

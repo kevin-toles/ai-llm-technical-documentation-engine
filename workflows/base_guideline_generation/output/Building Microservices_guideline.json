@@ -1,0 +1,226 @@
+{
+  "book_metadata": {
+    "title": "Comprehensive Python Guidelines — Building Microservices, 2nd Edition (Chapters 1-15)",
+    "source": "Building Microservices, 2nd Edition, Chapters 1-15",
+    "book_name": "Building Microservices"
+  },
+  "source_info": {
+    "generated_by": "convert_md_to_json_guideline.py",
+    "generation_date": "2025-11-24",
+    "llm_enabled": false,
+    "conversion_source": "markdown_chapter_summaries"
+  },
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "title": "What Are Microservices?",
+      "page_range": {
+        "start": 1,
+        "end": 28
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Introduces microservices architecture fundamentals, defining what microservices are and their key characteristics including independent deployability, modularity, and service autonomy. Discusses benefits and challenges of distributed systems and compares microservices to monolithic architectures. [^1]",
+      "concepts": [
+        {
+          "name": "Gil",
+          "page": 23
+        }
+      ]
+    },
+    {
+      "chapter_number": 2,
+      "title": "How to Model Microservices",
+      "page_range": {
+        "start": 29,
+        "end": 68
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Explores how to model microservices using domain-driven design principles. Covers bounded contexts, service boundaries, information hiding, cohesion and coupling, and strategies for decomposing systems into appropriate service boundaries aligned with business capabilities. [^20]",
+      "concepts": [
+        {
+          "name": "Gil",
+          "page": 51
+        }
+      ]
+    },
+    {
+      "chapter_number": 3,
+      "title": "Splitting the Monolith",
+      "page_range": {
+        "start": 69,
+        "end": 112
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Details strategies for migrating from monolithic applications to microservices architecture. Covers the strangler pattern, incremental decomposition, database splitting techniques, parallel running, and practical approaches to modernizing legacy systems while maintaining business continuity. [^39]",
+      "concepts": []
+    },
+    {
+      "chapter_number": 4,
+      "title": "Microservice Communication Styles",
+      "page_range": {
+        "start": 113,
+        "end": 160
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Examines different communication styles for microservices including synchronous (REST, RPC) and asynchronous (messaging, events) approaches. Discusses choreography vs orchestration, event-driven architecture, and choosing appropriate communication patterns for different scenarios. [^58]",
+      "concepts": []
+    },
+    {
+      "chapter_number": 5,
+      "title": "Implementing Microservice Communication",
+      "page_range": {
+        "start": 161,
+        "end": 208
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Provides detailed implementation guidance for microservice communication including REST APIs, RPC frameworks (gRPC), GraphQL, message brokers (Kafka, RabbitMQ), API gateways, and service mesh technologies. Covers protocol selection and serialization formats. [^77]",
+      "concepts": []
+    },
+    {
+      "chapter_number": 6,
+      "title": "Workflow",
+      "page_range": {
+        "start": 209,
+        "end": 242
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Explores workflow management in distributed systems including orchestration and choreography patterns. Covers saga pattern for distributed transactions, compensation mechanisms, long-running processes, state machines, and coordinating business processes across multiple services. [^96]",
+      "concepts": [
+        {
+          "name": "Gil",
+          "page": 216
+        }
+      ]
+    },
+    {
+      "chapter_number": 7,
+      "title": "Build",
+      "page_range": {
+        "start": 243,
+        "end": 272
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Covers build automation and CI/CD pipeline design for microservices. Discusses continuous integration practices, containerization with Docker, artifact management, versioning strategies, dependency management, and automating the build process for multiple services. [^115]",
+      "concepts": [
+        {
+          "name": "Gil",
+          "page": 257
+        }
+      ]
+    },
+    {
+      "chapter_number": 8,
+      "title": "Deployment",
+      "page_range": {
+        "start": 273,
+        "end": 312
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Details deployment strategies and infrastructure for microservices including Kubernetes orchestration, cloud platforms, blue-green deployments, canary releases, rolling deployments, infrastructure automation, and managing multiple environments with containers. [^134]",
+      "concepts": []
+    },
+    {
+      "chapter_number": 9,
+      "title": "Testing",
+      "page_range": {
+        "start": 313,
+        "end": 350
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Examines testing strategies for microservices including the test pyramid, unit testing, integration testing, contract testing with consumer-driven contracts, end-to-end testing, test automation, and ensuring quality in distributed systems with appropriate test coverage. [^153]",
+      "concepts": []
+    },
+    {
+      "chapter_number": 10,
+      "title": "From Monitoring to Observability",
+      "page_range": {
+        "start": 351,
+        "end": 386
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Explores observability and monitoring in microservices environments. Covers metrics collection, centralized logging, distributed tracing, alerting strategies, building dashboards, implementing telemetry, health checks, and defining SLOs and SLAs for service reliability. [^172]",
+      "concepts": [
+        {
+          "name": "Gil",
+          "page": 354
+        }
+      ]
+    },
+    {
+      "chapter_number": 11,
+      "title": "Security",
+      "page_range": {
+        "start": 387,
+        "end": 424
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Addresses security concerns in microservices including authentication and authorization mechanisms, OAuth and JWT tokens, encryption and TLS/SSL, API security best practices, secret management, identity management, and implementing defense-in-depth security strategies. [^191]",
+      "concepts": [
+        {
+          "name": "Gil",
+          "page": 422
+        }
+      ]
+    },
+    {
+      "chapter_number": 12,
+      "title": "Resiliency",
+      "page_range": {
+        "start": 425,
+        "end": 448
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Focuses on building resilient microservices with fault tolerance patterns including circuit breakers, retry policies, timeouts, bulkhead pattern, graceful degradation, failure handling strategies, chaos engineering practices, and designing for redundancy and high availability. [^210]",
+      "concepts": [
+        {
+          "name": "Gil",
+          "page": 426
+        }
+      ]
+    },
+    {
+      "chapter_number": 13,
+      "title": "Scaling",
+      "page_range": {
+        "start": 449,
+        "end": 464
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Covers scaling strategies for microservices including horizontal and vertical scaling, load balancing techniques, caching strategies, performance optimization, autoscaling mechanisms, capacity planning, data partitioning and sharding, and achieving elasticity in distributed systems. [^228]",
+      "concepts": []
+    },
+    {
+      "chapter_number": 14,
+      "title": "User Interfaces",
+      "page_range": {
+        "start": 465,
+        "end": 472
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Examines user interface patterns for microservices including micro frontends, backend for frontend (BFF) pattern, API composition techniques, GraphQL for client queries, single-page applications (SPA), UI aggregation strategies, and designing frontend architectures for microservices. [^245]",
+      "concepts": [
+        {
+          "name": "Gil",
+          "page": 471
+        }
+      ]
+    },
+    {
+      "chapter_number": 15,
+      "title": "Organizational Structures",
+      "page_range": {
+        "start": 473,
+        "end": 473
+      },
+      "cross_text_analysis": "",
+      "chapter_summary": "Discusses organizational structures and team topologies for microservices success. Covers Conway's Law implications, DevOps culture, service ownership models, team autonomy, cross-functional teams, governance approaches, organizational alignment, and fostering effective collaboration. [^261]",
+      "concepts": [
+        {
+          "name": "Re",
+          "page": 473
+        }
+      ]
+    }
+  ],
+  "footnotes": []
+}

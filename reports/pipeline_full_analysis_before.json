@@ -1,0 +1,2408 @@
+{
+  "generated": "2025-11-29T12:51:16.880129",
+  "description": "Pipeline dry run analysis - checking workflow outputs",
+  "recent_changes": [
+    "Tab 1: Unstructured PDF extractor with PyMuPDF fallback",
+    "Tab 2: TOCParserStrategy + StatisticalExtractor with WordNet",
+    "Tab 4: BERTopic + Sentence Transformers integration",
+    "Tab 5: Topic-aware cross-referencing"
+  ],
+  "books_analyzed": 51,
+  "comparisons": [
+    {
+      "book_name": "A Philosophy of Software Design",
+      "analyzed_at": "2025-11-29T12:51:16.471194",
+      "tab1_pdf_extraction": {
+        "book_name": "A Philosophy of Software Design",
+        "json_file_exists": true,
+        "json_file_size_kb": 737.8095703125,
+        "total_pages": 0,
+        "chapters_detected": 25,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "A Philosophy of Software Design",
+        "metadata_file_exists": true,
+        "chapter_count": 25,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 3816.36,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "A Philosophy of Software Design",
+        "enriched_file_exists": true,
+        "chapter_count": 25,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 1.4,
+        "avg_keywords_enriched": 10.0,
+        "avg_concepts_enriched": 10.0,
+        "enrichment_method": "statistical",
+        "libraries": {
+          "yake": "0.4.8",
+          "summa": "1.2.0",
+          "scikit-learn": "1.3.2"
+        },
+        "corpus_size": 25
+      },
+      "tab5_guideline_generation": {
+        "book_name": "A Philosophy of Software Design",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "AI Agents In Action",
+      "analyzed_at": "2025-11-29T12:51:16.475542",
+      "tab1_pdf_extraction": {
+        "book_name": "AI Agents In Action",
+        "json_file_exists": true,
+        "json_file_size_kb": 1313.06640625,
+        "total_pages": 0,
+        "chapters_detected": 39,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "AI Agents In Action",
+        "metadata_file_exists": true,
+        "chapter_count": 39,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 3978.897435897436,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "AI Agents In Action",
+        "enriched_file_exists": true,
+        "chapter_count": 39,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 2.1794871794871793,
+        "avg_keywords_enriched": 10.0,
+        "avg_concepts_enriched": 10.0,
+        "enrichment_method": "statistical",
+        "libraries": {
+          "yake": "0.4.8",
+          "summa": "1.2.0",
+          "scikit-learn": "1.3.2"
+        },
+        "corpus_size": 25
+      },
+      "tab5_guideline_generation": {
+        "book_name": "AI Agents In Action",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "AI Agents and Applications",
+      "analyzed_at": "2025-11-29T12:51:16.487107",
+      "tab1_pdf_extraction": {
+        "book_name": "AI Agents and Applications",
+        "json_file_exists": true,
+        "json_file_size_kb": 1497.8291015625,
+        "total_pages": 0,
+        "chapters_detected": 62,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "AI Agents and Applications",
+        "metadata_file_exists": true,
+        "chapter_count": 62,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 2665.564516129032,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "AI Agents and Applications",
+        "enriched_file_exists": true,
+        "chapter_count": 62,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 1.6935483870967742,
+        "avg_keywords_enriched": 10.0,
+        "avg_concepts_enriched": 10.0,
+        "enrichment_method": "statistical",
+        "libraries": {
+          "yake": "0.4.8",
+          "summa": "1.2.0",
+          "scikit-learn": "1.3.2"
+        },
+        "corpus_size": 25
+      },
+      "tab5_guideline_generation": {
+        "book_name": "AI Agents and Applications",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "AI Engineering Building Applications",
+      "analyzed_at": "2025-11-29T12:51:16.498327",
+      "tab1_pdf_extraction": {
+        "book_name": "AI Engineering Building Applications",
+        "json_file_exists": true,
+        "json_file_size_kb": 2326.443359375,
+        "total_pages": 0,
+        "chapters_detected": 49,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "AI Engineering Building Applications",
+        "metadata_file_exists": true,
+        "chapter_count": 49,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 5242.836734693878,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "AI Engineering Building Applications",
+        "enriched_file_exists": true,
+        "chapter_count": 49,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 2.0816326530612246,
+        "avg_keywords_enriched": 10.0,
+        "avg_concepts_enriched": 9.938775510204081,
+        "enrichment_method": "statistical",
+        "libraries": {
+          "yake": "0.4.8",
+          "summa": "1.2.0",
+          "scikit-learn": "1.3.2"
+        },
+        "corpus_size": 25
+      },
+      "tab5_guideline_generation": {
+        "book_name": "AI Engineering Building Applications",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "AntiPatterns",
+      "analyzed_at": "2025-11-29T12:51:16.511339",
+      "tab1_pdf_extraction": {
+        "book_name": "AntiPatterns",
+        "json_file_exists": true,
+        "json_file_size_kb": 990.5478515625,
+        "total_pages": 0,
+        "chapters_detected": 18,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "AntiPatterns",
+        "metadata_file_exists": true,
+        "chapter_count": 18,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 7450.111111111111,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "AntiPatterns",
+        "enriched_file_exists": true,
+        "chapter_count": 18,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 1.3333333333333333,
+        "avg_keywords_enriched": 10.0,
+        "avg_concepts_enriched": 10.0,
+        "enrichment_method": "statistical",
+        "libraries": {
+          "yake": "0.4.8",
+          "summa": "1.2.0",
+          "scikit-learn": "1.3.2"
+        },
+        "corpus_size": 25
+      },
+      "tab5_guideline_generation": {
+        "book_name": "AntiPatterns",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "Architecture Patterns with Python",
+      "analyzed_at": "2025-11-29T12:51:16.516684",
+      "tab1_pdf_extraction": {
+        "book_name": "Architecture Patterns with Python",
+        "json_file_exists": true,
+        "json_file_size_kb": 584.0078125,
+        "total_pages": 0,
+        "chapters_detected": 0,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Architecture Patterns with Python",
+        "metadata_file_exists": true,
+        "chapter_count": 13,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 5849.2307692307695,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Architecture Patterns with Python",
+        "enriched_file_exists": true,
+        "chapter_count": 13,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 1.4615384615384615,
+        "avg_keywords_enriched": 10.0,
+        "avg_concepts_enriched": 10.0,
+        "enrichment_method": "statistical",
+        "libraries": {
+          "yake": "0.4.8",
+          "summa": "1.2.0",
+          "scikit-learn": "1.3.2"
+        },
+        "corpus_size": 25
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Architecture Patterns with Python",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "Building LLM Powered Applications",
+      "analyzed_at": "2025-11-29T12:51:16.521846",
+      "tab1_pdf_extraction": {
+        "book_name": "Building LLM Powered Applications",
+        "json_file_exists": true,
+        "json_file_size_kb": 1150.0390625,
+        "total_pages": 0,
+        "chapters_detected": 59,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Building LLM Powered Applications",
+        "metadata_file_exists": true,
+        "chapter_count": 59,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 9.983050847457626,
+        "avg_summary_length": 2163.271186440678,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Building LLM Powered Applications",
+        "enriched_file_exists": true,
+        "chapter_count": 59,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 1.2203389830508475,
+        "avg_keywords_enriched": 10.0,
+        "avg_concepts_enriched": 9.932203389830509,
+        "enrichment_method": "statistical",
+        "libraries": {
+          "yake": "0.4.8",
+          "summa": "1.2.0",
+          "scikit-learn": "1.3.2"
+        },
+        "corpus_size": 25
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Building LLM Powered Applications",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "Building Microservices",
+      "analyzed_at": "2025-11-29T12:51:16.530486",
+      "tab1_pdf_extraction": {
+        "book_name": "Building Microservices",
+        "json_file_exists": true,
+        "json_file_size_kb": 689.314453125,
+        "total_pages": 0,
+        "chapters_detected": 0,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Building Microservices",
+        "metadata_file_exists": true,
+        "chapter_count": 12,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 7835.5,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Building Microservices",
+        "enriched_file_exists": true,
+        "chapter_count": 12,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 1.3333333333333333,
+        "avg_keywords_enriched": 10.0,
+        "avg_concepts_enriched": 10.0,
+        "enrichment_method": "statistical",
+        "libraries": {
+          "yake": "0.4.8",
+          "summa": "1.2.0",
+          "scikit-learn": "1.3.2"
+        },
+        "corpus_size": 25
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Building Microservices",
+        "guideline_file_exists": true,
+        "section_count": 15,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": "json"
+      }
+    },
+    {
+      "book_name": "Building Python Microservices with FastAPI",
+      "analyzed_at": "2025-11-29T12:51:16.537199",
+      "tab1_pdf_extraction": {
+        "book_name": "Building Python Microservices with FastAPI",
+        "json_file_exists": true,
+        "json_file_size_kb": 829.814453125,
+        "total_pages": 0,
+        "chapters_detected": 0,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Building Python Microservices with FastAPI",
+        "metadata_file_exists": true,
+        "chapter_count": 10,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 17631.2,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Building Python Microservices with FastAPI",
+        "enriched_file_exists": true,
+        "chapter_count": 10,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 1.0,
+        "avg_keywords_enriched": 10.0,
+        "avg_concepts_enriched": 10.0,
+        "enrichment_method": "statistical",
+        "libraries": {
+          "yake": "0.4.8",
+          "summa": "1.2.0",
+          "scikit-learn": "1.3.2"
+        },
+        "corpus_size": 25
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Building Python Microservices with FastAPI",
+        "guideline_file_exists": true,
+        "section_count": 14,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": "json"
+      }
+    },
+    {
+      "book_name": "C++ Concurrency in Action",
+      "analyzed_at": "2025-11-29T12:51:16.542703",
+      "tab1_pdf_extraction": {
+        "book_name": "C++ Concurrency in Action",
+        "json_file_exists": true,
+        "json_file_size_kb": 2747.7470703125,
+        "total_pages": 0,
+        "chapters_detected": 54,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "C++ Concurrency in Action",
+        "metadata_file_exists": true,
+        "chapter_count": 54,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 5632.407407407408,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "C++ Concurrency in Action",
+        "enriched_file_exists": false,
+        "chapter_count": 0,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 0.0,
+        "avg_keywords_enriched": 0.0,
+        "avg_concepts_enriched": 0.0,
+        "enrichment_method": "",
+        "libraries": {},
+        "corpus_size": 0
+      },
+      "tab5_guideline_generation": {
+        "book_name": "C++ Concurrency in Action",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "C++ Templates_ The Complete Guide",
+      "analyzed_at": "2025-11-29T12:51:16.556987",
+      "tab1_pdf_extraction": {
+        "book_name": "C++ Templates_ The Complete Guide",
+        "json_file_exists": true,
+        "json_file_size_kb": 4200.6669921875,
+        "total_pages": 0,
+        "chapters_detected": 81,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "C++ Templates_ The Complete Guide",
+        "metadata_file_exists": true,
+        "chapter_count": 81,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 9.358024691358025,
+        "avg_summary_length": 5585.395061728395,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "C++ Templates_ The Complete Guide",
+        "enriched_file_exists": false,
+        "chapter_count": 0,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 0.0,
+        "avg_keywords_enriched": 0.0,
+        "avg_concepts_enriched": 0.0,
+        "enrichment_method": "",
+        "libraries": {},
+        "corpus_size": 0
+      },
+      "tab5_guideline_generation": {
+        "book_name": "C++ Templates_ The Complete Guide",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "Computer Systems A Programmer\u2019s Perspective",
+      "analyzed_at": "2025-11-29T12:51:16.574068",
+      "tab1_pdf_extraction": {
+        "book_name": "Computer Systems A Programmer\u2019s Perspective",
+        "json_file_exists": true,
+        "json_file_size_kb": 4744.80859375,
+        "total_pages": 0,
+        "chapters_detected": 55,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Computer Systems A Programmer\u2019s Perspective",
+        "metadata_file_exists": true,
+        "chapter_count": 55,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 11534.181818181818,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Computer Systems A Programmer\u2019s Perspective",
+        "enriched_file_exists": false,
+        "chapter_count": 0,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 0.0,
+        "avg_keywords_enriched": 0.0,
+        "avg_concepts_enriched": 0.0,
+        "enrichment_method": "",
+        "libraries": {},
+        "corpus_size": 0
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Computer Systems A Programmer\u2019s Perspective",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "Data-Oriented Design",
+      "analyzed_at": "2025-11-29T12:51:16.592526",
+      "tab1_pdf_extraction": {
+        "book_name": "Data-Oriented Design",
+        "json_file_exists": true,
+        "json_file_size_kb": 804.9501953125,
+        "total_pages": 0,
+        "chapters_detected": 11,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Data-Oriented Design",
+        "metadata_file_exists": true,
+        "chapter_count": 11,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 8109.636363636364,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Data-Oriented Design",
+        "enriched_file_exists": false,
+        "chapter_count": 0,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 0.0,
+        "avg_keywords_enriched": 0.0,
+        "avg_concepts_enriched": 0.0,
+        "enrichment_method": "",
+        "libraries": {},
+        "corpus_size": 0
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Data-Oriented Design",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "Designing Data-Intensive Applications",
+      "analyzed_at": "2025-11-29T12:51:16.596809",
+      "tab1_pdf_extraction": {
+        "book_name": "Designing Data-Intensive Applications",
+        "json_file_exists": true,
+        "json_file_size_kb": 2989.0576171875,
+        "total_pages": 0,
+        "chapters_detected": 62,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Designing Data-Intensive Applications",
+        "metadata_file_exists": true,
+        "chapter_count": 62,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 5446.048387096775,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Designing Data-Intensive Applications",
+        "enriched_file_exists": false,
+        "chapter_count": 0,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 0.0,
+        "avg_keywords_enriched": 0.0,
+        "avg_concepts_enriched": 0.0,
+        "enrichment_method": "",
+        "libraries": {},
+        "corpus_size": 0
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Designing Data-Intensive Applications",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "analyzed_at": "2025-11-29T12:51:16.607092",
+      "tab1_pdf_extraction": {
+        "book_name": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+        "json_file_exists": true,
+        "json_file_size_kb": 1732.720703125,
+        "total_pages": 0,
+        "chapters_detected": 54,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+        "metadata_file_exists": true,
+        "chapter_count": 54,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 4173.833333333333,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+        "enriched_file_exists": false,
+        "chapter_count": 0,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 0.0,
+        "avg_keywords_enriched": 0.0,
+        "avg_concepts_enriched": 0.0,
+        "enrichment_method": "",
+        "libraries": {},
+        "corpus_size": 0
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "Effective-Python",
+      "analyzed_at": "2025-11-29T12:51:16.613622",
+      "tab1_pdf_extraction": {
+        "book_name": "Effective-Python",
+        "json_file_exists": true,
+        "json_file_size_kb": 1594.9541015625,
+        "total_pages": 0,
+        "chapters_detected": 44,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Effective-Python",
+        "metadata_file_exists": true,
+        "chapter_count": 44,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 3698.931818181818,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Effective-Python",
+        "enriched_file_exists": false,
+        "chapter_count": 0,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 0.0,
+        "avg_keywords_enriched": 0.0,
+        "avg_concepts_enriched": 0.0,
+        "enrichment_method": "",
+        "libraries": {},
+        "corpus_size": 0
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Effective-Python",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "Effective_Modern_C++",
+      "analyzed_at": "2025-11-29T12:51:16.620000",
+      "tab1_pdf_extraction": {
+        "book_name": "Effective_Modern_C++",
+        "json_file_exists": true,
+        "json_file_size_kb": 1445.5205078125,
+        "total_pages": 0,
+        "chapters_detected": 32,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Effective_Modern_C++",
+        "metadata_file_exists": true,
+        "chapter_count": 32,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 5281.6875,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Effective_Modern_C++",
+        "enriched_file_exists": false,
+        "chapter_count": 0,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 0.0,
+        "avg_keywords_enriched": 0.0,
+        "avg_concepts_enriched": 0.0,
+        "enrichment_method": "",
+        "libraries": {},
+        "corpus_size": 0
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Effective_Modern_C++",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "Fluent Python 2nd",
+      "analyzed_at": "2025-11-29T12:51:16.628339",
+      "tab1_pdf_extraction": {
+        "book_name": "Fluent Python 2nd",
+        "json_file_exists": true,
+        "json_file_size_kb": 2029.7880859375,
+        "total_pages": 0,
+        "chapters_detected": 0,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Fluent Python 2nd",
+        "metadata_file_exists": true,
+        "chapter_count": 23,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 11224.173913043478,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Fluent Python 2nd",
+        "enriched_file_exists": true,
+        "chapter_count": 23,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 1.173913043478261,
+        "avg_keywords_enriched": 10.0,
+        "avg_concepts_enriched": 10.0,
+        "enrichment_method": "statistical",
+        "libraries": {
+          "yake": "0.4.8",
+          "summa": "1.2.0",
+          "scikit-learn": "1.3.2"
+        },
+        "corpus_size": 25
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Fluent Python 2nd",
+        "guideline_file_exists": true,
+        "section_count": 15,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": "json"
+      }
+    },
+    {
+      "book_name": "Game Programming Gems 1",
+      "analyzed_at": "2025-11-29T12:51:16.639113",
+      "tab1_pdf_extraction": {
+        "book_name": "Game Programming Gems 1",
+        "json_file_exists": true,
+        "json_file_size_kb": 2286.990234375,
+        "total_pages": 0,
+        "chapters_detected": 62,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Game Programming Gems 1",
+        "metadata_file_exists": true,
+        "chapter_count": 62,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 4503.822580645161,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Game Programming Gems 1",
+        "enriched_file_exists": false,
+        "chapter_count": 0,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 0.0,
+        "avg_keywords_enriched": 0.0,
+        "avg_concepts_enriched": 0.0,
+        "enrichment_method": "",
+        "libraries": {},
+        "corpus_size": 0
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Game Programming Gems 1",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "Game Programming Gems 2",
+      "analyzed_at": "2025-11-29T12:51:16.647998",
+      "tab1_pdf_extraction": {
+        "book_name": "Game Programming Gems 2",
+        "json_file_exists": true,
+        "json_file_size_kb": 2326.30859375,
+        "total_pages": 0,
+        "chapters_detected": 56,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Game Programming Gems 2",
+        "metadata_file_exists": true,
+        "chapter_count": 56,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 5163.107142857143,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Game Programming Gems 2",
+        "enriched_file_exists": false,
+        "chapter_count": 0,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 0.0,
+        "avg_keywords_enriched": 0.0,
+        "avg_concepts_enriched": 0.0,
+        "enrichment_method": "",
+        "libraries": {},
+        "corpus_size": 0
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Game Programming Gems 2",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "Game Programming Gems 3",
+      "analyzed_at": "2025-11-29T12:51:16.661221",
+      "tab1_pdf_extraction": {
+        "book_name": "Game Programming Gems 3",
+        "json_file_exists": true,
+        "json_file_size_kb": 2608.09375,
+        "total_pages": 0,
+        "chapters_detected": 66,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Game Programming Gems 3",
+        "metadata_file_exists": true,
+        "chapter_count": 66,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 4738.121212121212,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Game Programming Gems 3",
+        "enriched_file_exists": false,
+        "chapter_count": 0,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 0.0,
+        "avg_keywords_enriched": 0.0,
+        "avg_concepts_enriched": 0.0,
+        "enrichment_method": "",
+        "libraries": {},
+        "corpus_size": 0
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Game Programming Gems 3",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "Game Programming Gems 4",
+      "analyzed_at": "2025-11-29T12:51:16.671052",
+      "tab1_pdf_extraction": {
+        "book_name": "Game Programming Gems 4",
+        "json_file_exists": true,
+        "json_file_size_kb": 111.6865234375,
+        "total_pages": 0,
+        "chapters_detected": 36,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Game Programming Gems 4",
+        "metadata_file_exists": true,
+        "chapter_count": 36,
+        "avg_keywords_per_chapter": 3.0,
+        "avg_concepts_per_chapter": 0.0,
+        "avg_summary_length": 159.75,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Game Programming Gems 4",
+        "enriched_file_exists": false,
+        "chapter_count": 0,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 0.0,
+        "avg_keywords_enriched": 0.0,
+        "avg_concepts_enriched": 0.0,
+        "enrichment_method": "",
+        "libraries": {},
+        "corpus_size": 0
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Game Programming Gems 4",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "Game Programming Gems 6",
+      "analyzed_at": "2025-11-29T12:51:16.673083",
+      "tab1_pdf_extraction": {
+        "book_name": "Game Programming Gems 6",
+        "json_file_exists": true,
+        "json_file_size_kb": 105.505859375,
+        "total_pages": 0,
+        "chapters_detected": 35,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Game Programming Gems 6",
+        "metadata_file_exists": true,
+        "chapter_count": 35,
+        "avg_keywords_per_chapter": 3.2857142857142856,
+        "avg_concepts_per_chapter": 0.2857142857142857,
+        "avg_summary_length": 104.37142857142857,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Game Programming Gems 6",
+        "enriched_file_exists": false,
+        "chapter_count": 0,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 0.0,
+        "avg_keywords_enriched": 0.0,
+        "avg_concepts_enriched": 0.0,
+        "enrichment_method": "",
+        "libraries": {},
+        "corpus_size": 0
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Game Programming Gems 6",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "Game Programming Gems 7",
+      "analyzed_at": "2025-11-29T12:51:16.674909",
+      "tab1_pdf_extraction": {
+        "book_name": "Game Programming Gems 7",
+        "json_file_exists": true,
+        "json_file_size_kb": 2500.177734375,
+        "total_pages": 0,
+        "chapters_detected": 65,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Game Programming Gems 7",
+        "metadata_file_exists": true,
+        "chapter_count": 65,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 4563.9384615384615,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Game Programming Gems 7",
+        "enriched_file_exists": false,
+        "chapter_count": 0,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 0.0,
+        "avg_keywords_enriched": 0.0,
+        "avg_concepts_enriched": 0.0,
+        "enrichment_method": "",
+        "libraries": {},
+        "corpus_size": 0
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Game Programming Gems 7",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "Game Programming Gems 8",
+      "analyzed_at": "2025-11-29T12:51:16.684406",
+      "tab1_pdf_extraction": {
+        "book_name": "Game Programming Gems 8",
+        "json_file_exists": true,
+        "json_file_size_kb": 2704.8828125,
+        "total_pages": 0,
+        "chapters_detected": 57,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Game Programming Gems 8",
+        "metadata_file_exists": true,
+        "chapter_count": 57,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 5792.649122807017,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Game Programming Gems 8",
+        "enriched_file_exists": false,
+        "chapter_count": 0,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 0.0,
+        "avg_keywords_enriched": 0.0,
+        "avg_concepts_enriched": 0.0,
+        "enrichment_method": "",
+        "libraries": {},
+        "corpus_size": 0
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Game Programming Gems 8",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "Game_Engine_Architecture",
+      "analyzed_at": "2025-11-29T12:51:16.695279",
+      "tab1_pdf_extraction": {
+        "book_name": "Game_Engine_Architecture",
+        "json_file_exists": true,
+        "json_file_size_kb": 3650.138671875,
+        "total_pages": 0,
+        "chapters_detected": 42,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Game_Engine_Architecture",
+        "metadata_file_exists": true,
+        "chapter_count": 42,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 10201.404761904761,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Game_Engine_Architecture",
+        "enriched_file_exists": false,
+        "chapter_count": 0,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 0.0,
+        "avg_keywords_enriched": 0.0,
+        "avg_concepts_enriched": 0.0,
+        "enrichment_method": "",
+        "libraries": {},
+        "corpus_size": 0
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Game_Engine_Architecture",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "Generative AI with LangChain_2e",
+      "analyzed_at": "2025-11-29T12:51:16.709407",
+      "tab1_pdf_extraction": {
+        "book_name": "Generative AI with LangChain_2e",
+        "json_file_exists": true,
+        "json_file_size_kb": 1796.830078125,
+        "total_pages": 0,
+        "chapters_detected": 56,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Generative AI with LangChain_2e",
+        "metadata_file_exists": true,
+        "chapter_count": 56,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 3803.660714285714,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Generative AI with LangChain_2e",
+        "enriched_file_exists": true,
+        "chapter_count": 56,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 1.75,
+        "avg_keywords_enriched": 10.0,
+        "avg_concepts_enriched": 10.0,
+        "enrichment_method": "statistical",
+        "libraries": {
+          "yake": "0.4.8",
+          "summa": "1.2.0",
+          "scikit-learn": "1.3.2"
+        },
+        "corpus_size": 25
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Generative AI with LangChain_2e",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "LLM-Engineers-Handbook",
+      "analyzed_at": "2025-11-29T12:51:16.720093",
+      "tab1_pdf_extraction": {
+        "book_name": "LLM-Engineers-Handbook",
+        "json_file_exists": true,
+        "json_file_size_kb": 1865.451171875,
+        "total_pages": 0,
+        "chapters_detected": 57,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "LLM-Engineers-Handbook",
+        "metadata_file_exists": true,
+        "chapter_count": 57,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 3900.1052631578946,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "LLM-Engineers-Handbook",
+        "enriched_file_exists": true,
+        "chapter_count": 57,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 1.6140350877192982,
+        "avg_keywords_enriched": 10.0,
+        "avg_concepts_enriched": 10.0,
+        "enrichment_method": "statistical",
+        "libraries": {
+          "yake": "0.4.8",
+          "summa": "1.2.0",
+          "scikit-learn": "1.3.2"
+        },
+        "corpus_size": 25
+      },
+      "tab5_guideline_generation": {
+        "book_name": "LLM-Engineers-Handbook",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "Learning Python Ed6",
+      "analyzed_at": "2025-11-29T12:51:16.734755",
+      "tab1_pdf_extraction": {
+        "book_name": "Learning Python Ed6",
+        "json_file_exists": true,
+        "json_file_size_kb": 3537.0869140625,
+        "total_pages": 0,
+        "chapters_detected": 10,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Learning Python Ed6",
+        "metadata_file_exists": true,
+        "chapter_count": 10,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 19050.5,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Learning Python Ed6",
+        "enriched_file_exists": true,
+        "chapter_count": 10,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 2.4,
+        "avg_keywords_enriched": 10.0,
+        "avg_concepts_enriched": 10.0,
+        "enrichment_method": "statistical",
+        "libraries": {
+          "yake": "0.4.8",
+          "summa": "1.2.0",
+          "scikit-learn": "1.3.2"
+        },
+        "corpus_size": 25
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Learning Python Ed6",
+        "guideline_file_exists": true,
+        "section_count": 41,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": "json"
+      }
+    },
+    {
+      "book_name": "Machine Learning Design Patterns",
+      "analyzed_at": "2025-11-29T12:51:16.751748",
+      "tab1_pdf_extraction": {
+        "book_name": "Machine Learning Design Patterns",
+        "json_file_exists": true,
+        "json_file_size_kb": 1742.3818359375,
+        "total_pages": 0,
+        "chapters_detected": 58,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Machine Learning Design Patterns",
+        "metadata_file_exists": true,
+        "chapter_count": 58,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 4010.5862068965516,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Machine Learning Design Patterns",
+        "enriched_file_exists": false,
+        "chapter_count": 0,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 0.0,
+        "avg_keywords_enriched": 0.0,
+        "avg_concepts_enriched": 0.0,
+        "enrichment_method": "",
+        "libraries": {},
+        "corpus_size": 0
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Machine Learning Design Patterns",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "Machine Learning Engineering",
+      "analyzed_at": "2025-11-29T12:51:16.758102",
+      "tab1_pdf_extraction": {
+        "book_name": "Machine Learning Engineering",
+        "json_file_exists": true,
+        "json_file_size_kb": 1302.3349609375,
+        "total_pages": 0,
+        "chapters_detected": 34,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Machine Learning Engineering",
+        "metadata_file_exists": true,
+        "chapter_count": 34,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 5134.0,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Machine Learning Engineering",
+        "enriched_file_exists": true,
+        "chapter_count": 34,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 2.264705882352941,
+        "avg_keywords_enriched": 10.0,
+        "avg_concepts_enriched": 10.0,
+        "enrichment_method": "statistical",
+        "libraries": {
+          "yake": "0.4.8",
+          "summa": "1.2.0",
+          "scikit-learn": "1.3.2"
+        },
+        "corpus_size": 25
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Machine Learning Engineering",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "Microservice APIs Using Python Flask FastAPI",
+      "analyzed_at": "2025-11-29T12:51:16.768243",
+      "tab1_pdf_extraction": {
+        "book_name": "Microservice APIs Using Python Flask FastAPI",
+        "json_file_exists": true,
+        "json_file_size_kb": 961.955078125,
+        "total_pages": 0,
+        "chapters_detected": 0,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Microservice APIs Using Python Flask FastAPI",
+        "metadata_file_exists": true,
+        "chapter_count": 27,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 9.925925925925926,
+        "avg_summary_length": 7813.259259259259,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Microservice APIs Using Python Flask FastAPI",
+        "enriched_file_exists": true,
+        "chapter_count": 27,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 1.1851851851851851,
+        "avg_keywords_enriched": 10.0,
+        "avg_concepts_enriched": 10.0,
+        "enrichment_method": "statistical",
+        "libraries": {
+          "yake": "0.4.8",
+          "summa": "1.2.0",
+          "scikit-learn": "1.3.2"
+        },
+        "corpus_size": 25
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Microservice APIs Using Python Flask FastAPI",
+        "guideline_file_exists": true,
+        "section_count": 13,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": "json"
+      }
+    },
+    {
+      "book_name": "Microservice Architecture",
+      "analyzed_at": "2025-11-29T12:51:16.776025",
+      "tab1_pdf_extraction": {
+        "book_name": "Microservice Architecture",
+        "json_file_exists": true,
+        "json_file_size_kb": 328.40234375,
+        "total_pages": 0,
+        "chapters_detected": 0,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Microservice Architecture",
+        "metadata_file_exists": true,
+        "chapter_count": 8,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 6527.25,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Microservice Architecture",
+        "enriched_file_exists": true,
+        "chapter_count": 8,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 3.25,
+        "avg_keywords_enriched": 10.0,
+        "avg_concepts_enriched": 10.0,
+        "enrichment_method": "statistical",
+        "libraries": {
+          "yake": "0.4.8",
+          "summa": "1.2.0",
+          "scikit-learn": "1.3.2"
+        },
+        "corpus_size": 25
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Microservice Architecture",
+        "guideline_file_exists": true,
+        "section_count": 6,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": "json"
+      }
+    },
+    {
+      "book_name": "Microservices Up and Running",
+      "analyzed_at": "2025-11-29T12:51:16.779242",
+      "tab1_pdf_extraction": {
+        "book_name": "Microservices Up and Running",
+        "json_file_exists": true,
+        "json_file_size_kb": 679.1884765625,
+        "total_pages": 0,
+        "chapters_detected": 0,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Microservices Up and Running",
+        "metadata_file_exists": true,
+        "chapter_count": 1,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 24753.0,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Microservices Up and Running",
+        "enriched_file_exists": true,
+        "chapter_count": 1,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 1.0,
+        "avg_keywords_enriched": 10.0,
+        "avg_concepts_enriched": 10.0,
+        "enrichment_method": "statistical",
+        "libraries": {
+          "yake": "0.4.8",
+          "summa": "1.2.0",
+          "scikit-learn": "1.3.2"
+        },
+        "corpus_size": 25
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Microservices Up and Running",
+        "guideline_file_exists": true,
+        "section_count": 12,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": "json"
+      }
+    },
+    {
+      "book_name": "More Effective C++",
+      "analyzed_at": "2025-11-29T12:51:16.783022",
+      "tab1_pdf_extraction": {
+        "book_name": "More Effective C++",
+        "json_file_exists": true,
+        "json_file_size_kb": 1349.9326171875,
+        "total_pages": 0,
+        "chapters_detected": 33,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "More Effective C++",
+        "metadata_file_exists": true,
+        "chapter_count": 33,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 4503.636363636364,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "More Effective C++",
+        "enriched_file_exists": false,
+        "chapter_count": 0,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 0.0,
+        "avg_keywords_enriched": 0.0,
+        "avg_concepts_enriched": 0.0,
+        "enrichment_method": "",
+        "libraries": {},
+        "corpus_size": 0
+      },
+      "tab5_guideline_generation": {
+        "book_name": "More Effective C++",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "Python Architecture Patterns",
+      "analyzed_at": "2025-11-29T12:51:16.788236",
+      "tab1_pdf_extraction": {
+        "book_name": "Python Architecture Patterns",
+        "json_file_exists": true,
+        "json_file_size_kb": 1095.6650390625,
+        "total_pages": 0,
+        "chapters_detected": 0,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Python Architecture Patterns",
+        "metadata_file_exists": true,
+        "chapter_count": 16,
+        "avg_keywords_per_chapter": 14.9375,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 15721.0,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Python Architecture Patterns",
+        "enriched_file_exists": true,
+        "chapter_count": 16,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 1.25,
+        "avg_keywords_enriched": 10.0,
+        "avg_concepts_enriched": 10.0,
+        "enrichment_method": "statistical",
+        "libraries": {
+          "yake": "0.4.8",
+          "summa": "1.2.0",
+          "scikit-learn": "1.3.2"
+        },
+        "corpus_size": 25
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Python Architecture Patterns",
+        "guideline_file_exists": true,
+        "section_count": 16,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": "json"
+      }
+    },
+    {
+      "book_name": "Python Cookbook 3rd",
+      "analyzed_at": "2025-11-29T12:51:16.797822",
+      "tab1_pdf_extraction": {
+        "book_name": "Python Cookbook 3rd",
+        "json_file_exists": true,
+        "json_file_size_kb": 1308.23046875,
+        "total_pages": 0,
+        "chapters_detected": 15,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Python Cookbook 3rd",
+        "metadata_file_exists": true,
+        "chapter_count": 15,
+        "avg_keywords_per_chapter": 14.866666666666667,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 17690.8,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Python Cookbook 3rd",
+        "enriched_file_exists": true,
+        "chapter_count": 15,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 1.8,
+        "avg_keywords_enriched": 10.0,
+        "avg_concepts_enriched": 10.0,
+        "enrichment_method": "statistical",
+        "libraries": {
+          "yake": "0.4.8",
+          "summa": "1.2.0",
+          "scikit-learn": "1.3.2"
+        },
+        "corpus_size": 25
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Python Cookbook 3rd",
+        "guideline_file_exists": true,
+        "section_count": 15,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": "json"
+      }
+    },
+    {
+      "book_name": "Python Data Analysis 3rd",
+      "analyzed_at": "2025-11-29T12:51:16.807399",
+      "tab1_pdf_extraction": {
+        "book_name": "Python Data Analysis 3rd",
+        "json_file_exists": true,
+        "json_file_size_kb": 1039.8740234375,
+        "total_pages": 0,
+        "chapters_detected": 0,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Python Data Analysis 3rd",
+        "metadata_file_exists": true,
+        "chapter_count": 9,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 8573.888888888889,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Python Data Analysis 3rd",
+        "enriched_file_exists": true,
+        "chapter_count": 9,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 1.3333333333333333,
+        "avg_keywords_enriched": 10.0,
+        "avg_concepts_enriched": 10.0,
+        "enrichment_method": "statistical",
+        "libraries": {
+          "yake": "0.4.8",
+          "summa": "1.2.0",
+          "scikit-learn": "1.3.2"
+        },
+        "corpus_size": 25
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Python Data Analysis 3rd",
+        "guideline_file_exists": true,
+        "section_count": 13,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": "json"
+      }
+    },
+    {
+      "book_name": "Python Distilled",
+      "analyzed_at": "2025-11-29T12:51:16.814523",
+      "tab1_pdf_extraction": {
+        "book_name": "Python Distilled",
+        "json_file_exists": true,
+        "json_file_size_kb": 649.25390625,
+        "total_pages": 0,
+        "chapters_detected": 0,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Python Distilled",
+        "metadata_file_exists": true,
+        "chapter_count": 5,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 15265.4,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Python Distilled",
+        "enriched_file_exists": true,
+        "chapter_count": 5,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 1.8,
+        "avg_keywords_enriched": 10.0,
+        "avg_concepts_enriched": 10.0,
+        "enrichment_method": "statistical",
+        "libraries": {
+          "yake": "0.4.8",
+          "summa": "1.2.0",
+          "scikit-learn": "1.3.2"
+        },
+        "corpus_size": 25
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Python Distilled",
+        "guideline_file_exists": true,
+        "section_count": 9,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": "json"
+      }
+    },
+    {
+      "book_name": "Python Essential Reference 4th",
+      "analyzed_at": "2025-11-29T12:51:16.820744",
+      "tab1_pdf_extraction": {
+        "book_name": "Python Essential Reference 4th",
+        "json_file_exists": true,
+        "json_file_size_kb": 1712.8388671875,
+        "total_pages": 0,
+        "chapters_detected": 0,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Python Essential Reference 4th",
+        "metadata_file_exists": true,
+        "chapter_count": 24,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 12664.333333333334,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Python Essential Reference 4th",
+        "enriched_file_exists": true,
+        "chapter_count": 24,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 1.3333333333333333,
+        "avg_keywords_enriched": 10.0,
+        "avg_concepts_enriched": 10.0,
+        "enrichment_method": "statistical",
+        "libraries": {
+          "yake": "0.4.8",
+          "summa": "1.2.0",
+          "scikit-learn": "1.3.2"
+        },
+        "corpus_size": 25
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Python Essential Reference 4th",
+        "guideline_file_exists": true,
+        "section_count": 14,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": "json"
+      }
+    },
+    {
+      "book_name": "Python Microservices Development",
+      "analyzed_at": "2025-11-29T12:51:16.831258",
+      "tab1_pdf_extraction": {
+        "book_name": "Python Microservices Development",
+        "json_file_exists": true,
+        "json_file_size_kb": 591.6220703125,
+        "total_pages": 0,
+        "chapters_detected": 0,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Python Microservices Development",
+        "metadata_file_exists": true,
+        "chapter_count": 12,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 10829.416666666666,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Python Microservices Development",
+        "enriched_file_exists": true,
+        "chapter_count": 12,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 1.4166666666666667,
+        "avg_keywords_enriched": 10.0,
+        "avg_concepts_enriched": 10.0,
+        "enrichment_method": "statistical",
+        "libraries": {
+          "yake": "0.4.8",
+          "summa": "1.2.0",
+          "scikit-learn": "1.3.2"
+        },
+        "corpus_size": 25
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Python Microservices Development",
+        "guideline_file_exists": true,
+        "section_count": 11,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": "json"
+      }
+    },
+    {
+      "book_name": "Release It! Design and Deploy Production-Ready Software",
+      "analyzed_at": "2025-11-29T12:51:16.836434",
+      "tab1_pdf_extraction": {
+        "book_name": "Release It! Design and Deploy Production-Ready Software",
+        "json_file_exists": true,
+        "json_file_size_kb": 1666.1904296875,
+        "total_pages": 0,
+        "chapters_detected": 44,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Release It! Design and Deploy Production-Ready Software",
+        "metadata_file_exists": true,
+        "chapter_count": 44,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 5156.704545454545,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Release It! Design and Deploy Production-Ready Software",
+        "enriched_file_exists": false,
+        "chapter_count": 0,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 0.0,
+        "avg_keywords_enriched": 0.0,
+        "avg_concepts_enriched": 0.0,
+        "enrichment_method": "",
+        "libraries": {},
+        "corpus_size": 0
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Release It! Design and Deploy Production-Ready Software",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "Reliable Machine Learning",
+      "analyzed_at": "2025-11-29T12:51:16.842395",
+      "tab1_pdf_extraction": {
+        "book_name": "Reliable Machine Learning",
+        "json_file_exists": true,
+        "json_file_size_kb": 1993.3955078125,
+        "total_pages": 0,
+        "chapters_detected": 47,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Reliable Machine Learning",
+        "metadata_file_exists": true,
+        "chapter_count": 47,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 9.893617021276595,
+        "avg_summary_length": 5671.425531914893,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Reliable Machine Learning",
+        "enriched_file_exists": true,
+        "chapter_count": 47,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 1.872340425531915,
+        "avg_keywords_enriched": 10.0,
+        "avg_concepts_enriched": 10.0,
+        "enrichment_method": "statistical",
+        "libraries": {
+          "yake": "0.4.8",
+          "summa": "1.2.0",
+          "scikit-learn": "1.3.2"
+        },
+        "corpus_size": 25
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Reliable Machine Learning",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "Software Architecture",
+      "analyzed_at": "2025-11-29T12:51:16.851233",
+      "tab1_pdf_extraction": {
+        "book_name": "Software Architecture",
+        "json_file_exists": true,
+        "json_file_size_kb": 1641.66796875,
+        "total_pages": 0,
+        "chapters_detected": 45,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Software Architecture",
+        "metadata_file_exists": true,
+        "chapter_count": 45,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 5459.822222222222,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Software Architecture",
+        "enriched_file_exists": false,
+        "chapter_count": 0,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 0.0,
+        "avg_keywords_enriched": 0.0,
+        "avg_concepts_enriched": 0.0,
+        "enrichment_method": "",
+        "libraries": {},
+        "corpus_size": 0
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Software Architecture",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "TestBook",
+      "analyzed_at": "2025-11-29T12:51:16.857816",
+      "tab1_pdf_extraction": {
+        "book_name": "TestBook",
+        "json_file_exists": false,
+        "json_file_size_kb": 0.0,
+        "total_pages": 0,
+        "chapters_detected": 0,
+        "extraction_method": "",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "TestBook",
+        "metadata_file_exists": false,
+        "chapter_count": 0,
+        "avg_keywords_per_chapter": 0.0,
+        "avg_concepts_per_chapter": 0.0,
+        "avg_summary_length": 0.0,
+        "has_page_ranges": false,
+        "extraction_method": ""
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "TestBook",
+        "enriched_file_exists": false,
+        "chapter_count": 0,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 0.0,
+        "avg_keywords_enriched": 0.0,
+        "avg_concepts_enriched": 0.0,
+        "enrichment_method": "",
+        "libraries": {},
+        "corpus_size": 0
+      },
+      "tab5_guideline_generation": {
+        "book_name": "TestBook",
+        "guideline_file_exists": true,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": "json"
+      }
+    },
+    {
+      "book_name": "Test_Book",
+      "analyzed_at": "2025-11-29T12:51:16.858174",
+      "tab1_pdf_extraction": {
+        "book_name": "Test_Book",
+        "json_file_exists": false,
+        "json_file_size_kb": 0.0,
+        "total_pages": 0,
+        "chapters_detected": 0,
+        "extraction_method": "",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "Test_Book",
+        "metadata_file_exists": false,
+        "chapter_count": 0,
+        "avg_keywords_per_chapter": 0.0,
+        "avg_concepts_per_chapter": 0.0,
+        "avg_summary_length": 0.0,
+        "has_page_ranges": false,
+        "extraction_method": ""
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "Test_Book",
+        "enriched_file_exists": false,
+        "chapter_count": 0,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 0.0,
+        "avg_keywords_enriched": 0.0,
+        "avg_concepts_enriched": 0.0,
+        "enrichment_method": "",
+        "libraries": {},
+        "corpus_size": 0
+      },
+      "tab5_guideline_generation": {
+        "book_name": "Test_Book",
+        "guideline_file_exists": true,
+        "section_count": 1,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": "json"
+      }
+    },
+    {
+      "book_name": "The Little Book Of Python-Anti-Patterns",
+      "analyzed_at": "2025-11-29T12:51:16.858847",
+      "tab1_pdf_extraction": {
+        "book_name": "The Little Book Of Python-Anti-Patterns",
+        "json_file_exists": true,
+        "json_file_size_kb": 213.224609375,
+        "total_pages": 0,
+        "chapters_detected": 8,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "The Little Book Of Python-Anti-Patterns",
+        "metadata_file_exists": true,
+        "chapter_count": 8,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 3996.375,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "The Little Book Of Python-Anti-Patterns",
+        "enriched_file_exists": false,
+        "chapter_count": 0,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 0.0,
+        "avg_keywords_enriched": 0.0,
+        "avg_concepts_enriched": 0.0,
+        "enrichment_method": "",
+        "libraries": {},
+        "corpus_size": 0
+      },
+      "tab5_guideline_generation": {
+        "book_name": "The Little Book Of Python-Anti-Patterns",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "chapter_cache",
+      "analyzed_at": "2025-11-29T12:51:16.860702",
+      "tab1_pdf_extraction": {
+        "book_name": "chapter_cache",
+        "json_file_exists": false,
+        "json_file_size_kb": 0.0,
+        "total_pages": 0,
+        "chapters_detected": 0,
+        "extraction_method": "",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "chapter_cache",
+        "metadata_file_exists": false,
+        "chapter_count": 0,
+        "avg_keywords_per_chapter": 0.0,
+        "avg_concepts_per_chapter": 0.0,
+        "avg_summary_length": 0.0,
+        "has_page_ranges": false,
+        "extraction_method": ""
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "chapter_cache",
+        "enriched_file_exists": false,
+        "chapter_count": 0,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 0.0,
+        "avg_keywords_enriched": 0.0,
+        "avg_concepts_enriched": 0.0,
+        "enrichment_method": "",
+        "libraries": {},
+        "corpus_size": 0
+      },
+      "tab5_guideline_generation": {
+        "book_name": "chapter_cache",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "makinggames",
+      "analyzed_at": "2025-11-29T12:51:16.860827",
+      "tab1_pdf_extraction": {
+        "book_name": "makinggames",
+        "json_file_exists": true,
+        "json_file_size_kb": 1532.7529296875,
+        "total_pages": 0,
+        "chapters_detected": 42,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "makinggames",
+        "metadata_file_exists": true,
+        "chapter_count": 42,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 9.880952380952381,
+        "avg_summary_length": 3986.5,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "makinggames",
+        "enriched_file_exists": false,
+        "chapter_count": 0,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 0.0,
+        "avg_keywords_enriched": 0.0,
+        "avg_concepts_enriched": 0.0,
+        "enrichment_method": "",
+        "libraries": {},
+        "corpus_size": 0
+      },
+      "tab5_guideline_generation": {
+        "book_name": "makinggames",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "operating_systems_three_easy_pieces",
+      "analyzed_at": "2025-11-29T12:51:16.867396",
+      "tab1_pdf_extraction": {
+        "book_name": "operating_systems_three_easy_pieces",
+        "json_file_exists": true,
+        "json_file_size_kb": 2791.087890625,
+        "total_pages": 0,
+        "chapters_detected": 63,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "operating_systems_three_easy_pieces",
+        "metadata_file_exists": true,
+        "chapter_count": 63,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 5284.68253968254,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "operating_systems_three_easy_pieces",
+        "enriched_file_exists": false,
+        "chapter_count": 0,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 0.0,
+        "avg_keywords_enriched": 0.0,
+        "avg_concepts_enriched": 0.0,
+        "enrichment_method": "",
+        "libraries": {},
+        "corpus_size": 0
+      },
+      "tab5_guideline_generation": {
+        "book_name": "operating_systems_three_easy_pieces",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "test",
+      "analyzed_at": "2025-11-29T12:51:16.877852",
+      "tab1_pdf_extraction": {
+        "book_name": "test",
+        "json_file_exists": false,
+        "json_file_size_kb": 0.0,
+        "total_pages": 0,
+        "chapters_detected": 0,
+        "extraction_method": "",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "test",
+        "metadata_file_exists": false,
+        "chapter_count": 0,
+        "avg_keywords_per_chapter": 0.0,
+        "avg_concepts_per_chapter": 0.0,
+        "avg_summary_length": 0.0,
+        "has_page_ranges": false,
+        "extraction_method": ""
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "test",
+        "enriched_file_exists": true,
+        "chapter_count": 49,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 2.0816326530612246,
+        "avg_keywords_enriched": 10.0,
+        "avg_concepts_enriched": 9.938775510204081,
+        "enrichment_method": "statistical",
+        "libraries": {
+          "yake": "0.4.8",
+          "summa": "1.2.0",
+          "scikit-learn": "1.3.2"
+        },
+        "corpus_size": 25
+      },
+      "tab5_guideline_generation": {
+        "book_name": "test",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    }
+  ]
+}

@@ -48,7 +48,7 @@ class LocalCodeRabbitAnalyzer:
             result = subprocess.run([
                 'bandit', '-r', '.', 
                 '-f', 'json',
-                '--exclude', '__pycache__,.git,venv,env,.pytest_cache,.mypy_cache,docker_volumes,cache_storage,logs,backups',
+                '--exclude', '__pycache__,.git,venv,env,.pytest_cache,.mypy_cache,docker_volumes,cache_storage,logs,backups,inputs,outputs,data/inputs,data/outputs',
                 '--quiet'  # Suppress warnings
             ], capture_output=True, text=True)
             
