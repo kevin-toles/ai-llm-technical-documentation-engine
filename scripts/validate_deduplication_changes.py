@@ -98,7 +98,7 @@ def run_enrichment_pipeline() -> bool:
     """Run the enrichment pipeline with validation."""
     log("Running enrichment pipeline...")
     
-    script_path = PROJECT_ROOT / "run_enrichment_with_validation.py"
+    script_path = PROJECT_ROOT / "scripts" / "run_enrichment_with_validation.py"
     if not script_path.exists():
         log(f"Script not found: {script_path}", "ERROR")
         return False

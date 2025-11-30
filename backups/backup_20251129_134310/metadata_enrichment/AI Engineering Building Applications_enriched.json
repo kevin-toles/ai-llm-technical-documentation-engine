@@ -1,22 +1,15 @@
 {
   "book": "AI Engineering Building Applications",
   "enrichment_metadata": {
-    "generated": "2025-11-29T13:43:42.663477",
+    "generated": "2025-11-28T17:48:46.154381",
     "method": "statistical",
     "libraries": {
       "yake": "0.4.8",
       "summa": "1.2.0",
-      "scikit-learn": "1.3.2",
-      "bertopic": "unavailable",
-      "sentence_transformers": "available"
+      "scikit-learn": "1.3.2"
     },
     "corpus_size": 25,
-    "total_chapters_analyzed": 680,
-    "topic_clustering": {
-      "enabled": true,
-      "num_topics": 0,
-      "using_bertopic": false
-    }
+    "total_chapters_analyzed": 680
   },
   "chapters": [
     {
@@ -60,28 +53,21 @@
           "chapter": 1,
           "title": "Segment 1 (pages 1-18)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
+        },
+        {
+          "book": "AI Engineering Building Applications",
+          "chapter": 5,
+          "title": "Segment 5 (pages 82-102)",
+          "relevance_score": 0.77,
+          "method": "cosine_similarity"
         },
         {
           "book": "AI Engineering Building Applications",
           "chapter": 46,
           "title": "Segment 46 (pages 930-949)",
-          "relevance_score": 0.7,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Generative AI with LangChain_2e",
-          "chapter": 3,
-          "title": "Segment 3 (pages 17-24)",
-          "relevance_score": 0.65,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Building LLM Powered Applications",
-          "chapter": 1,
-          "title": "Segment 1 (pages 1-8)",
-          "relevance_score": 0.64,
-          "method": "sentence_transformers"
+          "relevance_score": 0.76,
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
@@ -91,17 +77,12 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "Engineering Foundation Models",
+          "term": "Engineering",
           "score": 0.001,
           "source": "cross_book_yake"
         },
         {
-          "term": "Engineering",
-          "score": 0.002,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "foundation models engineering",
+          "term": "Engineering Foundation Models",
           "score": 0.002,
           "source": "cross_book_yake"
         },
@@ -111,28 +92,33 @@
           "source": "cross_book_yake"
         },
         {
+          "term": "model",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "foundation models engineering",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Foundation",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
           "term": "Foundation Models Models",
-          "score": 0.002,
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Building Applications",
+          "score": 0.004,
           "source": "cross_book_yake"
         },
         {
           "term": "Models Models Applications",
-          "score": 0.003,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "Applications Engineering Building",
-          "score": 0.003,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "Engineering Building Applications",
-          "score": 0.003,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "Building Applications Engineering",
-          "score": 0.003,
+          "score": 0.005,
           "source": "cross_book_yake"
         }
       ],
@@ -174,11 +160,10 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "builds",
+          "concept": "applications",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 2,
@@ -221,21 +206,21 @@
           "chapter": 2,
           "title": "Segment 2 (pages 19-39)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 30,
-          "title": "Segment 30 (pages 595-616)",
-          "relevance_score": 0.65,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         },
         {
           "book": "AI Engineering Building Applications",
           "chapter": 12,
           "title": "Segment 12 (pages 231-252)",
-          "relevance_score": 0.64,
-          "method": "sentence_transformers"
+          "relevance_score": 0.84,
+          "method": "cosine_similarity"
+        },
+        {
+          "book": "AI Engineering Building Applications",
+          "chapter": 3,
+          "title": "Segment 3 (pages 40-60)",
+          "relevance_score": 0.72,
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
@@ -255,7 +240,17 @@
           "source": "cross_book_yake"
         },
         {
+          "term": "foundation models",
+          "score": 0.001,
+          "source": "cross_book_yake"
+        },
+        {
           "term": "language",
+          "score": 0.001,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "model models language",
           "score": 0.002,
           "source": "cross_book_yake"
         },
@@ -265,12 +260,12 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "model models language",
+          "term": "Masked language model",
           "score": 0.002,
           "source": "cross_book_yake"
         },
         {
-          "term": "Masked language model",
+          "term": "large language models",
           "score": 0.002,
           "source": "cross_book_yake"
         },
@@ -278,23 +273,9 @@
           "term": "Autoregressive language model",
           "score": 0.003,
           "source": "cross_book_yake"
-        },
-        {
-          "term": "foundation models",
-          "score": 0.003,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "models model models",
-          "score": 0.004,
-          "source": "cross_book_yake"
         }
       ],
       "concepts_enriched": [
-        {
-          "concept": "models",
-          "source": "cross_book_summa"
-        },
         {
           "concept": "model",
           "source": "cross_book_summa"
@@ -324,15 +305,18 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "trained",
+          "concept": "engineer",
           "source": "cross_book_summa"
         },
         {
-          "concept": "train",
+          "concept": "engineering",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "trained",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 3,
@@ -375,31 +359,29 @@
           "chapter": 3,
           "title": "Segment 3 (pages 40-60)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         },
         {
           "book": "AI Engineering Building Applications",
-          "chapter": 24,
-          "title": "Segment 24 (pages 477-494)",
-          "relevance_score": 0.56,
-          "method": "sentence_transformers"
+          "chapter": 6,
+          "title": "Segment 6 (pages 103-122)",
+          "relevance_score": 0.78,
+          "method": "cosine_similarity"
         },
         {
-          "book": "Building LLM Powered Applications",
+          "book": "AI Engineering Building Applications",
           "chapter": 2,
-          "title": "Segment 2 (pages 9-16)",
-          "relevance_score": 0.53,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Reliable Machine Learning",
-          "chapter": 13,
-          "title": "Segment 13 (pages 107-114)",
-          "relevance_score": 0.52,
-          "method": "sentence_transformers"
+          "title": "Segment 2 (pages 19-39)",
+          "relevance_score": 0.72,
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
+        {
+          "term": "foundation models",
+          "score": 0.001,
+          "source": "cross_book_yake"
+        },
         {
           "term": "model",
           "score": 0.001,
@@ -411,13 +393,13 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "foundation models",
+          "term": "language models",
           "score": 0.001,
           "source": "cross_book_yake"
         },
         {
-          "term": "language models",
-          "score": 0.001,
+          "term": "model foundation models",
+          "score": 0.002,
           "source": "cross_book_yake"
         },
         {
@@ -426,28 +408,23 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "models language models",
-          "score": 0.003,
-          "source": "cross_book_yake"
-        },
-        {
           "term": "models model foundation",
           "score": 0.003,
           "source": "cross_book_yake"
         },
         {
-          "term": "model foundation models",
+          "term": "Foundation models models",
           "score": 0.003,
           "source": "cross_book_yake"
         },
         {
           "term": "language",
-          "score": 0.005,
+          "score": 0.003,
           "source": "cross_book_yake"
         },
         {
-          "term": "data",
-          "score": 0.005,
+          "term": "models language models",
+          "score": 0.003,
           "source": "cross_book_yake"
         }
       ],
@@ -461,39 +438,38 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "modeler",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "labeling",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "labeled",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "labels",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "label",
-          "source": "cross_book_summa"
-        },
-        {
           "concept": "data",
           "source": "cross_book_summa"
         },
         {
-          "concept": "applications",
+          "concept": "engineering",
           "source": "cross_book_summa"
         },
         {
-          "concept": "application",
+          "concept": "engineers",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "trained",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "train",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "training",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "languages",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "foundation",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 4,
@@ -536,86 +512,79 @@
           "chapter": 4,
           "title": "Segment 4 (pages 61-81)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
+        },
+        {
+          "book": "Generative AI with LangChain_2e",
+          "chapter": 52,
+          "title": "Segment 52 (pages 440-447)",
+          "relevance_score": 0.82,
+          "method": "cosine_similarity"
         },
         {
           "book": "Building LLM Powered Applications",
-          "chapter": 54,
-          "title": "Segment 54 (pages 459-466)",
-          "relevance_score": 0.65,
-          "method": "sentence_transformers"
+          "chapter": 52,
+          "title": "Segment 52 (pages 441-448)",
+          "relevance_score": 0.77,
+          "method": "cosine_similarity"
         },
         {
-          "book": "Generative AI with LangChain_2e",
+          "book": "Building LLM Powered Applications",
           "chapter": 1,
           "title": "Segment 1 (pages 1-8)",
-          "relevance_score": 0.62,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Generative AI with LangChain_2e",
-          "chapter": 35,
-          "title": "Segment 35 (pages 295-302)",
-          "relevance_score": 0.62,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 1,
-          "title": "Segment 1 (pages 1-18)",
-          "relevance_score": 0.62,
-          "method": "sentence_transformers"
+          "relevance_score": 0.74,
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
         {
-          "term": "Code",
-          "score": 0.005,
+          "term": "generative",
+          "score": 0.009,
           "source": "cross_book_yake"
         },
         {
           "term": "applications",
-          "score": 0.005,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "generative",
-          "score": 0.006,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "models",
-          "score": 0.007,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "Foundation Models",
-          "score": 0.01,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "code generation",
-          "score": 0.01,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "Models Models Applications",
-          "score": 0.01,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "engineering",
-          "score": 0.011,
+          "score": 0.009,
           "source": "cross_book_yake"
         },
         {
           "term": "generate",
-          "score": 0.012,
+          "score": 0.014,
           "source": "cross_book_yake"
         },
         {
-          "term": "Building Applications",
-          "score": 0.012,
+          "term": "AI-generated",
+          "score": 0.017,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Packt Publishing",
+          "score": 0.019,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Act",
+          "score": 0.02,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "automation",
+          "score": 0.02,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "data applications Segment",
+          "score": 0.021,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "applications Data cases",
+          "score": 0.021,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "automation generative Generative",
+          "score": 0.024,
           "source": "cross_book_yake"
         }
       ],
@@ -645,23 +614,22 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "coding",
+          "concept": "automate",
           "source": "cross_book_summa"
         },
         {
-          "concept": "code",
+          "concept": "automating",
           "source": "cross_book_summa"
         },
         {
-          "concept": "models",
+          "concept": "automation",
           "source": "cross_book_summa"
         },
         {
-          "concept": "model",
+          "concept": "automated",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 5,
@@ -704,72 +672,79 @@
           "chapter": 5,
           "title": "Segment 5 (pages 82-102)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
+        },
+        {
+          "book": "AI Engineering Building Applications",
+          "chapter": 6,
+          "title": "Segment 6 (pages 103-122)",
+          "relevance_score": 0.83,
+          "method": "cosine_similarity"
+        },
+        {
+          "book": "AI Engineering Building Applications",
+          "chapter": 46,
+          "title": "Segment 46 (pages 930-949)",
+          "relevance_score": 0.8,
+          "method": "cosine_similarity"
         },
         {
           "book": "AI Engineering Building Applications",
           "chapter": 1,
           "title": "Segment 1 (pages 1-18)",
-          "relevance_score": 0.61,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 2,
-          "title": "Segment 2 (pages 19-39)",
-          "relevance_score": 0.57,
-          "method": "sentence_transformers"
+          "relevance_score": 0.77,
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
+        {
+          "term": "foundation models",
+          "score": 0.001,
+          "source": "cross_book_yake"
+        },
         {
           "term": "model",
           "score": 0.001,
           "source": "cross_book_yake"
         },
         {
-          "term": "foundation models",
-          "score": 0.002,
-          "source": "cross_book_yake"
-        },
-        {
           "term": "models",
-          "score": 0.002,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "language model",
-          "score": 0.003,
+          "score": 0.001,
           "source": "cross_book_yake"
         },
         {
           "term": "engineering",
-          "score": 0.003,
+          "score": 0.001,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Engineering foundation models",
+          "score": 0.002,
           "source": "cross_book_yake"
         },
         {
           "term": "model engineering models",
-          "score": 0.004,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "model development",
-          "score": 0.005,
+          "score": 0.002,
           "source": "cross_book_yake"
         },
         {
           "term": "models foundation models",
-          "score": 0.006,
+          "score": 0.003,
           "source": "cross_book_yake"
         },
         {
           "term": "foundation models model",
-          "score": 0.006,
+          "score": 0.003,
           "source": "cross_book_yake"
         },
         {
-          "term": "applications",
-          "score": 0.007,
+          "term": "foundation models engineering",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "engineering models foundation",
+          "score": 0.003,
           "source": "cross_book_yake"
         }
       ],
@@ -783,6 +758,14 @@
           "source": "cross_book_summa"
         },
         {
+          "concept": "data",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "engineers",
+          "source": "cross_book_summa"
+        },
+        {
           "concept": "applications",
           "source": "cross_book_summa"
         },
@@ -791,31 +774,22 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "engineering",
+          "concept": "trained",
           "source": "cross_book_summa"
         },
         {
-          "concept": "engineers",
+          "concept": "training",
           "source": "cross_book_summa"
         },
         {
-          "concept": "engineer",
+          "concept": "train",
           "source": "cross_book_summa"
         },
         {
           "concept": "building",
           "source": "cross_book_summa"
-        },
-        {
-          "concept": "build",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "book",
-          "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 6,
@@ -858,32 +832,34 @@
           "chapter": 6,
           "title": "Segment 6 (pages 103-122)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         },
         {
           "book": "AI Engineering Building Applications",
-          "chapter": 12,
-          "title": "Segment 12 (pages 231-252)",
-          "relevance_score": 0.64,
-          "method": "sentence_transformers"
+          "chapter": 5,
+          "title": "Segment 5 (pages 82-102)",
+          "relevance_score": 0.83,
+          "method": "cosine_similarity"
         },
         {
           "book": "AI Engineering Building Applications",
-          "chapter": 30,
-          "title": "Segment 30 (pages 595-616)",
-          "relevance_score": 0.62,
-          "method": "sentence_transformers"
+          "chapter": 46,
+          "title": "Segment 46 (pages 930-949)",
+          "relevance_score": 0.78,
+          "method": "cosine_similarity"
+        },
+        {
+          "book": "AI Engineering Building Applications",
+          "chapter": 3,
+          "title": "Segment 3 (pages 40-60)",
+          "relevance_score": 0.78,
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
         {
-          "term": "model",
-          "score": 0.001,
-          "source": "cross_book_yake"
-        },
-        {
           "term": "Foundation models",
-          "score": 0.001,
+          "score": 0.0,
           "source": "cross_book_yake"
         },
         {
@@ -892,38 +868,43 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "language model",
-          "score": 0.003,
+          "term": "model",
+          "score": 0.001,
           "source": "cross_book_yake"
         },
         {
-          "term": "model model models",
-          "score": 0.005,
+          "term": "engineering",
+          "score": 0.001,
           "source": "cross_book_yake"
         },
         {
           "term": "model Foundation models",
-          "score": 0.005,
+          "score": 0.001,
           "source": "cross_book_yake"
         },
         {
-          "term": "Foundation models models",
-          "score": 0.005,
+          "term": "models models engineering",
+          "score": 0.002,
           "source": "cross_book_yake"
         },
         {
           "term": "Foundation",
-          "score": 0.005,
+          "score": 0.002,
           "source": "cross_book_yake"
         },
         {
-          "term": "data",
-          "score": 0.006,
+          "term": "Foundation models models",
+          "score": 0.002,
           "source": "cross_book_yake"
         },
         {
-          "term": "training",
-          "score": 0.006,
+          "term": "Engineering foundation models",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "foundation models engineering",
+          "score": 0.003,
           "source": "cross_book_yake"
         }
       ],
@@ -945,6 +926,14 @@
           "source": "cross_book_summa"
         },
         {
+          "concept": "engineering",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "engineers",
+          "source": "cross_book_summa"
+        },
+        {
           "concept": "training",
           "source": "cross_book_summa"
         },
@@ -953,23 +942,14 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "different",
+          "concept": "application",
           "source": "cross_book_summa"
         },
         {
-          "concept": "differs",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "differently",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "differences",
+          "concept": "foundation",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 7,
@@ -1012,79 +992,58 @@
           "chapter": 7,
           "title": "Segment 7 (pages 123-143)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Building LLM Powered Applications",
-          "chapter": 57,
-          "title": "Segment 57 (pages 483-490)",
-          "relevance_score": 0.62,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Generative AI with LangChain_2e",
-          "chapter": 51,
-          "title": "Segment 51 (pages 431-439)",
-          "relevance_score": 0.6,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 12,
-          "title": "Segment 12 (pages 231-252)",
-          "relevance_score": 0.59,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
         {
           "term": "model",
-          "score": 0.001,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "language model",
-          "score": 0.001,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "models",
-          "score": 0.001,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "language",
-          "score": 0.003,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "language model model",
-          "score": 0.003,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "model model models",
           "score": 0.004,
           "source": "cross_book_yake"
         },
         {
-          "term": "models model modeling",
-          "score": 0.005,
+          "term": "models",
+          "score": 0.006,
           "source": "cross_book_yake"
         },
         {
-          "term": "large language model",
-          "score": 0.005,
+          "term": "Crawl models English",
+          "score": 0.013,
           "source": "cross_book_yake"
         },
         {
-          "term": "token models model",
-          "score": 0.005,
+          "term": "languages",
+          "score": 0.013,
           "source": "cross_book_yake"
         },
         {
-          "term": "models model",
-          "score": 0.007,
+          "term": "Common Crawl",
+          "score": 0.015,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "tokens",
+          "score": 0.015,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "English",
+          "score": 0.015,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "language",
+          "score": 0.016,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "model Common Crawl",
+          "score": 0.017,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Common Crawl models",
+          "score": 0.017,
           "source": "cross_book_yake"
         }
       ],
@@ -1110,27 +1069,26 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "trained",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "train",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "training",
-          "source": "cross_book_summa"
-        },
-        {
           "concept": "data",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "architectural",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "architecture",
           "source": "cross_book_summa"
         },
         {
           "concept": "tokens",
           "source": "cross_book_summa"
+        },
+        {
+          "concept": "tokenization",
+          "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 8,
@@ -1173,86 +1131,58 @@
           "chapter": 8,
           "title": "Segment 8 (pages 144-164)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Agents In Action",
-          "chapter": 8,
-          "title": "Segment 8 (pages 58-66)",
-          "relevance_score": 0.6,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Generative AI with LangChain_2e",
-          "chapter": 51,
-          "title": "Segment 51 (pages 431-439)",
-          "relevance_score": 0.55,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Building LLM Powered Applications",
-          "chapter": 57,
-          "title": "Segment 57 (pages 483-490)",
-          "relevance_score": 0.55,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 40,
-          "title": "Segment 40 (pages 808-829)",
-          "relevance_score": 0.54,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
         {
           "term": "model",
-          "score": 0.0,
+          "score": 0.001,
           "source": "cross_book_yake"
         },
         {
           "term": "models",
-          "score": 0.001,
+          "score": 0.004,
           "source": "cross_book_yake"
         },
         {
           "term": "Model Size",
-          "score": 0.001,
+          "score": 0.004,
           "source": "cross_book_yake"
         },
         {
           "term": "model models Model",
-          "score": 0.001,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "models Model Size",
-          "score": 0.003,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "model models",
-          "score": 0.003,
+          "score": 0.005,
           "source": "cross_book_yake"
         },
         {
           "term": "Model performance",
-          "score": 0.004,
+          "score": 0.009,
           "source": "cross_book_yake"
         },
         {
-          "term": "models Model",
-          "score": 0.004,
+          "term": "models Model Size",
+          "score": 0.01,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "number",
+          "score": 0.01,
           "source": "cross_book_yake"
         },
         {
           "term": "Size",
-          "score": 0.004,
+          "score": 0.01,
           "source": "cross_book_yake"
         },
         {
-          "term": "Model performance model",
-          "score": 0.005,
+          "term": "model models",
+          "score": 0.012,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "transformer model",
+          "score": 0.017,
           "source": "cross_book_yake"
         }
       ],
@@ -1270,15 +1200,11 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "tokenization",
+          "concept": "sizes",
           "source": "cross_book_summa"
         },
         {
-          "concept": "tokens",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "token",
+          "concept": "size",
           "source": "cross_book_summa"
         },
         {
@@ -1290,15 +1216,18 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "sizes",
+          "concept": "parameters",
           "source": "cross_book_summa"
         },
         {
-          "concept": "size",
+          "concept": "parameter",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "performance",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 9,
@@ -1341,83 +1270,66 @@
           "chapter": 9,
           "title": "Segment 9 (pages 165-185)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Reliable Machine Learning",
-          "chapter": 21,
-          "title": "Segment 21 (pages 178-185)",
-          "relevance_score": 0.63,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Generative AI with LangChain_2e",
-          "chapter": 51,
-          "title": "Segment 51 (pages 431-439)",
-          "relevance_score": 0.62,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 24,
-          "title": "Segment 24 (pages 477-494)",
-          "relevance_score": 0.59,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
         {
           "term": "model",
-          "score": 0.001,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "models",
-          "score": 0.001,
+          "score": 0.002,
           "source": "cross_book_yake"
         },
         {
           "term": "data",
-          "score": 0.002,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "training data",
-          "score": 0.002,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "model data models",
-          "score": 0.003,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "training",
-          "score": 0.003,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "reward model",
-          "score": 0.004,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "model training",
-          "score": 0.004,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "Data model training",
           "score": 0.005,
           "source": "cross_book_yake"
         },
         {
-          "term": "model training models",
+          "term": "models",
           "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "reward model",
+          "score": 0.007,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "model data models",
+          "score": 0.011,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "pre-trained model",
+          "score": 0.012,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "training data",
+          "score": 0.013,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "models reward model",
+          "score": 0.019,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "training",
+          "score": 0.02,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "responses",
+          "score": 0.023,
           "source": "cross_book_yake"
         }
       ],
       "concepts_enriched": [
+        {
+          "concept": "model",
+          "source": "cross_book_summa"
+        },
         {
           "concept": "modeling",
           "source": "cross_book_summa"
@@ -1427,11 +1339,11 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "prompt",
+          "concept": "responses",
           "source": "cross_book_summa"
         },
         {
-          "concept": "prompts",
+          "concept": "response",
           "source": "cross_book_summa"
         },
         {
@@ -1447,19 +1359,14 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "generative",
+          "concept": "labeled",
           "source": "cross_book_summa"
         },
         {
-          "concept": "generation",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "generations",
+          "concept": "preferences",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 10,
@@ -1502,28 +1409,14 @@
           "chapter": 10,
           "title": "Segment 10 (pages 186-208)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         },
         {
-          "book": "LLM-Engineers-Handbook",
-          "chapter": 30,
-          "title": "Segment 30 (pages 275-282)",
-          "relevance_score": 0.61,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "LLM-Engineers-Handbook",
-          "chapter": 31,
-          "title": "Segment 31 (pages 283-291)",
-          "relevance_score": 0.6,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Building LLM Powered Applications",
-          "chapter": 8,
-          "title": "Segment 8 (pages 59-66)",
-          "relevance_score": 0.6,
-          "method": "sentence_transformers"
+          "book": "AI Engineering Building Applications",
+          "chapter": 11,
+          "title": "Segment 11 (pages 209-230)",
+          "relevance_score": 0.82,
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
@@ -1533,28 +1426,8 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "reward model",
-          "score": 0.002,
-          "source": "cross_book_yake"
-        },
-        {
           "term": "models",
-          "score": 0.002,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "language model",
           "score": 0.003,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "models reward model",
-          "score": 0.004,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "model models",
-          "score": 0.004,
           "source": "cross_book_yake"
         },
         {
@@ -1563,36 +1436,52 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "outputs model models",
-          "score": 0.004,
+          "term": "model models",
+          "score": 0.005,
           "source": "cross_book_yake"
         },
         {
-          "term": "model models reward",
+          "term": "language model",
+          "score": 0.005,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "outputs",
+          "score": 0.005,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "outputs model models",
           "score": 0.005,
           "source": "cross_book_yake"
         },
         {
           "term": "language model models",
-          "score": 0.005,
+          "score": 0.01,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "reward model",
+          "score": 0.01,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "model generates",
+          "score": 0.01,
           "source": "cross_book_yake"
         }
       ],
       "concepts_enriched": [
         {
+          "concept": "model",
+          "source": "cross_book_summa"
+        },
+        {
           "concept": "models",
           "source": "cross_book_summa"
         },
         {
-          "concept": "trained",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "train",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "training",
+          "concept": "modeling",
           "source": "cross_book_summa"
         },
         {
@@ -1612,15 +1501,18 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "language",
+          "concept": "generative",
           "source": "cross_book_summa"
         },
         {
-          "concept": "preferences",
+          "concept": "sampling",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "sample",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 11,
@@ -1663,21 +1555,35 @@
           "chapter": 11,
           "title": "Segment 11 (pages 209-230)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         },
         {
           "book": "AI Engineering Building Applications",
           "chapter": 10,
           "title": "Segment 10 (pages 186-208)",
-          "relevance_score": 0.58,
-          "method": "sentence_transformers"
+          "relevance_score": 0.82,
+          "method": "cosine_similarity"
         },
         {
           "book": "AI Engineering Building Applications",
-          "chapter": 2,
-          "title": "Segment 2 (pages 19-39)",
-          "relevance_score": 0.57,
-          "method": "sentence_transformers"
+          "chapter": 42,
+          "title": "Segment 42 (pages 853-871)",
+          "relevance_score": 0.75,
+          "method": "cosine_similarity"
+        },
+        {
+          "book": "AI Engineering Building Applications",
+          "chapter": 24,
+          "title": "Segment 24 (pages 477-494)",
+          "relevance_score": 0.73,
+          "method": "cosine_similarity"
+        },
+        {
+          "book": "AI Engineering Building Applications",
+          "chapter": 34,
+          "title": "Segment 34 (pages 681-701)",
+          "relevance_score": 0.71,
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
@@ -1692,42 +1598,42 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "language model",
-          "score": 0.001,
+          "term": "model models",
+          "score": 0.002,
           "source": "cross_book_yake"
         },
         {
           "term": "model models outputs",
-          "score": 0.003,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "model models",
-          "score": 0.003,
+          "score": 0.002,
           "source": "cross_book_yake"
         },
         {
           "term": "models outputs model",
-          "score": 0.004,
+          "score": 0.003,
           "source": "cross_book_yake"
         },
         {
           "term": "models model outputs",
-          "score": 0.004,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "language model models",
-          "score": 0.004,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "foundation models",
-          "score": 0.004,
+          "score": 0.003,
           "source": "cross_book_yake"
         },
         {
           "term": "model generates",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "model API",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "model outputs",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "data",
           "score": 0.005,
           "source": "cross_book_yake"
         }
@@ -1754,27 +1660,26 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "token",
+          "concept": "data",
           "source": "cross_book_summa"
         },
         {
-          "concept": "tokens",
+          "concept": "training",
           "source": "cross_book_summa"
         },
         {
-          "concept": "tokenization",
+          "concept": "trained",
           "source": "cross_book_summa"
         },
         {
-          "concept": "generate",
+          "concept": "train",
           "source": "cross_book_summa"
         },
         {
-          "concept": "generating",
+          "concept": "trains",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 12,
@@ -1817,36 +1722,24 @@
           "chapter": 12,
           "title": "Segment 12 (pages 231-252)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         },
         {
           "book": "AI Engineering Building Applications",
-          "chapter": 47,
-          "title": "Segment 47 (pages 950-972)",
-          "relevance_score": 0.7,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 6,
-          "title": "Segment 6 (pages 103-122)",
-          "relevance_score": 0.64,
-          "method": "sentence_transformers"
+          "chapter": 2,
+          "title": "Segment 2 (pages 19-39)",
+          "relevance_score": 0.84,
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
-        {
-          "term": "model",
-          "score": 0.0,
-          "source": "cross_book_yake"
-        },
         {
           "term": "language model",
           "score": 0.0,
           "source": "cross_book_yake"
         },
         {
-          "term": "foundation models",
+          "term": "model",
           "score": 0.001,
           "source": "cross_book_yake"
         },
@@ -1856,33 +1749,38 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "model model models",
-          "score": 0.001,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "model models model",
-          "score": 0.001,
+          "term": "language",
+          "score": 0.002,
           "source": "cross_book_yake"
         },
         {
           "term": "language model model",
-          "score": 0.001,
+          "score": 0.002,
           "source": "cross_book_yake"
         },
         {
           "term": "model models language",
-          "score": 0.001,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "large language models",
           "score": 0.002,
           "source": "cross_book_yake"
         },
         {
-          "term": "evaluating foundation models",
+          "term": "model model models",
           "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "foundation models",
+          "score": 0.003,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Masked language model",
+          "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "models model modeling",
+          "score": 0.006,
           "source": "cross_book_yake"
         }
       ],
@@ -1896,39 +1794,38 @@
           "source": "cross_book_summa"
         },
         {
+          "concept": "language",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "languages",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "tokenization",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "tokens",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "token",
+          "source": "cross_book_summa"
+        },
+        {
           "concept": "data",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "perplexity",
           "source": "cross_book_summa"
         },
         {
           "concept": "evaluation",
           "source": "cross_book_summa"
-        },
-        {
-          "concept": "training",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "trained",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "train",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "engineering",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "engineers",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "language",
-          "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 13,
@@ -1971,104 +1868,62 @@
           "chapter": 13,
           "title": "Segment 13 (pages 253-274)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 20,
-          "title": "Segment 20 (pages 398-416)",
-          "relevance_score": 0.67,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Generative AI with LangChain_2e",
-          "chapter": 41,
-          "title": "Segment 41 (pages 344-352)",
-          "relevance_score": 0.62,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
         {
-          "term": "evaluation",
-          "score": 0.003,
-          "source": "cross_book_yake"
-        },
-        {
           "term": "similarity",
-          "score": 0.004,
+          "score": 0.005,
           "source": "cross_book_yake"
         },
         {
           "term": "reference",
-          "score": 0.006,
+          "score": 0.008,
           "source": "cross_book_yake"
         },
         {
           "term": "embedding",
-          "score": 0.006,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "reference responses",
-          "score": 0.006,
+          "score": 0.008,
           "source": "cross_book_yake"
         },
         {
           "term": "response",
-          "score": 0.008,
+          "score": 0.01,
           "source": "cross_book_yake"
         },
         {
-          "term": "reference data",
-          "score": 0.008,
+          "term": "reference responses",
+          "score": 0.01,
           "source": "cross_book_yake"
         },
         {
           "term": "embeddings",
-          "score": 0.008,
+          "score": 0.01,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "reference data",
+          "score": 0.012,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "responses",
+          "score": 0.015,
           "source": "cross_book_yake"
         },
         {
           "term": "data",
-          "score": 0.008,
+          "score": 0.015,
           "source": "cross_book_yake"
         },
         {
-          "term": "evaluate",
-          "score": 0.008,
+          "term": "Semantic similarity",
+          "score": 0.015,
           "source": "cross_book_yake"
         }
       ],
       "concepts_enriched": [
-        {
-          "concept": "evaluating",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "evaluate",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "evaluator",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "evaluators",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "evaluations",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "evaluated",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "evaluates",
-          "source": "cross_book_summa"
-        },
         {
           "concept": "embedding",
           "source": "cross_book_summa"
@@ -2078,11 +1933,38 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "model",
+          "concept": "similarity",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "similar",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "text",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "texts",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "responses",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "response",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "evaluating",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "evaluate",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 14,
@@ -2125,72 +2007,58 @@
           "chapter": 14,
           "title": "Segment 14 (pages 275-296)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 20,
-          "title": "Segment 20 (pages 398-416)",
-          "relevance_score": 0.65,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 46,
-          "title": "Segment 46 (pages 930-949)",
-          "relevance_score": 0.59,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
         {
-          "term": "model",
-          "score": 0.002,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "models",
-          "score": 0.002,
-          "source": "cross_book_yake"
-        },
-        {
           "term": "judge",
-          "score": 0.003,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "evaluation",
           "score": 0.004,
           "source": "cross_book_yake"
         },
         {
           "term": "judges",
-          "score": 0.004,
+          "score": 0.005,
           "source": "cross_book_yake"
         },
         {
-          "term": "foundation models",
-          "score": 0.006,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "engineering",
-          "score": 0.006,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "data",
+          "term": "model",
           "score": 0.006,
           "source": "cross_book_yake"
         },
         {
           "term": "response",
-          "score": 0.008,
+          "score": 0.01,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "models",
+          "score": 0.01,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "responses",
+          "score": 0.016,
           "source": "cross_book_yake"
         },
         {
           "term": "evaluate",
-          "score": 0.009,
+          "score": 0.016,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "judges models response",
+          "score": 0.023,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "generated",
+          "score": 0.027,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "prompt",
+          "score": 0.027,
           "source": "cross_book_yake"
         }
       ],
@@ -2204,7 +2072,23 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "modeling",
+          "concept": "judges",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "judged",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "scores",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "scoring",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "score",
           "source": "cross_book_summa"
         },
         {
@@ -2218,25 +2102,8 @@
         {
           "concept": "evaluation",
           "source": "cross_book_summa"
-        },
-        {
-          "concept": "evaluators",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "evaluated",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "data",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "judges",
-          "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 15,
@@ -2279,72 +2146,58 @@
           "chapter": 15,
           "title": "Segment 15 (pages 297-315)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 19,
-          "title": "Segment 19 (pages 375-397)",
-          "relevance_score": 0.62,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 14,
-          "title": "Segment 14 (pages 275-296)",
-          "relevance_score": 0.54,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
         {
           "term": "model",
-          "score": 0.001,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "models",
           "score": 0.002,
           "source": "cross_book_yake"
         },
         {
-          "term": "Benchmarks",
-          "score": 0.007,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "evaluate models",
-          "score": 0.007,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "evaluate",
-          "score": 0.007,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "evaluation",
-          "score": 0.007,
+          "term": "models",
+          "score": 0.004,
           "source": "cross_book_yake"
         },
         {
           "term": "comparative evaluation",
-          "score": 0.009,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "judge",
           "score": 0.011,
           "source": "cross_book_yake"
         },
         {
-          "term": "Benchmark",
-          "score": 0.011,
+          "term": "evaluation",
+          "score": 0.012,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "comparative",
+          "score": 0.017,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "evaluate models",
+          "score": 0.022,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "evaluate",
+          "score": 0.023,
           "source": "cross_book_yake"
         },
         {
           "term": "model models comparative",
-          "score": 0.012,
+          "score": 0.028,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Chatbot Arena",
+          "score": 0.031,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Chatbot Arena model",
+          "score": 0.034,
           "source": "cross_book_yake"
         }
       ],
@@ -2355,14 +2208,6 @@
         },
         {
           "concept": "modeling",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "benchmarks",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "benchmark",
           "source": "cross_book_summa"
         },
         {
@@ -2388,9 +2233,16 @@
         {
           "concept": "evaluations",
           "source": "cross_book_summa"
+        },
+        {
+          "concept": "compare",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "compared",
+          "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 16,
@@ -2433,64 +2285,18 @@
           "chapter": 16,
           "title": "Segment 16 (pages 316-334)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 20,
-          "title": "Segment 20 (pages 398-416)",
-          "relevance_score": 0.7,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Generative AI with LangChain_2e",
-          "chapter": 41,
-          "title": "Segment 41 (pages 344-352)",
-          "relevance_score": 0.61,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 12,
-          "title": "Segment 12 (pages 231-252)",
-          "relevance_score": 0.6,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
-        {
-          "term": "model",
-          "score": 0.001,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "evaluation",
-          "score": 0.002,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "models",
-          "score": 0.003,
-          "source": "cross_book_yake"
-        },
         {
           "term": "factual consistency",
           "score": 0.003,
           "source": "cross_book_yake"
         },
         {
-          "term": "language model",
-          "score": 0.003,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "evaluate",
-          "score": 0.004,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "factual",
-          "score": 0.007,
+          "term": "model",
+          "score": 0.006,
           "source": "cross_book_yake"
         },
         {
@@ -2499,17 +2305,46 @@
           "source": "cross_book_yake"
         },
         {
+          "term": "factual",
+          "score": 0.007,
+          "source": "cross_book_yake"
+        },
+        {
           "term": "evaluate factual consistency",
-          "score": 0.008,
+          "score": 0.01,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "evaluate",
+          "score": 0.01,
           "source": "cross_book_yake"
         },
         {
           "term": "model factual consistency",
-          "score": 0.008,
+          "score": 0.011,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "models",
+          "score": 0.017,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "evaluated",
+          "score": 0.018,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "consistency models model",
+          "score": 0.019,
           "source": "cross_book_yake"
         }
       ],
       "concepts_enriched": [
+        {
+          "concept": "evaluation",
+          "source": "cross_book_summa"
+        },
         {
           "concept": "evaluated",
           "source": "cross_book_summa"
@@ -2527,14 +2362,6 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "evaluates",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "evaluations",
-          "source": "cross_book_summa"
-        },
-        {
           "concept": "models",
           "source": "cross_book_summa"
         },
@@ -2543,15 +2370,18 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "modeling",
+          "concept": "generative",
           "source": "cross_book_summa"
         },
         {
-          "concept": "outputs",
+          "concept": "generation",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "generate",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 17,
@@ -2594,86 +2424,58 @@
           "chapter": 17,
           "title": "Segment 17 (pages 335-354)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Building LLM Powered Applications",
-          "chapter": 14,
-          "title": "Segment 14 (pages 111-118)",
-          "relevance_score": 0.59,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Building LLM Powered Applications",
-          "chapter": 53,
-          "title": "Segment 53 (pages 449-458)",
-          "relevance_score": 0.52,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Generative AI with LangChain_2e",
-          "chapter": 51,
-          "title": "Segment 51 (pages 431-439)",
-          "relevance_score": 0.51,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Agents and Applications",
-          "chapter": 55,
-          "title": "Segment 55 (pages 474-483)",
-          "relevance_score": 0.51,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
         {
-          "term": "models",
-          "score": 0.001,
+          "term": "model",
+          "score": 0.002,
           "source": "cross_book_yake"
         },
         {
-          "term": "model",
-          "score": 0.001,
+          "term": "models",
+          "score": 0.004,
           "source": "cross_book_yake"
         },
         {
           "term": "model model models",
-          "score": 0.001,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "language models",
-          "score": 0.003,
+          "score": 0.006,
           "source": "cross_book_yake"
         },
         {
           "term": "model models instructions",
-          "score": 0.003,
+          "score": 0.01,
           "source": "cross_book_yake"
         },
         {
           "term": "models model instruction",
-          "score": 0.003,
+          "score": 0.01,
           "source": "cross_book_yake"
         },
         {
-          "term": "model models",
-          "score": 0.004,
+          "term": "instructions",
+          "score": 0.012,
           "source": "cross_book_yake"
         },
         {
-          "term": "models model",
-          "score": 0.004,
+          "term": "model instruction instructions",
+          "score": 0.018,
           "source": "cross_book_yake"
         },
         {
-          "term": "model models LLMs",
-          "score": 0.004,
+          "term": "Cost models model",
+          "score": 0.018,
           "source": "cross_book_yake"
         },
         {
-          "term": "large language models",
-          "score": 0.005,
+          "term": "Capability",
+          "score": 0.019,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "evaluate",
+          "score": 0.024,
           "source": "cross_book_yake"
         }
       ],
@@ -2687,39 +2489,38 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "modeling",
+          "concept": "follow",
           "source": "cross_book_summa"
         },
         {
-          "concept": "generating",
+          "concept": "instruction",
           "source": "cross_book_summa"
         },
         {
-          "concept": "generate",
+          "concept": "instructions",
           "source": "cross_book_summa"
         },
         {
-          "concept": "generates",
+          "concept": "instruct",
           "source": "cross_book_summa"
         },
         {
-          "concept": "generative",
+          "concept": "instructing",
           "source": "cross_book_summa"
         },
         {
-          "concept": "generations",
+          "concept": "evaluate",
           "source": "cross_book_summa"
         },
         {
-          "concept": "training",
+          "concept": "evaluation",
           "source": "cross_book_summa"
         },
         {
-          "concept": "trained",
+          "concept": "evaluating",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 18,
@@ -2762,28 +2563,28 @@
           "chapter": 18,
           "title": "Segment 18 (pages 355-374)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
+        },
+        {
+          "book": "AI Engineering Building Applications",
+          "chapter": 47,
+          "title": "Segment 47 (pages 950-972)",
+          "relevance_score": 0.73,
+          "method": "cosine_similarity"
         },
         {
           "book": "Building LLM Powered Applications",
-          "chapter": 14,
-          "title": "Segment 14 (pages 111-118)",
-          "relevance_score": 0.58,
-          "method": "sentence_transformers"
+          "chapter": 16,
+          "title": "Segment 16 (pages 128-135)",
+          "relevance_score": 0.72,
+          "method": "cosine_similarity"
         },
         {
-          "book": "AI Engineering Building Applications",
-          "chapter": 6,
-          "title": "Segment 6 (pages 103-122)",
-          "relevance_score": 0.54,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 42,
-          "title": "Segment 42 (pages 853-871)",
-          "relevance_score": 0.53,
-          "method": "sentence_transformers"
+          "book": "AI Agents and Applications",
+          "chapter": 57,
+          "title": "Segment 57 (pages 492-499)",
+          "relevance_score": 0.7,
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
@@ -2794,6 +2595,11 @@
         },
         {
           "term": "Model",
+          "score": 0.0,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "model APIs model",
           "score": 0.001,
           "source": "cross_book_yake"
         },
@@ -2803,22 +2609,7 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "APIs model API",
-          "score": 0.001,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "model APIs model",
-          "score": 0.001,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "model API",
-          "score": 0.001,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "model APIs",
+          "term": "models model models",
           "score": 0.001,
           "source": "cross_book_yake"
         },
@@ -2828,13 +2619,23 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "models model APIs",
-          "score": 0.002,
+          "term": "open source",
+          "score": 0.001,
           "source": "cross_book_yake"
         },
         {
-          "term": "models model models",
-          "score": 0.002,
+          "term": "APIs model API",
+          "score": 0.001,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "source models model",
+          "score": 0.001,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "model APIs",
+          "score": 0.001,
           "source": "cross_book_yake"
         }
       ],
@@ -2864,23 +2665,22 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "training",
+          "concept": "sourced",
           "source": "cross_book_summa"
         },
         {
-          "concept": "trained",
+          "concept": "evaluation",
           "source": "cross_book_summa"
         },
         {
-          "concept": "train",
+          "concept": "evaluating",
           "source": "cross_book_summa"
         },
         {
-          "concept": "engineering",
+          "concept": "evaluate",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 19,
@@ -2923,76 +2723,70 @@
           "chapter": 19,
           "title": "Segment 19 (pages 375-397)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 15,
-          "title": "Segment 15 (pages 297-315)",
-          "relevance_score": 0.62,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 20,
-          "title": "Segment 20 (pages 398-416)",
-          "relevance_score": 0.5,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
-        {
-          "term": "model",
-          "score": 0.002,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "models",
-          "score": 0.002,
-          "source": "cross_book_yake"
-        },
         {
           "term": "Benchmarks",
           "score": 0.002,
           "source": "cross_book_yake"
         },
         {
-          "term": "Evaluation",
-          "score": 0.003,
+          "term": "Benchmark",
+          "score": 0.004,
           "source": "cross_book_yake"
         },
         {
-          "term": "Benchmark",
-          "score": 0.003,
+          "term": "model",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "models",
+          "score": 0.005,
           "source": "cross_book_yake"
         },
         {
           "term": "benchmark data",
-          "score": 0.004,
+          "score": 0.005,
           "source": "cross_book_yake"
         },
         {
           "term": "data",
-          "score": 0.004,
+          "score": 0.005,
           "source": "cross_book_yake"
         },
         {
           "term": "Public Benchmarks",
-          "score": 0.006,
+          "score": 0.007,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "training data",
+          "score": 0.01,
           "source": "cross_book_yake"
         },
         {
           "term": "benchmarks benchmark model",
-          "score": 0.006,
+          "score": 0.011,
           "source": "cross_book_yake"
         },
         {
-          "term": "evaluate",
-          "score": 0.007,
+          "term": "Benchmarks model models",
+          "score": 0.013,
           "source": "cross_book_yake"
         }
       ],
       "concepts_enriched": [
+        {
+          "concept": "benchmarks",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "benchmark",
+          "source": "cross_book_summa"
+        },
         {
           "concept": "model",
           "source": "cross_book_summa"
@@ -3002,7 +2796,7 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "modeling",
+          "concept": "data",
           "source": "cross_book_summa"
         },
         {
@@ -3018,23 +2812,14 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "evaluator",
+          "concept": "trained",
           "source": "cross_book_summa"
         },
         {
-          "concept": "evaluators",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "evaluations",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "benchmarks",
+          "concept": "training",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 20,
@@ -3077,71 +2862,64 @@
           "chapter": 20,
           "title": "Segment 20 (pages 398-416)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         },
         {
-          "book": "AI Engineering Building Applications",
-          "chapter": 16,
-          "title": "Segment 16 (pages 316-334)",
-          "relevance_score": 0.7,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 13,
-          "title": "Segment 13 (pages 253-274)",
-          "relevance_score": 0.67,
-          "method": "sentence_transformers"
+          "book": "Generative AI with LangChain_2e",
+          "chapter": 40,
+          "title": "Segment 40 (pages 336-343)",
+          "relevance_score": 0.71,
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
         {
           "term": "evaluation",
-          "score": 0.002,
+          "score": 0.001,
           "source": "cross_book_yake"
         },
         {
           "term": "evaluation pipeline",
-          "score": 0.004,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "model",
-          "score": 0.004,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "models",
-          "score": 0.005,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "evaluate",
-          "score": 0.006,
+          "score": 0.003,
           "source": "cross_book_yake"
         },
         {
           "term": "evaluation evaluation pipeline",
-          "score": 0.006,
+          "score": 0.005,
           "source": "cross_book_yake"
         },
         {
           "term": "Evaluation Methods",
+          "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "models",
           "score": 0.007,
           "source": "cross_book_yake"
         },
         {
-          "term": "Data",
+          "term": "model",
           "score": 0.008,
           "source": "cross_book_yake"
         },
         {
           "term": "evaluation set",
-          "score": 0.009,
+          "score": 0.008,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "evaluation evaluation",
+          "score": 0.008,
           "source": "cross_book_yake"
         },
         {
           "term": "evaluation metrics",
+          "score": 0.009,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Evaluation Methods evaluation",
           "score": 0.01,
           "source": "cross_book_yake"
         }
@@ -3164,11 +2942,7 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "evaluator",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "evaluators",
+          "concept": "evaluates",
           "source": "cross_book_summa"
         },
         {
@@ -3184,11 +2958,14 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "modeling",
+          "concept": "users",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "user",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 21,
@@ -3231,28 +3008,21 @@
           "chapter": 21,
           "title": "Segment 21 (pages 417-434)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Building LLM Powered Applications",
-          "chapter": 17,
-          "title": "Segment 17 (pages 136-143)",
-          "relevance_score": 0.68,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         },
         {
           "book": "AI Engineering Building Applications",
           "chapter": 22,
           "title": "Segment 22 (pages 435-456)",
-          "relevance_score": 0.66,
-          "method": "sentence_transformers"
+          "relevance_score": 0.84,
+          "method": "cosine_similarity"
         },
         {
-          "book": "AI Agents and Applications",
-          "chapter": 10,
-          "title": "Segment 10 (pages 76-83)",
-          "relevance_score": 0.66,
-          "method": "sentence_transformers"
+          "book": "AI Engineering Building Applications",
+          "chapter": 23,
+          "title": "Segment 23 (pages 457-476)",
+          "relevance_score": 0.76,
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
@@ -3267,18 +3037,18 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "prompt engineering",
+          "term": "prompts",
           "score": 0.003,
           "source": "cross_book_yake"
         },
         {
-          "term": "prompts",
+          "term": "prompt engineering",
           "score": 0.004,
           "source": "cross_book_yake"
         },
         {
-          "term": "models",
-          "score": 0.005,
+          "term": "system prompt",
+          "score": 0.004,
           "source": "cross_book_yake"
         },
         {
@@ -3287,23 +3057,23 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "system prompt",
-          "score": 0.007,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "context",
-          "score": 0.007,
+          "term": "models",
+          "score": 0.005,
           "source": "cross_book_yake"
         },
         {
           "term": "prompt prompts",
-          "score": 0.008,
+          "score": 0.007,
           "source": "cross_book_yake"
         },
         {
           "term": "prompt prompts prompt",
-          "score": 0.009,
+          "score": 0.007,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Prompt System Prompt",
+          "score": 0.008,
           "source": "cross_book_yake"
         }
       ],
@@ -3329,15 +3099,7 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "llm",
-          "source": "cross_book_summa"
-        },
-        {
           "concept": "context",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "contexts",
           "source": "cross_book_summa"
         },
         {
@@ -3347,9 +3109,16 @@
         {
           "concept": "different",
           "source": "cross_book_summa"
+        },
+        {
+          "concept": "differ",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "user",
+          "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 22,
@@ -3392,21 +3161,21 @@
           "chapter": 22,
           "title": "Segment 22 (pages 435-456)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         },
         {
           "book": "AI Engineering Building Applications",
           "chapter": 21,
           "title": "Segment 21 (pages 417-434)",
-          "relevance_score": 0.66,
-          "method": "sentence_transformers"
+          "relevance_score": 0.84,
+          "method": "cosine_similarity"
         },
         {
           "book": "AI Engineering Building Applications",
           "chapter": 23,
           "title": "Segment 23 (pages 457-476)",
-          "relevance_score": 0.64,
-          "method": "sentence_transformers"
+          "relevance_score": 0.81,
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
@@ -3502,8 +3271,7 @@
           "concept": "instructions",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 23,
@@ -3546,34 +3314,41 @@
           "chapter": 23,
           "title": "Segment 23 (pages 457-476)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Agents In Action",
-          "chapter": 7,
-          "title": "Segment 7 (pages 50-57)",
-          "relevance_score": 0.7,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Generative AI with LangChain_2e",
-          "chapter": 14,
-          "title": "Segment 14 (pages 113-121)",
-          "relevance_score": 0.66,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         },
         {
           "book": "AI Engineering Building Applications",
           "chapter": 22,
           "title": "Segment 22 (pages 435-456)",
-          "relevance_score": 0.64,
-          "method": "sentence_transformers"
+          "relevance_score": 0.81,
+          "method": "cosine_similarity"
+        },
+        {
+          "book": "AI Agents In Action",
+          "chapter": 27,
+          "title": "Segment 27 (pages 233-241)",
+          "relevance_score": 0.79,
+          "method": "cosine_similarity"
+        },
+        {
+          "book": "AI Engineering Building Applications",
+          "chapter": 21,
+          "title": "Segment 21 (pages 417-434)",
+          "relevance_score": 0.76,
+          "method": "cosine_similarity"
+        },
+        {
+          "book": "Generative AI with LangChain_2e",
+          "chapter": 13,
+          "title": "Segment 13 (pages 104-112)",
+          "relevance_score": 0.7,
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
         {
           "term": "prompt",
-          "score": 0.001,
+          "score": 0.0,
           "source": "cross_book_yake"
         },
         {
@@ -3583,7 +3358,7 @@
         },
         {
           "term": "prompts",
-          "score": 0.002,
+          "score": 0.001,
           "source": "cross_book_yake"
         },
         {
@@ -3592,8 +3367,23 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "reverse prompt engineering",
-          "score": 0.003,
+          "term": "model",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "prompt model prompts",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "model prompts prompt",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "system prompt",
+          "score": 0.002,
           "source": "cross_book_yake"
         },
         {
@@ -3602,23 +3392,8 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "prompt model prompts",
+          "term": "reverse prompt engineering",
           "score": 0.003,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "model prompts prompt",
-          "score": 0.003,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "model",
-          "score": 0.004,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "prompt engineering tool",
-          "score": 0.004,
           "source": "cross_book_yake"
         }
       ],
@@ -3644,27 +3419,26 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "output",
+          "concept": "engineering",
           "source": "cross_book_summa"
         },
         {
-          "concept": "outputs",
+          "concept": "context",
           "source": "cross_book_summa"
         },
         {
-          "concept": "outputting",
+          "concept": "different",
           "source": "cross_book_summa"
         },
         {
-          "concept": "examples",
+          "concept": "differ",
           "source": "cross_book_summa"
         },
         {
-          "concept": "tactics",
+          "concept": "differences",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 24,
@@ -3707,21 +3481,14 @@
           "chapter": 24,
           "title": "Segment 24 (pages 477-494)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         },
         {
           "book": "AI Engineering Building Applications",
-          "chapter": 9,
-          "title": "Segment 9 (pages 165-185)",
-          "relevance_score": 0.59,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 10,
-          "title": "Segment 10 (pages 186-208)",
-          "relevance_score": 0.58,
-          "method": "sentence_transformers"
+          "chapter": 11,
+          "title": "Segment 11 (pages 209-230)",
+          "relevance_score": 0.73,
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
@@ -3741,13 +3508,13 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "data",
-          "score": 0.004,
+          "term": "model models prompt",
+          "score": 0.006,
           "source": "cross_book_yake"
         },
         {
-          "term": "model models prompt",
-          "score": 0.005,
+          "term": "data",
+          "score": 0.006,
           "source": "cross_book_yake"
         },
         {
@@ -3756,23 +3523,23 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "reward model",
-          "score": 0.007,
-          "source": "cross_book_yake"
-        },
-        {
           "term": "training",
-          "score": 0.007,
+          "score": 0.008,
           "source": "cross_book_yake"
         },
         {
           "term": "data Data models",
-          "score": 0.008,
+          "score": 0.009,
           "source": "cross_book_yake"
         },
         {
-          "term": "language model",
-          "score": 0.008,
+          "term": "n’t model models",
+          "score": 0.01,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "model outputs",
+          "score": 0.01,
           "source": "cross_book_yake"
         }
       ],
@@ -3790,11 +3557,15 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "trained",
+          "concept": "prompt",
           "source": "cross_book_summa"
         },
         {
-          "concept": "train",
+          "concept": "prompts",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "prompting",
           "source": "cross_book_summa"
         },
         {
@@ -3806,19 +3577,14 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "generations",
+          "concept": "trained",
           "source": "cross_book_summa"
         },
         {
-          "concept": "generative",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "generated",
+          "concept": "train",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 25,
@@ -3861,86 +3627,58 @@
           "chapter": 25,
           "title": "Segment 25 (pages 495-517)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Generative AI with LangChain_2e",
-          "chapter": 16,
-          "title": "Segment 16 (pages 130-138)",
-          "relevance_score": 0.78,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Agents and Applications",
-          "chapter": 27,
-          "title": "Segment 27 (pages 230-240)",
-          "relevance_score": 0.72,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "LLM-Engineers-Handbook",
-          "chapter": 17,
-          "title": "Segment 17 (pages 149-163)",
-          "relevance_score": 0.66,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Agents and Applications",
-          "chapter": 23,
-          "title": "Segment 23 (pages 191-199)",
-          "relevance_score": 0.65,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
         {
-          "term": "RAG Feature Pipeline",
-          "score": 0.0,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "RAG",
-          "score": 0.001,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "RAG Feature",
-          "score": 0.001,
-          "source": "cross_book_yake"
-        },
-        {
           "term": "Retrieval",
-          "score": 0.002,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "retrieval Retrieval RAG",
-          "score": 0.002,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "RAG systems",
-          "score": 0.002,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "RAG pipeline RAG",
           "score": 0.003,
           "source": "cross_book_yake"
         },
         {
-          "term": "Retrieval RAG vector",
-          "score": 0.003,
+          "term": "term-based retrieval",
+          "score": 0.005,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "embedding-based retrieval",
+          "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "vector search",
+          "score": 0.009,
           "source": "cross_book_yake"
         },
         {
           "term": "vector",
-          "score": 0.003,
+          "score": 0.01,
           "source": "cross_book_yake"
         },
         {
-          "term": "RAG Systems RAG",
-          "score": 0.003,
+          "term": "documents",
+          "score": 0.01,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "retrieval Retrieval RAG",
+          "score": 0.011,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "query",
+          "score": 0.012,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "retrieval retrieval retrieval",
+          "score": 0.012,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "retrieval retrieval",
+          "score": 0.013,
           "source": "cross_book_yake"
         }
       ],
@@ -3978,15 +3716,14 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "data",
+          "concept": "vectors",
           "source": "cross_book_summa"
         },
         {
-          "concept": "rag",
+          "concept": "vector",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 26,
@@ -4029,79 +3766,58 @@
           "chapter": 26,
           "title": "Segment 26 (pages 518-535)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Agents and Applications",
-          "chapter": 27,
-          "title": "Segment 27 (pages 230-240)",
-          "relevance_score": 0.62,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 25,
-          "title": "Segment 25 (pages 495-517)",
-          "relevance_score": 0.62,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Generative AI with LangChain_2e",
-          "chapter": 20,
-          "title": "Segment 20 (pages 165-173)",
-          "relevance_score": 0.62,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
         {
-          "term": "retrieval",
-          "score": 0.003,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "documents",
-          "score": 0.003,
+          "term": "chunk",
+          "score": 0.007,
           "source": "cross_book_yake"
         },
         {
           "term": "document",
-          "score": 0.003,
+          "score": 0.008,
           "source": "cross_book_yake"
         },
         {
           "term": "query",
-          "score": 0.005,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "chunk",
-          "score": 0.005,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "RAG",
-          "score": 0.006,
+          "score": 0.011,
           "source": "cross_book_yake"
         },
         {
           "term": "chunks",
-          "score": 0.006,
+          "score": 0.011,
           "source": "cross_book_yake"
         },
         {
-          "term": "vector",
-          "score": 0.007,
+          "term": "documents",
+          "score": 0.012,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "retrieval",
+          "score": 0.016,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "context",
+          "score": 0.017,
           "source": "cross_book_yake"
         },
         {
           "term": "retriever",
-          "score": 0.007,
+          "score": 0.019,
           "source": "cross_book_yake"
         },
         {
-          "term": "RAG documents RAG",
-          "score": 0.008,
+          "term": "chunk documents",
+          "score": 0.019,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "chunk query document",
+          "score": 0.027,
           "source": "cross_book_yake"
         }
       ],
@@ -4127,27 +3843,26 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "retrieving",
+          "concept": "query",
           "source": "cross_book_summa"
         },
         {
-          "concept": "retrieves",
+          "concept": "queries",
           "source": "cross_book_summa"
         },
         {
-          "concept": "retrievals",
+          "concept": "queried",
           "source": "cross_book_summa"
         },
         {
-          "concept": "documents",
+          "concept": "chunks",
           "source": "cross_book_summa"
         },
         {
-          "concept": "document",
+          "concept": "chunk",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 27,
@@ -4190,92 +3905,75 @@
           "chapter": 27,
           "title": "Segment 27 (pages 536-554)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         },
         {
-          "book": "AI Agents In Action",
-          "chapter": 4,
-          "title": "Segment 4 (pages 25-32)",
-          "relevance_score": 0.74,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Agents In Action",
-          "chapter": 36,
-          "title": "Segment 36 (pages 313-321)",
-          "relevance_score": 0.71,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Agents In Action",
-          "chapter": 5,
-          "title": "Segment 5 (pages 33-40)",
-          "relevance_score": 0.71,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Agents In Action",
-          "chapter": 2,
-          "title": "Segment 2 (pages 9-16)",
-          "relevance_score": 0.71,
-          "method": "sentence_transformers"
+          "book": "AI Engineering Building Applications",
+          "chapter": 28,
+          "title": "Segment 28 (pages 555-576)",
+          "relevance_score": 0.8,
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
         {
           "term": "agent",
-          "score": 0.001,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "agents",
           "score": 0.002,
           "source": "cross_book_yake"
         },
         {
           "term": "plan",
-          "score": 0.005,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "Autonomous agent",
-          "score": 0.005,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "model",
-          "score": 0.006,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "agent agents",
-          "score": 0.006,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "agent systems",
-          "score": 0.007,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "planning",
-          "score": 0.007,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "agent system agent",
-          "score": 0.008,
+          "score": 0.004,
           "source": "cross_book_yake"
         },
         {
           "term": "tools",
+          "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "model",
+          "score": 0.007,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "tool",
           "score": 0.008,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "agents",
+          "score": 0.013,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "generate",
+          "score": 0.016,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "plans",
+          "score": 0.017,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "environment",
+          "score": 0.017,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "task",
+          "score": 0.018,
           "source": "cross_book_yake"
         }
       ],
       "concepts_enriched": [
         {
           "concept": "agents",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "tool",
           "source": "cross_book_summa"
         },
         {
@@ -4291,10 +3989,6 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "planned",
-          "source": "cross_book_summa"
-        },
-        {
           "concept": "model",
           "source": "cross_book_summa"
         },
@@ -4303,19 +3997,18 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "tasks",
+          "concept": "generation",
           "source": "cross_book_summa"
         },
         {
-          "concept": "task",
+          "concept": "generate",
           "source": "cross_book_summa"
         },
         {
-          "concept": "tasked",
+          "concept": "generated",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 28,
@@ -4358,28 +4051,21 @@
           "chapter": 28,
           "title": "Segment 28 (pages 555-576)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         },
         {
           "book": "AI Engineering Building Applications",
-          "chapter": 29,
-          "title": "Segment 29 (pages 577-594)",
-          "relevance_score": 0.67,
-          "method": "sentence_transformers"
+          "chapter": 27,
+          "title": "Segment 27 (pages 536-554)",
+          "relevance_score": 0.8,
+          "method": "cosine_similarity"
         },
         {
-          "book": "AI Agents In Action",
-          "chapter": 35,
-          "title": "Segment 35 (pages 304-312)",
-          "relevance_score": 0.64,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Agents In Action",
-          "chapter": 34,
-          "title": "Segment 34 (pages 296-303)",
-          "relevance_score": 0.62,
-          "method": "sentence_transformers"
+          "book": "Building LLM Powered Applications",
+          "chapter": 36,
+          "title": "Segment 36 (pages 300-307)",
+          "relevance_score": 0.7,
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
@@ -4389,68 +4075,52 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "tool",
-          "score": 0.003,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "Plan",
+          "term": "tools",
           "score": 0.004,
           "source": "cross_book_yake"
         },
         {
-          "term": "tools",
+          "term": "tool",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Plan",
           "score": 0.005,
           "source": "cross_book_yake"
         },
         {
           "term": "model",
-          "score": 0.006,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "planning",
-          "score": 0.006,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "agent planning",
-          "score": 0.006,
+          "score": 0.008,
           "source": "cross_book_yake"
         },
         {
           "term": "agents",
-          "score": 0.007,
+          "score": 0.011,
           "source": "cross_book_yake"
         },
         {
-          "term": "plans agent agents",
-          "score": 0.007,
+          "term": "task",
+          "score": 0.012,
           "source": "cross_book_yake"
         },
         {
           "term": "agent tool tools",
-          "score": 0.008,
+          "score": 0.014,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "generate",
+          "score": 0.014,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "plans agent agents",
+          "score": 0.016,
           "source": "cross_book_yake"
         }
       ],
       "concepts_enriched": [
-        {
-          "concept": "plan",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "planning",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "plans",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "planned",
-          "source": "cross_book_summa"
-        },
         {
           "concept": "agent",
           "source": "cross_book_summa"
@@ -4468,15 +4138,30 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "function",
+          "concept": "planning",
           "source": "cross_book_summa"
         },
         {
-          "concept": "functions",
+          "concept": "model",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "models",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "generator",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "generate",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "generates",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 29,
@@ -4519,90 +4204,80 @@
           "chapter": 29,
           "title": "Segment 29 (pages 577-594)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 28,
-          "title": "Segment 28 (pages 555-576)",
-          "relevance_score": 0.67,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 27,
-          "title": "Segment 27 (pages 536-554)",
-          "relevance_score": 0.64,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
         {
-          "term": "agent",
-          "score": 0.002,
+          "term": "memory",
+          "score": 0.004,
           "source": "cross_book_yake"
         },
         {
           "term": "model",
-          "score": 0.003,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "memory",
-          "score": 0.003,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "tools",
           "score": 0.006,
           "source": "cross_book_yake"
         },
         {
-          "term": "tool",
-          "score": 0.006,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "plan",
+          "term": "agent",
           "score": 0.008,
           "source": "cross_book_yake"
         },
         {
           "term": "Long-term memory",
-          "score": 0.009,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "agents",
           "score": 0.012,
           "source": "cross_book_yake"
         },
         {
           "term": "RAG",
-          "score": 0.012,
+          "score": 0.013,
           "source": "cross_book_yake"
         },
         {
-          "term": "task",
-          "score": 0.012,
+          "term": "information",
+          "score": 0.016,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "short-term memory",
+          "score": 0.02,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Long-term",
+          "score": 0.025,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "context",
+          "score": 0.026,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "memory system",
+          "score": 0.03,
           "source": "cross_book_yake"
         }
       ],
       "concepts_enriched": [
+        {
+          "concept": "memory",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "memories",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "information",
+          "source": "cross_book_summa"
+        },
         {
           "concept": "agents",
           "source": "cross_book_summa"
         },
         {
           "concept": "tools",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "plan",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "plans",
           "source": "cross_book_summa"
         },
         {
@@ -4614,11 +4289,7 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "memory",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "memories",
+          "concept": "context",
           "source": "cross_book_summa"
         },
         {
@@ -4629,8 +4300,7 @@
           "concept": "tasks",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 30,
@@ -4673,21 +4343,21 @@
           "chapter": 30,
           "title": "Segment 30 (pages 595-616)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         },
         {
           "book": "AI Engineering Building Applications",
-          "chapter": 2,
-          "title": "Segment 2 (pages 19-39)",
-          "relevance_score": 0.65,
-          "method": "sentence_transformers"
+          "chapter": 34,
+          "title": "Segment 34 (pages 681-701)",
+          "relevance_score": 0.78,
+          "method": "cosine_similarity"
         },
         {
           "book": "AI Engineering Building Applications",
-          "chapter": 6,
-          "title": "Segment 6 (pages 103-122)",
-          "relevance_score": 0.62,
-          "method": "sentence_transformers"
+          "chapter": 33,
+          "title": "Segment 33 (pages 663-680)",
+          "relevance_score": 0.72,
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
@@ -4697,33 +4367,23 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "models",
+          "term": "models model models",
           "score": 0.001,
           "source": "cross_book_yake"
         },
         {
-          "term": "models model models",
+          "term": "models",
           "score": 0.002,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "foundation models",
-          "score": 0.002,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "language model",
-          "score": 0.003,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "finetuning",
-          "score": 0.004,
           "source": "cross_book_yake"
         },
         {
           "term": "base model",
-          "score": 0.004,
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "finetuning",
+          "score": 0.003,
           "source": "cross_book_yake"
         },
         {
@@ -4732,7 +4392,12 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "Llama models model",
+          "term": "Model models Model",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "models model",
           "score": 0.004,
           "source": "cross_book_yake"
         },
@@ -4740,19 +4405,32 @@
           "term": "Code Llama models",
           "score": 0.004,
           "source": "cross_book_yake"
+        },
+        {
+          "term": "Llama models model",
+          "score": 0.005,
+          "source": "cross_book_yake"
         }
       ],
       "concepts_enriched": [
+        {
+          "concept": "models",
+          "source": "cross_book_summa"
+        },
         {
           "concept": "model",
           "source": "cross_book_summa"
         },
         {
-          "concept": "modeling",
+          "concept": "data",
           "source": "cross_book_summa"
         },
         {
-          "concept": "data",
+          "concept": "tasks",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "task",
           "source": "cross_book_summa"
         },
         {
@@ -4768,23 +4446,14 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "ais",
+          "concept": "trains",
           "source": "cross_book_summa"
         },
         {
-          "concept": "different",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "differs",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "differently",
+          "concept": "merging",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 31,
@@ -4827,72 +4496,58 @@
           "chapter": 31,
           "title": "Segment 31 (pages 617-639)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 32,
-          "title": "Segment 32 (pages 640-662)",
-          "relevance_score": 0.72,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 40,
-          "title": "Segment 40 (pages 808-829)",
-          "relevance_score": 0.68,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
         {
           "term": "model",
-          "score": 0.001,
+          "score": 0.002,
           "source": "cross_book_yake"
         },
         {
           "term": "memory",
-          "score": 0.002,
+          "score": 0.003,
           "source": "cross_book_yake"
         },
         {
           "term": "memory needed",
-          "score": 0.002,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "models",
-          "score": 0.005,
+          "score": 0.003,
           "source": "cross_book_yake"
         },
         {
           "term": "memory footprint",
-          "score": 0.005,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "model memory memory",
-          "score": 0.006,
+          "score": 0.008,
           "source": "cross_book_yake"
         },
         {
           "term": "needed",
-          "score": 0.007,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "parameters",
           "score": 0.008,
           "source": "cross_book_yake"
         },
         {
           "term": "precision",
-          "score": 0.009,
+          "score": 0.01,
           "source": "cross_book_yake"
         },
         {
-          "term": "model models",
-          "score": 0.009,
+          "term": "models",
+          "score": 0.011,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "model memory memory",
+          "score": 0.013,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "model ’s memory",
+          "score": 0.018,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "training",
+          "score": 0.018,
           "source": "cross_book_yake"
         }
       ],
@@ -4902,19 +4557,7 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "token",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "tokens",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "parameters",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "parameter",
+          "concept": "precision",
           "source": "cross_book_summa"
         },
         {
@@ -4930,15 +4573,26 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "optimizing",
+          "concept": "bits",
           "source": "cross_book_summa"
         },
         {
-          "concept": "optimized",
+          "concept": "bit",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "parameters",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "parameter",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "values",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 32,
@@ -4981,102 +4635,64 @@
           "chapter": 32,
           "title": "Segment 32 (pages 640-662)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 31,
-          "title": "Segment 31 (pages 617-639)",
-          "relevance_score": 0.72,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 40,
-          "title": "Segment 40 (pages 808-829)",
-          "relevance_score": 0.62,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
-        {
-          "term": "model",
-          "score": 0.001,
-          "source": "cross_book_yake"
-        },
         {
           "term": "LoRA",
           "score": 0.003,
           "source": "cross_book_yake"
         },
         {
-          "term": "memory",
-          "score": 0.004,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "models",
-          "score": 0.005,
+          "term": "model",
+          "score": 0.003,
           "source": "cross_book_yake"
         },
         {
           "term": "parameters",
-          "score": 0.005,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "memory needed",
           "score": 0.007,
           "source": "cross_book_yake"
         },
         {
           "term": "trainable parameters",
-          "score": 0.008,
+          "score": 0.01,
           "source": "cross_book_yake"
         },
         {
           "term": "finetuning",
-          "score": 0.008,
+          "score": 0.011,
           "source": "cross_book_yake"
         },
         {
-          "term": "target model",
-          "score": 0.012,
+          "term": "models",
+          "score": 0.013,
           "source": "cross_book_yake"
         },
         {
-          "term": "memory footprint",
-          "score": 0.012,
+          "term": "trainable",
+          "score": 0.018,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Full finetuning",
+          "score": 0.018,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "memory",
+          "score": 0.019,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "PEFT models LoRA",
+          "score": 0.024,
           "source": "cross_book_yake"
         }
       ],
       "concepts_enriched": [
         {
-          "concept": "models",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "token",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "tokens",
-          "source": "cross_book_summa"
-        },
-        {
           "concept": "parameter",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "trained",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "training",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "train",
           "source": "cross_book_summa"
         },
         {
@@ -5084,15 +4700,38 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "optimization",
+          "concept": "matrix",
           "source": "cross_book_summa"
         },
         {
-          "concept": "optimizing",
+          "concept": "adaptation",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "adapters",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "adapt",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "weight",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "rank",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "matrices",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "uses",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 33,
@@ -5135,21 +4774,14 @@
           "chapter": 33,
           "title": "Segment 33 (pages 663-680)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         },
         {
           "book": "AI Engineering Building Applications",
           "chapter": 30,
           "title": "Segment 30 (pages 595-616)",
-          "relevance_score": 0.57,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 34,
-          "title": "Segment 34 (pages 681-701)",
-          "relevance_score": 0.51,
-          "method": "sentence_transformers"
+          "relevance_score": 0.72,
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
@@ -5159,18 +4791,18 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "models Model models",
+          "term": "Model Merging",
           "score": 0.001,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "models Model models",
+          "score": 0.002,
           "source": "cross_book_yake"
         },
         {
           "term": "models",
-          "score": 0.001,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "Model Merging",
-          "score": 0.001,
+          "score": 0.002,
           "source": "cross_book_yake"
         },
         {
@@ -5179,13 +4811,13 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "base model",
-          "score": 0.003,
+          "term": "models Model",
+          "score": 0.004,
           "source": "cross_book_yake"
         },
         {
-          "term": "models Model",
-          "score": 0.003,
+          "term": "base model",
+          "score": 0.004,
           "source": "cross_book_yake"
         },
         {
@@ -5195,12 +4827,12 @@
         },
         {
           "term": "models base model",
-          "score": 0.005,
+          "score": 0.006,
           "source": "cross_book_yake"
         },
         {
-          "term": "Finetuning",
-          "score": 0.005,
+          "term": "models model task",
+          "score": 0.006,
           "source": "cross_book_yake"
         }
       ],
@@ -5214,15 +4846,27 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "data",
-          "source": "cross_book_summa"
-        },
-        {
           "concept": "task",
           "source": "cross_book_summa"
         },
         {
           "concept": "tasks",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "merging",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "merge",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "merged",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "data",
           "source": "cross_book_summa"
         },
         {
@@ -5232,21 +4876,8 @@
         {
           "concept": "train",
           "source": "cross_book_summa"
-        },
-        {
-          "concept": "trained",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "trains",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "merging",
-          "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 34,
@@ -5289,27 +4920,27 @@
           "chapter": 34,
           "title": "Segment 34 (pages 681-701)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         },
         {
           "book": "AI Engineering Building Applications",
           "chapter": 30,
           "title": "Segment 30 (pages 595-616)",
-          "relevance_score": 0.58,
-          "method": "sentence_transformers"
+          "relevance_score": 0.78,
+          "method": "cosine_similarity"
         },
         {
-          "book": "Building LLM Powered Applications",
-          "chapter": 47,
-          "title": "Segment 47 (pages 396-406)",
-          "relevance_score": 0.57,
-          "method": "sentence_transformers"
+          "book": "AI Engineering Building Applications",
+          "chapter": 11,
+          "title": "Segment 11 (pages 209-230)",
+          "relevance_score": 0.71,
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
         {
           "term": "model",
-          "score": 0.001,
+          "score": 0.0,
           "source": "cross_book_yake"
         },
         {
@@ -5319,7 +4950,7 @@
         },
         {
           "term": "base model",
-          "score": 0.003,
+          "score": 0.004,
           "source": "cross_book_yake"
         },
         {
@@ -5329,32 +4960,32 @@
         },
         {
           "term": "data",
-          "score": 0.005,
+          "score": 0.004,
           "source": "cross_book_yake"
         },
         {
           "term": "models model models",
-          "score": 0.005,
+          "score": 0.004,
           "source": "cross_book_yake"
         },
         {
           "term": "models model data",
-          "score": 0.006,
+          "score": 0.005,
           "source": "cross_book_yake"
         },
         {
           "term": "models model",
-          "score": 0.007,
+          "score": 0.006,
           "source": "cross_book_yake"
         },
         {
-          "term": "models base model",
+          "term": "training",
           "score": 0.008,
           "source": "cross_book_yake"
         },
         {
           "term": "finetuned model",
-          "score": 0.009,
+          "score": 0.008,
           "source": "cross_book_yake"
         }
       ],
@@ -5376,14 +5007,6 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "task",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "tasks",
-          "source": "cross_book_summa"
-        },
-        {
           "concept": "training",
           "source": "cross_book_summa"
         },
@@ -5398,9 +5021,16 @@
         {
           "concept": "trains",
           "source": "cross_book_summa"
+        },
+        {
+          "concept": "different",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "response",
+          "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 35,
@@ -5443,28 +5073,7 @@
           "chapter": 35,
           "title": "Segment 35 (pages 702-724)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 38,
-          "title": "Segment 38 (pages 767-788)",
-          "relevance_score": 0.62,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Reliable Machine Learning",
-          "chapter": 7,
-          "title": "Segment 7 (pages 53-61)",
-          "relevance_score": 0.58,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Building LLM Powered Applications",
-          "chapter": 47,
-          "title": "Segment 47 (pages 396-406)",
-          "relevance_score": 0.52,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
@@ -5475,47 +5084,47 @@
         },
         {
           "term": "model",
-          "score": 0.002,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "data model models",
-          "score": 0.003,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "training data",
-          "score": 0.003,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "models",
-          "score": 0.004,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "Data quality",
-          "score": 0.005,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "training",
-          "score": 0.006,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "data model",
           "score": 0.007,
           "source": "cross_book_yake"
         },
         {
-          "term": "Data data Data",
+          "term": "training data",
+          "score": 0.007,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Data quality",
           "score": 0.008,
           "source": "cross_book_yake"
         },
         {
-          "term": "data training data",
-          "score": 0.008,
+          "term": "data model models",
+          "score": 0.009,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "training",
+          "score": 0.015,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "models",
+          "score": 0.015,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "data diversity",
+          "score": 0.016,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "finetuning",
+          "score": 0.017,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "data data quality",
+          "score": 0.018,
           "source": "cross_book_yake"
         }
       ],
@@ -5533,14 +5142,6 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "modelers",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "modeling",
-          "source": "cross_book_summa"
-        },
-        {
           "concept": "train",
           "source": "cross_book_summa"
         },
@@ -5553,15 +5154,22 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "tasks",
+          "concept": "dataset",
           "source": "cross_book_summa"
         },
         {
-          "concept": "task",
+          "concept": "examples",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "performance",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "quality",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 36,
@@ -5604,41 +5212,29 @@
           "chapter": 36,
           "title": "Segment 36 (pages 725-745)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         },
         {
           "book": "AI Engineering Building Applications",
           "chapter": 37,
           "title": "Segment 37 (pages 746-766)",
-          "relevance_score": 0.71,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 38,
-          "title": "Segment 38 (pages 767-788)",
-          "relevance_score": 0.61,
-          "method": "sentence_transformers"
+          "relevance_score": 0.8,
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
         {
           "term": "data",
-          "score": 0.0,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "generate data",
           "score": 0.001,
           "source": "cross_book_yake"
         },
         {
-          "term": "data synthesis",
+          "term": "generate data",
           "score": 0.002,
           "source": "cross_book_yake"
         },
         {
-          "term": "synthetic data",
+          "term": "data synthesis",
           "score": 0.002,
           "source": "cross_book_yake"
         },
@@ -5648,8 +5244,8 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "model",
-          "score": 0.003,
+          "term": "synthetic data",
+          "score": 0.002,
           "source": "cross_book_yake"
         },
         {
@@ -5658,17 +5254,22 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "data data generate",
-          "score": 0.004,
-          "source": "cross_book_yake"
-        },
-        {
           "term": "generates data data",
           "score": 0.004,
           "source": "cross_book_yake"
         },
         {
+          "term": "data data generate",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
           "term": "Data synthesis generates",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "synthesis generates data",
           "score": 0.004,
           "source": "cross_book_yake"
         }
@@ -5714,8 +5315,7 @@
           "concept": "generator",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 37,
@@ -5758,27 +5358,20 @@
           "chapter": 37,
           "title": "Segment 37 (pages 746-766)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         },
         {
           "book": "AI Engineering Building Applications",
           "chapter": 36,
           "title": "Segment 36 (pages 725-745)",
-          "relevance_score": 0.71,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 38,
-          "title": "Segment 38 (pages 767-788)",
-          "relevance_score": 0.71,
-          "method": "sentence_transformers"
+          "relevance_score": 0.8,
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
         {
           "term": "Data",
-          "score": 0.0,
+          "score": 0.001,
           "source": "cross_book_yake"
         },
         {
@@ -5788,7 +5381,7 @@
         },
         {
           "term": "model",
-          "score": 0.002,
+          "score": 0.004,
           "source": "cross_book_yake"
         },
         {
@@ -5797,47 +5390,39 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "data synthesis",
-          "score": 0.004,
+          "term": "AI-generated data",
+          "score": 0.005,
           "source": "cross_book_yake"
         },
         {
-          "term": "AI-generated data",
-          "score": 0.004,
+          "term": "data synthesis",
+          "score": 0.005,
           "source": "cross_book_yake"
         },
         {
           "term": "data model models",
-          "score": 0.005,
+          "score": 0.006,
           "source": "cross_book_yake"
         },
         {
           "term": "model models data",
-          "score": 0.005,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "training data",
-          "score": 0.005,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "Models",
           "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "data data synthesis",
+          "score": 0.007,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "data data",
+          "score": 0.008,
           "source": "cross_book_yake"
         }
       ],
       "concepts_enriched": [
         {
           "concept": "data",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "model",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "models",
           "source": "cross_book_summa"
         },
         {
@@ -5867,9 +5452,16 @@
         {
           "concept": "generator",
           "source": "cross_book_summa"
+        },
+        {
+          "concept": "model",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "models",
+          "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 38,
@@ -5912,32 +5504,18 @@
           "chapter": 38,
           "title": "Segment 38 (pages 767-788)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 37,
-          "title": "Segment 37 (pages 746-766)",
-          "relevance_score": 0.71,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Reliable Machine Learning",
-          "chapter": 7,
-          "title": "Segment 7 (pages 53-61)",
-          "relevance_score": 0.65,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
         {
-          "term": "data",
-          "score": 0.001,
+          "term": "model",
+          "score": 0.004,
           "source": "cross_book_yake"
         },
         {
-          "term": "model",
-          "score": 0.002,
+          "term": "data",
+          "score": 0.006,
           "source": "cross_book_yake"
         },
         {
@@ -5946,38 +5524,38 @@
           "source": "cross_book_yake"
         },
         {
+          "term": "model inference",
+          "score": 0.015,
+          "source": "cross_book_yake"
+        },
+        {
           "term": "models",
-          "score": 0.007,
+          "score": 0.015,
           "source": "cross_book_yake"
         },
         {
-          "term": "training data",
-          "score": 0.007,
+          "term": "token",
+          "score": 0.021,
           "source": "cross_book_yake"
         },
         {
-          "term": "synthetic data",
-          "score": 0.007,
+          "term": "memory",
+          "score": 0.024,
           "source": "cross_book_yake"
         },
         {
-          "term": "data model",
-          "score": 0.009,
+          "term": "model inference inference",
+          "score": 0.025,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "inference service",
+          "score": 0.026,
           "source": "cross_book_yake"
         },
         {
           "term": "data model inference",
-          "score": 0.011,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "model inference",
-          "score": 0.011,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "training",
-          "score": 0.011,
+          "score": 0.029,
           "source": "cross_book_yake"
         }
       ],
@@ -5991,15 +5569,7 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "modelers",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "train",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "trained",
+          "concept": "inference",
           "source": "cross_book_summa"
         },
         {
@@ -6021,9 +5591,16 @@
         {
           "concept": "generators",
           "source": "cross_book_summa"
+        },
+        {
+          "concept": "generates",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "train",
+          "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 39,
@@ -6066,120 +5643,75 @@
           "chapter": 39,
           "title": "Segment 39 (pages 789-807)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         },
         {
-          "book": "LLM-Engineers-Handbook",
-          "chapter": 43,
-          "title": "Segment 43 (pages 393-400)",
-          "relevance_score": 0.6,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "LLM-Engineers-Handbook",
-          "chapter": 27,
-          "title": "Segment 27 (pages 245-252)",
-          "relevance_score": 0.56,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "LLM-Engineers-Handbook",
-          "chapter": 36,
-          "title": "Segment 36 (pages 326-334)",
-          "relevance_score": 0.56,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "LLM-Engineers-Handbook",
-          "chapter": 42,
-          "title": "Segment 42 (pages 384-392)",
-          "relevance_score": 0.53,
-          "method": "sentence_transformers"
+          "book": "AI Agents In Action",
+          "chapter": 26,
+          "title": "Segment 26 (pages 224-232)",
+          "relevance_score": 0.7,
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
-        {
-          "term": "GPU memory GPUs",
-          "score": 0.002,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "GPU memory",
-          "score": 0.002,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "GPU",
-          "score": 0.002,
-          "source": "cross_book_yake"
-        },
         {
           "term": "memory",
           "score": 0.002,
           "source": "cross_book_yake"
         },
         {
-          "term": "Model",
-          "score": 0.003,
+          "term": "GPU memory GPUs",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "GPU memory",
+          "score": 0.005,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "GPU",
+          "score": 0.006,
           "source": "cross_book_yake"
         },
         {
           "term": "memory GPUs MFU",
-          "score": 0.003,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "Inference Pipeline",
-          "score": 0.003,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "Inference Pipeline Deployment",
-          "score": 0.003,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "inference",
-          "score": 0.004,
+          "score": 0.006,
           "source": "cross_book_yake"
         },
         {
           "term": "GPUs MFU CPU",
-          "score": 0.004,
+          "score": 0.007,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "GPU utilization",
+          "score": 0.007,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "CPU memory GPU",
+          "score": 0.009,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "MBU GPU memory",
+          "score": 0.009,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "chips NVIDIA GPU",
+          "score": 0.009,
           "source": "cross_book_yake"
         }
       ],
       "concepts_enriched": [
         {
-          "concept": "memory",
+          "concept": "memories",
           "source": "cross_book_summa"
         },
         {
-          "concept": "models",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "model",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "training",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "train",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "trained",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "inference",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "infer",
+          "concept": "chip",
           "source": "cross_book_summa"
         },
         {
@@ -6189,9 +5721,32 @@
         {
           "concept": "computing",
           "source": "cross_book_summa"
+        },
+        {
+          "concept": "computational",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "computation",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "computed",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "computations",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "store",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "stores",
+          "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 40,
@@ -6234,32 +5789,13 @@
           "chapter": 40,
           "title": "Segment 40 (pages 808-829)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 31,
-          "title": "Segment 31 (pages 617-639)",
-          "relevance_score": 0.68,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 32,
-          "title": "Segment 32 (pages 640-662)",
-          "relevance_score": 0.62,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
         {
           "term": "model",
-          "score": 0.001,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "target model",
-          "score": 0.004,
+          "score": 0.002,
           "source": "cross_book_yake"
         },
         {
@@ -6268,38 +5804,43 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "memory",
+          "term": "target model",
           "score": 0.005,
           "source": "cross_book_yake"
         },
         {
           "term": "draft model",
-          "score": 0.005,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "model models token",
-          "score": 0.006,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "models",
-          "score": 0.006,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "token",
           "score": 0.007,
           "source": "cross_book_yake"
         },
         {
-          "term": "model models",
+          "term": "token",
           "score": 0.008,
           "source": "cross_book_yake"
         },
         {
-          "term": "memory needed",
-          "score": 0.008,
+          "term": "draft tokens",
+          "score": 0.01,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "draft",
+          "score": 0.011,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "model models token",
+          "score": 0.014,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "cache",
+          "score": 0.015,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "models token tokens",
+          "score": 0.017,
           "source": "cross_book_yake"
         }
       ],
@@ -6321,31 +5862,30 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "parameters",
+          "concept": "attention",
           "source": "cross_book_summa"
         },
         {
-          "concept": "parameter",
+          "concept": "optimizing",
           "source": "cross_book_summa"
         },
         {
-          "concept": "train",
+          "concept": "optimized",
           "source": "cross_book_summa"
         },
         {
-          "concept": "trained",
+          "concept": "draft",
           "source": "cross_book_summa"
         },
         {
-          "concept": "training",
+          "concept": "generate",
           "source": "cross_book_summa"
         },
         {
-          "concept": "memory",
+          "concept": "generates",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 41,
@@ -6388,87 +5928,62 @@
           "chapter": 41,
           "title": "Segment 41 (pages 830-852)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "LLM-Engineers-Handbook",
-          "chapter": 42,
-          "title": "Segment 42 (pages 384-392)",
-          "relevance_score": 0.6,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "LLM-Engineers-Handbook",
-          "chapter": 43,
-          "title": "Segment 43 (pages 393-400)",
-          "relevance_score": 0.56,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 40,
-          "title": "Segment 40 (pages 808-829)",
-          "relevance_score": 0.52,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
         {
           "term": "model",
-          "score": 0.001,
+          "score": 0.003,
           "source": "cross_book_yake"
         },
         {
           "term": "models",
-          "score": 0.003,
+          "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Prompt",
+          "score": 0.01,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "parallelism",
+          "score": 0.013,
           "source": "cross_book_yake"
         },
         {
           "term": "Inference",
-          "score": 0.003,
+          "score": 0.014,
           "source": "cross_book_yake"
         },
         {
-          "term": "inference pipeline",
-          "score": 0.004,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "Inference Pipeline Deployment",
-          "score": 0.005,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "model models",
-          "score": 0.007,
+          "term": "Prompt caching",
+          "score": 0.015,
           "source": "cross_book_yake"
         },
         {
           "term": "latency",
-          "score": 0.008,
+          "score": 0.015,
           "source": "cross_book_yake"
         },
         {
           "term": "model models Parallelism",
-          "score": 0.008,
+          "score": 0.016,
           "source": "cross_book_yake"
         },
         {
-          "term": "GPU GPUs model",
-          "score": 0.009,
+          "term": "model parallelism",
+          "score": 0.019,
           "source": "cross_book_yake"
         },
         {
-          "term": "LLM",
-          "score": 0.009,
+          "term": "model API",
+          "score": 0.023,
           "source": "cross_book_yake"
         }
       ],
       "concepts_enriched": [
-        {
-          "concept": "models",
-          "source": "cross_book_summa"
-        },
         {
           "concept": "model",
           "source": "cross_book_summa"
@@ -6482,15 +5997,11 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "infer",
+          "concept": "parallelism",
           "source": "cross_book_summa"
         },
         {
-          "concept": "tokens",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "token",
+          "concept": "parallel",
           "source": "cross_book_summa"
         },
         {
@@ -6498,15 +6009,22 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "processing",
+          "concept": "optimize",
           "source": "cross_book_summa"
         },
         {
-          "concept": "processes",
+          "concept": "batching",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "batch",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "prompt",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 42,
@@ -6549,79 +6067,65 @@
           "chapter": 42,
           "title": "Segment 42 (pages 853-871)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Python Architecture Patterns",
-          "chapter": 3,
-          "title": "Data Modeling\b",
-          "relevance_score": 0.56,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Machine Learning Engineering",
-          "chapter": 31,
-          "title": "Segment 31 (pages 263-271)",
-          "relevance_score": 0.54,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         },
         {
           "book": "AI Engineering Building Applications",
           "chapter": 11,
           "title": "Segment 11 (pages 209-230)",
-          "relevance_score": 0.53,
-          "method": "sentence_transformers"
+          "relevance_score": 0.75,
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
         {
           "term": "model",
-          "score": 0.0,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "API Model API",
-          "score": 0.001,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "models API Model",
-          "score": 0.001,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "Model API",
           "score": 0.001,
           "source": "cross_book_yake"
         },
         {
           "term": "models",
-          "score": 0.001,
+          "score": 0.002,
           "source": "cross_book_yake"
         },
         {
-          "term": "API",
+          "term": "Model API",
+          "score": 0.002,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "models API Model",
           "score": 0.002,
           "source": "cross_book_yake"
         },
         {
           "term": "model gateway",
-          "score": 0.002,
+          "score": 0.003,
           "source": "cross_book_yake"
         },
         {
-          "term": "model APIs",
-          "score": 0.002,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "Model API box",
+          "term": "API Model API",
           "score": 0.003,
           "source": "cross_book_yake"
         },
         {
           "term": "Model models",
-          "score": 0.003,
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "model APIs",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "model model gateway",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "model gateway models",
+          "score": 0.004,
           "source": "cross_book_yake"
         }
       ],
@@ -6639,15 +6143,15 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "database",
+          "concept": "output",
           "source": "cross_book_summa"
         },
         {
-          "concept": "databases",
+          "concept": "outputs",
           "source": "cross_book_summa"
         },
         {
-          "concept": "data",
+          "concept": "response",
           "source": "cross_book_summa"
         },
         {
@@ -6659,15 +6163,14 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "differ",
+          "concept": "context",
           "source": "cross_book_summa"
         },
         {
-          "concept": "different",
+          "concept": "generates",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 43,
@@ -6710,132 +6213,103 @@
           "chapter": 43,
           "title": "Segment 43 (pages 872-889)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Agents and Applications",
-          "chapter": 36,
-          "title": "Segment 36 (pages 309-316)",
-          "relevance_score": 0.53,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Building LLM Powered Applications",
-          "chapter": 23,
-          "title": "Segment 23 (pages 184-192)",
-          "relevance_score": 0.52,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "LLM-Engineers-Handbook",
-          "chapter": 17,
-          "title": "Segment 17 (pages 149-163)",
-          "relevance_score": 0.51,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Generative AI with LangChain_2e",
-          "chapter": 17,
-          "title": "Segment 17 (pages 139-148)",
-          "relevance_score": 0.49,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
         {
-          "term": "RAG Feature Pipeline",
-          "score": 0.001,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "RAG Feature",
-          "score": 0.002,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "vector",
-          "score": 0.003,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "vector store",
-          "score": 0.003,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "Feature Pipeline",
-          "score": 0.003,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "data",
-          "score": 0.004,
-          "source": "cross_book_yake"
-        },
-        {
           "term": "metrics",
-          "score": 0.005,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "RAG",
-          "score": 0.005,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "pipeline",
           "score": 0.006,
           "source": "cross_book_yake"
         },
         {
-          "term": "Feature Pipeline RAG",
-          "score": 0.006,
+          "term": "cache",
+          "score": 0.018,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "query",
+          "score": 0.018,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "model",
+          "score": 0.024,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "output",
+          "score": 0.024,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "application",
+          "score": 0.028,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "system",
+          "score": 0.033,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "user",
+          "score": 0.033,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "outputs",
+          "score": 0.037,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Semantic",
+          "score": 0.048,
           "source": "cross_book_yake"
         }
       ],
       "concepts_enriched": [
         {
-          "concept": "vectors",
+          "concept": "metric",
           "source": "cross_book_summa"
         },
         {
-          "concept": "data",
+          "concept": "metrics",
           "source": "cross_book_summa"
         },
         {
-          "concept": "store",
+          "concept": "cache",
           "source": "cross_book_summa"
         },
         {
-          "concept": "stores",
+          "concept": "cached",
           "source": "cross_book_summa"
         },
         {
-          "concept": "stored",
+          "concept": "caches",
           "source": "cross_book_summa"
         },
         {
-          "concept": "storing",
+          "concept": "application",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "applications",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "outputs",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "output",
           "source": "cross_book_summa"
         },
         {
           "concept": "query",
           "source": "cross_book_summa"
-        },
-        {
-          "concept": "queries",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "querying",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "queried",
-          "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 44,
@@ -6878,49 +6352,30 @@
           "chapter": 44,
           "title": "Segment 44 (pages 890-909)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Building LLM Powered Applications",
-          "chapter": 2,
-          "title": "Segment 2 (pages 9-16)",
-          "relevance_score": 0.54,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Building LLM Powered Applications",
-          "chapter": 26,
-          "title": "Segment 26 (pages 211-218)",
-          "relevance_score": 0.54,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         },
         {
           "book": "AI Engineering Building Applications",
-          "chapter": 21,
-          "title": "Segment 21 (pages 417-434)",
-          "relevance_score": 0.53,
-          "method": "sentence_transformers"
+          "chapter": 45,
+          "title": "Segment 45 (pages 910-929)",
+          "relevance_score": 0.9,
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
+        {
+          "term": "User Feedback",
+          "score": 0.001,
+          "source": "cross_book_yake"
+        },
         {
           "term": "user",
           "score": 0.002,
           "source": "cross_book_yake"
         },
         {
-          "term": "User Feedback",
-          "score": 0.002,
-          "source": "cross_book_yake"
-        },
-        {
           "term": "Feedback",
-          "score": 0.003,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "model",
-          "score": 0.003,
+          "score": 0.002,
           "source": "cross_book_yake"
         },
         {
@@ -6929,28 +6384,33 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "Feedback user User",
-          "score": 0.004,
-          "source": "cross_book_yake"
-        },
-        {
           "term": "User Feedback users",
           "score": 0.004,
           "source": "cross_book_yake"
         },
         {
-          "term": "user User Feedback",
-          "score": 0.004,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "user users model",
-          "score": 0.005,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "Feedback users model",
+          "term": "Feedback user User",
           "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "user User Feedback",
+          "score": 0.006,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Conversational Feedback",
+          "score": 0.009,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Feedback user",
+          "score": 0.011,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "model",
+          "score": 0.013,
           "source": "cross_book_yake"
         }
       ],
@@ -6964,7 +6424,7 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "models",
+          "concept": "feedback",
           "source": "cross_book_summa"
         },
         {
@@ -6984,19 +6444,18 @@
           "source": "cross_book_summa"
         },
         {
+          "concept": "data",
+          "source": "cross_book_summa"
+        },
+        {
           "concept": "applications",
           "source": "cross_book_summa"
         },
         {
           "concept": "application",
           "source": "cross_book_summa"
-        },
-        {
-          "concept": "prompt",
-          "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 45,
@@ -7039,31 +6498,24 @@
           "chapter": 45,
           "title": "Segment 45 (pages 910-929)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         },
         {
           "book": "AI Engineering Building Applications",
           "chapter": 44,
           "title": "Segment 44 (pages 890-909)",
-          "relevance_score": 0.52,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 22,
-          "title": "Segment 22 (pages 435-456)",
-          "relevance_score": 0.41,
-          "method": "sentence_transformers"
+          "relevance_score": 0.9,
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
         {
-          "term": "user feedback",
+          "term": "feedback",
           "score": 0.001,
           "source": "cross_book_yake"
         },
         {
-          "term": "feedback",
+          "term": "user feedback",
           "score": 0.001,
           "source": "cross_book_yake"
         },
@@ -7079,32 +6531,32 @@
         },
         {
           "term": "user feedback Users",
-          "score": 0.004,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "model",
           "score": 0.005,
           "source": "cross_book_yake"
         },
         {
           "term": "feedback user feedback",
-          "score": 0.006,
+          "score": 0.007,
           "source": "cross_book_yake"
         },
         {
           "term": "feedback Users user",
-          "score": 0.007,
+          "score": 0.008,
           "source": "cross_book_yake"
         },
         {
           "term": "user users feedback",
-          "score": 0.007,
+          "score": 0.008,
           "source": "cross_book_yake"
         },
         {
-          "term": "prompt",
-          "score": 0.009,
+          "term": "feedback user",
+          "score": 0.014,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "feedback user users",
+          "score": 0.015,
           "source": "cross_book_yake"
         }
       ],
@@ -7122,19 +6574,19 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "prompt",
+          "concept": "conversational",
           "source": "cross_book_summa"
         },
         {
-          "concept": "prompts",
+          "concept": "conversations",
           "source": "cross_book_summa"
         },
         {
-          "concept": "prompting",
+          "concept": "conversation",
           "source": "cross_book_summa"
         },
         {
-          "concept": "model",
+          "concept": "conversely",
           "source": "cross_book_summa"
         },
         {
@@ -7149,8 +6601,7 @@
           "concept": "responsibility",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 46,
@@ -7193,27 +6644,34 @@
           "chapter": 46,
           "title": "Segment 46 (pages 930-949)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
+        },
+        {
+          "book": "AI Engineering Building Applications",
+          "chapter": 5,
+          "title": "Segment 5 (pages 82-102)",
+          "relevance_score": 0.8,
+          "method": "cosine_similarity"
+        },
+        {
+          "book": "AI Engineering Building Applications",
+          "chapter": 6,
+          "title": "Segment 6 (pages 103-122)",
+          "relevance_score": 0.78,
+          "method": "cosine_similarity"
         },
         {
           "book": "AI Engineering Building Applications",
           "chapter": 1,
           "title": "Segment 1 (pages 1-18)",
-          "relevance_score": 0.7,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 12,
-          "title": "Segment 12 (pages 231-252)",
-          "relevance_score": 0.63,
-          "method": "sentence_transformers"
+          "relevance_score": 0.76,
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
         {
           "term": "Foundation models",
-          "score": 0.001,
+          "score": 0.0,
           "source": "cross_book_yake"
         },
         {
@@ -7227,17 +6685,12 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "models",
-          "score": 0.001,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "models engineering models",
-          "score": 0.001,
-          "source": "cross_book_yake"
-        },
-        {
           "term": "engineering",
+          "score": 0.001,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "models",
           "score": 0.001,
           "source": "cross_book_yake"
         },
@@ -7247,17 +6700,22 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "language model",
+          "term": "models engineering models",
+          "score": 0.001,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Foundation models models",
           "score": 0.002,
           "source": "cross_book_yake"
         },
         {
-          "term": "Evaluating Foundation Models",
+          "term": "prompt engineering",
           "score": 0.002,
           "source": "cross_book_yake"
         },
         {
-          "term": "data foundation models",
+          "term": "engineering versus",
           "score": 0.002,
           "source": "cross_book_yake"
         }
@@ -7284,27 +6742,26 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "engineer",
-          "source": "cross_book_summa"
-        },
-        {
           "concept": "engineers",
           "source": "cross_book_summa"
         },
         {
-          "concept": "evaluation",
+          "concept": "application",
           "source": "cross_book_summa"
         },
         {
-          "concept": "evaluating",
+          "concept": "applications",
           "source": "cross_book_summa"
         },
         {
-          "concept": "evaluate",
+          "concept": "training",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "trained",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 47,
@@ -7347,24 +6804,29 @@
           "chapter": 47,
           "title": "Segment 47 (pages 950-972)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         },
         {
           "book": "AI Engineering Building Applications",
-          "chapter": 12,
-          "title": "Segment 12 (pages 231-252)",
-          "relevance_score": 0.7,
-          "method": "sentence_transformers"
+          "chapter": 18,
+          "title": "Segment 18 (pages 355-374)",
+          "relevance_score": 0.73,
+          "method": "cosine_similarity"
         },
         {
-          "book": "AI Engineering Building Applications",
-          "chapter": 2,
-          "title": "Segment 2 (pages 19-39)",
-          "relevance_score": 0.61,
-          "method": "sentence_transformers"
+          "book": "AI Agents and Applications",
+          "chapter": 55,
+          "title": "Segment 55 (pages 474-483)",
+          "relevance_score": 0.71,
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
+        {
+          "term": "Open source models",
+          "score": 0.0,
+          "source": "cross_book_yake"
+        },
         {
           "term": "large language models",
           "score": 0.0,
@@ -7376,22 +6838,12 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "Model",
-          "score": 0.0,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "language model",
-          "score": 0.0,
-          "source": "cross_book_yake"
-        },
-        {
           "term": "models versus model",
           "score": 0.0,
           "source": "cross_book_yake"
         },
         {
-          "term": "foundation models",
+          "term": "Model",
           "score": 0.0,
           "source": "cross_book_yake"
         },
@@ -7401,13 +6853,18 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "Open source models",
+          "term": "language models",
           "score": 0.0,
           "source": "cross_book_yake"
         },
         {
-          "term": "model model models",
-          "score": 0.0,
+          "term": "models model models",
+          "score": 0.001,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "models foundation models",
+          "score": 0.001,
           "source": "cross_book_yake"
         },
         {
@@ -7430,35 +6887,34 @@
           "source": "cross_book_summa"
         },
         {
+          "concept": "openness",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "tasks",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "task",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "apis",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "api",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "data",
+          "source": "cross_book_summa"
+        },
+        {
           "concept": "language",
           "source": "cross_book_summa"
-        },
-        {
-          "concept": "languages",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "evaluation",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "evaluating",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "evaluate",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "tokenization",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "tokens",
-          "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 48,
@@ -7501,28 +6957,7 @@
           "chapter": 48,
           "title": "Segment 48 (pages 973-990)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Building LLM Powered Applications",
-          "chapter": 17,
-          "title": "Segment 17 (pages 136-143)",
-          "relevance_score": 0.6,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 47,
-          "title": "Segment 47 (pages 950-972)",
-          "relevance_score": 0.6,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Engineering Building Applications",
-          "chapter": 21,
-          "title": "Segment 21 (pages 417-434)",
-          "relevance_score": 0.56,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
@@ -7532,27 +6967,12 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "Prompt Engineering",
-          "score": 0.0,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "model",
-          "score": 0.001,
-          "source": "cross_book_yake"
-        },
-        {
           "term": "reverse prompt engineering",
           "score": 0.001,
           "source": "cross_book_yake"
         },
         {
-          "term": "Prompts model models",
-          "score": 0.001,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "Engineering prompt Prompts",
+          "term": "Prompt Engineering",
           "score": 0.001,
           "source": "cross_book_yake"
         },
@@ -7567,13 +6987,28 @@
           "source": "cross_book_yake"
         },
         {
-          "term": "prompt",
+          "term": "Evaluate Prompt Engineering",
           "score": 0.001,
           "source": "cross_book_yake"
         },
         {
-          "term": "Models",
+          "term": "prompt engineering tools",
           "score": 0.001,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Engineering prompt Prompts",
+          "score": 0.001,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Prompts prompt engineering",
+          "score": 0.001,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "prompt",
+          "score": 0.002,
           "source": "cross_book_yake"
         }
       ],
@@ -7591,10 +7026,6 @@
           "source": "cross_book_summa"
         },
         {
-          "concept": "prompting",
-          "source": "cross_book_summa"
-        },
-        {
           "concept": "evaluation",
           "source": "cross_book_summa"
         },
@@ -7603,23 +7034,26 @@
           "source": "cross_book_summa"
         },
         {
+          "concept": "prompting",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "data",
+          "source": "cross_book_summa"
+        },
+        {
+          "concept": "retrievers",
+          "source": "cross_book_summa"
+        },
+        {
           "concept": "engineering",
           "source": "cross_book_summa"
         },
         {
-          "concept": "engine",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "context",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "instruct",
+          "concept": "step",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     },
     {
       "chapter_number": 49,
@@ -7662,132 +7096,91 @@
           "chapter": 49,
           "title": "Segment 49 (pages 991-991)",
           "relevance_score": 1.0,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Building LLM Powered Applications",
-          "chapter": 59,
-          "title": "Segment 59 (pages 499-500)",
-          "relevance_score": 0.3,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "AI Agents In Action",
-          "chapter": 1,
-          "title": "Segment 1 (pages 1-8)",
-          "relevance_score": 0.3,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "LLM-Engineers-Handbook",
-          "chapter": 19,
-          "title": "Segment 19 (pages 172-179)",
-          "relevance_score": 0.26,
-          "method": "sentence_transformers"
-        },
-        {
-          "book": "Python Architecture Patterns",
-          "chapter": 1,
-          "title": "Introduction to Software Architecture\b",
-          "relevance_score": 0.26,
-          "method": "sentence_transformers"
+          "method": "cosine_similarity"
         }
       ],
       "keywords_enriched": [
-        {
-          "term": "Royal Natural Montgomery",
-          "score": 0.001,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "Royal Royal Natural",
-          "score": 0.001,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "IUCN Omani Natural",
-          "score": 0.001,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "Royal Natural History",
-          "score": 0.001,
-          "source": "cross_book_yake"
-        },
         {
           "term": "Karen Montgomery Adobe",
           "score": 0.002,
           "source": "cross_book_yake"
         },
         {
-          "term": "Omani Natural History",
-          "score": 0.002,
+          "term": "Royal Natural Montgomery",
+          "score": 0.003,
           "source": "cross_book_yake"
         },
         {
-          "term": "royal history Segment",
-          "score": 0.002,
+          "term": "Montgomery Adobe Myriad",
+          "score": 0.003,
           "source": "cross_book_yake"
         },
         {
-          "term": "data Karen Montgomery",
-          "score": 0.002,
-          "source": "cross_book_yake"
-        },
-        {
-          "term": "Natural History Lydekker",
-          "score": 0.002,
+          "term": "IUCN Omani Natural",
+          "score": 0.003,
           "source": "cross_book_yake"
         },
         {
           "term": "Condensed IUCN Omani",
-          "score": 0.002,
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "data Karen Montgomery",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Myriad Condensed IUCN",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Royal Royal Natural",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Omani Natural History",
+          "score": 0.004,
+          "source": "cross_book_yake"
+        },
+        {
+          "term": "Royal Natural History",
+          "score": 0.005,
           "source": "cross_book_yake"
         }
       ],
       "concepts_enriched": [
         {
-          "concept": "python",
+          "concept": "montgomery",
           "source": "cross_book_summa"
         },
         {
-          "concept": "designations",
+          "concept": "natural",
           "source": "cross_book_summa"
         },
         {
-          "concept": "design",
+          "concept": "royal",
           "source": "cross_book_summa"
         },
         {
-          "concept": "designing",
+          "concept": "cover",
           "source": "cross_book_summa"
         },
         {
-          "concept": "designer",
+          "concept": "segment",
           "source": "cross_book_summa"
         },
         {
-          "concept": "designs",
+          "concept": "myriad",
           "source": "cross_book_summa"
         },
         {
-          "concept": "architecture",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "architectural",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "architectures",
-          "source": "cross_book_summa"
-        },
-        {
-          "concept": "documents",
+          "concept": "adobe",
           "source": "cross_book_summa"
         }
-      ],
-      "topic_id": -1
+      ]
     }
   ]
 }
