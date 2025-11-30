@@ -73,10 +73,10 @@ def get_llm_configs() -> dict[str, LLMConfig]:
         - ANTHROPIC_API_KEY
         - OPENAI_API_KEY
     
-    Configured Models (per test plan):
+    Configured Models:
         - Claude Opus 4.5, Claude Sonnet 4.5
-        - GPT-5.1, GPT-5, gpt-5.1-mini, gpt-5.1-nano
-        - Gemini 3 Pro, Gemini 3 Flash
+        - GPT-5.1, GPT-5, GPT-5 Mini, GPT-5 Nano
+        - Gemini 3 Pro, Gemini 2.5 Flash
         - DeepSeek V3, DeepSeek R1
     """
     configs = {}
@@ -105,23 +105,23 @@ def get_llm_configs() -> dict[str, LLMConfig]:
             }
         )
     
-    # Gemini 3 Pro and Gemini 3 Flash
+    # Gemini 3 Pro and Gemini 2.5 Flash (Gemini 3 Flash not yet available)
     gemini_key = os.environ.get("GEMINI_API_KEY", "")
     if gemini_key:
         configs["gemini-3-pro"] = LLMConfig(
             name="Gemini 3 Pro",
-            base_url=f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key={gemini_key}",
+            base_url=f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:generateContent?key={gemini_key}",
             api_key=gemini_key,
-            model="gemini-2.5-pro",  # Latest pro model
+            model="gemini-3-pro-preview",
             headers={
                 "Content-Type": "application/json"
             }
         )
-        configs["gemini-3-flash"] = LLMConfig(
-            name="Gemini 3 Flash",
+        configs["gemini-2.5-flash"] = LLMConfig(
+            name="Gemini 2.5 Flash",
             base_url=f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
             api_key=gemini_key,
-            model="gemini-2.5-flash",  # Latest flash model
+            model="gemini-2.5-flash",
             headers={
                 "Content-Type": "application/json"
             }
@@ -134,7 +134,7 @@ def get_llm_configs() -> dict[str, LLMConfig]:
             name="Claude Opus 4.5",
             base_url="https://api.anthropic.com/v1/messages",
             api_key=anthropic_key,
-            model="claude-opus-4-20250514",
+            model="claude-opus-4-5-20251101",
             headers={
                 "Content-Type": "application/json",
                 "x-api-key": anthropic_key,
@@ -145,7 +145,7 @@ def get_llm_configs() -> dict[str, LLMConfig]:
             name="Claude Sonnet 4.5",
             base_url="https://api.anthropic.com/v1/messages",
             api_key=anthropic_key,
-            model="claude-sonnet-4-20250514",
+            model="claude-sonnet-4-5-20250929",
             headers={
                 "Content-Type": "application/json",
                 "x-api-key": anthropic_key,
@@ -153,14 +153,14 @@ def get_llm_configs() -> dict[str, LLMConfig]:
             }
         )
     
-    # OpenAI GPT-5.1, GPT-5, gpt-5.1-mini, gpt-5.1-nano
+    # OpenAI GPT-5.1, GPT-5, GPT-5-mini, GPT-5-nano
     openai_key = os.environ.get("OPENAI_API_KEY", "")
     if openai_key:
         configs["gpt-5.1"] = LLMConfig(
             name="GPT-5.1",
             base_url="https://api.openai.com/v1/chat/completions",
             api_key=openai_key,
-            model="gpt-4o",  # Current top model
+            model="gpt-5.1",
             headers={
                 "Content-Type": "application/json",
                 "Authorization": f"Bearer {openai_key}"
@@ -170,27 +170,27 @@ def get_llm_configs() -> dict[str, LLMConfig]:
             name="GPT-5",
             base_url="https://api.openai.com/v1/chat/completions",
             api_key=openai_key,
-            model="gpt-4o",  # Current top model
+            model="gpt-5",
             headers={
                 "Content-Type": "application/json",
                 "Authorization": f"Bearer {openai_key}"
             }
         )
-        configs["gpt-5.1-mini"] = LLMConfig(
-            name="GPT-5.1 Mini",
+        configs["gpt-5-mini"] = LLMConfig(
+            name="GPT-5 Mini",
             base_url="https://api.openai.com/v1/chat/completions",
             api_key=openai_key,
-            model="gpt-4o-mini",
+            model="gpt-5-mini",
             headers={
                 "Content-Type": "application/json",
                 "Authorization": f"Bearer {openai_key}"
             }
         )
-        configs["gpt-5.1-nano"] = LLMConfig(
-            name="GPT-5.1 Nano",
+        configs["gpt-5-nano"] = LLMConfig(
+            name="GPT-5 Nano",
             base_url="https://api.openai.com/v1/chat/completions",
             api_key=openai_key,
-            model="gpt-4o-mini",  # Smallest available
+            model="gpt-5-nano",
             headers={
                 "Content-Type": "application/json",
                 "Authorization": f"Bearer {openai_key}"
@@ -317,7 +317,7 @@ def call_gemini(config: LLMConfig, prompt: str) -> dict[str, Any]:
     Call Gemini API using the Python SDK if available, otherwise REST API.
     
     SDK: google-generativeai
-    Model: gemini-2.5-pro or gemini-2.5-flash
+    Model: gemini-3-pro-preview or gemini-2.5-flash
     """
     # Try SDK first (preferred method)
     if GENAI_AVAILABLE and genai is not None:
@@ -664,11 +664,88 @@ def compare_profiles(profile1: str, profile2: str, models: list[str] | None = No
     return comparison
 
 
+def extract_evaluation_summary(aggregate: dict[str, Any]) -> dict[str, Any]:
+    """
+    Extract only the essential data needed for LLM evaluation from full aggregate.
+    
+    This reduces payload from ~7MB to ~50KB per profile while keeping evaluation-relevant data.
+    """
+    source_book = aggregate.get("source_book", {})
+    source_metadata = source_book.get("metadata", {}) if isinstance(source_book, dict) else {}
+    chapters = source_metadata.get("chapters", [])
+    
+    # Collect all keywords and concepts from source book
+    all_keywords = []
+    all_concepts = []
+    chapter_summaries = []
+    
+    for ch in chapters[:15]:  # First 15 chapters for evaluation
+        ch_keywords = ch.get("keywords", [])
+        ch_concepts = ch.get("concepts", [])
+        ch_related = ch.get("related_chapters", [])
+        
+        # Extract keyword terms
+        for kw in ch_keywords:
+            if isinstance(kw, dict):
+                all_keywords.append(kw.get("term", kw.get("keyword", "")))
+            else:
+                all_keywords.append(str(kw))
+        
+        # Extract concept terms
+        for concept in ch_concepts:
+            if isinstance(concept, dict):
+                all_concepts.append(concept.get("concept", ""))
+            else:
+                all_concepts.append(str(concept))
+        
+        # Chapter summary
+        chapter_summaries.append({
+            "chapter": ch.get("chapter_number", ch.get("number", 0)),
+            "title": ch.get("title", ""),
+            "keywords_count": len(ch_keywords),
+            "concepts_count": len(ch_concepts),
+            "related_chapters_count": len(ch_related),
+            "sample_keywords": [kw.get("term", kw) if isinstance(kw, dict) else kw for kw in ch_keywords[:5]],
+            "sample_concepts": [c.get("concept", c) if isinstance(c, dict) else c for c in ch_concepts[:3]],
+            "sample_related": [
+                {"book": r.get("book", ""), "chapter": r.get("chapter", ""), "similarity": r.get("similarity", 0)}
+                for r in ch_related[:3]
+            ] if ch_related else []
+        })
+    
+    # Get unique keywords and concepts
+    unique_keywords = list(set(all_keywords))
+    unique_concepts = list(set(all_concepts))
+    
+    # Calculate stats
+    stats = aggregate.get("statistics", {})
+    
+    return {
+        "source_book": source_book.get("name", "Unknown") if isinstance(source_book, dict) else "Unknown",
+        "statistics": {
+            "total_books": stats.get("total_books", 0),
+            "total_chapters": stats.get("total_chapters", 0),
+            "companion_books": stats.get("companion_books", 0),
+        },
+        "extraction_summary": {
+            "total_keywords_in_sample": len(all_keywords),
+            "unique_keywords_in_sample": len(unique_keywords),
+            "keyword_diversity_ratio": len(unique_keywords) / len(all_keywords) if all_keywords else 0,
+            "total_concepts_in_sample": len(all_concepts),
+            "unique_concepts_in_sample": len(unique_concepts),
+        },
+        "sample_keywords": unique_keywords[:100],  # Top 100 unique keywords
+        "sample_concepts": unique_concepts[:50],   # Top 50 unique concepts
+        "chapter_analysis": chapter_summaries,
+    }
+
+
 def create_comparative_prompt(aggregates: dict[str, dict[str, Any]]) -> str:
     """
-    Create a comparative evaluation prompt with all 4 aggregates.
+    Create a comparative evaluation prompt with summarized aggregates.
     
     Strategy B: Send all profiles to each LLM for direct comparison.
+    Uses extracted summaries to keep prompt under 100KB.
     """
     prompt = """You are an expert NLP evaluator assessing keyword extraction quality for technical documentation cross-referencing.
 
@@ -736,17 +813,18 @@ Respond with ONLY valid JSON (no markdown code blocks):
   }
 }
 
-## Aggregate Data
+## Extraction Data (Summarized for Evaluation)
 
 """
     
-    # Add each aggregate
+    # Add summarized data for each profile
     for profile in ["baseline", "current", "moderate", "aggressive"]:
         suffix = profile.upper()
         if suffix.lower() in aggregates or profile in aggregates:
             data = aggregates.get(profile, aggregates.get(suffix.lower(), {}))
-            prompt += f"\n[{suffix} AGGREGATE]\n"
-            prompt += json.dumps(data, indent=2)
+            summary = extract_evaluation_summary(data)
+            prompt += f"\n### {suffix} PROFILE\n"
+            prompt += json.dumps(summary, indent=2)
             prompt += "\n"
     
     return prompt
@@ -790,12 +868,12 @@ def run_comparative_evaluation(models: list[str] | None = None) -> dict[str, Any
     prompt = create_comparative_prompt(aggregates)
     print(f"\n📝 Comparative prompt created ({len(prompt):,} chars)")
     
-    # Default models for comparative evaluation (per test plan)
+    # Default models for comparative evaluation (actual model names)
     if models is None:
         models = [
             "claude-opus-4.5", "claude-sonnet-4.5",
-            "gpt-5.1", "gpt-5", "gpt-5.1-mini", "gpt-5.1-nano",
-            "gemini-3-pro", "gemini-3-flash",
+            "gpt-5.1", "gpt-5", "gpt-5-mini", "gpt-5-nano",
+            "gemini-3-pro", "gemini-2.5-flash",
             "deepseek-v3", "deepseek-r1"
         ]
     

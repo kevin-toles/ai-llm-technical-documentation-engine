@@ -260,7 +260,6 @@ def run_profile_pipeline(profile_name: str) -> Dict[str, Any]:
         if existing_metadata.exists():
             print(f"  ⚠️ Source JSON text not found, using existing metadata: {existing_metadata.name}")
             # Copy existing metadata with profile suffix (the extraction params won't apply here)
-            import shutil
             shutil.copy(existing_metadata, metadata_file)
             v2 = validate_step("Metadata", metadata_file.exists(), f"Copied {metadata_file.name}")
         else:
@@ -274,8 +273,8 @@ def run_profile_pipeline(profile_name: str) -> Dict[str, Any]:
     
     result["validations"]["metadata_extraction"] = v2 if 'v2' in dir() else False
     
-    # Step 3: Verify taxonomy exists
-    print("\n[Step 3/5] Verifying taxonomy...")
+    # Step 3: Verify taxonomy exists and transform to production format
+    print("\n[Step 3/5] Verifying taxonomy and transforming to production format...")
     
     v3 = validate_step("Taxonomy", taxonomy_file.exists(), str(taxonomy_file.name))
     
@@ -283,9 +282,36 @@ def run_profile_pipeline(profile_name: str) -> Dict[str, Any]:
         # Try to copy from base taxonomy
         base_taxonomy = PROJECT_ROOT / "workflows" / "taxonomy_setup" / "output" / "AI-ML_taxonomy_20251128.json"
         if base_taxonomy.exists():
-            import shutil
             shutil.copy(base_taxonomy, taxonomy_file)
             v3 = validate_step("Taxonomy", taxonomy_file.exists(), f"Created {taxonomy_file.name}")
+    
+    # Transform taxonomy to production format
+    # Production create_aggregate_package.py expects books as list of strings: ["Book1.json", "Book2.json"]
+    # But our taxonomy has books as list of dicts: [{"name": "Book1.json", "priority": 1, ...}, ...]
+    if v3 and taxonomy_file.exists():
+        try:
+            with open(taxonomy_file) as f:
+                taxonomy_data = json.load(f)
+            
+            # Transform tiers.*.books from list of dicts to list of strings
+            tiers = taxonomy_data.get("tiers", {})
+            transformed = False
+            for tier_name, tier_data in tiers.items():
+                books = tier_data.get("books", [])
+                if books and isinstance(books[0], dict):
+                    # Transform: extract just the "name" field from each book dict
+                    tier_data["books"] = [book["name"] for book in books if isinstance(book, dict) and "name" in book]
+                    transformed = True
+            
+            if transformed:
+                # Write transformed taxonomy back
+                with open(taxonomy_file, "w") as f:
+                    json.dump(taxonomy_data, f, indent=2)
+                print("  ✅ Transformed taxonomy to production format (books as string list)")
+            else:
+                print("  ℹ️ Taxonomy already in production format")
+        except Exception as e:
+            print(f"  ⚠️ Could not transform taxonomy: {e}")
     
     result["validations"]["taxonomy"] = v3
     
@@ -304,7 +330,6 @@ def run_profile_pipeline(profile_name: str) -> Dict[str, Any]:
     for meta_file in source_metadata_dir.glob("*_metadata.json"):
         dest_file = eval_dir / meta_file.name
         if not dest_file.exists():
-            import shutil
             shutil.copy(meta_file, dest_file)
             companion_count += 1
     if companion_count > 0:
