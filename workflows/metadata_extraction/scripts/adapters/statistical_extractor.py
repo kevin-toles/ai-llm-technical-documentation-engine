@@ -11,8 +11,16 @@ Document References:
 - BOOK_TAXONOMY_MATRIX: Architecture Patterns (Tier 1), Python Distilled (Tier 3)
 
 TDD Status: GREEN phase - Minimal implementation to pass tests
+
+Environment Variables (optional configuration):
+- EXTRACTION_YAKE_TOP_N: Default top_n for keyword extraction (default: 20)
+- EXTRACTION_YAKE_N: Max n-gram size for YAKE (default: 3)
+- EXTRACTION_YAKE_DEDUPLIM: YAKE deduplication threshold (default: 0.9)
+- EXTRACTION_STEM_DEDUP_ENABLED: Enable stem-based deduplication (default: true)
+- EXTRACTION_NGRAM_CLEAN_ENABLED: Enable n-gram cleaning (default: true)
 """
 
+import os
 import re
 from typing import List, Tuple, Set, Union, cast
 import yake  # type: ignore[import-untyped]
@@ -399,21 +407,37 @@ class StatisticalExtractor:
     
     def __init__(self):
         """
-        Initialize YAKE keyword extractor with default parameters.
+        Initialize YAKE keyword extractor with configurable parameters.
+        
+        Parameters can be overridden via environment variables:
+        - EXTRACTION_YAKE_TOP_N: Default top_n (default: 20)
+        - EXTRACTION_YAKE_N: Max n-gram size (default: 3)
+        - EXTRACTION_YAKE_DEDUPLIM: Deduplication threshold (default: 0.9)
+        - EXTRACTION_STEM_DEDUP_ENABLED: Enable stem deduplication (default: true)
+        - EXTRACTION_NGRAM_CLEAN_ENABLED: Enable n-gram cleaning (default: true)
         
         YAKE Configuration (per research - see DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN):
         - lan='en': English language
-        - n=3: Max n-gram size (1-3 words)
-        - dedupLim=0.9: Deduplication threshold
-        - top=20: Default number of keywords (overridden by top_n parameter)
+        - n: Max n-gram size (1-3 words by default)
+        - dedupLim: Deduplication threshold (0.9 by default)
+        - top: Default number of keywords (overridden by top_n parameter)
         
         Per PYTHON_GUIDELINES Ch. 7: Initialize dependencies in __init__.
         """
+        # Read configuration from environment variables
+        self.default_top_n = int(os.environ.get("EXTRACTION_YAKE_TOP_N", "20"))
+        yake_n = int(os.environ.get("EXTRACTION_YAKE_N", "3"))
+        yake_deduplim = float(os.environ.get("EXTRACTION_YAKE_DEDUPLIM", "0.9"))
+        
+        # Deduplication flags
+        self.stem_dedup_enabled = os.environ.get("EXTRACTION_STEM_DEDUP_ENABLED", "true").lower() == "true"
+        self.ngram_clean_enabled = os.environ.get("EXTRACTION_NGRAM_CLEAN_ENABLED", "true").lower() == "true"
+        
         self.kw_extractor = yake.KeywordExtractor(
             lan='en',
-            n=3,              # Max 3-word phrases
-            dedupLim=0.9,     # Remove near-duplicates
-            top=20,           # Default top N (overridden in method)
+            n=yake_n,
+            dedupLim=yake_deduplim,
+            top=self.default_top_n,
             features=None
         )
     
@@ -458,10 +482,16 @@ class StatisticalExtractor:
         filtered_keywords = [(kw, score) for kw, score in keywords if _is_valid_keyword(kw)]
         
         # Step 2: Remove n-grams with repeated words (e.g., "Models Models")
-        cleaned_keywords = _clean_ngram_duplicates(filtered_keywords)
+        if self.ngram_clean_enabled:
+            cleaned_keywords = _clean_ngram_duplicates(filtered_keywords)
+        else:
+            cleaned_keywords = filtered_keywords
         
         # Step 3: Deduplicate by stem (e.g., model/models/modeling → model)
-        deduped_keywords = cast(List[Tuple[str, float]], _deduplicate_by_stem(cleaned_keywords))
+        if self.stem_dedup_enabled:
+            deduped_keywords = cast(List[Tuple[str, float]], _deduplicate_by_stem(cleaned_keywords))
+        else:
+            deduped_keywords = cleaned_keywords
         
         # Return top N keywords (already sorted by score ascending)
         return deduped_keywords[:top_n]
