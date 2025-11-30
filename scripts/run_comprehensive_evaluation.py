@@ -14,6 +14,9 @@ Usage:
     python run_comprehensive_evaluation.py --extract-only
     python run_comprehensive_evaluation.py --evaluate-only
     python run_comprehensive_evaluation.py --dry-run
+    
+    # With observability logging:
+    python run_comprehensive_evaluation.py --run-all --with-observability
 """
 
 import argparse
@@ -22,11 +25,102 @@ import os
 import sys
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 # Add project root to path
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
+
+# Optional observability integration
+_observability_enabled = False
+_trace_id: Optional[str] = None
+
+
+def init_observability() -> None:
+    """Initialize observability logging if available."""
+    global _observability_enabled, _trace_id
+    try:
+        from observability_platform.src.jsonl_logger import log_record, new_id, now_iso
+        from observability_platform.src.architecture_context import log_architecture_context
+        
+        _observability_enabled = True
+        _trace_id = new_id("trc")
+        
+        # Log architecture context once at start
+        log_architecture_context()
+        
+        # Log pipeline start
+        log_record({
+            "record_type": "event",
+            "event_type": "PipelineStarted",
+            "trace_id": _trace_id,
+            "pipeline": "comprehensive_extraction_evaluation",
+            "timestamp": now_iso(),
+        })
+        
+        print("📊 Observability logging enabled")
+    except ImportError:
+        _observability_enabled = False
+        print("ℹ️  Observability logging not available (optional)")
+
+
+def log_phase_start(phase_name: str) -> None:
+    """Log the start of a pipeline phase."""
+    if not _observability_enabled:
+        return
+    try:
+        from observability_platform.src.jsonl_logger import log_record, now_iso
+        log_record({
+            "record_type": "event",
+            "event_type": "PhaseStarted",
+            "trace_id": _trace_id,
+            "phase": phase_name,
+            "timestamp": now_iso(),
+        })
+    except Exception:
+        pass
+
+
+def log_phase_end(phase_name: str, status: str, metrics: Optional[Dict] = None) -> None:
+    """Log the end of a pipeline phase."""
+    if not _observability_enabled:
+        return
+    try:
+        from observability_platform.src.jsonl_logger import log_record, now_iso
+        record = {
+            "record_type": "event",
+            "event_type": "PhaseCompleted",
+            "trace_id": _trace_id,
+            "phase": phase_name,
+            "status": status,
+            "timestamp": now_iso(),
+        }
+        if metrics:
+            record["metrics"] = metrics
+        log_record(record)
+    except Exception:
+        pass
+
+
+def log_pipeline_end(status: str, summary: Optional[Dict] = None) -> None:
+    """Log the end of the entire pipeline."""
+    if not _observability_enabled:
+        return
+    try:
+        from observability_platform.src.jsonl_logger import log_record, now_iso
+        record = {
+            "record_type": "event",
+            "event_type": "PipelineCompleted",
+            "trace_id": _trace_id,
+            "pipeline": "comprehensive_extraction_evaluation",
+            "status": status,
+            "timestamp": now_iso(),
+        }
+        if summary:
+            record["summary"] = summary
+        log_record(record)
+    except Exception:
+        pass
 
 
 def verify_prerequisites() -> Dict[str, Any]:
@@ -149,12 +243,19 @@ def run_extraction_phase() -> bool:
     print("PHASE 1: EXTRACTION")
     print("=" * 60)
     
+    log_phase_start("extraction")
+    
     from scripts.run_extraction_tests import run_all_profiles
     
     results = run_all_profiles()
     
     # Check all succeeded
     success = all(r.get("success", False) for r in results.values())
+    
+    log_phase_end("extraction", "success" if success else "failed", {
+        "profiles_run": len(results),
+        "profiles_succeeded": sum(1 for r in results.values() if r.get("success", False)),
+    })
     
     return success
 
@@ -165,9 +266,17 @@ def run_evaluation_phase(models: List[str] | None = None) -> Dict[str, Any]:
     print("PHASE 2: LLM COMPARATIVE EVALUATION")
     print("=" * 60)
     
+    log_phase_start("llm_evaluation")
+    
     from scripts.llm_evaluation import run_comparative_evaluation
     
     results = run_comparative_evaluation(models)
+    
+    status = "failed" if "error" in results else "success"
+    log_phase_end("llm_evaluation", status, {
+        "models_used": results.get("models_used", []),
+        "consensus": results.get("consensus", {}),
+    })
     
     return results
 
@@ -286,7 +395,17 @@ def main():
         help="LLM models to use for evaluation"
     )
     
+    parser.add_argument(
+        "--enable-observability",
+        action="store_true",
+        help="Enable JSONL observability logging (logs to observability_platform/logs/)"
+    )
+    
     args = parser.parse_args()
+    
+    # Configure observability if enabled
+    if args.enable_observability:
+        init_observability()
     
     if args.dry_run:
         run_dry_run()
