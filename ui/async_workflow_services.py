@@ -259,12 +259,28 @@ class AsyncFileListService:
     """
     
     @staticmethod
-    def get_files_for_workflow(input_dir: Path, extension: str) -> List[str]:
-        """Get filtered list of files from directory"""
+    def get_files_for_workflow(
+        input_dir: Path, 
+        extension: str,
+        exclude_dirs: List[str] = None
+    ) -> List[str]:
+        """Get filtered list of files from directory, excluding specified subdirectories"""
         if not input_dir.exists():
             return []
         
-        files = [f.name for f in input_dir.glob(f"*{extension}")]
+        exclude_dirs = exclude_dirs or []
+        files = []
+        
+        for f in input_dir.glob(f"*{extension}"):
+            # Only include files, not directories
+            if f.is_file():
+                # Check if file is in an excluded directory
+                is_excluded = any(
+                    excluded in f.parts for excluded in exclude_dirs
+                )
+                if not is_excluded:
+                    files.append(f.name)
+        
         return sorted(files)
     
     @staticmethod

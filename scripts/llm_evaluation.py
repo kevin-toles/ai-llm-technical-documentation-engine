@@ -35,6 +35,13 @@ import httpx
 # Rate limiting configuration
 API_CALL_DELAY_SECONDS = 3  # Delay between API calls to avoid rate limits
 API_TIMEOUT_SECONDS = 300   # 5 minute timeout for large prompts with complex analysis
+
+# Retry configuration for rate limits
+MAX_RETRIES = 3              # Maximum number of retry attempts
+INITIAL_RETRY_DELAY = 10     # Initial delay in seconds before first retry
+MAX_RETRY_DELAY = 120        # Maximum delay between retries (2 minutes)
+RETRY_BACKOFF_FACTOR = 2     # Exponential backoff multiplier
+
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
@@ -1252,6 +1259,93 @@ Respond with ONLY valid JSON (no markdown):
     return prompt
 
 
+def is_retryable_error(result: dict[str, Any]) -> bool:
+    """Check if an error result is retryable (rate limit or temporary)."""
+    if "error" not in result:
+        return False
+    
+    error = result["error"].lower()
+    retryable_patterns = [
+        "429",
+        "rate limit",
+        "rate-limit",
+        "too many requests",
+        "overloaded",
+        "529",
+        "503",
+        "service unavailable",
+        "timeout",
+        "quota exceeded",
+    ]
+    
+    return any(pattern in error for pattern in retryable_patterns)
+
+
+def call_llm_with_retry(model: str, config: "LLMConfig", prompt: str) -> dict[str, Any]:
+    """
+    Call an LLM with automatic retry on rate limits.
+    
+    Uses exponential backoff for retries.
+    
+    Args:
+        model: Model key (e.g., "claude-opus-4.5", "gpt-5")
+        config: LLMConfig for the model
+        prompt: The prompt to send
+    
+    Returns:
+        Parsed JSON response or error dict
+    """
+    last_result = None
+    
+    for attempt in range(MAX_RETRIES + 1):
+        # Call the LLM
+        result = call_llm(model, config, prompt)
+        
+        # Success - return immediately
+        if "error" not in result:
+            if attempt > 0:
+                print(f" (succeeded on retry {attempt})")
+            return result
+        
+        # Check if error is retryable
+        if not is_retryable_error(result):
+            # Non-retryable error (auth, parsing, etc.)
+            return result
+        
+        last_result = result
+        
+        # Don't retry if we've exhausted attempts
+        if attempt >= MAX_RETRIES:
+            break
+        
+        # Calculate delay with exponential backoff
+        delay = min(
+            INITIAL_RETRY_DELAY * (RETRY_BACKOFF_FACTOR ** attempt),
+            MAX_RETRY_DELAY
+        )
+        
+        # Extract retry-after header if available
+        error_msg = result.get("error", "")
+        if "retry after" in error_msg.lower():
+            # Try to extract the suggested delay
+            import re
+            match = re.search(r'retry after (\d+)', error_msg.lower())
+            if match:
+                suggested_delay = int(match.group(1))
+                delay = max(delay, suggested_delay)
+        
+        print(f"\n     ⚠️  {result['error'][:50]}...")
+        print(f"     🔄 Retry {attempt + 1}/{MAX_RETRIES} in {delay}s...", end="", flush=True)
+        time.sleep(delay)
+    
+    # All retries exhausted
+    return {
+        "error": f"Max retries ({MAX_RETRIES}) exceeded. Last error: {last_result.get('error', 'unknown')}",
+        "retries_attempted": MAX_RETRIES,
+        "last_result": last_result
+    }
+
+
 def call_llm(model: str, config: "LLMConfig", prompt: str) -> dict[str, Any]:
     """
     Route a prompt to the appropriate LLM handler.
@@ -1354,7 +1448,7 @@ def run_chunked_evaluation(model: str, aggregates: dict[str, dict[str, Any]]) ->
         if i > 1:
             time.sleep(API_CALL_DELAY_SECONDS)
         
-        result = call_llm(model, config, prompt)
+        result = call_llm_with_retry(model, config, prompt)
         
         if "error" in result:
             print(f"❌ {result['error'][:40]}")
@@ -1379,7 +1473,7 @@ def run_chunked_evaluation(model: str, aggregates: dict[str, dict[str, Any]]) ->
     time.sleep(API_CALL_DELAY_SECONDS)
     
     final_prompt = create_final_assessment_prompt(merged)
-    final_result = call_llm(model, config, final_prompt)
+    final_result = call_llm_with_retry(model, config, final_prompt)
     
     if "error" in final_result:
         print(f"❌ {final_result['error'][:40]}")

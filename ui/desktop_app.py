@@ -66,8 +66,9 @@ WORKFLOWS = {
     },
     "tab6": {
         "name": "LLM Enhancement",
-        "input_dir": WORKFLOWS_DIR / "base_guideline_generation" / "output" / "chapter_summaries",
-        "input_ext": MD_EXT,
+        "input_dir": WORKFLOWS_DIR / "base_guideline_generation" / "output",
+        "input_ext": JSON_EXT,
+        "exclude_dirs": ["chapter_summaries"],
         "output_dir": WORKFLOWS_DIR / "llm_enhancement" / "output",
         "script": WORKFLOWS_DIR / "llm_enhancement" / "scripts" / "integrate_llm_enhancements.py"
     }
@@ -88,7 +89,12 @@ class API:
             return {"error": "Invalid tab"}
         
         workflow = WORKFLOWS[tab_id]
-        files = FileListService.get_files_for_workflow(workflow["input_dir"], workflow["input_ext"])
+        exclude_dirs = workflow.get("exclude_dirs", [])
+        files = FileListService.get_files_for_workflow(
+            workflow["input_dir"], 
+            workflow["input_ext"],
+            exclude_dirs=exclude_dirs
+        )
         
         response = {
             "files": files,
