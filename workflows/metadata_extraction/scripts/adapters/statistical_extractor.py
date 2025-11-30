@@ -14,7 +14,7 @@ TDD Status: GREEN phase - Minimal implementation to pass tests
 """
 
 import re
-from typing import List, Tuple, Set
+from typing import List, Tuple, Set, Union, cast
 import yake  # type: ignore[import-untyped]
 from summa import keywords as summa_keywords, summarizer  # type: ignore[import-untyped]
 
@@ -194,6 +194,189 @@ def _is_valid_concept(concept: str) -> bool:
     return True
 
 
+def _get_word_stem(word: str) -> str:
+    """
+    Get a simple stem for a word by removing common suffixes.
+    
+    Uses a simple suffix-stripping approach rather than full stemmer
+    to avoid heavy dependencies like NLTK's PorterStemmer.
+    
+    Per PYTHON_GUIDELINES Ch. 7: Simple, focused functions.
+    
+    Args:
+        word: Word to stem
+        
+    Returns:
+        Stemmed word (lowercase)
+    """
+    word = word.lower().strip()
+    
+    # Handle special case: words ending in 'es' where base ends in 'e'
+    # e.g., "architectures" -> "architecture", "types" -> "type"
+    if word.endswith('es') and len(word) > 4:
+        # Check if removing just 's' gives a valid-looking stem
+        potential_stem = word[:-1]  # Remove just 's'
+        if potential_stem.endswith('e'):
+            return potential_stem
+    
+    # Common English suffixes in order (more specific first)
+    # Use minimum stem length to avoid over-stemming
+    suffix_rules = [
+        # (suffix, min_stem_length)
+        ('ization', 3),
+        ('isation', 3),
+        ('ational', 3),
+        ('fulness', 3),
+        ('ousness', 3),
+        ('iveness', 3),
+        ('ement', 3),
+        ('ation', 3),
+        ('ening', 3),
+        ('ising', 3),
+        ('izing', 3),
+        ('ively', 3),
+        ('ously', 3),
+        ('fully', 3),
+        ('ness', 3),
+        ('ment', 3),
+        ('able', 3),
+        ('ible', 3),
+        ('ings', 3),
+        ('tion', 3),
+        ('sion', 3),
+        ('ally', 3),
+        ('edly', 3),
+        ('ing', 4),  # Higher min to avoid "model" → "mod"
+        ('ies', 3),
+        ('ied', 3),
+        ('ers', 3),
+        ('ery', 3),
+        ('est', 3),
+        ('ful', 3),
+        ('ish', 3),
+        ('ity', 3),
+        ('ive', 3),
+        ('ous', 3),
+        ('ly', 3),
+        ('ed', 3),
+        ('er', 3),
+        ('s', 4),   # Only strip 's' from longer words
+    ]
+    
+    for suffix, min_stem in suffix_rules:
+        if word.endswith(suffix):
+            stem = word[:-len(suffix)]
+            if len(stem) >= min_stem:
+                return stem
+    
+    return word
+
+
+def _get_phrase_stem_signature(phrase: str) -> str:
+    """
+    Get a stem signature for a multi-word phrase.
+    
+    The signature is the sorted stems of all words, allowing
+    detection of phrases with same conceptual meaning.
+    
+    Args:
+        phrase: Multi-word phrase
+        
+    Returns:
+        Sorted stem signature string
+    """
+    words = phrase.lower().split()
+    stems = sorted(_get_word_stem(w) for w in words)
+    return " ".join(stems)
+
+
+def _deduplicate_by_stem(
+    items: List[Tuple[str, float]] | List[str]
+) -> List[Tuple[str, float]] | List[str]:
+    """
+    Deduplicate keywords/concepts by word stem.
+    
+    Keeps only the first occurrence of each stem, preserving
+    order and scores. Handles both keyword tuples and concept strings.
+    
+    Per ARCHITECTURE_GUIDELINES Ch. 4: Single responsibility - dedup only.
+    Per PYTHON_GUIDELINES Ch. 7: Function does one thing well.
+    
+    Args:
+        items: List of (keyword, score) tuples or list of concept strings
+        
+    Returns:
+        Deduplicated list in same format as input
+        
+    Examples:
+        >>> _deduplicate_by_stem([("model", 0.01), ("models", 0.02)])
+        [("model", 0.01)]
+        >>> _deduplicate_by_stem(["model", "models", "data"])
+        ["model", "data"]
+    """
+    if not items:
+        return items
+    
+    seen_stems: Set[str] = set()
+    result: List[Tuple[str, float]] | List[str] = []
+    
+    # Detect input type
+    is_tuple_list = isinstance(items[0], tuple)
+    
+    for item in items:
+        if is_tuple_list:
+            keyword, score = item  # type: ignore
+            stem_sig = _get_phrase_stem_signature(keyword)
+            if stem_sig not in seen_stems:
+                seen_stems.add(stem_sig)
+                result.append((keyword, score))  # type: ignore
+        else:
+            # String list (concepts)
+            concept = cast(str, item)
+            stem = _get_word_stem(concept)
+            if stem not in seen_stems:
+                seen_stems.add(stem)
+                result.append(concept)  # type: ignore
+    
+    return result
+
+
+def _clean_ngram_duplicates(
+    keywords: List[Tuple[str, float]]
+) -> List[Tuple[str, float]]:
+    """
+    Remove n-grams that contain repeated words.
+    
+    Filters out phrases like "Models Models Applications" where
+    a word appears more than once (case-insensitive).
+    
+    Per ARCHITECTURE_GUIDELINES: Remove noise from extraction.
+    
+    Args:
+        keywords: List of (keyword, score) tuples
+        
+    Returns:
+        Filtered list with no repeated-word n-grams
+        
+    Examples:
+        >>> _clean_ngram_duplicates([("Models Models", 0.01), ("Machine Learning", 0.02)])
+        [("Machine Learning", 0.02)]
+    """
+    if not keywords:
+        return keywords
+    
+    result: List[Tuple[str, float]] = []
+    
+    for keyword, score in keywords:
+        words = keyword.lower().split()
+        # Check for repeated words (case-insensitive)
+        if len(words) == len(set(words)):
+            # No duplicates - keep this keyword
+            result.append((keyword, score))
+    
+    return result
+
+
 class StatisticalExtractor:
     """
     Adapter for statistical NLP libraries (YAKE, Summa, scikit-learn).
@@ -268,14 +451,20 @@ class StatisticalExtractor:
         if top_n <= 0:
             raise ValueError(_ERROR_INVALID_TOP_N)
         
-        # Extract keywords using YAKE
+        # Extract keywords using YAKE (request more to account for filtering)
         keywords = self.kw_extractor.extract_keywords(text)
         
-        # Filter out noisy keywords
+        # Step 1: Filter out noisy keywords
         filtered_keywords = [(kw, score) for kw, score in keywords if _is_valid_keyword(kw)]
         
+        # Step 2: Remove n-grams with repeated words (e.g., "Models Models")
+        cleaned_keywords = _clean_ngram_duplicates(filtered_keywords)
+        
+        # Step 3: Deduplicate by stem (e.g., model/models/modeling → model)
+        deduped_keywords = cast(List[Tuple[str, float]], _deduplicate_by_stem(cleaned_keywords))
+        
         # Return top N keywords (already sorted by score ascending)
-        return filtered_keywords[:top_n]
+        return deduped_keywords[:top_n]
     
     def _extract_concepts_from_summa(self, text: str, top_n: int) -> List[str]:
         """
@@ -369,15 +558,18 @@ class StatisticalExtractor:
         if top_n <= 0:
             raise ValueError(_ERROR_INVALID_TOP_N)
         
-        # Try Summa first
-        concepts = self._extract_concepts_from_summa(text, top_n)
+        # Try Summa first (request more to account for deduplication)
+        concepts = self._extract_concepts_from_summa(text, top_n * 2)
         
         # Fallback to YAKE keywords if Summa fails
         if not concepts:
-            concepts = self._extract_concepts_from_keywords(text, top_n)
+            concepts = self._extract_concepts_from_keywords(text, top_n * 2)
         
-        # Summa may return more than requested - limit to top_n
-        return concepts[:top_n] if concepts else []
+        # Deduplicate by stem (e.g., model/models/modeling → model)
+        deduped_concepts = cast(List[str], _deduplicate_by_stem(concepts))
+        
+        # Return top_n concepts
+        return deduped_concepts[:top_n] if deduped_concepts else []
     
     def generate_summary(self, text: str, ratio: float = 0.2) -> str:
         """
