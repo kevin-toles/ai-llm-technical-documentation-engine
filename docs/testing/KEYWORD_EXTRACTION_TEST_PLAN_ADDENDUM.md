@@ -2,52 +2,74 @@
 
 **Date:** November 30, 2025  
 **Status:** FINALIZED - Ready for Execution  
-**Version:** 3.0 - Rigorous Navigation-Based Validation  
+**Version:** 4.0 - Chunked Evaluation Architecture  
 **Related:** KEYWORD_EXTRACTION_TEST_PLAN.md  
 
 ---
 
-## 1. Evaluation Philosophy: LLM as Knowledge Graph Navigator
+## 1. Evaluation Architecture: Chunked + Final Assessment
 
-### 1.1 The Critical Distinction
+### 1.1 Why Chunked Evaluation?
 
-The LLM is **NOT** an expert evaluator giving subjective scores.  
-The LLM is a **NAVIGATOR** testing whether concepts are discoverable through the aggregate.
+The original single-prompt approach had limitations:
+
+| Issue | Single Prompt | Chunked Approach |
+|-------|---------------|------------------|
+| Prompt Size | ~73KB | ~25KB per chunk |
+| Timeout Risk | High | Low |
+| Context Pressure | High (18 questions + 4 aggregates) | Low (6 questions per call) |
+| Model Focus | Diluted | Concentrated |
+| Recovery from Errors | Must restart all | Only retry failed chunk |
+
+### 1.2 Chunked Evaluation Flow
 
 ```
-❌ WRONG APPROACH (Subjective Scoring):
-   "I rate this extraction 8/10 for quality"
-   
-❌ WRONG APPROACH (Using Own Knowledge):
-   "To answer Q7 about multi-agent frameworks, you need role choreography..."
-   
-✅ CORRECT APPROACH (Navigation Testing):
-   "Searching BASELINE aggregate for Q7 focus areas:
-    - 'agent' → FOUND in sample_keywords
-    - 'multi-agent' → NOT FOUND
-    - 'choreography' → NOT FOUND
-    - Following cross-ref Ch14→Ch22: found 'tool use', relevant
-    - Navigation score: 4/10 (1/5 focus areas discoverable)"
+┌─────────────────────────────────────────────────────────────────┐
+│                    STAGE 1: CHUNKED ANALYSIS                    │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  Chunk 1: [Instructions + Q1-Q6 + 4 Aggregates]                 │
+│           → Scores for 6 questions per profile                  │
+│           ~25KB prompt                                          │
+│                                                                 │
+│  Chunk 2: [Instructions + Q7-Q12 + 4 Aggregates]                │
+│           → Scores for 6 questions per profile                  │
+│           ~25KB prompt                                          │
+│                                                                 │
+│  Chunk 3: [Instructions + Q13-Q18 + 4 Aggregates]               │
+│           → Scores for 6 questions per profile                  │
+│           ~25KB prompt                                          │
+│                                                                 │
+├─────────────────────────────────────────────────────────────────┤
+│                    LOCAL MERGE                                  │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  Python merges all 18 question scores per profile:              │
+│  {                                                              │
+│    "baseline": { "Q1": 4, "Q2": 5, ..., "total": 72 },          │
+│    "current": { "Q1": 6, "Q2": 7, ..., "total": 98 },           │
+│    "moderate": { "Q1": 7, "Q2": 8, ..., "total": 112 },         │
+│    "aggressive": { "Q1": 8, "Q2": 7, ..., "total": 108 }        │
+│  }                                                              │
+│                                                                 │
+├─────────────────────────────────────────────────────────────────┤
+│                    STAGE 2: FINAL DECISION                      │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  Final Call: [Merged scores summary + "Pick the winner"]        │
+│              → Final recommendation with reasoning              │
+│              ~5KB prompt (just scores, no aggregates)           │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
 ```
 
-### 1.2 Why This Approach?
+### 1.3 Benefits
 
-1. **Simulates Production Usage**: Users navigate the knowledge graph to find content
-2. **Verifiable Results**: Every claim cites specific data from the aggregate
-3. **No Hallucination**: LLM cannot invent quality scores without evidence
-4. **Objective Comparison**: Which aggregate enables finding more relevant content?
-
-### 1.3 The 18 System Design Questions
-
-These are **NOT** questions for the LLM to answer.  
-These are **NAVIGATION EXERCISES** to test discoverability.
-
-For each question:
-1. Extract the focus areas (the concepts needed to answer it)
-2. Search each aggregate's sample_keywords for those concepts
-3. Follow cross-references to find related content
-4. Report: What percentage of focus areas are discoverable?
-5. Compare: Which aggregate enables better navigation?
+1. **Smaller Prompts**: Each chunk is ~25KB vs 73KB single prompt
+2. **Better Focus**: LLM concentrates on 6 questions at a time
+3. **Error Recovery**: If one chunk fails, only retry that chunk
+4. **Final Synthesis**: Dedicated call for holistic recommendation
+5. **Cost Similar**: 4 calls × ~7K tokens ≈ 1 call × 28K tokens
 
 ---
 
@@ -57,371 +79,381 @@ For each question:
 
 | Profile | YAKE top_n | Stem Dedup | Threshold | Status |
 |---------|-----------|------------|-----------|--------|
-| **baseline** | 10 | OFF | 0.7 | ✅ Ready |
-| **current** | 20 | ON | 0.7 | ✅ Ready |
-| **moderate** | 25 | ON | 0.6 | ✅ Ready |
-| **aggressive** | 35 | ON | 0.5 | ✅ Ready |
+| **BASELINE** | 10 | OFF | 0.7 | ✅ Ready |
+| **CURRENT** | 20 | ON | 0.7 | ✅ Ready |
+| **MODERATE** | 25 | ON | 0.6 | ✅ Ready |
+| **AGGRESSIVE** | 35 | ON | 0.5 | ✅ Ready |
 
 ### LLM Evaluators (10 Models)
 
-| # | Provider | Model | API Model ID |
-|---|----------|-------|--------------|
-| 1 | Anthropic | Claude Opus 4.5 | `claude-opus-4-5-20251101` |
-| 2 | Anthropic | Claude Sonnet 4.5 | `claude-sonnet-4-5-20250929` |
-| 3 | OpenAI | GPT-5.1 | `gpt-5.1` |
-| 4 | OpenAI | GPT-5 | `gpt-5` |
-| 5 | OpenAI | GPT-5 Mini | `gpt-5-mini` |
-| 6 | OpenAI | GPT-5 Nano | `gpt-5-nano` |
-| 7 | Google | Gemini 3 Pro | `gemini-3-pro-preview` |
-| 8 | Google | Gemini 2.5 Flash | `gemini-2.5-flash` |
-| 9 | DeepSeek | DeepSeek V3 | `deepseek-chat` |
-| 10 | DeepSeek | DeepSeek R1 | `deepseek-reasoner` |
+| # | Provider | Model | API Model ID | Status |
+|---|----------|-------|--------------|--------|
+| 1 | Anthropic | Claude Opus 4.5 | `claude-opus-4-5-20251101` | ✅ Working |
+| 2 | Anthropic | Claude Sonnet 4.5 | `claude-sonnet-4-5-20250929` | ⚠️ 529 Temp |
+| 3 | OpenAI | GPT-5.1 | `gpt-5.1` | ✅ Working |
+| 4 | OpenAI | GPT-5 | `gpt-5` | ✅ Working |
+| 5 | OpenAI | GPT-5 Mini | `gpt-5-mini` | ✅ Working |
+| 6 | OpenAI | GPT-5 Nano | `gpt-5-nano` | ✅ Working |
+| 7 | Google | Gemini 3 Pro | `gemini-3-pro-preview` | ⚠️ 429 Quota |
+| 8 | Google | Gemini 2.5 Flash | `gemini-2.5-flash` | ✅ Working |
+| 9 | DeepSeek | DeepSeek V3 | `deepseek-chat` | ✅ Working |
+| 10 | DeepSeek | DeepSeek R1 | `deepseek-reasoner` | ✅ Working |
+
+**Note:** 8/10 models confirmed working. 2 have temporary rate limit issues.
 
 ---
 
-## 3. The Five Required Analyses
+## 3. Chunk Structure
 
-Each LLM must complete these **navigation-based analyses**:
+### Chunk 1: Questions Q1-Q6 (Infrastructure & Orchestration)
 
-### Analysis 1: Keyword Relevance (Data Search Only)
+| Q# | Question | Focus Areas |
+|----|----------|-------------|
+| Q1 | Scalable LLM code understanding | chunking, embeddings, retrieval, indexing |
+| Q2 | Agentic coding assistant | sandboxing, static analysis, verification, rollback |
+| Q3 | LLM batch processing >GB | map-reduce, orchestration, persistent state |
+| Q4 | Multi-model orchestrator | routing, retry, backoff, cost-aware |
+| Q5 | Local fallback system | local inference, Qwen, Llama, quantization |
+| Q6 | LLM for infrastructure | tool schemas, IAM, guardrails, traceability |
 
-**Task:** Search sample_keywords against chapter_analysis titles.
+### Chunk 2: Questions Q7-Q12 (Agents & Performance)
 
-**Method:**
+| Q# | Question | Focus Areas |
+|----|----------|-------------|
+| Q7 | Multi-agent collaboration | choreography, handoffs, arbitration, confidence |
+| Q8 | Hallucination prevention | grounding, schema validation, safety rails |
+| Q9 | 100GB document indexing | distributed, HNSW, IVF, vector pruning |
+| Q10 | Secure multi-tenant fine-tuning | data boundary, encryption, isolation |
+| Q11 | 70B model latency | KV cache, speculative decoding, MoE |
+| Q12 | Diagnosing incorrect outputs | retrieval eval, consistency, benchmarks |
+
+### Chunk 3: Questions Q13-Q18 (Safety & Applications)
+
+| Q# | Question | Focus Areas |
+|----|----------|-------------|
+| Q13 | Code-writing agent safety | static analysis, sandboxing, unit tests |
+| Q14 | Jailbreak detection | classifiers, intent detection, perplexity |
+| Q15 | Resume-job matching | skill embeddings, requirement extraction |
+| Q16 | LLM refactoring engine | AST, snippet embedding, diff-only |
+| Q17 | Code-to-diagram service | static parsing, call graph, Mermaid |
+| Q18 | Knowledge graph from textbooks | metadata extraction, taxonomy, deduplication |
+
+---
+
+## 4. Chunk Prompt Template
+
+Each chunk receives this prompt structure:
+
 ```
-For each chapter in chapter_analysis:
-  1. Read chapter title (e.g., "Transformer Architectures")
-  2. Search sample_keywords for terms related to that title
-  3. Count: How many of that chapter's keywords appear in sample_keywords?
-  4. Report: relevant_count / total_count with examples
-```
+You are a KNOWLEDGE GRAPH NAVIGATOR testing discoverability.
 
-**Output:**
-```json
+## CHUNK {N} OF 3 - Questions Q{X} to Q{Y}
+
+You are analyzing 4 extraction profiles to determine which produces
+better keyword navigation. Score questions Q{X}-Q{Y} only.
+
+## CRITICAL RULES
+
+1. DO NOT answer the system design questions yourself
+2. ONLY report what you can find by searching sample_keywords
+3. Score based on how many focus areas are DISCOVERABLE
+
+## QUESTIONS FOR THIS CHUNK
+
+Q{X}: "{Title}"
+    Focus areas to search: [term1, term2, ...]
+
+Q{X+1}: "{Title}"
+    Focus areas to search: [term1, term2, ...]
+
+... (6 questions total)
+
+## SCORING INSTRUCTIONS
+
+For each question:
+1. Search sample_keywords for each focus area term
+2. Count: found vs missing terms
+3. Score: (found / total) * 10, rounded
+
+## OUTPUT FORMAT (JSON only)
+
 {
-  "baseline": {
-    "relevant_count": 42,
-    "irrelevant_count": 8,
-    "examples": [
-      {"keyword": "transformer", "chapter": "Ch5: Transformer Architectures", "relevant": true},
-      {"keyword": "example code", "chapter": "Ch5", "relevant": false, "reason": "generic section marker"}
-    ]
-  }
-}
-```
-
----
-
-### Analysis 2: Duplicate Detection (Scan Sample Keywords)
-
-**Task:** Find morphological variants in sample_keywords.
-
-**Method:**
-```
-For each keyword in sample_keywords:
-  1. Compute stem (e.g., "modeling" → "model")
-  2. Group keywords by stem
-  3. Any group with >1 member = duplicate group
-  4. Count total duplicate groups
-```
-
-**Expected:**
-- BASELINE should have 15-30 duplicate groups (stem_dedup OFF)
-- CURRENT/MODERATE/AGGRESSIVE should have 0-5 (stem_dedup ON)
-
-**Output:**
-```json
-{
-  "baseline": {
-    "duplicate_groups": 23,
-    "examples": [
-      ["model", "models", "modeling"],
-      ["embed", "embedding", "embeddings"],
-      ["train", "training", "trained"]
-    ]
-  },
-  "current": {
-    "duplicate_groups": 2,
-    "examples": [["neural network", "neural"]]
-  }
-}
-```
-
----
-
-### Analysis 3: Cross-Reference Tracing
-
-**Task:** Follow cross-references and validate connections.
-
-**Method:**
-```
-For each chapter in chapter_analysis:
-  For each entry in sample_related:
-    1. Read source chapter topic
-    2. Read target book/chapter info
-    3. Determine: Is this a logical navigation path?
-    4. Record: valid or invalid with reason
-```
-
-**Output:**
-```json
-{
-  "baseline": {
-    "total_traced": 35,
-    "valid": 28,
-    "invalid": 7,
-    "examples_valid": [
-      {"from": "Ch5: Transformers", "to": "Ch12: BERT", "reason": "BERT is transformer-based"}
-    ],
-    "examples_invalid": [
-      {"from": "Ch3: Python Basics", "to": "Ch45: Deployment", "reason": "No topical connection"}
-    ]
-  }
-}
-```
-
----
-
-### Analysis 4: Noise Term Identification
-
-**Task:** Count non-informative terms in sample_keywords.
-
-**Noise Categories:**
-- Section markers: "introduction", "conclusion", "summary", "chapter", "section"
-- Generic terms: "approach", "method", "technique", "example", "system", "process"
-- Meta terms: "figure", "table", "code listing", "output"
-
-**Method:**
-```
-For each keyword in sample_keywords:
-  If keyword matches noise category:
-    Add to noise_terms list
-Calculate: noise_ratio = len(noise_terms) / len(sample_keywords)
-```
-
-**Output:**
-```json
-{
-  "baseline": {
-    "noise_terms": ["introduction", "example", "approach", "method"],
-    "noise_count": 12,
-    "total_keywords": 100,
-    "noise_ratio": 0.12
-  }
-}
-```
-
----
-
-### Analysis 5: Navigation Test (18 Questions)
-
-**Task:** For each system design question, test if the aggregate enables finding relevant content.
-
-**The LLM does NOT answer the question. It only searches the aggregate.**
-
-#### Navigation Protocol Per Question:
-
-```
-Question: "How would you design a multi-agent framework with planner/coder/critic/tester roles?"
-
-Focus areas to search for:
-- role choreography
-- reasoning handoffs
-- arbitration layer
-- self-termination rules
-- confidence scoring
-
-BASELINE aggregate search:
-  sample_keywords scan:
-    - "agent" → FOUND
-    - "multi-agent" → NOT FOUND
-    - "choreography" → NOT FOUND
-    - "handoff" → NOT FOUND
-    - "arbitration" → NOT FOUND
-    - "termination" → NOT FOUND
-  
-  cross-reference trace:
-    - Ch14 (if exists) → followed to Ch22, found "tool use" (partially relevant)
-  
-  Focus areas discoverable: 1/5 (20%)
-  Navigation score: 3/10
-  
-CURRENT aggregate search:
-  sample_keywords scan:
-    - "agent" → FOUND
-    - "multi-agent" → FOUND
-    - "agent coordination" → FOUND
-    - "orchestration" → FOUND
-    - "choreography" → NOT FOUND
-    - "arbitration" → NOT FOUND
-  
-  Focus areas discoverable: 3/5 (60%)
-  Navigation score: 6/10
-
-Best aggregate for Q7: CURRENT (found coordination concepts)
-```
-
----
-
-## 4. The 18 System Design Questions (Focus Areas)
-
-| Q# | Question | Focus Areas to Search |
-|----|----------|----------------------|
-| Q1 | Scalable LLM code understanding | chunking, embeddings, retrieval, indexing, grounding, hallucination |
-| Q2 | Agentic coding assistant | sandboxing, static analysis, verification, diff, rollback, guardrails |
-| Q3 | LLM batch processing >GB | map-reduce, chunk orchestration, persistent state, quality gates |
-| Q4 | Multi-model orchestrator | routing, retry, backoff, cost-aware, degradation, parallelism |
-| Q5 | Local fallback system | local inference, Qwen, Llama, GGUF, quantization, offline |
-| Q6 | LLM for infrastructure | tool schemas, IAM, guardrails, traceability, intent classification |
-| Q7 | Multi-agent collaboration | choreography, handoffs, arbitration, self-termination, confidence |
-| Q8 | Hallucination prevention | grounding, schema validation, safety rails, log-probability, self-tests |
-| Q9 | 100GB document indexing | distributed embeddings, HNSW, IVF, vector pruning, hot/cold storage |
-| Q10 | Secure multi-tenant fine-tuning | data boundary, encryption, isolation, gradients, audit |
-| Q11 | 70B model latency | KV cache, speculative decoding, MoE, distillation, flash-attention |
-| Q12 | Diagnosing incorrect outputs | retrieval eval, likelihood, consistency, CoT validation, benchmarks |
-| Q13 | Code-writing agent safety | static analysis, sandboxing, unit tests, rollback, anomaly detection |
-| Q14 | Jailbreak detection | classifiers, intent detection, safety models, perplexity |
-| Q15 | Resume-job matching | skill embeddings, requirement extraction, scoring, rewriting |
-| Q16 | LLM refactoring engine | AST, snippet embedding, per-file isolation, diff-only, self-review |
-| Q17 | Code-to-diagram service | static parsing, call graph, LLM summarization, Mermaid, PlantUML |
-| Q18 | Knowledge graph from textbooks | metadata extraction, taxonomy, semantic alignment, cross-book dedup |
-
----
-
-## 5. Expected Output Per LLM
-
-Each of the 10 LLMs produces:
-
-```json
-{
-  "evaluator_model": "claude-opus-4.5",
-  "timestamp": "2025-11-30T...",
-  
-  "analysis_1_relevance": {
-    "baseline": {"relevant": 42, "irrelevant": 8, "ratio": 0.84, "examples": [...]},
-    "current": {"relevant": 45, "irrelevant": 5, "ratio": 0.90, "examples": [...]},
-    ...
-  },
-  
-  "analysis_2_duplicates": {
-    "baseline": {"groups": 23, "examples": [["model", "models"], ...]},
-    "current": {"groups": 2, "examples": [...]},
-    ...
-  },
-  
-  "analysis_3_cross_refs": {
-    "baseline": {"valid": 28, "invalid": 7, "ratio": 0.80, "examples": [...]},
-    ...
-  },
-  
-  "analysis_4_noise": {
-    "baseline": {"count": 12, "ratio": 0.12, "terms": [...]},
-    ...
-  },
-  
-  "analysis_5_navigation": {
-    "Q1": {
-      "focus_areas": ["chunking", "embeddings", ...],
-      "baseline": {"found": 2, "missing": 4, "score": 4},
-      "current": {"found": 4, "missing": 2, "score": 7},
-      "moderate": {"found": 5, "missing": 1, "score": 8},
-      "aggressive": {"found": 6, "missing": 0, "score": 9},
-      "best": "aggressive"
+  "chunk": {N},
+  "scores": {
+    "Q{X}": {
+      "baseline": {"found": [...], "missing": [...], "score": N},
+      "current": {"found": [...], "missing": [...], "score": N},
+      "moderate": {"found": [...], "missing": [...], "score": N},
+      "aggressive": {"found": [...], "missing": [...], "score": N}
     },
+    ... (all 6 questions)
+  }
+}
+
+## AGGREGATE DATA
+
+### BASELINE PROFILE
+{summarized aggregate JSON}
+
+### CURRENT PROFILE
+{summarized aggregate JSON}
+
+### MODERATE PROFILE
+{summarized aggregate JSON}
+
+### AGGRESSIVE PROFILE
+{summarized aggregate JSON}
+```
+
+---
+
+## 5. Final Assessment Prompt
+
+After merging chunk results, the final call receives:
+
+```
+You are making a FINAL ASSESSMENT of 4 extraction profiles.
+
+## YOUR TASK
+
+Based on the merged scores from 18 system design questions,
+determine which profile is BEST for production use.
+
+## MERGED SCORES FROM ALL 18 QUESTIONS
+
+{
+  "all_scores": {
+    "Q1": {"baseline": {"score": 4}, "current": {"score": 6}, ...},
     "Q2": {...},
-    ... (all 18)
+    ... (all 18 questions)
   },
-  
-  "summary": {
-    "navigation_totals": {
+  "profile_totals": {
+    "baseline": 72,
+    "current": 98,
+    "moderate": 112,
+    "aggressive": 108
+  }
+}
+
+## ANALYSIS REQUIRED
+
+1. Review total scores for each profile
+2. Count how many questions each profile "won"
+3. Identify patterns in which profiles excel at which question types
+4. Make a final recommendation with reasoning
+
+## OUTPUT FORMAT (JSON only)
+
+{
+  "totals": {
+    "baseline": 72,
+    "current": 98,
+    "moderate": 112,
+    "aggressive": 108
+  },
+  "questions_won": {
+    "baseline": 2,
+    "current": 5,
+    "moderate": 7,
+    "aggressive": 4
+  },
+  "analysis": {
+    "baseline_strengths": "...",
+    "current_strengths": "...",
+    "moderate_strengths": "...",
+    "aggressive_strengths": "..."
+  },
+  "recommendation": {
+    "best_for_production": "moderate",
+    "confidence": "high",
+    "reasoning": "Moderate achieved highest total score (112/180) and won most questions (7/18)..."
+  }
+}
+```
+
+---
+
+## 6. API Call Flow Per Model
+
+For each of the 10 LLM models:
+
+```
+Model: claude-opus-4.5
+├── Chunk 1 (Q1-Q6)     → ~25KB prompt → Response with 6 scores
+│   ⏳ 3s delay
+├── Chunk 2 (Q7-Q12)    → ~25KB prompt → Response with 6 scores
+│   ⏳ 3s delay
+├── Chunk 3 (Q13-Q18)   → ~25KB prompt → Response with 6 scores
+│   ⏳ 3s delay
+├── [LOCAL] Merge 18 scores
+└── Final Assessment    → ~5KB prompt → Final recommendation
+    ⏳ 3s delay before next model
+```
+
+**Total API calls:** 4 per model × 10 models = 40 calls
+**Total time estimate:** ~30-45 minutes (including delays)
+
+---
+
+## 7. Expected Output Structure
+
+### Per-Model Evaluation Result
+
+```json
+{
+  "model": "claude-opus-4.5",
+  "approach": "chunked_evaluation",
+  "stage1_chunks": [
+    {
+      "chunk": 1,
+      "scores": {
+        "Q1": {"baseline": {"found": [...], "score": 4}, ...},
+        "Q2": {...},
+        ...
+      }
+    },
+    {
+      "chunk": 2,
+      "scores": {...}
+    },
+    {
+      "chunk": 3,
+      "scores": {...}
+    }
+  ],
+  "merged_scores": {
+    "all_scores": {...},
+    "profile_totals": {
       "baseline": 72,
       "current": 98,
       "moderate": 112,
-      "aggressive": 124
-    },
-    "duplicate_reduction": {
-      "baseline": 23,
-      "current": 2,
-      "improvement": "91%"
-    },
-    "recommendation": "moderate",
-    "reasoning": "Best balance of navigation coverage (112/180) with low noise (8%)"
-  }
-}
-```
-
----
-
-## 6. Aggregation Across 10 LLMs
-
-Final report combines all 10 evaluations:
-
-```json
-{
-  "consensus": {
-    "best_for_navigation": {
-      "winner": "moderate",
-      "votes": 7,
-      "avg_score": 115
-    },
-    "best_for_deduplication": {
-      "winner": "current",
-      "baseline_duplicates": 23,
-      "current_duplicates": 2
-    },
-    "question_by_question": {
-      "Q1": {"winner": "aggressive", "consensus": 8},
-      "Q2": {"winner": "moderate", "consensus": 6},
-      ...
+      "aggressive": 108
+    }
+  },
+  "final_assessment": {
+    "totals": {...},
+    "questions_won": {...},
+    "recommendation": {
+      "best_for_production": "moderate",
+      "confidence": "high",
+      "reasoning": "..."
     }
   }
 }
 ```
 
+### Aggregate Results Across All Models
+
+```json
+{
+  "evaluation_type": "chunked_comparative",
+  "timestamp": "2025-11-30T...",
+  "approach": {
+    "stage1": "3 chunks of 6 questions each (~25KB per call)",
+    "stage2": "Final assessment from merged scores (~5KB)",
+    "total_calls_per_model": 4
+  },
+  "models_used": ["claude-opus-4.5", "gpt-5.1", ...],
+  "evaluations": {
+    "claude-opus-4.5": {...},
+    "gpt-5.1": {...},
+    ...
+  },
+  "consensus": {
+    "best_for_production": "moderate",
+    "votes": {
+      "baseline": 0,
+      "current": 2,
+      "moderate": 6,
+      "aggressive": 2
+    },
+    "agreement_ratio": 0.6
+  }
+}
+```
+
 ---
 
-## 7. Execution
+## 8. Execution
 
 ### Command
 
 ```bash
 cd /Users/kevintoles/POC/llm-document-enhancer
-source ~/.zshrc
-python3 scripts/llm_evaluation.py --comparative --rigorous
+python3 scripts/llm_evaluation.py --chunked
+```
+
+### Alternative: Single-Prompt Mode (Not Recommended)
+
+```bash
+python3 scripts/llm_evaluation.py --comparative
 ```
 
 ### Expected Time
 
-- 10 LLM calls × ~3 minutes each = ~30-45 minutes
-- Plus 3-second delays between calls
-- Total: ~1 hour
+| Phase | Duration |
+|-------|----------|
+| Loading aggregates | ~5 seconds |
+| Per model (4 calls) | ~3-5 minutes |
+| 10 models total | ~30-50 minutes |
+| Saving results | ~2 seconds |
 
 ### Output Location
 
 ```
 outputs/evaluation/
-├── rigorous_evaluation_claude-opus-4.5_<timestamp>.json
-├── rigorous_evaluation_claude-sonnet-4.5_<timestamp>.json
-├── rigorous_evaluation_gpt-5.1_<timestamp>.json
-├── ... (10 files total)
-└── rigorous_evaluation_aggregate_<timestamp>.json
+├── llm_chunked_evaluation_<timestamp>.json
+└── (optional debug files if parsing fails)
 ```
 
 ---
 
-## 8. Success Criteria
+## 9. Success Criteria
 
-| Metric | Baseline | Target (Current/Moderate) |
-|--------|----------|---------------------------|
-| Duplicate Groups | >15 | <5 |
-| Navigation Score (avg/180) | <80 | >100 |
+| Metric | Baseline Target | Current/Moderate Target |
+|--------|-----------------|-------------------------|
+| Navigation Score (sum/180) | <80 | >100 |
 | Questions Won | <5 | >10 |
-| Cross-Ref Validity | TBD | >75% |
-| Noise Ratio | TBD | <15% |
+| LLM Consensus | N/A | >50% agreement |
+| Chunk Success Rate | N/A | >80% (at least 2/3 chunks) |
+
+---
+
+## 10. Error Handling
+
+### Chunk Failure Recovery
+
+If a chunk fails:
+1. The error is logged in `stage1_chunks`
+2. Merge proceeds with available chunks
+3. Final assessment uses partial data (if ≥2 chunks succeeded)
+4. Model result marked with `chunk_errors: true`
+
+### Graceful Degradation
+
+| Scenario | Behavior |
+|----------|----------|
+| 1 chunk fails | Continue with 12/18 questions |
+| 2 chunks fail | Continue with 6/18 questions |
+| All 3 chunks fail | Skip model, log error |
+| Final assessment fails | Use merged totals as result |
+
+---
+
+## 11. API Fixes Applied
+
+The following issues were resolved to enable all 10 models:
+
+| Issue | Fix Applied |
+|-------|-------------|
+| OpenAI GPT-5 `max_tokens` error | Changed to `max_completion_tokens` |
+| OpenAI GPT-5 `temperature` error | Removed temperature parameter |
+| Model routing mismatch | Changed to `startswith()` matching |
+| Gemini SDK missing | Installed `google-generativeai` package |
 
 ---
 
 **Status:** READY FOR EXECUTION  
-**Next Action:** Update `scripts/llm_evaluation.py` with rigorous prompt  
-**Estimated Completion:** 2-3 hours total
+**Command:** `python3 scripts/llm_evaluation.py --chunked`  
+**Estimated Completion:** 30-50 minutes
 

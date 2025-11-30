@@ -1055,6 +1055,461 @@ Respond with ONLY valid JSON (no markdown code blocks):
     return prompt
 
 
+# =============================================================================
+# CHUNKED EVALUATION APPROACH
+# =============================================================================
+# This approach splits the 18 questions into 3 chunks of 6 questions each,
+# sends each chunk to the LLM separately, merges the results locally,
+# and then sends the merged scores for a final assessment.
+# 
+# Benefits:
+#   - Smaller per-call token usage (~25KB vs 73KB)
+#   - Lower timeout risk
+#   - Better model context pressure management
+#   - Final decision is more focused
+# =============================================================================
+
+# Define all 18 questions globally for reuse
+EVALUATION_QUESTIONS = [
+    ("Q1", "Scalable LLM code understanding system", 
+     ["chunking", "embeddings", "retrieval", "indexing", "grounding", "hallucination"]),
+    ("Q2", "Agentic coding assistant with safe code changes",
+     ["sandboxing", "static analysis", "verification", "diff", "rollback", "guardrails"]),
+    ("Q3", "LLM batch processing for multi-GB datasets",
+     ["map-reduce", "chunk", "orchestration", "persistent state", "quality gates", "metadata"]),
+    ("Q4", "Multi-model orchestrator across providers",
+     ["routing", "retry", "backoff", "cost", "degradation", "parallelism", "normalization"]),
+    ("Q5", "Fully local fallback system",
+     ["local inference", "Qwen", "Llama", "GGUF", "quantization", "offline", "on-device"]),
+    ("Q6", "LLM agent for infrastructure automation",
+     ["tool schema", "IAM", "guardrails", "traceability", "intent classification", "verification"]),
+    ("Q7", "Multi-agent collaboration framework",
+     ["choreography", "handoff", "arbitration", "termination", "confidence", "roles"]),
+    ("Q8", "Hallucination prevention in agentic systems",
+     ["grounding", "schema validation", "safety rails", "log-probability", "self-test"]),
+    ("Q9", "100GB+ document indexing system",
+     ["distributed", "HNSW", "IVF", "vector pruning", "hot storage", "cold storage", "partial update"]),
+    ("Q10", "Secure multi-tenant fine-tuning",
+     ["data boundary", "encryption", "isolation", "gradients", "audit", "tenant"]),
+    ("Q11", "70B model inference latency reduction",
+     ["KV cache", "speculative decoding", "MoE", "distillation", "flash-attention", "quantization"]),
+    ("Q12", "Diagnosing confident but incorrect LLM outputs",
+     ["retrieval eval", "likelihood", "consistency", "chain-of-thought", "benchmark"]),
+    ("Q13", "Safety guardrails for code-writing agents",
+     ["static analysis", "sandboxing", "unit test", "rollback", "anomaly detection", "approval"]),
+    ("Q14", "Jailbreak detection system",
+     ["classifier", "intent detection", "safety model", "perplexity", "pattern"]),
+    ("Q15", "Resume-job description matching system",
+     ["skill embedding", "requirement extraction", "scoring", "rewriting", "ensemble"]),
+    ("Q16", "LLM-powered refactoring engine",
+     ["AST", "snippet embedding", "per-file isolation", "diff-only", "self-review"]),
+    ("Q17", "Code-to-architecture diagram microservice",
+     ["static parsing", "call graph", "summarization", "Mermaid", "PlantUML", "JSON schema"]),
+    ("Q18", "Knowledge graph from technical textbooks",
+     ["metadata extraction", "taxonomy", "semantic alignment", "cross-book", "deduplication", "guideline"]),
+]
+
+
+def create_chunked_prompt(aggregates: dict[str, dict[str, Any]], questions: list[tuple], chunk_num: int) -> str:
+    """
+    Create a prompt for a chunk of questions (Stage 1).
+    
+    Args:
+        aggregates: The 4 profile aggregates
+        questions: List of (qid, title, focus_areas) tuples for this chunk
+        chunk_num: Which chunk this is (1, 2, or 3)
+    
+    Returns:
+        Prompt string for this chunk
+    """
+    # Build questions section
+    questions_text = ""
+    for qid, title, focus_areas in questions:
+        questions_text += f"\n{qid}: \"{title}\"\n"
+        questions_text += f"    Focus areas to search: {focus_areas}\n"
+    
+    prompt = f"""You are a KNOWLEDGE GRAPH NAVIGATOR testing the discoverability of technical concepts.
+
+## CHUNK {chunk_num} OF 3 - Questions {questions[0][0]} to {questions[-1][0]}
+
+You are analyzing 4 extraction profiles to determine which produces better keyword navigation.
+This is chunk {chunk_num}/3 - you are scoring questions {questions[0][0]}-{questions[-1][0]} only.
+
+## CRITICAL RULES
+
+1. DO NOT answer the system design questions yourself
+2. ONLY report what you can find by searching the provided sample_keywords
+3. For each question, search for the focus area terms in each profile's keywords
+4. Score based on how many focus areas are DISCOVERABLE (found in keywords)
+
+## QUESTIONS FOR THIS CHUNK
+
+{questions_text}
+
+## SCORING INSTRUCTIONS
+
+For each question:
+1. Search sample_keywords for each focus area term
+2. Count: found vs missing terms
+3. Score: (found / total) * 10, rounded to nearest integer
+
+## REQUIRED JSON OUTPUT
+
+Respond with ONLY valid JSON (no markdown):
+
+{{
+  "chunk": {chunk_num},
+  "questions_evaluated": ["{questions[0][0]}", ..., "{questions[-1][0]}"],
+  "scores": {{
+    "{questions[0][0]}": {{
+      "baseline": {{"found": [...], "missing": [...], "score": <1-10>}},
+      "current": {{"found": [...], "missing": [...], "score": <1-10>}},
+      "moderate": {{"found": [...], "missing": [...], "score": <1-10>}},
+      "aggressive": {{"found": [...], "missing": [...], "score": <1-10>}}
+    }},
+    ... (all {len(questions)} questions in this chunk)
+  }}
+}}
+
+## AGGREGATE DATA TO ANALYZE
+
+"""
+    
+    # Add summarized data for each profile
+    for profile in ["baseline", "current", "moderate", "aggressive"]:
+        if profile in aggregates:
+            summary = extract_evaluation_summary(aggregates[profile])
+            prompt += f"\n### {profile.upper()} PROFILE\n"
+            prompt += json.dumps(summary, indent=2)
+            prompt += "\n"
+    
+    return prompt
+
+
+def create_final_assessment_prompt(merged_scores: dict[str, Any]) -> str:
+    """
+    Create prompt for final assessment (Stage 2).
+    
+    Takes the merged scores from all 3 chunks and asks the LLM
+    to make a final recommendation.
+    
+    Args:
+        merged_scores: Combined scores from all chunks
+    
+    Returns:
+        Prompt string for final assessment
+    """
+    prompt = f"""You are making a FINAL ASSESSMENT of 4 extraction profiles based on navigation test results.
+
+## YOUR TASK
+
+You have received evaluation scores from 18 system design questions.
+Each question tested whether focus area keywords were discoverable in the knowledge graph.
+
+Based on the scores below, determine which profile is BEST for production use.
+
+## MERGED SCORES FROM ALL 18 QUESTIONS
+
+{json.dumps(merged_scores, indent=2)}
+
+## ANALYSIS REQUIRED
+
+1. Calculate total navigation score for each profile (sum of all 18 question scores)
+2. Count how many questions each profile "won" (had highest score)
+3. Identify any patterns (which profiles excel at which question types?)
+4. Make a final recommendation
+
+## REQUIRED JSON OUTPUT
+
+Respond with ONLY valid JSON (no markdown):
+
+{{
+  "totals": {{
+    "baseline": <sum of 18 scores>,
+    "current": <sum>,
+    "moderate": <sum>,
+    "aggressive": <sum>
+  }},
+  "questions_won": {{
+    "baseline": <count where baseline had highest score>,
+    "current": <count>,
+    "moderate": <count>,
+    "aggressive": <count>
+  }},
+  "analysis": {{
+    "baseline_strengths": "<what types of questions baseline excels at>",
+    "current_strengths": "<what current excels at>",
+    "moderate_strengths": "<what moderate excels at>",
+    "aggressive_strengths": "<what aggressive excels at>"
+  }},
+  "recommendation": {{
+    "best_for_production": "<baseline|current|moderate|aggressive>",
+    "confidence": "<high|medium|low>",
+    "reasoning": "<2-3 sentences citing specific scores and patterns>"
+  }}
+}}
+"""
+    return prompt
+
+
+def call_llm(model: str, config: "LLMConfig", prompt: str) -> dict[str, Any]:
+    """
+    Route a prompt to the appropriate LLM handler.
+    
+    Args:
+        model: Model key (e.g., "claude-opus-4.5", "gpt-5")
+        config: LLMConfig for the model
+        prompt: The prompt to send
+    
+    Returns:
+        Parsed JSON response or error dict
+    """
+    if model.startswith("deepseek"):
+        return call_deepseek(config, prompt)
+    elif model.startswith("gemini"):
+        return call_gemini(config, prompt)
+    elif model.startswith("claude"):
+        return call_claude(config, prompt)
+    elif model.startswith("gpt"):
+        return call_openai(config, prompt)
+    else:
+        return {"error": f"No handler for {model}"}
+
+
+def merge_chunk_results(chunk_results: list[dict[str, Any]]) -> dict[str, Any]:
+    """
+    Merge results from 3 chunks into a single scores dictionary.
+    
+    Args:
+        chunk_results: List of 3 chunk result dicts
+    
+    Returns:
+        Merged scores for all 18 questions
+    """
+    merged = {
+        "all_scores": {},
+        "profile_totals": {
+            "baseline": 0,
+            "current": 0,
+            "moderate": 0,
+            "aggressive": 0
+        }
+    }
+    
+    for chunk in chunk_results:
+        if "error" in chunk:
+            continue
+        
+        scores = chunk.get("scores", {})
+        for qid, profile_scores in scores.items():
+            merged["all_scores"][qid] = profile_scores
+            
+            # Accumulate totals
+            for profile in ["baseline", "current", "moderate", "aggressive"]:
+                if profile in profile_scores:
+                    score = profile_scores[profile].get("score", 0)
+                    if isinstance(score, (int, float)):
+                        merged["profile_totals"][profile] += score
+    
+    return merged
+
+
+def run_chunked_evaluation(model: str, aggregates: dict[str, dict[str, Any]]) -> dict[str, Any]:
+    """
+    Run the chunked evaluation for a single model.
+    
+    Stage 1: 3 API calls with 6 questions each
+    Stage 2: 1 API call for final assessment
+    
+    Args:
+        model: Model key to use
+        aggregates: The 4 profile aggregates
+    
+    Returns:
+        Complete evaluation result including final recommendation
+    """
+    configs = get_llm_configs()
+    
+    if model not in configs:
+        return {"error": f"Model '{model}' not configured"}
+    
+    config = configs[model]
+    
+    # Split questions into 3 chunks of 6
+    chunks = [
+        EVALUATION_QUESTIONS[0:6],   # Q1-Q6
+        EVALUATION_QUESTIONS[6:12],  # Q7-Q12
+        EVALUATION_QUESTIONS[12:18], # Q13-Q18
+    ]
+    
+    chunk_results = []
+    
+    # Stage 1: Evaluate each chunk
+    for i, chunk_questions in enumerate(chunks, 1):
+        print(f"      📦 Chunk {i}/3 (Q{chunk_questions[0][0][-1]}-Q{chunk_questions[-1][0][-2:]})...", end=" ", flush=True)
+        
+        prompt = create_chunked_prompt(aggregates, chunk_questions, i)
+        
+        # Add delay between chunks
+        if i > 1:
+            time.sleep(API_CALL_DELAY_SECONDS)
+        
+        result = call_llm(model, config, prompt)
+        
+        if "error" in result:
+            print(f"❌ {result['error'][:40]}")
+            chunk_results.append(result)
+        else:
+            print(f"✅")
+            chunk_results.append(result)
+    
+    # Check if we have enough successful chunks
+    successful_chunks = [c for c in chunk_results if "error" not in c]
+    if len(successful_chunks) < 2:
+        return {
+            "error": "Too many chunk failures",
+            "chunk_results": chunk_results
+        }
+    
+    # Merge chunk results
+    merged = merge_chunk_results(chunk_results)
+    
+    # Stage 2: Final assessment
+    print(f"      🎯 Final assessment...", end=" ", flush=True)
+    time.sleep(API_CALL_DELAY_SECONDS)
+    
+    final_prompt = create_final_assessment_prompt(merged)
+    final_result = call_llm(model, config, final_prompt)
+    
+    if "error" in final_result:
+        print(f"❌ {final_result['error'][:40]}")
+    else:
+        best = final_result.get("recommendation", {}).get("best_for_production", "N/A")
+        print(f"✅ Recommends: {best.upper()}")
+    
+    return {
+        "model": model,
+        "approach": "chunked_evaluation",
+        "stage1_chunks": chunk_results,
+        "merged_scores": merged,
+        "final_assessment": final_result,
+        "recommendation": final_result.get("recommendation", {}) if "error" not in final_result else None
+    }
+
+
+def run_chunked_comparative_evaluation(models: list[str] | None = None) -> dict[str, Any]:
+    """
+    Run chunked comparative evaluation across multiple models.
+    
+    This is the main entry point for the new chunked approach.
+    
+    Args:
+        models: List of model keys to use (defaults to all 10)
+    
+    Returns:
+        Complete evaluation results with consensus
+    """
+    eval_dir = PROJECT_ROOT / "outputs" / "evaluation"
+    
+    # Load all aggregates
+    aggregates = {}
+    profiles = ["baseline", "current", "moderate", "aggressive"]
+    suffixes = {"baseline": "BASELINE", "current": "CURRENT", "moderate": "MODERATE", "aggressive": "AGGRESSIVE"}
+    
+    print("\n📂 Loading aggregates...")
+    for profile in profiles:
+        suffix = suffixes[profile]
+        agg_file = eval_dir / f"aggregate_{suffix}.json"
+        
+        if agg_file.exists():
+            with open(agg_file) as f:
+                aggregates[profile] = json.load(f)
+            print(f"  ✅ {suffix}: Loaded")
+        else:
+            print(f"  ❌ {suffix}: Not found")
+    
+    if len(aggregates) != 4:
+        return {"error": f"Missing aggregates. Found {len(aggregates)}/4. Run extraction first."}
+    
+    # Default models
+    if models is None:
+        models = [
+            "claude-opus-4.5", "claude-sonnet-4.5",
+            "gpt-5.1", "gpt-5", "gpt-5-mini", "gpt-5-nano",
+            "gemini-3-pro", "gemini-2.5-flash",
+            "deepseek-v3", "deepseek-r1"
+        ]
+    
+    configs = get_llm_configs()
+    
+    # Filter to available models
+    available_models = [m for m in models if m in configs]
+    
+    print(f"\n🔄 Running CHUNKED evaluation approach")
+    print(f"   Strategy: 3 chunks × 6 questions + 1 final assessment = 4 calls per model")
+    print(f"   Models: {len(available_models)}/{len(models)} available")
+    print(f"   Total API calls: ~{len(available_models) * 4}")
+    print()
+    
+    results = {
+        "evaluation_type": "chunked_comparative",
+        "timestamp": datetime.now().isoformat(),
+        "approach": {
+            "stage1": "3 chunks of 6 questions each (~25KB per call)",
+            "stage2": "Final assessment from merged scores (~5KB)",
+            "total_calls_per_model": 4
+        },
+        "profiles_evaluated": profiles,
+        "models_used": [],
+        "evaluations": {},
+    }
+    
+    for i, model in enumerate(available_models, 1):
+        print(f"  🤖 [{i}/{len(available_models)}] {model}")
+        
+        # Add delay between models (except first)
+        if i > 1:
+            print(f"     ⏳ Waiting {API_CALL_DELAY_SECONDS}s before next model...")
+            time.sleep(API_CALL_DELAY_SECONDS)
+        
+        eval_result = run_chunked_evaluation(model, aggregates)
+        results["evaluations"][model] = eval_result
+        
+        if "error" not in eval_result:
+            results["models_used"].append(model)
+    
+    # Calculate consensus
+    if results["models_used"]:
+        recommendations = {}
+        for model in results["models_used"]:
+            eval_result = results["evaluations"][model]
+            rec = eval_result.get("recommendation", {})
+            best = rec.get("best_for_production", "")
+            if best:
+                recommendations[best.lower()] = recommendations.get(best.lower(), 0) + 1
+        
+        if recommendations:
+            consensus = max(recommendations, key=recommendations.get)
+            results["consensus"] = {
+                "best_for_production": consensus,
+                "votes": recommendations,
+                "agreement_ratio": recommendations[consensus] / len(results["models_used"])
+            }
+            
+            print(f"\n📊 CONSENSUS: {consensus.upper()}")
+            print(f"   Votes: {recommendations}")
+            print(f"   Agreement: {results['consensus']['agreement_ratio']:.0%}")
+    
+    # Save results
+    output_file = eval_dir / f"llm_chunked_evaluation_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+    with open(output_file, "w") as f:
+        json.dump(results, f, indent=2)
+    
+    print(f"\n✅ Chunked evaluation saved: {output_file}")
+    
+    return results
+
+
 def run_comparative_evaluation(models: list[str] | None = None) -> dict[str, Any]:
     """
     Run Strategy B comparative evaluation.
@@ -1493,7 +1948,13 @@ def main() -> None:
     parser.add_argument(
         "--comparative",
         action="store_true",
-        help="Run Strategy B comparative evaluation (all 4 profiles to each LLM)"
+        help="Run Strategy B comparative evaluation (all 4 profiles to each LLM) - single large prompt"
+    )
+    
+    parser.add_argument(
+        "--chunked",
+        action="store_true",
+        help="Run CHUNKED comparative evaluation (3 chunks + final assessment) - recommended approach"
     )
     
     parser.add_argument(
@@ -1545,6 +2006,10 @@ def main() -> None:
     
     if args.comparative:
         run_comparative_evaluation(args.models)
+        return
+    
+    if args.chunked:
+        run_chunked_comparative_evaluation(args.models)
         return
     
     if args.output_dir:
