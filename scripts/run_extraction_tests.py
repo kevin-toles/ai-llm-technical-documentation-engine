@@ -418,6 +418,15 @@ def create_aggregate(enriched_file: Path, profile_name: str, profile: Dict[str, 
     }
     
     # Build aggregate
+    # Extract book name: enriched files have "book" key with format "BookName_SUFFIX"
+    raw_book = enriched_data.get("book", enriched_data.get("book_title", enriched_data.get("title", "Unknown")))
+    # Remove profile suffix if present (e.g., "AI Engineering_BASELINE" -> "AI Engineering")
+    source_book = raw_book
+    for suffix in ["_BASELINE", "_CURRENT", "_MODERATE", "_AGGRESSIVE"]:
+        if source_book.endswith(suffix):
+            source_book = source_book[:-len(suffix)]
+            break
+    
     aggregate = {
         "profile": profile_name,
         "profile_config": {
@@ -425,7 +434,7 @@ def create_aggregate(enriched_file: Path, profile_name: str, profile: Dict[str, 
             "description": profile.get("description"),
             "parameters": profile.get("parameters"),
         },
-        "source_book": enriched_data.get("book_title", enriched_data.get("title", "Unknown")),
+        "source_book": source_book,
         "timestamp": datetime.now().isoformat(),
         "statistics": stats,
         "keywords_sample": unique_keywords[:50],  # First 50 unique keywords
@@ -479,30 +488,87 @@ def run_all_profiles() -> Dict[str, Any]:
 
 
 def validate_aggregates() -> bool:
-    """Validate all 4 aggregates exist and are valid."""
+    """Validate all 4 aggregates exist and have valid structure."""
     eval_dir = PROJECT_ROOT / "outputs" / "evaluation"
     
     print("\nValidating aggregates...")
+    print("=" * 60)
     all_valid = True
+    issues = []
     
     for profile, suffix in PROFILE_SUFFIXES.items():
         agg_file = eval_dir / f"aggregate_{suffix}.json"
         
-        if agg_file.exists():
-            try:
-                with open(agg_file) as f:
-                    data = json.load(f)
-                
-                keywords = len(data.get("keywords_sample", []))
-                concepts = len(data.get("concepts_sample", []))
-                
-                print(f"  ✅ {suffix}: {keywords} keywords, {concepts} concepts")
-            except Exception as e:
-                print(f"  ❌ {suffix}: Invalid JSON - {e}")
-                all_valid = False
-        else:
+        if not agg_file.exists():
             print(f"  ❌ {suffix}: File not found")
             all_valid = False
+            issues.append(f"{suffix}: File missing")
+            continue
+        
+        try:
+            with open(agg_file) as f:
+                data = json.load(f)
+            
+            # Required fields check
+            required_fields = ["profile", "profile_config", "source_book", "statistics", 
+                             "keywords_sample", "concepts_sample"]
+            missing_fields = [f for f in required_fields if f not in data]
+            if missing_fields:
+                issues.append(f"{suffix}: Missing fields {missing_fields}")
+                all_valid = False
+            
+            # Content validation
+            source_book = data.get("source_book", "Unknown")
+            keywords = len(data.get("keywords_sample", []))
+            concepts = len(data.get("concepts_sample", []))
+            cross_refs = len(data.get("cross_references_sample", []))
+            stats = data.get("statistics", {})
+            
+            # Check for "Unknown" source_book
+            if source_book == "Unknown":
+                issues.append(f"{suffix}: source_book is 'Unknown' (extraction bug)")
+                all_valid = False
+            
+            # Check for empty content
+            if keywords == 0:
+                issues.append(f"{suffix}: No keywords extracted")
+                all_valid = False
+            
+            if concepts == 0:
+                issues.append(f"{suffix}: No concepts extracted")
+                all_valid = False
+            
+            # Warn about missing cross-references (not a failure, but notable)
+            if cross_refs == 0:
+                issues.append(f"{suffix}: No cross-references (companion books may be missing)")
+            
+            # Summary line
+            status = "✅" if source_book != "Unknown" and keywords > 0 and concepts > 0 else "⚠️ "
+            print(f"  {status} {suffix}:")
+            print(f"      Source: {source_book}")
+            print(f"      Keywords: {keywords}, Concepts: {concepts}, Cross-refs: {cross_refs}")
+            print(f"      Keyword diversity: {stats.get('keyword_diversity_ratio', 0):.1%}")
+            
+        except json.JSONDecodeError as e:
+            print(f"  ❌ {suffix}: Invalid JSON - {e}")
+            all_valid = False
+            issues.append(f"{suffix}: Invalid JSON")
+        except Exception as e:
+            print(f"  ❌ {suffix}: Error - {e}")
+            all_valid = False
+            issues.append(f"{suffix}: {e}")
+    
+    # Summary
+    print("\n" + "=" * 60)
+    if issues:
+        print("Issues found:")
+        for issue in issues:
+            print(f"  ⚠️  {issue}")
+    
+    if all_valid:
+        print("\n✅ All aggregates valid and ready for LLM evaluation")
+    else:
+        print("\n❌ Some aggregates have issues. Review above.")
     
     return all_valid
 

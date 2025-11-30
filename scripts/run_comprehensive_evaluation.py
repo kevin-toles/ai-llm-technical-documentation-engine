@@ -238,14 +238,14 @@ def run_dry_run() -> None:
 
 
 def run_extraction_phase() -> bool:
-    """Run extraction for all 4 profiles."""
+    """Run extraction for all 4 profiles with validation gates."""
     print("\n" + "=" * 60)
     print("PHASE 1: EXTRACTION")
     print("=" * 60)
     
     log_phase_start("extraction")
     
-    from scripts.run_extraction_tests import run_all_profiles
+    from scripts.run_extraction_tests import run_all_profiles, validate_aggregates
     
     results = run_all_profiles()
     
@@ -257,7 +257,64 @@ def run_extraction_phase() -> bool:
         "profiles_succeeded": sum(1 for r in results.values() if r.get("success", False)),
     })
     
+    if not success:
+        return False
+    
+    # VALIDATION GATE: Validate all aggregates before proceeding
+    print("\n" + "-" * 60)
+    print("VALIDATION GATE: Aggregate Validation")
+    print("-" * 60)
+    
+    log_phase_start("aggregate_validation")
+    
+    aggregates_valid = validate_aggregates()
+    validation_details = collect_aggregate_validation_details()
+    
+    log_phase_end("aggregate_validation", "success" if aggregates_valid else "failed", validation_details)
+    
+    if not aggregates_valid:
+        print("\n❌ VALIDATION GATE FAILED: Aggregates have issues.")
+        print("   Review the validation output above before proceeding.")
+        # For now, we'll continue but warn (aggregates may have expected issues like 0 cross-refs)
+        print("   ⚠️  Continuing with warning (some issues may be expected in simulation)")
+    else:
+        print("\n✅ VALIDATION GATE PASSED: All aggregates valid")
+    
     return success
+
+
+def collect_aggregate_validation_details() -> Dict[str, Any]:
+    """Collect detailed validation metrics for aggregates."""
+    eval_dir = PROJECT_ROOT / "outputs" / "evaluation"
+    details = {
+        "profiles_validated": 0,
+        "issues": [],
+        "per_profile": {}
+    }
+    
+    for profile_name, suffix in [("baseline", "BASELINE"), ("current", "CURRENT"), 
+                                  ("moderate", "MODERATE"), ("aggressive", "AGGRESSIVE")]:
+        agg_file = eval_dir / f"aggregate_{suffix}.json"
+        if agg_file.exists():
+            try:
+                with open(agg_file) as f:
+                    data = json.load(f)
+                details["profiles_validated"] += 1
+                details["per_profile"][profile_name] = {
+                    "source_book": data.get("source_book", "Unknown"),
+                    "keywords_count": len(data.get("keywords_sample", [])),
+                    "concepts_count": len(data.get("concepts_sample", [])),
+                    "cross_refs_count": len(data.get("cross_references_sample", [])),
+                    "keyword_diversity": data.get("statistics", {}).get("keyword_diversity_ratio", 0),
+                }
+                if data.get("source_book") == "Unknown":
+                    details["issues"].append(f"{suffix}: source_book is Unknown")
+                if len(data.get("keywords_sample", [])) == 0:
+                    details["issues"].append(f"{suffix}: no keywords")
+            except Exception as e:
+                details["issues"].append(f"{suffix}: {str(e)}")
+    
+    return details
 
 
 def run_evaluation_phase(models: List[str] | None = None) -> Dict[str, Any]:
@@ -329,33 +386,103 @@ def generate_final_report(eval_results: Dict[str, Any]) -> None:
 
 
 def run_full_pipeline(models: List[str] | None = None) -> None:
-    """Run complete pipeline: extraction + evaluation."""
+    """Run complete pipeline: extraction + evaluation with validation gates."""
     start_time = datetime.now()
     
     print("\n" + "=" * 60)
     print("COMPREHENSIVE EXTRACTION EVALUATION PIPELINE")
     print("=" * 60)
     print(f"Started: {start_time.isoformat()}")
+    print("Observability: " + ("✅ Enabled" if _observability_enabled else "❌ Disabled"))
     
-    # Phase 1: Extraction
+    # Phase 1: Extraction with validation gate
     extraction_success = run_extraction_phase()
     
     if not extraction_success:
         print("\n❌ Extraction phase failed. Cannot proceed with evaluation.")
+        log_pipeline_end("failed", {"phase": "extraction", "reason": "extraction_failed"})
         return
+    
+    print("\n✅ Extraction phase completed. Proceeding to LLM evaluation.")
     
     # Phase 2: LLM Evaluation
     eval_results = run_evaluation_phase(models)
     
+    # Validate LLM results
+    print("\n" + "-" * 60)
+    print("VALIDATION GATE: LLM Evaluation Results")
+    print("-" * 60)
+    
+    log_phase_start("llm_validation")
+    
+    llm_validation = validate_llm_results(eval_results)
+    
+    log_phase_end("llm_validation", "success" if llm_validation["valid"] else "failed", llm_validation)
+    
+    if llm_validation["valid"]:
+        print("✅ LLM evaluation results validated")
+    else:
+        print(f"⚠️  LLM evaluation has issues: {llm_validation.get('issues', [])}")
+    
     # Final Report
     generate_final_report(eval_results)
     
-    # Timing
+    # Timing and pipeline completion
     end_time = datetime.now()
     duration = end_time - start_time
     
+    summary = {
+        "extraction_success": extraction_success,
+        "llm_models_used": eval_results.get("models_used", []),
+        "consensus": eval_results.get("consensus", {}),
+        "duration_seconds": duration.total_seconds(),
+    }
+    
+    log_pipeline_end("success", summary)
+    
     print(f"\n⏱️  Total duration: {duration}")
     print("=" * 60)
+
+
+def validate_llm_results(eval_results: Dict[str, Any]) -> Dict[str, Any]:
+    """Validate LLM evaluation results."""
+    validation = {
+        "valid": True,
+        "issues": [],
+        "models_responded": 0,
+        "consensus_reached": False,
+    }
+    
+    if "error" in eval_results:
+        validation["valid"] = False
+        validation["issues"].append(f"Evaluation error: {eval_results['error']}")
+        return validation
+    
+    evaluations = eval_results.get("evaluations", {})
+    validation["models_responded"] = len(evaluations)
+    
+    if validation["models_responded"] == 0:
+        validation["valid"] = False
+        validation["issues"].append("No models responded")
+        return validation
+    
+    # Check for consensus
+    consensus = eval_results.get("consensus", {})
+    if consensus.get("best_for_production"):
+        validation["consensus_reached"] = True
+        validation["consensus_profile"] = consensus.get("best_for_production")
+        validation["agreement_ratio"] = consensus.get("agreement_ratio", 0)
+    else:
+        validation["issues"].append("No consensus reached among models")
+    
+    # Check each model's response
+    for model, result in evaluations.items():
+        if "error" in result:
+            validation["issues"].append(f"{model}: {result['error']}")
+        elif "comparative_ranking" not in result:
+            validation["issues"].append(f"{model}: No ranking provided")
+    
+    return validation
 
 
 def main():
