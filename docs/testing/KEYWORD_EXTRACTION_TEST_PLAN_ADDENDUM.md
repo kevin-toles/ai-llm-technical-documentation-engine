@@ -1,414 +1,427 @@
 # Keyword Extraction Test Plan - Implementation Addendum
 
-**Date:** November 29, 2025  
+**Date:** November 30, 2025  
 **Status:** FINALIZED - Ready for Execution  
+**Version:** 3.0 - Rigorous Navigation-Based Validation  
 **Related:** KEYWORD_EXTRACTION_TEST_PLAN.md  
 
 ---
 
-## 1. Final Configuration Status
+## 1. Evaluation Philosophy: LLM as Knowledge Graph Navigator
+
+### 1.1 The Critical Distinction
+
+The LLM is **NOT** an expert evaluator giving subjective scores.  
+The LLM is a **NAVIGATOR** testing whether concepts are discoverable through the aggregate.
+
+```
+❌ WRONG APPROACH (Subjective Scoring):
+   "I rate this extraction 8/10 for quality"
+   
+❌ WRONG APPROACH (Using Own Knowledge):
+   "To answer Q7 about multi-agent frameworks, you need role choreography..."
+   
+✅ CORRECT APPROACH (Navigation Testing):
+   "Searching BASELINE aggregate for Q7 focus areas:
+    - 'agent' → FOUND in sample_keywords
+    - 'multi-agent' → NOT FOUND
+    - 'choreography' → NOT FOUND
+    - Following cross-ref Ch14→Ch22: found 'tool use', relevant
+    - Navigation score: 4/10 (1/5 focus areas discoverable)"
+```
+
+### 1.2 Why This Approach?
+
+1. **Simulates Production Usage**: Users navigate the knowledge graph to find content
+2. **Verifiable Results**: Every claim cites specific data from the aggregate
+3. **No Hallucination**: LLM cannot invent quality scores without evidence
+4. **Objective Comparison**: Which aggregate enables finding more relevant content?
+
+### 1.3 The 18 System Design Questions
+
+These are **NOT** questions for the LLM to answer.  
+These are **NAVIGATION EXERCISES** to test discoverability.
+
+For each question:
+1. Extract the focus areas (the concepts needed to answer it)
+2. Search each aggregate's sample_keywords for those concepts
+3. Follow cross-references to find related content
+4. Report: What percentage of focus areas are discoverable?
+5. Compare: Which aggregate enables better navigation?
+
+---
+
+## 2. Configuration Status
 
 ### Test Profiles (4 Total)
 
-| Profile | YAKE top_n | N-gram | dedupLim | Stem Dedup | Threshold | Status |
-|---------|-----------|--------|----------|------------|-----------|--------|
-| **baseline** | 10 | 3 | 0.9 | OFF | 0.7 | ✅ Configured |
-| **current** | 20 | 3 | 0.9 | ON | 0.7 | ✅ Configured |
-| **moderate** | 25 | 4 | 0.85 | ON | 0.6 | ✅ Configured |
-| **aggressive** | 35 | 5 | 0.8 | ON | 0.5 | ✅ Configured |
+| Profile | YAKE top_n | Stem Dedup | Threshold | Status |
+|---------|-----------|------------|-----------|--------|
+| **baseline** | 10 | OFF | 0.7 | ✅ Ready |
+| **current** | 20 | ON | 0.7 | ✅ Ready |
+| **moderate** | 25 | ON | 0.6 | ✅ Ready |
+| **aggressive** | 35 | ON | 0.5 | ✅ Ready |
 
-**Configuration File:** `config/extraction_profiles.json`
+### LLM Evaluators (10 Models)
 
-### LLM Evaluators (5 Available, 3 Usable)
-
-| Provider | Model | API Key | Status | Notes |
-|----------|-------|---------|--------|-------|
-| **Gemini** | gemini-2.5-flash | ✅ Set | ✅ READY | 50 models available |
-| **Claude** | claude-sonnet-4-20250514 | ✅ Set | ✅ READY | Connected |
-| **OpenAI** | gpt-4o | ✅ Set | ✅ READY | 99 models available |
-| DeepSeek | deepseek-chat | ✅ Set | ⚠️ Needs Credits | Models list works |
-| DeepSeek | deepseek-reasoner | ✅ Set | ⚠️ Needs Credits | Models list works |
-
-**API Keys Location:** `~/.zshrc` (loaded via environment variables)
-
-### Test Matrix
-
-```
-4 profiles × 3 LLMs = 12 evaluations
-12 evaluations × 5 criteria = 60 individual scores
-```
+| # | Provider | Model | API Model ID |
+|---|----------|-------|--------------|
+| 1 | Anthropic | Claude Opus 4.5 | `claude-opus-4-5-20251101` |
+| 2 | Anthropic | Claude Sonnet 4.5 | `claude-sonnet-4-5-20250929` |
+| 3 | OpenAI | GPT-5.1 | `gpt-5.1` |
+| 4 | OpenAI | GPT-5 | `gpt-5` |
+| 5 | OpenAI | GPT-5 Mini | `gpt-5-mini` |
+| 6 | OpenAI | GPT-5 Nano | `gpt-5-nano` |
+| 7 | Google | Gemini 3 Pro | `gemini-3-pro-preview` |
+| 8 | Google | Gemini 2.5 Flash | `gemini-2.5-flash` |
+| 9 | DeepSeek | DeepSeek V3 | `deepseek-chat` |
+| 10 | DeepSeek | DeepSeek R1 | `deepseek-reasoner` |
 
 ---
 
-## 2. Actual LLM Evaluation Prompts
+## 3. The Five Required Analyses
 
-### System Prompt
+Each LLM must complete these **navigation-based analyses**:
+
+### Analysis 1: Keyword Relevance (Data Search Only)
+
+**Task:** Search sample_keywords against chapter_analysis titles.
+
+**Method:**
 ```
-You are an expert at evaluating NLP extraction quality. Always respond with valid JSON.
+For each chapter in chapter_analysis:
+  1. Read chapter title (e.g., "Transformer Architectures")
+  2. Search sample_keywords for terms related to that title
+  3. Count: How many of that chapter's keywords appear in sample_keywords?
+  4. Report: relevant_count / total_count with examples
 ```
 
-### Evaluation Prompt Template
-
-```
-You are evaluating the quality of automated keyword extraction for a technical book chapter.
-
-## Context
-{context}
-
-## Extracted Data
-
-### Keywords (first 30):
-{json.dumps(keywords, indent=2)}
-
-### Key Concepts (first 20):
-{json.dumps(concepts, indent=2)}
-
-### Related Chapters (first 10):
-{json.dumps(related_chapters, indent=2)}
-
-## Evaluation Criteria
-
-Please evaluate on a scale of 1-10 for each criterion:
-
-1. **Keyword Quality** (1-10): Are keywords relevant, specific, and diverse? 
-   Do they avoid redundant variants (e.g., "model" vs "models")?
-
-2. **Concept Coverage** (1-10): Do the concepts capture the main themes of 
-   the chapter? Are they appropriately abstract?
-
-3. **Navigation Utility** (1-10): Would these keywords and related chapters 
-   help a reader navigate the book effectively?
-
-4. **Deduplication Quality** (1-10): Are there redundant or near-duplicate 
-   terms? Rate higher if terms are unique and diverse.
-
-5. **Cross-Reference Value** (1-10): Do the related chapters make sense? 
-   Would a reader find value in following these connections?
-
-## Response Format
-
-Respond with JSON only:
+**Output:**
 ```json
 {
-  "scores": {
-    "keyword_quality": <1-10>,
-    "concept_coverage": <1-10>,
-    "navigation_utility": <1-10>,
-    "deduplication_quality": <1-10>,
-    "cross_reference_value": <1-10>
+  "baseline": {
+    "relevant_count": 42,
+    "irrelevant_count": 8,
+    "examples": [
+      {"keyword": "transformer", "chapter": "Ch5: Transformer Architectures", "relevant": true},
+      {"keyword": "example code", "chapter": "Ch5", "relevant": false, "reason": "generic section marker"}
+    ]
+  }
+}
+```
+
+---
+
+### Analysis 2: Duplicate Detection (Scan Sample Keywords)
+
+**Task:** Find morphological variants in sample_keywords.
+
+**Method:**
+```
+For each keyword in sample_keywords:
+  1. Compute stem (e.g., "modeling" → "model")
+  2. Group keywords by stem
+  3. Any group with >1 member = duplicate group
+  4. Count total duplicate groups
+```
+
+**Expected:**
+- BASELINE should have 15-30 duplicate groups (stem_dedup OFF)
+- CURRENT/MODERATE/AGGRESSIVE should have 0-5 (stem_dedup ON)
+
+**Output:**
+```json
+{
+  "baseline": {
+    "duplicate_groups": 23,
+    "examples": [
+      ["model", "models", "modeling"],
+      ["embed", "embedding", "embeddings"],
+      ["train", "training", "trained"]
+    ]
   },
-  "overall_score": <1-10>,
-  "strengths": ["<strength 1>", "<strength 2>"],
-  "weaknesses": ["<weakness 1>", "<weakness 2>"],
-  "specific_issues": ["<issue 1>", "<issue 2>"],
-  "recommendations": ["<recommendation 1>", "<recommendation 2>"]
-}
-```
-```
-
-**Implementation:** `scripts/llm_evaluation.py` → `create_evaluation_prompt()`
-
----
-
-## 3. Objective Verification Metrics
-
-### Statistical Measures (Calculated Automatically)
-
-The evaluation includes **objective statistical metrics** alongside LLM scores:
-
-#### Diversity Metrics
-- **Unique Keywords Count:** Total unique keywords extracted
-- **Diversity Ratio:** `unique_keywords / total_keyword_instances`
-- **Average Frequency:** How often each keyword appears
-
-#### Deduplication Metrics
-- **Potential Duplicate Groups:** Stem-based duplicate detection
-- **Duplicate Examples:** Sample of found duplicates
-- **N-gram Distribution:** 1-word, 2-word, 3-word, 4+ word counts
-
-#### Coverage Metrics
-- **Chapters Processed:** Number of chapters analyzed
-- **Keywords per Chapter:** Distribution statistics
-- **Concept Density:** Concepts per page
-
-**Implementation:** `scripts/run_comprehensive_evaluation.py` → `calculate_objective_metrics()`
-
-### Verification Against Ground Truth
-
-#### Baseline Comparison
-```python
-# Compare against known baseline (before enhancement)
-BASELINE_METRICS = {
-    "unique_keywords": 383,
-    "diversity_ratio": 0.XX,  # To be measured
-    "duplicate_groups": ~20-30  # Estimated
-}
-
-# Current enhancement
-CURRENT_METRICS = {
-    "unique_keywords": 404,
-    "improvement": "+5.48%",
-    "duplicate_groups": 0  # Target
+  "current": {
+    "duplicate_groups": 2,
+    "examples": [["neural network", "neural"]]
+  }
 }
 ```
 
-#### Inter-Rater Reliability
-```python
-# Cross-validate LLM scores
-- Calculate variance across 3 LLM evaluators
-- Flag high-variance scores for human review
-- Compute Cohen's Kappa if possible
+---
+
+### Analysis 3: Cross-Reference Tracing
+
+**Task:** Follow cross-references and validate connections.
+
+**Method:**
+```
+For each chapter in chapter_analysis:
+  For each entry in sample_related:
+    1. Read source chapter topic
+    2. Read target book/chapter info
+    3. Determine: Is this a logical navigation path?
+    4. Record: valid or invalid with reason
+```
+
+**Output:**
+```json
+{
+  "baseline": {
+    "total_traced": 35,
+    "valid": 28,
+    "invalid": 7,
+    "examples_valid": [
+      {"from": "Ch5: Transformers", "to": "Ch12: BERT", "reason": "BERT is transformer-based"}
+    ],
+    "examples_invalid": [
+      {"from": "Ch3: Python Basics", "to": "Ch45: Deployment", "reason": "No topical connection"}
+    ]
+  }
+}
 ```
 
 ---
 
-## 4. Updated Test Execution Plan
+### Analysis 4: Noise Term Identification
 
-### Phase 1: Pre-Validation ✅ COMPLETE
-- [x] TDD test suite (13/13 tests passing)
-- [x] Static analysis (mypy, SonarQube)
-- [x] Git commits pushed
-- [x] Initial validation (5.48% improvement quantified)
+**Task:** Count non-informative terms in sample_keywords.
 
-### Phase 2: Infrastructure Setup ✅ COMPLETE
-- [x] API keys configured (Gemini, Claude, OpenAI)
-- [x] Test profiles defined (baseline, current, moderate, aggressive)
-- [x] Evaluation scripts created
-- [x] Comprehensive evaluation pipeline ready
+**Noise Categories:**
+- Section markers: "introduction", "conclusion", "summary", "chapter", "section"
+- Generic terms: "approach", "method", "technique", "example", "system", "process"
+- Meta terms: "figure", "table", "code listing", "output"
 
-### Phase 3: Extraction Runs 🔄 PENDING
-```bash
-# Run all 4 profiles with full extraction
-python scripts/run_comprehensive_evaluation.py --run-all
+**Method:**
+```
+For each keyword in sample_keywords:
+  If keyword matches noise category:
+    Add to noise_terms list
+Calculate: noise_ratio = len(noise_terms) / len(sample_keywords)
 ```
 
-**Estimated Time:** 2-4 hours (depends on book size)
-
-**Outputs:**
-- 4 extraction output directories
-- 4 objective metrics reports
-- Profile configuration records
-
-### Phase 4: LLM Evaluation 🔄 PENDING
-```bash
-# Evaluate each profile with 3 LLMs
-# (Automatically triggered by --run-all)
+**Output:**
+```json
+{
+  "baseline": {
+    "noise_terms": ["introduction", "example", "approach", "method"],
+    "noise_count": 12,
+    "total_keywords": 100,
+    "noise_ratio": 0.12
+  }
+}
 ```
 
-**Estimated Time:** 1-2 hours (API calls)
+---
 
-**Outputs:**
-- 12 LLM evaluation results (4 profiles × 3 LLMs)
-- 60 individual criterion scores
-- Aggregate comparison report
+### Analysis 5: Navigation Test (18 Questions)
 
-### Phase 5: Analysis 🔄 PENDING
-```bash
-# Analyze results
-python scripts/run_comprehensive_evaluation.py --analyze-results
+**Task:** For each system design question, test if the aggregate enables finding relevant content.
+
+**The LLM does NOT answer the question. It only searches the aggregate.**
+
+#### Navigation Protocol Per Question:
+
+```
+Question: "How would you design a multi-agent framework with planner/coder/critic/tester roles?"
+
+Focus areas to search for:
+- role choreography
+- reasoning handoffs
+- arbitration layer
+- self-termination rules
+- confidence scoring
+
+BASELINE aggregate search:
+  sample_keywords scan:
+    - "agent" → FOUND
+    - "multi-agent" → NOT FOUND
+    - "choreography" → NOT FOUND
+    - "handoff" → NOT FOUND
+    - "arbitration" → NOT FOUND
+    - "termination" → NOT FOUND
+  
+  cross-reference trace:
+    - Ch14 (if exists) → followed to Ch22, found "tool use" (partially relevant)
+  
+  Focus areas discoverable: 1/5 (20%)
+  Navigation score: 3/10
+  
+CURRENT aggregate search:
+  sample_keywords scan:
+    - "agent" → FOUND
+    - "multi-agent" → FOUND
+    - "agent coordination" → FOUND
+    - "orchestration" → FOUND
+    - "choreography" → NOT FOUND
+    - "arbitration" → NOT FOUND
+  
+  Focus areas discoverable: 3/5 (60%)
+  Navigation score: 6/10
+
+Best aggregate for Q7: CURRENT (found coordination concepts)
 ```
 
-**Outputs:**
-- Rankings by LLM score
-- Objective metrics comparison
-- Diversity improvement quantification
-- Duplicate reduction analysis
+---
 
-### Phase 6: Documentation 🔄 PENDING
-```bash
-# Generate comprehensive writeup
-python scripts/generate_implementation_writeup.py \\
-  --output docs/KEYWORD_DEDUPLICATION_WRITEUP.md
+## 4. The 18 System Design Questions (Focus Areas)
+
+| Q# | Question | Focus Areas to Search |
+|----|----------|----------------------|
+| Q1 | Scalable LLM code understanding | chunking, embeddings, retrieval, indexing, grounding, hallucination |
+| Q2 | Agentic coding assistant | sandboxing, static analysis, verification, diff, rollback, guardrails |
+| Q3 | LLM batch processing >GB | map-reduce, chunk orchestration, persistent state, quality gates |
+| Q4 | Multi-model orchestrator | routing, retry, backoff, cost-aware, degradation, parallelism |
+| Q5 | Local fallback system | local inference, Qwen, Llama, GGUF, quantization, offline |
+| Q6 | LLM for infrastructure | tool schemas, IAM, guardrails, traceability, intent classification |
+| Q7 | Multi-agent collaboration | choreography, handoffs, arbitration, self-termination, confidence |
+| Q8 | Hallucination prevention | grounding, schema validation, safety rails, log-probability, self-tests |
+| Q9 | 100GB document indexing | distributed embeddings, HNSW, IVF, vector pruning, hot/cold storage |
+| Q10 | Secure multi-tenant fine-tuning | data boundary, encryption, isolation, gradients, audit |
+| Q11 | 70B model latency | KV cache, speculative decoding, MoE, distillation, flash-attention |
+| Q12 | Diagnosing incorrect outputs | retrieval eval, likelihood, consistency, CoT validation, benchmarks |
+| Q13 | Code-writing agent safety | static analysis, sandboxing, unit tests, rollback, anomaly detection |
+| Q14 | Jailbreak detection | classifiers, intent detection, safety models, perplexity |
+| Q15 | Resume-job matching | skill embeddings, requirement extraction, scoring, rewriting |
+| Q16 | LLM refactoring engine | AST, snippet embedding, per-file isolation, diff-only, self-review |
+| Q17 | Code-to-diagram service | static parsing, call graph, LLM summarization, Mermaid, PlantUML |
+| Q18 | Knowledge graph from textbooks | metadata extraction, taxonomy, semantic alignment, cross-book dedup |
+
+---
+
+## 5. Expected Output Per LLM
+
+Each of the 10 LLMs produces:
+
+```json
+{
+  "evaluator_model": "claude-opus-4.5",
+  "timestamp": "2025-11-30T...",
+  
+  "analysis_1_relevance": {
+    "baseline": {"relevant": 42, "irrelevant": 8, "ratio": 0.84, "examples": [...]},
+    "current": {"relevant": 45, "irrelevant": 5, "ratio": 0.90, "examples": [...]},
+    ...
+  },
+  
+  "analysis_2_duplicates": {
+    "baseline": {"groups": 23, "examples": [["model", "models"], ...]},
+    "current": {"groups": 2, "examples": [...]},
+    ...
+  },
+  
+  "analysis_3_cross_refs": {
+    "baseline": {"valid": 28, "invalid": 7, "ratio": 0.80, "examples": [...]},
+    ...
+  },
+  
+  "analysis_4_noise": {
+    "baseline": {"count": 12, "ratio": 0.12, "terms": [...]},
+    ...
+  },
+  
+  "analysis_5_navigation": {
+    "Q1": {
+      "focus_areas": ["chunking", "embeddings", ...],
+      "baseline": {"found": 2, "missing": 4, "score": 4},
+      "current": {"found": 4, "missing": 2, "score": 7},
+      "moderate": {"found": 5, "missing": 1, "score": 8},
+      "aggressive": {"found": 6, "missing": 0, "score": 9},
+      "best": "aggressive"
+    },
+    "Q2": {...},
+    ... (all 18)
+  },
+  
+  "summary": {
+    "navigation_totals": {
+      "baseline": 72,
+      "current": 98,
+      "moderate": 112,
+      "aggressive": 124
+    },
+    "duplicate_reduction": {
+      "baseline": 23,
+      "current": 2,
+      "improvement": "91%"
+    },
+    "recommendation": "moderate",
+    "reasoning": "Best balance of navigation coverage (112/180) with low noise (8%)"
+  }
+}
 ```
 
-**Outputs:**
-- Full architecture mapping
-- Problem/solution/results documentation
-- Codebase state at each point
-- Git history
-- Lessons learned
+---
+
+## 6. Aggregation Across 10 LLMs
+
+Final report combines all 10 evaluations:
+
+```json
+{
+  "consensus": {
+    "best_for_navigation": {
+      "winner": "moderate",
+      "votes": 7,
+      "avg_score": 115
+    },
+    "best_for_deduplication": {
+      "winner": "current",
+      "baseline_duplicates": 23,
+      "current_duplicates": 2
+    },
+    "question_by_question": {
+      "Q1": {"winner": "aggressive", "consensus": 8},
+      "Q2": {"winner": "moderate", "consensus": 6},
+      ...
+    }
+  }
+}
+```
 
 ---
 
-## 5. Answers to Specific Questions
+## 7. Execution
 
-### Q1: Script Configuration for Aggregates and Models
-
-**Answer:** ✅ YES
-
-**Aggregates (4 profiles):**
-- Defined in `config/extraction_profiles.json`
-- Loaded by `scripts/run_extraction_tests.py`
-- Applied via environment variables
-- `statistical_extractor.py` reads env vars ✅ (just updated)
-
-**Models (3 usable):**
-- Configured in `scripts/llm_evaluation.py`
-- API keys set in `~/.zshrc` ✅
-- Connection tested: Gemini, Claude, OpenAI ✅
-- DeepSeek available but needs credits ⚠️
-
-**Integration:**
-- `scripts/run_comprehensive_evaluation.py` orchestrates everything
-- Single command: `--run-all` executes full pipeline
-
----
-
-### Q2: Test Plan Updated
-
-**Answer:** ✅ YES - This document
-
-**Updates:**
-- Reduced from 12 to 5 LLM models (3 usable)
-- Added actual prompt text (see Section 2)
-- Included objective metrics (see Section 3)
-- Finalized test matrix: 4 profiles × 3 LLMs = 12 evaluations
-- Added execution timeline and commands
-
----
-
-### Q3: LLM Prompts Included
-
-**Answer:** ✅ YES - See Section 2
-
-**Prompt Components:**
-1. System prompt (instructs JSON response)
-2. Context (book title, chapter title)
-3. Extracted data (keywords, concepts, related chapters)
-4. Evaluation criteria (5 dimensions, 1-10 scale)
-5. Response format (structured JSON schema)
-
-**Reviewable at:** Section 2 above, or in code:
-- `scripts/llm_evaluation.py` lines ~170-240
-
----
-
-### Q4: Objective Verification
-
-**Answer:** ✅ YES - Multi-level verification
-
-**Level 1: Statistical Metrics** (Objective)
-- Unique keyword count
-- Diversity ratio
-- Duplicate detection
-- N-gram distribution
-
-**Level 2: LLM Evaluation** (Subjective but Cross-Validated)
-- 3 independent LLM assessments
-- 5 criteria per assessment
-- Aggregate scoring
-- Variance analysis
-
-**Level 3: Baseline Comparison** (Ground Truth)
-- Compare vs. pre-enhancement state (383 keywords)
-- Measure improvement (+5.48% already validated)
-- Track duplicate reduction
-
-**Level 4: Human Validation** (Optional)
-- Manual review of high-variance scores
-- Spot-check duplicate groups
-- Verify edge cases
-
-**What We're Testing Against:**
-1. **Pre-enhancement baseline:** 383 unique keywords, ~20-30 duplicate groups
-2. **Expected improvement:** +5-10% unique keywords, 0 duplicate groups
-3. **Quality maintenance:** LLM scores should not decrease
-4. **Diversity increase:** More unique terms in same slot count
-
----
-
-### Q5: Final Writeup Automation
-
-**Answer:** ✅ YES - Automated script created
-
-**Tool:** `scripts/generate_implementation_writeup.py`
-
-**Generates:**
-- Architecture state mapping (before/after)
-- Component diagrams
-- Data flow diagrams
-- File structure with line counts
-- Git commit history
-- Problem identification
-- Solution design
-- Implementation details
-- Results and validation
-- Lessons learned
-- Future improvements
-
-**Codebase Mapping:**
-- Scans all relevant files
-- Counts lines, calculates sizes
-- Maps dependencies
-- Traces data flows
-- Documents each decision point
-
-**Output:** `docs/KEYWORD_DEDUPLICATION_WRITEUP.md` (20+ pages)
-
----
-
-## 6. Execution Checklist
-
-### Ready to Execute
-
-- [x] All scripts created and tested
-- [x] API keys configured
-- [x] Test profiles defined
-- [x] Environment variables working
-- [x] Statistical extractor updated
-- [x] Objective metrics implemented
-- [x] LLM evaluation prompts finalized
-- [x] Documentation generator ready
-
-### Execute Now
+### Command
 
 ```bash
-# 1. Run full evaluation (2-6 hours total)
 cd /Users/kevintoles/POC/llm-document-enhancer
-python scripts/run_comprehensive_evaluation.py --run-all \\
-  --models gemini claude openai
+source ~/.zshrc
+python3 scripts/llm_evaluation.py --comparative --rigorous
+```
 
-# 2. Analyze results
-python scripts/run_comprehensive_evaluation.py --analyze-results
+### Expected Time
 
-# 3. Generate writeup
-python scripts/generate_implementation_writeup.py \\
-  --output docs/KEYWORD_DEDUPLICATION_WRITEUP.md
+- 10 LLM calls × ~3 minutes each = ~30-45 minutes
+- Plus 3-second delays between calls
+- Total: ~1 hour
+
+### Output Location
+
+```
+outputs/evaluation/
+├── rigorous_evaluation_claude-opus-4.5_<timestamp>.json
+├── rigorous_evaluation_claude-sonnet-4.5_<timestamp>.json
+├── rigorous_evaluation_gpt-5.1_<timestamp>.json
+├── ... (10 files total)
+└── rigorous_evaluation_aggregate_<timestamp>.json
 ```
 
 ---
 
-## 7. Expected Outputs Summary
+## 8. Success Criteria
 
-### Quantitative Outputs
-
-| Metric | Baseline | Current | Moderate | Aggressive |
-|--------|----------|---------|----------|------------|
-| Unique Keywords | ~380 | ~404 | TBD | TBD |
-| Diversity Ratio | TBD | TBD | TBD | TBD |
-| Duplicate Groups | ~25 | 0 | 0 | 0 |
-| LLM Avg Score | TBD | TBD | TBD | TBD |
-| Keyword Quality | TBD | TBD | TBD | TBD |
-| Dedup Quality | TBD | TBD | TBD | TBD |
-
-### Qualitative Outputs
-
-- **Strengths:** Identified by 3 LLMs per profile
-- **Weaknesses:** Identified by 3 LLMs per profile
-- **Recommendations:** Actionable improvements
-- **Rankings:** Best to worst profile
-
-### Documentation Outputs
-
-- Comprehensive 20+ page writeup
-- Architecture diagrams
-- Decision documentation
-- Results validation
-- Lessons learned
+| Metric | Baseline | Target (Current/Moderate) |
+|--------|----------|---------------------------|
+| Duplicate Groups | >15 | <5 |
+| Navigation Score (avg/180) | <80 | >100 |
+| Questions Won | <5 | >10 |
+| Cross-Ref Validity | TBD | >75% |
+| Noise Ratio | TBD | <15% |
 
 ---
 
 **Status:** READY FOR EXECUTION  
-**Next Action:** Run `python scripts/run_comprehensive_evaluation.py --run-all`  
-**Estimated Completion:** 4-6 hours  
+**Next Action:** Update `scripts/llm_evaluation.py` with rigorous prompt  
+**Estimated Completion:** 2-3 hours total
 
