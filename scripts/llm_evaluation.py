@@ -34,7 +34,7 @@ import httpx
 
 # Rate limiting configuration
 API_CALL_DELAY_SECONDS = 3  # Delay between API calls to avoid rate limits
-API_TIMEOUT_SECONDS = 120   # Increased timeout for larger prompts
+API_TIMEOUT_SECONDS = 300   # 5 minute timeout for large prompts with complex analysis
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
@@ -271,9 +271,10 @@ def call_deepseek(config: LLMConfig, prompt: str) -> dict[str, Any]:
     payload = {
         "model": config.model,
         "messages": [
-            {"role": "system", "content": "You are an expert at evaluating NLP extraction quality. Always respond with valid JSON."},
+            {"role": "system", "content": "You are an expert at evaluating NLP extraction quality. You MUST respond with valid JSON only. Do not include markdown code blocks, explanations, or any text before or after the JSON object. Start your response with { and end with }."},
             {"role": "user", "content": prompt}
         ],
+        "max_tokens": 8192,  # DeepSeek max is 8192
         "stream": False  # Non-stream mode per docs
     }
     
@@ -288,16 +289,17 @@ def call_deepseek(config: LLMConfig, prompt: str) -> dict[str, Any]:
             result = response.json()
             content = result["choices"][0]["message"]["content"]
             
-            # Parse JSON from response
-            try:
-                # Handle markdown code blocks
-                if "```json" in content:
-                    content = content.split("```json")[1].split("```")[0]
-                elif "```" in content:
-                    content = content.split("```")[1].split("```")[0]
-                return json.loads(content.strip())
-            except json.JSONDecodeError:
-                return {"error": "Failed to parse JSON", "raw_response": content[:500]}
+            # Use robust JSON extraction
+            parsed = extract_json_from_response(content)
+            if parsed is not None:
+                return parsed
+            
+            # Save debug file
+            debug_file = PROJECT_ROOT / "outputs" / "evaluation" / f"debug_deepseek_{datetime.now().strftime('%H%M%S')}.txt"
+            debug_file.parent.mkdir(parents=True, exist_ok=True)
+            with open(debug_file, "w") as f:
+                f.write(content)
+            return {"error": "Failed to parse JSON", "raw_response": content[:1000], "debug_file": str(debug_file)}
     
     except httpx.TimeoutException:
         return {"error": f"Timeout after {API_TIMEOUT_SECONDS}s - model may need more time"}
@@ -329,15 +331,17 @@ def call_gemini(config: LLMConfig, prompt: str) -> dict[str, Any]:
             response = model.generate_content(full_prompt)
             content = response.text
             
-            # Parse JSON from response
-            try:
-                if "```json" in content:
-                    content = content.split("```json")[1].split("```")[0]
-                elif "```" in content:
-                    content = content.split("```")[1].split("```")[0]
-                return json.loads(content.strip())
-            except json.JSONDecodeError:
-                return {"error": "Failed to parse JSON", "raw_response": content[:500]}
+            # Use robust JSON extraction
+            parsed = extract_json_from_response(content)
+            if parsed is not None:
+                return parsed
+            
+            # Save debug file
+            debug_file = PROJECT_ROOT / "outputs" / "evaluation" / f"debug_gemini_{datetime.now().strftime('%H%M%S')}.txt"
+            debug_file.parent.mkdir(parents=True, exist_ok=True)
+            with open(debug_file, "w") as f:
+                f.write(content)
+            return {"error": "Failed to parse JSON", "raw_response": content[:1000], "debug_file": str(debug_file)}
                 
         except Exception as e:
             error_msg = str(e)
@@ -401,15 +405,74 @@ def call_gemini(config: LLMConfig, prompt: str) -> dict[str, Any]:
         return {"error": f"Gemini error: {str(e)[:100]}"}
 
 
+def extract_json_from_response(content: str) -> dict[str, Any] | None:
+    """
+    Extract JSON from LLM response, handling various formats.
+    
+    Tries multiple strategies:
+    1. Direct JSON parse
+    2. Extract from ```json ... ``` blocks
+    3. Extract from ``` ... ``` blocks
+    4. Find JSON object boundaries { ... }
+    """
+    content = content.strip()
+    
+    # Strategy 1: Direct parse (if response is pure JSON)
+    try:
+        return json.loads(content)
+    except json.JSONDecodeError:
+        pass
+    
+    # Strategy 2: Extract from ```json blocks
+    if "```json" in content:
+        try:
+            json_part = content.split("```json")[1].split("```")[0]
+            return json.loads(json_part.strip())
+        except (json.JSONDecodeError, IndexError):
+            pass
+    
+    # Strategy 3: Extract from ``` blocks
+    if "```" in content:
+        try:
+            json_part = content.split("```")[1].split("```")[0]
+            return json.loads(json_part.strip())
+        except (json.JSONDecodeError, IndexError):
+            pass
+    
+    # Strategy 4: Find JSON object by braces
+    start_idx = content.find("{")
+    if start_idx != -1:
+        # Find matching closing brace
+        brace_count = 0
+        end_idx = start_idx
+        for i, char in enumerate(content[start_idx:], start_idx):
+            if char == "{":
+                brace_count += 1
+            elif char == "}":
+                brace_count -= 1
+                if brace_count == 0:
+                    end_idx = i + 1
+                    break
+        
+        if end_idx > start_idx:
+            try:
+                json_str = content[start_idx:end_idx]
+                return json.loads(json_str)
+            except json.JSONDecodeError:
+                pass
+    
+    return None
+
+
 def call_claude(config: LLMConfig, prompt: str) -> dict[str, Any]:
     """Call Claude API (Opus 4.5 or Sonnet 4.5)."""
     payload = {
         "model": config.model,
-        "max_tokens": 4000,
+        "max_tokens": 16000,  # Increased for complex evaluation response
         "messages": [
             {"role": "user", "content": prompt}
         ],
-        "system": "You are an expert at evaluating NLP extraction quality. Always respond with valid JSON only, no markdown code blocks."
+        "system": "You are an expert at evaluating NLP extraction quality. You MUST respond with valid JSON only. Do not include markdown code blocks, explanations, or any text before or after the JSON object. Start your response with { and end with }."
     }
     
     try:
@@ -423,14 +486,21 @@ def call_claude(config: LLMConfig, prompt: str) -> dict[str, Any]:
             result = response.json()
             content = result["content"][0]["text"]
             
-            try:
-                if "```json" in content:
-                    content = content.split("```json")[1].split("```")[0]
-                elif "```" in content:
-                    content = content.split("```")[1].split("```")[0]
-                return json.loads(content.strip())
-            except json.JSONDecodeError:
-                return {"error": "Failed to parse JSON", "raw_response": content[:500]}
+            # Try robust JSON extraction
+            parsed = extract_json_from_response(content)
+            if parsed is not None:
+                return parsed
+            
+            # Save raw response for debugging
+            debug_file = PROJECT_ROOT / "outputs" / "evaluation" / f"debug_claude_{datetime.now().strftime('%H%M%S')}.txt"
+            debug_file.parent.mkdir(parents=True, exist_ok=True)
+            with open(debug_file, "w") as f:
+                f.write(f"Model: {config.model}\n")
+                f.write(f"Response length: {len(content)}\n")
+                f.write("="*80 + "\n")
+                f.write(content)
+            
+            return {"error": "Failed to parse JSON", "raw_response": content[:1000], "debug_file": str(debug_file)}
     
     except httpx.TimeoutException:
         return {"error": f"Timeout after {API_TIMEOUT_SECONDS}s"}
@@ -448,15 +518,15 @@ def call_claude(config: LLMConfig, prompt: str) -> dict[str, Any]:
 
 
 def call_openai(config: LLMConfig, prompt: str) -> dict[str, Any]:
-    """Call OpenAI API (GPT-5.1, GPT-5, gpt-5.1-mini, gpt-5.1-nano)."""
+    """Call OpenAI API (GPT-5.1, GPT-5, gpt-5-mini, gpt-5-nano)."""
+    # GPT-5.x models don't support temperature parameter and use max_completion_tokens
     payload = {
         "model": config.model,
         "messages": [
-            {"role": "system", "content": "You are an expert at evaluating NLP extraction quality. Always respond with valid JSON only, no markdown code blocks."},
+            {"role": "system", "content": "You are an expert at evaluating NLP extraction quality. You MUST respond with valid JSON only. Do not include markdown code blocks, explanations, or any text before or after the JSON object. Start your response with { and end with }."},
             {"role": "user", "content": prompt}
         ],
-        "temperature": 0.3,
-        "max_tokens": 4000
+        "max_completion_tokens": 32000  # GPT-5.x uses max_completion_tokens, not max_tokens
     }
     
     try:
@@ -470,14 +540,17 @@ def call_openai(config: LLMConfig, prompt: str) -> dict[str, Any]:
             result = response.json()
             content = result["choices"][0]["message"]["content"]
             
-            try:
-                if "```json" in content:
-                    content = content.split("```json")[1].split("```")[0]
-                elif "```" in content:
-                    content = content.split("```")[1].split("```")[0]
-                return json.loads(content.strip())
-            except json.JSONDecodeError:
-                return {"error": "Failed to parse JSON", "raw_response": content[:500]}
+            # Use robust JSON extraction
+            parsed = extract_json_from_response(content)
+            if parsed is not None:
+                return parsed
+            
+            # Save debug file
+            debug_file = PROJECT_ROOT / "outputs" / "evaluation" / f"debug_openai_{datetime.now().strftime('%H%M%S')}.txt"
+            debug_file.parent.mkdir(parents=True, exist_ok=True)
+            with open(debug_file, "w") as f:
+                f.write(content)
+            return {"error": "Failed to parse JSON", "raw_response": content[:1000], "debug_file": str(debug_file)}
     
     except httpx.TimeoutException:
         return {"error": f"Timeout after {API_TIMEOUT_SECONDS}s"}
@@ -509,14 +582,14 @@ def evaluate_with_llm(llm_name: str, extraction_data: dict[str, Any], context: s
     
     print(f"  🤖 Calling {config.name}...")
     
-    # Route to appropriate API handler
-    if llm_name in ("deepseek", "deepseek-reasoner"):
+    # Route to appropriate API handler based on config key
+    if llm_name.startswith("deepseek"):
         return call_deepseek(config, prompt)
-    elif llm_name == "gemini":
+    elif llm_name.startswith("gemini"):
         return call_gemini(config, prompt)
-    elif llm_name == "claude":
+    elif llm_name.startswith("claude"):
         return call_claude(config, prompt)
-    elif llm_name == "openai":
+    elif llm_name.startswith("gpt"):
         return call_openai(config, prompt)
     else:
         return {"error": f"No handler for {llm_name}"}
