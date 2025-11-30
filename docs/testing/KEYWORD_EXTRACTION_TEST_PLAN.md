@@ -250,10 +250,10 @@ Each test run produces:
 
 ### 8.2 API Keys (Stored in Environment)
 ```bash
-export OPENAI_API_KEY="..."          # User's existing key
-export ANTHROPIC_API_KEY="..."       # User's existing key
-export DEEPSEEK_API_KEY="sk-104b1216a8244bc6ab3182016d704d20"
-export GEMINI_API_KEY="AIzaSyBuFw1-29vjvJc6sFqaRLXwpbp-YPHUbhM"
+export OPENAI_API_KEY="your-openai-api-key"
+export ANTHROPIC_API_KEY="your-anthropic-api-key"
+export DEEPSEEK_API_KEY="your-deepseek-api-key"
+export GEMINI_API_KEY="your-gemini-api-key"
 ```
 
 ### 8.3 Evaluation Prompt
