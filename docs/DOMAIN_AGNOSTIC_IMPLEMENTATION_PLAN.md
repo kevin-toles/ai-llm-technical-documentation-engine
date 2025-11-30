@@ -1688,6 +1688,32 @@ def process_chapter_hybrid(chapter_num, chapter_content):
 - ✅ Test on sample chapters (Python, biology, law, construction)
 - ✅ Validate output quality
 
+#### Codebase Assessment: `/workflows` Directory
+
+**Lines of Code by Subdirectory:**
+
+| Subdirectory | Lines of Code | % of Total | Assessment |
+|--------------|---------------|------------|------------|
+| `llm_enhancement/` | 6,943 | 33.0% | ⚠️ Largest module - consider splitting |
+| `base_guideline_generation/` | 3,393 | 16.1% | ✅ Appropriate size |
+| `metadata_extraction/` | 2,784 | 13.2% | ✅ Appropriate size |
+| `metadata_enrichment/` | 2,710 | 12.9% | ✅ Appropriate size |
+| `shared/` | 2,643 | 12.6% | ✅ Shared utilities - expected |
+| `pdf_to_json/` | 2,091 | 9.9% | ✅ Appropriate size |
+| `taxonomy_setup/` | 446 | 2.1% | ✅ Small, focused |
+| **Total** | **21,010** | **100%** | Moderately large |
+
+**Maintainability Assessment:**
+
+- **Single-Developer POC Context**: 21K lines is moderately large but reasonable for 6 distinct workflows
+- **Module Distribution**: Well-distributed across 6+ workflow directories (not monolithic)
+- **Flag for Attention**: `llm_enhancement/` at 6,943 lines (33% of total) may benefit from splitting into:
+  - Core enhancement logic
+  - Prompt template management  
+  - Response parsing/validation
+- **Test Coverage**: 299+ tests provide safety net for refactoring
+- **Recommendation**: Before standalone extraction, consider refactoring `llm_enhancement/` into smaller, focused modules
+
 ### Phase 3: LLM Pre-Filter (Week 3)
 - ✅ Create `SimilarityFilter` class
 - ✅ Define JSON interchange format
