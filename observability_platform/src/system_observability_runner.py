@@ -44,8 +44,11 @@ try:
 except ImportError:
     REQUESTS_AVAILABLE = False
 
-# Add project root to path
-PROJECT_ROOT = Path(__file__).parent.parent.parent
+# Path configuration
+# When running from observability_platform/src/, go up 2 levels to project root
+# When running from project root, this still works correctly
+OBSERVABILITY_ROOT = Path(__file__).parent.parent
+PROJECT_ROOT = OBSERVABILITY_ROOT.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 
@@ -53,7 +56,8 @@ sys.path.insert(0, str(PROJECT_ROOT))
 # Configuration
 # =============================================================================
 
-LOG_FILE = PROJECT_ROOT / "logs" / "observability" / "system_observability_log.jsonl"
+# Log file is within the observability_platform directory for self-containment
+LOG_FILE = OBSERVABILITY_ROOT / "logs" / "system_observability_log.jsonl"
 SCHEMA_VERSION = "1.0.0"
 GENERATOR_ID = "frontend_driver_v1"
 

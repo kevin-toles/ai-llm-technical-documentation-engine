@@ -31,9 +31,11 @@ from pathlib import Path
 from typing import Any, Dict, List, Set
 from unittest.mock import MagicMock, patch
 
-# Add project root to path
-PROJECT_ROOT = Path(__file__).parent.parent.parent
+# Path configuration for observability_platform structure
+OBSERVABILITY_ROOT = Path(__file__).parent.parent
+PROJECT_ROOT = OBSERVABILITY_ROOT.parent
 sys.path.insert(0, str(PROJECT_ROOT))
+sys.path.insert(0, str(OBSERVABILITY_ROOT / "src"))
 
 
 # =============================================================================
@@ -53,7 +55,7 @@ class TestTypeAnnotations(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         """Load and parse the observability runner module."""
-        cls.module_path = PROJECT_ROOT / "scripts" / "observability" / "system_observability_runner.py"
+        cls.module_path = OBSERVABILITY_ROOT / "src" / "system_observability_runner.py"
         with open(cls.module_path, "r", encoding="utf-8") as f:
             cls.source_code = f.read()
         cls.tree = ast.parse(cls.source_code)
@@ -151,7 +153,7 @@ class TestCognitiveComplexity(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         """Load and parse the observability runner module."""
-        cls.module_path = PROJECT_ROOT / "scripts" / "observability" / "system_observability_runner.py"
+        cls.module_path = OBSERVABILITY_ROOT / "src" / "system_observability_runner.py"
         with open(cls.module_path, "r", encoding="utf-8") as f:
             cls.source_code = f.read()
         cls.tree = ast.parse(cls.source_code)
@@ -282,7 +284,7 @@ class TestExceptionHandling(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         """Load and parse the observability runner module."""
-        cls.module_path = PROJECT_ROOT / "scripts" / "observability" / "system_observability_runner.py"
+        cls.module_path = OBSERVABILITY_ROOT / "src" / "system_observability_runner.py"
         with open(cls.module_path, "r", encoding="utf-8") as f:
             cls.source_code = f.read()
         cls.tree = ast.parse(cls.source_code)
@@ -350,11 +352,11 @@ class TestJSONLSchema(unittest.TestCase):
     
     def test_log_record_has_required_fields(self) -> None:
         """All log records must have record_type field."""
-        from scripts.observability.system_observability_runner import log_record, LOG_FILE
+        from system_observability_runner import log_record, LOG_FILE
         
         # Temporarily redirect log file
         original_log_file = LOG_FILE
-        import scripts.observability.system_observability_runner as obs
+        import system_observability_runner as obs
         obs.LOG_FILE = self.temp_log
         
         try:
@@ -371,7 +373,7 @@ class TestJSONLSchema(unittest.TestCase):
     
     def test_component_record_has_valid_structure(self) -> None:
         """Component records must have component_id and component_kind."""
-        from scripts.observability.system_observability_runner import (
+        from system_observability_runner import (
             Component, asdict
         )
         
@@ -392,7 +394,7 @@ class TestJSONLSchema(unittest.TestCase):
     
     def test_relationship_record_validates_from_to(self) -> None:
         """Relationship records must have from_id, to_id, relationship_type."""
-        from scripts.observability.system_observability_runner import (
+        from system_observability_runner import (
             Relationship, asdict
         )
         
@@ -412,7 +414,7 @@ class TestJSONLSchema(unittest.TestCase):
     
     def test_timestamp_format_is_iso(self) -> None:
         """now_iso() should return valid ISO format timestamp."""
-        from scripts.observability.system_observability_runner import now_iso
+        from system_observability_runner import now_iso
         
         ts = now_iso()
         
@@ -444,7 +446,7 @@ class TestScenarioExecution(unittest.TestCase):
     
     def test_scenario_steps_execute_in_order(self) -> None:
         """Steps should execute in the order defined by 'order' field."""
-        from scripts.observability.system_observability_runner import (
+        from system_observability_runner import (
             Scenario, ScenarioStep, get_scenario_definitions
         )
         
@@ -461,7 +463,7 @@ class TestScenarioExecution(unittest.TestCase):
     
     def test_new_id_generates_unique_ids(self) -> None:
         """new_id() should generate unique IDs."""
-        from scripts.observability.system_observability_runner import new_id
+        from system_observability_runner import new_id
         
         ids: Set[str] = set()
         for _ in range(100):
@@ -471,7 +473,7 @@ class TestScenarioExecution(unittest.TestCase):
     
     def test_new_id_has_correct_prefix(self) -> None:
         """new_id() should include the given prefix."""
-        from scripts.observability.system_observability_runner import new_id
+        from system_observability_runner import new_id
         
         trace_id = new_id("trc")
         scenario_id = new_id("sr")
@@ -481,7 +483,7 @@ class TestScenarioExecution(unittest.TestCase):
     
     def test_get_scenario_definitions_returns_dict(self) -> None:
         """get_scenario_definitions() should return a non-empty dict."""
-        from scripts.observability.system_observability_runner import get_scenario_definitions
+        from system_observability_runner import get_scenario_definitions
         
         scenarios = get_scenario_definitions()
         
@@ -490,7 +492,7 @@ class TestScenarioExecution(unittest.TestCase):
     
     def test_all_scenarios_have_required_fields(self) -> None:
         """All scenarios must have scenario_id, name, description."""
-        from scripts.observability.system_observability_runner import get_scenario_definitions
+        from system_observability_runner import get_scenario_definitions
         
         scenarios = get_scenario_definitions()
         
@@ -529,7 +531,7 @@ class TestArchitecturePatterns(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         """Load module source for analysis."""
-        cls.module_path = PROJECT_ROOT / "scripts" / "observability" / "system_observability_runner.py"
+        cls.module_path = OBSERVABILITY_ROOT / "src" / "system_observability_runner.py"
         with open(cls.module_path, "r", encoding="utf-8") as f:
             cls.source_code = f.read()
     
@@ -565,7 +567,7 @@ class TestArchitecturePatterns(unittest.TestCase):
     
     def test_architecture_context_is_separate_from_logging(self) -> None:
         """Architecture context definition should be separate from logging logic."""
-        from scripts.observability.system_observability_runner import (
+        from system_observability_runner import (
             get_architecture_context, log_architecture_context
         )
         
@@ -594,7 +596,7 @@ class TestDataClasses(unittest.TestCase):
     
     def test_component_has_sensible_defaults(self) -> None:
         """Component dataclass should work with minimal required fields."""
-        from scripts.observability.system_observability_runner import Component
+        from system_observability_runner import Component
         
         # Should be able to create with just required fields
         component = Component(
@@ -608,7 +610,7 @@ class TestDataClasses(unittest.TestCase):
     
     def test_scenario_step_has_sensible_defaults(self) -> None:
         """ScenarioStep dataclass should work with minimal required fields."""
-        from scripts.observability.system_observability_runner import ScenarioStep
+        from system_observability_runner import ScenarioStep
         
         step = ScenarioStep(
             step_id="step_1",
@@ -622,7 +624,7 @@ class TestDataClasses(unittest.TestCase):
     
     def test_scenario_has_empty_steps_by_default(self) -> None:
         """Scenario dataclass should have empty steps list by default."""
-        from scripts.observability.system_observability_runner import Scenario
+        from system_observability_runner import Scenario
         
         scenario = Scenario(
             scenario_id="test",
@@ -655,8 +657,8 @@ class TestValidateLog(unittest.TestCase):
     
     def test_validate_log_returns_error_for_missing_file(self) -> None:
         """validate_log() should return error dict for missing file."""
-        from scripts.observability.system_observability_runner import validate_log, LOG_FILE
-        import scripts.observability.system_observability_runner as obs
+        from system_observability_runner import validate_log, LOG_FILE
+        import system_observability_runner as obs
         
         original_log_file = LOG_FILE
         obs.LOG_FILE = Path("/nonexistent/path/log.jsonl")
@@ -669,8 +671,8 @@ class TestValidateLog(unittest.TestCase):
     
     def test_validate_log_counts_record_types(self) -> None:
         """validate_log() should count records by type."""
-        from scripts.observability.system_observability_runner import validate_log, LOG_FILE
-        import scripts.observability.system_observability_runner as obs
+        from system_observability_runner import validate_log, LOG_FILE
+        import system_observability_runner as obs
         
         original_log_file = LOG_FILE
         obs.LOG_FILE = self.temp_log
