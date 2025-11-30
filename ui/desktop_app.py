@@ -145,23 +145,36 @@ class API:
         return {"files": sorted(files)}
     
     def get_llm_providers(self):
-        """Get available LLM providers and their models"""
+        """Get available LLM providers and their models (matching llm_evaluation.py configs)"""
         return {
-            "openai": {
-                "name": "OpenAI",
-                "models": ["gpt-4o", "gpt-4o-mini", "gpt-4-turbo", "gpt-3.5-turbo"]
-            },
             "anthropic": {
-                "name": "Anthropic",
+                "name": "Anthropic (Primary)",
                 "models": [
-                    "claude-sonnet-4-5-20250929",
-                    "claude-haiku-4-5-20251001",
-                    "claude-opus-4-1-20250805",
-                    "claude-sonnet-4-20250514",
-                    "claude-opus-4-20250514", 
-                    "claude-3-7-sonnet-20250219",
-                    "claude-3-5-haiku-20241022",
-                    "claude-3-haiku-20240307"
+                    {"id": "claude-opus-4-5-20251101", "name": "Claude Opus 4.5", "recommended": True},
+                    {"id": "claude-sonnet-4-5-20250929", "name": "Claude Sonnet 4.5"},
+                ]
+            },
+            "openai": {
+                "name": "OpenAI (Primary)",
+                "models": [
+                    {"id": "gpt-5.1", "name": "GPT-5.1", "recommended": True},
+                    {"id": "gpt-5", "name": "GPT-5"},
+                    {"id": "gpt-5.1-mini", "name": "GPT-5.1 Mini"},
+                    {"id": "gpt-5.1-nano", "name": "GPT-5.1 Nano"},
+                ]
+            },
+            "google": {
+                "name": "Google",
+                "models": [
+                    {"id": "gemini-3-pro-preview", "name": "Gemini 3 Pro"},
+                    {"id": "gemini-2.5-flash", "name": "Gemini 2.5 Flash"},
+                ]
+            },
+            "deepseek": {
+                "name": "DeepSeek",
+                "models": [
+                    {"id": "deepseek-chat", "name": "DeepSeek V3"},
+                    {"id": "deepseek-reasoner", "name": "DeepSeek R1"},
                 ]
             }
         }

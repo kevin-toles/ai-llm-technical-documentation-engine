@@ -285,7 +285,13 @@
             const provider = window.llmProviders[providerId];
             modelSelect.innerHTML = `
                 <option value="">-- Select Model --</option>
-                ${provider.models.map(model => `<option value="${model}">${model}</option>`).join('')}
+                ${provider.models.map(model => {
+                    // Handle both object format {id, name, recommended} and string format
+                    const modelId = typeof model === 'object' ? model.id : model;
+                    const modelName = typeof model === 'object' ? model.name : model;
+                    const isRecommended = typeof model === 'object' && model.recommended;
+                    return `<option value="${modelId}"${isRecommended ? ' selected' : ''}>${modelName}${isRecommended ? ' ★' : ''}</option>`;
+                }).join('')}
             `;
         }
 
