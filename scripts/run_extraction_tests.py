@@ -25,10 +25,14 @@ import sys
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
+import shutil
 
 # Add project root to path
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
+
+# Import production aggregate package creation
+from workflows.llm_enhancement.scripts.create_aggregate_package import create_aggregate_package
 
 
 # Profile suffix mapping
@@ -289,6 +293,22 @@ def run_profile_pipeline(profile_name: str) -> Dict[str, Any]:
     # Step 4: Run enrichment
     print("\n[Step 4/5] Running enrichment...")
     
+    # Copy companion book metadata to eval_dir so enrichment can find them
+    # The enrichment script looks for companion books in the same directory as the input file
+    source_metadata_dir = PROJECT_ROOT / "workflows" / "metadata_extraction" / "output"
+    print("  Copying companion book metadata to evaluation directory...")
+    companion_count = 0
+    for meta_file in source_metadata_dir.glob("*_metadata.json"):
+        dest_file = eval_dir / meta_file.name
+        if not dest_file.exists():
+            import shutil
+            shutil.copy(meta_file, dest_file)
+            companion_count += 1
+    if companion_count > 0:
+        print(f"  Copied {companion_count} companion metadata files")
+    else:
+        print("  Companion metadata already present")
+    
     try:
         from workflows.metadata_enrichment.scripts.enrich_metadata_per_book import enrich_metadata
         
@@ -320,29 +340,56 @@ def run_profile_pipeline(profile_name: str) -> Dict[str, Any]:
         result["validations"]["enrichment"] = False
         return result
     
-    # Step 5: Create aggregate
-    print("\n[Step 5/5] Creating aggregate...")
+    # Step 5: Create aggregate using production aggregate package creation
+    # This bundles: taxonomy + source book enriched metadata + all companion book metadata
+    print("\n[Step 5/5] Creating aggregate package (production flow)...")
     
     try:
-        aggregate = create_aggregate(enriched_file, profile_name, profile)
+        # Use production aggregate creation which includes full taxonomy and all companion metadata
+        # Directories for aggregate creation
+        metadata_dir = PROJECT_ROOT / "workflows" / "metadata_extraction" / "output"
+        guideline_dir = PROJECT_ROOT / "workflows" / "base_guideline_generation" / "output"
         
-        with open(aggregate_file, "w") as f:
-            json.dump(aggregate, f, indent=2)
+        # Create tmp output dir for aggregate packages
+        aggregate_tmp_dir = eval_dir / "aggregate_packages"
+        aggregate_tmp_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Call production aggregate package creation
+        # This will load taxonomy, source book enriched metadata, and all companion book metadata
+        package_path = create_aggregate_package(
+            taxonomy_path=taxonomy_file,
+            metadata_dir=metadata_dir,
+            guideline_dir=guideline_dir,
+            output_dir=aggregate_tmp_dir,
+            enriched_metadata_file=enriched_file  # Use our enriched file for the source book
+        )
+        
+        # Copy/rename to our expected aggregate file location
+        shutil.copy(package_path, aggregate_file)
         
         v5 = validate_step("Aggregate", aggregate_file.exists(), f"Created {aggregate_file.name}")
         
-        # Validate aggregate content
-        keywords_count = len(aggregate.get("keywords_sample", []))
-        concepts_count = len(aggregate.get("concepts_sample", []))
+        # Validate aggregate content from production format
+        with open(aggregate_file) as f:
+            aggregate = json.load(f)
         
-        print(f"  Keywords in sample: {keywords_count}")
-        print(f"  Concepts in sample: {concepts_count}")
+        companion_count = len(aggregate.get("companion_books", []))
+        stats = aggregate.get("statistics", {})
+        total_books = stats.get("total_books", 0)
+        total_chapters = stats.get("total_chapters", 0)
         
-        v5 = v5 and keywords_count > 0
+        print(f"  Total books in aggregate: {total_books}")
+        print(f"  Companion books: {companion_count}")
+        print(f"  Total chapters across all books: {total_chapters}")
+        print(f"  Missing books: {stats.get('missing_count', 0)}")
+        
+        v5 = v5 and companion_count > 0
         result["validations"]["aggregate"] = v5
         
     except Exception as e:
         print(f"  ❌ Aggregate creation failed: {e}")
+        import traceback
+        traceback.print_exc()
         result["validations"]["aggregate"] = False
         return result
     
@@ -488,10 +535,10 @@ def run_all_profiles() -> Dict[str, Any]:
 
 
 def validate_aggregates() -> bool:
-    """Validate all 4 aggregates exist and have valid structure."""
+    """Validate all 4 aggregates exist and have valid structure (production format)."""
     eval_dir = PROJECT_ROOT / "outputs" / "evaluation"
     
-    print("\nValidating aggregates...")
+    print("\nValidating aggregates (production format)...")
     print("=" * 60)
     all_valid = True
     issues = []
@@ -509,45 +556,53 @@ def validate_aggregates() -> bool:
             with open(agg_file) as f:
                 data = json.load(f)
             
-            # Required fields check
-            required_fields = ["profile", "profile_config", "source_book", "statistics", 
-                             "keywords_sample", "concepts_sample"]
+            # Required fields check (production aggregate format)
+            required_fields = ["project", "taxonomy", "source_book", "companion_books", "statistics"]
             missing_fields = [f for f in required_fields if f not in data]
             if missing_fields:
                 issues.append(f"{suffix}: Missing fields {missing_fields}")
                 all_valid = False
             
-            # Content validation
-            source_book = data.get("source_book", "Unknown")
-            keywords = len(data.get("keywords_sample", []))
-            concepts = len(data.get("concepts_sample", []))
-            cross_refs = len(data.get("cross_references_sample", []))
+            # Content validation (production format)
+            project = data.get("project", {})
+            source_book_data = data.get("source_book", {})
+            source_book_name = source_book_data.get("name", "Unknown") if isinstance(source_book_data, dict) else "Unknown"
+            companion_books = data.get("companion_books", [])
+            missing_books = data.get("missing_books", [])
             stats = data.get("statistics", {})
             
+            total_books = stats.get("total_books", 0)
+            total_chapters = stats.get("total_chapters", 0)
+            companion_count = stats.get("companion_books", len(companion_books))
+            missing_count = stats.get("missing_count", len(missing_books))
+            
             # Check for "Unknown" source_book
-            if source_book == "Unknown":
-                issues.append(f"{suffix}: source_book is 'Unknown' (extraction bug)")
+            if source_book_name == "Unknown":
+                issues.append(f"{suffix}: source_book name is 'Unknown' (extraction bug)")
                 all_valid = False
             
-            # Check for empty content
-            if keywords == 0:
-                issues.append(f"{suffix}: No keywords extracted")
+            # Check for companion books
+            if companion_count == 0:
+                issues.append(f"{suffix}: No companion books loaded")
                 all_valid = False
             
-            if concepts == 0:
-                issues.append(f"{suffix}: No concepts extracted")
+            # Check source book has metadata
+            source_metadata = source_book_data.get("metadata", {}) if isinstance(source_book_data, dict) else {}
+            if not source_metadata:
+                issues.append(f"{suffix}: Source book has no metadata")
                 all_valid = False
             
-            # Warn about missing cross-references (not a failure, but notable)
-            if cross_refs == 0:
-                issues.append(f"{suffix}: No cross-references (companion books may be missing)")
+            # Warn about missing books (not a failure, but notable)
+            if missing_count > 0:
+                issues.append(f"{suffix}: {missing_count} books from taxonomy missing metadata")
             
             # Summary line
-            status = "✅" if source_book != "Unknown" and keywords > 0 and concepts > 0 else "⚠️ "
+            status = "✅" if source_book_name != "Unknown" and companion_count > 0 and source_metadata else "⚠️ "
             print(f"  {status} {suffix}:")
-            print(f"      Source: {source_book}")
-            print(f"      Keywords: {keywords}, Concepts: {concepts}, Cross-refs: {cross_refs}")
-            print(f"      Keyword diversity: {stats.get('keyword_diversity_ratio', 0):.1%}")
+            print(f"      Project ID: {project.get('id', 'N/A')}")
+            print(f"      Source book: {source_book_name}")
+            print(f"      Total books: {total_books}, Companion: {companion_count}, Missing: {missing_count}")
+            print(f"      Total chapters across all books: {total_chapters}")
             
         except json.JSONDecodeError as e:
             print(f"  ❌ {suffix}: Invalid JSON - {e}")

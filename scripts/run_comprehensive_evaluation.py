@@ -517,9 +517,14 @@ def main():
     parser.add_argument(
         "--models",
         nargs="+",
-        choices=["gemini", "claude", "openai", "deepseek"],
-        default=["gemini", "claude", "openai", "deepseek"],
-        help="LLM models to use for evaluation"
+        choices=[
+            "claude-opus-4.5", "claude-sonnet-4.5",
+            "gpt-5.1", "gpt-5", "gpt-5.1-mini", "gpt-5.1-nano",
+            "gemini-3-pro", "gemini-3-flash",
+            "deepseek-v3", "deepseek-r1"
+        ],
+        default=None,  # Will use all available models if None
+        help="LLM models to use for evaluation (default: all 10 models)"
     )
     
     parser.add_argument(

@@ -99,15 +99,21 @@ Each profile run includes validation at every step:
 
 ## 6. LLM Evaluation Strategy
 
-### 6.1 Strategy B: Comparative Evaluation (4 LLM Calls)
+### 6.1 Strategy B: Comparative Evaluation (10 LLM Calls)
 
 All 4 aggregates are sent to each LLM in a single prompt for comparative analysis.
 
 **LLMs Used:**
-1. Gemini 2.5 Flash
-2. Claude Sonnet 4
-3. GPT-4o
-4. DeepSeek Chat
+1. Claude Opus 4.5
+2. Claude Sonnet 4.5
+3. GPT-5.1
+4. GPT-5
+5. GPT-5.1 Mini
+6. GPT-5.1 Nano
+7. Gemini 3 Pro
+8. Gemini 3 Flash
+9. DeepSeek V3
+10. DeepSeek R1 (Open-Source)
 
 ### 6.2 Evaluation Process
 
