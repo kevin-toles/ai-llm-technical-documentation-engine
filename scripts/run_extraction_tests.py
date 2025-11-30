@@ -213,8 +213,11 @@ def run_profile_pipeline(profile_name: str) -> Dict[str, Any]:
     # Profile-specific extracted metadata
     metadata_file = eval_dir / f"{book_name}_metadata_{suffix}.json"
     
-    # Profile-specific taxonomy
-    taxonomy_file = eval_dir / f"AI-ML_taxonomy_{suffix}.json"
+    # Profile-specific taxonomy with naming that production aggregate script expects
+    # Production create_aggregate_package.py extracts: taxonomy_path.stem.replace("_taxonomy", "")
+    # So "{book_name}_{suffix}_taxonomy.json" -> "{book_name}_{suffix}" as source book
+    # We'll need to copy metadata to match this expected source book name
+    taxonomy_file = eval_dir / f"{book_name}_{suffix}_taxonomy.json"
     
     # Profile-specific enriched output
     enriched_file = eval_dir / f"{book_name}_enriched_{suffix}.json"
@@ -346,22 +349,50 @@ def run_profile_pipeline(profile_name: str) -> Dict[str, Any]:
     
     try:
         # Use production aggregate creation which includes full taxonomy and all companion metadata
-        # Directories for aggregate creation
-        metadata_dir = PROJECT_ROOT / "workflows" / "metadata_extraction" / "output"
-        guideline_dir = PROJECT_ROOT / "workflows" / "base_guideline_generation" / "output"
-        
         # Create tmp output dir for aggregate packages
         aggregate_tmp_dir = eval_dir / "aggregate_packages"
         aggregate_tmp_dir.mkdir(parents=True, exist_ok=True)
+        
+        # The production script extracts source_book from taxonomy filename:
+        # "{book_name}_{suffix}_taxonomy.json" -> "{book_name}_{suffix}"
+        # It then looks for "{source_book}_metadata.json" in metadata_dir
+        # So we need to create a metadata file with that exact name
+        source_book_with_suffix = f"{book_name}_{suffix}"
+        
+        # Create a metadata directory for this profile's aggregate
+        profile_metadata_dir = aggregate_tmp_dir / f"metadata_{suffix}"
+        profile_metadata_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Copy all companion book metadata to this directory
+        source_metadata_dir = PROJECT_ROOT / "workflows" / "metadata_extraction" / "output"
+        for meta_file in source_metadata_dir.glob("*_metadata.json"):
+            shutil.copy(meta_file, profile_metadata_dir / meta_file.name)
+        
+        # Copy our profile-specific metadata with the expected naming
+        # Production expects: {source_book}_metadata.json where source_book = "{book_name}_{suffix}"
+        expected_metadata_name = f"{source_book_with_suffix}_metadata.json"
+        shutil.copy(metadata_file, profile_metadata_dir / expected_metadata_name)
+        print(f"  Created metadata for production: {expected_metadata_name}")
+        
+        # The production script expects enriched files named "{book}_enr_metadata_{timestamp}.json"
+        # Our enriched file is named "{book}_enriched_{PROFILE}.json"
+        # Create a copy with the expected naming pattern so production script can find it
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        production_enriched_file = aggregate_tmp_dir / f"{source_book_with_suffix}_enr_metadata_{timestamp}.json"
+        shutil.copy(enriched_file, production_enriched_file)
+        print(f"  Created enriched file for production: {production_enriched_file.name}")
+        
+        # Guideline directory
+        guideline_dir = PROJECT_ROOT / "workflows" / "base_guideline_generation" / "output"
         
         # Call production aggregate package creation
         # This will load taxonomy, source book enriched metadata, and all companion book metadata
         package_path = create_aggregate_package(
             taxonomy_path=taxonomy_file,
-            metadata_dir=metadata_dir,
+            metadata_dir=profile_metadata_dir,  # Use our prepared metadata directory
             guideline_dir=guideline_dir,
             output_dir=aggregate_tmp_dir,
-            enriched_metadata_file=enriched_file  # Use our enriched file for the source book
+            enriched_metadata_file=production_enriched_file  # Use renamed enriched file
         )
         
         # Copy/rename to our expected aggregate file location
