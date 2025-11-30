@@ -106,6 +106,7 @@ def run_enrichment_pipeline() -> bool:
     result = run_command([
         sys.executable,
         str(script_path),
+        "--book",
         TEST_BOOK
     ])
     
