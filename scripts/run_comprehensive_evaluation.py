@@ -5,14 +5,15 @@ Comprehensive Extraction Evaluation Pipeline
 
 Orchestrates the complete test pipeline:
 1. Run 4 extraction profiles (baseline, current, moderate, aggressive)
-2. Collect objective metrics (diversity, uniqueness, coverage)
-3. Evaluate with 3 LLMs (Gemini, Claude, OpenAI)
-4. Aggregate results and generate comparison report
+2. Create profile-specific aggregates with validation
+3. Run Strategy B comparative LLM evaluation (all 4 aggregates to each LLM)
+4. Generate final report
 
 Usage:
     python run_comprehensive_evaluation.py --run-all
-    python run_comprehensive_evaluation.py --profile baseline --evaluate
-    python run_comprehensive_evaluation.py --analyze-results
+    python run_comprehensive_evaluation.py --extract-only
+    python run_comprehensive_evaluation.py --evaluate-only
+    python run_comprehensive_evaluation.py --dry-run
 """
 
 import argparse
@@ -27,216 +28,225 @@ from typing import Any, Dict, List
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from scripts.run_extraction_tests import run_extraction_for_profile, get_profile
-from scripts.llm_evaluation import run_evaluation, get_llm_configs
 
-
-def calculate_objective_metrics(output_dir: Path) -> Dict[str, Any]:
-    """
-    Calculate objective statistical metrics for extraction output.
-    
-    Returns metrics for verifying extraction quality:
-    - Keyword diversity (unique vs total)
-    - Average keyword length
-    - N-gram distribution
-    - Duplicate detection
-    - Coverage metrics
-    """
-    metrics = {
-        "timestamp": datetime.now().isoformat(),
-        "output_dir": str(output_dir),
+def verify_prerequisites() -> Dict[str, Any]:
+    """Verify all prerequisites are in place."""
+    status = {
+        "profiles_config": False,
+        "source_metadata": False,
+        "taxonomies": False,
+        "api_keys": {},
     }
     
-    # Load extraction output
-    json_files = list(output_dir.glob("*_enriched.json"))
-    if not json_files:
-        json_files = list(output_dir.glob("*.json"))
+    # Check profiles config
+    profiles_path = PROJECT_ROOT / "config" / "extraction_profiles.json"
+    status["profiles_config"] = profiles_path.exists()
     
-    if not json_files:
-        return {"error": "No JSON files found"}
+    # Check source metadata
+    config = {}
+    if profiles_path.exists():
+        with open(profiles_path) as f:
+            config = json.load(f)
     
-    latest_file = max(json_files, key=lambda p: p.stat().st_mtime)
+    test_book = config.get("test_book", {})
+    metadata_file = PROJECT_ROOT / "workflows" / "metadata_extraction" / "output" / test_book.get("metadata_file", "")
+    status["source_metadata"] = metadata_file.exists()
+    status["source_metadata_path"] = str(metadata_file) if metadata_file.exists() else "NOT FOUND"
     
+    # Check taxonomies
+    eval_dir = PROJECT_ROOT / "outputs" / "evaluation"
+    taxonomy_count = 0
+    for suffix in ["BASELINE", "CURRENT", "MODERATE", "AGGRESSIVE"]:
+        if (eval_dir / f"AI-ML_taxonomy_{suffix}.json").exists():
+            taxonomy_count += 1
+    status["taxonomies"] = taxonomy_count == 4
+    status["taxonomies_count"] = taxonomy_count
+    
+    # Check API keys
+    for key in ["DEEPSEEK_API_KEY", "GEMINI_API_KEY", "ANTHROPIC_API_KEY", "OPENAI_API_KEY"]:
+        val = os.environ.get(key, "")
+        if val:
+            status["api_keys"][key] = f"***{val[-4:]}"
+        else:
+            status["api_keys"][key] = "NOT SET"
+    
+    return status
+
+
+def run_dry_run() -> None:
+    """Run configuration verification without executing."""
+    print("\n🔍 DRY RUN - Configuration Verification")
+    print("=" * 60)
+    
+    status = verify_prerequisites()
+    
+    # Profiles config
+    print("\n📋 Extraction Profiles:")
+    if status["profiles_config"]:
+        profiles_path = PROJECT_ROOT / "config" / "extraction_profiles.json"
+        with open(profiles_path) as f:
+            config = json.load(f)
+        for name, profile in config.get("profiles", {}).items():
+            params = profile.get("parameters", {})
+            yake = params.get("yake", {})
+            custom = params.get("custom_dedup", {})
+            print(f"  ✅ {name}: top_n={yake.get('top_n')}, "
+                  f"stem_dedup={custom.get('stem_dedup_enabled')}, "
+                  f"ngram_clean={custom.get('ngram_clean_enabled')}")
+    else:
+        print("  ❌ Profiles config not found")
+    
+    # Source metadata
+    print("\n📄 Source Metadata:")
+    if status["source_metadata"]:
+        print(f"  ✅ {status['source_metadata_path']}")
+    else:
+        print(f"  ❌ {status.get('source_metadata_path', 'NOT FOUND')}")
+    
+    # Taxonomies
+    print("\n📚 Taxonomies:")
+    if status["taxonomies"]:
+        print(f"  ✅ All 4 taxonomy variants exist")
+    else:
+        print(f"  ⚠️  Only {status['taxonomies_count']}/4 taxonomies found")
+        print("    Run: scripts/run_extraction_tests.py to create missing taxonomies")
+    
+    # API Keys
+    print("\n🔐 API Keys:")
+    for key, val in status["api_keys"].items():
+        if val != "NOT SET":
+            print(f"  ✅ {key}: {val}")
+        else:
+            print(f"  ❌ {key}: NOT SET")
+    
+    # Test LLM connections
+    print("\n🔌 LLM Connection Test:")
     try:
-        with open(latest_file) as f:
-            data = json.load(f)
-        
-        # Extract keywords from all chapters
-        all_keywords = set()
-        keyword_counts = {}
-        ngram_distribution = {1: 0, 2: 0, 3: 0, "4+": 0}
-        
-        chapters = data.get("chapters", [])
-        for chapter in chapters:
-            keywords = chapter.get("keywords", [])
-            for kw in keywords:
-                keyword_text = kw if isinstance(kw, str) else kw.get("keyword", "")
-                if keyword_text:
-                    all_keywords.add(keyword_text.lower())
-                    keyword_counts[keyword_text.lower()] = keyword_counts.get(keyword_text.lower(), 0) + 1
-                    
-                    # Count n-grams
-                    word_count = len(keyword_text.split())
-                    if word_count <= 3:
-                        ngram_distribution[word_count] += 1
-                    else:
-                        ngram_distribution["4+"] += 1
-        
-        # Calculate metrics
-        total_keywords = sum(keyword_counts.values())
-        unique_keywords = len(all_keywords)
-        
-        metrics.update({
-            "total_keyword_instances": total_keywords,
-            "unique_keywords": unique_keywords,
-            "diversity_ratio": unique_keywords / total_keywords if total_keywords > 0 else 0,
-            "average_frequency": total_keywords / unique_keywords if unique_keywords > 0 else 0,
-            "ngram_distribution": ngram_distribution,
-            "chapters_processed": len(chapters),
-        })
-        
-        # Find potential duplicates (stem-based)
-        from workflows.metadata_extraction.scripts.adapters.statistical_extractor import _get_word_stem
-        
-        stem_groups = {}
-        for kw in all_keywords:
-            stem = _get_word_stem(kw)
-            if stem not in stem_groups:
-                stem_groups[stem] = []
-            stem_groups[stem].append(kw)
-        
-        potential_duplicates = {stem: words for stem, words in stem_groups.items() if len(words) > 1}
-        
-        metrics.update({
-            "potential_duplicate_groups": len(potential_duplicates),
-            "duplicate_examples": dict(list(potential_duplicates.items())[:5]),
-        })
-        
+        from scripts.llm_evaluation import test_api_connections
+        test_api_connections()
     except Exception as e:
-        metrics["error"] = str(e)
+        print(f"  ⚠️ Could not test connections: {e}")
     
-    return metrics
+    print("\n" + "=" * 60)
+    
+    # Ready status
+    all_ready = (
+        status["profiles_config"] and 
+        status["source_metadata"] and 
+        status["taxonomies"] and
+        any(v != "NOT SET" for v in status["api_keys"].values())
+    )
+    
+    if all_ready:
+        print("✅ Ready for execution. Use --run-all to start.")
+    else:
+        print("⚠️ Prerequisites missing. Fix issues above before running.")
 
 
-def run_profile_with_evaluation(profile_name: str, llm_models: List[str]) -> Dict[str, Any]:
-    """
-    Run extraction for a profile and evaluate with LLMs.
+def run_extraction_phase() -> bool:
+    """Run extraction for all 4 profiles."""
+    print("\n" + "=" * 60)
+    print("PHASE 1: EXTRACTION")
+    print("=" * 60)
     
-    Returns combined results with objective and subjective metrics.
-    """
-    print(f"\n{'='*60}")
-    print(f"Processing Profile: {profile_name}")
-    print(f"{'='*60}")
+    from scripts.run_extraction_tests import run_all_profiles
     
-    # Step 1: Run extraction
-    print("\n[1/3] Running extraction...")
-    output_dir = run_extraction_for_profile(profile_name)
+    results = run_all_profiles()
     
-    # Step 2: Calculate objective metrics
-    print("\n[2/3] Calculating objective metrics...")
-    objective_metrics = calculate_objective_metrics(output_dir)
+    # Check all succeeded
+    success = all(r.get("success", False) for r in results.values())
     
-    # Step 3: Run LLM evaluation
-    print("\n[3/3] Running LLM evaluation...")
-    llm_results = run_evaluation(str(output_dir), llm_models)
+    return success
+
+
+def run_evaluation_phase(models: List[str] | None = None) -> Dict[str, Any]:
+    """Run Strategy B comparative LLM evaluation."""
+    print("\n" + "=" * 60)
+    print("PHASE 2: LLM COMPARATIVE EVALUATION")
+    print("=" * 60)
     
-    # Combine results
-    combined_results = {
-        "profile": profile_name,
-        "output_dir": str(output_dir),
+    from scripts.llm_evaluation import run_comparative_evaluation
+    
+    results = run_comparative_evaluation(models)
+    
+    return results
+
+
+def generate_final_report(eval_results: Dict[str, Any]) -> None:
+    """Generate final summary report."""
+    print("\n" + "=" * 60)
+    print("FINAL REPORT")
+    print("=" * 60)
+    
+    if "error" in eval_results:
+        print(f"\n❌ Evaluation failed: {eval_results['error']}")
+        return
+    
+    # Consensus
+    consensus = eval_results.get("consensus", {})
+    if consensus:
+        best = consensus.get("best_for_production", "Unknown")
+        votes = consensus.get("votes", {})
+        ratio = consensus.get("agreement_ratio", 0)
+        
+        print(f"\n🏆 RECOMMENDED PROFILE: {best.upper()}")
+        print(f"   Agreement: {ratio:.0%} of LLMs")
+        print(f"   Votes: {votes}")
+    
+    # Per-LLM results
+    print("\n📊 Per-LLM Rankings:")
+    for model, eval_result in eval_results.get("evaluations", {}).items():
+        if "comparative_ranking" in eval_result:
+            rankings = eval_result["comparative_ranking"]
+            print(f"\n  {model}:")
+            for r in rankings:
+                print(f"    #{r['rank']}: {r['profile']} ({r['overall_score']}/10)")
+    
+    # Save summary
+    eval_dir = PROJECT_ROOT / "outputs" / "evaluation"
+    summary_file = eval_dir / f"final_summary_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+    
+    summary = {
         "timestamp": datetime.now().isoformat(),
-        "objective_metrics": objective_metrics,
-        "llm_evaluation": llm_results,
+        "consensus": consensus,
+        "models_used": eval_results.get("models_used", []),
+        "recommendation": best if consensus else "Inconclusive",
     }
     
-    # Save combined results
-    results_file = PROJECT_ROOT / "outputs" / f"evaluation_results_{profile_name}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
-    with open(results_file, "w") as f:
-        json.dump(combined_results, f, indent=2)
+    with open(summary_file, "w") as f:
+        json.dump(summary, f, indent=2)
     
-    print(f"\n✅ Results saved: {results_file}")
-    
-    return combined_results
+    print(f"\n📄 Summary saved: {summary_file}")
 
 
-def run_all_profiles(llm_models: List[str]) -> Dict[str, Any]:
-    """
-    Run all 4 profiles and aggregate results.
-    """
-    profiles = ["baseline", "current", "moderate", "aggressive"]
-    all_results = {}
+def run_full_pipeline(models: List[str] | None = None) -> None:
+    """Run complete pipeline: extraction + evaluation."""
+    start_time = datetime.now()
     
-    for profile in profiles:
-        try:
-            results = run_profile_with_evaluation(profile, llm_models)
-            all_results[profile] = results
-        except Exception as e:
-            print(f"\n⚠️  Error processing profile '{profile}': {e}")
-            all_results[profile] = {"error": str(e)}
+    print("\n" + "=" * 60)
+    print("COMPREHENSIVE EXTRACTION EVALUATION PIPELINE")
+    print("=" * 60)
+    print(f"Started: {start_time.isoformat()}")
     
-    # Generate comparison report
-    comparison_report = generate_comparison_report(all_results)
+    # Phase 1: Extraction
+    extraction_success = run_extraction_phase()
     
-    # Save aggregate results
-    aggregate_file = PROJECT_ROOT / "outputs" / f"aggregate_evaluation_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
-    with open(aggregate_file, "w") as f:
-        json.dump({
-            "profiles": all_results,
-            "comparison": comparison_report,
-            "timestamp": datetime.now().isoformat(),
-        }, f, indent=2)
+    if not extraction_success:
+        print("\n❌ Extraction phase failed. Cannot proceed with evaluation.")
+        return
     
-    print(f"\n{'='*60}")
-    print(f"✅ Aggregate results saved: {aggregate_file}")
-    print(f"{'='*60}")
+    # Phase 2: LLM Evaluation
+    eval_results = run_evaluation_phase(models)
     
-    return all_results
-
-
-def generate_comparison_report(all_results: Dict[str, Any]) -> Dict[str, Any]:
-    """
-    Generate comparison report across all profiles.
-    """
-    report = {
-        "objective_comparison": {},
-        "llm_scores_comparison": {},
-        "rankings": {},
-    }
+    # Final Report
+    generate_final_report(eval_results)
     
-    # Compare objective metrics
-    for profile, results in all_results.items():
-        if "error" in results:
-            continue
-        
-        metrics = results.get("objective_metrics", {})
-        report["objective_comparison"][profile] = {
-            "unique_keywords": metrics.get("unique_keywords", 0),
-            "diversity_ratio": metrics.get("diversity_ratio", 0),
-            "potential_duplicates": metrics.get("potential_duplicate_groups", 0),
-        }
+    # Timing
+    end_time = datetime.now()
+    duration = end_time - start_time
     
-    # Compare LLM scores
-    for profile, results in all_results.items():
-        if "error" in results:
-            continue
-        
-        llm_eval = results.get("llm_evaluation", {})
-        aggregate = llm_eval.get("aggregate", {})
-        report["llm_scores_comparison"][profile] = {
-            "average_score": aggregate.get("average_score", 0),
-            "models_responded": aggregate.get("models_responded", 0),
-        }
-    
-    # Rank profiles
-    scores = [(profile, data.get("average_score", 0)) 
-              for profile, data in report["llm_scores_comparison"].items()]
-    scores.sort(key=lambda x: x[1], reverse=True)
-    
-    report["rankings"] = {
-        "by_llm_score": [{"profile": p, "score": s} for p, s in scores],
-    }
-    
-    return report
+    print(f"\n⏱️  Total duration: {duration}")
+    print("=" * 60)
 
 
 def main():
@@ -247,72 +257,46 @@ def main():
     parser.add_argument(
         "--run-all",
         action="store_true",
-        help="Run all 4 profiles with full evaluation"
+        help="Run complete pipeline: extraction + LLM evaluation"
     )
     
     parser.add_argument(
-        "--profile",
-        choices=["baseline", "current", "moderate", "aggressive"],
-        help="Run specific profile"
-    )
-    
-    parser.add_argument(
-        "--evaluate",
+        "--extract-only",
         action="store_true",
-        help="Evaluate with LLMs (requires --profile)"
+        help="Run extraction phase only (create aggregates)"
+    )
+    
+    parser.add_argument(
+        "--evaluate-only",
+        action="store_true",
+        help="Run LLM evaluation only (requires existing aggregates)"
+    )
+    
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Verify configuration without executing"
     )
     
     parser.add_argument(
         "--models",
         nargs="+",
-        choices=["gemini", "claude", "openai", "deepseek", "deepseek-reasoner"],
-        default=["gemini", "claude", "openai"],
-        help="LLM models to use for evaluation (default: gemini claude openai)"
-    )
-    
-    parser.add_argument(
-        "--analyze-results",
-        action="store_true",
-        help="Analyze existing results"
+        choices=["gemini", "claude", "openai", "deepseek"],
+        default=["gemini", "claude", "openai", "deepseek"],
+        help="LLM models to use for evaluation"
     )
     
     args = parser.parse_args()
     
-    if args.run_all:
-        run_all_profiles(args.models)
-    elif args.profile:
-        if args.evaluate:
-            run_profile_with_evaluation(args.profile, args.models)
-        else:
-            run_extraction_for_profile(args.profile)
-    elif args.analyze_results:
-        # Load and analyze recent results
-        outputs_dir = PROJECT_ROOT / "outputs"
-        result_files = list(outputs_dir.glob("aggregate_evaluation_*.json"))
-        if result_files:
-            latest = max(result_files, key=lambda p: p.stat().st_mtime)
-            with open(latest) as f:
-                data = json.load(f)
-            
-            print(f"\n📊 Analysis of: {latest.name}")
-            print("="*60)
-            
-            comparison = data.get("comparison", {})
-            rankings = comparison.get("rankings", {})
-            
-            print("\n🏆 Rankings by LLM Score:")
-            for rank in rankings.get("by_llm_score", []):
-                print(f"  {rank['profile']}: {rank['score']:.2f}/10")
-            
-            print("\n📈 Objective Metrics Comparison:")
-            obj_comp = comparison.get("objective_comparison", {})
-            for profile, metrics in obj_comp.items():
-                print(f"\n  {profile}:")
-                print(f"    Unique keywords: {metrics.get('unique_keywords', 0)}")
-                print(f"    Diversity ratio: {metrics.get('diversity_ratio', 0):.2%}")
-                print(f"    Potential duplicates: {metrics.get('potential_duplicates', 0)}")
-        else:
-            print("No aggregate results found")
+    if args.dry_run:
+        run_dry_run()
+    elif args.run_all:
+        run_full_pipeline(args.models)
+    elif args.extract_only:
+        run_extraction_phase()
+    elif args.evaluate_only:
+        eval_results = run_evaluation_phase(args.models)
+        generate_final_report(eval_results)
     else:
         parser.print_help()
 

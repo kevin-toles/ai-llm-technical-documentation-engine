@@ -38,13 +38,30 @@ PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 # Statistical extractor for YAKE + Summa (existing implementation)
+# NOTE: Lazy loading - instantiate at runtime to respect environment variables
+_STATISTICAL_EXTRACTOR_CLASS = None
+_STATISTICAL_EXTRACTOR_INSTANCE = None
+
 try:
     from workflows.metadata_extraction.scripts.adapters.statistical_extractor import StatisticalExtractor
-    STATISTICAL_EXTRACTOR = StatisticalExtractor()
+    _STATISTICAL_EXTRACTOR_CLASS = StatisticalExtractor
 except ImportError as e:
     print(f"Warning: StatisticalExtractor not available: {e}")
     print("Will use fallback keyword extraction")
-    STATISTICAL_EXTRACTOR = None  # type: ignore[assignment]
+
+
+def get_statistical_extractor():
+    """
+    Get StatisticalExtractor instance with lazy loading.
+    
+    This ensures environment variables are read at call time, not import time.
+    Each call creates a new instance to pick up any env var changes.
+    """
+    global _STATISTICAL_EXTRACTOR_CLASS
+    if _STATISTICAL_EXTRACTOR_CLASS is None:
+        return None
+    # Create new instance each time to pick up env var changes
+    return _STATISTICAL_EXTRACTOR_CLASS()
 
 # BERTopic/Sentence Transformers integration (Option C Architecture)
 try:
@@ -382,9 +399,10 @@ def rescore_keywords_cross_book(
     # Combine current chapter with related chapter contexts
     combined_text = current_chapter_text + " " + " ".join(related_chapters_texts)
     
-    # Extract keywords using YAKE via StatisticalExtractor
-    if STATISTICAL_EXTRACTOR:
-        keywords_with_scores = STATISTICAL_EXTRACTOR.extract_keywords(
+    # Extract keywords using YAKE via StatisticalExtractor (lazy loaded)
+    extractor = get_statistical_extractor()
+    if extractor:
+        keywords_with_scores = extractor.extract_keywords(
             combined_text,
             top_n=top_n
         )
@@ -431,9 +449,10 @@ def extract_concepts_cross_book(
     # Combine current chapter with related chapter contexts
     combined_text = current_chapter_text + " " + " ".join(related_chapters_texts)
     
-    # Extract concepts using Summa via StatisticalExtractor
-    if STATISTICAL_EXTRACTOR:
-        concepts = STATISTICAL_EXTRACTOR.extract_concepts(combined_text, top_n=top_n)
+    # Extract concepts using Summa via StatisticalExtractor (lazy loaded)
+    extractor = get_statistical_extractor()
+    if extractor:
+        concepts = extractor.extract_concepts(combined_text, top_n=top_n)
     else:
         # Fallback: simple noun phrase extraction if StatisticalExtractor unavailable
         import re

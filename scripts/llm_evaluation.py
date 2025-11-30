@@ -554,6 +554,209 @@ def compare_profiles(profile1: str, profile2: str, models: list[str] | None = No
     return comparison
 
 
+def create_comparative_prompt(aggregates: dict[str, dict[str, Any]]) -> str:
+    """
+    Create a comparative evaluation prompt with all 4 aggregates.
+    
+    Strategy B: Send all profiles to each LLM for direct comparison.
+    """
+    prompt = """You are an expert NLP evaluator assessing keyword extraction quality for technical documentation cross-referencing.
+
+## Task
+You have been given extraction outputs from 4 different parameter configurations applied to the same source document. Evaluate each configuration SEQUENTIALLY (not in parallel) and provide an objective comparison.
+
+## Configurations Provided
+1. BASELINE: Original settings (stem deduplication OFF, top_n=10)
+2. CURRENT: Enhanced settings (stem deduplication ON, top_n=20)
+3. MODERATE: Expanded extraction (top_n=25, relaxed thresholds)
+4. AGGRESSIVE: Maximum extraction (top_n=35, lowest thresholds)
+
+## Evaluation Criteria (Score 1-10 for each configuration)
+
+1. **Keyword Quality**: Relevance, specificity, technical accuracy
+2. **Deduplication Effectiveness**: Absence of redundant variants (model/models/modeling)
+3. **Concept Coverage**: Breadth and depth of main themes captured
+4. **Cross-Reference Utility**: Value of related chapter connections for navigation
+5. **Signal-to-Noise Ratio**: Meaningful terms vs. generic/noise terms
+
+## Required Output Format
+
+Respond with ONLY valid JSON (no markdown code blocks):
+
+{
+  "evaluation_timestamp": "<ISO timestamp>",
+  "sequential_analysis": {
+    "baseline": {
+      "scores": {
+        "keyword_quality": <1-10>,
+        "deduplication_effectiveness": <1-10>,
+        "concept_coverage": <1-10>,
+        "cross_reference_utility": <1-10>,
+        "signal_to_noise": <1-10>
+      },
+      "overall_score": <1-10>,
+      "observations": ["<observation 1>", "<observation 2>"]
+    },
+    "current": {
+      "scores": { ... },
+      "overall_score": <1-10>,
+      "observations": [...]
+    },
+    "moderate": {
+      "scores": { ... },
+      "overall_score": <1-10>,
+      "observations": [...]
+    },
+    "aggressive": {
+      "scores": { ... },
+      "overall_score": <1-10>,
+      "observations": [...]
+    }
+  },
+  "comparative_ranking": [
+    {"rank": 1, "profile": "<best>", "overall_score": <1-10>, "rationale": "..."},
+    {"rank": 2, "profile": "...", "overall_score": <1-10>, "rationale": "..."},
+    {"rank": 3, "profile": "...", "overall_score": <1-10>, "rationale": "..."},
+    {"rank": 4, "profile": "<worst>", "overall_score": <1-10>, "rationale": "..."}
+  ],
+  "recommendation": {
+    "best_for_production": "<profile>",
+    "reasoning": "...",
+    "tradeoffs": ["<tradeoff 1>", "<tradeoff 2>"]
+  }
+}
+
+## Aggregate Data
+
+"""
+    
+    # Add each aggregate
+    for profile in ["baseline", "current", "moderate", "aggressive"]:
+        suffix = profile.upper()
+        if suffix.lower() in aggregates or profile in aggregates:
+            data = aggregates.get(profile, aggregates.get(suffix.lower(), {}))
+            prompt += f"\n[{suffix} AGGREGATE]\n"
+            prompt += json.dumps(data, indent=2)
+            prompt += "\n"
+    
+    return prompt
+
+
+def run_comparative_evaluation(models: list[str] | None = None) -> dict[str, Any]:
+    """
+    Run Strategy B comparative evaluation.
+    
+    Loads all 4 aggregates and sends them to each LLM for comparison.
+    """
+    eval_dir = PROJECT_ROOT / "outputs" / "evaluation"
+    
+    # Load all aggregates
+    aggregates = {}
+    profiles = ["baseline", "current", "moderate", "aggressive"]
+    suffixes = {"baseline": "BASELINE", "current": "CURRENT", "moderate": "MODERATE", "aggressive": "AGGRESSIVE"}
+    
+    print("\n📂 Loading aggregates...")
+    for profile in profiles:
+        suffix = suffixes[profile]
+        agg_file = eval_dir / f"aggregate_{suffix}.json"
+        
+        if agg_file.exists():
+            with open(agg_file) as f:
+                aggregates[profile] = json.load(f)
+            print(f"  ✅ {suffix}: Loaded")
+        else:
+            print(f"  ❌ {suffix}: Not found")
+    
+    if len(aggregates) != 4:
+        return {"error": f"Missing aggregates. Found {len(aggregates)}/4. Run extraction first."}
+    
+    # Create comparative prompt
+    prompt = create_comparative_prompt(aggregates)
+    print(f"\n📝 Comparative prompt created ({len(prompt):,} chars)")
+    
+    # Default models for comparative evaluation
+    if models is None:
+        models = ["gemini", "claude", "openai", "deepseek"]
+    
+    configs = get_llm_configs()
+    
+    # Run evaluation with each LLM
+    results = {
+        "evaluation_type": "comparative",
+        "timestamp": datetime.now().isoformat(),
+        "profiles_evaluated": profiles,
+        "models_used": [],
+        "evaluations": {},
+    }
+    
+    print(f"\n🔍 Running comparative LLM evaluations...")
+    print(f"   Sending all 4 profiles to each LLM for comparison\n")
+    
+    for model in models:
+        if model not in configs:
+            print(f"  ⚠️  {model}: Not configured (skipping)")
+            continue
+        
+        config = configs[model]
+        print(f"  🤖 Calling {config.name}...")
+        
+        try:
+            # Route to appropriate API handler
+            if model in ("deepseek", "deepseek-reasoner"):
+                eval_result = call_deepseek(config, prompt)
+            elif model == "gemini":
+                eval_result = call_gemini(config, prompt)
+            elif model == "claude":
+                eval_result = call_claude(config, prompt)
+            elif model == "openai":
+                eval_result = call_openai(config, prompt)
+            else:
+                eval_result = {"error": f"No handler for {model}"}
+            
+            results["evaluations"][model] = eval_result
+            results["models_used"].append(model)
+            
+            if "error" not in eval_result:
+                # Extract recommendation
+                rec = eval_result.get("recommendation", {})
+                best = rec.get("best_for_production", "N/A")
+                print(f"     ✅ {model}: Recommends '{best}' for production")
+            else:
+                print(f"     ❌ {model}: Error - {eval_result.get('error', 'Unknown')[:50]}")
+                
+        except Exception as e:
+            results["evaluations"][model] = {"error": str(e)}
+            print(f"     ❌ {model}: Exception - {str(e)[:50]}")
+    
+    # Aggregate recommendations across LLMs
+    if results["models_used"]:
+        recommendations = {}
+        for model, eval_result in results["evaluations"].items():
+            if "recommendation" in eval_result:
+                best = eval_result["recommendation"].get("best_for_production", "")
+                if best:
+                    recommendations[best] = recommendations.get(best, 0) + 1
+        
+        if recommendations:
+            consensus = max(recommendations, key=recommendations.get)
+            results["consensus"] = {
+                "best_for_production": consensus,
+                "votes": recommendations,
+                "agreement_ratio": recommendations[consensus] / len(results["models_used"])
+            }
+            
+            print(f"\n📊 Consensus: {consensus.upper()} ({recommendations[consensus]}/{len(results['models_used'])} LLMs agree)")
+    
+    # Save results
+    output_file = eval_dir / f"llm_comparative_evaluation_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+    with open(output_file, "w") as f:
+        json.dump(results, f, indent=2)
+    
+    print(f"\n✅ Comparative evaluation saved: {output_file}")
+    
+    return results
+
+
 def list_available_models() -> None:
     """List available LLM models based on configured API keys."""
     configs = get_llm_configs()
@@ -855,6 +1058,12 @@ def main() -> None:
     )
     
     parser.add_argument(
+        "--comparative",
+        action="store_true",
+        help="Run Strategy B comparative evaluation (all 4 profiles to each LLM)"
+    )
+    
+    parser.add_argument(
         "--models",
         nargs="+",
         choices=["deepseek", "deepseek-reasoner", "gemini", "claude", "openai"],
@@ -899,6 +1108,10 @@ def main() -> None:
     
     if args.compare:
         compare_profiles(args.compare[0], args.compare[1], args.models)
+        return
+    
+    if args.comparative:
+        run_comparative_evaluation(args.models)
         return
     
     if args.output_dir:

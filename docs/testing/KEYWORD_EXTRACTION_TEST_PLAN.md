@@ -1,436 +1,281 @@
 # Keyword Extraction Enhancement Test Plan
 
-**Document Version:** 1.0  
-**Created:** 2025-11-29  
-**Author:** GitHub Copilot  
+**Version:** 2.0  
+**Date:** 2025-11-29  
 **Branch:** `feature/keyword-deduplication-enhancement`
 
----
+## 1. Objective
 
-## Table of Contents
+Evaluate whether stem-based keyword deduplication and expanded extraction parameters improve cross-referencing quality in the document enhancement pipeline.
 
-1. [Executive Summary](#executive-summary)
-2. [Current State Assessment](#current-state-assessment)
-3. [Problem Statement](#problem-statement)
-4. [Proposed Solution](#proposed-solution)
-5. [Implementation Progress](#implementation-progress)
-6. [Complete Parameter Matrix](#complete-parameter-matrix)
-7. [Test Configurations](#test-configurations)
-8. [LLM Evaluation Framework](#llm-evaluation-framework)
-9. [Execution Plan](#execution-plan)
-10. [Success Criteria](#success-criteria)
+## 2. Pipeline Under Test
 
----
-
-## 1. Executive Summary
-
-This test plan documents a systematic evaluation of keyword extraction and cross-referencing quality improvements in the LLM Document Enhancer application. We are testing 4 parameter configurations across 11 tunable parameters, with quality assessment performed by multiple LLM providers.
-
-### Key Metrics
-- **+5.48%** increase in unique keywords (383 → 404)
-- **1.95x** replacement ratio (43 new terms / 22 removed)
-- **10.64%** of new keyword set consists of brand new diverse terms
-
----
-
-## 2. Current State Assessment
-
-### 2.1 Application Architecture
+The test exercises the following pipeline stages:
 
 ```
-llm-document-enhancer/
-├── workflows/
-│   ├── pdf_to_json/                    # Tab 1: PDF → JSON conversion
-│   │   └── scripts/
-│   │       ├── convert_pdf_to_json.py
-│   │       ├── chapter_segmenter.py
-│   │       └── adapters/
-│   │           ├── pdf_converter.py
-│   │           └── unstructured_extractor.py
-│   │
-│   ├── metadata_extraction/            # Tab 2: Keyword/Concept extraction
-│   │   └── scripts/
-│   │       ├── generate_metadata_universal.py
-│   │       ├── adapters/
-│   │       │   └── statistical_extractor.py  ← PRIMARY MODIFICATION TARGET
-│   │       └── strategies/
-│   │           ├── predefined_strategy.py
-│   │           ├── toc_parser_strategy.py
-│   │           ├── regex_pattern_strategy.py
-│   │           └── duplicate_filter_strategy.py
-│   │
-│   ├── taxonomy_setup/                 # Tab 3: Taxonomy generation
-│   │   └── output/
-│   │       └── AI-ML_taxonomy_20251128.json
-│   │
-│   ├── metadata_enrichment/            # Tab 4: Cross-referencing & enrichment
-│   │   └── scripts/
-│   │       ├── enrich_metadata_per_book.py
-│   │       ├── semantic_similarity_engine.py
-│   │       ├── topic_clusterer.py
-│   │       └── tier_relationship_engine.py
-│   │
-│   ├── base_guideline_generation/      # Tab 5: Guideline generation
-│   │   └── scripts/
-│   │       └── chapter_generator_all_text.py
-│   │
-│   └── llm_enhancement/                # Tab 6: LLM enhancement
-│       └── scripts/
-│           └── (LLM API integration)
-│
-├── config/
-│   ├── settings.py
-│   ├── extraction_profiles.json        ← NEW: Parameter configurations
-│   └── validation_rules.json
-│
-├── scripts/
-│   ├── validate_deduplication_changes.py
-│   ├── run_enrichment_with_validation.py
-│   └── llm_cross_reference_evaluation.py  ← NEW: Multi-LLM evaluation
-│
-└── outputs/
-    └── archive/
-        ├── baseline_from_git/          # Original pre-enhancement
-        ├── test_current/               # Current (top_n=20, dedup ON)
-        ├── test_moderate/              # Moderate (top_n=25)
-        └── test_aggressive/            # Aggressive (top_n=35)
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                          TEST PIPELINE FLOW                                  │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  EXISTING JSON TEXT          TAXONOMY              ENRICHMENT    AGGREGATE  │
+│  (unchanged input)           (profile suffix)      (profile params)         │
+│                                                                             │
+│  ┌──────────────────┐    ┌─────────────────┐    ┌───────────────┐    ┌────┐│
+│  │ AI Engineering   │───▶│ AI-ML_taxonomy_ │───▶│ *_enriched_   │───▶│ AGG││
+│  │ Building Apps    │    │ BASELINE.json   │    │ BASELINE.json │    │    ││
+│  │ _metadata.json   │    └─────────────────┘    └───────────────┘    └────┘│
+│  │                  │                                                       │
+│  │  (source stays   │    Repeated for: CURRENT, MODERATE, AGGRESSIVE       │
+│  │   the same)      │                                                       │
+│  └──────────────────┘                                                       │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
 ```
 
-### 2.2 Key Components Modified
+**Important:** The source JSON text file is pre-existing. We do NOT convert PDFs to JSON during this test. The PDF→JSON conversion is a separate, prior workflow step.
 
-| Component | File | Changes Made |
-|-----------|------|--------------|
-| StatisticalExtractor | `statistical_extractor.py` | Added stem-based deduplication, n-gram cleanup |
-| Keyword Extraction | `statistical_extractor.py` | Changed `top_n` default from 10 → 20 |
-| Helper Functions | `statistical_extractor.py` | Added `_get_word_stem()`, `_deduplicate_by_stem()`, `_clean_ngram_duplicates()`, `_get_phrase_stem_signature()` |
+## 3. Test Configurations (4 Profiles)
 
-### 2.3 Data Flow
+### 3.1 Complete Parameter Matrix
 
-```
-PDF → JSON → Metadata Extraction → Enrichment → Guideline → LLM Enhancement
-         ↓                ↓              ↓
-    Raw Text      Keywords/Concepts  Cross-References
-                  (YAKE + Summa)     (TF-IDF + Cosine)
-```
+| Component | Parameter | Baseline | Current | Moderate | Aggressive |
+|-----------|-----------|----------|---------|----------|------------|
+| **YAKE** | top_n | 10 | 20 | 25 | 35 |
+| **YAKE** | n (n-gram) | 3 | 3 | 4 | 5 |
+| **YAKE** | dedupLim | 0.9 | 0.9 | 0.85 | 0.8 |
+| **Summa** | concepts_top_n | 10 | 10 | 12 | 15 |
+| **Custom** | stem_dedup | OFF | ON | ON | ON |
+| **Custom** | ngram_clean | OFF | ON | ON | ON |
+| **TF-IDF** | max_features | 1000 | 1000 | 1500 | 2000 |
+| **TF-IDF** | min_df | 2 | 2 | 1 | 1 |
+| **Related** | threshold | 0.7 | 0.7 | 0.6 | 0.5 |
+| **Related** | top_n | 5 | 5 | 7 | 10 |
+| **BERTopic** | min_topic_size | 2 | 2 | 2 | 2 |
 
----
+**Total: 11 parameters across 4 configurations**
 
-## 3. Problem Statement
+### 3.2 Profile Descriptions
 
-### 3.1 Original Issues
-1. **Duplicate keywords**: "model" and "models" both appearing, wasting extraction slots
-2. **Low diversity**: Same word forms repeated across chapters
-3. **Noisy n-grams**: Phrases like "Models Models Applications" appearing
-4. **Limited extraction**: Only 10 keywords per chapter (insufficient for cross-referencing)
+- **Baseline:** Original settings before deduplication enhancement (stem_dedup OFF)
+- **Current:** Implementation with stem-based deduplication enabled (top_n=20)
+- **Moderate:** Expanded extraction with relaxed thresholds
+- **Aggressive:** Maximum extraction with lowest thresholds
 
-### 3.2 Impact
-- Poor cross-reference discovery
-- Redundant navigation paths
-- Missed conceptual connections between chapters
+## 4. Test Artifacts
 
----
+### 4.1 Naming Convention
 
-## 4. Proposed Solution
+All artifacts follow the pattern: `{original_name}_{PROFILE}.json`
 
-### 4.1 Implemented Changes
-1. **Stem-based deduplication**: Uses suffix stripping to normalize word forms
-2. **N-gram cleanup**: Filters phrases with repeated words
-3. **Increased extraction**: `top_n` increased from 10 to 20
-4. **Phrase stem signatures**: Multi-word deduplication support
+| Artifact Type | Example Filename |
+|--------------|------------------|
+| Taxonomy | `AI-ML_taxonomy_BASELINE.json` |
+| Enriched Metadata | `AI Engineering Building Applications_enriched_BASELINE.json` |
+| Aggregate | `aggregate_BASELINE.json` |
 
-### 4.2 New Helper Functions
+### 4.2 Source Data (Unchanged)
 
-```python
-def _get_word_stem(word: str) -> str:
-    """Simple suffix-based stemming without NLTK dependency."""
-    
-def _deduplicate_by_stem(items: List) -> List:
-    """Remove items with same stem, keeping first occurrence."""
-    
-def _clean_ngram_duplicates(keywords: List[Tuple[str, float]]) -> List:
-    """Remove n-grams with repeated words."""
-    
-def _get_phrase_stem_signature(phrase: str) -> str:
-    """Create sorted stem signature for multi-word deduplication."""
-```
-
----
-
-## 5. Implementation Progress
-
-### 5.1 Completed ✅
-- [x] TDD RED: 13 test cases written
-- [x] TDD GREEN: All deduplication functions implemented
-- [x] TDD REFACTOR: SonarQube issues resolved
-- [x] Validation: Fresh extraction confirms deduplication working
-- [x] Metrics: +5.48% unique keywords, 1.95x replacement ratio
-- [x] Project reorganization: Docs → `docs/`, scripts → `scripts/`
-- [x] Git commits pushed to `feature/keyword-deduplication-enhancement`
-
-### 5.2 In Progress 🔄
-- [ ] Create extraction_profiles.json configuration
-- [ ] Run baseline test (restore original settings)
-- [ ] Run moderate test (top_n=25)
-- [ ] Run aggressive test (top_n=35)
-- [ ] Create LLM evaluation script
-- [ ] Execute multi-LLM evaluations
-- [ ] Generate final analysis report
-
----
-
-## 6. Complete Parameter Matrix
-
-### 6.1 All Tunable Parameters
-
-| # | Component | Parameter | Description | Range | Impact |
-|---|-----------|-----------|-------------|-------|--------|
-| 1 | YAKE | `top_n` | Keywords per chapter | 5-50 | HIGH |
-| 2 | YAKE | `n` | Max n-gram size | 1-5 | MEDIUM |
-| 3 | YAKE | `dedupLim` | Internal dedup threshold | 0.5-1.0 | MEDIUM |
-| 4 | Summa | `concepts_top_n` | Concepts per chapter | 5-20 | MEDIUM |
-| 5 | Summa | `summary_ratio` | Summary extraction ratio | 0.1-0.5 | LOW |
-| 6 | Custom | `stem_dedup` | Stem-based deduplication | ON/OFF | HIGH |
-| 7 | Custom | `ngram_clean` | N-gram cleanup | ON/OFF | MEDIUM |
-| 8 | TF-IDF | `max_features` | Vocabulary size | 500-5000 | MEDIUM |
-| 9 | TF-IDF | `min_df` | Min document frequency | 1-5 | LOW |
-| 10 | Related | `threshold` | Min similarity for relation | 0.3-0.9 | HIGH |
-| 11 | Related | `related_top_n` | Max related chapters | 3-10 | MEDIUM |
-
-### 6.2 Test Configuration Matrix
-
-| Parameter | Baseline | Current | Moderate | Aggressive |
-|-----------|----------|---------|----------|------------|
-| `top_n` | 10 | 20 | 25 | 35 |
-| `n` (n-gram) | 3 | 3 | 4 | 5 |
-| `dedupLim` | 0.9 | 0.9 | 0.85 | 0.8 |
-| `concepts_top_n` | 10 | 10 | 12 | 15 |
-| `stem_dedup` | OFF | ON | ON | ON |
-| `ngram_clean` | OFF | ON | ON | ON |
-| `max_features` | 1000 | 1000 | 1500 | 2000 |
-| `min_df` | 2 | 2 | 1 | 1 |
-| `threshold` | 0.7 | 0.7 | 0.6 | 0.5 |
-| `related_top_n` | 5 | 5 | 7 | 10 |
-
----
-
-## 7. Test Configurations
-
-### 7.1 Test Book
-- **Name:** AI Engineering Building Applications
+- **Metadata File:** `AI Engineering Building Applications_metadata.json`
+- **Location:** `workflows/metadata_extraction/output/`
+- **Base Taxonomy:** `AI-ML_taxonomy_20251128.json`
 - **Chapters:** 49
 - **Pages:** 991
-- **Taxonomy:** AI-ML_taxonomy_20251128.json
 
-### 7.2 Test Outputs
-Each test run produces:
-1. `{test_name}_metadata.json` - Raw extraction output
-2. `{test_name}_enriched.json` - Enriched with cross-references
-3. `{test_name}_aggregate.json` - Summary statistics for LLM evaluation
+### 4.3 Generated Per Profile
 
----
+1. **Taxonomy:** Copy of base taxonomy with profile suffix (for traceability)
+2. **Enriched Metadata:** Output of enrichment with profile parameters applied
+3. **Aggregate:** Combined metrics and extracted data for LLM evaluation
 
-## 8. LLM Evaluation Framework
+## 5. Validation Checkpoints
 
-### 8.1 LLM Providers & Models
+Each profile run includes validation at every step:
 
-| Provider | Model | Use Case | API Endpoint |
-|----------|-------|----------|--------------|
-| **OpenAI** | GPT-5.1 | Main evaluation | api.openai.com |
-| **OpenAI** | GPT-5.1 Pro | Deep analysis | api.openai.com |
-| **OpenAI** | GPT-5.1 Codex | Code-heavy evaluation | api.openai.com |
-| **OpenAI** | GPT-5 Mini | Budget evaluation | api.openai.com |
-| **OpenAI** | GPT-5 Nano | Cheap evaluation runs | api.openai.com |
-| **Anthropic** | Claude 4.5 Sonnet | Balanced evaluation | api.anthropic.com |
-| **Anthropic** | Claude 4.6 Opus | Deep reasoning | api.anthropic.com |
-| **Anthropic** | Claude 4.5 Haiku | Fast/cheap evaluation | api.anthropic.com |
-| **DeepSeek** | Coder V3 | Code analysis | api.deepseek.com |
-| **DeepSeek** | R1 | Reasoning evaluation | api.deepseek.com |
-| **DeepSeek** | Coder R1 Hybrid | Code + reasoning | api.deepseek.com |
-| **Google** | Gemini 3 | Multimodal evaluation | generativelanguage.googleapis.com |
+| Step | Validation | Pass Criteria |
+|------|------------|---------------|
+| Taxonomy | File exists, valid JSON, tier structure intact | ✓ |
+| Enrichment | Keywords extracted, concepts identified, related chapters found | Count > 0 |
+| Aggregate | All required fields present, JSON serializable | Schema valid |
 
-### 8.2 API Keys (Stored in Environment)
-```bash
-export OPENAI_API_KEY="your-openai-api-key"
-export ANTHROPIC_API_KEY="your-anthropic-api-key"
-export DEEPSEEK_API_KEY="your-deepseek-api-key"
-export GEMINI_API_KEY="your-gemini-api-key"
+## 6. LLM Evaluation Strategy
+
+### 6.1 Strategy B: Comparative Evaluation (4 LLM Calls)
+
+All 4 aggregates are sent to each LLM in a single prompt for comparative analysis.
+
+**LLMs Used:**
+1. Gemini 2.5 Flash
+2. Claude Sonnet 4
+3. GPT-4o
+4. DeepSeek Chat
+
+### 6.2 Evaluation Process
+
+1. Load all 4 aggregates (BASELINE, CURRENT, MODERATE, AGGRESSIVE)
+2. For each LLM:
+   - Send comparative prompt with all 4 aggregates
+   - LLM performs sequential cross-reference analysis
+   - LLM returns objective evaluation with metrics and rankings
+3. Aggregate LLM responses into final report
+
+### 6.3 Comparative Evaluation Prompt
+
 ```
-
-### 8.3 Evaluation Prompt
-
-```markdown
-# Cross-Reference Quality Evaluation
-
-You are an expert technical documentation analyst. Evaluate the cross-referencing 
-quality of the following keyword extraction configurations for a technical book.
+You are an expert NLP evaluator assessing keyword extraction quality for technical documentation cross-referencing.
 
 ## Task
-Compare these 4 extraction configurations and score each on the criteria below.
+You have been given extraction outputs from 4 different parameter configurations applied to the same source document. Evaluate each configuration SEQUENTIALLY (not in parallel) and provide an objective comparison.
 
-## Configurations
-1. **BASELINE**: {baseline_aggregate}
-2. **CURRENT**: {current_aggregate}  
-3. **MODERATE**: {moderate_aggregate}
-4. **AGGRESSIVE**: {aggressive_aggregate}
+## Configurations Provided
+1. BASELINE: Original settings (stem deduplication OFF, top_n=10)
+2. CURRENT: Enhanced settings (stem deduplication ON, top_n=20)
+3. MODERATE: Expanded extraction (top_n=25, relaxed thresholds)
+4. AGGRESSIVE: Maximum extraction (top_n=35, lowest thresholds)
 
-## Evaluation Criteria (Score 1-10 for each)
+## Evaluation Criteria (Score 1-10 for each configuration)
 
-### Navigation Quality
-1. **Concept Discoverability**: Can a reader find related topics easily from keywords?
-2. **Cross-Reference Density**: Are chapters well-connected through shared keywords?
-3. **Semantic Coherence**: Do keywords accurately represent chapter content?
+1. **Keyword Quality**: Relevance, specificity, technical accuracy
+2. **Deduplication Effectiveness**: Absence of redundant variants (model/models/modeling)
+3. **Concept Coverage**: Breadth and depth of main themes captured
+4. **Cross-Reference Utility**: Value of related chapter connections for navigation
+5. **Signal-to-Noise Ratio**: Meaningful terms vs. generic/noise terms
 
-### Keyword Quality
-4. **Specificity**: Are keywords precise (e.g., "training data pipeline") vs generic ("data")?
-5. **Redundancy Score**: How much overlap/duplication exists? (Lower = better)
-6. **Coverage Breadth**: Does the keyword set capture the chapter's full scope?
-
-### Practical Utility
-7. **Search Effectiveness**: Would these keywords help a user find this chapter?
-8. **Learning Path Clarity**: Can a reader understand prerequisite relationships?
-9. **Topic Clustering**: Do related chapters share appropriate keywords?
-
-### Overall
-10. **Best Configuration**: Which configuration provides the best balance?
-
-## Response Format
-Provide your evaluation as JSON:
-```json
-{
-  "baseline": {
-    "scores": {"discoverability": X, "density": X, ...},
-    "total": X,
-    "strengths": ["..."],
-    "weaknesses": ["..."]
-  },
-  "current": {...},
-  "moderate": {...},
-  "aggressive": {...},
-  "recommendation": "...",
-  "reasoning": "..."
-}
-```
-
-## Data for Evaluation
-{aggregates_json}
-```
-
-### 8.4 Aggregate JSON Structure
+## Required Output Format
 
 ```json
 {
-  "configuration": "current",
-  "parameters": {
-    "top_n": 20,
-    "n_gram": 3,
-    "dedup_enabled": true,
-    ...
+  "evaluation_timestamp": "<ISO timestamp>",
+  "sequential_analysis": {
+    "baseline": { "scores": {...}, "observations": [...] },
+    "current": { "scores": {...}, "observations": [...] },
+    "moderate": { "scores": {...}, "observations": [...] },
+    "aggressive": { "scores": {...}, "observations": [...] }
   },
-  "statistics": {
-    "total_keywords": 733,
-    "unique_keywords": 404,
-    "total_concepts": 490,
-    "avg_keywords_per_chapter": 14.96,
-    "avg_related_chapters": 3.7,
-    "keyword_diversity_ratio": 0.55
-  },
-  "sample_chapters": [
-    {
-      "chapter": 1,
-      "title": "Segment 1 (pages 1-18)",
-      "keywords": ["book", "Engineering", "Foundation Models", ...],
-      "concepts": ["models", "engineering", "engineer", ...],
-      "related_chapters": [2, 5, 10]
-    },
-    ...
+  "comparative_ranking": [
+    {"rank": 1, "profile": "<best>", "overall_score": <1-10>, "rationale": "..."},
+    {"rank": 2, "profile": "...", "overall_score": <1-10>, "rationale": "..."},
+    {"rank": 3, "profile": "...", "overall_score": <1-10>, "rationale": "..."},
+    {"rank": 4, "profile": "<worst>", "overall_score": <1-10>, "rationale": "..."}
   ],
-  "cross_reference_matrix": {
-    "1": [2, 5, 10],
-    "2": [1, 3, 7],
-    ...
+  "recommendation": {
+    "best_for_production": "<profile>",
+    "reasoning": "...",
+    "tradeoffs": [...]
   }
 }
 ```
 
----
+## Aggregate Data
 
-## 9. Execution Plan
+[BASELINE AGGREGATE]
+{baseline_data}
 
-### Phase 1: Configuration Setup
-1. Create `config/extraction_profiles.json`
-2. Create parameterized extraction runner
-3. Archive current outputs
+[CURRENT AGGREGATE]
+{current_data}
 
-### Phase 2: Test Execution
-| Step | Test | Duration | Output |
-|------|------|----------|--------|
-| 1 | Baseline (restore original) | ~5 min | `baseline_aggregate.json` |
-| 2 | Current (already done) | - | `current_aggregate.json` |
-| 3 | Moderate | ~5 min | `moderate_aggregate.json` |
-| 4 | Aggressive | ~5 min | `aggressive_aggregate.json` |
+[MODERATE AGGREGATE]
+{moderate_data}
 
-### Phase 3: LLM Evaluation
-| Step | LLM | Duration | Cost Est. |
-|------|-----|----------|-----------|
-| 1 | Claude 4.5 Sonnet | ~2 min | $0.10 |
-| 2 | GPT-5.1 | ~2 min | $0.15 |
-| 3 | DeepSeek R1 | ~2 min | $0.02 |
-| 4 | Gemini 3 | ~2 min | $0.05 |
+[AGGRESSIVE AGGREGATE]
+{aggressive_data}
+```
 
-### Phase 4: Analysis & Documentation
-1. Compile LLM evaluations
-2. Generate comparison report
-3. Create architecture writeup
-4. Update CHANGELOG
+## 7. Expected Outcomes
 
----
+### 7.1 Hypothesis
 
-## 10. Success Criteria
+The **Current** configuration (stem_dedup=ON, top_n=20) will outperform Baseline by:
+- Reducing redundant keyword variants by 30-50%
+- Maintaining or improving cross-reference quality
+- Achieving higher deduplication effectiveness scores
 
-### 10.1 Quantitative
-- [ ] All 4 test configurations complete successfully
-- [ ] At least 3 LLM evaluations completed
-- [ ] Aggregate JSON files generated for all tests
-- [ ] Comparison metrics calculated
+### 7.2 Success Metrics
 
-### 10.2 Qualitative
-- [ ] LLM consensus on best configuration
-- [ ] Clear improvement over baseline documented
-- [ ] Trade-offs between configurations understood
-- [ ] Recommendation for production configuration
+| Metric | Baseline Target | Current Target |
+|--------|-----------------|----------------|
+| Unique Keywords | N (measured) | ≥ N |
+| Duplicate Variants | High | Low (30-50% reduction) |
+| Cross-Reference Score | Measured | ≥ Baseline |
+| Overall LLM Ranking | 3rd or 4th | 1st or 2nd |
 
-### 10.3 Documentation
-- [ ] Architecture writeup complete
-- [ ] Test results documented
-- [ ] CHANGELOG updated
-- [ ] All changes committed to feature branch
+## 8. Execution
 
----
+### 8.1 Prerequisites
 
-## Appendix A: Git Commits on Feature Branch
+- API keys configured in environment:
+  - `GEMINI_API_KEY`
+  - `ANTHROPIC_API_KEY`
+  - `OPENAI_API_KEY`
+  - `DEEPSEEK_API_KEY`
 
-| Commit | Description |
-|--------|-------------|
-| `7bf7bc9f` | feat: add keyword deduplication with stemming and n-gram cleanup |
-| `9b3a6c8e` | refactor: fix SonarQube redundant exception warnings |
-| `149541e5` | feat: add validation script for deduplication changes |
-| `00eff0ce` | refactor: reorganize project structure |
-| `8d544a84` | fix: correct argument format for enrichment script |
-| `ccde4f45` | test: validate deduplication with fresh extraction |
+### 8.2 Run Command
 
----
+```bash
+cd /Users/kevintoles/POC/llm-document-enhancer
+source ~/.zshrc
+python3 scripts/run_comprehensive_evaluation.py --run-all
+```
 
-## Appendix B: Validated Metrics (Current Configuration)
+### 8.3 Output Location
 
-| Metric | Baseline | Current | Change |
-|--------|----------|---------|--------|
-| Total keywords | 735 | 733 | -0.27% |
-| Unique keywords | 383 | 404 | **+5.48%** |
-| Keywords removed | - | 22 | - |
-| New keywords added | - | 43 | - |
-| Replacement ratio | - | 1.95x | - |
-| % new in set | - | 10.64% | - |
+```
+outputs/
+├── evaluation/
+│   ├── AI-ML_taxonomy_BASELINE.json
+│   ├── AI-ML_taxonomy_CURRENT.json
+│   ├── AI-ML_taxonomy_MODERATE.json
+│   ├── AI-ML_taxonomy_AGGRESSIVE.json
+│   ├── AI Engineering Building Applications_enriched_BASELINE.json
+│   ├── AI Engineering Building Applications_enriched_CURRENT.json
+│   ├── AI Engineering Building Applications_enriched_MODERATE.json
+│   ├── AI Engineering Building Applications_enriched_AGGRESSIVE.json
+│   ├── aggregate_BASELINE.json
+│   ├── aggregate_CURRENT.json
+│   ├── aggregate_MODERATE.json
+│   ├── aggregate_AGGRESSIVE.json
+│   └── llm_comparative_evaluation_<timestamp>.json
+```
 
----
+## 9. Configuration Reference
 
-*Document generated as part of TDD workflow on feature/keyword-deduplication-enhancement*
+Profile configurations are defined in:
+- `config/extraction_profiles.json`
+
+Environment variables read by StatisticalExtractor:
+- `EXTRACTION_YAKE_TOP_N`
+- `EXTRACTION_YAKE_N`
+- `EXTRACTION_YAKE_DEDUPLIM`
+- `EXTRACTION_SUMMA_CONCEPTS_TOP_N`
+- `EXTRACTION_STEM_DEDUP_ENABLED`
+- `EXTRACTION_NGRAM_CLEAN_ENABLED`
+- `EXTRACTION_TFIDF_MAX_FEATURES`
+- `EXTRACTION_TFIDF_MIN_DF`
+- `EXTRACTION_CHAPTERS_THRESHOLD`
+- `EXTRACTION_CHAPTERS_TOP_N`
+
+## 10. Test Script Architecture
+
+```
+scripts/
+├── run_comprehensive_evaluation.py    # Main orchestrator
+│   ├── Loads 4 profiles from config
+│   ├── For each profile:
+│   │   ├── Creates taxonomy copy with suffix
+│   │   ├── Sets environment variables for profile
+│   │   ├── Runs enrichment (StatisticalExtractor uses env vars)
+│   │   ├── Creates aggregate
+│   │   └── Validates outputs
+│   └── Sends all 4 aggregates to each LLM (Strategy B)
+│
+├── run_extraction_tests.py            # Profile application utilities
+│   ├── get_profile(name) → profile config
+│   ├── apply_profile_to_extractor(profile) → sets env vars
+│   └── run_extraction_for_profile(name) → executes enrichment
+│
+└── llm_evaluation.py                  # LLM API integration
+    ├── create_comparative_prompt(aggregates) → prompt string
+    ├── call_gemini(prompt) → evaluation JSON
+    ├── call_claude(prompt) → evaluation JSON
+    ├── call_openai(prompt) → evaluation JSON
+    └── call_deepseek(prompt) → evaluation JSON
+```

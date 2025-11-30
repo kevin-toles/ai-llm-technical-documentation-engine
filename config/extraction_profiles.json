@@ -190,8 +190,28 @@
   
   "test_book": {
     "name": "AI Engineering Building Applications",
-    "taxonomy": "AI-ML_taxonomy_20251128.json",
+    "json_file": "AI Engineering Building Applications.json",
+    "metadata_file": "AI Engineering Building Applications_metadata.json",
+    "taxonomy_base": "AI-ML_taxonomy_20251128.json",
+    "json_source_dir": "workflows/pdf_to_json/output/textbooks_json",
     "chapters": 49,
-    "pages": 991
+    "pages": 991,
+    "description": "Primary test book for extraction profile comparison"
+  },
+  
+  "naming_convention": {
+    "suffix_format": "_{PROFILE}",
+    "profiles": {
+      "baseline": "BASELINE",
+      "current": "CURRENT", 
+      "moderate": "MODERATE",
+      "aggressive": "AGGRESSIVE"
+    },
+    "examples": {
+      "metadata": "AI Engineering Building Applications_metadata_BASELINE.json",
+      "taxonomy": "AI-ML_taxonomy_BASELINE.json",
+      "enriched": "AI Engineering Building Applications_enriched_BASELINE.json",
+      "aggregate": "aggregate_BASELINE.json"
+    }
   }
 }
