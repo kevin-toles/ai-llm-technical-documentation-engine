@@ -14,25 +14,25 @@
       "Chip Huyen",
       "Foundation",
       "Building",
-      "model",
       "Building Applications",
       "Engineering Building Applications",
       "Models Chip Huyen",
-      "build",
       "Foundation Models Chip",
-      "Solutions"
+      "Solutions",
+      "Chip",
+      "DMLS"
     ],
     "concepts": [
       "models",
-      "modeling",
       "engineering",
       "engineer",
-      "engineers",
       "book",
-      "books",
       "applications",
       "application",
-      "developer"
+      "developer",
+      "including",
+      "include",
+      "production"
     ]
   },
   {
@@ -45,7 +45,6 @@
       "language model",
       "model",
       "Masked language model",
-      "models",
       "language",
       "Book",
       "Autoregressive language model",
@@ -56,19 +55,20 @@
       "autoregressive language",
       "tokens",
       "engineering",
-      "finetuning"
+      "finetuning",
+      "data"
     ],
     "concepts": [
       "models",
-      "model",
-      "modeling",
       "chapters",
       "token",
-      "tokens",
-      "tokenization",
       "examples",
-      "data",
-      "application"
+      "application",
+      "applications",
+      "likely",
+      "engineer",
+      "engineering",
+      "book"
     ]
   },
   {
@@ -79,7 +79,6 @@
     "summary": "A language model might be able to complete it with: “Likely spam”, which\nturns this language model into a spam classifier.\nLanguage modeling is just one of many ML algorithms.\nThe answer is that language models can be trained using self-supervision,\nwhile many other models require supervision.\nlabeling bottleneck to create larger datasets for models to learn from,\nmodel to learn, and then train the model on these examples.\nthe model can be applied to new data.\ndetection model, you use examples of transactions, each labeled with\nOnce the model learns from these examples, you can\nuse this model to predict whether a transaction is fraudulent.\nThe success of AI models in the 2010s lay in supervision.\nThe model that\nto-Latin model is more expensive.\nsupervision, instead of requiring explicit labels, the model can infer labels\nLanguage modeling is self-supervised because each\ncontexts the model can use to predict these labels.\nTraining samples from the sentence “I love street food.” for language modeling.\nThese markers are necessary for a language model to work with\nthe model.\nlanguage models know when to end their responses.\nSelf-supervised learning means that language models can learn from text\nmodel have to be to be considered large?\nA parameter is a variable within an ML model that is\nWhen OpenAI’s first generative pre-trained transformer (GPT) model came\nwriting of this book, a model with 100 billion parameters is considered\nusually taken for granted: Why do larger models need more data?\nmodels have more capacity to learn, and, therefore, would need more\nYou can train a large model\nFrom Large Language Models to Foundation\nModels\nWhile language models are capable of incredible tasks, they are limited to\nIncorporating more data modalities into language models makes them\ncharacterized as foundation models.\nimportance of these models in AI applications and the fact that they can be\nFoundation models mark a breakthrough from the traditional structure of AI\nText-only models can be used for tasks such as\nImage-only models can be used for object\nA model that can work with more than one data modality is also called a\nmultimodal model.\nA generative multimodal model is also called a large\nmultimodal model (LMM).\nIf a language model generates the next token\nconditioned on text-only tokens, a multimodal model generates the next\nthat the model supports, as shown in Figure 1-3.\nA multimodal model can generate the next token using information from both text and\nJust like language models, multimodal models need data to scale up.\nsupervision works for multimodal models too.\nlanguage-image model CLIP (OpenAI, 2021).\nThis book uses the term foundation models to refer to both large language models and large\nmultimodal models.\nCLIP is an embedding model, trained to produce joint\nembedding models like CLIP are the backbones of generative multimodal\nFoundation models also mark the transition from task-specific models to\ngeneral-purpose models.\nPreviously, models were often developed for\nA model trained for\nFoundation models, thanks to their scale and the way they are trained, are\nmodel to maximize its performance on a specific task.\nidea of the types of tasks a foundation model can perform.\nAn out-of-the-box model might be\nThere are multiple techniques you can use to get the model to generate what\nmodel can leverage to generate better descriptions.\nengineering techniques that you can use to adapt a model to your needs.\nAdapting an existing powerful model to your task is generally a lot easier\nthan building a model for your task from scratch—for example, ten\nFoundation models make it cheaper to develop AI applications and reduce\nExactly how much data is needed to adapt a model depends\nFrom Foundation Models to AI Engineering\nAI engineering refers to the process of building applications on top of\nfoundation models.\nPeople have been building AI applications for over a\nIf traditional ML engineering involves developing ML models, AI\nFoundation models are powerful not just because they can do\nAI is used\nAI can even be\nall of which will help train even more powerful models in the future.\nAs AI applications\nThe model as a service approach popularized by OpenAI and other\nmodel providers makes it easier to leverage AI to build applications.\nNot only that, AI also makes it possible to build applications with\nwork with these models in plain English instead of having to use a\ndevelop AI applications.\nBecause of the resources it takes to develop foundation models, this process\nmajority of people will be to adapt these models for specific applications.\non top of foundation models, including ML engineering, MLOps, AIOps,\nEngineering Versus ML Engineering”, working with foundation models\ndiffers from working with traditional ML models in several important\n(engineering) foundation models to do what you want.\nfoundation models about what term they would use to describe what they\nFoundation Model Use Cases\nmodels seems endless.\nAI for that.\n(AWS) has categorized enterprise generative AI use cases into three\nto AI models directly, whereas β and ζ refer to exposures to AI-powered software.\nAs you learn more about how to build foundation models in\nform a better picture of what use cases foundation models can and should",
     "keywords": [
       "models",
-      "model",
       "foundation models",
       "language models",
       "engineering",
@@ -92,19 +91,20 @@
       "tasks",
       "cases",
       "BOS",
-      "cases foundation models"
+      "cases foundation models",
+      "image"
     ],
     "concepts": [
       "modeling",
-      "models",
       "generating",
-      "generative",
       "generates",
-      "generate",
-      "generated",
       "generation",
       "labeled",
-      "labeling"
+      "engineering",
+      "engineers",
+      "foundation",
+      "trained",
+      "data"
     ]
   },
   {
@@ -123,24 +123,24 @@
       "n’t",
       "generate",
       "Coding",
-      "case",
       "Information aggregation",
       "bots",
       "make",
       "Image",
-      "Conversational bots"
+      "Conversational bots",
+      "Students"
     ],
     "concepts": [
       "ais",
       "generative",
-      "generation",
-      "generating",
-      "generated",
       "generate",
-      "generates",
       "generations",
       "data",
-      "applications"
+      "applications",
+      "application",
+      "users",
+      "coding",
+      "code"
     ]
   },
   {
@@ -152,7 +152,6 @@
     "keywords": [
       "model",
       "engineering",
-      "models",
       "foundation models",
       "model development",
       "Google Photos",
@@ -164,19 +163,20 @@
       "training",
       "development",
       "layer",
-      "model development layers"
+      "model development layers",
+      "foundation"
     ],
     "concepts": [
       "model",
-      "models",
-      "modeling",
       "products",
-      "product",
       "production",
       "train",
-      "training",
-      "trained",
-      "application"
+      "application",
+      "applications",
+      "engineers",
+      "engineering",
+      "include",
+      "included"
     ]
   },
   {
@@ -188,7 +188,6 @@
     "keywords": [
       "model",
       "Foundation models",
-      "models",
       "engineering",
       "data",
       "prompt engineering",
@@ -200,19 +199,20 @@
       "Dataset engineering",
       "important",
       "prompt",
-      "Gemini"
+      "Gemini",
+      "n’t"
     ],
     "concepts": [
       "model",
-      "models",
-      "modeling",
       "data",
       "engineering",
       "engineers",
-      "engineer",
       "ais",
       "train",
-      "trained"
+      "developers",
+      "including",
+      "include",
+      "chapters"
     ]
   },
   {
@@ -224,7 +224,6 @@
     "keywords": [
       "model",
       "Common Crawl",
-      "models",
       "English",
       "transformer architecture",
       "attention mechanism",
@@ -236,19 +235,20 @@
       "architecture",
       "tokens",
       "input",
-      "token"
+      "Crawl",
+      "input tokens"
     ],
     "concepts": [
       "models",
-      "model",
-      "modeling",
       "languages",
-      "language",
       "data",
       "english",
-      "tokens",
       "tokenization",
-      "token"
+      "architectural",
+      "architecture",
+      "transformer",
+      "transformations",
+      "perform"
     ]
   },
   {
@@ -259,7 +259,6 @@
     "summary": "The number of transformer blocks in a transformer model is often referred\nto as that model’s number of layers.\nA transformer-based language model is\nindices determines the model’s maximum context length.\nmodel’s context length without increasing the number of position\nFigure 2-6 visualizes a transformer model architecture.\ntransformer model is determined by the dimensions of its building blocks.\n(Dubey et al., 2024) models.\nThe dimension values of different Llama models.\nModel\nModel dim\nOther model architectures\nWhile the transformer model dominates the landscape, it’s not the only\nWhile transformer-based models are dominating, as\nhave the same context length limitation that transformer-based models have.\n(state space models) (Gu et al., 2021a).\nmodel sizes.\nOn language modeling, Mamba-3B outperforms\nmixture-of-experts model with 52B total available parameters (12B\nstrong performance on standard language model benchmarks and long-\nModel Size\nend of a model name.\nLlama, a model family developed by Meta, with 13 billion parameters.\nIn general, increasing a model’s parameters increases its capacity to learn,\nresulting in better models.\nAs the community better understands how to train large models, newer-generation models tend to\nto train and run this model.\nFor example, if a model has 7 billion\nThe number of parameters can be misleading if the model is sparse.\nsparse model has a large percentage of zero-value parameters.\nparameter model that is 90% sparse only has 700 million non-zero\nThis means that a large sparse model can require less compute\nWhile this model has\nparameter model.\nA larger model can also underperform a smaller model if it’s not trained on\nImagine a 13B-param model trained on a dataset consisting of\nthan a much smaller model trained on more data.\nWhen discussing model size, it’s important to consider the size of the data it\nFor most models, dataset sizes are measured by the number\nFor language models, a training sample can be a sentence, a Wikipedia\nmodels can have different tokenization processes, resulting in the same\ndataset having different numbers of tokens for different models.\nthe unit that a model operates on, knowing the number of tokens in a dataset\nhelps us measure how much a model can potentially learn from that data.\nmodels:\nThe number of tokens in a model’s dataset isn’t the same as its number of\nmodel is trained on.\nIf a dataset contains 1 trillion tokens and a model is\nexamples of the number of training tokens for models with different\nExamples of the number of training tokens for models with different numbers of\nModel\nPre-training large models requires compute.\nA more standardized unit for a model’s compute requirement is FLOP, or\nIn summary, three numbers signal a model’s scale:\nNumber of parameters, which is a proxy for the model’s learning capacity.\nNumber of tokens a model was trained on, which is a proxy for how much a model learned.\nbigger models perform worse?\nAccording to their paper, models trained to be more aligned “are much\nmodels perform worse.\nScaling law: Building compute-optimal models\n1. Model performance depends on the model size and the dataset size.\n2. Bigger models and bigger datasets require more compute.\nstart with an arbitrarily large model size and see how much it would cost.\nout the best model performance you can afford.\nof FLOPs, what model size and dataset size would give the best\nGiven a compute budget, the rule that helps calculate the optimal model\nTo study the relationship between model size, dataset\nsize, compute budget, and model performance, the authors trained 400\nlanguage models ranging from 70 million to over 16 billion parameters on 5\nneed the number of training tokens to be approximately 20 times the model\nThis means that a 3B-parameter model needs approximately 60B\nThe model size and the number of training tokens should be\nscaled equally: for every doubling of the model size, the number of training\nGraphs that depict the relationships between training loss, a model’s number of\nparameters, FLOPs, and number of training tokens.\nThe scaling law was developed for dense models trained on predominantly\nThe scaling law optimizes model quality given a compute budget.\nOn the topic of model performance given a compute budget, it’s worth\nnoting that the cost of achieving a given model performance is decreasing.\nWhile the cost for the same model performance is decreasing, the cost for\nmodel performance improvement remains high.\nan order of magnitude more data, compute, or energy than a model with a\nFor large vision models,\nHowever, small performance changes in language modeling loss or\nThe performance of a model depends heavily on the values of its\nto train a model multiple times with different sets of hyperparameters and\nmodels as training them once is resource-draining enough.\nA parameter can be learned by the model during the training process.\nmodel learns.\nHyperparameters to configure the model include the number\nof layers, the model dimension, and vocabulary size.\ncontrol how a model learns include batch size, number of epochs, learning\nhyperparameters on models of different sizes, usually much smaller than the\ntarget model size, and then extrapolate how these hyperparameters would\nwork on the target model size.\na 6.7B model.\nexperience and resources to study the training of large models.",
     "keywords": [
       "model",
-      "models",
       "Model Size",
       "number",
       "training",
@@ -272,19 +271,20 @@
       "transformer model",
       "transformer",
       "billion",
-      "Model performance"
+      "Model performance",
+      "billion parameters"
     ],
     "concepts": [
       "model",
-      "models",
-      "modeling",
       "training",
-      "train",
-      "trained",
       "parameters",
-      "parameter",
       "scale",
-      "scales"
+      "scaling",
+      "computation",
+      "compute",
+      "data",
+      "perform",
+      "performance"
     ]
   },
   {
@@ -296,11 +296,9 @@
     "keywords": [
       "model",
       "data",
-      "models",
       "reward model",
       "Preference finetuning",
       "response",
-      "responses",
       "training data",
       "Finetuning",
       "pre-trained model",
@@ -308,19 +306,21 @@
       "demonstration data",
       "training",
       "RLHF",
-      "comparison data"
+      "comparison data",
+      "human",
+      "human preference"
     ],
     "concepts": [
       "model",
-      "modeling",
       "train",
       "responses",
-      "response",
       "responsibilities",
       "labeling",
-      "labeled",
       "generated",
-      "generate"
+      "generate",
+      "prompt",
+      "quality",
+      "scale"
     ]
   },
   {
@@ -333,30 +333,30 @@
       "model",
       "outputs",
       "language model",
-      "models",
       "reward model",
       "probabilities",
       "Sampling",
       "probability",
-      "output",
       "token",
       "temperature",
-      "tokens",
       "logits",
       "Test Time Compute",
-      "multiple outputs"
+      "multiple outputs",
+      "Time Compute",
+      "time",
+      "SFT model"
     ],
     "concepts": [
       "model",
-      "models",
-      "outputs",
       "samples",
       "sampling",
-      "sample",
-      "sampled",
       "probabilities",
       "probability",
-      "generation"
+      "generation",
+      "generations",
+      "generating",
+      "token",
+      "temperature"
     ]
   },
   {
@@ -367,11 +367,9 @@
     "summary": "You can guide a model to generate structured outputs at different layers of\nbest if the model is already pretty good at generating structured outputs and\nmodel to generate outputs in any format.\nHowever, whether a model can\nA few percentage points of invalid model outputs can still be\noutput, there will be at least two model queries: one to generate the output\nWhen I started working with foundation models, I noticed the\nmeans if you find the common mistakes a model makes, you can potentially\nhappens if a model’s outputs are already mostly correctly formatted, with\nAt a high level, to generate a token, the model samples among values that\nRecall that to generate a token, your model first\nneeded for constrained sampling are better invested in training models to\nFinetuning a model on examples following your desirable format is the\nmost effective and general approach to get models to generate outputs in\nfinetuning doesn’t guarantee that the model will always output the expected\nmodel’s architecture before finetuning.\ncan append a classifier head to the foundation model’s architecture to make\nsure that the model outputs only one of the pre-specified classes.\nthe model, such as this classifier head.\nthe model, by itself, isn’t capable of generating structured outputs.\nHowever, as models become more powerful, we can expect them to get\nget models to output exactly what we need with minimal prompting, and\nThe way AI models sample their responses makes them probabilistic.\nIf you ask an AI model the same question twice, its answer can\nIf an AI model thinks that Vietnamese cuisine has a 70% chance of\nInconsistency is when a model generates very different responses for the\nHallucination is when a model gives a\nThe model later will probabilistically output\nwho doesn’t believe that US presidents are aliens, the model is making this\nFoundation models are usually trained using a large amount of data.\n1. Same input, different outputs: Giving the model the same prompt twice\n2. Slightly different input, drastically different outputs: Giving the model a\nThe same input can produce different outputs in the same model.\nmodel will be consistent 100% of the time.\nIf you host your models, you have some\nHowever, if you use a model API\nFixing the model’s output generation variables is\nstill a good practice, but it won’t force the model to generate the same\nIt is, however, possible to get models to\nhallucination was a common phenomenon for generative models even\nbefore the term foundation model and the transformer architecture were\nA model samples outputs from all probable options.\nmodel can output something that is believed to have never been seen before\nhypotheses about why language models hallucinate.\n2021, is that a language model hallucinates because it can’t differentiate\nImagine that you give the model the prompt: “Who’s Chip Huyen?” and the\nfirst sentence the model generates is: “Chip Huyen is an architect.” The\nnext token the model generates will be conditioned on the sequence:\nthe model can expand upon it and generate outrageously wrong facts.\nFigure 2-24 shows an example of self-delusion by the model LLaVA-v1.5-\nIn its response, the model\nmaking an incorrect assumption, a model can continue hallucinating to\ninitial wrong assumptions can cause the model to make mistakes on\nwhich the model is made to differentiate between user-provided prompts\ngenerated by the model (called the model’s actions).\nDuring SFT, models are trained to mimic responses written by labelers.\nthese responses use the knowledge that the labelers have but the model\ndoesn’t have, we’re effectively teaching the model to hallucinate.\nwrite so that the model knows that the responses aren’t made up, we can\nperhaps teach the model to use only what it knows.\nhallucinations can be fixed by forcing a model to give answers based on\nthe reward model is trained using only comparisons—response A is better\nargued that a better reward function that punishes a model more for making\nalone model.\nHallucination is worse for the model that uses both RLHF and SFT (InstructGPT)\ncompared to the same model that uses only SFT (Ouyang et al., 2022).\nBased on the assumption that a foundation model knows what it knows,\n‘Sorry, I don’t know.’” Asking models for concise responses also seems to\nhelp with hallucinations—the fewer tokens a model has to generate, the less\nmodel hallucinates so that we won’t serve those hallucinated responses to\nfoundation model.\ntraining details in favor of modeling factors that help you determine what\nmodels to use and how to use them.\nA crucial factor affecting a model’s performance is its training data.\nmodels require a large amount of training data, which can be expensive and\nModel providers, therefore, often leverage\nThis leads to models that can perform well on\ncurate training data to develop models targeting specific languages,\nWhile model\narchitecting the model.\nThe chapter looked into modeling choices, such as\nmodel architecture and model size.\nlanguage-based foundation models is transformer.\nThe scale of a model can be measured by three key numbers: the number of\nneeded to train a model are the model size and the data size.\nCurrently, scaling up a model generally makes it better.\ntraining, the resulting model might produce outputs that don’t align with\nby which a model generates output tokens.\nSampling makes AI models\nThis probabilistic nature is what makes models like ChatGPT\nWorking with AI models requires building your workflows around their\nEvaluation for foundation models is\ndidn’t include as much data in the Chinese language or China-centric narratives to train their models.\nML fundamentals related to model training are outside the scope of this book.\nFor example, self-supervision—where a model\nmodel’s parameters are updated during training based on the error—is discussed in Chapter 7.\ncauses them to shrink toward zero, making it difficult for the model to learn.\nWhy do simple activation functions work for complex models like LLMs?\nThe model just needs a nonlinear function to\nChapter 7 discusses how to calculate a model’s memory usage.\nAs of this writing, large models are typically pre-trained on only one epoch of data.\nA friend used this analogy: a pre-trained model talks like a web page, not a human.\nthe risk of people using AI to spread misinformation, you might want to try to build a model that’s as\nPaid model APIs often charge per number of output tokens.",
     "keywords": [
       "model",
-      "models",
       "outputs",
       "model generates",
       "n’t",
-      "output",
       "hallucinations",
       "model generates output",
       "foundation models",
@@ -380,19 +378,21 @@
       "data",
       "training data",
       "generate",
-      "sampling"
+      "sampling",
+      "structured outputs",
+      "model training"
     ],
     "concepts": [
       "model",
-      "models",
-      "modeling",
       "hallucinations",
       "hallucination",
       "hallucinate",
-      "hallucinates",
       "hallucinating",
-      "hallucinated",
-      "generating"
+      "generating",
+      "generation",
+      "generates",
+      "generator",
+      "output"
     ]
   },
   {
@@ -404,7 +404,6 @@
     "keywords": [
       "language model",
       "model",
-      "models",
       "language",
       "cross entropy",
       "perplexity",
@@ -416,19 +415,20 @@
       "Training",
       "evaluating foundation models",
       "token",
-      "cross"
+      "cross",
+      "language model learns"
     ],
     "concepts": [
       "models",
-      "model",
-      "modeling",
       "evaluation",
       "evaluate",
       "evaluating",
       "evaluators",
       "evaluations",
-      "evaluated",
-      "perplexity"
+      "perplexity",
+      "tokens",
+      "data",
+      "language"
     ]
   },
   {
@@ -443,28 +443,28 @@
       "reference",
       "reference data",
       "reference responses",
-      "embeddings",
       "Semantic similarity",
       "response",
       "Lexical similarity",
       "functional correctness",
       "data",
-      "responses",
       "model",
       "text",
-      "generated"
+      "generated",
+      "similarity score",
+      "generated response"
     ],
     "concepts": [
       "embedding",
-      "embeddings",
       "model",
-      "models",
-      "modeling",
       "text",
-      "texts",
       "similarity",
-      "similar",
-      "ais"
+      "ais",
+      "generation",
+      "generated",
+      "generates",
+      "evaluation",
+      "evaluating"
     ]
   },
   {
@@ -477,30 +477,30 @@
       "judge",
       "model",
       "answer",
-      "judges",
-      "models",
       "response",
       "generated answer",
-      "responses",
       "score",
       "prompt",
       "evaluation",
       "generated",
       "question",
       "evaluate",
-      "generated response"
+      "generated response",
+      "scoring",
+      "truth answer",
+      "reference response"
     ],
     "concepts": [
       "models",
-      "model",
       "score",
-      "scores",
       "scoring",
       "evaluate",
       "evaluation",
-      "evaluates",
       "evaluator",
-      "evaluating"
+      "evaluating",
+      "responses",
+      "judges",
+      "judged"
     ]
   },
   {
@@ -511,7 +511,6 @@
     "summary": "leaderboard that ranks models using scores computed from pairwise model\nMany model providers use comparative evaluation to evaluate their models\nAn evaluator,\nComparative evaluation shouldn’t be confused with A/B testing.\ncomparative evaluation, a user sees outputs from multiple models at the\nModel A\nModel B\nModel 1\nModel 2\nModel 1\nModel 3\nModel 10\nModel 10\nModel 7\nModel 4\nModel 4\nThe probability that model A is preferred over model B is the win rate of A\nIf there are only two models, ranking them is straightforward.\nThe model\nThe more models there are, the more\nModel pair #\nModel A\nModel B\nModel 1\nModel 2\nModel 1\nModel 3\nModel 1\nModel 4\nModel 1\nModel 5\nModel 2\nModel 3\nModel 2\nModel 4\nModel 2\nModel 5\nModel 3\nModel 4\nModel 3\nModel 5\nModel 4\nModel 5\nranking of models.\nmodel from the comparative signals and then ranks models by their scores.\nComparative evaluation is new in AI but has been around for almost a\nadapted to evaluating AI models, such as Elo, Bradley–Terry, and TrueSkill.\nLMSYS’s Chatbot Arena originally used Elo to compute models’ ranking\nlikely to win in a match against the lower-ranked model.\nIf model A ranks\nhigher than model B, users should prefer model A to model B more than\nranking is good, at least for model pairs with sufficient matches.\nChallenges of Comparative Evaluation\nscores to rank models is easy.\nWith comparative evaluation, both signal\ngathering and model ranking are challenging.\ncompare grows quadratically with the number of models.\nLMSYS evaluated 57 models using 244,000 comparisons.\ntransitivity can happen because different model pairs are evaluated by\nThere’s also the challenge of evaluating new models.\nevaluation, only the new model needs to be evaluated.\nevaluation, the new model has to be evaluated against existing models,\nwhich can change the ranking of existing models.\nThis also makes it hard to evaluate private models.\nIf you want to use comparative evaluation for your model,\nevaluation for you.\nHowever, not all model pairs need to be equally compared.\nOnly after voting is done are the model\nyou might prefer that the model refuses.\nSecond, crowdsourcing comparisons require users to evaluate models\nmodels’ performance.\nEvaluating models using too many simple prompts\nmodels using only these hard prompts.\nevaluators on the criteria to compare two responses or train them to use\nand let users evaluate models during their workflows.\nSome teams prefer AI to human evaluators.\nWe need a model that is good enough.\nwhich model is better.\nmodel is good enough for our use case.\nConsider model B, which wins against A 51%\nIf model B\nThe Future of Comparative Evaluation\nAs models\nimpossible for human evaluators to give model responses concrete scores.\nComparative evaluation can give us discriminating signals about models\nevaluating open-ended, powerful models is challenging.\nto evaluate than traditional ML models.\nevaluation, or both.\nWhen evaluating models, you can evaluate each model independently, and\ncomparative signals: which of the two models is better?\nAI evaluation.\nmotivated the development of preference models: specialized AI judges that\nmodels.\nA 2023 study by a16z showed that 6 out of 70 decision makers evaluated models by word of mouth.\nmodels, we’ll have no one qualified to evaluate future models.\nWithout Reference text), an evaluation method that leverages stronger language models to\nthat the model Llama-13b has a score of 800.\nno one has admitted to me that they tried to game the ranking, several model developers have told me\nevaluate models in the context of your application.\nuse these approaches to evaluate models for your applications.\nintroduced to evaluate these models along different criteria.\nmodels.",
     "keywords": [
       "model",
-      "models",
       "comparative evaluation",
       "evaluation",
       "comparative",
@@ -524,19 +523,20 @@
       "human",
       "evaluate models",
       "Elo",
-      "LMSYS Chatbot Arena"
+      "LMSYS Chatbot Arena",
+      "scores"
     ],
     "concepts": [
       "model",
-      "modeling",
       "evaluate",
       "evaluator",
       "evaluating",
-      "evaluators",
-      "evaluated",
       "evaluations",
       "compare",
-      "compared"
+      "compared",
+      "users",
+      "ranking",
+      "human"
     ]
   },
   {
@@ -551,28 +551,28 @@
       "factual",
       "evaluate",
       "consistency",
-      "models",
       "model outputs",
       "evaluate factual consistency",
       "application",
       "output",
       "tasks",
-      "outputs",
       "metrics",
       "evaluated",
-      "capabilities"
+      "capabilities",
+      "n’t",
+      "evaluation"
     ],
     "concepts": [
       "evaluation",
       "evaluate",
       "evaluated",
-      "evaluating",
       "evaluator",
       "model",
-      "models",
       "generative",
       "generation",
-      "generate"
+      "generate",
+      "factuality",
+      "factually"
     ]
   },
   {
@@ -583,10 +583,8 @@
     "summary": "Figure 4-2 shows the performance of several models on this benchmark, as\nThe performance of different models on TruthfulQA, as shown in GPT-4’s technical\nOther than factual consistency, there are many ways in which a model’s\nChapter 5 also discusses more ways in which AI models can be unsafe and\nmodel generating only content that supports this ideology.\nhave shown that models, depending on their training, can be imbued\nPolitical and economic leanings of different foundation models (Feng et al., 2023).\nThese model providers also need to develop\nMany models developed to detect toxicity in\nExamples of these models are Facebook’s hate\nmodels specialized in different languages, such as Danish and Vietnamese.\nnaturally occurring prompts that are likely to get models to generate toxic\nInstruction-Following Capability\nInstruction-following measurement asks the question: how good is this\nmodel at following the instructions you give it?\nIf the model is bad at\nfinetuned for following instructions.\nMore powerful models are generally\nbetter at following instructions.\ninstructions than GPT-3.5, and similarly, Claude-v2 is better at following\nLet’s say you ask the model to detect the sentiment in a tweet and output\nThe model seems to understand\ncapability to do sentiment analysis on tweets, but its instruction-following\nInstruction-following capability is essential for applications that require\nFor example, if you ask a model to classify an input as\nA, B, or C, but the model outputs “That’s correct”, this output isn’t very\nBut instruction-following capability goes beyond generating structured\nIf you ask a model to use only words of at most four characters, the\nmodel’s outputs don’t have to be structured, but they should still follow the\ninstruction to contain only words of at most four characters.\nThe model they use needs the ability to follow the instruction to work with\nImagine you ask a model to write a lục bát poem, which is a\nIf the model fails to do so, it can either be because\nHow well a model performs depends on the quality of its instructions, which makes it hard to\nevaluate AI models.\nWhen a model performs poorly, it can either be because the model is bad or the\nInstruction-following criteria\nDifferent benchmarks have different notions of what instruction-following\nINFOBench, measure models’ capability to follow a wide range of\ninstructions, which are to give you ideas on how to evaluate a model’s\nability to follow your instructions: what criteria to use, what instructions to\nThe Google benchmark IFEval, Instruction-Following Evaluation, focuses\non whether the model can produce outputs following an expected format.\nIf you ask a model to write a\nif the output contains this word; hence, this instruction is automatically\nAutomatically verifiable instructions proposed by Zhou et al.\nto evaluate models’\ninstruction-following capability.\nInstruction\nInstruction\nInstruction\nInstruction\nInstruction\nInstruction\nwhat instruction-following means.\nOn top of evaluating a model’s ability to\nmodel’s ability to follow content constraints (such as “discuss only climate\nIf you instruct a\nmodel to “use language appropriate to a young audience”, how do you\nA model is considered to successfully follow an instruction if its output\nand the evaluator determines that a model’s output meets two of them, the\nmodel’s score for this instruction is 2/3.\nThe final score for a model on this\nbenchmark is the number of criteria a model gets right divided by the total\nnumber of criteria for all instructions.\nhow good different models are at following instructions.\nA model that\nyour instructions.\nYou should curate your own benchmark to evaluate your model’s capability to follow your\nIf you need a model to output YAML, include YAML\ninstructions in your benchmark.\nevaluate the model on this instruction.\nasking the model to assume a fictional character or a persona.\na model’s outputs, as discussed in Chapter 5\nevaluate roleplaying capability include RoleLLM (Wang et al., 2023) and\ntrained a reward model to evaluate each roleplaying aspect on a five-point\nRoleLLM evaluates a model’s ability to emulate a persona using both\nevaluate whether your model stays in character.\nmight be able to create heuristics to evaluate the model’s outputs.\nthe average of the model’s outputs.\nFor example, if a model is supposed to\nprompt used by the RoleLLM AI judge to rank models based on their ability\nSystem Instruction:\nYou should rank the models based on\nThe models below are to play the role of\nneed to rank the following models based on the\nA model that generates high-quality outputs but is too slow and expensive\nWhen evaluating models, it’s important to balance\nmodel quality, latency, and cost.\nmodels if they provide better cost and latency.\nThere are multiple metrics for latency for foundation models, including but\nLatency depends not only on the underlying model but also on each prompt\nAutoregressive language models typically generate\nprompting, such as instructing the model to be concise, setting a stopping\nWhen evaluating models based on latency, it’s important to differentiate between the must-have and\nIf you use model APIs, they typically charge by tokens.\nchoose the largest models that can fit their machines.\nTherefore, many popular models are those that max out these memory\nIt’s not a coincidence that many models today have 7 billion\nIf you use model APIs, your cost per token usually doesn’t change much as\nHowever, if you host your own models, your cost per token can\nmakes more sense to use model APIs or to host their own models.\nTable 4-3 shows criteria you might use to evaluate models for your\nThe row scale is especially important when evaluating model\nAn example of criteria used to select models for a fictional application.\nOverall model",
     "keywords": [
       "model",
-      "models",
       "instructions",
       "outputs",
-      "output",
       "Latency",
       "Capability",
       "role",
@@ -596,19 +594,21 @@
       "Roleplaying",
       "Instruction-Following Capability",
       "format",
-      "Cost"
+      "Cost",
+      "models based",
+      "response"
     ],
     "concepts": [
       "models",
-      "model",
       "instruction",
       "instructions",
       "instruct",
-      "instructing",
       "generation",
       "generated",
-      "generating",
-      "generate"
+      "generate",
+      "outputs",
+      "evaluation",
+      "evaluate"
     ]
   },
   {
@@ -620,7 +620,6 @@
     "keywords": [
       "open source models",
       "model",
-      "models",
       "open source",
       "source models",
       "model APIs",
@@ -632,19 +631,20 @@
       "data",
       "API providers",
       "commercial model",
-      "model providers"
+      "model providers",
+      "n’t"
     ],
     "concepts": [
       "model",
-      "open",
       "data",
       "license",
       "licensing",
-      "licensed",
       "apis",
       "api",
       "providers",
-      "provides"
+      "provides",
+      "useful",
+      "typically"
     ]
   },
   {
@@ -656,8 +656,6 @@
     "keywords": [
       "Benchmarks",
       "model",
-      "models",
-      "Benchmark",
       "Data",
       "Hugging Face",
       "evaluation",
@@ -668,19 +666,21 @@
       "leaderboard",
       "training",
       "application",
-      "Face"
+      "Face",
+      "n’t",
+      "evaluate"
     ],
     "concepts": [
       "benchmarks",
-      "benchmark",
       "model",
-      "models",
       "evaluation",
       "evaluate",
       "evaluating",
-      "evaluated",
-      "evaluates",
-      "data"
+      "data",
+      "questions",
+      "question",
+      "reasoning",
+      "scores"
     ]
   },
   {
@@ -694,7 +694,6 @@
       "evaluation pipeline",
       "model",
       "data",
-      "models",
       "application",
       "evaluation metrics",
       "Evaluation Methods",
@@ -704,19 +703,20 @@
       "Factual consistency",
       "evaluation results",
       "pipeline",
-      "prompt engineering"
+      "prompt engineering",
+      "evaluate"
     ],
     "concepts": [
       "evaluate",
       "evaluation",
       "evaluating",
-      "evaluated",
       "models",
-      "model",
       "user",
-      "users",
       "data",
-      "scoring"
+      "scoring",
+      "score",
+      "prompt",
+      "different"
     ]
   },
   {
@@ -731,8 +731,6 @@
       "System Prompt",
       "User Prompt",
       "prompt engineering",
-      "prompts",
-      "models",
       "context",
       "System",
       "context length",
@@ -740,19 +738,21 @@
       "Learning",
       "template",
       "task",
-      "engineering"
+      "engineering",
+      "In-Context Learning",
+      "length"
     ],
     "concepts": [
       "prompt",
-      "prompts",
-      "prompting",
       "model",
-      "models",
       "context",
       "instruction",
       "instructions",
       "different",
-      "difference"
+      "difference",
+      "including",
+      "include",
+      "useful"
     ]
   },
   {
@@ -764,31 +764,31 @@
     "keywords": [
       "model",
       "prompt",
-      "prompts",
       "prompt engineering",
-      "models",
       "Context",
       "CoT",
       "Prompt Engineering Tools",
       "tools",
       "steps",
       "Output",
-      "outputs",
       "Prompt decomposition",
       "engineering",
-      "step"
+      "User",
+      "performance",
+      "model APIs",
+      "User prompt"
     ],
     "concepts": [
       "prompt",
-      "prompts",
-      "prompting",
       "model",
       "output",
-      "outputs",
       "outputting",
       "tools",
-      "tool",
-      "different"
+      "different",
+      "differ",
+      "steps",
+      "cot",
+      "context"
     ]
   },
   {
@@ -800,31 +800,31 @@
     "keywords": [
       "prompt",
       "model",
-      "prompts",
       "prompt engineering",
       "system prompt",
       "prompt injection",
       "API calls",
-      "models",
       "system",
       "Reverse Prompt",
       "reverse prompt engineering",
       "code",
       "instructions",
       "prompt attacks",
-      "prompt engineering tool"
+      "prompt engineering tool",
+      "application",
+      "tool"
     ],
     "concepts": [
       "prompt",
-      "prompts",
       "attacks",
-      "attacker",
-      "attack",
       "model",
-      "models",
       "likely",
       "application",
-      "applications"
+      "applications",
+      "user",
+      "code",
+      "emails",
+      "output"
     ]
   },
   {
@@ -837,30 +837,30 @@
       "model",
       "training data",
       "Data",
-      "models",
       "prompt",
       "training",
       "training data extraction",
       "attacks",
-      "prompts",
       "data extraction",
       "instructions",
       "system",
       "Prompt Attacks",
       "Extracting training data",
-      "n’t"
+      "n’t",
+      "prompt engineering",
+      "Information"
     ],
     "concepts": [
       "model",
-      "models",
       "prompt",
-      "prompts",
       "data",
       "attacks",
-      "attackers",
-      "attacker",
-      "attack",
-      "copyright"
+      "copyright",
+      "likely",
+      "instructions",
+      "instruction",
+      "information",
+      "context"
     ]
   },
   {
@@ -880,23 +880,23 @@
       "query",
       "context",
       "term-based retrieval",
-      "vectors",
       "model",
       "RAG system",
       "search",
-      "document"
+      "document",
+      "embedding"
     ],
     "concepts": [
       "retrieving",
       "retrieve",
-      "retrieves",
       "retrieval",
-      "retriever",
-      "retrieved",
-      "retrievers",
-      "retrievals",
       "term",
-      "terms"
+      "embedding",
+      "vectors",
+      "query",
+      "queries",
+      "context",
+      "search"
     ]
   },
   {
@@ -911,7 +911,6 @@
       "document",
       "documents",
       "retrieval",
-      "chunks",
       "chunk size",
       "context",
       "model",
@@ -920,19 +919,20 @@
       "RAG",
       "query rewriting",
       "retriever",
-      "chunk documents"
+      "chunk documents",
+      "SQL"
     ],
     "concepts": [
       "retrieval",
       "retriever",
       "retrieve",
-      "retrievers",
-      "retrieved",
       "query",
       "queries",
       "queried",
       "chunking",
-      "chunks"
+      "data",
+      "documents",
+      "document"
     ]
   },
   {
@@ -946,29 +946,29 @@
       "model",
       "tools",
       "plan",
-      "agents",
       "actions",
       "environment",
-      "tool",
       "task",
-      "plans",
       "Invoke SQL query",
-      "models",
       "planning",
       "generate",
-      "n’t"
+      "n’t",
+      "SQL query",
+      "SQL",
+      "Invoke SQL",
+      "query"
     ],
     "concepts": [
       "planning",
       "plans",
-      "plan",
       "tool",
       "models",
-      "model",
       "actions",
-      "action",
       "generative",
-      "generate"
+      "generate",
+      "generation",
+      "generator",
+      "code"
     ]
   },
   {
@@ -980,31 +980,30 @@
     "keywords": [
       "agent",
       "tool",
-      "tools",
       "Plan",
       "task",
       "function",
       "model",
       "generate",
       "products",
-      "agents",
       "query",
-      "product",
-      "models",
       "tool inventory",
-      "response"
+      "response",
+      "parameters",
+      "Reflection",
+      "best-selling products"
     ],
     "concepts": [
       "tool",
       "planning",
       "plans",
       "agent",
-      "agents",
       "different",
-      "differently",
       "differences",
       "task",
-      "tasks"
+      "functions",
+      "function",
+      "reflection"
     ]
   },
   {
@@ -1024,11 +1023,11 @@
       "RAG",
       "tool",
       "context",
-      "agents",
       "task",
-      "tools",
       "memory management",
-      "Tool failures"
+      "Tool failures",
+      "system",
+      "RAG system"
     ],
     "concepts": [
       "memory",
@@ -1037,10 +1036,10 @@
       "information",
       "tools",
       "model",
-      "models",
       "context",
       "task",
-      "tasks"
+      "likely",
+      "uses"
     ]
   },
   {
@@ -1052,31 +1051,31 @@
     "keywords": [
       "model",
       "finetuning",
-      "models",
       "base model",
       "data",
       "RAG",
       "finetune",
       "task",
       "finetuned model",
-      "tasks",
       "n’t",
       "RAG outperforms finetuning",
       "finetuning techniques",
       "training",
-      "Code Llama models"
+      "Code Llama models",
+      "base",
+      "finetune a model"
     ],
     "concepts": [
       "model",
-      "models",
       "data",
       "task",
-      "tasks",
       "base",
       "based",
       "prompt",
-      "prompting",
-      "prompts"
+      "learning",
+      "examples",
+      "required",
+      "require"
     ]
   },
   {
@@ -1091,28 +1090,28 @@
       "memory needed",
       "precision",
       "memory footprint",
-      "models",
       "finetuning",
       "bits",
       "Training",
       "trainable parameter",
       "needed",
       "parameters",
-      "parameter",
       "inference",
-      "trainable"
+      "Quantization",
+      "lower precision",
+      "format"
     ],
     "concepts": [
       "model",
-      "models",
       "precision",
       "precisely",
-      "precise",
       "memory",
       "trained",
-      "training",
-      "train",
-      "bits"
+      "bits",
+      "bit",
+      "value",
+      "quantization",
+      "parameters"
     ]
   },
   {
@@ -1133,22 +1132,22 @@
       "matrix",
       "trainable",
       "PEFT",
-      "models",
       "LoRA adapters",
       "performance",
-      "number"
+      "number",
+      "Full"
     ],
     "concepts": [
       "models",
-      "parameters",
       "parameter",
       "memory",
-      "performance",
       "adapter",
-      "adapters",
-      "adaptation",
-      "adapt",
-      "matrices"
+      "matrices",
+      "rank",
+      "weight",
+      "trained",
+      "techniques",
+      "matrix"
     ]
   },
   {
@@ -1159,32 +1158,31 @@
     "summary": "Model\nModel Merging and Multi-Task Finetuning\nmodel, model merging allows you to create a custom model by combining\nmultiple models.\nModel merging offers you greater flexibility than\nYou can take two available models and merge them\nfinetune any or all of the constituent models before merging them together.\nWhile you don’t have to further finetune the merged model, its performance\nWithout finetuning, model merging\nThe goal of model merging is to create a single model that provides more\nFor example, if you have two models\na single model that is better than both of them on that task.\nFor example, if you have two models that can do\ndifferent tasks, they can be merged into one model that can do both tasks\nmodels.\nGiven two models that were finetuned on top of the same base\nOne important use case of model merging is multi-task finetuning.\nmodel merging, if you want to a finetune a model for multiple tasks, you\nmodel on this dataset to make the model learn all the tasks\nYou can finetune the model on each task separately but sequentially.\nAfter training a model on task A, train it on task B, and so on.\nassumption is that it’s easier for models to learn one task at a time.\nA model can forget how to do an old task\nModel merging offers another method for multi-task finetuning.\nfinetune the model on different tasks separately but in parallel.\nthese different models are merged together.\nseparately allows the model to learn that task better.\nModel merging is also appealing when you have to deploy models to\nInstead of squeezing multiple models for different tasks\nonto a device, you can merge these models together into one model that can\nModel merging is one way to do federated learning (McMahan et al.,\n2016), in which multiple devices train the same model using separate data.\nconstituent models.\nThe idea of combining models together to obtain better performance started\nalgorithms alone.” If model merging typically involves mixing parameters\nFigure 7-13 compares ensembling and model merging.\nJust like model\nHow ensembling and model merging work.\nMany model-merging techniques are experimental and might become\nModel merging approaches differ in how the constituent parameters are\nThree main approaches to model merging: summing, layer stacking, and concatenation.\nYou can mix these approaches when merging models, e.g., summing some\nThis approach involves adding the weight values of constituent models\nIf the parameters in two models are in\nidea that multiple models can be linearly combined to create a better one\nModel soups\nmultiple finetuned models can improve accuracy without increasing\nHowever, it’s more common to merge models by linearly\nWhile you can linearly combine any set of models, linear combination is\nthe most effective for models finetuned on top of the same base model.\nThe idea is that once you’ve finetuned a model for a specific task,\nsubtracting the base model from it should give you a vector that captures\nMerging Models Modulo Permutation Symmetries” (Ainsworth et al.,\n2022), and “Merging by Matching Models in Task Parameter Subspaces”\nIn the case of model\nmerging, the unknown value is the merged model, and the known values are the constituent models.\nBecause the formula for SLERP is mathy, and model-merging tools\nDuring finetuning, many models’ parameters are adjusted.\nmodel’s performance on the task.\noriginal value in the base model, effectively setting the corresponding task\nsubtracting the base model from the finetuned model.)\nThese redundant parameters, while not harmful to one model, might be\nharmful to the merged model.\npractice can significantly improve the quality of the final merged models.\nThe more models there are to merge, the more important pruning is because\nIn this approach, you take different layers from one or more models and\napproach, the merged models resulting from layer stacking typically require\nwhich was merged from two finetuned Llama 2-70B models, Xwin and\nIt took 72 out of 80 layers from each model and merged them\nLayer stacking can be used to train mixture-of-experts (MoE) models, as\nYou then further train the merged model along with the\nshowed that layer stacking can produce models that\nModel\n3. Further train this upscaled model toward the target performance.\nInstead of adding the parameters of the constituent models together in\nFinetuning frameworks and base models\nBase models",
     "keywords": [
       "Model",
-      "models",
       "Model Merging",
       "Merging",
       "task",
       "parameters",
       "Finetuning",
-      "merged",
       "constituent models",
       "base model",
       "task vector",
       "vector",
       "performance",
-      "merged model",
-      "layer"
+      "layer",
+      "multiple",
+      "merge"
     ],
     "concepts": [
-      "models",
       "model",
       "task",
-      "tasks",
       "merging",
       "merge",
-      "merged",
       "parameters",
-      "parameter",
-      "performance"
+      "performance",
+      "perform",
+      "combined",
+      "combine",
+      "combinations"
     ]
   },
   {
@@ -1197,7 +1195,6 @@
       "model",
       "finetuning",
       "data",
-      "models",
       "training",
       "Learning",
       "training data",
@@ -1208,19 +1205,20 @@
       "performance",
       "n’t",
       "loss",
-      "model learns"
+      "model learns",
+      "Finetuning frameworks"
     ],
     "concepts": [
       "models",
-      "model",
       "data",
-      "training",
       "train",
-      "trained",
-      "trains",
       "learning",
-      "learns",
-      "learn"
+      "performance",
+      "perform",
+      "response",
+      "responsible",
+      "memory",
+      "likely"
     ]
   },
   {
@@ -1232,7 +1230,6 @@
     "keywords": [
       "data",
       "model",
-      "models",
       "finetuning",
       "dataset",
       "training data",
@@ -1244,19 +1241,20 @@
       "Llama",
       "instructions",
       "data diversity",
-      "datasets"
+      "quality",
+      "n’t"
     ],
     "concepts": [
-      "data",
       "model",
-      "models",
       "examples",
       "dataset",
       "user",
-      "users",
       "instructions",
       "instruction",
-      "perform"
+      "perform",
+      "performance",
+      "diverse",
+      "diversity"
     ]
   },
   {
@@ -1273,26 +1271,26 @@
       "synthetic data",
       "model",
       "instruction data",
-      "models",
       "Instruction data synthesis",
       "Synthesis",
       "Data synthesis generates",
-      "synthesis generates data",
       "data synthesis techniques",
       "synthetic",
-      "synthesize data"
+      "synthesize data",
+      "synthesize instruction data",
+      "instruction"
     ],
     "concepts": [
       "data",
       "generate",
-      "generates",
       "generated",
       "generators",
-      "generating",
       "generation",
-      "generator",
       "models",
-      "model"
+      "ais",
+      "dataset",
+      "simulate",
+      "simulation"
     ]
   },
   {
@@ -1305,7 +1303,6 @@
       "Data",
       "model",
       "synthetic data",
-      "models",
       "synthetic",
       "generated data",
       "AI-generated data",
@@ -1316,19 +1313,20 @@
       "model collapse",
       "training",
       "quality",
-      "low-quality data"
+      "low-quality data",
+      "real data"
     ],
     "concepts": [
       "model",
-      "models",
       "data",
       "training",
-      "train",
-      "trained",
       "instruct",
       "instructions",
       "instruction",
-      "generate"
+      "generate",
+      "generated",
+      "generation",
+      "generations"
     ]
   },
   {
@@ -1343,28 +1341,28 @@
       "inference",
       "inference service",
       "memory",
-      "models",
       "tokens",
       "n’t",
-      "token",
       "users",
       "memory bandwidth-bound",
       "latency",
       "TTFT",
       "Inference Optimization",
-      "requests"
+      "requests",
+      "time",
+      "output tokens"
     ],
     "concepts": [
       "model",
-      "models",
       "generating",
-      "generated",
       "generation",
       "generate",
       "generators",
-      "generates",
       "latency",
-      "users"
+      "users",
+      "different",
+      "difference",
+      "differs"
     ]
   },
   {
@@ -1387,20 +1385,20 @@
       "Utilization",
       "MBU",
       "GPU memory",
-      "chip",
-      "bandwidth"
+      "bandwidth",
+      "Throughput"
     ],
     "concepts": [
-      "memory",
       "compute",
       "computing",
-      "computed",
-      "computational",
       "computations",
-      "computation",
       "typically",
       "typical",
-      "chips"
+      "chips",
+      "throughput",
+      "model",
+      "processing",
+      "process"
     ]
   },
   {
@@ -1414,7 +1412,6 @@
       "tokens",
       "target model",
       "draft model",
-      "token",
       "attention",
       "cache",
       "draft tokens",
@@ -1424,19 +1421,20 @@
       "Inference",
       "memory",
       "techniques",
-      "Optimization"
+      "Optimization",
+      "size"
     ],
     "concepts": [
       "model",
-      "models",
       "token",
-      "tokens",
       "attention",
       "decoding",
       "decode",
-      "decoder",
       "memory",
-      "optimization"
+      "optimization",
+      "optimize",
+      "optimized",
+      "hardware"
     ]
   },
   {
@@ -1447,7 +1445,6 @@
     "summary": "broadly across different models, operator fusion requires a deeper\nunderstanding of a model’s specific operators and architecture.\nA model script specifies a series of operations that need to be performed to\nexecute that model.\nCompilers bridge ML models and the\n1. Call torch.compile to compile the model into more efficient kernels.\nThroughput improvement by different optimization techniques in\nunclear how these optimization steps impact the model’s output quality.\nInference Service Optimization\nworkloads (inference requests from users that may involve different\nmodels), the goal is to efficiently allocate resources to these workloads to\noptimize for latency and cost.\nUnlike many model-level techniques, service-\nlevel techniques don’t modify models and shouldn’t change the output\ninference service might receive multiple requests simultaneously.\nprocessing each request separately, batching the requests that arrive around\nprocesses the batch either when it has four requests or when 100 ms has\nDynamic batching keeps the latency manageable but might be less compute-efficient.\nIf one request in a batch generates only 10\nAfter a request in a batch is completed\nand its response returned, the service can add another request into the batch\nWith continuous batching, completed responses can be returned immediately to users,\nOne common optimization technique for inference servers is to\nvolume of processed requests while adhering to latency requirements.\nprefill compute) and latency requirements (e.g., whether you want lower\nPrompt caching\nWithout a prompt cache, your model needs\nWith a prompt cache, the\nsystem prompt needs to be processed just once for the first query.\nPrompt caching is useful for queries that involve long documents.\nFor applications with long system prompts, prompt caching can\ntokens, and your application generates one million model API calls daily, a\nprompt cache will save you from processing approximately one billion\nUnless you use a model API with this functionality, implementing prompt\noffers prompt caching that promises up to 90% cost savings (the longer the\ncached context, the higher the savings) and up to 75% latency reduction.\nThe impact of prompt caching on the cost and latency of different scenarios\nCost and latency reduced by prompt caching.\ncached prompt)\nacross all models are data parallelism and model parallelism.\nAn optimization technique might involve multiple parallelism\nsimply creates multiple replicas of the model you want to serve.\nTrying to fit models of different sizes onto\nmore models, more replicas, and more chips.\nLet’s say you have a mixture of models of different sizes (e.g., 8B, 13B,\nreplicas to create for each model and what GPUs to use for each replica\nmodels on a 40 GB GPU, or should you reserve this GPU for one 34B\nmodel?\nIf you have a fixed number of model replicas, you need to decide what\nOften, your model is so big that it can’t fit into one machine.\nModel\nparallelism refers to the practice of splitting the same model across multiple\nFitting models onto chips can become an even more complicated\nproblem with model parallelism.\nThere are several ways to split a model.\nlarge models that don’t fit on single machines.\nAnother way to split a model is pipeline parallelism, which involves\ndividing a model’s computation into distinct stages and assigning each stage\nAs data flows through the model, each stage processes\nPipeline parallelism enables model splits to be executed in parallel.\nmicro-batch is processed on one machine, its output is passed onto the next\npart of the model on the next machine.\nWhile pipeline parallelism enables serving large models on multiple\nmachines, it increases the total latency for each request due to extra\nprocessing more efficient, including context parallelism and sequence\nIn context parallelism, the input sequence itself is split across different\nIn sequence parallelism, operators needed for the entire input are split\nA model’s usability depends heavily on its inference cost and latency.\nFor language model-based\ninference, latency can be broken into time to first token (TTFT), which is\nHow efficiently a model can run depends on the hardware it is run on.\nwhat it takes to optimize models on different accelerators.\nThe chapter then continued with different techniques for inference\nGiven the availability of model APIs, most application\nmodel APIs. This chapter also focused on optimization at the model level and the\nModel-level optimization often requires changing\nmodel intact and only changes how it’s served.\nModel-level techniques include model-agnostic techniques like quantization\nDifferent model architectures require their own\nFor example, because a key bottleneck of transformer models\nmodel is in its autoregressive decoding process, and consequently, many\nInference service-level techniques include various batching and parallelism\nlanguage models, including prefilling/decoding decoupling and prompt\nPrompt caching, on the other\nparallelism (which both reduces latency and enables serving larger models),\ntransformer models).\nInference optimization concludes the list of model adaptation techniques\nImagine you’re a model provider.\nmodel only makes sense if the money you can recover from inference for a model is more than its\nThe more a model is used in production, the more model providers can\ncalls on top of open source models.\nPrefilling effectively populates the initial KV cache for the transformer model.\nIf you run an inference service, separating your inference APIs into online and batch can help you\ntheir requests to the batch API, so that your service can focus on processing the online API requests\nWhile a chip can be developed to run one model architecture, a model architecture can be developed\ncheaper electricity but can increase network latency, making the data centers less appealing for use\ncases with stringent latency requirements like inference.\nEach token generation step necessitates the transfer of the entire model’s parameters from the\nBecause the model can produce only one token at a time, the process consumes only a small\nThe number of attention computations for an autoregressive model is O(n ).\nConvolution operations are often used in image generation models like Stable Diffusion.\nreading the code is that in a long conversation, it caches the previous messages and processes only\nDuring training, the same technique is called data parallelism.\nfoundation models to specific applications.\nmodels.",
     "keywords": [
       "model",
-      "models",
       "Parallelism",
       "Prompt",
       "INFERENCE",
@@ -1460,19 +1457,20 @@
       "optimization",
       "cost",
       "GPU",
-      "GPUs"
+      "GPUs",
+      "model parallelism"
     ],
     "concepts": [
       "model",
-      "modeling",
       "latency",
       "inference",
       "compute",
       "computational",
-      "computing",
-      "computation",
       "computations",
-      "computers"
+      "batching",
+      "batches",
+      "requests",
+      "request"
     ]
   },
   {
@@ -1484,7 +1482,6 @@
     "keywords": [
       "model",
       "model gateway",
-      "models",
       "API",
       "Model API",
       "guardrails",
@@ -1496,19 +1493,20 @@
       "response",
       "model APIs",
       "application",
-      "information"
+      "information",
+      "data"
     ],
     "concepts": [
       "model",
-      "models",
       "response",
-      "responses",
       "guardrails",
-      "guardrail",
       "gateway",
-      "gateways",
       "api",
-      "apis"
+      "apis",
+      "different",
+      "differ",
+      "context",
+      "user"
     ]
   },
   {
@@ -1532,19 +1530,19 @@
       "System prompt",
       "observability",
       "prompt",
-      "output"
+      "log"
     ],
     "concepts": [
       "metric",
-      "metrics",
       "cache",
       "cached",
-      "caching",
-      "caches",
       "user",
-      "users",
       "query",
-      "queries"
+      "queries",
+      "application",
+      "applications",
+      "monitoring",
+      "response"
     ]
   },
   {
@@ -1557,7 +1555,6 @@
       "Feedback",
       "user",
       "User Feedback",
-      "users",
       "model",
       "response",
       "conversation",
@@ -1568,19 +1565,20 @@
       "Conversational Feedback",
       "orchestrator",
       "Explicit feedback",
-      "give feedback"
+      "give feedback",
+      "Implicit feedback"
     ],
     "concepts": [
-      "user",
       "users",
       "model",
-      "models",
       "feedback",
       "conversational",
       "conversations",
-      "conversation",
       "conversely",
-      "data"
+      "data",
+      "response",
+      "responsible",
+      "likely"
     ]
   },
   {
@@ -1593,7 +1591,6 @@
       "feedback",
       "user feedback",
       "Users",
-      "user",
       "n’t",
       "system",
       "users give feedback",
@@ -1604,19 +1601,20 @@
       "application",
       "bias",
       "responses",
-      "model"
+      "model",
+      "biases"
     ],
     "concepts": [
       "user",
-      "users",
       "feedback",
       "likes",
       "liked",
-      "likely",
       "liking",
       "production",
       "product",
-      "products"
+      "biases",
+      "bias",
+      "good"
     ]
   },
   {
@@ -1627,12 +1625,9 @@
     "summary": "models.\nMore systematic approaches to AI engineering, such as those\nFor more resources about AI engineering, check out the book’s GitHub\nAI engineering has a lot of challenges.\nFoundation models as planners\nAI application planning (see application planning)\nAI engineering (AIE)\ndefined, From Foundation Models to AI Engineering\nML engineering versus, AI Engineering Versus ML Engineering-AI\nrise of AI engineering, The Rise of AI Engineering-From Foundation\nModels to AI Engineering\nAI engineering architecture (see engineering architecture)\nAI engineering stack (see engineering stack)\n(see also AI-as-a-judge)\nAI systems evaluation (see systems evaluation)\nAI-as-a-judge, AI as a Judge-What Models Can Act as Judges?\nreasons, Why AI as a Judge?\nreference-based, What Models Can Act as Judges?\nAI-powered data synthesis (see data synthesis, AI-powered)\nanomaly detection, Similarity Measurements Against Reference Data\ninverse scaling and alignment training, Model Size\napplication building, Introduction to Building AI Applications with\nFoundation Models-Summary\napplication planning, Planning AI Applications-Maintenance\nuse case evaluation, Use Case Evaluation-AI product defensibility\nengineering stack, The AI Engineering Stack-AI Engineering Versus\nAI engineering versus ML engineering, AI Engineering Versus ML\nEngineering-AI interface\nfull-stack engineering versus, AI Engineering Versus Full-Stack\nLayers of the AI Stack\nfoundation model use cases, Foundation Model Use Cases-Workflow\nrise of AI engineering, The Rise of AI Engineering-From Foundation\nModels to AI Engineering\nfoundation models to AI engineering, From Foundation Models to\nAI Engineering-From Foundation Models to AI Engineering\napplication development, Three Layers of the AI Stack, Application\ndevelopment-AI interface\nprompt engineering and context construction, Prompt engineering and\napplication planning, Planning AI Applications-Maintenance\nuse case evaluation, Use Case Evaluation-AI product defensibility\noptimization, Attention mechanism optimization-Writing kernels for\nwiring kernels for attention computation, Writing kernels for\naugmentation of data\ndefined, Data Augmentation and Synthesis\ndata contamination detection, Perplexity Interpretation and Use Cases\nmodel-centric versus data-centric, Dataset Engineering\nTime to Think, Data Curation\ncomparative evaluation, Ranking Models with Comparative\neffect on AI investment, From Foundation Models to AI Engineering\nPrompt Engineering\nChinchilla scaling law, Scaling law: Building compute-optimal models\nCLIP, From Large Language Models to Foundation Models, Domain-\nSpecific Models, Introduction to Embedding\nclustering, Similarity Measurements Against Reference Data\nCommon Crawl dataset, Training Data-Multilingual Models\ncomparative evaluation, Ranking Models with Comparative Evaluation-\ncomparison data, Reward model\ncomputational capabilities, of AI accelerators, Computational\ncompute-optimal models, Scaling law: Building compute-optimal\nmodels-Scaling law: Building compute-optimal models\nmodels\ncontext construction, Prompt engineering and context construction,\ncopyright, model training and, Data lineage and copyright\ndata augmentation, Data Augmentation and Synthesis-Model Distillation\ndefined, Data Augmentation and Synthesis\ndata contamination, Data contamination with public benchmarks-\ndata synthesis, Data Augmentation and Synthesis-Model Distillation\nAI-powered, AI-Powered Data Synthesis-Obscure data lineage\ndata synthesis\nlimitations, Limitations to AI-generated data-Obscure data lineage\nModel Distillation\ndata-centric view of AI, Dataset Engineering\ndefensive prompt engineering\nbase, Base models\ndomain-specific training data models, Domain-Specific Models-Domain-\nSpecific Models\nElo, Ranking Models with Comparative Evaluation, Scalability\nembedding model, From Large Language Models to Foundation Models\nembedding models, Introduction to Embedding\nengineering architecture, AI Engineering Architecture-AI Pipeline\nstep 3: adding model router and gateway, Step 3.\nAdd Model Router\nengineering stack, Three Layers of the AI Stack-Three Layers of the AI\napplication development, Three Layers of the AI Stack\nprompt engineering and context construction, Prompt engineering\ninfrastructure, Three Layers of the AI Stack\nML engineering versus, Model development-Inference optimization\nmodel development, Three Layers of the AI Stack\nAI as a judge, AI as a Judge-What Models Can Act as Judges?\nAI systems evaluation (see systems evaluation)\nchallenges of foundation model evaluation, Challenges of Evaluating\nFoundation Models-Challenges of Evaluating Foundation Models\nlanguage model for computing text perplexity, Perplexity",
     "keywords": [
       "data",
-      "Data data",
       "foundation models",
       "engineering",
       "models",
-      "Filter Data data",
-      "Model",
       "prompt engineering",
       "data synthesis",
       "Data Augmentation",
@@ -1640,19 +1635,22 @@
       "Engineering foundation models",
       "engineering versus",
       "Evaluation prompt engineering",
-      "prompt"
+      "prompt",
+      "foundation",
+      "comparative evaluation",
+      "context"
     ],
     "concepts": [
       "models",
-      "model",
-      "modeling",
       "evaluation",
       "evaluating",
       "engineering",
       "write",
       "writing",
       "applications",
-      "application"
+      "computational",
+      "compute",
+      "prompt"
     ]
   },
   {
@@ -1665,7 +1663,6 @@
       "Model",
       "models versus model",
       "large language models",
-      "models",
       "Open source models",
       "inference performance metrics",
       "inference",
@@ -1673,22 +1670,23 @@
       "foundation models",
       "MBU model inference",
       "Finetuning",
-      "model architectures model",
       "memory",
-      "inference APIs inference",
-      "Model Architecture-Other model"
+      "source models versus",
+      "data",
+      "inference optimization",
+      "inference performance"
     ],
     "concepts": [
       "models",
-      "model",
-      "modeling",
       "data",
       "evaluation",
       "evaluating",
       "evaluate",
       "memory",
       "inference",
-      "prompt"
+      "prompt",
+      "retrieval",
+      "metrics"
     ]
   },
   {
@@ -1705,26 +1703,26 @@
       "prompt engineering tools",
       "reverse prompt",
       "Version Prompts prompt",
-      "prompt injection prompt",
       "retrieval",
       "retrieval algorithms",
       "model",
       "Evaluate Prompt Engineering",
-      "Prompts",
       "finetuning",
-      "Version Prompts"
+      "Version Prompts",
+      "Comparing retrieval algorithms",
+      "Reward model"
     ],
     "concepts": [
       "model",
-      "models",
-      "modeling",
       "prompt",
-      "prompting",
-      "prompts",
       "evaluation",
       "evaluating",
       "evaluate",
-      "data"
+      "data",
+      "feedback",
+      "retrieval",
+      "retrievers",
+      "owl"
     ]
   },
   {
@@ -1758,9 +1756,9 @@
       "deficient",
       "natural",
       "fonts",
-      "font",
       "royal",
-      "history"
+      "history",
+      "freedman"
     ]
   }
 ]
