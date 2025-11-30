@@ -668,7 +668,7 @@ class StatisticalExtractor:
         
         try:
             return self.extract_keywords(text, top_n=top_n)
-        except (ValueError, Exception):
+        except Exception:
             # Any failure returns empty list
             return []
 
@@ -709,7 +709,7 @@ class StatisticalExtractor:
         
         try:
             return self.extract_concepts(text, top_n=top_n)
-        except (ValueError, Exception):
+        except Exception:
             # Any failure returns empty list
             return []
 
@@ -755,6 +755,6 @@ class StatisticalExtractor:
         try:
             summary = self.generate_summary(text, ratio=ratio)
             return summary if summary else fallback
-        except (ValueError, Exception):
+        except Exception:
             # Any failure returns fallback
             return fallback
