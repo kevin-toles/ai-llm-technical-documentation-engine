@@ -742,78 +742,230 @@ def extract_evaluation_summary(aggregate: dict[str, Any]) -> dict[str, Any]:
 
 def create_comparative_prompt(aggregates: dict[str, dict[str, Any]]) -> str:
     """
-    Create a comparative evaluation prompt with summarized aggregates.
+    Create a rigorous navigation-based evaluation prompt.
     
-    Strategy B: Send all profiles to each LLM for direct comparison.
-    Uses extracted summaries to keep prompt under 100KB.
+    The LLM acts as a NAVIGATOR testing discoverability, NOT as an expert evaluator.
+    It searches the aggregates and reports what is/isn't discoverable.
     """
-    prompt = """You are an expert NLP evaluator assessing keyword extraction quality for technical documentation cross-referencing.
+    
+    # Define the 18 system design questions with focus areas
+    questions = [
+        ("Q1", "Scalable LLM code understanding system", 
+         ["chunking", "embeddings", "retrieval", "indexing", "grounding", "hallucination"]),
+        ("Q2", "Agentic coding assistant with safe code changes",
+         ["sandboxing", "static analysis", "verification", "diff", "rollback", "guardrails"]),
+        ("Q3", "LLM batch processing for multi-GB datasets",
+         ["map-reduce", "chunk", "orchestration", "persistent state", "quality gates", "metadata"]),
+        ("Q4", "Multi-model orchestrator across providers",
+         ["routing", "retry", "backoff", "cost", "degradation", "parallelism", "normalization"]),
+        ("Q5", "Fully local fallback system",
+         ["local inference", "Qwen", "Llama", "GGUF", "quantization", "offline", "on-device"]),
+        ("Q6", "LLM agent for infrastructure automation",
+         ["tool schema", "IAM", "guardrails", "traceability", "intent classification", "verification"]),
+        ("Q7", "Multi-agent collaboration framework",
+         ["choreography", "handoff", "arbitration", "termination", "confidence", "roles"]),
+        ("Q8", "Hallucination prevention in agentic systems",
+         ["grounding", "schema validation", "safety rails", "log-probability", "self-test"]),
+        ("Q9", "100GB+ document indexing system",
+         ["distributed", "HNSW", "IVF", "vector pruning", "hot storage", "cold storage", "partial update"]),
+        ("Q10", "Secure multi-tenant fine-tuning",
+         ["data boundary", "encryption", "isolation", "gradients", "audit", "tenant"]),
+        ("Q11", "70B model inference latency reduction",
+         ["KV cache", "speculative decoding", "MoE", "distillation", "flash-attention", "quantization"]),
+        ("Q12", "Diagnosing confident but incorrect LLM outputs",
+         ["retrieval eval", "likelihood", "consistency", "chain-of-thought", "benchmark"]),
+        ("Q13", "Safety guardrails for code-writing agents",
+         ["static analysis", "sandboxing", "unit test", "rollback", "anomaly detection", "approval"]),
+        ("Q14", "Jailbreak detection system",
+         ["classifier", "intent detection", "safety model", "perplexity", "pattern"]),
+        ("Q15", "Resume-job description matching system",
+         ["skill embedding", "requirement extraction", "scoring", "rewriting", "ensemble"]),
+        ("Q16", "LLM-powered refactoring engine",
+         ["AST", "snippet embedding", "per-file isolation", "diff-only", "self-review"]),
+        ("Q17", "Code-to-architecture diagram microservice",
+         ["static parsing", "call graph", "summarization", "Mermaid", "PlantUML", "JSON schema"]),
+        ("Q18", "Knowledge graph from technical textbooks",
+         ["metadata extraction", "taxonomy", "semantic alignment", "cross-book", "deduplication", "guideline"]),
+    ]
+    
+    # Build questions section
+    questions_text = ""
+    for qid, title, focus_areas in questions:
+        questions_text += f"\n{qid}: \"{title}\"\n"
+        questions_text += f"    Focus areas to search: {focus_areas}\n"
+    
+    prompt = f"""You are a KNOWLEDGE GRAPH NAVIGATOR testing the discoverability of technical concepts.
 
-## Task
-You have been given extraction outputs from 4 different parameter configurations applied to the same source document. Evaluate each configuration SEQUENTIALLY (not in parallel) and provide an objective comparison.
+## YOUR ROLE - READ CAREFULLY
 
-## Configurations Provided
-1. BASELINE: Original settings (stem deduplication OFF, top_n=10)
-2. CURRENT: Enhanced settings (stem deduplication ON, top_n=20)
-3. MODERATE: Expanded extraction (top_n=25, relaxed thresholds)
-4. AGGRESSIVE: Maximum extraction (top_n=35, lowest thresholds)
+You are NOT a domain expert giving opinions.
+You are SIMULATING A USER who needs to find information using ONLY the aggregate data provided.
+You CANNOT use your own knowledge - you can ONLY report what is DISCOVERABLE in the aggregates.
 
-## Evaluation Criteria (Score 1-10 for each configuration)
+## CRITICAL RULES
 
-1. **Keyword Quality**: Relevance, specificity, technical accuracy
-2. **Deduplication Effectiveness**: Absence of redundant variants (model/models/modeling)
-3. **Concept Coverage**: Breadth and depth of main themes captured
-4. **Cross-Reference Utility**: Value of related chapter connections for navigation
-5. **Signal-to-Noise Ratio**: Meaningful terms vs. generic/noise terms
+1. DO NOT answer the system design questions yourself
+2. DO NOT use your training knowledge to evaluate quality  
+3. ONLY report what you can find by searching the provided sample_keywords and cross-references
+4. Your job is to TEST NAVIGATION through the knowledge graph, not demonstrate expertise
+5. Every claim must cite SPECIFIC DATA from the aggregates
 
-## Required Output Format
+## WHAT YOU MUST DO
+
+For each aggregate (BASELINE, CURRENT, MODERATE, AGGRESSIVE), perform these analyses:
+
+### ANALYSIS 1: Duplicate Detection
+Scan the sample_keywords list for morphological variants:
+- Find word groups that share the same stem (e.g., "model", "models", "modeling")
+- Count how many duplicate groups exist
+- BASELINE should have MORE duplicates (stem deduplication was OFF)
+- Report the EXACT duplicate pairs you find in the data
+
+### ANALYSIS 2: Noise Term Identification  
+Count these noise categories in sample_keywords:
+- Section markers: "introduction", "conclusion", "summary", "chapter", "section", "example"
+- Generic terms: "approach", "method", "technique", "system", "process", "way"
+List the EXACT noise terms you find.
+
+### ANALYSIS 3: Cross-Reference Validation
+For each chapter's sample_related entries:
+- Read the source chapter title and the target book/chapter
+- Determine: Does this connection make logical sense for navigation?
+- Count valid vs invalid connections
+- Give 2-3 specific examples of good AND bad cross-references
+
+### ANALYSIS 4: Navigation Test (18 Questions)
+For EACH question below, search the aggregate:
+
+{questions_text}
+
+For each question:
+1. Search sample_keywords for the focus area terms
+2. Report which terms are FOUND vs MISSING
+3. Check if cross-references lead to relevant content
+4. Score navigation success: 1-10 (based on % of focus areas discoverable)
+
+## EXAMPLE OF CORRECT ANALYSIS (Follow This Pattern)
+
+Question Q7: "Multi-agent collaboration framework"
+Focus areas: ["choreography", "handoff", "arbitration", "termination", "confidence", "roles"]
+
+BASELINE aggregate search:
+```
+sample_keywords scan:
+  - "choreography" → NOT FOUND
+  - "handoff" → NOT FOUND  
+  - "arbitration" → NOT FOUND
+  - "termination" → NOT FOUND
+  - "confidence" → FOUND (appears in list)
+  - "roles" → NOT FOUND
+  - "agent" → FOUND (related term)
+  - "multi-agent" → NOT FOUND
+
+Cross-references checked:
+  - No chapters with "agent" in title found
+  
+Focus areas found: 1/6 (17%)
+Navigation score: 2/10
+```
+
+CURRENT aggregate search:
+```
+sample_keywords scan:
+  - "choreography" → NOT FOUND
+  - "handoff" → NOT FOUND
+  - "arbitration" → NOT FOUND
+  - "agent" → FOUND
+  - "multi-agent" → FOUND
+  - "coordination" → FOUND (related)
+  
+Focus areas found: 2/6 (33%)
+Navigation score: 4/10
+```
+
+## REQUIRED JSON OUTPUT FORMAT
 
 Respond with ONLY valid JSON (no markdown code blocks):
 
-{
-  "evaluation_timestamp": "<ISO timestamp>",
-  "sequential_analysis": {
-    "baseline": {
-      "scores": {
-        "keyword_quality": <1-10>,
-        "deduplication_effectiveness": <1-10>,
-        "concept_coverage": <1-10>,
-        "cross_reference_utility": <1-10>,
-        "signal_to_noise": <1-10>
-      },
-      "overall_score": <1-10>,
-      "observations": ["<observation 1>", "<observation 2>"]
-    },
-    "current": {
-      "scores": { ... },
-      "overall_score": <1-10>,
-      "observations": [...]
-    },
-    "moderate": {
-      "scores": { ... },
-      "overall_score": <1-10>,
-      "observations": [...]
-    },
-    "aggressive": {
-      "scores": { ... },
-      "overall_score": <1-10>,
-      "observations": [...]
-    }
-  },
-  "comparative_ranking": [
-    {"rank": 1, "profile": "<best>", "overall_score": <1-10>, "rationale": "..."},
-    {"rank": 2, "profile": "...", "overall_score": <1-10>, "rationale": "..."},
-    {"rank": 3, "profile": "...", "overall_score": <1-10>, "rationale": "..."},
-    {"rank": 4, "profile": "<worst>", "overall_score": <1-10>, "rationale": "..."}
-  ],
-  "recommendation": {
-    "best_for_production": "<profile>",
-    "reasoning": "...",
-    "tradeoffs": ["<tradeoff 1>", "<tradeoff 2>"]
-  }
-}
+{{
+  "analysis_1_duplicates": {{
+    "baseline": {{
+      "duplicate_groups_found": <number>,
+      "examples": [["model", "models"], ["train", "training"], ...]
+    }},
+    "current": {{
+      "duplicate_groups_found": <number>,
+      "examples": [...]
+    }},
+    "moderate": {{...}},
+    "aggressive": {{...}}
+  }},
+  
+  "analysis_2_noise": {{
+    "baseline": {{
+      "noise_terms_found": ["introduction", "example", ...],
+      "noise_count": <number>,
+      "total_keywords": <number from sample_keywords length>
+    }},
+    "current": {{...}},
+    "moderate": {{...}},
+    "aggressive": {{...}}
+  }},
+  
+  "analysis_3_cross_refs": {{
+    "baseline": {{
+      "total_checked": <number>,
+      "valid": <number>,
+      "invalid": <number>,
+      "good_examples": [
+        {{"from": "Ch5: X", "to": "Ch12: Y", "why_valid": "..."}}
+      ],
+      "bad_examples": [
+        {{"from": "Ch3: A", "to": "Ch45: B", "why_invalid": "..."}}
+      ]
+    }},
+    "current": {{...}},
+    "moderate": {{...}},
+    "aggressive": {{...}}
+  }},
+  
+  "analysis_4_navigation": {{
+    "Q1": {{
+      "focus_areas": ["chunking", "embeddings", ...],
+      "baseline": {{"found": [...], "missing": [...], "score": <1-10>}},
+      "current": {{"found": [...], "missing": [...], "score": <1-10>}},
+      "moderate": {{"found": [...], "missing": [...], "score": <1-10>}},
+      "aggressive": {{"found": [...], "missing": [...], "score": <1-10>}},
+      "best_profile": "<profile with highest score>"
+    }},
+    "Q2": {{...}},
+    ... (all 18 questions)
+  }},
+  
+  "summary": {{
+    "navigation_totals": {{
+      "baseline": <sum of all 18 Q scores>,
+      "current": <sum>,
+      "moderate": <sum>,
+      "aggressive": <sum>
+    }},
+    "duplicate_comparison": {{
+      "baseline_groups": <N>,
+      "current_groups": <N>,
+      "reduction_percent": "<X%>"
+    }},
+    "questions_won": {{
+      "baseline": <count where baseline had highest score>,
+      "current": <count>,
+      "moderate": <count>,
+      "aggressive": <count>
+    }},
+    "overall_recommendation": "<best profile>",
+    "evidence": "<cite specific numbers: X navigation score, Y fewer duplicates, Z% noise>"
+  }}
+}}
 
-## Extraction Data (Summarized for Evaluation)
+## AGGREGATE DATA TO ANALYZE
 
 """
     
