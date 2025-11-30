@@ -50,11 +50,19 @@ outputs/
 htmlcov/
 .DS_Store
 
+# Type checking cache (mypy)
+.mypy_cache/
+**/​.mypy_cache/
+
 # Test pollution (files created by tests in wrong location)
 PYTHON_GUIDELINES_Learning Python Ed6.md
 
-# PDF input files (large binaries, not for version control)
-workflows/pdf_to_json/input/*.pdf
+# Workflow input/output directories (generated data, not for version control)
+# Keep directory structure with .gitkeep files, but ignore contents
+workflows/*/input/*
+workflows/*/output/*
+!workflows/*/input/.gitkeep
+!workflows/*/output/.gitkeep
 
-# Converted JSON outputs (generated files)
-workflows/pdf_to_json/output/textbooks_json/*.json
+# Exception: Keep taxonomy configuration files (these are curated, not generated)
+!workflows/taxonomy_setup/output/*.json
