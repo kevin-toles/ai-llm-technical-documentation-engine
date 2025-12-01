@@ -1075,12 +1075,16 @@ Prioritize books that provide the most direct, substantial coverage of this chap
         """
         from workflows.shared.prompts.templates import format_comprehensive_phase2_prompt
         
+        # Extract taxonomy from aggregate data
+        taxonomy_data = self._aggregate_data.get('taxonomy') if self._aggregate_data else None
+        
         return format_comprehensive_phase2_prompt(
             chapter_num=chapter_num,
             chapter_title=chapter_title,
             metadata_response=metadata_response,
             content_package=content_package,
-            source_book_name=self._source_book_name
+            source_book_name=self._source_book_name,
+            taxonomy_data=taxonomy_data
         )
     
     # ========================================================================

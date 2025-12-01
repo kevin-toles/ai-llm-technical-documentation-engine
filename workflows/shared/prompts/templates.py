@@ -15,7 +15,7 @@ References:
 """
 
 from pathlib import Path
-from typing import Any, Dict, Final, List
+from typing import Any, Dict, Final, List, Optional
 
 # Template directory is fixed relative to this module
 TEMPLATE_DIR: Final[Path] = Path(__file__).parent
@@ -196,12 +196,55 @@ def _format_excerpt_content(book_name: str, excerpts: List[Dict[str, Any]]) -> s
     return '\n'.join(sections)
 
 
+def _format_taxonomy_for_prompt(taxonomy_data: Optional[Dict[str, Any]]) -> str:
+    """Format taxonomy data into a readable string for the LLM prompt.
+    
+    Args:
+        taxonomy_data: Taxonomy dict with 'tiers' containing book assignments
+        
+    Returns:
+        Formatted string showing tier -> books mapping
+    """
+    if not taxonomy_data or 'tiers' not in taxonomy_data:
+        return "No taxonomy data available."
+    
+    lines = []
+    tiers = taxonomy_data.get('tiers', {})
+    
+    # Sort by priority (1, 2, 3)
+    sorted_tiers = sorted(
+        tiers.items(),
+        key=lambda x: x[1].get('priority', 99) if isinstance(x[1], dict) else 99
+    )
+    
+    for tier_key, tier_data in sorted_tiers:
+        if not isinstance(tier_data, dict):
+            continue
+            
+        priority = tier_data.get('priority', '?')
+        name = tier_data.get('name', tier_key.title())
+        books = tier_data.get('books', [])
+        
+        # Clean up book names (remove .json extension)
+        clean_books = [b.replace('.json', '') for b in books[:10]]  # Limit to 10
+        
+        lines.append(f"Priority {priority} - {name}:")
+        for book in clean_books:
+            lines.append(f"  • {book}")
+        if len(books) > 10:
+            lines.append(f"  ... and {len(books) - 10} more")
+        lines.append("")
+    
+    return '\n'.join(lines)
+
+
 def format_comprehensive_phase2_prompt(
     chapter_num: int,
     chapter_title: str,
     metadata_response: Any,  # MetadataExtractionResponse with validation_summary, analysis_strategy
     content_package: Dict[str, Any],
-    source_book_name: str = "Unknown Book"
+    source_book_name: str = "Unknown Book",
+    taxonomy_data: Optional[Dict[str, Any]] = None
 ) -> str:
     """Format Phase 2 comprehensive prompt for integrated scholarly annotation.
     
@@ -214,6 +257,7 @@ def format_comprehensive_phase2_prompt(
         metadata_response: Object with .validation_summary and .analysis_strategy attributes
         content_package: Dict mapping book_name -> list of excerpt dicts
         source_book_name: Name of the source book being analyzed (dynamic, not hardcoded)
+        taxonomy_data: Taxonomy dict with tiers and book assignments
         
     Returns:
         Formatted prompt string ready for LLM
@@ -231,6 +275,9 @@ def format_comprehensive_phase2_prompt(
     
     content_text = '\n'.join(content_sections)
     
+    # Format taxonomy for prompt
+    taxonomy_text = _format_taxonomy_for_prompt(taxonomy_data) if taxonomy_data else "No taxonomy data available."
+    
     return template.format(
         source_book_name=source_book_name,
         chapter_num=chapter_num,
@@ -238,7 +285,8 @@ def format_comprehensive_phase2_prompt(
         metadata_response_validation_summary=metadata_response.validation_summary,
         metadata_response_analysis_strategy=metadata_response.analysis_strategy,
         content_package_count=len(content_package),
-        content_text=content_text[:15000]  # Limit to first 15000 chars
+        content_text=content_text[:15000],  # Limit to first 15000 chars
+        taxonomy_text=taxonomy_text
     )
 
 

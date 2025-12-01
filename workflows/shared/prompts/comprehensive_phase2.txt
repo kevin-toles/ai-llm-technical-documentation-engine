@@ -12,6 +12,53 @@ COMPANION CONTENT RETRIEVED (from {content_package_count} books):
 NOTE: Some entries are FULL CHAPTERS, others are page excerpts.
 {content_text}
 
+TAXONOMY-AWARE SYNTHESIS:
+
+The companion books are organized into a tiered taxonomy. Use this to structure your analysis:
+
+{taxonomy_text}
+
+TIER DEFINITIONS:
+
+🏛️ ARCHITECTURE SPINE (Priority 1) - Required
+   Foundational concepts that form the structural backbone of the domain.
+   These are high-level patterns, principles, and architectural decisions that guide everything else.
+   Think: "What are the core mental models needed to understand this topic?"
+   Examples: Design patterns, system architecture, core paradigms
+
+⚙️ IMPLEMENTATION (Priority 2) - Required  
+   Practical techniques and concrete implementations that build upon architectural concepts.
+   These are the "how-to" specifics: APIs, algorithms, data structures, and coding techniques
+   that developers use daily.
+   Examples: Language syntax, standard libraries, common algorithms
+
+✨ ENGINEERING PRACTICES (Priority 3) - Optional
+   Professional methodologies, workflows, and best practices for building quality software.
+   These are the soft skills and processes that separate hobbyists from professionals.
+   Examples: Testing strategies, code review, refactoring, team collaboration
+
+STRUCTURE YOUR ANNOTATION USING THE TAXONOMY:
+
+1. LEAD WITH ARCHITECTURE (Priority 1):
+   - Start with foundational mental models and design patterns
+   - Establish the "why" and structural principles before implementation details
+   - These references are REQUIRED - if no Architecture content exists, acknowledge the gap
+
+2. BRIDGE TO IMPLEMENTATION (Priority 2):
+   - Show how architectural principles manifest in concrete code and APIs
+   - Cite specific techniques, algorithms, or library usage
+   - These references are REQUIRED - implementation grounds the theory in practice
+
+3. ENRICH WITH ENGINEERING PRACTICES (Priority 3):
+   - Add professional context: testing, refactoring, code quality considerations
+   - These references are OPTIONAL - include only when genuinely relevant
+   - Don't force Engineering Practices references if they don't add substantive value
+
+4. ACKNOWLEDGE TIER GAPS:
+   - If a required tier (Architecture or Implementation) has no substantive content, say so explicitly
+   - Example: "While Fluent Python provides deep implementation coverage, no Architecture Spine 
+     book in the corpus addresses the underlying design pattern."
+
 ANALYSIS APPROACH:
 
 1. VALIDATE EACH EXCERPT: For each companion book page above, determine:
@@ -30,13 +77,7 @@ ANALYSIS APPROACH:
    - Explain this is a limitation of keyword matching, not a conceptual relationship
    - Direct the learner to rely on the primary text for this topic
 
-4. ORGANIZE BY TIER (when multiple genuine sources exist):
-   - Architecture Spine books: Patterns, DDD, theoretical frameworks
-   - Implementation Layer books: Practical applications, deployment, real-world usage
-   - Engineering Practices books: Language idioms, protocols, advanced techniques
-   - Show connections across tiers when applicable
-
-5. CITATION REQUIREMENTS (Chicago Manual of Style, 17th Edition):
+4. CITATION REQUIREMENTS (Chicago Manual of Style, 17th Edition):
    - Use footnote-style citations embedded in your annotation
    - Format: Author(s), *Book Title*, edition/chapter info, page numbers.
    - For chapters: Include chapter number and title when available
