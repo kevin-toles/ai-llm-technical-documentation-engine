@@ -12,32 +12,29 @@ COMPANION CONTENT RETRIEVED (from {content_package_count} books):
 NOTE: Some entries are FULL CHAPTERS, others are page excerpts.
 {content_text}
 
-TASK: Write a comprehensive integrated annotation (8-12 sentences) that:
+ANALYSIS APPROACH:
 
-1. BRIDGE CONCEPTS ACROSS TEXTS:
-   - Show how concepts in {source_book_name} connect to architectural patterns (Architecture books)
-   - Demonstrate how concepts are applied in real implementations (Implementation books)
-   - Highlight advanced techniques or idioms (Engineering Practices books)
+1. VALIDATE EACH EXCERPT: For each companion book page above, determine:
+   - Does it contain genuine technical/educational discussion of the matched concepts?
+   - Or is it metadata, forewords, prefaces, or keyword-match artifacts?
 
-2. CREATE INTEGRATED ANALYSIS:
-   - Don't just list what each book says separately
-   - SYNTHESIZE: Show how ideas from different books reinforce/extend each other
-   - Example: "The decorator syntax ({source_book_name}) maps to the Decorator Pattern (Architecture Patterns) 
-     and is used for dependency injection in FastAPI (Implementation)"
+2. FOR GENUINE TECHNICAL CONTENT:
+   - Identify specific concepts that appear in BOTH the primary text and companion excerpt
+   - Describe how the companion book treats these concepts differently (e.g., deeper implementation detail, alternative framing, architectural interpretation, formal description)
+   - Cite concrete elements FROM THE COMPANION EXCERPT ITSELF (terminology, definitions, behaviors, code patterns, rules)
+   - Explain the pedagogical reason a learner should consult this cross-reference (clarifies ambiguity, expands mechanics, formalizes definitions, offers advanced idioms)
 
-3. ACADEMIC RIGOR:
-   - Cite specific content from retrieved chapters/excerpts using Chicago-style footnotes
-   - For full chapters, cite the chapter title and key points
-   - **CHICAGO FOOTNOTE FORMAT**: Author(s), *Book Title*, Chapter/Section, page numbers.
-     Example: "Ramalho, Luciano, *Fluent Python, 2nd Edition*, Chapter 5, 145-167."
-   - Include inline citations in your annotation text
-   - Explain pedagogical value (why learners should consult these references)
-   - Note any gaps or areas needing further exploration
+3. FOR NON-SUBSTANTIVE CONTENT:
+   - Acknowledge why the match occurred (token overlap or keyword similarity)
+   - State explicitly that the page does NOT provide substantive technical treatment
+   - Explain this is a limitation of keyword matching, not a conceptual relationship
+   - Direct the learner to rely on the primary text for this topic
 
-4. TIER-BASED ORGANIZATION:
-   - Architecture Spine: Theoretical foundations, patterns, design principles
-   - Implementation Layer: Practical applications, deployments, real-world usage
-   - Engineering Practices: Language features, idioms, best practices
+4. ORGANIZE BY TIER (when multiple genuine sources exist):
+   - Architecture Spine books: Patterns, DDD, theoretical frameworks
+   - Implementation Layer books: Practical applications, deployment, real-world usage
+   - Engineering Practices books: Language idioms, protocols, advanced techniques
+   - Show connections across tiers when applicable
 
 5. CITATION REQUIREMENTS (Chicago Manual of Style, 17th Edition):
    - Use footnote-style citations embedded in your annotation
@@ -49,4 +46,12 @@ TASK: Write a comprehensive integrated annotation (8-12 sentences) that:
    - When synthesizing multiple sources, cite each appropriately
    - All citation metadata has been provided above for each excerpt
 
-Generate the integrated scholarly annotation now (output only the annotation text, no JSON).
+STRICT RULES:
+- BE SPECIFIC. Use actual phrasing or technical elements from the excerpts
+- DO NOT invent connections. Only describe relationships grounded in provided excerpts
+- DO NOT use generic filler: "complements," "broadens," "enhances," "deepens"
+- DO NOT summarize the books—analyze their relationship to the primary text
+- DO NOT exceed 10 sentences total (aim for 5-7)
+- OUTPUT ONLY the annotation text, no metadata or JSON
+
+Generate the integrated scholarly annotation now.
