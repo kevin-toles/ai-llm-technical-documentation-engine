@@ -8,7 +8,7 @@ separation of concerns pattern.
 Sprint 1 Day 1-2: Phase separation architecture
 """
 
-from typing import List, Any, TYPE_CHECKING
+from typing import List, Any, Dict, Optional, TYPE_CHECKING
 
 if TYPE_CHECKING:
     # Type hints only - not imported at runtime
@@ -62,21 +62,28 @@ class TwoPhaseOrchestrator:
     - This orchestrator will coordinate between them
     """
     
-    def __init__(self, metadata_service: Any, llm_available: bool = True):
+    def __init__(
+        self,
+        metadata_service: Any,
+        llm_available: bool = True,
+        aggregate_data: Optional[Dict[str, Any]] = None
+    ):
         """
         Initialize orchestrator with dependencies.
         
         Args:
             metadata_service: Metadata extraction service
             llm_available: Whether LLM is available
+            aggregate_data: Aggregate package data (taxonomy, companion books, source book)
         """
         # Lazy load the legacy orchestrator class
         legacy_orchestrator_class, _ = _get_legacy_classes()
         
-        # For now, delegate to legacy orchestrator
+        # For now, delegate to legacy orchestrator, passing aggregate_data
         self._legacy_orchestrator = legacy_orchestrator_class(
             metadata_service=metadata_service,
-            llm_available=llm_available
+            llm_available=llm_available,
+            aggregate_data=aggregate_data
         )
         
         # Future: Replace with:

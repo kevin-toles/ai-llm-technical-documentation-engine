@@ -164,7 +164,8 @@ class AnalysisOrchestrator:
         self,
         metadata_service: MetadataExtractionService,
         llm_available: bool = LLM_AVAILABLE,
-        lazy_load: bool = True
+        lazy_load: bool = True,
+        aggregate_data: Optional[Dict[str, Any]] = None
     ):
         """Initialize orchestrator with dependencies.
         
@@ -174,12 +175,19 @@ class AnalysisOrchestrator:
             metadata_service: Service for accessing book metadata
             llm_available: Whether LLM is available
             lazy_load: If True, only load books AFTER LLM requests them (saves memory & initial tokens)
+            aggregate_data: Aggregate package data containing taxonomy, companion books, source book
         """
         self._metadata_service = metadata_service
         self._llm_available = llm_available
         self._lazy_load = lazy_load
         self._state = AnalysisPhase.INITIAL
         self._current_chapter_num = 0  # Tracking for cache keys
+        self._aggregate_data = aggregate_data or {}
+        
+        # Extract source book and companion books from aggregate for dynamic use
+        self._source_book_name = self._extract_source_book_name()
+        self._companion_book_titles = self._extract_companion_book_titles()
+        self._citation_map = self._build_citation_map()
         
         # Sprint 3.4: Initialize metadata builder (Builder pattern)
         self._metadata_builder = MetadataBuilder(metadata_service)
@@ -187,6 +195,82 @@ class AnalysisOrchestrator:
         # Lazy loading: Don't load books until LLM requests them
         if not lazy_load:
             print("Note: Lazy loading disabled - loading all books upfront")
+    
+    def _extract_source_book_name(self) -> str:
+        """Extract source book name from aggregate data."""
+        source_book = self._aggregate_data.get("source_book", {})
+        name = source_book.get("name", "")
+        # Remove profile suffix if present (e.g., "AI Engineering Building Applications_BASELINE")
+        for suffix in ["_BASELINE", "_CURRENT", "_MODERATE", "_AGGRESSIVE"]:
+            if name.endswith(suffix):
+                name = name[:-len(suffix)]
+                break
+        return name or "Unknown Book"
+    
+    def _extract_companion_book_titles(self) -> List[str]:
+        """Extract companion book titles from aggregate data.
+        
+        Dynamically builds the list from the aggregate package instead of hardcoding.
+        """
+        titles = []
+        companion_books = self._aggregate_data.get("companion_books", [])
+        
+        for book in companion_books:
+            name = book.get("name", "")
+            if name:
+                titles.append(name)
+                # Also add common variations
+                if "2nd" not in name and "3rd" not in name and "4th" not in name:
+                    # Add variations with edition markers for fuzzy matching
+                    titles.append(f"{name} 2nd")
+                    titles.append(f"{name} 3rd")
+        
+        # Also include source book
+        if self._source_book_name:
+            titles.append(self._source_book_name)
+        
+        # Deduplicate
+        return list(dict.fromkeys(titles))
+    
+    def _build_citation_map(self) -> Dict[str, tuple]:
+        """Build citation map from aggregate data.
+        
+        Creates (author, title) tuples for each book.
+        Falls back to ("Unknown", title) if author not available.
+        """
+        citation_map = {}
+        
+        # Source book
+        source_book = self._aggregate_data.get("source_book", {})
+        source_name = source_book.get("name", "")
+        source_author = source_book.get("metadata", {}).get("author", "Unknown")
+        if source_name:
+            citation_map[source_name] = (source_author, source_name)
+        
+        # Companion books
+        for book in self._aggregate_data.get("companion_books", []):
+            name = book.get("name", "")
+            # Try to get author from metadata (structure varies)
+            author = "Unknown"
+            metadata = book.get("metadata", {})
+            if isinstance(metadata, dict):
+                author = metadata.get("author", "Unknown")
+            
+            if name:
+                citation_map[name] = (author, name)
+        
+        # Add centralized constants as fallback (known authors)
+        citation_map.update({
+            BookTitles.PYTHON_ESSENTIAL_REF: ("Beazley, David", BookTitles.PYTHON_ESSENTIAL_REF),
+            BookTitles.FLUENT_PYTHON: ("Ramalho, Luciano", BookTitles.FLUENT_PYTHON),
+            BookTitles.PYTHON_DISTILLED: ("Beazley, David", BookTitles.PYTHON_DISTILLED),
+            BookTitles.PYTHON_DATA_ANALYSIS: ("McKinney, Wes", BookTitles.PYTHON_DATA_ANALYSIS),
+            "Architecture Patterns with Python": ("Percival, Harry and Gregory, Bob", "Architecture Patterns with Python"),
+            "Building Microservices": ("Newman, Sam", "Building Microservices"),
+            "Python Cookbook 3rd": ("Beazley, David and Jones, Brian K.", "Python Cookbook 3rd"),
+        })
+        
+        return citation_map
     
     def _execute_phase1_with_retry(
         self,
@@ -332,8 +416,8 @@ Prioritize books that provide the most direct, substantial coverage of this chap
             max_tokens_phase1 = 8000
             response = self._execute_phase1_with_retry(prompt, max_tokens_phase1, len(books_metadata))
             
-            # Limit requests if too many (extracted to helper)
-            response = self._limit_content_requests(response, max_requests=10)
+            # LLM self-limits - no hard cap on books
+            # (removed max_requests=10 to let LLM decide what's relevant)
             
             print(f"✓ LLM extracted concepts and identified {len(response.content_requests)} book chapters to review")
             for req in response.content_requests[:5]:
@@ -629,7 +713,8 @@ Prioritize books that provide the most direct, substantial coverage of this chap
             chapter_num=chapter_num,
             chapter_title=chapter_title,
             chapter_full_text=chapter_full_text,
-            books_metadata=books_metadata
+            books_metadata=books_metadata,
+            source_book_name=self._source_book_name
         )
     
     def _extract_chapter_numbers_from_rationale(self, rationale: str) -> List[int]:
@@ -740,7 +825,7 @@ Prioritize books that provide the most direct, substantial coverage of this chap
         excerpts = []
         author, full_title = self._get_citation_info(req.book_name)
         
-        for page_num in req.pages[:10]:  # Limit pages per book
+        for page_num in req.pages:  # Process all LLM-requested pages
             if str(page_num) in book_content:
                 excerpts.append({
                     'page': page_num,
@@ -782,7 +867,7 @@ Prioritize books that provide the most direct, substantial coverage of this chap
             chapter_manager = None
             has_chapter_metadata = False
         
-        for req in content_requests[:10]:  # Limit to top 10 books
+        for req in content_requests:  # Process all LLM-requested books
             try:
                 book_content = self._load_book_json_by_name(req.book_name)
                 if not book_content:
@@ -862,31 +947,12 @@ Prioritize books that provide the most direct, substantial coverage of this chap
         Returns:
             Tuple of (author, full_title) for citation formatting
             
-        Note: Keys match JSON filenames exactly. Values provide formal citation details.
-        Sprint 3.3: Using centralized BookTitles constants (no duplication)
+        Note: Uses dynamic citation_map built from aggregate data at init time.
+        Falls back to known authors for core books if aggregate doesn't have author info.
         """
-        citation_map = {
-            # Python Language Books (keys match JSON filenames)
-            "Learning Python Ed6": ("Lutz, Mark", "Learning Python Ed6"),
-            BookTitles.PYTHON_ESSENTIAL_REF: ("Beazley, David", BookTitles.PYTHON_ESSENTIAL_REF),
-            BookTitles.FLUENT_PYTHON: ("Ramalho, Luciano", BookTitles.FLUENT_PYTHON),
-            BookTitles.PYTHON_DISTILLED: ("Beazley, David", BookTitles.PYTHON_DISTILLED),
-            "Python Cookbook 3rd": ("Beazley, David and Jones, Brian K.", "Python Cookbook 3rd"),
-            BookTitles.PYTHON_DATA_ANALYSIS: ("McKinney, Wes", BookTitles.PYTHON_DATA_ANALYSIS),
-            
-            # Architecture Books (keys match JSON filenames)
-            "Architecture Patterns with Python": ("Percival, Harry and Gregory, Bob", "Architecture Patterns with Python"),
-            "Python Microservices Development": ("Ziadé, Tarek", "Python Microservices Development"),
-            "Building Microservices": ("Newman, Sam", "Building Microservices"),
-            "Microservice Architecture": ("Dragoni, Nicola et al.", "Microservice Architecture"),
-            "Microservices Up and Running": ("Gammelgård, Ronnie and Hammarberg, Marcus", "Microservices Up and Running"),
-            "Building Python Microservices with FastAPI": ("Sinha, Sherwin John", "Building Python Microservices with FastAPI"),
-            "Microservice APIs Using Python Flask FastAPI": ("Buelta, Jaime", "Microservice APIs Using Python Flask FastAPI"),
-            "Python Architecture Patterns": ("Buelta, Jaime", "Python Architecture Patterns"),
-        }
-        
-        if book_filename in citation_map:
-            return citation_map[book_filename]
+        # Use dynamically built citation map from aggregate data
+        if book_filename in self._citation_map:
+            return self._citation_map[book_filename]
         
         # Fallback: use the filename as-is (already human-readable)
         return ("Unknown", book_filename)
@@ -1013,7 +1079,8 @@ Prioritize books that provide the most direct, substantial coverage of this chap
             chapter_num=chapter_num,
             chapter_title=chapter_title,
             metadata_response=metadata_response,
-            content_package=content_package
+            content_package=content_package,
+            source_book_name=self._source_book_name
         )
     
     # ========================================================================
@@ -1121,12 +1188,12 @@ Prioritize books that provide the most direct, substantial coverage of this chap
         # Sort by priority
         sorted_requests = sorted(requests)
         
-        for request in sorted_requests[:10]:  # Limit to top 10 books
+        for request in sorted_requests:  # Process all LLM-requested books
             # Clean book name for lookup
             clean_name = request.book_name.replace(' ', '_').replace('_Content', '')
             
             excerpts = []
-            for page_num in request.pages[:10]:  # Limit pages per book
+            for page_num in request.pages:  # Process all LLM-requested pages
                 page = self._metadata_service._repo.get_page(clean_name, page_num)
                 if page:
                     excerpts.append({
@@ -1151,47 +1218,25 @@ Prioritize books that provide the most direct, substantial coverage of this chap
     def _extract_sources(self, annotation: str) -> List[str]:
         """Extract cited sources from annotation text.
         
-        Uses a comprehensive list of known book titles from the taxonomy.
+        Uses the companion book titles from aggregate data (dynamically loaded).
         Matches book titles mentioned in the annotation text.
         """
         sources = []
         
-        # Comprehensive list of known book titles from BOOK_TAXONOMY_MATRIX.md
-        # and aggregate package companion books
-        known_books = [
-            # Core Python (Tier 3)
-            "Fluent Python", "Fluent Python 2nd",
-            "Learning Python", "Learning Python Ed.6", "Learning Python Ed6",
-            "Python Essential Reference", "Python Essential Reference 4th",
-            "Python Distilled",
-            "Python Cookbook", "Python Cookbook 3rd",
-            "Python Data Analysis", "Python Data Analysis 3rd",
-            
-            # Architecture (Tier 1)
-            "Architecture Patterns with Python",
-            "Python Architecture Patterns",
-            "Building Microservices",
-            "Microservice Architecture",
-            "Microservices Up and Running",
-            "Microservice APIs",
-            
-            # Microservices/FastAPI
-            "Building Python Microservices with FastAPI",
-            "Python Microservices Development",
-            
-            # AI/LLM (Tier 1)
-            "AI Engineering", "AI Engineering Building Applications",
-            "Building LLM Powered Applications",
-            "AI Agents and Applications",
-            "AI Agents In Action",
-            
-            # Other technical books
-            "Effective Python",
-            "Clean Code",
-            "Design Patterns",
-            "Domain-Driven Design",
-            "Patterns of Enterprise Application Architecture",
-        ]
+        # Use dynamically extracted companion book titles from aggregate
+        # (populated in __init__ from aggregate_data)
+        known_books = self._companion_book_titles if self._companion_book_titles else []
+        
+        # Fallback: add some core known titles if aggregate didn't provide any
+        if not known_books:
+            known_books = [
+                BookTitles.FLUENT_PYTHON,
+                BookTitles.PYTHON_ESSENTIAL_REF,
+                BookTitles.PYTHON_DISTILLED,
+                BookTitles.PYTHON_DATA_ANALYSIS,
+                "Architecture Patterns with Python",
+                "Building Microservices",
+            ]
         
         annotation_lower = annotation.lower()
         
@@ -1389,7 +1434,8 @@ Prioritize books that provide the most direct, substantial coverage of this chap
         concepts: List[str]
     ) -> ScholarlyAnnotation:
         """Mock annotation for testing."""
-        annotation_text = f"""The {chapter_title} chapter introduces Python's numeric type system, which receives sophisticated treatment in several companion texts. Python Essential Reference 4th (Ch. 3, pp. 145-148) provides comprehensive implementation details for integer, float, and Decimal types, emphasizing precision control through decimal.Context managers—a critical topic absent from Learning Python's introductory coverage. Fluent Python 2nd (Ch. 12, pp. 89-91) demonstrates advanced numeric protocols through operator overloading examples, showing how custom classes can integrate seamlessly with Python's numeric tower using __add__, __mul__, and other special methods. The gap analysis reveals that while Learning Python establishes foundational concepts like type coercion and basic arithmetic, it defers complex number applications and NumPy integration patterns that appear extensively in Python Data Analysis 3rd. Python Distilled (pp. 45-46) offers a concise middle ground, covering numeric best practices including integer division nuances and floating-point comparison pitfalls that intermediate learners should understand."""
+        source_book = self._source_book_name or "the source book"
+        annotation_text = f"""The {chapter_title} chapter introduces Python's numeric type system, which receives sophisticated treatment in several companion texts. Python Essential Reference 4th (Ch. 3, pp. 145-148) provides comprehensive implementation details for integer, float, and Decimal types, emphasizing precision control through decimal.Context managers—a critical topic absent from {source_book}'s introductory coverage. Fluent Python 2nd (Ch. 12, pp. 89-91) demonstrates advanced numeric protocols through operator overloading examples, showing how custom classes can integrate seamlessly with Python's numeric tower using __add__, __mul__, and other special methods. The gap analysis reveals that while {source_book} establishes foundational concepts like type coercion and basic arithmetic, it defers complex number applications and NumPy integration patterns that appear extensively in Python Data Analysis 3rd. Python Distilled (pp. 45-46) offers a concise middle ground, covering numeric best practices including integer division nuances and floating-point comparison pitfalls that intermediate learners should understand."""
         
         return ScholarlyAnnotation(
             chapter_number=chapter_num,

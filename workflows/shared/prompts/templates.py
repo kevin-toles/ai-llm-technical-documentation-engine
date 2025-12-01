@@ -108,7 +108,8 @@ def format_comprehensive_phase1_prompt(
     chapter_num: int,
     chapter_title: str,
     chapter_full_text: str,
-    books_metadata: List[Dict[str, Any]]
+    books_metadata: List[Dict[str, Any]],
+    source_book_name: str = "Unknown Book"
 ) -> str:
     """
     Format comprehensive Phase 1 prompt with actual values.
@@ -120,6 +121,7 @@ def format_comprehensive_phase1_prompt(
         chapter_title: Chapter title (e.g., "Introduction to Python")
         chapter_full_text: Full chapter text content
         books_metadata: List of book metadata dicts
+        source_book_name: Name of the source book being analyzed (dynamic, not hardcoded)
         
     Returns:
         Formatted prompt string ready for LLM
@@ -146,6 +148,7 @@ def format_comprehensive_phase1_prompt(
     )
     
     return template.format(
+        source_book_name=source_book_name,
         chapter_num=chapter_num,
         chapter_title=chapter_title,
         chapter_text_length=len(chapter_full_text),
@@ -197,7 +200,8 @@ def format_comprehensive_phase2_prompt(
     chapter_num: int,
     chapter_title: str,
     metadata_response: Any,  # MetadataExtractionResponse with validation_summary, analysis_strategy
-    content_package: Dict[str, Any]
+    content_package: Dict[str, Any],
+    source_book_name: str = "Unknown Book"
 ) -> str:
     """Format Phase 2 comprehensive prompt for integrated scholarly annotation.
     
@@ -209,6 +213,7 @@ def format_comprehensive_phase2_prompt(
         chapter_title: Chapter title
         metadata_response: Object with .validation_summary and .analysis_strategy attributes
         content_package: Dict mapping book_name -> list of excerpt dicts
+        source_book_name: Name of the source book being analyzed (dynamic, not hardcoded)
         
     Returns:
         Formatted prompt string ready for LLM
@@ -227,6 +232,7 @@ def format_comprehensive_phase2_prompt(
     content_text = '\n'.join(content_sections)
     
     return template.format(
+        source_book_name=source_book_name,
         chapter_num=chapter_num,
         chapter_title=chapter_title,
         metadata_response_validation_summary=metadata_response.validation_summary,

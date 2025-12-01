@@ -116,6 +116,7 @@ def get_or_create_orchestrator() -> Optional[TwoPhaseOrchestrator]:
     Ensures we only initialize the metadata service once for efficiency.
     
     UPDATED: Now returns TwoPhaseOrchestrator (Sprint 1 Day 1-2 refactoring)
+    UPDATED: Now passes AGGREGATE_DATA for dynamic book info (no hardcoding)
     """
     global _orchestrator
     
@@ -124,7 +125,11 @@ def get_or_create_orchestrator() -> Optional[TwoPhaseOrchestrator]:
         print("Initializing two-phase orchestrator...")
         try:
             metadata_service = MetadataServiceFactory.create_default()
-            _orchestrator = TwoPhaseOrchestrator(metadata_service)
+            # Pass aggregate data for dynamic book titles/authors (no hardcoding)
+            _orchestrator = TwoPhaseOrchestrator(
+                metadata_service,
+                aggregate_data=AGGREGATE_DATA
+            )
             logger.info("✓ TwoPhaseOrchestrator initialized successfully")
             print("✓ System ready (using refactored architecture)")
         except Exception as e:
@@ -606,11 +611,6 @@ def _extract_chapters_from_content(content: str) -> tuple[str, str, List[int], i
     
     logger.info(f"Found {len(all_chapters)} chapters (Chapter {all_chapters[0]} - Chapter {all_chapters[-1]})")
     print(f"\n📋 Found {len(all_chapters)} chapters (Chapter {all_chapters[0]} - Chapter {all_chapters[-1]})")
-    
-    # LIMIT TO CHAPTERS 1-10 FOR TESTING
-    all_chapters = [ch for ch in all_chapters if 1 <= ch <= 10]
-    logger.info(f"LIMITING to chapters 1-10 for testing: {all_chapters}")
-    print(f"⚠️  LIMITING to chapters 1-10 for testing: {all_chapters}")
     
     return header, chapters_content, all_chapters, 0
 

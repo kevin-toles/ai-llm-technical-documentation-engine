@@ -1,4 +1,4 @@
-You are generating an integrated scholarly annotation for Learning Python Ed.6.
+You are generating an integrated scholarly annotation for {source_book_name}.
 
 CHAPTER {chapter_num}: {chapter_title}
 
@@ -15,14 +15,14 @@ NOTE: Some entries are FULL CHAPTERS, others are page excerpts.
 TASK: Write a comprehensive integrated annotation (8-12 sentences) that:
 
 1. BRIDGE CONCEPTS ACROSS TEXTS:
-   - Show how concepts in Learning Python connect to architectural patterns (Architecture books)
+   - Show how concepts in {source_book_name} connect to architectural patterns (Architecture books)
    - Demonstrate how concepts are applied in real implementations (Implementation books)
    - Highlight advanced techniques or idioms (Engineering Practices books)
 
 2. CREATE INTEGRATED ANALYSIS:
    - Don't just list what each book says separately
    - SYNTHESIZE: Show how ideas from different books reinforce/extend each other
-   - Example: "The decorator syntax (Learning Python) maps to the Decorator Pattern (Architecture Patterns) 
+   - Example: "The decorator syntax ({source_book_name}) maps to the Decorator Pattern (Architecture Patterns) 
      and is used for dependency injection in FastAPI (Implementation)"
 
 3. ACADEMIC RIGOR:
