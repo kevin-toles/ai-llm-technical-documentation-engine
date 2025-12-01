@@ -10,6 +10,10 @@ These tests MUST FAIL initially (TDD RED), then pass after extraction (TDD GREEN
 """
 from pathlib import Path
 
+# Get project root for correct path resolution
+project_root = Path(__file__).parent.parent.parent
+PROMPTS_DIR = project_root / "workflows" / "shared" / "prompts"
+
 
 
 def test_phase2_template_file_exists():
@@ -22,7 +26,7 @@ def test_phase2_template_file_exists():
     - REFACTORING_PLAN.md: Sprint 2 template extraction (final prompt)
     - Source: interactive_llm_system_v3_hybrid_prompt.py lines 1389-1469
     """
-    template_path = Path("src/prompts/phase2.txt")
+    template_path = PROMPTS_DIR / "phase2.txt"
     assert template_path.exists(), \
         f"Template not found: {template_path}. Extract from interactive_llm_system_v3_hybrid_prompt.py lines 1389-1469"
 
@@ -45,7 +49,7 @@ def test_phase2_has_required_placeholders():
     References:
     - PYTHON_GUIDELINES: String formatting with {placeholder} syntax
     """
-    template_path = Path("src/prompts/phase2.txt")
+    template_path = PROMPTS_DIR / "phase2.txt"
     template_content = template_path.read_text()
     
     required_placeholders = {
@@ -174,7 +178,7 @@ def test_phase2_preserves_analysis_instructions():
     References:
     - Source: lines 1426-1461 define analysis approach
     """
-    template_path = Path("src/prompts/phase2.txt")
+    template_path = PROMPTS_DIR / "phase2.txt"
     template_content = template_path.read_text()
     
     # Verify analysis sections exist
@@ -204,7 +208,7 @@ def test_phase2_preserves_strict_rules():
     References:
     - Source: lines 1463-1469 define strict rules
     """
-    template_path = Path("src/prompts/phase2.txt")
+    template_path = PROMPTS_DIR / "phase2.txt"
     template_content = template_path.read_text()
     
     # Verify strict rules section exists

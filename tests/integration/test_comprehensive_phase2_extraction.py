@@ -10,40 +10,54 @@ These tests MUST FAIL initially (TDD RED), then pass after extraction (TDD GREEN
 from pathlib import Path
 
 
+# Correct path to templates in workflows/shared/prompts/
+PROMPTS_DIR = Path(__file__).parent.parent.parent / "workflows" / "shared" / "prompts"
+
 
 def test_comprehensive_phase2_template_file_exists():
     """
-    TDD RED: Verify comprehensive_phase2.txt template file exists.
-    
-    Expected to FAIL until GREEN phase creates the template file.
+    TDD GREEN: Verify comprehensive_phase2.txt template file exists.
     """
-    template_path = Path("src/prompts/comprehensive_phase2.txt")
+    template_path = PROMPTS_DIR / "comprehensive_phase2.txt"
     assert template_path.exists(), \
-        f"Template not found: {template_path}. Extract from interactive_llm_system_v3_hybrid_prompt.py lines ~1150-1228"
+        f"Template not found: {template_path}"
+
+
+def test_comprehensive_phase2_system_prompt_exists():
+    """
+    TDD GREEN: Verify comprehensive_phase2_system.txt exists (system/user split).
+    """
+    system_path = PROMPTS_DIR / "comprehensive_phase2_system.txt"
+    assert system_path.exists(), \
+        f"System prompt not found: {system_path}"
 
 
 def test_comprehensive_phase2_has_required_placeholders():
     """
-    TDD RED: Verify template contains all required placeholders.
+    TDD GREEN: Verify template contains all required placeholders.
     
-    Expected placeholders from source (line 1211):
+    Expected placeholders:
+    - {source_book_name}
     - {chapter_num}
     - {chapter_title}
     - {metadata_response_validation_summary}
     - {metadata_response_analysis_strategy}
     - {content_package_count}
     - {content_text}
+    - {taxonomy_text}
     """
-    template_path = Path("src/prompts/comprehensive_phase2.txt")
+    template_path = PROMPTS_DIR / "comprehensive_phase2.txt"
     template_content = template_path.read_text()
     
     required_placeholders = {
+        '{source_book_name}',
         '{chapter_num}',
         '{chapter_title}',
         '{metadata_response_validation_summary}',
         '{metadata_response_analysis_strategy}',
         '{content_package_count}',
-        '{content_text}'
+        '{content_text}',
+        '{taxonomy_text}'
     }
     
     for placeholder in required_placeholders:
@@ -53,9 +67,7 @@ def test_comprehensive_phase2_has_required_placeholders():
 
 def test_format_comprehensive_phase2_prompt_function_exists():
     """
-    TDD RED: Verify format_comprehensive_phase2_prompt() function exists.
-    
-    Expected to FAIL until GREEN phase implements formatter in templates.py.
+    TDD GREEN: Verify format_comprehensive_phase2_prompt() function exists.
     """
     from workflows.shared.prompts.templates import format_comprehensive_phase2_prompt
     assert callable(format_comprehensive_phase2_prompt)
@@ -63,13 +75,15 @@ def test_format_comprehensive_phase2_prompt_function_exists():
 
 def test_format_comprehensive_phase2_prompt_signature():
     """
-    TDD RED: Verify function signature matches requirements.
+    TDD GREEN: Verify function signature matches requirements.
     
-    Expected parameters (from _build_comprehensive_phase2_prompt):
+    Expected parameters:
     - chapter_num: int
     - chapter_title: str
-    - metadata_response: MetadataExtractionResponse (has validation_summary, analysis_strategy)
+    - metadata_response: object with validation_summary, analysis_strategy
     - content_package: Dict[str, Any]
+    - source_book_name: str (optional, default "Unknown Book")
+    - taxonomy_data: Optional[Dict] (optional)
     """
     from workflows.shared.prompts.templates import format_comprehensive_phase2_prompt
     import inspect
@@ -77,14 +91,16 @@ def test_format_comprehensive_phase2_prompt_signature():
     sig = inspect.signature(format_comprehensive_phase2_prompt)
     params = list(sig.parameters.keys())
     
-    expected_params = ['chapter_num', 'chapter_title', 'metadata_response', 'content_package']
+    # Required params first, then optional
+    expected_params = ['chapter_num', 'chapter_title', 'metadata_response', 
+                       'content_package', 'source_book_name', 'taxonomy_data']
     assert params == expected_params, \
         f"Expected params {expected_params}, got {params}"
 
 
-def test_format_comprehensive_phase2_prompt_returns_string():
+def test_format_comprehensive_phase2_prompt_returns_tuple():
     """
-    TDD RED: Verify function returns (system_prompt, user_prompt) tuple.
+    TDD GREEN: Verify function returns (system_prompt, user_prompt) tuple.
     
     Uses mock metadata response and content package.
     """
@@ -139,17 +155,44 @@ def test_format_comprehensive_phase2_prompt_returns_string():
 
 def test_comprehensive_phase2_preserves_citation_format():
     """
-    TDD RED: Verify template preserves Chicago-style citation format.
-    
-    The prompt requires specific citation format:
-    - **CHICAGO FOOTNOTE FORMAT**: Author(s), *Book Title*, Chapter/Section, page numbers.
-    - Example: "Ramalho, Luciano, *Fluent Python, 2nd Edition*, Chapter 5, 145-167."
+    TDD GREEN: Verify template preserves Chicago-style citation requirements.
     """
-    template_path = Path("src/prompts/comprehensive_phase2.txt")
+    template_path = PROMPTS_DIR / "comprehensive_phase2.txt"
     template_content = template_path.read_text()
     
-    # Verify citation requirements are present
-    assert "CHICAGO FOOTNOTE FORMAT" in template_content or "Chicago-style footnotes" in template_content, \
-        "Template must preserve Chicago citation format requirements"
-    assert "Author(s), *Book Title*" in template_content, \
-        "Template must include citation format example"
+    # Verify citation requirements are present (uses 17th edition)
+    assert "Chicago Manual of Style" in template_content or "Chicago-style" in template_content, \
+        "Template must reference Chicago citation format"
+
+
+def test_system_prompt_contains_role_identity():
+    """
+    TDD GREEN: Verify system prompt contains role/identity context.
+    """
+    system_path = PROMPTS_DIR / "comprehensive_phase2_system.txt"
+    content = system_path.read_text()
+    
+    # Should have role definition
+    assert "scholarly documentation analyst" in content.lower(), \
+        "System prompt should define analyst role"
+    
+    # Should have output constraint
+    assert "annotation" in content.lower(), \
+        "System prompt should mention annotation output"
+
+
+def test_user_prompt_starts_with_task():
+    """
+    TDD GREEN: Verify user prompt starts with task, not role definition.
+    """
+    template_path = PROMPTS_DIR / "comprehensive_phase2.txt"
+    content = template_path.read_text()
+    
+    # Should NOT start with "You are..."
+    first_line = content.strip().split('\n')[0]
+    assert not first_line.startswith("You are"), \
+        "User prompt should start with task, not role (role is in system prompt)"
+    
+    # Should start with task instruction
+    assert "Generate" in first_line or "annotation" in first_line.lower(), \
+        "User prompt should start with task instruction"

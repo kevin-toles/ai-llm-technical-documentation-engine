@@ -10,6 +10,10 @@ These tests MUST FAIL initially (TDD RED), then pass after extraction (TDD GREEN
 """
 from pathlib import Path
 
+# Get project root for correct path resolution
+project_root = Path(__file__).parent.parent.parent
+PROMPTS_DIR = project_root / "workflows" / "shared" / "prompts"
+
 
 
 def test_phase1_template_file_exists():
@@ -22,7 +26,7 @@ def test_phase1_template_file_exists():
     - REFACTORING_PLAN.md: Sprint 2 template extraction
     - Source: interactive_llm_system_v3_hybrid_prompt.py lines 1349-1456
     """
-    template_path = Path("src/prompts/phase1.txt")
+    template_path = PROMPTS_DIR / "phase1.txt"
     assert template_path.exists(), \
         f"Template not found: {template_path}. Extract from interactive_llm_system_v3_hybrid_prompt.py lines 1349-1456"
 
@@ -44,7 +48,7 @@ def test_phase1_has_required_placeholders():
     References:
     - PYTHON_GUIDELINES: String formatting with {placeholder} syntax
     """
-    template_path = Path("src/prompts/phase1.txt")
+    template_path = PROMPTS_DIR / "phase1.txt"
     template_content = template_path.read_text()
     
     required_placeholders = {
@@ -158,7 +162,7 @@ def test_phase1_preserves_json_schema():
     References:
     - Source: lines 1377-1389 define JSON schema
     """
-    template_path = Path("src/prompts/phase1.txt")
+    template_path = PROMPTS_DIR / "phase1.txt"
     template_content = template_path.read_text()
     
     # Verify JSON schema is present
@@ -189,7 +193,7 @@ def test_phase1_preserves_book_taxonomy():
     - BOOK_TAXONOMY_MATRIX.md: Microservice Architecture taxonomy
     - Source: lines 1408-1430 define taxonomy tiers
     """
-    template_path = Path("src/prompts/phase1.txt")
+    template_path = PROMPTS_DIR / "phase1.txt"
     template_content = template_path.read_text()
     
     # Verify taxonomy sections exist
