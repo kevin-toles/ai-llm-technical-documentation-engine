@@ -980,8 +980,8 @@ Prioritize books that provide the most direct, substantial coverage of this chap
         print(f"Retrieved content from {len(content_package)} books")
         print(f"Total excerpts: {sum(len(excerpts) for excerpts in content_package.values())}")
         
-        # Build synthesis prompt
-        prompt = self._build_comprehensive_phase2_prompt(
+        # Build synthesis prompt (now returns system + user prompts)
+        system_prompt, user_prompt = self._build_comprehensive_phase2_prompt(
             chapter_num,
             chapter_title,
             chapter_full_text,
@@ -989,10 +989,10 @@ Prioritize books that provide the most direct, substantial coverage of this chap
             content_package
         )
         
-        print(f"Estimated tokens: ~{self._estimate_tokens(prompt):,}")
+        print(f"Estimated tokens: ~{self._estimate_tokens(user_prompt):,}")
         
         try:
-            llm_output = call_llm(prompt, max_tokens=4000, phase="phase2", chapter_num=chapter_num)
+            llm_output = call_llm(user_prompt, system_prompt=system_prompt, max_tokens=4000, phase="phase2", chapter_num=chapter_num)
             
             # Parse annotation from LLM output
             annotation_text = llm_output.strip()
@@ -1052,11 +1052,12 @@ Prioritize books that provide the most direct, substantial coverage of this chap
         _chapter_full_text: str,
         metadata_response: LLMMetadataResponse,
         content_package: Dict[str, List[Dict]]
-    ) -> str:
+    ) -> tuple:
         """
         Build Phase 2 prompt for comprehensive synthesis.
         
         REFACTORED: Now uses template system from src/prompts/
+        Returns both system prompt and user prompt for proper separation.
         
         Args:
             chapter_num: Chapter number for identification
@@ -1066,10 +1067,11 @@ Prioritize books that provide the most direct, substantial coverage of this chap
             content_package: Book excerpts requested in Phase 1
             
         Returns:
-            Formatted prompt string ready for LLM
+            Tuple of (system_prompt, user_prompt) ready for LLM
             
         References:
             - Template: src/prompts/comprehensive_phase2.txt
+            - System: src/prompts/comprehensive_phase2_system.txt
             - Formatter: src/prompts/templates.format_comprehensive_phase2_prompt
             - Sprint 2.12: TDD REFACTOR - Integrate Phase2
         """

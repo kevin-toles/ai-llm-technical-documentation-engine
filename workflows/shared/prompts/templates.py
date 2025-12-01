@@ -15,10 +15,35 @@ References:
 """
 
 from pathlib import Path
-from typing import Any, Dict, Final, List, Optional
+from typing import Any, Dict, Final, List, Optional, Tuple
 
 # Template directory is fixed relative to this module
 TEMPLATE_DIR: Final[Path] = Path(__file__).parent
+
+
+def load_system_prompt(name: str) -> str:
+    """
+    Load a system prompt template from file.
+    
+    System prompts contain persistent role/identity context that doesn't
+    change between chapters - separated from task-specific user prompts.
+    
+    Args:
+        name: System prompt name (e.g., "comprehensive_phase2_system")
+        
+    Returns:
+        System prompt content as UTF-8 encoded string.
+        
+    Raises:
+        FileNotFoundError: If system prompt file doesn't exist
+    """
+    # Security: Prevent path traversal attacks
+    if '/' in name or '\\' in name:
+        raise ValueError(f"System prompt name cannot contain path separators: {name}")
+    
+    prompt_path = TEMPLATE_DIR / f"{name}.txt"
+    with prompt_path.open('r', encoding='utf-8') as f:
+        return f.read()
 
 
 def load_template(name: str) -> str:
@@ -245,11 +270,15 @@ def format_comprehensive_phase2_prompt(
     content_package: Dict[str, Any],
     source_book_name: str = "Unknown Book",
     taxonomy_data: Optional[Dict[str, Any]] = None
-) -> str:
+) -> Tuple[str, str]:
     """Format Phase 2 comprehensive prompt for integrated scholarly annotation.
     
     Builds prompt for generating integrated scholarly annotations that synthesize
     content from multiple companion books with Chicago-style citations.
+    
+    Returns BOTH system prompt and user prompt for proper separation of concerns:
+    - System prompt: Role identity, output format constraints (persistent)
+    - User prompt: Chapter data, taxonomy, rules, examples (task-specific)
     
     Args:
         chapter_num: Chapter number
@@ -260,12 +289,15 @@ def format_comprehensive_phase2_prompt(
         taxonomy_data: Taxonomy dict with tiers and book assignments
         
     Returns:
-        Formatted prompt string ready for LLM
+        Tuple of (system_prompt, user_prompt) - both ready for LLM
         
     References:
         - Source: interactive_llm_system_v3_hybrid_prompt.py::_build_comprehensive_phase2_prompt
         - Template: src/prompts/comprehensive_phase2.txt
+        - System: src/prompts/comprehensive_phase2_system.txt
     """
+    # Load both templates
+    system_prompt = load_system_prompt("comprehensive_phase2_system")
     template = load_template("comprehensive_phase2")
     
     # Build content sections from all books
@@ -278,7 +310,7 @@ def format_comprehensive_phase2_prompt(
     # Format taxonomy for prompt
     taxonomy_text = _format_taxonomy_for_prompt(taxonomy_data) if taxonomy_data else "No taxonomy data available."
     
-    return template.format(
+    user_prompt = template.format(
         source_book_name=source_book_name,
         chapter_num=chapter_num,
         chapter_title=chapter_title,
@@ -288,6 +320,8 @@ def format_comprehensive_phase2_prompt(
         content_text=content_text[:15000],  # Limit to first 15000 chars
         taxonomy_text=taxonomy_text
     )
+    
+    return system_prompt, user_prompt
 
 
 def format_phase1_prompt(

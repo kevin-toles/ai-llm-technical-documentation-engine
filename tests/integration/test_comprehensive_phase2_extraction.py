@@ -84,7 +84,7 @@ def test_format_comprehensive_phase2_prompt_signature():
 
 def test_format_comprehensive_phase2_prompt_returns_string():
     """
-    TDD RED: Verify function returns formatted prompt string.
+    TDD RED: Verify function returns (system_prompt, user_prompt) tuple.
     
     Uses mock metadata response and content package.
     """
@@ -123,10 +123,18 @@ def test_format_comprehensive_phase2_prompt_returns_string():
         content_package=mock_content
     )
     
-    assert isinstance(result, str)
-    assert len(result) > 500  # Should be substantial prompt
-    assert "CHAPTER 7: Function Decorators" in result
-    assert "Concepts: decorators, context managers" in result
+    # Should return tuple of (system_prompt, user_prompt)
+    assert isinstance(result, tuple)
+    assert len(result) == 2
+    system_prompt, user_prompt = result
+    
+    assert isinstance(system_prompt, str)
+    assert isinstance(user_prompt, str)
+    assert len(user_prompt) > 500  # Should be substantial prompt
+    assert "CHAPTER 7: Function Decorators" in user_prompt
+    assert "Concepts: decorators, context managers" in user_prompt
+    # System prompt should have the role identity
+    assert "scholarly documentation analyst" in system_prompt
 
 
 def test_comprehensive_phase2_preserves_citation_format():
