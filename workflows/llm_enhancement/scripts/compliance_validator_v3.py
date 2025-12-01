@@ -275,18 +275,99 @@ class ComplianceValidator:
             rule_config = self.rules[rule_name]
             pattern = rule_config.get("pattern", "")
             
-            # Simple pattern matching validation
-            # (In production, this would use more sophisticated validation logic)
             if rule_name == "verbatim_block":
                 # Check for code blocks without annotations
                 errors.extend(self._check_verbatim_blocks(content))
             elif rule_name == "annotation":
-                # Check for missing annotations
+                # Check for source annotations
                 errors.extend(self._check_annotations(content, pattern))
+            elif rule_name == "chicago_citation":
+                # Check for Chicago-style citations
+                errors.extend(self._check_chicago_citations(content, pattern))
+        
+        # V3: Add content quality checks
+        errors.extend(self._check_content_quality(content))
         
         # Add fix suggestions
         for error in errors:
             error["suggestion"] = self._generate_fix_suggestion(error)
+        
+        return errors
+    
+    def _check_content_quality(self, content: str) -> List[Dict[str, Any]]:
+        """
+        Check for minimum content quality indicators.
+        
+        V3: Added to catch empty/stub output files.
+        """
+        errors = []
+        
+        # Check minimum content length (less than 1000 chars is suspicious)
+        if len(content) < 1000:
+            errors.append({
+                "rule": "content_quality",
+                "line": 1,
+                "message": f"Content too short ({len(content)} chars). Expected substantial scholarly content.",
+                "location": "Entire file"
+            })
+        
+        # Check for Cross-Text Analysis section
+        if "### Cross-Text Analysis" not in content and "Cross-Text Analysis" not in content:
+            errors.append({
+                "rule": "content_quality",
+                "line": 1,
+                "message": "Missing 'Cross-Text Analysis' section. LLM enhancement may have failed.",
+                "location": "Document structure"
+            })
+        
+        # Check for footnotes (scholarly content should have citations)
+        footnote_pattern = r'\[\^\d+\]'
+        if not re.search(footnote_pattern, content):
+            errors.append({
+                "rule": "content_quality",
+                "line": 1,
+                "message": "No footnote references found. Expected scholarly annotations with citations.",
+                "location": "Document citations"
+            })
+        
+        # Check for chapter summaries with actual content
+        summary_pattern = r'### Chapter Summary\s*\n(.{100,})'
+        if not re.search(summary_pattern, content, re.DOTALL):
+            errors.append({
+                "rule": "content_quality",
+                "line": 1,
+                "message": "Chapter summaries appear empty or missing. Expected detailed summaries.",
+                "location": "Chapter content"
+            })
+        
+        return errors
+    
+    def _check_chicago_citations(self, content: str, _pattern: str) -> List[Dict[str, Any]]:
+        """
+        Check for Chicago-style citations in content.
+        
+        V3: Actually implements citation checking (was stub before).
+        
+        Args:
+            content: Markdown content to validate
+            _pattern: Reserved for custom pattern (unused, kept for API compatibility)
+        """
+        errors = []
+        
+        # Check for footnote definitions with content (e.g., [^1]: Author, Title...)
+        footnote_def_pattern = r'\[\^\d+\]:\s*.+'
+        
+        # Check if there are footnote references
+        has_references = re.search(r'\[\^\d+\](?!:)', content)
+        has_definitions = re.search(footnote_def_pattern, content)
+        
+        if has_references and not has_definitions:
+            errors.append({
+                "rule": "chicago_citation",
+                "line": 1,
+                "message": "Footnote references found but no citation definitions.",
+                "location": "Document end"
+            })
         
         return errors
     

@@ -179,6 +179,7 @@ class AnalysisOrchestrator:
         self._llm_available = llm_available
         self._lazy_load = lazy_load
         self._state = AnalysisPhase.INITIAL
+        self._current_chapter_num = 0  # Tracking for cache keys
         
         # Sprint 3.4: Initialize metadata builder (Builder pattern)
         self._metadata_builder = MetadataBuilder(metadata_service)
@@ -213,7 +214,8 @@ class AnalysisOrchestrator:
             - Fluent Python Ch. 7: Extract Method pattern for complexity reduction
             - Architecture Patterns Ch. 3: Error handling separation
         """
-        llm_output = call_llm(prompt, max_tokens=max_tokens)
+        # Pass phase="phase1" and chapter_num for caching
+        llm_output = call_llm(prompt, max_tokens=max_tokens, phase="phase1", chapter_num=self._current_chapter_num)
         
         # DEBUG: Show raw LLM response
         print("\n" + "="*80)
@@ -246,7 +248,8 @@ IMPORTANT CONSTRAINT: You have access to {books_count} books, but please limit y
 to ONLY the TOP 10 most relevant and high-priority books. Focus on quality over quantity. 
 Prioritize books that provide the most direct, substantial coverage of this chapter's core concepts."""
             
-            llm_output = call_llm(constrained_prompt, max_tokens=max_tokens)
+            # Note: Different prompt = different cache key (won't hit previous cache)
+            llm_output = call_llm(constrained_prompt, max_tokens=max_tokens, phase="phase1", chapter_num=self._current_chapter_num)
             response = LLMMetadataResponse.from_llm_output(llm_output)
             print(f"✓ Retry with constraint: Found {len(response.content_requests)} content requests")
         
@@ -298,6 +301,9 @@ Prioritize books that provide the most direct, substantial coverage of this chap
         print(f"\n{'='*80}")
         print(f"COMPREHENSIVE LLM ANALYSIS: Chapter {chapter_num} - {chapter_title}")
         print(f"{'='*80}")
+        
+        # Track current chapter for cache key generation
+        self._current_chapter_num = chapter_num
         
         # Build books metadata (all books - using data-driven concept taxonomy)
         books_metadata = self._build_books_metadata_only()
@@ -444,7 +450,7 @@ Prioritize books that provide the most direct, substantial coverage of this chap
         
         # Call LLM
         try:
-            llm_output = call_llm(prompt, max_tokens=2000)
+            llm_output = call_llm(prompt, max_tokens=2000, phase="phase1", chapter_num=chapter_num)
             response = LLMMetadataResponse.from_llm_output(llm_output)
             
             print(f"✓ Received {len(response.content_requests)} content requests")
@@ -500,7 +506,7 @@ Prioritize books that provide the most direct, substantial coverage of this chap
         
         # Call LLM for final analysis
         try:
-            annotation_text = call_llm(prompt, max_tokens=1500)
+            annotation_text = call_llm(prompt, max_tokens=1500, phase="phase2", chapter_num=chapter_num)
             
             # Parse sources and concepts from annotation
             sources = self._extract_sources(annotation_text)
@@ -920,25 +926,51 @@ Prioritize books that provide the most direct, substantial coverage of this chap
         print(f"Estimated tokens: ~{self._estimate_tokens(prompt):,}")
         
         try:
-            llm_output = call_llm(prompt, max_tokens=4000)
+            llm_output = call_llm(prompt, max_tokens=4000, phase="phase2", chapter_num=chapter_num)
             
             # Parse annotation from LLM output
             annotation_text = llm_output.strip()
             
-            # Extract sources and concepts (basic parsing)
-            sources = list(content_package.keys())
-            concepts = metadata_response.validation_summary  # Contains extracted concepts
+            # Extract sources from annotation text (uses known book title matching)
+            sources = self._extract_sources(annotation_text)
+            
+            # Also include books that were loaded (in case annotation doesn't mention them by exact name)
+            for book_name in content_package.keys():
+                if book_name not in sources:
+                    sources.append(book_name)
+            
+            # Extract concepts that appear in the annotation
+            # Use the concepts from content requests + extract from annotation text
+            concepts_validated = []
+            for req in metadata_response.content_requests:
+                # Extract key concepts from the rationale
+                for word in req.rationale.lower().split():
+                    # Filter: only alphabetic words > 4 chars, no newlines
+                    clean_word = word.strip()
+                    if len(clean_word) > 4 and clean_word.isalpha():
+                        concepts_validated.append(clean_word)
+            
+            # Also extract concepts from annotation text using our helper
+            annotation_concepts = _extract_concepts_from_text(annotation_text)
+            # Filter to only clean, lowercase concept keywords
+            for concept in annotation_concepts:
+                clean = concept.strip().lower()
+                if clean.isalpha() and len(clean) > 3 and '\n' not in concept:
+                    concepts_validated.append(clean)
+            
+            # Deduplicate and limit to top 20
+            concepts_validated = list(dict.fromkeys(concepts_validated))[:20]
             
             print(f"✓ Generated annotation: {len(annotation_text)} chars")
             print(f"✓ Sources cited: {len(sources)}")
-            print(f"✓ Concepts validated: {len(metadata_response.content_requests)}")
+            print(f"✓ Concepts validated: {len(concepts_validated)}")
             
             return ScholarlyAnnotation(
                 chapter_number=chapter_num,
                 chapter_title=chapter_title,
                 annotation_text=annotation_text,
                 sources_cited=sources,
-                concepts_validated=concepts.split(', ') if isinstance(concepts, str) else [],
+                concepts_validated=concepts_validated,
                 gaps_identified=[],
                 metadata={'status': 'comprehensive_synthesis', 'method': 'scenario_2'}
             )
@@ -1117,21 +1149,68 @@ Prioritize books that provide the most direct, substantial coverage of this chap
         return len(text) // 4
     
     def _extract_sources(self, annotation: str) -> List[str]:
-        """Extract cited sources from annotation text."""
+        """Extract cited sources from annotation text.
+        
+        Uses a comprehensive list of known book titles from the taxonomy.
+        Matches book titles mentioned in the annotation text.
+        """
         sources = []
-        # Simple extraction - look for book mentions
-        all_books = self._metadata_service._repo.get_all()
-        for book in all_books:
-            book_name_variants = [
-                book.title,
-                book.title.replace('_', ' '),
-                book.file_name.replace('_Content.json', '').replace('_', ' ')
-            ]
-            for variant in book_name_variants:
-                if variant.lower() in annotation.lower():
-                    sources.append(book.title)
-                    break
-        return list(set(sources))
+        
+        # Comprehensive list of known book titles from BOOK_TAXONOMY_MATRIX.md
+        # and aggregate package companion books
+        known_books = [
+            # Core Python (Tier 3)
+            "Fluent Python", "Fluent Python 2nd",
+            "Learning Python", "Learning Python Ed.6", "Learning Python Ed6",
+            "Python Essential Reference", "Python Essential Reference 4th",
+            "Python Distilled",
+            "Python Cookbook", "Python Cookbook 3rd",
+            "Python Data Analysis", "Python Data Analysis 3rd",
+            
+            # Architecture (Tier 1)
+            "Architecture Patterns with Python",
+            "Python Architecture Patterns",
+            "Building Microservices",
+            "Microservice Architecture",
+            "Microservices Up and Running",
+            "Microservice APIs",
+            
+            # Microservices/FastAPI
+            "Building Python Microservices with FastAPI",
+            "Python Microservices Development",
+            
+            # AI/LLM (Tier 1)
+            "AI Engineering", "AI Engineering Building Applications",
+            "Building LLM Powered Applications",
+            "AI Agents and Applications",
+            "AI Agents In Action",
+            
+            # Other technical books
+            "Effective Python",
+            "Clean Code",
+            "Design Patterns",
+            "Domain-Driven Design",
+            "Patterns of Enterprise Application Architecture",
+        ]
+        
+        annotation_lower = annotation.lower()
+        
+        for book_title in known_books:
+            # Check for exact match (case-insensitive)
+            if book_title.lower() in annotation_lower:
+                # Normalize to canonical form (remove edition suffixes for dedup)
+                canonical = book_title.split(" Ed")[0].split(" 2nd")[0].split(" 3rd")[0].split(" 4th")[0].strip()
+                sources.append(book_title)
+        
+        # Deduplicate while preserving order
+        seen = set()
+        unique_sources = []
+        for s in sources:
+            if s not in seen:
+                seen.add(s)
+                unique_sources.append(s)
+        
+        return unique_sources
     
     def _extract_gaps(self, gap_text: str) -> List[str]:
         """Extract identified gaps from gap analysis text."""

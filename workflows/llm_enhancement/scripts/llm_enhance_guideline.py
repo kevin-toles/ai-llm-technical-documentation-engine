@@ -126,11 +126,14 @@ def build_context_index(aggregate: Dict[str, Any]) -> Dict[str, Dict[str, Any]]:
     book_name = source_book.get("name", "unknown")
     metadata = source_book.get("metadata", {})
     
-    for chapter in metadata.get("chapters", []):
-        key = f"{book_name}_ch{chapter.get('number', 0)}"
+    # Handle both dict with "chapters" key and direct list
+    chapters = metadata.get("chapters", []) if isinstance(metadata, dict) else metadata
+    for chapter in chapters:
+        ch_num = chapter.get('chapter_number', chapter.get('number', 0))
+        key = f"{book_name}_ch{ch_num}"
         context_index[key] = {
             "book": book_name,
-            "chapter": chapter.get("number"),
+            "chapter": ch_num,
             "title": chapter.get("title", ""),
             "keywords": chapter.get("keywords_enriched", chapter.get("keywords", [])),
             "concepts": chapter.get("concepts_enriched", chapter.get("concepts", [])),
@@ -140,13 +143,16 @@ def build_context_index(aggregate: Dict[str, Any]) -> Dict[str, Dict[str, Any]]:
     # Index companion books
     for book in aggregate.get("companion_books", []):
         book_name = book.get("name", "unknown")
-        metadata = book.get("metadata", {})
+        metadata = book.get("metadata", [])
         
-        for chapter in metadata.get("chapters", []):
-            key = f"{book_name}_ch{chapter.get('number', 0)}"
+        # metadata is a list of chapters directly, not a dict with "chapters" key
+        chapters = metadata if isinstance(metadata, list) else metadata.get("chapters", [])
+        for chapter in chapters:
+            ch_num = chapter.get('chapter_number', chapter.get('number', 0))
+            key = f"{book_name}_ch{ch_num}"
             context_index[key] = {
                 "book": book_name,
-                "chapter": chapter.get("number"),
+                "chapter": ch_num,
                 "title": chapter.get("title", ""),
                 "keywords": chapter.get("keywords_enriched", chapter.get("keywords", [])),
                 "concepts": chapter.get("concepts_enriched", chapter.get("concepts", [])),

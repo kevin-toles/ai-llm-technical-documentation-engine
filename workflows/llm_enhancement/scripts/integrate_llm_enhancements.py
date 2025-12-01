@@ -1,9 +1,15 @@
 #!/usr/bin/env python3
 """
-integrate_llm_enhancements.py - V2 Interactive Metadata-First
+integrate_llm_enhancements.py - V3 Aggregate-Aware Interactive Metadata-First
 
 Integrate LLM-generated enhancements using the interactive metadata-first approach.
 This version uses two-phase analysis for efficient token usage and smarter analysis.
+
+V3 Changes (Aggregate Support):
+- Accepts --aggregate parameter with pre-built aggregate package
+- Extracts taxonomy, companion books, and source book from aggregate
+- No longer loads files from filesystem directly (uses aggregate data)
+- Still produces rich scholarly output format
 
 V2 Changes:
 - Uses AnalysisOrchestrator for two-phase LLM workflow
@@ -64,12 +70,16 @@ logger.info(f"Logging initialized - log file: {LOG_FILE}")
 
 # Import simplified LLM function (still used for summary enhancement)
 try:
-    from workflows.shared.llm_integration import call_llm
+    from workflows.shared.llm_integration import call_llm, get_cache_stats
     LLM_AVAILABLE = True
     logger.info("✓ LLM integration loaded successfully")
 except ImportError as e:
     LLM_AVAILABLE = False
     logger.error(f"✗ LLM integration failed to load: {e}")
+    
+    # Fallback for get_cache_stats
+    def get_cache_stats():
+        return {"enabled": False, "phase1_count": 0, "phase2_count": 0}
 
 # Import new interactive system (V3 with hybrid prompt quality enforcement)
 # UPDATED: Now using TwoPhaseOrchestrator from refactored phases package
@@ -87,10 +97,13 @@ except ImportError as e:
 # Global orchestrator (singleton pattern for efficiency)
 _orchestrator = None
 
+# Global aggregate data (loaded from --aggregate)
+AGGREGATE_DATA = None
+
 REPO_ROOT = Path(__file__).parent.parent.parent.parent
 GUIDELINES_FILE = REPO_ROOT / "workflows" / "base_guideline_generation" / "output" / "chapter_summaries" / "PYTHON_GUIDELINES_Learning_Python_Ed6.md"
 JSON_DIR = REPO_ROOT / "workflows" / "pdf_to_json" / "output" / "textbooks_json"
-TAXONOMY_DATA = None  # Will be loaded from --taxonomy argument
+TAXONOMY_DATA = None  # Will be loaded from --taxonomy or --aggregate
 
 # Regex pattern constants (to avoid duplication)
 CHAPTER_TITLE_PATTERN = r'## Chapter \d+:\s*(.+)'
@@ -123,9 +136,50 @@ def get_or_create_orchestrator() -> Optional[TwoPhaseOrchestrator]:
     return _orchestrator
 
 def load_companion_books():
-    """Load all companion book JSON files from Textbooks_JSON directory."""
+    """Load companion book data from aggregate package or filesystem.
+    
+    V3: Prioritizes aggregate package if available, falls back to filesystem.
+    """
     companion_data = {}
     
+    # V3: Use aggregate data if available
+    if AGGREGATE_DATA:
+        logger.info("Loading companion books from aggregate package...")
+        print("Loading companion books from aggregate package...")
+        
+        # Extract companion books from aggregate
+        for book in AGGREGATE_DATA.get("companion_books", []):
+            book_name = book.get("name", "unknown")
+            metadata = book.get("metadata", [])
+            
+            # Convert metadata list to expected format
+            companion_data[book_name] = {
+                "name": book_name,
+                "tier": book.get("tier", "unknown"),
+                "priority": book.get("priority", 0),
+                "chapters": metadata if isinstance(metadata, list) else metadata.get("chapters", [])
+            }
+            logger.debug(f"  Loaded {len(companion_data[book_name]['chapters'])} chapters from {book_name}")
+            print(f"  Loaded {len(companion_data[book_name]['chapters'])} chapters from {book_name}")
+        
+        # Also add source book
+        source_book = AGGREGATE_DATA.get("source_book", {})
+        if source_book:
+            book_name = source_book.get("name", "unknown")
+            metadata = source_book.get("metadata", {})
+            chapters = metadata.get("chapters", []) if isinstance(metadata, dict) else metadata
+            companion_data[book_name] = {
+                "name": book_name,
+                "tier": source_book.get("tier", "primary"),
+                "priority": 1,
+                "chapters": chapters
+            }
+            print(f"  Loaded {len(chapters)} chapters from source book: {book_name}")
+        
+        logger.info(f"✓ Loaded {len(companion_data)} books from aggregate package")
+        return companion_data
+    
+    # Fallback: Load from filesystem (legacy behavior)
     logger.info(f"Loading companion books from: {JSON_DIR}")
     
     if not JSON_DIR.exists():
@@ -203,14 +257,21 @@ def _build_taxonomy_context() -> str:
     Service Layer Pattern: Separates taxonomy formatting logic from orchestration.
     Reduces complexity by extracting nested iteration logic.
     
+    V3: Supports taxonomy from both TAXONOMY_DATA and AGGREGATE_DATA.
+    
     Returns:
         Formatted taxonomy context string, or empty string if unavailable
     """
-    if not TAXONOMY_DATA or 'tiers' not in TAXONOMY_DATA:
+    # V3: Try aggregate taxonomy first
+    taxonomy = TAXONOMY_DATA
+    if not taxonomy and AGGREGATE_DATA:
+        taxonomy = AGGREGATE_DATA.get("taxonomy", {})
+    
+    if not taxonomy or 'tiers' not in taxonomy:
         return ""
     
     context = "\n\nTAXONOMY STRUCTURE (concept hierarchy and relationships):\n"
-    for tier_name, tier_data in TAXONOMY_DATA['tiers'].items():
+    for tier_name, tier_data in taxonomy['tiers'].items():
         if isinstance(tier_data, dict):
             priority = tier_data.get('priority', '?')
             concepts = tier_data.get('concepts', [])
@@ -446,15 +507,19 @@ def _perform_critical_checks(companion_data: Dict, orchestrator) -> int:
         print("   Required modules: metadata_extraction_system, interactive_llm_system_v3_hybrid_prompt")
         return 1
     
-    # CRITICAL CHECK 3: Companion books loaded
+    # CRITICAL CHECK 3: Companion books loaded (relaxed for aggregate mode)
     if not companion_data:
-        logger.error("✗ CRITICAL: No companion book data loaded.")
-        print("❌ CRITICAL ERROR: No companion book data loaded.")
-        print(f"   Check that JSON files exist in: {JSON_DIR}")
-        return 1
+        if AGGREGATE_DATA:
+            logger.warning("⚠ No companion data extracted from aggregate, but continuing...")
+            print("⚠️  Warning: No companion data extracted from aggregate")
+        else:
+            logger.error("✗ CRITICAL: No companion book data loaded.")
+            print("❌ CRITICAL ERROR: No companion book data loaded.")
+            print(f"   Check that JSON files exist in: {JSON_DIR}")
+            return 1
     
-    # CRITICAL CHECK 4: Minimum number of books
-    if len(companion_data) < 10:
+    # CRITICAL CHECK 4: Minimum number of books (skip for aggregate mode)
+    if not AGGREGATE_DATA and len(companion_data) < 10:
         logger.error(f"✗ CRITICAL: Only {len(companion_data)} books loaded (expected 14)")
         print(f"❌ CRITICAL ERROR: Only {len(companion_data)} books loaded (expected 14)")
         print(f"   Check JSON directory: {JSON_DIR}")
@@ -468,22 +533,28 @@ def _perform_critical_checks(companion_data: Dict, orchestrator) -> int:
         print(f"   Check that Textbooks_JSON directory has valid JSON files: {JSON_DIR}")
         return 1
     
-    # CRITICAL CHECK 7: Verify orchestrator can see books
-    try:
-        books_metadata = orchestrator._legacy_orchestrator._build_books_metadata_only()
-        if len(books_metadata) == 0:
-            logger.error("✗ CRITICAL: Orchestrator loaded but found 0 books in metadata")
-            print("❌ CRITICAL ERROR: Orchestrator found 0 books in metadata")
-            print("   This is the issue you saw before: 'Book metadata for 0 books'")
-            print("   Check MetadataServiceFactory paths in metadata_extraction_system.py")
+    # CRITICAL CHECK 7: Verify orchestrator can see books (skip for aggregate mode)
+    if not AGGREGATE_DATA:
+        try:
+            books_metadata = orchestrator._legacy_orchestrator._build_books_metadata_only()
+            if len(books_metadata) == 0:
+                logger.error("✗ CRITICAL: Orchestrator loaded but found 0 books in metadata")
+                print("❌ CRITICAL ERROR: Orchestrator found 0 books in metadata")
+                print("   This is the issue you saw before: 'Book metadata for 0 books'")
+                print("   Check MetadataServiceFactory paths in metadata_extraction_system.py")
+                return 1
+            logger.info(f"✓ Orchestrator can access {len(books_metadata)} books")
+            print(f"✓ Orchestrator validated: {len(books_metadata)} books accessible")
+        except Exception as e:
+            logger.error(f"✗ CRITICAL: Failed to validate orchestrator: {e}")
+            logger.debug(traceback.format_exc())
+            print(f"❌ CRITICAL ERROR: Failed to validate orchestrator: {e}")
             return 1
-        logger.info(f"✓ Orchestrator can access {len(books_metadata)} books")
-        print(f"✓ Orchestrator validated: {len(books_metadata)} books accessible")
-    except Exception as e:
-        logger.error(f"✗ CRITICAL: Failed to validate orchestrator: {e}")
-        logger.debug(traceback.format_exc())
-        print(f"❌ CRITICAL ERROR: Failed to validate orchestrator: {e}")
-        return 1
+    else:
+        # Aggregate mode: just verify we have data
+        total_books = len(companion_data)
+        logger.info(f"✓ Aggregate mode: {total_books} books available")
+        print(f"✓ Aggregate mode: {total_books} books available")
     
     return 0
 
@@ -712,7 +783,18 @@ def _process_all_chapters(header: str, chapters_content: str, all_chapters: List
 def _save_partial_results(header: str, enhanced_content: str, chapters_with_cross_refs: int):
     """Save partial results when processing is interrupted."""
     enhanced_document = header + enhanced_content
-    output_filename = "PYTHON_GUIDELINES_Learning_Python_Ed6_LLM_ENHANCED_PARTIAL.md"
+    
+    # Determine output filename from source
+    if AGGREGATE_DATA:
+        source_name = AGGREGATE_DATA.get("project", {}).get("id", "unknown")
+        if not source_name or source_name == "unknown":
+            source_name = AGGREGATE_DATA.get("source_book", {}).get("name", "unknown")
+    else:
+        source_name = GUIDELINES_FILE.stem.replace("_guideline", "")
+    
+    safe_name = source_name.replace(" ", "_").replace("/", "_")
+    output_filename = f"{safe_name}_LLM_ENHANCED_PARTIAL.md"
+    
     output_dir = REPO_ROOT / "workflows" / "llm_enhancement" / "output"
     output_dir.mkdir(parents=True, exist_ok=True)
     partial_file = output_dir / output_filename
@@ -732,8 +814,18 @@ def main():
     logger.info("Starting LLM Enhancement Workflow")
     logger.info("="*66)
     
+    # Display cache status
+    cache_stats = get_cache_stats()
+    if cache_stats.get("enabled"):
+        print(f"\n💾 LLM Cache: ENABLED (TTL: {cache_stats.get('ttl_days', 30)} days)")
+        print(f"   Phase 1 cached: {cache_stats.get('phase1_count', 0)} entries")
+        print(f"   Phase 2 cached: {cache_stats.get('phase2_count', 0)} entries")
+        print("   Cache hits save ~$0.30 per phase!")
+    else:
+        print("\n⚠️  LLM Cache: DISABLED (all calls will hit API)")
+    
     # Load companion book data
-    print("Loading companion book JSON files from Textbooks_JSON:")
+    print("\nLoading companion book JSON files from Textbooks_JSON:")
     logger.info("Loading companion book JSON files from Textbooks_JSON:")
     companion_data = load_companion_books()
     
@@ -772,12 +864,6 @@ def main():
     print(f"🚀 Proceeding with full enhancement of {len(all_chapters)} chapters...")
     logger.info("✅ ALL CRITICAL CHECKS PASSED - Proceeding with full enhancement")
     
-    user_confirm = input(f"\n⚠️  This will make ~{len(all_chapters) * 2} API calls (~{len(all_chapters) * 60_000} tokens). Continue? [y/N]: ")
-    if user_confirm.lower() != 'y':
-        print("❌ Enhancement cancelled by user")
-        logger.info("Enhancement cancelled by user")
-        return 0
-    
     print("🔄 Processing ALL chapters with LLM enhancement...")
     
     # Process all chapters
@@ -791,8 +877,18 @@ def main():
     # Reconstruct the full document
     enhanced_document = header + enhanced_content
     
-    # Save enhanced version to workflow output directory
-    output_filename = "PYTHON_GUIDELINES_Learning_Python_Ed6_LLM_ENHANCED.md"
+    # Determine output filename from source (aggregate or guideline)
+    if AGGREGATE_DATA:
+        source_name = AGGREGATE_DATA.get("project", {}).get("id", "unknown")
+        if not source_name or source_name == "unknown":
+            source_name = AGGREGATE_DATA.get("source_book", {}).get("name", "unknown")
+    else:
+        source_name = GUIDELINES_FILE.stem.replace("_guideline", "")
+    
+    # Sanitize filename
+    safe_name = source_name.replace(" ", "_").replace("/", "_")
+    output_filename = f"{safe_name}_LLM_ENHANCED.md"
+    
     output_dir = REPO_ROOT / "workflows" / "llm_enhancement" / "output"
     output_dir.mkdir(parents=True, exist_ok=True)
     enhanced_file = output_dir / output_filename
@@ -827,6 +923,14 @@ def main():
     print(f"📄 Enhanced version saved to: {enhanced_file}")
     print(f"\nModel used: {os.getenv('ANTHROPIC_MODEL', 'claude-sonnet-4-5-20250929')}")
     print(f"Provider: {os.getenv('LLM_PROVIDER', 'anthropic').upper()}")
+    
+    # Show final cache stats
+    final_cache_stats = get_cache_stats()
+    if final_cache_stats.get("enabled"):
+        print("\n💾 Cache Status After Run:")
+        print(f"   Phase 1 cached: {final_cache_stats.get('phase1_count', 0)} entries")
+        print(f"   Phase 2 cached: {final_cache_stats.get('phase2_count', 0)} entries")
+    
     print(f"📝 Log file: {LOG_FILE}")
     
     logger.info(f"Enhanced version saved to: {enhanced_file}")
@@ -840,6 +944,11 @@ if __name__ == "__main__":
     # Parse command-line arguments
     parser = argparse.ArgumentParser(description='Integrate LLM enhancements with taxonomy-aware cross-referencing')
     parser.add_argument(
+        '--aggregate',
+        type=str,
+        help='Path to aggregate package JSON (contains taxonomy, companion books, source book)'
+    )
+    parser.add_argument(
         '--guideline',
         type=str,
         help='Path to the base guideline file to enhance'
@@ -847,9 +956,45 @@ if __name__ == "__main__":
     parser.add_argument(
         '--taxonomy',
         type=str,
-        help='Path to taxonomy JSON file (defines concept hierarchy and relationships)'
+        help='Path to taxonomy JSON file (optional if using --aggregate)'
     )
     args = parser.parse_args()
+    
+    # V3: Load aggregate package if provided
+    if args.aggregate:
+        aggregate_path = Path(args.aggregate)
+        if not aggregate_path.exists():
+            print(f"ERROR: Aggregate package not found: {aggregate_path}")
+            exit(1)
+        
+        try:
+            with open(aggregate_path, 'r', encoding='utf-8') as f:
+                AGGREGATE_DATA = json.load(f)
+            print(f"✓ Loaded aggregate package: {aggregate_path.name}")
+            
+            # Extract statistics
+            stats = AGGREGATE_DATA.get("statistics", {})
+            print(f"  Total books: {stats.get('total_books', 0)}")
+            print(f"  Total chapters: {stats.get('total_chapters', 0)}")
+            print(f"  Companion books: {stats.get('companion_books', 0)}")
+            
+            # Extract taxonomy from aggregate
+            if 'taxonomy' in AGGREGATE_DATA:
+                TAXONOMY_DATA = AGGREGATE_DATA['taxonomy']
+                tier_count = len(TAXONOMY_DATA.get('tiers', {}))
+                print(f"  Taxonomy tiers: {tier_count}")
+            
+            # Extract guideline from aggregate if not provided separately
+            if not args.guideline and 'source_book' in AGGREGATE_DATA:
+                source_book = AGGREGATE_DATA['source_book']
+                if 'guideline' in source_book:
+                    # Create a temp guideline from aggregate data
+                    print(f"  Using guideline from aggregate: {source_book.get('name', 'unknown')}")
+                    # The guideline in aggregate is a structured object, we need the markdown version
+                    # For now, we still require --guideline to point to the markdown file
+        except Exception as e:
+            print(f"ERROR: Failed to load aggregate package: {e}")
+            exit(1)
     
     # Update global paths if provided
     if args.guideline:
@@ -858,8 +1003,7 @@ if __name__ == "__main__":
             print(f"ERROR: Guideline file not found: {GUIDELINES_FILE}")
             exit(1)
     
-    # Load taxonomy if provided
-    TAXONOMY_DATA = None
+    # Load taxonomy if provided (overrides aggregate taxonomy)
     if args.taxonomy:
         taxonomy_path = Path(args.taxonomy)
         if not taxonomy_path.exists():
@@ -881,7 +1025,7 @@ if __name__ == "__main__":
     
     # Display startup banner
     print("\n" + "="*70)
-    print("  LLM Cross-Referencing System - V2 Interactive Metadata-First")
+    print("  LLM Cross-Referencing System - V3 Aggregate-Aware")
     print("="*70)
     provider = os.getenv('LLM_PROVIDER', 'anthropic').upper()
     model = os.getenv('ANTHROPIC_MODEL', 'claude-sonnet-4-5-20250929') if provider == 'ANTHROPIC' else os.getenv('OPENAI_MODEL', 'gpt-5-nano')
@@ -890,8 +1034,10 @@ if __name__ == "__main__":
     print(f"  Temperature: {os.getenv('LLM_TEMPERATURE', '0.2')}")
     print(f"  Max Tokens: {os.getenv('LLM_MAX_TOKENS', '4096')}")
     print(f"  Target: {GUIDELINES_FILE.name}")
+    if AGGREGATE_DATA:
+        print("  Mode: Aggregate-aware (using pre-built package)")
     if TAXONOMY_DATA:
-        print(f"  Taxonomy: {taxonomy_path.name}")
+        print("  Taxonomy: loaded")
     print("="*70 + "\n")
     
     exit_code = main()

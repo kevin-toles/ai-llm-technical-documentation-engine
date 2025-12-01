@@ -19,12 +19,28 @@ Usage:
 import json
 import sys
 import os
+import hashlib
 from pathlib import Path
 from typing import Dict, List, Set, Any, Tuple, Optional
 from datetime import datetime
 from enum import Enum
 
 print("[llm_integration] Module loading started", flush=True)
+
+# LLM Response Cache (Repository Pattern)
+# Saves ~$0.60 per chapter on cache hits
+LLM_CACHE = None
+CACHE_ENABLED = os.getenv("LLM_CACHE_ENABLED", "true").lower() == "true"
+
+try:
+    from workflows.llm_enhancement.scripts.cache.llm_cache import LLMCacheRepository, LLMResponse
+    if CACHE_ENABLED:
+        LLM_CACHE = LLMCacheRepository(ttl_days=30)
+        print("[llm_integration] ✓ LLM cache initialized (30-day TTL)", flush=True)
+    else:
+        print("[llm_integration] ⚠ LLM cache disabled via LLM_CACHE_ENABLED=false", flush=True)
+except ImportError as e:
+    print(f"[llm_integration] ⚠ LLM cache not available: {e}", flush=True)
 
 # Load environment variables
 try:
@@ -384,14 +400,28 @@ def _call_anthropic_api(call_num: int, prompt: str, system_prompt: Optional[str]
     return response_text
 
 
-def call_llm(prompt: str, system_prompt: Optional[str] = None, max_tokens: int = 2000) -> str:
+def _compute_prompt_hash(prompt: str, system_prompt: Optional[str] = None) -> str:
+    """Compute SHA256 hash of prompt for cache key."""
+    combined = (system_prompt or "") + prompt
+    return hashlib.sha256(combined.encode('utf-8')).hexdigest()
+
+
+def call_llm(prompt: str, system_prompt: Optional[str] = None, max_tokens: int = 2000,
+             phase: str = "general", chapter_num: int = 0) -> str:
     """
     Make automated LLM API call using Anthropic Claude (no user interaction).
+    
+    Implements Cache-Aside Pattern:
+    1. Check cache for existing response
+    2. On cache hit: return cached response (saves ~$0.30)
+    3. On cache miss: call API, cache response, return
     
     Args:
         prompt: User prompt
         system_prompt: Optional system prompt
         max_tokens: Maximum response tokens
+        phase: "phase1", "phase2", or "general" for cache organization
+        chapter_num: Chapter number for cache key (0 = no caching)
     
     Returns:
         LLM response as string
@@ -400,10 +430,36 @@ def call_llm(prompt: str, system_prompt: Optional[str] = None, max_tokens: int =
     _api_call_count += 1
     call_num = _api_call_count
     
+    # Compute prompt hash for caching
+    prompt_hash = _compute_prompt_hash(prompt, system_prompt)
+    
+    # Check cache first (Cache-Aside Pattern)
+    if LLM_CACHE and chapter_num > 0 and phase in ("phase1", "phase2"):
+        cached = LLM_CACHE.get(phase, chapter_num, prompt_hash)
+        if cached:
+            print(f"[LLM API #{call_num}] 💰 CACHE HIT for {phase} Chapter {chapter_num} (saved ~$0.30)", flush=True)
+            return cached.response_text
+    
     # Try Anthropic Claude
     if LLM_PROVIDER == "anthropic" and ANTHROPIC_AVAILABLE:
         try:
-            return _call_anthropic_api(call_num, prompt, system_prompt, max_tokens)
+            response_text = _call_anthropic_api(call_num, prompt, system_prompt, max_tokens)
+            
+            # Cache the response
+            if LLM_CACHE and chapter_num > 0 and phase in ("phase1", "phase2"):
+                llm_response = LLMResponse(
+                    phase=phase,
+                    chapter_num=chapter_num,
+                    prompt_hash=prompt_hash,
+                    response_text=response_text,
+                    parsed_data={},  # Parsed by caller
+                    model=ANTHROPIC_MODEL,
+                    tokens_used=0  # Could track from API response
+                )
+                LLM_CACHE.set(llm_response)
+                print(f"[LLM API #{call_num}] 💾 Cached {phase} Chapter {chapter_num}", flush=True)
+            
+            return response_text
             
         except anthropic.APIError as e:
             _handle_anthropic_error(call_num, e, prompt, system_prompt)
@@ -422,6 +478,39 @@ def call_llm(prompt: str, system_prompt: Optional[str] = None, max_tokens: int =
     print("  Warning: No LLM provider available, using fallback logic", file=sys.stderr)
     return "{}"
 
+
+def get_cache_stats() -> Dict[str, Any]:
+    """
+    Get LLM cache statistics for reporting.
+    
+    Returns dict with:
+        - enabled: Whether caching is enabled
+        - phase1_count: Number of cached phase1 responses
+        - phase2_count: Number of cached phase2 responses
+        - cache_dir: Path to cache directory
+    """
+    if not LLM_CACHE:
+        return {"enabled": False, "phase1_count": 0, "phase2_count": 0, "cache_dir": None}
+    
+    try:
+        phase1_count = len(list(LLM_CACHE.phase1_dir.glob("chapter_*.json")))
+        phase2_count = len(list(LLM_CACHE.phase2_dir.glob("chapter_*.json")))
+        return {
+            "enabled": True,
+            "phase1_count": phase1_count,
+            "phase2_count": phase2_count,
+            "cache_dir": str(LLM_CACHE.cache_dir),
+            "ttl_days": LLM_CACHE.ttl_seconds // (24 * 60 * 60)
+        }
+    except Exception:
+        return {"enabled": True, "phase1_count": 0, "phase2_count": 0, "cache_dir": None}
+
+
+def clear_cache() -> int:
+    """Clear all cached LLM responses. Returns count of entries deleted."""
+    if not LLM_CACHE:
+        return 0
+    return LLM_CACHE.clear()
 
 
 def prompt_for_semantic_concepts(chapter_num: int, chapter_title: str, 
