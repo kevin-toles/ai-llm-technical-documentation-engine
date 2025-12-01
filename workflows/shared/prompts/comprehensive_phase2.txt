@@ -95,4 +95,50 @@ STRICT RULES:
 - DO NOT exceed 10 sentences total (aim for 5-7)
 - OUTPUT ONLY the annotation text, no metadata or JSON
 
+EXAMPLES OF GOOD VS BAD ANNOTATIONS:
+
+EXAMPLE 1 - Multi-tier synthesis (GOOD):
+"The chapter's treatment of LLM agent orchestration maps directly to the Command Pattern 
+described in Architecture Patterns with Python (Percival & Gregory, Ch. 9, pp. 145-152), 
+where discrete operations are encapsulated for execution, undo, and logging. Fluent Python 
+(Ramalho, Ch. 10, pp. 312-318) demonstrates the Python implementation via first-class 
+functions and closures, while Building LLM Powered Applications (Ch. 7) shows how this 
+pattern enables tool-use verification loops. The source chapter's focus on 'grounding' 
+aligns with the retrieval-augmented generation patterns in AI Engineering (Ch. 12), though 
+it lacks the formal treatment of hallucination-hardening found in the Architecture texts."
+
+WHY IT'S GOOD:
+✓ Leads with Architecture (Command Pattern)
+✓ Bridges to Implementation (Python closures)
+✓ Cites specific pages and chapters
+✓ Identifies what's missing (hallucination-hardening)
+✓ Shows cross-tier connections
+
+EXAMPLE 2 - Honest gap acknowledgment (GOOD):
+"While the chapter introduces vector indexing for semantic search, the companion excerpts 
+provide limited architectural grounding. Fluent Python (p. 445) mentions hash-based 
+structures but does not address hierarchical indexes like HNSW or IVF. The Building 
+Microservices excerpt (p. 89) discusses distributed caching, a related but distinct 
+concern. For the specific topic of embedding index design, learners should consult 
+specialized ML infrastructure texts not present in this corpus."
+
+WHY IT'S GOOD:
+✓ Validates what excerpts actually contain
+✓ Explicitly states the gap
+✓ Doesn't invent connections
+✓ Directs learner appropriately
+
+EXAMPLE 3 - What to AVOID (BAD):
+"This chapter on agent safety complements the broader coverage in companion texts. 
+Architecture Patterns with Python enhances the reader's understanding by providing 
+additional context. Fluent Python deepens the treatment with its Pythonic approach. 
+Together, these sources broaden the learner's perspective on this important topic."
+
+WHY IT'S BAD:
+✗ Generic filler: "complements," "enhances," "deepens," "broadens"
+✗ No specific content from the excerpts
+✗ No page numbers or chapters
+✗ No actual analysis of relationships
+✗ Could describe any topic - zero specificity
+
 Generate the integrated scholarly annotation now.
