@@ -150,8 +150,12 @@ def verify_prerequisites() -> Dict[str, Any]:
     # Check taxonomies
     eval_dir = PROJECT_ROOT / "outputs" / "evaluation"
     taxonomy_count = 0
+    book_name = test_book.get("name", "AI Engineering Building Applications")
     for suffix in ["BASELINE", "CURRENT", "MODERATE", "AGGRESSIVE"]:
-        if (eval_dir / f"AI-ML_taxonomy_{suffix}.json").exists():
+        # Check both naming patterns
+        pattern1 = eval_dir / f"{book_name}_{suffix}_taxonomy.json"
+        pattern2 = eval_dir / f"AI-ML_taxonomy_{suffix}.json"
+        if pattern1.exists() or pattern2.exists():
             taxonomy_count += 1
     status["taxonomies"] = taxonomy_count == 4
     status["taxonomies_count"] = taxonomy_count

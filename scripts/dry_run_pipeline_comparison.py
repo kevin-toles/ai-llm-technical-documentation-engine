@@ -120,6 +120,25 @@ class Tab5Metrics:
 
 
 @dataclass
+class Tab6Metrics:
+    """LLM Enhancement metrics."""
+    book_name: str
+    enhanced_guideline_exists: bool = False
+    aggregate_package_exists: bool = False
+    chapter_count: int = 0
+    chapters_with_annotations: int = 0
+    avg_annotation_length: float = 0.0
+    avg_citations_per_chapter: float = 0.0
+    has_tier_citations: bool = False
+    companion_books_used: int = 0
+    llm_provider: str = ""
+    uses_system_prompt: bool = False
+    
+    def to_dict(self) -> Dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass
 class PipelineComparison:
     """Complete pipeline comparison for a book."""
     book_name: str
