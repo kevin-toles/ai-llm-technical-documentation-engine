@@ -1,5 +1,60 @@
 You are conducting a comprehensive scholarly cross-reference analysis for {source_book_name}.
 
+CROSS-REFERENCE WORKFLOW:
+
+Before processing any chapters, review the detailed workflow schema provided in the 
+"llm_workflow" section of this aggregate package. This schema defines the complete 
+cross-referencing strategy including tier relationships, validation criteria, and 
+citation requirements. Internalize this workflow before beginning.
+
+You are annotating ONE chapter at a time. For each source chapter, follow these steps:
+
+PHASE 1 - ANALYSIS:
+1. REVIEW SOURCE CHAPTER: Read the base guideline and enriched metadata for this chapter.
+   Understand what concepts it teaches and extract keywords for matching.
+
+2. REVIEW TAXONOMY: Examine the taxonomy structure to understand:
+   - Which books are in the corpus
+   - How books are organized into tiers with priorities
+   - Tier relationships: Parallel (same tier), Perpendicular (adjacent), Skip-tier (non-adjacent)
+
+3. REVIEW COMPANION METADATA: Scan chapter-level metadata for ALL companion books.
+   You now have visibility into every chapter across the entire corpus.
+
+4. MATCH CONCEPTS: Cross-reference source chapter concepts against companion metadata.
+   Look for keyword overlap and semantic similarity. Prioritize higher-tier matches.
+
+5. REQUEST CONTENT: List ALL companion chapters that are genuinely relevant.
+   DO NOT impose arbitrary limits—request everything that matters.
+
+PHASE 2 - SYNTHESIS:
+6. [System retrieves the chapters you requested]
+
+7. VALIDATE RELEVANCE: For each retrieved chapter, verify:
+   - Does it GENUINELY relate to the source concept?
+   - Is the connection substantive, not just keyword overlap?
+   - Does it add scholarly value?
+   If not genuinely relevant, acknowledge the limitation rather than forcing a connection.
+
+8. STRUCTURE BY TIER: Organize your annotation by tier priority:
+   - TIER 1 (Required): Lead with foundational patterns and principles
+   - TIER 2 (Required): Bridge to practical code and techniques
+   - TIER 3 (Optional): Add operational context when genuinely relevant
+   - Acknowledge gaps if required tiers lack relevant content
+
+9. OUTPUT ANNOTATION: Write scholarly annotation with:
+   - Synthesized insights from cross-references
+   - Chicago-style citations with page numbers
+   - Clear connection back to source chapter concepts
+
+GUARDRAILS:
+✗ Do NOT limit requests to "top N" chapters
+✗ Do NOT force connections where none exist—acknowledge gaps
+✓ DO prioritize higher tiers when structuring output
+✓ DO validate genuine relevance before citing
+
+---
+
 CHAPTER {chapter_num}: {chapter_title}
 
 FULL CHAPTER TEXT ({chapter_text_length} characters):
@@ -55,12 +110,9 @@ RESPOND IN JSON FORMAT:
 
 GUIDELINES:
 - Extract concepts comprehensively (don't rely on pre-defined keywords)
-- Request 6-12 books that offer substantive cross-references
+- Request ALL relevant books from the taxonomy that offer substantive cross-references
 - Use chapter metadata when available for precise targeting
 - Build many-to-many mapping across multiple books
 - Consider cascading: Engineering concepts → Architecture patterns → Implementation examples
-
-IMPORTANT CONSTRAINT:
-To ensure focused, high-quality cross-references, please limit your content_requests to the TOP 10 most relevant books. Prioritize quality over quantity - select only those books that provide the most substantive connections to the current chapter's concepts.
 
 Provide your comprehensive analysis now.

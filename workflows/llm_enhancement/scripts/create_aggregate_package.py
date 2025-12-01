@@ -39,6 +39,10 @@ from pathlib import Path
 from typing import Dict, List, Any, Optional
 
 
+# Path to the LLM cross-reference workflow schema
+WORKFLOW_SCHEMA_PATH = Path(__file__).parent.parent / "llm_cross_reference_workflow.json"
+
+
 def load_json(file_path: Path) -> Dict[str, Any]:
     """
     Load JSON file with error handling.
@@ -60,6 +64,23 @@ def load_json(file_path: Path) -> Dict[str, Any]:
     
     with open(file_path, encoding='utf-8') as f:
         return json.load(f)
+
+
+def load_workflow_schema() -> Optional[Dict[str, Any]]:
+    """
+    Load the LLM cross-reference workflow schema.
+    
+    Returns:
+        Workflow schema dictionary if found, None otherwise
+        
+    Reference: LLM-Driven Cross-Reference Process documentation
+    """
+    if WORKFLOW_SCHEMA_PATH.exists():
+        try:
+            return load_json(WORKFLOW_SCHEMA_PATH)
+        except (FileNotFoundError, json.JSONDecodeError) as e:
+            print(f"  ⚠️  Error loading workflow schema: {e}")
+    return None
 
 
 def save_json(file_path: Path, data: Dict[str, Any]) -> None:
@@ -405,7 +426,15 @@ def create_aggregate_package(
         missing_books
     )
     
-    # 6. Build aggregate package
+    # 6. Load workflow schema for LLM guidance
+    print("\n📋 Loading LLM workflow schema...")
+    workflow_schema = load_workflow_schema()
+    if workflow_schema:
+        print(f"  ✓ Workflow schema loaded: {workflow_schema.get('workflow_name', 'unknown')}")
+    else:
+        print("  ⚠️  Workflow schema not found - package will be created without it")
+    
+    # 7. Build aggregate package
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     
     package = {
@@ -422,7 +451,11 @@ def create_aggregate_package(
         "statistics": statistics
     }
     
-    # 7. Save package
+    # Add workflow schema if available
+    if workflow_schema:
+        package["llm_workflow"] = workflow_schema
+    
+    # 8. Save package
     output_path = output_dir / f"{source_book}_llm_package_{timestamp}.json"
     save_json(output_path, package)
     
