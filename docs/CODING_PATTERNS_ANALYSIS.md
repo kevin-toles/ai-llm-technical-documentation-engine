@@ -2,9 +2,9 @@
 **Workflows Directory - Git History Analysis**
 
 **Generated**: November 26, 2025  
-**Updated**: December 4, 2025  
+**Updated**: December 4, 2025 (Cognitive Complexity Refactoring)  
 **Repository**: ai-llm-technical-documentation-engine, llm-gateway  
-**Analysis Scope**: workflows/ directory (21 commits, ~222 issues), llm-gateway/src (41 issues fixed via CodeRabbit/SonarQube)  
+**Analysis Scope**: workflows/ directory (21 commits, ~222 issues), llm-gateway/src (46 issues fixed via CodeRabbit/SonarQube/TDD)  
 **Time Period**: June 2024 - December 2025
 
 ---
@@ -21,15 +21,30 @@ This document analyzes 21 fix/refactor commits from git history to identify **re
 
 ### Issue Distribution by Category
 
-| Category | Count | % | Primary Tool |
-|----------|-------|---|--------------|
-| **Type Annotation Issues** | 62 | 28% | Mypy |
-| **Cognitive Complexity** | 48 | 22% | SonarQube |
-| **Exception Handling** | 38 | 17% | SonarQube/Bandit |
-| **Unused Parameters** | 32 | 14% | SonarQube |
-| **Import Problems** | 24 | 11% | Mypy |
-| **Regex Patterns** | 18 | 8% | SonarQube |
-| **Total** | **222** | **100%** | - |
+| Category | Count | % | Primary Tool | Status |
+|----------|-------|---|--------------|--------|
+| **Type Annotation Issues** | 62 | 28% | Mypy | Active |
+| **Cognitive Complexity** | 48 → 43 | 22% | SonarQube | ✅ 5 resolved (Dec 4) |
+| **Exception Handling** | 38 | 17% | SonarQube/Bandit | Active |
+| **Unused Parameters** | 32 | 14% | SonarQube | Active |
+| **Import Problems** | 24 | 11% | Mypy | Active |
+| **Regex Patterns** | 18 | 8% | SonarQube | Active |
+| **Total** | **222 → 217** | **100%** | - | - |
+
+### December 4, 2025: Cognitive Complexity Refactoring (llm-gateway)
+
+**TDD-driven refactoring** of 5 high-complexity functions in `anthropic.py` and `openai.py`:
+
+| Method | Before | After | Helpers Added | Tests Added |
+|--------|--------|-------|---------------|-------------|
+| `anthropic._execute_with_retry()` | 19 | 11 | `_classify_error()` | 3 |
+| `anthropic.stream()` | 17 | 9 | `_handle_message_start()`, `_handle_content_delta()`, `_handle_message_delta()` | 4 |
+| `anthropic._transform_messages()` | 16 | 8 | `_transform_tool_message()`, `_transform_assistant_tool_message()`, `_merge_tool_result()` | 2 |
+| `openai._execute_with_retry()` | 18 | 10 | `_classify_error()` | 3 |
+| `openai._build_request_kwargs()` | 21 | 7 | `_transform_message()`, `_build_optional_params()`, `_build_tools_list()` | 3 |
+| **Totals** | **91** | **45** | **10 helpers** | **15 tests** |
+
+**SonarQube Result**: 0 cognitive complexity warnings (was 5). All 957 tests passing.
 
 ### December 2025 Update: llm-gateway Full Static Analysis (CodeRabbit PR #2)
 
@@ -443,6 +458,439 @@ def _generate_cross_references(context: CrossReferenceContext) -> Tuple[str, int
 3. **Remove unused parameters** during refactoring
 4. **Builder pattern** for complex object construction
 5. **SonarQube rule**: Enable S107 (too many parameters)
+
+---
+
+### Anti-Pattern 2.3: Complex Error Classification in Retry Logic (RESOLVED - December 4, 2025)
+
+**Pre-Fix Anti-Pattern** (from llm-gateway `src/providers/anthropic.py` and `openai.py`):
+```python
+# anthropic.py - _execute_with_retry() - Cognitive Complexity: 19
+async def _execute_with_retry(self, func, **kwargs) -> Any:
+    last_error: Optional[Exception] = None
+    
+    for attempt in range(self._max_retries):
+        try:
+            return await func(**kwargs)
+        except Exception as e:
+            error_str = str(e).lower()
+            
+            # Check for authentication errors (don't retry) - adds +4 complexity
+            if (
+                "authentication" in error_str
+                or "api key" in error_str
+                or "unauthorized" in error_str
+                or "invalid_api_key" in error_str
+            ):
+                raise AuthenticationError(str(e), provider="anthropic") from e
+            
+            # Check for rate limit errors (retry) - adds +2 complexity
+            if "rate limit" in error_str or "429" in error_str:
+                last_error = RateLimitError(str(e))
+            else:
+                last_error = ProviderError(str(e), provider="anthropic")
+            
+            # Wait before retry (exponential backoff)
+            if attempt < self._max_retries - 1:
+                delay = self._retry_delay * (2 ** attempt)
+                await asyncio.sleep(delay)
+    
+    # Exhausted retries
+    if isinstance(last_error, RateLimitError):
+        raise last_error
+    raise ProviderError(f"Request failed after {self._max_retries} attempts", provider="anthropic")
+```
+
+**Issue Type**: SonarQube warning - `Refactor this function to reduce its Cognitive Complexity from 19 to the 15 allowed`
+
+**Post-Fix Pattern** (Extract Method + TDD):
+```python
+# Step 1: Extract error classification into helper method
+def _classify_error(self, error_str: str) -> str:
+    """
+    Classify an error string into error type.
+    
+    Extracted to reduce cognitive complexity of _execute_with_retry().
+    
+    Args:
+        error_str: The error message.
+        
+    Returns:
+        Error type: 'auth', 'rate_limit', or 'other'.
+    """
+    error_lower = error_str.lower()
+    
+    # Authentication errors
+    if (
+        "authentication" in error_lower
+        or "api key" in error_lower
+        or "unauthorized" in error_lower
+        or "invalid_api_key" in error_lower
+    ):
+        return "auth"
+    
+    # Rate limit errors
+    if "rate limit" in error_lower or "429" in error_lower:
+        return "rate_limit"
+    
+    return "other"
+
+# Step 2: Simplified _execute_with_retry() - Complexity now 11
+async def _execute_with_retry(self, func, **kwargs) -> Any:
+    last_error: Exception | None = None
+    
+    for attempt in range(self._max_retries):
+        try:
+            return await func(**kwargs)
+        except Exception as e:
+            error_type = self._classify_error(str(e))
+            
+            # Auth errors: don't retry
+            if error_type == "auth":
+                raise AuthenticationError(str(e), provider="anthropic") from e
+            
+            # Rate limit errors: retry with RateLimitError
+            if error_type == "rate_limit":
+                last_error = RateLimitError(str(e))
+            else:
+                last_error = ProviderError(str(e), provider="anthropic")
+            
+            # Wait before retry (exponential backoff)
+            if attempt < self._max_retries - 1:
+                delay = self._retry_delay * (2 ** attempt)
+                await asyncio.sleep(delay)
+    
+    # Exhausted retries
+    if isinstance(last_error, RateLimitError):
+        raise last_error
+    raise ProviderError(f"Request failed after {self._max_retries} attempts", provider="anthropic")
+```
+
+**TDD Tests for Helper Method**:
+```python
+class TestAnthropicProviderErrorClassification:
+    """Tests for _classify_error() helper method."""
+    
+    @pytest.fixture
+    def provider(self):
+        from src.providers.anthropic import AnthropicProvider
+        return AnthropicProvider(api_key="test-key")
+    
+    def test_classify_error_authentication_error(self, provider) -> None:
+        """_classify_error returns 'auth' for authentication errors."""
+        assert provider._classify_error("authentication failed") == "auth"
+        assert provider._classify_error("invalid api key") == "auth"
+        assert provider._classify_error("unauthorized access") == "auth"
+        assert provider._classify_error("invalid_api_key error") == "auth"
+    
+    def test_classify_error_rate_limit_error(self, provider) -> None:
+        """_classify_error returns 'rate_limit' for rate limit errors."""
+        assert provider._classify_error("rate limit exceeded") == "rate_limit"
+        assert provider._classify_error("429 too many requests") == "rate_limit"
+    
+    def test_classify_error_other_error(self, provider) -> None:
+        """_classify_error returns 'other' for unrecognized errors."""
+        assert provider._classify_error("connection timeout") == "other"
+        assert provider._classify_error("server error 500") == "other"
+```
+
+**Root Cause**:
+- **Inline conditionals** - error classification logic embedded in retry loop
+- **Multiple string checks** - each `or` clause adds complexity
+- **DRY violation** - same classification logic duplicated in `_handle_error()`
+
+**Prevention Strategy**:
+1. **Extract Method** pattern - move conditional logic to helper functions
+2. **Single Responsibility** - each method does one thing
+3. **TDD for helpers** - write tests for extracted methods first
+4. **Reuse helpers** - `_handle_error()` can now call `_classify_error()`
+5. **Target complexity <15** - SonarQube default threshold
+
+---
+
+### Anti-Pattern 2.4: Complex Stream Event Handling (RESOLVED - December 4, 2025)
+
+**Pre-Fix Anti-Pattern** (from llm-gateway `src/providers/anthropic.py` - `stream()` method):
+```python
+# stream() - Cognitive Complexity: 17
+async def stream(self, request: ChatCompletionRequest) -> AsyncIterator[ChatCompletionChunk]:
+    kwargs = self._build_request_kwargs(request)
+    
+    try:
+        async with self._client.messages.stream(**kwargs) as stream:
+            message_id: Optional[str] = None
+            model: Optional[str] = None
+            
+            async for event in stream:
+                if event.type == "message_start":
+                    message_id = event.message.id
+                    model = event.message.model
+                elif event.type == "content_block_delta":
+                    if hasattr(event.delta, "text"):
+                        yield ChatCompletionChunk(
+                            id=message_id or "unknown",
+                            model=model or request.model,
+                            choices=[
+                                ChunkChoice(
+                                    index=0,
+                                    delta=ChunkDelta(
+                                        role="assistant",
+                                        content=event.delta.text,
+                                    ),
+                                    finish_reason=None,
+                                )
+                            ],
+                        )
+                elif event.type == "message_delta":
+                    finish_reason = None
+                    if hasattr(event.delta, "stop_reason"):
+                        finish_reason = (
+                            "stop" if event.delta.stop_reason == "end_turn"
+                            else event.delta.stop_reason
+                        )
+                    yield ChatCompletionChunk(
+                        id=message_id or "unknown",
+                        model=model or request.model,
+                        choices=[
+                            ChunkChoice(
+                                index=0,
+                                delta=ChunkDelta(),
+                                finish_reason=finish_reason,
+                            )
+                        ],
+                    )
+    except Exception as e:
+        self._handle_error(e)
+```
+
+**Post-Fix Pattern** (Extract Event Handlers):
+```python
+# Helper methods extracted - each with complexity 2-4
+def _handle_message_start(self, event: Any) -> tuple[str, str]:
+    """Handle message_start event from Anthropic stream."""
+    return event.message.id, event.message.model
+
+def _handle_content_delta(self, event: Any, message_id: str, model: str) -> ChatCompletionChunk:
+    """Handle content_block_delta event from Anthropic stream."""
+    return ChatCompletionChunk(
+        id=message_id,
+        model=model,
+        created=int(time.time()),
+        choices=[
+            ChunkChoice(
+                index=0,
+                delta=ChunkDelta(role="assistant", content=event.delta.text),
+                finish_reason=None,
+            )
+        ],
+    )
+
+def _handle_message_delta(self, event: Any, message_id: str, model: str) -> ChatCompletionChunk:
+    """Handle message_delta event from Anthropic stream."""
+    finish_reason = None
+    if hasattr(event.delta, "stop_reason"):
+        stop_reason = event.delta.stop_reason
+        finish_reason = "stop" if stop_reason == "end_turn" else stop_reason
+    
+    return ChatCompletionChunk(
+        id=message_id,
+        model=model,
+        created=int(time.time()),
+        choices=[
+            ChunkChoice(index=0, delta=ChunkDelta(), finish_reason=finish_reason)
+        ],
+    )
+
+# Simplified stream() - Complexity now 9
+async def stream(self, request: ChatCompletionRequest) -> AsyncIterator[ChatCompletionChunk]:
+    kwargs = self._build_request_kwargs(request)
+    
+    try:
+        async with self._client.messages.stream(**kwargs) as stream:
+            message_id: str | None = None
+            model: str | None = None
+            
+            async for event in stream:
+                if event.type == "message_start":
+                    message_id, model = self._handle_message_start(event)
+                elif event.type == "content_block_delta":
+                    if hasattr(event.delta, "text"):
+                        yield self._handle_content_delta(event, message_id or "unknown", model or request.model)
+                elif event.type == "message_delta":
+                    yield self._handle_message_delta(event, message_id or "unknown", model or request.model)
+    except Exception as e:
+        self._handle_error(e)
+```
+
+**TDD Tests for Stream Event Handlers**:
+```python
+class TestAnthropicProviderStreamEventHandlers:
+    """Tests for stream event handlers - extracted from stream()."""
+    
+    def test_handle_message_start_event(self, provider) -> None:
+        """_handle_message_start extracts id and model from event."""
+        event = MagicMock()
+        event.message.id = "msg_123"
+        event.message.model = "claude-3-sonnet-20240229"
+        
+        message_id, model = provider._handle_message_start(event)
+        
+        assert message_id == "msg_123"
+        assert model == "claude-3-sonnet-20240229"
+    
+    def test_handle_content_delta_event(self, provider) -> None:
+        """_handle_content_delta creates chunk from content delta."""
+        event = MagicMock()
+        event.delta.text = "Hello world"
+        
+        chunk = provider._handle_content_delta(event, "msg_123", "claude-3-sonnet-20240229")
+        
+        assert isinstance(chunk, ChatCompletionChunk)
+        assert chunk.choices[0].delta.content == "Hello world"
+    
+    def test_handle_message_delta_event_stop(self, provider) -> None:
+        """_handle_message_delta creates final chunk with finish_reason."""
+        event = MagicMock()
+        event.delta.stop_reason = "end_turn"
+        
+        chunk = provider._handle_message_delta(event, "msg_123", "claude-3-sonnet-20240229")
+        
+        assert chunk.choices[0].finish_reason == "stop"
+```
+
+**Root Cause**:
+- **Event handling inline** - all stream event logic in one method
+- **Object construction complexity** - building ChatCompletionChunk adds lines
+- **Multiple event types** - each type branch adds complexity
+
+**Prevention Strategy**:
+1. **Extract event handlers** - one method per event type
+2. **Return objects from helpers** - don't yield from helpers
+3. **Test handlers in isolation** - easier to verify behavior
+4. **Consider State Pattern** - for complex event state machines
+
+---
+
+### Anti-Pattern 2.5: Complex Request Building (RESOLVED - December 4, 2025)
+
+**Pre-Fix Anti-Pattern** (from llm-gateway `src/providers/openai.py` - `_build_request_kwargs()`):
+```python
+# _build_request_kwargs() - Cognitive Complexity: 21
+def _build_request_kwargs(self, request: ChatCompletionRequest) -> dict[str, Any]:
+    # Convert messages to dict format
+    messages = []
+    for msg in request.messages:
+        msg_dict: dict[str, Any] = {"role": msg.role}
+        if msg.content is not None:
+            msg_dict["content"] = msg.content
+        if msg.name is not None:
+            msg_dict["name"] = msg.name
+        if msg.tool_calls is not None:
+            msg_dict["tool_calls"] = msg.tool_calls
+        if msg.tool_call_id is not None:
+            msg_dict["tool_call_id"] = msg.tool_call_id
+        messages.append(msg_dict)
+    
+    kwargs: dict[str, Any] = {"model": request.model, "messages": messages}
+    
+    # Add optional parameters (each adds +1 complexity)
+    if request.temperature is not None:
+        kwargs["temperature"] = request.temperature
+    if request.max_tokens is not None:
+        kwargs["max_tokens"] = request.max_tokens
+    if request.top_p is not None:
+        kwargs["top_p"] = request.top_p
+    # ... 6 more optional parameters
+    
+    # Handle tools (adds +3 complexity with list comprehension)
+    if request.tools:
+        kwargs["tools"] = [
+            {
+                "type": tool.type,
+                "function": {
+                    "name": tool.function.name,
+                    **({"description": tool.function.description} if tool.function.description else {}),
+                    **({"parameters": tool.function.parameters} if tool.function.parameters else {}),
+                },
+            }
+            for tool in request.tools
+        ]
+    
+    return kwargs
+```
+
+**Post-Fix Pattern** (Extract Helpers):
+```python
+def _transform_message(self, msg: Any) -> dict[str, Any]:
+    """Transform a Message object to dict format for API call."""
+    msg_dict: dict[str, Any] = {"role": msg.role}
+    
+    if msg.content is not None:
+        msg_dict["content"] = msg.content
+    if msg.name is not None:
+        msg_dict["name"] = msg.name
+    if msg.tool_calls is not None:
+        msg_dict["tool_calls"] = msg.tool_calls
+    if msg.tool_call_id is not None:
+        msg_dict["tool_call_id"] = msg.tool_call_id
+    
+    return msg_dict
+
+def _build_optional_params(self, request: ChatCompletionRequest) -> dict[str, Any]:
+    """Build optional parameters dict from request."""
+    params: dict[str, Any] = {}
+    
+    if request.temperature is not None:
+        params["temperature"] = request.temperature
+    if request.max_tokens is not None:
+        params["max_tokens"] = request.max_tokens
+    if request.top_p is not None:
+        params["top_p"] = request.top_p
+    # ... remaining parameters
+    
+    return params
+
+def _build_tools_list(self, tools: list[Any]) -> list[dict[str, Any]]:
+    """Build tools list from request tools."""
+    return [
+        {
+            "type": tool.type,
+            "function": {
+                "name": tool.function.name,
+                **({"description": tool.function.description} if tool.function.description else {}),
+                **({"parameters": tool.function.parameters} if tool.function.parameters else {}),
+            },
+        }
+        for tool in tools
+    ]
+
+# Simplified _build_request_kwargs() - Complexity now 7
+def _build_request_kwargs(self, request: ChatCompletionRequest) -> dict[str, Any]:
+    messages = [self._transform_message(msg) for msg in request.messages]
+    
+    kwargs: dict[str, Any] = {"model": request.model, "messages": messages}
+    kwargs.update(self._build_optional_params(request))
+    
+    if request.tools:
+        kwargs["tools"] = self._build_tools_list(request.tools)
+    if request.tool_choice is not None:
+        kwargs["tool_choice"] = request.tool_choice
+    
+    return kwargs
+```
+
+**Complexity Reduction Summary** (December 4, 2025):
+
+| File | Method | Before | After | Helpers Added |
+|------|--------|--------|-------|---------------|
+| `anthropic.py` | `_execute_with_retry()` | 19 | 11 | `_classify_error()` |
+| `anthropic.py` | `stream()` | 17 | 9 | `_handle_message_start()`, `_handle_content_delta()`, `_handle_message_delta()` |
+| `anthropic.py` | `_transform_messages()` | 16 | 8 | `_transform_tool_message()`, `_transform_assistant_tool_message()`, `_merge_tool_result()` |
+| `openai.py` | `_execute_with_retry()` | 18 | 10 | `_classify_error()` |
+| `openai.py` | `_build_request_kwargs()` | 21 | 7 | `_transform_message()`, `_build_optional_params()`, `_build_tools_list()` |
+| **Total** | **5 methods** | **91** | **45** | **10 helpers** |
+
+**SonarQube Result**: 0 cognitive complexity warnings after refactoring.
 
 ---
 
