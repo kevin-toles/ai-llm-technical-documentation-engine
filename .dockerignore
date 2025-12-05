@@ -1,0 +1,64 @@
+# ==============================================================================
+# LLM Document Enhancer - Docker Ignore
+# ==============================================================================
+
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv
+venv/
+ENV/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+*.egg-info/
+.eggs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Testing
+.coverage
+htmlcov/
+.benchmarks/
+tests/
+tests_unit/
+tests_integration/
+
+# Build artifacts
+.scannerwork/
+*.log
+
+# Documentation (not needed in container)
+docs/
+*.md
+!README.md
+
+# Local development
+backups/
+.env
+.env.local
+*.command
+
+# Outputs and cache (mounted as volumes)
+outputs/
+logs/
+cache/
+
+# Reports and analysis
+reports/
+coderabbit/
+
+# Sonar
+sonar-project.properties

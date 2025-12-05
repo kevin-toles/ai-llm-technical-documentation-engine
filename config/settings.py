@@ -204,6 +204,37 @@ class ChapterSegmentationConfig:
 
 
 @dataclass
+class GatewayConfig:
+    """LLM Gateway configuration for WBS 3.1.3.1.
+    
+    Environment Variables:
+        DOC_ENHANCER_LLM_GATEWAY_URL: Gateway URL (default: http://localhost:8080)
+        DOC_ENHANCER_LLM_GATEWAY_TIMEOUT: Request timeout in seconds (default: 30.0)
+        DOC_ENHANCER_USE_GATEWAY: Feature flag for gateway usage (default: false)
+        DOC_ENHANCER_SESSION_TTL: Session TTL in seconds (default: 3600)
+    
+    Reference:
+        - WBS 3.1.3.1: Environment Configuration
+        - ARCHITECTURE.md: llm-gateway configuration
+    """
+    gateway_url: str = field(default_factory=lambda: os.getenv("DOC_ENHANCER_LLM_GATEWAY_URL") or "http://localhost:8080")
+    timeout: float = field(default_factory=lambda: float(os.getenv("DOC_ENHANCER_LLM_GATEWAY_TIMEOUT") or "30.0"))
+    use_gateway: bool = field(default_factory=lambda: (os.getenv("DOC_ENHANCER_USE_GATEWAY") or "false").lower() == "true")
+    session_ttl: int = field(default_factory=lambda: int(os.getenv("DOC_ENHANCER_SESSION_TTL") or "3600"))
+    
+    def __post_init__(self):
+        """Validate gateway configuration."""
+        if self.timeout <= 0:
+            raise ValueError(f"DOC_ENHANCER_LLM_GATEWAY_TIMEOUT={self.timeout} must be > 0")
+        
+        if self.session_ttl < 60:
+            raise ValueError(f"DOC_ENHANCER_SESSION_TTL={self.session_ttl} must be >= 60 seconds")
+        
+        if not self.gateway_url.startswith(("http://", "https://")):
+            raise ValueError("DOC_ENHANCER_LLM_GATEWAY_URL must start with http:// or https://")
+
+
+@dataclass
 class PathConfig:
     """File path configuration.
     
@@ -265,6 +296,7 @@ class Settings:
     llm: LLMConfig = field(default_factory=LLMConfig)
     constraints: PromptConstraints = field(default_factory=PromptConstraints)
     retry: RetryConfig = field(default_factory=RetryConfig)
+    gateway: GatewayConfig = field(default_factory=GatewayConfig)
     # cache: CacheConfig removed (Task 5.2 - see DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN.md Part 2)
     chapter_segmentation: ChapterSegmentationConfig = field(default_factory=ChapterSegmentationConfig)
     paths: PathConfig = field(default_factory=PathConfig)
@@ -310,6 +342,12 @@ class Settings:
         print(f"  Max Attempts: {self.retry.max_attempts}")
         print(f"  Backoff Factor: {self.retry.backoff_factor}")
         print(f"  Constraint Factor: {self.retry.constraint_factor}")
+        
+        print("\n[Gateway]")
+        print(f"  Gateway URL: {self.gateway.gateway_url}")
+        print(f"  Timeout: {self.gateway.timeout}s")
+        print(f"  Use Gateway: {self.gateway.use_gateway}")
+        print(f"  Session TTL: {self.gateway.session_ttl}s")
         
         # Cache config removed (Task 5.2) - see DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN.md Part 2
         

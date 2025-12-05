@@ -9,6 +9,11 @@ Reference:
 import os
 from .base import LLMProvider
 from .anthropic_provider import AnthropicProvider
+from .gateway_provider import GatewayProvider
+
+
+# Supported provider names
+SUPPORTED_PROVIDERS = ("anthropic", "gateway")
 
 
 def create_llm_provider() -> LLMProvider:
@@ -23,7 +28,7 @@ def create_llm_provider() -> LLMProvider:
         LLMProvider instance (default: AnthropicProvider)
     
     Environment Variables:
-        LLM_PROVIDER: Provider name ("anthropic", "openai", etc.)
+        LLM_PROVIDER: Provider name ("anthropic", "gateway", etc.)
                      Default: "anthropic"
     
     Raises:
@@ -41,11 +46,36 @@ def create_llm_provider() -> LLMProvider:
         Microservices Up and Running Ch. 7 - Environment-based configuration
     """
     provider_name = os.getenv("LLM_PROVIDER", "anthropic").lower()
+    return get_provider(provider_name)
+
+
+def get_provider(provider_name: str) -> LLMProvider:
+    """
+    Get LLM provider instance by name.
     
-    if provider_name == "anthropic":
+    Factory method that creates the appropriate provider based on name.
+    
+    Args:
+        provider_name: Provider identifier ("anthropic", "gateway")
+    
+    Returns:
+        LLMProvider instance
+    
+    Raises:
+        ValueError: If unknown provider specified
+    
+    Reference:
+        WBS 3.1.2.1 - Replace Direct LLM Calls
+    """
+    name = provider_name.lower()
+    
+    if name == "anthropic":
         return AnthropicProvider()
+    
+    if name == "gateway":
+        return GatewayProvider()
     
     raise ValueError(
         f"Unknown LLM provider: {provider_name}. "
-        f"Supported providers: anthropic"
+        f"Supported providers: {', '.join(SUPPORTED_PROVIDERS)}"
     )
