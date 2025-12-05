@@ -61,8 +61,10 @@ PYTHON_GUIDELINES_Learning Python Ed6.md
 # Keep directory structure with .gitkeep files, but ignore contents
 workflows/*/input/*
 workflows/*/output/*
+workflows/*/tmp/*
 !workflows/*/input/.gitkeep
 !workflows/*/output/.gitkeep
+!workflows/*/tmp/.gitkeep
 
 # Exception: Keep taxonomy configuration files (these are curated, not generated)
 !workflows/taxonomy_setup/output/*.json
