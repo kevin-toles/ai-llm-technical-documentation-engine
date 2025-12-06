@@ -475,7 +475,143 @@ def print_comparison_results(results: List[ComparisonResult]) -> None:
         print(f"  {icon} {r.field}: {r.backup_value} → {r.new_value} ({r.change})")
 
 
+def _setup_environment(book_name: str) -> tuple:
+    """
+    Set up the environment for enrichment workflow.
+    
+    Returns:
+        tuple: (taxonomy_path, existing_backup) or (None, None) if setup fails
+        
+    Reference: CODING_PATTERNS_ANALYSIS.md Category 2 - Extract Method pattern
+    """
+    print("\n" + "="*60)
+    print("🔬 ENRICHMENT WITH VALIDATION")
+    print(f"   Book: {book_name}")
+    print("="*60)
+    
+    # Find taxonomy
+    taxonomy_path = find_taxonomy_file()
+    if not taxonomy_path:
+        print("❌ No taxonomy file found!")
+        return None, None
+    print(f"\n📋 Using taxonomy: {taxonomy_path.name}")
+    
+    # Find existing backup for comparison
+    existing_backup = find_latest_backup()
+    if existing_backup:
+        print(f"📦 Found backup for comparison: {existing_backup.name}")
+    
+    return taxonomy_path, existing_backup
+
+
+def _run_tab4_workflow(book_name: str, taxonomy_path: Path, existing_backup: Path | None) -> tuple:
+    """
+    Execute Tab 4 enrichment workflow and validation.
+    
+    Returns:
+        tuple: (success: bool, failures: int, comparison_results: list)
+        
+    Reference: CODING_PATTERNS_ANALYSIS.md Category 2 - Single Responsibility
+    """
+    print(f"\n{'─'*60}")
+    print("🔗 TAB 4: Metadata Enrichment")
+    print(f"{'─'*60}")
+    
+    tab4_success = run_tab4_enrichment(book_name, taxonomy_path)
+    if tab4_success:
+        print("  ✅ Tab 4 complete")
+    else:
+        print("  ❌ Tab 4 failed")
+        return False, 0, []
+    
+    # Validate Tab 4
+    enrichment_results = validate_enrichment(book_name)
+    enrichment_failures = print_validation_results(enrichment_results, "📋 Enrichment Validation")
+    
+    # Compare with backup
+    comparison_results = []
+    if existing_backup:
+        comparison_results = compare_enrichments(book_name, existing_backup)
+        print_comparison_results(comparison_results)
+    
+    return True, enrichment_failures, comparison_results
+
+
+def _run_tab5_workflow(book_name: str, taxonomy_path: Path) -> int:
+    """
+    Execute Tab 5 guideline generation workflow and validation.
+    
+    Returns:
+        int: Number of validation failures
+        
+    Reference: CODING_PATTERNS_ANALYSIS.md Category 2 - Single Responsibility
+    """
+    print(f"\n{'─'*60}")
+    print("📖 TAB 5: Guideline Generation")
+    print(f"{'─'*60}")
+    
+    tab5_success = run_tab5_guideline(book_name, taxonomy_path)
+    if tab5_success:
+        print("  ✅ Tab 5 complete")
+    else:
+        print("  ❌ Tab 5 failed")
+    
+    # Validate Tab 5
+    guideline_results = validate_guideline(book_name)
+    return print_validation_results(guideline_results, "📋 Guideline Validation")
+
+
+def _print_summary(enrichment_failures: int, guideline_failures: int | None) -> None:
+    """
+    Print workflow summary.
+    
+    Reference: CODING_PATTERNS_ANALYSIS.md Category 2 - Extract Method
+    """
+    print(f"\n{'='*60}")
+    print("📊 SUMMARY")
+    print(f"{'='*60}")
+    print(f"\n✅ Tab 4 Enrichment: {'PASSED' if enrichment_failures == 0 else f'FAILED ({enrichment_failures} issues)'}")
+    if guideline_failures is not None:
+        print(f"✅ Tab 5 Guideline: {'PASSED' if guideline_failures == 0 else f'FAILED ({guideline_failures} issues)'}")
+
+
+def _save_report(
+    output_path: str,
+    book_name: str,
+    taxonomy_path: Path,
+    enrichment_results: list,
+    comparison_results: list,
+    guideline_results: list | None
+) -> None:
+    """
+    Save validation report to JSON file.
+    
+    Reference: CODING_PATTERNS_ANALYSIS.md Category 2 - Extract Method
+    """
+    report = {
+        "generated": datetime.now().isoformat(),
+        "book": book_name,
+        "taxonomy": taxonomy_path.name,
+        "enrichment_validation": [asdict(r) for r in enrichment_results],
+        "comparison": [asdict(r) for r in comparison_results] if comparison_results else [],
+    }
+    if guideline_results is not None:
+        report["guideline_validation"] = [asdict(r) for r in guideline_results]
+    
+    report_path = Path(output_path)
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(report_path, 'w', encoding='utf-8') as f:
+        json.dump(report, f, indent=2)
+    print(f"\n📁 Report saved to: {report_path}")
+
+
 def main():
+    """
+    Main entry point for enrichment with validation workflow.
+    
+    Refactored to reduce cognitive complexity per CODING_PATTERNS_ANALYSIS.md
+    Category 2 - delegating to helper functions for single responsibility.
+    """
     parser = argparse.ArgumentParser(
         description="Run enrichment with validation and comparison"
     )
@@ -504,23 +640,12 @@ def main():
     args = parser.parse_args()
     book_name = args.book
     
-    print("\n" + "="*60)
-    print("🔬 ENRICHMENT WITH VALIDATION")
-    print(f"   Book: {book_name}")
-    print("="*60)
-    
-    # Find taxonomy
-    taxonomy_path = find_taxonomy_file()
-    if not taxonomy_path:
-        print("❌ No taxonomy file found!")
+    # Setup environment (S3776 refactor: extracted to helper)
+    taxonomy_path, existing_backup = _setup_environment(book_name)
+    if taxonomy_path is None:
         return 1
-    print(f"\n📋 Using taxonomy: {taxonomy_path.name}")
     
-    # Find existing backup for comparison
-    existing_backup = find_latest_backup()
-    if existing_backup:
-        print(f"📦 Found backup for comparison: {existing_backup.name}")
-    
+    # Handle dry-run mode
     if args.dry_run:
         print("\n⚠️  DRY RUN - No changes will be made")
         print("\nWould run:")
@@ -536,71 +661,38 @@ def main():
     
     # Backup current outputs
     print("\n📦 Backing up current outputs...")
-    # NOTE: backup_dir returned for potential future use; prefixed per S1481
-    _backup_dir = backup_current_outputs(book_name)  # noqa: F841
+    _backup_dir = backup_current_outputs(book_name)  # noqa: F841 - for potential future use
     
-    # Run Tab 4
-    print(f"\n{'─'*60}")
-    print("🔗 TAB 4: Metadata Enrichment")
-    print(f"{'─'*60}")
-    
-    tab4_success = run_tab4_enrichment(book_name, taxonomy_path)
-    if tab4_success:
-        print("  ✅ Tab 4 complete")
-    else:
-        print("  ❌ Tab 4 failed")
+    # Run Tab 4 workflow (S3776 refactor: extracted to helper)
+    tab4_success, enrichment_failures, comparison_results = _run_tab4_workflow(
+        book_name, taxonomy_path, existing_backup
+    )
+    if not tab4_success:
         return 1
     
-    # Validate Tab 4
+    # Get enrichment results for report
     enrichment_results = validate_enrichment(book_name)
-    enrichment_failures = print_validation_results(enrichment_results, "📋 Enrichment Validation")
     
-    # Compare with backup
-    if existing_backup:
-        comparison_results = compare_enrichments(book_name, existing_backup)
-        print_comparison_results(comparison_results)
-    
-    # Run Tab 5 (optional)
+    # Run Tab 5 workflow if not skipped (S3776 refactor: extracted to helper)
+    guideline_failures = None
+    guideline_results = None
     if not args.skip_tab5:
-        print(f"\n{'─'*60}")
-        print("📖 TAB 5: Guideline Generation")
-        print(f"{'─'*60}")
-        
-        tab5_success = run_tab5_guideline(book_name, taxonomy_path)
-        if tab5_success:
-            print("  ✅ Tab 5 complete")
-        else:
-            print("  ❌ Tab 5 failed")
-        
-        # Validate Tab 5
+        guideline_failures = _run_tab5_workflow(book_name, taxonomy_path)
         guideline_results = validate_guideline(book_name)
-        guideline_failures = print_validation_results(guideline_results, "📋 Guideline Validation")
     
-    # Summary
-    print(f"\n{'='*60}")
-    print("📊 SUMMARY")
-    print(f"{'='*60}")
-    print(f"\n✅ Tab 4 Enrichment: {'PASSED' if enrichment_failures == 0 else f'FAILED ({enrichment_failures} issues)'}")
-    if not args.skip_tab5:
-        print(f"✅ Tab 5 Guideline: {'PASSED' if guideline_failures == 0 else f'FAILED ({guideline_failures} issues)'}")
+    # Print summary (S3776 refactor: extracted to helper)
+    _print_summary(enrichment_failures, guideline_failures)
     
-    # Save report
+    # Save report if requested (S3776 refactor: extracted to helper)
     if args.output_report:
-        report = {
-            "generated": datetime.now().isoformat(),
-            "book": book_name,
-            "taxonomy": taxonomy_path.name,
-            "enrichment_validation": [asdict(r) for r in enrichment_results],
-            "comparison": [asdict(r) for r in comparison_results] if existing_backup else [],
-        }
-        if not args.skip_tab5:
-            report["guideline_validation"] = [asdict(r) for r in guideline_results]
-        
-        report_path = Path(args.output_report)
-        report_path.parent.mkdir(parents=True, exist_ok=True)
-        with open(report_path, 'w', encoding='utf-8') as f:
-            json.dump(report, f, indent=2)
-        print(f"\n📁 Report saved to: {report_path}")
+        _save_report(
+            args.output_report,
+            book_name,
+            taxonomy_path,
+            enrichment_results,
+            comparison_results,
+            guideline_results
+        )
     
     return 0 if enrichment_failures == 0 else 1
 
