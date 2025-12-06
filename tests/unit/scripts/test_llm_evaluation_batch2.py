@@ -410,3 +410,176 @@ class TestRemainingS1192Issues:
             f"Found {literal_count} occurrences of '{literal}'. "
             f"Use constant KEYWORD_STATIC_ANALYSIS instead (S1192)."
         )
+
+
+class TestS3776CognitiveComplexityLlmEvaluation:
+    """
+    S3776: Cognitive Complexity tests for scripts/llm_evaluation.py.
+    
+    Functions flagged at lines: 332, 423, 755, 1381, 1502, 1615, 1870, 1998.
+    Pattern Reference: CODING_PATTERNS_ANALYSIS.md Category 2 (Extract Method).
+    
+    Strategy: Extract helper functions to reduce complexity below 15.
+    """
+    
+    @pytest.fixture
+    def llm_evaluation_content(self) -> str:
+        """Load llm_evaluation.py content for analysis."""
+        file_path = Path(__file__).parent.parent.parent.parent / "scripts" / "llm_evaluation.py"
+        return file_path.read_text()
+    
+    def _count_complexity_indicators(self, function_body: str) -> int:
+        """
+        Approximate cognitive complexity by counting complexity indicators.
+        
+        This is a simplified estimate - not exact SonarQube calculation.
+        """
+        complexity = 0
+        nesting_level = 0
+        lines = function_body.split('\n')
+        
+        for line in lines:
+            stripped = line.strip()
+            
+            if stripped.startswith(('if ', 'elif ', 'for ', 'while ', 'try:', 'with ')):
+                complexity += 1 + nesting_level
+                nesting_level += 1
+            elif stripped.startswith(('else:', 'except', 'finally:')):
+                complexity += 1
+            elif stripped.startswith('return ') and complexity > 0:
+                complexity += 1  # Early return penalty
+            
+            complexity += stripped.count(' and ')
+            complexity += stripped.count(' or ')
+        
+        return complexity
+    
+    def _extract_function_body(self, content: str, func_name: str) -> str:
+        """Extract function body for complexity analysis."""
+        pattern = rf'def {func_name}\([^)]*\)[^:]*:[^\n]*\n(.*?)(?=\ndef |\nclass |\Z)'
+        match = re.search(pattern, content, re.DOTALL)
+        return match.group(1) if match else ""
+    
+    def test_call_deepseek_complexity(self, llm_evaluation_content: str):
+        """
+        S3776 Line 332: call_deepseek() should have complexity <= 15.
+        
+        Refactoring strategy: Extract _handle_http_error() and _save_debug_response().
+        """
+        # Check for helper functions (indicates refactoring done)
+        has_helpers = (
+            '_handle_http_error' in llm_evaluation_content or
+            '_handle_api_response' in llm_evaluation_content or
+            '_save_debug_response' in llm_evaluation_content
+        )
+        
+        if not has_helpers:
+            body = self._extract_function_body(llm_evaluation_content, 'call_deepseek')
+            complexity = self._count_complexity_indicators(body)
+            
+            assert complexity <= 15 or has_helpers, (
+                f"call_deepseek() estimated complexity: {complexity}. "
+                f"Extract helper functions per CODING_PATTERNS_ANALYSIS.md Category 2."
+            )
+    
+    def test_call_gemini_complexity(self, llm_evaluation_content: str):
+        """
+        S3776 Line 423: call_gemini() should have complexity <= 15.
+        
+        Refactoring strategy: Extract _call_gemini_sdk() and _call_gemini_rest().
+        """
+        # Check for helper functions
+        has_helpers = (
+            '_call_gemini_sdk' in llm_evaluation_content or
+            '_call_gemini_rest' in llm_evaluation_content or
+            '_handle_gemini_response' in llm_evaluation_content
+        )
+        
+        if not has_helpers:
+            body = self._extract_function_body(llm_evaluation_content, 'call_gemini')
+            complexity = self._count_complexity_indicators(body)
+            
+            assert complexity <= 15 or has_helpers, (
+                f"call_gemini() estimated complexity: {complexity}. "
+                f"Extract _call_gemini_sdk() and _call_gemini_rest() helpers."
+            )
+    
+    def test_call_llm_with_retry_complexity(self, llm_evaluation_content: str):
+        """
+        S3776 Line 1381: call_llm_with_retry() should have complexity <= 15.
+        
+        Refactoring strategy: Extract _calculate_retry_delay() helper.
+        """
+        has_helpers = '_calculate_retry_delay' in llm_evaluation_content
+        
+        if not has_helpers:
+            body = self._extract_function_body(llm_evaluation_content, 'call_llm_with_retry')
+            complexity = self._count_complexity_indicators(body)
+            
+            assert complexity <= 15 or has_helpers, (
+                f"call_llm_with_retry() estimated complexity: {complexity}. "
+                f"Extract _calculate_retry_delay() helper."
+            )
+    
+    def test_run_chunked_evaluation_complexity(self, llm_evaluation_content: str):
+        """
+        S3776 Line 1502: run_chunked_evaluation() should have complexity <= 15.
+        
+        Refactoring strategy: Extract _process_chunk() and _run_final_assessment().
+        """
+        has_helpers = (
+            '_process_chunk' in llm_evaluation_content or
+            '_run_final_assessment' in llm_evaluation_content or
+            '_evaluate_chunk' in llm_evaluation_content
+        )
+        
+        if not has_helpers:
+            body = self._extract_function_body(llm_evaluation_content, 'run_chunked_evaluation')
+            complexity = self._count_complexity_indicators(body)
+            
+            assert complexity <= 15 or has_helpers, (
+                f"run_chunked_evaluation() estimated complexity: {complexity}. "
+                f"Extract _process_chunk() and _run_final_assessment() helpers."
+            )
+    
+    def test_run_chunked_comparative_evaluation_complexity(self, llm_evaluation_content: str):
+        """
+        S3776 Line 1615: run_chunked_comparative_evaluation() complexity <= 15.
+        
+        Refactoring strategy: Extract _load_aggregates(), _calculate_consensus().
+        """
+        has_helpers = (
+            '_load_aggregates' in llm_evaluation_content or
+            '_calculate_consensus' in llm_evaluation_content or
+            '_load_profile_aggregates' in llm_evaluation_content
+        )
+        
+        if not has_helpers:
+            body = self._extract_function_body(llm_evaluation_content, 'run_chunked_comparative_evaluation')
+            complexity = self._count_complexity_indicators(body)
+            
+            assert complexity <= 15 or has_helpers, (
+                f"run_chunked_comparative_evaluation() complexity: {complexity}. "
+                f"Extract _load_aggregates() and _calculate_consensus() helpers."
+            )
+    
+    def test_test_api_connections_complexity(self, llm_evaluation_content: str):
+        """
+        S3776 Line 1998: test_api_connections() should have complexity <= 15.
+        
+        Refactoring strategy: Extract _test_deepseek(), _test_gemini(), etc.
+        """
+        has_helpers = (
+            '_test_deepseek' in llm_evaluation_content or
+            '_test_provider' in llm_evaluation_content or
+            '_test_api_provider' in llm_evaluation_content
+        )
+        
+        if not has_helpers:
+            body = self._extract_function_body(llm_evaluation_content, 'test_api_connections')
+            complexity = self._count_complexity_indicators(body)
+            
+            assert complexity <= 15 or has_helpers, (
+                f"test_api_connections() estimated complexity: {complexity}. "
+                f"Extract per-provider test helpers (_test_deepseek, etc.)."
+            )

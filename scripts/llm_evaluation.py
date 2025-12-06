@@ -97,6 +97,345 @@ class LLMConfig:
     headers: dict[str, str]
 
 
+# =============================================================================
+# HELPER FUNCTIONS FOR COGNITIVE COMPLEXITY REDUCTION (S3776)
+# Pattern: CODING_PATTERNS_ANALYSIS.md Category 2 - Extract Method
+# =============================================================================
+
+
+def _handle_http_error(e: httpx.HTTPStatusError) -> dict[str, Any]:
+    """
+    Handle HTTP errors for API calls with consistent error messages.
+    
+    Extracts error handling from call_deepseek, call_gemini, etc. to reduce complexity.
+    """
+    if e.response.status_code == 429:
+        return {"error": ERROR_RATE_LIMITED}
+    elif e.response.status_code == 401:
+        return {"error": ERROR_AUTH_FAILED}
+    else:
+        return {"error": f"HTTP {e.response.status_code}: {str(e)[:100]}"}
+
+
+def _save_debug_response(content: str, provider: str) -> Path:
+    """
+    Save debug response to file for troubleshooting failed JSON parsing.
+    
+    Returns path to the debug file.
+    """
+    debug_file = PROJECT_ROOT / "outputs" / "evaluation" / f"debug_{provider}_{datetime.now().strftime('%H%M%S')}.txt"
+    debug_file.parent.mkdir(parents=True, exist_ok=True)
+    with open(debug_file, "w") as f:
+        f.write(content)
+    return debug_file
+
+
+def _call_gemini_sdk(config: LLMConfig, prompt: str) -> dict[str, Any]:
+    """
+    Call Gemini API using the Python SDK.
+    
+    Extracted from call_gemini() to reduce cognitive complexity.
+    """
+    if not GENAI_AVAILABLE or genai is None:
+        return {"error": "Gemini SDK not available"}
+    
+    try:
+        genai.configure(api_key=config.api_key)
+        model = genai.GenerativeModel(config.model)
+        
+        full_prompt = f"You are an expert at evaluating NLP extraction quality. Always respond with valid JSON only, no markdown code blocks.\n\n{prompt}"
+        response = model.generate_content(full_prompt)
+        content = response.text
+        
+        # Use robust JSON extraction
+        parsed = extract_json_from_response(content)
+        if parsed is not None:
+            return parsed
+        
+        # Save debug file
+        debug_file = _save_debug_response(content, "gemini")
+        return {"error": ERROR_FAILED_TO_PARSE_JSON, "raw_response": content[:1000], "debug_file": str(debug_file)}
+            
+    except Exception as e:
+        error_msg = str(e)
+        if "429" in error_msg or "quota" in error_msg.lower():
+            return {"error": "Rate limited (429) - quota exceeded"}
+        elif "401" in error_msg or "invalid" in error_msg.lower():
+            return {"error": "Authentication failed - check API key"}
+        return {"error": f"Gemini SDK error: {error_msg[:100]}"}
+
+
+def _call_gemini_rest(config: LLMConfig, prompt: str) -> dict[str, Any]:
+    """
+    Call Gemini API using REST API fallback.
+    
+    Extracted from call_gemini() to reduce cognitive complexity.
+    """
+    payload = {
+        "contents": [
+            {
+                "parts": [
+                    {"text": f"You are an expert at evaluating NLP extraction quality. Always respond with valid JSON only, no markdown code blocks.\n\n{prompt}"}
+                ]
+            }
+        ],
+        "generationConfig": {
+            "temperature": 0.3,
+            "maxOutputTokens": 4000
+        }
+    }
+    
+    try:
+        with httpx.Client(timeout=API_TIMEOUT_SECONDS) as client:
+            response = client.post(
+                config.base_url,
+                headers=config.headers,
+                json=payload
+            )
+            response.raise_for_status()
+            result = response.json()
+            
+            # Extract content from Gemini response
+            content = result.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "")
+            
+            if not content:
+                return {"error": "Empty response from Gemini", "raw_response": str(result)[:500]}
+            
+            # Parse JSON from response
+            try:
+                if JSON_CODE_BLOCK in content:
+                    content = content.split(JSON_CODE_BLOCK)[1].split("```")[0]
+                elif "```" in content:
+                    content = content.split("```")[1].split("```")[0]
+                return json.loads(content.strip())
+            except json.JSONDecodeError:
+                return {"error": ERROR_FAILED_TO_PARSE_JSON, "raw_response": content[:500]}
+    
+    except httpx.TimeoutException:
+        return {"error": f"Timeout after {API_TIMEOUT_SECONDS}s"}
+    except httpx.HTTPStatusError as e:
+        return _handle_http_error(e)
+    except Exception as e:
+        return {"error": f"Gemini error: {str(e)[:100]}"}
+
+
+def _calculate_retry_delay(attempt: int, error_msg: str) -> float:
+    """
+    Calculate retry delay with exponential backoff.
+    
+    Extracted from call_llm_with_retry() to reduce cognitive complexity.
+    
+    Args:
+        attempt: Current retry attempt (0-indexed)
+        error_msg: Error message that may contain retry-after header info
+    
+    Returns:
+        Delay in seconds before next retry
+    """
+    import re
+    
+    # Base delay with exponential backoff
+    delay = min(
+        INITIAL_RETRY_DELAY * (RETRY_BACKOFF_FACTOR ** attempt),
+        MAX_RETRY_DELAY
+    )
+    
+    # Extract retry-after header if available
+    if "retry after" in error_msg.lower():
+        match = re.search(r'retry after (\d+)', error_msg.lower())
+        if match:
+            suggested_delay = int(match.group(1))
+            delay = max(delay, suggested_delay)
+    
+    return delay
+
+
+def _load_profile_aggregates(eval_dir: Path, profiles: list[str], suffixes: dict[str, str]) -> dict[str, Any]:
+    """
+    Load aggregate files for all profiles.
+    
+    Extracted from run_chunked_comparative_evaluation() to reduce complexity.
+    
+    Returns:
+        Dictionary of profile name -> aggregate data
+    """
+    aggregates = {}
+    
+    print("\n📂 Loading aggregates...")
+    for profile in profiles:
+        suffix = suffixes[profile]
+        agg_file = eval_dir / f"aggregate_{suffix}.json"
+        
+        if agg_file.exists():
+            with open(agg_file) as f:
+                aggregates[profile] = json.load(f)
+            print(f"  ✅ {suffix}: Loaded")
+        else:
+            print(f"  ❌ {suffix}: Not found")
+    
+    return aggregates
+
+
+def _calculate_consensus(evaluations: dict[str, Any], models_used: list[str]) -> dict[str, Any]:
+    """
+    Calculate consensus recommendation from model evaluations.
+    
+    Extracted from run_chunked_comparative_evaluation() to reduce complexity.
+    
+    Returns:
+        Consensus dictionary with best_for_production, votes, agreement_ratio
+    """
+    recommendations = {}
+    for model in models_used:
+        eval_result = evaluations[model]
+        rec = eval_result.get("recommendation", {})
+        best = rec.get("best_for_production", "")
+        if best:
+            recommendations[best.lower()] = recommendations.get(best.lower(), 0) + 1
+    
+    if not recommendations:
+        return {}
+    
+    consensus = max(recommendations, key=recommendations.get)
+    return {
+        "best_for_production": consensus,
+        "votes": recommendations,
+        "agreement_ratio": recommendations[consensus] / len(models_used)
+    }
+
+
+def _test_deepseek_connection(api_key: str) -> dict[str, Any]:
+    """
+    Test DeepSeek API connection.
+    
+    Extracted from test_api_connections() to reduce complexity.
+    """
+    print("\n  DeepSeek:")
+    try:
+        models = list_deepseek_models()
+        if models and "error" not in models[0]:
+            for m in models:
+                if "id" in m:
+                    print(f"    ✅ Model: {m['id']}")
+                if "note" in m:
+                    print(f"    ℹ️  {m['note']}")
+            return {"status": "connected", "models": models}
+        else:
+            print(f"    ⚠️  {models[0].get('error', 'Unknown error')}")
+            return {"status": "error", "error": models[0].get("error", "Unknown")}
+    except Exception as e:
+        print(f"    ❌ Error: {e}")
+        return {"status": "error", "error": str(e)}
+
+
+def _test_gemini_connection(api_key: str) -> dict[str, Any]:
+    """
+    Test Gemini API connection.
+    
+    Extracted from test_api_connections() to reduce complexity.
+    """
+    print("\n  Gemini:")
+    try:
+        models = list_gemini_models()
+        if models and "error" not in models[0]:
+            print(f"    ✅ Connected - {len(models)} models available")
+            for m in models[:3]:
+                name = m.get("name", m.get("display_name", "Unknown"))
+                print(f"       - {name}")
+            if len(models) > 3:
+                print(f"       ... and {len(models) - 3} more")
+            return {"status": "connected", "model_count": len(models)}
+        else:
+            print(f"    ⚠️  {models[0].get('error', 'Unknown error')}")
+            return {"status": "error", "error": models[0].get("error", "Unknown")}
+    except Exception as e:
+        print(f"    ❌ Error: {e}")
+        return {"status": "error", "error": str(e)}
+
+
+def _test_anthropic_connection(api_key: str) -> dict[str, Any]:
+    """
+    Test Anthropic (Claude) API connection.
+    
+    Extracted from test_api_connections() to reduce complexity.
+    """
+    print("\n  Anthropic (Claude):")
+    try:
+        with httpx.Client(timeout=10.0) as client:
+            response = client.get(
+                "https://api.anthropic.com/v1/models",
+                headers={
+                    "x-api-key": api_key,
+                    "anthropic-version": "2023-06-01"
+                }
+            )
+            if response.status_code == 200:
+                print("    ✅ Connected")
+                return {"status": "connected"}
+            else:
+                print(f"    ⚠️  HTTP {response.status_code}")
+                return {"status": "error", "code": response.status_code}
+    except Exception as e:
+        print(f"    ❌ Error: {e}")
+        return {"status": "error", "error": str(e)}
+
+
+def _test_openai_connection(api_key: str) -> dict[str, Any]:
+    """
+    Test OpenAI API connection.
+    
+    Extracted from test_api_connections() to reduce complexity.
+    """
+    print("\n  OpenAI:")
+    try:
+        with httpx.Client(timeout=10.0) as client:
+            response = client.get(
+                "https://api.openai.com/v1/models",
+                headers={"Authorization": f"Bearer {api_key}"}
+            )
+            if response.status_code == 200:
+                data = response.json()
+                model_count = len(data.get("data", []))
+                print(f"    ✅ Connected - {model_count} models available")
+                return {"status": "connected", "model_count": model_count}
+            else:
+                print(f"    ⚠️  HTTP {response.status_code}")
+                return {"status": "error", "code": response.status_code}
+    except Exception as e:
+        print(f"    ❌ Error: {e}")
+        return {"status": "error", "error": str(e)}
+
+
+def _process_evaluation_chunk(
+    chunk_num: int, 
+    chunk_questions: list[tuple], 
+    aggregates: dict[str, Any],
+    model: str,
+    config: LLMConfig
+) -> dict[str, Any]:
+    """
+    Process a single evaluation chunk.
+    
+    Extracted from run_chunked_evaluation() to reduce complexity.
+    """
+    print(f"      📦 Chunk {chunk_num}/3 (Q{chunk_questions[0][0][-1]}-Q{chunk_questions[-1][0][-2:]})...", end=" ", flush=True)
+    
+    prompt = create_chunked_prompt(aggregates, chunk_questions, chunk_num)
+    
+    # Add delay between chunks
+    if chunk_num > 1:
+        time.sleep(API_CALL_DELAY_SECONDS)
+    
+    result = call_llm_with_retry(model, config, prompt)
+    
+    if "error" in result:
+        print(f"❌ {result['error'][:40]}")
+    else:
+        print("✅")
+    
+    return result
+
+
 def get_llm_configs() -> dict[str, LLMConfig]:
     """
     Get LLM configurations from environment variables.
@@ -301,6 +640,8 @@ def call_deepseek(config: LLMConfig, prompt: str) -> dict[str, Any]:
     
     API endpoint: https://api.deepseek.com/chat/completions
     Model: deepseek-chat (V3) or deepseek-reasoner (R1)
+    
+    Refactored per S3776 to use helper functions for error handling.
     """
     payload = {
         "model": config.model,
@@ -328,22 +669,14 @@ def call_deepseek(config: LLMConfig, prompt: str) -> dict[str, Any]:
             if parsed is not None:
                 return parsed
             
-            # Save debug file
-            debug_file = PROJECT_ROOT / "outputs" / "evaluation" / f"debug_deepseek_{datetime.now().strftime('%H%M%S')}.txt"
-            debug_file.parent.mkdir(parents=True, exist_ok=True)
-            with open(debug_file, "w") as f:
-                f.write(content)
+            # Save debug file using helper
+            debug_file = _save_debug_response(content, "deepseek")
             return {"error": ERROR_FAILED_TO_PARSE_JSON, "raw_response": content[:1000], "debug_file": str(debug_file)}
     
     except httpx.TimeoutException:
         return {"error": f"Timeout after {API_TIMEOUT_SECONDS}s - model may need more time"}
     except httpx.HTTPStatusError as e:
-        if e.response.status_code == 429:
-            return {"error": ERROR_RATE_LIMITED}
-        elif e.response.status_code == 401:
-            return {"error": ERROR_AUTH_FAILED}
-        else:
-            return {"error": f"HTTP {e.response.status_code}: {str(e)[:100]}"}
+        return _handle_http_error(e)
     except Exception as e:
         return {"error": f"DeepSeek error: {str(e)[:100]}"}
 
@@ -354,89 +687,15 @@ def call_gemini(config: LLMConfig, prompt: str) -> dict[str, Any]:
     
     SDK: google-generativeai
     Model: gemini-3-pro-preview or gemini-2.5-flash
+    
+    Refactored per S3776 to delegate to helper functions.
     """
     # Try SDK first (preferred method)
     if GENAI_AVAILABLE and genai is not None:
-        try:
-            genai.configure(api_key=config.api_key)
-            model = genai.GenerativeModel(config.model)
-            
-            full_prompt = f"You are an expert at evaluating NLP extraction quality. Always respond with valid JSON only, no markdown code blocks.\n\n{prompt}"
-            response = model.generate_content(full_prompt)
-            content = response.text
-            
-            # Use robust JSON extraction
-            parsed = extract_json_from_response(content)
-            if parsed is not None:
-                return parsed
-            
-            # Save debug file
-            debug_file = PROJECT_ROOT / "outputs" / "evaluation" / f"debug_gemini_{datetime.now().strftime('%H%M%S')}.txt"
-            debug_file.parent.mkdir(parents=True, exist_ok=True)
-            with open(debug_file, "w") as f:
-                f.write(content)
-            return {"error": ERROR_FAILED_TO_PARSE_JSON, "raw_response": content[:1000], "debug_file": str(debug_file)}
-                
-        except Exception as e:
-            error_msg = str(e)
-            if "429" in error_msg or "quota" in error_msg.lower():
-                return {"error": "Rate limited (429) - quota exceeded"}
-            elif "401" in error_msg or "invalid" in error_msg.lower():
-                return {"error": "Authentication failed - check API key"}
-            return {"error": f"Gemini SDK error: {error_msg[:100]}"}
+        return _call_gemini_sdk(config, prompt)
     
     # Fallback to REST API
-    payload = {
-        "contents": [
-            {
-                "parts": [
-                    {"text": f"You are an expert at evaluating NLP extraction quality. Always respond with valid JSON only, no markdown code blocks.\n\n{prompt}"}
-                ]
-            }
-        ],
-        "generationConfig": {
-            "temperature": 0.3,
-            "maxOutputTokens": 4000
-        }
-    }
-    
-    try:
-        with httpx.Client(timeout=API_TIMEOUT_SECONDS) as client:
-            response = client.post(
-                config.base_url,
-                headers=config.headers,
-                json=payload
-            )
-            response.raise_for_status()
-            result = response.json()
-            
-            # Extract content from Gemini response
-            content = result.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "")
-            
-            if not content:
-                return {"error": "Empty response from Gemini", "raw_response": str(result)[:500]}
-            
-            # Parse JSON from response
-            try:
-                if JSON_CODE_BLOCK in content:
-                    content = content.split(JSON_CODE_BLOCK)[1].split("```")[0]
-                elif "```" in content:
-                    content = content.split("```")[1].split("```")[0]
-                return json.loads(content.strip())
-            except json.JSONDecodeError:
-                return {"error": ERROR_FAILED_TO_PARSE_JSON, "raw_response": content[:500]}
-    
-    except httpx.TimeoutException:
-        return {"error": f"Timeout after {API_TIMEOUT_SECONDS}s"}
-    except httpx.HTTPStatusError as e:
-        if e.response.status_code == 429:
-            return {"error": ERROR_RATE_LIMITED}
-        elif e.response.status_code == 401:
-            return {"error": ERROR_AUTH_FAILED}
-        else:
-            return {"error": f"HTTP {e.response.status_code}: {str(e)[:100]}"}
-    except Exception as e:
-        return {"error": f"Gemini error: {str(e)[:100]}"}
+    return _call_gemini_rest(config, prompt)
 
 
 def extract_json_from_response(content: str) -> dict[str, Any] | None:
@@ -1313,6 +1572,7 @@ def call_llm_with_retry(model: str, config: "LLMConfig", prompt: str) -> dict[st
     Call an LLM with automatic retry on rate limits.
     
     Uses exponential backoff for retries.
+    Refactored per S3776 to use _calculate_retry_delay helper.
     
     Args:
         model: Model key (e.g., "claude-opus-4.5", "gpt-5")
@@ -1336,7 +1596,6 @@ def call_llm_with_retry(model: str, config: "LLMConfig", prompt: str) -> dict[st
         
         # Check if error is retryable
         if not is_retryable_error(result):
-            # Non-retryable error (auth, parsing, etc.)
             return result
         
         last_result = result
@@ -1345,23 +1604,11 @@ def call_llm_with_retry(model: str, config: "LLMConfig", prompt: str) -> dict[st
         if attempt >= MAX_RETRIES:
             break
         
-        # Calculate delay with exponential backoff
-        delay = min(
-            INITIAL_RETRY_DELAY * (RETRY_BACKOFF_FACTOR ** attempt),
-            MAX_RETRY_DELAY
-        )
-        
-        # Extract retry-after header if available
+        # Use helper for delay calculation
         error_msg = result.get("error", "")
-        if "retry after" in error_msg.lower():
-            # Try to extract the suggested delay
-            import re
-            match = re.search(r'retry after (\d+)', error_msg.lower())
-            if match:
-                suggested_delay = int(match.group(1))
-                delay = max(delay, suggested_delay)
+        delay = _calculate_retry_delay(attempt, error_msg)
         
-        print(f"\n     ⚠️  {result['error'][:50]}...")
+        print(f"\n     ⚠️  {error_msg[:50]}...")
         print(f"     🔄 Retry {attempt + 1}/{MAX_RETRIES} in {delay}s...", end="", flush=True)
         time.sleep(delay)
     
@@ -1442,6 +1689,8 @@ def run_chunked_evaluation(model: str, aggregates: dict[str, dict[str, Any]]) ->
     Stage 1: 3 API calls with 6 questions each
     Stage 2: 1 API call for final assessment
     
+    Refactored per S3776 to use _process_evaluation_chunk helper.
+    
     Args:
         model: Model key to use
         aggregates: The 4 profile aggregates
@@ -1463,34 +1712,16 @@ def run_chunked_evaluation(model: str, aggregates: dict[str, dict[str, Any]]) ->
         EVALUATION_QUESTIONS[12:18], # Q13-Q18
     ]
     
-    chunk_results = []
-    
-    # Stage 1: Evaluate each chunk
-    for i, chunk_questions in enumerate(chunks, 1):
-        print(f"      📦 Chunk {i}/3 (Q{chunk_questions[0][0][-1]}-Q{chunk_questions[-1][0][-2:]})...", end=" ", flush=True)
-        
-        prompt = create_chunked_prompt(aggregates, chunk_questions, i)
-        
-        # Add delay between chunks
-        if i > 1:
-            time.sleep(API_CALL_DELAY_SECONDS)
-        
-        result = call_llm_with_retry(model, config, prompt)
-        
-        if "error" in result:
-            print(f"❌ {result['error'][:40]}")
-            chunk_results.append(result)
-        else:
-            print("✅")
-            chunk_results.append(result)
+    # Stage 1: Process each chunk using helper
+    chunk_results = [
+        _process_evaluation_chunk(i, chunk_questions, aggregates, model, config)
+        for i, chunk_questions in enumerate(chunks, 1)
+    ]
     
     # Check if we have enough successful chunks
     successful_chunks = [c for c in chunk_results if "error" not in c]
     if len(successful_chunks) < 2:
-        return {
-            "error": "Too many chunk failures",
-            "chunk_results": chunk_results
-        }
+        return {"error": "Too many chunk failures", "chunk_results": chunk_results}
     
     # Merge chunk results
     merged = merge_chunk_results(chunk_results)
@@ -1523,6 +1754,7 @@ def run_chunked_comparative_evaluation(models: list[str] | None = None) -> dict[
     Run chunked comparative evaluation across multiple models.
     
     This is the main entry point for the new chunked approach.
+    Refactored per S3776 to use _load_profile_aggregates and _calculate_consensus helpers.
     
     Args:
         models: List of model keys to use (defaults to all 10)
@@ -1531,23 +1763,11 @@ def run_chunked_comparative_evaluation(models: list[str] | None = None) -> dict[
         Complete evaluation results with consensus
     """
     eval_dir = PROJECT_ROOT / "outputs" / "evaluation"
-    
-    # Load all aggregates
-    aggregates = {}
     profiles = ["baseline", "current", "moderate", "aggressive"]
     suffixes = {"baseline": "BASELINE", "current": "CURRENT", "moderate": "MODERATE", "aggressive": "AGGRESSIVE"}
     
-    print("\n📂 Loading aggregates...")
-    for profile in profiles:
-        suffix = suffixes[profile]
-        agg_file = eval_dir / f"aggregate_{suffix}.json"
-        
-        if agg_file.exists():
-            with open(agg_file) as f:
-                aggregates[profile] = json.load(f)
-            print(f"  ✅ {suffix}: Loaded")
-        else:
-            print(f"  ❌ {suffix}: Not found")
+    # Load all aggregates using helper
+    aggregates = _load_profile_aggregates(eval_dir, profiles, suffixes)
     
     if len(aggregates) != 4:
         return {"error": f"Missing aggregates. Found {len(aggregates)}/4. Run extraction first."}
@@ -1562,8 +1782,6 @@ def run_chunked_comparative_evaluation(models: list[str] | None = None) -> dict[
         ]
     
     configs = get_llm_configs()
-    
-    # Filter to available models
     available_models = [m for m in models if m in configs]
     
     print("\n🔄 Running CHUNKED evaluation approach")
@@ -1588,7 +1806,6 @@ def run_chunked_comparative_evaluation(models: list[str] | None = None) -> dict[
     for i, model in enumerate(available_models, 1):
         print(f"  🤖 [{i}/{len(available_models)}] {model}")
         
-        # Add delay between models (except first)
         if i > 1:
             print(f"     ⏳ Waiting {API_CALL_DELAY_SECONDS}s before next model...")
             time.sleep(API_CALL_DELAY_SECONDS)
@@ -1599,27 +1816,14 @@ def run_chunked_comparative_evaluation(models: list[str] | None = None) -> dict[
         if "error" not in eval_result:
             results["models_used"].append(model)
     
-    # Calculate consensus
+    # Calculate consensus using helper
     if results["models_used"]:
-        recommendations = {}
-        for model in results["models_used"]:
-            eval_result = results["evaluations"][model]
-            rec = eval_result.get("recommendation", {})
-            best = rec.get("best_for_production", "")
-            if best:
-                recommendations[best.lower()] = recommendations.get(best.lower(), 0) + 1
-        
-        if recommendations:
-            consensus = max(recommendations, key=recommendations.get)
-            results["consensus"] = {
-                "best_for_production": consensus,
-                "votes": recommendations,
-                "agreement_ratio": recommendations[consensus] / len(results["models_used"])
-            }
-            
-            print(f"\n📊 CONSENSUS: {consensus.upper()}")
-            print(f"   Votes: {recommendations}")
-            print(f"   Agreement: {results['consensus']['agreement_ratio']:.0%}")
+        consensus_result = _calculate_consensus(results["evaluations"], results["models_used"])
+        if consensus_result:
+            results["consensus"] = consensus_result
+            print(f"\n📊 CONSENSUS: {consensus_result['best_for_production'].upper()}")
+            print(f"   Votes: {consensus_result['votes']}")
+            print(f"   Agreement: {consensus_result['agreement_ratio']:.0%}")
     
     # Save results
     output_file = eval_dir / f"llm_chunked_evaluation_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
@@ -1890,6 +2094,8 @@ def test_api_connections() -> dict[str, dict[str, Any]]:
     """
     Test API connections for all configured providers.
     
+    Refactored per S3776 to use per-provider helper functions.
+    
     Returns connection status and available models for each provider.
     """
     results = {}
@@ -1911,101 +2117,30 @@ def test_api_connections() -> dict[str, dict[str, Any]]:
         else:
             print(f"  ❌ {key_name}: NOT SET")
     
-    # Test DeepSeek
     print("\n🔌 Testing API Connections:")
     print("=" * 50)
     
+    # Test each provider using helper functions
     if env_keys["DEEPSEEK_API_KEY"]:
-        print("\n  DeepSeek:")
-        try:
-            models = list_deepseek_models()
-            if models and "error" not in models[0]:
-                results["deepseek"] = {"status": "connected", "models": models}
-                for m in models:
-                    if "id" in m:
-                        print(f"    ✅ Model: {m['id']}")
-                    if "note" in m:
-                        print(f"    ℹ️  {m['note']}")
-            else:
-                results["deepseek"] = {"status": "error", "error": models[0].get("error", "Unknown")}
-                print(f"    ⚠️  {models[0].get('error', 'Unknown error')}")
-        except Exception as e:
-            results["deepseek"] = {"status": "error", "error": str(e)}
-            print(f"    ❌ Error: {e}")
+        results["deepseek"] = _test_deepseek_connection(env_keys["DEEPSEEK_API_KEY"])
     else:
         results["deepseek"] = {"status": "no_key"}
         print("\n  DeepSeek: Skipped (no API key)")
     
-    # Test Gemini
     if env_keys["GEMINI_API_KEY"]:
-        print("\n  Gemini:")
-        try:
-            models = list_gemini_models()
-            if models and "error" not in models[0]:
-                # Show only first 5 models
-                results["gemini"] = {"status": "connected", "model_count": len(models)}
-                print(f"    ✅ Connected - {len(models)} models available")
-                for m in models[:3]:
-                    name = m.get("name", m.get("display_name", "Unknown"))
-                    print(f"       - {name}")
-                if len(models) > 3:
-                    print(f"       ... and {len(models) - 3} more")
-            else:
-                results["gemini"] = {"status": "error", "error": models[0].get("error", "Unknown")}
-                print(f"    ⚠️  {models[0].get('error', 'Unknown error')}")
-        except Exception as e:
-            results["gemini"] = {"status": "error", "error": str(e)}
-            print(f"    ❌ Error: {e}")
+        results["gemini"] = _test_gemini_connection(env_keys["GEMINI_API_KEY"])
     else:
         results["gemini"] = {"status": "no_key"}
         print("\n  Gemini: Skipped (no API key)")
     
-    # Test Anthropic
     if env_keys["ANTHROPIC_API_KEY"]:
-        print("\n  Anthropic (Claude):")
-        try:
-            # Simple test - just check if we can reach the API
-            with httpx.Client(timeout=10.0) as client:
-                response = client.get(
-                    "https://api.anthropic.com/v1/models",
-                    headers={
-                        "x-api-key": env_keys["ANTHROPIC_API_KEY"],
-                        "anthropic-version": "2023-06-01"
-                    }
-                )
-                if response.status_code == 200:
-                    results["anthropic"] = {"status": "connected"}
-                    print("    ✅ Connected")
-                else:
-                    results["anthropic"] = {"status": "error", "code": response.status_code}
-                    print(f"    ⚠️  HTTP {response.status_code}")
-        except Exception as e:
-            results["anthropic"] = {"status": "error", "error": str(e)}
-            print(f"    ❌ Error: {e}")
+        results["anthropic"] = _test_anthropic_connection(env_keys["ANTHROPIC_API_KEY"])
     else:
         results["anthropic"] = {"status": "no_key"}
         print("\n  Anthropic: Skipped (no API key)")
     
-    # Test OpenAI
     if env_keys["OPENAI_API_KEY"]:
-        print("\n  OpenAI:")
-        try:
-            with httpx.Client(timeout=10.0) as client:
-                response = client.get(
-                    "https://api.openai.com/v1/models",
-                    headers={"Authorization": f"Bearer {env_keys['OPENAI_API_KEY']}"}
-                )
-                if response.status_code == 200:
-                    data = response.json()
-                    model_count = len(data.get("data", []))
-                    results["openai"] = {"status": "connected", "model_count": model_count}
-                    print(f"    ✅ Connected - {model_count} models available")
-                else:
-                    results["openai"] = {"status": "error", "code": response.status_code}
-                    print(f"    ⚠️  HTTP {response.status_code}")
-        except Exception as e:
-            results["openai"] = {"status": "error", "error": str(e)}
-            print(f"    ❌ Error: {e}")
+        results["openai"] = _test_openai_connection(env_keys["OPENAI_API_KEY"])
     else:
         results["openai"] = {"status": "no_key"}
         print("\n  OpenAI: Skipped (no API key)")
