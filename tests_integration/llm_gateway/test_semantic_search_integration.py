@@ -194,13 +194,14 @@ class TestSearchToolExecution:
         
         # Results should be list or contain results array
         results = data.get("results", data.get("result", []))
-        if isinstance(results, list) and len(results) > 0:
+        if isinstance(results, list):
             # Each result should have content or text
-            first_result = results[0]
-            assert any(
-                key in first_result 
-                for key in ["content", "text", "chunk", "passage"]
-            )
+            first_result = next(iter(results), None)
+            if first_result is not None:
+                assert any(
+                    key in first_result 
+                    for key in ["content", "text", "chunk", "passage"]
+                )
 
 
 # =============================================================================

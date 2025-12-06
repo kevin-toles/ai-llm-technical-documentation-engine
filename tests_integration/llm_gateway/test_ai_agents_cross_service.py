@@ -8,9 +8,9 @@ Per GUIDELINES (Newman pp. 352-353): Graceful degradation
 These tests require Docker services running with `docker compose --profile integration-test up`.
 """
 
+import asyncio
 import pytest
 import httpx
-import time
 
 from tests_integration.llm_gateway.conftest import (
     GATEWAY_URL,
@@ -39,11 +39,8 @@ class TestAIAgentsToolRegistration:
         data = response.json()
         tools = data.get("tools", [])
         
-        # Should have some tools registered
-        assert len(tools) >= 0, "Tools endpoint should return tool list"
-        
-        # Check for common AI agent tools
-        tool_names = [t.get("name") for t in tools]
+        # Should return a list (may be empty if no tools configured)
+        assert isinstance(tools, list), "Tools endpoint should return tool list"
         
         # Log available tools for debugging
         if tools:
@@ -67,13 +64,6 @@ class TestAIAgentsToolRegistration:
         data = response.json()
         tools = data.get("tools", [])
         tool_names = [t.get("name") for t in tools]
-        
-        # Check for agent-specific tools if any exist
-        agent_tool_patterns = ["agent", "route", "delegate", "task"]
-        agent_tools = [
-            name for name in tool_names 
-            if any(pattern in name.lower() for pattern in agent_tool_patterns)
-        ]
         
         # Just verify the endpoint works - actual tool presence depends on config
         assert isinstance(tool_names, list)
@@ -143,12 +133,15 @@ class TestAgentConfigurationRetrieval:
         data = list_response.json()
         agents = data.get("agents", data) if isinstance(data, dict) else data
         
-        if not agents or not isinstance(agents, list) or len(agents) == 0:
+        if not agents or not isinstance(agents, list):
             pytest.skip("No agents configured")
         
-        # Get first agent by ID
-        first_agent = agents[0]
-        agent_id = first_agent.get("id", first_agent.get("name"))
+        # Safely get first agent using iterator pattern
+        first_agent = next(iter(agents), None)
+        if first_agent is None:
+            pytest.skip("Agent list is empty")
+            
+        agent_id = first_agent.get("id", first_agent.get("name")) if isinstance(first_agent, dict) else None
         
         if not agent_id:
             pytest.skip("Agent has no ID")
@@ -174,14 +167,12 @@ class TestAgentConfigurationRetrieval:
         data = response.json()
         agents = data.get("agents", data) if isinstance(data, dict) else data
         
-        if agents and isinstance(agents, list) and len(agents) > 0:
-            # At least one agent should have capabilities or tools
-            has_capabilities = any(
-                "capabilities" in agent or "tools" in agent or "functions" in agent
-                for agent in agents
-            )
-            # Not all implementations include capabilities - just verify structure
+        if agents and isinstance(agents, list):
+            # Verify list structure
             assert isinstance(agents, list)
+            # If agents exist, verify they have expected structure
+            for agent in agents:
+                assert isinstance(agent, dict), "Each agent should be a dictionary"
 
 
 # =============================================================================
@@ -229,12 +220,14 @@ class TestAgentToolExecution:
         
         tools = tools_response.json().get("tools", [])
         
-        if not tools:
+        # Try to execute first available tool using iterator pattern
+        tool = next(iter(tools), None)
+        if tool is None:
             pytest.skip("No tools available")
         
-        # Try to execute first available tool
-        tool = tools[0]
-        tool_name = tool.get("name")
+        tool_name = tool.get("name") if isinstance(tool, dict) else None
+        if not tool_name:
+            pytest.skip("Tool has no name")
         
         payload = {
             "tool_name": tool_name,
@@ -463,7 +456,7 @@ class TestAIAgentsCircuitBreaker:
         }
         
         # Wait a moment for potential circuit half-open
-        time.sleep(1)
+        await asyncio.sleep(1)
         
         response = await gateway_client.post(
             "/v1/chat/completions",

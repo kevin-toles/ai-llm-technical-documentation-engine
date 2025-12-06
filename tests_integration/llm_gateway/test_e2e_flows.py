@@ -64,8 +64,9 @@ class TestCompleteChatFlow:
         if response.status_code == 200:
             data = response.json()
             assert "choices" in data
-            assert len(data["choices"]) > 0
-            assert "message" in data["choices"][0]
+            first_choice = next(iter(data["choices"]), None)
+            assert first_choice is not None, "Expected at least one choice"
+            assert "message" in first_choice
 
     async def test_chat_with_session_persistence(
         self,
@@ -147,8 +148,8 @@ class TestCompleteChatFlow:
                     if chunk_data != "[DONE]":
                         chunks.append(chunk_data)
             
-            # Should receive some chunks
-            assert len(chunks) >= 0  # May be empty if no streaming support
+            # Verify chunks is a list (may be empty if no streaming support)
+            assert isinstance(chunks, list)
 
 
 # =============================================================================
@@ -317,8 +318,8 @@ class TestMultiToolWorkflow:
                 "status": response.status_code
             })
         
-        # Should have attempted at least one execution
-        assert len(results) >= 0
+        # Verify results is a list (tool execution was attempted)
+        assert isinstance(results, list)
 
     async def test_parallel_tool_capability(
         self,
