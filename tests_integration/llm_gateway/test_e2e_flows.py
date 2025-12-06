@@ -15,7 +15,7 @@ import time
 import uuid
 from typing import Optional
 
-from tests.integration.conftest import (
+from tests_integration.llm_gateway.conftest import (
     GATEWAY_URL,
     SEMANTIC_SEARCH_URL,
     AI_AGENTS_URL,

@@ -31,6 +31,9 @@ from typing import Any, Dict, List, Optional
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
+# Constants for S1192 compliance - avoid duplicated literals
+NOT_SET = "NOT SET"
+
 # Optional observability integration
 _observability_enabled = False
 _trace_id: Optional[str] = None
@@ -166,19 +169,17 @@ def verify_prerequisites() -> Dict[str, Any]:
         if val:
             status["api_keys"][key] = f"***{val[-4:]}"
         else:
-            status["api_keys"][key] = "NOT SET"
+            status["api_keys"][key] = NOT_SET
     
     return status
 
 
-def run_dry_run() -> None:
-    """Run configuration verification without executing."""
-    print("\n🔍 DRY RUN - Configuration Verification")
-    print("=" * 60)
+def _print_profiles_status(status: Dict[str, Any]) -> None:
+    """
+    Print extraction profiles status.
     
-    status = verify_prerequisites()
-    
-    # Profiles config
+    Extracted from run_dry_run() to reduce cognitive complexity (S3776).
+    """
     print("\n📋 Extraction Profiles:")
     if status["profiles_config"]:
         profiles_path = PROJECT_ROOT / "config" / "extraction_profiles.json"
@@ -193,29 +194,61 @@ def run_dry_run() -> None:
                   f"ngram_clean={custom.get('ngram_clean_enabled')}")
     else:
         print("  ❌ Profiles config not found")
+
+
+def _print_source_metadata_status(status: Dict[str, Any]) -> None:
+    """
+    Print source metadata status.
     
-    # Source metadata
+    Extracted from run_dry_run() to reduce cognitive complexity (S3776).
+    """
     print("\n📄 Source Metadata:")
     if status["source_metadata"]:
         print(f"  ✅ {status['source_metadata_path']}")
     else:
         print(f"  ❌ {status.get('source_metadata_path', 'NOT FOUND')}")
+
+
+def _print_taxonomies_status(status: Dict[str, Any]) -> None:
+    """
+    Print taxonomies status.
     
-    # Taxonomies
+    Extracted from run_dry_run() to reduce cognitive complexity (S3776).
+    """
     print("\n📚 Taxonomies:")
     if status["taxonomies"]:
-        print(f"  ✅ All 4 taxonomy variants exist")
+        print("  ✅ All 4 taxonomy variants exist")
     else:
         print(f"  ⚠️  Only {status['taxonomies_count']}/4 taxonomies found")
         print("    Run: scripts/run_extraction_tests.py to create missing taxonomies")
+
+
+def _print_api_keys_status(status: Dict[str, Any]) -> None:
+    """
+    Print API keys status.
     
-    # API Keys
+    Extracted from run_dry_run() to reduce cognitive complexity (S3776).
+    """
     print("\n🔐 API Keys:")
     for key, val in status["api_keys"].items():
-        if val != "NOT SET":
+        if val != NOT_SET:
             print(f"  ✅ {key}: {val}")
         else:
-            print(f"  ❌ {key}: NOT SET")
+            print(f"  ❌ {key}: {NOT_SET}")
+
+
+def run_dry_run() -> None:
+    """Run configuration verification without executing."""
+    print("\n🔍 DRY RUN - Configuration Verification")
+    print("=" * 60)
+    
+    status = verify_prerequisites()
+    
+    # Use helper functions to reduce cognitive complexity (S3776)
+    _print_profiles_status(status)
+    _print_source_metadata_status(status)
+    _print_taxonomies_status(status)
+    _print_api_keys_status(status)
     
     # Test LLM connections
     print("\n🔌 LLM Connection Test:")
@@ -232,7 +265,7 @@ def run_dry_run() -> None:
         status["profiles_config"] and 
         status["source_metadata"] and 
         status["taxonomies"] and
-        any(v != "NOT SET" for v in status["api_keys"].values())
+        any(v != NOT_SET for v in status["api_keys"].values())
     )
     
     if all_ready:

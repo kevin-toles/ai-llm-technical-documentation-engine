@@ -210,6 +210,186 @@ def _apply_and_print_config(profile: Dict[str, Any]) -> None:
     print(f"  ngram_clean: {custom.get('ngram_clean_enabled')}")
 
 
+def _run_metadata_extraction_step(
+    book_name: str, 
+    test_book: Dict[str, Any],
+    metadata_file: Path
+) -> bool:
+    """Execute metadata extraction step (Step 2).
+    
+    Reduces cognitive complexity by extracting step logic.
+    """
+    source_json = find_source_json_text(book_name)
+    
+    if source_json is None:
+        existing_metadata = PROJECT_ROOT / "workflows" / "metadata_extraction" / "output" / test_book.get("metadata_file", "")
+        if existing_metadata.exists():
+            print(f"  ⚠️ Source JSON text not found, using existing metadata: {existing_metadata.name}")
+            shutil.copy(existing_metadata, metadata_file)
+            return validate_step("Metadata", metadata_file.exists(), f"Copied {metadata_file.name}")
+        print(f"  ❌ No source found for {book_name}")
+        return False
+    
+    print(f"  Source JSON: {source_json.name}")
+    result = run_metadata_extraction(source_json, metadata_file)
+    return validate_step("Metadata Extraction", result, f"Created {metadata_file.name}")
+
+
+def _verify_and_transform_taxonomy(taxonomy_file: Path) -> bool:
+    """Verify taxonomy exists and transform to production format (Step 3).
+    
+    Reduces cognitive complexity by extracting taxonomy transformation.
+    """
+    v3 = validate_step("Taxonomy", taxonomy_file.exists(), str(taxonomy_file.name))
+    
+    if not v3:
+        base_taxonomy = PROJECT_ROOT / "workflows" / "taxonomy_setup" / "output" / "AI-ML_taxonomy_20251128.json"
+        if base_taxonomy.exists():
+            shutil.copy(base_taxonomy, taxonomy_file)
+            v3 = validate_step("Taxonomy", taxonomy_file.exists(), f"Created {taxonomy_file.name}")
+    
+    if not (v3 and taxonomy_file.exists()):
+        return v3
+    
+    try:
+        with open(taxonomy_file) as f:
+            taxonomy_data = json.load(f)
+        
+        tiers = taxonomy_data.get("tiers", {})
+        transformed = False
+        for tier_name, tier_data in tiers.items():
+            books = tier_data.get("books", [])
+            if books and isinstance(books[0], dict):
+                tier_data["books"] = [book["name"] for book in books if isinstance(book, dict) and "name" in book]
+                transformed = True
+        
+        if transformed:
+            with open(taxonomy_file, "w") as f:
+                json.dump(taxonomy_data, f, indent=2)
+            print("  ✅ Transformed taxonomy to production format (books as string list)")
+        else:
+            print("  ℹ️ Taxonomy already in production format")
+    except Exception as e:
+        print(f"  ⚠️ Could not transform taxonomy: {e}")
+    
+    return v3
+
+
+def _copy_companion_metadata(eval_dir: Path) -> None:
+    """Copy companion book metadata to evaluation directory.
+    
+    Reduces cognitive complexity by extracting companion copying.
+    """
+    source_metadata_dir = PROJECT_ROOT / "workflows" / "metadata_extraction" / "output"
+    print("  Copying companion book metadata to evaluation directory...")
+    companion_count = 0
+    for meta_file in source_metadata_dir.glob("*_metadata.json"):
+        dest_file = eval_dir / meta_file.name
+        if not dest_file.exists():
+            shutil.copy(meta_file, dest_file)
+            companion_count += 1
+    if companion_count > 0:
+        print(f"  Copied {companion_count} companion metadata files")
+    else:
+        print("  Companion metadata already present")
+
+
+def _run_enrichment_step(
+    metadata_file: Path, 
+    taxonomy_file: Path, 
+    enriched_file: Path
+) -> bool:
+    """Execute enrichment step (Step 4).
+    
+    Reduces cognitive complexity by extracting enrichment logic.
+    """
+    from workflows.metadata_enrichment.scripts.enrich_metadata_per_book import enrich_metadata
+    
+    enrich_metadata(metadata_file, taxonomy_file, enriched_file)
+    
+    v4 = validate_step("Enrichment", enriched_file.exists(), f"Created {enriched_file.name}")
+    
+    if enriched_file.exists():
+        with open(enriched_file) as f:
+            enriched_data = json.load(f)
+        
+        chapters = enriched_data.get("chapters", [])
+        total_keywords = sum(len(ch.get("keywords", [])) for ch in chapters)
+        total_concepts = sum(len(ch.get("concepts", [])) for ch in chapters)
+        
+        print(f"  Chapters: {len(chapters)}")
+        print(f"  Total keywords: {total_keywords}")
+        print(f"  Total concepts: {total_concepts}")
+        
+        v4 = v4 and total_keywords > 0
+    
+    return v4
+
+
+def _run_aggregate_step(
+    book_name: str,
+    suffix: str,
+    metadata_file: Path,
+    taxonomy_file: Path,
+    enriched_file: Path,
+    aggregate_file: Path,
+    eval_dir: Path
+) -> bool:
+    """Execute aggregate creation step (Step 5).
+    
+    Reduces cognitive complexity by extracting aggregate logic.
+    """
+    aggregate_tmp_dir = eval_dir / "aggregate_packages"
+    aggregate_tmp_dir.mkdir(parents=True, exist_ok=True)
+    
+    source_book_with_suffix = f"{book_name}_{suffix}"
+    
+    profile_metadata_dir = aggregate_tmp_dir / f"metadata_{suffix}"
+    profile_metadata_dir.mkdir(parents=True, exist_ok=True)
+    
+    source_metadata_dir = PROJECT_ROOT / "workflows" / "metadata_extraction" / "output"
+    for meta_file in source_metadata_dir.glob("*_metadata.json"):
+        shutil.copy(meta_file, profile_metadata_dir / meta_file.name)
+    
+    expected_metadata_name = f"{source_book_with_suffix}_metadata.json"
+    shutil.copy(metadata_file, profile_metadata_dir / expected_metadata_name)
+    print(f"  Created metadata for production: {expected_metadata_name}")
+    
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    production_enriched_file = aggregate_tmp_dir / f"{source_book_with_suffix}_enr_metadata_{timestamp}.json"
+    shutil.copy(enriched_file, production_enriched_file)
+    print(f"  Created enriched file for production: {production_enriched_file.name}")
+    
+    guideline_dir = PROJECT_ROOT / "workflows" / "base_guideline_generation" / "output"
+    
+    package_path = create_aggregate_package(
+        taxonomy_path=taxonomy_file,
+        metadata_dir=profile_metadata_dir,
+        guideline_dir=guideline_dir,
+        output_dir=aggregate_tmp_dir,
+        enriched_metadata_file=production_enriched_file
+    )
+    
+    shutil.copy(package_path, aggregate_file)
+    
+    v5 = validate_step("Aggregate", aggregate_file.exists(), f"Created {aggregate_file.name}")
+    
+    with open(aggregate_file) as f:
+        aggregate = json.load(f)
+    
+    companion_count = len(aggregate.get("companion_books", []))
+    stats = aggregate.get("statistics", {})
+    total_books = stats.get("total_books", 0)
+    total_chapters = stats.get("total_chapters", 0)
+    
+    print(f"  Total books in aggregate: {total_books}")
+    print(f"  Companion books: {companion_count}")
+    print(f"  Total chapters across all books: {total_chapters}")
+    print(f"  Missing books: {stats.get('missing_count', 0)}")
+    
+    return v5 and companion_count > 0
+
+
 def run_profile_pipeline(profile_name: str) -> Dict[str, Any]:
     """
     Run the complete pipeline for a single profile.
@@ -234,172 +414,46 @@ def run_profile_pipeline(profile_name: str) -> Dict[str, Any]:
     print(f"{'='*60}")
     print(f"Description: {profile.get('description', 'N/A')}")
     
-    result = {
-        "profile": profile_name,
-        "suffix": suffix,
-        "timestamp": datetime.now().isoformat(),
-        "validations": {},
-        "paths": {},
-        "success": False,
-    }
+    result = _initialize_profile_result(profile_name, suffix)
     
     # Define paths
     eval_dir = PROJECT_ROOT / "outputs" / "evaluation"
     eval_dir.mkdir(parents=True, exist_ok=True)
     
     book_name = test_book.get("name", "Unknown")
+    paths = _setup_profile_paths(book_name, suffix, eval_dir)
     
-    # Profile-specific extracted metadata
-    metadata_file = eval_dir / f"{book_name}_metadata_{suffix}.json"
-    
-    # Profile-specific taxonomy with naming that production aggregate script expects
-    # Production create_aggregate_package.py extracts: taxonomy_path.stem.replace("_taxonomy", "")
-    # So "{book_name}_{suffix}_taxonomy.json" -> "{book_name}_{suffix}" as source book
-    # We'll need to copy metadata to match this expected source book name
-    taxonomy_file = eval_dir / f"{book_name}_{suffix}_taxonomy.json"
-    
-    # Profile-specific enriched output
-    enriched_file = eval_dir / f"{book_name}_enriched_{suffix}.json"
-    
-    # Profile-specific aggregate
-    aggregate_file = eval_dir / f"aggregate_{suffix}.json"
-    
-    result["paths"] = {
-        "metadata": str(metadata_file),
-        "taxonomy": str(taxonomy_file),
-        "enriched": str(enriched_file),
-        "aggregate": str(aggregate_file),
-    }
+    result["paths"] = {k: str(v) for k, v in paths.items()}
     
     # Step 1: Apply profile environment variables
     print("\n[Step 1/5] Applying profile configuration...")
-    apply_profile_env_vars(profile)
-    
-    params = profile.get("parameters", {})
-    yake = params.get("yake", {})
-    custom = params.get("custom_dedup", {})
-    
-    print(f"  YAKE top_n: {yake.get('top_n')}")
-    print(f"  YAKE n: {yake.get('n')}")
-    print(f"  YAKE dedupLim: {yake.get('dedupLim')}")
-    print(f"  stem_dedup: {custom.get('stem_dedup_enabled')}")
-    print(f"  ngram_clean: {custom.get('ngram_clean_enabled')}")
-    
+    _apply_and_print_config(profile)
     result["validations"]["config_applied"] = True
     
     # Step 2: Run metadata extraction
     print("\n[Step 2/5] Running metadata extraction...")
+    v2 = _run_metadata_extraction_step(book_name, test_book, paths["metadata"])
+    result["validations"]["metadata_extraction"] = v2
     
-    # Find source JSON text file
-    source_json = find_source_json_text(book_name)
-    
-    if source_json is None:
-        # Fallback: use existing metadata as source (copy and re-process would be complex)
-        existing_metadata = PROJECT_ROOT / "workflows" / "metadata_extraction" / "output" / test_book.get("metadata_file", "")
-        if existing_metadata.exists():
-            print(f"  ⚠️ Source JSON text not found, using existing metadata: {existing_metadata.name}")
-            # Copy existing metadata with profile suffix (the extraction params won't apply here)
-            shutil.copy(existing_metadata, metadata_file)
-            v2 = validate_step("Metadata", metadata_file.exists(), f"Copied {metadata_file.name}")
-        else:
-            print(f"  ❌ No source found for {book_name}")
-            result["validations"]["metadata_extraction"] = False
-            return result
-    else:
-        print(f"  Source JSON: {source_json.name}")
-        v2 = run_metadata_extraction(source_json, metadata_file)
-        v2 = validate_step("Metadata Extraction", v2, f"Created {metadata_file.name}")
-    
-    result["validations"]["metadata_extraction"] = v2 if 'v2' in dir() else False
+    if not v2:
+        return result
     
     # Step 3: Verify taxonomy exists and transform to production format
     print("\n[Step 3/5] Verifying taxonomy and transforming to production format...")
-    
-    v3 = validate_step("Taxonomy", taxonomy_file.exists(), str(taxonomy_file.name))
-    
-    if not v3:
-        # Try to copy from base taxonomy
-        base_taxonomy = PROJECT_ROOT / "workflows" / "taxonomy_setup" / "output" / "AI-ML_taxonomy_20251128.json"
-        if base_taxonomy.exists():
-            shutil.copy(base_taxonomy, taxonomy_file)
-            v3 = validate_step("Taxonomy", taxonomy_file.exists(), f"Created {taxonomy_file.name}")
-    
-    # Transform taxonomy to production format
-    # Production create_aggregate_package.py expects books as list of strings: ["Book1.json", "Book2.json"]
-    # But our taxonomy has books as list of dicts: [{"name": "Book1.json", "priority": 1, ...}, ...]
-    if v3 and taxonomy_file.exists():
-        try:
-            with open(taxonomy_file) as f:
-                taxonomy_data = json.load(f)
-            
-            # Transform tiers.*.books from list of dicts to list of strings
-            tiers = taxonomy_data.get("tiers", {})
-            transformed = False
-            for tier_name, tier_data in tiers.items():
-                books = tier_data.get("books", [])
-                if books and isinstance(books[0], dict):
-                    # Transform: extract just the "name" field from each book dict
-                    tier_data["books"] = [book["name"] for book in books if isinstance(book, dict) and "name" in book]
-                    transformed = True
-            
-            if transformed:
-                # Write transformed taxonomy back
-                with open(taxonomy_file, "w") as f:
-                    json.dump(taxonomy_data, f, indent=2)
-                print("  ✅ Transformed taxonomy to production format (books as string list)")
-            else:
-                print("  ℹ️ Taxonomy already in production format")
-        except Exception as e:
-            print(f"  ⚠️ Could not transform taxonomy: {e}")
-    
+    v3 = _verify_and_transform_taxonomy(paths["taxonomy"])
     result["validations"]["taxonomy"] = v3
     
-    if not result["validations"]["taxonomy"]:
+    if not v3:
         print("\n❌ Taxonomy not available. Cannot proceed.")
         return result
     
     # Step 4: Run enrichment
     print("\n[Step 4/5] Running enrichment...")
-    
-    # Copy companion book metadata to eval_dir so enrichment can find them
-    # The enrichment script looks for companion books in the same directory as the input file
-    source_metadata_dir = PROJECT_ROOT / "workflows" / "metadata_extraction" / "output"
-    print("  Copying companion book metadata to evaluation directory...")
-    companion_count = 0
-    for meta_file in source_metadata_dir.glob("*_metadata.json"):
-        dest_file = eval_dir / meta_file.name
-        if not dest_file.exists():
-            shutil.copy(meta_file, dest_file)
-            companion_count += 1
-    if companion_count > 0:
-        print(f"  Copied {companion_count} companion metadata files")
-    else:
-        print("  Companion metadata already present")
+    _copy_companion_metadata(eval_dir)
     
     try:
-        from workflows.metadata_enrichment.scripts.enrich_metadata_per_book import enrich_metadata
-        
-        enrich_metadata(metadata_file, taxonomy_file, enriched_file)
-        
-        v4 = validate_step("Enrichment", enriched_file.exists(), f"Created {enriched_file.name}")
-        
-        # Validate enriched content
-        if enriched_file.exists():
-            with open(enriched_file) as f:
-                enriched_data = json.load(f)
-            
-            chapters = enriched_data.get("chapters", [])
-            total_keywords = sum(len(ch.get("keywords", [])) for ch in chapters)
-            total_concepts = sum(len(ch.get("concepts", [])) for ch in chapters)
-            
-            print(f"  Chapters: {len(chapters)}")
-            print(f"  Total keywords: {total_keywords}")
-            print(f"  Total concepts: {total_concepts}")
-            
-            v4 = v4 and total_keywords > 0
-        
+        v4 = _run_enrichment_step(paths["metadata"], paths["taxonomy"], paths["enriched"])
         result["validations"]["enrichment"] = v4
-        
     except Exception as e:
         print(f"  ❌ Enrichment failed: {e}")
         import traceback
@@ -408,79 +462,15 @@ def run_profile_pipeline(profile_name: str) -> Dict[str, Any]:
         return result
     
     # Step 5: Create aggregate using production aggregate package creation
-    # This bundles: taxonomy + source book enriched metadata + all companion book metadata
     print("\n[Step 5/5] Creating aggregate package (production flow)...")
     
     try:
-        # Use production aggregate creation which includes full taxonomy and all companion metadata
-        # Create tmp output dir for aggregate packages
-        aggregate_tmp_dir = eval_dir / "aggregate_packages"
-        aggregate_tmp_dir.mkdir(parents=True, exist_ok=True)
-        
-        # The production script extracts source_book from taxonomy filename:
-        # "{book_name}_{suffix}_taxonomy.json" -> "{book_name}_{suffix}"
-        # It then looks for "{source_book}_metadata.json" in metadata_dir
-        # So we need to create a metadata file with that exact name
-        source_book_with_suffix = f"{book_name}_{suffix}"
-        
-        # Create a metadata directory for this profile's aggregate
-        profile_metadata_dir = aggregate_tmp_dir / f"metadata_{suffix}"
-        profile_metadata_dir.mkdir(parents=True, exist_ok=True)
-        
-        # Copy all companion book metadata to this directory
-        source_metadata_dir = PROJECT_ROOT / "workflows" / "metadata_extraction" / "output"
-        for meta_file in source_metadata_dir.glob("*_metadata.json"):
-            shutil.copy(meta_file, profile_metadata_dir / meta_file.name)
-        
-        # Copy our profile-specific metadata with the expected naming
-        # Production expects: {source_book}_metadata.json where source_book = "{book_name}_{suffix}"
-        expected_metadata_name = f"{source_book_with_suffix}_metadata.json"
-        shutil.copy(metadata_file, profile_metadata_dir / expected_metadata_name)
-        print(f"  Created metadata for production: {expected_metadata_name}")
-        
-        # The production script expects enriched files named "{book}_enr_metadata_{timestamp}.json"
-        # Our enriched file is named "{book}_enriched_{PROFILE}.json"
-        # Create a copy with the expected naming pattern so production script can find it
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        production_enriched_file = aggregate_tmp_dir / f"{source_book_with_suffix}_enr_metadata_{timestamp}.json"
-        shutil.copy(enriched_file, production_enriched_file)
-        print(f"  Created enriched file for production: {production_enriched_file.name}")
-        
-        # Guideline directory
-        guideline_dir = PROJECT_ROOT / "workflows" / "base_guideline_generation" / "output"
-        
-        # Call production aggregate package creation
-        # This will load taxonomy, source book enriched metadata, and all companion book metadata
-        package_path = create_aggregate_package(
-            taxonomy_path=taxonomy_file,
-            metadata_dir=profile_metadata_dir,  # Use our prepared metadata directory
-            guideline_dir=guideline_dir,
-            output_dir=aggregate_tmp_dir,
-            enriched_metadata_file=production_enriched_file  # Use renamed enriched file
+        v5 = _run_aggregate_step(
+            book_name, suffix,
+            paths["metadata"], paths["taxonomy"], paths["enriched"], paths["aggregate"],
+            eval_dir
         )
-        
-        # Copy/rename to our expected aggregate file location
-        shutil.copy(package_path, aggregate_file)
-        
-        v5 = validate_step("Aggregate", aggregate_file.exists(), f"Created {aggregate_file.name}")
-        
-        # Validate aggregate content from production format
-        with open(aggregate_file) as f:
-            aggregate = json.load(f)
-        
-        companion_count = len(aggregate.get("companion_books", []))
-        stats = aggregate.get("statistics", {})
-        total_books = stats.get("total_books", 0)
-        total_chapters = stats.get("total_chapters", 0)
-        
-        print(f"  Total books in aggregate: {total_books}")
-        print(f"  Companion books: {companion_count}")
-        print(f"  Total chapters across all books: {total_chapters}")
-        print(f"  Missing books: {stats.get('missing_count', 0)}")
-        
-        v5 = v5 and companion_count > 0
         result["validations"]["aggregate"] = v5
-        
     except Exception as e:
         print(f"  ❌ Aggregate creation failed: {e}")
         import traceback
@@ -499,6 +489,65 @@ def run_profile_pipeline(profile_name: str) -> Dict[str, Any]:
     return result
 
 
+def _extract_keyword_term(kw: Any) -> str:
+    """Extract keyword term from various formats.
+    
+    Reduces cognitive complexity by extracting type checking.
+    """
+    if isinstance(kw, dict):
+        return kw.get("term", kw.get("keyword", ""))
+    return str(kw)
+
+
+def _extract_concept_name(concept: Any) -> str:
+    """Extract concept name from various formats.
+    
+    Reduces cognitive complexity by extracting type checking.
+    """
+    if isinstance(concept, dict):
+        return concept.get("concept", "")
+    return str(concept)
+
+
+def _collect_chapter_data(chapters: List[Dict[str, Any]]) -> tuple:
+    """Collect keywords, concepts, and related chapters from all chapters.
+    
+    Reduces cognitive complexity by extracting nested loop.
+    """
+    all_keywords = []
+    all_concepts = []
+    all_related = []
+    
+    for ch in chapters:
+        for kw in ch.get("keywords", []):
+            all_keywords.append(_extract_keyword_term(kw))
+        
+        for concept in ch.get("concepts", []):
+            all_concepts.append(_extract_concept_name(concept))
+        
+        for rel in ch.get("related_chapters", []):
+            if isinstance(rel, dict):
+                all_related.append({
+                    "from_chapter": ch.get("chapter_number", ch.get("number", 0)),
+                    "to_book": rel.get("book", ""),
+                    "to_chapter": rel.get("chapter", ""),
+                    "similarity": rel.get("similarity", 0),
+                })
+    
+    return all_keywords, all_concepts, all_related
+
+
+def _remove_profile_suffix(book_name: str) -> str:
+    """Remove profile suffix from book name.
+    
+    Reduces cognitive complexity by extracting suffix handling.
+    """
+    for suffix in ["_BASELINE", "_CURRENT", "_MODERATE", "_AGGRESSIVE"]:
+        if book_name.endswith(suffix):
+            return book_name[:-len(suffix)]
+    return book_name
+
+
 def create_aggregate(enriched_file: Path, profile_name: str, profile: Dict[str, Any]) -> Dict[str, Any]:
     """
     Create aggregate data structure for LLM evaluation.
@@ -514,41 +563,11 @@ def create_aggregate(enriched_file: Path, profile_name: str, profile: Dict[str, 
     
     chapters = enriched_data.get("chapters", [])
     
-    # Collect all keywords and concepts
-    all_keywords = []
-    all_concepts = []
-    all_related = []
+    all_keywords, all_concepts, all_related = _collect_chapter_data(chapters)
     
-    for ch in chapters:
-        # Keywords
-        for kw in ch.get("keywords", []):
-            if isinstance(kw, dict):
-                all_keywords.append(kw.get("term", kw.get("keyword", "")))
-            else:
-                all_keywords.append(str(kw))
-        
-        # Concepts
-        for concept in ch.get("concepts", []):
-            if isinstance(concept, dict):
-                all_concepts.append(concept.get("concept", ""))
-            else:
-                all_concepts.append(str(concept))
-        
-        # Related chapters
-        for rel in ch.get("related_chapters", []):
-            if isinstance(rel, dict):
-                all_related.append({
-                    "from_chapter": ch.get("chapter_number", ch.get("number", 0)),
-                    "to_book": rel.get("book", ""),
-                    "to_chapter": rel.get("chapter", ""),
-                    "similarity": rel.get("similarity", 0),
-                })
-    
-    # Deduplicate and count
     unique_keywords = list(set(all_keywords))
     unique_concepts = list(set(all_concepts))
     
-    # Calculate statistics
     stats = {
         "total_chapters": len(chapters),
         "total_keyword_instances": len(all_keywords),
@@ -559,15 +578,8 @@ def create_aggregate(enriched_file: Path, profile_name: str, profile: Dict[str, 
         "total_cross_references": len(all_related),
     }
     
-    # Build aggregate
-    # Extract book name: enriched files have "book" key with format "BookName_SUFFIX"
     raw_book = enriched_data.get("book", enriched_data.get("book_title", enriched_data.get("title", "Unknown")))
-    # Remove profile suffix if present (e.g., "AI Engineering_BASELINE" -> "AI Engineering")
-    source_book = raw_book
-    for suffix in ["_BASELINE", "_CURRENT", "_MODERATE", "_AGGRESSIVE"]:
-        if source_book.endswith(suffix):
-            source_book = source_book[:-len(suffix)]
-            break
+    source_book = _remove_profile_suffix(raw_book)
     
     aggregate = {
         "profile": profile_name,
@@ -579,9 +591,9 @@ def create_aggregate(enriched_file: Path, profile_name: str, profile: Dict[str, 
         "source_book": source_book,
         "timestamp": datetime.now().isoformat(),
         "statistics": stats,
-        "keywords_sample": unique_keywords[:50],  # First 50 unique keywords
-        "concepts_sample": unique_concepts[:30],  # First 30 unique concepts
-        "cross_references_sample": all_related[:20],  # First 20 cross-references
+        "keywords_sample": unique_keywords[:50],
+        "concepts_sample": unique_concepts[:30],
+        "cross_references_sample": all_related[:20],
         "chapters_summary": [
             {
                 "number": ch.get("chapter_number", ch.get("number", i+1)),
@@ -590,7 +602,7 @@ def create_aggregate(enriched_file: Path, profile_name: str, profile: Dict[str, 
                 "concepts_count": len(ch.get("concepts", [])),
                 "related_count": len(ch.get("related_chapters", [])),
             }
-            for i, ch in enumerate(chapters[:10])  # First 10 chapters
+            for i, ch in enumerate(chapters[:10])
         ],
     }
     
@@ -629,6 +641,109 @@ def run_all_profiles() -> Dict[str, Any]:
     return results
 
 
+def _validate_required_fields(data: Dict[str, Any], suffix: str, issues: List[str]) -> bool:
+    """Validate required fields in aggregate data.
+    
+    Reduces cognitive complexity by extracting field validation.
+    """
+    required_fields = ["project", "taxonomy", "source_book", "companion_books", "statistics"]
+    missing_fields = [f for f in required_fields if f not in data]
+    if missing_fields:
+        issues.append(f"{suffix}: Missing fields {missing_fields}")
+        return False
+    return True
+
+
+def _validate_aggregate_content(data: Dict[str, Any], suffix: str, issues: List[str]) -> bool:
+    """Validate aggregate content structure.
+    
+    Reduces cognitive complexity by extracting content validation.
+    """
+    valid = True
+    source_book_data = data.get("source_book", {})
+    source_book_name = source_book_data.get("name", "Unknown") if isinstance(source_book_data, dict) else "Unknown"
+    companion_books = data.get("companion_books", [])
+    missing_books = data.get("missing_books", [])
+    stats = data.get("statistics", {})
+    
+    companion_count = stats.get("companion_books", len(companion_books))
+    missing_count = stats.get("missing_count", len(missing_books))
+    
+    if source_book_name == "Unknown":
+        issues.append(f"{suffix}: source_book name is 'Unknown' (extraction bug)")
+        valid = False
+    
+    if companion_count == 0:
+        issues.append(f"{suffix}: No companion books loaded")
+        valid = False
+    
+    source_metadata = source_book_data.get("metadata", {}) if isinstance(source_book_data, dict) else {}
+    if not source_metadata:
+        issues.append(f"{suffix}: Source book has no metadata")
+        valid = False
+    
+    if missing_count > 0:
+        issues.append(f"{suffix}: {missing_count} books from taxonomy missing metadata")
+    
+    return valid
+
+
+def _print_aggregate_summary(data: Dict[str, Any], suffix: str) -> None:
+    """Print validation summary for an aggregate.
+    
+    Reduces cognitive complexity by extracting print logic.
+    """
+    project = data.get("project", {})
+    source_book_data = data.get("source_book", {})
+    source_book_name = source_book_data.get("name", "Unknown") if isinstance(source_book_data, dict) else "Unknown"
+    companion_books = data.get("companion_books", [])
+    missing_books = data.get("missing_books", [])
+    stats = data.get("statistics", {})
+    
+    total_books = stats.get("total_books", 0)
+    total_chapters = stats.get("total_chapters", 0)
+    companion_count = stats.get("companion_books", len(companion_books))
+    missing_count = stats.get("missing_count", len(missing_books))
+    
+    source_metadata = source_book_data.get("metadata", {}) if isinstance(source_book_data, dict) else {}
+    status = "✅" if source_book_name != "Unknown" and companion_count > 0 and source_metadata else "⚠️ "
+    
+    print(f"  {status} {suffix}:")
+    print(f"      Project ID: {project.get('id', 'N/A')}")
+    print(f"      Source book: {source_book_name}")
+    print(f"      Total books: {total_books}, Companion: {companion_count}, Missing: {missing_count}")
+    print(f"      Total chapters across all books: {total_chapters}")
+
+
+def _validate_single_aggregate(agg_file: Path, suffix: str, issues: List[str]) -> bool:
+    """Validate a single aggregate file.
+    
+    Reduces cognitive complexity by extracting single file validation loop body.
+    """
+    if not agg_file.exists():
+        print(f"  ❌ {suffix}: File not found")
+        issues.append(f"{suffix}: File missing")
+        return False
+    
+    try:
+        with open(agg_file) as f:
+            data = json.load(f)
+        
+        valid = _validate_required_fields(data, suffix, issues)
+        valid = _validate_aggregate_content(data, suffix, issues) and valid
+        _print_aggregate_summary(data, suffix)
+        return valid
+        
+    except json.JSONDecodeError as e:
+        print(f"  ❌ {suffix}: Invalid JSON - {e}")
+        issues.append(f"{suffix}: Invalid JSON")
+        return False
+    except Exception as e:
+        print(f"  ❌ {suffix}: Error - {e}")
+        issues.append(f"{suffix}: {e}")
+        return False
+
+
 def validate_aggregates() -> bool:
     """Validate all 4 aggregates exist and have valid structure (production format)."""
     eval_dir = PROJECT_ROOT / "outputs" / "evaluation"
@@ -640,75 +755,9 @@ def validate_aggregates() -> bool:
     
     for profile, suffix in PROFILE_SUFFIXES.items():
         agg_file = eval_dir / f"aggregate_{suffix}.json"
-        
-        if not agg_file.exists():
-            print(f"  ❌ {suffix}: File not found")
+        if not _validate_single_aggregate(agg_file, suffix, issues):
             all_valid = False
-            issues.append(f"{suffix}: File missing")
-            continue
-        
-        try:
-            with open(agg_file) as f:
-                data = json.load(f)
-            
-            # Required fields check (production aggregate format)
-            required_fields = ["project", "taxonomy", "source_book", "companion_books", "statistics"]
-            missing_fields = [f for f in required_fields if f not in data]
-            if missing_fields:
-                issues.append(f"{suffix}: Missing fields {missing_fields}")
-                all_valid = False
-            
-            # Content validation (production format)
-            project = data.get("project", {})
-            source_book_data = data.get("source_book", {})
-            source_book_name = source_book_data.get("name", "Unknown") if isinstance(source_book_data, dict) else "Unknown"
-            companion_books = data.get("companion_books", [])
-            missing_books = data.get("missing_books", [])
-            stats = data.get("statistics", {})
-            
-            total_books = stats.get("total_books", 0)
-            total_chapters = stats.get("total_chapters", 0)
-            companion_count = stats.get("companion_books", len(companion_books))
-            missing_count = stats.get("missing_count", len(missing_books))
-            
-            # Check for "Unknown" source_book
-            if source_book_name == "Unknown":
-                issues.append(f"{suffix}: source_book name is 'Unknown' (extraction bug)")
-                all_valid = False
-            
-            # Check for companion books
-            if companion_count == 0:
-                issues.append(f"{suffix}: No companion books loaded")
-                all_valid = False
-            
-            # Check source book has metadata
-            source_metadata = source_book_data.get("metadata", {}) if isinstance(source_book_data, dict) else {}
-            if not source_metadata:
-                issues.append(f"{suffix}: Source book has no metadata")
-                all_valid = False
-            
-            # Warn about missing books (not a failure, but notable)
-            if missing_count > 0:
-                issues.append(f"{suffix}: {missing_count} books from taxonomy missing metadata")
-            
-            # Summary line
-            status = "✅" if source_book_name != "Unknown" and companion_count > 0 and source_metadata else "⚠️ "
-            print(f"  {status} {suffix}:")
-            print(f"      Project ID: {project.get('id', 'N/A')}")
-            print(f"      Source book: {source_book_name}")
-            print(f"      Total books: {total_books}, Companion: {companion_count}, Missing: {missing_count}")
-            print(f"      Total chapters across all books: {total_chapters}")
-            
-        except json.JSONDecodeError as e:
-            print(f"  ❌ {suffix}: Invalid JSON - {e}")
-            all_valid = False
-            issues.append(f"{suffix}: Invalid JSON")
-        except Exception as e:
-            print(f"  ❌ {suffix}: Error - {e}")
-            all_valid = False
-            issues.append(f"{suffix}: {e}")
     
-    # Summary
     print("\n" + "=" * 60)
     if issues:
         print("Issues found:")

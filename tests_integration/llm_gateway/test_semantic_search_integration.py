@@ -12,7 +12,7 @@ import pytest
 import httpx
 import time
 
-from tests.integration.conftest import (
+from tests_integration.llm_gateway.conftest import (
     GATEWAY_URL,
     SEMANTIC_SEARCH_URL,
 )

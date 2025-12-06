@@ -112,6 +112,33 @@ class BookTitles:
     NOTE: Canonical name per BOOK_TAXONOMY_MATRIX.md
     (NOT "Python for Data Analysis 3rd" - previous inconsistency fixed)
     """
+    
+    # Architecture & Microservices Tier
+    # Added for S1192 compliance - eliminating duplicated literals
+    
+    ARCH_PATTERNS_PYTHON: Final[str] = "Architecture Patterns with Python"
+    """
+    Percival & Gregory's domain-driven design with Python.
+    
+    Taxonomy: Architecture patterns and clean architecture
+    Focus: DDD, Repository pattern, Event-driven architecture
+    """
+    
+    BUILDING_MICROSERVICES: Final[str] = "Building Microservices"
+    """
+    Sam Newman's microservices architecture guide.
+    
+    Taxonomy: Architecture patterns
+    Focus: Service decomposition, integration patterns, deployment
+    """
+    
+    PYTHON_COOKBOOK: Final[str] = "Python Cookbook 3rd"
+    """
+    Beazley & Jones Python recipes and best practices.
+    
+    Taxonomy: Tier 3 - Engineering Practices
+    Focus: Practical recipes, advanced techniques
+    """
 
 
 # Module-level validation (executed at import time)
@@ -122,7 +149,10 @@ if __name__ != "__main__":
         "PYTHON_ESSENTIAL_REF",
         "FLUENT_PYTHON", 
         "PYTHON_DISTILLED",
-        "PYTHON_DATA_ANALYSIS"
+        "PYTHON_DATA_ANALYSIS",
+        "ARCH_PATTERNS_PYTHON",
+        "BUILDING_MICROSERVICES",
+        "PYTHON_COOKBOOK",
     ]
     
     for attr_name in _required_attrs:

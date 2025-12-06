@@ -310,54 +310,83 @@ def analyze_tab4(book_name: str) -> Tab4Metrics:
     return metrics
 
 
+def _analyze_tab5_json(json_file: Path, metrics: Tab5Metrics) -> Tab5Metrics:
+    """
+    Analyze JSON guideline file.
+    
+    Extracted from analyze_tab5() to reduce cognitive complexity (S3776).
+    
+    Args:
+        json_file: Path to the JSON guideline file.
+        metrics: Tab5Metrics object to populate.
+        
+    Returns:
+        Updated Tab5Metrics object.
+    """
+    metrics.guideline_file_exists = True
+    metrics.output_format = "json"
+    
+    try:
+        with open(json_file, encoding='utf-8') as f:
+            data = json.load(f)
+        
+        if isinstance(data, dict):
+            sections = data.get("sections", data.get("chapters", []))
+            metrics.section_count = len(sections)
+            
+            for section in sections:
+                xrefs = section.get("cross_references", [])
+                metrics.cross_references_count += len(xrefs)
+                
+                # Check for topic boosting
+                if any(xref.get("topic_id") is not None for xref in xrefs):
+                    metrics.has_topic_boosting = True
+                    
+    except Exception as e:
+        print(f"  ⚠️  Error parsing Tab 5 JSON: {e}")
+    
+    return metrics
+
+
+def _analyze_tab5_markdown(md_file: Path, metrics: Tab5Metrics) -> Tab5Metrics:
+    """
+    Analyze Markdown guideline file.
+    
+    Extracted from analyze_tab5() to reduce cognitive complexity (S3776).
+    
+    Args:
+        md_file: Path to the Markdown guideline file.
+        metrics: Tab5Metrics object to populate.
+        
+    Returns:
+        Updated Tab5Metrics object.
+    """
+    metrics.guideline_file_exists = True
+    metrics.output_format = "markdown"
+    
+    try:
+        content = md_file.read_text(encoding='utf-8')
+        metrics.section_count = content.count("\n## ")
+        metrics.cross_references_count = content.count("See also") + content.count("Related:")
+    except Exception as e:
+        print(f"  ⚠️  Error parsing Tab 5 MD: {e}")
+    
+    return metrics
+
+
 def analyze_tab5(book_name: str) -> Tab5Metrics:
     """Analyze guideline generation output."""
     metrics = Tab5Metrics(book_name=book_name)
     
     guideline_dir = PROJECT_ROOT / "workflows" / "base_guideline_generation" / "output"
     
-    # Check for JSON or MD output
     json_file = guideline_dir / f"{book_name}_guideline.json"
     md_file = guideline_dir / f"{book_name}_guideline.md"
     
     if json_file.exists():
-        metrics.guideline_file_exists = True
-        metrics.output_format = "json"
-        
-        try:
-            with open(json_file, encoding='utf-8') as f:
-                data = json.load(f)
-            
-            # Count sections
-            if isinstance(data, dict):
-                metrics.section_count = len(data.get("sections", data.get("chapters", [])))
-                
-                # Look for cross-references
-                for section in data.get("sections", data.get("chapters", [])):
-                    xrefs = section.get("cross_references", [])
-                    metrics.cross_references_count += len(xrefs)
-                    
-                    # Check for topic boosting (look for topic_id in refs)
-                    for xref in xrefs:
-                        if xref.get("topic_id") is not None:
-                            metrics.has_topic_boosting = True
-                            break
-                            
-        except Exception as e:
-            print(f"  ⚠️  Error parsing Tab 5 JSON: {e}")
-            
+        return _analyze_tab5_json(json_file, metrics)
     elif md_file.exists():
-        metrics.guideline_file_exists = True
-        metrics.output_format = "markdown"
-        
-        try:
-            content = md_file.read_text(encoding='utf-8')
-            # Count sections by headers
-            metrics.section_count = content.count("\n## ")
-            # Count cross-references (look for "See also" or "Related:")
-            metrics.cross_references_count = content.count("See also") + content.count("Related:")
-        except Exception as e:
-            print(f"  ⚠️  Error parsing Tab 5 MD: {e}")
+        return _analyze_tab5_markdown(md_file, metrics)
     
     return metrics
 
@@ -381,14 +410,12 @@ def analyze_book(book_name: str) -> PipelineComparison:
 # REPORTING FUNCTIONS
 # =============================================================================
 
-def print_comparison_report(comparison: PipelineComparison) -> None:
-    """Print human-readable comparison report."""
-    print(f"\n{'='*70}")
-    print(f"📊 PIPELINE ANALYSIS: {comparison.book_name}")
-    print(f"{'='*70}")
+def _print_tab1_report(t1: Optional[Tab1Metrics]) -> None:
+    """
+    Print Tab 1 (PDF Extraction) report section.
     
-    # Tab 1: PDF Extraction
-    t1 = comparison.tab1
+    Extracted from print_comparison_report() to reduce cognitive complexity (S3776).
+    """
     print("\n📄 TAB 1: PDF to JSON Extraction")
     if t1 and t1.json_file_exists:
         print(f"   ✅ JSON file: {t1.json_file_size_kb:.1f} KB")
@@ -398,9 +425,14 @@ def print_comparison_report(comparison: PipelineComparison) -> None:
         print(f"   • Extraction method: {t1.extraction_method}")
     else:
         print("   ⚠️  JSON file not found")
+
+
+def _print_tab2_report(t2: Optional[Tab2Metrics]) -> None:
+    """
+    Print Tab 2 (Metadata Extraction) report section.
     
-    # Tab 2: Metadata Extraction
-    t2 = comparison.tab2
+    Extracted from print_comparison_report() to reduce cognitive complexity (S3776).
+    """
     print("\n📋 TAB 2: Metadata Extraction")
     if t2 and t2.metadata_file_exists:
         print("   ✅ Metadata file exists")
@@ -412,9 +444,14 @@ def print_comparison_report(comparison: PipelineComparison) -> None:
         print(f"   • Method: {t2.extraction_method}")
     else:
         print("   ⚠️  Metadata file not found")
+
+
+def _print_tab4_report(t4: Optional[Tab4Metrics]) -> None:
+    """
+    Print Tab 4 (Metadata Enrichment) report section.
     
-    # Tab 4: Metadata Enrichment
-    t4 = comparison.tab4
+    Extracted from print_comparison_report() to reduce cognitive complexity (S3776).
+    """
     print("\n🔗 TAB 4: Metadata Enrichment")
     if t4 and t4.enriched_file_exists:
         print("   ✅ Enriched file exists")
@@ -437,9 +474,14 @@ def print_comparison_report(comparison: PipelineComparison) -> None:
             print(f"   • Libraries: {', '.join(f'{k}={v}' for k, v in t4.libraries.items())}")
     else:
         print("   ⚠️  Enriched file not found")
+
+
+def _print_tab5_report(t5: Optional[Tab5Metrics]) -> None:
+    """
+    Print Tab 5 (Guideline Generation) report section.
     
-    # Tab 5: Guideline Generation
-    t5 = comparison.tab5
+    Extracted from print_comparison_report() to reduce cognitive complexity (S3776).
+    """
     print("\n📖 TAB 5: Guideline Generation")
     if t5 and t5.guideline_file_exists:
         print(f"   ✅ Guideline file exists ({t5.output_format})")
@@ -448,6 +490,19 @@ def print_comparison_report(comparison: PipelineComparison) -> None:
         print(f"   • Topic boosting: {'Yes' if t5.has_topic_boosting else 'No'}")
     else:
         print("   ⚠️  Guideline file not found")
+
+
+def print_comparison_report(comparison: PipelineComparison) -> None:
+    """Print human-readable comparison report."""
+    print(f"\n{'='*70}")
+    print(f"📊 PIPELINE ANALYSIS: {comparison.book_name}")
+    print(f"{'='*70}")
+    
+    # Use helper functions to reduce cognitive complexity (S3776)
+    _print_tab1_report(comparison.tab1)
+    _print_tab2_report(comparison.tab2)
+    _print_tab4_report(comparison.tab4)
+    _print_tab5_report(comparison.tab5)
 
 
 def get_available_books() -> List[str]:

@@ -304,11 +304,14 @@ def _calculate_consensus(evaluations: dict[str, Any], models_used: list[str]) ->
     }
 
 
-def _test_deepseek_connection(api_key: str) -> dict[str, Any]:
+def _test_deepseek_connection(_api_key: str) -> dict[str, Any]:
     """
     Test DeepSeek API connection.
     
     Extracted from test_api_connections() to reduce complexity.
+    
+    Args:
+        _api_key: API key (unused - models fetched via environment variable).
     """
     print("\n  DeepSeek:")
     try:
@@ -328,11 +331,14 @@ def _test_deepseek_connection(api_key: str) -> dict[str, Any]:
         return {"status": "error", "error": str(e)}
 
 
-def _test_gemini_connection(api_key: str) -> dict[str, Any]:
+def _test_gemini_connection(_api_key: str) -> dict[str, Any]:
     """
     Test Gemini API connection.
     
     Extracted from test_api_connections() to reduce complexity.
+    
+    Args:
+        _api_key: API key (unused - models fetched via environment variable).
     """
     print("\n  Gemini:")
     try:
@@ -698,11 +704,84 @@ def call_gemini(config: LLMConfig, prompt: str) -> dict[str, Any]:
     return _call_gemini_rest(config, prompt)
 
 
+def _try_direct_json_parse(content: str) -> dict[str, Any] | None:
+    """
+    Strategy 1: Try direct JSON parse.
+    
+    Extracted from extract_json_from_response() to reduce complexity (S3776).
+    """
+    try:
+        return json.loads(content)
+    except json.JSONDecodeError:
+        return None
+
+
+def _try_extract_from_json_block(content: str) -> dict[str, Any] | None:
+    """
+    Strategy 2: Extract from ```json ... ``` blocks.
+    
+    Extracted from extract_json_from_response() to reduce complexity (S3776).
+    """
+    if JSON_CODE_BLOCK not in content:
+        return None
+    try:
+        json_part = content.split(JSON_CODE_BLOCK)[1].split("```")[0]
+        return json.loads(json_part.strip())
+    except (json.JSONDecodeError, IndexError):
+        return None
+
+
+def _try_extract_from_code_block(content: str) -> dict[str, Any] | None:
+    """
+    Strategy 3: Extract from ``` ... ``` blocks.
+    
+    Extracted from extract_json_from_response() to reduce complexity (S3776).
+    """
+    if "```" not in content:
+        return None
+    try:
+        json_part = content.split("```")[1].split("```")[0]
+        return json.loads(json_part.strip())
+    except (json.JSONDecodeError, IndexError):
+        return None
+
+
+def _try_extract_by_braces(content: str) -> dict[str, Any] | None:
+    """
+    Strategy 4: Find JSON object by matching braces.
+    
+    Extracted from extract_json_from_response() to reduce complexity (S3776).
+    """
+    start_idx = content.find("{")
+    if start_idx == -1:
+        return None
+    
+    # Find matching closing brace
+    brace_count = 0
+    end_idx = start_idx
+    for i, char in enumerate(content[start_idx:], start_idx):
+        if char == "{":
+            brace_count += 1
+        elif char == "}":
+            brace_count -= 1
+            if brace_count == 0:
+                end_idx = i + 1
+                break
+    
+    if end_idx <= start_idx:
+        return None
+    
+    try:
+        return json.loads(content[start_idx:end_idx])
+    except json.JSONDecodeError:
+        return None
+
+
 def extract_json_from_response(content: str) -> dict[str, Any] | None:
     """
     Extract JSON from LLM response, handling various formats.
     
-    Tries multiple strategies:
+    Tries multiple strategies in order:
     1. Direct JSON parse
     2. Extract from ```json ... ``` blocks
     3. Extract from ``` ... ``` blocks
@@ -710,49 +789,18 @@ def extract_json_from_response(content: str) -> dict[str, Any] | None:
     """
     content = content.strip()
     
-    # Strategy 1: Direct parse (if response is pure JSON)
-    try:
-        return json.loads(content)
-    except json.JSONDecodeError:
-        pass
+    # Try each strategy in order until one succeeds
+    strategies = [
+        _try_direct_json_parse,
+        _try_extract_from_json_block,
+        _try_extract_from_code_block,
+        _try_extract_by_braces,
+    ]
     
-    # Strategy 2: Extract from ```json blocks
-    if JSON_CODE_BLOCK in content:
-        try:
-            json_part = content.split(JSON_CODE_BLOCK)[1].split("```")[0]
-            return json.loads(json_part.strip())
-        except (json.JSONDecodeError, IndexError):
-            pass
-    
-    # Strategy 3: Extract from ``` blocks
-    if "```" in content:
-        try:
-            json_part = content.split("```")[1].split("```")[0]
-            return json.loads(json_part.strip())
-        except (json.JSONDecodeError, IndexError):
-            pass
-    
-    # Strategy 4: Find JSON object by braces
-    start_idx = content.find("{")
-    if start_idx != -1:
-        # Find matching closing brace
-        brace_count = 0
-        end_idx = start_idx
-        for i, char in enumerate(content[start_idx:], start_idx):
-            if char == "{":
-                brace_count += 1
-            elif char == "}":
-                brace_count -= 1
-                if brace_count == 0:
-                    end_idx = i + 1
-                    break
-        
-        if end_idx > start_idx:
-            try:
-                json_str = content[start_idx:end_idx]
-                return json.loads(json_str)
-            except json.JSONDecodeError:
-                pass
+    for strategy in strategies:
+        result = strategy(content)
+        if result is not None:
+            return result
     
     return None
 
@@ -1030,6 +1078,53 @@ def compare_profiles(profile1: str, profile2: str, models: list[str] | None = No
     return comparison
 
 
+def _extract_terms_from_items(items: list, term_key: str) -> list[str]:
+    """
+    Extract term strings from a list of dict or string items.
+    
+    Extracted from extract_evaluation_summary() to reduce complexity (S3776).
+    
+    Args:
+        items: List of dicts or strings containing terms.
+        term_key: Key to extract from dict items (e.g., "term", "concept").
+        
+    Returns:
+        List of extracted term strings.
+    """
+    terms = []
+    for item in items:
+        if isinstance(item, dict):
+            terms.append(item.get(term_key, item.get("keyword", "")))
+        else:
+            terms.append(str(item))
+    return terms
+
+
+def _create_chapter_summary(ch: dict[str, Any]) -> dict[str, Any]:
+    """
+    Create a summary dict for a single chapter.
+    
+    Extracted from extract_evaluation_summary() to reduce complexity (S3776).
+    """
+    ch_keywords = ch.get("keywords", [])
+    ch_concepts = ch.get("concepts", [])
+    ch_related = ch.get("related_chapters", [])
+    
+    return {
+        "chapter": ch.get("chapter_number", ch.get("number", 0)),
+        "title": ch.get("title", ""),
+        "keywords_count": len(ch_keywords),
+        "concepts_count": len(ch_concepts),
+        "related_chapters_count": len(ch_related),
+        "sample_keywords": [kw.get("term", kw) if isinstance(kw, dict) else kw for kw in ch_keywords[:5]],
+        "sample_concepts": [c.get("concept", c) if isinstance(c, dict) else c for c in ch_concepts[:3]],
+        "sample_related": [
+            {"book": r.get("book", ""), "chapter": r.get("chapter", ""), "similarity": r.get("similarity", 0)}
+            for r in ch_related[:3]
+        ] if ch_related else []
+    }
+
+
 def extract_evaluation_summary(aggregate: dict[str, Any]) -> dict[str, Any]:
     """
     Extract only the essential data needed for LLM evaluation from full aggregate.
@@ -1048,36 +1143,13 @@ def extract_evaluation_summary(aggregate: dict[str, Any]) -> dict[str, Any]:
     for ch in chapters[:15]:  # First 15 chapters for evaluation
         ch_keywords = ch.get("keywords", [])
         ch_concepts = ch.get("concepts", [])
-        ch_related = ch.get("related_chapters", [])
         
-        # Extract keyword terms
-        for kw in ch_keywords:
-            if isinstance(kw, dict):
-                all_keywords.append(kw.get("term", kw.get("keyword", "")))
-            else:
-                all_keywords.append(str(kw))
+        # Extract terms using helper functions
+        all_keywords.extend(_extract_terms_from_items(ch_keywords, "term"))
+        all_concepts.extend(_extract_terms_from_items(ch_concepts, "concept"))
         
-        # Extract concept terms
-        for concept in ch_concepts:
-            if isinstance(concept, dict):
-                all_concepts.append(concept.get("concept", ""))
-            else:
-                all_concepts.append(str(concept))
-        
-        # Chapter summary
-        chapter_summaries.append({
-            "chapter": ch.get("chapter_number", ch.get("number", 0)),
-            "title": ch.get("title", ""),
-            "keywords_count": len(ch_keywords),
-            "concepts_count": len(ch_concepts),
-            "related_chapters_count": len(ch_related),
-            "sample_keywords": [kw.get("term", kw) if isinstance(kw, dict) else kw for kw in ch_keywords[:5]],
-            "sample_concepts": [c.get("concept", c) if isinstance(c, dict) else c for c in ch_concepts[:3]],
-            "sample_related": [
-                {"book": r.get("book", ""), "chapter": r.get("chapter", ""), "similarity": r.get("similarity", 0)}
-                for r in ch_related[:3]
-            ] if ch_related else []
-        })
+        # Create chapter summary
+        chapter_summaries.append(_create_chapter_summary(ch))
     
     # Get unique keywords and concepts
     unique_keywords = list(set(all_keywords))
@@ -1644,6 +1716,30 @@ def call_llm(model: str, config: "LLMConfig", prompt: str) -> dict[str, Any]:
         return {"error": f"No handler for {model}"}
 
 
+def _accumulate_profile_scores(
+    merged: dict[str, Any],
+    qid: str,
+    profile_scores: dict[str, Any]
+) -> None:
+    """
+    Accumulate scores for a single question into merged totals.
+    
+    Extracted from merge_chunk_results() to reduce complexity (S3776).
+    
+    Args:
+        merged: The merged results dict to update.
+        qid: Question ID.
+        profile_scores: Scores dict for this question.
+    """
+    merged["all_scores"][qid] = profile_scores
+    
+    for profile in ["baseline", "current", "moderate", "aggressive"]:
+        if profile in profile_scores:
+            score = profile_scores[profile].get("score", 0)
+            if isinstance(score, (int, float)):
+                merged["profile_totals"][profile] += score
+
+
 def merge_chunk_results(chunk_results: list[dict[str, Any]]) -> dict[str, Any]:
     """
     Merge results from 3 chunks into a single scores dictionary.
@@ -1670,14 +1766,7 @@ def merge_chunk_results(chunk_results: list[dict[str, Any]]) -> dict[str, Any]:
         
         scores = chunk.get("scores", {})
         for qid, profile_scores in scores.items():
-            merged["all_scores"][qid] = profile_scores
-            
-            # Accumulate totals
-            for profile in ["baseline", "current", "moderate", "aggressive"]:
-                if profile in profile_scores:
-                    score = profile_scores[profile].get("score", 0)
-                    if isinstance(score, (int, float)):
-                        merged["profile_totals"][profile] += score
+            _accumulate_profile_scores(merged, qid, profile_scores)
     
     return merged
 
@@ -1835,21 +1924,17 @@ def run_chunked_comparative_evaluation(models: list[str] | None = None) -> dict[
     return results
 
 
-def run_comparative_evaluation(models: list[str] | None = None) -> dict[str, Any]:
+def _load_aggregates_from_dir(eval_dir: Path) -> dict[str, Any]:
+    """Load all aggregate files from evaluation directory.
+    
+    Reduces cognitive complexity by extracting the loading loop.
+    
+    Args:
+        eval_dir: Directory containing aggregate JSON files
+        
+    Returns:
+        Dictionary mapping profile names to their loaded data
     """
-    Run Strategy B comparative evaluation.
-    
-    Loads all 4 aggregates and sends them to each LLM for comparison.
-    
-    Default models (per test plan):
-        - Claude Opus 4.5, Claude Sonnet 4.5
-        - GPT-5.1, GPT-5, gpt-5.1-mini, gpt-5.1-nano
-        - Gemini 3 Pro, Gemini 3 Flash
-        - DeepSeek V3, DeepSeek R1
-    """
-    eval_dir = PROJECT_ROOT / "outputs" / "evaluation"
-    
-    # Load all aggregates
     aggregates = {}
     profiles = ["baseline", "current", "moderate", "aggressive"]
     suffixes = {"baseline": "BASELINE", "current": "CURRENT", "moderate": "MODERATE", "aggressive": "AGGRESSIVE"}
@@ -1865,6 +1950,99 @@ def run_comparative_evaluation(models: list[str] | None = None) -> dict[str, Any
             print(f"  ✅ {suffix}: Loaded")
         else:
             print(f"  ❌ {suffix}: Not found")
+    
+    return aggregates
+
+
+def _call_model_api(model: str, config: Any, prompt: str) -> dict[str, Any]:
+    """Route to appropriate API handler based on model provider.
+    
+    Reduces cognitive complexity by extracting provider routing logic.
+    
+    Args:
+        model: Model identifier string
+        config: Model configuration object
+        prompt: Prompt text to send
+        
+    Returns:
+        Evaluation result dictionary from the API
+    """
+    if model.startswith("deepseek"):
+        return call_deepseek(config, prompt)
+    if model.startswith("gemini"):
+        return call_gemini(config, prompt)
+    if model.startswith("claude"):
+        return call_claude(config, prompt)
+    if model.startswith("gpt"):
+        return call_openai(config, prompt)
+    return {"error": f"No handler for {model}"}
+
+
+def _process_model_result(model: str, eval_result: dict[str, Any], results: dict[str, Any]) -> None:
+    """Process and log the result from a single model evaluation.
+    
+    Reduces cognitive complexity by extracting result processing logic.
+    
+    Args:
+        model: Model identifier string
+        eval_result: Result dictionary from API call
+        results: Main results dictionary to update
+    """
+    results["evaluations"][model] = eval_result
+    
+    if "error" not in eval_result:
+        results["models_used"].append(model)
+        rec = eval_result.get("recommendation", {})
+        best = rec.get("best_for_production", "N/A")
+        print(f"     ✅ {model}: Recommends '{best}' for production")
+    else:
+        print(f"     ❌ {model}: Error - {eval_result.get('error', 'Unknown')[:80]}")
+
+
+def _aggregate_recommendations(results: dict[str, Any]) -> None:
+    """Aggregate recommendations across LLMs to find consensus.
+    
+    Reduces cognitive complexity by extracting consensus aggregation.
+    
+    Args:
+        results: Main results dictionary to update with consensus
+    """
+    if not results["models_used"]:
+        return
+        
+    recommendations = {}
+    for model, eval_result in results["evaluations"].items():
+        if "recommendation" in eval_result:
+            best = eval_result["recommendation"].get("best_for_production", "")
+            if best:
+                recommendations[best] = recommendations.get(best, 0) + 1
+    
+    if recommendations:
+        consensus = max(recommendations, key=recommendations.get)
+        results["consensus"] = {
+            "best_for_production": consensus,
+            "votes": recommendations,
+            "agreement_ratio": recommendations[consensus] / len(results["models_used"])
+        }
+        print(f"\n📊 Consensus: {consensus.upper()} ({recommendations[consensus]}/{len(results['models_used'])} LLMs agree)")
+
+
+def run_comparative_evaluation(models: list[str] | None = None) -> dict[str, Any]:
+    """
+    Run Strategy B comparative evaluation.
+    
+    Loads all 4 aggregates and sends them to each LLM for comparison.
+    
+    Default models (per test plan):
+        - Claude Opus 4.5, Claude Sonnet 4.5
+        - GPT-5.1, GPT-5, gpt-5.1-mini, gpt-5.1-nano
+        - Gemini 3 Pro, Gemini 3 Flash
+        - DeepSeek V3, DeepSeek R1
+    """
+    eval_dir = PROJECT_ROOT / "outputs" / "evaluation"
+    
+    # Load all aggregates using helper
+    aggregates = _load_aggregates_from_dir(eval_dir)
     
     if len(aggregates) != 4:
         return {"error": f"Missing aggregates. Found {len(aggregates)}/4. Run extraction first."}
@@ -1884,11 +2062,11 @@ def run_comparative_evaluation(models: list[str] | None = None) -> dict[str, Any
     
     configs = get_llm_configs()
     
-    # Run evaluation with each LLM
+    # Initialize results structure
     results = {
         "evaluation_type": "comparative",
         "timestamp": datetime.now().isoformat(),
-        "profiles_evaluated": profiles,
+        "profiles_evaluated": ["baseline", "current", "moderate", "aggressive"],
         "models_used": [],
         "evaluations": {},
     }
@@ -1897,13 +2075,13 @@ def run_comparative_evaluation(models: list[str] | None = None) -> dict[str, Any
     print("   Sending all 4 profiles to each LLM for comparison")
     print(f"   Using {API_CALL_DELAY_SECONDS}s delay between API calls to avoid rate limits\n")
     
+    # Run evaluation for each configured model
     models_called = 0
     for model in models:
         if model not in configs:
             print(f"  ⚠️  {model}: Not configured (skipping)")
             continue
         
-        # Add delay between API calls (except for the first one)
         if models_called > 0:
             print(f"     ⏳ Waiting {API_CALL_DELAY_SECONDS}s before next API call...")
             time.sleep(API_CALL_DELAY_SECONDS)
@@ -1912,53 +2090,16 @@ def run_comparative_evaluation(models: list[str] | None = None) -> dict[str, Any
         print(f"  🤖 [{models_called + 1}/{len(models)}] Calling {config.name} ({config.model})...")
         
         try:
-            # Route to appropriate API handler based on provider
-            if model.startswith("deepseek"):
-                eval_result = call_deepseek(config, prompt)
-            elif model.startswith("gemini"):
-                eval_result = call_gemini(config, prompt)
-            elif model.startswith("claude"):
-                eval_result = call_claude(config, prompt)
-            elif model.startswith("gpt"):
-                eval_result = call_openai(config, prompt)
-            else:
-                eval_result = {"error": f"No handler for {model}"}
-            
-            results["evaluations"][model] = eval_result
-            results["models_used"].append(model)
+            eval_result = _call_model_api(model, config, prompt)
+            _process_model_result(model, eval_result, results)
             models_called += 1
-            
-            if "error" not in eval_result:
-                # Extract recommendation
-                rec = eval_result.get("recommendation", {})
-                best = rec.get("best_for_production", "N/A")
-                print(f"     ✅ {model}: Recommends '{best}' for production")
-            else:
-                print(f"     ❌ {model}: Error - {eval_result.get('error', 'Unknown')[:80]}")
-                
         except Exception as e:
             results["evaluations"][model] = {"error": str(e)}
             models_called += 1
             print(f"     ❌ {model}: Exception - {str(e)[:80]}")
     
-    # Aggregate recommendations across LLMs
-    if results["models_used"]:
-        recommendations = {}
-        for model, eval_result in results["evaluations"].items():
-            if "recommendation" in eval_result:
-                best = eval_result["recommendation"].get("best_for_production", "")
-                if best:
-                    recommendations[best] = recommendations.get(best, 0) + 1
-        
-        if recommendations:
-            consensus = max(recommendations, key=recommendations.get)
-            results["consensus"] = {
-                "best_for_production": consensus,
-                "votes": recommendations,
-                "agreement_ratio": recommendations[consensus] / len(results["models_used"])
-            }
-            
-            print(f"\n📊 Consensus: {consensus.upper()} ({recommendations[consensus]}/{len(results['models_used'])} LLMs agree)")
+    # Aggregate recommendations using helper
+    _aggregate_recommendations(results)
     
     # Save results
     output_file = eval_dir / f"llm_comparative_evaluation_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
@@ -2149,36 +2290,51 @@ def test_api_connections() -> dict[str, dict[str, Any]]:
     return results
 
 
+def _fetch_gemini_models() -> None:
+    """Fetch and display Gemini models.
+    
+    Reduces cognitive complexity by extracting Gemini-specific logic.
+    """
+    models = list_gemini_models()
+    if not models or "error" in models[0]:
+        print(f"  ⚠️  Error: {models[0].get('error', 'Unknown error') if models else 'No models returned'}")
+        return
+    
+    for m in models:
+        name = m.get("name", m.get("display_name", "Unknown"))
+        desc = m.get("description", "")[:80]
+        methods = m.get("supported_methods", m.get("supportedGenerationMethods", []))
+        print(f"\n  📌 {name}")
+        if desc:
+            print(f"     {desc}")
+        if methods:
+            print(f"     Methods: {', '.join(methods[:3])}")
+
+
+def _fetch_deepseek_models() -> None:
+    """Fetch and display DeepSeek models.
+    
+    Reduces cognitive complexity by extracting DeepSeek-specific logic.
+    """
+    models = list_deepseek_models()
+    for m in models:
+        if "note" in m:
+            print(f"  ℹ️  {m['note']}")
+            continue
+        model_id = m.get("id", "Unknown")
+        desc = m.get("description", m.get("object", ""))
+        print(f"  📌 {model_id}: {desc}")
+
+
 def fetch_provider_models(provider: str) -> None:
     """Fetch and display available models from a specific provider."""
     print(f"\n📋 Fetching available models from {provider}...")
     print("=" * 60)
     
     if provider == "gemini":
-        models = list_gemini_models()
-        if models and "error" not in models[0]:
-            for m in models:
-                name = m.get("name", m.get("display_name", "Unknown"))
-                desc = m.get("description", "")[:80]
-                methods = m.get("supported_methods", m.get("supportedGenerationMethods", []))
-                print(f"\n  📌 {name}")
-                if desc:
-                    print(f"     {desc}")
-                if methods:
-                    print(f"     Methods: {', '.join(methods[:3])}")
-        else:
-            print(f"  ⚠️  Error: {models[0].get('error', 'Unknown error')}")
-    
+        _fetch_gemini_models()
     elif provider == "deepseek":
-        models = list_deepseek_models()
-        for m in models:
-            if "note" in m:
-                print(f"  ℹ️  {m['note']}")
-                continue
-            model_id = m.get("id", "Unknown")
-            desc = m.get("description", m.get("object", ""))
-            print(f"  📌 {model_id}: {desc}")
-    
+        _fetch_deepseek_models()
     else:
         print(f"  ⚠️  Provider '{provider}' not supported for model listing")
 

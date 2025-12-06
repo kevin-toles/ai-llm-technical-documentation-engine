@@ -265,9 +265,9 @@ class AnalysisOrchestrator:
             BookTitles.FLUENT_PYTHON: ("Ramalho, Luciano", BookTitles.FLUENT_PYTHON),
             BookTitles.PYTHON_DISTILLED: ("Beazley, David", BookTitles.PYTHON_DISTILLED),
             BookTitles.PYTHON_DATA_ANALYSIS: ("McKinney, Wes", BookTitles.PYTHON_DATA_ANALYSIS),
-            "Architecture Patterns with Python": ("Percival, Harry and Gregory, Bob", "Architecture Patterns with Python"),
-            "Building Microservices": ("Newman, Sam", "Building Microservices"),
-            "Python Cookbook 3rd": ("Beazley, David and Jones, Brian K.", "Python Cookbook 3rd"),
+            BookTitles.ARCH_PATTERNS_PYTHON: ("Percival, Harry and Gregory, Bob", BookTitles.ARCH_PATTERNS_PYTHON),
+            BookTitles.BUILDING_MICROSERVICES: ("Newman, Sam", BookTitles.BUILDING_MICROSERVICES),
+            BookTitles.PYTHON_COOKBOOK: ("Beazley, David and Jones, Brian K.", BookTitles.PYTHON_COOKBOOK),
         })
         
         return citation_map
@@ -957,6 +957,58 @@ Prioritize books that provide the most direct, substantial coverage of this chap
         # Fallback: use the filename as-is (already human-readable)
         return ("Unknown", book_filename)
     
+    def _extract_concepts_from_requests(
+        self,
+        content_requests: List[Any]
+    ) -> List[str]:
+        """
+        Extract key concepts from content request rationales.
+        
+        Extracted from _phase2_comprehensive_synthesis() to reduce complexity (S3776).
+        
+        Args:
+            content_requests: List of content request objects with rationale fields.
+            
+        Returns:
+            List of extracted concept keywords.
+        """
+        concepts = []
+        for req in content_requests:
+            for word in req.rationale.lower().split():
+                clean_word = word.strip()
+                if len(clean_word) > 4 and clean_word.isalpha():
+                    concepts.append(clean_word)
+        return concepts
+    
+    def _extract_and_merge_concepts(
+        self,
+        content_requests: List[Any],
+        annotation_text: str
+    ) -> List[str]:
+        """
+        Extract and merge concepts from requests and annotation text.
+        
+        Extracted from _phase2_comprehensive_synthesis() to reduce complexity (S3776).
+        
+        Args:
+            content_requests: Content request objects.
+            annotation_text: Generated annotation text.
+            
+        Returns:
+            Deduplicated list of concept keywords (max 20).
+        """
+        concepts_validated = self._extract_concepts_from_requests(content_requests)
+        
+        # Extract concepts from annotation text
+        annotation_concepts = _extract_concepts_from_text(annotation_text)
+        for concept in annotation_concepts:
+            clean = concept.strip().lower()
+            if clean.isalpha() and len(clean) > 3 and '\n' not in concept:
+                concepts_validated.append(clean)
+        
+        # Deduplicate and limit to top 20
+        return list(dict.fromkeys(concepts_validated))[:20]
+    
     def _phase2_comprehensive_synthesis(
         self,
         chapter_num: int,
@@ -966,66 +1018,42 @@ Prioritize books that provide the most direct, substantial coverage of this chap
     ) -> ScholarlyAnnotation:
         """Phase 2 for comprehensive analysis: Lazy load content + synthesize annotation."""
         
-        # LAZY LOADING: Only load chapters that LLM requested
-        if self._lazy_load:
-            content_package = self._lazy_load_requested_chapters(
-                metadata_response.content_requests
-            )
-        else:
-            # Old approach: retrieve from already-loaded books
-            content_package = self._retrieve_requested_content(
-                metadata_response.content_requests
-            )
+        # Load content based on mode
+        content_package = (
+            self._lazy_load_requested_chapters(metadata_response.content_requests)
+            if self._lazy_load
+            else self._retrieve_requested_content(metadata_response.content_requests)
+        )
         
         print(f"Retrieved content from {len(content_package)} books")
         print(f"Total excerpts: {sum(len(excerpts) for excerpts in content_package.values())}")
         
-        # Build synthesis prompt (now returns system + user prompts)
+        # Build synthesis prompt
         system_prompt, user_prompt = self._build_comprehensive_phase2_prompt(
-            chapter_num,
-            chapter_title,
-            chapter_full_text,
-            metadata_response,
-            content_package
+            chapter_num, chapter_title, chapter_full_text,
+            metadata_response, content_package
         )
         
         print(f"Estimated tokens: ~{self._estimate_tokens(user_prompt):,}")
         
         try:
-            llm_output = call_llm(user_prompt, system_prompt=system_prompt, max_tokens=4000, phase="phase2", chapter_num=chapter_num)
+            llm_output = call_llm(
+                user_prompt, system_prompt=system_prompt, 
+                max_tokens=4000, phase="phase2", chapter_num=chapter_num
+            )
             
-            # Parse annotation from LLM output
             annotation_text = llm_output.strip()
             
-            # Extract sources from annotation text (uses known book title matching)
+            # Extract sources from annotation + content package
             sources = self._extract_sources(annotation_text)
-            
-            # Also include books that were loaded (in case annotation doesn't mention them by exact name)
             for book_name in content_package.keys():
                 if book_name not in sources:
                     sources.append(book_name)
             
-            # Extract concepts that appear in the annotation
-            # Use the concepts from content requests + extract from annotation text
-            concepts_validated = []
-            for req in metadata_response.content_requests:
-                # Extract key concepts from the rationale
-                for word in req.rationale.lower().split():
-                    # Filter: only alphabetic words > 4 chars, no newlines
-                    clean_word = word.strip()
-                    if len(clean_word) > 4 and clean_word.isalpha():
-                        concepts_validated.append(clean_word)
-            
-            # Also extract concepts from annotation text using our helper
-            annotation_concepts = _extract_concepts_from_text(annotation_text)
-            # Filter to only clean, lowercase concept keywords
-            for concept in annotation_concepts:
-                clean = concept.strip().lower()
-                if clean.isalpha() and len(clean) > 3 and '\n' not in concept:
-                    concepts_validated.append(clean)
-            
-            # Deduplicate and limit to top 20
-            concepts_validated = list(dict.fromkeys(concepts_validated))[:20]
+            # Extract and merge concepts using helper
+            concepts_validated = self._extract_and_merge_concepts(
+                metadata_response.content_requests, annotation_text
+            )
             
             print(f"✓ Generated annotation: {len(annotation_text)} chars")
             print(f"✓ Sources cited: {len(sources)}")
@@ -1240,8 +1268,8 @@ Prioritize books that provide the most direct, substantial coverage of this chap
                 BookTitles.PYTHON_ESSENTIAL_REF,
                 BookTitles.PYTHON_DISTILLED,
                 BookTitles.PYTHON_DATA_ANALYSIS,
-                "Architecture Patterns with Python",
-                "Building Microservices",
+                BookTitles.ARCH_PATTERNS_PYTHON,
+                BookTitles.BUILDING_MICROSERVICES,
             ]
         
         annotation_lower = annotation.lower()
@@ -1249,8 +1277,7 @@ Prioritize books that provide the most direct, substantial coverage of this chap
         for book_title in known_books:
             # Check for exact match (case-insensitive)
             if book_title.lower() in annotation_lower:
-                # Normalize to canonical form (remove edition suffixes for dedup)
-                canonical = book_title.split(" Ed")[0].split(" 2nd")[0].split(" 3rd")[0].split(" 4th")[0].strip()
+                # Add book title directly (dedup happens below)
                 sources.append(book_title)
         
         # Deduplicate while preserving order

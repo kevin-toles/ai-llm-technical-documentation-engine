@@ -92,42 +92,58 @@ class WorkflowExecutionService:
         validation_warnings = []
         
         for idx, file in enumerate(files, 1):
-            try:
-                file_path = input_dir / file
-                self._update_progress(workflow_id, f"[{idx}/{len(files)}] Processing: {file}")
-                
-                # Build command using strategy
-                cmd = self._build_command(tab_id, script_path, file_path, taxonomy_file)
-                
-                if cmd:
-                    result = self._run_subprocess(cmd)
-                    if result["success"]:
-                        # Run post-execution validation for ALL tabs
-                        validation_result = self._validate_workflow_output(tab_id, file, workflow)
-                        
-                        if validation_result["errors"]:
-                            failed.append(file)
-                            self._update_progress(workflow_id, 
-                                f"✗ Validation failed: {file} - {validation_result['errors'][0]}")
-                        else:
-                            successful.append(file)
-                            if validation_result["warnings"]:
-                                validation_warnings.extend(validation_result["warnings"])
-                                self._update_progress(workflow_id, f"✓ {file} (with warnings)")
-                            else:
-                                self._update_progress(workflow_id, f"✓ {file}")
-                    else:
-                        failed.append(file)
-                        self._update_progress(workflow_id, f"✗ {file}: {result['error']}")
-                        
-            except Exception as e:
+            self._update_progress(workflow_id, f"[{idx}/{len(files)}] Processing: {file}")
+            result = self._process_single_file(
+                workflow_id, tab_id, file, input_dir, script_path, 
+                taxonomy_file, workflow, validation_warnings
+            )
+            if result:
+                successful.append(file)
+            else:
                 failed.append(file)
-                self._update_progress(workflow_id, f"✗ {file}: {str(e)}")
         
         self.workflow_status[workflow_id]["successful"] = successful
         self.workflow_status[workflow_id]["failed"] = failed
         if validation_warnings:
             self.workflow_status[workflow_id]["validation_warnings"] = validation_warnings
+
+    def _process_single_file(self, workflow_id: str, tab_id: str, file: str,
+                             input_dir: Path, script_path: Path,
+                             taxonomy_file: Optional[str], workflow: Dict,
+                             validation_warnings: List[str]) -> bool:
+        """Process a single file through the workflow.
+        
+        Reduces cognitive complexity by extracting single file processing.
+        """
+        try:
+            file_path = input_dir / file
+            cmd = self._build_command(tab_id, script_path, file_path, taxonomy_file)
+            
+            if not cmd:
+                return False
+            
+            result = self._run_subprocess(cmd)
+            if not result["success"]:
+                self._update_progress(workflow_id, f"✗ {file}: {result['error']}")
+                return False
+            
+            validation_result = self._validate_workflow_output(tab_id, file, workflow)
+            
+            if validation_result["errors"]:
+                self._update_progress(workflow_id, 
+                    f"✗ Validation failed: {file} - {validation_result['errors'][0]}")
+                return False
+            
+            if validation_result["warnings"]:
+                validation_warnings.extend(validation_result["warnings"])
+                self._update_progress(workflow_id, f"✓ {file} (with warnings)")
+            else:
+                self._update_progress(workflow_id, f"✓ {file}")
+            return True
+            
+        except Exception as e:
+            self._update_progress(workflow_id, f"✗ {file}: {str(e)}")
+            return False
     
     def _validate_workflow_output(self, tab_id: str, filename: str, 
                                    workflow: Dict) -> Dict[str, List[str]]:
