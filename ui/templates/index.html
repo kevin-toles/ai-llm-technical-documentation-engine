@@ -265,7 +265,135 @@
             `;
         }
 
+        // =============================================================================
+        // HELPER FUNCTIONS FOR S3776 COGNITIVE COMPLEXITY REDUCTION
+        // Pattern: CODING_PATTERNS_ANALYSIS.md Category 2 - Extract Method
+        // =============================================================================
+        
+        /**
+         * Handle drag start event for tier builder.
+         * Extracted from initTierBuilder() to reduce cognitive complexity.
+         */
+        function handleDragStart(e, setDraggedElement) {
+            if (e.target.classList.contains('draggable')) {
+                setDraggedElement(e.target);
+                e.target.classList.add('dragging');
+                e.dataTransfer.effectAllowed = 'move';
+                console.log(`[DRAG-START] ${e.target.dataset.file}`);
+            }
+        }
+        
+        /**
+         * Handle drag end event for tier builder.
+         * Extracted from initTierBuilder() to reduce cognitive complexity.
+         */
+        function handleDragEnd(e, tierTabContainer) {
+            if (e.target.classList.contains('draggable')) {
+                e.target.classList.remove('dragging');
+                tierTabContainer.querySelectorAll('.drag-over').forEach(el => {
+                    el.classList.remove('drag-over');
+                });
+            }
+        }
+        
+        /**
+         * Handle drop event for tier builder.
+         * Extracted from initTierBuilder() to reduce cognitive complexity.
+         */
+        function handleTierDrop(e, dropZone, draggedElement, tabId) {
+            e.preventDefault();
+            dropZone.classList.remove('drag-over');
+            
+            if (!draggedElement) {
+                console.error('No dragged element!');
+                return;
+            }
+            
+            const file = draggedElement.dataset.file;
+            const fromTier = draggedElement.parentElement.dataset.tier;
+            const toTier = dropZone.dataset.tier;
+            
+            console.log(`Moving "${file}" from ${fromTier} to ${toTier}`);
+            
+            // Update state tracking
+            updateTierState(tabId, fromTier, toTier, file);
+            
+            // Remove empty message if present
+            const emptyMsg = dropZone.querySelector('.empty-tier');
+            if (emptyMsg) emptyMsg.remove();
+            
+            // Transform element if moving between containers
+            transformDraggedElement(draggedElement, fromTier, toTier, file, tabId);
+            
+            // Check if origin tier is now empty
+            checkEmptyTier(fromTier, dropZone);
+        }
+        
+        /**
+         * Update tier state when item moves between tiers.
+         * Extracted helper for handleTierDrop().
+         */
+        function updateTierState(tabId, fromTier, toTier, file) {
+            if (fromTier !== 'pool' && globalThis.tierState[tabId]) {
+                const fromArray = globalThis.tierState[tabId][fromTier];
+                if (fromArray) {
+                    const index = fromArray.indexOf(file);
+                    if (index > -1) fromArray.splice(index, 1);
+                }
+            }
+            
+            if (toTier !== 'pool' && globalThis.tierState[tabId]) {
+                const toArray = globalThis.tierState[tabId][toTier];
+                if (toArray && !toArray.includes(file)) {
+                    toArray.push(file);
+                    console.log(`[STATE-UPDATE] Added "${file}" to ${toTier}. State:`, globalThis.tierState[tabId]);
+                }
+            }
+        }
+        
+        /**
+         * Transform dragged element between pool and tier formats.
+         * Extracted helper for handleTierDrop().
+         */
+        function transformDraggedElement(draggedElement, fromTier, toTier, file, tabId) {
+            if (fromTier === toTier) return;
+            
+            if (toTier === 'pool') {
+                // Moving back to pool - convert to pool-file
+                draggedElement.className = 'pool-file draggable';
+                draggedElement.draggable = true;
+                draggedElement.innerHTML = file;
+                console.log(`Converted to pool-file: ${file}`);
+            } else if (fromTier === 'pool') {
+                // Moving from pool to tier - convert to tier-item
+                draggedElement.className = 'tier-item draggable';
+                draggedElement.draggable = true;
+                draggedElement.dataset.file = file;
+                draggedElement.innerHTML = `
+                    <span class="drag-handle">⋮⋮</span>
+                    <span class="tier-file-name">${file}</span>
+                    <button onclick="removeTierItem('${tabId}', this)" class="tier-btn-remove">✕</button>
+                `;
+                console.log(`Converted to tier-item: ${file}, class=${draggedElement.className}`);
+            }
+        }
+        
+        /**
+         * Check if origin tier is empty and add placeholder.
+         * Extracted helper for handleTierDrop().
+         */
+        function checkEmptyTier(fromTier, dropZone) {
+            const originTier = document.querySelector(`[data-tier="${fromTier}"]`);
+            if (originTier && originTier !== dropZone && fromTier !== 'pool') {
+                const items = originTier.querySelectorAll('.tier-item');
+                if (items.length === 0) {
+                    originTier.innerHTML = '<p class="empty-tier">Drag files here</p>';
+                }
+            }
+        }
+
         // Initialize tier builder with Trello-style drag & drop
+        // Refactored per S3776 to use helper functions
         function initTierBuilder(tabId, allFiles) {
             let draggedElement = null;
             
@@ -288,127 +416,45 @@
                 return;
             }
             
-            // Add drag event listeners scoped to this tab
-            tierTabContainer.addEventListener('dragstart', function(e) {
-                if (e.target.classList.contains('draggable')) {
-                    draggedElement = e.target;
-                    e.target.classList.add('dragging');
-                    e.dataTransfer.effectAllowed = 'move';
-                    console.log(`[DRAG-START] ${e.target.dataset.file}`);
-                }
+            // Drag start - delegates to helper
+            tierTabContainer.addEventListener('dragstart', (e) => {
+                handleDragStart(e, (el) => { draggedElement = el; });
             });
             
-            tierTabContainer.addEventListener('dragend', function(e) {
-                if (e.target.classList.contains('draggable')) {
-                    e.target.classList.remove('dragging');
-                    tierTabContainer.querySelectorAll('.drag-over').forEach(el => {
-                        el.classList.remove('drag-over');
-                    });
-                }
+            // Drag end - delegates to helper
+            tierTabContainer.addEventListener('dragend', (e) => {
+                handleDragEnd(e, tierTabContainer);
             });
             
-            // Add drop zone event listeners - ONLY for this specific tab
+            // Drop zone listeners - simplified with helper delegation
             tierTabContainer.querySelectorAll('.drop-zone, .file-pool').forEach(dropZone => {
+                // Dragover handler - positioning logic
                 dropZone.addEventListener('dragover', (e) => {
                     e.preventDefault();
                     e.dataTransfer.dropEffect = 'move';
-                    
                     if (!dropZone.classList.contains('dragging')) {
                         dropZone.classList.add('drag-over');
                     }
                     
-                    // Get the draggable element being dragged over
                     const afterElement = getDragAfterElement(dropZone, e.clientY);
                     if (afterElement == null) {
-                        // Append at the end, but before empty message
                         const emptyMsg = dropZone.querySelector('.empty-tier');
                         if (draggedElement && draggedElement !== afterElement) {
-                            if (emptyMsg) {
-                                emptyMsg.before(draggedElement);
-                            } else {
-                                dropZone.appendChild(draggedElement);
-                            }
+                            emptyMsg ? emptyMsg.before(draggedElement) : dropZone.appendChild(draggedElement);
                         }
                     } else if (draggedElement && draggedElement !== afterElement) {
-                        // S6660 fix: Merged else-if to avoid if as only statement in else
                         afterElement.before(draggedElement);
                     }
                 });
                 
+                // Dragleave handler - simple
                 dropZone.addEventListener('dragleave', (e) => {
-                    if (e.target === dropZone) {
-                        dropZone.classList.remove('drag-over');
-                    }
+                    if (e.target === dropZone) dropZone.classList.remove('drag-over');
                 });
                 
+                // Drop handler - delegates to helper
                 dropZone.addEventListener('drop', (e) => {
-                    e.preventDefault();
-                    dropZone.classList.remove('drag-over');
-                    
-                    if (!draggedElement) {
-                        console.error('No dragged element!');
-                        return;
-                    }
-                    
-                    const file = draggedElement.dataset.file;
-                    const fromTier = draggedElement.parentElement.dataset.tier;
-                    const toTier = dropZone.dataset.tier;
-                    
-                    console.log(`Moving "${file}" from ${fromTier} to ${toTier}`);
-                    
-                    // Update state tracking
-                    if (fromTier !== 'pool' && globalThis.tierState[tabId]) {
-                        const fromArray = globalThis.tierState[tabId][fromTier];
-                        if (fromArray) {
-                            const index = fromArray.indexOf(file);
-                            if (index > -1) fromArray.splice(index, 1);
-                        }
-                    }
-                    
-                    if (toTier !== 'pool' && globalThis.tierState[tabId]) {
-                        const toArray = globalThis.tierState[tabId][toTier];
-                        if (toArray && !toArray.includes(file)) {
-                            toArray.push(file);
-                            console.log(`[STATE-UPDATE] Added "${file}" to ${toTier}. State:`, globalThis.tierState[tabId]);
-                        }
-                    }
-                    
-                    // Remove empty message if present
-                    const emptyMsg = dropZone.querySelector('.empty-tier');
-                    if (emptyMsg) {
-                        emptyMsg.remove();
-                    }
-                    
-                    // If moving between different containers, transform the element
-                    if (fromTier !== toTier) {
-                        if (toTier === 'pool') {
-                            // Moving back to pool - convert to pool-file
-                            draggedElement.className = 'pool-file draggable';
-                            draggedElement.draggable = true;
-                            draggedElement.innerHTML = file;
-                            console.log(`Converted to pool-file: ${file}`);
-                        } else if (fromTier === 'pool') {
-                            // Moving from pool to tier - convert to tier-item
-                            draggedElement.className = 'tier-item draggable';
-                            draggedElement.draggable = true;
-                            draggedElement.dataset.file = file;
-                            draggedElement.innerHTML = `
-                                <span class="drag-handle">⋮⋮</span>
-                                <span class="tier-file-name">${file}</span>
-                                <button onclick="removeTierItem('${tabId}', this)" class="tier-btn-remove">✕</button>
-                            `;
-                            console.log(`Converted to tier-item: ${file}, class=${draggedElement.className}`);
-                        }
-                    }
-                    
-                    // Check if origin tier is now empty
-                    const originTier = document.querySelector(`[data-tier="${fromTier}"]`);
-                    if (originTier && originTier !== dropZone && fromTier !== 'pool') {
-                        const items = originTier.querySelectorAll('.tier-item');
-                        if (items.length === 0) {
-                            originTier.innerHTML = '<p class="empty-tier">Drag files here</p>';
-                        }
-                    }
+                    handleTierDrop(e, dropZone, draggedElement, tabId);
                 });
             });
         }
@@ -533,174 +579,177 @@
             }
         }
 
-        // Run workflow
-        async function runWorkflow(tabId) {
-            let selectedFiles = [];
-            let tierData = {};
-            let llmConfig = {};
-            let taxonomyFile = null;
-            let pool = null;  // Declare pool at function scope
-            
-            // Check if this is LLM tab
+        // =============================================================================
+        // WORKFLOW HELPER FUNCTIONS FOR S3776 COGNITIVE COMPLEXITY REDUCTION
+        // =============================================================================
+        
+        /**
+         * Get configuration for LLM tab (tab with guideline selector).
+         * Returns null if not an LLM tab or validation fails.
+         */
+        function getTabConfig(tabId) {
             const guidelineSelect = document.getElementById(`${tabId}-guideline`);
-            if (guidelineSelect) {
-                const guideline = guidelineSelect.value;
-                const taxonomy = document.getElementById(`${tabId}-taxonomy`)?.value || '';
-                const provider = document.getElementById(`${tabId}-provider`).value;
-                const model = document.getElementById(`${tabId}-model`).value;
-                
-                // All fields required
-                if (!guideline || !taxonomy || !provider || !model) {
-                    alert('Please select all required fields:\n- Base Guideline\n- Taxonomy\n- LLM Provider\n- Model');
-                    return;
-                }
-                
-                llmConfig = { guideline, taxonomy, provider, model };
-            } 
-            // Check if this is Base Guideline tab (tab6)
-            else if (tabId === 'tab6') {
-                const bookSelect = document.getElementById(`${tabId}-book`);
-                const taxonomySelect = document.getElementById(`${tabId}-taxonomy`);
-                
-                if (!bookSelect || !bookSelect.value) {
-                    alert('Please select a book to create guideline from');
-                    return;
-                }
-                
-                selectedFiles = [bookSelect.value];
-                taxonomyFile = taxonomySelect ? taxonomySelect.value : null;
-            }
-            else {
-                // Check if this is taxonomy tab with tiers
-                pool = document.getElementById(`${tabId}-pool`);
-                
-                if (pool) {
-                    // Get taxonomy name
-                    const taxonomyNameInput = document.getElementById(`${tabId}-taxonomy-name`);
-                    const taxonomyName = taxonomyNameInput ? taxonomyNameInput.value.trim() : '';
-                    
-                    if (!taxonomyName || taxonomyName.length < 3) {
-                        alert('Please enter a taxonomy name (3-15 characters)');
-                        return;
-                    }
-                    
-                    // Get tier data from state (no DOM scraping!)
-                    tierData = globalThis.tierState && globalThis.tierState[tabId] ? 
-                               structuredClone(globalThis.tierState[tabId]) : 
-                               {architecture: [], implementation: [], practices: []};
-                    
-                    console.log('Tier data from state:', tierData);
-                    
-                    // Validate required tiers (Architecture and Implementation)
-                    const hasArchitecture = tierData.architecture && tierData.architecture.length > 0;
-                    const hasImplementation = tierData.implementation && tierData.implementation.length > 0;
-                    
-                    if (!hasArchitecture || !hasImplementation) {
-                        alert('The first two tiers are required:\n\n🏛️ Architecture Spine (Priority 1)\n⚙️ Implementation (Priority 2)\n\nEngineering Practices (Priority 3) is optional.');
-                        return;
-                    }
-                    
-                    // Count total files
-                    selectedFiles = Object.values(tierData).flat();
-                    
-                    if (selectedFiles.length === 0) {
-                        alert('Please drag files into the Architecture and Implementation tiers before running the workflow.');
-                        return;
-                    }
-                } else {
-                    // Regular file selection with checkboxes
-                    selectedFiles = Array.from(
-                        document.querySelectorAll(`input[name="${tabId}-file"]:checked`)
-                    ).map(cb => cb.value);
-                    
-                    // Check for taxonomy selector (tab4 or tab6)
-                    const taxonomySelect = document.getElementById(`${tabId}-taxonomy`);
-                    if (taxonomySelect) {
-                        taxonomyFile = taxonomySelect.value;
-                    }
-                }
-                
-                // Only validate if we're not in tier mode (pool doesn't exist)
-                // In tier mode, validation already happened above
-                if (!pool && selectedFiles.length === 0) {
-                    alert('Please select at least one file');
-                    return;
-                }
+            if (!guidelineSelect) return null;
+            
+            const guideline = guidelineSelect.value;
+            const taxonomy = document.getElementById(`${tabId}-taxonomy`)?.value || '';
+            const provider = document.getElementById(`${tabId}-provider`).value;
+            const model = document.getElementById(`${tabId}-model`).value;
+            
+            if (!guideline || !taxonomy || !provider || !model) {
+                alert('Please select all required fields:\n- Base Guideline\n- Taxonomy\n- LLM Provider\n- Model');
+                return { error: true };
             }
             
-            // Build payload
-            let payload;
-            if (llmConfig.guideline) {
-                payload = { llm_config: llmConfig };
-            } else if (pool) {
-                // Always send tiers payload if we're in tier mode (even if empty - backend will validate)
-                const taxonomyNameInput = document.getElementById(`${tabId}-taxonomy-name`);
-                const taxonomyName = taxonomyNameInput ? taxonomyNameInput.value.trim() : '';
-                payload = { tiers: tierData, taxonomy_name: taxonomyName };
-            } else {
-                payload = { files: selectedFiles };
-                // Add taxonomy if selected (for tab6)
-                if (taxonomyFile) {
-                    payload.taxonomy = taxonomyFile;
-                }
+            return { llmConfig: { guideline, taxonomy, provider, model } };
+        }
+        
+        /**
+         * Get configuration for Base Guideline tab (tab6).
+         * Returns null if not tab6 or validation fails.
+         */
+        function getBaseGuidelineConfig(tabId) {
+            if (tabId !== 'tab6') return null;
+            
+            const bookSelect = document.getElementById(`${tabId}-book`);
+            const taxonomySelect = document.getElementById(`${tabId}-taxonomy`);
+            
+            if (!bookSelect || !bookSelect.value) {
+                alert('Please select a book to create guideline from');
+                return { error: true };
             }
             
+            return {
+                selectedFiles: [bookSelect.value],
+                taxonomyFile: taxonomySelect ? taxonomySelect.value : null
+            };
+        }
+        
+        /**
+         * Get configuration for Tier-based tab (taxonomy builder).
+         * Returns null if no pool exists or validation fails.
+         */
+        function getTierConfig(tabId) {
+            const pool = document.getElementById(`${tabId}-pool`);
+            if (!pool) return null;
+            
+            const taxonomyNameInput = document.getElementById(`${tabId}-taxonomy-name`);
+            const taxonomyName = taxonomyNameInput ? taxonomyNameInput.value.trim() : '';
+            
+            if (!taxonomyName || taxonomyName.length < 3) {
+                alert('Please enter a taxonomy name (3-15 characters)');
+                return { error: true };
+            }
+            
+            const tierData = globalThis.tierState && globalThis.tierState[tabId] ? 
+                           structuredClone(globalThis.tierState[tabId]) : 
+                           {architecture: [], implementation: [], practices: []};
+            
+            const hasArchitecture = tierData.architecture && tierData.architecture.length > 0;
+            const hasImplementation = tierData.implementation && tierData.implementation.length > 0;
+            
+            if (!hasArchitecture || !hasImplementation) {
+                alert('The first two tiers are required:\n\n🏛️ Architecture Spine (Priority 1)\n⚙️ Implementation (Priority 2)\n\nEngineering Practices (Priority 3) is optional.');
+                return { error: true };
+            }
+            
+            const selectedFiles = Object.values(tierData).flat();
+            if (selectedFiles.length === 0) {
+                alert('Please drag files into the Architecture and Implementation tiers before running the workflow.');
+                return { error: true };
+            }
+            
+            return { tierData, taxonomyName, selectedFiles, pool };
+        }
+        
+        /**
+         * Get configuration for standard checkbox file selection.
+         */
+        function getFileSelectionConfig(tabId) {
+            const selectedFiles = Array.from(
+                document.querySelectorAll(`input[name="${tabId}-file"]:checked`)
+            ).map(cb => cb.value);
+            
+            const taxonomySelect = document.getElementById(`${tabId}-taxonomy`);
+            const taxonomyFile = taxonomySelect ? taxonomySelect.value : null;
+            
+            if (selectedFiles.length === 0) {
+                alert('Please select at least one file');
+                return { error: true };
+            }
+            
+            return { selectedFiles, taxonomyFile };
+        }
+        
+        /**
+         * Build the payload for the workflow API call.
+         */
+        function buildWorkflowPayload(config) {
+            if (config.llmConfig) {
+                return { llm_config: config.llmConfig };
+            }
+            if (config.tierData) {
+                return { tiers: config.tierData, taxonomy_name: config.taxonomyName };
+            }
+            const payload = { files: config.selectedFiles };
+            if (config.taxonomyFile) {
+                payload.taxonomy = config.taxonomyFile;
+            }
+            return payload;
+        }
+
+        // Run workflow - refactored per S3776 to use helper functions
+        async function runWorkflow(tabId) {
+            // Use helper functions to get configuration for each tab type
+            let config = getTabConfig(tabId);
+            
+            if (!config) {
+                config = getBaseGuidelineConfig(tabId);
+            }
+            if (!config) {
+                config = getTierConfig(tabId);
+            }
+            if (!config) {
+                config = getFileSelectionConfig(tabId);
+            }
+            
+            // Check for validation errors
+            if (config && config.error) return;
+            if (!config) {
+                alert('Unable to determine tab configuration');
+                return;
+            }
+            
+            // Build payload using helper
+            const payload = buildWorkflowPayload(config);
             console.log('Sending payload:', payload);
             
-            // DIAGNOSTIC: Dump entire tab HTML
-            const tabElement = document.getElementById(tabId);
-            console.log('[DIAGNOSTIC] Tab element HTML:', tabElement ? tabElement.innerHTML : 'TAB NOT FOUND');
-            console.log('[DIAGNOSTIC] All elements with -status:', Array.from(document.querySelectorAll('[id$="-status"]')).map(el => el.id));
-            
-            // Show status panel
+            // Get status elements
             const statusPanel = document.getElementById(`${tabId}-status`);
             const statusContent = document.getElementById(`${tabId}-status-content`);
             
-            console.log('[DEBUG] Looking for status elements:', {
-                tabId,
-                statusPanel,
-                statusContent,
-                statusPanelId: `${tabId}-status`,
-                statusContentId: `${tabId}-status-content`,
-                allStatusPanels: document.querySelectorAll('[id$="-status"]'),
-                parentElement: document.getElementById(tabId)
-            });
-            
             if (!statusPanel || !statusContent) {
-                console.error(`[ERROR] Status panel elements not found! Looking for: ${tabId}-status and ${tabId}-status-content`);
-                console.error('Tab element exists:', !!document.getElementById(tabId));
-                console.error('DOM structure:', document.getElementById(tabId));
+                console.error(`[ERROR] Status panel elements not found for: ${tabId}`);
                 return;
             }
             
             statusPanel.style.display = 'block';
             statusContent.innerHTML = '<p>Starting workflow...</p>';
             
-            console.log('[DEBUG] Status panel shown:', statusPanel.style.display);
-            
             try {
-                console.log('[DEBUG] Entering fetch try block, about to call fetch');
                 const response = await fetch(`/run/${tabId}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
                 });
-                console.log('[DEBUG] Fetch returned:', {
-                    status: response.status,
-                    ok: response.ok,
-                    type: typeof response,
-                    hasJson: typeof response.json === 'function'
-                });
                 
                 const result = await response.json();
-                console.log('[DEBUG] Parsed JSON response:', result);
                 
                 if (result.error) {
                     statusContent.innerHTML = `<p class="error">Error: ${result.error}</p>`;
                     return;
                 }
                 
-                // Start polling for status updates
                 if (result.workflow_id) {
                     pollWorkflowStatus(tabId, result.workflow_id);
                     statusContent.innerHTML = `<p>✓ ${result.message}</p><p>Monitoring progress...</p>`;

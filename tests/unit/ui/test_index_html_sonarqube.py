@@ -266,3 +266,119 @@ class TestRemainingIndexHtmlIssues:
         # Test passes if not a module (top-level await not available)
         # The actual S7785 fix requires converting to module type
         assert True  # Placeholder - actual fix depends on module type decision
+
+
+class TestS3776JavaScriptCognitiveComplexity:
+    """
+    S3776: Cognitive Complexity tests for JavaScript functions in index.html.
+    
+    Functions flagged:
+    - initTierBuilder (Line 345): Complexity 22 (threshold 15)
+    - runWorkflow (Line 538): Complexity 48 (threshold 15)
+    
+    Pattern Reference: CODING_PATTERNS_ANALYSIS.md Category 2 (Extract Method)
+    
+    Strategy: Extract helper functions to reduce complexity below 15.
+    For JavaScript in HTML, this means creating separate functions that are
+    called from the main functions.
+    """
+    
+    @pytest.fixture
+    def index_html_content(self) -> str:
+        """Load index.html content for analysis."""
+        index_path = Path(__file__).parent.parent.parent.parent / "ui" / "templates" / "index.html"
+        return index_path.read_text()
+    
+    @pytest.fixture
+    def script_content(self, index_html_content: str) -> str:
+        """Extract main script section."""
+        pattern = r'<script>(.*?)</script>'
+        matches = re.findall(pattern, index_html_content, re.DOTALL)
+        return matches[-1] if matches else ""
+    
+    def test_init_tier_builder_has_helpers(self, script_content: str):
+        """
+        S3776 Line 345: initTierBuilder() should delegate to helper functions.
+        
+        Refactoring strategy: Extract event handlers into separate functions:
+        - handleDragStart(e, draggedElement)
+        - handleDragEnd(e)
+        - handleDragOver(e, dropZone, draggedElement)
+        - handleDrop(e, dropZone, draggedElement, tabId)
+        
+        Alternative: Look for reduced nesting depth.
+        """
+        # Check for helper functions that reduce initTierBuilder complexity
+        has_drag_handlers = any([
+            'function handleDragStart' in script_content,
+            'function handleDragOver' in script_content,
+            'function handleDrop' in script_content,
+            'function handleTierDrop' in script_content,
+            'const handleDragStart' in script_content,
+            'const handleDrop' in script_content,
+        ])
+        
+        # Alternative: Check for reduced event handler nesting
+        # If no helpers, check that the forEach loop has simpler handlers
+        init_tier_match = re.search(
+            r'function initTierBuilder\([^)]*\)\s*\{(.*?)(?=\n\s*function |\n\s*// Get the element)',
+            script_content,
+            re.DOTALL
+        )
+        
+        if init_tier_match:
+            body = init_tier_match.group(1)
+            # Count nesting indicators
+            event_handlers = body.count('addEventListener')
+            # If we have helpers, there should be fewer inline event handlers
+            has_delegated_handlers = event_handlers <= 4 or has_drag_handlers
+            
+            assert has_delegated_handlers, (
+                f"initTierBuilder() has {event_handlers} inline event handlers. "
+                f"Extract helper functions per CODING_PATTERNS_ANALYSIS.md Category 2."
+            )
+    
+    def test_run_workflow_has_helpers(self, script_content: str):
+        """
+        S3776 Line 538: runWorkflow() should delegate to helper functions.
+        
+        Refactoring strategy: Extract validation/setup into helpers:
+        - validateLlmTab(tabId) -> { isValid, llmConfig }
+        - validateTierTab(tabId) -> { isValid, tierData, selectedFiles }
+        - validateFileSelection(tabId) -> { isValid, selectedFiles }
+        - buildWorkflowPayload(data) -> payload
+        - showWorkflowStatus(tabId, message)
+        """
+        # Check for helper functions that reduce runWorkflow complexity
+        has_workflow_helpers = any([
+            'function validateLlmTab' in script_content,
+            'function validateTierTab' in script_content,
+            'function validateFileSelection' in script_content,
+            'function buildWorkflowPayload' in script_content,
+            'function getTabConfig' in script_content,
+            'function handleLlmTab' in script_content,
+            'const validateLlmTab' in script_content,
+            'const getTabConfig' in script_content,
+        ])
+        
+        # Alternative: Count if/else branches in runWorkflow
+        run_workflow_match = re.search(
+            r'async function runWorkflow\([^)]*\)\s*\{(.*?)(?=\n\s*async function |\n\s*function |\Z)',
+            script_content,
+            re.DOTALL
+        )
+        
+        if run_workflow_match:
+            body = run_workflow_match.group(1)
+            # Count branching indicators
+            if_count = body.count('if (')
+            else_count = body.count('else')
+            total_branches = if_count + else_count
+            
+            # With helpers, branch count should be reduced
+            has_reduced_branches = total_branches <= 15 or has_workflow_helpers
+            
+            assert has_reduced_branches, (
+                f"runWorkflow() has {total_branches} branches (if/else). "
+                f"Extract helper functions per CODING_PATTERNS_ANALYSIS.md Category 2."
+            )

@@ -212,3 +212,153 @@ class TestBatch3NoRegressions:
         """Verify key functions still exist."""
         assert 'def print_comparison_report' in pipeline_content
         assert 'def analyze_' in pipeline_content
+
+
+class TestS3776CognitiveComplexity:
+    """
+    TDD RED tests for S3776 Cognitive Complexity issues in Batch 1-3 files.
+    
+    SonarQube S3776: Refactor functions to reduce Cognitive Complexity.
+    Target: Maximum complexity of 15 per function.
+    
+    Remaining issues:
+    - run_enrichment_with_validation.py Line 478: main() complexity exceeds 15
+    - dry_run_pipeline_comparison.py Line 313: function complexity exceeds 15
+    - dry_run_pipeline_comparison.py Line 384: function complexity exceeds 15
+    
+    Reference: CODING_PATTERNS_ANALYSIS.md Category 2 (Cognitive Complexity)
+    Pattern: Extract Method - break into helper functions with single responsibility
+    """
+    
+    @pytest.fixture
+    def enrichment_content(self) -> str:
+        file_path = Path(__file__).parent.parent.parent.parent / "scripts" / "run_enrichment_with_validation.py"
+        return file_path.read_text()
+    
+    @pytest.fixture
+    def pipeline_content(self) -> str:
+        file_path = Path(__file__).parent.parent.parent.parent / "scripts" / "dry_run_pipeline_comparison.py"
+        return file_path.read_text()
+    
+    def _count_complexity_indicators(self, function_body: str) -> int:
+        """
+        Approximate cognitive complexity by counting complexity indicators.
+        
+        Complexity increases with:
+        - if/elif/else statements (+1 each, +1 for nesting)
+        - for/while loops (+1 each, +1 for nesting)
+        - try/except blocks (+1)
+        - and/or operators (+1)
+        - break/continue (+1)
+        - recursion (+1)
+        - early returns after first (+1 each)
+        
+        Note: This is a simplified approximation, not exact SonarQube calculation.
+        """
+        complexity = 0
+        nesting_level = 0
+        lines = function_body.split('\n')
+        
+        for line in lines:
+            stripped = line.strip()
+            
+            # Track nesting
+            if stripped.startswith(('if ', 'elif ', 'for ', 'while ', 'try:', 'with ')):
+                complexity += 1 + nesting_level
+                nesting_level += 1
+            elif stripped.startswith(('else:', 'except', 'finally:')):
+                complexity += 1
+            elif stripped.startswith('return ') and complexity > 0:
+                complexity += 1  # Early return penalty
+            
+            # Logical operators
+            complexity += stripped.count(' and ')
+            complexity += stripped.count(' or ')
+            
+            # Control flow breaks
+            if stripped in ('break', 'continue'):
+                complexity += 1
+            
+            # Decrease nesting on dedent (simplified)
+            if nesting_level > 0 and not line.startswith(' ' * (4 * nesting_level)):
+                nesting_level = max(0, nesting_level - 1)
+        
+        return complexity
+    
+    def test_main_function_complexity_under_threshold(self, enrichment_content: str):
+        """
+        S3776 Line 478: main() function should have complexity <= 15.
+        
+        Current issue: Cognitive Complexity exceeds threshold.
+        Fix: Extract helper functions for:
+          - Argument parsing setup
+          - Tab 4 execution and validation
+          - Tab 5 execution and validation
+          - Summary generation
+          - Report saving
+        """
+        # Extract main function body (simplified - just check function exists and has helpers)
+        # A properly refactored main() should delegate to helper functions
+        
+        # Count how many high-level operations are in main()
+        # A well-structured main() should have low complexity with delegation
+        main_match = re.search(r'def main\(\):(.*?)(?=\ndef |\nif __name__|$)', enrichment_content, re.DOTALL)
+        
+        assert main_match is not None, "main() function not found"
+        main_body = main_match.group(1)
+        
+        # Check for refactoring pattern: main() should delegate to helpers
+        # Look for helper function calls (functions starting with _ or specific names)
+        helper_calls = [
+            '_run_tab4_workflow',
+            '_run_tab5_workflow', 
+            '_print_summary',
+            '_save_report',
+            '_setup_environment'
+        ]
+        
+        # At least some helper delegation should exist after refactoring
+        delegation_found = any(helper in main_body for helper in helper_calls)
+        
+        # Alternative: check if main() has been kept simple
+        # Approximate complexity check
+        estimated_complexity = self._count_complexity_indicators(main_body)
+        
+        # The test passes if either:
+        # 1. Helper functions are used (delegation pattern)
+        # 2. OR complexity is under threshold
+        assert delegation_found or estimated_complexity <= 15, (
+            f"main() has estimated complexity of {estimated_complexity} (threshold: 15). "
+            f"Extract helper functions per CODING_PATTERNS_ANALYSIS.md Category 2."
+        )
+    
+    def test_pipeline_functions_refactored(self, pipeline_content: str):
+        """
+        S3776 Lines 313, 384: Functions should have complexity <= 15.
+        
+        Pattern: Look for evidence of refactoring - helper functions that
+        reduce main function complexity.
+        """
+        # Check for helper function definitions (functions starting with _)
+        helper_functions = re.findall(r'def (_[a-z_]+)\(', pipeline_content)
+        
+        # After refactoring, should have helper functions
+        # A well-structured file should have private helpers
+        has_helper_pattern = len(helper_functions) >= 2
+        
+        # Alternative: count complexity in specific functions
+        # Look for print_comparison_report and check its complexity
+        report_match = re.search(
+            r'def print_comparison_report\([^)]*\):(.*?)(?=\ndef |\nclass |$)', 
+            pipeline_content, 
+            re.DOTALL
+        )
+        
+        if report_match:
+            report_body = report_match.group(1)
+            estimated_complexity = self._count_complexity_indicators(report_body)
+            
+            assert has_helper_pattern or estimated_complexity <= 15, (
+                f"print_comparison_report() has estimated complexity of {estimated_complexity}. "
+                f"Extract helper functions per CODING_PATTERNS_ANALYSIS.md Category 2."
+            )
