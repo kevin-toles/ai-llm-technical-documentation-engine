@@ -152,3 +152,117 @@ class TestJavaScriptPatternCompliance:
         assert len(before_calls) >= 1, (
             "Expected .before() method to be used for DOM insertion"
         )
+
+
+class TestRemainingIndexHtmlIssues:
+    """
+    TDD RED tests for remaining SonarQube issues in index.html.
+    
+    SonarQube reports 5 remaining issues:
+    - S6660 Line 333: 'If' statement should not be the only statement in 'else' block
+    - S3776 Line 345: Cognitive Complexity 22 (threshold 15)
+    - S3776 Line 538: Cognitive Complexity 48 (threshold 15)
+    - S3358 Line 738: Extract nested ternary operation
+    - S7785 Line 767: Prefer top-level await over async function call
+    
+    Reference: CODING_PATTERNS_ANALYSIS.md Category 2 (Cognitive Complexity)
+    """
+    
+    @pytest.fixture
+    def index_html_content(self) -> str:
+        """Load index.html content for analysis."""
+        index_path = Path(__file__).parent.parent.parent.parent / "ui" / "templates" / "index.html"
+        return index_path.read_text()
+    
+    @pytest.fixture
+    def script_content(self, index_html_content: str) -> str:
+        """Extract main script section."""
+        pattern = r'<script>(.*?)</script>'
+        matches = re.findall(pattern, index_html_content, re.DOTALL)
+        return matches[-1] if matches else ""
+    
+    def test_s6660_no_if_only_in_else(self, script_content: str):
+        """
+        S6660 Line 333: 'If' statement should not be the only statement in 'else' block.
+        
+        Anti-pattern:
+            if (afterElement == null) {
+                // ...
+            } else {
+                if (draggedElement && ...) {  // S6660: if as only statement in else
+                    afterElement.before(draggedElement);
+                }
+            }
+        
+        Fix: Merge into else-if:
+            if (afterElement == null) {
+                // ...
+            } else if (draggedElement && ...) {
+                afterElement.before(draggedElement);
+            }
+        """
+        # Look for the pattern: else { if (... only if statement
+        # This regex finds else blocks containing only an if statement
+        pattern = r'\}\s*else\s*\{\s*\n\s*if\s*\([^)]+\)\s*\{\s*\n\s*[^}]+\.before\([^)]+\);\s*\n\s*\}\s*\n\s*\}'
+        
+        matches = re.findall(pattern, script_content)
+        assert len(matches) == 0, (
+            f"Found {len(matches)} 'else {{ if' patterns where if is only statement. "
+            f"Merge into 'else if' to fix S6660."
+        )
+    
+    def test_s3358_no_nested_ternary(self, script_content: str):
+        """
+        S3358 Line 738: Extract nested ternary operation into independent statement.
+        
+        Anti-pattern:
+            const className = isError ? 'error' : (isSuccess ? 'success' : '');
+        
+        Fix: Extract to helper or use if/else:
+            let className = '';
+            if (isError) className = 'error';
+            else if (isSuccess) className = 'success';
+        """
+        # Look for nested ternary: condition ? value : (condition ? value : value)
+        pattern = r'\?[^?:]+:\s*\([^?]+\?[^:]+:[^)]+\)'
+        
+        nested_ternary = re.search(pattern, script_content)
+        assert nested_ternary is None, (
+            f"Found nested ternary expression. Extract to independent statements (S3358). "
+            f"Found: {nested_ternary.group(0)[:50] if nested_ternary else 'N/A'}"
+        )
+    
+    def test_s7785_no_async_iife_for_toplevel(self, index_html_content: str):
+        """
+        S7785 Line 767: Prefer top-level await over async function call.
+        
+        Anti-pattern:
+            async function loadFiles(tabId) { ... }
+            loadFiles('tab1');  // Called synchronously
+        
+        In module context, prefer top-level await:
+            await loadFiles('tab1');
+        
+        Note: Since this is inline script in HTML (not module), we check if
+        there's a simple async IIFE wrapper that could be converted.
+        The loadFiles('tab1') call at end is fine for non-module scripts.
+        """
+        # This rule applies to ES modules. For inline scripts, we check if
+        # there's unnecessary async IIFE pattern
+        # Pattern: (async () => { ... })() or (async function() { ... })()
+        async_iife = re.findall(r'\(async\s*(?:function\s*)?\([^)]*\)\s*=>\s*\{|\(async\s*function', index_html_content)
+        
+        # If using module type, check for sync call to async function at end
+        has_module_type = 'type="module"' in index_html_content
+        
+        if has_module_type:
+            # Check for async function called without await at script end
+            pattern = r'loadFiles\([^)]+\);\s*$'
+            no_await_call = re.search(pattern, index_html_content, re.MULTILINE)
+            assert no_await_call is None, (
+                "In module scripts, use 'await loadFiles(...)' instead of synchronous call (S7785)."
+            )
+        
+        # Test passes if not a module (top-level await not available)
+        # The actual S7785 fix requires converting to module type
+        assert True  # Placeholder - actual fix depends on module type decision

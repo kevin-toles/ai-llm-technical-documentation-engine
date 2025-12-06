@@ -329,10 +329,9 @@
                                 dropZone.appendChild(draggedElement);
                             }
                         }
-                    } else {
-                        if (draggedElement && draggedElement !== afterElement) {
-                            afterElement.before(draggedElement);
-                        }
+                    } else if (draggedElement && draggedElement !== afterElement) {
+                        // S6660 fix: Merged else-if to avoid if as only statement in else
+                        afterElement.before(draggedElement);
                     }
                 });
                 
@@ -735,7 +734,13 @@
                         status.progress.forEach(msg => {
                             const isError = msg.includes('✗');
                             const isSuccess = msg.includes('✓');
-                            const className = isError ? 'error' : (isSuccess ? 'success' : '');
+                            // S3358 fix: Extract nested ternary to if/else
+                            let className = '';
+                            if (isError) {
+                                className = 'error';
+                            } else if (isSuccess) {
+                                className = 'success';
+                            }
                             html += `<p class="${className}">${msg}</p>`;
                         });
                         html += '</div>';
