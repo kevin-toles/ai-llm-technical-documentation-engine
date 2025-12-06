@@ -171,6 +171,45 @@ def run_metadata_extraction(
         return False
 
 
+def _initialize_profile_result(profile_name: str, suffix: str) -> Dict[str, Any]:
+    """Initialize the result dictionary for a profile run."""
+    return {
+        "profile": profile_name,
+        "suffix": suffix,
+        "timestamp": datetime.now().isoformat(),
+        "validations": {},
+        "paths": {},
+        "success": False,
+    }
+
+
+def _setup_profile_paths(
+    book_name: str, suffix: str, eval_dir: Path
+) -> Dict[str, Path]:
+    """Set up all file paths for a profile run."""
+    return {
+        "metadata": eval_dir / f"{book_name}_metadata_{suffix}.json",
+        "taxonomy": eval_dir / f"{book_name}_{suffix}_taxonomy.json",
+        "enriched": eval_dir / f"{book_name}_enriched_{suffix}.json",
+        "aggregate": eval_dir / f"aggregate_{suffix}.json",
+    }
+
+
+def _apply_and_print_config(profile: Dict[str, Any]) -> None:
+    """Apply profile configuration and print settings."""
+    apply_profile_env_vars(profile)
+    
+    params = profile.get("parameters", {})
+    yake = params.get("yake", {})
+    custom = params.get("custom_dedup", {})
+    
+    print(f"  YAKE top_n: {yake.get('top_n')}")
+    print(f"  YAKE n: {yake.get('n')}")
+    print(f"  YAKE dedupLim: {yake.get('dedupLim')}")
+    print(f"  stem_dedup: {custom.get('stem_dedup_enabled')}")
+    print(f"  ngram_clean: {custom.get('ngram_clean_enabled')}")
+
+
 def run_profile_pipeline(profile_name: str) -> Dict[str, Any]:
     """
     Run the complete pipeline for a single profile.

@@ -203,7 +203,7 @@ def run_tab4_metadata_enrichment(book_name: str, taxonomy_path: Path, dry_run: b
     ]
     
     if dry_run:
-        print(f"  [DRY RUN] Would run Tab 4 enrichment")
+        print("  [DRY RUN] Would run Tab 4 enrichment")
         return True
     
     try:
@@ -247,7 +247,7 @@ def run_tab5_guideline_generation(book_name: str, taxonomy_path: Optional[Path] 
         cmd.extend(["--taxonomy", str(taxonomy_path)])
     
     if dry_run:
-        print(f"  [DRY RUN] Would run Tab 5 guideline generation")
+        print("  [DRY RUN] Would run Tab 5 guideline generation")
         return True
     
     try:
@@ -340,141 +340,189 @@ def print_stats(stats: PipelineStats, dry_run: bool) -> None:
     print(f"\n📚 Total books: {stats.total_books}")
     
     if stats.tab2_success + stats.tab2_failed > 0:
-        print(f"\n📋 Tab 2 (Metadata Extraction):")
+        print("\n📋 Tab 2 (Metadata Extraction):")
         print(f"   ✅ Success: {stats.tab2_success}")
         print(f"   ❌ Failed: {stats.tab2_failed}")
     
     if stats.tab4_success + stats.tab4_failed > 0:
-        print(f"\n🔗 Tab 4 (Metadata Enrichment):")
+        print("\n🔗 Tab 4 (Metadata Enrichment):")
         print(f"   ✅ Success: {stats.tab4_success}")
         print(f"   ❌ Failed: {stats.tab4_failed}")
     
     if stats.tab5_success + stats.tab5_failed > 0:
-        print(f"\n📖 Tab 5 (Guideline Generation):")
+        print("\n📖 Tab 5 (Guideline Generation):")
         print(f"   ✅ Success: {stats.tab5_success}")
         print(f"   ❌ Failed: {stats.tab5_failed}")
     
     print(f"\n⏱️  Total time: {stats.total_time_seconds:.1f}s ({stats.total_time_seconds/60:.1f} min)")
     
     if stats.errors:
-        print(f"\n⚠️  Errors:")
+        print("\n⚠️  Errors:")
         for err in stats.errors:
             print(f"   • {err}")
 
 
-def main():
+def _parse_arguments() -> argparse.Namespace:
+    """Set up and parse command-line arguments."""
     parser = argparse.ArgumentParser(
         description="Re-run pipeline to generate fresh outputs with updated code"
     )
     
     # Scope options
     parser.add_argument(
-        "--books",
-        nargs="+",
-        help="Specific books to process (default: all)"
+        "--books", nargs="+", help="Specific books to process (default: all)"
     )
     parser.add_argument(
-        "--limit",
-        type=int,
-        help="Maximum number of books to process"
+        "--limit", type=int, help="Maximum number of books to process"
     )
     
     # Tab selection
     parser.add_argument(
-        "--tab4-only",
-        action="store_true",
+        "--tab4-only", action="store_true",
         help="Only run Tab 4 enrichment (most common)"
     )
     parser.add_argument(
-        "--from-tab2",
-        action="store_true",
+        "--from-tab2", action="store_true",
         help="Run from Tab 2 onwards (metadata → enrichment → guidelines)"
     )
     parser.add_argument(
-        "--full",
-        action="store_true",
+        "--full", action="store_true",
         help="Run complete pipeline (Tab 2, 4, 5)"
     )
     
     # Options
     parser.add_argument(
-        "--dry-run",
-        action="store_true",
+        "--dry-run", action="store_true",
         help="Show what would be done without executing"
     )
     parser.add_argument(
-        "--backup",
-        action="store_true",
+        "--backup", action="store_true",
         help="Backup current outputs before re-running"
     )
     parser.add_argument(
-        "--output-report",
-        type=str,
+        "--output-report", type=str,
         help="Save execution report to JSON file"
     )
     parser.add_argument(
-        "--list-books",
-        action="store_true",
+        "--list-books", action="store_true",
         help="List available books and exit"
     )
     parser.add_argument(
-        "--taxonomy",
-        type=str,
-        help="Only process books in this taxonomy file (e.g., AI-ML_taxonomy_20251128.json)"
+        "--taxonomy", type=str,
+        help="Only process books in this taxonomy file"
     )
     
-    args = parser.parse_args()
-    
-    # List books and exit
-    if args.list_books:
-        books = get_all_books()
-        print(f"\n📚 Available books ({len(books)}):")
-        for book in books:
-            print(f"  • {book}")
-        return
-    
-    # Determine books to process
+    return parser.parse_args()
+
+
+def _list_available_books() -> None:
+    """Print list of available books and exit."""
+    books = get_all_books()
+    print(f"\n📚 Available books ({len(books)}):")
+    for book in books:
+        print(f"  • {book}")
+
+
+def _get_books_to_process(args: argparse.Namespace) -> Optional[List[str]]:
+    """Determine which books to process based on arguments."""
     if args.books:
         books = args.books
     elif args.taxonomy:
-        # Load books from specified taxonomy file
         taxonomy_dir = PROJECT_ROOT / "workflows" / "taxonomy_setup" / "output"
         taxonomy_file = taxonomy_dir / args.taxonomy
         if not taxonomy_file.exists():
-            # Try without directory prefix
             taxonomy_file = Path(args.taxonomy)
         books = get_books_from_taxonomy(taxonomy_file)
         if not books:
             print(f"❌ No books found in taxonomy: {args.taxonomy}")
-            return
+            return None
         print(f"\n📋 Using taxonomy: {args.taxonomy}")
     else:
         books = get_all_books()
     
     if args.limit:
         books = books[:args.limit]
+    return books
+
+
+def _print_run_config(
+    books: List[str], run_tab2: bool, run_tab5: bool, args: argparse.Namespace
+) -> None:
+    """Print pipeline configuration."""
+    print("\n" + "="*60)
+    print("🚀 FULL PIPELINE RE-RUN")
+    print("="*60)
+    print(f"\n📚 Books to process: {len(books)}")
+    print(f"📋 Tab 2 (Metadata): {'Yes' if run_tab2 else 'No'}")
+    print("🔗 Tab 4 (Enrichment): Yes - BERTopic + Sentence Transformers")
+    print(f"📖 Tab 5 (Guidelines): {'Yes' if run_tab5 else 'No'}")
+    print(f"💾 Backup: {'Yes' if args.backup else 'No'}")
+    print(f"🔍 Dry run: {'Yes' if args.dry_run else 'No'}")
+
+
+def _confirm_execution(args: argparse.Namespace) -> bool:
+    """Confirm execution with user if not dry run."""
+    if not args.dry_run:
+        print("\n⚠️  This will overwrite existing output files!")
+        response = input("Continue? [y/N]: ").strip().lower()
+        return response == 'y'
+    return True
+
+
+def _save_report(
+    args: argparse.Namespace,
+    stats: PipelineStats,
+    books: List[str],
+    run_tab2: bool,
+    run_tab4: bool,
+    run_tab5: bool
+) -> None:
+    """Save execution report to JSON file."""
+    if not args.output_report:
+        return
+    
+    report_path = Path(args.output_report)
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    
+    report = {
+        "generated": datetime.now().isoformat(),
+        "dry_run": args.dry_run,
+        "books_processed": books,
+        "tabs_run": {"tab2": run_tab2, "tab4": run_tab4, "tab5": run_tab5},
+        "stats": stats.to_dict()
+    }
+    
+    with open(report_path, 'w', encoding='utf-8') as f:
+        json.dump(report, f, indent=2)
+    print(f"\n📁 Report saved to: {report_path}")
+
+
+def main():
+    """Main entry point - orchestrates pipeline execution using helpers."""
+    args = _parse_arguments()
+    
+    # Handle list-books command
+    if args.list_books:
+        _list_available_books()
+        return
+    
+    # Get books to process
+    books = _get_books_to_process(args)
+    if books is None:
+        return
     
     # Determine which tabs to run
     run_tab2 = args.from_tab2 or args.full
     run_tab4 = True  # Always run Tab 4 (the main focus)
     run_tab5 = not args.tab4_only
     
-    print("\n" + "="*60)
-    print("🚀 FULL PIPELINE RE-RUN")
-    print("="*60)
-    print(f"\n📚 Books to process: {len(books)}")
-    print(f"📋 Tab 2 (Metadata): {'Yes' if run_tab2 else 'No'}")
-    print(f"🔗 Tab 4 (Enrichment): Yes - BERTopic + Sentence Transformers")
-    print(f"📖 Tab 5 (Guidelines): {'Yes' if run_tab5 else 'No'}")
-    print(f"💾 Backup: {'Yes' if args.backup else 'No'}")
-    print(f"🔍 Dry run: {'Yes' if args.dry_run else 'No'}")
+    # Print configuration
+    _print_run_config(books, run_tab2, run_tab5, args)
     
-    if not args.dry_run:
-        print("\n⚠️  This will overwrite existing output files!")
-        response = input("Continue? [y/N]: ").strip().lower()
-        if response != 'y':
-            print("Aborted.")
-            return
+    # Confirm execution
+    if not _confirm_execution(args):
+        print("Aborted.")
+        return
     
     # Run pipeline
     stats = run_pipeline(
@@ -486,29 +534,9 @@ def main():
         backup=args.backup
     )
     
-    # Print summary
+    # Print summary and save report
     print_stats(stats, args.dry_run)
-    
-    # Save report
-    if args.output_report:
-        report_path = Path(args.output_report)
-        report_path.parent.mkdir(parents=True, exist_ok=True)
-        
-        report = {
-            "generated": datetime.now().isoformat(),
-            "dry_run": args.dry_run,
-            "books_processed": books,
-            "tabs_run": {
-                "tab2": run_tab2,
-                "tab4": run_tab4,
-                "tab5": run_tab5
-            },
-            "stats": stats.to_dict()
-        }
-        
-        with open(report_path, 'w', encoding='utf-8') as f:
-            json.dump(report, f, indent=2)
-        print(f"\n📁 Report saved to: {report_path}")
+    _save_report(args, stats, books, run_tab2, run_tab4, run_tab5)
 
 
 if __name__ == "__main__":

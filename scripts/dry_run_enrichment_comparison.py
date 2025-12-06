@@ -118,8 +118,9 @@ def calculate_overlap(list1: List[Any], list2: List[Any]) -> float:
             return item.get("term", str(item)).lower()
         return str(item).lower()
     
-    set1 = set(normalize(x) for x in list1)
-    set2 = set(normalize(x) for x in list2)
+    # S7494: Use set comprehension instead of set() constructor
+    set1 = {normalize(x) for x in list1}
+    set2 = {normalize(x) for x in list2}
     
     intersection = len(set1 & set2)
     union = len(set1 | set2)
@@ -257,27 +258,27 @@ def print_comparison_report(metrics: ComparisonMetrics) -> None:
     
     print(f"\n📚 Chapters: {metrics.original_chapters} → {metrics.new_chapters}")
     
-    print(f"\n🏷️  TOPIC CLUSTERING (NEW FEATURE)")
+    print("\n🏷️  TOPIC CLUSTERING (NEW FEATURE)")
     print(f"   • Topics assigned: {metrics.topic_ids_added} chapters")
     print(f"   • Unique topics: {metrics.unique_topics}")
     print(f"   • Coverage: {metrics.topic_coverage*100:.1f}%")
     
-    print(f"\n🔗 RELATED CHAPTERS")
+    print("\n🔗 RELATED CHAPTERS")
     print(f"   • Original avg: {metrics.orig_avg_related:.2f}")
     print(f"   • New avg: {metrics.new_avg_related:.2f}")
     print(f"   • Change: {'+' if metrics.related_chapters_diff > 0 else ''}{metrics.related_chapters_diff:.2f}")
     
-    print(f"\n🔑 KEYWORDS ENRICHED")
+    print("\n🔑 KEYWORDS ENRICHED")
     print(f"   • Original avg: {metrics.orig_avg_keywords:.2f}")
     print(f"   • New avg: {metrics.new_avg_keywords:.2f}")
     print(f"   • Overlap: {metrics.keyword_overlap*100:.1f}%")
     
-    print(f"\n💡 CONCEPTS ENRICHED")
+    print("\n💡 CONCEPTS ENRICHED")
     print(f"   • Original avg: {metrics.orig_avg_concepts:.2f}")
     print(f"   • New avg: {metrics.new_avg_concepts:.2f}")
     print(f"   • Overlap: {metrics.concept_overlap*100:.1f}%")
     
-    print(f"\n⚙️  ENRICHMENT DETAILS")
+    print("\n⚙️  ENRICHMENT DETAILS")
     print(f"   • Method: {metrics.enrichment_method}")
     print(f"   • Libraries: {', '.join(f'{k}={v}' for k, v in metrics.libraries_used.items())}")
     print(f"   • Processing time: {metrics.processing_time_seconds:.2f}s")
@@ -314,7 +315,14 @@ def get_available_books() -> List[str]:
     return sorted(books)
 
 
-def main():
+# =============================================================================
+# S3776 Helper Functions - Extract Method Pattern
+# Reference: CODING_PATTERNS_ANALYSIS.md Category 2
+# =============================================================================
+
+
+def _parse_arguments() -> argparse.Namespace:
+    """Parse command-line arguments. Extracted from main() for S3776."""
     parser = argparse.ArgumentParser(
         description="Compare current vs new enrichment outputs"
     )
@@ -344,18 +352,100 @@ def main():
         action="store_true",
         help="List available books and exit"
     )
+    return parser.parse_args()
+
+
+def _list_available_books() -> None:
+    """List available books and exit. Extracted from main() for S3776."""
+    books = get_available_books()
+    print(f"\n📚 Available books for comparison ({len(books)}):")
+    for book in books:
+        print(f"  • {book}")
+
+
+def _process_book(book_name: str, enriched_dir: Path) -> Optional[Dict[str, Any]]:
+    """
+    Process a single book comparison.
+    Extracted from main() for S3776.
     
-    args = parser.parse_args()
+    Returns metrics dict or None if processing failed.
+    """
+    print(f"\n{'─'*60}")
+    print(f"📖 Processing: {book_name}")
+    print(f"{'─'*60}")
+    
+    # Load original enriched output
+    original_path = enriched_dir / f"{book_name}_enriched.json"
+    original = load_enriched_file(original_path)
+    
+    if not original:
+        return None
+    
+    # Run new enrichment to temp file
+    with tempfile.NamedTemporaryFile(suffix=".json", delete=False) as tmp:
+        temp_output = Path(tmp.name)
+    
+    try:
+        new_output, processing_time = run_enrichment(book_name, temp_output)
+        
+        if new_output:
+            metrics = compare_enriched_outputs(
+                original, new_output, book_name, processing_time
+            )
+            print_comparison_report(metrics)
+            return metrics.to_dict()
+        return None
+    finally:
+        if temp_output.exists():
+            temp_output.unlink()
+
+
+def _print_summary(all_metrics: List[Dict[str, Any]]) -> None:
+    """Print summary of all book comparisons. Extracted from main() for S3776."""
+    if len(all_metrics) <= 1:
+        return
+    
+    print(f"\n{'='*60}")
+    print("📊 SUMMARY")
+    print(f"{'='*60}")
+    
+    total_topics = sum(m["topic_clustering"]["topic_ids_added"] for m in all_metrics)
+    avg_coverage = sum(m["topic_clustering"]["coverage_pct"] for m in all_metrics) / len(all_metrics)
+    avg_kw_overlap = sum(m["keywords"]["overlap_pct"] for m in all_metrics) / len(all_metrics)
+    avg_concept_overlap = sum(m["concepts"]["overlap_pct"] for m in all_metrics) / len(all_metrics)
+    
+    print(f"\n✅ Books analyzed: {len(all_metrics)}")
+    print(f"✅ Total topics assigned: {total_topics}")
+    print(f"✅ Average topic coverage: {avg_coverage:.1f}%")
+    print(f"✅ Average keyword overlap: {avg_kw_overlap:.1f}%")
+    print(f"✅ Average concept overlap: {avg_concept_overlap:.1f}%")
+
+
+def _save_report(output_path: str, all_metrics: List[Dict[str, Any]]) -> None:
+    """Save comparison report to JSON. Extracted from main() for S3776."""
+    report_path = Path(output_path)
+    report = {
+        "generated": datetime.now().isoformat(),
+        "description": "Dry run comparison: Current vs BERTopic/Sentence Transformers enrichment",
+        "books_analyzed": len(all_metrics),
+        "comparisons": all_metrics
+    }
+    with open(report_path, 'w', encoding='utf-8') as f:
+        json.dump(report, f, indent=2)
+    print(f"\n📁 Report saved to: {report_path}")
+
+
+def main():
+    """Main entry point - refactored per S3776 to use helper functions."""
+    args = _parse_arguments()
     
     if args.list_books:
-        books = get_available_books()
-        print(f"\n📚 Available books for comparison ({len(books)}):")
-        for book in books:
-            print(f"  • {book}")
+        _list_available_books()
         return
     
     if not args.book and not args.all:
-        parser.error("Either --book or --all must be specified")
+        print("Error: Either --book or --all must be specified")
+        return
     
     print("\n" + "="*60)
     print("🔬 DRY RUN: Enrichment Comparison")
@@ -373,64 +463,15 @@ def main():
     all_metrics = []
     
     for book_name in books:
-        print(f"\n{'─'*60}")
-        print(f"📖 Processing: {book_name}")
-        print(f"{'─'*60}")
-        
-        # Load original enriched output
-        original_path = enriched_dir / f"{book_name}_enriched.json"
-        original = load_enriched_file(original_path)
-        
-        if not original:
-            continue
-        
-        # Run new enrichment to temp file
-        with tempfile.NamedTemporaryFile(suffix=".json", delete=False) as tmp:
-            temp_output = Path(tmp.name)
-        
-        try:
-            new_output, processing_time = run_enrichment(book_name, temp_output)
-            
-            if new_output:
-                metrics = compare_enriched_outputs(
-                    original, new_output, book_name, processing_time
-                )
-                print_comparison_report(metrics)
-                all_metrics.append(metrics.to_dict())
-            
-        finally:
-            if temp_output.exists():
-                temp_output.unlink()
+        metrics = _process_book(book_name, enriched_dir)
+        if metrics:
+            all_metrics.append(metrics)
     
-    # Summary
-    if len(all_metrics) > 1:
-        print(f"\n{'='*60}")
-        print("📊 SUMMARY")
-        print(f"{'='*60}")
-        
-        total_topics = sum(m["topic_clustering"]["topic_ids_added"] for m in all_metrics)
-        avg_coverage = sum(m["topic_clustering"]["coverage_pct"] for m in all_metrics) / len(all_metrics)
-        avg_kw_overlap = sum(m["keywords"]["overlap_pct"] for m in all_metrics) / len(all_metrics)
-        avg_concept_overlap = sum(m["concepts"]["overlap_pct"] for m in all_metrics) / len(all_metrics)
-        
-        print(f"\n✅ Books analyzed: {len(all_metrics)}")
-        print(f"✅ Total topics assigned: {total_topics}")
-        print(f"✅ Average topic coverage: {avg_coverage:.1f}%")
-        print(f"✅ Average keyword overlap: {avg_kw_overlap:.1f}%")
-        print(f"✅ Average concept overlap: {avg_concept_overlap:.1f}%")
+    # Summary and report
+    _print_summary(all_metrics)
     
-    # Save report if requested
     if args.output_report:
-        report_path = Path(args.output_report)
-        report = {
-            "generated": datetime.now().isoformat(),
-            "description": "Dry run comparison: Current vs BERTopic/Sentence Transformers enrichment",
-            "books_analyzed": len(all_metrics),
-            "comparisons": all_metrics
-        }
-        with open(report_path, 'w', encoding='utf-8') as f:
-            json.dump(report, f, indent=2)
-        print(f"\n📁 Report saved to: {report_path}")
+        _save_report(args.output_report, all_metrics)
 
 
 if __name__ == "__main__":

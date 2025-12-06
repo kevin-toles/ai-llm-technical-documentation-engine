@@ -82,45 +82,41 @@ class PDFConversionValidator:
     
     MIN_PAGES_WITH_CONTENT = 5  # Expect at least 5 pages with actual content
     MIN_CONTENT_PER_PAGE = 100  # Minimum chars for a page to count as having content
-    
+
     @staticmethod
-    def validate(source_pdf: Path, output_json: Path) -> ValidationResult:
-        """Validate PDF conversion output."""
-        result = ValidationResult()
-        
-        # Check output exists
+    def _validate_file_and_load(output_json: Path, result: ValidationResult) -> Optional[dict]:
+        """Validate file exists and load JSON data."""
         if not output_json.exists():
             result.add_error(f"Output JSON not created: {output_json.name}")
-            return result
+            return None
         
         result.add_info(f"Output file exists: {output_json.name}")
         
-        # Load and validate JSON
         try:
             with open(output_json) as f:
-                data = json.load(f)
+                return json.load(f)
         except json.JSONDecodeError as e:
             result.add_error(f"Invalid JSON: {e}")
-            return result
-        
-        # Required fields
+            return None
+
+    @staticmethod
+    def _validate_required_fields(data: dict, result: ValidationResult) -> bool:
+        """Validate required fields are present."""
         required_fields = ["pages", "chapters", "metadata"]
         for field in required_fields:
             if field not in data:
                 result.add_error(f"Missing required field: '{field}'")
-        
-        if result.errors:
-            return result
-        
-        # Validate pages
-        pages = data.get("pages", [])
+        return not result.errors
+
+    @staticmethod
+    def _validate_pages(pages: List[dict], result: ValidationResult) -> None:
+        """Validate page content."""
         if not pages:
             result.add_error("No pages extracted from PDF")
-            return result
+            return
         
         result.add_info(f"Pages extracted: {len(pages)}")
         
-        # Check page content
         pages_with_content = 0
         empty_pages = []
         
@@ -143,22 +139,43 @@ class PDFConversionValidator:
         
         if len(empty_pages) > len(pages) * 0.5:
             result.add_warning(f"High proportion of empty pages: {len(empty_pages)}/{len(pages)}")
-        
-        # Validate chapters
-        chapters = data.get("chapters", [])
+
+    @staticmethod
+    def _validate_chapters(chapters: List[dict], result: ValidationResult) -> None:
+        """Validate chapter structure."""
         if not chapters:
             result.add_error("No chapters detected")
-        else:
-            result.add_info(f"Chapters detected: {len(chapters)}")
-            
-            # Validate chapter structure
-            for ch in chapters:
-                required_ch_fields = ["number", "title", "start_page", "end_page"]
-                missing = [f for f in required_ch_fields if f not in ch]
-                if missing:
-                    result.add_warning(
-                        f"Chapter {ch.get('number', '?')} missing fields: {missing}"
-                    )
+            return
+        
+        result.add_info(f"Chapters detected: {len(chapters)}")
+        
+        for ch in chapters:
+            required_ch_fields = ["number", "title", "start_page", "end_page"]
+            missing = [f for f in required_ch_fields if f not in ch]
+            if missing:
+                result.add_warning(f"Chapter {ch.get('number', '?')} missing fields: {missing}")
+    
+    @staticmethod
+    def validate(source_pdf: Path, output_json: Path) -> ValidationResult:
+        """Validate PDF conversion output using helper methods."""
+        result = ValidationResult()
+        
+        # Load and validate file
+        data = PDFConversionValidator._validate_file_and_load(output_json, result)
+        if data is None:
+            return result
+        
+        # Check required fields
+        if not PDFConversionValidator._validate_required_fields(data, result):
+            return result
+        
+        # Validate pages
+        PDFConversionValidator._validate_pages(data.get("pages", []), result)
+        if result.errors:
+            return result
+        
+        # Validate chapters
+        PDFConversionValidator._validate_chapters(data.get("chapters", []), result)
         
         # Validate metadata
         metadata = data.get("metadata", {})
