@@ -2,9 +2,9 @@
 **Workflows Directory - Git History Analysis**
 
 **Generated**: November 26, 2025  
-**Updated**: December 4, 2025 (Cognitive Complexity Refactoring)  
-**Repository**: ai-llm-technical-documentation-engine, llm-gateway  
-**Analysis Scope**: workflows/ directory (21 commits, ~222 issues), llm-gateway/src (46 issues fixed via CodeRabbit/SonarQube/TDD)  
+**Updated**: December 5, 2025 (JavaScript Global Object & DOM Patterns)  
+**Repository**: ai-llm-technical-documentation-engine, llm-gateway, llm-document-enhancer  
+**Analysis Scope**: workflows/ directory (21 commits, ~222 issues), llm-gateway/src (52 issues fixed via CodeRabbit/SonarQube/TDD), llm-document-enhancer/ui (28 issues fixed)  
 **Time Period**: June 2024 - December 2025
 
 ---
@@ -32,7 +32,22 @@ This document analyzes 21 fix/refactor commits from git history to identify **re
 | **Empty F-Strings** | 2 | <1% | SonarQube | ✅ Resolved (Dec 5) |
 | **Duplicated Literals** | 1 | <1% | SonarQube | ✅ Resolved (Dec 5) |
 | **Unused Variables** | 2 | <1% | SonarQube | ✅ Resolved (Dec 5) |
-| **Total** | **227 → 220** | **100%** | - | - |
+| **JavaScript Global Access** | 23 | NEW | SonarQube | ✅ Resolved (Dec 5) |
+| **DOM Manipulation** | 2 | NEW | SonarQube | ✅ Resolved (Dec 5) |
+| **Total** | **252 → 220** | **100%** | - | - |
+
+### December 5, 2025: SonarQube Batch 7 Fixes (llm-document-enhancer)
+
+**TDD-driven fixes** of 28 SonarQube code smells in `ui/templates/index.html`:
+
+| Issue Range | Rule | Count | Fix Applied |
+|-------------|------|-------|-------------|
+| 1-23 | S7764 | 23 | `window.X` → `globalThis.X` |
+| 24-25 | S7768 | 2 | `insertBefore` → `element.before()` |
+| 26 | S7784 | 1 | `JSON.parse(JSON.stringify())` → `structuredClone()` |
+| 27-28 | S1481/S1854 | 2 | Remove unused `containerId` variable |
+
+**SonarQube Result**: index.html 33 → 5 issues. Total: 150 → 122 issues.
 
 ### December 5, 2025: SonarQube Batch 6 Fixes (llm-gateway)
 
@@ -2206,6 +2221,117 @@ history_count = 0
 
 ---
 
+## Category 17: JavaScript Global Object Access (NEW - December 2025 SonarQube Batch 7)
+
+### Anti-Pattern 17.1: Using `window` for Global State
+
+**Pre-Fix Anti-Pattern** (from llm-document-enhancer SonarQube scan):
+```javascript
+// ui/templates/index.html - Multiple lines
+window.llmProviders = data.llm_providers;
+
+if (!window.tierState) window.tierState = {};
+if (!window.tierState[tabId]) {
+    window.tierState[tabId] = {
+        architecture: [],
+        implementation: [],
+        practices: []
+    };
+}
+
+// Deep copy using JSON
+const copy = JSON.parse(JSON.stringify(window.tierState[tabId]));
+```
+
+**Issue Type**: SonarQube MINOR - `Prefer 'globalThis' over 'window'` (javascript:S7764)
+
+**Post-Fix Pattern**:
+```javascript
+// Use globalThis instead of window for ES2020+ compatibility
+globalThis.llmProviders = data.llm_providers;
+
+if (!globalThis.tierState) globalThis.tierState = {};
+if (!globalThis.tierState[tabId]) {
+    globalThis.tierState[tabId] = {
+        architecture: [],
+        implementation: [],
+        practices: []
+    };
+}
+
+// Use structuredClone for deep copy (ES2021+)
+const copy = structuredClone(globalThis.tierState[tabId]);
+```
+
+**Root Cause**:
+- **Legacy patterns** - `window` was the traditional way to access global scope
+- **Browser-only assumption** - code assumes browser environment
+- **Copy patterns** - JSON.parse/stringify is outdated for deep cloning
+
+**Prevention Strategy**:
+1. **Use `globalThis`** - works in browsers, Node.js, Web Workers, and Deno
+2. **Use `structuredClone()`** - modern deep copy API (replaces JSON round-trip)
+3. **ESLint rule** - `no-restricted-globals` can flag `window` usage
+4. **SonarQube** - S7764 flags `window` usage for global access
+
+---
+
+## Category 18: DOM Manipulation Methods (NEW - December 2025 SonarQube Batch 7)
+
+### Anti-Pattern 18.1: Using `insertBefore` for DOM Insertion
+
+**Pre-Fix Anti-Pattern** (from llm-document-enhancer SonarQube scan):
+```javascript
+// ui/templates/index.html:328, 335
+const emptyMsg = dropZone.querySelector('.empty-tier');
+if (emptyMsg) {
+    dropZone.insertBefore(draggedElement, emptyMsg);
+} else {
+    dropZone.appendChild(draggedElement);
+}
+
+// Also problematic:
+dropZone.insertBefore(draggedElement, afterElement);
+```
+
+**Issue Type**: SonarQube MINOR - `Prefer 'emptyMsg.before(draggedElement)' over 'dropZone.insertBefore(draggedElement, emptyMsg)'` (javascript:S7768)
+
+**Post-Fix Pattern**:
+```javascript
+// Use element.before() method (ES2016+)
+const emptyMsg = dropZone.querySelector('.empty-tier');
+if (emptyMsg) {
+    emptyMsg.before(draggedElement);
+} else {
+    dropZone.appendChild(draggedElement);
+}
+
+// Cleaner and more intuitive:
+afterElement.before(draggedElement);
+```
+
+**Root Cause**:
+- **Legacy API familiarity** - `insertBefore` is older, more widely known
+- **Documentation examples** - many tutorials still use old methods
+- **Refactoring debt** - old code not updated when modern APIs available
+
+**Prevention Strategy**:
+1. **Use `element.before()`** - insert node before reference element
+2. **Use `element.after()`** - insert node after reference element
+3. **Use `element.prepend()`** - insert at beginning of parent
+4. **Use `element.append()`** - insert at end of parent (replaces `appendChild`)
+5. **SonarQube** - S7768 flags `insertBefore` when `before()` is preferred
+
+**Modern DOM Insertion API Summary**:
+| Old Method | Modern Method | Usage |
+|------------|---------------|-------|
+| `parent.insertBefore(node, ref)` | `ref.before(node)` | Insert before element |
+| `parent.appendChild(node)` | `parent.append(node)` | Append to end |
+| `parent.insertBefore(node, first)` | `parent.prepend(node)` | Prepend to start |
+| `ref.nextSibling ? parent.insertBefore(node, ref.next) : parent.appendChild(node)` | `ref.after(node)` | Insert after element |
+
+---
+
 ## Prevention Checklist
 
 ### Pre-Commit Checks
@@ -2807,7 +2933,7 @@ pre-commit install
 
 ## Conclusion
 
-This analysis of 30+ commits fixing 286 issues across `workflows/` and `llm-gateway/src` directories reveals **13 major anti-pattern categories**:
+This analysis of 30+ commits fixing 314 issues across `workflows/`, `llm-gateway/src`, and `llm-document-enhancer/ui` directories reveals **18 major anti-pattern categories**:
 
 1. **Type Annotation Issues** (28%) - Missing Optional, no type guards
 2. **Cognitive Complexity** (22%) - Functions doing too much
@@ -2825,6 +2951,8 @@ This analysis of 30+ commits fixing 286 issues across `workflows/` and `llm-gate
 14. **Empty F-Strings** (NEW) - F-string without placeholders
 15. **Duplicated Literals** (NEW) - Magic strings repeated 3+ times
 16. **Unused Variables** (NEW) - Assigned but never used local variables
+17. **JavaScript Global Access** (NEW) - `window` instead of `globalThis`
+18. **DOM Manipulation** (NEW) - `insertBefore` instead of `element.before()`
 
 **Key Takeaways**:
 - **Mypy catches 30%** of issues - run it locally before commit
@@ -2835,6 +2963,7 @@ This analysis of 30+ commits fixing 286 issues across `workflows/` and `llm-gate
 - **Tool synergy** - Mypy + SonarQube + CodeRabbit + Bandit + Ruff = comprehensive coverage
 - **NOSONAR for intentional patterns** - document async stubs that will be implemented later
 - **TDD for providers** - 26 tests drove AnthropicProvider implementation
+- **JavaScript modernization** - `globalThis` and modern DOM APIs improve cross-platform compatibility
 
 **New Patterns Discovered (December 2025 CodeRabbit)**:
 - **Race conditions in async code** - Use asyncio.Lock() for shared mutable state
@@ -2842,6 +2971,11 @@ This analysis of 30+ commits fixing 286 issues across `workflows/` and `llm-gate
 - **K8s env var prefix mismatch** - Match Helm env vars to pydantic Settings prefix
 - **Redis non-atomic operations** - Use HINCRBY/HINCRBYFLOAT instead of GET/SET
 - **Provider abstraction gaps** - TDD to ensure all providers implement interface
+
+**New Patterns Discovered (December 2025 SonarQube Batch 7)**:
+- **JavaScript global scope** - Use `globalThis` instead of `window` for ES2020+ compatibility
+- **DOM insertion** - Use modern `element.before()`, `after()`, `prepend()`, `append()` APIs
+- **Deep cloning** - Use `structuredClone()` instead of `JSON.parse(JSON.stringify())`
 
 **New Patterns Discovered (December 2025 SonarQube Batch 6)**:
 - **Empty f-strings** - Remove f-prefix when no placeholders used

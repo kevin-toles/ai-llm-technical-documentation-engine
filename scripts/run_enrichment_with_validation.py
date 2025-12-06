@@ -179,7 +179,7 @@ def validate_enrichment(book_name: str) -> List[ValidationResult]:
     # Check topic_id (NEW FEATURE)
     chapters_with_topic = [ch for ch in chapters if ch.get("topic_id") is not None]
     topic_coverage = len(chapters_with_topic) / len(chapters) * 100
-    unique_topics = len(set(ch.get("topic_id") for ch in chapters_with_topic))
+    unique_topics = len({ch.get("topic_id") for ch in chapters_with_topic})
     
     results.append(ValidationResult(
         passed=topic_coverage > 0,
@@ -293,6 +293,33 @@ def validate_guideline(book_name: str) -> List[ValidationResult]:
 # COMPARISON FUNCTIONS
 # =============================================================================
 
+def _determine_change_status(new_val: float, backup_val: float, threshold: float = 0.0) -> str:
+    """
+    Determine change status comparing new vs backup values.
+    
+    Extracted from nested ternary to improve readability (SonarQube S3358).
+    
+    Args:
+        new_val: New value to compare
+        backup_val: Backup/baseline value
+        threshold: Tolerance for "same" determination (default 0.0 for exact match)
+    
+    Returns:
+        "improved", "same", or "degraded"
+    """
+    if threshold > 0:
+        if abs(new_val - backup_val) < threshold:
+            return "same"
+        return "improved" if new_val > backup_val else "degraded"
+    else:
+        if new_val > backup_val:
+            return "improved"
+        elif new_val == backup_val:
+            return "same"
+        else:
+            return "degraded"
+
+
 def compare_enrichments(book_name: str, backup_dir: Path) -> List[ComparisonResult]:
     """Compare new enrichment with backup."""
     results = []
@@ -327,7 +354,7 @@ def compare_enrichments(book_name: str, backup_dir: Path) -> List[ComparisonResu
         field="topic_id_count",
         backup_value=backup_topics,
         new_value=new_topics,
-        change="improved" if new_topics > backup_topics else ("same" if new_topics == backup_topics else "degraded")
+        change=_determine_change_status(new_topics, backup_topics)
     ))
     
     # Compare related chapters
@@ -337,7 +364,7 @@ def compare_enrichments(book_name: str, backup_dir: Path) -> List[ComparisonResu
         field="avg_related_chapters",
         backup_value=round(backup_related, 2),
         new_value=round(new_related, 2),
-        change="improved" if new_related > backup_related else ("same" if abs(new_related - backup_related) < 0.1 else "degraded")
+        change=_determine_change_status(new_related, backup_related, threshold=0.1)
     ))
     
     # Compare keywords
@@ -347,7 +374,7 @@ def compare_enrichments(book_name: str, backup_dir: Path) -> List[ComparisonResu
         field="avg_keywords_enriched",
         backup_value=round(backup_kw, 2),
         new_value=round(new_kw, 2),
-        change="same" if abs(new_kw - backup_kw) < 0.5 else ("improved" if new_kw > backup_kw else "degraded")
+        change=_determine_change_status(new_kw, backup_kw, threshold=0.5)
     ))
     
     return results
@@ -440,7 +467,7 @@ def print_validation_results(results: List[ValidationResult], title: str) -> int
 
 def print_comparison_results(results: List[ComparisonResult]) -> None:
     """Print comparison results."""
-    print(f"\n  📊 Comparison with Backup")
+    print("\n  📊 Comparison with Backup")
     print(f"  {'─'*50}")
     
     for r in results:
@@ -478,7 +505,7 @@ def main():
     book_name = args.book
     
     print("\n" + "="*60)
-    print(f"🔬 ENRICHMENT WITH VALIDATION")
+    print("🔬 ENRICHMENT WITH VALIDATION")
     print(f"   Book: {book_name}")
     print("="*60)
     
@@ -496,20 +523,21 @@ def main():
     
     if args.dry_run:
         print("\n⚠️  DRY RUN - No changes will be made")
-        print(f"\nWould run:")
-        print(f"  • Tab 4: Metadata Enrichment with BERTopic + Sentence Transformers")
+        print("\nWould run:")
+        print("  • Tab 4: Metadata Enrichment with BERTopic + Sentence Transformers")
         if not args.skip_tab5:
-            print(f"  • Tab 5: Guideline Generation")
-        print(f"\nWould validate:")
-        print(f"  • Enrichment: topic_id, related_chapters, keywords, concepts")
-        print(f"  • Guideline: JSON structure, sections, cross-references")
-        print(f"\nWould compare:")
-        print(f"  • New output vs backup (if exists)")
+            print("  • Tab 5: Guideline Generation")
+        print("\nWould validate:")
+        print("  • Enrichment: topic_id, related_chapters, keywords, concepts")
+        print("  • Guideline: JSON structure, sections, cross-references")
+        print("\nWould compare:")
+        print("  • New output vs backup (if exists)")
         return 0
     
     # Backup current outputs
     print("\n📦 Backing up current outputs...")
-    backup_dir = backup_current_outputs(book_name)
+    # NOTE: backup_dir returned for potential future use; prefixed per S1481
+    _backup_dir = backup_current_outputs(book_name)  # noqa: F841
     
     # Run Tab 4
     print(f"\n{'─'*60}")

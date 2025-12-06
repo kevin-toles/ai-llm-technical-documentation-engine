@@ -145,7 +145,7 @@
                     `;
                     
                     // Store provider data for model selection
-                    window.llmProviders = data.llm_providers;
+                    globalThis.llmProviders = data.llm_providers;
                 }
                 // Special handling for Metadata Enrichment tab (tab4) - requires taxonomy selection
                 else if (tabId === 'tab4' && data.taxonomy_files) {
@@ -247,12 +247,12 @@
         function updateModelList(tabId, providerId) {
             const modelSelect = document.getElementById(`${tabId}-model`);
             
-            if (!providerId || !window.llmProviders || !window.llmProviders[providerId]) {
+            if (!providerId || !globalThis.llmProviders || !globalThis.llmProviders[providerId]) {
                 modelSelect.innerHTML = '<option value="">-- Select Provider First --</option>';
                 return;
             }
             
-            const provider = window.llmProviders[providerId];
+            const provider = globalThis.llmProviders[providerId];
             modelSelect.innerHTML = `
                 <option value="">-- Select Model --</option>
                 ${provider.models.map(model => {
@@ -268,19 +268,18 @@
         // Initialize tier builder with Trello-style drag & drop
         function initTierBuilder(tabId, allFiles) {
             let draggedElement = null;
-            const containerId = `${tabId}-pool`;
             
             // Initialize state tracking for this tab
-            if (!window.tierState) window.tierState = {};
-            if (!window.tierState[tabId]) {
-                window.tierState[tabId] = {
+            if (!globalThis.tierState) globalThis.tierState = {};
+            if (!globalThis.tierState[tabId]) {
+                globalThis.tierState[tabId] = {
                     architecture: [],
                     implementation: [],
                     practices: []
                 };
             }
             
-            console.log(`[TIER-INIT] Initialized state for ${tabId}:`, window.tierState[tabId]);
+            console.log(`[TIER-INIT] Initialized state for ${tabId}:`, globalThis.tierState[tabId]);
             
             // Get tab container for scoped event listeners
             const tierTabContainer = document.getElementById(tabId);
@@ -325,14 +324,14 @@
                         const emptyMsg = dropZone.querySelector('.empty-tier');
                         if (draggedElement && draggedElement !== afterElement) {
                             if (emptyMsg) {
-                                dropZone.insertBefore(draggedElement, emptyMsg);
+                                emptyMsg.before(draggedElement);
                             } else {
                                 dropZone.appendChild(draggedElement);
                             }
                         }
                     } else {
                         if (draggedElement && draggedElement !== afterElement) {
-                            dropZone.insertBefore(draggedElement, afterElement);
+                            afterElement.before(draggedElement);
                         }
                     }
                 });
@@ -359,19 +358,19 @@
                     console.log(`Moving "${file}" from ${fromTier} to ${toTier}`);
                     
                     // Update state tracking
-                    if (fromTier !== 'pool' && window.tierState[tabId]) {
-                        const fromArray = window.tierState[tabId][fromTier];
+                    if (fromTier !== 'pool' && globalThis.tierState[tabId]) {
+                        const fromArray = globalThis.tierState[tabId][fromTier];
                         if (fromArray) {
                             const index = fromArray.indexOf(file);
                             if (index > -1) fromArray.splice(index, 1);
                         }
                     }
                     
-                    if (toTier !== 'pool' && window.tierState[tabId]) {
-                        const toArray = window.tierState[tabId][toTier];
+                    if (toTier !== 'pool' && globalThis.tierState[tabId]) {
+                        const toArray = globalThis.tierState[tabId][toTier];
                         if (toArray && !toArray.includes(file)) {
                             toArray.push(file);
-                            console.log(`[STATE-UPDATE] Added "${file}" to ${toTier}. State:`, window.tierState[tabId]);
+                            console.log(`[STATE-UPDATE] Added "${file}" to ${toTier}. State:`, globalThis.tierState[tabId]);
                         }
                     }
                     
@@ -438,8 +437,8 @@
             const tier = tierList.dataset.tier;
             
             // Update state tracking
-            if (tier && window.tierState && window.tierState[tabId]) {
-                const tierArray = window.tierState[tabId][tier];
+            if (tier && globalThis.tierState && globalThis.tierState[tabId]) {
+                const tierArray = globalThis.tierState[tabId][tier];
                 if (tierArray) {
                     const index = tierArray.indexOf(file);
                     if (index > -1) tierArray.splice(index, 1);
@@ -497,8 +496,8 @@
             const pool = document.getElementById(`${tabId}-pool`);
             if (pool) {
                 // Reset state
-                if (window.tierState && window.tierState[tabId]) {
-                    window.tierState[tabId] = {
+                if (globalThis.tierState && globalThis.tierState[tabId]) {
+                    globalThis.tierState[tabId] = {
                         architecture: [],
                         implementation: [],
                         practices: []
@@ -587,8 +586,8 @@
                     }
                     
                     // Get tier data from state (no DOM scraping!)
-                    tierData = window.tierState && window.tierState[tabId] ? 
-                               JSON.parse(JSON.stringify(window.tierState[tabId])) : 
+                    tierData = globalThis.tierState && globalThis.tierState[tabId] ? 
+                               structuredClone(globalThis.tierState[tabId]) : 
                                {architecture: [], implementation: [], practices: []};
                     
                     console.log('Tier data from state:', tierData);

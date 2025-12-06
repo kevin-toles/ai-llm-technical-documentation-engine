@@ -389,7 +389,7 @@ def print_comparison_report(comparison: PipelineComparison) -> None:
     
     # Tab 1: PDF Extraction
     t1 = comparison.tab1
-    print(f"\n📄 TAB 1: PDF to JSON Extraction")
+    print("\n📄 TAB 1: PDF to JSON Extraction")
     if t1 and t1.json_file_exists:
         print(f"   ✅ JSON file: {t1.json_file_size_kb:.1f} KB")
         print(f"   • Total pages: {t1.total_pages}")
@@ -397,13 +397,13 @@ def print_comparison_report(comparison: PipelineComparison) -> None:
         print(f"   • Has TOC: {'Yes' if t1.has_toc else 'No'}")
         print(f"   • Extraction method: {t1.extraction_method}")
     else:
-        print(f"   ⚠️  JSON file not found")
+        print("   ⚠️  JSON file not found")
     
     # Tab 2: Metadata Extraction
     t2 = comparison.tab2
-    print(f"\n📋 TAB 2: Metadata Extraction")
+    print("\n📋 TAB 2: Metadata Extraction")
     if t2 and t2.metadata_file_exists:
-        print(f"   ✅ Metadata file exists")
+        print("   ✅ Metadata file exists")
         print(f"   • Chapters: {t2.chapter_count}")
         print(f"   • Avg keywords/chapter: {t2.avg_keywords_per_chapter:.1f}")
         print(f"   • Avg concepts/chapter: {t2.avg_concepts_per_chapter:.1f}")
@@ -411,23 +411,23 @@ def print_comparison_report(comparison: PipelineComparison) -> None:
         print(f"   • Has page ranges: {'Yes' if t2.has_page_ranges else 'No'}")
         print(f"   • Method: {t2.extraction_method}")
     else:
-        print(f"   ⚠️  Metadata file not found")
+        print("   ⚠️  Metadata file not found")
     
     # Tab 4: Metadata Enrichment
     t4 = comparison.tab4
-    print(f"\n🔗 TAB 4: Metadata Enrichment")
+    print("\n🔗 TAB 4: Metadata Enrichment")
     if t4 and t4.enriched_file_exists:
-        print(f"   ✅ Enriched file exists")
+        print("   ✅ Enriched file exists")
         print(f"   • Chapters: {t4.chapter_count}")
         print(f"   • Corpus size: {t4.corpus_size} chapters analyzed")
         
         # Topic clustering (NEW FEATURE)
         if t4.has_topic_ids:
-            print(f"   🆕 TOPIC CLUSTERING:")
+            print("   🆕 TOPIC CLUSTERING:")
             print(f"      • Coverage: {t4.topic_coverage_pct:.1f}%")
             print(f"      • Unique topics: {t4.unique_topics}")
         else:
-            print(f"   ℹ️  No topic_id assignments (pre-BERTopic output)")
+            print("   ℹ️  No topic_id assignments (pre-BERTopic output)")
         
         print(f"   • Avg related chapters: {t4.avg_related_chapters:.2f}")
         print(f"   • Avg keywords enriched: {t4.avg_keywords_enriched:.2f}")
@@ -436,18 +436,18 @@ def print_comparison_report(comparison: PipelineComparison) -> None:
         if t4.libraries:
             print(f"   • Libraries: {', '.join(f'{k}={v}' for k, v in t4.libraries.items())}")
     else:
-        print(f"   ⚠️  Enriched file not found")
+        print("   ⚠️  Enriched file not found")
     
     # Tab 5: Guideline Generation
     t5 = comparison.tab5
-    print(f"\n📖 TAB 5: Guideline Generation")
+    print("\n📖 TAB 5: Guideline Generation")
     if t5 and t5.guideline_file_exists:
         print(f"   ✅ Guideline file exists ({t5.output_format})")
         print(f"   • Sections: {t5.section_count}")
         print(f"   • Cross-references: {t5.cross_references_count}")
         print(f"   • Topic boosting: {'Yes' if t5.has_topic_boosting else 'No'}")
     else:
-        print(f"   ⚠️  Guideline file not found")
+        print("   ⚠️  Guideline file not found")
 
 
 def get_available_books() -> List[str]:

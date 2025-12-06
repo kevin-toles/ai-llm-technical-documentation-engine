@@ -42,6 +42,33 @@ INITIAL_RETRY_DELAY = 10     # Initial delay in seconds before first retry
 MAX_RETRY_DELAY = 120        # Maximum delay between retries (2 minutes)
 RETRY_BACKOFF_FACTOR = 2     # Exponential backoff multiplier
 
+# String constants to avoid duplication (SonarQube S1192)
+CONTENT_TYPE_JSON = "application/json"
+MODEL_GEMINI_FLASH = "gemini-2.5-flash"
+MODEL_CLAUDE_OPUS = "claude-opus-4.5"
+MODEL_CLAUDE_SONNET = "claude-sonnet-4.5"
+MODEL_GPT = "gpt-5.1"
+JSON_CODE_BLOCK = "```json"
+
+# API URL constants (S1192 - duplicated 4 times)
+OPENAI_CHAT_COMPLETIONS_URL = "https://api.openai.com/v1/chat/completions"
+
+# Evaluation system prompt (S1192 - duplicated 3+ times)
+EVALUATION_SYSTEM_PROMPT = (
+    "You are an expert at evaluating NLP extraction quality. "
+    "You MUST respond with valid JSON only. Do not include markdown code blocks, "
+    "explanations, or any text before or after the JSON object. "
+    "Start your response with { and end with }."
+)
+
+# Error message constants (S1192 - duplicated multiple times)
+ERROR_FAILED_TO_PARSE_JSON = "Failed to parse JSON"
+ERROR_RATE_LIMITED = "Rate limited (429) - too many requests"
+ERROR_AUTH_FAILED = "Authentication failed (401) - check API key"
+
+# Keyword constants for test data (S1192 - duplicated 4 times)
+KEYWORD_STATIC_ANALYSIS = "static analysis"
+
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
@@ -97,7 +124,7 @@ def get_llm_configs() -> dict[str, LLMConfig]:
             api_key=deepseek_key,
             model="deepseek-chat",  # V3 is the current deepseek-chat
             headers={
-                "Content-Type": "application/json",
+                "Content-Type": CONTENT_TYPE_JSON,
                 "Authorization": f"Bearer {deepseek_key}"
             }
         )
@@ -107,7 +134,7 @@ def get_llm_configs() -> dict[str, LLMConfig]:
             api_key=deepseek_key,
             model="deepseek-reasoner",  # R1 is deepseek-reasoner
             headers={
-                "Content-Type": "application/json",
+                "Content-Type": CONTENT_TYPE_JSON,
                 "Authorization": f"Bearer {deepseek_key}"
             }
         )
@@ -121,40 +148,40 @@ def get_llm_configs() -> dict[str, LLMConfig]:
             api_key=gemini_key,
             model="gemini-3-pro-preview",
             headers={
-                "Content-Type": "application/json"
+                "Content-Type": CONTENT_TYPE_JSON
             }
         )
-        configs["gemini-2.5-flash"] = LLMConfig(
+        configs[MODEL_GEMINI_FLASH] = LLMConfig(
             name="Gemini 2.5 Flash",
             base_url=f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={gemini_key}",
             api_key=gemini_key,
-            model="gemini-2.5-flash",
+            model=MODEL_GEMINI_FLASH,
             headers={
-                "Content-Type": "application/json"
+                "Content-Type": CONTENT_TYPE_JSON
             }
         )
     
     # Claude Opus 4.5 and Claude Sonnet 4.5
     anthropic_key = os.environ.get("ANTHROPIC_API_KEY", "")
     if anthropic_key:
-        configs["claude-opus-4.5"] = LLMConfig(
+        configs[MODEL_CLAUDE_OPUS] = LLMConfig(
             name="Claude Opus 4.5",
             base_url="https://api.anthropic.com/v1/messages",
             api_key=anthropic_key,
             model="claude-opus-4-5-20251101",
             headers={
-                "Content-Type": "application/json",
+                "Content-Type": CONTENT_TYPE_JSON,
                 "x-api-key": anthropic_key,
                 "anthropic-version": "2023-06-01"
             }
         )
-        configs["claude-sonnet-4.5"] = LLMConfig(
+        configs[MODEL_CLAUDE_SONNET] = LLMConfig(
             name="Claude Sonnet 4.5",
             base_url="https://api.anthropic.com/v1/messages",
             api_key=anthropic_key,
             model="claude-sonnet-4-5-20250929",
             headers={
-                "Content-Type": "application/json",
+                "Content-Type": CONTENT_TYPE_JSON,
                 "x-api-key": anthropic_key,
                 "anthropic-version": "2023-06-01"
             }
@@ -163,43 +190,43 @@ def get_llm_configs() -> dict[str, LLMConfig]:
     # OpenAI GPT-5.1, GPT-5, GPT-5-mini, GPT-5-nano
     openai_key = os.environ.get("OPENAI_API_KEY", "")
     if openai_key:
-        configs["gpt-5.1"] = LLMConfig(
+        configs[MODEL_GPT] = LLMConfig(
             name="GPT-5.1",
-            base_url="https://api.openai.com/v1/chat/completions",
+            base_url=OPENAI_CHAT_COMPLETIONS_URL,
             api_key=openai_key,
-            model="gpt-5.1",
+            model=MODEL_GPT,
             headers={
-                "Content-Type": "application/json",
+                "Content-Type": CONTENT_TYPE_JSON,
                 "Authorization": f"Bearer {openai_key}"
             }
         )
         configs["gpt-5"] = LLMConfig(
             name="GPT-5",
-            base_url="https://api.openai.com/v1/chat/completions",
+            base_url=OPENAI_CHAT_COMPLETIONS_URL,
             api_key=openai_key,
             model="gpt-5",
             headers={
-                "Content-Type": "application/json",
+                "Content-Type": CONTENT_TYPE_JSON,
                 "Authorization": f"Bearer {openai_key}"
             }
         )
         configs["gpt-5-mini"] = LLMConfig(
             name="GPT-5 Mini",
-            base_url="https://api.openai.com/v1/chat/completions",
+            base_url=OPENAI_CHAT_COMPLETIONS_URL,
             api_key=openai_key,
             model="gpt-5-mini",
             headers={
-                "Content-Type": "application/json",
+                "Content-Type": CONTENT_TYPE_JSON,
                 "Authorization": f"Bearer {openai_key}"
             }
         )
         configs["gpt-5-nano"] = LLMConfig(
             name="GPT-5 Nano",
-            base_url="https://api.openai.com/v1/chat/completions",
+            base_url=OPENAI_CHAT_COMPLETIONS_URL,
             api_key=openai_key,
             model="gpt-5-nano",
             headers={
-                "Content-Type": "application/json",
+                "Content-Type": CONTENT_TYPE_JSON,
                 "Authorization": f"Bearer {openai_key}"
             }
         )
@@ -278,7 +305,7 @@ def call_deepseek(config: LLMConfig, prompt: str) -> dict[str, Any]:
     payload = {
         "model": config.model,
         "messages": [
-            {"role": "system", "content": "You are an expert at evaluating NLP extraction quality. You MUST respond with valid JSON only. Do not include markdown code blocks, explanations, or any text before or after the JSON object. Start your response with { and end with }."},
+            {"role": "system", "content": EVALUATION_SYSTEM_PROMPT},
             {"role": "user", "content": prompt}
         ],
         "max_tokens": 8192,  # DeepSeek max is 8192
@@ -306,15 +333,15 @@ def call_deepseek(config: LLMConfig, prompt: str) -> dict[str, Any]:
             debug_file.parent.mkdir(parents=True, exist_ok=True)
             with open(debug_file, "w") as f:
                 f.write(content)
-            return {"error": "Failed to parse JSON", "raw_response": content[:1000], "debug_file": str(debug_file)}
+            return {"error": ERROR_FAILED_TO_PARSE_JSON, "raw_response": content[:1000], "debug_file": str(debug_file)}
     
     except httpx.TimeoutException:
         return {"error": f"Timeout after {API_TIMEOUT_SECONDS}s - model may need more time"}
     except httpx.HTTPStatusError as e:
         if e.response.status_code == 429:
-            return {"error": "Rate limited (429) - too many requests"}
+            return {"error": ERROR_RATE_LIMITED}
         elif e.response.status_code == 401:
-            return {"error": "Authentication failed (401) - check API key"}
+            return {"error": ERROR_AUTH_FAILED}
         else:
             return {"error": f"HTTP {e.response.status_code}: {str(e)[:100]}"}
     except Exception as e:
@@ -348,7 +375,7 @@ def call_gemini(config: LLMConfig, prompt: str) -> dict[str, Any]:
             debug_file.parent.mkdir(parents=True, exist_ok=True)
             with open(debug_file, "w") as f:
                 f.write(content)
-            return {"error": "Failed to parse JSON", "raw_response": content[:1000], "debug_file": str(debug_file)}
+            return {"error": ERROR_FAILED_TO_PARSE_JSON, "raw_response": content[:1000], "debug_file": str(debug_file)}
                 
         except Exception as e:
             error_msg = str(e)
@@ -391,21 +418,21 @@ def call_gemini(config: LLMConfig, prompt: str) -> dict[str, Any]:
             
             # Parse JSON from response
             try:
-                if "```json" in content:
-                    content = content.split("```json")[1].split("```")[0]
+                if JSON_CODE_BLOCK in content:
+                    content = content.split(JSON_CODE_BLOCK)[1].split("```")[0]
                 elif "```" in content:
                     content = content.split("```")[1].split("```")[0]
                 return json.loads(content.strip())
             except json.JSONDecodeError:
-                return {"error": "Failed to parse JSON", "raw_response": content[:500]}
+                return {"error": ERROR_FAILED_TO_PARSE_JSON, "raw_response": content[:500]}
     
     except httpx.TimeoutException:
         return {"error": f"Timeout after {API_TIMEOUT_SECONDS}s"}
     except httpx.HTTPStatusError as e:
         if e.response.status_code == 429:
-            return {"error": "Rate limited (429) - too many requests"}
+            return {"error": ERROR_RATE_LIMITED}
         elif e.response.status_code == 401:
-            return {"error": "Authentication failed (401) - check API key"}
+            return {"error": ERROR_AUTH_FAILED}
         else:
             return {"error": f"HTTP {e.response.status_code}: {str(e)[:100]}"}
     except Exception as e:
@@ -431,9 +458,9 @@ def extract_json_from_response(content: str) -> dict[str, Any] | None:
         pass
     
     # Strategy 2: Extract from ```json blocks
-    if "```json" in content:
+    if JSON_CODE_BLOCK in content:
         try:
-            json_part = content.split("```json")[1].split("```")[0]
+            json_part = content.split(JSON_CODE_BLOCK)[1].split("```")[0]
             return json.loads(json_part.strip())
         except (json.JSONDecodeError, IndexError):
             pass
@@ -479,7 +506,7 @@ def call_claude(config: LLMConfig, prompt: str) -> dict[str, Any]:
         "messages": [
             {"role": "user", "content": prompt}
         ],
-        "system": "You are an expert at evaluating NLP extraction quality. You MUST respond with valid JSON only. Do not include markdown code blocks, explanations, or any text before or after the JSON object. Start your response with { and end with }."
+        "system": EVALUATION_SYSTEM_PROMPT
     }
     
     try:
@@ -507,15 +534,15 @@ def call_claude(config: LLMConfig, prompt: str) -> dict[str, Any]:
                 f.write("="*80 + "\n")
                 f.write(content)
             
-            return {"error": "Failed to parse JSON", "raw_response": content[:1000], "debug_file": str(debug_file)}
+            return {"error": ERROR_FAILED_TO_PARSE_JSON, "raw_response": content[:1000], "debug_file": str(debug_file)}
     
     except httpx.TimeoutException:
         return {"error": f"Timeout after {API_TIMEOUT_SECONDS}s"}
     except httpx.HTTPStatusError as e:
         if e.response.status_code == 429:
-            return {"error": "Rate limited (429) - too many requests"}
+            return {"error": ERROR_RATE_LIMITED}
         elif e.response.status_code == 401:
-            return {"error": "Authentication failed (401) - check API key"}
+            return {"error": ERROR_AUTH_FAILED}
         elif e.response.status_code == 529:
             return {"error": "API overloaded (529) - try again later"}
         else:
@@ -530,7 +557,7 @@ def call_openai(config: LLMConfig, prompt: str) -> dict[str, Any]:
     payload = {
         "model": config.model,
         "messages": [
-            {"role": "system", "content": "You are an expert at evaluating NLP extraction quality. You MUST respond with valid JSON only. Do not include markdown code blocks, explanations, or any text before or after the JSON object. Start your response with { and end with }."},
+            {"role": "system", "content": EVALUATION_SYSTEM_PROMPT},
             {"role": "user", "content": prompt}
         ],
         "max_completion_tokens": 32000  # GPT-5.x uses max_completion_tokens, not max_tokens
@@ -557,7 +584,7 @@ def call_openai(config: LLMConfig, prompt: str) -> dict[str, Any]:
             debug_file.parent.mkdir(parents=True, exist_ok=True)
             with open(debug_file, "w") as f:
                 f.write(content)
-            return {"error": "Failed to parse JSON", "raw_response": content[:1000], "debug_file": str(debug_file)}
+            return {"error": ERROR_FAILED_TO_PARSE_JSON, "raw_response": content[:1000], "debug_file": str(debug_file)}
     
     except httpx.TimeoutException:
         return {"error": f"Timeout after {API_TIMEOUT_SECONDS}s"}
@@ -567,7 +594,7 @@ def call_openai(config: LLMConfig, prompt: str) -> dict[str, Any]:
             retry_after = e.response.headers.get("retry-after", "unknown")
             return {"error": f"Rate limited (429) - retry after {retry_after}s"}
         elif e.response.status_code == 401:
-            return {"error": "Authentication failed (401) - check API key"}
+            return {"error": ERROR_AUTH_FAILED}
         elif e.response.status_code == 503:
             return {"error": "Service unavailable (503) - try again later"}
         else:
@@ -658,7 +685,7 @@ def run_evaluation(output_path: str, models: list[str] | None = None) -> dict[st
         "evaluations": {}
     }
     
-    print(f"\n🔍 Running LLM evaluations...")
+    print("\n🔍 Running LLM evaluations...")
     
     for model in models:
         result = evaluate_with_llm(model, extraction_data, context)
@@ -833,7 +860,7 @@ def create_comparative_prompt(aggregates: dict[str, dict[str, Any]]) -> str:
         ("Q1", "Scalable LLM code understanding system", 
          ["chunking", "embeddings", "retrieval", "indexing", "grounding", "hallucination"]),
         ("Q2", "Agentic coding assistant with safe code changes",
-         ["sandboxing", "static analysis", "verification", "diff", "rollback", "guardrails"]),
+         ["sandboxing", KEYWORD_STATIC_ANALYSIS, "verification", "diff", "rollback", "guardrails"]),
         ("Q3", "LLM batch processing for multi-GB datasets",
          ["map-reduce", "chunk", "orchestration", "persistent state", "quality gates", "metadata"]),
         ("Q4", "Multi-model orchestrator across providers",
@@ -855,7 +882,7 @@ def create_comparative_prompt(aggregates: dict[str, dict[str, Any]]) -> str:
         ("Q12", "Diagnosing confident but incorrect LLM outputs",
          ["retrieval eval", "likelihood", "consistency", "chain-of-thought", "benchmark"]),
         ("Q13", "Safety guardrails for code-writing agents",
-         ["static analysis", "sandboxing", "unit test", "rollback", "anomaly detection", "approval"]),
+         [KEYWORD_STATIC_ANALYSIS, "sandboxing", "unit test", "rollback", "anomaly detection", "approval"]),
         ("Q14", "Jailbreak detection system",
          ["classifier", "intent detection", "safety model", "perplexity", "pattern"]),
         ("Q15", "Resume-job description matching system",
@@ -1081,7 +1108,7 @@ EVALUATION_QUESTIONS = [
     ("Q1", "Scalable LLM code understanding system", 
      ["chunking", "embeddings", "retrieval", "indexing", "grounding", "hallucination"]),
     ("Q2", "Agentic coding assistant with safe code changes",
-     ["sandboxing", "static analysis", "verification", "diff", "rollback", "guardrails"]),
+     ["sandboxing", KEYWORD_STATIC_ANALYSIS, "verification", "diff", "rollback", "guardrails"]),
     ("Q3", "LLM batch processing for multi-GB datasets",
      ["map-reduce", "chunk", "orchestration", "persistent state", "quality gates", "metadata"]),
     ("Q4", "Multi-model orchestrator across providers",
@@ -1103,7 +1130,7 @@ EVALUATION_QUESTIONS = [
     ("Q12", "Diagnosing confident but incorrect LLM outputs",
      ["retrieval eval", "likelihood", "consistency", "chain-of-thought", "benchmark"]),
     ("Q13", "Safety guardrails for code-writing agents",
-     ["static analysis", "sandboxing", "unit test", "rollback", "anomaly detection", "approval"]),
+     [KEYWORD_STATIC_ANALYSIS, "sandboxing", "unit test", "rollback", "anomaly detection", "approval"]),
     ("Q14", "Jailbreak detection system",
      ["classifier", "intent detection", "safety model", "perplexity", "pattern"]),
     ("Q15", "Resume-job description matching system",
@@ -1454,7 +1481,7 @@ def run_chunked_evaluation(model: str, aggregates: dict[str, dict[str, Any]]) ->
             print(f"❌ {result['error'][:40]}")
             chunk_results.append(result)
         else:
-            print(f"✅")
+            print("✅")
             chunk_results.append(result)
     
     # Check if we have enough successful chunks
@@ -1469,7 +1496,7 @@ def run_chunked_evaluation(model: str, aggregates: dict[str, dict[str, Any]]) ->
     merged = merge_chunk_results(chunk_results)
     
     # Stage 2: Final assessment
-    print(f"      🎯 Final assessment...", end=" ", flush=True)
+    print("      🎯 Final assessment...", end=" ", flush=True)
     time.sleep(API_CALL_DELAY_SECONDS)
     
     final_prompt = create_final_assessment_prompt(merged)
@@ -1528,9 +1555,9 @@ def run_chunked_comparative_evaluation(models: list[str] | None = None) -> dict[
     # Default models
     if models is None:
         models = [
-            "claude-opus-4.5", "claude-sonnet-4.5",
-            "gpt-5.1", "gpt-5", "gpt-5-mini", "gpt-5-nano",
-            "gemini-3-pro", "gemini-2.5-flash",
+            MODEL_CLAUDE_OPUS, MODEL_CLAUDE_SONNET,
+            MODEL_GPT, "gpt-5", "gpt-5-mini", "gpt-5-nano",
+            "gemini-3-pro", MODEL_GEMINI_FLASH,
             "deepseek-v3", "deepseek-r1"
         ]
     
@@ -1539,8 +1566,8 @@ def run_chunked_comparative_evaluation(models: list[str] | None = None) -> dict[
     # Filter to available models
     available_models = [m for m in models if m in configs]
     
-    print(f"\n🔄 Running CHUNKED evaluation approach")
-    print(f"   Strategy: 3 chunks × 6 questions + 1 final assessment = 4 calls per model")
+    print("\n🔄 Running CHUNKED evaluation approach")
+    print("   Strategy: 3 chunks × 6 questions + 1 final assessment = 4 calls per model")
     print(f"   Models: {len(available_models)}/{len(models)} available")
     print(f"   Total API calls: ~{len(available_models) * 4}")
     print()
@@ -1645,9 +1672,9 @@ def run_comparative_evaluation(models: list[str] | None = None) -> dict[str, Any
     # Default models for comparative evaluation (actual model names)
     if models is None:
         models = [
-            "claude-opus-4.5", "claude-sonnet-4.5",
-            "gpt-5.1", "gpt-5", "gpt-5-mini", "gpt-5-nano",
-            "gemini-3-pro", "gemini-2.5-flash",
+            MODEL_CLAUDE_OPUS, MODEL_CLAUDE_SONNET,
+            MODEL_GPT, "gpt-5", "gpt-5-mini", "gpt-5-nano",
+            "gemini-3-pro", MODEL_GEMINI_FLASH,
             "deepseek-v3", "deepseek-r1"
         ]
     
@@ -1663,7 +1690,7 @@ def run_comparative_evaluation(models: list[str] | None = None) -> dict[str, Any
     }
     
     print("\n🔍 Running comparative LLM evaluations...")
-    print(f"   Sending all 4 profiles to each LLM for comparison")
+    print("   Sending all 4 profiles to each LLM for comparison")
     print(f"   Using {API_CALL_DELAY_SECONDS}s delay between API calls to avoid rate limits\n")
     
     models_called = 0
