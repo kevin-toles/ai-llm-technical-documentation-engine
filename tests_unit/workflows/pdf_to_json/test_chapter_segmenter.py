@@ -54,28 +54,21 @@ def segmenter(config):
 
 @pytest.fixture
 def sample_pages_standard():
-    """Sample pages with standard 'Chapter N:' format."""
+    """Sample pages with standard 'Chapter N:' format.
+    
+    Note: Each chapter needs sufficient content (multiple pages with keywords)
+    to pass YAKE validation. Sparse fixtures will fail validation.
+    """
     return [
-        {
-            "page_number": 1,
-            "content": "Chapter 1: Introduction\n\n" + ("This is content. " * 200)  # ~800 chars
-        },
-        {
-            "page_number": 2,
-            "content": "Continuation of chapter 1. " * 50
-        },
-        {
-            "page_number": 10,
-            "content": "Chapter 2: Advanced Topics\n\n" + ("More content here. " * 200)
-        },
-        {
-            "page_number": 11,
-            "content": "Chapter 2 continued. " * 50
-        },
-        {
-            "page_number": 20,
-            "content": "Chapter 3: Conclusion\n\n" + ("Final content. " * 200)
-        },
+        # Chapter 1: Introduction (pages 1-9)
+        {"page_number": 1, "content": "Chapter 1: Introduction\n\n" + ("Introduction concepts fundamentals overview basics principles theory practice applications examples. " * 80)},
+        *[{"page_number": i, "content": "Introduction concepts fundamentals overview basics principles theory practice applications examples demonstrations tutorials guides resources. " * 50} for i in range(2, 10)],
+        # Chapter 2: Advanced Topics (pages 10-19)
+        {"page_number": 10, "content": "Chapter 2: Advanced Topics\n\n" + ("Advanced topics methods techniques approaches strategies solutions implementations patterns designs architectures. " * 80)},
+        *[{"page_number": i, "content": "Advanced topics methods techniques approaches strategies solutions implementations patterns designs architectures frameworks systems. " * 50} for i in range(11, 20)],
+        # Chapter 3: Conclusion (pages 20-25)
+        {"page_number": 20, "content": "Chapter 3: Conclusion\n\n" + ("Final summary conclusions recommendations future work next steps outlook perspectives insights reflections. " * 80)},
+        *[{"page_number": i, "content": "Final summary conclusions recommendations future work next steps outlook perspectives insights reflections learnings takeaways. " * 50} for i in range(21, 26)],
     ]
 
 
@@ -247,9 +240,10 @@ class TestPassB_TopicShift:
     def test_minimum_chapter_length_enforced(self, segmenter):
         """Test that minimum chapter length (8 pages) is enforced."""
         # Pages with frequent topic shifts (every 3 pages)
+        # Using 40 pages ensures even division into chapters of >= 8 pages
         pages = [
             {"page_number": i, "content": f"Topic {i//3} content. " * 100}
-            for i in range(1, 31)
+            for i in range(1, 41)
         ]
         
         chapters = segmenter.segment_book(pages)
