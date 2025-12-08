@@ -147,7 +147,7 @@ def sample_pages_topic_shift():
 # Pass A Tests: Regex Pattern Matching
 # ============================================================================
 
-class TestPassA_RegexPatterns:
+class TestPassARegexPatterns:
     """Test Pass A: Regex-based chapter detection with YAKE validation."""
     
     def test_standard_chapter_format(self, segmenter, sample_pages_standard):
@@ -221,7 +221,7 @@ class TestPassA_RegexPatterns:
 # Pass B Tests: Topic-Shift Detection (TF-IDF + Cosine Similarity)
 # ============================================================================
 
-class TestPassB_TopicShift:
+class TestPassBTopicShift:
     """Test Pass B: TF-IDF-based topic boundary detection."""
     
     def test_topic_shift_detection(self, segmenter, sample_pages_topic_shift):
@@ -284,7 +284,7 @@ class TestPassB_TopicShift:
 # Pass C Tests: Synthetic Segmentation (Guaranteed Fallback)
 # ============================================================================
 
-class TestPassC_SyntheticSegmentation:
+class TestPassCSyntheticSegmentation:
     """Test Pass C: Guaranteed synthetic segmentation fallback."""
     
     def test_always_returns_chapters(self, segmenter, sample_pages_no_chapters):
@@ -356,7 +356,7 @@ class TestPassC_SyntheticSegmentation:
 # Integration Tests: Full 3-Pass Workflow
 # ============================================================================
 
-class TestIntegration_ThreePassWorkflow:
+class TestIntegrationThreePassWorkflow:
     """Test full 3-pass workflow with fallback logic."""
     
     def test_pass_a_success_skips_b_c(self, segmenter, sample_pages_standard):
@@ -518,7 +518,7 @@ class TestPerformance:
         ]
         
         start = time.time()
-        chapters = segmenter.segment_book(pages)
+        _ = segmenter.segment_book(pages)  # Output not used in timing test
         elapsed = time.time() - start
         
         # Time per page should be consistent (~0.02-0.03s/page)
