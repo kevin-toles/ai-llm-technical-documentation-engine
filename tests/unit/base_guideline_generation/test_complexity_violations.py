@@ -38,6 +38,49 @@ from workflows.base_guideline_generation.scripts import (
 # ============================================================================
 
 
+def _extract_names_from_target(target: ast.AST) -> Set[str]:
+    """Extract variable names from an assignment target node."""
+    names: Set[str] = set()
+    if isinstance(target, ast.Name):
+        names.add(target.id)
+    elif isinstance(target, ast.Tuple):
+        for elt in target.elts:
+            if isinstance(elt, ast.Name):
+                names.add(elt.id)
+    return names
+
+
+def _extract_vars_from_assign(node: ast.Assign) -> Set[str]:
+    """Extract variable names from an Assign node."""
+    names: Set[str] = set()
+    for target in node.targets:
+        names.update(_extract_names_from_target(target))
+    return names
+
+
+def _extract_vars_from_for(node: ast.For) -> Set[str]:
+    """Extract loop variable from a For node."""
+    return _extract_names_from_target(node.target)
+
+
+def _extract_vars_from_comprehension(node: ast.AST) -> Set[str]:
+    """Extract variables from comprehension generators."""
+    names: Set[str] = set()
+    if isinstance(node, (ast.ListComp, ast.DictComp, ast.SetComp)):
+        for generator in node.generators:
+            names.update(_extract_names_from_target(generator.target))
+    return names
+
+
+def _extract_vars_from_with(node: ast.With) -> Set[str]:
+    """Extract variables from a With statement."""
+    names: Set[str] = set()
+    for item in node.items:
+        if item.optional_vars:
+            names.update(_extract_names_from_target(item.optional_vars))
+    return names
+
+
 def count_local_variables(func) -> int:
     """
     Count local variables in a function using AST analysis.
@@ -71,27 +114,16 @@ def count_local_variables(func) -> int:
     for arg in func_def.args.args:
         local_vars.add(arg.arg)
 
-    # Walk AST to find assignments
+    # Walk AST to find assignments using helper functions
     for node in ast.walk(func_def):
         if isinstance(node, ast.Assign):
-            for target in node.targets:
-                if isinstance(target, ast.Name):
-                    local_vars.add(target.id)
-                elif isinstance(target, ast.Tuple):
-                    for elt in target.elts:
-                        if isinstance(elt, ast.Name):
-                            local_vars.add(elt.id)
+            local_vars.update(_extract_vars_from_assign(node))
         elif isinstance(node, ast.For):
-            if isinstance(node.target, ast.Name):
-                local_vars.add(node.target.id)
+            local_vars.update(_extract_vars_from_for(node))
         elif isinstance(node, (ast.ListComp, ast.DictComp, ast.SetComp)):
-            for generator in node.generators:
-                if isinstance(generator.target, ast.Name):
-                    local_vars.add(generator.target.id)
+            local_vars.update(_extract_vars_from_comprehension(node))
         elif isinstance(node, ast.With):
-            for item in node.items:
-                if item.optional_vars and isinstance(item.optional_vars, ast.Name):
-                    local_vars.add(item.optional_vars.id)
+            local_vars.update(_extract_vars_from_with(node))
 
     return len(local_vars)
 
