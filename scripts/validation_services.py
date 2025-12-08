@@ -17,7 +17,7 @@ Services:
 
 import json
 from pathlib import Path
-from typing import Dict, List, Tuple, Any
+from typing import Dict, List, Tuple, Any, Optional
 from dataclasses import dataclass
 
 
@@ -438,7 +438,105 @@ class ContentCaptureValidator:
     MIN_CHARS_PER_PAGE = 100  # Minimum expected chars per page (excluding index/cover)
     
     @staticmethod
-    def validate(metadata: List[Dict], source_pages: List[Dict]) -> List[ValidationResult]:
+    def _build_page_map(source_pages: List[Dict]) -> Dict[int, int]:
+        """
+        Build mapping from page number to content length.
+        
+        Extracted to reduce cognitive complexity.
+        """
+        page_map = {}
+        for page in source_pages:
+            page_num = page.get('page_number')
+            if page_num is not None:
+                content = page.get('content', '')
+                page_map[page_num] = len(content) if content else 0
+        return page_map
+    
+    @staticmethod
+    def _calculate_source_chars(page_map: Dict[int, int], start_page: int, end_page: int) -> Tuple[int, int]:
+        """
+        Calculate total source characters and pages checked for a page range.
+        
+        Extracted to reduce cognitive complexity.
+        
+        Returns:
+            Tuple of (source_chars, pages_checked)
+        """
+        source_chars = 0
+        pages_checked = 0
+        for page_num in range(start_page, end_page + 1):
+            if page_num in page_map:
+                pages_checked += 1
+                if page_map[page_num] > 0:
+                    source_chars += page_map[page_num]
+        return source_chars, pages_checked
+    
+    @staticmethod
+    def _is_empty_extraction(chapter: Dict) -> bool:
+        """
+        Check if chapter metadata shows empty/minimal extraction.
+        
+        Extracted to reduce cognitive complexity.
+        """
+        summary = chapter.get('summary', '')
+        keywords = chapter.get('keywords', [])
+        concepts = chapter.get('concepts', [])
+        return len(summary) < 50 and len(keywords) == 0 and len(concepts) == 0
+    
+    @classmethod
+    def _validate_chapter(
+        cls, 
+        chapter: Dict, 
+        page_map: Dict[int, int]
+    ) -> Optional[ValidationResult]:
+        """
+        Validate a single chapter's content capture.
+        
+        Extracted to reduce cognitive complexity.
+        
+        Returns:
+            ValidationResult if issue found, None otherwise
+        """
+        chapter_num = chapter.get('chapter_number', '?')
+        start_page = chapter.get('start_page')
+        end_page = chapter.get('end_page')
+        
+        if start_page is None or end_page is None:
+            return None
+        
+        source_chars, pages_checked = cls._calculate_source_chars(page_map, start_page, end_page)
+        is_empty = cls._is_empty_extraction(chapter)
+        
+        # If source has substantial content but extraction is empty, that's a bug
+        if source_chars > 500 and is_empty:
+            summary = chapter.get('summary', '')
+            keywords = chapter.get('keywords', [])
+            concepts = chapter.get('concepts', [])
+            return ValidationResult(
+                False,
+                f"Chapter {chapter_num}: Source has {source_chars:,} chars on pages {start_page}-{end_page} "
+                f"but extraction appears empty (summary: {len(summary)} chars, "
+                f"keywords: {len(keywords)}, concepts: {len(concepts)})",
+                "error"
+            )
+        if source_chars == 0 and pages_checked > 0:
+            # Source pages genuinely have no content
+            return ValidationResult(
+                True,
+                f"Chapter {chapter_num}: Source pages {start_page}-{end_page} have no content (valid empty)",
+                "info"
+            )
+        if pages_checked == 0:
+            # Page numbers don't exist in source - possible page numbering issue
+            return ValidationResult(
+                False,
+                f"Chapter {chapter_num}: Pages {start_page}-{end_page} not found in source JSON",
+                "warning"
+            )
+        return None
+    
+    @classmethod
+    def validate(cls, metadata: List[Dict], source_pages: List[Dict]) -> List[ValidationResult]:
         """
         Validate that each chapter's page range has content in the source JSON.
         
@@ -451,70 +549,12 @@ class ContentCaptureValidator:
         if not source_pages:
             return results
         
-        # Build page_number -> page content map
-        page_map = {}
-        for page in source_pages:
-            page_num = page.get('page_number')
-            if page_num is not None:
-                content = page.get('content', '')
-                page_map[page_num] = len(content) if content else 0
+        page_map = cls._build_page_map(source_pages)
         
         for chapter in metadata:
-            chapter_num = chapter.get('chapter_number', '?')
-            start_page = chapter.get('start_page')
-            end_page = chapter.get('end_page')
-            
-            if start_page is None or end_page is None:
-                continue
-            
-            # Calculate total source content for this chapter's page range
-            source_chars = 0
-            pages_with_content = 0
-            pages_checked = 0
-            
-            for page_num in range(start_page, end_page + 1):
-                if page_num in page_map:
-                    pages_checked += 1
-                    if page_map[page_num] > 0:
-                        source_chars += page_map[page_num]
-                        pages_with_content += 1
-            
-            # Check if extraction captured the content
-            # Look for signs of empty extraction in the metadata
-            summary = chapter.get('summary', '')
-            keywords = chapter.get('keywords', [])
-            concepts = chapter.get('concepts', [])
-            
-            # Detect empty/minimal extraction
-            is_empty_extraction = (
-                len(summary) < 50 and 
-                len(keywords) == 0 and 
-                len(concepts) == 0
-            )
-            
-            # If source has substantial content but extraction is empty, that's a bug
-            if source_chars > 500 and is_empty_extraction:
-                results.append(ValidationResult(
-                    False,
-                    f"Chapter {chapter_num}: Source has {source_chars:,} chars on pages {start_page}-{end_page} "
-                    f"but extraction appears empty (summary: {len(summary)} chars, "
-                    f"keywords: {len(keywords)}, concepts: {len(concepts)})",
-                    "error"
-                ))
-            elif source_chars == 0 and pages_checked > 0:
-                # Source pages genuinely have no content
-                results.append(ValidationResult(
-                    True,
-                    f"Chapter {chapter_num}: Source pages {start_page}-{end_page} have no content (valid empty)",
-                    "info"
-                ))
-            elif pages_checked == 0:
-                # Page numbers don't exist in source - possible page numbering issue
-                results.append(ValidationResult(
-                    False,
-                    f"Chapter {chapter_num}: Pages {start_page}-{end_page} not found in source JSON",
-                    "warning"
-                ))
+            result = cls._validate_chapter(chapter, page_map)
+            if result is not None:
+                results.append(result)
         
         return results
 

@@ -17,7 +17,7 @@ References:
     - PYTHON_GUIDELINES Ch.8: Classes and OOP
 """
 
-from typing import Dict, List, Any
+from typing import Dict, List, Any, Optional
 from collections import Counter
 
 
@@ -238,7 +238,63 @@ class ConceptDeduplicationValidator:
     """
     
     @staticmethod
-    def validate_deduplication(taxonomy: Dict[str, Any]) -> List[ValidationResult]:
+    def _validate_tier_duplicates(
+        tier_name: str, 
+        tier_data: Dict[str, Any]
+    ) -> Optional["ValidationResult"]:
+        """
+        Validate a single tier for duplicate concepts.
+        
+        Extracted to reduce cognitive complexity.
+        """
+        if "concepts" not in tier_data:
+            return None
+        
+        concepts = tier_data["concepts"]
+        if not isinstance(concepts, list):
+            return None
+        
+        concept_counts = Counter(concepts)
+        duplicates = {c: count for c, count in concept_counts.items() if count > 1}
+        
+        if duplicates:
+            return ValidationResult(
+                "failed",
+                f"Tier '{tier_name}' has duplicate concepts: " +
+                ", ".join([f"{c} ({count}x)" for c, count in duplicates.items()])
+            )
+        return ValidationResult(
+            "passed",
+            f"Tier '{tier_name}' has no duplicate concepts ({len(concepts)} unique)"
+        )
+    
+    @staticmethod
+    def _analyze_cross_tier_concepts(tiers: Dict[str, Any]) -> Optional["ValidationResult"]:
+        """
+        Analyze concepts appearing in multiple tiers.
+        
+        Extracted to reduce cognitive complexity.
+        """
+        all_concepts: Dict[str, List[str]] = {}
+        for tier_name, tier_data in tiers.items():
+            if "concepts" in tier_data:
+                for concept in tier_data["concepts"]:
+                    if concept not in all_concepts:
+                        all_concepts[concept] = []
+                    all_concepts[concept].append(tier_name)
+        
+        cross_tier_concepts = {c: t for c, t in all_concepts.items() if len(t) > 1}
+        
+        if cross_tier_concepts:
+            return ValidationResult(
+                "passed",  # Not a failure - this is allowed
+                f"{len(cross_tier_concepts)} concepts appear in multiple tiers "
+                f"(e.g., {list(cross_tier_concepts.keys())[:3]})"
+            )
+        return None
+    
+    @classmethod
+    def validate_deduplication(cls, taxonomy: Dict[str, Any]) -> List["ValidationResult"]:
         """
         Validate no duplicate concepts within same tier.
         
@@ -262,49 +318,14 @@ class ConceptDeduplicationValidator:
         
         tiers = taxonomy["tiers"]
         
-        # Check each tier for duplicates
         for tier_name, tier_data in tiers.items():
-            if "concepts" not in tier_data:
-                continue
-            
-            concepts = tier_data["concepts"]
-            
-            if not isinstance(concepts, list):
-                continue
-            
-            # Count occurrences
-            concept_counts = Counter(concepts)
-            duplicates = {concept: count for concept, count in concept_counts.items() if count > 1}
-            
-            if duplicates:
-                results.append(ValidationResult(
-                    "failed",
-                    f"Tier '{tier_name}' has duplicate concepts: " +
-                    ", ".join([f"{c} ({count}x)" for c, count in duplicates.items()])
-                ))
-            else:
-                results.append(ValidationResult(
-                    "passed",
-                    f"Tier '{tier_name}' has no duplicate concepts ({len(concepts)} unique)"
-                ))
+            result = cls._validate_tier_duplicates(tier_name, tier_data)
+            if result:
+                results.append(result)
         
-        # Cross-tier analysis (informational only - not a failure)
-        all_concepts: Dict[str, List[str]] = {}
-        for tier_name, tier_data in tiers.items():
-            if "concepts" in tier_data:
-                for concept in tier_data["concepts"]:
-                    if concept not in all_concepts:
-                        all_concepts[concept] = []
-                    all_concepts[concept].append(tier_name)
-        
-        cross_tier_concepts = {c: tiers for c, tiers in all_concepts.items() if len(tiers) > 1}
-        
-        if cross_tier_concepts:
-            results.append(ValidationResult(
-                "passed",  # Not a failure - this is allowed
-                f"{len(cross_tier_concepts)} concepts appear in multiple tiers "
-                f"(e.g., {list(cross_tier_concepts.keys())[:3]})"
-            ))
+        cross_tier_result = cls._analyze_cross_tier_concepts(tiers)
+        if cross_tier_result:
+            results.append(cross_tier_result)
         
         return results
 
@@ -349,7 +370,12 @@ class TaxonomyValidationOrchestrator:
             self.all_results.extend(results)
             
             for result in results:
-                icon = "✓" if result.is_passed() else "⚠️" if result.is_warning() else "✗"
+                if result.is_passed():
+                    icon = "✓"
+                elif result.is_warning():
+                    icon = "⚠️"
+                else:
+                    icon = "✗"
                 print(f"  {icon} {result.message}")
         
         # Summary

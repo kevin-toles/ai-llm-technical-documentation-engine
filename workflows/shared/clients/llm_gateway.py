@@ -30,6 +30,13 @@ import httpx
 
 
 # =============================================================================
+# Constants - SonarQube S1192: Extract duplicated literals
+# =============================================================================
+
+_CLIENT_NOT_INITIALIZED_ERROR = "Client not initialized. Use async context manager."
+
+
+# =============================================================================
 # Custom Exceptions - WBS 3.1.1.1.5
 # Pattern: Domain-specific exceptions (CODING_PATTERNS §2.3)
 # =============================================================================
@@ -315,7 +322,7 @@ class LLMGatewayClient:
             GatewayAPIError: On API error
         """
         if self._client is None:
-            raise RuntimeError("Client not initialized. Use async context manager.")
+            raise RuntimeError(_CLIENT_NOT_INITIALIZED_ERROR)
 
         try:
             response = await self._client.post(endpoint, json=payload)
@@ -356,7 +363,7 @@ class LLMGatewayClient:
             bool: True if gateway is healthy, False otherwise
         """
         if self._client is None:
-            raise RuntimeError("Client not initialized. Use async context manager.")
+            raise RuntimeError(_CLIENT_NOT_INITIALIZED_ERROR)
 
         try:
             response = await self._client.get("/health")
@@ -408,7 +415,7 @@ class LLMGatewayClient:
             dict: Session state
         """
         if self._client is None:
-            raise RuntimeError("Client not initialized. Use async context manager.")
+            raise RuntimeError(_CLIENT_NOT_INITIALIZED_ERROR)
 
         try:
             response = await self._client.get(f"/v1/sessions/{session_id}")
@@ -436,7 +443,7 @@ class LLMGatewayClient:
             GatewayAPIError: On API error (e.g., 404 Not Found)
         """
         if self._client is None:
-            raise RuntimeError("Client not initialized. Use async context manager.")
+            raise RuntimeError(_CLIENT_NOT_INITIALIZED_ERROR)
 
         try:
             response = await self._client.delete(f"/v1/sessions/{session_id}")

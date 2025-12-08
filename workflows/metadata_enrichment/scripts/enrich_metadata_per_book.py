@@ -473,6 +473,94 @@ def extract_concepts_cross_book(
     return concepts_enriched
 
 
+def _find_chapter_index(
+    book_name: str, 
+    chapter_num: int, 
+    index: List[Dict[str, Any]]
+) -> Optional[int]:
+    """Find chapter index in corpus. Returns None if not found."""
+    for idx, item in enumerate(index):
+        if item["book"] == f"{book_name}.json" and item["chapter"] == chapter_num:
+            return idx
+    return None
+
+
+def _get_topic_info(
+    topic_clusterer: Optional[Any], 
+    chapter_idx: int
+) -> Optional[int]:
+    """Get topic ID from clusterer. Returns None if unavailable."""
+    if topic_clusterer is None:
+        return None
+    try:
+        topic_info = topic_clusterer.get_topic_for_chapter(chapter_idx)
+        topic_id = topic_info.topic_id
+        if topic_id is not None and topic_id >= 0:
+            print(f"    Topic ID: {topic_id} ({topic_info.topic_name})")
+            return topic_id
+    except Exception as e:
+        print(f"    ⚠️  Could not get topic_id: {e}")
+    return None
+
+
+def _find_related_with_semantic(
+    chapter_idx: int,
+    book_name: str,
+    index: List[Dict[str, Any]],
+    similarity_matrix: Any,
+    semantic_engine: Optional[Any],
+    semantic_embeddings: Optional[Any]
+) -> List[Dict[str, Any]]:
+    """Find related chapters using semantic or TF-IDF similarity."""
+    if semantic_engine is not None and semantic_embeddings is not None:
+        try:
+            related_results = semantic_engine.find_similar(
+                query_idx=chapter_idx,
+                embeddings=semantic_embeddings,
+                index=index,
+                top_k=5,
+                threshold=0.1,
+            )
+            related = []
+            for r in related_results:
+                if r.book == f"{book_name}.json":
+                    continue
+                related.append({
+                    "book": r.book,
+                    "chapter": r.chapter,
+                    "title": r.title,
+                    "relevance_score": round(r.score, 2),
+                    "method": r.method,
+                })
+            return related[:5]
+        except Exception as e:
+            print(f"    ⚠️  Semantic similarity failed, using TF-IDF: {e}")
+    
+    return find_related_chapters(
+        chapter_idx,
+        similarity_matrix,
+        index,
+        f"{book_name}.json",
+        threshold=0.7,
+        top_n=5
+    )
+
+
+def _collect_related_texts(
+    related: List[Dict[str, Any]], 
+    corpus: List[str], 
+    index: List[Dict[str, Any]]
+) -> List[str]:
+    """Collect text content from related chapters."""
+    related_texts = []
+    for rel in related:
+        for idx, item in enumerate(index):
+            if item["book"] == rel["book"] and item["chapter"] == rel["chapter"]:
+                related_texts.append(corpus[idx])
+                break
+    return related_texts
+
+
 def _enrich_single_chapter(
     chapter: Dict[str, Any],
     book_name: str,
@@ -506,84 +594,23 @@ def _enrich_single_chapter(
     print(f"  Chapter {chapter_num}: {chapter.get('title', 'Untitled')}")
     
     # Find chapter index in corpus
-    chapter_idx = None
-    for idx, item in enumerate(index):
-        if (item["book"] == f"{book_name}.json" and 
-            item["chapter"] == chapter_num):
-            chapter_idx = idx
-            break
-    
+    chapter_idx = _find_chapter_index(book_name, chapter_num, index)
     if chapter_idx is None:
         print("    ⚠️  Chapter not found in corpus, skipping enrichment")
         return chapter
     
     # Get topic_id from TopicClusterer (Option C Architecture)
-    topic_id: Optional[int] = None
-    if topic_clusterer is not None:
-        try:
-            topic_info = topic_clusterer.get_topic_for_chapter(chapter_idx)
-            topic_id = topic_info.topic_id
-            if topic_id is not None and topic_id >= 0:
-                print(f"    Topic ID: {topic_id} ({topic_info.topic_name})")
-        except Exception as e:
-            print(f"    ⚠️  Could not get topic_id: {e}")
+    topic_id = _get_topic_info(topic_clusterer, chapter_idx)
     
     # Find related chapters using cosine similarity (or semantic similarity)
-    if semantic_engine is not None and semantic_embeddings is not None:
-        # Use SemanticSimilarityEngine for better similarity detection
-        try:
-            related_results = semantic_engine.find_similar(
-                query_idx=chapter_idx,
-                embeddings=semantic_embeddings,
-                index=index,
-                top_k=5,
-                threshold=0.1,  # Lower threshold for semantic similarity
-            )
-            # Convert SimilarityResult to expected format
-            related = []
-            for r in related_results:
-                # Skip chapters from same book (cross-book analysis only)
-                if r.book == f"{book_name}.json":
-                    continue
-                related.append({
-                    "book": r.book,
-                    "chapter": r.chapter,
-                    "title": r.title,
-                    "relevance_score": round(r.score, 2),
-                    "method": r.method,
-                })
-            # Limit to top 5
-            related = related[:5]
-        except Exception as e:
-            print(f"    ⚠️  Semantic similarity failed, using TF-IDF: {e}")
-            related = find_related_chapters(
-                chapter_idx,
-                similarity_matrix,
-                index,
-                f"{book_name}.json",
-                threshold=0.7,
-                top_n=5
-            )
-    else:
-        # Fallback to original TF-IDF similarity
-        related = find_related_chapters(
-            chapter_idx,
-            similarity_matrix,
-            index,
-            f"{book_name}.json",
-            threshold=0.7,
-            top_n=5
-        )
+    related = _find_related_with_semantic(
+        chapter_idx, book_name, index, similarity_matrix,
+        semantic_engine, semantic_embeddings
+    )
     print(f"    Related chapters found: {len(related)}")
     
     # Get related chapter texts for keyword/concept enrichment
-    related_texts = []
-    for rel in related:
-        for idx, item in enumerate(index):
-            if (item["book"] == rel["book"] and 
-                item["chapter"] == rel["chapter"]):
-                related_texts.append(corpus[idx])
-                break
+    related_texts = _collect_related_texts(related, corpus, index)
     
     # Build current chapter text
     current_text = " ".join([

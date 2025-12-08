@@ -16,7 +16,7 @@ References:
     - PYTHON_GUIDELINES Ch.8: Classes and OOP
 """
 
-from typing import Dict, List, Any
+from typing import Dict, List, Any, Tuple, Optional
 
 
 class ValidationResult:
@@ -132,8 +132,47 @@ class EnrichmentContentValidator:
         - ARCHITECTURE_GUIDELINES Ch.13: Strategy Pattern
     """
     
+    REQUIRED_FIELDS = [
+        "related_chapters",
+        "keywords_enriched",
+        "concepts_enriched"
+    ]
+    
     @staticmethod
-    def validate_content(chapters: List[Dict[str, Any]]) -> List[ValidationResult]:
+    def _check_chapter_fields(
+        chapter: Dict[str, Any], 
+        chapter_id: str
+    ) -> Tuple[Optional[str], Optional[str]]:
+        """
+        Check a single chapter for missing fields and invalid scores.
+        
+        Returns:
+            Tuple of (missing_field_info, invalid_score_info) or None for each if valid
+        """
+        missing_field_info = None
+        invalid_score_info = None
+        
+        # Check required enrichment fields present
+        missing = [f for f in EnrichmentContentValidator.REQUIRED_FIELDS if f not in chapter]
+        if missing:
+            missing_field_info = f"{chapter_id} (missing: {', '.join(missing)})"
+        
+        # Validate similarity scores in related_chapters
+        if "related_chapters" in chapter:
+            for related in chapter["related_chapters"]:
+                if "similarity_score" in related:
+                    score = related["similarity_score"]
+                    if not isinstance(score, (int, float)):
+                        invalid_score_info = f"{chapter_id} (score not numeric: {type(score).__name__})"
+                        break
+                    if not (0.0 <= score <= 1.0):
+                        invalid_score_info = f"{chapter_id} (score out of range: {score})"
+                        break
+        
+        return missing_field_info, invalid_score_info
+    
+    @classmethod
+    def validate_content(cls, chapters: List[Dict[str, Any]]) -> List["ValidationResult"]:
         """
         Validate each chapter has enrichment fields.
         
@@ -157,38 +196,17 @@ class EnrichmentContentValidator:
             ))
             return results
         
-        required_fields = [
-            "related_chapters",
-            "keywords_enriched",
-            "concepts_enriched"
-        ]
-        
         chapters_missing_fields = []
         chapters_with_invalid_scores = []
         
         for i, chapter in enumerate(chapters):
             chapter_id = chapter.get("chapter", f"Chapter {i+1}")
+            missing_info, invalid_info = cls._check_chapter_fields(chapter, chapter_id)
             
-            # Check required enrichment fields present
-            missing = [f for f in required_fields if f not in chapter]
-            if missing:
-                chapters_missing_fields.append(
-                    f"{chapter_id} (missing: {', '.join(missing)})"
-                )
-            
-            # Validate similarity scores in related_chapters
-            if "related_chapters" in chapter:
-                for related in chapter["related_chapters"]:
-                    if "similarity_score" in related:
-                        score = related["similarity_score"]
-                        if not isinstance(score, (int, float)):
-                            chapters_with_invalid_scores.append(
-                                f"{chapter_id} (score not numeric: {type(score).__name__})"
-                            )
-                        elif not (0.0 <= score <= 1.0):
-                            chapters_with_invalid_scores.append(
-                                f"{chapter_id} (score out of range: {score})"
-                            )
+            if missing_info:
+                chapters_missing_fields.append(missing_info)
+            if invalid_info:
+                chapters_with_invalid_scores.append(invalid_info)
         
         # Report findings
         if chapters_missing_fields:

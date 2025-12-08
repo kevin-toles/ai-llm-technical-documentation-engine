@@ -295,6 +295,64 @@ class UniversalMetadataGenerator:
                     f"but Chapter {next_num} starts at page {next_start}"
                 )
     
+    def _collect_chapter_text(self, start_page: int, end_page: int) -> Tuple[str, int]:
+        """
+        Collect text content from pages within a chapter range.
+        
+        Extracted to reduce cognitive complexity in generate_metadata().
+        
+        Args:
+            start_page: Starting page number (inclusive)
+            end_page: Ending page number (inclusive)
+            
+        Returns:
+            Tuple of (chapter_text, pages_found_count)
+        """
+        chapter_text = ""
+        pages_found = 0
+        for page in self.pages:
+            page_num = page.get('page_number', 0)
+            if start_page <= page_num <= end_page:
+                chapter_text += page.get('content', page.get('text', '')) + "\n"
+                pages_found += 1
+        return chapter_text, pages_found
+    
+    def _create_fallback_metadata(
+        self,
+        ch_num: int,
+        title: str,
+        start_page: int,
+        end_page: int,
+        error_suffix: str = ""
+    ) -> ChapterMetadata:
+        """
+        Create minimal metadata for chapters with no text or extraction failures.
+        
+        Extracted to reduce cognitive complexity in generate_metadata().
+        
+        Args:
+            ch_num: Chapter number
+            title: Chapter title
+            start_page: Starting page number
+            end_page: Ending page number
+            error_suffix: Optional suffix for summary (e.g., "(metadata extraction failed)")
+            
+        Returns:
+            ChapterMetadata with fallback values
+        """
+        summary = f"Chapter {ch_num}: {title}"
+        if error_suffix:
+            summary = f"{summary} {error_suffix}"
+        return ChapterMetadata(
+            chapter_number=ch_num,
+            title=title,
+            start_page=start_page,
+            end_page=end_page,
+            summary=summary,
+            keywords=[],
+            concepts=[]
+        )
+    
     def generate_metadata(
         self,
         chapters: List[Tuple[int, str, int, int]]
@@ -322,17 +380,8 @@ class UniversalMetadataGenerator:
             progress_pct = (idx / total_chapters) * 100
             print(f"\n[{progress_pct:.1f}%] Processing Chapter {ch_num}: {title}")
             
-            # Collect text from chapter pages
-            # BUG FIX: Use page_number field instead of array index
-            # The pages array may not start at page 1 (e.g., cover pages skipped)
-            # So we need to find pages by their page_number, not by array position
-            chapter_text = ""
-            pages_found = 0
-            for page in self.pages:
-                page_num = page.get('page_number', 0)
-                if start_page <= page_num <= end_page:
-                    chapter_text += page.get('content', page.get('text', '')) + "\n"
-                    pages_found += 1
+            # Collect text from chapter pages using helper method
+            chapter_text, pages_found = self._collect_chapter_text(start_page, end_page)
             
             # Optimize for large chapters: limit text size to avoid timeouts
             # StatisticalExtractor (YAKE + Summa) is expensive for >100K chars
@@ -346,17 +395,8 @@ class UniversalMetadataGenerator:
             
             # Guard against empty text (scanned/image pages with no extracted text)
             if not chapter_text or not chapter_text.strip():
-                print(f"  ⚠️ Warning: Chapter has no text content, using title only")
-                chapter_meta = ChapterMetadata(
-                    chapter_number=ch_num,
-                    title=title,
-                    start_page=start_page,
-                    end_page=end_page,
-                    summary=f"Chapter {ch_num}: {title}",
-                    keywords=[],
-                    concepts=[]
-                )
-                metadata_list.append(chapter_meta)
+                print("  ⚠️ Warning: Chapter has no text content, using title only")
+                metadata_list.append(self._create_fallback_metadata(ch_num, title, start_page, end_page))
                 continue
             
             # Per-chapter try/except: skip failed chapters, don't crash entire book
@@ -395,16 +435,12 @@ class UniversalMetadataGenerator:
                 print(f"  ⚠️ Skipping chapter {ch_num}, continuing with next chapter...")
                 
                 # Create minimal metadata entry so chapter is tracked
-                chapter_meta = ChapterMetadata(
-                    chapter_number=ch_num,
-                    title=title,
-                    start_page=start_page,
-                    end_page=end_page,
-                    summary=f"Chapter {ch_num}: {title} (metadata extraction failed)",
-                    keywords=[],
-                    concepts=[]
+                metadata_list.append(
+                    self._create_fallback_metadata(
+                        ch_num, title, start_page, end_page, 
+                        error_suffix="(metadata extraction failed)"
+                    )
                 )
-                metadata_list.append(chapter_meta)
                 continue
         
         return metadata_list

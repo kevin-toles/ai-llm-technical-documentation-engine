@@ -220,7 +220,7 @@ class TopicClusterer:
     def _fallback_clustering(
         self,
         corpus: List[str],
-        index: List[Dict[str, Any]]
+        _index: List[Dict[str, Any]]
     ) -> TopicResults:
         """
         Fallback clustering when BERTopic unavailable.
@@ -229,7 +229,7 @@ class TopicClusterer:
         
         Args:
             corpus: List of chapter text content
-            index: List of chapter metadata
+            _index: List of chapter metadata (unused in fallback)
         
         Returns:
             TopicResults with all chapters assigned to topic -1
@@ -253,7 +253,7 @@ class TopicClusterer:
     
     def _build_topics_list(
         self,
-        topic_info_dict: Any,
+        _topic_info_dict: Any,
         index: List[Dict[str, Any]],
         topic_assignments: List[int]
     ) -> List[Dict[str, Any]]:
@@ -261,7 +261,7 @@ class TopicClusterer:
         Build topic metadata list from BERTopic results.
         
         Args:
-            topic_info_dict: DataFrame from BERTopic.get_topic_info()
+            _topic_info_dict: DataFrame from BERTopic.get_topic_info() (unused - reserved for future)
             index: Chapter metadata
             topic_assignments: Topic ID for each chapter
         
@@ -271,7 +271,7 @@ class TopicClusterer:
         topics_list = []
         
         # Get unique topic IDs (excluding -1 outliers)
-        unique_topics = set(t for t in topic_assignments if t >= 0)
+        unique_topics = {t for t in topic_assignments if t >= 0}
         
         for topic_id in sorted(unique_topics):
             try:

@@ -201,98 +201,113 @@ class MetadataExtractionValidator:
     MIN_CONCEPTS = 3
     
     @staticmethod
-    def validate(source_json: Path, metadata_json: Path) -> ValidationResult:
-        """Validate metadata extraction output."""
-        result = ValidationResult()
-        
-        # Check output exists
+    def _load_metadata(metadata_json: Path, result: "ValidationResult") -> Optional[List]:
+        """Load and validate metadata JSON structure."""
         if not metadata_json.exists():
             result.add_error(f"Metadata file not created: {metadata_json.name}")
-            return result
+            return None
         
         result.add_info(f"Metadata file exists: {metadata_json.name}")
         
-        # Load metadata
         try:
             with open(metadata_json) as f:
                 metadata = json.load(f)
         except json.JSONDecodeError as e:
             result.add_error(f"Invalid metadata JSON: {e}")
-            return result
+            return None
         
         if not isinstance(metadata, list):
             result.add_error(f"Metadata must be a list, got {type(metadata).__name__}")
-            return result
+            return None
         
         if not metadata:
             result.add_error("Metadata is empty (0 chapters)")
-            return result
+            return None
         
         result.add_info(f"Chapters in metadata: {len(metadata)}")
-        
-        # Load source for content capture validation
-        source_pages = []
+        return metadata
+    
+    @staticmethod
+    def _build_page_content_map(source_json: Path, result: "ValidationResult") -> Dict[int, int]:
+        """Build page number to content length mapping from source JSON."""
+        page_content_map = {}
         if source_json.exists():
             try:
                 with open(source_json) as f:
                     source_data = json.load(f)
                     source_pages = source_data.get("pages", [])
+                for page in source_pages:
+                    page_num = page.get("page_number")
+                    if page_num is not None:
+                        content = page.get("content", "")
+                        page_content_map[page_num] = len(content) if content else 0
             except Exception:
                 result.add_warning("Could not load source JSON for content validation")
+        return page_content_map
+    
+    @classmethod
+    def _validate_chapter(
+        cls, 
+        chapter: Dict, 
+        page_content_map: Dict[int, int], 
+        result: "ValidationResult"
+    ) -> bool:
+        """Validate a single chapter. Returns True if empty extraction detected with source content."""
+        ch_num = chapter.get("chapter_number", "?")
         
-        # Build page_number -> content map
-        page_content_map = {}
-        for page in source_pages:
-            page_num = page.get("page_number")
-            if page_num is not None:
-                content = page.get("content", "")
-                page_content_map[page_num] = len(content) if content else 0
+        required = ["chapter_number", "title", "start_page", "end_page", 
+                   "summary", "keywords", "concepts"]
+        missing = [f for f in required if f not in chapter]
+        if missing:
+            result.add_error(f"Chapter {ch_num}: Missing fields: {missing}")
+            return False
         
-        # Validate each chapter
-        empty_extraction_chapters = []
+        summary = chapter.get("summary", "")
+        keywords = chapter.get("keywords", [])
+        concepts = chapter.get("concepts", [])
+        start_page = chapter.get("start_page")
+        end_page = chapter.get("end_page")
+        
+        is_empty = (
+            len(summary) < cls.MIN_SUMMARY_LENGTH and
+            len(keywords) < cls.MIN_KEYWORDS and
+            len(concepts) < cls.MIN_CONCEPTS
+        )
+        
+        if not is_empty:
+            return False
+        
+        source_chars = sum(
+            page_content_map.get(p, 0) 
+            for p in range(start_page, end_page + 1)
+        )
+        
+        if source_chars > 500:
+            result.add_error(
+                f"Chapter {ch_num}: Source has {source_chars:,} chars "
+                f"but extraction appears empty (summary: {len(summary)}, "
+                f"keywords: {len(keywords)}, concepts: {len(concepts)})"
+            )
+            return True
+        
+        result.add_warning(
+            f"Chapter {ch_num}: Minimal extraction (source may have limited content)"
+        )
+        return False
+    
+    @classmethod
+    def validate(cls, source_json: Path, metadata_json: Path) -> "ValidationResult":
+        """Validate metadata extraction output."""
+        result = ValidationResult()
+        
+        metadata = cls._load_metadata(metadata_json, result)
+        if metadata is None:
+            return result
+        
+        page_content_map = cls._build_page_content_map(source_json, result)
         
         for chapter in metadata:
-            ch_num = chapter.get("chapter_number", "?")
-            
-            # Check required fields
-            required = ["chapter_number", "title", "start_page", "end_page", 
-                       "summary", "keywords", "concepts"]
-            missing = [f for f in required if f not in chapter]
-            if missing:
-                result.add_error(f"Chapter {ch_num}: Missing fields: {missing}")
-                continue
-            
-            summary = chapter.get("summary", "")
-            keywords = chapter.get("keywords", [])
-            concepts = chapter.get("concepts", [])
-            start_page = chapter.get("start_page")
-            end_page = chapter.get("end_page")
-            
-            # Check for empty extraction
-            is_empty = (
-                len(summary) < MetadataExtractionValidator.MIN_SUMMARY_LENGTH and
-                len(keywords) < MetadataExtractionValidator.MIN_KEYWORDS and
-                len(concepts) < MetadataExtractionValidator.MIN_CONCEPTS
-            )
-            
-            if is_empty:
-                # Check if source has content
-                source_chars = sum(
-                    page_content_map.get(p, 0) 
-                    for p in range(start_page, end_page + 1)
-                )
-                
-                if source_chars > 500:
-                    result.add_error(
-                        f"Chapter {ch_num}: Source has {source_chars:,} chars "
-                        f"but extraction appears empty (summary: {len(summary)}, "
-                        f"keywords: {len(keywords)}, concepts: {len(concepts)})"
-                    )
-                    empty_extraction_chapters.append(ch_num)
-                else:
-                    result.add_warning(
-                        f"Chapter {ch_num}: Minimal extraction (source may have limited content)"
-                    )
+            cls._validate_chapter(chapter, page_content_map, result)
         
         if not result.errors:
             result.add_info("All chapters have valid extraction")
@@ -388,9 +403,51 @@ class BaseGuidelineValidator:
     
     MIN_GUIDELINE_LENGTH = 1000  # Minimum chars for a valid guideline
     
+    @classmethod
+    def _validate_md_output(cls, output_md: Path, result: "ValidationResult") -> None:
+        """Validate markdown output file."""
+        if not output_md.exists():
+            result.add_error(f"Markdown output not created: {output_md.name}")
+            return
+        
+        result.add_info(f"Markdown output exists: {output_md.name}")
+        content = output_md.read_text()
+        
+        if len(content) < cls.MIN_GUIDELINE_LENGTH:
+            result.add_error(
+                f"Guideline too short: {len(content)} chars "
+                f"(min: {cls.MIN_GUIDELINE_LENGTH})"
+            )
+        else:
+            result.add_info(f"Guideline length: {len(content):,} chars")
+        
+        if "# " not in content:
+            result.add_warning("No top-level headers found in markdown")
+        
+        if "## " not in content:
+            result.add_warning("No second-level headers found in markdown")
+    
     @staticmethod
-    def validate(source_metadata: Path, output_md: Optional[Path] = None, 
-                 output_json: Optional[Path] = None) -> ValidationResult:
+    def _validate_json_output(output_json: Path, result: "ValidationResult") -> None:
+        """Validate JSON output file."""
+        if not output_json.exists():
+            result.add_error(f"JSON output not created: {output_json.name}")
+            return
+        
+        result.add_info(f"JSON output exists: {output_json.name}")
+        
+        try:
+            with open(output_json) as f:
+                data = json.load(f)
+            
+            if "guidelines" not in data and "content" not in data:
+                result.add_warning("JSON missing 'guidelines' or 'content' field")
+        except json.JSONDecodeError as e:
+            result.add_error(f"Invalid guideline JSON: {e}")
+    
+    @classmethod
+    def validate(cls, source_metadata: Path, output_md: Optional[Path] = None, 
+                 output_json: Optional[Path] = None) -> "ValidationResult":
         """Validate base guideline generation output."""
         result = ValidationResult()
         
@@ -398,47 +455,11 @@ class BaseGuidelineValidator:
             result.add_error("No output file specified")
             return result
         
-        # Validate MD output
         if output_md:
-            if not output_md.exists():
-                result.add_error(f"Markdown output not created: {output_md.name}")
-            else:
-                result.add_info(f"Markdown output exists: {output_md.name}")
-                
-                content = output_md.read_text()
-                
-                if len(content) < BaseGuidelineValidator.MIN_GUIDELINE_LENGTH:
-                    result.add_error(
-                        f"Guideline too short: {len(content)} chars "
-                        f"(min: {BaseGuidelineValidator.MIN_GUIDELINE_LENGTH})"
-                    )
-                else:
-                    result.add_info(f"Guideline length: {len(content):,} chars")
-                
-                # Check for expected markdown structure
-                if "# " not in content:
-                    result.add_warning("No top-level headers found in markdown")
-                
-                if "## " not in content:
-                    result.add_warning("No second-level headers found in markdown")
+            cls._validate_md_output(output_md, result)
         
-        # Validate JSON output
         if output_json:
-            if not output_json.exists():
-                result.add_error(f"JSON output not created: {output_json.name}")
-            else:
-                result.add_info(f"JSON output exists: {output_json.name}")
-                
-                try:
-                    with open(output_json) as f:
-                        data = json.load(f)
-                    
-                    # Check guideline structure
-                    if "guidelines" not in data and "content" not in data:
-                        result.add_warning("JSON missing 'guidelines' or 'content' field")
-                    
-                except json.JSONDecodeError as e:
-                    result.add_error(f"Invalid guideline JSON: {e}")
+            cls._validate_json_output(output_json, result)
         
         return result
 
@@ -503,9 +524,52 @@ class LLMEnhancementValidator:
         
         return result
     
+    @classmethod
+    def _check_enhancement_markers(cls, content: str, result: "ValidationResult") -> None:
+        """Check for expected enhancement markers in content."""
+        markers_found = []
+        markers_missing = []
+        
+        for marker in cls.REQUIRED_ENHANCEMENT_MARKERS:
+            if marker in content:
+                markers_found.append(marker)
+            else:
+                markers_missing.append(marker)
+        
+        if markers_missing:
+            result.add_warning(f"Missing enhancement markers: {markers_missing}")
+        
+        if markers_found:
+            result.add_info(f"Enhancement markers found: {len(markers_found)}")
+    
     @staticmethod
-    def validate_enhanced_output(enhanced_path: Path, 
-                                  original_path: Optional[Path] = None) -> ValidationResult:
+    def _check_truncation(content: str, original_path: Optional[Path], result: "ValidationResult") -> None:
+        """Check for LLM truncation issues by comparing with original."""
+        if not original_path or not original_path.exists():
+            return
+        
+        original_content = original_path.read_text()
+        
+        if len(content) < len(original_content) * 0.8:
+            result.add_warning(
+                f"Enhanced content ({len(content):,} chars) is shorter than "
+                f"original ({len(original_content):,} chars) - possible truncation"
+            )
+        
+        truncation_markers = [
+            "I'll continue",
+            "Let me know if",
+            "[continues]",
+            "...more to follow"
+        ]
+        
+        for marker in truncation_markers:
+            if marker.lower() in content.lower():
+                result.add_error(f"LLM truncation detected: '{marker}'")
+    
+    @classmethod
+    def validate_enhanced_output(cls, enhanced_path: Path, 
+                                  original_path: Optional[Path] = None) -> "ValidationResult":
         """
         Validate LLM-enhanced output.
         
@@ -522,56 +586,18 @@ class LLMEnhancementValidator:
             return result
         
         result.add_info(f"Enhanced output exists: {enhanced_path.name}")
-        
         content = enhanced_path.read_text()
         
-        # Length check
-        if len(content) < LLMEnhancementValidator.MIN_ENHANCED_LENGTH:
+        if len(content) < cls.MIN_ENHANCED_LENGTH:
             result.add_error(
                 f"Enhanced output too short: {len(content)} chars "
-                f"(min: {LLMEnhancementValidator.MIN_ENHANCED_LENGTH})"
+                f"(min: {cls.MIN_ENHANCED_LENGTH})"
             )
         else:
             result.add_info(f"Enhanced output length: {len(content):,} chars")
         
-        # Check for enhancement markers
-        markers_found = []
-        markers_missing = []
-        
-        for marker in LLMEnhancementValidator.REQUIRED_ENHANCEMENT_MARKERS:
-            if marker in content:
-                markers_found.append(marker)
-            else:
-                markers_missing.append(marker)
-        
-        if markers_missing:
-            result.add_warning(f"Missing enhancement markers: {markers_missing}")
-        
-        if markers_found:
-            result.add_info(f"Enhancement markers found: {len(markers_found)}")
-        
-        # Compare with original if provided
-        if original_path and original_path.exists():
-            original_content = original_path.read_text()
-            
-            # Enhanced should generally be longer than original
-            if len(content) < len(original_content) * 0.8:
-                result.add_warning(
-                    f"Enhanced content ({len(content):,} chars) is shorter than "
-                    f"original ({len(original_content):,} chars) - possible truncation"
-                )
-            
-            # Check for obvious LLM errors
-            truncation_markers = [
-                "I'll continue",
-                "Let me know if",
-                "[continues]",
-                "...more to follow"
-            ]
-            
-            for marker in truncation_markers:
-                if marker.lower() in content.lower():
-                    result.add_error(f"LLM truncation detected: '{marker}'")
+        cls._check_enhancement_markers(content, result)
+        cls._check_truncation(content, original_path, result)
         
         return result
 

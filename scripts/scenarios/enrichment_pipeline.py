@@ -14,6 +14,12 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 from observability_platform.src.data_classes import Scenario, ScenarioStep
 
+# =============================================================================
+# Constants - SonarQube S1192: Extract duplicated literals
+# =============================================================================
+
+_ENRICH_METADATA_MODULE = "workflows.metadata_enrichment.scripts.enrich_metadata_per_book"
+
 
 def get_enrichment_pipeline_scenario() -> Scenario:
     """
@@ -36,7 +42,7 @@ def get_enrichment_pipeline_scenario() -> Scenario:
             name="Load Book Metadata",
             order=1,
             function="load_metadata",
-            module="workflows.metadata_enrichment.scripts.enrich_metadata_per_book",
+            module=_ENRICH_METADATA_MODULE,
             entity_inputs=[{"entity_id": "entity_book_metadata", "instance_id": "target_book"}],
             service_id="svc_metadata_enricher"
         ),
@@ -45,7 +51,7 @@ def get_enrichment_pipeline_scenario() -> Scenario:
             name="Load Taxonomy",
             order=2,
             function="load_taxonomy",
-            module="workflows.metadata_enrichment.scripts.enrich_metadata_per_book",
+            module=_ENRICH_METADATA_MODULE,
             entity_inputs=[{"entity_id": "entity_taxonomy", "instance_id": "target_taxonomy"}],
             service_id="svc_taxonomy_builder"
         ),
@@ -54,7 +60,7 @@ def get_enrichment_pipeline_scenario() -> Scenario:
             name="Build Chapter Corpus",
             order=3,
             function="build_chapter_corpus",
-            module="workflows.metadata_enrichment.scripts.enrich_metadata_per_book",
+            module=_ENRICH_METADATA_MODULE,
             service_id="svc_metadata_enricher"
         ),
         ScenarioStep(
@@ -62,7 +68,7 @@ def get_enrichment_pipeline_scenario() -> Scenario:
             name="Compute Similarity Matrix",
             order=4,
             function="compute_similarity_matrix",
-            module="workflows.metadata_enrichment.scripts.enrich_metadata_per_book",
+            module=_ENRICH_METADATA_MODULE,
             service_id="svc_metadata_enricher"
         ),
         ScenarioStep(
@@ -70,7 +76,7 @@ def get_enrichment_pipeline_scenario() -> Scenario:
             name="Enrich Chapters",
             order=5,
             function="enrich_metadata",
-            module="workflows.metadata_enrichment.scripts.enrich_metadata_per_book",
+            module=_ENRICH_METADATA_MODULE,
             entity_outputs_keys=["enriched_metadata_file"],
             service_id="svc_metadata_enricher"
         ),

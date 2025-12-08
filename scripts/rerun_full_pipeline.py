@@ -262,6 +262,49 @@ def run_tab5_guideline_generation(book_name: str, taxonomy_path: Optional[Path] 
         return False
 
 
+def _process_book_tabs(
+    book_name: str,
+    stats: "PipelineStats",
+    taxonomy_path: Optional[Path],
+    run_tab2: bool,
+    run_tab4: bool,
+    run_tab5: bool,
+    dry_run: bool
+) -> None:
+    """
+    Process all enabled tabs for a single book.
+    
+    Extracted from run_pipeline() to reduce cognitive complexity.
+    Updates stats in place.
+    """
+    # Tab 2: Metadata Extraction
+    if run_tab2:
+        print("  📋 Tab 2: Metadata Extraction...")
+        if run_tab2_metadata_extraction(book_name, dry_run):
+            stats.tab2_success += 1
+            print("  ✅ Tab 2 complete")
+        else:
+            stats.tab2_failed += 1
+    
+    # Tab 4: Metadata Enrichment
+    if run_tab4 and taxonomy_path:
+        print("  🔗 Tab 4: Metadata Enrichment (BERTopic + Sentence Transformers)...")
+        if run_tab4_metadata_enrichment(book_name, taxonomy_path, dry_run):
+            stats.tab4_success += 1
+            print("  ✅ Tab 4 complete")
+        else:
+            stats.tab4_failed += 1
+    
+    # Tab 5: Guideline Generation
+    if run_tab5:
+        print("  📖 Tab 5: Guideline Generation...")
+        if run_tab5_guideline_generation(book_name, taxonomy_path, dry_run):
+            stats.tab5_success += 1
+            print("  ✅ Tab 5 complete")
+        else:
+            stats.tab5_failed += 1
+
+
 def run_pipeline(
     books: List[str],
     run_tab2: bool = False,
@@ -297,32 +340,10 @@ def run_pipeline(
         print(f"[{i}/{len(books)}] 📖 {book_name}")
         print(f"{'─'*60}")
         
-        # Tab 2: Metadata Extraction
-        if run_tab2:
-            print("  📋 Tab 2: Metadata Extraction...")
-            if run_tab2_metadata_extraction(book_name, dry_run):
-                stats.tab2_success += 1
-                print("  ✅ Tab 2 complete")
-            else:
-                stats.tab2_failed += 1
-        
-        # Tab 4: Metadata Enrichment
-        if run_tab4 and taxonomy_path:
-            print("  🔗 Tab 4: Metadata Enrichment (BERTopic + Sentence Transformers)...")
-            if run_tab4_metadata_enrichment(book_name, taxonomy_path, dry_run):
-                stats.tab4_success += 1
-                print("  ✅ Tab 4 complete")
-            else:
-                stats.tab4_failed += 1
-        
-        # Tab 5: Guideline Generation
-        if run_tab5:
-            print("  📖 Tab 5: Guideline Generation...")
-            if run_tab5_guideline_generation(book_name, taxonomy_path, dry_run):
-                stats.tab5_success += 1
-                print("  ✅ Tab 5 complete")
-            else:
-                stats.tab5_failed += 1
+        _process_book_tabs(
+            book_name, stats, taxonomy_path,
+            run_tab2, run_tab4, run_tab5, dry_run
+        )
     
     stats.total_time_seconds = time.time() - start_time
     return stats

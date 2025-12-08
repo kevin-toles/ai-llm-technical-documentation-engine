@@ -199,14 +199,14 @@ class UnstructuredExtractor:
                     return elements
                 else:
                     # User-visible status: show error and fallback
-                    print(f"   ❌ Unstructured extracted 0 elements (likely scanned/image PDF)")
+                    print("   ❌ Unstructured extracted 0 elements (likely scanned/image PDF)")
                     self.logger.warning(
                         f"Unstructured returned 0 elements for {pdf_path.name} "
                         "(likely a scanned PDF)"
                     )
                     if not self.config.fallback_to_pymupdf:
                         return elements  # Return empty list if no fallback
-                    print(f"   🔄 Fallback initiated: PyMuPDF with OCR support...")
+                    print("   🔄 Fallback initiated: PyMuPDF with OCR support...")
                     
             except Exception as e:
                 # User-visible status: show error and fallback
@@ -214,7 +214,7 @@ class UnstructuredExtractor:
                 self.logger.warning(f"Unstructured extraction failed: {e}")
                 if not self.config.fallback_to_pymupdf:
                     raise
-                print(f"   🔄 Fallback initiated: PyMuPDF with OCR support...")
+                print("   🔄 Fallback initiated: PyMuPDF with OCR support...")
         
         # Fallback to PyMuPDF (triggered on exception OR 0 elements)
         if self.config.fallback_to_pymupdf and PYMUPDF_AVAILABLE:
