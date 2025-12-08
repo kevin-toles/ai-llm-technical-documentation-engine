@@ -129,7 +129,7 @@ def validate_pdf_conversion(pdf_name: str, input_dir: Path, output_dir: Path) ->
         # All validations passed
         result["success"] = True
         
-        print(f"\n✅ SUCCESS!")
+        print("\n✅ SUCCESS!")
         print(f"   Pages: {result['pages_processed']} (OCR: {result['ocr_pages']}, Direct: {result['direct_pages']})")
         print(f"   Chapters: {result['chapters_detected']}")
         print(f"   Duration: {result['duration_seconds']:.1f}s")

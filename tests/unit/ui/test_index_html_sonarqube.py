@@ -94,13 +94,13 @@ class TestSonarQubeJavaScriptPatterns:
         )
         
         # If declared, verify it's actually used (not just assigned)
-        for decl in containerid_declarations:
+        for _ in containerid_declarations:
             # Check if containerId is used beyond declaration
             containerid_uses = re.findall(r'\bcontainerId\b', index_html_content)
             # Should only appear in declaration, not elsewhere
             assert len(containerid_uses) <= 1 or len(containerid_uses) == 0, (
-                f"Variable 'containerId' is declared but not meaningfully used. "
-                f"Remove the unused variable (SonarQube S1481/S1854)."
+                "Variable 'containerId' is declared but not meaningfully used. "
+                "Remove the unused variable (SonarQube S1481/S1854)."
             )
     
     # ========== S7768: insertBefore -> element.before() ==========
@@ -250,7 +250,7 @@ class TestRemainingIndexHtmlIssues:
         # This rule applies to ES modules. For inline scripts, we check if
         # there's unnecessary async IIFE pattern
         # Pattern: (async () => { ... })() or (async function() { ... })()
-        async_iife = re.findall(r'\(async\s*(?:function\s*)?\([^)]*\)\s*=>\s*\{|\(async\s*function', index_html_content)
+        # Note: async_iife detection is informational only for inline scripts
         
         # If using module type, check for sync call to async function at end
         has_module_type = 'type="module"' in index_html_content
@@ -265,7 +265,7 @@ class TestRemainingIndexHtmlIssues:
         
         # Test passes if not a module (top-level await not available)
         # The actual S7785 fix requires converting to module type
-        assert True  # Placeholder - actual fix depends on module type decision
+        pytest.skip("Placeholder - actual fix depends on module type decision")
 
 
 class TestS3776JavaScriptCognitiveComplexity:
@@ -320,14 +320,16 @@ class TestS3776JavaScriptCognitiveComplexity:
         
         # Alternative: Check for reduced event handler nesting
         # If no helpers, check that the forEach loop has simpler handlers
-        init_tier_match = re.search(
-            r'function initTierBuilder\([^)]*\)\s*\{(.*?)(?=\n\s*function |\n\s*// Get the element)',
-            script_content,
-            re.DOTALL
-        )
-        
-        if init_tier_match:
-            body = init_tier_match.group(1)
+        # Using string find to avoid reluctant quantifier (S5852)
+        init_start = script_content.find('function initTierBuilder(')
+        if init_start != -1:
+            rest = script_content[init_start:]
+            # Find end by looking for next function or comment marker
+            next_func = rest.find('\n    function ', 1)  # Start from 1 to skip current
+            comment_marker = rest.find('\n    // Get the element')
+            candidates = [pos for pos in [next_func, comment_marker] if pos > 0]
+            end_pos = min(candidates) if candidates else len(rest)
+            body = rest[:end_pos]
             # Count nesting indicators
             event_handlers = body.count('addEventListener')
             # If we have helpers, there should be fewer inline event handlers
@@ -362,14 +364,16 @@ class TestS3776JavaScriptCognitiveComplexity:
         ])
         
         # Alternative: Count if/else branches in runWorkflow
-        run_workflow_match = re.search(
-            r'async function runWorkflow\([^)]*\)\s*\{(.*?)(?=\n\s*async function |\n\s*function |\Z)',
-            script_content,
-            re.DOTALL
-        )
-        
-        if run_workflow_match:
-            body = run_workflow_match.group(1)
+        # Using string find to avoid reluctant quantifier (S5852)
+        run_start = script_content.find('async function runWorkflow(')
+        if run_start != -1:
+            rest = script_content[run_start:]
+            # Find end by looking for next async function or function
+            next_async = rest.find('\n    async function ', 1)
+            next_func = rest.find('\n    function ', 1)
+            candidates = [pos for pos in [next_async, next_func] if pos > 0]
+            end_pos = min(candidates) if candidates else len(rest)
+            body = rest[:end_pos]
             # Count branching indicators
             if_count = body.count('if (')
             else_count = body.count('else')

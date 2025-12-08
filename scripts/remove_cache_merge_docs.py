@@ -90,7 +90,9 @@ def update_workflow_output_analysis():
     content = doc.read_text()
     
     # Remove Tab 3b section (### Tab 3b: ... to next ###)
-    pattern = r'### Tab 3b: Metadata Cache Merge.*?(?=###|\Z)'
+    # Fix S5852: Use character class negation instead of reluctant quantifier .*?
+    # Per CODING_PATTERNS_ANALYSIS.md Category #6.1
+    pattern = r'### Tab 3b: Metadata Cache Merge[^#]*(?=###|\Z)'
     content = re.sub(pattern, '', content, flags=re.DOTALL)
     
     # Update tab numbering in all references

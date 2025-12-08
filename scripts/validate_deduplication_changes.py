@@ -263,7 +263,7 @@ def generate_report(
     
     for filename, analysis in comparison.get("keyword_analysis", {}).items():
         report_lines.extend([
-            f"",
+            "",
             f"### {filename}",
             f"  Pre-change total keywords:  {analysis.get('pre_total_keywords', 0)}",
             f"  Post-change total keywords: {analysis.get('post_total_keywords', 0)}",

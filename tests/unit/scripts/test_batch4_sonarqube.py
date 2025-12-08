@@ -84,15 +84,18 @@ class TestDryRunEnrichmentComparisonS3457:
         
         Checks for f"..." patterns without {} placeholders.
         """
-        # Extract print_comparison_report function
-        func_match = re.search(
-            r'def print_comparison_report\([^)]*\):[^\n]*\n(.*?)(?=\ndef |\nclass |$)',
-            file_content,
-            re.DOTALL
-        )
-        
-        if func_match:
-            func_body = func_match.group(1)
+        # Extract print_comparison_report function using split approach
+        # to avoid reluctant quantifier (S5852)
+        func_start = file_content.find('def print_comparison_report(')
+        if func_start != -1:
+            # Find function body by locating next function/class definition
+            rest = file_content[func_start:]
+            next_def = rest.find('\ndef ', 1)  # Start from 1 to skip current def
+            next_class = rest.find('\nclass ', 1)
+            end_pos = min(
+                pos for pos in [next_def, next_class, len(rest)] if pos > 0
+            )
+            func_body = rest[:end_pos]
             # Find f-strings without placeholders in print statements
             # Pattern: print(f"..." where ... has no { }
             empty_fstring_prints = re.findall(r'print\(f"[^{}"\n]+"\)', func_body)
@@ -135,15 +138,15 @@ class TestDryRunEnrichmentComparisonS3776:
         
         helpers_found = [h for h in helper_patterns if f'def {h}(' in file_content]
         
-        # Extract main() function
-        main_match = re.search(
-            r'def main\(\):[^\n]*\n(.*?)(?=\nif __name__|$)',
-            file_content,
-            re.DOTALL
-        )
-        
-        if main_match:
-            main_body = main_match.group(1)
+        # Extract main() function using split approach
+        # to avoid reluctant quantifier (S5852)
+        main_start = file_content.find('def main():')
+        if main_start != -1:
+            rest = file_content[main_start:]
+            # Find end by looking for if __name__ or end of file
+            name_check = rest.find('\nif __name__')
+            end_pos = name_check if name_check > 0 else len(rest)
+            main_body = rest[:end_pos]
             # Count complexity indicators
             for_count = main_body.count('for ')
             if_count = main_body.count('if ')
@@ -182,30 +185,18 @@ class TestLlmEvaluationS1172:
         
         If parameter is required by interface but not used, prefix with _.
         """
-        # Find function at/near line 307
-        lines = file_content.split('\n')
-        
         # Check if api_key is used in function body or prefixed with _
-        # Look for functions with api_key parameter
-        pattern = r'def \w+\([^)]*\bapi_key\b[^)]*\):'
-        matches = re.findall(pattern, file_content)
+        # Look for functions with api_key parameter that haven't been fixed
+        # Pattern: api_key without leading underscore
+        pattern = r'def \w+\([^)]*(?<!_)\bapi_key\b[^)]*\):'
+        unfixed_matches = re.findall(pattern, file_content)
         
-        for match in matches:
-            # Check if it's _api_key (intentionally unused)
-            if '_api_key' not in match and 'api_key' in match:
-                # Find the function body and check if api_key is used
-                func_name_match = re.search(r'def (\w+)\(', match)
-                if func_name_match:
-                    func_name = func_name_match.group(1)
-                    # This is a heuristic check - real validation would parse AST
-                    # For now, just verify the pattern exists and note it
-                    pass
+        # Filter out matches that have _api_key (already fixed)
+        unfixed_matches = [m for m in unfixed_matches if '_api_key' not in m]
         
-        # Check that functions with unused api_key have been fixed
-        unused_api_key_pattern = r'def \w+\([^)]*(?<![_])api_key(?!.*api_key)[^)]*\):'
-        # If found, check the function body doesn't use api_key
-        # This test will pass once the parameter is either used or prefixed with _
-        assert True  # Placeholder - actual check requires function body analysis
+        # Test passes if all api_key params are either used or prefixed with _
+        # This is a placeholder until AST analysis is implemented
+        pytest.skip("Placeholder - requires function body analysis to verify api_key usage")
     
     def test_line_331_unused_api_key_param(self, file_content: str):
         """
@@ -213,7 +204,7 @@ class TestLlmEvaluationS1172:
         """
         # Similar to above - check for api_key usage or _ prefix
         # This is a structural test - validates the parameter is handled
-        assert True  # Placeholder
+        pytest.skip("Placeholder - requires function body analysis")
 
 
 class TestLlmEvaluationS3776Batch4:
