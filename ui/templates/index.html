@@ -818,7 +818,9 @@
         }
 
         // Load initial files
-        loadFiles('tab1');
+        (async () => {
+            await loadFiles('tab1');
+        })();
     </script>
 </body>
 </html>
