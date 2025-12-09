@@ -20,6 +20,40 @@ This document tracks all implementation changes, their rationale, and git commit
 
 ## 2025-12-09
 
+### CL-002: WBS 0.1.2 - Environment Configuration
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-09 |
+| **WBS Item** | 0.1.2 - Environment Configuration |
+| **Change Type** | Infrastructure |
+| **Summary** | Created .env.integration file with all required service URLs and credentials |
+| **Files Changed** | `.env.integration` |
+| **Rationale** | Integration tests require consistent environment configuration |
+| **Git Commit** | Pending |
+
+**Tasks Completed:**
+
+| Task | Variable | Value |
+|------|----------|-------|
+| 0.1.2.1 | SEMANTIC_SEARCH_URL | http://localhost:8081 |
+| 0.1.2.2 | GATEWAY_URL | http://localhost:8080 |
+| 0.1.2.3 | QDRANT_URL | http://localhost:6333 |
+| 0.1.2.4 | NEO4J_URI | bolt://localhost:7687 |
+| 0.1.2.5 | NEO4J_PASSWORD | devpassword (matches docker-compose) |
+| 0.1.2.6 | ANTHROPIC_API_KEY | Configured with fallback |
+
+**Usage:**
+```bash
+# Use with docker-compose
+docker-compose -f docker-compose.integration.yml --env-file .env.integration up -d
+
+# Source for local testing
+source .env.integration
+```
+
+---
+
 ### CL-001: WBS 0.1.1 - Create Unified Docker Compose Integration Profile
 
 | Field | Value |
