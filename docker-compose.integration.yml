@@ -1,0 +1,291 @@
+# ==============================================================================
+# LLM Document Enhancer - Integration Profile
+# ==============================================================================
+# Self-contained integration compose for running all platform services
+# Reference: WBS 0.1.1 - Create Unified Docker Compose
+# Reference: /Users/kevintoles/POC/llm-platform/docker-compose.yml (primary platform)
+# Reference: Comp_Static_Analysis_Report_20251203.md Issues #2, #3, #18
+#
+# Architecture Decision:
+#   Per GUIDELINES_AI_Engineering §3.2 "Avoid duplication of infrastructure"
+#   This file provides a self-contained integration environment that mirrors
+#   the unified platform but with isolated volumes for testing.
+#
+# Usage:
+#   # Start all integration services
+#   docker-compose -f docker-compose.integration.yml up -d
+#
+#   # Build and start
+#   docker-compose -f docker-compose.integration.yml up -d --build
+#
+#   # Run integration tests
+#   docker-compose -f docker-compose.integration.yml --profile test up
+#
+#   # Stop all services
+#   docker-compose -f docker-compose.integration.yml down
+#
+#   # Stop and remove volumes (clean slate)
+#   docker-compose -f docker-compose.integration.yml down -v
+#
+# Health Verification:
+#   curl http://localhost:8080/health       # llm-gateway
+#   curl http://localhost:8081/health       # semantic-search
+#   curl http://localhost:8082/health       # ai-agents
+#   curl http://localhost:6333/health       # qdrant
+#   curl http://localhost:7474              # neo4j browser
+# ==============================================================================
+
+services:
+  # ============================================================================
+  # INFRASTRUCTURE LAYER
+  # ============================================================================
+  
+  # --------------------------------------------------------------------------
+  # Redis - Session Storage & Caching
+  # --------------------------------------------------------------------------
+  redis:
+    image: redis:7-alpine
+    container_name: integration-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - integration_redis_data:/data
+    command: >
+      redis-server
+      --appendonly yes
+      --maxmemory 256mb
+      --maxmemory-policy allkeys-lru
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+    restart: unless-stopped
+    networks:
+      - integration-network
+
+  # --------------------------------------------------------------------------
+  # Qdrant - Vector Database
+  # --------------------------------------------------------------------------
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: integration-qdrant
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - integration_qdrant_data:/qdrant/storage
+    environment:
+      - QDRANT__SERVICE__GRPC_PORT=6334
+    healthcheck:
+      test: ["CMD-SHELL", "timeout 5 bash -c 'cat < /dev/null > /dev/tcp/localhost/6333' || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+    networks:
+      - integration-network
+
+  # --------------------------------------------------------------------------
+  # Neo4j - Graph Database
+  # --------------------------------------------------------------------------
+  neo4j:
+    image: neo4j:5-community
+    container_name: integration-neo4j
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - integration_neo4j_data:/data
+      - integration_neo4j_logs:/logs
+    environment:
+      - NEO4J_AUTH=neo4j/${NEO4J_PASSWORD:-devpassword}
+      - NEO4J_PLUGINS=["apoc"]
+      - NEO4J_dbms_security_procedures_unrestricted=apoc.*
+      - NEO4J_dbms_memory_heap_initial__size=256m
+      - NEO4J_dbms_memory_heap_max__size=512m
+    healthcheck:
+      test: ["CMD", "cypher-shell", "-u", "neo4j", "-p", "${NEO4J_PASSWORD:-devpassword}", "RETURN 1"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: unless-stopped
+    networks:
+      - integration-network
+
+  # ============================================================================
+  # APPLICATION LAYER
+  # ============================================================================
+
+  # --------------------------------------------------------------------------
+  # Semantic Search Service
+  # --------------------------------------------------------------------------
+  semantic-search:
+    build:
+      context: ../semantic-search-service
+      dockerfile: Dockerfile
+    container_name: integration-semantic-search
+    ports:
+      - "8081:8081"
+    environment:
+      SEMANTIC_SEARCH_PORT: "8081"
+      SBERT_MODEL: all-mpnet-base-v2
+      QDRANT_URL: http://qdrant:6333
+      NEO4J_URL: bolt://neo4j:7687
+      NEO4J_USER: neo4j
+      NEO4J_PASSWORD: ${NEO4J_PASSWORD:-devpassword}
+      ENABLE_GRAPH_SEARCH: "true"
+      ENABLE_HYBRID_SEARCH: "true"
+    volumes:
+      - integration_model_cache:/models
+    depends_on:
+      qdrant:
+        condition: service_healthy
+      neo4j:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8081/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+    restart: unless-stopped
+    networks:
+      - integration-network
+
+  # --------------------------------------------------------------------------
+  # AI Agents Service
+  # --------------------------------------------------------------------------
+  ai-agents:
+    build:
+      context: ../ai-agents
+      dockerfile: Dockerfile
+    container_name: integration-ai-agents
+    ports:
+      - "8082:8082"
+    environment:
+      AI_AGENTS_PORT: "8082"
+      AI_AGENTS_LOG_LEVEL: INFO
+      LLM_GATEWAY_URL: http://llm-gateway:8080
+      SEMANTIC_SEARCH_URL: http://semantic-search:8081
+      NEO4J_URL: bolt://neo4j:7687
+      NEO4J_USER: neo4j
+      NEO4J_PASSWORD: ${NEO4J_PASSWORD:-devpassword}
+      ENABLE_CROSS_REFERENCE_AGENT: "true"
+    depends_on:
+      semantic-search:
+        condition: service_healthy
+      neo4j:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8082/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+    restart: unless-stopped
+    networks:
+      - integration-network
+
+  # --------------------------------------------------------------------------
+  # LLM Gateway Service
+  # --------------------------------------------------------------------------
+  llm-gateway:
+    build:
+      context: ../llm-gateway
+      dockerfile: deploy/docker/Dockerfile
+    container_name: integration-llm-gateway
+    ports:
+      - "8080:8080"
+    environment:
+      LLM_GATEWAY_ENV: integration
+      LLM_GATEWAY_PORT: "8080"
+      LLM_GATEWAY_LOG_LEVEL: INFO
+      LLM_GATEWAY_WORKERS: "4"
+      LLM_GATEWAY_REDIS_URL: redis://redis:6379
+      LLM_GATEWAY_SEMANTIC_SEARCH_URL: http://semantic-search:8081
+      LLM_GATEWAY_AI_AGENTS_URL: http://ai-agents:8082
+      LLM_GATEWAY_DEFAULT_PROVIDER: ${LLM_GATEWAY_DEFAULT_PROVIDER:-anthropic}
+      LLM_GATEWAY_DEFAULT_MODEL: ${LLM_GATEWAY_DEFAULT_MODEL:-claude-3-sonnet-20240229}
+      LLM_GATEWAY_RATE_LIMIT_REQUESTS_PER_MINUTE: "60"
+      LLM_GATEWAY_SESSION_TTL_SECONDS: "3600"
+    env_file:
+      - .env
+    depends_on:
+      redis:
+        condition: service_healthy
+      semantic-search:
+        condition: service_healthy
+      ai-agents:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    restart: unless-stopped
+    networks:
+      - integration-network
+
+  # ============================================================================
+  # INTEGRATION TEST RUNNER (Optional - use with --profile test)
+  # ============================================================================
+  integration-tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: integration-test-runner
+    environment:
+      LLM_GATEWAY_URL: http://llm-gateway:8080
+      SEMANTIC_SEARCH_URL: http://semantic-search:8081
+      AI_AGENTS_URL: http://ai-agents:8082
+      NEO4J_URL: bolt://neo4j:7687
+      NEO4J_USER: neo4j
+      NEO4J_PASSWORD: ${NEO4J_PASSWORD:-devpassword}
+      QDRANT_URL: http://qdrant:6333
+    command: >
+      pytest tests_integration/
+      --tb=short
+      -v
+      --junit-xml=/app/reports/integration-results.xml
+    volumes:
+      - ./reports:/app/reports
+    depends_on:
+      llm-gateway:
+        condition: service_healthy
+      semantic-search:
+        condition: service_healthy
+      ai-agents:
+        condition: service_healthy
+    networks:
+      - integration-network
+    profiles:
+      - test  # Only run when explicitly requested
+
+# ==============================================================================
+# NETWORKS
+# ==============================================================================
+networks:
+  integration-network:
+    name: integration-network
+    driver: bridge
+
+# ==============================================================================
+# VOLUMES
+# Separate volumes for integration tests (isolated from production)
+# ==============================================================================
+volumes:
+  integration_redis_data:
+    name: integration_redis
+  integration_qdrant_data:
+    name: integration_qdrant
+  integration_neo4j_data:
+    name: integration_neo4j
+  integration_neo4j_logs:
+    name: integration_neo4j_logs
+  integration_model_cache:
+    name: integration_models
