@@ -71,13 +71,14 @@ def _extract_pdf_metadata(doc, pdf_path: Path) -> Dict:
         "source_pdf": pdf_path.name
     }
     
-    # Try to get metadata from PDF
+    # Try to get metadata from PDF (author only - title always uses filename for consistency)
+    # Note: PDF embedded titles are often inconsistent (e.g., "AI Engineering (for True Epub)")
+    # Using filename ensures consistency with taxonomy and cross-reference systems
     pdf_metadata = doc.metadata
     if pdf_metadata:
         if pdf_metadata.get('author'):
             metadata['author'] = pdf_metadata['author']
-        if pdf_metadata.get('title'):
-            metadata['title'] = pdf_metadata['title']
+        # Intentionally NOT using pdf_metadata['title'] - filename is the canonical title
     
     return metadata
 
