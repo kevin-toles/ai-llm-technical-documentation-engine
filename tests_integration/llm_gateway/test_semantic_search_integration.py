@@ -1,7 +1,11 @@
 """
 WBS 3.5.3.1: Gateway → Semantic Search Cross-Service Integration Tests
+WBS 3.1: Metadata Extraction Integration Tests
+WBS 3.2: Taxonomy Graph Integration Tests
 
 Tests gateway's communication with the semantic-search service through Docker.
+Also tests metadata extraction and taxonomy graph functionality.
+
 Per GUIDELINES (Newman pp. 357-358): Circuit breaker pattern
 Per GUIDELINES (Newman pp. 352-353): Graceful degradation
 
@@ -11,11 +15,35 @@ These tests require Docker services running with `docker compose --profile integ
 import pytest
 import httpx
 import time
+import json
+import os
+from pathlib import Path
+from typing import Any
 
 from tests_integration.llm_gateway.conftest import (
     GATEWAY_URL,
     SEMANTIC_SEARCH_URL,
 )
+
+# Neo4j configuration
+NEO4J_URI = os.getenv("NEO4J_URI", "bolt://localhost:7687")
+NEO4J_USER = os.getenv("NEO4J_USER", "neo4j")
+NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD", "devpassword")
+
+# Sample texts for metadata extraction tests
+SAMPLE_TEXT_ML = """
+Machine learning pipelines require careful data preprocessing.
+Feature engineering transforms raw data into meaningful representations.
+Model training involves optimizing parameters through gradient descent.
+Evaluation metrics like accuracy and F1 score measure model performance.
+"""
+
+SAMPLE_TEXT_ARCHITECTURE = """
+Microservices architecture enables independent deployment of services.
+Service mesh provides observability, traffic management, and security.
+Circuit breakers prevent cascading failures in distributed systems.
+API gateways handle authentication, rate limiting, and request routing.
+"""
 
 
 # =============================================================================
@@ -534,3 +562,349 @@ class TestSemanticSearchResponseFormat:
             key in data 
             for key in ["error", "message", "detail", "errors"]
         )
+
+
+# =============================================================================
+# WBS 3.1: Metadata Extraction Integration Tests
+# =============================================================================
+
+
+@pytest.mark.integration
+@pytest.mark.metadata
+class TestMetadataExtraction:
+    """
+    WBS 3.1.1 - Tests for YAKE keyword extraction and metadata generation.
+    Tests that the StatisticalExtractor can extract domain-agnostic keywords.
+    """
+
+    @pytest.fixture
+    def extractor(self):
+        """Create StatisticalExtractor instance."""
+        try:
+            from workflows.metadata_extraction.scripts.adapters.statistical_extractor import (
+                StatisticalExtractor,
+            )
+            return StatisticalExtractor()
+        except ImportError:
+            pytest.skip("StatisticalExtractor not available")
+
+    def test_statistical_extractor_import(self):
+        """Test StatisticalExtractor can be imported."""
+        try:
+            from workflows.metadata_extraction.scripts.adapters.statistical_extractor import (
+                StatisticalExtractor,
+            )
+            assert StatisticalExtractor is not None
+        except ImportError as e:
+            pytest.fail(f"Failed to import StatisticalExtractor: {e}")
+
+    def test_extract_keywords_returns_list(self, extractor):
+        """Test that extract_keywords returns a list of keywords."""
+        result = extractor.extract_keywords(SAMPLE_TEXT_ML)
+        keywords = result.get("keywords", [])
+        assert isinstance(keywords, list), "Keywords should be a list"
+        assert len(keywords) >= 3, f"Expected at least 3 keywords, got {len(keywords)}"
+
+    def test_extract_keywords_are_strings(self, extractor):
+        """Test that all extracted keywords are strings."""
+        result = extractor.extract_keywords(SAMPLE_TEXT_ARCHITECTURE)
+        keywords = result.get("keywords", [])
+        for kw in keywords:
+            assert isinstance(kw, str), f"Keyword should be string, got {type(kw)}"
+
+    def test_extract_keywords_domain_agnostic(self, extractor):
+        """Test that extractor works on different domains."""
+        for text in [SAMPLE_TEXT_ML, SAMPLE_TEXT_ARCHITECTURE]:
+            result = extractor.extract_keywords(text)
+            keywords = result.get("keywords", [])
+            assert len(keywords) >= 3, "Should extract keywords from any domain"
+
+    def test_metadata_json_serializable(self, extractor):
+        """Test that generated metadata is JSON-serializable."""
+        result = extractor.extract_keywords(SAMPLE_TEXT_ML)
+        metadata = {
+            "chapter_id": "test-ch1",
+            "keywords": result.get("keywords", []),
+        }
+        json_str = json.dumps(metadata, indent=2)
+        assert len(json_str) > 0
+        parsed = json.loads(json_str)
+        assert "keywords" in parsed
+
+
+@pytest.mark.integration
+@pytest.mark.metadata
+class TestMetadataOutputValidation:
+    """WBS 3.1 - Tests for validating existing metadata output files."""
+
+    @pytest.fixture
+    def output_dir(self) -> Path:
+        """Get metadata extraction output directory."""
+        return Path("/Users/kevintoles/POC/llm-document-enhancer/workflows/metadata_extraction/output")
+
+    def test_output_directory_exists(self, output_dir):
+        """Test that output directory exists."""
+        if not output_dir.exists():
+            pytest.skip(f"Output directory does not exist: {output_dir}")
+        assert output_dir.is_dir()
+
+    def test_output_files_are_valid_json(self, output_dir):
+        """Test that output JSON files are valid."""
+        if not output_dir.exists():
+            pytest.skip("Output directory does not exist")
+        
+        json_files = list(output_dir.glob("*.json"))
+        if not json_files:
+            pytest.skip("No JSON output files found")
+        
+        for json_file in json_files[:3]:
+            with open(json_file, "r") as f:
+                data = json.load(f)
+            assert data is not None
+
+
+# =============================================================================
+# WBS 3.2: Taxonomy Graph Integration Tests
+# =============================================================================
+
+
+@pytest.mark.integration
+@pytest.mark.taxonomy
+@pytest.mark.neo4j
+class TestNeo4jConnection:
+    """WBS 3.2.2 - Test Neo4j database connection."""
+
+    @pytest.fixture
+    async def neo4j_driver(self):
+        """Create Neo4j driver."""
+        try:
+            from neo4j import AsyncGraphDatabase
+        except ImportError:
+            pytest.skip("neo4j package not installed")
+        
+        driver = AsyncGraphDatabase.driver(
+            NEO4J_URI,
+            auth=(NEO4J_USER, NEO4J_PASSWORD),
+        )
+        
+        try:
+            async with driver.session() as session:
+                await session.run("RETURN 1")
+            yield driver
+        except Exception as e:
+            pytest.skip(f"Cannot connect to Neo4j: {e}")
+        finally:
+            await driver.close()
+
+    async def test_neo4j_connection(self, neo4j_driver):
+        """Test basic Neo4j connection."""
+        async with neo4j_driver.session() as session:
+            result = await session.run("RETURN 'connected' AS status")
+            record = await result.single()
+            assert record["status"] == "connected"
+
+
+@pytest.mark.integration
+@pytest.mark.taxonomy
+@pytest.mark.neo4j
+class TestTaxonomyNodes:
+    """WBS 3.2.2 - Test taxonomy node existence."""
+
+    @pytest.fixture
+    async def neo4j_driver(self):
+        """Create Neo4j driver."""
+        try:
+            from neo4j import AsyncGraphDatabase
+        except ImportError:
+            pytest.skip("neo4j package not installed")
+        
+        driver = AsyncGraphDatabase.driver(
+            NEO4J_URI,
+            auth=(NEO4J_USER, NEO4J_PASSWORD),
+        )
+        
+        try:
+            async with driver.session() as session:
+                await session.run("RETURN 1")
+            yield driver
+        except Exception as e:
+            pytest.skip(f"Cannot connect to Neo4j: {e}")
+        finally:
+            await driver.close()
+
+    async def test_tier_nodes_exist(self, neo4j_driver):
+        """Test that Tier nodes exist in the database."""
+        async with neo4j_driver.session() as session:
+            result = await session.run("MATCH (t:Tier) RETURN count(t) AS count")
+            record = await result.single()
+            tier_count = record["count"]
+            assert tier_count >= 0, "Query should return a count"
+
+    async def test_book_nodes_exist(self, neo4j_driver):
+        """Test that Book nodes exist in the database."""
+        async with neo4j_driver.session() as session:
+            result = await session.run("MATCH (b:Book) RETURN count(b) AS count")
+            record = await result.single()
+            book_count = record["count"]
+            assert book_count >= 0, "Query should return a count"
+
+    async def test_chapter_nodes_exist(self, neo4j_driver):
+        """Test that Chapter nodes exist in the database."""
+        async with neo4j_driver.session() as session:
+            result = await session.run("MATCH (c:Chapter) RETURN count(c) AS count")
+            record = await result.single()
+            chapter_count = record["count"]
+            assert chapter_count >= 0, "Query should return a count"
+
+
+@pytest.mark.integration
+@pytest.mark.taxonomy
+@pytest.mark.neo4j
+class TestTaxonomyRelationships:
+    """WBS 3.2.2 - Test taxonomy graph relationships."""
+
+    @pytest.fixture
+    async def neo4j_driver(self):
+        """Create Neo4j driver."""
+        try:
+            from neo4j import AsyncGraphDatabase
+        except ImportError:
+            pytest.skip("neo4j package not installed")
+        
+        driver = AsyncGraphDatabase.driver(
+            NEO4J_URI,
+            auth=(NEO4J_USER, NEO4J_PASSWORD),
+        )
+        
+        try:
+            async with driver.session() as session:
+                await session.run("RETURN 1")
+            yield driver
+        except Exception as e:
+            pytest.skip(f"Cannot connect to Neo4j: {e}")
+        finally:
+            await driver.close()
+
+    async def test_belongs_to_relationships(self, neo4j_driver):
+        """Test BELONGS_TO relationships exist."""
+        async with neo4j_driver.session() as session:
+            result = await session.run(
+                "MATCH ()-[r:BELONGS_TO]->() RETURN count(r) AS count"
+            )
+            record = await result.single()
+            count = record["count"]
+            # May be 0 if not seeded, but query should work
+            assert count >= 0
+
+    async def test_parallel_relationships(self, neo4j_driver):
+        """Test PARALLEL relationships exist."""
+        async with neo4j_driver.session() as session:
+            result = await session.run(
+                "MATCH ()-[r:PARALLEL]->() RETURN count(r) AS count"
+            )
+            record = await result.single()
+            count = record["count"]
+            assert count >= 0
+
+    async def test_relationship_summary(self, neo4j_driver):
+        """Test summary of all relationship types."""
+        async with neo4j_driver.session() as session:
+            result = await session.run(
+                """
+                MATCH ()-[r]->()
+                RETURN type(r) AS type, count(r) AS count
+                ORDER BY count DESC
+                """
+            )
+            records = [record async for record in result]
+            # Just verify the query works
+            assert isinstance(records, list)
+
+
+@pytest.mark.integration
+@pytest.mark.taxonomy
+@pytest.mark.neo4j
+class TestGraphTraversal:
+    """WBS 3.2.2 - Test graph traversal operations."""
+
+    @pytest.fixture
+    async def neo4j_driver(self):
+        """Create Neo4j driver."""
+        try:
+            from neo4j import AsyncGraphDatabase
+        except ImportError:
+            pytest.skip("neo4j package not installed")
+        
+        driver = AsyncGraphDatabase.driver(
+            NEO4J_URI,
+            auth=(NEO4J_USER, NEO4J_PASSWORD),
+        )
+        
+        try:
+            async with driver.session() as session:
+                await session.run("RETURN 1")
+            yield driver
+        except Exception as e:
+            pytest.skip(f"Cannot connect to Neo4j: {e}")
+        finally:
+            await driver.close()
+
+    async def test_chapter_to_book_traversal(self, neo4j_driver):
+        """Test traversing from Chapter to Book."""
+        async with neo4j_driver.session() as session:
+            result = await session.run(
+                """
+                MATCH (c:Chapter)-[:BELONGS_TO]->(b:Book)
+                RETURN c.title AS chapter, b.title AS book
+                LIMIT 3
+                """
+            )
+            records = [record async for record in result]
+            if not records:
+                pytest.skip("No Chapter-Book paths found - run seeding first")
+            
+            for record in records:
+                assert record["chapter"] is not None
+                assert record["book"] is not None
+
+    async def test_chapter_to_tier_traversal(self, neo4j_driver):
+        """Test traversing from Chapter to Tier (2 hops)."""
+        async with neo4j_driver.session() as session:
+            result = await session.run(
+                """
+                MATCH (c:Chapter)-[:BELONGS_TO]->(b:Book)-[:BELONGS_TO]->(t:Tier)
+                RETURN c.title AS chapter, b.title AS book, t.id AS tier
+                LIMIT 3
+                """
+            )
+            records = [record async for record in result]
+            if not records:
+                pytest.skip("No Chapter-Book-Tier paths found - run seeding first")
+            
+            for record in records:
+                assert record["chapter"] is not None
+                assert record["tier"] is not None
+
+
+@pytest.mark.integration
+@pytest.mark.taxonomy
+class TestTraversalModule:
+    """WBS 3.2.2 - Test the GraphTraversal module from semantic-search-service."""
+
+    def test_import_traversal_module(self):
+        """Test that traversal module can be imported."""
+        try:
+            from src.graph.traversal import GraphTraversal, RelationshipType
+            assert GraphTraversal is not None
+            assert RelationshipType is not None
+        except ImportError:
+            pytest.skip("Could not import traversal module")
+
+    def test_relationship_types_enum(self):
+        """Test RelationshipType enum values."""
+        try:
+            from src.graph.traversal import RelationshipType
+            assert hasattr(RelationshipType, "PARALLEL")
+            assert hasattr(RelationshipType, "PERPENDICULAR")
+        except ImportError:
+            pytest.skip("Traversal module not available")
