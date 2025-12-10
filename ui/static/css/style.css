@@ -1,0 +1,706 @@
+/* macOS Big Sur Style UI */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 40px;
+    min-height: 100vh;
+}
+
+.window {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.window-controls {
+    display: flex;
+    gap: 8px;
+    padding: 12px 16px;
+    background: linear-gradient(to bottom, #e8e8e8, #d0d0d0);
+    border-bottom: 1px solid #bbb;
+}
+
+.control-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.control-button.close {
+    background: #ff5f57;
+    border: 1px solid #e0443e;
+}
+
+.control-button.minimize {
+    background: #ffbd2e;
+    border: 1px solid #dea123;
+}
+
+.control-button.maximize {
+    background: #28ca42;
+    border: 1px solid #1aab29;
+}
+
+.window-title {
+    text-align: center;
+    padding: 8px;
+    font-size: 13px;
+    color: #666;
+    font-weight: 500;
+    background: linear-gradient(to bottom, #e8e8e8, #d0d0d0);
+    border-bottom: 1px solid #bbb;
+}
+
+.content {
+    padding: 24px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    flex-wrap: wrap;
+}
+
+.tab {
+    padding: 10px 16px;
+    background: #f5f5f5;
+    border: 1px solid transparent;
+    border-radius: 6px 6px 0 0;
+    cursor: pointer;
+    font-size: 13px;
+    color: #666;
+    transition: all 0.2s;
+}
+
+.tab:hover {
+    background: #e8e8e8;
+    color: #333;
+}
+
+.tab.active {
+    background: white;
+    color: #0056b3;
+    font-weight: 600;
+    border: 1px solid #ddd;
+    border-bottom: 1px solid white;
+    margin-bottom: -1px;
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Workflow Info */
+.workflow-info {
+    background: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+}
+
+.path-info {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+.path-info:last-child {
+    margin-bottom: 0;
+}
+
+.path-info strong {
+    color: #333;
+    font-weight: 600;
+    display: inline-block;
+    width: 60px;
+}
+
+.path-info span {
+    font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+    font-size: 12px;
+    color: #007aff;
+}
+
+/* File Selector */
+.file-selector {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.file-list {
+    padding: 12px;
+}
+
+/* LLM Configuration (for LLM Enhancement tab) */
+.llm-config {
+    padding: 20px;
+}
+
+.config-section {
+    margin-bottom: 20px;
+}
+
+.config-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.config-select {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: white;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.config-select:focus {
+    outline: none;
+    border-color: #007aff;
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+.config-select:hover {
+    border-color: #999;
+}
+
+/* Tier Builder (for Taxonomy tab) */
+.taxonomy-name-input {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+}
+
+.taxonomy-name-input label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.taxonomy-name-input input[type="text"] {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    transition: border-color 0.2s;
+}
+
+.taxonomy-name-input input[type="text"]:focus {
+    outline: none;
+    border-color: #007aff;
+}
+
+.taxonomy-name-input small {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    color: #666;
+    font-style: italic;
+}
+
+.taxonomy-guide {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+}
+
+.taxonomy-guide h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.tier-descriptions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.tier-desc {
+    background: white;
+    border-radius: 6px;
+    padding: 14px;
+    border-left: 4px solid #007aff;
+}
+
+.tier-desc.tier-optional {
+    border-left-color: #999;
+    opacity: 0.85;
+}
+
+.tier-desc.tier-optional strong {
+    color: #666;
+}
+
+.tier-desc strong {
+    display: block;
+    font-size: 14px;
+    color: #007aff;
+    margin-bottom: 8px;
+}
+
+.tier-desc p {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+.tier-desc em {
+    font-size: 11px;
+    color: #666;
+    font-style: italic;
+}
+
+.tier-relationship {
+    background: rgba(0, 122, 255, 0.1);
+    border-radius: 6px;
+    padding: 12px 16px;
+    text-align: center;
+}
+
+.tier-relationship p {
+    font-size: 13px;
+    color: #333;
+    margin: 0;
+}
+
+.tier-relationship strong {
+    color: #007aff;
+}
+
+.tier-builder {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 16px;
+    padding: 16px;
+}
+
+.available-files h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #ddd;
+}
+
+.file-pool {
+    max-height: 350px;
+    overflow-y: auto;
+    background: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 8px;
+    transition: all 0.2s;
+}
+
+.file-pool.drag-over {
+    background: #e3f2fd;
+    border-color: #007aff;
+    border-style: solid;
+}
+
+.pool-file {
+    padding: 8px 12px;
+    margin-bottom: 4px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: grab;
+    font-size: 13px;
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.pool-file:hover {
+    background: #f5f5f5;
+    border-color: #007aff;
+    transform: translateX(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pool-file:active {
+    cursor: grabbing;
+}
+
+.pool-file.dragging {
+    opacity: 0.5;
+    cursor: grabbing;
+}
+
+.draggable {
+    cursor: grab;
+}
+
+.draggable:active {
+    cursor: grabbing;
+}
+
+.draggable.dragging {
+    opacity: 0.5;
+}
+
+.tier-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.tier-column h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #007aff;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #007aff;
+}
+
+.tier-priority {
+    font-size: 11px;
+    color: #666;
+    font-weight: 400;
+}
+
+.tier-list {
+    background: #f9f9f9;
+    border: 2px dashed #ddd;
+    border-radius: 6px;
+    padding: 8px;
+    min-height: 300px;
+    max-height: 350px;
+    overflow-y: auto;
+    transition: all 0.2s;
+}
+
+.tier-list.drag-over {
+    background: #e3f2fd;
+    border-color: #007aff;
+    border-style: solid;
+    box-shadow: inset 0 0 0 2px rgba(0, 122, 255, 0.2);
+}
+
+.tier-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    margin-bottom: 4px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: grab;
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.tier-item:hover {
+    border-color: #007aff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.tier-item:active {
+    cursor: grabbing;
+}
+
+.tier-item.dragging {
+    opacity: 0.5;
+    cursor: grabbing;
+}
+
+.drag-handle {
+    color: #999;
+    cursor: grab;
+    font-size: 14px;
+    line-height: 1;
+    padding: 0 4px;
+}
+
+.tier-item:hover .drag-handle {
+    color: #007aff;
+}
+
+.tier-file-name {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tier-controls {
+    display: flex;
+    gap: 4px;
+}
+
+.tier-btn {
+    padding: 2px 6px;
+    background: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.tier-btn:hover {
+    background: #003d80;
+}
+
+.tier-btn-remove {
+    padding: 2px 8px;
+    background: #ff3b30;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.tier-btn-remove:hover {
+    background: #cc0000;
+    transform: scale(1.1);
+}
+
+.empty-tier {
+    color: #999;
+    font-size: 12px;
+    font-style: italic;
+    text-align: center;
+    padding: 40px 10px;
+    pointer-events: none;
+}
+
+/* Tier Selector (old design - keep for backward compat) */
+.tier-selector {
+    padding: 0;
+}
+
+.tier-section {
+    border-bottom: 1px solid #e8e8e8;
+    padding: 16px;
+}
+
+.tier-section:last-child {
+    border-bottom: none;
+}
+
+.tier-section h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #007aff;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #007aff;
+}
+
+.tier-files {
+    display: flex;
+    flex-direction: column;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    margin-bottom: 4px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-size: 14px;
+    color: #333;
+}
+
+.file-item:hover {
+    background: #f5f5f5;
+}
+
+.file-item input[type="checkbox"] {
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.no-files {
+    color: #999;
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Buttons */
+.button-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.btn {
+    padding: 10px 24px;
+    border-radius: 8px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background: #0056b3;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #003d80;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 86, 179, 0.3);
+}
+
+.btn-secondary {
+    background: #f5f5f5;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.btn-secondary:hover {
+    background: #e8e8e8;
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Status Panel */
+.status-panel {
+    margin-top: 20px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.status-header {
+    background: #0056b3;
+    color: white;
+    padding: 10px 16px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.status-content {
+    padding: 16px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.status-content p {
+    margin-bottom: 8px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.status-content p:last-child {
+    margin-bottom: 0;
+}
+
+.status-content .error {
+    color: #ff3b30;
+    font-weight: 600;
+}
+
+.status-content .success {
+    color: #28ca42;
+}
+
+.progress-log {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 12px;
+    margin: 12px 0;
+    font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+    font-size: 12px;
+}
+
+.progress-log p {
+    margin-bottom: 4px;
+    line-height: 1.4;
+}
+
+/* Scrollbar styling */
+.file-selector::-webkit-scrollbar {
+    width: 8px;
+}
+
+.file-selector::-webkit-scrollbar-track {
+    background: #f5f5f5;
+    border-radius: 4px;
+}
+
+.file-selector::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.file-selector::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+}

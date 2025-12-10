@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "key": "chapter_37_7968b150",
+    "created_at": 1764563858.56017,
+    "ttl_seconds": 2592000,
+    "content_hash": "7968b150cc8704dd8685be5d99af9d91c4e534574885b87f8a138663c9f3d320"
+  },
+  "data": {
+    "phase": "phase2",
+    "chapter_num": 37,
+    "prompt_hash": "7968b150cc8704dd8685be5d99af9d91c4e534574885b87f8a138663c9f3d320",
+    "response_text": "The chapter's treatment of Unicode and byte strings addresses fundamental encoding concerns that underpin all text processing in AI applications, yet no companion book excerpts were retrieved for cross-referencing. This represents a significant gap in the available corpus, as Unicode handling intersects critically with multiple architectural and implementation domains: API design patterns require explicit encoding contracts at service boundaries, HTTP request/response cycles in web frameworks like FastAPI and Flask depend on proper byte-to-string conversions, and LLM tokenization pipelines must correctly handle multi-byte character sequences. The Architecture Spine texts in this corpus\u2014including *Building Microservices* and *Architecture Patterns with Python*\u2014would typically address data serialization patterns where encoding decisions propagate through system layers, while Implementation tier references like *Fluent Python, 2nd Edition* provide authoritative coverage of Python's string model, the `encode()`/`decode()` methods, and the distinction between `str` and `bytes` types. Without retrieved excerpts, learners should consult Ramalho's treatment of text versus bytes in *Fluent Python* (Chapter 4) for the canonical Python implementation perspective, and recognize that encoding errors in AI systems often manifest as silent data corruption during document ingestion or API communication\u2014a concern that spans from low-level Python idioms to high-level architectural decisions about data contracts.",
+    "parsed_data": {},
+    "model": "claude-opus-4-5-20251101",
+    "tokens_used": 0
+  }
+}

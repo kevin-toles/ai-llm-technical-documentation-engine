@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "key": "chapter_40_f63d9147",
+    "created_at": 1764563950.4547698,
+    "ttl_seconds": 2592000,
+    "content_hash": "f63d9147e4971b5d90c77bf89598c8611746c827edeb42d8fac6a14a1b250f5d"
+  },
+  "data": {
+    "phase": "phase2",
+    "chapter_num": 40,
+    "prompt_hash": "f63d9147e4971b5d90c77bf89598c8611746c827edeb42d8fac6a14a1b250f5d",
+    "response_text": "This chapter on metaclasses presents a significant gap in the available cross-reference corpus. While metaclasses represent Python's most sophisticated metaprogramming mechanism\u2014enabling framework-level abstractions like declarative ORM models, automatic registration patterns, and plugin architectures\u2014no companion book excerpts were retrieved for synthesis. The Architecture Spine texts in this corpus (including *AI Engineering Building Applications* itself, *Architecture Patterns with Python*, and *Building Microservices*) would typically address how metaclasses enable the Registry and Factory patterns that underpin extensible AI agent systems, but no specific chapter metadata was available for cross-referencing. Similarly, the Implementation tier texts (*Fluent Python, 2nd Edition* and *Python Distilled*) provide authoritative coverage of the `type`/`object` duality, `__new__` versus `__init__` semantics, and the metaclass resolution order, yet these could not be retrieved for this annotation. For learners seeking to understand how metaclasses connect to practical AI engineering\u2014such as building declarative tool registration systems or automatic prompt template validation\u2014the primary text should be supplemented with Ramalho's treatment of class metaprogramming in *Fluent Python* (Chapters 22-24) and Beazley's formal specification in *Python Distilled* (Chapter 7), though specific page-level synthesis cannot be provided here due to retrieval limitations.",
+    "parsed_data": {},
+    "model": "claude-opus-4-5-20251101",
+    "tokens_used": 0
+  }
+}

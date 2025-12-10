@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "key": "chapter_1_68694b4c",
+    "created_at": 1765351062.636428,
+    "ttl_seconds": 2592000,
+    "content_hash": "68694b4c7ac59ec71bef9e0675be8aabe23445f3b56a659f17fb06df37c295e2"
+  },
+  "data": {
+    "phase": "phase2",
+    "chapter_num": 1,
+    "prompt_hash": "68694b4c7ac59ec71bef9e0675be8aabe23445f3b56a659f17fb06df37c295e2",
+    "response_text": "# Integrated Scholarly Annotation: Domain Modeling\n\nThis chapter introduces domain modeling through the lens of Domain-Driven Design (DDD), distinguishing entities (objects with identity and lifecycle) from value objects (immutable objects defined by their attributes). The pedagogical approach grounds these architectural concepts in concrete Python implementations using dataclasses, type hints, and magic methods like `__eq__` and `__hash__`. However, **the corpus contains zero companion books for cross-reference**, creating a significant gap across all three taxonomic tiers.\n\n**Architecture Spine (Missing):** The chapter's treatment of bounded contexts, ubiquitous language, and the entity/value object distinction would benefit from cross-reference to foundational DDD texts (e.g., Evans's *Domain-Driven Design*) or architectural pattern catalogs that formalize these design decisions. Without such references, learners cannot trace how the `OrderLine` value object pattern scales to complex domain models or compare alternative approaches to domain exception hierarchies like `OutOfStock`.\n\n**Implementation Layer (Missing):** The chapter's use of Python dataclasses with `frozen=True` for immutability, `__hash__` for set membership, and type hints for domain constraints lacks companion coverage of Python's object model fundamentals. Texts addressing magic method protocols, dataclass internals, or the trade-offs between `@dataclass` and `NamedTuple` would clarify why the authors chose specific implementation techniques for `Batch` entities versus `OrderLine` value objects.\n\n**Engineering Practices (Missing):** The allocation logic's test-driven development approach and the domain exception pattern for business rule violations would connect naturally to books on Python testing strategies, refactoring domain models, or evolving bounded contexts\u2014none of which appear in the corpus. This isolation prevents learners from seeing how these patterns integrate into larger systems or production codebases.\n\nFor this foundational chapter, readers must rely solely on the source material, recognizing that comprehensive understanding requires external consultation of DDD literature, Python object-oriented programming texts, and software architecture references not present in this collection.",
+    "parsed_data": {},
+    "model": "claude-sonnet-4-5-20250929",
+    "tokens_used": 0
+  }
+}

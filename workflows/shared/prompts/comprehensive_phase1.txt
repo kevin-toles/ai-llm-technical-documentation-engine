@@ -1,0 +1,118 @@
+You are conducting a comprehensive scholarly cross-reference analysis for {source_book_name}.
+
+CROSS-REFERENCE WORKFLOW:
+
+Before processing any chapters, review the detailed workflow schema provided in the 
+"llm_workflow" section of this aggregate package. This schema defines the complete 
+cross-referencing strategy including tier relationships, validation criteria, and 
+citation requirements. Internalize this workflow before beginning.
+
+You are annotating ONE chapter at a time. For each source chapter, follow these steps:
+
+PHASE 1 - ANALYSIS:
+1. REVIEW SOURCE CHAPTER: Read the base guideline and enriched metadata for this chapter.
+   Understand what concepts it teaches and extract keywords for matching.
+
+2. REVIEW TAXONOMY: Examine the taxonomy structure to understand:
+   - Which books are in the corpus
+   - How books are organized into tiers with priorities
+   - Tier relationships: Parallel (same tier), Perpendicular (adjacent), Skip-tier (non-adjacent)
+
+3. REVIEW COMPANION METADATA: Scan chapter-level metadata for ALL companion books.
+   You now have visibility into every chapter across the entire corpus.
+
+4. MATCH CONCEPTS: Cross-reference source chapter concepts against companion metadata.
+   Look for keyword overlap and semantic similarity. Prioritize higher-tier matches.
+
+5. REQUEST CONTENT: List ALL companion chapters that are genuinely relevant.
+   DO NOT impose arbitrary limits—request everything that matters.
+
+PHASE 2 - SYNTHESIS:
+6. [System retrieves the chapters you requested]
+
+7. VALIDATE RELEVANCE: For each retrieved chapter, verify:
+   - Does it GENUINELY relate to the source concept?
+   - Is the connection substantive, not just keyword overlap?
+   - Does it add scholarly value?
+   If not genuinely relevant, acknowledge the limitation rather than forcing a connection.
+
+8. STRUCTURE BY TIER: Organize your annotation by tier priority:
+   - TIER 1 (Required): Lead with foundational patterns and principles
+   - TIER 2 (Required): Bridge to practical code and techniques
+   - TIER 3 (Optional): Add operational context when genuinely relevant
+   - Acknowledge gaps if required tiers lack relevant content
+
+9. OUTPUT ANNOTATION: Write scholarly annotation with:
+   - Synthesized insights from cross-references
+   - Chicago-style citations with page numbers
+   - Clear connection back to source chapter concepts
+
+GUARDRAILS:
+✗ Do NOT limit requests to "top N" chapters
+✗ Do NOT force connections where none exist—acknowledge gaps
+✓ DO prioritize higher tiers when structuring output
+✓ DO validate genuine relevance before citing
+
+---
+
+CHAPTER {chapter_num}: {chapter_title}
+
+FULL CHAPTER TEXT ({chapter_text_length} characters):
+{chapter_text_preview}
+{chapter_text_truncation}
+
+COMPANION BOOKS AVAILABLE ({books_count} books with chapter metadata):
+{books_text}
+
+NOTE: Book content is NOT loaded yet - only metadata is shown above.
+After you make your requests, the system will load ONLY the specific chapters you request.
+This saves memory and tokens, so feel free to request what you need!
+
+YOUR TASK:
+
+1. READ & ANALYZE THE CHAPTER:
+   - Extract ALL key concepts, techniques, and topics covered
+   - Identify main themes and learning objectives
+   - Note examples, code patterns, and pedagogical approaches
+
+2. CROSS-REFERENCE DISCOVERY:
+   - Review the 15 companion books above
+   - For each book, consider both:
+     * Overall concepts covered (shown in metadata)
+     * Specific chapters that might relate (when chapter metadata available)
+   - Use the book taxonomy:
+     * Architecture Spine books: Patterns, DDD, microservices theory
+     * Implementation Layer books: FastAPI, Flask, deployment, APIs
+     * Engineering Practices books: Python idioms, recipes, language reference
+
+3. REQUEST SPECIFIC CHAPTERS/SECTIONS:
+   - For books WITH chapter metadata: Request specific chapters by number/title
+     Example: "Chapter 5: Decorators" or "Chapter 8: Async Programming"
+   - For books WITHOUT chapter metadata: Request page ranges that likely contain relevant content
+   - Explain WHY each chapter/section would help build cross-references
+   - Prioritize books that offer different perspectives (architecture vs implementation vs idioms)
+
+RESPOND IN JSON FORMAT:
+{{
+  "concepts_extracted": ["list", "of", "all", "concepts", "found"],
+  "themes_identified": ["main", "themes"],
+  "content_requests": [
+    {{
+      "book_name": "exact book title",
+      "chapters_or_sections": ["Chapter 5: Decorators", "Chapter 8, Section 2"],
+      "pages": [145, 146, 147],
+      "rationale": "why this content will enhance cross-references",
+      "priority": 1-5
+    }}
+  ],
+  "analysis_strategy": "Your plan for synthesizing an integrated annotation"
+}}
+
+GUIDELINES:
+- Extract concepts comprehensively (don't rely on pre-defined keywords)
+- Request ALL relevant books from the taxonomy that offer substantive cross-references
+- Use chapter metadata when available for precise targeting
+- Build many-to-many mapping across multiple books
+- Consider cascading: Engineering concepts → Architecture patterns → Implementation examples
+
+Provide your comprehensive analysis now.

@@ -1,0 +1,211 @@
+{
+  "workflow_name": "LLM-Driven Cross-Reference Process",
+  "version": "1.0",
+  "description": "Defines the per-chapter workflow for LLM cross-referencing across companion books in the taxonomy",
+  "execution_scope": "per_chapter",
+  "phases": [
+    {
+      "phase_id": 1,
+      "phase_name": "Analysis & Content Request",
+      "steps": [
+        {
+          "step_id": 1,
+          "step_name": "Review Source Chapter",
+          "description": "LLM reviews base guideline and enriched metadata for the source chapter",
+          "inputs": [
+            {
+              "name": "base_guideline",
+              "source": "source_book.guideline",
+              "contains": ["chapter_title", "summary", "learning_objectives", "pedagogical_structure", "teaching_approach"]
+            },
+            {
+              "name": "enriched_metadata",
+              "source": "source_book.metadata",
+              "contains": ["extracted_keywords", "key_concepts", "technical_vocabulary", "domain_classifications", "concept_relationships"]
+            }
+          ],
+          "outputs": ["understanding_of_chapter_content", "core_concepts_for_cross_referencing", "keywords_for_matching"]
+        },
+        {
+          "step_id": 2,
+          "step_name": "Review Taxonomy Structure",
+          "description": "LLM reviews the taxonomy to understand book organization and tier priorities",
+          "inputs": [
+            {
+              "name": "taxonomy",
+              "source": "taxonomy",
+              "contains": ["tiers", "tier_names", "tier_priorities", "book_lists_per_tier"]
+            }
+          ],
+          "outputs": ["corpus_understanding", "tier_organization", "tier_relationships"]
+        },
+        {
+          "step_id": 3,
+          "step_name": "Review Companion Book Metadata",
+          "description": "LLM reviews chapter-level metadata for ALL books in the taxonomy",
+          "inputs": [
+            {
+              "name": "companion_books_metadata",
+              "source": "companion_books[].metadata",
+              "contains": ["chapter_keywords", "chapter_concepts", "book_tier", "book_priority"]
+            }
+          ],
+          "outputs": ["visibility_into_all_companion_chapters"]
+        },
+        {
+          "step_id": 4,
+          "step_name": "Cross-Reference Keywords & Match Concepts",
+          "description": "LLM matches source chapter concepts to companion book chapters using keyword overlap and semantic similarity",
+          "matching_criteria": [
+            "keyword_overlap_between_source_and_companion",
+            "semantic_similarity_of_concepts",
+            "tier_aware_relevance"
+          ],
+          "tier_relationships": {
+            "parallel": {
+              "definition": "Same tier level",
+              "notation": "Tier N <-> Tier N",
+              "use_case": "Cross-reference complementary approaches to same concept"
+            },
+            "perpendicular": {
+              "definition": "Adjacent tier levels",
+              "notation": "Tier N <-> Tier N+1",
+              "use_case": "Connect theory to implementation"
+            },
+            "skip_tier": {
+              "definition": "Non-adjacent tiers",
+              "notation": "Tier N <-> Tier N+2",
+              "use_case": "Connect high-level concepts to operational details"
+            }
+          },
+          "outputs": ["matched_companion_chapters_with_relevance"]
+        },
+        {
+          "step_id": 5,
+          "step_name": "Request Specific Chapter Content",
+          "description": "LLM outputs structured content requests for ALL relevant chapters with NO arbitrary limits",
+          "constraints": {
+            "no_arbitrary_limits": true,
+            "request_all_relevant": true
+          },
+          "output_format": {
+            "content_requests": [
+              {
+                "book": "{book_title}",
+                "chapter": "{chapter_number}",
+                "relevance": "{why_this_chapter_is_relevant}"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "phase_id": "system",
+      "phase_name": "Content Retrieval",
+      "steps": [
+        {
+          "step_id": 6,
+          "step_name": "Retrieve Full Chapter Content",
+          "description": "System fetches requested chapters and returns content package to LLM",
+          "executor": "system",
+          "outputs": ["content_package_with_full_chapters"]
+        }
+      ]
+    },
+    {
+      "phase_id": 2,
+      "phase_name": "Synthesis & Annotation",
+      "steps": [
+        {
+          "step_id": 7,
+          "step_name": "Validate & Synthesize",
+          "description": "LLM validates genuine relevance for each retrieved chapter",
+          "validation_checks": [
+            "Does this content GENUINELY relate to the source concept?",
+            "Is the connection substantive or just keyword overlap?",
+            "Does it add scholarly value (not redundant)?",
+            "Can I cite specific pages with precision?"
+          ],
+          "on_no_genuine_connection": "Acknowledge the limitation explicitly in output"
+        },
+        {
+          "step_id": 8,
+          "step_name": "Structure by Tier Priority",
+          "description": "LLM structures annotation by tier priority from taxonomy",
+          "tier_handling": {
+            "tier_1": {
+              "priority": 1,
+              "requirement": "REQUIRED",
+              "guidance": "Lead with foundational patterns and design principles"
+            },
+            "tier_2": {
+              "priority": 2,
+              "requirement": "REQUIRED",
+              "guidance": "Bridge to practical code and techniques"
+            },
+            "tier_3": {
+              "priority": 3,
+              "requirement": "OPTIONAL",
+              "guidance": "Add operational context when genuinely relevant"
+            }
+          },
+          "gap_handling": "Acknowledge when required tiers lack content"
+        },
+        {
+          "step_id": 9,
+          "step_name": "Output Scholarly Annotation",
+          "description": "LLM outputs final annotation with Chicago-style citations including page numbers",
+          "citation_format": "Chicago Manual of Style, 17th Edition",
+          "citation_requirements": ["author", "book_title", "chapter_number", "page_numbers"],
+          "output_structure": ["chapter_title", "annotation_body", "footnote_citations"]
+        }
+      ]
+    }
+  ],
+  "design_principles": [
+    {
+      "principle": "Per-Chapter Processing",
+      "description": "Workflow executes for EACH chapter in the source book"
+    },
+    {
+      "principle": "Source-First",
+      "description": "LLM reviews source chapter BEFORE taxonomy"
+    },
+    {
+      "principle": "Metadata-Driven",
+      "description": "Concept matching uses enriched metadata, not raw text"
+    },
+    {
+      "principle": "No Arbitrary Limits",
+      "description": "LLM requests ALL relevant chapters"
+    },
+    {
+      "principle": "Tier-Aware Synthesis",
+      "description": "Annotations structured by tier priority from taxonomy"
+    },
+    {
+      "principle": "Validation Required",
+      "description": "LLM must verify genuine relevance, not just keyword overlap"
+    },
+    {
+      "principle": "Gap Acknowledgment",
+      "description": "Missing tier coverage is explicitly noted"
+    },
+    {
+      "principle": "Citation Precision",
+      "description": "Chicago-style citations with page numbers"
+    }
+  ],
+  "workflow_summary": [
+    "Step 1: Review source chapter (base guideline + enriched metadata)",
+    "Step 2: Review taxonomy structure",
+    "Step 3: Review ALL companion book metadata",
+    "Step 4: Cross-reference keywords & match concepts",
+    "Step 5: Request specific chapter content (NO LIMITS)",
+    "Step 6: System retrieves content",
+    "Step 7: Validate genuine relevance",
+    "Step 8: Structure by tier priority",
+    "Step 9: Output scholarly annotation with citations"
+  ]
+}

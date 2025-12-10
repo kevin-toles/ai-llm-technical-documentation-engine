@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "key": "chapter_1_cf44eb73",
+    "created_at": 1765346673.836302,
+    "ttl_seconds": 2592000,
+    "content_hash": "cf44eb7384070872045ca0a4f843e5de627d5100b1e4411e70890d64fbebdfe6"
+  },
+  "data": {
+    "phase": "phase1",
+    "chapter_num": 1,
+    "prompt_hash": "cf44eb7384070872045ca0a4f843e5de627d5100b1e4411e70890d64fbebdfe6",
+    "response_text": "```json\n{\n  \"concepts_extracted\": [\n    \"domain modeling\",\n    \"object-oriented programming\",\n    \"entity vs value object distinction\",\n    \"dataclasses\",\n    \"immutability\",\n    \"equality comparison (__eq__)\",\n    \"hashing (__hash__)\",\n    \"magic methods\",\n    \"type hints\",\n    \"business logic representation\",\n    \"domain exceptions\",\n    \"allocation logic\",\n    \"domain-driven design concepts\",\n    \"class design\",\n    \"object identity\",\n    \"value semantics\",\n    \"entity semantics\",\n    \"domain concepts as code\",\n    \"business rules in code\",\n    \"OrderLine and Batch domain objects\",\n    \"composition and aggregation\",\n    \"frozen dataclasses\",\n    \"domain vocabulary\",\n    \"ubiquitous language\"\n  ],\n  \"themes_identified\": [\n    \"Translating business concepts into Python classes\",\n    \"Distinguishing entities from value objects\",\n    \"Implementing domain logic with proper OOP principles\",\n    \"Using Python's data model for domain modeling\",\n    \"Establishing object equality and identity semantics\",\n    \"Creating immutable value objects\",\n    \"Expressing domain concepts through exceptions\",\n    \"Foundation for architecture patterns\"\n  ],\n  \"content_requests\": [],\n  \"analysis_strategy\": \"Since no companion books are available in the corpus, I cannot provide cross-references to other texts. The chapter stands as a foundational introduction to domain modeling in Python, covering:\\n\\n1. **Core Domain Modeling Concepts**: The distinction between entities (objects with identity over time) and value objects (objects defined by their attributes), implemented using Python's dataclasses and magic methods.\\n\\n2. **Python Implementation Patterns**: Practical use of __eq__, __hash__, __init__, and __gt__ magic methods to implement domain semantics, along with type hints for clarity.\\n\\n3. **Business Logic Translation**: Converting real-world business concepts (like order allocation, batches, and inventory) into maintainable Python code that reflects domain expert vocabulary.\\n\\n4. **Design Principles**: Immutability for value objects (@frozen=True), proper equality semantics, and using exceptions to express domain concepts.\\n\\nWithout companion books available, I would normally cross-reference:\\n- **Architecture books** for DDD patterns, aggregate design, and bounded contexts\\n- **Python reference books** for deeper coverage of magic methods, dataclasses, and type hints\\n- **Implementation books** for practical applications in web frameworks\\n- **Design pattern books** for entity/value object patterns and domain model patterns\\n\\nThe chapter serves as a self-contained introduction that would benefit from connections to both theoretical architecture patterns and practical Python idioms, but these connections cannot be established without access to companion texts in the corpus.\"\n}\n```",
+    "parsed_data": {},
+    "model": "claude-sonnet-4-5-20250929",
+    "tokens_used": 0
+  }
+}

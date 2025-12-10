@@ -1,0 +1,29 @@
+{
+  "chicago_citation": {
+    "pattern": "\\(.*?\\d{4}.*?pp?\\. \\d+.*?\\)",
+    "description": "Chicago-style citation format: (Author, Year, pp. Page)",
+    "fix_template": "(${author}, ${year}, pp. ${page})",
+    "enabled": true
+  },
+  "annotation": {
+    "pattern": "\\*\\*From.*?:\\*\\*",
+    "description": "Source annotation format: **From [Book]:**",
+    "fix_template": "**From ${source}:**",
+    "enabled": true
+  },
+  "verbatim_block": {
+    "pattern": "^```[\\w]*\\n[\\s\\S]*?\\n```",
+    "description": "Verbatim code blocks must have footnote annotations",
+    "enabled": true
+  },
+  "tpm_derivation": {
+    "pattern": "Derived from\\s*:\\s*(\\[\\^\\d+\\](\\s*,\\s*)?)+",
+    "description": "TPM sections must cite sources with 'Derived from:'",
+    "enabled": true
+  },
+  "footnote_definition": {
+    "pattern": "^\\[\\^(\\d+)\\]:\\s*.+\\. \\(JSON `[^`]+`, p\\. \\d+, lines? \\d+\\s*[–-]\\s*\\d+\\)\\.$",
+    "description": "Footnote definitions must follow Chicago format",
+    "enabled": true
+  }
+}

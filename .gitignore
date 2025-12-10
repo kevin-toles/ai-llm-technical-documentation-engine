@@ -48,3 +48,28 @@ outputs/
 .pytest_cache/
 .coverage
 htmlcov/
+.DS_Store
+
+# Type checking cache (mypy)
+.mypy_cache/
+**/​.mypy_cache/
+
+# Test pollution (files created by tests in wrong location)
+PYTHON_GUIDELINES_Learning Python Ed6.md
+
+# Workflow input/output directories (generated data, not for version control)
+# Keep directory structure with .gitkeep files, but ignore contents
+workflows/*/input/*
+workflows/*/output/*
+workflows/*/tmp/*
+!workflows/*/input/.gitkeep
+!workflows/*/output/.gitkeep
+!workflows/*/tmp/.gitkeep
+
+# Exception: Keep taxonomy configuration files (these are curated, not generated)
+!workflows/taxonomy_setup/output/*.json
+
+# Exception: Keep book manifest files (these are curated metadata, not generated)
+!workflows/*/input/book_manifest.json
+
+.scannerwork/

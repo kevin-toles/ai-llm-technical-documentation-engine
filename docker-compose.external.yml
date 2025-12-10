@@ -1,0 +1,59 @@
+# ==============================================================================
+# LLM Document Enhancer - External Gateway Mode
+# ==============================================================================
+# Use this file when llm-gateway is already running in its own docker-compose
+# Assumes llm-network exists from llm-gateway stack
+#
+# Usage: docker compose -f docker-compose.external.yml up document-enhancer
+# ==============================================================================
+
+services:
+  # ============================================================================
+  # Document Enhancer - Connect to External Gateway
+  # ============================================================================
+  document-enhancer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: llm-document-enhancer
+    ports:
+      - "8000:8000"
+    environment:
+      # Application Configuration
+      DOC_ENHANCER_ENV: development
+      DOC_ENHANCER_LOG_LEVEL: DEBUG
+      
+      # LLM Gateway Configuration - External gateway on shared network
+      DOC_ENHANCER_GATEWAY_URL: http://llm-gateway:8080
+      DOC_ENHANCER_GATEWAY_TIMEOUT: "30.0"
+      DOC_ENHANCER_GATEWAY_ENABLED: "true"
+      DOC_ENHANCER_GATEWAY_SESSION_TTL: "3600.0"
+      
+      # Legacy LLM Configuration (for non-gateway mode)
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+    env_file:
+      - .env
+    volumes:
+      - ./workflows:/app/workflows:ro
+      - ./config:/app/config:ro
+      - ./outputs:/app/outputs
+      - ./logs:/app/logs
+      - ./cache:/app/cache
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+    networks:
+      - llm-network
+
+# ==============================================================================
+# Networks - Use External Network from llm-gateway
+# ==============================================================================
+networks:
+  llm-network:
+    external: true
+    name: llm-network

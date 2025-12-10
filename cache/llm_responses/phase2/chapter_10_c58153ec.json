@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "key": "chapter_10_c58153ec",
+    "created_at": 1765351541.6537778,
+    "ttl_seconds": 2592000,
+    "content_hash": "c58153eccaa2f0187806c00d3f6aa3b2a9d4cd39d9db5b1e8b7c580765a1c8b3"
+  },
+  "data": {
+    "phase": "phase2",
+    "chapter_num": 10,
+    "prompt_hash": "c58153eccaa2f0187806c00d3f6aa3b2a9d4cd39d9db5b1e8b7c580765a1c8b3",
+    "response_text": "I cannot generate a substantive cross-reference annotation for this chapter because no companion book content was retrieved from the corpus. The chapter presents a comprehensive treatment of the Command pattern in domain-driven design contexts\u2014introducing command objects as explicit representations of user intent, command handlers as the execution layer, and the architectural benefits of separating command definition from handling logic. The text demonstrates how commands enable message-based architectures, facilitate testing through dependency injection, and support both synchronous and asynchronous processing models.\n\nWithout companion texts, I cannot provide the multi-tiered analysis this methodology requires. An ideal annotation would cite Architecture Spine sources on CQRS and message-driven patterns (establishing why commands exist as architectural primitives), Implementation sources on Python dataclasses and type hints (showing how Python's type system makes command objects elegant), and Engineering Practices sources on testing strategies for command handlers. The absence of these references represents a significant gap: learners consulting only this chapter lack comparative perspectives on command pattern variations, alternative implementations in other languages or frameworks, and the broader event-sourcing ecosystem where commands typically operate. For comprehensive understanding of command-based architectures, readers should seek supplementary texts on domain-driven design, event sourcing, and CQRS patterns that this corpus does not provide.",
+    "parsed_data": {},
+    "model": "claude-sonnet-4-5-20250929",
+    "tokens_used": 0
+  }
+}

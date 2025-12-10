@@ -1,0 +1,1887 @@
+#!/usr/bin/env python3
+"""
+Enrich Metadata Per Book - Statistical Cross-Book Analysis
+
+Enriches single book's metadata with cross-book similarity analysis using
+scikit-learn TF-IDF and cosine similarity. NO LLM calls.
+
+Usage:
+    python enrich_metadata_per_book.py \\
+        --input workflows/metadata_extraction/output/architecture_patterns_metadata.json \\
+        --taxonomy workflows/taxonomy_setup/output/architecture_patterns_taxonomy.json \\
+        --output workflows/metadata_enrichment/output/architecture_patterns_metadata_enriched.json
+
+References:
+    - CONSOLIDATED_IMPLEMENTATION_PLAN.md: Tab 4 requirements
+    - TAB4_IMPLEMENTATION_PLAN.md: Detailed implementation
+    - Architecture Patterns with Python Ch. 13: Dependency Injection patterns
+    - BERTOPIC_SENTENCE_TRANSFORMERS_DESIGN.md: Option C Architecture
+    
+Test-Driven Development:
+    - Tests: tests/integration/test_metadata_enrichment.py
+    - This is the GREEN phase - implementing minimal code to pass RED tests
+"""
+
+import argparse
+import asyncio
+import json
+import sys
+from pathlib import Path
+from typing import List, Dict, Any, Tuple, Optional
+from datetime import datetime
+
+# scikit-learn imports for TF-IDF and cosine similarity
+from sklearn.feature_extraction.text import TfidfVectorizer  # type: ignore[import-untyped]
+from sklearn.metrics.pairwise import cosine_similarity  # type: ignore[import-untyped]
+
+# Project configuration and paths
+PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
+sys.path.insert(0, str(PROJECT_ROOT))
+
+# Statistical extractor for YAKE + Summa (existing implementation)
+# NOTE: Lazy loading - instantiate at runtime to respect environment variables
+_STATISTICAL_EXTRACTOR_CLASS = None
+_STATISTICAL_EXTRACTOR_INSTANCE = None
+
+try:
+    from workflows.metadata_extraction.scripts.adapters.statistical_extractor import StatisticalExtractor
+    _STATISTICAL_EXTRACTOR_CLASS = StatisticalExtractor
+except ImportError as e:
+    print(f"Warning: StatisticalExtractor not available: {e}")
+    print("Will use fallback keyword extraction")
+
+
+def get_statistical_extractor():
+    """
+    Get StatisticalExtractor instance with lazy loading.
+    
+    This ensures environment variables are read at call time, not import time.
+    Each call creates a new instance to pick up any env var changes.
+    """
+    global _STATISTICAL_EXTRACTOR_CLASS
+    if _STATISTICAL_EXTRACTOR_CLASS is None:
+        return None
+    # Create new instance each time to pick up env var changes
+    return _STATISTICAL_EXTRACTOR_CLASS()
+
+# BERTopic/Sentence Transformers integration (Option C Architecture)
+try:
+    from workflows.metadata_enrichment.scripts.topic_clusterer import (
+        TopicClusterer,
+        TopicResults,
+        TopicInfo,
+        BERTOPIC_AVAILABLE,
+    )
+    TOPIC_CLUSTERER_AVAILABLE = True
+except ImportError as e:
+    print(f"Warning: TopicClusterer not available: {e}")
+    print("Topic clustering will be skipped")
+    TOPIC_CLUSTERER_AVAILABLE = False
+    TopicClusterer = None  # type: ignore[misc, assignment]
+    TopicResults = None  # type: ignore[misc, assignment]
+    TopicInfo = None  # type: ignore[misc, assignment]
+    BERTOPIC_AVAILABLE = False
+
+try:
+    from workflows.metadata_enrichment.scripts.semantic_similarity_engine import (
+        SemanticSimilarityEngine,
+        SimilarityConfig,
+        SENTENCE_TRANSFORMERS_AVAILABLE,
+    )
+    SEMANTIC_ENGINE_AVAILABLE = True
+except ImportError as e:
+    print(f"Warning: SemanticSimilarityEngine not available: {e}")
+    print("Semantic similarity will use TF-IDF fallback")
+    SEMANTIC_ENGINE_AVAILABLE = False
+    SemanticSimilarityEngine = None  # type: ignore[misc, assignment]
+    SimilarityConfig = None  # type: ignore[misc, assignment]
+    SENTENCE_TRANSFORMERS_AVAILABLE = False
+
+# WBS 3.2.3: Semantic Search Client for remote API calls
+try:
+    from workflows.shared.clients.search_client import SemanticSearchClient
+    SEMANTIC_SEARCH_CLIENT_AVAILABLE = True
+except ImportError as e:
+    print(f"Warning: SemanticSearchClient not available: {e}")
+    SEMANTIC_SEARCH_CLIENT_AVAILABLE = False
+    SemanticSearchClient = None  # type: ignore[misc, assignment]
+
+# WBS 5.1.2: Orchestrator Client for Code-Orchestrator-Service integration
+try:
+    from workflows.shared.clients.orchestrator_client import (
+        OrchestratorClient,
+        OrchestratorClientProtocol,
+        FakeOrchestratorClient,
+        OrchestratorClientError,
+        SEMANTIC_SIMILARITY_THRESHOLD,
+    )
+    ORCHESTRATOR_CLIENT_AVAILABLE = True
+except ImportError as e:
+    print(f"Warning: OrchestratorClient not available: {e}")
+    ORCHESTRATOR_CLIENT_AVAILABLE = False
+    OrchestratorClient = None  # type: ignore[misc, assignment]
+    OrchestratorClientProtocol = None  # type: ignore[misc, assignment]
+    FakeOrchestratorClient = None  # type: ignore[misc, assignment]
+    OrchestratorClientError = None  # type: ignore[misc, assignment]
+    SEMANTIC_SIMILARITY_THRESHOLD = 0.3  # Fallback constant
+
+
+def _extract_books_from_taxonomy(taxonomy: Dict[str, Any]) -> set:
+    """
+    Extract book names from taxonomy tiers.
+    
+    Helper function extracted to reduce cognitive complexity.
+    
+    Args:
+        taxonomy: Taxonomy dictionary from Tab 3
+        
+    Returns:
+        Set of book names found in taxonomy
+    """
+    book_set = set()
+    for tier_name, tier_data in taxonomy.get("tiers", {}).items():
+        if "books" in tier_data:
+            for book_entry in tier_data.get("books", []):
+                # Handle both old format (string) and new format (dict with 'name' key)
+                if isinstance(book_entry, dict):
+                    book_file = book_entry.get("name", "")
+                else:
+                    book_file = book_entry
+                # Clean filename: "Book_Name.json" -> "Book_Name"
+                book_name = book_file.replace(".json", "").replace("_metadata", "")
+                book_set.add(book_name)
+    return book_set
+
+
+def _scan_metadata_directory(metadata_dir: Path) -> set:
+    """
+    Scan metadata directory for all available books.
+    
+    Helper function extracted to reduce cognitive complexity.
+    
+    Args:
+        metadata_dir: Directory containing *_metadata.json files
+        
+    Returns:
+        Set of book names found in directory
+    """
+    book_set = set()
+    if metadata_dir.exists():
+        for meta_file in metadata_dir.glob("*_metadata.json"):
+            book_name = meta_file.stem.replace("_metadata", "")
+            book_set.add(book_name)
+            print(f"[INFO] Found book: {book_name}")
+    return book_set
+
+
+def _load_book_metadata(book_set: set, metadata_dir: Path) -> Dict[str, Any]:
+    """
+    Load metadata for each book in the book set.
+    
+    Helper function extracted to reduce cognitive complexity.
+    
+    Args:
+        book_set: Set of book names to load
+        metadata_dir: Directory containing *_metadata.json files
+        
+    Returns:
+        Dictionary with metadata and corpus_size
+    """
+    context = {
+        "books": list(book_set),
+        "metadata": {},
+        "corpus_size": 0
+    }
+    
+    for book_name in book_set:
+        metadata_filename = f"{book_name}_metadata.json"
+        metadata_path = metadata_dir / metadata_filename
+        
+        if metadata_path.exists():
+            with open(metadata_path, encoding='utf-8') as f:
+                book_metadata = json.load(f)
+                # Ensure context["metadata"] and context["corpus_size"] are properly typed
+                context["metadata"][book_name] = book_metadata  # type: ignore[index]
+                context["corpus_size"] += len(book_metadata)  # type: ignore[arg-type, operator]
+        else:
+            print(f"  ⚠️  Skipping {book_name} - metadata not found at {metadata_path}")
+    
+    return context
+
+
+def load_cross_book_context(taxonomy_path: Path, metadata_dir: Path) -> Dict[str, Any]:
+    """
+    Load metadata for all books listed in taxonomy.
+    
+    Reference: TAB4_IMPLEMENTATION_PLAN.md - Function 1
+    Pattern: Repository pattern for data access (Architecture Patterns Ch. 2)
+    
+    Args:
+        taxonomy_path: Path to {book}_taxonomy.json from Tab 3
+        metadata_dir: Directory containing *_metadata.json files from Tab 2
+        
+    Returns:
+        Dictionary containing:
+        - books: List of book names
+        - metadata: Dict mapping book_name -> chapter list
+        - corpus_size: Total number of chapters across all books
+        
+    Raises:
+        FileNotFoundError: If taxonomy file doesn't exist
+        json.JSONDecodeError: If taxonomy JSON is invalid
+    """
+    if not taxonomy_path.exists():
+        raise FileNotFoundError(f"Taxonomy file not found: {taxonomy_path}")
+    
+    with open(taxonomy_path, encoding='utf-8') as f:
+        taxonomy = json.load(f)
+    
+    # Extract book list from taxonomy tiers
+    book_set = _extract_books_from_taxonomy(taxonomy)
+    
+    # If no books found in taxonomy, scan metadata directory
+    if not book_set:
+        print("[INFO] Taxonomy doesn't contain book list. Scanning metadata directory for all available books...")
+        book_set = _scan_metadata_directory(metadata_dir)
+    
+    # Load metadata for each book
+    return _load_book_metadata(book_set, metadata_dir)
+
+
+def build_chapter_corpus(context: Dict[str, Any]) -> Tuple[List[str], List[Dict[str, Any]]]:
+    """
+    Build corpus of chapter texts and index for TF-IDF.
+    
+    Reference: TAB4_IMPLEMENTATION_PLAN.md - Function 2
+    Pattern: Factory pattern for corpus construction
+    
+    Args:
+        context: Cross-book context from load_cross_book_context()
+        
+    Returns:
+        Tuple of:
+        - corpus: List of chapter text strings (one per chapter)
+        - index: List of chapter metadata dicts with keys:
+            - book: Book filename
+            - chapter: Chapter number
+            - title: Chapter title
+            - start_page: Start page number
+            - end_page: End page number
+    """
+    corpus = []
+    index = []
+    
+    for book_name, chapters in context["metadata"].items():
+        for chapter in chapters:
+            # Combine all text features for TF-IDF analysis
+            # Using title, summary, keywords, and concepts provides rich semantic content
+            text_parts = [
+                chapter.get("title", ""),
+                chapter.get("summary", ""),
+                " ".join(chapter.get("keywords", [])),
+                " ".join(chapter.get("concepts", []))
+            ]
+            chapter_text = " ".join(text_parts)
+            
+            corpus.append(chapter_text)
+            index.append({
+                "book": book_name,
+                "chapter": chapter.get("chapter_number"),
+                "title": chapter.get("title", ""),
+                "start_page": chapter.get("start_page"),
+                "end_page": chapter.get("end_page")
+            })
+    
+    return corpus, index
+
+
+def compute_similarity_matrix(corpus: List[str]) -> Any:
+    """
+    Compute TF-IDF matrix and cosine similarity between all chapters.
+    
+    Reference: TAB4_IMPLEMENTATION_PLAN.md - Function 3
+    Pattern: Statistical methods (no LLM) - scikit-learn
+    
+    Args:
+        corpus: List of chapter text strings
+        
+    Returns:
+        similarity_matrix: numpy array of shape (n_chapters, n_chapters)
+                          where similarity_matrix[i][j] is cosine similarity between chapter i and j
+                          
+    Configuration:
+        - stop_words: Remove common English words ("the", "a", etc.)
+        - max_features: Limit to 1000 most important terms
+        - ngram_range: Include unigrams, bigrams, and trigrams
+        - min_df: Ignore terms appearing in fewer than 2 documents
+        - max_df: Ignore terms appearing in more than 80% of documents
+    """
+    # TF-IDF vectorization configuration per plan
+    vectorizer = TfidfVectorizer(
+        stop_words='english',
+        max_features=1000,
+        ngram_range=(1, 3),  # Unigrams, bigrams, trigrams
+        min_df=2,  # Minimum document frequency
+        max_df=0.8  # Maximum document frequency (80%)
+    )
+    
+    # Transform corpus to TF-IDF matrix
+    tfidf_matrix = vectorizer.fit_transform(corpus)
+    
+    # Compute pairwise cosine similarity
+    similarity_matrix = cosine_similarity(tfidf_matrix)
+    
+    return similarity_matrix
+
+
+def find_related_chapters(
+    chapter_idx: int,
+    similarity_matrix: Any,
+    index: List[Dict[str, Any]],
+    current_book: str,
+    threshold: float = 0.7,
+    top_n: int = 5
+) -> List[Dict[str, Any]]:
+    """
+    Find top N related chapters for a given chapter using cosine similarity.
+    
+    Reference: TAB4_IMPLEMENTATION_PLAN.md - Function 4
+    Pattern: Filter pattern with threshold and ranking
+    
+    Args:
+        chapter_idx: Index of current chapter in corpus/similarity matrix
+        similarity_matrix: Precomputed cosine similarity matrix
+        index: Chapter metadata index
+        current_book: Book name to exclude self-references
+        threshold: Minimum similarity score (0.7 = 70% similarity)
+        top_n: Maximum number of related chapters to return (5)
+        
+    Returns:
+        List of related chapter dicts with keys:
+        - book: Book filename
+        - chapter: Chapter number
+        - title: Chapter title
+        - relevance_score: Similarity score (0.0-1.0)
+        - method: Always "cosine_similarity"
+    """
+    scores = similarity_matrix[chapter_idx]
+    
+    # Build list of (index, score) pairs for chapters above threshold
+    scored_chapters = []
+    for idx, score in enumerate(scores):
+        # Skip self-reference and chapters below threshold
+        if idx == chapter_idx or score < threshold:
+            continue
+        
+        chapter_info = index[idx]
+        # Exclude chapters from same book (cross-book analysis only)
+        if chapter_info["book"] == current_book:
+            continue
+        
+        scored_chapters.append({
+            "idx": idx,
+            "score": float(score),  # Convert numpy float to Python float
+            "book": chapter_info["book"],
+            "chapter": chapter_info["chapter"],
+            "title": chapter_info["title"]
+        })
+    
+    # Sort by similarity score (descending) and take top N
+    scored_chapters.sort(key=lambda x: x["score"], reverse=True)
+    
+    # Format output per schema
+    related = []
+    for item in scored_chapters[:top_n]:
+        related.append({
+            "book": item["book"],
+            "chapter": item["chapter"],
+            "title": item["title"],
+            "relevance_score": round(item["score"], 2),
+            "method": "cosine_similarity"
+        })
+    
+    return related
+
+
+# =============================================================================
+# WBS 5.1.3: find_related_chapters_semantic - Orchestrator Integration
+# Pattern: Async function replacing TF-IDF with semantic embeddings
+# =============================================================================
+
+
+async def find_related_chapters_semantic(
+    chapter_text: str,
+    current_book: str,
+    client: "OrchestratorClientProtocol",
+    domain: Optional[str] = None,
+    threshold: float = SEMANTIC_SIMILARITY_THRESHOLD,
+    top_n: int = 5,
+) -> List[Dict[str, Any]]:
+    """
+    Find related chapters using Code-Orchestrator-Service semantic search.
+    
+    Reference: WBS_IMPLEMENTATION.md - Phase 5.1.3
+    Pattern: Replaces TF-IDF find_related_chapters with semantic embeddings
+    
+    Key Improvements over TF-IDF:
+    - Uses HuggingFace sentence-transformers embeddings (vs TF-IDF)
+    - Lower threshold 0.3 achievable (vs impossible 0.7 TF-IDF)
+    - Cross-book semantic similarity (vs lexical matching)
+    
+    Args:
+        chapter_text: Chapter text/content to search for similar content
+        current_book: Book name to exclude from results (self-references)
+        client: OrchestratorClient instance (Protocol-compliant)
+        domain: Optional domain filter (e.g., "ai-ml", "architecture")
+        threshold: Minimum similarity threshold (default: 0.3)
+        top_n: Maximum number of results (default: 5)
+        
+    Returns:
+        List of related chapter dicts with keys:
+        - book: Source book name
+        - chapter: Chapter number
+        - title: Chapter title
+        - relevance_score: Similarity score (0.0-1.0)
+        - method: "semantic_embedding"
+        - citation: Chicago-style citation string
+        
+    Raises:
+        ValueError: If chapter_text is empty
+        OrchestratorClientError: On API failure
+    """
+    if not chapter_text or not chapter_text.strip():
+        raise ValueError("chapter_text must not be empty")
+    
+    # Call orchestrator service for semantic search
+    # Request extra results to account for filtering
+    results = await client.search(
+        query=chapter_text,
+        domain=domain,
+        top_k=top_n * 2,  # Get extra to filter self-references
+        threshold=threshold,
+    )
+    
+    # Filter out self-references and format output
+    related = []
+    for result in results:
+        # Handle both direct result format and metadata nested format
+        if "metadata" in result:
+            metadata = result.get("metadata", {})
+            book = metadata.get("book", metadata.get("source", ""))
+            chapter_num = metadata.get("chapter", metadata.get("chapter_number", 0))
+            title = metadata.get("title", "")
+            score = result.get("score", 0.0)
+        else:
+            # Direct format (from FakeOrchestratorClient)
+            book = result.get("book", "")
+            chapter_num = result.get("chapter", 0)
+            title = result.get("title", "")
+            score = result.get("relevance_score", result.get("score", 0.0))
+        
+        # Exclude chapters from same book (cross-book analysis only)
+        if book == current_book:
+            continue
+        
+        # Filter by threshold (for FakeOrchestratorClient which doesn't filter)
+        if score < threshold:
+            continue
+        
+        # Generate Chicago-style citation
+        citation = generate_chicago_citation(book, chapter_num, title)
+        
+        related.append({
+            "book": book,
+            "chapter": chapter_num,
+            "title": title,
+            "relevance_score": round(score, 2),
+            "method": "orchestrator_semantic",
+            "citation": citation,
+        })
+        
+        if len(related) >= top_n:
+            break
+    
+    return related
+
+
+def generate_chicago_citation(
+    ref_or_book: Dict[str, Any] | str,
+    chapter: Optional[int] = None,
+    title: Optional[str] = None
+) -> str:
+    """
+    Generate Chicago-style citation for a chapter reference.
+    
+    Reference: WBS_IMPLEMENTATION.md - Phase 5.2.3
+    Pattern: Citation generation for cross-book references
+    
+    Supports two call signatures:
+    1. generate_chicago_citation(ref_dict) - pass a dict with book, chapter, title, author, start_page
+    2. generate_chicago_citation(book, chapter, title) - pass individual args (legacy)
+    
+    Chicago Manual of Style format for book chapters:
+    Author, "Chapter Title," in Book Title (Year), page.
+    
+    Args:
+        ref_or_book: Either a reference dict or book title string
+        chapter: Chapter number (only if first arg is string)
+        title: Chapter title (only if first arg is string)
+        
+    Returns:
+        Chicago-style citation string
+        
+    Example:
+        >>> generate_chicago_citation({"book": "AI Engineering", "chapter": 5, "title": "RAG", "author": "Huyen", "start_page": 150})
+        'Huyen, "RAG," in AI Engineering, 150.'
+    """
+    # Handle dict input (new style)
+    if isinstance(ref_or_book, dict):
+        book = ref_or_book.get("book", "")
+        chapter = ref_or_book.get("chapter", 0)
+        title = ref_or_book.get("title", "")
+        author = ref_or_book.get("author", "")
+        start_page = ref_or_book.get("start_page", "")
+    else:
+        # Legacy string input
+        book = ref_or_book
+        author = ""
+        start_page = ""
+    
+    # Clean book name (remove underscores, metadata suffix)
+    clean_book = book.replace("_", " ").replace(" metadata", "").strip()
+    
+    # Format title with quotes
+    quoted_title = f'"{title}"' if title else '"Untitled"'
+    
+    # Build citation based on available info
+    if author:
+        # Full Chicago format: Author, "Title," in Book, page.
+        surname = author.split()[-1] if author else ""
+        if start_page:
+            return f'{surname}, {quoted_title}, in {clean_book}, {start_page}.'
+        else:
+            return f'{surname}, {quoted_title}, in {clean_book}.'
+    else:
+        # Simple format without author
+        return f'{quoted_title} in {clean_book}, Chapter {chapter}.'
+
+
+def add_citations_to_refs(
+    related_chapters: List[Dict[str, Any]],
+    book_metadata: Dict[str, Any]
+) -> List[Dict[str, Any]]:
+    """
+    Add Chicago-style citations to related chapter references.
+    
+    Reference: WBS_IMPLEMENTATION.md - Phase 5.2.3
+    Pattern: Citation enrichment
+    
+    Args:
+        related_chapters: List of related chapter dicts
+        book_metadata: Dict mapping book name to metadata (author, chapters)
+        
+    Returns:
+        List of related chapters with 'citation' field added
+    """
+    enriched = []
+    for ref in related_chapters:
+        book = ref.get("book", "")
+        chapter_num = ref.get("chapter", 0)
+        title = ref.get("title", "")
+        
+        # Look up book metadata for author and page info
+        book_info = book_metadata.get(book, {})
+        author = book_info.get("author", "")
+        
+        # Look up chapter-specific info
+        chapters_info = book_info.get("chapters", {})
+        chapter_info = chapters_info.get(chapter_num, {})
+        start_page = chapter_info.get("start_page", "")
+        end_page = chapter_info.get("end_page", "")
+        
+        # Build enriched ref with citation
+        enriched_ref = {
+            **ref,
+            "author": author,
+            "start_page": start_page,
+            "end_page": end_page,
+            "citation": generate_chicago_citation({
+                "book": book,
+                "chapter": chapter_num,
+                "title": title,
+                "author": author,
+                "start_page": start_page,
+            })
+        }
+        enriched.append(enriched_ref)
+    
+    return enriched
+
+
+# =============================================================================
+# WBS 5.2: E2E Validation Helper Functions
+# Pattern: Domain filtering and validation utilities
+# =============================================================================
+
+
+# Domain mapping for book classification
+DOMAIN_BOOK_MAPPING = {
+    "ai-ml": [
+        "AI Engineering",
+        "Building LLM Apps",
+        "Machine Learning",
+        "Deep Learning",
+        "Natural Language Processing",
+        "RAG",
+    ],
+    "architecture": [
+        "Architecture Patterns",
+        "Domain Driven Design",
+        "Microservices",
+        "Clean Architecture",
+        "System Design",
+    ],
+    "python": [
+        "Architecture Patterns with Python",
+        "Fluent Python",
+        "Python Cookbook",
+    ],
+}
+
+
+def count_cross_book_refs(enriched_data: Dict[str, Any]) -> int:
+    """
+    Count cross-book references in enriched metadata.
+    
+    Reference: WBS_IMPLEMENTATION.md - Phase 5.2.1
+    Pattern: E2E validation helper
+    
+    Args:
+        enriched_data: Enriched metadata dict with 'book' and 'chapters' keys
+        
+    Returns:
+        Count of cross-book references (excludes same-book references)
+    """
+    current_book = enriched_data.get("book", enriched_data.get("book_title", ""))
+    chapters = enriched_data.get("chapters", [])
+    
+    count = 0
+    for chapter in chapters:
+        related = chapter.get("related_chapters", chapter.get("cross_book_references", []))
+        for ref in related:
+            ref_book = ref.get("book", "")
+            # Only count if it's from a different book
+            if ref_book and ref_book != current_book:
+                count += 1
+    
+    return count
+
+
+def is_relevant_domain(ref: Dict[str, Any], expected_domain: str) -> bool:
+    """
+    Check if a reference is relevant to the expected domain.
+    
+    Reference: WBS_IMPLEMENTATION.md - Phase 5.2.2
+    Pattern: False positive detection
+    
+    Args:
+        ref: Reference dict with 'book' key
+        expected_domain: Domain to check against (e.g., "ai-ml")
+        
+    Returns:
+        True if the reference book is relevant to the domain
+    """
+    book = ref.get("book", "")
+    
+    # Get domain books
+    domain_books = DOMAIN_BOOK_MAPPING.get(expected_domain, [])
+    
+    # Check if book contains any domain keyword
+    for domain_book in domain_books:
+        if domain_book.lower() in book.lower() or book.lower() in domain_book.lower():
+            return True
+    
+    # Exclude known irrelevant domains
+    excluded_for_ai = ["C++", "Concurrency in Action", "Systems Programming", "COBOL"]
+    if expected_domain == "ai-ml":
+        for excluded in excluded_for_ai:
+            if excluded.lower() in book.lower():
+                return False
+    
+    # Default to true for unknown books (benefit of the doubt)
+    return True
+
+
+def filter_by_domain(
+    results: List[Dict[str, Any]], domain: str
+) -> List[Dict[str, Any]]:
+    """
+    Filter search results by domain relevance.
+    
+    Reference: WBS_IMPLEMENTATION.md - Phase 5.2.2
+    Pattern: False positive reduction
+    
+    Args:
+        results: List of search result dicts
+        domain: Target domain (e.g., "ai-ml")
+        
+    Returns:
+        Filtered list excluding irrelevant domain results
+    """
+    return [r for r in results if is_relevant_domain(r, domain)]
+
+
+async def enrich_chapter_with_orchestrator(
+    chapter: Dict[str, Any],
+    client: "OrchestratorClientProtocol",
+    current_book: str,
+    domain: Optional[str] = None,
+    fallback_enabled: bool = False,
+) -> Dict[str, Any]:
+    """
+    Enrich a single chapter using orchestrator semantic search.
+    
+    Reference: WBS_IMPLEMENTATION.md - Phase 5.1
+    Pattern: Single chapter enrichment for fine-grained control
+    
+    Args:
+        chapter: Chapter dict with title, summary, keywords, concepts
+        client: OrchestratorClient instance
+        current_book: Book name to exclude from results
+        domain: Optional domain filter
+        fallback_enabled: If True, use TF-IDF fallback on error
+        
+    Returns:
+        Enriched chapter dict with related_chapters
+    """
+    chapter_num = chapter.get("chapter_number", 0)
+    chapter_title = chapter.get("title", f"Chapter {chapter_num}")
+    
+    # Build query from chapter content
+    query_parts = [
+        chapter_title,
+        chapter.get("summary", "")[:500],
+        " ".join(chapter.get("keywords", [])[:10]),
+        " ".join(chapter.get("concepts", [])[:5])
+    ]
+    query_text = " ".join(filter(None, query_parts))
+    
+    try:
+        related = await find_related_chapters_semantic(
+            chapter_text=query_text,
+            current_book=current_book,
+            client=client,
+            domain=domain,
+            threshold=SEMANTIC_SIMILARITY_THRESHOLD,
+            top_n=5,
+        )
+    except Exception:
+        # Graceful degradation - return empty refs on error
+        related = []
+    
+    # Build enriched chapter
+    return {
+        **chapter,
+        "related_chapters": related,
+        "similarity_source": "orchestrator_semantic",
+    }
+
+
+async def run_enrichment_with_orchestrator(
+    book_name: str,
+    domain: str,
+    client: "OrchestratorClientProtocol",
+) -> Dict[str, Any]:
+    """
+    Run full book enrichment using orchestrator semantic search.
+    
+    Reference: WBS_IMPLEMENTATION.md - Phase 5 Integration Test
+    Pattern: E2E enrichment flow
+    
+    Args:
+        book_name: Name of the book to enrich
+        domain: Domain filter (e.g., "ai-ml")
+        client: OrchestratorClient instance
+        
+    Returns:
+        Enriched book metadata with chapters containing related_chapters
+    """
+    # For testing, generate sample chapters if not loading from file
+    sample_chapters = [
+        {
+            "chapter_number": 1,
+            "title": "Introduction to Patterns",
+            "summary": "Overview of software architecture patterns"
+        },
+        {
+            "chapter_number": 2,
+            "title": "Repository Pattern",
+            "summary": "Data access abstraction pattern"
+        },
+    ]
+    
+    enriched_chapters = []
+    for chapter in sample_chapters:
+        enriched = await enrich_chapter_with_orchestrator(
+            chapter=chapter,
+            client=client,
+            current_book=book_name,
+            domain=domain,
+        )
+        enriched_chapters.append(enriched)
+    
+    return {
+        "book": book_name,
+        "book_title": book_name.replace("_", " "),
+        "chapters": enriched_chapters,
+    }
+
+
+def rescore_keywords_cross_book(
+    current_chapter_text: str,
+    related_chapters_texts: List[str],
+    top_n: int = 10
+) -> List[Dict[str, Any]]:
+    """
+    Re-score keywords using YAKE with combined text from related chapters.
+    
+    Reference: TAB4_IMPLEMENTATION_PLAN.md - Function 5
+    Pattern: Statistical keyword extraction with cross-book context
+    
+    Args:
+        current_chapter_text: Text from current chapter
+        related_chapters_texts: Texts from related chapters
+        top_n: Number of keywords to return (10)
+        
+    Returns:
+        List of keyword dicts with keys:
+        - term: Keyword string
+        - score: YAKE score (lower is better)
+        - source: Always "cross_book_yake"
+    """
+    # Combine current chapter with related chapter contexts
+    combined_text = current_chapter_text + " " + " ".join(related_chapters_texts)
+    
+    # Extract keywords using YAKE via StatisticalExtractor (lazy loaded)
+    extractor = get_statistical_extractor()
+    if extractor:
+        keywords_with_scores = extractor.extract_keywords(
+            combined_text,
+            top_n=top_n
+        )
+    else:
+        # Fallback: simple word frequency if StatisticalExtractor unavailable
+        from collections import Counter
+        words = combined_text.lower().split()
+        word_counts = Counter(words)
+        keywords_with_scores = [(word, count) for word, count in word_counts.most_common(top_n)]
+    
+    # Format output per schema
+    keywords_enriched = []
+    for keyword, score in keywords_with_scores:
+        keywords_enriched.append({
+            "term": keyword,
+            "score": round(float(score), 3),
+            "source": "cross_book_yake"
+        })
+    
+    return keywords_enriched
+
+
+def extract_concepts_cross_book(
+    current_chapter_text: str,
+    related_chapters_texts: List[str],
+    top_n: int = 10
+) -> List[Dict[str, Any]]:
+    """
+    Extract concepts using Summa TextRank with combined text from related chapters.
+    
+    Reference: TAB4_IMPLEMENTATION_PLAN.md - Function 6
+    Pattern: Statistical concept extraction with cross-book context
+    
+    Args:
+        current_chapter_text: Text from current chapter
+        related_chapters_texts: Texts from related chapters
+        top_n: Number of concepts to return (10)
+        
+    Returns:
+        List of concept dicts with keys:
+        - concept: Concept phrase string
+        - source: Always "cross_book_summa"
+    """
+    # Combine current chapter with related chapter contexts
+    combined_text = current_chapter_text + " " + " ".join(related_chapters_texts)
+    
+    # Extract concepts using Summa via StatisticalExtractor (lazy loaded)
+    extractor = get_statistical_extractor()
+    if extractor:
+        concepts = extractor.extract_concepts(combined_text, top_n=top_n)
+    else:
+        # Fallback: simple noun phrase extraction if StatisticalExtractor unavailable
+        import re
+        # Extract multi-word phrases (simple heuristic)
+        phrases = re.findall(r'\b[a-z]+(?:\s+[a-z]+){1,2}\b', combined_text.lower())
+        from collections import Counter
+        phrase_counts = Counter(phrases)
+        concepts = [phrase for phrase, _ in phrase_counts.most_common(top_n)]
+    
+    # Format output per schema
+    concepts_enriched = []
+    for concept in concepts:
+        concepts_enriched.append({
+            "concept": concept,
+            "source": "cross_book_summa"
+        })
+    
+    return concepts_enriched
+
+
+def _find_chapter_index(
+    book_name: str, 
+    chapter_num: int, 
+    index: List[Dict[str, Any]]
+) -> Optional[int]:
+    """Find chapter index in corpus. Returns None if not found."""
+    for idx, item in enumerate(index):
+        if item["book"] == f"{book_name}.json" and item["chapter"] == chapter_num:
+            return idx
+    return None
+
+
+def _get_topic_info(
+    topic_clusterer: Optional[Any], 
+    chapter_idx: int
+) -> Optional[int]:
+    """Get topic ID from clusterer. Returns None if unavailable."""
+    if topic_clusterer is None:
+        return None
+    try:
+        topic_info = topic_clusterer.get_topic_for_chapter(chapter_idx)
+        topic_id = topic_info.topic_id
+        if topic_id is not None and topic_id >= 0:
+            print(f"    Topic ID: {topic_id} ({topic_info.topic_name})")
+            return topic_id
+    except Exception as e:
+        print(f"    ⚠️  Could not get topic_id: {e}")
+    return None
+
+
+def _find_related_with_semantic(
+    chapter_idx: int,
+    book_name: str,
+    index: List[Dict[str, Any]],
+    similarity_matrix: Any,
+    semantic_engine: Optional[Any],
+    semantic_embeddings: Optional[Any]
+) -> List[Dict[str, Any]]:
+    """Find related chapters using semantic or TF-IDF similarity."""
+    if semantic_engine is not None and semantic_embeddings is not None:
+        try:
+            related_results = semantic_engine.find_similar(
+                query_idx=chapter_idx,
+                embeddings=semantic_embeddings,
+                index=index,
+                top_k=5,
+                threshold=0.1,
+            )
+            related = []
+            for r in related_results:
+                if r.book == f"{book_name}.json":
+                    continue
+                related.append({
+                    "book": r.book,
+                    "chapter": r.chapter,
+                    "title": r.title,
+                    "relevance_score": round(r.score, 2),
+                    "method": r.method,
+                })
+            return related[:5]
+        except Exception as e:
+            print(f"    ⚠️  Semantic similarity failed, using TF-IDF: {e}")
+    
+    return find_related_chapters(
+        chapter_idx,
+        similarity_matrix,
+        index,
+        f"{book_name}.json",
+        threshold=0.7,
+        top_n=5
+    )
+
+
+def _collect_related_texts(
+    related: List[Dict[str, Any]], 
+    corpus: List[str], 
+    index: List[Dict[str, Any]]
+) -> List[str]:
+    """Collect text content from related chapters."""
+    related_texts = []
+    for rel in related:
+        for idx, item in enumerate(index):
+            if item["book"] == rel["book"] and item["chapter"] == rel["chapter"]:
+                related_texts.append(corpus[idx])
+                break
+    return related_texts
+
+
+def _enrich_single_chapter(
+    chapter: Dict[str, Any],
+    book_name: str,
+    corpus: List[str],
+    index: List[Dict[str, Any]],
+    similarity_matrix: Any,
+    topic_clusterer: Optional[Any] = None,
+    semantic_engine: Optional[Any] = None,
+    semantic_embeddings: Optional[Any] = None,
+) -> Dict[str, Any]:
+    """
+    Helper function to enrich a single chapter (reduces cognitive complexity).
+    
+    Pattern: Extract Method refactoring (reduce complexity)
+    Reference: BERTOPIC_SENTENCE_TRANSFORMERS_DESIGN.md - Option C Architecture
+    
+    Args:
+        chapter: Chapter metadata dict from Tab 2
+        book_name: Name of current book
+        corpus: Full chapter corpus
+        index: Chapter index
+        similarity_matrix: Precomputed similarity matrix
+        topic_clusterer: Optional TopicClusterer instance (fitted)
+        semantic_engine: Optional SemanticSimilarityEngine instance
+        semantic_embeddings: Optional precomputed semantic embeddings
+        
+    Returns:
+        Enriched chapter dict with topic_id, related_chapters, keywords_enriched, concepts_enriched
+    """
+    chapter_num = chapter.get("chapter_number")
+    print(f"  Chapter {chapter_num}: {chapter.get('title', 'Untitled')}")
+    
+    # Find chapter index in corpus
+    chapter_idx = _find_chapter_index(book_name, chapter_num, index)
+    if chapter_idx is None:
+        print("    ⚠️  Chapter not found in corpus, skipping enrichment")
+        return chapter
+    
+    # Get topic_id from TopicClusterer (Option C Architecture)
+    topic_id = _get_topic_info(topic_clusterer, chapter_idx)
+    
+    # Find related chapters using cosine similarity (or semantic similarity)
+    related = _find_related_with_semantic(
+        chapter_idx, book_name, index, similarity_matrix,
+        semantic_engine, semantic_embeddings
+    )
+    print(f"    Related chapters found: {len(related)}")
+    
+    # Get related chapter texts for keyword/concept enrichment
+    related_texts = _collect_related_texts(related, corpus, index)
+    
+    # Build current chapter text
+    current_text = " ".join([
+        chapter.get("title", ""),
+        chapter.get("summary", ""),
+        " ".join(chapter.get("keywords", [])),
+        " ".join(chapter.get("concepts", []))
+    ])
+    
+    # Re-score keywords with cross-book context
+    keywords_enriched = rescore_keywords_cross_book(
+        current_text,
+        related_texts,
+        top_n=10
+    )
+    
+    # Extract cross-book concepts
+    concepts_enriched = extract_concepts_cross_book(
+        current_text,
+        related_texts,
+        top_n=10
+    )
+    
+    # Build enriched chapter (preserve all original fields + add enrichments)
+    enriched = {
+        **chapter,  # Preserve all Tab 2 fields
+        "related_chapters": related,
+        "keywords_enriched": keywords_enriched,
+        "concepts_enriched": concepts_enriched
+    }
+    
+    # Add topic_id if available (Option C Architecture)
+    if topic_id is not None:
+        enriched["topic_id"] = topic_id
+    
+    return enriched
+
+
+def enrich_metadata(
+    input_path: Path,
+    taxonomy_path: Path,
+    output_path: Path
+) -> None:
+    """
+    Main enrichment function - orchestrates the complete Tab 4 workflow.
+    
+    Reference: TAB4_IMPLEMENTATION_PLAN.md - Function 7
+    Pattern: Orchestration pattern (Architecture Patterns Ch. 8)
+    
+    Workflow:
+    1. Load current book metadata (Tab 2 output)
+    2. Load cross-book context from taxonomy (Tab 3 output)
+    3. Build TF-IDF corpus from all books
+    4. Compute similarity matrix
+    5. For each chapter:
+       a. Find related chapters (cosine similarity > 0.7)
+       b. Re-score keywords with YAKE using cross-book context
+       c. Extract concepts with Summa using cross-book context
+    6. Generate enriched metadata JSON (Tab 4 output)
+    
+    Args:
+        input_path: Path to {book}_metadata.json (Tab 2 output)
+        taxonomy_path: Path to {book}_taxonomy.json (Tab 3 output)
+        output_path: Path for {book}_metadata_enriched.json (Tab 4 output)
+        
+    Output Schema:
+        {
+            "book": str,
+            "enrichment_metadata": {
+                "generated": ISO timestamp,
+                "method": "statistical",
+                "libraries": {yake, summa, scikit-learn versions},
+                "corpus_size": int,
+                "total_chapters_analyzed": int
+            },
+            "chapters": [
+                {
+                    ... (all original Tab 2 fields preserved),
+                    "topic_id": int (optional, from BERTopic clustering),
+                    "related_chapters": [...],
+                    "keywords_enriched": [...],
+                    "concepts_enriched": [...]
+                }
+            ]
+        }
+    """
+    print("\n📊 Tab 4: Statistical Enrichment")
+    print(f"Input: {input_path.name}")
+    print(f"Taxonomy: {taxonomy_path.name}")
+    
+    # 1. Load current book metadata
+    if not input_path.exists():
+        raise FileNotFoundError(f"Input file not found: {input_path}")
+    
+    with open(input_path, encoding='utf-8') as f:
+        book_metadata = json.load(f)
+    
+    book_name = input_path.stem.replace("_metadata", "")
+    print(f"\nEnriching: {book_name}")
+    print(f"Chapters: {len(book_metadata)}")
+    
+    # 2. Load cross-book context from taxonomy
+    print("\nLoading companion books from taxonomy...")
+    metadata_dir = input_path.parent
+    context = load_cross_book_context(taxonomy_path, metadata_dir)
+    
+    # Add current book to context (needed for similarity comparisons)
+    current_book_key = f"{book_name}.json"
+    if current_book_key not in context['metadata']:
+        context['metadata'][current_book_key] = book_metadata
+        context['books'].append(current_book_key)
+        context['corpus_size'] += len(book_metadata)
+    
+    print(f"  Books found: {len(context['books'])} (including current book)")
+    print(f"  Total chapters: {context['corpus_size']}")
+    
+    # 3. Build TF-IDF corpus
+    print("\nBuilding TF-IDF corpus...")
+    corpus, index = build_chapter_corpus(context)
+    print(f"  Corpus size: {len(corpus)} chapters")
+    
+    # 4. Compute similarity matrix
+    print("\nComputing cosine similarity matrix...")
+    similarity_matrix = compute_similarity_matrix(corpus)
+    print(f"  Matrix shape: {similarity_matrix.shape}")
+    
+    # 4b. Run BERTopic clustering (Option C Architecture)
+    topic_results: Optional[TopicResults] = None
+    topic_clusterer: Optional[TopicClusterer] = None
+    if TOPIC_CLUSTERER_AVAILABLE and TopicClusterer is not None:
+        print("\n🔍 Running topic clustering (BERTopic/fallback)...")
+        try:
+            topic_clusterer = TopicClusterer()
+            # Pass corpus (list of strings) and index (list of dicts)
+            topic_results = topic_clusterer.cluster_chapters(corpus, index)
+            print(f"  Topics discovered: {topic_results.topic_count}")
+            print(f"  Using BERTopic: {BERTOPIC_AVAILABLE}")
+        except Exception as e:
+            print(f"  ⚠️  Topic clustering failed: {e}")
+            topic_results = None
+            topic_clusterer = None
+    
+    # 4c. Initialize SemanticSimilarityEngine for enhanced similarity
+    semantic_engine: Optional[SemanticSimilarityEngine] = None
+    semantic_embeddings = None
+    if SEMANTIC_ENGINE_AVAILABLE and SemanticSimilarityEngine is not None:
+        print("\n🔗 Initializing semantic similarity engine...")
+        try:
+            semantic_engine = SemanticSimilarityEngine()
+            semantic_embeddings = semantic_engine.compute_embeddings(corpus)
+            print(f"  Embeddings computed: {semantic_embeddings.shape}")
+            print(f"  Using fallback (TF-IDF): {semantic_engine.is_using_fallback}")
+        except Exception as e:
+            print(f"  ⚠️  Semantic engine initialization failed: {e}")
+            semantic_engine = None
+    
+    # 5. Enrich each chapter using helper function
+    print("\nEnriching chapters with cross-book analysis...")
+    enriched_chapters = [
+        _enrich_single_chapter(
+            chapter, book_name, corpus, index, similarity_matrix,
+            topic_clusterer=topic_clusterer,
+            semantic_engine=semantic_engine,
+            semantic_embeddings=semantic_embeddings,
+        )
+        for chapter in book_metadata
+    ]
+    
+    # 6. Build enriched metadata output
+    enriched_metadata = {
+        "book": book_name,
+        "enrichment_metadata": {
+            "generated": datetime.now().isoformat(),
+            "method": "statistical",
+            "libraries": {
+                "yake": "0.4.8",
+                "summa": "1.2.0",
+                "scikit-learn": "1.3.2",
+                "bertopic": "available" if BERTOPIC_AVAILABLE else "unavailable",
+                "sentence_transformers": "available" if SENTENCE_TRANSFORMERS_AVAILABLE else "unavailable",
+            },
+            "corpus_size": len(context["books"]),
+            "total_chapters_analyzed": context["corpus_size"],
+            "topic_clustering": {
+                "enabled": topic_results is not None,
+                "num_topics": topic_results.topic_count if topic_results else 0,
+                "using_bertopic": BERTOPIC_AVAILABLE,
+            },
+        },
+        "chapters": enriched_chapters
+    }
+    
+    # 7. Save enriched metadata
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_path, 'w', encoding='utf-8') as f:
+        json.dump(enriched_metadata, f, indent=2, ensure_ascii=False)
+    
+    # Calculate and report file size
+    size_kb = output_path.stat().st_size / 1024
+    print(f"\n✅ Enriched metadata saved: {output_path.name}")
+    print(f"  File size: {size_kb:.1f} KB")
+    print(f"  Chapters enriched: {len(enriched_chapters)}")
+    print("  Statistical method: TF-IDF + cosine similarity")
+    print("  NO LLM calls made ✓")
+
+
+def enrich_metadata_local(
+    input_path: Path,
+    output_path: Path
+) -> None:
+    """
+    Local/within-book enrichment - computes TF-IDF similarity between chapters
+    in a single book without requiring cross-book taxonomy.
+    
+    Reference: WBS 3.1.2 - TF-IDF Similarity (Local)
+    Pattern: Statistical methods (no LLM) - scikit-learn
+    
+    Workflow:
+    1. Load book metadata (from WBS 3.1.1 output)
+    2. Build TF-IDF corpus from chapter content
+    3. Compute cosine similarity matrix (chapter × chapter)
+    4. For each chapter, identify top-5 similar chapters
+    5. Store similarity scores in enriched metadata JSON
+    
+    Args:
+        input_path: Path to book metadata JSON (WBS 3.1.1 output)
+        output_path: Path for enriched metadata JSON output
+        
+    Output Schema:
+        {
+            "book_title": str,
+            "total_chapters": int,
+            "enrichment_metadata": {
+                "generated": ISO timestamp,
+                "method": "tfidf_local",
+                "mode": "within_book"
+            },
+            "chapters": [
+                {
+                    ... (all original fields preserved),
+                    "similar_chapters": [
+                        {
+                            "chapter_id": int,
+                            "title": str,
+                            "score": float (0.0-1.0)
+                        }
+                    ]
+                }
+            ]
+        }
+    """
+    print("\n📊 WBS 3.1.2: TF-IDF Similarity (Local Mode)")
+    print(f"Input: {input_path.name}")
+    
+    # 1. Load book metadata
+    if not input_path.exists():
+        raise FileNotFoundError(f"Input file not found: {input_path}")
+    
+    with open(input_path, encoding='utf-8') as f:
+        book_data = json.load(f)
+    
+    # Handle both formats: list of chapters or {chapters: [...]}
+    if isinstance(book_data, list):
+        chapters = book_data
+        book_title = input_path.stem.replace("_metadata", "")
+    else:
+        chapters = book_data.get("chapters", [])
+        book_title = book_data.get("book_title", input_path.stem.replace("_metadata", ""))
+    
+    print(f"\nBook: {book_title}")
+    print(f"Chapters: {len(chapters)}")
+    
+    # 2. Build TF-IDF corpus from chapter content
+    print("\nBuilding TF-IDF corpus...")
+    corpus = []
+    for chapter in chapters:
+        # Combine text features for TF-IDF
+        text_parts = [
+            chapter.get("title", ""),
+            chapter.get("summary", ""),
+            " ".join(chapter.get("keywords", [])),
+            " ".join(chapter.get("concepts", []))
+        ]
+        chapter_text = " ".join(text_parts)
+        corpus.append(chapter_text)
+    
+    print(f"  Corpus size: {len(corpus)} chapters")
+    
+    # 3. Compute TF-IDF matrix and cosine similarity
+    print("\nComputing TF-IDF vectors...")
+    
+    # Need at least min_df documents for TF-IDF
+    min_df = min(2, len(corpus))
+    
+    vectorizer = TfidfVectorizer(
+        stop_words='english',
+        max_features=1000,
+        ngram_range=(1, 2),  # Unigrams and bigrams
+        min_df=min_df,
+        max_df=0.9
+    )
+    
+    tfidf_matrix = vectorizer.fit_transform(corpus)
+    print(f"  TF-IDF matrix shape: {tfidf_matrix.shape}")
+    
+    # Compute pairwise cosine similarity
+    print("\nComputing cosine similarity matrix...")
+    similarity_matrix = cosine_similarity(tfidf_matrix)
+    print(f"  Similarity matrix shape: {similarity_matrix.shape}")
+    
+    # 4. For each chapter, identify top-5 similar chapters
+    print("\nIdentifying similar chapters...")
+    enriched_chapters = []
+    
+    for idx, chapter in enumerate(chapters):
+        chapter_num = chapter.get("chapter_number", idx + 1)
+        
+        # Get similarity scores for this chapter
+        scores = similarity_matrix[idx]
+        
+        # Build list of (other_idx, score) pairs, excluding self
+        similar_chapters = []
+        for other_idx, score in enumerate(scores):
+            if other_idx == idx:  # Skip self
+                continue
+            similar_chapters.append({
+                "chapter_id": chapters[other_idx].get("chapter_number", other_idx + 1),
+                "title": chapters[other_idx].get("title", f"Chapter {other_idx + 1}"),
+                "score": round(float(score), 4)
+            })
+        
+        # Sort by score descending and take top 5
+        similar_chapters.sort(key=lambda x: x["score"], reverse=True)
+        top_similar = similar_chapters[:5]
+        
+        # Build enriched chapter (preserve all original fields + add similar_chapters)
+        enriched_chapter = {
+            **chapter,
+            "similar_chapters": top_similar,
+            "similarity_source": "tfidf"
+        }
+        enriched_chapters.append(enriched_chapter)
+        
+        # Progress output for first few chapters
+        if idx < 3:
+            top_scores = [f"{s['score']:.3f}" for s in top_similar[:3]]
+            print(f"  Chapter {chapter_num}: top scores = {top_scores}")
+    
+    # 5. Build enriched metadata output
+    enriched_metadata = {
+        "book_title": book_title,
+        "total_chapters": len(enriched_chapters),
+        "enrichment_metadata": {
+            "generated": datetime.now().isoformat(),
+            "method": "tfidf_local",
+            "mode": "within_book",
+            "libraries": {
+                "scikit-learn": "1.3.2"
+            }
+        },
+        "chapters": enriched_chapters
+    }
+    
+    # 6. Save enriched metadata
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_path, 'w', encoding='utf-8') as f:
+        json.dump(enriched_metadata, f, indent=2, ensure_ascii=False)
+    
+    # Report
+    size_kb = output_path.stat().st_size / 1024
+    print(f"\n✅ Enriched metadata saved: {output_path.name}")
+    print(f"  File size: {size_kb:.1f} KB")
+    print(f"  Chapters enriched: {len(enriched_chapters)}")
+    print(f"  Each chapter has top-5 similar chapters")
+    print("  NO LLM calls made ✓")
+
+
+async def enrich_metadata_semantic(
+    input_path: Path,
+    output_path: Path,
+    semantic_search_url: str = "http://localhost:8081"
+) -> None:
+    """
+    Semantic search enrichment - uses remote semantic search API for similarity.
+    
+    Reference: WBS 3.2.4 - Integrate Search Client into Metadata Enrichment
+    Pattern: Remote API integration via SemanticSearchClient
+    
+    Workflow:
+    1. Load book metadata (from WBS 3.1.1 output)
+    2. For each chapter, call semantic search API
+    3. Store similarity results with source="semantic_search"
+    4. Save enriched metadata JSON output
+    
+    Args:
+        input_path: Path to book metadata JSON (WBS 3.1.1 output)
+        output_path: Path for enriched metadata JSON output
+        semantic_search_url: URL of semantic search service
+        
+    Output Schema:
+        {
+            "book_title": str,
+            "total_chapters": int,
+            "enrichment_metadata": {
+                "generated": ISO timestamp,
+                "method": "semantic_search",
+                "mode": "remote_api",
+                "semantic_search_url": str
+            },
+            "chapters": [
+                {
+                    ... (all original fields preserved),
+                    "semantic_similar": [...],
+                    "similarity_source": "semantic_search"
+                }
+            ]
+        }
+    """
+    print("\n📊 WBS 3.2.4: Semantic Search Enrichment (Remote API)")
+    print(f"Input: {input_path.name}")
+    print(f"Semantic Search URL: {semantic_search_url}")
+    
+    # 1. Load book metadata
+    if not input_path.exists():
+        raise FileNotFoundError(f"Input file not found: {input_path}")
+    
+    with open(input_path, encoding='utf-8') as f:
+        book_data = json.load(f)
+    
+    # Handle both formats: list of chapters or {chapters: [...]}
+    if isinstance(book_data, list):
+        chapters = book_data
+        book_title = input_path.stem.replace("_metadata", "")
+    else:
+        chapters = book_data.get("chapters", [])
+        book_title = book_data.get("book_title", input_path.stem.replace("_metadata", ""))
+    
+    print(f"\nBook: {book_title}")
+    print(f"Chapters: {len(chapters)}")
+    
+    # 2. Connect to semantic search service and enrich each chapter
+    print("\nConnecting to semantic search service...")
+    enriched_chapters = []
+    
+    async with SemanticSearchClient(base_url=semantic_search_url) as client:
+        # Test connection with health check
+        try:
+            health = await client.health_check()
+            print(f"  Service status: {health.get('status', 'unknown')}")
+        except Exception as e:
+            print(f"  ⚠️  Health check failed: {e}")
+            print("  Continuing with enrichment...")
+        
+        print("\nEnriching chapters with semantic search...")
+        
+        for idx, chapter in enumerate(chapters):
+            chapter_num = chapter.get("chapter_number", idx + 1)
+            chapter_title = chapter.get("title", f"Chapter {chapter_num}")
+            
+            # Build query from chapter content
+            query_parts = [
+                chapter_title,
+                chapter.get("summary", "")[:500],  # Limit summary length
+                " ".join(chapter.get("keywords", [])[:10]),
+                " ".join(chapter.get("concepts", [])[:5])
+            ]
+            query_text = " ".join(filter(None, query_parts))
+            
+            try:
+                # Call semantic search API
+                results = await client.search(
+                    query=query_text,
+                    limit=6,  # Get 6 to filter out self-matches
+                    collection="chapters"
+                )
+                
+                # Filter to top 5, excluding self-matches
+                similar_chapters = []
+                for r in results:
+                    payload = r.get("payload", {})
+                    result_title = payload.get("title", "")
+                    
+                    # Skip if it's the same chapter (self-match)
+                    if result_title == chapter_title:
+                        continue
+                    
+                    similar_chapters.append({
+                        "chapter_id": payload.get("chapter_number", payload.get("chapter_id", 0)),
+                        "title": result_title,
+                        "score": round(r.get("score", 0.0), 4),
+                        "book": payload.get("book_title", payload.get("book_id", ""))
+                    })
+                    
+                    if len(similar_chapters) >= 5:
+                        break
+                
+                # Progress output
+                if idx < 3 or idx == len(chapters) - 1:
+                    top_scores = [f"{s['score']:.3f}" for s in similar_chapters[:3]]
+                    print(f"  Chapter {chapter_num}: {len(similar_chapters)} similar, scores={top_scores}")
+                elif idx == 3:
+                    print(f"  ... (processing {len(chapters) - 4} more chapters)")
+                
+            except Exception as e:
+                print(f"  ⚠️  Chapter {chapter_num} search failed: {e}")
+                similar_chapters = []
+            
+            # Build enriched chapter
+            enriched_chapter = {
+                **chapter,
+                "similar_chapters": similar_chapters,
+                "similarity_source": "semantic_search"
+            }
+            enriched_chapters.append(enriched_chapter)
+    
+    # 3. Build enriched metadata output
+    enriched_metadata = {
+        "book_title": book_title,
+        "total_chapters": len(enriched_chapters),
+        "enrichment_metadata": {
+            "generated": datetime.now().isoformat(),
+            "method": "semantic_search",
+            "mode": "remote_api",
+            "semantic_search_url": semantic_search_url,
+            "libraries": {
+                "httpx": "async HTTP client",
+                "semantic-search-service": "all-mpnet-base-v2"
+            }
+        },
+        "chapters": enriched_chapters
+    }
+    
+    # 4. Save enriched metadata
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_path, 'w', encoding='utf-8') as f:
+        json.dump(enriched_metadata, f, indent=2, ensure_ascii=False)
+    
+    # Report
+    size_kb = output_path.stat().st_size / 1024
+    print(f"\n✅ Enriched metadata saved: {output_path.name}")
+    print(f"  File size: {size_kb:.1f} KB")
+    print(f"  Chapters enriched: {len(enriched_chapters)}")
+    print(f"  Similarity source: semantic_search (remote API)")
+    print("  NO LLM calls made ✓")
+
+
+# =============================================================================
+# WBS 5.1.1: CLI Argument Parser
+# Pattern: Extracted function for testability (Architecture Patterns Ch. 13)
+# =============================================================================
+
+
+def create_argument_parser() -> argparse.ArgumentParser:
+    """
+    Create argument parser for metadata enrichment CLI.
+    
+    Reference: WBS_IMPLEMENTATION.md - Phase 5.1.1
+    Pattern: Extracted function for testability
+    
+    Returns:
+        Configured ArgumentParser instance with all CLI flags
+    """
+    parser = argparse.ArgumentParser(
+        description="Enrich metadata with statistical analysis (Tab 4)"
+    )
+    parser.add_argument(
+        "--input",
+        type=Path,
+        required=True,
+        help="Input metadata JSON from Tab 2 (e.g., architecture_patterns_metadata.json)"
+    )
+    parser.add_argument(
+        "--taxonomy",
+        type=Path,
+        required=False,
+        default=None,
+        help="Taxonomy JSON from Tab 3 (optional - omit for local/within-book mode)"
+    )
+    parser.add_argument(
+        "--output",
+        type=Path,
+        required=True,
+        help="Output enriched metadata JSON (e.g., architecture_patterns_metadata_enriched.json)"
+    )
+    parser.add_argument(
+        "--use-semantic-search",
+        action="store_true",
+        help="Use remote semantic search API instead of local TF-IDF (WBS 3.2.4)"
+    )
+    parser.add_argument(
+        "--semantic-search-url",
+        type=str,
+        default="http://localhost:8081",
+        help="Semantic search service URL (default: http://localhost:8081)"
+    )
+    # WBS 5.1.1: Add orchestrator integration flags
+    parser.add_argument(
+        "--use-orchestrator",
+        action="store_true",
+        help="Use Code-Orchestrator-Service for semantic search (WBS 5.1)"
+    )
+    parser.add_argument(
+        "--orchestrator-url",
+        type=str,
+        default="http://localhost:8083",
+        help="Orchestrator service URL (default: http://localhost:8083)"
+    )
+    return parser
+
+
+async def enrich_metadata_orchestrator(
+    input_path: Path,
+    output_path: Path,
+    orchestrator_url: str = "http://localhost:8083",
+) -> None:
+    """
+    Orchestrator-based enrichment - uses Code-Orchestrator-Service for semantic search.
+    
+    Reference: WBS_IMPLEMENTATION.md - Phase 5.1
+    Pattern: Remote API integration via OrchestratorClient
+    
+    Workflow:
+    1. Load book metadata (from WBS 3.1.1 output)
+    2. For each chapter, call orchestrator search API
+    3. Store similarity results with source="orchestrator_semantic"
+    4. Generate Chicago-style citations for cross-book refs
+    5. Save enriched metadata JSON output
+    
+    Args:
+        input_path: Path to book metadata JSON (WBS 3.1.1 output)
+        output_path: Path for enriched metadata JSON output
+        orchestrator_url: URL of Code-Orchestrator-Service
+    """
+    print("\n📊 WBS 5.1: Orchestrator-based Semantic Enrichment")
+    print(f"Input: {input_path.name}")
+    print(f"Orchestrator URL: {orchestrator_url}")
+    
+    # 1. Load book metadata
+    if not input_path.exists():
+        raise FileNotFoundError(f"Input file not found: {input_path}")
+    
+    with open(input_path, encoding='utf-8') as f:
+        book_data = json.load(f)
+    
+    # Handle both formats: list of chapters or {chapters: [...]}
+    if isinstance(book_data, list):
+        chapters = book_data
+        book_title = input_path.stem.replace("_metadata", "")
+    else:
+        chapters = book_data.get("chapters", [])
+        book_title = book_data.get("book_title", input_path.stem.replace("_metadata", ""))
+    
+    print(f"\nBook: {book_title}")
+    print(f"Chapters: {len(chapters)}")
+    print(f"Threshold: {SEMANTIC_SIMILARITY_THRESHOLD}")
+    
+    # 2. Connect to orchestrator service and enrich each chapter
+    print("\nConnecting to Code-Orchestrator-Service...")
+    enriched_chapters = []
+    
+    async with OrchestratorClient(base_url=orchestrator_url) as client:
+        print("\nEnriching chapters with orchestrator semantic search...")
+        
+        for idx, chapter in enumerate(chapters):
+            chapter_num = chapter.get("chapter_number", idx + 1)
+            chapter_title = chapter.get("title", f"Chapter {chapter_num}")
+            
+            # Build query from chapter content
+            query_parts = [
+                chapter_title,
+                chapter.get("summary", "")[:500],  # Limit summary length
+                " ".join(chapter.get("keywords", [])[:10]),
+                " ".join(chapter.get("concepts", [])[:5])
+            ]
+            query_text = " ".join(filter(None, query_parts))
+            
+            try:
+                # Call orchestrator for semantic search
+                related = await find_related_chapters_semantic(
+                    chapter_text=query_text,
+                    current_book=book_title,
+                    client=client,
+                    threshold=SEMANTIC_SIMILARITY_THRESHOLD,
+                    top_n=5,
+                )
+                
+                # Progress output
+                if idx < 3 or idx == len(chapters) - 1:
+                    top_scores = [f"{r['relevance_score']:.3f}" for r in related[:3]]
+                    print(f"  Chapter {chapter_num}: {len(related)} related, scores={top_scores}")
+                elif idx == 3:
+                    print(f"  ... (processing {len(chapters) - 4} more chapters)")
+                
+            except Exception as e:
+                print(f"  ⚠️  Chapter {chapter_num} search failed: {e}")
+                related = []
+            
+            # Build enriched chapter with cross-book references
+            enriched_chapter = {
+                **chapter,
+                "cross_book_references": related,
+                "similarity_source": "orchestrator_semantic",
+            }
+            enriched_chapters.append(enriched_chapter)
+    
+    # 3. Build enriched metadata output
+    enriched_metadata = {
+        "book_title": book_title,
+        "total_chapters": len(enriched_chapters),
+        "enrichment_metadata": {
+            "generated": datetime.now().isoformat(),
+            "method": "orchestrator_semantic",
+            "mode": "remote_api",
+            "orchestrator_url": orchestrator_url,
+            "threshold": SEMANTIC_SIMILARITY_THRESHOLD,
+            "libraries": {
+                "httpx": "async HTTP client",
+                "code-orchestrator-service": "sentence-transformers"
+            }
+        },
+        "chapters": enriched_chapters
+    }
+    
+    # 4. Save enriched metadata
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_path, 'w', encoding='utf-8') as f:
+        json.dump(enriched_metadata, f, indent=2, ensure_ascii=False)
+    
+    # Report
+    size_kb = output_path.stat().st_size / 1024
+    print(f"\n✅ Enriched metadata saved: {output_path.name}")
+    print(f"  File size: {size_kb:.1f} KB")
+    print(f"  Chapters enriched: {len(enriched_chapters)}")
+    print(f"  Similarity source: orchestrator_semantic")
+    print(f"  Threshold: {SEMANTIC_SIMILARITY_THRESHOLD}")
+    print("  NO LLM calls made ✓")
+
+
+def main():
+    """
+    Command-line interface for metadata enrichment.
+    
+    Example (cross-book mode with taxonomy):
+        python enrich_metadata_per_book.py \\
+            --input workflows/metadata_extraction/output/architecture_patterns_metadata.json \\
+            --taxonomy workflows/taxonomy_setup/output/architecture_patterns_taxonomy.json \\
+            --output workflows/metadata_enrichment/output/architecture_patterns_metadata_enriched.json
+    
+    Example (local/within-book mode without taxonomy):
+        python enrich_metadata_per_book.py \\
+            --input workflows/metadata_extraction/output/test_book_metadata.json \\
+            --output workflows/metadata_enrichment/output/test_book_enriched.json
+    
+    Example (orchestrator mode - WBS 5.1):
+        python enrich_metadata_per_book.py \\
+            --input workflows/metadata_extraction/output/architecture_patterns_metadata.json \\
+            --output workflows/metadata_enrichment/output/architecture_patterns_enriched.json \\
+            --use-orchestrator \\
+            --orchestrator-url http://localhost:8083
+    """
+    parser = create_argument_parser()
+    args = parser.parse_args()
+    
+    # Validate inputs exist
+    if not args.input.exists():
+        print(f"❌ Error: Input file not found: {args.input}")
+        sys.exit(1)
+    
+    if args.taxonomy and not args.taxonomy.exists():
+        print(f"❌ Error: Taxonomy file not found: {args.taxonomy}")
+        sys.exit(1)
+    
+    # Run enrichment
+    try:
+        if args.use_orchestrator:
+            # Orchestrator mode (WBS 5.1)
+            if not ORCHESTRATOR_CLIENT_AVAILABLE:
+                print("❌ Error: OrchestratorClient not available")
+                print("  Check workflows/shared/clients/orchestrator_client.py exists")
+                sys.exit(1)
+            asyncio.run(enrich_metadata_orchestrator(
+                args.input,
+                args.output,
+                orchestrator_url=args.orchestrator_url
+            ))
+        elif args.use_semantic_search:
+            # Semantic search mode (WBS 3.2.4)
+            if not SEMANTIC_SEARCH_CLIENT_AVAILABLE:
+                print("❌ Error: SemanticSearchClient not available")
+                print("  Install with: pip install httpx")
+                sys.exit(1)
+            asyncio.run(enrich_metadata_semantic(
+                args.input, 
+                args.output,
+                semantic_search_url=args.semantic_search_url
+            ))
+        elif args.taxonomy:
+            # Cross-book mode with taxonomy
+            enrich_metadata(args.input, args.taxonomy, args.output)
+        else:
+            # Local/within-book mode without taxonomy
+            enrich_metadata_local(args.input, args.output)
+    except Exception as e:
+        print(f"\n❌ Enrichment failed: {e}")
+        import traceback
+        traceback.print_exc()
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()

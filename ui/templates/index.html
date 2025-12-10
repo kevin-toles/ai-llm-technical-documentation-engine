@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Document Enhancer</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Security: Added SRI integrity hash for CDN resource -->
+    <script src="https://unpkg.com/htmx.org@1.9.10" 
+            integrity="sha384-D1OqJkS0EqPKXNfRrGOiDmD4qAF+pNL0dWCNlPKvEwL9TGxfMHMbkdmMBsAVqZdQ" 
+            crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="window">
+        <div class="window-controls">
+            <span class="control-button close"></span>
+            <span class="control-button minimize"></span>
+            <span class="control-button maximize"></span>
+        </div>
+
+        <div class="window-title">LLM Document Enhancer</div>
+
+        <div class="content">
+            <h1>Workflow Runner</h1>
+            
+            <!-- Tab Navigation -->
+            <div class="tabs">
+                <button class="tab active" data-tab="tab1">1. PDF → JSON</button>
+                <button class="tab" data-tab="tab2">2. Metadata Extract</button>
+                <button class="tab" data-tab="tab3">3. Taxonomy Setup</button>
+                <button class="tab" data-tab="tab4">4. Metadata Enrich</button>
+                <button class="tab" data-tab="tab5">5. Base Guideline</button>
+                <button class="tab" data-tab="tab6">6. LLM Enhancement</button>
+            </div>
+
+            <!-- Tab Content -->
+            {% for tab_id, workflow in workflows.items() %}
+            <div class="tab-content {{ 'active' if tab_id == 'tab1' else '' }}" id="{{ tab_id }}">
+                <h2>{{ workflow.name }}</h2>
+                
+                <div class="workflow-info">
+                    <div class="path-info">
+                        <strong>Input:</strong> <span id="{{ tab_id }}-input-dir">Loading...</span>
+                    </div>
+                    <div class="path-info">
+                        <strong>Found:</strong> <span id="{{ tab_id }}-file-count">0 files</span>
+                    </div>
+                </div>
+
+                <div class="file-selector">
+                    <div class="file-list" id="{{ tab_id }}-files">
+                        <p>Loading files...</p>
+                    </div>
+                </div>
+
+                <div class="button-row">
+                    <button class="btn btn-secondary" onclick="clearSelection('{{ tab_id }}')">Clear</button>
+                    <button class="btn btn-primary" onclick="runWorkflow('{{ tab_id }}')">Run Workflow ▶</button>
+                </div>
+
+                <div class="status-panel" id="{{ tab_id }}-status" style="display: none;">
+                    <div class="status-header">Workflow Status</div>
+                    <div class="status-content" id="{{ tab_id }}-status-content"></div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script>
+        // Tab switching
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const tabId = tab.dataset.tab;
+                
+                // Update active tab
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                // Update active content
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                document.getElementById(tabId).classList.add('active');
+                
+                // Load files for this tab
+                loadFiles(tabId);
+            });
+        });
+
+        // Load files for a workflow
+        async function loadFiles(tabId) {
+            const response = await fetch(`/files/${tabId}`);
+            const data = await response.json();
+            
+            const container = document.getElementById(`${tabId}-files`);
+            const inputDir = document.getElementById(`${tabId}-input-dir`);
+            const fileCount = document.getElementById(`${tabId}-file-count`);
+            
+            inputDir.textContent = data.input_dir;
+            
+            if (data.files && data.files.length > 0) {
+                fileCount.textContent = `${data.files.length} files`;
+                
+                // Special handling for LLM Enhancement tab (tab6) - check llm_providers first
+                if (data.llm_providers) {
+                    container.innerHTML = `
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 20px;">
+                            <div class="config-section">
+                                <label class="config-label">Base Guideline: <span style="color: #c00;">*</span></label>
+                                <select id="${tabId}-guideline" class="config-select">
+                                    <option value="">-- Select Guideline --</option>
+                                    ${data.files.map(file => `<option value="${file}">${file}</option>`).join('')}
+                                </select>
+                                <p style="font-size: 11px; color: #666; margin-top: 5px;">Guideline JSON from Tab 5</p>
+                            </div>
+                            
+                            <div class="config-section">
+                                <label class="config-label">Taxonomy: <span style="color: #c00;">*</span></label>
+                                <select id="${tabId}-taxonomy" class="config-select">
+                                    <option value="">-- Select Taxonomy --</option>
+                                    ${(data.taxonomy_files || []).map(file => `<option value="${file}">${file}</option>`).join('')}
+                                </select>
+                                <p style="font-size: 11px; color: #666; margin-top: 5px;">Defines book list (from Tab 3)</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                            <div class="config-section">
+                                <label class="config-label">LLM Provider: <span style="color: #c00;">*</span></label>
+                                <select id="${tabId}-provider" class="config-select" onchange="updateModelList('${tabId}', this.value)">
+                                    <option value="">-- Select Provider --</option>
+                                    ${Object.entries(data.llm_providers).map(([id, provider]) => 
+                                        `<option value="${id}">${provider.name}</option>`
+                                    ).join('')}
+                                </select>
+                            </div>
+                            
+                            <div class="config-section">
+                                <label class="config-label">Model: <span style="color: #c00;">*</span></label>
+                                <select id="${tabId}-model" class="config-select">
+                                    <option value="">-- Select Provider First --</option>
+                                </select>
+                            </div>
+                        </div>
+                        <p style="font-size: 11px; color: #888; margin-top: 10px;">ℹ️ Enriched metadata auto-discovered from Tab 4 output based on taxonomy</p>
+                    `;
+                    
+                    // Store provider data for model selection
+                    globalThis.llmProviders = data.llm_providers;
+                }
+                // Special handling for Metadata Enrichment tab (tab4) - requires taxonomy selection
+                else if (tabId === 'tab4' && data.taxonomy_files) {
+                    container.innerHTML = `
+                        <div style="display: grid; grid-template-columns: 1fr 300px; gap: 20px; align-items: start;">
+                            <div class="file-list">
+                                <h4 style="margin-bottom: 10px;">Select Metadata Files to Enrich:</h4>
+                                ${data.files.map(file => `
+                                    <label class="file-item">
+                                        <input type="checkbox" name="${tabId}-file" value="${file}">
+                                        ${file}
+                                    </label>
+                                `).join('')}
+                            </div>
+                            <div class="config-section">
+                                <label class="config-label">Select Taxonomy (required):</label>
+                                <select id="${tabId}-taxonomy" class="config-select">
+                                    <option value="">-- Select Taxonomy --</option>
+                                    ${data.taxonomy_files.map(file => `<option value="${file}">${file}</option>`).join('')}
+                                </select>
+                                <p style="font-size: 11px; color: #666; margin-top: 5px;">
+                                    Taxonomy scopes enrichment to specific book set
+                                </p>
+                            </div>
+                        </div>
+                    `;
+                } 
+                else if (data.supports_tiers && data.tiers) {
+                    // Taxonomy tab with tier builder (Trello-style drag & drop)
+                    container.innerHTML = `
+                        <div class="taxonomy-name-input">
+                            <label for="${tabId}-taxonomy-name">Taxonomy Name (10-15 chars):</label>
+                            <input type="text" id="${tabId}-taxonomy-name" maxlength="15" placeholder="e.g., game_dev" />
+                            <small>File will be saved as: [name]_taxonomy_YYYYMMDD.json</small>
+                        </div>
+                        <div class="taxonomy-guide">
+                            <h3>📚 Understanding the Three-Tier Taxonomy</h3>
+                            <div class="tier-descriptions">
+                                <div class="tier-desc">
+                                    <strong>🏛️ Architecture Spine (Priority 1) - Required</strong>
+                                    <p>Foundational concepts that form the structural backbone of the domain. These are high-level patterns, principles, and architectural decisions that guide everything else. Think: "What are the core mental models needed to understand this topic?"</p>
+                                    <em>Examples: Design patterns, system architecture, core paradigms</em>
+                                </div>
+                                <div class="tier-desc">
+                                    <strong>⚙️ Implementation (Priority 2) - Required</strong>
+                                    <p>Practical techniques and concrete implementations that build upon architectural concepts. These are the "how-to" specifics: APIs, algorithms, data structures, and coding techniques that developers use daily.</p>
+                                    <em>Examples: Language syntax, standard libraries, common algorithms</em>
+                                </div>
+                                <div class="tier-desc tier-optional">
+                                    <strong>✨ Engineering Practices (Priority 3) - Optional</strong>
+                                    <p>Professional methodologies, workflows, and best practices for building quality software. These are the soft skills and processes that separate hobbyists from professionals.</p>
+                                    <em>Examples: Testing strategies, code review, refactoring, team collaboration</em>
+                                </div>
+                            </div>
+                            <div class="tier-relationship">
+                                <p><strong>How they relate:</strong> Architecture provides the "why," Implementation provides the "how," and Practices provide the "right way." The first two tiers are required; Engineering Practices can be omitted if not relevant to your taxonomy.</p>
+                            </div>
+                        </div>
+                        <div class="tier-builder">
+                            <div class="available-files">
+                                <h3>Available Files</h3>
+                                <div class="file-pool" id="${tabId}-pool" data-tier="pool">
+                                    ${data.files.map(file => `
+                                        <div class="pool-file draggable" draggable="true" data-file="${file}">
+                                            ${file}
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            <div class="tier-columns">
+                                ${data.tiers.map(tier => `
+                                    <div class="tier-column">
+                                        <h3>${tier.name} <span class="tier-priority">(Priority ${tier.priority})</span></h3>
+                                        <div class="tier-list drop-zone" id="${tabId}-${tier.id}" data-tier="${tier.id}" data-priority="${tier.priority}">
+                                            <p class="empty-tier">Drag files here</p>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                    initTierBuilder(tabId, data.files);
+                } else {
+                    // Regular file list
+                    container.innerHTML = data.files.map(file => `
+                        <label class="file-item">
+                            <input type="checkbox" name="${tabId}-file" value="${file}">
+                            ${file}
+                        </label>
+                    `).join('');
+                }
+            } else {
+                fileCount.textContent = '0 files';
+                container.innerHTML = '<p class="no-files">No files found</p>';
+            }
+        }
+
+        // Update model list when provider changes
+        function updateModelList(tabId, providerId) {
+            const modelSelect = document.getElementById(`${tabId}-model`);
+            
+            if (!providerId || !globalThis.llmProviders || !globalThis.llmProviders[providerId]) {
+                modelSelect.innerHTML = '<option value="">-- Select Provider First --</option>';
+                return;
+            }
+            
+            const provider = globalThis.llmProviders[providerId];
+            modelSelect.innerHTML = `
+                <option value="">-- Select Model --</option>
+                ${provider.models.map(model => {
+                    // Handle both object format {id, name, recommended} and string format
+                    const modelId = typeof model === 'object' ? model.id : model;
+                    const modelName = typeof model === 'object' ? model.name : model;
+                    const isRecommended = typeof model === 'object' && model.recommended;
+                    return `<option value="${modelId}"${isRecommended ? ' selected' : ''}>${modelName}${isRecommended ? ' ★' : ''}</option>`;
+                }).join('')}
+            `;
+        }
+
+        // =============================================================================
+        // HELPER FUNCTIONS FOR S3776 COGNITIVE COMPLEXITY REDUCTION
+        // Pattern: CODING_PATTERNS_ANALYSIS.md Category 2 - Extract Method
+        // =============================================================================
+        
+        /**
+         * Handle drag start event for tier builder.
+         * Extracted from initTierBuilder() to reduce cognitive complexity.
+         */
+        function handleDragStart(e, setDraggedElement) {
+            if (e.target.classList.contains('draggable')) {
+                setDraggedElement(e.target);
+                e.target.classList.add('dragging');
+                e.dataTransfer.effectAllowed = 'move';
+                console.log(`[DRAG-START] ${e.target.dataset.file}`);
+            }
+        }
+        
+        /**
+         * Handle drag end event for tier builder.
+         * Extracted from initTierBuilder() to reduce cognitive complexity.
+         */
+        function handleDragEnd(e, tierTabContainer) {
+            if (e.target.classList.contains('draggable')) {
+                e.target.classList.remove('dragging');
+                tierTabContainer.querySelectorAll('.drag-over').forEach(el => {
+                    el.classList.remove('drag-over');
+                });
+            }
+        }
+        
+        /**
+         * Handle drop event for tier builder.
+         * Extracted from initTierBuilder() to reduce cognitive complexity.
+         */
+        function handleTierDrop(e, dropZone, draggedElement, tabId) {
+            e.preventDefault();
+            dropZone.classList.remove('drag-over');
+            
+            if (!draggedElement) {
+                console.error('No dragged element!');
+                return;
+            }
+            
+            const file = draggedElement.dataset.file;
+            const fromTier = draggedElement.parentElement.dataset.tier;
+            const toTier = dropZone.dataset.tier;
+            
+            console.log(`Moving "${file}" from ${fromTier} to ${toTier}`);
+            
+            // Update state tracking
+            updateTierState(tabId, fromTier, toTier, file);
+            
+            // Remove empty message if present
+            const emptyMsg = dropZone.querySelector('.empty-tier');
+            if (emptyMsg) emptyMsg.remove();
+            
+            // Transform element if moving between containers
+            transformDraggedElement(draggedElement, fromTier, toTier, file, tabId);
+            
+            // Check if origin tier is now empty
+            checkEmptyTier(fromTier, dropZone);
+        }
+        
+        /**
+         * Update tier state when item moves between tiers.
+         * Extracted helper for handleTierDrop().
+         */
+        function updateTierState(tabId, fromTier, toTier, file) {
+            if (fromTier !== 'pool' && globalThis.tierState[tabId]) {
+                const fromArray = globalThis.tierState[tabId][fromTier];
+                if (fromArray) {
+                    const index = fromArray.indexOf(file);
+                    if (index > -1) fromArray.splice(index, 1);
+                }
+            }
+            
+            if (toTier !== 'pool' && globalThis.tierState[tabId]) {
+                const toArray = globalThis.tierState[tabId][toTier];
+                if (toArray && !toArray.includes(file)) {
+                    toArray.push(file);
+                    console.log(`[STATE-UPDATE] Added "${file}" to ${toTier}. State:`, globalThis.tierState[tabId]);
+                }
+            }
+        }
+        
+        /**
+         * Transform dragged element between pool and tier formats.
+         * Extracted helper for handleTierDrop().
+         */
+        function transformDraggedElement(draggedElement, fromTier, toTier, file, tabId) {
+            if (fromTier === toTier) return;
+            
+            if (toTier === 'pool') {
+                // Moving back to pool - convert to pool-file
+                draggedElement.className = 'pool-file draggable';
+                draggedElement.draggable = true;
+                draggedElement.innerHTML = file;
+                console.log(`Converted to pool-file: ${file}`);
+            } else if (fromTier === 'pool') {
+                // Moving from pool to tier - convert to tier-item
+                draggedElement.className = 'tier-item draggable';
+                draggedElement.draggable = true;
+                draggedElement.dataset.file = file;
+                draggedElement.innerHTML = `
+                    <span class="drag-handle">⋮⋮</span>
+                    <span class="tier-file-name">${file}</span>
+                    <button onclick="removeTierItem('${tabId}', this)" class="tier-btn-remove">✕</button>
+                `;
+                console.log(`Converted to tier-item: ${file}, class=${draggedElement.className}`);
+            }
+        }
+        
+        /**
+         * Check if origin tier is empty and add placeholder.
+         * Extracted helper for handleTierDrop().
+         */
+        function checkEmptyTier(fromTier, dropZone) {
+            const originTier = document.querySelector(`[data-tier="${fromTier}"]`);
+            if (originTier && originTier !== dropZone && fromTier !== 'pool') {
+                const items = originTier.querySelectorAll('.tier-item');
+                if (items.length === 0) {
+                    originTier.innerHTML = '<p class="empty-tier">Drag files here</p>';
+                }
+            }
+        }
+
+        // Initialize tier builder with Trello-style drag & drop
+        // Refactored per S3776 to use helper functions
+        function initTierBuilder(tabId, allFiles) {
+            let draggedElement = null;
+            
+            // Initialize state tracking for this tab
+            if (!globalThis.tierState) globalThis.tierState = {};
+            if (!globalThis.tierState[tabId]) {
+                globalThis.tierState[tabId] = {
+                    architecture: [],
+                    implementation: [],
+                    practices: []
+                };
+            }
+            
+            console.log(`[TIER-INIT] Initialized state for ${tabId}:`, globalThis.tierState[tabId]);
+            
+            // Get tab container for scoped event listeners
+            const tierTabContainer = document.getElementById(tabId);
+            if (!tierTabContainer) {
+                console.error(`Tab container not found: ${tabId}`);
+                return;
+            }
+            
+            // Drag start - delegates to helper
+            tierTabContainer.addEventListener('dragstart', (e) => {
+                handleDragStart(e, (el) => { draggedElement = el; });
+            });
+            
+            // Drag end - delegates to helper
+            tierTabContainer.addEventListener('dragend', (e) => {
+                handleDragEnd(e, tierTabContainer);
+            });
+            
+            // Drop zone listeners - simplified with helper delegation
+            tierTabContainer.querySelectorAll('.drop-zone, .file-pool').forEach(dropZone => {
+                // Dragover handler - positioning logic
+                dropZone.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    e.dataTransfer.dropEffect = 'move';
+                    if (!dropZone.classList.contains('dragging')) {
+                        dropZone.classList.add('drag-over');
+                    }
+                    
+                    const afterElement = getDragAfterElement(dropZone, e.clientY);
+                    if (afterElement == null) {
+                        const emptyMsg = dropZone.querySelector('.empty-tier');
+                        if (draggedElement && draggedElement !== afterElement) {
+                            emptyMsg ? emptyMsg.before(draggedElement) : dropZone.appendChild(draggedElement);
+                        }
+                    } else if (draggedElement && draggedElement !== afterElement) {
+                        afterElement.before(draggedElement);
+                    }
+                });
+                
+                // Dragleave handler - simple
+                dropZone.addEventListener('dragleave', (e) => {
+                    if (e.target === dropZone) dropZone.classList.remove('drag-over');
+                });
+                
+                // Drop handler - delegates to helper
+                dropZone.addEventListener('drop', (e) => {
+                    handleTierDrop(e, dropZone, draggedElement, tabId);
+                });
+            });
+        }
+        
+        // Get the element to insert after during drag
+        function getDragAfterElement(container, y) {
+            const draggableElements = [...container.querySelectorAll('.draggable:not(.dragging)')];
+            
+            return draggableElements.reduce((closest, child) => {
+                const box = child.getBoundingClientRect();
+                const offset = y - box.top - box.height / 2;
+                
+                if (offset < 0 && offset > closest.offset) {
+                    return { offset: offset, element: child };
+                } else {
+                    return closest;
+                }
+            }, { offset: Number.NEGATIVE_INFINITY }).element;
+        }
+
+        function removeTierItem(tabId, btn) {
+            const item = btn.closest('.tier-item');
+            const file = item.dataset.file;
+            const tierList = item.parentNode;
+            const tier = tierList.dataset.tier;
+            
+            // Update state tracking
+            if (tier && globalThis.tierState && globalThis.tierState[tabId]) {
+                const tierArray = globalThis.tierState[tabId][tier];
+                if (tierArray) {
+                    const index = tierArray.indexOf(file);
+                    if (index > -1) tierArray.splice(index, 1);
+                }
+            }
+            
+            // Remove from tier
+            item.remove();
+            
+            // Add back to pool
+            const pool = document.getElementById(`${tabId}-pool`);
+            const poolFile = document.createElement('div');
+            poolFile.className = 'pool-file draggable';
+            poolFile.draggable = true;
+            poolFile.dataset.file = file;
+            poolFile.textContent = file;
+            pool.appendChild(poolFile);
+            
+            // Show empty message if no files left
+            const items = tierList.querySelectorAll('.tier-item');
+            if (items.length === 0) {
+                tierList.innerHTML = '<p class="empty-tier">Drag files here</p>';
+            }
+        }
+
+        // Clear selection
+        function clearSelection(tabId) {
+            // For LLM tab, clear all dropdowns
+            const guideline = document.getElementById(`${tabId}-guideline`);
+            
+            if (guideline) {
+                const taxonomy = document.getElementById(`${tabId}-taxonomy`);
+                const enrichedMetadata = document.getElementById(`${tabId}-enriched-metadata`);
+                const provider = document.getElementById(`${tabId}-provider`);
+                const model = document.getElementById(`${tabId}-model`);
+                
+                guideline.value = '';
+                if (taxonomy) taxonomy.value = '';
+                if (enrichedMetadata) enrichedMetadata.value = '';
+                provider.value = '';
+                model.innerHTML = '<option value="">-- Select Provider First --</option>';
+                return;
+            }
+            
+            // For Base Guideline tab (tab6), clear dropdowns
+            const bookSelect = document.getElementById(`${tabId}-book`);
+            if (bookSelect) {
+                bookSelect.value = '';
+                const taxonomySelect = document.getElementById(`${tabId}-taxonomy`);
+                if (taxonomySelect) taxonomySelect.value = '';
+                return;
+            }
+            
+            // For taxonomy tab, move all files back to pool
+            const pool = document.getElementById(`${tabId}-pool`);
+            if (pool) {
+                // Reset state
+                if (globalThis.tierState && globalThis.tierState[tabId]) {
+                    globalThis.tierState[tabId] = {
+                        architecture: [],
+                        implementation: [],
+                        practices: []
+                    };
+                    console.log(`[CLEAR] Reset state for ${tabId}`);
+                }
+                
+                const allFiles = [];
+                ['architecture', 'implementation', 'practices'].forEach(tier => {
+                    const tierList = document.getElementById(`${tabId}-${tier}`);
+                    if (tierList) {
+                        const items = tierList.querySelectorAll('.tier-item');
+                        items.forEach(item => {
+                            allFiles.push(item.dataset.file);
+                            item.remove();
+                        });
+                        tierList.innerHTML = '<p class="empty-tier">Drop files here or click → to add</p>';
+                    }
+                });
+                
+                // Re-add all files to pool
+                allFiles.forEach(file => {
+                    const poolFile = document.createElement('div');
+                    poolFile.className = 'pool-file';
+                    poolFile.dataset.file = file;
+                    poolFile.textContent = file;
+                    pool.appendChild(poolFile);
+                });
+            } else {
+                // Regular checkboxes
+                document.querySelectorAll(`input[name="${tabId}-file"]`).forEach(cb => {
+                    cb.checked = false;
+                });
+            }
+        }
+
+        // =============================================================================
+        // WORKFLOW HELPER FUNCTIONS FOR S3776 COGNITIVE COMPLEXITY REDUCTION
+        // =============================================================================
+        
+        /**
+         * Get configuration for LLM tab (tab with guideline selector).
+         * Returns null if not an LLM tab or validation fails.
+         */
+        function getTabConfig(tabId) {
+            const guidelineSelect = document.getElementById(`${tabId}-guideline`);
+            if (!guidelineSelect) return null;
+            
+            const guideline = guidelineSelect.value;
+            const taxonomy = document.getElementById(`${tabId}-taxonomy`)?.value || '';
+            const provider = document.getElementById(`${tabId}-provider`).value;
+            const model = document.getElementById(`${tabId}-model`).value;
+            
+            if (!guideline || !taxonomy || !provider || !model) {
+                alert('Please select all required fields:\n- Base Guideline\n- Taxonomy\n- LLM Provider\n- Model');
+                return { error: true };
+            }
+            
+            return { llmConfig: { guideline, taxonomy, provider, model } };
+        }
+        
+        /**
+         * Get configuration for Base Guideline tab (tab6).
+         * Returns null if not tab6 or validation fails.
+         */
+        function getBaseGuidelineConfig(tabId) {
+            if (tabId !== 'tab6') return null;
+            
+            const bookSelect = document.getElementById(`${tabId}-book`);
+            const taxonomySelect = document.getElementById(`${tabId}-taxonomy`);
+            
+            if (!bookSelect || !bookSelect.value) {
+                alert('Please select a book to create guideline from');
+                return { error: true };
+            }
+            
+            return {
+                selectedFiles: [bookSelect.value],
+                taxonomyFile: taxonomySelect ? taxonomySelect.value : null
+            };
+        }
+        
+        /**
+         * Get configuration for Tier-based tab (taxonomy builder).
+         * Returns null if no pool exists or validation fails.
+         */
+        function getTierConfig(tabId) {
+            const pool = document.getElementById(`${tabId}-pool`);
+            if (!pool) return null;
+            
+            const taxonomyNameInput = document.getElementById(`${tabId}-taxonomy-name`);
+            const taxonomyName = taxonomyNameInput ? taxonomyNameInput.value.trim() : '';
+            
+            if (!taxonomyName || taxonomyName.length < 3) {
+                alert('Please enter a taxonomy name (3-15 characters)');
+                return { error: true };
+            }
+            
+            const tierData = globalThis.tierState && globalThis.tierState[tabId] ? 
+                           structuredClone(globalThis.tierState[tabId]) : 
+                           {architecture: [], implementation: [], practices: []};
+            
+            const hasArchitecture = tierData.architecture && tierData.architecture.length > 0;
+            const hasImplementation = tierData.implementation && tierData.implementation.length > 0;
+            
+            if (!hasArchitecture || !hasImplementation) {
+                alert('The first two tiers are required:\n\n🏛️ Architecture Spine (Priority 1)\n⚙️ Implementation (Priority 2)\n\nEngineering Practices (Priority 3) is optional.');
+                return { error: true };
+            }
+            
+            const selectedFiles = Object.values(tierData).flat();
+            if (selectedFiles.length === 0) {
+                alert('Please drag files into the Architecture and Implementation tiers before running the workflow.');
+                return { error: true };
+            }
+            
+            return { tierData, taxonomyName, selectedFiles, pool };
+        }
+        
+        /**
+         * Get configuration for standard checkbox file selection.
+         */
+        function getFileSelectionConfig(tabId) {
+            const selectedFiles = Array.from(
+                document.querySelectorAll(`input[name="${tabId}-file"]:checked`)
+            ).map(cb => cb.value);
+            
+            const taxonomySelect = document.getElementById(`${tabId}-taxonomy`);
+            const taxonomyFile = taxonomySelect ? taxonomySelect.value : null;
+            
+            if (selectedFiles.length === 0) {
+                alert('Please select at least one file');
+                return { error: true };
+            }
+            
+            return { selectedFiles, taxonomyFile };
+        }
+        
+        /**
+         * Build the payload for the workflow API call.
+         */
+        function buildWorkflowPayload(config) {
+            if (config.llmConfig) {
+                return { llm_config: config.llmConfig };
+            }
+            if (config.tierData) {
+                return { tiers: config.tierData, taxonomy_name: config.taxonomyName };
+            }
+            const payload = { files: config.selectedFiles };
+            if (config.taxonomyFile) {
+                payload.taxonomy = config.taxonomyFile;
+            }
+            return payload;
+        }
+
+        // Run workflow - refactored per S3776 to use helper functions
+        async function runWorkflow(tabId) {
+            // Use helper functions to get configuration for each tab type
+            let config = getTabConfig(tabId);
+            
+            if (!config) {
+                config = getBaseGuidelineConfig(tabId);
+            }
+            if (!config) {
+                config = getTierConfig(tabId);
+            }
+            if (!config) {
+                config = getFileSelectionConfig(tabId);
+            }
+            
+            // Check for validation errors
+            if (config && config.error) return;
+            if (!config) {
+                alert('Unable to determine tab configuration');
+                return;
+            }
+            
+            // Build payload using helper
+            const payload = buildWorkflowPayload(config);
+            console.log('Sending payload:', payload);
+            
+            // Get status elements
+            const statusPanel = document.getElementById(`${tabId}-status`);
+            const statusContent = document.getElementById(`${tabId}-status-content`);
+            
+            if (!statusPanel || !statusContent) {
+                console.error(`[ERROR] Status panel elements not found for: ${tabId}`);
+                return;
+            }
+            
+            statusPanel.style.display = 'block';
+            statusContent.innerHTML = '<p>Starting workflow...</p>';
+            
+            try {
+                const response = await fetch(`/run/${tabId}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                
+                const result = await response.json();
+                
+                if (result.error) {
+                    statusContent.innerHTML = `<p class="error">Error: ${result.error}</p>`;
+                    return;
+                }
+                
+                if (result.workflow_id) {
+                    pollWorkflowStatus(tabId, result.workflow_id);
+                    statusContent.innerHTML = `<p>✓ ${result.message}</p><p>Monitoring progress...</p>`;
+                }
+            } catch (error) {
+                console.error('[DEBUG] Fetch error:', error);
+                statusContent.innerHTML = `<p class="error">Failed to start workflow: ${error.message}</p>`;
+            }
+        }
+
+        // Poll workflow status
+        async function pollWorkflowStatus(tabId, workflowId) {
+            const statusContent = document.getElementById(`${tabId}-status-content`);
+            
+            const interval = setInterval(async () => {
+                try {
+                    const response = await fetch(`/status/${workflowId}`);
+                    const status = await response.json();
+                    
+                    if (status.error) {
+                        clearInterval(interval);
+                        statusContent.innerHTML = `<p class="error">Error: ${status.error}</p>`;
+                        return;
+                    }
+                    
+                    // Build status display
+                    let html = `<p><strong>Status:</strong> ${status.status}</p>`;
+                    
+                    if (status.progress && status.progress.length > 0) {
+                        html += '<div class="progress-log">';
+                        status.progress.forEach(msg => {
+                            const isError = msg.includes('✗');
+                            const isSuccess = msg.includes('✓');
+                            // S3358 fix: Extract nested ternary to if/else
+                            let className = '';
+                            if (isError) {
+                                className = 'error';
+                            } else if (isSuccess) {
+                                className = 'success';
+                            }
+                            html += `<p class="${className}">${msg}</p>`;
+                        });
+                        html += '</div>';
+                    }
+                    
+                    if (status.summary) {
+                        html += `<p><strong>${status.summary}</strong></p>`;
+                    }
+                    
+                    if (status.output_file) {
+                        html += `<p>Output: ${status.output_file}</p>`;
+                    }
+                    
+                    statusContent.innerHTML = html;
+                    
+                    // Stop polling if completed or error
+                    if (status.status === 'completed' || status.status === 'error') {
+                        clearInterval(interval);
+                    }
+                    
+                } catch (error) {
+                    clearInterval(interval);
+                    statusContent.innerHTML += `<p class="error">Status check failed: ${error.message}</p>`;
+                }
+            }, 1000); // Poll every second
+        }
+
+        // Load initial files
+        (async () => {
+            await loadFiles('tab1');
+        })();
+    </script>
+</body>
+</html>

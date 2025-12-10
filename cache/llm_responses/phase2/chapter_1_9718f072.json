@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "key": "chapter_1_9718f072",
+    "created_at": 1765346648.0825899,
+    "ttl_seconds": 2592000,
+    "content_hash": "9718f072dcf3d304759379070fea5a80e4d6de01d141475a318d8cea8ba5afc3"
+  },
+  "data": {
+    "phase": "phase2",
+    "chapter_num": 1,
+    "prompt_hash": "9718f072dcf3d304759379070fea5a80e4d6de01d141475a318d8cea8ba5afc3",
+    "response_text": "I cannot generate a substantive cross-reference annotation for this chapter because no companion books were retrieved from the corpus. The primary text introduces foundational Domain-Driven Design concepts\u2014specifically the distinction between entities (objects with persistent identity across attribute changes) and value objects (objects defined entirely by their attributes, exhibiting immutability and value-based equality)\u2014alongside Python implementation techniques including dataclasses, magic methods (`__eq__`, `__hash__`, `__gt__`), and type hints for expressing business logic. \n\nA complete annotation would require Architecture Spine texts addressing DDD patterns, entity/value object theory, and bounded context design; Implementation Layer texts demonstrating Python's dataclass mechanics, protocol-based typing, and immutability patterns; and potentially Engineering Practices texts covering domain model testing strategies. Without these companion sources, learners should treat this chapter as a self-contained introduction to domain modeling in Python, recognizing that cross-references to formal DDD literature (Evans, Vernon) and Python-specific pattern catalogs would strengthen understanding of both the architectural rationale and idiomatic implementation choices presented here.",
+    "parsed_data": {},
+    "model": "claude-sonnet-4-5-20250929",
+    "tokens_used": 0
+  }
+}

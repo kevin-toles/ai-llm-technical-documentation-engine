@@ -1,0 +1,217 @@
+{
+  "version": "1.0",
+  "created": "2025-11-29",
+  "description": "Extraction parameter profiles for keyword/concept extraction testing",
+  
+  "profiles": {
+    "baseline": {
+      "name": "Baseline (Original)",
+      "description": "Original settings before deduplication enhancement",
+      "enabled": true,
+      "parameters": {
+        "yake": {
+          "top_n": 10,
+          "n": 3,
+          "dedupLim": 0.9,
+          "lan": "en"
+        },
+        "summa": {
+          "concepts_top_n": 10,
+          "summary_ratio": 0.2,
+          "words_multiplier": 2
+        },
+        "custom_dedup": {
+          "stem_dedup_enabled": false,
+          "ngram_clean_enabled": false
+        },
+        "tfidf": {
+          "max_features": 1000,
+          "min_df": 2,
+          "max_df": 0.8
+        },
+        "related_chapters": {
+          "threshold": 0.7,
+          "top_n": 5
+        },
+        "bertopic": {
+          "min_topic_size": 2,
+          "embedding_model": "all-MiniLM-L6-v2"
+        }
+      }
+    },
+    
+    "current": {
+      "name": "Current (Dedup Enabled)",
+      "description": "Current implementation with stem-based deduplication",
+      "enabled": true,
+      "parameters": {
+        "yake": {
+          "top_n": 20,
+          "n": 3,
+          "dedupLim": 0.9,
+          "lan": "en"
+        },
+        "summa": {
+          "concepts_top_n": 10,
+          "summary_ratio": 0.2,
+          "words_multiplier": 2
+        },
+        "custom_dedup": {
+          "stem_dedup_enabled": true,
+          "ngram_clean_enabled": true
+        },
+        "tfidf": {
+          "max_features": 1000,
+          "min_df": 2,
+          "max_df": 0.8
+        },
+        "related_chapters": {
+          "threshold": 0.7,
+          "top_n": 5
+        },
+        "bertopic": {
+          "min_topic_size": 2,
+          "embedding_model": "all-MiniLM-L6-v2"
+        }
+      }
+    },
+    
+    "moderate": {
+      "name": "Moderate (Expanded)",
+      "description": "Moderately expanded extraction with relaxed thresholds",
+      "enabled": true,
+      "parameters": {
+        "yake": {
+          "top_n": 25,
+          "n": 4,
+          "dedupLim": 0.85,
+          "lan": "en"
+        },
+        "summa": {
+          "concepts_top_n": 12,
+          "summary_ratio": 0.25,
+          "words_multiplier": 2
+        },
+        "custom_dedup": {
+          "stem_dedup_enabled": true,
+          "ngram_clean_enabled": true
+        },
+        "tfidf": {
+          "max_features": 1500,
+          "min_df": 1,
+          "max_df": 0.85
+        },
+        "related_chapters": {
+          "threshold": 0.6,
+          "top_n": 7
+        },
+        "bertopic": {
+          "min_topic_size": 2,
+          "embedding_model": "all-MiniLM-L6-v2"
+        }
+      }
+    },
+    
+    "aggressive": {
+      "name": "Aggressive (Maximum)",
+      "description": "Maximum extraction with lowest thresholds",
+      "enabled": true,
+      "parameters": {
+        "yake": {
+          "top_n": 35,
+          "n": 5,
+          "dedupLim": 0.8,
+          "lan": "en"
+        },
+        "summa": {
+          "concepts_top_n": 15,
+          "summary_ratio": 0.3,
+          "words_multiplier": 2
+        },
+        "custom_dedup": {
+          "stem_dedup_enabled": true,
+          "ngram_clean_enabled": true
+        },
+        "tfidf": {
+          "max_features": 2000,
+          "min_df": 1,
+          "max_df": 0.9
+        },
+        "related_chapters": {
+          "threshold": 0.5,
+          "top_n": 10
+        },
+        "bertopic": {
+          "min_topic_size": 2,
+          "embedding_model": "all-MiniLM-L6-v2"
+        }
+      }
+    }
+  },
+  
+  "llm_evaluation": {
+    "providers": {
+      "deepseek": {
+        "base_url": "https://api.deepseek.com/chat/completions",
+        "models": {
+          "deepseek-chat": {"name": "deepseek-chat", "use_case": "general", "cost_per_1k": 0.001},
+          "deepseek-reasoner": {"name": "deepseek-reasoner", "use_case": "reasoning", "cost_per_1k": 0.002}
+        }
+      },
+      "google": {
+        "base_url": "https://generativelanguage.googleapis.com/v1beta",
+        "models": {
+          "gemini-2.5-flash": {"name": "gemini-2.5-flash", "use_case": "fast_multimodal", "cost_per_1k": 0.001},
+          "gemini-2.5-pro": {"name": "gemini-2.5-pro", "use_case": "advanced", "cost_per_1k": 0.002},
+          "gemini-3-pro-preview": {"name": "gemini-3-pro-preview", "use_case": "latest", "cost_per_1k": 0.003}
+        }
+      },
+      "anthropic": {
+        "base_url": "https://api.anthropic.com/v1",
+        "models": {
+          "claude-4.5-sonnet": {"name": "claude-sonnet-4-20250514", "use_case": "balanced", "cost_per_1k": 0.015},
+          "claude-4.6-opus": {"name": "claude-opus-4-20250514", "use_case": "deep_reasoning", "cost_per_1k": 0.075},
+          "claude-4.5-haiku": {"name": "claude-haiku-4-20250514", "use_case": "fast_cheap", "cost_per_1k": 0.001}
+        }
+      },
+      "openai": {
+        "base_url": "https://api.openai.com/v1",
+        "models": {
+          "gpt-4o": {"name": "gpt-4o", "use_case": "main", "cost_per_1k": 0.03},
+          "gpt-4o-mini": {"name": "gpt-4o-mini", "use_case": "budget", "cost_per_1k": 0.01}
+        }
+      }
+    },
+    "default_models": [
+      "deepseek-chat",
+      "gemini-2.5-flash"
+    ]
+  },
+  
+  "test_book": {
+    "name": "AI Engineering Building Applications",
+    "json_file": "AI Engineering Building Applications.json",
+    "metadata_file": "AI Engineering Building Applications_metadata.json",
+    "taxonomy_base": "AI-ML_taxonomy_20251128.json",
+    "json_source_dir": "workflows/pdf_to_json/output/textbooks_json",
+    "chapters": 49,
+    "pages": 991,
+    "description": "Primary test book for extraction profile comparison"
+  },
+  
+  "naming_convention": {
+    "suffix_format": "_{PROFILE}",
+    "profiles": {
+      "baseline": "BASELINE",
+      "current": "CURRENT", 
+      "moderate": "MODERATE",
+      "aggressive": "AGGRESSIVE"
+    },
+    "examples": {
+      "metadata": "AI Engineering Building Applications_metadata_BASELINE.json",
+      "taxonomy": "AI-ML_taxonomy_BASELINE.json",
+      "enriched": "AI Engineering Building Applications_enriched_BASELINE.json",
+      "aggregate": "aggregate_BASELINE.json"
+    }
+  }
+}

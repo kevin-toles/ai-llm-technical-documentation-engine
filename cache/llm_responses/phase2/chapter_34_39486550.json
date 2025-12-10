@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "key": "chapter_34_39486550",
+    "created_at": 1764563773.069002,
+    "ttl_seconds": 2592000,
+    "content_hash": "3948655017707e18e0f781f396e25bf9d3408bf6d0ee78c0bc5b233d19cd767b"
+  },
+  "data": {
+    "phase": "phase2",
+    "chapter_num": 34,
+    "prompt_hash": "3948655017707e18e0f781f396e25bf9d3408bf6d0ee78c0bc5b233d19cd767b",
+    "response_text": "The chapter's treatment of Python exception handling\u2014covering try/except/else/finally blocks, the raise statement, and assert\u2014represents foundational implementation knowledge, yet the companion corpus provides no retrieved excerpts for cross-referencing. This absence is significant: exception handling intersects critically with architectural concerns in AI applications, where robust error management determines system reliability during API calls, model inference failures, and data pipeline interruptions. Without Architecture Spine content from texts like *Building Microservices* or *Architecture Patterns with Python*, learners lack guidance on how exception hierarchies should map to domain boundaries or how fault tolerance patterns inform exception design decisions. Similarly, the Implementation tier would benefit from *Fluent Python*'s treatment of context managers and exception chaining, or *Python Cookbook*'s practical recipes for custom exception classes\u2014content that would ground the chapter's OOP inheritance discussion in idiomatic Python practice. For AI engineering specifically, exception handling becomes critical when managing LLM API rate limits, timeout errors, and malformed model outputs, topics likely addressed in *AI Engineering* or *Building LLM Powered Applications* but unavailable here for validation. Learners should rely on the primary text for syntactic foundations while seeking supplementary architectural guidance on designing exception hierarchies that communicate failure modes across service boundaries.",
+    "parsed_data": {},
+    "model": "claude-opus-4-5-20251101",
+    "tokens_used": 0
+  }
+}

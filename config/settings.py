@@ -65,40 +65,6 @@ class LLMConfig:
 
 
 @dataclass
-class TaxonomyConfig:
-    """Book taxonomy settings.
-    
-    Environment Variables:
-        TAXONOMY_MIN_RELEVANCE: Minimum relevance score 0.0-1.0 (default: 0.3)
-        TAXONOMY_MAX_BOOKS: Maximum books to send to LLM (default: 10)
-        TAXONOMY_CASCADE_DEPTH: Cascading depth for book relationships (default: 1)
-        TAXONOMY_ENABLE_PREFILTER: Enable pre-filtering before Phase 1 (default: true)
-    """
-    min_relevance: float = field(default_factory=lambda: float(os.getenv("TAXONOMY_MIN_RELEVANCE", "0.3")))
-    max_books: int = field(default_factory=lambda: int(os.getenv("TAXONOMY_MAX_BOOKS", "10")))
-    cascade_depth: int = field(default_factory=lambda: int(os.getenv("TAXONOMY_CASCADE_DEPTH", "1")))
-    enable_prefilter: bool = field(default_factory=lambda: os.getenv("TAXONOMY_ENABLE_PREFILTER", "true").lower() == "true")
-    
-    def __post_init__(self):
-        """Validate configuration."""
-        if not 0.0 <= self.min_relevance <= 1.0:
-            raise ValueError(
-                f"TAXONOMY_MIN_RELEVANCE={self.min_relevance} must be between 0.0 and 1.0"
-            )
-        
-        if self.max_books < 1 or self.max_books > 14:
-            raise ValueError(
-                f"TAXONOMY_MAX_BOOKS={self.max_books} must be between 1 and 14 "
-                "(14 = total books in library)"
-            )
-        
-        if self.cascade_depth < 1 or self.cascade_depth > 3:
-            raise ValueError(
-                f"TAXONOMY_CASCADE_DEPTH={self.cascade_depth} must be between 1 and 3"
-            )
-
-
-@dataclass
 class PromptConstraints:
     """JSON response field constraints (Acceptance Criteria AC-2).
     
@@ -165,32 +131,107 @@ class RetryConfig:
             )
 
 
+# CacheConfig removed - old cache implementation deleted (Task 5.2)
+# New cache system will be implemented in DOMAIN_AGNOSTIC Part 2 with:
+#   - Statistical Pre-Filter Cache (workflows/llm_enhancement/cache/prefilter/)
+#   - LLM Response Cache (workflows/llm_enhancement/cache/llm_responses/)
+# See: DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN.md Part 2
+
+
 @dataclass
-class CacheConfig:
-    """Caching configuration (Acceptance Criteria AC-4).
+class ChapterSegmentationConfig:
+    """Chapter segmentation configuration for PDF → JSON conversion (Tab 1).
+    
+    Controls the 3-pass chapter detection algorithm:
+    - Pass A: Regex-based pattern matching
+    - Pass B: Topic-shift detection using TF-IDF cosine similarity
+    - Pass C: Synthetic segmentation (guaranteed fallback)
     
     Environment Variables:
-        CACHE_ENABLED: Enable caching (default: true)
-        CACHE_DIR: Cache directory path (default: cache)
-        CACHE_PHASE1_TTL_DAYS: Phase 1 cache TTL in days (default: 30)
-        CACHE_PHASE2_TTL_DAYS: Phase 2 cache TTL in days (default: 30)
+        CHAPTER_MIN_PAGES: Minimum pages per chapter (default: 8)
+        CHAPTER_TARGET_PAGES: Target pages per chapter for synthetic segmentation (default: 20)
+        CHAPTER_SIM_THRESHOLD: Cosine similarity threshold for topic shifts (default: 0.25)
+        CHAPTER_MIN_CHAPTERS: Minimum chapters for valid segmentation (default: 3)
+        CHAPTER_MAX_CHAPTERS: Maximum chapters to prevent over-segmentation (default: 80)
+        CHAPTER_MIN_KEYWORDS: Minimum keywords for chapter validation (default: 3)
+        CHAPTER_TF_IDF_MAX_FEATURES: Max TF-IDF features (default: 5000)
+    
+    Reference Documents:
+        - CONSOLIDATED_IMPLEMENTATION_PLAN.md: Tab 1 statistical methods
+        - BOOK_TAXONOMY_MATRIX.md: Algorithm design patterns (Python Cookbook)
+        - docs/analysis/chapter_segmenter_conflict_assessment.md: Performance trade-offs
     """
-    enabled: bool = field(default_factory=lambda: os.getenv("CACHE_ENABLED", "true").lower() == "true")
-    cache_dir: Path = field(default_factory=lambda: Path(os.getenv("CACHE_DIR", "cache")))
-    phase1_ttl_days: int = field(default_factory=lambda: int(os.getenv("CACHE_PHASE1_TTL_DAYS", "30")))
-    phase2_ttl_days: int = field(default_factory=lambda: int(os.getenv("CACHE_PHASE2_TTL_DAYS", "30")))
+    min_pages: int = field(default_factory=lambda: int(os.getenv("CHAPTER_MIN_PAGES", "8")))
+    target_pages: int = field(default_factory=lambda: int(os.getenv("CHAPTER_TARGET_PAGES", "20")))
+    similarity_threshold: float = field(default_factory=lambda: float(os.getenv("CHAPTER_SIM_THRESHOLD", "0.25")))
+    min_chapters: int = field(default_factory=lambda: int(os.getenv("CHAPTER_MIN_CHAPTERS", "3")))
+    max_chapters: int = field(default_factory=lambda: int(os.getenv("CHAPTER_MAX_CHAPTERS", "80")))
+    min_keywords: int = field(default_factory=lambda: int(os.getenv("CHAPTER_MIN_KEYWORDS", "3")))
+    tfidf_max_features: int = field(default_factory=lambda: int(os.getenv("CHAPTER_TF_IDF_MAX_FEATURES", "5000")))
     
     def __post_init__(self):
-        """Validate and setup cache directory."""
-        if self.phase1_ttl_days < 1:
-            raise ValueError("CACHE_PHASE1_TTL_DAYS must be >= 1")
+        """Validate chapter segmentation configuration."""
+        if self.min_pages < 3:
+            raise ValueError(
+                f"CHAPTER_MIN_PAGES={self.min_pages} too small, must be >= 3"
+            )
         
-        if self.phase2_ttl_days < 1:
-            raise ValueError("CACHE_PHASE2_TTL_DAYS must be >= 1")
+        if self.target_pages < self.min_pages:
+            raise ValueError(
+                f"CHAPTER_TARGET_PAGES={self.target_pages} must be >= "
+                f"CHAPTER_MIN_PAGES={self.min_pages}"
+            )
         
-        # Create cache directory if enabled
-        if self.enabled:
-            self.cache_dir.mkdir(parents=True, exist_ok=True)
+        if not 0.1 <= self.similarity_threshold <= 0.5:
+            raise ValueError(
+                f"CHAPTER_SIM_THRESHOLD={self.similarity_threshold} must be between 0.1 and 0.5"
+            )
+        
+        if self.min_chapters < 1:
+            raise ValueError("CHAPTER_MIN_CHAPTERS must be >= 1")
+        
+        if self.max_chapters < self.min_chapters:
+            raise ValueError(
+                f"CHAPTER_MAX_CHAPTERS={self.max_chapters} must be >= "
+                f"CHAPTER_MIN_CHAPTERS={self.min_chapters}"
+            )
+        
+        if self.min_keywords < 2:
+            raise ValueError("CHAPTER_MIN_KEYWORDS must be >= 2")
+        
+        if self.tfidf_max_features < 1000:
+            raise ValueError("CHAPTER_TF_IDF_MAX_FEATURES must be >= 1000 for meaningful analysis")
+
+
+@dataclass
+class GatewayConfig:
+    """LLM Gateway configuration for WBS 3.1.3.1.
+    
+    Environment Variables:
+        DOC_ENHANCER_LLM_GATEWAY_URL: Gateway URL (default: http://localhost:8080)
+        DOC_ENHANCER_LLM_GATEWAY_TIMEOUT: Request timeout in seconds (default: 30.0)
+        DOC_ENHANCER_USE_GATEWAY: Feature flag for gateway usage (default: false)
+        DOC_ENHANCER_SESSION_TTL: Session TTL in seconds (default: 3600)
+    
+    Reference:
+        - WBS 3.1.3.1: Environment Configuration
+        - ARCHITECTURE.md: llm-gateway configuration
+    """
+    gateway_url: str = field(default_factory=lambda: os.getenv("DOC_ENHANCER_LLM_GATEWAY_URL") or "http://localhost:8080")
+    timeout: float = field(default_factory=lambda: float(os.getenv("DOC_ENHANCER_LLM_GATEWAY_TIMEOUT") or "30.0"))
+    use_gateway: bool = field(default_factory=lambda: (os.getenv("DOC_ENHANCER_USE_GATEWAY") or "false").lower() == "true")
+    session_ttl: int = field(default_factory=lambda: int(os.getenv("DOC_ENHANCER_SESSION_TTL") or "3600"))
+    
+    def __post_init__(self):
+        """Validate gateway configuration."""
+        if self.timeout <= 0:
+            raise ValueError(f"DOC_ENHANCER_LLM_GATEWAY_TIMEOUT={self.timeout} must be > 0")
+        
+        if self.session_ttl < 60:
+            raise ValueError(f"DOC_ENHANCER_SESSION_TTL={self.session_ttl} must be >= 60 seconds")
+        
+        if not self.gateway_url.startswith(("http://", "https://")):
+            raise ValueError("DOC_ENHANCER_LLM_GATEWAY_URL must start with http:// or https://")
 
 
 @dataclass
@@ -209,9 +250,19 @@ class PathConfig:
     
     def __post_init__(self):
         """Initialize derived paths."""
+        # Backward compatibility: data_dir for old code not yet refactored
         self.data_dir = Path(os.getenv("DATA_DIR", self.repo_root / "data"))
-        self.textbooks_json_dir = self.data_dir / "textbooks_json"
-        self.metadata_dir = self.data_dir / "metadata"
+        
+        # New workflow-based paths
+        self.textbooks_json_dir = Path(os.getenv(
+            "TEXTBOOKS_JSON_DIR", 
+            self.repo_root / "workflows" / "pdf_to_json" / "output" / "textbooks_json"
+        ))
+        self.metadata_dir = Path(os.getenv(
+            "METADATA_DIR",
+            self.repo_root / "workflows" / "metadata_extraction" / "output"
+        ))
+        
         self.guidelines_dir = Path(os.getenv("GUIDELINES_DIR", self.repo_root / "guidelines"))
         self.output_dir = Path(os.getenv("OUTPUT_DIR", self.repo_root / "outputs"))
         self.logs_dir = Path(os.getenv("LOGS_DIR", self.repo_root / "logs"))
@@ -236,16 +287,18 @@ class Settings:
         # Access configuration
         max_tokens = settings.llm.max_tokens
         cache_enabled = settings.cache.enabled
+        chapter_min_pages = settings.chapter_segmentation.min_pages
         
         # Override in tests
         test_settings = Settings()
         test_settings.llm.max_tokens = 4096
     """
     llm: LLMConfig = field(default_factory=LLMConfig)
-    taxonomy: TaxonomyConfig = field(default_factory=TaxonomyConfig)
     constraints: PromptConstraints = field(default_factory=PromptConstraints)
     retry: RetryConfig = field(default_factory=RetryConfig)
-    cache: CacheConfig = field(default_factory=CacheConfig)
+    gateway: GatewayConfig = field(default_factory=GatewayConfig)
+    # cache: CacheConfig removed (Task 5.2 - see DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN.md Part 2)
+    chapter_segmentation: ChapterSegmentationConfig = field(default_factory=ChapterSegmentationConfig)
     paths: PathConfig = field(default_factory=PathConfig)
     
     def validate(self):
@@ -253,18 +306,8 @@ class Settings:
         
         Validates relationships between different config sections.
         """
-        # Ensure max_books doesn't exceed what can fit in a response
-        estimated_tokens_per_book = 500  # Rough estimate for book metadata
-        total_metadata_tokens = self.taxonomy.max_books * estimated_tokens_per_book
-        
-        if total_metadata_tokens > self.llm.max_tokens * 0.5:
-            import warnings
-            warnings.warn(
-                f"TAXONOMY_MAX_BOOKS={self.taxonomy.max_books} may cause token issues. "
-                f"Estimated metadata tokens: {total_metadata_tokens}, "
-                f"max_tokens limit: {self.llm.max_tokens}. "
-                f"Consider reducing TAXONOMY_MAX_BOOKS to {self.llm.max_tokens // 1000} or less."
-            )
+        # Cross-config validation (if needed in future)
+        pass
     
     def display(self):
         """Display current configuration (useful for debugging)."""
@@ -280,28 +323,33 @@ class Settings:
         print(f"  Max Tokens: {self.llm.max_tokens:,}")
         print(f"  Logging Enabled: {self.llm.enable_logging}")
         
-        print("\n[Taxonomy]")
-        print(f"  Min Relevance: {self.taxonomy.min_relevance}")
-        print(f"  Max Books: {self.taxonomy.max_books}")
-        print(f"  Cascade Depth: {self.taxonomy.cascade_depth}")
-        print(f"  Pre-filter Enabled: {self.taxonomy.enable_prefilter}")
-        
         print("\n[Constraints]")
         print(f"  Max Content Requests: {self.constraints.max_content_requests}")
         print(f"  Max Sections/Request: {self.constraints.max_sections_per_request}")
         print(f"  Max Rationale Chars: {self.constraints.max_rationale_chars}")
         print(f"  Max Pages/Section: {self.constraints.max_pages_per_section}")
         
+        print("\n[Chapter Segmentation]")
+        print(f"  Min Pages: {self.chapter_segmentation.min_pages}")
+        print(f"  Target Pages: {self.chapter_segmentation.target_pages}")
+        print(f"  Similarity Threshold: {self.chapter_segmentation.similarity_threshold}")
+        print(f"  Min Chapters: {self.chapter_segmentation.min_chapters}")
+        print(f"  Max Chapters: {self.chapter_segmentation.max_chapters}")
+        print(f"  Min Keywords: {self.chapter_segmentation.min_keywords}")
+        print(f"  TF-IDF Max Features: {self.chapter_segmentation.tfidf_max_features:,}")
+        
         print("\n[Retry Policy]")
         print(f"  Max Attempts: {self.retry.max_attempts}")
         print(f"  Backoff Factor: {self.retry.backoff_factor}")
         print(f"  Constraint Factor: {self.retry.constraint_factor}")
         
-        print("\n[Cache]")
-        print(f"  Enabled: {self.cache.enabled}")
-        print(f"  Directory: {self.cache.cache_dir}")
-        print(f"  Phase 1 TTL: {self.cache.phase1_ttl_days} days")
-        print(f"  Phase 2 TTL: {self.cache.phase2_ttl_days} days")
+        print("\n[Gateway]")
+        print(f"  Gateway URL: {self.gateway.gateway_url}")
+        print(f"  Timeout: {self.gateway.timeout}s")
+        print(f"  Use Gateway: {self.gateway.use_gateway}")
+        print(f"  Session TTL: {self.gateway.session_ttl}s")
+        
+        # Cache config removed (Task 5.2) - see DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN.md Part 2
         
         print("\n[Paths]")
         print(f"  Repo Root: {self.paths.repo_root}")

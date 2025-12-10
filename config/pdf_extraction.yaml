@@ -1,0 +1,95 @@
+# =============================================================================
+# PDF Extraction Pipeline Configuration
+# Reference: END_TO_END_INTEGRATION_WBS.md WBS 1.1.2
+# =============================================================================
+
+# Input Configuration
+input:
+  # Path to source PDF file (from test_manifest.json)
+  input_pdf: "/Users/kevintoles/POC/textbooks/PDF/Architecture-Patterns-with-Python.pdf"
+  
+  # Manifest file with expected values for validation
+  manifest_path: "/Users/kevintoles/POC/textbooks/test_manifest.json"
+
+# Output Configuration  
+output:
+  # Path for extracted JSON output
+  output_json: "/Users/kevintoles/POC/llm-document-enhancer/outputs/extracted_chapters.json"
+  
+  # Path for chunked documents
+  chunks_json: "/Users/kevintoles/POC/llm-document-enhancer/outputs/extracted_chunks.json"
+  
+  # Path for metadata output
+  metadata_json: "/Users/kevintoles/POC/llm-document-enhancer/outputs/extraction_metadata.json"
+
+# Chapter Detection Configuration
+chapter_detection:
+  # Regex pattern for detecting chapter headings
+  # Matches: "1. Chapter Title", "Chapter 1: Title", "1 - Title"
+  chapter_regex: "^\\d+\\.\\s+[A-Z]|^Chapter\\s+\\d+"
+  
+  # Additional patterns for parts and appendices
+  part_regex: "^Part\\s+[IVX]+|^[IVX]+\\.\\s+"
+  appendix_regex: "^Appendix\\s+[A-Z]|^[A-Z]\\.\\s+[A-Z]"
+  
+  # Minimum characters for a valid chapter
+  min_chapter_length: 500
+  
+  # Maximum chapters expected (for validation)
+  max_chapters: 50
+
+# Text Chunking Configuration
+chunking:
+  # Size of each text chunk in characters
+  chunk_size: 1000
+  
+  # Overlap between consecutive chunks
+  chunk_overlap: 200
+  
+  # Chunking strategy: "fixed", "semantic", "paragraph"
+  strategy: "fixed"
+  
+  # Separator for splitting (used in semantic/paragraph modes)
+  separators:
+    - "\n\n"
+    - "\n"
+    - ". "
+    - " "
+
+# Text Processing Configuration
+processing:
+  # Remove headers/footers
+  remove_headers: true
+  remove_footers: true
+  
+  # Clean up whitespace
+  normalize_whitespace: true
+  
+  # Remove page numbers
+  remove_page_numbers: true
+  
+  # Encoding for text extraction
+  encoding: "utf-8"
+
+# Extraction Quality Settings
+quality:
+  # Minimum confidence score for chapter detection
+  confidence_threshold: 0.7
+  
+  # Retry failed pages
+  retry_failed_pages: true
+  max_retries: 3
+  
+  # Logging level: DEBUG, INFO, WARNING, ERROR
+  log_level: "INFO"
+
+# Validation Settings (cross-reference with manifest)
+validation:
+  # Validate chapter count against manifest
+  validate_chapter_count: true
+  
+  # Tolerance for page count mismatch
+  page_count_tolerance: 5
+  
+  # Required minimum text extraction ratio
+  min_text_ratio: 0.8

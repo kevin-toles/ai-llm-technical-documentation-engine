@@ -1,0 +1,258 @@
+{
+  "generated": "2025-11-29T12:49:49.886262",
+  "description": "Pipeline dry run analysis - checking workflow outputs",
+  "recent_changes": [
+    "Tab 1: Unstructured PDF extractor with PyMuPDF fallback",
+    "Tab 2: TOCParserStrategy + StatisticalExtractor with WordNet",
+    "Tab 4: BERTopic + Sentence Transformers integration",
+    "Tab 5: Topic-aware cross-referencing"
+  ],
+  "books_analyzed": 5,
+  "comparisons": [
+    {
+      "book_name": "A Philosophy of Software Design",
+      "analyzed_at": "2025-11-29T12:49:49.848554",
+      "tab1_pdf_extraction": {
+        "book_name": "A Philosophy of Software Design",
+        "json_file_exists": true,
+        "json_file_size_kb": 737.8095703125,
+        "total_pages": 0,
+        "chapters_detected": 25,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "A Philosophy of Software Design",
+        "metadata_file_exists": true,
+        "chapter_count": 25,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 3816.36,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "A Philosophy of Software Design",
+        "enriched_file_exists": true,
+        "chapter_count": 25,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 1.4,
+        "avg_keywords_enriched": 10.0,
+        "avg_concepts_enriched": 10.0,
+        "enrichment_method": "statistical",
+        "libraries": {
+          "yake": "0.4.8",
+          "summa": "1.2.0",
+          "scikit-learn": "1.3.2"
+        },
+        "corpus_size": 25
+      },
+      "tab5_guideline_generation": {
+        "book_name": "A Philosophy of Software Design",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "AI Agents In Action",
+      "analyzed_at": "2025-11-29T12:49:49.852540",
+      "tab1_pdf_extraction": {
+        "book_name": "AI Agents In Action",
+        "json_file_exists": true,
+        "json_file_size_kb": 1313.06640625,
+        "total_pages": 0,
+        "chapters_detected": 39,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "AI Agents In Action",
+        "metadata_file_exists": true,
+        "chapter_count": 39,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 3978.897435897436,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "AI Agents In Action",
+        "enriched_file_exists": true,
+        "chapter_count": 39,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 2.1794871794871793,
+        "avg_keywords_enriched": 10.0,
+        "avg_concepts_enriched": 10.0,
+        "enrichment_method": "statistical",
+        "libraries": {
+          "yake": "0.4.8",
+          "summa": "1.2.0",
+          "scikit-learn": "1.3.2"
+        },
+        "corpus_size": 25
+      },
+      "tab5_guideline_generation": {
+        "book_name": "AI Agents In Action",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "AI Agents and Applications",
+      "analyzed_at": "2025-11-29T12:49:49.860555",
+      "tab1_pdf_extraction": {
+        "book_name": "AI Agents and Applications",
+        "json_file_exists": true,
+        "json_file_size_kb": 1497.8291015625,
+        "total_pages": 0,
+        "chapters_detected": 62,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "AI Agents and Applications",
+        "metadata_file_exists": true,
+        "chapter_count": 62,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 2665.564516129032,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "AI Agents and Applications",
+        "enriched_file_exists": true,
+        "chapter_count": 62,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 1.6935483870967742,
+        "avg_keywords_enriched": 10.0,
+        "avg_concepts_enriched": 10.0,
+        "enrichment_method": "statistical",
+        "libraries": {
+          "yake": "0.4.8",
+          "summa": "1.2.0",
+          "scikit-learn": "1.3.2"
+        },
+        "corpus_size": 25
+      },
+      "tab5_guideline_generation": {
+        "book_name": "AI Agents and Applications",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "AI Engineering Building Applications",
+      "analyzed_at": "2025-11-29T12:49:49.870586",
+      "tab1_pdf_extraction": {
+        "book_name": "AI Engineering Building Applications",
+        "json_file_exists": true,
+        "json_file_size_kb": 2326.443359375,
+        "total_pages": 0,
+        "chapters_detected": 49,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "AI Engineering Building Applications",
+        "metadata_file_exists": true,
+        "chapter_count": 49,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 5242.836734693878,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "AI Engineering Building Applications",
+        "enriched_file_exists": true,
+        "chapter_count": 49,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 2.0816326530612246,
+        "avg_keywords_enriched": 10.0,
+        "avg_concepts_enriched": 9.938775510204081,
+        "enrichment_method": "statistical",
+        "libraries": {
+          "yake": "0.4.8",
+          "summa": "1.2.0",
+          "scikit-learn": "1.3.2"
+        },
+        "corpus_size": 25
+      },
+      "tab5_guideline_generation": {
+        "book_name": "AI Engineering Building Applications",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    },
+    {
+      "book_name": "AntiPatterns",
+      "analyzed_at": "2025-11-29T12:49:49.881467",
+      "tab1_pdf_extraction": {
+        "book_name": "AntiPatterns",
+        "json_file_exists": true,
+        "json_file_size_kb": 990.5478515625,
+        "total_pages": 0,
+        "chapters_detected": 18,
+        "extraction_method": "unknown",
+        "has_toc": false
+      },
+      "tab2_metadata_extraction": {
+        "book_name": "AntiPatterns",
+        "metadata_file_exists": true,
+        "chapter_count": 18,
+        "avg_keywords_per_chapter": 15.0,
+        "avg_concepts_per_chapter": 10.0,
+        "avg_summary_length": 7450.111111111111,
+        "has_page_ranges": true,
+        "extraction_method": "statistical"
+      },
+      "tab4_metadata_enrichment": {
+        "book_name": "AntiPatterns",
+        "enriched_file_exists": true,
+        "chapter_count": 18,
+        "has_topic_ids": false,
+        "topic_coverage_pct": 0.0,
+        "unique_topics": 0,
+        "avg_related_chapters": 1.3333333333333333,
+        "avg_keywords_enriched": 10.0,
+        "avg_concepts_enriched": 10.0,
+        "enrichment_method": "statistical",
+        "libraries": {
+          "yake": "0.4.8",
+          "summa": "1.2.0",
+          "scikit-learn": "1.3.2"
+        },
+        "corpus_size": 25
+      },
+      "tab5_guideline_generation": {
+        "book_name": "AntiPatterns",
+        "guideline_file_exists": false,
+        "section_count": 0,
+        "cross_references_count": 0,
+        "has_topic_boosting": false,
+        "output_format": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "key": "chapter_13_9772590e",
+    "created_at": 1765351697.732484,
+    "ttl_seconds": 2592000,
+    "content_hash": "9772590edf7e119a8d17adb8022d553d37b23d9a7f77c410dc52b220aacfc81d"
+  },
+  "data": {
+    "phase": "phase2",
+    "chapter_num": 13,
+    "prompt_hash": "9772590edf7e119a8d17adb8022d553d37b23d9a7f77c410dc52b220aacfc81d",
+    "response_text": "I cannot generate a substantive cross-reference annotation for this chapter because no companion book excerpts were provided in the corpus. The retrieval system returned zero companion texts, leaving no material to analyze for conceptual relationships, alternative treatments, or pedagogical connections.\n\n**What This Chapter Covers (Standalone Context):**\nChapter 13 demonstrates dependency injection patterns in Python through progressive examples: a bootstrap function that wires concrete implementations to abstract interfaces, pytest fixtures that leverage DI for test isolation, and framework-specific adaptations for Flask and Django. The chapter emphasizes explicit dependency management over hidden coupling, using context managers (`__enter__`/`__exit__`) for resource lifecycle control and showing how to swap real database implementations for in-memory fakes during testing.\n\n**Missing Cross-Reference Opportunities:**\nWithout companion texts, I cannot provide the required Architecture Spine references (e.g., how DI relates to hexagonal architecture ports/adapters, IoC container patterns, or service locator anti-patterns), Implementation tier connections (e.g., comparison with FastAPI's dependency injection system, Python descriptor protocol alternatives, or decorator-based injection), or Engineering Practices context (e.g., integration testing strategies, fixture design patterns, or test pyramid considerations). A complete annotation would require companion books addressing Python design patterns, web framework architectures, or testing methodologies\u2014none of which appear in the provided corpus.",
+    "parsed_data": {},
+    "model": "claude-sonnet-4-5-20250929",
+    "tokens_used": 0
+  }
+}

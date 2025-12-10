@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "key": "chapter_10_d85b30be",
+    "created_at": 1764562970.0501719,
+    "ttl_seconds": 2592000,
+    "content_hash": "d85b30bea63b455666da12570051331323cc724e734710e4760feecf9e1994dd"
+  },
+  "data": {
+    "phase": "phase2",
+    "chapter_num": 10,
+    "prompt_hash": "d85b30bea63b455666da12570051331323cc724e734710e4760feecf9e1994dd",
+    "response_text": "This chapter provides a foundational taxonomy of Python's statement syntax\u2014distinguishing simple statements (assignment, expression, print) from compound statements (if, while, for, try, def, class)\u2014yet the absence of companion book metadata in this aggregate package prevents systematic cross-referencing with the corpus's Architecture Spine or Implementation texts. The internal forward references to Chapter 13 (while and for loops), Chapter 17 (function definitions with def, return, and yield), and the external citation of *Programming Python* for practical applications suggest a deliberate pedagogical separation between syntax introduction and applied usage that would typically align with how *Fluent Python* treats statement semantics or how *Architecture Patterns with Python* contextualizes control flow within design patterns. The chapter's emphasis on indentation-based block structure and the colon-terminated header line as Python's syntactic signature represents a language design decision that Implementation-tier texts like *Python Distilled* or *Python Essential Reference* would formalize with precise grammar rules, while Architecture-tier discussions would connect to readability principles underlying Python's design philosophy. Without access to specific companion excerpts, learners should note that this chapter's Table 10-1 statement overview serves as an index for deeper treatment: exception handling (try/except/finally) connects to reliability patterns in engineering practice texts, context managers (with) relate to resource management in systems design, and import mechanisms (from/import) underpin the module architecture discussed in Chapter 4's file organization coverage. The gap in available cross-references for this foundational syntax chapter is significant\u2014learners seeking architectural rationale for Python's statement design or implementation-level details of statement execution should consult the referenced chapters directly and the *Programming Python* companion noted in the source summary.",
+    "parsed_data": {},
+    "model": "claude-opus-4-5-20251101",
+    "tokens_used": 0
+  }
+}

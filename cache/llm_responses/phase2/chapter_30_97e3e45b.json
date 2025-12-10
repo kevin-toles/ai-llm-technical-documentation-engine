@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "key": "chapter_30_97e3e45b",
+    "created_at": 1764563659.932058,
+    "ttl_seconds": 2592000,
+    "content_hash": "97e3e45bd9e20d9efd18969ddb77ce7ea7c890fb28e3e6e9f6bd078f92d0a46c"
+  },
+  "data": {
+    "phase": "phase2",
+    "chapter_num": 30,
+    "prompt_hash": "97e3e45bd9e20d9efd18969ddb77ce7ea7c890fb28e3e6e9f6bd078f92d0a46c",
+    "response_text": "The chapter's treatment of operator overloading in Python represents a core implementation-tier topic for which no companion book content was retrieved from the corpus. This absence is significant: operator overloading through special methods (`__add__`, `__mul__`, `__eq__`, etc.) constitutes a foundational Python protocol that enables the polymorphic behavior underlying libraries commonly used in AI engineering contexts\u2014NumPy's array broadcasting, pandas DataFrame operations, and SQLAlchemy's query expression language all depend on these mechanisms. Without Architecture Spine content, the structural rationale connecting operator overloading to broader design patterns (such as the Expression Builder pattern or domain-specific language construction) cannot be cross-referenced. Similarly, the Implementation tier gap means learners cannot access Fluent Python's detailed coverage of the data model's infix operator dispatch rules, augmented assignment protocols, or the `__radd__`/`__iadd__` distinction that governs operand coercion. For AI engineering applications specifically, understanding how custom tensor types or embedding containers implement arithmetic operations would benefit from cross-referencing with texts covering numerical computing patterns, but such connections cannot be established from the current retrieval. Learners should consult the primary text for this topic while recognizing that comprehensive treatment of Python's operator protocol\u2014particularly its interaction with inheritance hierarchies and the `NotImplemented` sentinel\u2014would require dedicated Python reference materials such as Ramalho's *Fluent Python* or Beazley's *Python Distilled*, which were not surfaced in this retrieval cycle.",
+    "parsed_data": {},
+    "model": "claude-opus-4-5-20251101",
+    "tokens_used": 0
+  }
+}

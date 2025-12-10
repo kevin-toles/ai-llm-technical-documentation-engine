@@ -1,0 +1,144 @@
+Generate an integrated scholarly annotation for {source_book_name}.
+
+CHAPTER {chapter_num}: {chapter_title}
+
+CONCEPTS YOU EXTRACTED:
+{metadata_response_validation_summary}
+
+YOUR ANALYSIS STRATEGY:
+{metadata_response_analysis_strategy}
+
+COMPANION CONTENT RETRIEVED (from {content_package_count} books):
+NOTE: Some entries are FULL CHAPTERS, others are page excerpts.
+{content_text}
+
+TAXONOMY-AWARE SYNTHESIS:
+
+The companion books are organized into a tiered taxonomy. Use this to structure your analysis:
+
+{taxonomy_text}
+
+TIER DEFINITIONS:
+
+🏛️ ARCHITECTURE SPINE (Priority 1) - Required
+   Foundational concepts that form the structural backbone of the domain.
+   These are high-level patterns, principles, and architectural decisions that guide everything else.
+   Think: "What are the core mental models needed to understand this topic?"
+   Examples: Design patterns, system architecture, core paradigms
+
+⚙️ IMPLEMENTATION (Priority 2) - Required  
+   Practical techniques and concrete implementations that build upon architectural concepts.
+   These are the "how-to" specifics: APIs, algorithms, data structures, and coding techniques
+   that developers use daily.
+   Examples: Language syntax, standard libraries, common algorithms
+
+✨ ENGINEERING PRACTICES (Priority 3) - Optional
+   Professional methodologies, workflows, and best practices for building quality software.
+   These are the soft skills and processes that separate hobbyists from professionals.
+   Examples: Testing strategies, code review, refactoring, team collaboration
+
+STRUCTURE YOUR ANNOTATION USING THE TAXONOMY:
+
+1. LEAD WITH ARCHITECTURE (Priority 1):
+   - Start with foundational mental models and design patterns
+   - Establish the "why" and structural principles before implementation details
+   - These references are REQUIRED - if no Architecture content exists, acknowledge the gap
+
+2. BRIDGE TO IMPLEMENTATION (Priority 2):
+   - Show how architectural principles manifest in concrete code and APIs
+   - Cite specific techniques, algorithms, or library usage
+   - These references are REQUIRED - implementation grounds the theory in practice
+
+3. ENRICH WITH ENGINEERING PRACTICES (Priority 3):
+   - Add professional context: testing, refactoring, code quality considerations
+   - These references are OPTIONAL - include only when genuinely relevant
+   - Don't force Engineering Practices references if they don't add substantive value
+
+4. ACKNOWLEDGE TIER GAPS:
+   - If a required tier (Architecture or Implementation) has no substantive content, say so explicitly
+   - Example: "While Fluent Python provides deep implementation coverage, no Architecture Spine 
+     book in the corpus addresses the underlying design pattern."
+
+ANALYSIS APPROACH:
+
+1. VALIDATE EACH EXCERPT: For each companion book page above, determine:
+   - Does it contain genuine technical/educational discussion of the matched concepts?
+   - Or is it metadata, forewords, prefaces, or keyword-match artifacts?
+
+2. FOR GENUINE TECHNICAL CONTENT:
+   - Identify specific concepts that appear in BOTH the primary text and companion excerpt
+   - Describe how the companion book treats these concepts differently (e.g., deeper implementation detail, alternative framing, architectural interpretation, formal description)
+   - Cite concrete elements FROM THE COMPANION EXCERPT ITSELF (terminology, definitions, behaviors, code patterns, rules)
+   - Explain the pedagogical reason a learner should consult this cross-reference (clarifies ambiguity, expands mechanics, formalizes definitions, offers advanced idioms)
+
+3. FOR NON-SUBSTANTIVE CONTENT:
+   - Acknowledge why the match occurred (token overlap or keyword similarity)
+   - State explicitly that the page does NOT provide substantive technical treatment
+   - Explain this is a limitation of keyword matching, not a conceptual relationship
+   - Direct the learner to rely on the primary text for this topic
+
+4. CITATION REQUIREMENTS (Chicago Manual of Style, 17th Edition):
+   - Use footnote-style citations embedded in your annotation
+   - Format: Author(s), *Book Title*, edition/chapter info, page numbers.
+   - For chapters: Include chapter number and title when available
+   - Example for full chapter: "As Percival and Gregory demonstrate in *Architecture Patterns with Python*, 
+     Chapter 3, pages 45-67, the repository pattern provides..."
+   - Example for single page: "Ramalho notes (*Fluent Python, 2nd Edition*, 145) that..."
+   - When synthesizing multiple sources, cite each appropriately
+   - All citation metadata has been provided above for each excerpt
+
+STRICT RULES:
+- BE SPECIFIC. Use actual phrasing or technical elements from the excerpts
+- DO NOT invent connections. Only describe relationships grounded in provided excerpts
+- DO NOT use generic filler: "complements," "broadens," "enhances," "deepens"
+- DO NOT summarize the books—analyze their relationship to the primary text
+- DO NOT exceed 10 sentences total (aim for 5-7)
+- OUTPUT ONLY the annotation text, no metadata or JSON
+
+EXAMPLES OF GOOD VS BAD ANNOTATIONS:
+
+EXAMPLE 1 - Multi-tier synthesis (GOOD):
+"The chapter's treatment of LLM agent orchestration maps directly to the Command Pattern 
+described in Architecture Patterns with Python (Percival & Gregory, Ch. 9, pp. 145-152), 
+where discrete operations are encapsulated for execution, undo, and logging. Fluent Python 
+(Ramalho, Ch. 10, pp. 312-318) demonstrates the Python implementation via first-class 
+functions and closures, while Building LLM Powered Applications (Ch. 7) shows how this 
+pattern enables tool-use verification loops. The source chapter's focus on 'grounding' 
+aligns with the retrieval-augmented generation patterns in AI Engineering (Ch. 12), though 
+it lacks the formal treatment of hallucination-hardening found in the Architecture texts."
+
+WHY IT'S GOOD:
+✓ Leads with Architecture (Command Pattern)
+✓ Bridges to Implementation (Python closures)
+✓ Cites specific pages and chapters
+✓ Identifies what's missing (hallucination-hardening)
+✓ Shows cross-tier connections
+
+EXAMPLE 2 - Honest gap acknowledgment (GOOD):
+"While the chapter introduces vector indexing for semantic search, the companion excerpts 
+provide limited architectural grounding. Fluent Python (p. 445) mentions hash-based 
+structures but does not address hierarchical indexes like HNSW or IVF. The Building 
+Microservices excerpt (p. 89) discusses distributed caching, a related but distinct 
+concern. For the specific topic of embedding index design, learners should consult 
+specialized ML infrastructure texts not present in this corpus."
+
+WHY IT'S GOOD:
+✓ Validates what excerpts actually contain
+✓ Explicitly states the gap
+✓ Doesn't invent connections
+✓ Directs learner appropriately
+
+EXAMPLE 3 - What to AVOID (BAD):
+"This chapter on agent safety complements the broader coverage in companion texts. 
+Architecture Patterns with Python enhances the reader's understanding by providing 
+additional context. Fluent Python deepens the treatment with its Pythonic approach. 
+Together, these sources broaden the learner's perspective on this important topic."
+
+WHY IT'S BAD:
+✗ Generic filler: "complements," "enhances," "deepens," "broadens"
+✗ No specific content from the excerpts
+✗ No page numbers or chapters
+✗ No actual analysis of relationships
+✗ Could describe any topic - zero specificity
+
+Generate the integrated scholarly annotation now.

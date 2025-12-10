@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "key": "chapter_29_25c81a3c",
+    "created_at": 1764563629.797825,
+    "ttl_seconds": 2592000,
+    "content_hash": "25c81a3c01b0be291dd73654414caad6f336cadc0064e0e145f7323dcc8b0908"
+  },
+  "data": {
+    "phase": "phase2",
+    "chapter_num": 29,
+    "prompt_hash": "25c81a3c01b0be291dd73654414caad6f336cadc0064e0e145f7323dcc8b0908",
+    "response_text": "The chapter's treatment of Python class coding mechanics\u2014including attribute resolution, method types, and namespace management\u2014represents foundational implementation knowledge that would typically connect to architectural patterns for domain modeling and service design. However, no companion books with chapter metadata are available in the current corpus for cross-referencing, preventing the identification of specific architectural treatments of how class hierarchies support patterns like Repository, Unit of Work, or domain entity design as found in Architecture Spine texts. Similarly, while Implementation-tier books such as *Fluent Python, 2nd Edition* would normally provide complementary coverage of descriptor protocols, metaclasses, and attribute access customization that extend the source chapter's foundational treatment, no excerpts are available to ground such connections. The source chapter's focus on `__init__`, `__class__`, and method binding would naturally intersect with framework-level discussions in FastAPI or Flask texts regarding how web frameworks leverage class mechanics for dependency injection and request handling, but these relationships cannot be validated without companion content. Learners seeking architectural context for applying these class mechanics to domain-driven design or microservice patterns should consult *Architecture Patterns with Python* (Percival & Gregory) and *Python Architecture Patterns* directly, while those requiring advanced implementation idioms around descriptors and metaclasses should reference *Fluent Python* (Ramalho), though specific chapter and page citations cannot be provided given current corpus limitations.",
+    "parsed_data": {},
+    "model": "claude-opus-4-5-20251101",
+    "tokens_used": 0
+  }
+}
