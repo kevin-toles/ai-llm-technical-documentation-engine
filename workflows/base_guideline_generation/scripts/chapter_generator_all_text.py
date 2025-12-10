@@ -535,6 +535,42 @@ TPM_MAX_TARGET = 0.65
 # -------------------------------
 
 
+def _extract_chapters_from_json(book_data: Dict[str, Any]) -> List[Tuple[int, str, int, int]]:
+    """
+    Extract chapter list from input JSON structure.
+    
+    Converts the JSON chapters array to the tuple format expected by the generator:
+    (chapter_num, title, start_page, end_page)
+    
+    Args:
+        book_data: Loaded JSON data with 'chapters' array
+        
+    Returns:
+        List of chapter tuples, or empty list if no chapters found
+        
+    Reference:
+        - WBS 2.2.1: Dynamic chapter extraction from input JSON
+    """
+    chapters = book_data.get("chapters", [])
+    if not chapters:
+        return []
+    
+    result = []
+    for ch in chapters:
+        chapter_num = ch.get("number", 0)
+        title = ch.get("title", f"Chapter {chapter_num}")
+        start_page = ch.get("start_page", 1)
+        end_page = ch.get("end_page", start_page)
+        
+        # Only include valid chapters
+        if chapter_num > 0 and title:
+            result.append((chapter_num, title, start_page, end_page))
+    
+    # Sort by chapter number
+    result.sort(key=lambda x: x[0])
+    return result
+
+
 def load_json_book(filename: str, custom_path: Optional[Path] = None) -> Dict[str, Any]:
     """
     Load JSON from either Engineering Practices or Architecture directory, or custom path.
@@ -2910,6 +2946,15 @@ def main(custom_input_path: Optional[Path] = None):
     primary = load_json_book(PRIMARY_BOOK, custom_path=custom_input_path)
     companions = _load_companion_books(ALL_BOOKS)
     
+    # Step 1a: Extract chapters from input JSON (dynamic, not hardcoded)
+    chapters_from_json = _extract_chapters_from_json(primary)
+    if not chapters_from_json:
+        print("WARNING: No chapters found in input JSON, falling back to hardcoded CHAPTERS")
+        chapters_to_process = CHAPTERS
+    else:
+        chapters_to_process = chapters_from_json
+        print(f"✓ Extracted {len(chapters_to_process)} chapters from input JSON")
+    
     # Step 1b: Load enriched metadata from Tab 4 (Option C Architecture)
     enriched_metadata: Optional[Dict[str, Any]] = None
     enriched_file = _get_enriched_metadata_filename(PRIMARY_BOOK)
@@ -2923,14 +2968,14 @@ def main(custom_input_path: Optional[Path] = None):
             print("  Note: Enriched metadata not found, using keyword-based cross-referencing")
 
     # Step 2: Build document header
-    total_chapters = len(CHAPTERS)
+    total_chapters = len(chapters_to_process)
     all_docs = _build_document_header(total_chapters)
 
     # Step 3: Process each chapter
     global_footnote_num = 1
     all_footnotes = []
 
-    for chapter_data in CHAPTERS:
+    for chapter_data in chapters_to_process:
         result = _process_single_chapter(
             chapter_data=chapter_data,
             primary=primary,
