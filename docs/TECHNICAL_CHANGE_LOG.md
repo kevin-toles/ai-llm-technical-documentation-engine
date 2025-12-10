@@ -20,6 +20,43 @@ This document tracks all implementation changes, their rationale, and git commit
 
 ## 2025-12-09
 
+### CL-004: WBS 1.1.2 - Configure Extraction Pipeline
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-09 |
+| **WBS Item** | 1.1.2 - Configure Extraction Pipeline |
+| **Change Type** | Infrastructure |
+| **Summary** | Created pdf_extraction.yaml with extraction pipeline configuration |
+| **Files Changed** | `config/pdf_extraction.yaml`, `scripts/validate_1.1.2_config.sh` |
+| **Rationale** | Extraction pipeline requires consistent configuration for chapter detection and chunking |
+| **Git Commit** | Pending |
+
+**Tasks Completed:**
+
+| Task | Description | Value |
+|------|-------------|-------|
+| 1.1.2.1 | Set input_pdf path | `/textbooks/PDF/Architecture-Patterns-with-Python.pdf` |
+| 1.1.2.2 | Set output_json path | `/outputs/extracted_chapters.json` |
+| 1.1.2.3 | Configure chapter_regex | `^\d+\.\s+[A-Z]|^Chapter\s+\d+` |
+| 1.1.2.4 | Set chunk_size | 1000 |
+| 1.1.2.4 | Set chunk_overlap | 200 |
+
+**Acceptance Tests (8/8 passed):**
+
+| # | Test | Status |
+|---|------|--------|
+| 1 | Config file exists | ✅ |
+| 2 | Has input_pdf field | ✅ |
+| 3 | Has output_json field | ✅ |
+| 4 | Valid YAML syntax | ✅ |
+| 5 | Has chunk_size (1000) | ✅ |
+| 6 | Has chunk_overlap (200) | ✅ |
+| 7 | Has chapter_regex | ✅ |
+| 8 | PDF path valid | ✅ |
+
+---
+
 ### CL-003: WBS 1.1.1 - Input Preparation (Test Document Selection)
 
 | Field | Value |
