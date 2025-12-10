@@ -468,120 +468,320 @@ def create_aggregate_package(
     return output_path
 
 
+def create_aggregate_from_enriched(
+    enriched_path: Path,
+    output_path: Path,
+    taxonomy_path: Optional[Path] = None,
+    companion_dir: Optional[Path] = None
+) -> Path:
+    """
+    Create aggregate package directly from enriched metadata (WBS 4.1.1).
+    
+    Simplified mode for Phase 4 LLM Enhancement workflow.
+    
+    Args:
+        enriched_path: Path to enriched metadata JSON (Phase 3 output)
+        output_path: Path to output aggregate package
+        taxonomy_path: Optional taxonomy JSON for additional context
+        companion_dir: Optional directory with companion book metadata
+        
+    Returns:
+        Path to created aggregate package
+        
+    Reference: END_TO_END_INTEGRATION_WBS.md WBS 4.1.1
+    """
+    print("\n📦 WBS 4.1.1: Create Aggregate Package")
+    print(f"  Enriched metadata: {enriched_path.name}")
+    
+    # 1. Load enriched metadata from Phase 3
+    print("\n📖 Loading enriched metadata from Phase 3...")
+    enriched_data = load_json(enriched_path)
+    
+    # Extract book info - handle both formats
+    if isinstance(enriched_data, list):
+        # List of chapters format
+        book_title = enriched_path.stem.replace("_enriched", "").replace("_", " ")
+        chapters = enriched_data
+    else:
+        # Dict format with chapters key
+        book_title = enriched_data.get("book_title", enriched_path.stem.replace("_enriched", ""))
+        chapters = enriched_data.get("chapters", [])
+    
+    print(f"  Book title: {book_title}")
+    print(f"  Chapters: {len(chapters)}")
+    
+    # 2. Load taxonomy if provided
+    taxonomy_data = None
+    if taxonomy_path and taxonomy_path.exists():
+        print(f"\n📋 Loading taxonomy: {taxonomy_path.name}...")
+        try:
+            taxonomy_data = load_json(taxonomy_path)
+            print(f"  ✓ Taxonomy loaded")
+        except Exception as e:
+            print(f"  ⚠️  Error loading taxonomy: {e}")
+    
+    # 3. Load companion books if directory provided
+    companion_books = []
+    if companion_dir and companion_dir.exists():
+        print(f"\n📚 Loading companion books from: {companion_dir}...")
+        for companion_file in companion_dir.glob("*_enriched.json"):
+            if companion_file.name == enriched_path.name:
+                continue  # Skip source book
+            try:
+                companion_data = load_json(companion_file)
+                companion_books.append({
+                    "name": companion_file.stem.replace("_enriched", ""),
+                    "metadata": companion_data if isinstance(companion_data, dict) else {"chapters": companion_data}
+                })
+                print(f"  ✓ Loaded: {companion_file.name}")
+            except Exception as e:
+                print(f"  ⚠️  Error loading {companion_file.name}: {e}")
+    
+    # 4. Build aggregate package with WBS 4.1.1 structure
+    print("\n📦 Building aggregate package...")
+    
+    # Build source_book structure matching acceptance criteria
+    source_book = {
+        "name": book_title,
+        "chapters": chapters,
+        "total_chapters": len(chapters),
+        "tier": "source"
+    }
+    
+    # Add enrichment metadata if present in original
+    if isinstance(enriched_data, dict) and "enrichment_metadata" in enriched_data:
+        source_book["enrichment_metadata"] = enriched_data["enrichment_metadata"]
+    
+    package = {
+        "package_info": {
+            "generated": datetime.now().isoformat(),
+            "source_file": enriched_path.name,
+            "package_version": "1.0",
+            "wbs_task": "4.1.1"
+        },
+        "source_book": source_book,
+        "companion_books": companion_books,
+        "statistics": {
+            "source_chapters": len(chapters),
+            "companion_books": len(companion_books),
+            "total_chapters": len(chapters) + sum(
+                len(cb.get("metadata", {}).get("chapters", [])) 
+                for cb in companion_books
+            )
+        }
+    }
+    
+    # Add taxonomy if loaded
+    if taxonomy_data:
+        package["taxonomy"] = taxonomy_data
+    
+    # 5. Validate package structure
+    print("\n✅ Validating package structure...")
+    required_keys = ["source_book", "package_info"]
+    for key in required_keys:
+        if key not in package:
+            raise ValueError(f"Missing required key: {key}")
+    
+    if "chapters" not in package["source_book"]:
+        raise ValueError("source_book.chapters is required")
+    
+    if len(package["source_book"]["chapters"]) < 1:
+        raise ValueError("source_book must have at least 1 chapter")
+    
+    # Check first chapter has enriched metadata
+    first_chapter = package["source_book"]["chapters"][0]
+    if "keywords" not in first_chapter:
+        print("  ⚠️  Warning: First chapter missing 'keywords' - may not be enriched metadata")
+    else:
+        print("  ✓ Enriched metadata present (keywords found)")
+    
+    print("  ✓ Package structure valid")
+    
+    # 6. Save package
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    save_json(output_path, package)
+    
+    file_size_kb = output_path.stat().st_size / 1024
+    print(f"\n✅ Aggregate package created: {output_path.name}")
+    print(f"  File size: {file_size_kb:.1f} KB")
+    print(f"  Location: {output_path}")
+    
+    return output_path
+
+
 def main():
     """
     Command-line interface for aggregate package creation.
     
-    Reference: CONSOLIDATED_IMPLEMENTATION_PLAN.md lines 1551-1565
+    Supports two modes:
+    1. Simple mode (WBS 4.1.1): --enriched + --output
+    2. Full mode (Tab 6): --taxonomy + --metadata-dir + --guideline-dir
+    
+    Reference: 
+    - END_TO_END_INTEGRATION_WBS.md WBS 4.1.1
+    - CONSOLIDATED_IMPLEMENTATION_PLAN.md lines 1551-1565
     """
     parser = argparse.ArgumentParser(
-        description="Tab 6: Create aggregate package for LLM enhancement",
+        description="Create aggregate package for LLM enhancement",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  # Create package with basic metadata
+  # Simple mode (WBS 4.1.1) - create from enriched metadata
+  python create_aggregate_package.py \\
+    --enriched workflows/metadata_enrichment/output/test_book_enriched.json \\
+    --output workflows/llm_enhancement/input/aggregate_package.json
+
+  # With companion books
+  python create_aggregate_package.py \\
+    --enriched workflows/metadata_enrichment/output/test_book_enriched.json \\
+    --output workflows/llm_enhancement/input/aggregate_package.json \\
+    --companion-dir workflows/metadata_enrichment/output
+
+  # Full mode (Tab 6) - with taxonomy
   python create_aggregate_package.py \\
     --taxonomy workflows/taxonomy_setup/output/architecture_patterns_taxonomy.json \\
     --metadata-dir workflows/metadata_extraction/output \\
-    --enriched-dir workflows/metadata_enrichment/output \\
     --guideline-dir workflows/base_guideline_generation/output \\
     --output-dir workflows/llm_enhancement/tmp
 
-  # Create package with enriched metadata (uses enriched for matching book only)
-  python create_aggregate_package.py \\
-    --taxonomy workflows/taxonomy_setup/output/architecture_patterns_taxonomy.json \\
-    --metadata-dir workflows/metadata_extraction/output \\
-    --enriched-dir workflows/metadata_enrichment/output \\
-    --guideline-dir workflows/base_guideline_generation/output \\
-    --enriched-metadata workflows/metadata_enrichment/output/Architecture_Patterns_enr_metadata_2024_01_15_14_30.json \\
-    --output-dir workflows/llm_enhancement/tmp
-
-Reference: CONSOLIDATED_IMPLEMENTATION_PLAN.md Tab 6
+Reference: END_TO_END_INTEGRATION_WBS.md WBS 4.1.1
         """
     )
     
+    # Simple mode arguments (WBS 4.1.1)
+    parser.add_argument(
+        "--enriched",
+        type=Path,
+        help="Path to enriched metadata JSON (Phase 3 output) - enables simple mode"
+    )
+    
+    parser.add_argument(
+        "--output",
+        type=Path,
+        help="Output path for aggregate package (used with --enriched)"
+    )
+    
+    parser.add_argument(
+        "--companion-dir",
+        type=Path,
+        help="Optional: Directory with companion book enriched metadata"
+    )
+    
+    # Full mode arguments (Tab 6)
     parser.add_argument(
         "--taxonomy",
         type=Path,
-        required=True,
-        help="Path to taxonomy JSON file (from Tab 3)"
+        help="Path to taxonomy JSON file (from Tab 3) - enables full mode"
     )
     
     parser.add_argument(
         "--metadata-dir",
         type=Path,
-        required=True,
         help="Directory containing basic metadata files (from Tab 2)"
     )
     
     parser.add_argument(
         "--enriched-dir",
         type=Path,
-        required=False,
-        help="Directory containing enriched metadata files (from Tab 4) - not used if --enriched-metadata is specified"
+        help="Directory containing enriched metadata files (from Tab 4)"
     )
     
     parser.add_argument(
         "--guideline-dir",
         type=Path,
-        required=True,
         help="Directory containing guideline JSON files (from Tab 5)"
     )
     
     parser.add_argument(
         "--enriched-metadata",
         type=Path,
-        required=False,
-        help="Optional: Specific enriched metadata file. Only used for the book that matches the filename."
+        help="Optional: Specific enriched metadata file for full mode"
     )
     
     parser.add_argument(
         "--output-dir",
         type=Path,
         default=Path("workflows/llm_enhancement/tmp"),
-        help="Directory for output package (default: workflows/llm_enhancement/tmp)"
+        help="Directory for output package in full mode (default: workflows/llm_enhancement/tmp)"
     )
     
     args = parser.parse_args()
     
-    # Validate input files
-    if not args.taxonomy.exists():
-        print(f"❌ Error: Taxonomy file not found: {args.taxonomy}", file=sys.stderr)
-        sys.exit(1)
-    
-    if not args.metadata_dir.exists():
-        print(f"❌ Error: Metadata directory not found: {args.metadata_dir}", file=sys.stderr)
-        sys.exit(1)
-    
-    if not args.guideline_dir.exists():
-        print(f"⚠️  Warning: Guideline directory not found: {args.guideline_dir}")
-        print("   Package will be created without guideline data")
-    
-    # Validate optional enriched metadata file
-    enriched_metadata_file = None
-    if args.enriched_metadata:
-        if not args.enriched_metadata.exists():
-            print(f"❌ Error: Enriched metadata file not found: {args.enriched_metadata}", file=sys.stderr)
+    # Determine mode and validate arguments
+    if args.enriched:
+        # Simple mode (WBS 4.1.1)
+        if not args.enriched.exists():
+            print(f"❌ Error: Enriched metadata file not found: {args.enriched}", file=sys.stderr)
             sys.exit(1)
-        enriched_metadata_file = args.enriched_metadata
+        
+        # Default output path if not specified
+        output_path = args.output
+        if output_path is None:
+            output_path = Path("workflows/llm_enhancement/input/aggregate_package.json")
+        
+        try:
+            result_path = create_aggregate_from_enriched(
+                enriched_path=args.enriched,
+                output_path=output_path,
+                taxonomy_path=args.taxonomy,
+                companion_dir=args.companion_dir
+            )
+            print(f"\n✅ Success! Package created at: {result_path}")
+            return 0
+            
+        except Exception as e:
+            print(f"\n❌ Error creating aggregate package: {e}", file=sys.stderr)
+            import traceback
+            traceback.print_exc()
+            return 1
     
-    try:
-        output_path = create_aggregate_package(
-            args.taxonomy,
-            args.metadata_dir,
-            args.guideline_dir,
-            args.output_dir,
-            enriched_metadata_file=enriched_metadata_file
-        )
+    elif args.taxonomy:
+        # Full mode (Tab 6)
+        if not args.taxonomy.exists():
+            print(f"❌ Error: Taxonomy file not found: {args.taxonomy}", file=sys.stderr)
+            sys.exit(1)
         
-        print(f"\n✅ Success! Package created at: {output_path}")
-        return 0
+        if not args.metadata_dir or not args.metadata_dir.exists():
+            print(f"❌ Error: Metadata directory required for full mode", file=sys.stderr)
+            sys.exit(1)
         
-    except Exception as e:
-        print(f"\n❌ Error creating aggregate package: {e}", file=sys.stderr)
-        import traceback
-        traceback.print_exc()
-        return 1
+        if not args.guideline_dir:
+            print(f"⚠️  Warning: Guideline directory not specified")
+            args.guideline_dir = Path("workflows/base_guideline_generation/output")
+        
+        if not args.guideline_dir.exists():
+            print(f"⚠️  Warning: Guideline directory not found: {args.guideline_dir}")
+            print("   Package will be created without guideline data")
+        
+        enriched_metadata_file = None
+        if args.enriched_metadata:
+            if not args.enriched_metadata.exists():
+                print(f"❌ Error: Enriched metadata file not found: {args.enriched_metadata}", file=sys.stderr)
+                sys.exit(1)
+            enriched_metadata_file = args.enriched_metadata
+        
+        try:
+            output_path = create_aggregate_package(
+                args.taxonomy,
+                args.metadata_dir,
+                args.guideline_dir,
+                args.output_dir,
+                enriched_metadata_file=enriched_metadata_file
+            )
+            
+            print(f"\n✅ Success! Package created at: {output_path}")
+            return 0
+            
+        except Exception as e:
+            print(f"\n❌ Error creating aggregate package: {e}", file=sys.stderr)
+            import traceback
+            traceback.print_exc()
+            return 1
+    
+    else:
+        print("❌ Error: Must specify either --enriched (simple mode) or --taxonomy (full mode)", file=sys.stderr)
+        parser.print_help()
+        sys.exit(1)
 
 
 if __name__ == "__main__":
