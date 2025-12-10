@@ -106,8 +106,10 @@ class SegmentationValidator:
         """Check chapters are sorted and start reasonably"""
         chapters_sorted = sorted(chapters, key=lambda ch: ch.start_page)
         
-        # First chapter should start within first 10 pages
-        if chapters_sorted[0].start_page < 1 or chapters_sorted[0].start_page > 10:
+        # First chapter should start within first 15% of book or page 50, whichever is larger
+        # This accommodates books with long introductions, prefaces, table of contents, etc.
+        max_first_chapter_page = max(50, int(chapters_sorted[-1].end_page * 0.15))
+        if chapters_sorted[0].start_page < 1 or chapters_sorted[0].start_page > max_first_chapter_page:
             return False
         
         return True
@@ -281,6 +283,11 @@ class RegexMatcher:
             (re.compile(r'^\s{0,10}Item\s+(\d{1,3})\s*[:.-]\s+([^\n]{1,200})$', re.MULTILINE), "item"),
             (re.compile(r'^(\d{1,3})\s+([A-Z][A-Z\s]{10,100})', re.MULTILINE), "numeric"),
         ]
+        # Strict pattern for title pages - requires "Chapter N." at the very start
+        self.title_page_pattern = re.compile(
+            r'^Chapter\s+(\d{1,3})\.\s+([A-Z][^\n]+)', 
+            re.MULTILINE
+        )
     
     def find_chapter_marker(self, text: str) -> Optional[Tuple[int, str, str]]:
         """
@@ -302,6 +309,32 @@ class RegexMatcher:
                 except (ValueError, IndexError):
                     continue
         
+        return None
+    
+    def is_chapter_title_page(self, text: str) -> Optional[Tuple[int, str]]:
+        """
+        Check if page starts with a chapter title (dedicated title page).
+        
+        Uses stricter matching - "Chapter N. Title" must be at the very
+        beginning of the page text (first 150 chars), indicating a dedicated
+        chapter title page rather than a reference to another chapter.
+        
+        Args:
+            text: Full page text
+            
+        Returns:
+            Tuple of (chapter_num, title) if this is a title page, None otherwise
+        """
+        # Check first 150 chars - chapter title should be very near start
+        first_chunk = text.strip()[:150]
+        match = self.title_page_pattern.match(first_chunk)
+        if match:
+            try:
+                chapter_num = int(match.group(1))
+                title = match.group(2).strip().rstrip('.')
+                return (chapter_num, title)
+            except (ValueError, IndexError):
+                pass
         return None
 
 

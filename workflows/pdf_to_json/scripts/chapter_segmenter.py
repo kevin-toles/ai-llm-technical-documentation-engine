@@ -148,51 +148,72 @@ class ChapterSegmenter:
         
         Refactored: CC 12 → <10 using service layer.
         
+        Enhanced: Two-phase detection:
+        1. First collect all dedicated chapter title pages (authoritative)
+        2. Then collect regex chapters that don't conflict with title pages
+        
+        This ensures title pages take precedence over chapter references.
+        
         Returns:
             List of chapters or None if detection failed
         """
-        candidates = []
-        seen_numbers = set()
+        title_page_candidates = []
+        regex_candidates = []
+        title_page_numbers = set()  # Chapter numbers found on title pages
         
+        # Phase 1: Collect all title page chapters (these are authoritative)
         for i, (page, text, page_num) in enumerate(zip(pages, page_texts, page_numbers)):
-            # Filter short pages
-            if PageFilter.is_too_short(text):
+            if PageFilter.is_too_short(text, min_length=100):
                 continue
             
-            # Get first 25 lines for marker detection
             first_text = '\n'.join(text.split('\n')[:25])
-            
-            # Skip TOC pages
             if PageFilter.is_toc_page(first_text):
                 continue
             
-            # Try regex patterns
+            title_page_match = self.regex_matcher.is_chapter_title_page(text)
+            if title_page_match:
+                chapter_num, title = title_page_match
+                if chapter_num not in title_page_numbers:
+                    title_page_numbers.add(chapter_num)
+                    title_page_candidates.append((page_num, chapter_num, title, "chapter_title"))
+        
+        # If we found title page chapters, use only those (they're the real chapters)
+        if title_page_candidates:
+            return ChapterBuilder.build_from_regex(title_page_candidates, page_numbers)
+        
+        # Phase 2: No title pages found - fall back to general regex detection
+        seen_numbers = set()
+        for i, (page, text, page_num) in enumerate(zip(pages, page_texts, page_numbers)):
+            if PageFilter.is_too_short(text, min_length=100):
+                continue
+            
+            first_text = '\n'.join(text.split('\n')[:25])
+            if PageFilter.is_toc_page(first_text):
+                continue
+            
             marker = self.regex_matcher.find_chapter_marker(first_text)
             if not marker:
                 continue
             
             chapter_num, title, pattern_type = marker
             
-            # Validate chapter has substantial content
+            # Require substantial content and YAKE validation for regex chapters
             if not PageFilter.has_substantial_content(text):
                 continue
             
-            # YAKE validation: real content, not TOC
             if not self.yake_validator.validate(text):
                 continue
             
-            # Skip duplicates (keep first valid occurrence)
             if chapter_num in seen_numbers:
                 continue
             
             seen_numbers.add(chapter_num)
-            candidates.append((page_num, chapter_num, title, pattern_type))
+            regex_candidates.append((page_num, chapter_num, title, pattern_type))
         
-        if not candidates:
+        if not regex_candidates:
             return None
         
-        # Build chapters from candidates
-        return ChapterBuilder.build_from_regex(candidates, page_numbers)
+        return ChapterBuilder.build_from_regex(regex_candidates, page_numbers)
     
     def _pass_b_topic_shift(self, page_texts: List[str], page_numbers: List[int]) -> Optional[List[Chapter]]:
         """
