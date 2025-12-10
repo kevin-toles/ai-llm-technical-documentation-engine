@@ -817,18 +817,193 @@ def enrich_metadata(
     print("  NO LLM calls made ✓")
 
 
+def enrich_metadata_local(
+    input_path: Path,
+    output_path: Path
+) -> None:
+    """
+    Local/within-book enrichment - computes TF-IDF similarity between chapters
+    in a single book without requiring cross-book taxonomy.
+    
+    Reference: WBS 3.1.2 - TF-IDF Similarity (Local)
+    Pattern: Statistical methods (no LLM) - scikit-learn
+    
+    Workflow:
+    1. Load book metadata (from WBS 3.1.1 output)
+    2. Build TF-IDF corpus from chapter content
+    3. Compute cosine similarity matrix (chapter × chapter)
+    4. For each chapter, identify top-5 similar chapters
+    5. Store similarity scores in enriched metadata JSON
+    
+    Args:
+        input_path: Path to book metadata JSON (WBS 3.1.1 output)
+        output_path: Path for enriched metadata JSON output
+        
+    Output Schema:
+        {
+            "book_title": str,
+            "total_chapters": int,
+            "enrichment_metadata": {
+                "generated": ISO timestamp,
+                "method": "tfidf_local",
+                "mode": "within_book"
+            },
+            "chapters": [
+                {
+                    ... (all original fields preserved),
+                    "tfidf_similar": [
+                        {
+                            "chapter_id": int,
+                            "title": str,
+                            "score": float (0.0-1.0)
+                        }
+                    ]
+                }
+            ]
+        }
+    """
+    print("\n📊 WBS 3.1.2: TF-IDF Similarity (Local Mode)")
+    print(f"Input: {input_path.name}")
+    
+    # 1. Load book metadata
+    if not input_path.exists():
+        raise FileNotFoundError(f"Input file not found: {input_path}")
+    
+    with open(input_path, encoding='utf-8') as f:
+        book_data = json.load(f)
+    
+    # Handle both formats: list of chapters or {chapters: [...]}
+    if isinstance(book_data, list):
+        chapters = book_data
+        book_title = input_path.stem.replace("_metadata", "")
+    else:
+        chapters = book_data.get("chapters", [])
+        book_title = book_data.get("book_title", input_path.stem.replace("_metadata", ""))
+    
+    print(f"\nBook: {book_title}")
+    print(f"Chapters: {len(chapters)}")
+    
+    # 2. Build TF-IDF corpus from chapter content
+    print("\nBuilding TF-IDF corpus...")
+    corpus = []
+    for chapter in chapters:
+        # Combine text features for TF-IDF
+        text_parts = [
+            chapter.get("title", ""),
+            chapter.get("summary", ""),
+            " ".join(chapter.get("keywords", [])),
+            " ".join(chapter.get("concepts", []))
+        ]
+        chapter_text = " ".join(text_parts)
+        corpus.append(chapter_text)
+    
+    print(f"  Corpus size: {len(corpus)} chapters")
+    
+    # 3. Compute TF-IDF matrix and cosine similarity
+    print("\nComputing TF-IDF vectors...")
+    
+    # Need at least min_df documents for TF-IDF
+    min_df = min(2, len(corpus))
+    
+    vectorizer = TfidfVectorizer(
+        stop_words='english',
+        max_features=1000,
+        ngram_range=(1, 2),  # Unigrams and bigrams
+        min_df=min_df,
+        max_df=0.9
+    )
+    
+    tfidf_matrix = vectorizer.fit_transform(corpus)
+    print(f"  TF-IDF matrix shape: {tfidf_matrix.shape}")
+    
+    # Compute pairwise cosine similarity
+    print("\nComputing cosine similarity matrix...")
+    similarity_matrix = cosine_similarity(tfidf_matrix)
+    print(f"  Similarity matrix shape: {similarity_matrix.shape}")
+    
+    # 4. For each chapter, identify top-5 similar chapters
+    print("\nIdentifying similar chapters...")
+    enriched_chapters = []
+    
+    for idx, chapter in enumerate(chapters):
+        chapter_num = chapter.get("chapter_number", idx + 1)
+        
+        # Get similarity scores for this chapter
+        scores = similarity_matrix[idx]
+        
+        # Build list of (other_idx, score) pairs, excluding self
+        similar_chapters = []
+        for other_idx, score in enumerate(scores):
+            if other_idx == idx:  # Skip self
+                continue
+            similar_chapters.append({
+                "chapter_id": chapters[other_idx].get("chapter_number", other_idx + 1),
+                "title": chapters[other_idx].get("title", f"Chapter {other_idx + 1}"),
+                "score": round(float(score), 4)
+            })
+        
+        # Sort by score descending and take top 5
+        similar_chapters.sort(key=lambda x: x["score"], reverse=True)
+        top_similar = similar_chapters[:5]
+        
+        # Build enriched chapter (preserve all original fields + add tfidf_similar)
+        enriched_chapter = {
+            **chapter,
+            "tfidf_similar": top_similar
+        }
+        enriched_chapters.append(enriched_chapter)
+        
+        # Progress output for first few chapters
+        if idx < 3:
+            top_scores = [f"{s['score']:.3f}" for s in top_similar[:3]]
+            print(f"  Chapter {chapter_num}: top scores = {top_scores}")
+    
+    # 5. Build enriched metadata output
+    enriched_metadata = {
+        "book_title": book_title,
+        "total_chapters": len(enriched_chapters),
+        "enrichment_metadata": {
+            "generated": datetime.now().isoformat(),
+            "method": "tfidf_local",
+            "mode": "within_book",
+            "libraries": {
+                "scikit-learn": "1.3.2"
+            }
+        },
+        "chapters": enriched_chapters
+    }
+    
+    # 6. Save enriched metadata
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_path, 'w', encoding='utf-8') as f:
+        json.dump(enriched_metadata, f, indent=2, ensure_ascii=False)
+    
+    # Report
+    size_kb = output_path.stat().st_size / 1024
+    print(f"\n✅ Enriched metadata saved: {output_path.name}")
+    print(f"  File size: {size_kb:.1f} KB")
+    print(f"  Chapters enriched: {len(enriched_chapters)}")
+    print(f"  Each chapter has top-5 similar chapters")
+    print("  NO LLM calls made ✓")
+
+
 def main():
     """
     Command-line interface for metadata enrichment.
     
-    Example:
+    Example (cross-book mode with taxonomy):
         python enrich_metadata_per_book.py \\
             --input workflows/metadata_extraction/output/architecture_patterns_metadata.json \\
             --taxonomy workflows/taxonomy_setup/output/architecture_patterns_taxonomy.json \\
             --output workflows/metadata_enrichment/output/architecture_patterns_metadata_enriched.json
+    
+    Example (local/within-book mode without taxonomy):
+        python enrich_metadata_per_book.py \\
+            --input workflows/metadata_extraction/output/test_book_metadata.json \\
+            --output workflows/metadata_enrichment/output/test_book_enriched.json
     """
     parser = argparse.ArgumentParser(
-        description="Enrich metadata with cross-book statistical analysis (Tab 4)"
+        description="Enrich metadata with statistical analysis (Tab 4)"
     )
     parser.add_argument(
         "--input",
@@ -839,8 +1014,9 @@ def main():
     parser.add_argument(
         "--taxonomy",
         type=Path,
-        required=True,
-        help="Taxonomy JSON from Tab 3 (e.g., architecture_patterns_taxonomy.json)"
+        required=False,
+        default=None,
+        help="Taxonomy JSON from Tab 3 (optional - omit for local/within-book mode)"
     )
     parser.add_argument(
         "--output",
@@ -856,13 +1032,18 @@ def main():
         print(f"❌ Error: Input file not found: {args.input}")
         sys.exit(1)
     
-    if not args.taxonomy.exists():
+    if args.taxonomy and not args.taxonomy.exists():
         print(f"❌ Error: Taxonomy file not found: {args.taxonomy}")
         sys.exit(1)
     
     # Run enrichment
     try:
-        enrich_metadata(args.input, args.taxonomy, args.output)
+        if args.taxonomy:
+            # Cross-book mode with taxonomy
+            enrich_metadata(args.input, args.taxonomy, args.output)
+        else:
+            # Local/within-book mode without taxonomy
+            enrich_metadata_local(args.input, args.output)
     except Exception as e:
         print(f"\n❌ Enrichment failed: {e}")
         import traceback
