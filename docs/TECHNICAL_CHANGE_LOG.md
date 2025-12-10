@@ -20,6 +20,52 @@ This document tracks all implementation changes, their rationale, and git commit
 
 ## 2025-12-09
 
+### CL-003: WBS 1.1.1 - Input Preparation (Test Document Selection)
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-09 |
+| **WBS Item** | 1.1.1 - Select Test Document |
+| **Change Type** | Infrastructure |
+| **Summary** | Created test_manifest.json with test PDF configuration |
+| **Files Changed** | `/textbooks/test_manifest.json`, `scripts/validate_1.1.1_input.sh` |
+| **Rationale** | Integration tests require a known test document with expected values |
+| **Git Commit** | Pending |
+
+**Tasks Completed:**
+
+| Task | Description | Status |
+|------|-------------|--------|
+| 1.1.1.1 | Identify test PDF (Architecture-Patterns-with-Python.pdf) | ✅ |
+| 1.1.1.2 | Verify PDF is text-extractable using pdftotext | ✅ |
+| 1.1.1.3 | Count expected chapters (13 chapters) | ✅ |
+| 1.1.1.4 | Create test manifest JSON with expected values | ✅ |
+
+**Test Document Details:**
+
+| Field | Value |
+|-------|-------|
+| PDF Path | `/textbooks/PDF/Architecture-Patterns-with-Python.pdf` |
+| Expected Chapters | 13 |
+| Expected Pages | 497 |
+| Authors | Bob Gregory, Harry Percival |
+| Topics | DDD, TDD, Event-Driven Architecture |
+
+**Acceptance Tests (8/8 passed):**
+
+| # | Test | Status |
+|---|------|--------|
+| 1 | PDFs in directory | ✅ |
+| 2 | Manifest exists | ✅ |
+| 3 | Valid JSON format | ✅ |
+| 4 | PDF path defined | ✅ |
+| 5 | Expected chapters defined | ✅ |
+| 6 | PDF file exists | ✅ |
+| 7 | Text extractable | ✅ |
+| 8 | Page count matches | ✅ |
+
+---
+
 ### CL-002: WBS 0.1.2 - Environment Configuration
 
 | Field | Value |
