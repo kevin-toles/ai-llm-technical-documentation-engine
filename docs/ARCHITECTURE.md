@@ -2,11 +2,95 @@
 
 ## Overview
 
-The LLM Document Enhancer is an **application** (not a microservice) that transforms raw technical documentation into cross-referenced guidelines. It consumes the LLM Gateway and Semantic Search microservices to perform its work.
+The LLM Document Enhancer is an **application** (not a microservice) that transforms raw technical documentation into cross-referenced guidelines. It consumes the LLM Gateway, AI Agents, Semantic Search, and Code-Orchestrator microservices to perform its work.
 
 ## Architecture Type
 
 **Application** - A batch processing application that runs on-demand or scheduled. It is a **consumer** of the microservices infrastructure, not a service itself.
+
+---
+
+## Kitchen Brigade Role: CUSTOMER
+
+In the Kitchen Brigade architecture, **llm-document-enhancer** is a **Customer** - it places orders and receives the final dish:
+
+```
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                          👤 CUSTOMER - ORDER PLACER                          │
+├──────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  WHAT IT DOES:                                                               │
+│  ─────────────                                                               │
+│  ✓ Places orders (calls services via HTTP)                                  │
+│  ✓ Receives results (enriched metadata, cross-references)                   │
+│  ✓ Writes output files ({book}_enriched.json)                               │
+│  ✓ Orchestrates the 6-step workflow pipeline                                │
+│                                                                              │
+│  WHAT IT CURRENTLY DOES (WRONG - TO BE REFACTORED):                         │
+│  ──────────────────────────────────────────────────                         │
+│  ✗ TF-IDF similarity (sklearn) - should call Code-Orchestrator-Service      │
+│  ✗ YAKE/Summa keyword extraction - should call Code-Orchestrator-Service    │
+│  ✗ Local similarity threshold (0.7 impossible) - needs semantic embeddings  │
+│                                                                              │
+│  TARGET STATE:                                                               │
+│  ─────────────                                                               │
+│  Instead of local TF-IDF, call Code-Orchestrator-Service:                   │
+│                                                                              │
+│  enrich_metadata_per_book.py                                                │
+│      │                                                                       │
+│      │ POST /api/v1/search                                                  │
+│      ▼                                                                       │
+│  Code-Orchestrator-Service (Sous Chef)                                      │
+│      │ Extracts semantic terms, validates, ranks                            │
+│      │ POST to Semantic Search                                              │
+│      │ Curates results (filters C++ false positives)                        │
+│      ▼                                                                       │
+│  Returns: curated related_chapters with semantic scores (0.3-0.5 threshold) │
+│                                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+```
+
+### Current vs Target Data Flow
+
+```
+CURRENT STATE (Broken - Zero Cross-Book References):
+─────────────────────────────────────────────────────
+enrich_metadata_per_book.py
+    ├─→ TfidfVectorizer (sklearn, local)
+    ├─→ cosine_similarity with threshold=0.7
+    ├─→ find_related_chapters() returns ZERO cross-book
+    └─→ Only within-book references (max TF-IDF ~0.50 cross-book)
+
+TARGET STATE (Semantic Cross-References):
+─────────────────────────────────────────
+enrich_metadata_per_book.py
+    │
+    │ --use-orchestrator flag
+    ▼
+Code-Orchestrator-Service (Port 8083)
+    │
+    ├─→ CodeT5+ extracts semantic terms from chapter text
+    ├─→ GraphCodeBERT validates terms (filters generic)
+    ├─→ CodeBERT ranks by embedding similarity
+    │
+    ▼
+Semantic Search Service (Port 8081)
+    │
+    ├─→ Queries Qdrant with validated terms
+    ├─→ Returns ALL matches
+    │
+    ▼
+Code-Orchestrator-Service (Curation)
+    │
+    ├─→ Filters domain mismatches (C++ chunks vs LLM chunks)
+    ├─→ Ranks by relevance to original query
+    ├─→ Returns curated cross-book references
+    │
+    ▼
+enrich_metadata_per_book.py
+    │
+    └─→ Writes {book}_enriched.json with REAL cross-references
+```
 
 ---
 

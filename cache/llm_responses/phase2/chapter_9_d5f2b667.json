@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "key": "chapter_9_d5f2b667",
+    "created_at": 1765351495.245733,
+    "ttl_seconds": 2592000,
+    "content_hash": "d5f2b667d666fc4d451bcd7fdfb9b5f2800525f496a22ae715a2ff2119d43e2e"
+  },
+  "data": {
+    "phase": "phase2",
+    "chapter_num": 9,
+    "prompt_hash": "d5f2b667d666fc4d451bcd7fdfb9b5f2800525f496a22ae715a2ff2119d43e2e",
+    "response_text": "I cannot generate a substantive cross-reference annotation for this chapter because no companion book excerpts were provided in the corpus. The analysis strategy correctly identifies the chapter's core concepts\u2014message bus implementation, event-driven architecture refactoring, handler registration patterns, and testing strategies using fake implementations\u2014but without companion texts, I cannot establish the required Architecture Spine or Implementation Layer connections.\n\nA complete annotation would require cross-references to architectural treatments of the Observer and Mediator patterns (showing how the message bus implements these foundational designs), implementation-level comparisons with event handling in frameworks like FastAPI or Flask, and potentially engineering practice discussions of testing isolation techniques. The chapter's progression from service layer to event-driven architecture, its use of Python decorators for handler registration, and its CQRS foundations all represent concepts that would benefit from multi-source synthesis, but the absence of companion content makes such analysis impossible.\n\nFor this chapter, learners must rely solely on the primary text's treatment of message bus patterns, event publishing mechanisms, and the refactoring steps demonstrated through the `FakeUnitOfWork` and `FakeMessageBus` testing patterns.",
+    "parsed_data": {},
+    "model": "claude-sonnet-4-5-20250929",
+    "tokens_used": 0
+  }
+}

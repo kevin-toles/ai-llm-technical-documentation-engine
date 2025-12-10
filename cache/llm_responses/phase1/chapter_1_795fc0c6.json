@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "key": "chapter_1_795fc0c6",
+    "created_at": 1765346638.946434,
+    "ttl_seconds": 2592000,
+    "content_hash": "795fc0c63d766e3296104b85a9ca119a5b5b42b2544f62e980ada459d52d26d1"
+  },
+  "data": {
+    "phase": "phase1",
+    "chapter_num": 1,
+    "prompt_hash": "795fc0c63d766e3296104b85a9ca119a5b5b42b2544f62e980ada459d52d26d1",
+    "response_text": "```json\n{\n  \"concepts_extracted\": [\n    \"domain modeling\",\n    \"value objects\",\n    \"entities\",\n    \"immutability\",\n    \"dataclasses\",\n    \"@dataclass decorator\",\n    \"@frozen parameter\",\n    \"equality (__eq__)\",\n    \"hashing (__hash__)\",\n    \"magic methods\",\n    \"domain exceptions\",\n    \"business logic\",\n    \"domain concepts\",\n    \"type hints\",\n    \"OrderLine\",\n    \"Batch\",\n    \"allocation logic\",\n    \"available_quantity\",\n    \"reference identity\",\n    \"unique identity over time\",\n    \"attribute-based equality\",\n    \"immutable types\",\n    \"domain-driven design\",\n    \"business rules\",\n    \"domain language\",\n    \"ubiquitous language\",\n    \"model behavior\",\n    \"domain primitives\",\n    \"comparison operators (__gt__)\",\n    \"None handling\",\n    \"Optional types\",\n    \"out of stock scenarios\",\n    \"business constraints\",\n    \"entity vs value object distinction\",\n    \"hashable objects\",\n    \"set operations\",\n    \"dict keys\",\n    \"read-only attributes\",\n    \"business value delivery\",\n    \"code closest to business\",\n    \"domain expertise capture\"\n  ],\n  \"themes_identified\": [\n    \"Distinguishing entities from value objects as fundamental domain modeling pattern\",\n    \"Using Python's dataclasses and magic methods to express domain concepts\",\n    \"Implementing immutability for value objects\",\n    \"Capturing business rules and constraints in code\",\n    \"Domain-driven design principles in Python\",\n    \"Type safety and hints for domain models\",\n    \"Exception handling as domain concept expression\",\n    \"Identity vs equality in domain objects\"\n  ],\n  \"content_requests\": [],\n  \"analysis_strategy\": \"Since no companion books are available in the corpus, I cannot generate cross-references. The chapter covers fundamental domain modeling concepts including:\\n\\n1. **Core DDD Patterns**: The distinction between entities (identity-based) and value objects (attribute-based equality), which are foundational Domain-Driven Design concepts\\n\\n2. **Python Implementation Techniques**: Heavy use of dataclasses, magic methods (__eq__, __hash__, __gt__, __init__), type hints, and immutability patterns\\n\\n3. **Business Logic Expression**: Capturing domain concepts through exceptions, modeling business rules (allocation, stock management), and maintaining ubiquitous language\\n\\nIf companion books were available, I would prioritize:\\n- **Architecture Spine books** (Tier 1): For DDD patterns, entity/value object theory, domain modeling principles\\n- **Implementation Layer books** (Tier 2): For Python-specific patterns, dataclass usage, type hints, API design\\n- **Engineering Practices books** (Tier 2): For magic methods, Python idioms, immutability patterns, testing approaches\\n\\nThe annotation would synthesize these perspectives to show how domain modeling bridges business concepts and technical implementation, with particular emphasis on Python's features that enable clean domain expression.\"\n}\n```",
+    "parsed_data": {},
+    "model": "claude-sonnet-4-5-20250929",
+    "tokens_used": 0
+  }
+}
