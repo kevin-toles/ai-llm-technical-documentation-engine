@@ -68,4 +68,8 @@ workflows/*/tmp/*
 
 # Exception: Keep taxonomy configuration files (these are curated, not generated)
 !workflows/taxonomy_setup/output/*.json
+
+# Exception: Keep book manifest files (these are curated metadata, not generated)
+!workflows/*/input/book_manifest.json
+
 .scannerwork/
