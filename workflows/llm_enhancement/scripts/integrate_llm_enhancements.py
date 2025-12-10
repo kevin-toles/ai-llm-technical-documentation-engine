@@ -100,6 +100,9 @@ _orchestrator = None
 # Global aggregate data (loaded from --aggregate)
 AGGREGATE_DATA = None
 
+# Global CLI args (set in __main__)
+CLI_ARGS = None
+
 REPO_ROOT = Path(__file__).parent.parent.parent.parent
 GUIDELINES_FILE = REPO_ROOT / "workflows" / "base_guideline_generation" / "output" / "chapter_summaries" / "PYTHON_GUIDELINES_Learning_Python_Ed6.md"
 JSON_DIR = REPO_ROOT / "workflows" / "pdf_to_json" / "output" / "textbooks_json"
@@ -854,6 +857,13 @@ def main():
     if exit_code != 0:
         return exit_code
     
+    # Limit chapters if --chapters flag provided
+    if CLI_ARGS and CLI_ARGS.chapters:
+        original_count = len(all_chapters)
+        all_chapters = all_chapters[:CLI_ARGS.chapters]
+        print(f"📊 Limiting to {len(all_chapters)} chapters (of {original_count}) per --chapters flag")
+        logger.info(f"Limiting to {len(all_chapters)} chapters (of {original_count}) per --chapters flag")
+    
     # Test first chapter
     exit_code = _test_first_chapter(orchestrator, chapters_content, all_chapters[0])
     if exit_code != 0:
@@ -885,13 +895,18 @@ def main():
     else:
         source_name = GUIDELINES_FILE.stem.replace("_guideline", "")
     
-    # Sanitize filename
-    safe_name = source_name.replace(" ", "_").replace("/", "_")
-    output_filename = f"{safe_name}_LLM_ENHANCED.md"
-    
-    output_dir = REPO_ROOT / "workflows" / "llm_enhancement" / "output"
-    output_dir.mkdir(parents=True, exist_ok=True)
-    enhanced_file = output_dir / output_filename
+    # Use --output path if provided, otherwise generate default
+    if CLI_ARGS and CLI_ARGS.output:
+        enhanced_file = Path(CLI_ARGS.output)
+        enhanced_file.parent.mkdir(parents=True, exist_ok=True)
+    else:
+        # Sanitize filename
+        safe_name = source_name.replace(" ", "_").replace("/", "_")
+        output_filename = f"{safe_name}_LLM_ENHANCED.md"
+        
+        output_dir = REPO_ROOT / "workflows" / "llm_enhancement" / "output"
+        output_dir.mkdir(parents=True, exist_ok=True)
+        enhanced_file = output_dir / output_filename
     
     try:
         # Save enhanced version
@@ -958,7 +973,30 @@ if __name__ == "__main__":
         type=str,
         help='Path to taxonomy JSON file (optional if using --aggregate)'
     )
+    parser.add_argument(
+        '--output',
+        type=str,
+        help='Path to output enhanced markdown file'
+    )
+    parser.add_argument(
+        '--chapters',
+        type=int,
+        help='Number of chapters to process (for testing, default: all)'
+    )
+    parser.add_argument(
+        '--verbose',
+        action='store_true',
+        help='Enable verbose output'
+    )
     args = parser.parse_args()
+    
+    # Set global CLI args for access in main()
+    CLI_ARGS = args
+    
+    # Verbose mode: set console logging to DEBUG
+    if args.verbose:
+        console_handler.setLevel(logging.DEBUG)
+        print("Verbose mode enabled")
     
     # V3: Load aggregate package if provided
     if args.aggregate:
