@@ -10,8 +10,11 @@ Reference Documents:
 
 Clients:
 - LLMGatewayClient: Async client for llm-gateway microservice
+- SemanticSearchClient: Async client for semantic-search-service (WBS 3.2.3)
 """
 
 from workflows.shared.clients.llm_gateway import LLMGatewayClient
+from workflows.shared.clients.search_client import SemanticSearchClient
 
-__all__ = ["LLMGatewayClient"]
+__all__ = ["LLMGatewayClient", "SemanticSearchClient"]
+
