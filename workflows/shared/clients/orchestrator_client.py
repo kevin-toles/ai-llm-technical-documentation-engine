@@ -53,7 +53,7 @@ SEMANTIC_SIMILARITY_THRESHOLD = 0.3
 class OrchestratorClientError(Exception):
     """
     Base exception for Orchestrator Client errors.
-    
+
     Reference: CODING_PATTERNS §7/§13 - Exception naming follows *Error pattern.
     """
 
@@ -101,7 +101,7 @@ class OrchestratorAPIError(OrchestratorClientError):
 class OrchestratorClientProtocol(Protocol):
     """
     Protocol for OrchestratorClient to enable duck typing and testing.
-    
+
     Reference: CODING_PATTERNS §4.4 - Protocol compliance for interface contracts.
     Pattern: Dependency Injection via Protocol (Architecture Patterns Ch. 13)
     """
@@ -144,7 +144,7 @@ class OrchestratorClient:
     Uses async context manager pattern for proper resource cleanup.
 
     Reference:
-    - GUIDELINES p. 2313: "using separate connection pools for different downstream services"
+    - GUIDELINES p. 2313: Connection pooling for downstream services
     - CODING_PATTERNS line 67: Anti-Pattern - new httpx.AsyncClient per request
 
     Attributes:
@@ -161,7 +161,7 @@ class OrchestratorClient:
             )
     """
 
-    # Retryable status codes - Reference: GUIDELINES p. 2309 (rate limiting operational reality)
+    # Retryable status codes - GUIDELINES p. 2309 (rate limiting)
     RETRYABLE_STATUS_CODES: frozenset[int] = frozenset({429, 502, 503, 504})
 
     def __init__(
@@ -176,8 +176,8 @@ class OrchestratorClient:
         Initialize Orchestrator client.
 
         Args:
-            base_url: Service base URL. Defaults to ORCHESTRATOR_URL env or localhost:8083
-            timeout: Request timeout in seconds. Defaults to ORCHESTRATOR_TIMEOUT env or 30.0
+            base_url: Service base URL. Defaults to ORCHESTRATOR_URL env.
+            timeout: Request timeout in seconds. Defaults to 30.0.
             max_connections: Max connections in pool. Default 10.
             max_retries: Maximum retry attempts for transient failures. Default 3.
             retry_delay: Base delay between retries in seconds. Default 1.0.
@@ -199,7 +199,7 @@ class OrchestratorClient:
         self.retry_delay: float = retry_delay
 
         # Lazy initialization - client created in __aenter__
-        # Pattern: Avoid creating httpx.AsyncClient per request (CODING_PATTERNS line 67)
+        # Pattern: Avoid creating httpx.AsyncClient per request
         self._client: Optional[httpx.AsyncClient] = None
 
     def _is_retryable_status(self, status_code: int) -> bool:
