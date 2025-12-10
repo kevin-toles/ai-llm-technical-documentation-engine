@@ -9,6 +9,7 @@ Reference Documents:
 - CODING_PATTERNS_ANALYSIS line 67: Anti-Pattern - new httpx.AsyncClient per request
 - Code-Orchestrator-Service/docs/ARCHITECTURE.md: API endpoints (/api/v1/search)
 - WBS_IMPLEMENTATION.md: Phase 5.1.2 - OrchestratorClient
+- WBS_IMPLEMENTATION.md: Phase 6.1/6.2 - Caching and Observability
 
 Anti-Patterns Avoided:
 - §12: Single httpx.AsyncClient reused via context manager (connection pooling)
@@ -25,11 +26,17 @@ Usage:
         )
 """
 
+from __future__ import annotations
+
 import asyncio
 import os
-from typing import Any, Optional, Protocol, runtime_checkable
+from typing import TYPE_CHECKING, Any, Optional, Protocol, runtime_checkable
 
 import httpx
+
+if TYPE_CHECKING:
+    from workflows.shared.clients.cache import ResultCache
+    from workflows.shared.clients.metrics import MetricsCollector, PerformanceLogger
 
 
 # =============================================================================
@@ -171,6 +178,9 @@ class OrchestratorClient:
         max_connections: int = 10,
         max_retries: int = 3,
         retry_delay: float = 1.0,
+        cache: Optional["ResultCache"] = None,
+        metrics: Optional["MetricsCollector"] = None,
+        perf_logger: Optional["PerformanceLogger"] = None,
     ) -> None:
         """
         Initialize Orchestrator client.
@@ -181,6 +191,9 @@ class OrchestratorClient:
             max_connections: Max connections in pool. Default 10.
             max_retries: Maximum retry attempts for transient failures. Default 3.
             retry_delay: Base delay between retries in seconds. Default 1.0.
+            cache: Optional ResultCache for caching search results (WBS 6.1.2).
+            metrics: Optional MetricsCollector for observability (WBS 6.2.1).
+            perf_logger: Optional PerformanceLogger for timing logs (WBS 6.2.3).
 
         Pattern: Environment variable configuration with sensible defaults
         Reference: CODING_PATTERNS §2.3 (exponential backoff pattern)
@@ -197,6 +210,11 @@ class OrchestratorClient:
         self.max_connections: int = max_connections
         self.max_retries: int = max_retries
         self.retry_delay: float = retry_delay
+
+        # WBS 6.1/6.2: Observability components
+        self.cache = cache
+        self.metrics = metrics
+        self.perf_logger = perf_logger
 
         # Lazy initialization - client created in __aenter__
         # Pattern: Avoid creating httpx.AsyncClient per request
@@ -261,7 +279,7 @@ class OrchestratorClient:
         return self._client
 
     # =========================================================================
-    # Search - WBS 5.1.2
+    # Search - WBS 5.1.2 + 6.1/6.2 (caching, metrics)
     # Pattern: POST /api/v1/search (Code-Orchestrator-Service API)
     # =========================================================================
 
@@ -271,6 +289,7 @@ class OrchestratorClient:
         domain: Optional[str] = None,
         top_k: int = 5,
         threshold: float = SEMANTIC_SIMILARITY_THRESHOLD,
+        skip_cache: bool = False,
     ) -> list[dict[str, Any]]:
         """
         Search for semantically similar content via Code-Orchestrator-Service.
@@ -282,6 +301,7 @@ class OrchestratorClient:
             domain: Optional domain filter (e.g., "ai-ml", "architecture")
             top_k: Maximum number of results to return (default: 5)
             threshold: Minimum similarity threshold (default: 0.3)
+            skip_cache: If True, bypass cache (WBS 6.1.2)
 
         Returns:
             List of search result dicts with keys:
@@ -296,9 +316,27 @@ class OrchestratorClient:
             OrchestratorConnectionError: On connection failure
             OrchestratorAPIError: On 4xx API errors (not 5xx - those degrade gracefully)
         """
+        import time
+        start_time = time.time()
+
+        # Track request count (WBS 6.2.1)
+        if self.metrics:
+            self.metrics.increment_counter("orchestrator_requests_total")
+
         # Validate query - Pattern: Input validation
         if not query or not query.strip():
             raise ValueError("query must not be empty")
+
+        # WBS 6.1.2: Check cache first
+        cache_key = f"search:{query}:{domain or ''}:{top_k}:{threshold}"
+        if self.cache and not skip_cache:
+            cached = self.cache.get(cache_key)
+            if cached is not None:
+                # Track cache hit (WBS 6.2.1)
+                if self.metrics:
+                    self.metrics.increment_counter("orchestrator_cache_hits_total")
+                self._record_timing(start_time, "search")
+                return cached
 
         # Build request payload
         payload: dict[str, Any] = {
@@ -323,12 +361,66 @@ class OrchestratorClient:
         except OrchestratorAPIError as e:
             # Graceful degradation: return empty on 5xx (service unavailable)
             if e.status_code and e.status_code >= 500:
+                self._record_timing(start_time, "search")
                 return []
             raise  # Re-raise 4xx errors
 
         # Extract results from response
         # Code-Orchestrator-Service returns {"results": [...], "total": int}
-        return response.get("results", [])
+        results = response.get("results", [])
+
+        # WBS 6.1.2: Store in cache
+        if self.cache:
+            self.cache.set(cache_key, results)
+
+        # WBS 6.2: Record timing
+        self._record_timing(start_time, "search")
+
+        return results
+
+    def _record_timing(self, start_time: float, operation: str) -> None:
+        """Record timing metrics and logs (WBS 6.2)."""
+        import time
+        duration_s = time.time() - start_time
+        duration_ms = duration_s * 1000
+
+        # Record histogram (WBS 6.2.1)
+        if self.metrics:
+            self.metrics.observe_histogram("orchestrator_latency_seconds", duration_s)
+
+        # Log timing (WBS 6.2.3)
+        if self.perf_logger:
+            self.perf_logger.log_timing(operation, duration_ms=duration_ms)
+
+    # =========================================================================
+    # Batch Search - WBS 6.1.3
+    # =========================================================================
+
+    async def batch_search(
+        self,
+        queries: list[dict[str, Any]],
+    ) -> list[list[dict[str, Any]]]:
+        """
+        Execute multiple searches in batch.
+
+        WBS 6.1.3: Batch inference support.
+
+        Args:
+            queries: List of query dicts with keys: query, domain, top_k, threshold
+
+        Returns:
+            List of result lists, one per input query
+        """
+        results = []
+        for q in queries:
+            r = await self.search(
+                query=q.get("query", ""),
+                domain=q.get("domain"),
+                top_k=q.get("top_k", 5),
+                threshold=q.get("threshold", SEMANTIC_SIMILARITY_THRESHOLD),
+            )
+            results.append(r)
+        return results
 
     async def _request_with_retry(
         self,
@@ -466,6 +558,7 @@ class FakeOrchestratorClient:
         domain: Optional[str] = None,
         top_k: int = 5,
         threshold: float = SEMANTIC_SIMILARITY_THRESHOLD,
+        skip_cache: bool = False,
     ) -> list[dict[str, Any]]:
         """
         Fake search implementation.
@@ -486,6 +579,26 @@ class FakeOrchestratorClient:
             raise self.error
 
         return self.results
+
+    async def batch_search(
+        self,
+        queries: list[dict[str, Any]],
+    ) -> list[list[dict[str, Any]]]:
+        """
+        Fake batch search implementation.
+
+        Returns configured results for each query.
+        """
+        results = []
+        for q in queries:
+            r = await self.search(
+                query=q.get("query", ""),
+                domain=q.get("domain"),
+                top_k=q.get("top_k", 5),
+                threshold=q.get("threshold", SEMANTIC_SIMILARITY_THRESHOLD),
+            )
+            results.append(r)
+        return results
 
     async def __aenter__(self) -> "FakeOrchestratorClient":
         """Enter async context (no-op for fake)."""
