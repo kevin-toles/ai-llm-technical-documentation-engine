@@ -14,13 +14,10 @@ WBS Items:
 - 6.2.3: Performance logs - log inference times per model
 """
 
-import asyncio
 import json
 import logging
-import re
 import time
-from typing import Any, Dict
-from unittest.mock import AsyncMock, MagicMock, patch
+from unittest.mock import AsyncMock, patch
 
 import pytest
 

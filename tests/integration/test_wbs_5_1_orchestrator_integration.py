@@ -19,7 +19,6 @@ Anti-Patterns Addressed:
 
 import pytest
 from pathlib import Path
-from typing import Protocol, Any
 from unittest.mock import AsyncMock, MagicMock, patch
 
 # Project root for path resolution
@@ -38,7 +37,6 @@ class TestCliOrchestratorFlag:
         
         Acceptance Criteria: CLI arg to enable orchestrator
         """
-        import argparse
         import sys
         
         # Import the enrichment script's argument parser
@@ -406,7 +404,7 @@ class TestFakeOrchestratorClient:
         try:
             from workflows.shared.clients.orchestrator_client import (
                 FakeOrchestratorClient,
-                OrchestratorClientProtocol
+                OrchestratorClientProtocol,  # noqa: F401 - imported for protocol documentation
             )
             client = FakeOrchestratorClient()
             assert hasattr(client, "search")

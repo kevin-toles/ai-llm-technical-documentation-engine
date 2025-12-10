@@ -15,10 +15,8 @@ WBS Items:
 - 6.1.4: GPU optimization - use torch.cuda for GPU inference
 """
 
-import asyncio
 import time
-from typing import Any, Dict, List
-from unittest.mock import AsyncMock, MagicMock, patch
+from unittest.mock import AsyncMock, patch
 
 import pytest
 
