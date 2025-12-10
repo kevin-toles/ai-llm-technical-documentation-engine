@@ -861,7 +861,7 @@ def enrich_metadata_local(
             "chapters": [
                 {
                     ... (all original fields preserved),
-                    "tfidf_similar": [
+                    "similar_chapters": [
                         {
                             "chapter_id": int,
                             "title": str,
@@ -956,10 +956,10 @@ def enrich_metadata_local(
         similar_chapters.sort(key=lambda x: x["score"], reverse=True)
         top_similar = similar_chapters[:5]
         
-        # Build enriched chapter (preserve all original fields + add tfidf_similar)
+        # Build enriched chapter (preserve all original fields + add similar_chapters)
         enriched_chapter = {
             **chapter,
-            "tfidf_similar": top_similar,
+            "similar_chapters": top_similar,
             "similarity_source": "tfidf"
         }
         enriched_chapters.append(enriched_chapter)
@@ -1131,7 +1131,7 @@ async def enrich_metadata_semantic(
             # Build enriched chapter
             enriched_chapter = {
                 **chapter,
-                "semantic_similar": similar_chapters,
+                "similar_chapters": similar_chapters,
                 "similarity_source": "semantic_search"
             }
             enriched_chapters.append(enriched_chapter)
