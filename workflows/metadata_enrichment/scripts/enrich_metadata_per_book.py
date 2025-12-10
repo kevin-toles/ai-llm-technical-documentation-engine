@@ -23,6 +23,7 @@ Test-Driven Development:
 """
 
 import argparse
+import asyncio
 import json
 import sys
 from pathlib import Path
@@ -95,6 +96,15 @@ except ImportError as e:
     SemanticSimilarityEngine = None  # type: ignore[misc, assignment]
     SimilarityConfig = None  # type: ignore[misc, assignment]
     SENTENCE_TRANSFORMERS_AVAILABLE = False
+
+# WBS 3.2.3: Semantic Search Client for remote API calls
+try:
+    from workflows.shared.clients.search_client import SemanticSearchClient
+    SEMANTIC_SEARCH_CLIENT_AVAILABLE = True
+except ImportError as e:
+    print(f"Warning: SemanticSearchClient not available: {e}")
+    SEMANTIC_SEARCH_CLIENT_AVAILABLE = False
+    SemanticSearchClient = None  # type: ignore[misc, assignment]
 
 
 def _extract_books_from_taxonomy(taxonomy: Dict[str, Any]) -> set:
@@ -949,7 +959,8 @@ def enrich_metadata_local(
         # Build enriched chapter (preserve all original fields + add tfidf_similar)
         enriched_chapter = {
             **chapter,
-            "tfidf_similar": top_similar
+            "tfidf_similar": top_similar,
+            "similarity_source": "tfidf"
         }
         enriched_chapters.append(enriched_chapter)
         
@@ -984,6 +995,175 @@ def enrich_metadata_local(
     print(f"  File size: {size_kb:.1f} KB")
     print(f"  Chapters enriched: {len(enriched_chapters)}")
     print(f"  Each chapter has top-5 similar chapters")
+    print("  NO LLM calls made ✓")
+
+
+async def enrich_metadata_semantic(
+    input_path: Path,
+    output_path: Path,
+    semantic_search_url: str = "http://localhost:8081"
+) -> None:
+    """
+    Semantic search enrichment - uses remote semantic search API for similarity.
+    
+    Reference: WBS 3.2.4 - Integrate Search Client into Metadata Enrichment
+    Pattern: Remote API integration via SemanticSearchClient
+    
+    Workflow:
+    1. Load book metadata (from WBS 3.1.1 output)
+    2. For each chapter, call semantic search API
+    3. Store similarity results with source="semantic_search"
+    4. Save enriched metadata JSON output
+    
+    Args:
+        input_path: Path to book metadata JSON (WBS 3.1.1 output)
+        output_path: Path for enriched metadata JSON output
+        semantic_search_url: URL of semantic search service
+        
+    Output Schema:
+        {
+            "book_title": str,
+            "total_chapters": int,
+            "enrichment_metadata": {
+                "generated": ISO timestamp,
+                "method": "semantic_search",
+                "mode": "remote_api",
+                "semantic_search_url": str
+            },
+            "chapters": [
+                {
+                    ... (all original fields preserved),
+                    "semantic_similar": [...],
+                    "similarity_source": "semantic_search"
+                }
+            ]
+        }
+    """
+    print("\n📊 WBS 3.2.4: Semantic Search Enrichment (Remote API)")
+    print(f"Input: {input_path.name}")
+    print(f"Semantic Search URL: {semantic_search_url}")
+    
+    # 1. Load book metadata
+    if not input_path.exists():
+        raise FileNotFoundError(f"Input file not found: {input_path}")
+    
+    with open(input_path, encoding='utf-8') as f:
+        book_data = json.load(f)
+    
+    # Handle both formats: list of chapters or {chapters: [...]}
+    if isinstance(book_data, list):
+        chapters = book_data
+        book_title = input_path.stem.replace("_metadata", "")
+    else:
+        chapters = book_data.get("chapters", [])
+        book_title = book_data.get("book_title", input_path.stem.replace("_metadata", ""))
+    
+    print(f"\nBook: {book_title}")
+    print(f"Chapters: {len(chapters)}")
+    
+    # 2. Connect to semantic search service and enrich each chapter
+    print("\nConnecting to semantic search service...")
+    enriched_chapters = []
+    
+    async with SemanticSearchClient(base_url=semantic_search_url) as client:
+        # Test connection with health check
+        try:
+            health = await client.health_check()
+            print(f"  Service status: {health.get('status', 'unknown')}")
+        except Exception as e:
+            print(f"  ⚠️  Health check failed: {e}")
+            print("  Continuing with enrichment...")
+        
+        print("\nEnriching chapters with semantic search...")
+        
+        for idx, chapter in enumerate(chapters):
+            chapter_num = chapter.get("chapter_number", idx + 1)
+            chapter_title = chapter.get("title", f"Chapter {chapter_num}")
+            
+            # Build query from chapter content
+            query_parts = [
+                chapter_title,
+                chapter.get("summary", "")[:500],  # Limit summary length
+                " ".join(chapter.get("keywords", [])[:10]),
+                " ".join(chapter.get("concepts", [])[:5])
+            ]
+            query_text = " ".join(filter(None, query_parts))
+            
+            try:
+                # Call semantic search API
+                results = await client.search(
+                    query=query_text,
+                    limit=6,  # Get 6 to filter out self-matches
+                    collection="chapters"
+                )
+                
+                # Filter to top 5, excluding self-matches
+                similar_chapters = []
+                for r in results:
+                    payload = r.get("payload", {})
+                    result_title = payload.get("title", "")
+                    
+                    # Skip if it's the same chapter (self-match)
+                    if result_title == chapter_title:
+                        continue
+                    
+                    similar_chapters.append({
+                        "chapter_id": payload.get("chapter_number", payload.get("chapter_id", 0)),
+                        "title": result_title,
+                        "score": round(r.get("score", 0.0), 4),
+                        "book": payload.get("book_title", payload.get("book_id", ""))
+                    })
+                    
+                    if len(similar_chapters) >= 5:
+                        break
+                
+                # Progress output
+                if idx < 3 or idx == len(chapters) - 1:
+                    top_scores = [f"{s['score']:.3f}" for s in similar_chapters[:3]]
+                    print(f"  Chapter {chapter_num}: {len(similar_chapters)} similar, scores={top_scores}")
+                elif idx == 3:
+                    print(f"  ... (processing {len(chapters) - 4} more chapters)")
+                
+            except Exception as e:
+                print(f"  ⚠️  Chapter {chapter_num} search failed: {e}")
+                similar_chapters = []
+            
+            # Build enriched chapter
+            enriched_chapter = {
+                **chapter,
+                "semantic_similar": similar_chapters,
+                "similarity_source": "semantic_search"
+            }
+            enriched_chapters.append(enriched_chapter)
+    
+    # 3. Build enriched metadata output
+    enriched_metadata = {
+        "book_title": book_title,
+        "total_chapters": len(enriched_chapters),
+        "enrichment_metadata": {
+            "generated": datetime.now().isoformat(),
+            "method": "semantic_search",
+            "mode": "remote_api",
+            "semantic_search_url": semantic_search_url,
+            "libraries": {
+                "httpx": "async HTTP client",
+                "semantic-search-service": "all-mpnet-base-v2"
+            }
+        },
+        "chapters": enriched_chapters
+    }
+    
+    # 4. Save enriched metadata
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_path, 'w', encoding='utf-8') as f:
+        json.dump(enriched_metadata, f, indent=2, ensure_ascii=False)
+    
+    # Report
+    size_kb = output_path.stat().st_size / 1024
+    print(f"\n✅ Enriched metadata saved: {output_path.name}")
+    print(f"  File size: {size_kb:.1f} KB")
+    print(f"  Chapters enriched: {len(enriched_chapters)}")
+    print(f"  Similarity source: semantic_search (remote API)")
     print("  NO LLM calls made ✓")
 
 
@@ -1024,6 +1204,17 @@ def main():
         required=True,
         help="Output enriched metadata JSON (e.g., architecture_patterns_metadata_enriched.json)"
     )
+    parser.add_argument(
+        "--use-semantic-search",
+        action="store_true",
+        help="Use remote semantic search API instead of local TF-IDF (WBS 3.2.4)"
+    )
+    parser.add_argument(
+        "--semantic-search-url",
+        type=str,
+        default="http://localhost:8081",
+        help="Semantic search service URL (default: http://localhost:8081)"
+    )
     
     args = parser.parse_args()
     
@@ -1038,7 +1229,18 @@ def main():
     
     # Run enrichment
     try:
-        if args.taxonomy:
+        if args.use_semantic_search:
+            # Semantic search mode (WBS 3.2.4)
+            if not SEMANTIC_SEARCH_CLIENT_AVAILABLE:
+                print("❌ Error: SemanticSearchClient not available")
+                print("  Install with: pip install httpx")
+                sys.exit(1)
+            asyncio.run(enrich_metadata_semantic(
+                args.input, 
+                args.output,
+                semantic_search_url=args.semantic_search_url
+            ))
+        elif args.taxonomy:
             # Cross-book mode with taxonomy
             enrich_metadata(args.input, args.taxonomy, args.output)
         else:
