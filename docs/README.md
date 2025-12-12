@@ -7,13 +7,14 @@ docs/
 ├── reference/          # Evergreen architecture & design docs
 ├── operations/         # Runbooks & troubleshooting guides
 ├── testing/            # Test plans & methodologies
-├── pending/            # Active work items (not yet complete)
 ├── archive/            # Completed implementation docs
 │   ├── *.md            # Completed implementation plans
 │   └── sprints/        # Sprint-specific analysis docs
 ├── TECHNICAL_CHANGE_LOG.md
 └── README.md           # This file
 ```
+
+> **Note**: Pending work items are centralized in `textbooks/pending/` by service.
 
 ---
 
@@ -60,11 +61,9 @@ Test plans and methodologies.
 
 ## 🚧 Pending Work
 
-Active implementation work not yet complete.
-
-| Document | Description | Remaining |
-|----------|-------------|-----------|
-| [CODERABBIT_REFACTORING_IMPLEMENTATION_PLAN.md](pending/CODERABBIT_REFACTORING_IMPLEMENTATION_PLAN.md) | CodeRabbit issue fixes | 2 high-complexity functions |
+> **Note**: All pending work documents have been centralized in the `textbooks/pending/` folder, organized by service.
+> 
+> See: [textbooks/pending/llm-document-enhancer/](../../textbooks/pending/llm-document-enhancer/)
 
 ---
 
