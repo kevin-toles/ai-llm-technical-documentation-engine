@@ -134,11 +134,13 @@ services:
       SEMANTIC_SEARCH_PORT: "8081"
       SBERT_MODEL: all-mpnet-base-v2
       QDRANT_URL: http://qdrant:6333
-      NEO4J_URL: bolt://neo4j:7687
+      NEO4J_URI: bolt://neo4j:7687
       NEO4J_USER: neo4j
       NEO4J_PASSWORD: ${NEO4J_PASSWORD:-devpassword}
+      EMBEDDING_MODEL: all-mpnet-base-v2
       ENABLE_GRAPH_SEARCH: "true"
       ENABLE_HYBRID_SEARCH: "true"
+      USE_REAL_CLIENTS: "true"
     volumes:
       - integration_model_cache:/models
     depends_on:
@@ -169,12 +171,13 @@ services:
     environment:
       AI_AGENTS_PORT: "8082"
       AI_AGENTS_LOG_LEVEL: INFO
-      LLM_GATEWAY_URL: http://llm-gateway:8080
-      SEMANTIC_SEARCH_URL: http://semantic-search:8081
+      AI_AGENTS_LLM_GATEWAY_URL: http://llm-gateway:8080
+      AI_AGENTS_SEMANTIC_SEARCH_URL: http://semantic-search:8081
+      # Neo4j client uses direct env vars (not AI_AGENTS_ prefix)
       NEO4J_URL: bolt://neo4j:7687
       NEO4J_USER: neo4j
       NEO4J_PASSWORD: ${NEO4J_PASSWORD:-devpassword}
-      ENABLE_CROSS_REFERENCE_AGENT: "true"
+      AI_AGENTS_ENABLE_CROSS_REFERENCE_AGENT: "true"
     depends_on:
       semantic-search:
         condition: service_healthy
