@@ -18,6 +18,379 @@ This document tracks all implementation changes, their rationale, and git commit
 
 ---
 
+## 2025-12-12
+
+### CL-027: Fix docker-compose.integration.yml Env Var Prefixes
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-12 |
+| **WBS Item** | Integration Infrastructure |
+| **Change Type** | Fix |
+| **Summary** | Fixed env var prefixes for ai-agents and semantic-search in docker-compose.integration.yml |
+| **Files Changed** | `docker-compose.integration.yml` |
+| **Rationale** | Per Comp_Static_Analysis #18 - consistent env var prefixes |
+| **Git Commit** | `03c303f5` |
+
+---
+
+### CL-026: Refactor - Remove Unused Imports per F401
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-12 |
+| **WBS Item** | Code Quality |
+| **Change Type** | Refactor |
+| **Summary** | Removed unused imports per F401 linting rule |
+| **Files Changed** | Various test files |
+| **Rationale** | Maintain clean imports per CODING_PATTERNS_ANALYSIS.md |
+| **Git Commit** | `7becf179` |
+
+---
+
+### CL-025: Documentation Reorganization
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-12 |
+| **WBS Item** | Documentation Consolidation |
+| **Change Type** | Documentation |
+| **Summary** | Reorganized docs folder: reference/, operations/, pending/, archive/sprints/ structure |
+| **Files Changed** | Multiple docs/ files reorganized |
+| **Rationale** | Improve documentation discoverability and separate active from archived content |
+| **Git Commit** | `ce30631c` |
+
+**New Structure:**
+
+| Folder | Purpose |
+|--------|---------|
+| `docs/reference/` | Stable reference documentation |
+| `docs/operations/` | Operational guides and runbooks |
+| `docs/pending/` | Work in progress (moved to textbooks/pending) |
+| `docs/archive/sprints/` | Completed sprint documentation |
+
+---
+
+### CL-024: Move Pending Docs to Centralized Location
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-12 |
+| **WBS Item** | Documentation Consolidation |
+| **Change Type** | Documentation |
+| **Summary** | Moved pending docs to textbooks/pending for centralized work tracking |
+| **Files Changed** | Various docs moved to `/textbooks/pending/llm-document-enhancer/` |
+| **Rationale** | All pending work docs centralized in textbooks/pending/{service}/ |
+| **Git Commit** | `b2929d5f` |
+
+---
+
+## 2025-12-11
+
+### CL-023: WBS 6.7 - Phase 6 Performance & Observability Complete
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-11 |
+| **WBS Item** | WBS 6.7 - Phase 6 Complete |
+| **Change Type** | Feature |
+| **Summary** | Completed Phase 6 Performance & Observability - all acceptance criteria met |
+| **Files Changed** | Performance monitoring, logging, metrics |
+| **Rationale** | WBS Phase 6 requires production-ready observability |
+| **Git Commit** | `7043b514` |
+
+---
+
+### CL-022: IT-001 to IT-007 Integration Test Matrix
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-11 |
+| **WBS Item** | Integration Testing |
+| **Change Type** | Testing |
+| **Summary** | Added integration test matrix covering IT-001 through IT-007 |
+| **Files Changed** | `tests/integration/` |
+| **Rationale** | Comprehensive integration coverage per END_TO_END_INTEGRATION_WBS.md |
+| **Git Commit** | `846ac88c` |
+
+**Test Matrix:**
+
+| ID | Test | Status |
+|----|------|--------|
+| IT-001 | Service connectivity | ✅ |
+| IT-002 | Health endpoints | ✅ |
+| IT-003 | Cross-service calls | ✅ |
+| IT-004 | Database connections | ✅ |
+| IT-005 | Search pipeline | ✅ |
+| IT-006 | LLM integration | ✅ |
+| IT-007 | Full pipeline E2E | ✅ |
+
+---
+
+## 2025-12-10
+
+### CL-021: WBS 5 - Phase 5 GREEN Complete - OrchestratorClient Integration
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-10 |
+| **WBS Item** | WBS 5 - OrchestratorClient |
+| **Change Type** | Feature |
+| **Summary** | Phase 5 GREEN complete - OrchestratorClient integration with ai-agents |
+| **Files Changed** | `src/clients/orchestrator_client.py`, tests |
+| **Rationale** | Enable document enhancement to call ai-agents for cross-referencing |
+| **Git Commit** | `9df0aa33` |
+
+**Integration Points:**
+
+| Client | Target | Purpose |
+|--------|--------|---------|
+| OrchestratorClient | ai-agents:8082 | Cross-reference generation |
+| GatewayClient | llm-gateway:8080 | LLM completions |
+| SemanticSearchClient | semantic-search:8081 | Search queries |
+
+---
+
+### CL-020: WBS 5 Linting Cleanup
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-10 |
+| **WBS Item** | WBS 5 - Code Quality |
+| **Change Type** | Refactor |
+| **Summary** | Clean up linting issues from Phase 5 implementation |
+| **Files Changed** | Various source files |
+| **Rationale** | Maintain code quality per CODING_PATTERNS_ANALYSIS.md |
+| **Git Commit** | `e4e628bd` |
+
+---
+
+### CL-019: WBS 4.3.1 - Token Usage Validation
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-10 |
+| **WBS Item** | WBS 4.3.1 - Token Usage |
+| **Change Type** | Feature |
+| **Summary** | Added token usage validation script for LLM calls |
+| **Files Changed** | `scripts/validate_token_usage.py` |
+| **Rationale** | Monitor and validate token consumption for cost control |
+| **Git Commit** | `a0652917` |
+
+---
+
+### CL-018: WBS 4.2.2 - Enhancement Quality Validation
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-10 |
+| **WBS Item** | WBS 4.2.2 - Quality Validation |
+| **Change Type** | Feature |
+| **Summary** | Added enhancement quality validation script |
+| **Files Changed** | `scripts/validate_enhancement_quality.py` |
+| **Rationale** | Verify LLM enhancement output meets quality criteria |
+| **Git Commit** | `25e17a7e` |
+
+---
+
+### CL-017: WBS 4.2.1 - CLI Flags for Two-Phase Orchestrator
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-10 |
+| **WBS Item** | WBS 4.2.1 - CLI Enhancement |
+| **Change Type** | Feature |
+| **Summary** | Added CLI flags and validation for two-phase orchestrator |
+| **Files Changed** | `scripts/create_aggregate_package.py` |
+| **Rationale** | Enable orchestrator mode selection via CLI |
+| **Git Commit** | `56bfca02` |
+
+---
+
+### CL-016: WBS 4.1.2 - LLM Gateway Connection Validation
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-10 |
+| **WBS Item** | WBS 4.1.2 - Gateway Validation |
+| **Change Type** | Feature |
+| **Summary** | Added LLM Gateway connection validation script |
+| **Files Changed** | `scripts/validate_gateway_connection.py` |
+| **Rationale** | Verify llm-gateway connectivity before enhancement |
+| **Git Commit** | `95446a81` |
+
+---
+
+### CL-015: WBS 4.1.1 - Simplified --enriched Mode
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-10 |
+| **WBS Item** | WBS 4.1.1 - Enriched Mode |
+| **Change Type** | Feature |
+| **Summary** | Added simplified --enriched mode to create_aggregate_package.py |
+| **Files Changed** | `scripts/create_aggregate_package.py` |
+| **Rationale** | Streamline aggregate package creation with enriched metadata |
+| **Git Commit** | `61aec90d` |
+
+---
+
+### CL-014: Gate 3 - Standardize Field Name to similar_chapters
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-10 |
+| **WBS Item** | Gate 3 - Field Standardization |
+| **Change Type** | Refactor |
+| **Summary** | Standardized field name to `similar_chapters` across codebase |
+| **Files Changed** | Multiple source and test files |
+| **Rationale** | Consistent naming convention per API contract |
+| **Git Commit** | `ee23b75d` |
+
+---
+
+### CL-013: WBS 3.2.4 - Search Client Integration into Metadata Enrichment
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-10 |
+| **WBS Item** | WBS 3.2.4 - Search Integration |
+| **Change Type** | Feature |
+| **Summary** | Integrated search client into metadata enrichment pipeline |
+| **Files Changed** | `src/metadata/enrichment.py` |
+| **Rationale** | Enable metadata enrichment to find related chapters via semantic search |
+| **Git Commit** | `ea35928d` |
+
+---
+
+### CL-012: WBS 3.2.3 - Create Semantic Search Client
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-10 |
+| **WBS Item** | WBS 3.2.3 - Search Client |
+| **Change Type** | Feature |
+| **Summary** | Created SemanticSearchClient for llm-document-enhancer |
+| **Files Changed** | `src/clients/semantic_search_client.py` |
+| **Rationale** | Client abstraction for semantic-search-service API calls |
+| **Git Commit** | `4ca4688b` |
+
+**Client Methods:**
+
+| Method | Endpoint | Purpose |
+|--------|----------|---------|
+| `search()` | POST /v1/search | Vector similarity search |
+| `embed()` | POST /v1/embed | Generate embeddings |
+| `health()` | GET /health | Health check |
+
+---
+
+### CL-011: WBS 3.2.2 - Neo4j Seeding Validation
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-10 |
+| **WBS Item** | WBS 3.2.2 - Neo4j Validation |
+| **Change Type** | Feature |
+| **Summary** | Added Neo4j seeding validation script |
+| **Files Changed** | `scripts/validate_neo4j_seeding.py` |
+| **Rationale** | Verify Neo4j taxonomy seeding before integration tests |
+| **Git Commit** | `4d268c18` |
+
+---
+
+### CL-010: WBS 3.2.1 - Qdrant Seeding Validation
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-10 |
+| **WBS Item** | WBS 3.2.1 - Qdrant Validation |
+| **Change Type** | Feature |
+| **Summary** | Added Qdrant seeding validation script |
+| **Files Changed** | `scripts/validate_qdrant_seeding.py` |
+| **Rationale** | Verify Qdrant vector seeding before integration tests |
+| **Git Commit** | `4ca4688b` |
+
+---
+
+### CL-009: WBS 3.1.2 - TF-IDF Similarity (Local Mode)
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-10 |
+| **WBS Item** | WBS 3.1.2 - Local TF-IDF |
+| **Change Type** | Feature |
+| **Summary** | Ran TF-IDF similarity in local mode for chapter matching |
+| **Files Changed** | `src/metadata/similarity.py` |
+| **Rationale** | Fallback similarity when vector DB unavailable |
+| **Git Commit** | `e5aee3cf` |
+
+---
+
+### CL-008: WBS 3.1.1 - Validation Update for Acceptance Criteria
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-10 |
+| **WBS Item** | WBS 3.1.1 - Acceptance Update |
+| **Change Type** | Feature |
+| **Summary** | Updated validation to match WBS 3.1.1 acceptance criteria |
+| **Files Changed** | `scripts/validate_3.1.1_yake.sh` |
+| **Rationale** | Ensure YAKE extraction meets specified criteria |
+| **Git Commit** | `6f0a3624` |
+
+---
+
+### CL-007: WBS 3.1.1 - YAKE Keyword Extraction
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-10 |
+| **WBS Item** | WBS 3.1.1 - YAKE |
+| **Change Type** | Feature |
+| **Summary** | Ran YAKE keyword extraction on test document |
+| **Files Changed** | `src/metadata/yake_extractor.py`, outputs |
+| **Rationale** | Extract keywords for metadata enrichment |
+| **Git Commit** | `491ba614` |
+
+**Extraction Results:**
+
+| Metric | Value |
+|--------|-------|
+| Keywords extracted | 50+ per chapter |
+| Top keywords | DDD, repository, aggregate, unit of work |
+| Processing time | < 5s per chapter |
+
+---
+
+### CL-006: WBS 2.2.1 - Guideline Generator with Dynamic Chapter Extraction
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-10 |
+| **WBS Item** | WBS 2.2.1 - Guideline Generator |
+| **Change Type** | Feature |
+| **Summary** | Ran guideline generator with dynamic chapter extraction |
+| **Files Changed** | `src/guideline/generator.py`, outputs |
+| **Rationale** | Generate base guidelines from extracted chapters |
+| **Git Commit** | `0736104c` |
+
+---
+
+### CL-005: WBS 2.1.1 - Setup Input Data for Guideline Generator
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-09 |
+| **WBS Item** | WBS 2.1.1 - Input Setup |
+| **Change Type** | Infrastructure |
+| **Summary** | Setup input data structure for guideline generator |
+| **Files Changed** | Input data files |
+| **Rationale** | Prepare chapter data for guideline generation |
+| **Git Commit** | `29ef37e8` |
+
+---
+
 ## 2025-12-09
 
 ### CL-004: WBS 1.1.2 - Configure Extraction Pipeline
@@ -54,6 +427,56 @@ This document tracks all implementation changes, their rationale, and git commit
 | 6 | Has chunk_overlap (200) | ✅ |
 | 7 | Has chapter_regex | ✅ |
 | 8 | PDF path valid | ✅ |
+
+---
+
+### CL-004b: WBS 1.2.1 - PDF Parser Chapter Detection Fix
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-09 |
+| **WBS Item** | WBS 1.2.1 - PDF Parser |
+| **Change Type** | Fix |
+| **Summary** | Fixed chapter detection for title pages in PDF parser |
+| **Files Changed** | `src/pdf/parser.py` |
+| **Rationale** | Chapter detection was including title pages as chapters |
+| **Git Commit** | `aaeef793` |
+
+**Issue:**
+- Title pages matching chapter regex pattern
+- False positives in chapter count
+
+**Fix:**
+- Added title page detection heuristics
+- Improved chapter boundary validation
+
+---
+
+### CL-004a: WBS 1.1.2 - PDF Extraction Pipeline Configuration
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-09 |
+| **WBS Item** | WBS 1.1.2 - Pipeline Config |
+| **Change Type** | Feature |
+| **Summary** | Added PDF extraction pipeline configuration |
+| **Files Changed** | `config/pdf_extraction.yaml` |
+| **Rationale** | Centralize extraction settings |
+| **Git Commit** | `8c5bd77a` |
+
+---
+
+### CL-003b: WBS 1.1.1 - Input Preparation Validation Script
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-09 |
+| **WBS Item** | WBS 1.1.1 - Input Validation |
+| **Change Type** | Feature |
+| **Summary** | Added input preparation validation script |
+| **Files Changed** | `scripts/validate_1.1.1_input.sh` |
+| **Rationale** | Automated validation of input preparation |
+| **Git Commit** | `6588f059` |
 
 ---
 
