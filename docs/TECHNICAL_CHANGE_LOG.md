@@ -18,6 +18,59 @@ This document tracks all implementation changes, their rationale, and git commit
 
 ---
 
+## 2025-12-13
+
+### CL-028: WBS 3.5.1 - Chapter Segmentation Processing (TDD Complete)
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-13 |
+| **WBS Item** | 3.5.1 (Chapter Segmentation) |
+| **Change Type** | Feature |
+| **Summary** | Implemented TDD cycle for chapter segmentation of 12 books with empty chapters |
+| **Files Changed** | `tests/unit/workflows/pdf_to_json/test_chapter_segmenter_processes_book.py`, `scripts/process_books_chapter_segmentation.py`, `test_fixtures/books/*.json` (12 files) |
+| **Rationale** | Process books from ai-platform-data through ChapterSegmenter to populate empty chapters |
+| **Git Commit** | Pending |
+
+**TDD Cycle:**
+- **RED Phase**: Created `test_chapter_segmenter_processes_book.py` with tests for:
+  - `TestChapterSegmenterProcessesBook`: Validates chapters have required fields
+  - `TestBatchBookProcessing`: Parametrized tests for all 12 books
+  - `TestChapterSegmentationPipeline`: Integration tests
+
+- **GREEN Phase**: 
+  - Created `process_books_chapter_segmentation.py` script
+  - Processed all 12 books through ChapterSegmenter
+  - Generated test fixtures in `test_fixtures/books/`
+
+- **REFACTOR Phase**:
+  - Parametrized tests across all 12 books
+  - **58 tests passing** (37 existing + 21 new)
+
+**Processing Results:**
+| Book | Chapters | Detection Method |
+|------|----------|------------------|
+| Architecture Patterns with Python | 13 | regex_chapter_title |
+| Building Microservices | 12 | regex_chapter_title |
+| Building Python Microservices with FastAPI | 46 | topic_boundary |
+| Fluent Python 2nd | 50 | synthetic |
+| Microservice APIs Using Python Flask FastAPI | 43 | topic_boundary |
+| Microservice Architecture | 18 | topic_boundary |
+| Microservices Up and Running | 32 | topic_boundary |
+| Python Architecture Patterns | 16 | regex_chapter |
+| Python Data Analysis 3rd | 13 | regex_chapter |
+| Python Distilled | 39 | topic_boundary |
+| Python Essential Reference 4th | 26 | regex_chapter |
+| Python Microservices Development | 38 | topic_boundary |
+| **Total** | **346** | - |
+
+**Document Cross-References:**
+- GUIDELINES_AI_Engineering: Batch processing patterns
+- CODING_PATTERNS_ANALYSIS: Anti-pattern audit (type hints, CC < 10)
+- AI_CODING_PLATFORM_ARCHITECTURE: Workflow separation
+
+---
+
 ## 2025-12-12
 
 ### CL-027: Fix docker-compose.integration.yml Env Var Prefixes
