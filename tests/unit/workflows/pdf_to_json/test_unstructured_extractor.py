@@ -312,10 +312,15 @@ class TestUnstructuredExtractorErrorHandling:
                 assert "Invalid PDF" in str(exc_info.value)
     
     def test_empty_pdf_returns_empty_list(self, sample_pdf_path):
-        """Verify empty PDF returns empty element list without error."""
+        """Verify empty PDF returns empty element list without error.
+        
+        When Unstructured returns 0 elements and fallback is disabled,
+        we should get an empty list back instead of triggering PyMuPDF.
+        """
+        config = ExtractionConfig(fallback_to_pymupdf=False)  # Disable fallback
         with patch(f'{MODULE_PATH}.UNSTRUCTURED_AVAILABLE', True):
             with patch(f'{MODULE_PATH}.partition_pdf', return_value=[]):
-                extractor = UnstructuredExtractor()
+                extractor = UnstructuredExtractor(config=config)
                 elements = extractor.extract_from_pdf(sample_pdf_path)
         
         assert elements == []
@@ -349,6 +354,37 @@ class TestUnstructuredExtractorWithPyMuPDFFallback:
         
         assert len(elements) >= 1
         assert any("Fallback" in e.text for e in elements)
+    
+    def test_fallback_on_zero_elements(self, sample_pdf_path):
+        """Verify fallback to PyMuPDF when Unstructured returns 0 elements.
+        
+        TDD RED Phase: This tests the scenario where Unstructured successfully
+        parses a PDF but returns no elements (e.g., scanned/image PDF).
+        The fallback should be triggered to try PyMuPDF with OCR support.
+        
+        Reference: CODING_PATTERNS_ANALYSIS - proper test coverage for edge cases
+        """
+        config = ExtractionConfig(fallback_to_pymupdf=True)
+        
+        with patch(f'{MODULE_PATH}.UNSTRUCTURED_AVAILABLE', True):
+            with patch(f'{MODULE_PATH}.partition_pdf', return_value=[]):  # Empty result
+                with patch(f'{MODULE_PATH}.PYMUPDF_AVAILABLE', True):
+                    with patch(f'{MODULE_PATH}.fitz') as mock_fitz:
+                        # Mock PyMuPDF fallback
+                        mock_doc = Mock()
+                        mock_doc.__len__ = Mock(return_value=1)
+                        mock_page = Mock()
+                        mock_page.get_text.return_value = "OCR fallback content"
+                        mock_doc.__getitem__ = Mock(return_value=mock_page)
+                        mock_doc.close = Mock()
+                        mock_fitz.open.return_value = mock_doc
+                        
+                        extractor = UnstructuredExtractor(config=config)
+                        elements = extractor.extract_from_pdf(sample_pdf_path)
+        
+        # Fallback should produce elements from PyMuPDF
+        assert len(elements) >= 1
+        assert any("OCR fallback" in e.text for e in elements)
     
     def test_no_fallback_when_disabled(self, sample_pdf_path):
         """Verify no fallback when disabled in config."""
