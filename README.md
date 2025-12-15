@@ -100,6 +100,50 @@ min_pages = settings.chapter_segmentation.min_pages
 
 See `examples/config_usage.py` for more examples.
 
+### SBERT Embedding Configuration
+
+The semantic similarity engine uses a three-tier fallback system for computing text embeddings:
+
+| Mode | Description | Use Case |
+|------|-------------|----------|
+| `api` | Use Code-Orchestrator SBERT API | **Production (default)** - Centralized model hosting |
+| `local` | Use local sentence-transformers | Offline/development - Requires `requirements-local.txt` |
+| `tfidf` | Use TF-IDF vectorization | Lightweight fallback - No ML dependencies |
+
+#### Configuration via Environment Variables
+
+```bash
+# .env file
+SBERT_FALLBACK_MODE=api              # Options: api, local, tfidf
+SBERT_API_URL=http://localhost:8083  # Code-Orchestrator URL
+SBERT_API_TIMEOUT=30.0               # API timeout in seconds
+```
+
+#### Installing Local SBERT (Optional)
+
+For offline scenarios or development without Code-Orchestrator:
+
+```bash
+# Install local SBERT dependencies (~800MB)
+pip install -r requirements-local.txt
+
+# Set fallback mode to local
+export SBERT_FALLBACK_MODE=local
+```
+
+#### Fallback Behavior
+
+The engine automatically falls back through the tiers:
+
+1. **API Mode** → Calls Code-Orchestrator `/api/v1/embeddings`
+2. **Local SBERT** → Uses `sentence-transformers` if installed
+3. **TF-IDF** → Statistical fallback (always available)
+
+```python
+# Example: Force TF-IDF mode for testing
+SBERT_FALLBACK_MODE=tfidf python -m workflows.metadata_enrichment.scripts.compute_similar_chapters
+```
+
 ### Running Workflows
 
 Each workflow stage can be run independently or as part of the full pipeline:

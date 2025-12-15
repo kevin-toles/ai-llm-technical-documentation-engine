@@ -20,6 +20,43 @@ This document tracks all implementation changes, their rationale, and git commit
 
 ## 2025-12-15
 
+### CL-036: Dependency Cleanup and Final Validation (WBS M4.3-M4.4)
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-15 |
+| **WBS Item** | SBERT_EXTRACTION_MIGRATION_WBS.md - M4.3 Dependency Cleanup, M4.4 Final Validation |
+| **Change Type** | Refactor |
+| **Summary** | Moved sentence-transformers to optional deps, updated Docker config, documented fallback modes |
+| **Files Changed** | `requirements-local.txt` (NEW), `Dockerfile`, `README.md` |
+| **Rationale** | Reduce Docker image size, centralize SBERT in Code-Orchestrator |
+| **Git Commit** | Pending |
+
+**M4.3 Dependency Cleanup:**
+
+| Task | Status | Details |
+|------|--------|---------|
+| M4.3.1 | ✅ | Created `requirements-local.txt` with sentence-transformers |
+| M4.3.2 | ✅ | Updated Dockerfile with `SBERT_FALLBACK_MODE=api` default |
+| M4.3.3 | ✅ | Verified local fallback code preserved (SENTENCE_TRANSFORMERS_AVAILABLE) |
+| M4.3.4 | ✅ | Added SBERT Embedding Configuration section to README |
+
+**M4.4 Final Validation:**
+
+| Test Suite | Tests | Status |
+|------------|-------|--------|
+| llm-document-enhancer semantic similarity | 54 | ✅ PASS |
+| Code-Orchestrator SBERT | 45 | ✅ PASS |
+
+**Docker Environment Variables Added:**
+
+| Variable | Default | Purpose |
+|----------|---------|---------|
+| `SBERT_FALLBACK_MODE` | `api` | Primary embedding method |
+| `SBERT_API_URL` | `http://code-orchestrator:8083` | Code-Orchestrator service URL |
+
+---
+
 ### CL-034: Functional Parity Verification Tests (WBS M4.1)
 
 | Field | Value |

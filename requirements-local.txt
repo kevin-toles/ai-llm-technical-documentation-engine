@@ -1,0 +1,22 @@
+# ==============================================================================
+# Local SBERT Dependencies - requirements-local.txt
+# ==============================================================================
+# 
+# These dependencies are OPTIONAL and only needed for local SBERT mode.
+# By default, llm-document-enhancer uses the Code-Orchestrator API for embeddings.
+#
+# Install these only if you need offline embedding computation:
+#   pip install -r requirements-local.txt
+#
+# See README.md section "SBERT Fallback Modes" for configuration details.
+# ==============================================================================
+
+# Sentence Transformers for local SBERT embeddings
+# Model: all-MiniLM-L6-v2 (384 dimensions)
+# Size: ~90MB download, ~400MB memory
+sentence-transformers>=2.2.0
+
+# PyTorch (required by sentence-transformers)
+# Note: This is a large dependency (~800MB)
+# If you only need API mode, skip this file
+torch>=2.0.0
