@@ -3,14 +3,27 @@ Semantic Similarity Engine using Sentence Transformers.
 
 This module provides semantic similarity computation for chapter content,
 enabling intelligent cross-referencing and related content discovery.
-It gracefully falls back to TF-IDF when Sentence Transformers is unavailable.
 
 Architecture: Service Layer Pattern (Architecture Patterns Ch. 4)
 Integration: Tab 4 (enrichment) -> computes similarities -> Tab 5 consumes
+
+WBS M3.2: Three-tier fallback strategy:
+    1. API (Code-Orchestrator SBERT API) - primary path
+    2. Local SBERT (sentence-transformers) - first fallback
+    3. TF-IDF - final fallback for offline scenarios
+
+Reference Documents:
+- SBERT_EXTRACTION_MIGRATION_WBS.md: M3.2 SemanticSimilarityEngine Refactor
+- CODING_PATTERNS_ANALYSIS: #7 Exception naming, #12 Connection pooling
 """
 
-from dataclasses import dataclass
-from typing import Any, Optional
+from __future__ import annotations
+
+import logging
+import os
+import warnings
+from dataclasses import dataclass, field
+from typing import TYPE_CHECKING, Any, Optional
 
 import numpy as np
 from numpy.typing import NDArray
@@ -28,10 +41,26 @@ except ImportError:
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
+# Type checking imports for SBERTClient
+if TYPE_CHECKING:
+    from workflows.shared.clients.sbert_client import SBERTClientProtocol
+
+# =============================================================================
+# Module Constants - SonarQube S1192
+# =============================================================================
+
+_DEFAULT_SBERT_API_URL = "http://localhost:8083"
+_DEFAULT_SBERT_API_TIMEOUT = 30.0
+
+# Logger for fallback warnings
+_logger = logging.getLogger(__name__)
+
 
 @dataclass
 class SimilarityConfig:
     """Configuration for the SemanticSimilarityEngine.
+
+    WBS M3.2: Extended for three-tier fallback (API → Local SBERT → TF-IDF).
 
     Attributes:
         model_name: Sentence Transformer model name (default: all-MiniLM-L6-v2)
@@ -39,6 +68,11 @@ class SimilarityConfig:
         top_k: Maximum number of similar chapters to return
         use_cache: Whether to cache embeddings for reuse
         fallback_to_tfidf: Whether to use TF-IDF when Sentence Transformers unavailable
+        use_api: Whether to use Code-Orchestrator SBERT API (M3.2.1)
+        sbert_api_url: Code-Orchestrator SBERT API URL (M3.3)
+        sbert_api_timeout: API request timeout in seconds (M3.3)
+        fallback_to_local: Fallback to local SBERT when API unavailable (M3.2.3)
+        fallback_mode: Primary computation mode (api, local, tfidf) (M3.2.6)
     """
 
     model_name: str = "all-MiniLM-L6-v2"
@@ -46,6 +80,22 @@ class SimilarityConfig:
     top_k: int = 5
     use_cache: bool = True
     fallback_to_tfidf: bool = True
+    # M3.2 API Client Configuration
+    use_api: bool = field(
+        default_factory=lambda: os.getenv("SBERT_FALLBACK_MODE", "local") == "api"
+    )
+    sbert_api_url: str = field(
+        default_factory=lambda: os.getenv("SBERT_API_URL", _DEFAULT_SBERT_API_URL)
+    )
+    sbert_api_timeout: float = field(
+        default_factory=lambda: float(
+            os.getenv("SBERT_API_TIMEOUT", str(_DEFAULT_SBERT_API_TIMEOUT))
+        )
+    )
+    fallback_to_local: bool = True
+    fallback_mode: str = field(
+        default_factory=lambda: os.getenv("SBERT_FALLBACK_MODE", "local")
+    )
 
 
 @dataclass
@@ -70,6 +120,11 @@ class SimilarityResult:
 class SemanticSimilarityEngine:
     """Engine for computing semantic similarity between chapter contents.
 
+    WBS M3.2: Three-tier fallback strategy:
+        1. API (Code-Orchestrator SBERT API) - primary path when use_api=True
+        2. Local SBERT (sentence-transformers) - fallback when API unavailable
+        3. TF-IDF - final fallback for offline scenarios
+
     Uses Sentence Transformers for high-quality semantic embeddings,
     with graceful fallback to TF-IDF when the library is unavailable.
 
@@ -79,18 +134,27 @@ class SemanticSimilarityEngine:
         >>> embeddings = engine.compute_embeddings(corpus)
         >>> index = [{"book": "b.json", "chapter": 1, "title": "Ch1"}, ...]
         >>> similar = engine.find_similar(0, embeddings, index, top_k=2)
+
+    Example with API client (M3.2):
+        >>> from workflows.shared.clients.sbert_client import SBERTClient
+        >>> config = SimilarityConfig(use_api=True)
+        >>> async with SBERTClient() as client:
+        ...     engine = SemanticSimilarityEngine(config=config, sbert_client=client)
+        ...     embeddings = await engine.compute_embeddings_async(corpus)
     """
 
     def __init__(
         self,
         model_name: str = "all-MiniLM-L6-v2",
         config: Optional[SimilarityConfig] = None,
+        sbert_client: Optional["SBERTClientProtocol"] = None,
     ) -> None:
         """Initialize the SemanticSimilarityEngine.
 
         Args:
             model_name: Name of the Sentence Transformer model to use.
             config: Configuration options. Uses defaults if not provided.
+            sbert_client: Optional SBERTClient for API mode (M3.2.1).
         """
         self.model_name = model_name
         self.config = config or SimilarityConfig(model_name=model_name)
@@ -99,27 +163,70 @@ class SemanticSimilarityEngine:
         self._embedding_cache: dict[str, NDArray[np.float64]] = {}
         self._using_fallback: bool = False
 
-        # Initialize the appropriate model
+        # M3.2: API Client and fallback tracking
+        self._sbert_client = sbert_client
+        self._use_api: bool = self.config.use_api
+        self._fallback_mode: str = self.config.fallback_mode
+        self._last_method: str = ""  # Track which method was used
+        self._logger = _logger
+
+        # Initialize the appropriate model based on fallback_mode
         self._initialize_model()
 
     def _initialize_model(self) -> None:
-        """Initialize the embedding model (Sentence Transformers or TF-IDF fallback)."""
-        if SENTENCE_TRANSFORMERS_AVAILABLE:
-            try:
-                self._model = SentenceTransformer(self.model_name)
-                self._using_fallback = False
-            except Exception:
-                # Model loading failed, use fallback
-                if self.config.fallback_to_tfidf:
-                    self._setup_tfidf_fallback()
-                else:
-                    raise
-        elif self.config.fallback_to_tfidf:
+        """Initialize embedding model based on fallback_mode.
+
+        WBS M3.2: Three-tier fallback initialization:
+            - mode="api": No local model needed (API handles it)
+            - mode="local": Initialize SentenceTransformer
+            - mode="tfidf": Initialize TF-IDF vectorizer
+
+        Falls back through the chain if initialization fails.
+        """
+        mode = self._fallback_mode
+
+        # Mode: API - Skip local model initialization (API will handle it)
+        if mode == "api" and self._use_api:
+            self._logger.info("Using API mode - deferring to Code-Orchestrator SBERT API")
+            # Still set up TF-IDF as emergency fallback
+            if self.config.fallback_to_tfidf:
+                self._setup_tfidf_fallback()
+            return
+
+        # Mode: Local or fallback from API
+        if mode in ("local", "api"):
+            if SENTENCE_TRANSFORMERS_AVAILABLE:
+                try:
+                    # M3.2.7: Deprecation warning for local SBERT
+                    if mode == "local":
+                        warnings.warn(
+                            "Local SBERT is deprecated. Consider using API mode "
+                            "(SBERT_FALLBACK_MODE=api) for better resource utilization.",
+                            DeprecationWarning,
+                            stacklevel=2,
+                        )
+                    self._model = SentenceTransformer(self.model_name)
+                    self._using_fallback = False
+                    return
+                except Exception as e:
+                    self._logger.warning(f"Local SBERT init failed: {e}")
+                    if not self.config.fallback_to_tfidf:
+                        raise
+
+            # Local SBERT not available, fall through to TF-IDF
+            if not self.config.fallback_to_tfidf:
+                raise ImportError(
+                    "sentence-transformers is not installed and fallback is disabled. "
+                    "Install with: pip install sentence-transformers"
+                )
+
+        # Mode: TF-IDF (or fallback from local)
+        if self.config.fallback_to_tfidf:
             self._setup_tfidf_fallback()
         else:
             raise ImportError(
-                "sentence-transformers is not installed and fallback is disabled. "
-                "Install with: pip install sentence-transformers"
+                "No embedding method available. Enable fallback_to_tfidf or install "
+                "sentence-transformers."
             )
 
     def _setup_tfidf_fallback(self) -> None:
@@ -138,10 +245,139 @@ class SemanticSimilarityEngine:
         """Check if the engine is using TF-IDF fallback instead of Sentence Transformers."""
         return self._using_fallback
 
+    # =========================================================================
+    # Async API Methods - WBS M3.2
+    # Pattern: Three-tier fallback (API → Local SBERT → TF-IDF)
+    # =========================================================================
+
+    async def compute_embeddings_async(
+        self, corpus: list[str]
+    ) -> NDArray[np.float64]:
+        """Compute embeddings asynchronously with three-tier fallback.
+
+        WBS M3.2: Three-tier fallback strategy:
+            1. API (Code-Orchestrator SBERT API) - if use_api=True
+            2. Local SBERT - if API fails and fallback_to_local=True
+            3. TF-IDF - if both fail and fallback_to_tfidf=True
+
+        Args:
+            corpus: List of chapter text strings.
+
+        Returns:
+            2D numpy array of shape (n_chapters, embedding_dim) with embeddings.
+            Returns empty array if corpus is empty.
+
+        Raises:
+            RuntimeError: If all fallback methods fail.
+        """
+        if not corpus:
+            return np.array([], dtype=np.float64)
+
+        # Check cache if enabled
+        if self.config.use_cache:
+            cache_key = self._compute_cache_key(corpus)
+            if cache_key in self._embedding_cache:
+                return self._embedding_cache[cache_key]
+
+        embeddings: Optional[NDArray[np.float64]] = None
+
+        # Tier 1: Try API if enabled
+        if self._use_api and self._sbert_client is not None:
+            embeddings = await self._compute_api_embeddings(corpus)
+
+        # Tier 2: Fallback to local SBERT
+        if embeddings is None and self.config.fallback_to_local:
+            embeddings = self._try_local_sbert(corpus)
+
+        # Tier 3: Fallback to TF-IDF
+        if embeddings is None and self.config.fallback_to_tfidf:
+            embeddings = self._compute_tfidf_embeddings(corpus)
+            self._last_method = "tfidf"
+
+        if embeddings is None:
+            raise RuntimeError("All embedding methods failed")
+
+        # Cache if enabled
+        if self.config.use_cache:
+            cache_key = self._compute_cache_key(corpus)
+            self._embedding_cache[cache_key] = embeddings
+
+        return embeddings
+
+    async def _compute_api_embeddings(
+        self, corpus: list[str]
+    ) -> Optional[NDArray[np.float64]]:
+        """Compute embeddings via Code-Orchestrator SBERT API.
+
+        Args:
+            corpus: List of texts to embed.
+
+        Returns:
+            Embedding array or None if API call fails.
+        """
+        # Import here to avoid circular dependency
+        from workflows.shared.clients.sbert_client import (
+            SBERTClientError,
+            SBERTConnectionError,
+            SBERTTimeoutError,
+        )
+
+        try:
+            if self._sbert_client is None:
+                return None
+
+            embeddings_list = await self._sbert_client.get_embeddings(corpus)
+            self._last_method = "api"
+            return np.array(embeddings_list, dtype=np.float64)
+
+        except (SBERTConnectionError, SBERTTimeoutError) as e:
+            self._logger.warning(
+                f"SBERT API unavailable ({type(e).__name__}): {e}. "
+                f"Falling back to local SBERT."
+            )
+            return None
+        except SBERTClientError as e:
+            self._logger.warning(f"SBERT API error: {e}. Falling back to local SBERT.")
+            return None
+
+    def _try_local_sbert(self, corpus: list[str]) -> Optional[NDArray[np.float64]]:
+        """Try computing embeddings with local SBERT.
+
+        Args:
+            corpus: List of texts to embed.
+
+        Returns:
+            Embedding array or None if local SBERT unavailable.
+        """
+        if not SENTENCE_TRANSFORMERS_AVAILABLE:
+            self._logger.warning(
+                "Local SBERT unavailable (sentence-transformers not installed). "
+                "Falling back to TF-IDF."
+            )
+            return None
+
+        if self._model is None:
+            # Try to initialize model
+            try:
+                self._model = SentenceTransformer(self.model_name)
+            except Exception as e:
+                self._logger.warning(f"Failed to initialize local SBERT: {e}")
+                return None
+
+        try:
+            embeddings = self._compute_transformer_embeddings(corpus)
+            self._last_method = "local_sbert"
+            return embeddings
+        except Exception as e:
+            self._logger.warning(f"Local SBERT embedding failed: {e}")
+            return None
+
     def compute_embeddings(
         self, corpus: list[str]
     ) -> NDArray[np.float64]:
-        """Compute embeddings for a list of chapter texts.
+        """Compute embeddings for a list of chapter texts (synchronous).
+
+        Note: For API mode, use compute_embeddings_async() instead.
 
         Args:
             corpus: List of chapter text strings.
@@ -162,8 +398,10 @@ class SemanticSimilarityEngine:
         # Compute embeddings
         if self._using_fallback:
             embeddings = self._compute_tfidf_embeddings(corpus)
+            self._last_method = "tfidf"
         else:
             embeddings = self._compute_transformer_embeddings(corpus)
+            self._last_method = "local_sbert"
 
         # Cache if enabled
         if self.config.use_cache:

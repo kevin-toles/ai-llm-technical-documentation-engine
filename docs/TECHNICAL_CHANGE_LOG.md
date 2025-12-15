@@ -20,6 +20,81 @@ This document tracks all implementation changes, their rationale, and git commit
 
 ## 2025-12-14
 
+### CL-033: SBERT Configuration Environment Variables (WBS M3.3)
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-14 |
+| **WBS Item** | SBERT_EXTRACTION_MIGRATION_WBS.md - M3.3 Configuration & Environment |
+| **Change Type** | Documentation |
+| **Summary** | Added SBERT API configuration environment variables to `.env.example` |
+| **Files Changed** | `.env.example` |
+| **Rationale** | Document new configuration options for SBERT API integration |
+| **Git Commit** | Pending |
+
+**Configuration Variables Added:**
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `SBERT_API_URL` | `http://localhost:8083` | SBERT embedding service URL |
+| `SBERT_API_TIMEOUT` | `30.0` | Request timeout in seconds |
+| `SBERT_FALLBACK_MODE` | `api` | Embedding method: `api` \| `local` \| `tfidf` |
+
+**Test Coverage (22 tests):**
+- `test_engine_config_has_api_url` - Config has `sbert_api_url` attribute
+- `test_engine_config_default_api_url` - Default URL is `http://localhost:8083`
+- `test_engine_config_has_api_timeout` - Config has `sbert_api_timeout` attribute
+- `test_engine_config_default_api_timeout` - Default timeout is `30.0`
+- `test_engine_config_has_fallback_to_local` - Config has `fallback_to_local` attribute
+- `test_engine_config_has_fallback_mode` - Config has `fallback_mode` attribute
+
+---
+
+### CL-032: SemanticSimilarityEngine Three-Tier Fallback (WBS M3.2)
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-14 |
+| **WBS Item** | SBERT_EXTRACTION_MIGRATION_WBS.md - M3.2 SemanticSimilarityEngine Refactor |
+| **Change Type** | Feature |
+| **Summary** | Refactored `SemanticSimilarityEngine` with three-tier fallback: API → Local SBERT → TF-IDF |
+| **Files Changed** | `workflows/metadata_enrichment/scripts/semantic_similarity_engine.py`, `tests/unit/metadata_enrichment/test_wbs_m3_2_engine_api_client.py` |
+| **Rationale** | Enable graceful degradation when Code-Orchestrator API unavailable |
+| **Git Commit** | Pending |
+
+**Implementation Details:**
+
+| Component | Description | Anti-Pattern Prevention |
+|-----------|-------------|------------------------|
+| `SimilarityConfig` | Extended with `use_api`, `sbert_api_url`, `fallback_to_local`, `fallback_mode` | Config externalization |
+| `compute_embeddings_async()` | New async method for API mode | Three-tier fallback chain |
+| `_compute_api_embeddings()` | API client integration | #12 (reuses SBERTClient) |
+| `_try_local_sbert()` | Local SBERT fallback | Graceful degradation |
+| Deprecation warning | Local SBERT marked deprecated | M3.2.7 gradual migration |
+| `_last_method` | Tracks which method was used | Observability |
+
+**Three-Tier Fallback Chain:**
+```
+SBERT_FALLBACK_MODE=api → Code-Orchestrator API → Local SBERT → TF-IDF
+SBERT_FALLBACK_MODE=local → Local SBERT (deprecated) → TF-IDF
+SBERT_FALLBACK_MODE=tfidf → TF-IDF only
+```
+
+**New Configuration Options (Environment Variables):**
+- `SBERT_FALLBACK_MODE`: `api` | `local` | `tfidf` (default: `local`)
+- `SBERT_API_URL`: Code-Orchestrator URL (default: `http://localhost:8083`)
+- `SBERT_API_TIMEOUT`: Request timeout in seconds (default: `30.0`)
+
+**Test Coverage (18 tests):**
+- `TestEngineUsesAPIClient`: 6 tests - API mode attribute, client acceptance, embeddings
+- `TestEngineFallbackLocal`: 4 tests - fallback on connection error, timeout, logging
+- `TestEngineFallbackTfidf`: 3 tests - TF-IDF when all else fails, similarity, method tracking
+- `TestThreeTierFallback`: 5 tests - mode support (api/local/tfidf), full chain
+
+**Total Test Count:** 40 tests (18 new + 22 existing) - 0 regressions
+
+---
+
 ### CL-031: SBERTClient Implementation (WBS M3.1)
 
 | Field | Value |
