@@ -24,11 +24,12 @@ Test-Driven Development:
 
 import argparse
 import asyncio
+import hashlib
 import json
 import sys
 from pathlib import Path
 from typing import List, Dict, Any, Tuple, Optional
-from datetime import datetime
+from datetime import datetime, timezone
 
 # scikit-learn imports for TF-IDF and cosine similarity
 from sklearn.feature_extraction.text import TfidfVectorizer  # type: ignore[import-untyped]
@@ -37,6 +38,103 @@ from sklearn.metrics.pairwise import cosine_similarity  # type: ignore[import-un
 # Project configuration and paths
 PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
+
+# =============================================================================
+# WBS D2.1.3: Enrichment Provenance Constants
+# Per CODING_PATTERNS_ANALYSIS.md S1192 - Extract duplicated literals
+# =============================================================================
+
+# Model version for provenance tracking
+SBERT_MODEL_VERSION = "all-MiniLM-L6-v2"
+TFIDF_MODEL_VERSION = "scikit-learn-1.3.2"
+
+# Enrichment method identifiers
+ENRICHMENT_METHOD_SBERT = "sentence_transformers"
+ENRICHMENT_METHOD_TFIDF = "tfidf"
+ENRICHMENT_METHOD_STATISTICAL = "statistical"
+ENRICHMENT_METHOD_SEMANTIC_SEARCH = "semantic_search"
+
+
+def compute_file_checksum(file_path: Path) -> str:
+    """
+    Compute SHA-256 checksum of a file for provenance tracking.
+    
+    Reference: WBS D2.1.3 - Enrichment Provenance
+    Pattern: File integrity verification
+    
+    Args:
+        file_path: Path to file to checksum
+        
+    Returns:
+        Checksum string in format "sha256:{hex_digest}"
+        Returns "sha256:none" if file doesn't exist
+    """
+    if not file_path.exists():
+        return "sha256:none"
+    
+    sha256_hash = hashlib.sha256()
+    with open(file_path, "rb") as f:
+        for chunk in iter(lambda: f.read(8192), b""):
+            sha256_hash.update(chunk)
+    
+    return f"sha256:{sha256_hash.hexdigest()}"
+
+
+def build_enrichment_provenance(
+    input_path: Path,
+    taxonomy_path: Optional[Path],
+    enrichment_method: str,
+    model_version: str,
+) -> Dict[str, Any]:
+    """
+    Build enrichment provenance metadata for output tracking.
+    
+    Reference: WBS D2.1.3 - Enrichment Provenance Fields
+    Pattern: Data lineage tracking
+    
+    Args:
+        input_path: Path to source metadata file
+        taxonomy_path: Path to taxonomy file (optional)
+        enrichment_method: Method used (sentence_transformers, tfidf, etc.)
+        model_version: Version of model/algorithm used
+        
+    Returns:
+        Dictionary with all provenance fields:
+        - taxonomy_id, taxonomy_version, taxonomy_path, taxonomy_checksum
+        - source_metadata_file, enrichment_date
+        - enrichment_method, model_version
+    """
+    # Extract taxonomy info if available
+    taxonomy_id = "none"
+    taxonomy_version = "none"
+    taxonomy_path_str = "none"
+    taxonomy_checksum = "sha256:none"
+    
+    if taxonomy_path and taxonomy_path.exists():
+        taxonomy_path_str = taxonomy_path.name
+        taxonomy_checksum = compute_file_checksum(taxonomy_path)
+        
+        # Try to extract taxonomy_id and version from file content
+        try:
+            with open(taxonomy_path, encoding="utf-8") as f:
+                taxonomy_data = json.load(f)
+            taxonomy_id = taxonomy_data.get("taxonomy_id", taxonomy_path.stem)
+            taxonomy_version = taxonomy_data.get("version", "1.0.0")
+        except (json.JSONDecodeError, KeyError):
+            taxonomy_id = taxonomy_path.stem
+            taxonomy_version = "1.0.0"
+    
+    return {
+        "taxonomy_id": taxonomy_id,
+        "taxonomy_version": taxonomy_version,
+        "taxonomy_path": taxonomy_path_str,
+        "taxonomy_checksum": taxonomy_checksum,
+        "source_metadata_file": input_path.name,
+        "enrichment_date": datetime.now(timezone.utc).isoformat(),
+        "enrichment_method": enrichment_method,
+        "model_version": model_version,
+    }
+
 
 # Statistical extractor for YAKE + Summa (existing implementation)
 # NOTE: Lazy loading - instantiate at runtime to respect environment variables
@@ -1422,7 +1520,14 @@ def enrich_metadata_local(
             top_scores = [f"{s['score']:.3f}" for s in top_similar[:3]]
             print(f"  Chapter {chapter_num}: top scores = {top_scores}")
     
-    # 5. Build enriched metadata output
+    # 5. Build enriched metadata output with provenance (WBS D2.1.3)
+    provenance = build_enrichment_provenance(
+        input_path=input_path,
+        taxonomy_path=None,  # Local mode has no taxonomy
+        enrichment_method=ENRICHMENT_METHOD_TFIDF,
+        model_version=TFIDF_MODEL_VERSION,
+    )
+    
     enriched_metadata = {
         "book_title": book_title,
         "total_chapters": len(enriched_chapters),
@@ -1432,7 +1537,9 @@ def enrich_metadata_local(
             "mode": "within_book",
             "libraries": {
                 "scikit-learn": "1.3.2"
-            }
+            },
+            # WBS D2.1.3: Enrichment provenance fields
+            **provenance,
         },
         "chapters": enriched_chapters
     }

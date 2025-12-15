@@ -20,29 +20,50 @@ This document tracks all implementation changes, their rationale, and git commit
 
 ## 2025-12-15
 
-### CL-038: Naming Convention & Enrichment Provenance Update
+### CL-038: Naming Convention & Enrichment Provenance Update ✅ COMPLETE
 
 | Field | Value |
 |-------|-------|
-| **Date/Time** | 2025-12-15 |
+| **Date/Time** | 2025-12-15 14:55 PST |
 | **WBS Item** | DATA_PIPELINE_FIX_WBS.md - D2.1 |
 | **Change Type** | Feature |
-| **Summary** | Update enriched output naming and add taxonomy provenance fields |
-| **Files Changed** | `workflows/metadata_enrichment/scripts/enrich_metadata_per_book.py` (PENDING) |
+| **Summary** | Added enrichment provenance fields to `enrich_metadata_per_book.py` |
+| **Files Changed** | `workflows/metadata_enrichment/scripts/enrich_metadata_per_book.py`, `tests/unit/metadata_enrichment/test_enriched_naming_convention.py` |
 | **Rationale** | Fix data pipeline inconsistency with ai-platform-data |
 | **Git Commit** | Pending |
 
-**Issue**: 
-- Output files used `{Book}_enriched.json` naming
-- No tracking of taxonomy version used for enrichment
-- ai-platform-data stripped `_enriched` suffix causing confusion
+**Implementation Summary**:
 
-**Changes Planned**:
+| Task | Status | Description |
+|------|--------|-------------|
+| D2.1.1 | ✅ | Created `test_enriched_naming_convention.py` with 12 tests |
+| D2.1.2 | ✅ | Output already uses `_metadata_enriched.json` convention |
+| D2.1.3 | ✅ | Added `build_enrichment_provenance()` helper function |
+| D2.1.4 | ✅ | All 21 enrichment tests pass |
+| D2.1.5 | ✅ | TECHNICAL_CHANGE_LOG updated |
 
-| Change | Before | After |
-|--------|--------|-------|
-| Output filename | `{Book}_enriched.json` | `{Book}_metadata_enriched.json` |
-| Provenance fields | None | `enrichment_metadata` section |
+**New Code Added**:
+
+```python
+# Constants for provenance tracking (per S1192)
+SBERT_MODEL_VERSION = "all-MiniLM-L6-v2"
+TFIDF_MODEL_VERSION = "scikit-learn-1.3.2"
+ENRICHMENT_METHOD_SBERT = "sentence_transformers"
+ENRICHMENT_METHOD_TFIDF = "tfidf"
+
+def compute_file_checksum(file_path: Path) -> str:
+    """Compute SHA-256 checksum for taxonomy file."""
+    ...
+
+def build_enrichment_provenance(
+    input_path: Path,
+    taxonomy_path: Optional[Path],
+    enrichment_method: str,
+    model_version: str,
+) -> Dict[str, Any]:
+    """Build enrichment provenance metadata for output tracking."""
+    ...
+```
 
 **New Enrichment Provenance Fields**:
 ```json
@@ -70,6 +91,11 @@ This document tracks all implementation changes, their rationale, and git commit
 - ✅ Kitchen Brigade: llm-document-enhancer owns all processing
 - ✅ ai-platform-data: Receives enriched files, doesn't generate them
 - ✅ Single Source of Truth: Naming convention matches across pipeline
+
+**Anti-Pattern Audit**:
+- ✅ S1192: Constants extracted (SBERT_MODEL_VERSION, etc.)
+- ✅ S3776: Functions under 15 complexity
+- ✅ S1172: No unused parameters
 
 **Reference**: `DATA_PIPELINE_FIX_WBS.md` in textbooks/pending/platform/
 
