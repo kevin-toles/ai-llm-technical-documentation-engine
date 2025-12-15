@@ -21,3 +21,5 @@ def pytest_configure(config):
     config.addinivalue_line("markers", "integration: Integration tests for workflow interactions")
     config.addinivalue_line("markers", "e2e: End-to-end workflow tests")
     config.addinivalue_line("markers", "slow: Tests that take a long time to run")
+    config.addinivalue_line("markers", "pipeline: Full pipeline integration tests")
+    config.addinivalue_line("markers", "live: Tests that require live services")

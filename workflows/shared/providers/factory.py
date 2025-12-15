@@ -25,11 +25,11 @@ def create_llm_provider() -> LLMProvider:
     application code from specific provider implementations.
     
     Returns:
-        LLMProvider instance (default: AnthropicProvider)
+        LLMProvider instance (default: GatewayProvider)
     
     Environment Variables:
-        LLM_PROVIDER: Provider name ("anthropic", "gateway", etc.)
-                     Default: "anthropic"
+        LLM_PROVIDER: Provider name ("gateway", "anthropic", etc.)
+                     Default: "gateway" (per Kitchen Brigade architecture)
     
     Raises:
         ValueError: If unknown provider specified
@@ -44,8 +44,9 @@ def create_llm_provider() -> LLMProvider:
     Reference:
         Architecture Patterns with Python Ch. 13 - Factory pattern simplifies DI
         Microservices Up and Running Ch. 7 - Environment-based configuration
+        ARCHITECTURE.md - Kitchen Brigade "Router" pattern: Gateway is single entry point
     """
-    provider_name = os.getenv("LLM_PROVIDER", "anthropic").lower()
+    provider_name = os.getenv("LLM_PROVIDER", "gateway").lower()
     return get_provider(provider_name)
 
 

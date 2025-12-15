@@ -51,8 +51,10 @@ PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 # Import LLM provider (Tab 7 ONLY)
+# WBS GATEWAY_ROUTING_REFACTOR: Use factory to route through Gateway
 try:
-    from workflows.shared.providers import AnthropicProvider, LLMError
+    from workflows.shared.providers import LLMError
+    from workflows.shared.providers.factory import create_llm_provider
     from config.settings import LLMConfig
     LLM_AVAILABLE = True
 except ImportError as e:
@@ -614,7 +616,9 @@ def enhance_guideline(
     print(f"  Max tokens: {config.max_tokens}")
     print(f"  Temperature: {config.temperature}")
     
-    llm_provider = AnthropicProvider(api_key=config.api_key, model=config.model)
+    # WBS GATEWAY_ROUTING_REFACTOR: Use factory to route through Gateway
+    # Factory respects LLM_PROVIDER env var (defaults to 'gateway')
+    llm_provider = create_llm_provider()
     
     # 5. Enhance each chapter
     print(f"\n📝 Enhancing {len(chapters)} chapters...")

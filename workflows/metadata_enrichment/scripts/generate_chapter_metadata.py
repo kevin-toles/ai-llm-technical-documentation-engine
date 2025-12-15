@@ -40,8 +40,45 @@ from workflows.metadata_extraction.scripts.adapters.statistical_extractor import
 # Global extractor instance (initialized once, reused for all chapters)
 STATISTICAL_EXTRACTOR = StatisticalExtractor()
 
-# Book locations (simplified - all books now in textbooks_json_dir root)
-# Reference: Microservices Ch. 7 - Externalized configuration
+# WBS 3.5.3.8 REFACTOR: Dynamic book discovery instead of hardcoded dict
+# Per CODING_PATTERNS #1.3: No magic values (hardcoded book list)
+# Books are discovered at runtime from configured directories
+
+
+def discover_books() -> Dict[str, Path]:
+    """
+    Dynamically discover all book JSON files from configured directories.
+    
+    Per CODING_PATTERNS #1.3: No hardcoded book lists.
+    Per Microservices Ch. 7: Externalized configuration.
+    
+    Priority order (later overrides earlier):
+    1. Legacy textbooks_json_dir (original processed books)
+    2. test_fixtures/books (re-processed books with guaranteed chapters)
+    
+    Returns:
+        Dict mapping book name to file path
+    """
+    books: Dict[str, Path] = {}
+    
+    # Priority 1: Configured textbooks_json_dir (legacy location - has most books)
+    if hasattr(settings.paths, 'textbooks_json_dir'):
+        legacy_dir = settings.paths.textbooks_json_dir
+        if legacy_dir.exists():
+            for book_path in legacy_dir.glob("*.json"):
+                books[book_path.name] = book_path
+    
+    # Priority 2: test_fixtures/books (re-processed books - override legacy)
+    test_fixtures_dir = PROJECT_ROOT / "test_fixtures" / "books"
+    if test_fixtures_dir.exists():
+        for book_path in test_fixtures_dir.glob("*.json"):
+            books[book_path.name] = book_path  # Override legacy with re-processed
+    
+    return books
+
+
+# Legacy BOOK_PATHS kept for backward compatibility (deprecated)
+# Use discover_books() instead
 BOOK_PATHS = {
     "Fluent Python 2nd.json": "",
     "Python Distilled.json": "",
@@ -354,57 +391,97 @@ def process_chapter_metadata(_book_name: str, chapter: Dict[str, Any],
 
 
 def main():
-    """Main processing function."""
+    """
+    Main processing function.
+    
+    Per WBS v1.4.0 ENRICHMENT DATA FLOW:
+        books/raw/*.json → generate_chapter_metadata.py → books/enriched/*.json
+    
+    Per TECHNICAL_CHANGE_LOG CL-006:
+        - One enriched file per book (not monolithic cache)
+        - Supports O(n) delta updates
+        - Taxonomy filtering at query-time
+    
+    Anti-Pattern Audit:
+        - CODING_PATTERNS #1.3: No hardcoded paths (use settings.paths)
+        - CODING_PATTERNS #10.3: Atomic file operations (write temp → rename)
+    """
     print("="*80)
-    print("GENERATING CHAPTER METADATA FOR ALL 15 BOOKS")
+    print("GENERATING CHAPTER METADATA FOR ALL BOOKS")
     print("="*80)
     
-    # Load current metadata cache from configured metadata directory
-    # Reference: Python Distilled Ch. 9 p. 228 - mkdir(parents=True, exist_ok=True)
-    cache_path = settings.paths.metadata_dir / "chapter_metadata_cache.json"
+    # WBS 3.5.3.8: Dynamic book discovery
+    available_books = discover_books()
+    print(f"\nDiscovered {len(available_books)} books in configured directories")
     
-    # Create metadata directory if it doesn't exist (12-Factor App - idempotent operations)
-    cache_path.parent.mkdir(parents=True, exist_ok=True)
-    
-    # Load cache if exists, otherwise start with empty dict
-    if cache_path.exists():
-        with open(cache_path, 'r') as f:
-            cache = json.load(f)
-    else:
-        print(f"No existing cache found at {cache_path}, starting fresh")
-        cache = {}
-    
-    print(f"\nLoaded cache with {len(cache)} books\n")
+    # Per WBS v1.4.0: Output to books/enriched/ directory (per-book files)
+    # NOT to a monolithic cache file
+    enriched_dir = PROJECT_ROOT / "books" / "enriched"
+    enriched_dir.mkdir(parents=True, exist_ok=True)
+    print(f"Output directory: {enriched_dir}")
     
     # Process each book
     books_processed = 0
     chapters_processed = 0
     
-    for book_name in BOOK_PATHS.keys():
-        if book_name not in cache:
-            print(f"⚠️  {book_name} not in cache, skipping...")
-            continue
-        
+    # Use dynamic discovery instead of hardcoded BOOK_PATHS
+    for book_name, book_path in sorted(available_books.items()):
         print(f"\n{'='*80}")
         print(f"Processing: {book_name}")
         print(f"{'='*80}")
         
         try:
-            # Load book JSON
-            book_data = load_book_json(book_name)
+            # Load book JSON directly from discovered path
+            with open(book_path, 'r', encoding='utf-8') as f:
+                book_data = json.load(f)
+            
+            chapters = book_data.get('chapters', [])
+            if not chapters:
+                print(f"⚠️  {book_name} has no chapters, skipping...")
+                continue
             
             # Process each chapter
             updated_chapters = []
-            for chapter in cache[book_name]:
-                updated_chapter = process_chapter_metadata(book_name, chapter, book_data)
-                updated_chapters.append(updated_chapter)
+            for i, chapter in enumerate(chapters):
+                # Build chapter metadata dict for processing
+                chapter_meta = {
+                    'chapter_number': chapter.get('number', chapter.get('chapter_number', i + 1)),
+                    'title': chapter.get('title', f'Chapter {i + 1}'),
+                    'start_page': chapter.get('start_page', 1),
+                    'end_page': chapter.get('end_page', 1),
+                }
+                
+                updated_chapter = process_chapter_metadata(book_name, chapter_meta, book_data)
+                
+                # Merge enrichment into original chapter (preserve all original fields)
+                enriched_chapter = {**chapter, **updated_chapter}
+                updated_chapters.append(enriched_chapter)
                 chapters_processed += 1
             
-            # Update cache
-            cache[book_name] = updated_chapters
-            books_processed += 1
+            # Per WBS v1.4.0: Create per-book enriched file (preserves original data)
+            enriched_book = {
+                **book_data,  # Preserve original metadata, pages, etc.
+                'chapters': updated_chapters,  # Replace chapters with enriched versions
+                'enrichment': {
+                    'version': '1.0.0',
+                    'generated_by': 'generate_chapter_metadata.py',
+                    'contains': ['keywords', 'concepts', 'summary']
+                }
+            }
             
+            # Per CODING_PATTERNS #10.3: Atomic file write (write temp → rename)
+            enriched_path = enriched_dir / book_name
+            temp_path = enriched_path.with_suffix('.json.tmp')
+            
+            with open(temp_path, 'w', encoding='utf-8') as f:
+                json.dump(enriched_book, f, indent=2, ensure_ascii=False)
+            
+            # Atomic rename
+            temp_path.rename(enriched_path)
+            
+            books_processed += 1
             print(f"✓ Completed {book_name}: {len(updated_chapters)} chapters")
+            print(f"  Saved to: {enriched_path}")
             
         except FileNotFoundError as e:
             print(f"❌ Error loading {book_name}: {e}")
@@ -415,22 +492,23 @@ def main():
             traceback.print_exc()
             continue
     
-    # Save updated cache
+    # Summary
     print(f"\n{'='*80}")
-    print("SAVING UPDATED METADATA")
+    print("ENRICHMENT COMPLETE")
     print(f"{'='*80}")
-    
-    with open(cache_path, 'w') as f:
-        json.dump(cache, f, indent=2)
     
     print("\n✅ SUCCESS!")
     print(f"   Processed {books_processed} books")
-    print(f"   Updated {chapters_processed} chapters")
-    print(f"   Saved to: {cache_path}")
-    print("\nAll chapters now have:")
-    print("  - summary (2-3 sentence overview)")
-    print("  - keywords (technical terms, max 15)")
-    print("  - concepts (key topics discussed, max 10)")
+    print(f"   Enriched {chapters_processed} chapters")
+    print(f"   Output: {enriched_dir}/")
+    print(f"   Files: {books_processed} individual JSON files (one per book)")
+    print("\nPer-book enriched files contain:")
+    print("  - Original book data (metadata, pages, chapters)")
+    print("  - Enriched chapters with:")
+    print("    - summary (2-3 sentence overview)")
+    print("    - keywords (technical terms, max 15)")
+    print("    - concepts (key topics discussed, max 10)")
+    print("\nNext step: WBS 3.5.3.7 - Run enrich_metadata_per_book.py for similar_chapters")
 
 
 if __name__ == "__main__":

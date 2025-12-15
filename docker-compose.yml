@@ -21,13 +21,18 @@ services:
       DOC_ENHANCER_ENV: development
       DOC_ENHANCER_LOG_LEVEL: DEBUG
       
+      # LLM Provider Configuration (WBS GATEWAY_ROUTING_REFACTOR)
+      # Kitchen Brigade architecture: ALL requests route through Gateway
+      LLM_PROVIDER: gateway
+      LLM_GATEWAY_URL: http://llm-gateway:8080
+      
       # LLM Gateway Configuration (per WBS 3.1.3.1)
       DOC_ENHANCER_GATEWAY_URL: http://llm-gateway:8080
       DOC_ENHANCER_GATEWAY_TIMEOUT: "30.0"
       DOC_ENHANCER_GATEWAY_ENABLED: "true"
       DOC_ENHANCER_GATEWAY_SESSION_TTL: "3600.0"
       
-      # Legacy LLM Configuration (for non-gateway mode)
+      # Legacy LLM Configuration (for non-gateway mode fallback)
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
     env_file:

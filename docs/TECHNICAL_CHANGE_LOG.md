@@ -18,6 +18,95 @@ This document tracks all implementation changes, their rationale, and git commit
 
 ---
 
+## 2025-12-14
+
+### CL-030: SBERT Migration Planning (Architecture Decision)
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-14 |
+| **WBS Item** | SBERT_EXTRACTION_MIGRATION_WBS.md |
+| **Change Type** | Documentation (Planning) |
+| **Summary** | SBERT will be migrated from local implementation to Code-Orchestrator-Service API |
+| **Files Changed** | N/A (Planning phase) |
+| **Rationale** | Kitchen Brigade architecture: Sous Chef (Code-Orchestrator) should host all understanding models including SBERT |
+| **Git Commit** | Pending |
+
+**Impact Assessment:**
+
+| File | Current State | Migration Plan |
+|------|---------------|----------------|
+| `semantic_similarity_engine.py` | Local SBERT + TF-IDF fallback | API client to Code-Orchestrator |
+| `compute_similar_chapters.py` | Uses `SemanticSimilarityEngine` | No change (engine abstraction) |
+| `enrich_metadata_per_book.py` | Uses similarity functions | No change (uses engine) |
+| Tests | Local model tests | Mock API responses |
+
+**Migration Benefits:**
+- ✅ Kitchen Brigade compliance: All understanding models in one service
+- ✅ Resource efficiency: Single SBERT model instance for platform
+- ✅ Service separation: Processing (enhancer) vs Intelligence (orchestrator)
+- ✅ Consistent API: Same interface as CodeBERT/GraphCodeBERT
+
+**Fallback Strategy:**
+- TF-IDF fallback preserved if Code-Orchestrator unavailable
+- Graceful degradation for offline/development scenarios
+- Feature flag for local vs API mode
+
+**Cross-References:**
+- Platform TECHNICAL_CHANGE_LOG.md: CL-009 (SBERT Migration)
+- Code-Orchestrator TECHNICAL_CHANGE_LOG.md: CL-004 (SBERT Integration)
+- SBERT_EXTRACTION_MIGRATION_WBS.md: Detailed TDD migration plan
+
+---
+
+### CL-029: WBS 3.5.3.7 - SBERT Similar Chapters Refactor (TDD Complete)
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-14 |
+| **WBS Item** | 3.5.3.7 (Similar Chapters Computation) |
+| **Change Type** | Refactor |
+| **Summary** | Refactored `compute_similar_chapters.py` to use `SemanticSimilarityEngine` (SBERT) instead of raw TF-IDF |
+| **Files Changed** | `workflows/metadata_enrichment/scripts/compute_similar_chapters.py`, `tests/unit/metadata_enrichment/test_wbs_3537_sbert_similar_chapters.py` |
+| **Rationale** | Architecture docs state TF-IDF is "WRONG - TO BE REFACTORED". SBERT provides semantic similarity (understanding meaning) vs TF-IDF lexical similarity (keyword overlap) |
+| **Git Commit** | Pending |
+
+**TDD Cycle:**
+- **RED Phase**: Created `test_wbs_3537_sbert_similar_chapters.py` with 12 tests:
+  - `TestComputeSimilarChaptersUsesSBERT`: Module imports and factory function
+  - `TestSimilarityResultsIncludeMethod`: Results include `method` field
+  - `TestMainFunctionUsesEngine`: Main uses SemanticSimilarityEngine
+  - `TestBackwardsCompatibility`: Existing function signatures preserved
+  - `TestCLIArguments`: New `--use-sbert` and `--model-name` options
+
+- **GREEN Phase**: 
+  - Removed raw sklearn TF-IDF implementation
+  - Added `SemanticSimilarityEngine` import and `create_similarity_engine()` factory
+  - Added `method` field to results (`sentence_transformers` or `tfidf`)
+  - All 12 new tests passing
+
+- **REFACTOR Phase**:
+  - Fixed SonarQube S1172 (unused `use_sbert` parameter)
+  - Fixed SonarQube S3457 (empty f-string)
+  - **46 tests passing** for WBS 3.5.3 suite
+  - **SonarQube: 0 issues**
+
+**Re-Enrichment Results:**
+| Metric | Value |
+|--------|-------|
+| Books processed | 47 |
+| Chapters analyzed | 1,922 |
+| Similar chapter links | 9,614 |
+| Similarity method | SBERT (`all-MiniLM-L6-v2`) |
+| Embedding dimensions | 384 |
+
+**Architecture Alignment:**
+- ✅ TIER_RELATIONSHIP_DIAGRAM.md Step 4: "semantic similarity of concepts"
+- ✅ AI_CODING_PLATFORM_ARCHITECTURE.md: SBERT for text similarity, Code-Orchestrator for code
+- ✅ Auto-fallback to TF-IDF when sentence-transformers unavailable
+
+---
+
 ## 2025-12-13
 
 ### CL-028: WBS 3.5.1 - Chapter Segmentation Processing (TDD Complete)

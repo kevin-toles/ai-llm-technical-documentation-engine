@@ -26,26 +26,22 @@ In the Kitchen Brigade architecture, **llm-document-enhancer** is a **Customer**
 │  ✓ Writes output files ({book}_enriched.json)                               │
 │  ✓ Orchestrates the 6-step workflow pipeline                                │
 │                                                                              │
-│  WHAT IT CURRENTLY DOES (WRONG - TO BE REFACTORED):                         │
-│  ──────────────────────────────────────────────────                         │
-│  ✗ TF-IDF similarity (sklearn) - should call Code-Orchestrator-Service      │
-│  ✗ YAKE/Summa keyword extraction - should call Code-Orchestrator-Service    │
-│  ✗ Local similarity threshold (0.7 impossible) - needs semantic embeddings  │
+│  SIMILARITY COMPUTATION (IMPLEMENTED 2025-12-14):                           │
+│  ─────────────────────────────────────────────────                          │
+│  ✓ SemanticSimilarityEngine with SBERT (all-MiniLM-L6-v2)                   │
+│  ✓ Auto-fallback to TF-IDF when sentence-transformers unavailable           │
+│  ✓ 47 books, 1922 chapters, 9614 similar_chapters links                     │
+│  ✓ Method tracked: "sentence_transformers" or "tfidf"                       │
 │                                                                              │
-│  TARGET STATE:                                                               │
-│  ─────────────                                                               │
-│  Instead of local TF-IDF, call Code-Orchestrator-Service:                   │
+│  FUTURE ENHANCEMENT (Code-Orchestrator Integration):                        │
+│  ───────────────────────────────────────────────────                        │
+│  For CODE-SPECIFIC content, call Code-Orchestrator-Service:                 │
+│  • CodeBERT: Code↔NL search                                                 │
+│  • GraphCodeBERT: Code structure understanding                              │
+│  • CodeT5+: Code generation                                                 │
 │                                                                              │
-│  enrich_metadata_per_book.py                                                │
-│      │                                                                       │
-│      │ POST /api/v1/search                                                  │
-│      ▼                                                                       │
-│  Code-Orchestrator-Service (Sous Chef)                                      │
-│      │ Extracts semantic terms, validates, ranks                            │
-│      │ POST to Semantic Search                                              │
-│      │ Curates results (filters C++ false positives)                        │
-│      ▼                                                                       │
-│  Returns: curated related_chapters with semantic scores (0.3-0.5 threshold) │
+│  Note: Textbook content uses SBERT (text similarity).                       │
+│        Code examples/repositories use Code-Orchestrator.                    │
 │                                                                              │
 └──────────────────────────────────────────────────────────────────────────────┘
 ```
