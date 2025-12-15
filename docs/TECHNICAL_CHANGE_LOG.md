@@ -20,6 +20,35 @@ This document tracks all implementation changes, their rationale, and git commit
 
 ## 2025-12-15
 
+### CL-037: SBERT Migration Complete (WBS M5 Documentation & Rollout)
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-15 |
+| **WBS Item** | SBERT_EXTRACTION_MIGRATION_WBS.md - M5 Documentation & Rollout |
+| **Change Type** | Documentation |
+| **Summary** | SBERT migration complete. All documentation updated, migration fully validated. |
+| **Files Changed** | `docs/TECHNICAL_CHANGE_LOG.md` |
+| **Rationale** | Final phase of SBERT extraction/migration |
+| **Git Commit** | Pending |
+
+**Migration Complete Summary:**
+
+| Phase | Status | Description |
+|-------|--------|-------------|
+| M1 | ✅ | Code Migration to Code-Orchestrator |
+| M2 | ✅ | API Endpoint Layer |
+| M3 | ✅ | API Client Refactor |
+| M4 | ✅ | Test Migration & Validation (75 tests) |
+| M5 | ✅ | Documentation & Rollout |
+
+**Architecture Compliance:**
+- Kitchen Brigade: SBERT now hosted in Sous Chef (Code-Orchestrator-Service)
+- Three-tier fallback: API → Local SBERT → TF-IDF
+- Zero regressions in semantic similarity functionality
+
+---
+
 ### CL-036: Dependency Cleanup and Final Validation (WBS M4.3-M4.4)
 
 | Field | Value |

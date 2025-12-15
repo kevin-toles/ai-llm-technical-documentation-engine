@@ -32,6 +32,11 @@ services:
       DOC_ENHANCER_GATEWAY_ENABLED: "true"
       DOC_ENHANCER_GATEWAY_SESSION_TTL: "3600.0"
       
+      # SBERT Embedding Configuration (WBS SBERT_EXTRACTION_MIGRATION M5.2)
+      # Kitchen Brigade: SBERT hosted in Sous Chef (Code-Orchestrator)
+      SBERT_API_URL: http://code-orchestrator:8083
+      SBERT_FALLBACK_MODE: api  # api | local | tfidf
+      
       # Legacy LLM Configuration (for non-gateway mode fallback)
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
@@ -46,6 +51,8 @@ services:
       - ./cache:/app/cache
     depends_on:
       llm-gateway:
+        condition: service_healthy
+      code-orchestrator:
         condition: service_healthy
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
@@ -86,6 +93,33 @@ services:
       timeout: 10s
       retries: 3
       start_period: 10s
+    restart: unless-stopped
+    networks:
+      - llm-network
+
+  # ============================================================================
+  # Code Orchestrator - SBERT Embedding Service (WBS SBERT_EXTRACTION_MIGRATION)
+  # ============================================================================
+  # Kitchen Brigade: Sous Chef providing semantic similarity capabilities
+  # Hosts SBERT model (MiniLM-L6-v2) and embedding endpoints
+  # ============================================================================
+  code-orchestrator:
+    image: code-orchestrator:latest
+    container_name: code-orchestrator
+    ports:
+      - "8083:8083"
+    environment:
+      CODE_ORCHESTRATOR_ENV: development
+      CODE_ORCHESTRATOR_PORT: "8083"
+      CODE_ORCHESTRATOR_LOG_LEVEL: DEBUG
+      # SBERT model loads at startup
+      SBERT_MODEL_NAME: all-MiniLM-L6-v2
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8083/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s  # SBERT model loading takes time
     restart: unless-stopped
     networks:
       - llm-network

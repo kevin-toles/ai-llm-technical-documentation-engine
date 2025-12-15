@@ -144,6 +144,54 @@ The engine automatically falls back through the tiers:
 SBERT_FALLBACK_MODE=tfidf python -m workflows.metadata_enrichment.scripts.compute_similar_chapters
 ```
 
+### Docker Deployment
+
+The system is containerized and integrates with the Kitchen Brigade microservices architecture.
+
+#### Service Startup Order
+
+```bash
+# Start full stack with docker compose
+docker compose up -d
+```
+
+**Dependency Chain:**
+
+```
+redis → llm-gateway → code-orchestrator → document-enhancer
+  │           │               │                  │
+  │           │               │                  └─ Port 8000 (Main API)
+  │           │               └─ Port 8083 (SBERT Embeddings)
+  │           └─ Port 8080 (LLM Gateway)
+  └─ Port 6379 (Session Store)
+```
+
+| Service | Port | Health Endpoint | Start Period |
+|---------|------|-----------------|--------------|
+| Redis | 6379 | `redis-cli ping` | 5s |
+| LLM Gateway | 8080 | `/health` | 10s |
+| Code Orchestrator | 8083 | `/health` | 30s (SBERT model loading) |
+| Document Enhancer | 8000 | `/health` | 10s |
+
+#### Environment Configuration
+
+The Docker setup defaults to API mode for SBERT embeddings:
+
+```yaml
+# docker-compose.yml (automatically configured)
+SBERT_API_URL: http://code-orchestrator:8083
+SBERT_FALLBACK_MODE: api
+```
+
+#### External Network Mode
+
+For full platform deployment with pre-running services:
+
+```bash
+# Use external network if services already running
+docker compose -f docker-compose.external.yml up -d
+```
+
 ### Running Workflows
 
 Each workflow stage can be run independently or as part of the full pipeline:
