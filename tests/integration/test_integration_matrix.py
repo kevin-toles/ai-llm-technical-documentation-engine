@@ -20,8 +20,8 @@ Test Matrix:
 
 MVP Acceptance Criteria:
 - [ ] CodeT5+, GraphCodeBERT, CodeBERT models load and respond
-- [ ] /api/v1/extract endpoint returns consensus terms
-- [ ] /api/v1/search endpoint returns curated results
+- [ ] /v1/extract endpoint returns consensus terms
+- [ ] /v1/search endpoint returns curated results
 - [ ] Domain filtering removes false positives
 - [ ] llm-document-enhancer produces cross-book references (currently ZERO)
 - [ ] Semantic threshold 0.3 is achievable (vs impossible 0.7 TF-IDF)

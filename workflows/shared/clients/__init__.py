@@ -12,6 +12,7 @@ Clients:
 - LLMGatewayClient: Async client for llm-gateway microservice
 - SemanticSearchClient: Async client for semantic-search-service (WBS 3.2.3)
 - OrchestratorClient: Async client for Code-Orchestrator-Service (WBS 5.1.2)
+- SBERTClient: Async client for Code-Orchestrator SBERT API (WBS M3.1)
 
 Observability (WBS 6.2):
 - cache: ResultCache for search result caching
@@ -43,6 +44,16 @@ from workflows.shared.clients.orchestrator_client import (
     OrchestratorTimeoutError,
     SEMANTIC_SIMILARITY_THRESHOLD,
 )
+from workflows.shared.clients.sbert_client import (
+    EMBEDDING_DIMENSIONS,
+    FakeSBERTClient,
+    SBERTAPIError,
+    SBERTClient,
+    SBERTClientError,
+    SBERTClientProtocol,
+    SBERTConnectionError,
+    SBERTTimeoutError,
+)
 from workflows.shared.clients.search_client import SemanticSearchClient
 
 __all__ = [
@@ -57,6 +68,15 @@ __all__ = [
     "OrchestratorClientProtocol",
     "FakeOrchestratorClient",
     "SEMANTIC_SIMILARITY_THRESHOLD",
+    # SBERT Client (WBS M3.1)
+    "SBERTClient",
+    "SBERTClientError",
+    "SBERTTimeoutError",
+    "SBERTConnectionError",
+    "SBERTAPIError",
+    "SBERTClientProtocol",
+    "FakeSBERTClient",
+    "EMBEDDING_DIMENSIONS",
     # Cache (WBS 6.1)
     "cache",
     "ResultCache",

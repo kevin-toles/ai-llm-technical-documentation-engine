@@ -84,16 +84,16 @@ class TestPrometheusMetrics:
         collector = MetricsCollector()
         collector.increment_counter(
             "orchestrator_requests_total",
-            labels={"endpoint": "/api/v1/search", "status": "success"}
+            labels={"endpoint": "/v1/search", "status": "success"}
         )
         collector.increment_counter(
             "orchestrator_requests_total",
-            labels={"endpoint": "/api/v1/search", "status": "error"}
+            labels={"endpoint": "/v1/search", "status": "error"}
         )
         
         success_value = collector.get_counter_value(
             "orchestrator_requests_total",
-            labels={"endpoint": "/api/v1/search", "status": "success"}
+            labels={"endpoint": "/v1/search", "status": "success"}
         )
         assert success_value == 1
 

@@ -20,6 +20,45 @@ This document tracks all implementation changes, their rationale, and git commit
 
 ## 2025-12-14
 
+### CL-031: SBERTClient Implementation (WBS M3.1)
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-14 |
+| **WBS Item** | SBERT_EXTRACTION_MIGRATION_WBS.md - M3.1 API Client Implementation |
+| **Change Type** | Feature |
+| **Summary** | Implemented `SBERTClient` - async HTTP client for Code-Orchestrator SBERT API |
+| **Files Changed** | `workflows/shared/clients/sbert_client.py`, `workflows/shared/clients/__init__.py`, `tests/unit/clients/test_wbs_m3_sbert_client.py` |
+| **Rationale** | Enable llm-document-enhancer to use centralized SBERT via Code-Orchestrator API |
+| **Git Commit** | Pending |
+
+**Implementation Details:**
+
+| Component | Description | Anti-Pattern Prevention |
+|-----------|-------------|------------------------|
+| `SBERTClient` | Async HTTP client with connection pooling | #12 (shared client) |
+| `SBERTClientProtocol` | Protocol for duck typing | §4.4 (interface contracts) |
+| `SBERTClientError` | Base exception class | #7 (no shadowing builtins) |
+| `SBERTTimeoutError` | Timeout exception | #7 (not TimeoutError) |
+| `SBERTConnectionError` | Connection exception | #7 (not ConnectionError) |
+| `SBERTAPIError` | API error exception | #7 (status_code attribute) |
+| `FakeSBERTClient` | In-memory fake for testing | #12 (no real HTTP in tests) |
+| Constants | `EMBEDDING_DIMENSIONS`, `_DEFAULT_*_ENDPOINT` | S1192 (no duplicated literals) |
+
+**Test Coverage (21 tests):**
+- `TestSBERTClientExists`: 6 tests - class/protocol/exception existence
+- `TestSBERTClientEmbeddings`: 3 tests - `/v1/embeddings` endpoint
+- `TestSBERTClientSimilarity`: 3 tests - `/v1/similarity` endpoint
+- `TestSBERTClientConnectionPooling`: 3 tests - context manager, single client
+- `TestSBERTClientErrorHandling`: 3 tests - connection/timeout/API errors
+- `TestSBERTClientConstants`: 3 tests - S1192 prevention
+
+**API Endpoints Used:**
+- `POST /v1/embeddings` - Get text embeddings (384 dimensions)
+- `POST /v1/similarity` - Get similarity score (0.0-1.0)
+
+---
+
 ### CL-030: SBERT Migration Planning (Architecture Decision)
 
 | Field | Value |

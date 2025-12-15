@@ -7,7 +7,7 @@ Reference Documents:
 - GUIDELINES p. 2313: "Different connection pools for each downstream service" (Newman)
 - GUIDELINES p. 2145: Connection pooling, graceful degradation, circuit breaker patterns
 - CODING_PATTERNS_ANALYSIS line 67: Anti-Pattern - new httpx.AsyncClient per request
-- Code-Orchestrator-Service/docs/ARCHITECTURE.md: API endpoints (/api/v1/search)
+- Code-Orchestrator-Service/docs/ARCHITECTURE.md: API endpoints (/v1/search)
 - WBS_IMPLEMENTATION.md: Phase 5.1.2 - OrchestratorClient
 - WBS_IMPLEMENTATION.md: Phase 6.1/6.2 - Caching and Observability
 
@@ -44,7 +44,7 @@ if TYPE_CHECKING:
 # =============================================================================
 
 _CLIENT_NOT_INITIALIZED_ERROR = "Client not initialized. Use async context manager."
-_DEFAULT_SEARCH_ENDPOINT = "/api/v1/search"
+_DEFAULT_SEARCH_ENDPOINT = "/v1/search"
 
 # WBS 5.1.4: Semantic similarity threshold (down from 0.7 TF-IDF to 0.3 semantic)
 # Reference: WBS_IMPLEMENTATION.md - Phase 5.1.4
@@ -280,7 +280,7 @@ class OrchestratorClient:
 
     # =========================================================================
     # Search - WBS 5.1.2 + 6.1/6.2 (caching, metrics)
-    # Pattern: POST /api/v1/search (Code-Orchestrator-Service API)
+    # Pattern: POST /v1/search (Code-Orchestrator-Service API)
     # =========================================================================
 
     async def search(
