@@ -20,6 +20,61 @@ This document tracks all implementation changes, their rationale, and git commit
 
 ## 2025-12-15
 
+### CL-038: Naming Convention & Enrichment Provenance Update
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-15 |
+| **WBS Item** | DATA_PIPELINE_FIX_WBS.md - D2.1 |
+| **Change Type** | Feature |
+| **Summary** | Update enriched output naming and add taxonomy provenance fields |
+| **Files Changed** | `workflows/metadata_enrichment/scripts/enrich_metadata_per_book.py` (PENDING) |
+| **Rationale** | Fix data pipeline inconsistency with ai-platform-data |
+| **Git Commit** | Pending |
+
+**Issue**: 
+- Output files used `{Book}_enriched.json` naming
+- No tracking of taxonomy version used for enrichment
+- ai-platform-data stripped `_enriched` suffix causing confusion
+
+**Changes Planned**:
+
+| Change | Before | After |
+|--------|--------|-------|
+| Output filename | `{Book}_enriched.json` | `{Book}_metadata_enriched.json` |
+| Provenance fields | None | `enrichment_metadata` section |
+
+**New Enrichment Provenance Fields**:
+```json
+{
+  "enrichment_metadata": {
+    "taxonomy_id": "ai-ml-2024",
+    "taxonomy_version": "1.0.0",
+    "taxonomy_path": "AI-ML_taxonomy_20251128.json",
+    "taxonomy_checksum": "sha256:abc123...",
+    "source_metadata_file": "{Book}_metadata.json",
+    "enrichment_date": "2025-12-15T12:00:00Z",
+    "enrichment_method": "sentence_transformers",
+    "model_version": "all-MiniLM-L6-v2"
+  }
+}
+```
+
+**Purpose of Provenance Fields**:
+1. **taxonomy_checksum**: Detect stale enrichments when taxonomy updates
+2. **source_metadata_file**: Track which metadata file was enriched
+3. **enrichment_method**: Distinguish SBERT vs TF-IDF results
+4. **enrichment_date**: Audit trail for when enrichment occurred
+
+**Architecture Alignment**:
+- ✅ Kitchen Brigade: llm-document-enhancer owns all processing
+- ✅ ai-platform-data: Receives enriched files, doesn't generate them
+- ✅ Single Source of Truth: Naming convention matches across pipeline
+
+**Reference**: `DATA_PIPELINE_FIX_WBS.md` in textbooks/pending/platform/
+
+---
+
 ### CL-037: SBERT Migration Complete (WBS M5 Documentation & Rollout)
 
 | Field | Value |
