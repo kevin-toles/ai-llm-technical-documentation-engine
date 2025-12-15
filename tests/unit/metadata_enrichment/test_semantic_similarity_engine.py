@@ -502,10 +502,10 @@ class TestFallbackBehavior:
                 )
             elif fallback_mode == "api" and engine._using_fallback:
                 # API mode fell back (no server) - could be local or tfidf
-                assert results[0].method in ("sentence_transformers", "tfidf")
+                assert results[0].method in ("sentence_transformers", "local_sbert", "tfidf")
             elif SENTENCE_TRANSFORMERS_AVAILABLE and not engine._using_fallback:
-                # Local SBERT mode
-                assert results[0].method == "sentence_transformers"
+                # Local SBERT mode - can be 'sentence_transformers' or 'local_sbert'
+                assert results[0].method in ("sentence_transformers", "local_sbert")
             else:
                 # TF-IDF fallback
                 assert results[0].method == "tfidf"

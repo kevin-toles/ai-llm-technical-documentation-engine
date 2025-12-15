@@ -538,8 +538,12 @@ class SemanticSimilarityEngine:
         # Get similarities for the target chapter
         similarities = similarity_matrix[query_idx]
 
-        # Determine method used
-        method = "tfidf" if self._using_fallback else "sentence_transformers"
+        # Determine method used - prefer _last_method (set by compute_embeddings_async)
+        # Fall back to checking _using_fallback for synchronous compute_embeddings
+        if self._last_method:
+            method = self._last_method
+        else:
+            method = "tfidf" if self._using_fallback else "sentence_transformers"
 
         # Find top-k similar chapters (excluding self)
         results: list[SimilarityResult] = []

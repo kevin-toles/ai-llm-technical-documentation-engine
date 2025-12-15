@@ -45,8 +45,8 @@ sys.path.insert(0, str(PROJECT_ROOT))
 # =============================================================================
 
 _SBERT_API_URL = os.getenv("SBERT_API_URL", "http://localhost:8083")
-_EMBEDDINGS_ENDPOINT = "/api/v1/embeddings"
-_SIMILARITY_ENDPOINT = "/api/v1/similarity"
+_EMBEDDINGS_ENDPOINT = "/v1/embeddings"
+_SIMILARITY_ENDPOINT = "/v1/similarity"
 _HEALTH_ENDPOINT = "/health"
 _EXPECTED_DIMENSIONS = 384
 
