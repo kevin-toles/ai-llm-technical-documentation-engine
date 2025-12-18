@@ -1,7 +1,31 @@
 #!/usr/bin/env python3
 """
-TDD Tests for WBS M4.1 - Functional Parity Verification.
+TDD Tests for WBS M4.1 - Functional Parity Verification - DEPRECATED
 
+=============================================================================
+DEPRECATED: Tests for local SBERT mode removed per Kitchen Brigade pattern
+=============================================================================
+
+These tests were for the following LOCAL ML functionality that has been REMOVED
+from semantic_similarity_engine.py:
+- Local SBERT mode (SENTENCE_TRANSFORMERS_AVAILABLE)
+- TF-IDF fallback mode (fallback_to_tfidf)
+- Local embedding computation
+
+Per the Kitchen Brigade Architecture (MULTI_STAGE_ENRICHMENT_PIPELINE_ARCHITECTURE.md):
+- llm-document-enhancer is a CUSTOMER only (no local ML)
+- All ML processing is now delegated to ai-agents MSEP service
+- SemanticSimilarityEngine now uses API-only mode
+
+For MSEP-related tests, see:
+- tests/e2e/test_msep_customer.py
+- tests/integration/test_msep_fallbacks.py
+- tests/unit/metadata_enrichment/test_msep_client.py
+
+These tests are kept for historical reference only.
+All tests are SKIPPED via module-level pytest.skip().
+
+Original documentation:
 WBS Reference: SBERT_EXTRACTION_MIGRATION_WBS.md - M4.1 Functional Parity
 Purpose: Verify that API mode produces identical results to local SBERT mode
 
@@ -12,36 +36,16 @@ TDD Phase: RED → GREEN → REFACTOR
 - M4.1.4: test_performance_acceptable (RED)
 - M4.1.5: Benchmark and tune (GREEN)
 - M4.1.6: Document performance characteristics (REFACTOR)
-
-Anti-Pattern Audit:
-- CODING_PATTERNS #12: Shared httpx.AsyncClient for benchmark tests
-- CODING_PATTERNS S1172: Underscore prefix for unused fixtures
-- CODING_PATTERNS S1192: Module constants for repeated values
-- CODING_PATTERNS S3776: Cognitive complexity < 15 per function
-
-Document Cross-References:
-- CODING_PATTERNS_ANALYSIS.md: Benchmark on large inputs < 100ms
-- AI_CODING_PLATFORM_ARCHITECTURE.md: Code-Orchestrator SBERT API
-- semantic_similarity_engine.py: Three-tier fallback implementation
 """
 
-import sys
-import time
-from pathlib import Path
-from typing import Any
-from unittest.mock import AsyncMock, MagicMock
-
-import numpy as np
 import pytest
 
-# Add project root to path
-PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
-sys.path.insert(0, str(PROJECT_ROOT))
-
-from workflows.metadata_enrichment.scripts.semantic_similarity_engine import (  # noqa: E402
-    SemanticSimilarityEngine,
-    SimilarityConfig,
-    SENTENCE_TRANSFORMERS_AVAILABLE,
+# Skip entire module - local SBERT mode has been removed per Kitchen Brigade pattern
+pytest.skip(
+    "DEPRECATED: Local SBERT/TF-IDF mode removed per Kitchen Brigade architecture. "
+    "See MULTI_STAGE_ENRICHMENT_PIPELINE_ARCHITECTURE.md. "
+    "SemanticSimilarityEngine now uses API-only mode via ai-agents MSEP.",
+    allow_module_level=True
 )
 
 # =============================================================================

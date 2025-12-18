@@ -31,9 +31,9 @@ from pathlib import Path
 from typing import List, Dict, Any, Tuple, Optional
 from datetime import datetime, timezone
 
-# scikit-learn imports for TF-IDF and cosine similarity
-from sklearn.feature_extraction.text import TfidfVectorizer  # type: ignore[import-untyped]
-from sklearn.metrics.pairwise import cosine_similarity  # type: ignore[import-untyped]
+# NOTE: TF-IDF imports REMOVED per Kitchen Brigade pattern
+# All ML processing now done in ai-agents MSEP service
+# See: MULTI_STAGE_ENRICHMENT_PIPELINE_ARCHITECTURE.md
 
 # Project configuration and paths
 PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
@@ -162,38 +162,18 @@ def get_statistical_extractor():
     # Create new instance each time to pick up env var changes
     return _STATISTICAL_EXTRACTOR_CLASS()
 
-# BERTopic/Sentence Transformers integration (Option C Architecture)
-try:
-    from workflows.metadata_enrichment.scripts.topic_clusterer import (
-        TopicClusterer,
-        TopicResults,
-        TopicInfo,
-        BERTOPIC_AVAILABLE,
-    )
-    TOPIC_CLUSTERER_AVAILABLE = True
-except ImportError as e:
-    print(f"Warning: TopicClusterer not available: {e}")
-    print("Topic clustering will be skipped")
-    TOPIC_CLUSTERER_AVAILABLE = False
-    TopicClusterer = None  # type: ignore[misc, assignment]
-    TopicResults = None  # type: ignore[misc, assignment]
-    TopicInfo = None  # type: ignore[misc, assignment]
-    BERTOPIC_AVAILABLE = False
 
-try:
-    from workflows.metadata_enrichment.scripts.semantic_similarity_engine import (
-        SemanticSimilarityEngine,
-        SimilarityConfig,
-        SENTENCE_TRANSFORMERS_AVAILABLE,
-    )
-    SEMANTIC_ENGINE_AVAILABLE = True
-except ImportError as e:
-    print(f"Warning: SemanticSimilarityEngine not available: {e}")
-    print("Semantic similarity will use TF-IDF fallback")
-    SEMANTIC_ENGINE_AVAILABLE = False
-    SemanticSimilarityEngine = None  # type: ignore[misc, assignment]
-    SimilarityConfig = None  # type: ignore[misc, assignment]
-    SENTENCE_TRANSFORMERS_AVAILABLE = False
+# =============================================================================
+# REMOVED: Local ML Library Imports (BERTopic, Sentence Transformers)
+# Per Kitchen Brigade pattern (MULTI_STAGE_ENRICHMENT_PIPELINE_ARCHITECTURE.md):
+# - llm-document-enhancer is CUSTOMER only (no local ML)
+# - All ML processing moved to ai-agents MSEP service
+#
+# Imports removed:
+# - TopicClusterer, TopicResults, TopicInfo, BERTOPIC_AVAILABLE
+# - SemanticSimilarityEngine, SimilarityConfig, SENTENCE_TRANSFORMERS_AVAILABLE
+# =============================================================================
+
 
 # WBS 3.2.3: Semantic Search Client for remote API calls
 try:
@@ -222,6 +202,35 @@ except ImportError as e:
     FakeOrchestratorClient = None  # type: ignore[misc, assignment]
     OrchestratorClientError = None  # type: ignore[misc, assignment]
     SEMANTIC_SIMILARITY_THRESHOLD = 0.3  # Fallback constant
+
+# =============================================================================
+# WBS MSE-6.2: MSEPClient for ai-agents MSEP API Integration
+# Pattern: Kitchen Brigade - CUSTOMER (llm-document-enhancer) -> EXPEDITOR (ai-agents)
+# =============================================================================
+try:
+    from workflows.shared.clients.msep_client import (
+        MSEPClient,
+        ChapterMeta,
+        MSEPConfig,
+        EnrichedMetadataResponse,
+        MSEPConnectionError,
+        MSEPTimeoutError,
+        MSEPAPIError,
+    )
+    MSEP_CLIENT_AVAILABLE = True
+except ImportError as e:
+    print(f"Warning: MSEPClient not available: {e}")
+    MSEP_CLIENT_AVAILABLE = False
+    MSEPClient = None  # type: ignore[misc, assignment]
+    ChapterMeta = None  # type: ignore[misc, assignment]
+    MSEPConfig = None  # type: ignore[misc, assignment]
+    EnrichedMetadataResponse = None  # type: ignore[misc, assignment]
+    MSEPConnectionError = Exception  # type: ignore[misc, assignment]
+    MSEPTimeoutError = Exception  # type: ignore[misc, assignment]
+    MSEPAPIError = Exception  # type: ignore[misc, assignment]
+
+# Provenance method identifier for MSEP enrichment
+ENRICHMENT_METHOD_MSEP = "msep"
 
 
 def _extract_books_from_taxonomy(taxonomy: Dict[str, Any]) -> set:
@@ -307,198 +316,18 @@ def _load_book_metadata(book_set: set, metadata_dir: Path) -> Dict[str, Any]:
     return context
 
 
-def load_cross_book_context(taxonomy_path: Path, metadata_dir: Path) -> Dict[str, Any]:
-    """
-    Load metadata for all books listed in taxonomy.
-    
-    Reference: TAB4_IMPLEMENTATION_PLAN.md - Function 1
-    Pattern: Repository pattern for data access (Architecture Patterns Ch. 2)
-    
-    Args:
-        taxonomy_path: Path to {book}_taxonomy.json from Tab 3
-        metadata_dir: Directory containing *_metadata.json files from Tab 2
-        
-    Returns:
-        Dictionary containing:
-        - books: List of book names
-        - metadata: Dict mapping book_name -> chapter list
-        - corpus_size: Total number of chapters across all books
-        
-    Raises:
-        FileNotFoundError: If taxonomy file doesn't exist
-        json.JSONDecodeError: If taxonomy JSON is invalid
-    """
-    if not taxonomy_path.exists():
-        raise FileNotFoundError(f"Taxonomy file not found: {taxonomy_path}")
-    
-    with open(taxonomy_path, encoding='utf-8') as f:
-        taxonomy = json.load(f)
-    
-    # Extract book list from taxonomy tiers
-    book_set = _extract_books_from_taxonomy(taxonomy)
-    
-    # If no books found in taxonomy, scan metadata directory
-    if not book_set:
-        print("[INFO] Taxonomy doesn't contain book list. Scanning metadata directory for all available books...")
-        book_set = _scan_metadata_directory(metadata_dir)
-    
-    # Load metadata for each book
-    return _load_book_metadata(book_set, metadata_dir)
-
-
-def build_chapter_corpus(context: Dict[str, Any]) -> Tuple[List[str], List[Dict[str, Any]]]:
-    """
-    Build corpus of chapter texts and index for TF-IDF.
-    
-    Reference: TAB4_IMPLEMENTATION_PLAN.md - Function 2
-    Pattern: Factory pattern for corpus construction
-    
-    Args:
-        context: Cross-book context from load_cross_book_context()
-        
-    Returns:
-        Tuple of:
-        - corpus: List of chapter text strings (one per chapter)
-        - index: List of chapter metadata dicts with keys:
-            - book: Book filename
-            - chapter: Chapter number
-            - title: Chapter title
-            - start_page: Start page number
-            - end_page: End page number
-    """
-    corpus = []
-    index = []
-    
-    for book_name, chapters in context["metadata"].items():
-        for chapter in chapters:
-            # Combine all text features for TF-IDF analysis
-            # Using title, summary, keywords, and concepts provides rich semantic content
-            text_parts = [
-                chapter.get("title", ""),
-                chapter.get("summary", ""),
-                " ".join(chapter.get("keywords", [])),
-                " ".join(chapter.get("concepts", []))
-            ]
-            chapter_text = " ".join(text_parts)
-            
-            corpus.append(chapter_text)
-            index.append({
-                "book": book_name,
-                "chapter": chapter.get("chapter_number"),
-                "title": chapter.get("title", ""),
-                "start_page": chapter.get("start_page"),
-                "end_page": chapter.get("end_page")
-            })
-    
-    return corpus, index
-
-
-def compute_similarity_matrix(corpus: List[str]) -> Any:
-    """
-    Compute TF-IDF matrix and cosine similarity between all chapters.
-    
-    Reference: TAB4_IMPLEMENTATION_PLAN.md - Function 3
-    Pattern: Statistical methods (no LLM) - scikit-learn
-    
-    Args:
-        corpus: List of chapter text strings
-        
-    Returns:
-        similarity_matrix: numpy array of shape (n_chapters, n_chapters)
-                          where similarity_matrix[i][j] is cosine similarity between chapter i and j
-                          
-    Configuration:
-        - stop_words: Remove common English words ("the", "a", etc.)
-        - max_features: Limit to 1000 most important terms
-        - ngram_range: Include unigrams, bigrams, and trigrams
-        - min_df: Ignore terms appearing in fewer than 2 documents
-        - max_df: Ignore terms appearing in more than 80% of documents
-    """
-    # TF-IDF vectorization configuration per plan
-    vectorizer = TfidfVectorizer(
-        stop_words='english',
-        max_features=1000,
-        ngram_range=(1, 3),  # Unigrams, bigrams, trigrams
-        min_df=2,  # Minimum document frequency
-        max_df=0.8  # Maximum document frequency (80%)
-    )
-    
-    # Transform corpus to TF-IDF matrix
-    tfidf_matrix = vectorizer.fit_transform(corpus)
-    
-    # Compute pairwise cosine similarity
-    similarity_matrix = cosine_similarity(tfidf_matrix)
-    
-    return similarity_matrix
-
-
-def find_related_chapters(
-    chapter_idx: int,
-    similarity_matrix: Any,
-    index: List[Dict[str, Any]],
-    current_book: str,
-    threshold: float = 0.7,
-    top_n: int = 5
-) -> List[Dict[str, Any]]:
-    """
-    Find top N related chapters for a given chapter using cosine similarity.
-    
-    Reference: TAB4_IMPLEMENTATION_PLAN.md - Function 4
-    Pattern: Filter pattern with threshold and ranking
-    
-    Args:
-        chapter_idx: Index of current chapter in corpus/similarity matrix
-        similarity_matrix: Precomputed cosine similarity matrix
-        index: Chapter metadata index
-        current_book: Book name to exclude self-references
-        threshold: Minimum similarity score (0.7 = 70% similarity)
-        top_n: Maximum number of related chapters to return (5)
-        
-    Returns:
-        List of related chapter dicts with keys:
-        - book: Book filename
-        - chapter: Chapter number
-        - title: Chapter title
-        - relevance_score: Similarity score (0.0-1.0)
-        - method: Always "cosine_similarity"
-    """
-    scores = similarity_matrix[chapter_idx]
-    
-    # Build list of (index, score) pairs for chapters above threshold
-    scored_chapters = []
-    for idx, score in enumerate(scores):
-        # Skip self-reference and chapters below threshold
-        if idx == chapter_idx or score < threshold:
-            continue
-        
-        chapter_info = index[idx]
-        # Exclude chapters from same book (cross-book analysis only)
-        if chapter_info["book"] == current_book:
-            continue
-        
-        scored_chapters.append({
-            "idx": idx,
-            "score": float(score),  # Convert numpy float to Python float
-            "book": chapter_info["book"],
-            "chapter": chapter_info["chapter"],
-            "title": chapter_info["title"]
-        })
-    
-    # Sort by similarity score (descending) and take top N
-    scored_chapters.sort(key=lambda x: x["score"], reverse=True)
-    
-    # Format output per schema
-    related = []
-    for item in scored_chapters[:top_n]:
-        related.append({
-            "book": item["book"],
-            "chapter": item["chapter"],
-            "title": item["title"],
-            "relevance_score": round(item["score"], 2),
-            "method": "cosine_similarity"
-        })
-    
-    return related
+# =============================================================================
+# REMOVED: TF-IDF Local Processing Functions
+# Per Kitchen Brigade pattern (MULTI_STAGE_ENRICHMENT_PIPELINE_ARCHITECTURE.md):
+# - llm-document-enhancer is CUSTOMER only (no local ML)
+# - All ML processing moved to ai-agents MSEP service
+#
+# Functions removed:
+# - load_cross_book_context()
+# - build_chapter_corpus()
+# - compute_similarity_matrix()
+# - find_related_chapters()
+# =============================================================================
 
 
 # =============================================================================
@@ -1034,180 +863,19 @@ def extract_concepts_cross_book(
     return concepts_enriched
 
 
-def _find_chapter_index(
-    book_name: str, 
-    chapter_num: int, 
-    index: List[Dict[str, Any]]
-) -> Optional[int]:
-    """Find chapter index in corpus. Returns None if not found."""
-    for idx, item in enumerate(index):
-        if item["book"] == f"{book_name}.json" and item["chapter"] == chapter_num:
-            return idx
-    return None
-
-
-def _get_topic_info(
-    topic_clusterer: Optional[Any], 
-    chapter_idx: int
-) -> Optional[int]:
-    """Get topic ID from clusterer. Returns None if unavailable."""
-    if topic_clusterer is None:
-        return None
-    try:
-        topic_info = topic_clusterer.get_topic_for_chapter(chapter_idx)
-        topic_id = topic_info.topic_id
-        if topic_id is not None and topic_id >= 0:
-            print(f"    Topic ID: {topic_id} ({topic_info.topic_name})")
-            return topic_id
-    except Exception as e:
-        print(f"    ⚠️  Could not get topic_id: {e}")
-    return None
-
-
-def _find_related_with_semantic(
-    chapter_idx: int,
-    book_name: str,
-    index: List[Dict[str, Any]],
-    similarity_matrix: Any,
-    semantic_engine: Optional[Any],
-    semantic_embeddings: Optional[Any]
-) -> List[Dict[str, Any]]:
-    """Find related chapters using semantic or TF-IDF similarity."""
-    if semantic_engine is not None and semantic_embeddings is not None:
-        try:
-            related_results = semantic_engine.find_similar(
-                query_idx=chapter_idx,
-                embeddings=semantic_embeddings,
-                index=index,
-                top_k=5,
-                threshold=0.1,
-            )
-            related = []
-            for r in related_results:
-                if r.book == f"{book_name}.json":
-                    continue
-                related.append({
-                    "book": r.book,
-                    "chapter": r.chapter,
-                    "title": r.title,
-                    "relevance_score": round(r.score, 2),
-                    "method": r.method,
-                })
-            return related[:5]
-        except Exception as e:
-            print(f"    ⚠️  Semantic similarity failed, using TF-IDF: {e}")
-    
-    return find_related_chapters(
-        chapter_idx,
-        similarity_matrix,
-        index,
-        f"{book_name}.json",
-        threshold=0.7,
-        top_n=5
-    )
-
-
-def _collect_related_texts(
-    related: List[Dict[str, Any]], 
-    corpus: List[str], 
-    index: List[Dict[str, Any]]
-) -> List[str]:
-    """Collect text content from related chapters."""
-    related_texts = []
-    for rel in related:
-        for idx, item in enumerate(index):
-            if item["book"] == rel["book"] and item["chapter"] == rel["chapter"]:
-                related_texts.append(corpus[idx])
-                break
-    return related_texts
-
-
-def _enrich_single_chapter(
-    chapter: Dict[str, Any],
-    book_name: str,
-    corpus: List[str],
-    index: List[Dict[str, Any]],
-    similarity_matrix: Any,
-    topic_clusterer: Optional[Any] = None,
-    semantic_engine: Optional[Any] = None,
-    semantic_embeddings: Optional[Any] = None,
-) -> Dict[str, Any]:
-    """
-    Helper function to enrich a single chapter (reduces cognitive complexity).
-    
-    Pattern: Extract Method refactoring (reduce complexity)
-    Reference: BERTOPIC_SENTENCE_TRANSFORMERS_DESIGN.md - Option C Architecture
-    
-    Args:
-        chapter: Chapter metadata dict from Tab 2
-        book_name: Name of current book
-        corpus: Full chapter corpus
-        index: Chapter index
-        similarity_matrix: Precomputed similarity matrix
-        topic_clusterer: Optional TopicClusterer instance (fitted)
-        semantic_engine: Optional SemanticSimilarityEngine instance
-        semantic_embeddings: Optional precomputed semantic embeddings
-        
-    Returns:
-        Enriched chapter dict with topic_id, related_chapters, keywords_enriched, concepts_enriched
-    """
-    chapter_num = chapter.get("chapter_number")
-    print(f"  Chapter {chapter_num}: {chapter.get('title', 'Untitled')}")
-    
-    # Find chapter index in corpus
-    chapter_idx = _find_chapter_index(book_name, chapter_num, index)
-    if chapter_idx is None:
-        print("    ⚠️  Chapter not found in corpus, skipping enrichment")
-        return chapter
-    
-    # Get topic_id from TopicClusterer (Option C Architecture)
-    topic_id = _get_topic_info(topic_clusterer, chapter_idx)
-    
-    # Find related chapters using cosine similarity (or semantic similarity)
-    related = _find_related_with_semantic(
-        chapter_idx, book_name, index, similarity_matrix,
-        semantic_engine, semantic_embeddings
-    )
-    print(f"    Related chapters found: {len(related)}")
-    
-    # Get related chapter texts for keyword/concept enrichment
-    related_texts = _collect_related_texts(related, corpus, index)
-    
-    # Build current chapter text
-    current_text = " ".join([
-        chapter.get("title", ""),
-        chapter.get("summary", ""),
-        " ".join(chapter.get("keywords", [])),
-        " ".join(chapter.get("concepts", []))
-    ])
-    
-    # Re-score keywords with cross-book context
-    keywords_enriched = rescore_keywords_cross_book(
-        current_text,
-        related_texts,
-        top_n=10
-    )
-    
-    # Extract cross-book concepts
-    concepts_enriched = extract_concepts_cross_book(
-        current_text,
-        related_texts,
-        top_n=10
-    )
-    
-    # Build enriched chapter (preserve all original fields + add enrichments)
-    enriched = {
-        **chapter,  # Preserve all Tab 2 fields
-        "related_chapters": related,
-        "keywords_enriched": keywords_enriched,
-        "concepts_enriched": concepts_enriched
-    }
-    
-    # Add topic_id if available (Option C Architecture)
-    if topic_id is not None:
-        enriched["topic_id"] = topic_id
-    
-    return enriched
+# =============================================================================
+# REMOVED: Local Enrichment Helper Functions
+# Per Kitchen Brigade pattern (MULTI_STAGE_ENRICHMENT_PIPELINE_ARCHITECTURE.md):
+# - llm-document-enhancer is CUSTOMER only (no local ML)
+# - All ML processing moved to ai-agents MSEP service
+#
+# Functions removed:
+# - _find_chapter_index()
+# - _get_topic_info()
+# - _find_related_with_semantic()
+# - _collect_related_texts()
+# - _enrich_single_chapter()
+# =============================================================================
 
 
 def enrich_metadata(
@@ -1216,166 +884,139 @@ def enrich_metadata(
     output_path: Path
 ) -> None:
     """
-    Main enrichment function - orchestrates the complete Tab 4 workflow.
+    Cross-book enrichment FALLBACK mode - creates minimal output without local ML.
+
+    Kitchen Brigade Pattern:
+    - llm-document-enhancer is CUSTOMER only (NO local ML)
+    - Taxonomy mode is DEPRECATED - use --use-msep for full enrichment
+    - This function produces MSEP-unified schema with empty enrichment fields
+
+    DEPRECATED: Use --use-msep instead for full enrichment capabilities.
     
-    Reference: TAB4_IMPLEMENTATION_PLAN.md - Function 7
-    Pattern: Orchestration pattern (Architecture Patterns Ch. 8)
-    
-    Workflow:
-    1. Load current book metadata (Tab 2 output)
-    2. Load cross-book context from taxonomy (Tab 3 output)
-    3. Build TF-IDF corpus from all books
-    4. Compute similarity matrix
-    5. For each chapter:
-       a. Find related chapters (cosine similarity > 0.7)
-       b. Re-score keywords with YAKE using cross-book context
-       c. Extract concepts with Summa using cross-book context
-    6. Generate enriched metadata JSON (Tab 4 output)
-    
+    Reference: MULTI_STAGE_ENRICHMENT_PIPELINE_ARCHITECTURE.md
+    Pattern: Graceful degradation, Kitchen Brigade compliance
+
     Args:
         input_path: Path to {book}_metadata.json (Tab 2 output)
-        taxonomy_path: Path to {book}_taxonomy.json (Tab 3 output)
+        taxonomy_path: Path to {book}_taxonomy.json (Tab 3 output) - IGNORED in fallback
         output_path: Path for {book}_metadata_enriched.json (Tab 4 output)
-        
-    Output Schema:
+
+    Output Schema (MSEP-unified, empty enrichments):
         {
             "book": str,
-            "enrichment_metadata": {
-                "generated": ISO timestamp,
-                "method": "statistical",
-                "libraries": {yake, summa, scikit-learn versions},
-                "corpus_size": int,
-                "total_chapters_analyzed": int
-            },
+            "enrichment_metadata": {...},
+            "enrichment_provenance": {...},
             "chapters": [
                 {
                     ... (all original Tab 2 fields preserved),
-                    "topic_id": int (optional, from BERTopic clustering),
-                    "related_chapters": [...],
-                    "keywords_enriched": [...],
-                    "concepts_enriched": [...]
+                    "cross_references": [],
+                    "enriched_keywords": {...},
+                    "topic_id": None,
+                    "related_chapters": [],
+                    "keywords_enriched": [],
+                    "concepts_enriched": []
                 }
             ]
         }
     """
-    print("\n📊 Tab 4: Statistical Enrichment")
-    print(f"Input: {input_path.name}")
-    print(f"Taxonomy: {taxonomy_path.name}")
-    
+    print("\n⚠️  DEPRECATED: --taxonomy mode uses fallback (no local ML)")
+    print("  Kitchen Brigade: No local ML processing in llm-document-enhancer")
+    print("  For full enrichment, use: --use-msep --msep-url http://localhost:8082")
+    print(f"\nInput: {input_path.name}")
+    print(f"Taxonomy: {taxonomy_path.name} (ignored in fallback mode)")
+
     # 1. Load current book metadata
     if not input_path.exists():
         raise FileNotFoundError(f"Input file not found: {input_path}")
-    
+
     with open(input_path, encoding='utf-8') as f:
         book_metadata = json.load(f)
-    
-    book_name = input_path.stem.replace("_metadata", "")
-    print(f"\nEnriching: {book_name}")
-    print(f"Chapters: {len(book_metadata)}")
-    
-    # 2. Load cross-book context from taxonomy
-    print("\nLoading companion books from taxonomy...")
-    metadata_dir = input_path.parent
-    context = load_cross_book_context(taxonomy_path, metadata_dir)
-    
-    # Add current book to context (needed for similarity comparisons)
-    current_book_key = f"{book_name}.json"
-    if current_book_key not in context['metadata']:
-        context['metadata'][current_book_key] = book_metadata
-        context['books'].append(current_book_key)
-        context['corpus_size'] += len(book_metadata)
-    
-    print(f"  Books found: {len(context['books'])} (including current book)")
-    print(f"  Total chapters: {context['corpus_size']}")
-    
-    # 3. Build TF-IDF corpus
-    print("\nBuilding TF-IDF corpus...")
-    corpus, index = build_chapter_corpus(context)
-    print(f"  Corpus size: {len(corpus)} chapters")
-    
-    # 4. Compute similarity matrix
-    print("\nComputing cosine similarity matrix...")
-    similarity_matrix = compute_similarity_matrix(corpus)
-    print(f"  Matrix shape: {similarity_matrix.shape}")
-    
-    # 4b. Run BERTopic clustering (Option C Architecture)
-    topic_results: Optional[TopicResults] = None
-    topic_clusterer: Optional[TopicClusterer] = None
-    if TOPIC_CLUSTERER_AVAILABLE and TopicClusterer is not None:
-        print("\n🔍 Running topic clustering (BERTopic/fallback)...")
-        try:
-            topic_clusterer = TopicClusterer()
-            # Pass corpus (list of strings) and index (list of dicts)
-            topic_results = topic_clusterer.cluster_chapters(corpus, index)
-            print(f"  Topics discovered: {topic_results.topic_count}")
-            print(f"  Using BERTopic: {BERTOPIC_AVAILABLE}")
-        except Exception as e:
-            print(f"  ⚠️  Topic clustering failed: {e}")
-            topic_results = None
-            topic_clusterer = None
-    
-    # 4c. Initialize SemanticSimilarityEngine for enhanced similarity
-    semantic_engine: Optional[SemanticSimilarityEngine] = None
-    semantic_embeddings = None
-    if SEMANTIC_ENGINE_AVAILABLE and SemanticSimilarityEngine is not None:
-        print("\n🔗 Initializing semantic similarity engine...")
-        try:
-            semantic_engine = SemanticSimilarityEngine()
-            semantic_embeddings = semantic_engine.compute_embeddings(corpus)
-            print(f"  Embeddings computed: {semantic_embeddings.shape}")
-            print(f"  Using fallback (TF-IDF): {semantic_engine.is_using_fallback}")
-        except Exception as e:
-            print(f"  ⚠️  Semantic engine initialization failed: {e}")
-            semantic_engine = None
-    
-    # 5. Enrich each chapter using helper function
-    print("\nEnriching chapters with cross-book analysis...")
-    enriched_chapters = [
-        _enrich_single_chapter(
-            chapter, book_name, corpus, index, similarity_matrix,
-            topic_clusterer=topic_clusterer,
-            semantic_engine=semantic_engine,
-            semantic_embeddings=semantic_embeddings,
-        )
-        for chapter in book_metadata
-    ]
-    
-    # 6. Build enriched metadata output
+
+    # Handle both formats
+    if isinstance(book_metadata, list):
+        chapters = book_metadata
+        book_name = input_path.stem.replace("_metadata", "")
+    else:
+        chapters = book_metadata.get("chapters", book_metadata)
+        book_name = book_metadata.get("book", input_path.stem.replace("_metadata", ""))
+
+    print(f"\nBook: {book_name}")
+    print(f"Chapters: {len(chapters)}")
+
+    # 2. Build enriched chapters with empty enrichment fields
+    enriched_chapters = []
+    timestamp = datetime.now().isoformat()
+
+    for idx, chapter in enumerate(chapters):
+        chapter_num = chapter.get("chapter_number", idx + 1)
+
+        # Build enriched chapter (preserve all original fields + empty enrichments)
+        enriched = chapter.copy()
+        enriched.update({
+            # MSEP-unified fields - empty in fallback mode
+            "cross_references": [],
+            "enriched_keywords": {
+                "tfidf": [],
+                "semantic": [],
+                "merged": chapter.get("keywords", []),
+            },
+            "topic_id": None,
+            "topic_name": None,
+            "graph_relationships": [],
+            "chapter_provenance": {
+                "methods_used": ["fallback"],
+                "sbert_score": 0.0,
+                "topic_boost": 0.0,
+                "timestamp": timestamp,
+            },
+            "similarity_source": "fallback_no_ml",
+            # Legacy fields (for backward compatibility)
+            "related_chapters": [],
+            "keywords_enriched": chapter.get("keywords", []),
+            "concepts_enriched": chapter.get("concepts", []),
+        })
+        enriched_chapters.append(enriched)
+
+    # 3. Build enriched metadata output
     enriched_metadata = {
         "book": book_name,
         "enrichment_metadata": {
-            "generated": datetime.now().isoformat(),
-            "method": "statistical",
+            "generated": timestamp,
+            "method": "fallback",
             "libraries": {
-                "yake": "0.4.8",
-                "summa": "1.2.0",
-                "scikit-learn": "1.3.2",
-                "bertopic": "available" if BERTOPIC_AVAILABLE else "unavailable",
-                "sentence_transformers": "available" if SENTENCE_TRANSFORMERS_AVAILABLE else "unavailable",
+                "note": "Local ML disabled per Kitchen Brigade pattern",
             },
-            "corpus_size": len(context["books"]),
-            "total_chapters_analyzed": context["corpus_size"],
+            "corpus_size": 0,
+            "total_chapters_analyzed": len(chapters),
             "topic_clustering": {
-                "enabled": topic_results is not None,
-                "num_topics": topic_results.topic_count if topic_results else 0,
-                "using_bertopic": BERTOPIC_AVAILABLE,
+                "enabled": False,
+                "num_topics": 0,
+                "using_bertopic": False,
             },
         },
+        "enrichment_provenance": build_enrichment_provenance(
+            input_path=input_path,
+            taxonomy_path=taxonomy_path,
+            enrichment_method="fallback",
+            model_version="none",
+        ),
         "chapters": enriched_chapters
     }
-    
-    # 7. Save enriched metadata
+    enriched_metadata["enrichment_provenance"]["fallback_mode"] = True
+    enriched_metadata["enrichment_provenance"]["fallback_reason"] = "taxonomy mode deprecated, use --use-msep"
+
+    # 4. Save enriched metadata
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(enriched_metadata, f, indent=2, ensure_ascii=False)
-    
-    # Calculate and report file size
+
+    # Report
     size_kb = output_path.stat().st_size / 1024
-    print(f"\n✅ Enriched metadata saved: {output_path.name}")
+    print(f"\n✅ Fallback metadata saved: {output_path.name}")
     print(f"  File size: {size_kb:.1f} KB")
-    print(f"  Chapters enriched: {len(enriched_chapters)}")
-    print("  Statistical method: TF-IDF + cosine similarity")
-    print("  NO LLM calls made ✓")
+    print(f"  Chapters: {len(enriched_chapters)}")
+    print(f"  Cross-references: 0 (fallback mode)")
+    print("  ⚠️  Run with --use-msep when ai-agents is available for full enrichment")
 
 
 def enrich_metadata_local(
@@ -1383,179 +1024,122 @@ def enrich_metadata_local(
     output_path: Path
 ) -> None:
     """
-    Local/within-book enrichment - computes TF-IDF similarity between chapters
-    in a single book without requiring cross-book taxonomy.
-    
-    Reference: WBS 3.1.2 - TF-IDF Similarity (Local)
-    Pattern: Statistical methods (no LLM) - scikit-learn
-    
-    Workflow:
-    1. Load book metadata (from WBS 3.1.1 output)
-    2. Build TF-IDF corpus from chapter content
-    3. Compute cosine similarity matrix (chapter × chapter)
-    4. For each chapter, identify top-5 similar chapters
-    5. Store similarity scores in enriched metadata JSON
-    
+    Fallback enrichment - creates minimal output without ML processing.
+
+    Kitchen Brigade Pattern:
+    - llm-document-enhancer is CUSTOMER only (NO local ML)
+    - This function is a FALLBACK when ai-agents MSEP is unavailable
+    - Produces MSEP-unified schema with empty enrichment fields
+
+    Reference: MULTI_STAGE_ENRICHMENT_PIPELINE_ARCHITECTURE.md
+    Pattern: Graceful degradation without local ML
+
     Args:
         input_path: Path to book metadata JSON (WBS 3.1.1 output)
         output_path: Path for enriched metadata JSON output
-        
-    Output Schema:
+
+    Output Schema (MSEP-unified, empty enrichments):
         {
             "book_title": str,
             "total_chapters": int,
-            "enrichment_metadata": {
-                "generated": ISO timestamp,
-                "method": "tfidf_local",
-                "mode": "within_book"
-            },
+            "enrichment_provenance": {...},
             "chapters": [
                 {
                     ... (all original fields preserved),
-                    "similar_chapters": [
-                        {
-                            "chapter_id": int,
-                            "title": str,
-                            "score": float (0.0-1.0)
-                        }
-                    ]
+                    "cross_references": [],
+                    "enriched_keywords": {"tfidf": [], "semantic": [], "merged": []},
+                    "topic_id": None,
+                    "chapter_provenance": {...}
                 }
             ]
         }
     """
-    print("\n📊 WBS 3.1.2: TF-IDF Similarity (Local Mode)")
-    print(f"Input: {input_path.name}")
-    
+    print("\n⚠️  FALLBACK MODE: ai-agents MSEP service unavailable")
+    print("  Kitchen Brigade: No local ML processing in llm-document-enhancer")
+    print("  Output will have empty enrichment fields")
+    print(f"\nInput: {input_path.name}")
+
     # 1. Load book metadata
     if not input_path.exists():
         raise FileNotFoundError(f"Input file not found: {input_path}")
-    
+
     with open(input_path, encoding='utf-8') as f:
         book_data = json.load(f)
-    
+
     # Handle both formats: list of chapters or {chapters: [...]}
     if isinstance(book_data, list):
         chapters = book_data
         book_title = input_path.stem.replace("_metadata", "")
+        original_book_data: Dict[str, Any] = {"chapters": chapters}
     else:
         chapters = book_data.get("chapters", [])
         book_title = book_data.get("book_title", input_path.stem.replace("_metadata", ""))
-    
+        original_book_data = book_data
+
     print(f"\nBook: {book_title}")
     print(f"Chapters: {len(chapters)}")
-    
-    # 2. Build TF-IDF corpus from chapter content
-    print("\nBuilding TF-IDF corpus...")
-    corpus = []
-    for chapter in chapters:
-        # Combine text features for TF-IDF
-        text_parts = [
-            chapter.get("title", ""),
-            chapter.get("summary", ""),
-            " ".join(chapter.get("keywords", [])),
-            " ".join(chapter.get("concepts", []))
-        ]
-        chapter_text = " ".join(text_parts)
-        corpus.append(chapter_text)
-    
-    print(f"  Corpus size: {len(corpus)} chapters")
-    
-    # 3. Compute TF-IDF matrix and cosine similarity
-    print("\nComputing TF-IDF vectors...")
-    
-    # Need at least min_df documents for TF-IDF
-    min_df = min(2, len(corpus))
-    
-    vectorizer = TfidfVectorizer(
-        stop_words='english',
-        max_features=1000,
-        ngram_range=(1, 2),  # Unigrams and bigrams
-        min_df=min_df,
-        max_df=0.9
-    )
-    
-    tfidf_matrix = vectorizer.fit_transform(corpus)
-    print(f"  TF-IDF matrix shape: {tfidf_matrix.shape}")
-    
-    # Compute pairwise cosine similarity
-    print("\nComputing cosine similarity matrix...")
-    similarity_matrix = cosine_similarity(tfidf_matrix)
-    print(f"  Similarity matrix shape: {similarity_matrix.shape}")
-    
-    # 4. For each chapter, identify top-5 similar chapters
-    print("\nIdentifying similar chapters...")
+
+    # 2. Build enriched chapters with empty enrichment fields (MSEP-unified schema)
     enriched_chapters = []
-    
+    timestamp = datetime.now().isoformat()
+
     for idx, chapter in enumerate(chapters):
         chapter_num = chapter.get("chapter_number", idx + 1)
-        
-        # Get similarity scores for this chapter
-        scores = similarity_matrix[idx]
-        
-        # Build list of (other_idx, score) pairs, excluding self
-        similar_chapters = []
-        for other_idx, score in enumerate(scores):
-            if other_idx == idx:  # Skip self
-                continue
-            similar_chapters.append({
-                "chapter_id": chapters[other_idx].get("chapter_number", other_idx + 1),
-                "title": chapters[other_idx].get("title", f"Chapter {other_idx + 1}"),
-                "score": round(float(score), 4)
-            })
-        
-        # Sort by score descending and take top 5
-        similar_chapters.sort(key=lambda x: x["score"], reverse=True)
-        top_similar = similar_chapters[:5]
-        
-        # Build enriched chapter (preserve all original fields + add similar_chapters)
-        enriched_chapter = {
-            **chapter,
-            "similar_chapters": top_similar,
-            "similarity_source": "tfidf"
-        }
-        enriched_chapters.append(enriched_chapter)
-        
-        # Progress output for first few chapters
-        if idx < 3:
-            top_scores = [f"{s['score']:.3f}" for s in top_similar[:3]]
-            print(f"  Chapter {chapter_num}: top scores = {top_scores}")
-    
-    # 5. Build enriched metadata output with provenance (WBS D2.1.3)
-    provenance = build_enrichment_provenance(
-        input_path=input_path,
-        taxonomy_path=None,  # Local mode has no taxonomy
-        enrichment_method=ENRICHMENT_METHOD_TFIDF,
-        model_version=TFIDF_MODEL_VERSION,
-    )
-    
-    enriched_metadata = {
-        "book_title": book_title,
-        "total_chapters": len(enriched_chapters),
-        "enrichment_metadata": {
-            "generated": datetime.now().isoformat(),
-            "method": "tfidf_local",
-            "mode": "within_book",
-            "libraries": {
-                "scikit-learn": "1.3.2"
+
+        # Build enriched chapter (preserve all original fields + empty MSEP fields)
+        enriched_chapter = chapter.copy()
+        enriched_chapter.update({
+            # MSEP-unified fields - empty in fallback mode
+            "cross_references": [],
+            "enriched_keywords": {
+                "tfidf": [],
+                "semantic": [],
+                "merged": chapter.get("keywords", []),  # Use original keywords
             },
-            # WBS D2.1.3: Enrichment provenance fields
-            **provenance,
-        },
-        "chapters": enriched_chapters
-    }
-    
-    # 6. Save enriched metadata
+            "topic_id": None,
+            "topic_name": None,
+            "graph_relationships": [],
+            "chapter_provenance": {
+                "methods_used": ["fallback"],
+                "sbert_score": 0.0,
+                "topic_boost": 0.0,
+                "timestamp": timestamp,
+            },
+            "similarity_source": "fallback_no_ml",
+        })
+        enriched_chapters.append(enriched_chapter)
+
+    # 3. Build enriched metadata output with provenance
+    enriched_metadata: Dict[str, Any] = original_book_data.copy()
+    enriched_metadata["chapters"] = enriched_chapters
+    enriched_metadata["book_title"] = book_title
+    enriched_metadata["total_chapters"] = len(enriched_chapters)
+
+    # Add top-level provenance
+    enriched_metadata["enrichment_provenance"] = build_enrichment_provenance(
+        input_path=input_path,
+        taxonomy_path=None,
+        enrichment_method="fallback",
+        model_version="none",
+    )
+    enriched_metadata["enrichment_provenance"]["total_cross_references"] = 0
+    enriched_metadata["enrichment_provenance"]["msep_processing_time_ms"] = 0.0
+    enriched_metadata["enrichment_provenance"]["fallback_mode"] = True
+    enriched_metadata["enrichment_provenance"]["fallback_reason"] = "ai-agents MSEP unavailable"
+
+    # 4. Save enriched metadata
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(enriched_metadata, f, indent=2, ensure_ascii=False)
-    
+
     # Report
     size_kb = output_path.stat().st_size / 1024
-    print(f"\n✅ Enriched metadata saved: {output_path.name}")
+    print(f"\n✅ Fallback metadata saved: {output_path.name}")
     print(f"  File size: {size_kb:.1f} KB")
-    print(f"  Chapters enriched: {len(enriched_chapters)}")
-    print(f"  Each chapter has top-5 similar chapters")
-    print("  NO LLM calls made ✓")
+    print(f"  Chapters: {len(enriched_chapters)}")
+    print(f"  Cross-references: 0 (fallback mode)")
+    print(f"  Schema: MSEP-unified (empty enrichments)")
+    print("  ⚠️  Run with --use-msep when ai-agents is available for full enrichment")
 
 
 async def enrich_metadata_semantic(
@@ -1788,6 +1372,18 @@ def create_argument_parser() -> argparse.ArgumentParser:
         default="http://localhost:8083",
         help="Orchestrator service URL (default: http://localhost:8083)"
     )
+    # WBS MSE-6.2: Add MSEP integration flags (Kitchen Brigade - ai-agents)
+    parser.add_argument(
+        "--use-msep",
+        action="store_true",
+        help="Use ai-agents MSEP endpoint for enrichment (WBS MSE-6.2)"
+    )
+    parser.add_argument(
+        "--msep-url",
+        type=str,
+        default="http://localhost:8082",
+        help="ai-agents MSEP service URL (default: http://localhost:8082)"
+    )
     return parser
 
 
@@ -1919,6 +1515,244 @@ async def enrich_metadata_orchestrator(
     print("  NO LLM calls made ✓")
 
 
+# =============================================================================
+# WBS MSE-6.2: MSEP Integration with ai-agents
+# Pattern: Kitchen Brigade - CUSTOMER delegates to EXPEDITOR
+# Reference: AI_CODING_PLATFORM_ARCHITECTURE.md - Scenario #1
+# =============================================================================
+
+import logging
+
+_logger = logging.getLogger(__name__)
+
+
+async def enrich_metadata_msep(
+    input_path: Path,
+    output_path: Path,
+    msep_url: str = "http://localhost:8082",
+) -> None:
+    """
+    MSEP-based enrichment - uses ai-agents MSEP endpoint for enrichment.
+
+    Kitchen Brigade Pattern:
+    - llm-document-enhancer is CUSTOMER only
+    - Delegates ALL enrichment logic to ai-agents (EXPEDITOR)
+    - NO local ML processing
+
+    WBS References:
+    - AC-6.2.1: Uses MSEPClient when --use-msep flag
+    - AC-6.2.2: Fallback to local enrichment when ai-agents unavailable
+    - AC-6.3.1: Writes {book}_enriched.json with MSEP results
+    - AC-6.3.2: Preserves existing metadata structure
+    - AC-6.3.3: Adds provenance to output JSON
+
+    Anti-Patterns Avoided (CODING_PATTERNS):
+    - §3.3: Always provide fallback, log it, document behavior
+    - S1172: No unused parameters
+    - S3776: Cognitive complexity < 15
+
+    Args:
+        input_path: Path to book metadata JSON (WBS 3.1.1 output)
+        output_path: Path for enriched metadata JSON output
+        msep_url: URL of ai-agents MSEP service (default: http://localhost:8082)
+
+    Raises:
+        FileNotFoundError: If input file doesn't exist
+    """
+    print("\n📊 WBS MSE-6.2: MSEP Enrichment (ai-agents API)")
+    print(f"Input: {input_path.name}")
+    print(f"MSEP URL: {msep_url}")
+
+    # 1. Load book metadata
+    if not input_path.exists():
+        raise FileNotFoundError(f"Input file not found: {input_path}")
+
+    with open(input_path, encoding="utf-8") as f:
+        book_data = json.load(f)
+
+    # Handle both formats: list of chapters or {chapters: [...]}
+    if isinstance(book_data, list):
+        chapters = book_data
+        book_title = input_path.stem.replace("_metadata", "")
+        original_book_data: Dict[str, Any] = {"chapters": chapters}
+    else:
+        chapters = book_data.get("chapters", [])
+        book_title = book_data.get(
+            "book_title", input_path.stem.replace("_metadata", "")
+        )
+        original_book_data = book_data
+
+    print(f"\nBook: {book_title}")
+    print(f"Chapters: {len(chapters)}")
+
+    # 2. Build corpus and chapter_index for MSEP API
+    corpus: list[str] = []
+    chapter_index: list[ChapterMeta] = []
+
+    for idx, chapter in enumerate(chapters):
+        chapter_num = chapter.get("chapter_number", idx + 1)
+        chapter_title = chapter.get("title", f"Chapter {chapter_num}")
+
+        # Build chapter content from available fields
+        content_parts = []
+        if chapter.get("title"):
+            content_parts.append(chapter["title"])
+        if chapter.get("summary"):
+            content_parts.append(chapter["summary"])
+        if chapter.get("content"):
+            content_parts.append(chapter["content"])
+        if chapter.get("keywords"):
+            content_parts.append(" ".join(chapter["keywords"]))
+
+        chapter_text = " ".join(content_parts) if content_parts else f"Chapter {chapter_num}"
+        corpus.append(chapter_text)
+
+        chapter_index.append(
+            ChapterMeta(
+                book=book_title,
+                chapter=chapter_num,
+                title=chapter_title,
+            )
+        )
+
+    # 3. Call MSEP API with fallback on error
+    enriched_response: Optional[EnrichedMetadataResponse] = None
+
+    try:
+        print("\nConnecting to ai-agents MSEP service...")
+        async with MSEPClient(base_url=msep_url) as client:
+            enriched_response = await client.enrich_metadata(
+                corpus=corpus,
+                chapter_index=chapter_index,
+                config=MSEPConfig(threshold=0.3),
+            )
+        print(f"✅ MSEP enrichment complete: {enriched_response.total_cross_references} cross-references")
+
+    except (MSEPConnectionError, MSEPTimeoutError) as e:
+        # AC-6.2.2: Fallback to local enrichment when ai-agents unavailable
+        # Per CODING_PATTERNS §3.3: Log the fallback
+        _logger.warning(
+            f"MSEP service unavailable ({type(e).__name__}: {e}). "
+            "Falling back to local enrichment."
+        )
+        print(f"\n⚠️ MSEP service unavailable: {e}")
+        print("  Falling back to local enrichment...")
+
+        # Fallback to existing local enrichment
+        enrich_metadata_local(input_path, output_path)
+        return
+
+    except MSEPAPIError as e:
+        # API errors (400, 422) should fail fast - not retry
+        _logger.error(f"MSEP API error: {e}")
+        raise
+
+    # 4. Merge MSEP response with original metadata (AC-6.3.2)
+    # Output format follows unified schema: book_enriched_chapters.schema.json
+    enriched_chapters = []
+
+    for idx, chapter in enumerate(chapters):
+        enriched_chapter = chapter.copy()  # Preserve all original fields
+
+        # Find matching enriched chapter from response
+        # MSEP returns chapter_id as "{book}:ch{chapter}" format
+        chapter_num = chapter.get('chapter_number', idx + 1)
+        chapter_id = f"{book_title}:ch{chapter_num}"
+        msep_chapter = None
+
+        for ec in enriched_response.chapters:
+            if ec.chapter_id == chapter_id:
+                msep_chapter = ec
+                break
+
+        if msep_chapter:
+            # Convert MSEP cross_references to unified similar_chapters format
+            # MSEP target format: "Book:ch5" -> {book: "Book", chapter: 5, ...}
+            similar_chapters = []
+            for xr in msep_chapter.cross_references:
+                # Parse target format "Book:ch5"
+                target_parts = xr.target.rsplit(":ch", 1)
+                target_book = target_parts[0] if len(target_parts) == 2 else book_title
+                target_chapter = int(target_parts[1]) if len(target_parts) == 2 else 0
+                
+                similar_chapters.append({
+                    "book": target_book,
+                    "chapter": target_chapter,
+                    "title": "",  # MSEP doesn't provide target title
+                    "score": round(xr.score, 3),
+                    "base_score": round(xr.base_score, 3),
+                    "topic_boost": round(xr.topic_boost, 3),
+                    "method": xr.method,
+                })
+            
+            enriched_chapter["similar_chapters"] = similar_chapters
+            enriched_chapter["enriched_keywords"] = {
+                "tfidf": msep_chapter.keywords.tfidf,
+                "semantic": msep_chapter.keywords.semantic,
+                "merged": msep_chapter.keywords.merged,
+            }
+            enriched_chapter["topic_id"] = msep_chapter.topic_id
+            enriched_chapter["chapter_provenance"] = {
+                "methods_used": msep_chapter.provenance.methods_used,
+                "sbert_score": msep_chapter.provenance.sbert_score,
+                "topic_boost": msep_chapter.provenance.topic_boost,
+                "timestamp": msep_chapter.provenance.timestamp,
+            }
+        else:
+            # No MSEP data for this chapter - add empty similar_chapters
+            enriched_chapter["similar_chapters"] = []
+
+        enriched_chapters.append(enriched_chapter)
+
+    # 5. Build output with provenance (AC-6.3.1, AC-6.3.3)
+    # Output format follows unified schema: book_enriched_chapters.schema.json
+    enriched_metadata: Dict[str, Any] = {
+        "metadata": {
+            "title": book_title,
+            "source_file": input_path.name,
+        },
+        "chapters": enriched_chapters,
+        "total_chapters": len(enriched_chapters),
+    }
+    
+    # Preserve any existing metadata from original book data
+    if isinstance(original_book_data, dict):
+        for key in ["author", "publisher", "isbn", "total_pages"]:
+            if key in original_book_data:
+                enriched_metadata["metadata"][key] = original_book_data[key]
+
+    # Add top-level provenance
+    enriched_metadata["enrichment_provenance"] = build_enrichment_provenance(
+        input_path=input_path,
+        taxonomy_path=None,
+        enrichment_method=ENRICHMENT_METHOD_MSEP,
+        model_version="ai-agents-msep-v1",
+    )
+
+    # Add MSEP-specific metadata (using unified field names)
+    enriched_metadata["enrichment_provenance"]["processing_time_ms"] = (
+        enriched_response.processing_time_ms
+    )
+    enriched_metadata["enrichment_provenance"]["total_similar_chapters"] = (
+        enriched_response.total_cross_references
+    )
+
+    # 6. Write output
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(enriched_metadata, f, indent=2, ensure_ascii=False)
+
+    # Report
+    size_kb = output_path.stat().st_size / 1024
+    print(f"\n✅ Enriched metadata saved: {output_path.name}")
+    print(f"  File size: {size_kb:.1f} KB")
+    print(f"  Chapters enriched: {len(enriched_chapters)}")
+    print(f"  Cross-references: {enriched_response.total_cross_references}")
+    print(f"  Processing time: {enriched_response.processing_time_ms:.1f}ms")
+    print(f"  Similarity source: msep")
+    print("  NO local ML processing ✓")
+
+
 def main():
     """
     Command-line interface for metadata enrichment.
@@ -1940,6 +1774,13 @@ def main():
             --output workflows/metadata_enrichment/output/architecture_patterns_enriched.json \\
             --use-orchestrator \\
             --orchestrator-url http://localhost:8083
+    
+    Example (MSEP mode - WBS MSE-6.2 - Kitchen Brigade):
+        python enrich_metadata_per_book.py \\
+            --input workflows/metadata_extraction/output/architecture_patterns_metadata.json \\
+            --output workflows/metadata_enrichment/output/architecture_patterns_enriched.json \\
+            --use-msep \\
+            --msep-url http://localhost:8082
     """
     parser = create_argument_parser()
     args = parser.parse_args()
@@ -1953,9 +1794,20 @@ def main():
         print(f"❌ Error: Taxonomy file not found: {args.taxonomy}")
         sys.exit(1)
     
-    # Run enrichment
+    # Run enrichment - priority: MSEP > Orchestrator > Semantic Search > Taxonomy > Local
     try:
-        if args.use_orchestrator:
+        if args.use_msep:
+            # MSEP mode (WBS MSE-6.2 - Kitchen Brigade)
+            if not MSEP_CLIENT_AVAILABLE:
+                print("❌ Error: MSEPClient not available")
+                print("  Check workflows/shared/clients/msep_client.py exists")
+                sys.exit(1)
+            asyncio.run(enrich_metadata_msep(
+                args.input,
+                args.output,
+                msep_url=args.msep_url
+            ))
+        elif args.use_orchestrator:
             # Orchestrator mode (WBS 5.1)
             if not ORCHESTRATOR_CLIENT_AVAILABLE:
                 print("❌ Error: OrchestratorClient not available")

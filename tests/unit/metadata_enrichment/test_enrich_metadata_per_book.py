@@ -1,6 +1,30 @@
 """
-Unit tests for enrich_metadata_per_book.py
+Unit tests for enrich_metadata_per_book.py - DEPRECATED
 
+=============================================================================
+DEPRECATED: Tests for local ML functions removed per Kitchen Brigade pattern
+=============================================================================
+
+These tests were for the following LOCAL ML functions that have been REMOVED
+from enrich_metadata_per_book.py:
+- _enrich_single_chapter() - local chapter enrichment helper
+- find_related_chapters() - local TF-IDF similarity
+- compute_similarity_matrix() - local TF-IDF computation
+
+Per the Kitchen Brigade Architecture (MULTI_STAGE_ENRICHMENT_PIPELINE_ARCHITECTURE.md):
+- llm-document-enhancer is a CUSTOMER only (no local ML)
+- All ML processing is now delegated to ai-agents MSEP service
+- Local mode now produces fallback output with empty enrichments
+
+For MSEP-related tests, see:
+- tests/e2e/test_msep_customer.py
+- tests/integration/test_msep_fallbacks.py
+- tests/unit/metadata_enrichment/test_msep_client.py
+
+These tests are kept for historical reference only.
+All tests are SKIPPED via module-level pytest.skip().
+
+Original documentation:
 Tests focus on functions with CC 9:
 - _enrich_single_chapter (CC 9) - Service layer for chapter enrichment
 
@@ -10,24 +34,16 @@ Architecture Patterns Applied:
 - Strategy Pattern: Test similarity-based enrichment strategy
 
 Sprint: Batch #2 Files 6-11 (HIGH priority, CC 8-9, tests only)
-
-Updated: Now uses rescore_keywords_cross_book and extract_concepts_cross_book
-Reference: BERTOPIC_SENTENCE_TRANSFORMERS_DESIGN.md - Option C Architecture
 """
 
 import pytest
-import numpy as np
-import sys
-from pathlib import Path
-from unittest.mock import Mock, patch
-from typing import List, Dict, Any
 
-# Add project root to path
-PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
-sys.path.insert(0, str(PROJECT_ROOT))
-
-from workflows.metadata_enrichment.scripts.enrich_metadata_per_book import (
-    _enrich_single_chapter
+# Skip entire module - functions have been removed per Kitchen Brigade pattern
+pytest.skip(
+    "DEPRECATED: Local ML functions removed per Kitchen Brigade architecture. "
+    "See MULTI_STAGE_ENRICHMENT_PIPELINE_ARCHITECTURE.md. "
+    "Use --use-msep flag for enrichment, or see tests/e2e/test_msep_customer.py.",
+    allow_module_level=True
 )
 
 

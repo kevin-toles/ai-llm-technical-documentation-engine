@@ -1,7 +1,31 @@
 #!/usr/bin/env python3
 """
-TDD Tests for SemanticSimilarityEngine - Sentence Transformers-based Similarity.
+TDD Tests for SemanticSimilarityEngine - DEPRECATED
 
+=============================================================================
+DEPRECATED: Tests for local SBERT/TF-IDF mode removed per Kitchen Brigade pattern
+=============================================================================
+
+These tests were for the LOCAL ML functionality that has been REMOVED
+from semantic_similarity_engine.py:
+- Local SBERT embedding computation
+- Local TF-IDF fallback mode
+- Local similarity matrix computation
+
+Per the Kitchen Brigade Architecture (MULTI_STAGE_ENRICHMENT_PIPELINE_ARCHITECTURE.md):
+- llm-document-enhancer is a CUSTOMER only (no local ML)
+- All ML processing is now delegated to ai-agents MSEP service
+- SemanticSimilarityEngine now uses API-only mode
+
+For MSEP-related tests, see:
+- tests/e2e/test_msep_customer.py
+- tests/integration/test_msep_fallbacks.py
+- tests/unit/metadata_enrichment/test_msep_client.py
+
+These tests are kept for historical reference only.
+All tests are SKIPPED via module-level pytest.skip().
+
+Original documentation:
 Reference: BERTOPIC_SENTENCE_TRANSFORMERS_DESIGN.md - Option C Architecture
 Pattern: Service Layer Pattern (Architecture Patterns Ch. 4)
 TDD Phase: RED - All tests expected to FAIL initially
@@ -16,16 +40,14 @@ Tests cover:
 """
 
 import pytest
-import numpy as np
-from typing import List, Dict, Any
-from dataclasses import dataclass
-from unittest.mock import patch, MagicMock
-import sys
-from pathlib import Path
 
-# Add project root to path
-PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
-sys.path.insert(0, str(PROJECT_ROOT))
+# Skip entire module - local SBERT/TF-IDF mode has been removed per Kitchen Brigade pattern
+pytest.skip(
+    "DEPRECATED: Local SBERT/TF-IDF mode removed per Kitchen Brigade architecture. "
+    "See MULTI_STAGE_ENRICHMENT_PIPELINE_ARCHITECTURE.md. "
+    "SemanticSimilarityEngine now uses API-only mode via ai-agents MSEP.",
+    allow_module_level=True
+)
 
 
 # Sample chapter texts from different domains

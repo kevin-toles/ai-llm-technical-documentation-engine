@@ -1,7 +1,31 @@
 #!/usr/bin/env python3
 """
-TDD Tests for SemanticSimilarityEngine API Client Integration - WBS M3.2.
+TDD Tests for SemanticSimilarityEngine API Client Integration - DEPRECATED
 
+=============================================================================
+DEPRECATED: Tests for local SBERT fallback mode removed per Kitchen Brigade pattern
+=============================================================================
+
+These tests were for the LOCAL ML fallback functionality that has been REMOVED
+from semantic_similarity_engine.py:
+- Local SBERT fallback mode
+- Local TF-IDF fallback mode
+- Three-tier fallback chain (API -> Local SBERT -> TF-IDF)
+
+Per the Kitchen Brigade Architecture (MULTI_STAGE_ENRICHMENT_PIPELINE_ARCHITECTURE.md):
+- llm-document-enhancer is a CUSTOMER only (no local ML)
+- All ML processing is now delegated to ai-agents MSEP service
+- SemanticSimilarityEngine now uses API-only mode (no local fallbacks)
+
+For MSEP-related tests, see:
+- tests/e2e/test_msep_customer.py
+- tests/integration/test_msep_fallbacks.py
+- tests/unit/metadata_enrichment/test_msep_client.py
+
+These tests are kept for historical reference only.
+All tests are SKIPPED via module-level pytest.skip().
+
+Original documentation:
 Reference: SBERT_EXTRACTION_MIGRATION_WBS.md M3.2 SemanticSimilarityEngine Refactor
 TDD Phase: RED - Tests for API client integration, fallback logic
 
@@ -9,29 +33,16 @@ Tests cover:
 1. M3.2.1: Engine uses API client when available
 2. M3.2.3: Engine falls back to local SBERT when API unavailable
 3. M3.2.5: Engine falls back to TF-IDF when both API and local unavailable
-
-Anti-Patterns Avoided:
-- #7: Exception naming (SBERTConnectionError, not ConnectionError)
-- #12: Connection pooling via SBERTClient context manager
-- S1172: No unused parameters
 """
 
 import pytest
-import numpy as np
-from unittest.mock import AsyncMock, patch
-import sys
-from pathlib import Path
 
-# Add project root to path
-PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
-sys.path.insert(0, str(PROJECT_ROOT))
-
-# Import the FakeSBERTClient for testing
-from workflows.shared.clients.sbert_client import (  # noqa: E402
-    FakeSBERTClient,
-    SBERTConnectionError,
-    SBERTTimeoutError,
-    EMBEDDING_DIMENSIONS,
+# Skip entire module - local SBERT/TF-IDF fallback has been removed per Kitchen Brigade pattern
+pytest.skip(
+    "DEPRECATED: Local SBERT/TF-IDF fallback modes removed per Kitchen Brigade architecture. "
+    "See MULTI_STAGE_ENRICHMENT_PIPELINE_ARCHITECTURE.md. "
+    "SemanticSimilarityEngine now uses API-only mode via ai-agents MSEP.",
+    allow_module_level=True
 )
 
 

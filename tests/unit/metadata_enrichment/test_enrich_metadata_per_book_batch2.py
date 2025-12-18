@@ -1,6 +1,29 @@
 """
-Unit tests for enrich_metadata_per_book functions (CC 9)
+Unit tests for enrich_metadata_per_book functions (CC 9) - DEPRECATED
 
+=============================================================================
+DEPRECATED: Tests for local ML functions removed per Kitchen Brigade pattern
+=============================================================================
+
+These tests were for the following LOCAL ML functions that have been REMOVED
+from enrich_metadata_per_book.py:
+- load_cross_book_context() - local taxonomy loading
+- build_chapter_corpus() - local corpus construction for TF-IDF
+
+Per the Kitchen Brigade Architecture (MULTI_STAGE_ENRICHMENT_PIPELINE_ARCHITECTURE.md):
+- llm-document-enhancer is a CUSTOMER only (no local ML)
+- All ML processing is now delegated to ai-agents MSEP service
+- Local mode now produces fallback output with empty enrichments
+
+For MSEP-related tests, see:
+- tests/e2e/test_msep_customer.py
+- tests/integration/test_msep_fallbacks.py
+- tests/unit/metadata_enrichment/test_msep_client.py
+
+These tests are kept for historical reference only.
+All tests are SKIPPED via module-level pytest.skip().
+
+Original documentation:
 Tests focus on functions with CC 8-9:
 - load_cross_book_context (CC 9) - Multiple conditional paths for taxonomy/metadata loading
 - build_chapter_corpus (CC 4) - Corpus construction for TF-IDF
@@ -14,19 +37,13 @@ Sprint: Batch #2 File #9 (HIGH priority, CC 9, tests only)
 """
 
 import pytest
-import json
-import sys
-from pathlib import Path
-from typing import Dict, Any
-from unittest.mock import Mock, MagicMock, patch, mock_open
 
-# Add project root to path
-PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
-sys.path.insert(0, str(PROJECT_ROOT))
-
-from workflows.metadata_enrichment.scripts.enrich_metadata_per_book import (
-    load_cross_book_context,
-    build_chapter_corpus
+# Skip entire module - functions have been removed per Kitchen Brigade pattern
+pytest.skip(
+    "DEPRECATED: Local ML functions removed per Kitchen Brigade architecture. "
+    "See MULTI_STAGE_ENRICHMENT_PIPELINE_ARCHITECTURE.md. "
+    "Use --use-msep flag for enrichment, or see tests/e2e/test_msep_customer.py.",
+    allow_module_level=True
 )
 
 

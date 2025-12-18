@@ -18,6 +18,57 @@ This document tracks all implementation changes, their rationale, and git commit
 
 ---
 
+## 2025-12-18
+
+### CL-039: EEP-6 Diagram Similarity - Enrichment Integration Notes
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-18 |
+| **WBS Item** | ENHANCED_ENRICHMENT_PIPELINE_WBS.md - Phase EEP-6 |
+| **Change Type** | Documentation |
+| **Summary** | EEP-6 Diagram Similarity implemented in Code-Orchestrator-Service. Future enrichment pipelines may add `diagram_references` to enriched metadata. |
+| **Files Changed** | `docs/TECHNICAL_CHANGE_LOG.md` |
+| **Rationale** | Document enrichment pipeline extension opportunities |
+| **Git Commit** | N/A (documentation only) |
+
+**EEP-6 Integration with Enrichment Pipeline:**
+
+Currently, `enrich_metadata_per_book.py` produces:
+- Keywords (TF-IDF extracted)
+- Concepts (taxonomy matched)
+- Summaries (LLM generated)
+- Similar chapters (SBERT computed)
+
+**Future Enhancement - Diagram Extraction:**
+
+| Field | Source | Description |
+|-------|--------|-------------|
+| `diagram_references` | Code-Orchestrator-Service | List of DiagramReference objects |
+
+**Potential Integration:**
+```python
+# Future: Add diagram extraction to enrichment pipeline
+async def enrich_with_diagrams(chapter_content: str):
+    # Call Code-Orchestrator-Service for diagram extraction
+    response = await http_client.post(
+        f"{CODE_ORCHESTRATOR_URL}/api/v1/diagrams/extract",
+        json={"text": chapter_content}
+    )
+    return response.json()["diagrams"]
+```
+
+**No Code Changes Required Now**: EEP-6 diagram extraction is available via API.
+
+**Architecture Alignment**:
+- ✅ Kitchen Brigade: Enhancer calls Code-Orchestrator API (not local SBERT)
+- ✅ SBERT centralized in Code-Orchestrator-Service
+- ✅ Enrichment output schema unchanged (backward compatible)
+
+**Deviations from Original Architecture**: None
+
+---
+
 ## 2025-12-15
 
 ### CL-038: Naming Convention & Enrichment Provenance Update ✅ COMPLETE
