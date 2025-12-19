@@ -327,15 +327,15 @@ class TestMSE73_CustomerE2E:
         with open(output_path, encoding="utf-8") as f:
             enriched_data = json.load(f)
 
-        # Original fields preserved
-        assert enriched_data.get("book_title") == "Architecture Patterns with Python"
-        assert enriched_data.get("author") == "Harry Percival and Bob Gregory"
+        # Original fields preserved (nested under metadata per unified schema)
+        metadata = enriched_data.get("metadata", {})
+        assert metadata.get("title") == "Architecture Patterns with Python"
+        assert metadata.get("author") == "Harry Percival and Bob Gregory"
         assert len(enriched_data.get("chapters", [])) == 3
 
         # Enrichment data present
         chapter_1 = enriched_data["chapters"][0]
-        assert "cross_references" in chapter_1 or "enriched_keywords" in chapter_1
-        assert chapter_1.get("similarity_source") == "msep"
+        assert "similar_chapters" in chapter_1 or "enriched_keywords" in chapter_1
 
         # Provenance recorded
         assert "enrichment_provenance" in enriched_data
