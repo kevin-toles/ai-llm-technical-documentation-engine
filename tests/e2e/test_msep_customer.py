@@ -1,23 +1,24 @@
 """
-End-to-End Test: llm-document-enhancer → ai-agents MSEP Flow.
+End-to-End Test: llm-document-enhancer → Gateway → ai-agents MSEP Flow.
 
 WBS Reference: MULTI_STAGE_ENRICHMENT_PIPELINE_WBS.md - MSE-7.3
-Pattern: Kitchen Brigade - CUSTOMER (llm-document-enhancer) → EXPEDITOR (ai-agents)
+Pattern: Kitchen Brigade - CUSTOMER (llm-document-enhancer) → MANAGER (Gateway) → EXPEDITOR (ai-agents)
 
 This test validates the complete MSEP customer flow:
-1. llm-document-enhancer calls ai-agents MSEP endpoint
-2. ai-agents returns enriched metadata
-3. llm-document-enhancer writes enriched JSON file
-4. No enrichment logic executed locally
+1. llm-document-enhancer calls Gateway at port 8080
+2. Gateway routes to ai-agents MSEP endpoint at port 8082
+3. ai-agents returns enriched metadata
+4. llm-document-enhancer writes enriched JSON file
+5. No enrichment logic executed locally
 
 Acceptance Criteria (MSE-7.3):
-- AC-7.3.1: llm-document-enhancer calls ai-agents successfully
+- AC-7.3.1: llm-document-enhancer calls Gateway successfully
 - AC-7.3.2: Writes enriched JSON file correctly
 - AC-7.3.3: No enrichment logic executed locally
 
 Prerequisites:
-    # ai-agents must be running on port 8082
-    docker-compose -f docker-compose.integration.yml up -d ai-agents
+    # Gateway must be running on port 8080 (routes to ai-agents:8082)
+    docker-compose -f docker-compose.integration.yml up -d llm-gateway ai-agents
     
 Usage:
     pytest tests/e2e/test_msep_customer.py -v
@@ -25,7 +26,7 @@ Usage:
 
 Architecture Verification:
 - llm-document-enhancer is CUSTOMER only
-- Calls ai-agents:8082 DIRECTLY (not via Gateway)
+- Calls Gateway:8080 (which routes to ai-agents:8082)
 - NO local ML/TF-IDF processing
 """
 
@@ -48,7 +49,8 @@ sys.path.insert(0, str(PROJECT_ROOT))
 # Configuration
 # =============================================================================
 
-AI_AGENTS_URL = os.getenv("AI_AGENTS_URL", "http://localhost:8082")
+# Gateway URL - external apps call Gateway, which routes to ai-agents
+GATEWAY_URL = os.getenv("GATEWAY_URL", "http://localhost:8080")
 SERVICE_TIMEOUT = 10.0
 
 
@@ -58,9 +60,9 @@ SERVICE_TIMEOUT = 10.0
 
 
 @pytest.fixture
-def ai_agents_url() -> str:
-    """AI agents URL from environment or default."""
-    return AI_AGENTS_URL
+def gateway_url() -> str:
+    """Gateway URL from environment or default."""
+    return GATEWAY_URL
 
 
 @pytest.fixture
@@ -228,7 +230,7 @@ class TestMSE73_CustomerE2E:
         AC-7.3.1: llm-document-enhancer calls ai-agents successfully.
 
         Verifies:
-        - MSEPClient sends correct request to ai-agents:8082
+        - MSEPClient sends correct request to Gateway:8080
         - Receives valid enriched response
         - No exceptions during communication
         """
@@ -262,10 +264,10 @@ class TestMSE73_CustomerE2E:
             await enrich_metadata_msep(
                 input_path=input_path,
                 output_path=output_path,
-                msep_url="http://localhost:8082",
+                msep_url="http://localhost:8080",
             )
 
-            # Verify ai-agents was called
+            # Verify Gateway was called
             mock_client.enrich_metadata.assert_called_once()
 
             # Verify call arguments match expected structure
@@ -317,7 +319,7 @@ class TestMSE73_CustomerE2E:
             await enrich_metadata_msep(
                 input_path=input_path,
                 output_path=output_path,
-                msep_url="http://localhost:8082",
+                msep_url="http://localhost:8080",
             )
 
         # Verify output file exists
@@ -404,7 +406,7 @@ class TestMSE73_CustomerE2E:
                 await enrich_metadata_msep(
                     input_path=input_path,
                     output_path=output_path,
-                    msep_url="http://localhost:8082",
+                    msep_url="http://localhost:8080",
                 )
 
         # Verify no local ML was used during MSEP mode
@@ -439,28 +441,27 @@ class TestMSE73_CustomerE2E_LiveServices:
     """
 
     @pytest.fixture
-    def check_ai_agents_available(self, ai_agents_url: str) -> bool:
-        """Check if ai-agents is running."""
+    def check_gateway_available(self, gateway_url: str) -> bool:
+        """Check if Gateway is running."""
         import httpx
 
         try:
-            response = httpx.get(f"{ai_agents_url}/health", timeout=5.0)
+            response = httpx.get(f"{gateway_url}/health", timeout=5.0)
             return response.status_code == 200
         except httpx.RequestError:
             return False
 
     @pytest.mark.asyncio
-    @pytest.mark.skip(reason="Requires live ai-agents service - enable manually")
     async def test_live_ai_agents_enrichment(
         self,
         tmp_path: Path,
         sample_book_metadata: dict[str, Any],
-        ai_agents_url: str,
+        gateway_url: str,
     ) -> None:
         """
-        Live E2E test with actual ai-agents service.
+        Live E2E test with Gateway -> ai-agents.
 
-        Enable this test when ai-agents is running with MSEP endpoint.
+        Enable this test when Gateway and ai-agents are running.
         """
         from workflows.metadata_enrichment.scripts.enrich_metadata_per_book import (
             enrich_metadata_msep,
@@ -472,11 +473,11 @@ class TestMSE73_CustomerE2E_LiveServices:
         with open(input_path, "w", encoding="utf-8") as f:
             json.dump(sample_book_metadata, f)
 
-        # Call live ai-agents
+        # Call Gateway (which routes to ai-agents)
         await enrich_metadata_msep(
             input_path=input_path,
             output_path=output_path,
-            msep_url=ai_agents_url,
+            msep_url=gateway_url,
         )
 
         # Verify output

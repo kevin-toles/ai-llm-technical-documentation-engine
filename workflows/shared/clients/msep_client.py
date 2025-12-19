@@ -1,17 +1,24 @@
 """MSEP Client - WBS MSE-6.1 API Client Implementation.
 
-Async HTTP client for ai-agents MSEP API with connection pooling.
+Async HTTP client for Gateway -> ai-agents MSEP API with connection pooling.
 
 Reference Documents:
+- llm-gateway/src/api/routes/tools.py: POST /v1/tools/execute endpoint
+- llm-gateway/src/tools/builtin/enrich_metadata.py: Gateway tool proxy
 - ai-agents/src/api/routes/enrich_metadata.py: POST /v1/agents/enrich-metadata endpoint
 - WBS MSE-6.1 AC-6.1.1: enrich_metadata(corpus, chapter_index, config) method
 - CODING_PATTERNS_ANALYSIS: Anti-Pattern #12 (single httpx.AsyncClient)
 - GUIDELINES p. 2313: Connection pooling (Newman)
 
 Kitchen Brigade Pattern:
-- llm-document-enhancer is CUSTOMER only
-- Calls ai-agents MSEP endpoint via this client
-- NO local ML processing
+- llm-document-enhancer (CUSTOMER) calls Gateway (MANAGER)
+- Gateway routes to ai-agents (EXPEDITOR) for enrichment
+- NO direct ai-agents calls from external applications
+
+Architecture Flow:
+    External App (llm-document-enhancer)
+        → Gateway:8080 POST /v1/tools/execute {"name": "enrich_metadata", ...}
+        → ai-agents:8082 POST /v1/agents/enrich-metadata
 
 Anti-Patterns Avoided:
 - #7/#13: Exception naming follows *Error suffix pattern
@@ -49,8 +56,8 @@ import httpx
 # =============================================================================
 
 _CLIENT_NOT_INITIALIZED_ERROR = "Client not initialized. Use async context manager."
-_DEFAULT_ENRICH_ENDPOINT = "/v1/agents/enrich-metadata"
-_DEFAULT_BASE_URL = "http://localhost:8082"
+_DEFAULT_ENRICH_ENDPOINT = "/v1/tools/execute"
+_DEFAULT_BASE_URL = "http://localhost:8080"
 _DEFAULT_TIMEOUT = 30.0
 _DEFAULT_MAX_CONNECTIONS = 10
 _DEFAULT_MAX_RETRIES = 3
@@ -387,17 +394,18 @@ class MSEPClientProtocol(Protocol):
 
 class MSEPClient:
     """
-    Async HTTP client for ai-agents MSEP API.
+    Async HTTP client for Gateway -> ai-agents MSEP API.
 
     Kitchen Brigade Pattern:
     - llm-document-enhancer is CUSTOMER only
-    - Delegates ALL enrichment logic to ai-agents (EXPEDITOR)
-    - NO local ML processing
+    - Calls Gateway (MANAGER) at port 8080
+    - Gateway routes to ai-agents (EXPEDITOR) at port 8082
+    - NO direct ai-agents calls from external applications
 
     WBS References:
     - AC-6.1.1: enrich_metadata(corpus, chapter_index, config) method
-    - AC-6.1.2: Calls POST /v1/agents/enrich-metadata on ai-agents:8082 DIRECTLY
-    - AC-6.1.5: Default base_url is http://localhost:8082
+    - AC-6.1.2: Calls Gateway POST /v1/tools/execute with tool name "enrich_metadata"
+    - AC-6.1.5: Default base_url is http://localhost:8080 (Gateway)
 
     Anti-Patterns Avoided:
     - #12: Single httpx.AsyncClient with connection pooling
@@ -429,8 +437,8 @@ class MSEPClient:
         """Initialize MSEP client.
 
         Args:
-            base_url: Base URL for ai-agents service.
-                     Defaults to MSEP_BASE_URL env var or http://localhost:8082.
+            base_url: Base URL for Gateway service.
+                     Defaults to MSEP_BASE_URL env var or http://localhost:8080.
             timeout: Request timeout in seconds.
             max_connections: Maximum concurrent connections.
             max_retries: Maximum retry attempts for retryable errors.
@@ -483,12 +491,15 @@ class MSEPClient:
         chapter_index: list[ChapterMeta],
         config: Optional[MSEPConfig] = None,
     ) -> EnrichedMetadataResponse:
-        """Enrich chapter metadata via ai-agents MSEP endpoint.
+        """Enrich chapter metadata via Gateway -> ai-agents MSEP endpoint.
 
-        Kitchen Brigade: Delegates to ai-agents for ALL enrichment logic.
-        llm-document-enhancer is CUSTOMER only.
+        Kitchen Brigade: 
+        - llm-document-enhancer (CUSTOMER) calls Gateway (MANAGER)
+        - Gateway routes to ai-agents (EXPEDITOR) for enrichment
+        - NO direct ai-agents calls from external apps
 
         WBS Reference: AC-6.1.1 - enrich_metadata(corpus, chapter_index, config) method
+        Architecture: External App -> Gateway:8080 -> ai-agents:8082
 
         Args:
             corpus: List of document/chapter text content.
@@ -500,7 +511,7 @@ class MSEPClient:
 
         Raises:
             MSEPTimeoutError: Request timed out.
-            MSEPConnectionError: Unable to connect to ai-agents.
+            MSEPConnectionError: Unable to connect to Gateway.
             MSEPAPIError: API returned 4xx/5xx error.
             ValueError: corpus and chapter_index length mismatch.
         """
@@ -511,22 +522,35 @@ class MSEPClient:
                 f"chapter_index length ({len(chapter_index)})"
             )
 
-        # Build request payload matching ai-agents EnrichMetadataRequest schema
-        payload: dict[str, Any] = {
+        # Build tool arguments for Gateway /v1/tools/execute
+        tool_arguments: dict[str, Any] = {
             "corpus": corpus,
             "chapter_index": [ch.to_dict() for ch in chapter_index],
         }
 
         # Add config if provided
         if config is not None:
-            payload["config"] = config.to_dict()
+            tool_arguments["config"] = config.to_dict()
+
+        # Gateway tool execute format: {"name": "tool_name", "arguments": {...}}
+        gateway_payload: dict[str, Any] = {
+            "name": "enrich_metadata",
+            "arguments": tool_arguments,
+        }
 
         response_data = await self._post(
             _DEFAULT_ENRICH_ENDPOINT,
-            json=payload,
+            json=gateway_payload,
         )
 
-        return EnrichedMetadataResponse.from_dict(response_data)
+        # Gateway returns: {"name": "...", "result": {...}, "success": bool}
+        # Extract the actual result from Gateway response
+        if not response_data.get("success", False):
+            error_msg = response_data.get("error", "Unknown Gateway error")
+            raise MSEPAPIError(f"Gateway tool execution failed: {error_msg}", 500)
+
+        result_data = response_data.get("result", {})
+        return EnrichedMetadataResponse.from_dict(result_data)
 
     async def _post(
         self,
