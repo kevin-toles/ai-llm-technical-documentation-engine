@@ -100,49 +100,31 @@ min_pages = settings.chapter_segmentation.min_pages
 
 See `examples/config_usage.py` for more examples.
 
-### SBERT Embedding Configuration
+### Metadata Enrichment via Gateway
 
-The semantic similarity engine uses a three-tier fallback system for computing text embeddings:
-
-| Mode | Description | Use Case |
-|------|-------------|----------|
-| `api` | Use Code-Orchestrator SBERT API | **Production (default)** - Centralized model hosting |
-| `local` | Use local sentence-transformers | Offline/development - Requires `requirements-local.txt` |
-| `tfidf` | Use TF-IDF vectorization | Lightweight fallback - No ML dependencies |
+This service uses the **Gateway-First Architecture** for all metadata enrichment operations.
+All enrichment requests are routed through the llm-gateway to the ai-agents MSEP (Multi-Stage Enrichment Pipeline).
 
 #### Configuration via Environment Variables
 
 ```bash
 # .env file
-SBERT_FALLBACK_MODE=api              # Options: api, local, tfidf
-SBERT_API_URL=http://localhost:8083  # Code-Orchestrator URL
-SBERT_API_TIMEOUT=30.0               # API timeout in seconds
+LLM_GATEWAY_URL=http://localhost:8080  # Gateway URL (required)
+AI_AGENTS_URL=http://localhost:8082    # Only used for health checks
 ```
 
-#### Installing Local SBERT (Optional)
+#### Enrichment Flow
 
-For offline scenarios or development without Code-Orchestrator:
-
-```bash
-# Install local SBERT dependencies (~800MB)
-pip install -r requirements-local.txt
-
-# Set fallback mode to local
-export SBERT_FALLBACK_MODE=local
+```
+llm-document-enhancer → Gateway:8080 → ai-agents:8082 (MSEP)
+                                     ↓
+                              Code-Orchestrator:8083 (SBERT embeddings)
 ```
 
-#### Fallback Behavior
-
-The engine automatically falls back through the tiers:
-
-1. **API Mode** → Calls Code-Orchestrator `/api/v1/embeddings`
-2. **Local SBERT** → Uses `sentence-transformers` if installed
-3. **TF-IDF** → Statistical fallback (always available)
-
-```python
-# Example: Force TF-IDF mode for testing
-SBERT_FALLBACK_MODE=tfidf python -m workflows.metadata_enrichment.scripts.compute_similar_chapters
-```
+**Key Points:**
+- llm-document-enhancer does NOT perform local enrichment
+- All semantic similarity/embeddings are handled by platform services
+- Gateway routes enrichment requests to ai-agents MSEP endpoint
 
 ### Docker Deployment
 
