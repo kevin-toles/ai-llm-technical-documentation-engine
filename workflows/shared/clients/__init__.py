@@ -10,9 +10,12 @@ Reference Documents:
 
 Clients:
 - LLMGatewayClient: Async client for llm-gateway microservice
+- MSEPClient: Async client for Gateway -> ai-agents MSEP API (WBS MSE-6.1)
 - SemanticSearchClient: Async client for semantic-search-service (WBS 3.2.3)
 - OrchestratorClient: Async client for Code-Orchestrator-Service (WBS 5.1.2)
-- SBERTClient: Async client for Code-Orchestrator SBERT API (WBS M3.1)
+
+NOTE: All external clients MUST route through Gateway:8080 per Kitchen Brigade architecture.
+Direct calls to platform services (ai-agents:8082, Code-Orchestrator:8083) are VIOLATIONS.
 
 Observability (WBS 6.2):
 - cache: ResultCache for search result caching
@@ -34,6 +37,21 @@ from workflows.shared.clients.metrics import (
     Span,
     create_span,
 )
+from workflows.shared.clients.msep_client import (
+    ChapterMeta,
+    CrossReference,
+    EnrichedChapter,
+    EnrichedMetadataResponse,
+    MergedKeywords,
+    MSEPAPIError,
+    MSEPClient,
+    MSEPClientError,
+    MSEPClientProtocol,
+    MSEPConfig,
+    MSEPConnectionError,
+    MSEPTimeoutError,
+    Provenance,
+)
 from workflows.shared.clients.orchestrator_client import (
     FakeOrchestratorClient,
     OrchestratorAPIError,
@@ -44,22 +62,27 @@ from workflows.shared.clients.orchestrator_client import (
     OrchestratorTimeoutError,
     SEMANTIC_SIMILARITY_THRESHOLD,
 )
-from workflows.shared.clients.sbert_client import (
-    EMBEDDING_DIMENSIONS,
-    FakeSBERTClient,
-    SBERTAPIError,
-    SBERTClient,
-    SBERTClientError,
-    SBERTClientProtocol,
-    SBERTConnectionError,
-    SBERTTimeoutError,
-)
 from workflows.shared.clients.search_client import SemanticSearchClient
 
 __all__ = [
-    # Clients
+    # Gateway Clients (Kitchen Brigade: CUSTOMER -> ROUTER)
     "LLMGatewayClient",
+    "MSEPClient",
+    "MSEPClientError",
+    "MSEPTimeoutError",
+    "MSEPConnectionError",
+    "MSEPAPIError",
+    "MSEPClientProtocol",
+    "ChapterMeta",
+    "MSEPConfig",
+    "CrossReference",
+    "MergedKeywords",
+    "Provenance",
+    "EnrichedChapter",
+    "EnrichedMetadataResponse",
+    # Search Client
     "SemanticSearchClient",
+    # Orchestrator Client (internal platform use only)
     "OrchestratorClient",
     "OrchestratorClientError",
     "OrchestratorTimeoutError",
@@ -68,15 +91,6 @@ __all__ = [
     "OrchestratorClientProtocol",
     "FakeOrchestratorClient",
     "SEMANTIC_SIMILARITY_THRESHOLD",
-    # SBERT Client (WBS M3.1)
-    "SBERTClient",
-    "SBERTClientError",
-    "SBERTTimeoutError",
-    "SBERTConnectionError",
-    "SBERTAPIError",
-    "SBERTClientProtocol",
-    "FakeSBERTClient",
-    "EMBEDDING_DIMENSIONS",
     # Cache (WBS 6.1)
     "cache",
     "ResultCache",
