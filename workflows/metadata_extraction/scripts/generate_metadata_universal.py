@@ -17,6 +17,9 @@ Usage:
     
     # Interactive mode:
     python3 generate_metadata_universal.py --input "path/to/book.json" --interactive
+    
+    # Use orchestrator service for extraction (AC-1.2):
+    python3 generate_metadata_universal.py --input "path/to/book.json" --use-orchestrator
 
 Output:
     - Saves to: data/metadata/{book_name}_metadata.json
@@ -26,13 +29,25 @@ Reference:
 - Python Distilled Ch. 9 - pathlib.Path operations
 - Python Distilled Ch. 7 - Dataclass configuration patterns
 - Microservices Up and Running Ch. 7 - 12-Factor App configuration
+
+AC Reference:
+- AC-1.1: USE_ORCHESTRATOR_EXTRACTION env var → MetadataExtractionClient
+- AC-1.2: --use-orchestrator CLI flag → MetadataExtractionClient (precedence)
+- AC-5.1: Orchestrator mode uses MetadataExtractionClient
+- AC-5.2: Local mode uses StatisticalExtractor
+- AC-5.3: Fallback on error uses StatisticalExtractor
+- AC-5.4: Strict mode (fallback=False) propagates exception
 """
 
+from __future__ import annotations
+
+import asyncio
 import json
 import argparse
+import logging
 from ast import literal_eval
 from pathlib import Path
-from typing import List, Dict, Any, Tuple, Optional
+from typing import List, Dict, Any, Tuple, Optional, TYPE_CHECKING
 from dataclasses import dataclass, asdict
 import sys
 
@@ -53,6 +68,17 @@ from workflows.metadata_extraction.scripts.strategies.yake_validation_strategy i
 from workflows.metadata_extraction.scripts.strategies.toc_filter_strategy import TOCFilterStrategy  # noqa: E402
 from workflows.metadata_extraction.scripts.strategies.duplicate_filter_strategy import DuplicateFilterStrategy  # noqa: E402
 
+# Import orchestrator client and settings (AC-1.1, AC-1.2)
+from workflows.shared.clients.metadata_client import (  # noqa: E402
+    MetadataExtractionClient,
+    MetadataExtractionOptions,
+    MetadataExtractionResult,
+    MetadataClientError,
+    MetadataClientConnectionError,
+    MetadataClientTimeoutError,
+)
+from config.extraction_settings import get_extraction_settings  # noqa: E402
+
 # Try to use settings, fallback to defaults
 try:
     from config.settings import settings  # noqa: E402
@@ -61,6 +87,9 @@ try:
 except ImportError:
     DEFAULT_JSON_DIR = Path("data/textbooks_json")
     DEFAULT_METADATA_DIR = Path("data/metadata")
+
+# Logger for this module
+logger = logging.getLogger(__name__)
 
 
 @dataclass
@@ -663,7 +692,48 @@ Examples:
         help='Show what would be saved without writing files'
     )
     
+    # AC-1.2: --use-orchestrator CLI flag for orchestrator-based extraction
+    parser.add_argument(
+        '--use-orchestrator',
+        action='store_true',
+        default=False,
+        help='Use Code-Orchestrator-Service for metadata extraction instead of local StatisticalExtractor'
+    )
+    
+    # AC-1.2: --fallback-on-error flag for graceful degradation
+    parser.add_argument(
+        '--fallback-on-error',
+        action='store_true',
+        default=True,
+        help='Fall back to local StatisticalExtractor if orchestrator fails (default: True)'
+    )
+    
     args = parser.parse_args()
+    
+    # ===========================================================================
+    # AC-1.2: Determine if orchestrator should be used
+    # Precedence: CLI flag > env var > default (False)
+    # ===========================================================================
+    settings = get_extraction_settings()
+    
+    # CLI flag takes precedence if explicitly provided
+    # argparse sets args.use_orchestrator to True if flag is present, False otherwise
+    # We check if CLI was explicitly used by seeing if --use-orchestrator appears in sys.argv
+    cli_explicitly_set = "--use-orchestrator" in sys.argv
+    
+    if cli_explicitly_set:
+        # CLI takes precedence
+        use_orchestrator = args.use_orchestrator
+    else:
+        # Fall back to env var via ExtractionSettings
+        use_orchestrator = settings.use_orchestrator_extraction
+    
+    # Log the decision for debugging
+    if use_orchestrator:
+        source = "CLI" if cli_explicitly_set else "env var (EXTRACTION_USE_ORCHESTRATOR_EXTRACTION)"
+        print(f"🔗 Using orchestrator service (source: {source})")
+    else:
+        print("📊 Using local StatisticalExtractor")
     
     # Initialize generator
     json_path = Path(args.input)
