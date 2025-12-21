@@ -229,6 +229,28 @@ except ImportError as e:
     MSEPTimeoutError = Exception  # type: ignore[misc, assignment]
     MSEPAPIError = Exception  # type: ignore[misc, assignment]
 
+# =============================================================================
+# CME-1.0: MetadataExtractionClient for Code-Orchestrator metadata extraction
+# Pattern: Kitchen Brigade - CUSTOMER -> SOUS CHEF (Code-Orchestrator)
+# =============================================================================
+try:
+    from workflows.shared.clients.metadata_client import (
+        MetadataExtractionClient,
+        MetadataExtractionResult,
+        MetadataExtractionOptions,
+        MetadataClientError,
+    )
+    from config.extraction_settings import get_extraction_settings
+    METADATA_CLIENT_AVAILABLE = True
+except ImportError as e:
+    print(f"Warning: MetadataExtractionClient not available: {e}")
+    METADATA_CLIENT_AVAILABLE = False
+    MetadataExtractionClient = None  # type: ignore[misc, assignment]
+    MetadataExtractionResult = None  # type: ignore[misc, assignment]
+    MetadataExtractionOptions = None  # type: ignore[misc, assignment]
+    MetadataClientError = Exception  # type: ignore[misc, assignment]
+    get_extraction_settings = None  # type: ignore[misc, assignment]
+
 # Provenance method identifier for MSEP enrichment
 ENRICHMENT_METHOD_MSEP = "msep"
 
@@ -770,10 +792,10 @@ def rescore_keywords_cross_book(
     top_n: int = 10
 ) -> List[Dict[str, Any]]:
     """
-    Re-score keywords using YAKE with combined text from related chapters.
+    Re-score keywords using orchestrator or YAKE with combined text from related chapters.
     
     Reference: TAB4_IMPLEMENTATION_PLAN.md - Function 5
-    Pattern: Statistical keyword extraction with cross-book context
+    Pattern: CME-1.0 orchestrator-first, fallback to StatisticalExtractor
     
     Args:
         current_chapter_text: Text from current chapter
@@ -783,13 +805,27 @@ def rescore_keywords_cross_book(
     Returns:
         List of keyword dicts with keys:
         - term: Keyword string
-        - score: YAKE score (lower is better)
-        - source: Always "cross_book_yake"
+        - score: TF-IDF score (higher is better) or YAKE score
+        - source: "orchestrator_tfidf" or "cross_book_yake"
     """
     # Combine current chapter with related chapter contexts
     combined_text = current_chapter_text + " " + " ".join(related_chapters_texts)
     
-    # Extract keywords using YAKE via StatisticalExtractor (lazy loaded)
+    # CME-1.0: Try orchestrator first if available and configured
+    if METADATA_CLIENT_AVAILABLE and get_extraction_settings is not None:
+        settings = get_extraction_settings()
+        if settings.use_orchestrator_extraction:
+            try:
+                import asyncio
+                result = asyncio.run(_extract_keywords_via_orchestrator(combined_text, top_n))
+                if result:
+                    return result
+            except Exception as e:
+                if not settings.fallback_on_error:
+                    raise
+                print(f"  Warning: Orchestrator extraction failed, falling back to local: {e}")
+    
+    # Fallback: Extract keywords using YAKE via StatisticalExtractor (lazy loaded)
     extractor = get_statistical_extractor()
     if extractor:
         keywords_with_scores = extractor.extract_keywords(
@@ -815,16 +851,50 @@ def rescore_keywords_cross_book(
     return keywords_enriched
 
 
+async def _extract_keywords_via_orchestrator(text: str, top_n: int = 10) -> List[Dict[str, Any]]:
+    """
+    Extract keywords via Code-Orchestrator-Service MetadataExtractionClient.
+    
+    CME-1.0: Uses TF-IDF extraction with noise filtering.
+    
+    Args:
+        text: Combined text to extract keywords from
+        top_n: Number of keywords to return
+        
+    Returns:
+        List of keyword dicts with orchestrator format
+    """
+    settings = get_extraction_settings()
+    options = MetadataExtractionOptions(
+        top_k_keywords=top_n,
+        filter_noise=True,
+    )
+    
+    async with MetadataExtractionClient(base_url=settings.orchestrator_url) as client:
+        result = await client.extract_metadata(text=text, options=options)
+        
+    keywords_enriched = []
+    for kw in result.keywords:
+        keywords_enriched.append({
+            "term": kw.term,
+            "score": round(kw.score, 3),
+            "source": "orchestrator_tfidf",
+            "is_technical": kw.is_technical,
+        })
+    
+    return keywords_enriched
+
+
 def extract_concepts_cross_book(
     current_chapter_text: str,
     related_chapters_texts: List[str],
     top_n: int = 10
 ) -> List[Dict[str, Any]]:
     """
-    Extract concepts using Summa TextRank with combined text from related chapters.
+    Extract concepts using orchestrator or Summa TextRank with combined text from related chapters.
     
     Reference: TAB4_IMPLEMENTATION_PLAN.md - Function 6
-    Pattern: Statistical concept extraction with cross-book context
+    Pattern: CME-1.0 orchestrator-first, fallback to StatisticalExtractor
     
     Args:
         current_chapter_text: Text from current chapter
@@ -834,12 +904,26 @@ def extract_concepts_cross_book(
     Returns:
         List of concept dicts with keys:
         - concept: Concept phrase string
-        - source: Always "cross_book_summa"
+        - source: "orchestrator_concept" or "cross_book_summa"
     """
     # Combine current chapter with related chapter contexts
     combined_text = current_chapter_text + " " + " ".join(related_chapters_texts)
     
-    # Extract concepts using Summa via StatisticalExtractor (lazy loaded)
+    # CME-1.0: Try orchestrator first if available and configured
+    if METADATA_CLIENT_AVAILABLE and get_extraction_settings is not None:
+        settings = get_extraction_settings()
+        if settings.use_orchestrator_extraction:
+            try:
+                import asyncio
+                result = asyncio.run(_extract_concepts_via_orchestrator(combined_text, top_n))
+                if result:
+                    return result
+            except Exception as e:
+                if not settings.fallback_on_error:
+                    raise
+                print(f"  Warning: Orchestrator concept extraction failed, falling back to local: {e}")
+    
+    # Fallback: Extract concepts using Summa via StatisticalExtractor (lazy loaded)
     extractor = get_statistical_extractor()
     if extractor:
         concepts = extractor.extract_concepts(combined_text, top_n=top_n)
@@ -858,6 +942,41 @@ def extract_concepts_cross_book(
         concepts_enriched.append({
             "concept": concept,
             "source": "cross_book_summa"
+        })
+    
+    return concepts_enriched
+
+
+async def _extract_concepts_via_orchestrator(text: str, top_n: int = 10) -> List[Dict[str, Any]]:
+    """
+    Extract concepts via Code-Orchestrator-Service MetadataExtractionClient.
+    
+    CME-1.0: Uses concept extraction with domain/tier classification.
+    
+    Args:
+        text: Combined text to extract concepts from
+        top_n: Number of concepts to return
+        
+    Returns:
+        List of concept dicts with orchestrator format
+    """
+    settings = get_extraction_settings()
+    options = MetadataExtractionOptions(
+        top_k_concepts=top_n,
+        filter_noise=True,
+    )
+    
+    async with MetadataExtractionClient(base_url=settings.orchestrator_url) as client:
+        result = await client.extract_metadata(text=text, options=options)
+        
+    concepts_enriched = []
+    for c in result.concepts:
+        concepts_enriched.append({
+            "concept": c.name,
+            "source": "orchestrator_concept",
+            "confidence": round(c.confidence, 3),
+            "domain": c.domain,
+            "tier": c.tier,
         })
     
     return concepts_enriched
