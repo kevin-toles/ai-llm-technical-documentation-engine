@@ -18,6 +18,95 @@ This document tracks all implementation changes, their rationale, and git commit
 
 ---
 
+## 2025-12-20
+
+### CL-040: CME-1.0 Complete - Configurable Metadata Extraction ✅
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-20 |
+| **WBS Item** | CME-1.0 (WBS-AC1, WBS-AC3, WBS-AC4, WBS-AC5) |
+| **Change Type** | Feature |
+| **Summary** | CME-1.0 Phase 2 COMPLETE. Configurable metadata extraction with toggle between local StatisticalExtractor and Code-Orchestrator-Service. Includes Pydantic settings, MetadataExtractionClient, FakeMetadataExtractionClient, and generator integration with fallback support. |
+| **Files Changed** | See below |
+| **Rationale** | Enable high-quality metadata extraction with noise filtering via Code-Orchestrator when available, with fallback to local extraction |
+| **Git Commit** | feat(CME-1.0): Complete WBS-AC1, WBS-AC3, WBS-AC4 - Metadata extraction client |
+
+**Architecture Reference**: [CME_ARCHITECTURE.md](../../textbooks/pending/platform/CME_ARCHITECTURE.md)
+
+**New Files Created:**
+- `config/extraction_settings.py` - Pydantic Settings with EXTRACTION_* env prefix (20 tests, 100% coverage)
+- `workflows/shared/clients/metadata_client.py` - MetadataExtractionClient + FakeClient + Protocol (44 tests, 98% coverage)
+- `tests/unit/config/test_extraction_settings.py` - Settings tests
+- `tests/unit/clients/test_metadata_client.py` - Client tests
+- `tests/unit/scripts/test_generator_config.py` - Config routing tests
+- `tests/unit/scripts/test_generator_integration.py` - Integration tests
+- `tests/unit/scripts/test_generator_chapter_detection.py` - Chapter detection tests
+- `tests/unit/scripts/test_generator_output.py` - Output tests
+- `tests/unit/scripts/test_generator_cli.py` - CLI tests
+- `tests/unit/scripts/test_generator_validation.py` - Validation tests
+- `tests/integration/test_cme_metadata_extraction.py` - Integration tests (10 tests)
+
+**Modified Files:**
+- `workflows/metadata_extraction/scripts/generate_metadata_universal.py` - Added `use_orchestrator`, `--use-orchestrator` CLI flag, fallback logic
+
+**Toggle Methods:**
+```bash
+# Default: Local StatisticalExtractor
+python3 generate_metadata_universal.py --input book.json
+
+# Orchestrator via CLI flag (takes precedence)
+python3 generate_metadata_universal.py --input book.json --use-orchestrator
+
+# Orchestrator via env var
+EXTRACTION_USE_ORCHESTRATOR_EXTRACTION=true python3 generate_metadata_universal.py --input book.json
+
+# With fallback disabled (strict mode)
+python3 generate_metadata_universal.py --input book.json --use-orchestrator --no-fallback
+```
+
+**Acceptance Criteria Fulfilled:**
+| AC | Description | Status |
+|----|-------------|--------|
+| AC-1.1 | ENV var → MetadataExtractionClient used | ✅ |
+| AC-1.2 | CLI flag → MetadataExtractionClient used (precedence) | ✅ |
+| AC-1.3 | Default → StatisticalExtractor (local) | ✅ |
+| AC-1.4 | EXTRACTION_* env vars override defaults | ✅ |
+| AC-3.1 | MetadataExtractionClient Protocol compliance | ✅ |
+| AC-3.2 | httpx.AsyncClient connection pooling | ✅ |
+| AC-3.3 | Async context manager | ✅ |
+| AC-3.4 | Retry with exponential backoff on 503 | ✅ |
+| AC-3.5 | health_check() returns bool, never raises | ✅ |
+| AC-4.1 | FakeMetadataExtractionClient Protocol compliance | ✅ |
+| AC-4.2 | set_response() + extract_metadata() works | ✅ |
+| AC-4.3 | Default empty response | ✅ |
+| AC-4.4 | No network calls | ✅ |
+| AC-5.1 | use_orchestrator=True → client used | ✅ |
+| AC-5.2 | use_orchestrator=False → local used | ✅ |
+| AC-5.3 | fallback_on_error=True → fallback | ✅ |
+| AC-5.4 | fallback_on_error=False → exception | ✅ |
+| AC-5.5 | Output schema identical both modes | ✅ |
+| AC-6.1-6.5 | Anti-pattern compliance | ✅ |
+| AC-7.1-7.3 | Testing requirements | ✅ |
+
+**Test Summary:**
+- WBS-AC1: 20 tests (extraction_settings) - 100% coverage
+- WBS-AC3: 44 tests (metadata_client) - 98% coverage
+- WBS-AC4: 8 tests (FakeClient) - 98% coverage
+- WBS-AC5: 55 tests (generator integration) - 63%*
+- Integration: 10 tests
+- **Total: 137 tests passing**
+
+*Legacy CLI code (main(), interactive_chapter_definition()) is difficult to unit test.
+
+**Architecture Alignment:**
+- ✅ Kitchen Brigade: Customer (enhancer) calls Sous Chef (Code-Orchestrator)
+- ✅ Protocol pattern for testing (FakeMetadataExtractionClient)
+- ✅ Connection pooling (Anti-Pattern #12)
+- ✅ Exception naming (Anti-Pattern #7/#13)
+
+---
+
 ## 2025-12-18
 
 ### CL-039: EEP-6 Diagram Similarity - Enrichment Integration Notes

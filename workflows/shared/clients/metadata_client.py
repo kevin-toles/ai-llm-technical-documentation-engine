@@ -24,14 +24,20 @@ from typing import Any, Final, Protocol, runtime_checkable
 
 import httpx
 
+from config.extraction_settings import (
+    DEFAULT_ORCHESTRATOR_URL,
+    DEFAULT_ORCHESTRATOR_TIMEOUT,
+    DEFAULT_ORCHESTRATOR_MAX_RETRIES,
+)
+
 
 # =============================================================================
-# Module Constants (S1192 compliance)
+# Module Constants (S1192 compliance - import shared, define local)
 # =============================================================================
 
-DEFAULT_BASE_URL: Final[str] = "http://localhost:8083"
-DEFAULT_TIMEOUT: Final[float] = 30.0
-DEFAULT_MAX_RETRIES: Final[int] = 3
+DEFAULT_BASE_URL: Final[str] = DEFAULT_ORCHESTRATOR_URL
+DEFAULT_TIMEOUT: Final[float] = DEFAULT_ORCHESTRATOR_TIMEOUT
+DEFAULT_MAX_RETRIES: Final[int] = DEFAULT_ORCHESTRATOR_MAX_RETRIES
 DEFAULT_RETRY_BASE_DELAY: Final[float] = 0.5
 ENDPOINT_EXTRACT: Final[str] = "/api/v1/metadata/extract"
 ENDPOINT_HEALTH: Final[str] = "/api/v1/health"

@@ -118,6 +118,11 @@ class UniversalMetadataGenerator:
     Configuration via dependency injection (ARCH 5336):
     - Keywords loaded from external config file
     - Patterns loaded from external config file
+    
+    Orchestrator Mode (AC-5.1 to AC-5.5):
+    - use_orchestrator=True: Uses MetadataExtractionClient for extraction
+    - use_orchestrator=False: Uses local StatisticalExtractor (default)
+    - fallback_on_error=True: Falls back to local on orchestrator failure
     """
     
     def __init__(
@@ -125,7 +130,10 @@ class UniversalMetadataGenerator:
         json_path: Path, 
         domain: str = "auto",
         keywords_file: Optional[Path] = None,  # Deprecated - kept for backward compatibility
-        patterns_file: Optional[Path] = None   # Deprecated - kept for backward compatibility
+        patterns_file: Optional[Path] = None,  # Deprecated - kept for backward compatibility
+        use_orchestrator: Optional[bool] = None,  # AC-5.1, AC-5.2: None = use env var
+        fallback_on_error: bool = True,  # AC-5.3, AC-5.4: fallback behavior
+        orchestrator_url: Optional[str] = None,  # Custom orchestrator URL
     ):
         """
         Initialize generator with JSON file.
@@ -135,6 +143,11 @@ class UniversalMetadataGenerator:
             domain: Domain of the book (ignored - now domain-agnostic via StatisticalExtractor)
             keywords_file: DEPRECATED - No longer used (statistical extraction is domain-agnostic)
             patterns_file: DEPRECATED - No longer used (statistical extraction is domain-agnostic)
+            use_orchestrator: If True, use MetadataExtractionClient; if False, use local;
+                             if None, read from ExtractionSettings (AC-1.1)
+            fallback_on_error: If True, fall back to local on orchestrator error (AC-5.3);
+                              if False, propagate exception (AC-5.4)
+            orchestrator_url: Custom orchestrator service URL (default from settings)
             
         Raises:
             FileNotFoundError: If JSON file doesn't exist (EAFP - PY 21)
@@ -142,11 +155,24 @@ class UniversalMetadataGenerator:
         Document References:
             - DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN: Part 1.3 (Integration)
             - ARCHITECTURE_GUIDELINES Ch. 4: Adapter pattern for external libraries
+            - CME_ARCHITECTURE.md: AC-5.1 to AC-5.5 (Orchestrator integration)
         """
         self.json_path = Path(json_path)
         self.domain = domain
         
+        # AC-5.1/AC-5.2: Determine extraction mode
+        # If use_orchestrator is None, read from ExtractionSettings (AC-1.1)
+        if use_orchestrator is None:
+            settings = get_extraction_settings()
+            self._use_orchestrator = settings.use_orchestrator_extraction
+        else:
+            self._use_orchestrator = use_orchestrator
+        
+        self._fallback_on_error = fallback_on_error
+        self._orchestrator_url = orchestrator_url
+        
         # Initialize StatisticalExtractor for domain-agnostic extraction
+        # Used as primary (AC-5.2) or fallback (AC-5.3)
         # Per DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN Part 1.2
         self.extractor = StatisticalExtractor()
         
@@ -161,10 +187,40 @@ class UniversalMetadataGenerator:
         self.pages = self.book_data.get('pages', [])
         self.book_name = self.json_path.stem
         
-        # Compile chapter pattern for auto-detection (default pattern)
+        # Log extraction mode
+        mode = "orchestrator" if self._use_orchestrator else "local"
+        logger.info(f"Initialized generator with {mode} extraction mode")
+        
         # Initialize StatisticalExtractor for domain-agnostic keyword extraction
         # Per DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN Part 1.3
         self.extractor = StatisticalExtractor()
+
+    # =========================================================================
+    # Public Properties (AC-1.1, AC-1.2, AC-5.1-AC-5.4)
+    # =========================================================================
+
+    @property
+    def use_orchestrator(self) -> bool:
+        """
+        Read-only access to orchestrator mode flag.
+        
+        AC Reference:
+            - AC-1.1: Reflects env var value when not overridden
+            - AC-1.2: Reflects CLI flag when specified
+            - AC-5.1/AC-5.2: Used for extraction routing
+        """
+        return self._use_orchestrator
+
+    @property
+    def fallback_on_error(self) -> bool:
+        """
+        Read-only access to fallback mode flag.
+        
+        AC Reference:
+            - AC-5.3: True enables fallback to StatisticalExtractor
+            - AC-5.4: False propagates exceptions
+        """
+        return self._fallback_on_error
     
     def auto_detect_chapters(self) -> List[Tuple[int, str, int, int]]:
         """
@@ -299,6 +355,182 @@ class UniversalMetadataGenerator:
         
         # Fallback: return chapter title
         return f"Chapter {chapter_num}: {title}"
+
+    # =========================================================================
+    # Orchestrator Integration (WBS-AC5)
+    # =========================================================================
+
+    def _create_metadata_client(self) -> MetadataExtractionClient:
+        """
+        Factory method to create MetadataExtractionClient.
+        
+        AC Reference:
+            - AC-5.1: Client instantiation when use_orchestrator=True
+        
+        Returns:
+            Configured MetadataExtractionClient instance
+        """
+        # Use configured URL or default from client
+        if self._orchestrator_url:
+            return MetadataExtractionClient(base_url=self._orchestrator_url)
+        return MetadataExtractionClient()
+
+    async def _extract_via_orchestrator_async(
+        self,
+        text: str,
+        title: str,
+        chapter_num: int,
+        max_keywords: int = 15,
+        max_concepts: int = 10,
+    ) -> Tuple[List[str], List[str], str]:
+        """
+        Extract metadata via orchestrator service asynchronously.
+        
+        AC Reference:
+            - AC-5.1: Orchestrator mode extraction
+            - AC-5.3: Fallback on error (when enabled)
+            - AC-5.4: Exception propagation (when fallback disabled)
+        
+        Args:
+            text: Chapter text content
+            title: Chapter title
+            chapter_num: Chapter number for logging
+            max_keywords: Maximum keywords to extract
+            max_concepts: Maximum concepts to extract
+            
+        Returns:
+            Tuple of (keywords, concepts, summary)
+            
+        Raises:
+            MetadataClientError: If extraction fails and fallback disabled
+        """
+        try:
+            async with self._create_metadata_client() as client:
+                options = MetadataExtractionOptions(
+                    top_k_keywords=max_keywords,
+                    top_k_concepts=max_concepts,
+                    enable_summary=True,
+                    summary_ratio=0.2,
+                )
+                result = await client.extract_metadata(text, title=title, options=options)
+                
+                # Map orchestrator response to standard format (AC-5.5)
+                keywords = [kw.term for kw in result.keywords]
+                concepts = [c.name for c in result.concepts]
+                summary = result.summary or self.generate_summary(text, title, chapter_num)
+                
+                logger.info(
+                    f"Orchestrator extraction for chapter {chapter_num}: "
+                    f"{len(keywords)} keywords, {len(concepts)} concepts"
+                )
+                return keywords, concepts, summary
+                
+        except MetadataClientError as e:
+            if self._fallback_on_error:
+                # AC-5.3: Fallback to local extraction
+                logger.warning(
+                    f"Orchestrator failed for chapter {chapter_num}, "
+                    f"falling back to local extraction: {e}"
+                )
+                return self._extract_local(text, title, chapter_num, max_keywords, max_concepts)
+            else:
+                # AC-5.4: Propagate exception
+                raise
+
+    def _extract_via_orchestrator(
+        self,
+        text: str,
+        title: str,
+        chapter_num: int,
+        max_keywords: int = 15,
+        max_concepts: int = 10,
+    ) -> Tuple[List[str], List[str], str]:
+        """
+        Synchronous wrapper for orchestrator extraction.
+        
+        Handles asyncio event loop management for sync callers.
+        
+        Args:
+            text: Chapter text content
+            title: Chapter title
+            chapter_num: Chapter number
+            max_keywords: Maximum keywords to extract
+            max_concepts: Maximum concepts to extract
+            
+        Returns:
+            Tuple of (keywords, concepts, summary)
+        """
+        return asyncio.run(
+            self._extract_via_orchestrator_async(
+                text, title, chapter_num, max_keywords, max_concepts
+            )
+        )
+
+    def _extract_local(
+        self,
+        text: str,
+        title: str,
+        chapter_num: int,
+        max_keywords: int = 15,
+        max_concepts: int = 10,
+    ) -> Tuple[List[str], List[str], str]:
+        """
+        Extract metadata using local StatisticalExtractor.
+        
+        AC Reference:
+            - AC-5.2: Local extraction when use_orchestrator=False
+            - AC-5.3: Fallback target when orchestrator fails
+        
+        Args:
+            text: Chapter text content
+            title: Chapter title
+            chapter_num: Chapter number
+            max_keywords: Maximum keywords to extract
+            max_concepts: Maximum concepts to extract
+            
+        Returns:
+            Tuple of (keywords, concepts, summary)
+        """
+        keywords = self.extract_keywords(text, max_keywords=max_keywords)
+        concepts = self.extract_concepts(text, max_concepts=max_concepts)
+        summary = self.generate_summary(text, title, chapter_num)
+        return keywords, concepts, summary
+
+    def extract_chapter_metadata(
+        self,
+        text: str,
+        title: str,
+        chapter_num: int,
+        max_keywords: int = 15,
+        max_concepts: int = 10,
+    ) -> Tuple[List[str], List[str], str]:
+        """
+        Extract metadata for a chapter using configured extraction mode.
+        
+        Routes to orchestrator or local extraction based on self._use_orchestrator.
+        
+        AC Reference:
+            - AC-5.1: Routes to orchestrator when use_orchestrator=True
+            - AC-5.2: Routes to local when use_orchestrator=False
+        
+        Args:
+            text: Chapter text content
+            title: Chapter title
+            chapter_num: Chapter number
+            max_keywords: Maximum keywords to extract
+            max_concepts: Maximum concepts to extract
+            
+        Returns:
+            Tuple of (keywords, concepts, summary)
+        """
+        if self._use_orchestrator:
+            return self._extract_via_orchestrator(
+                text, title, chapter_num, max_keywords, max_concepts
+            )
+        else:
+            return self._extract_local(
+                text, title, chapter_num, max_keywords, max_concepts
+            )
     
     def _validate_chapter_ranges(self, chapters: List[Tuple[int, str, int, int]]) -> None:
         """
@@ -432,15 +664,11 @@ class UniversalMetadataGenerator:
             # Per ANTI_PATTERN_ANALYSIS.md Section 1.3: Graceful degradation
             # Per ARCHITECTURE_GUIDELINES Ch. 8: Fault tolerance in pipelines
             try:
-                # Use safe_* methods that return empty on failure instead of raising
-                keywords_with_scores = self.extractor.safe_extract_keywords(chapter_text, top_n=15)
-                keywords = [kw for kw, _ in keywords_with_scores]
-                concepts = self.extractor.safe_extract_concepts(chapter_text, top_n=10)
-                fallback_summary = f"Chapter {ch_num}: {title}"
-                summary = self.extractor.safe_generate_summary(
-                    chapter_text, 
-                    ratio=0.2, 
-                    fallback=fallback_summary
+                # Route extraction based on orchestrator mode (WBS-AC5)
+                # AC-5.1: use_orchestrator=True → MetadataExtractionClient
+                # AC-5.2: use_orchestrator=False → StatisticalExtractor
+                keywords, concepts, summary = self.extract_chapter_metadata(
+                    chapter_text, title, ch_num, max_keywords=15, max_concepts=10
                 )
                 
                 print(f"  Keywords: {', '.join(keywords[:5])}..." if keywords else "  Keywords: (none extracted)")
@@ -457,6 +685,11 @@ class UniversalMetadataGenerator:
                 )
                 
                 metadata_list.append(chapter_meta)
+            
+            except MetadataClientError:
+                # AC-5.4: Re-raise MetadataClientError when fallback disabled
+                # (Fallback already handled in _extract_via_orchestrator_async)
+                raise
                 
             except Exception as e:
                 # Log error but continue with other chapters - don't kill entire book

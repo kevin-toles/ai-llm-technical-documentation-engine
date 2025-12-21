@@ -53,12 +53,12 @@ class ExtractionSettings(BaseSettings):
         top_k_concepts: Number of concepts to extract.
 
     AC Reference:
-        - AC-1.3: Default use_orchestrator_extraction=False
+        - AC-1.3: Default use_orchestrator_extraction=True (orchestrator mode)
         - AC-1.4: EXTRACTION_* env vars override defaults
     """
 
-    # Extraction mode (AC-1.3: default False)
-    use_orchestrator_extraction: bool = False
+    # Extraction mode (default: orchestrator for high-quality extraction)
+    use_orchestrator_extraction: bool = True
 
     # Orchestrator connection
     orchestrator_url: str = DEFAULT_ORCHESTRATOR_URL

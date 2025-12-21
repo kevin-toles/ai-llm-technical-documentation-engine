@@ -313,6 +313,82 @@ All steps use the **llm-gateway microservice** for LLM inference:
 
 ---
 
+## CME-1.0: Configurable Metadata Extraction (NEW)
+
+**Feature**: Configurable Metadata Extraction  
+**Status**: ✅ COMPLETE (December 2025)  
+**Architecture Document**: [CME_ARCHITECTURE.md](../../../textbooks/pending/platform/CME_ARCHITECTURE.md)
+
+### Overview
+
+CME-1.0 adds a configurable toggle to switch between two metadata extraction implementations:
+
+| Mode | Flag Value | Description |
+|------|------------|-------------|
+| **Local** | `use_orchestrator=False` | StatisticalExtractor (YAKE + Summa). Fast, offline, may include noise. |
+| **Orchestrator** | `use_orchestrator=True` | Code-Orchestrator-Service API. TF-IDF + noise filtering, higher quality. |
+
+### Architecture
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  llm-document-enhancer                                                      │
+│                                                                             │
+│  ┌─────────────────────────────┐      ┌─────────────────────────────────┐   │
+│  │ MetadataExtractionClient    │─────►│ Code-Orchestrator-Service       │   │
+│  │ (httpx async client)        │      │ :8083                           │   │
+│  │ ├── extract_metadata()      │ HTTP │                                 │   │
+│  │ └── health_check()          │◄─────│ POST /api/v1/metadata/extract   │   │
+│  └─────────────────────────────┘      │ ├── TF-IDF keywords             │   │
+│                                       │ ├── Concept extraction          │   │
+│         OR (fallback)                 │ ├── Noise validation            │   │
+│                 │                     │ └── Quality scoring             │   │
+│                 ▼                     └─────────────────────────────────┘   │
+│  ┌─────────────────────────────┐                                            │
+│  │ StatisticalExtractor        │                                            │
+│  │ (fallback if service down)  │                                            │
+│  └─────────────────────────────┘                                            │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+### Toggle Methods
+
+```bash
+# Default: Local StatisticalExtractor
+python3 generate_metadata_universal.py --input book.json
+
+# Orchestrator via CLI flag (takes precedence)
+python3 generate_metadata_universal.py --input book.json --use-orchestrator
+
+# Orchestrator via env var
+EXTRACTION_USE_ORCHESTRATOR_EXTRACTION=true python3 generate_metadata_universal.py --input book.json
+
+# With fallback disabled (strict mode)
+python3 generate_metadata_universal.py --input book.json --use-orchestrator --no-fallback
+```
+
+### Configuration
+
+```python
+# config/extraction_settings.py
+class ExtractionSettings(BaseSettings):
+    use_orchestrator_extraction: bool = False  # Default: local
+    orchestrator_url: str = "http://localhost:8083"
+    fallback_on_error: bool = True
+    
+    model_config = SettingsConfigDict(env_prefix="EXTRACTION_")
+```
+
+### Files
+
+| File | Description |
+|------|-------------|
+| `config/extraction_settings.py` | Pydantic Settings with EXTRACTION_* prefix |
+| `workflows/shared/clients/metadata_client.py` | MetadataExtractionClient + FakeClient |
+| `workflows/metadata_extraction/scripts/generate_metadata_universal.py` | Generator with --use-orchestrator flag |
+
+---
+
 ## Dependencies
 
 | Dependency | Type | Purpose |

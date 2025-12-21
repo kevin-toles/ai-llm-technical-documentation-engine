@@ -29,6 +29,16 @@ if TYPE_CHECKING:
 # =============================================================================
 
 
+@pytest.fixture(autouse=True)
+def reset_extraction_settings_cache() -> None:
+    """Reset the ExtractionSettings singleton cache before each test.
+    
+    This ensures that env var changes in patch.dict take effect.
+    """
+    import config.extraction_settings as settings_module
+    settings_module._extraction_settings = None
+
+
 @pytest.fixture
 def sample_book_json(tmp_path: Path) -> Path:
     """Create a minimal test book JSON file."""
