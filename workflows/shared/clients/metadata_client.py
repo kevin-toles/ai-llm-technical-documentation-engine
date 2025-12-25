@@ -40,6 +40,7 @@ DEFAULT_TIMEOUT: Final[float] = DEFAULT_ORCHESTRATOR_TIMEOUT
 DEFAULT_MAX_RETRIES: Final[int] = DEFAULT_ORCHESTRATOR_MAX_RETRIES
 DEFAULT_RETRY_BASE_DELAY: Final[float] = 0.5
 ENDPOINT_EXTRACT: Final[str] = "/api/v1/metadata/extract"
+ENDPOINT_EXTRACT_BATCH: Final[str] = "/api/v1/metadata/extract/batch"
 ENDPOINT_HEALTH: Final[str] = "/api/v1/health"
 
 # HTTP status codes that trigger retry (5xx server errors)
@@ -152,6 +153,36 @@ class MetadataExtractionOptions:
     summary_ratio: float = 0.2
     validate_dictionary: bool = True
     filter_noise: bool = True
+
+
+@dataclass
+class BatchTextItem:
+    """A single text item in a batch request."""
+
+    id: str
+    text: str
+    title: str | None = None
+
+
+@dataclass
+class BatchItemResult:
+    """Result for a single item in batch processing."""
+
+    id: str
+    success: bool
+    result: MetadataExtractionResult | None = None
+    error: str | None = None
+
+
+@dataclass
+class BatchExtractionResult:
+    """Result of batch metadata extraction."""
+
+    results: list[BatchItemResult] = field(default_factory=list)
+    total_items: int = 0
+    successful: int = 0
+    failed: int = 0
+    total_processing_time_ms: float = 0.0
 
 
 # =============================================================================
@@ -388,6 +419,98 @@ class MetadataExtractionClient:
             return response.status_code == 200
         except Exception:
             return False
+
+    async def extract_metadata_batch(
+        self,
+        items: list[BatchTextItem],
+        book_title: str | None = None,
+        options: MetadataExtractionOptions | None = None,
+    ) -> BatchExtractionResult:
+        """Extract metadata from multiple texts in a single request.
+
+        Optimized for batch processing of chapters from a single book.
+        Reduces HTTP overhead by sending all items in one request.
+
+        Args:
+            items: List of BatchTextItem to process.
+            book_title: Optional book title (applies to all items).
+            options: Extraction options (applies to all items).
+
+        Returns:
+            BatchExtractionResult with results for each item.
+
+        Raises:
+            MetadataClientConnectionError: If cannot connect.
+            MetadataClientTimeoutError: If request times out.
+            MetadataClientAPIError: If API returns error.
+        """
+        if self._http_client is None:
+            raise MetadataClientError("Client not initialized. Use async context manager.")
+
+        opts = options or MetadataExtractionOptions()
+        payload = {
+            "items": [
+                {
+                    "id": item.id,
+                    "text": item.text,
+                    "title": item.title,
+                }
+                for item in items
+            ],
+            "book_title": book_title,
+            "options": {
+                "top_k_keywords": opts.top_k_keywords,
+                "top_k_concepts": opts.top_k_concepts,
+                "min_keyword_confidence": opts.min_keyword_confidence,
+                "min_concept_confidence": opts.min_concept_confidence,
+                "enable_summary": opts.enable_summary,
+                "summary_ratio": opts.summary_ratio,
+                "validate_dictionary": opts.validate_dictionary,
+                "filter_noise": opts.filter_noise,
+            },
+        }
+
+        try:
+            # Use longer timeout for batch requests (30s + 5s per item)
+            batch_timeout = 30.0 + (len(items) * 5.0)
+            response = await self._http_client.post(
+                ENDPOINT_EXTRACT_BATCH,
+                json=payload,
+                timeout=batch_timeout,
+            )
+            response.raise_for_status()
+            return self._parse_batch_response(response.json())
+        except httpx.ConnectError as e:
+            raise MetadataClientConnectionError(str(e)) from e
+        except httpx.TimeoutException as e:
+            raise MetadataClientTimeoutError(str(e)) from e
+        except httpx.HTTPStatusError as e:
+            raise MetadataClientAPIError(
+                str(e),
+                e.response.status_code,
+                e.response.json() if e.response.content else None,
+            ) from e
+
+    def _parse_batch_response(self, data: dict[str, Any]) -> BatchExtractionResult:
+        """Parse batch API response to BatchExtractionResult."""
+        results = []
+        for item in data.get("results", []):
+            item_result = BatchItemResult(
+                id=item["id"],
+                success=item["success"],
+                error=item.get("error"),
+            )
+            if item.get("result"):
+                item_result.result = self._parse_response(item["result"])
+            results.append(item_result)
+
+        return BatchExtractionResult(
+            results=results,
+            total_items=data.get("total_items", 0),
+            successful=data.get("successful", 0),
+            failed=data.get("failed", 0),
+            total_processing_time_ms=data.get("total_processing_time_ms", 0.0),
+        )
 
 
 # =============================================================================

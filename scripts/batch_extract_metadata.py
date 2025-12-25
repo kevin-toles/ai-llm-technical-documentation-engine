@@ -100,12 +100,17 @@ def run_metadata_extraction(
     if use_orchestrator:
         cmd.append("--use-orchestrator")
     
+    # Dynamic timeout based on file size (large books like Code Complete need more time)
+    # Base: 5 min for small books, +5 min per MB over 1MB
+    file_size_mb = book_path.stat().st_size / (1024 * 1024)
+    timeout_seconds = max(300, int(300 + (file_size_mb - 1) * 300))  # 5-20 min range
+    
     try:
         result = subprocess.run(
             cmd,
             capture_output=True,
             text=True,
-            timeout=300  # 5 minute timeout per book
+            timeout=timeout_seconds  # Dynamic timeout based on file size
         )
         
         return {

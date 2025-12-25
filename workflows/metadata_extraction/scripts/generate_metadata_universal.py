@@ -76,6 +76,8 @@ from workflows.shared.clients.metadata_client import (  # noqa: E402
     MetadataClientError,
     MetadataClientConnectionError,
     MetadataClientTimeoutError,
+    BatchTextItem,
+    BatchExtractionResult,
 )
 from config.extraction_settings import get_extraction_settings  # noqa: E402
 
@@ -466,6 +468,94 @@ class UniversalMetadataGenerator:
             )
         )
 
+    async def _extract_batch_via_orchestrator_async(
+        self,
+        chapters_data: List[Dict[str, Any]],
+        max_keywords: int = 15,
+        max_concepts: int = 10,
+    ) -> Dict[str, Tuple[List[str], List[str], str]]:
+        """
+        Extract metadata for all chapters in a single batch request.
+        
+        Optimized for large books - reduces HTTP overhead by sending all chapters
+        in one request instead of one request per chapter.
+        
+        Args:
+            chapters_data: List of dicts with 'id', 'text', 'title' for each chapter
+            max_keywords: Maximum keywords per chapter
+            max_concepts: Maximum concepts per chapter
+            
+        Returns:
+            Dict mapping chapter_id to (keywords, concepts, summary) tuple
+        """
+        try:
+            async with self._create_metadata_client() as client:
+                # Build batch items
+                items = [
+                    BatchTextItem(
+                        id=ch['id'],
+                        text=ch['text'],
+                        title=ch.get('title'),
+                    )
+                    for ch in chapters_data
+                ]
+                
+                options = MetadataExtractionOptions(
+                    top_k_keywords=max_keywords,
+                    top_k_concepts=max_concepts,
+                    enable_summary=True,
+                    summary_ratio=0.2,
+                )
+                
+                result = await client.extract_metadata_batch(
+                    items=items,
+                    book_title=self.book_name,
+                    options=options,
+                )
+                
+                logger.info(
+                    f"Batch extraction: {result.successful}/{result.total_items} succeeded "
+                    f"in {result.total_processing_time_ms:.1f}ms"
+                )
+                
+                # Map results back to chapter IDs
+                results_map = {}
+                for item_result in result.results:
+                    if item_result.success and item_result.result:
+                        r = item_result.result
+                        keywords = [kw.term for kw in r.keywords]
+                        concepts = [c.name for c in r.concepts]
+                        summary = r.summary or ""
+                        results_map[item_result.id] = (keywords, concepts, summary)
+                    else:
+                        # Failed item - return empty results
+                        logger.warning(f"Batch item {item_result.id} failed: {item_result.error}")
+                        results_map[item_result.id] = ([], [], "")
+                
+                return results_map
+                
+        except MetadataClientError as e:
+            if self._fallback_on_error:
+                logger.warning(f"Batch extraction failed, falling back to per-chapter: {e}")
+                raise  # Let caller handle fallback
+            else:
+                raise
+
+    def _extract_batch_via_orchestrator(
+        self,
+        chapters_data: List[Dict[str, Any]],
+        max_keywords: int = 15,
+        max_concepts: int = 10,
+    ) -> Dict[str, Tuple[List[str], List[str], str]]:
+        """
+        Synchronous wrapper for batch orchestrator extraction.
+        """
+        return asyncio.run(
+            self._extract_batch_via_orchestrator_async(
+                chapters_data, max_keywords, max_concepts
+            )
+        )
+
     def _extract_local(
         self,
         text: str,
@@ -621,6 +711,9 @@ class UniversalMetadataGenerator:
         """
         Generate metadata for all chapters.
         
+        When orchestrator mode is enabled, uses batch extraction to process
+        all chapters in a single HTTP request for improved performance.
+        
         Args:
             chapters: List of (chapter_num, title, start_page, end_page) tuples
             
@@ -633,77 +726,155 @@ class UniversalMetadataGenerator:
         # Validate chapters for overlaps (exception hierarchy - PY 32425)
         self._validate_chapter_ranges(chapters)
         
-        metadata_list = []
         total_chapters = len(chapters)
         
+        # Phase 1: Collect all chapter texts
+        print(f"\n📖 Collecting text from {total_chapters} chapters...")
+        chapters_data = []
+        chapter_info = {}  # Maps chapter_id to (ch_num, title, start_page, end_page)
+        
+        MAX_CHAPTER_TEXT = 100000  # 100K chars (~50-60 pages of text)
+        
         for idx, (ch_num, title, start_page, end_page) in enumerate(chapters, start=1):
-            # Progress indicator (for large books)
-            progress_pct = (idx / total_chapters) * 100
-            print(f"\n[{progress_pct:.1f}%] Processing Chapter {ch_num}: {title}")
+            chapter_id = f"ch_{ch_num}"
+            chapter_info[chapter_id] = (ch_num, title, start_page, end_page)
             
-            # Collect text from chapter pages using helper method
+            # Collect text from chapter pages
             chapter_text, pages_found = self._collect_chapter_text(start_page, end_page)
             
-            # Optimize for large chapters: limit text size to avoid timeouts
-            # StatisticalExtractor (YAKE + Summa) is expensive for >100K chars
-            MAX_CHAPTER_TEXT = 100000  # 100K chars (~50-60 pages of text)
+            # Truncate large chapters
             if len(chapter_text) > MAX_CHAPTER_TEXT:
-                print(f"  Warning: Chapter text too large ({len(chapter_text):,} chars), truncating to {MAX_CHAPTER_TEXT:,} chars")
                 chapter_text = chapter_text[:MAX_CHAPTER_TEXT]
             
             page_count = pages_found if pages_found > 0 else (end_page - start_page + 1)
-            print(f"  Collected {len(chapter_text):,} characters from {page_count} pages")
             
-            # Guard against empty text (scanned/image pages with no extracted text)
-            if not chapter_text or not chapter_text.strip():
-                print("  ⚠️ Warning: Chapter has no text content, using title only")
-                metadata_list.append(self._create_fallback_metadata(ch_num, title, start_page, end_page))
-                continue
-            
-            # Per-chapter try/except: skip failed chapters, don't crash entire book
-            # Per ANTI_PATTERN_ANALYSIS.md Section 1.3: Graceful degradation
-            # Per ARCHITECTURE_GUIDELINES Ch. 8: Fault tolerance in pipelines
+            if chapter_text and chapter_text.strip():
+                chapters_data.append({
+                    'id': chapter_id,
+                    'text': chapter_text,
+                    'title': title,
+                    'ch_num': ch_num,
+                    'start_page': start_page,
+                    'end_page': end_page,
+                })
+                print(f"  [{idx}/{total_chapters}] Chapter {ch_num}: {len(chapter_text):,} chars")
+            else:
+                print(f"  [{idx}/{total_chapters}] Chapter {ch_num}: (no text content)")
+        
+        print(f"\n✅ Collected {len(chapters_data)} chapters with text content")
+        
+        # Phase 2: Extract metadata (batch or per-chapter)
+        metadata_list = []
+        
+        if self._use_orchestrator and chapters_data:
+            # Try batch extraction first
+            print(f"\n🚀 Using BATCH orchestrator extraction for {len(chapters_data)} chapters...")
             try:
-                # Route extraction based on orchestrator mode (WBS-AC5)
-                # AC-5.1: use_orchestrator=True → MetadataExtractionClient
-                # AC-5.2: use_orchestrator=False → StatisticalExtractor
+                batch_results = self._extract_batch_via_orchestrator(
+                    chapters_data, max_keywords=15, max_concepts=10
+                )
+                
+                # Build metadata from batch results
+                for ch_data in chapters_data:
+                    chapter_id = ch_data['id']
+                    ch_num, title, start_page, end_page = chapter_info[chapter_id]
+                    
+                    if chapter_id in batch_results:
+                        keywords, concepts, summary = batch_results[chapter_id]
+                        print(f"  ✓ Chapter {ch_num}: {len(keywords)} keywords, {len(concepts)} concepts")
+                    else:
+                        keywords, concepts, summary = [], [], ""
+                        print(f"  ⚠ Chapter {ch_num}: no results")
+                    
+                    # Generate summary if not provided
+                    if not summary:
+                        summary = self.generate_summary(ch_data['text'], title, ch_num)
+                    
+                    metadata_list.append(ChapterMetadata(
+                        chapter_number=ch_num,
+                        title=title,
+                        start_page=start_page,
+                        end_page=end_page,
+                        summary=summary,
+                        keywords=keywords,
+                        concepts=concepts,
+                    ))
+                
+                print(f"\n✅ Batch extraction complete: {len(metadata_list)} chapters processed")
+                
+            except (MetadataClientError, Exception) as e:
+                print(f"\n⚠️ Batch extraction failed: {e}")
+                print("   Falling back to per-chapter extraction...")
+                metadata_list = self._generate_metadata_per_chapter(chapters_data, chapter_info)
+        else:
+            # Per-chapter extraction (local or orchestrator per-chapter)
+            mode = "orchestrator" if self._use_orchestrator else "local"
+            print(f"\n🔄 Using per-chapter {mode} extraction...")
+            metadata_list = self._generate_metadata_per_chapter(chapters_data, chapter_info)
+        
+        # Add fallback entries for chapters without text
+        for ch_num, title, start_page, end_page in chapters:
+            chapter_id = f"ch_{ch_num}"
+            if chapter_id not in [f"ch_{m.chapter_number}" for m in metadata_list]:
+                metadata_list.append(self._create_fallback_metadata(
+                    ch_num, title, start_page, end_page
+                ))
+        
+        # Sort by chapter number
+        metadata_list.sort(key=lambda m: m.chapter_number)
+        
+        return metadata_list
+    
+    def _generate_metadata_per_chapter(
+        self,
+        chapters_data: List[Dict[str, Any]],
+        chapter_info: Dict[str, Tuple[int, str, int, int]],
+    ) -> List[ChapterMetadata]:
+        """
+        Generate metadata chapter-by-chapter (fallback when batch fails).
+        
+        Args:
+            chapters_data: List of chapter data dicts
+            chapter_info: Map of chapter_id to (ch_num, title, start_page, end_page)
+            
+        Returns:
+            List of ChapterMetadata objects
+        """
+        metadata_list = []
+        total = len(chapters_data)
+        
+        for idx, ch_data in enumerate(chapters_data, start=1):
+            chapter_id = ch_data['id']
+            ch_num, title, start_page, end_page = chapter_info[chapter_id]
+            chapter_text = ch_data['text']
+            
+            progress_pct = (idx / total) * 100
+            print(f"\n[{progress_pct:.1f}%] Processing Chapter {ch_num}: {title}")
+            
+            try:
                 keywords, concepts, summary = self.extract_chapter_metadata(
                     chapter_text, title, ch_num, max_keywords=15, max_concepts=10
                 )
                 
-                print(f"  Keywords: {', '.join(keywords[:5])}..." if keywords else "  Keywords: (none extracted)")
-                print(f"  Concepts: {', '.join(concepts[:5])}..." if concepts else "  Concepts: (none extracted)")
+                print(f"  Keywords: {', '.join(keywords[:5])}..." if keywords else "  Keywords: (none)")
+                print(f"  Concepts: {', '.join(concepts[:5])}..." if concepts else "  Concepts: (none)")
                 
-                chapter_meta = ChapterMetadata(
+                metadata_list.append(ChapterMetadata(
                     chapter_number=ch_num,
                     title=title,
                     start_page=start_page,
                     end_page=end_page,
                     summary=summary,
                     keywords=keywords,
-                    concepts=concepts
-                )
-                
-                metadata_list.append(chapter_meta)
-            
-            except MetadataClientError:
-                # AC-5.4: Re-raise MetadataClientError when fallback disabled
-                # (Fallback already handled in _extract_via_orchestrator_async)
-                raise
+                    concepts=concepts,
+                ))
                 
             except Exception as e:
-                # Log error but continue with other chapters - don't kill entire book
-                print(f"  ❌ Error extracting metadata: {e}")
-                print(f"  ⚠️ Skipping chapter {ch_num}, continuing with next chapter...")
-                
-                # Create minimal metadata entry so chapter is tracked
-                metadata_list.append(
-                    self._create_fallback_metadata(
-                        ch_num, title, start_page, end_page, 
-                        error_suffix="(metadata extraction failed)"
-                    )
-                )
-                continue
+                print(f"  ❌ Error: {e}")
+                metadata_list.append(self._create_fallback_metadata(
+                    ch_num, title, start_page, end_page,
+                    error_suffix="(metadata extraction failed)"
+                ))
         
         return metadata_list
     
