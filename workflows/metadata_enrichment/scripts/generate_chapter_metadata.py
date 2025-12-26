@@ -112,25 +112,26 @@ def _get_python_keyword_list() -> List[str]:
     return []  # Empty list - no longer used
 
 
-def extract_keywords_from_text(text: str, max_keywords: int = 15) -> List[str]:
+def extract_keywords_from_text(text: str) -> List[str]:
     """
-    Extract meaningful keywords from chapter text using statistical NLP.
+    Extract ALL meaningful keywords from chapter text using statistical NLP.
     
     Replaced hardcoded Python keyword matching with YAKE unsupervised extraction.
     Now works across ANY domain (Python, biology, law, construction, etc.).
     
+    No limits applied - extracts all valid keywords for downstream filtering.
+    
     Args:
         text: Chapter text content
-        max_keywords: Maximum number of keywords to return
         
     Returns:
-        List of keywords sorted by relevance (YAKE score)
+        List of ALL keywords sorted by relevance (YAKE score)
         
     Document References:
         - DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN Part 1.4: Metadata enrichment integration
         - ARCHITECTURE_GUIDELINES Ch. 4: Adapter pattern for NLP libraries
     """
-    keywords_with_scores = STATISTICAL_EXTRACTOR.extract_keywords(text, top_n=max_keywords)
+    keywords_with_scores = STATISTICAL_EXTRACTOR.extract_keywords(text)
     return [keyword for keyword, score in keywords_with_scores]
 
 
@@ -140,25 +141,26 @@ def extract_keywords_from_text(text: str, max_keywords: int = 15) -> List[str]:
 CONCEPT_PATTERNS: list[str] = []  # Empty list - no longer used
 
 
-def extract_concepts_from_text(text: str, max_concepts: int = 10) -> List[str]:
+def extract_concepts_from_text(text: str) -> List[str]:
     """
-    Extract key concepts from chapter text using TextRank.
+    Extract ALL key concepts from chapter text using TextRank.
     
     Replaced 70+ hardcoded regex patterns with Summa statistical extraction.
     Now works across ANY domain without hardcoded domain knowledge.
     
+    No limits applied - extracts all valid concepts for downstream filtering.
+    
     Args:
         text: Chapter text content
-        max_concepts: Maximum number of concepts to return
         
     Returns:
-        List of concepts (single-word terms)
+        List of ALL concepts (single-word terms)
         
     Document References:
         - DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN Part 1.4: Remove hardcoded patterns
         - ARCHITECTURE_GUIDELINES Ch. 5: Service layer orchestration
     """
-    return STATISTICAL_EXTRACTOR.extract_concepts(text, top_n=max_concepts)
+    return STATISTICAL_EXTRACTOR.extract_concepts(text)
 
 
 def _extract_sample_text(chapter_pages: List[Dict[str, Any]], num_pages: int = 5) -> str:

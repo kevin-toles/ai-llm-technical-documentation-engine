@@ -90,6 +90,13 @@ except ImportError:
     DEFAULT_JSON_DIR = Path("data/textbooks_json")
     DEFAULT_METADATA_DIR = Path("data/metadata")
 
+# Configure logging by default
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+
 # Logger for this module
 logger = logging.getLogger(__name__)
 
@@ -164,14 +171,17 @@ class UniversalMetadataGenerator:
         
         # AC-5.1/AC-5.2: Determine extraction mode
         # If use_orchestrator is None, read from ExtractionSettings (AC-1.1)
+        settings = get_extraction_settings()
         if use_orchestrator is None:
-            settings = get_extraction_settings()
             self._use_orchestrator = settings.use_orchestrator_extraction
         else:
             self._use_orchestrator = use_orchestrator
         
         self._fallback_on_error = fallback_on_error
         self._orchestrator_url = orchestrator_url
+        
+        # No limits on keywords/concepts - extract ALL, filter downstream, dedupe
+        # Limits removed per user requirement: "pull all available, filter through confirmed, dedupe"
         
         # Initialize StatisticalExtractor for domain-agnostic extraction
         # Used as primary (AC-5.2) or fallback (AC-5.3)
@@ -285,46 +295,68 @@ class UniversalMetadataGenerator:
         
         return final_chapters
     
-    def extract_keywords(self, text: str, max_keywords: int = 15) -> List[str]:
+    def extract_keywords(self, text: str, chapter_title: str = "", chapter_num: int = 0) -> List[str]:
         """
-        Extract meaningful keywords from chapter text using statistical methods.
+        Extract ALL meaningful keywords from chapter text using statistical methods.
         
         Replaced hardcoded keyword matching with YAKE unsupervised extraction.
         Now works across ANY domain (Python, biology, law, construction, etc.).
         
+        No limits applied - extracts all valid keywords for downstream filtering.
+        
         Args:
             text: Chapter text content
-            max_keywords: Maximum number of keywords to return
+            chapter_title: Optional chapter title for verbose logging
+            chapter_num: Optional chapter number for verbose logging
             
         Returns:
-            List of keywords sorted by relevance (YAKE score)
+            List of ALL keywords sorted by relevance (YAKE score)
             
         Document References:
             - DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN Part 1.3: Integration with StatisticalExtractor
             - ARCHITECTURE_GUIDELINES Ch. 4: Adapter pattern for NLP libraries
         """
-        keywords_with_scores = self.extractor.extract_keywords(text, top_n=max_keywords)
+        # Build source name for verbose logging
+        source_name = ""
+        if hasattr(self, 'book_name'):
+            if chapter_title or chapter_num:
+                source_name = f"{self.book_name} - Ch{chapter_num}: {chapter_title}"
+            else:
+                source_name = self.book_name
+        
+        keywords_with_scores = self.extractor.extract_keywords(text, source_name=source_name)
         return [keyword for keyword, score in keywords_with_scores]
     
-    def extract_concepts(self, text: str, max_concepts: int = 10) -> List[str]:
+    def extract_concepts(self, text: str, chapter_title: str = "", chapter_num: int = 0) -> List[str]:
         """
-        Extract key concepts and topics from chapter text using TextRank.
+        Extract ALL key concepts and topics from chapter text using TextRank.
         
         Replaced 35+ hardcoded regex patterns with Summa statistical extraction.
         Now works across ANY domain without hardcoded domain knowledge.
         
+        No limits applied - extracts all valid concepts for downstream filtering.
+        
         Args:
             text: Chapter text content
-            max_concepts: Maximum number of concepts to return
+            chapter_title: Optional chapter title for verbose logging
+            chapter_num: Optional chapter number for verbose logging
             
         Returns:
-            List of concepts (single-word terms)
+            List of ALL concepts (single-word terms)
             
         Document References:
             - DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN Part 1.3: Remove hardcoded patterns
             - ARCHITECTURE_GUIDELINES Ch. 5: Service layer orchestration
         """
-        return self.extractor.extract_concepts(text, top_n=max_concepts)
+        # Build source name for verbose logging
+        source_name = ""
+        if hasattr(self, 'book_name'):
+            if chapter_title or chapter_num:
+                source_name = f"{self.book_name} - Ch{chapter_num}: {chapter_title}"
+            else:
+                source_name = self.book_name
+        
+        return self.extractor.extract_concepts(text, source_name=source_name)
     
     def generate_summary(self, text: str, title: str, chapter_num: int) -> str:
         """
@@ -382,11 +414,11 @@ class UniversalMetadataGenerator:
         text: str,
         title: str,
         chapter_num: int,
-        max_keywords: int = 15,
-        max_concepts: int = 10,
     ) -> Tuple[List[str], List[str], str]:
         """
         Extract metadata via orchestrator service asynchronously.
+        
+        No limits on keywords/concepts - orchestrator extracts all, filters, and dedupes.
         
         AC Reference:
             - AC-5.1: Orchestrator mode extraction
@@ -397,8 +429,6 @@ class UniversalMetadataGenerator:
             text: Chapter text content
             title: Chapter title
             chapter_num: Chapter number for logging
-            max_keywords: Maximum keywords to extract
-            max_concepts: Maximum concepts to extract
             
         Returns:
             Tuple of (keywords, concepts, summary)
@@ -409,8 +439,6 @@ class UniversalMetadataGenerator:
         try:
             async with self._create_metadata_client() as client:
                 options = MetadataExtractionOptions(
-                    top_k_keywords=max_keywords,
-                    top_k_concepts=max_concepts,
                     enable_summary=True,
                     summary_ratio=0.2,
                 )
@@ -434,7 +462,7 @@ class UniversalMetadataGenerator:
                     f"Orchestrator failed for chapter {chapter_num}, "
                     f"falling back to local extraction: {e}"
                 )
-                return self._extract_local(text, title, chapter_num, max_keywords, max_concepts)
+                return self._extract_local(text, title, chapter_num)
             else:
                 # AC-5.4: Propagate exception
                 raise
@@ -444,35 +472,30 @@ class UniversalMetadataGenerator:
         text: str,
         title: str,
         chapter_num: int,
-        max_keywords: int = 15,
-        max_concepts: int = 10,
     ) -> Tuple[List[str], List[str], str]:
         """
         Synchronous wrapper for orchestrator extraction.
         
         Handles asyncio event loop management for sync callers.
+        No limits on keywords/concepts - extracts all.
         
         Args:
             text: Chapter text content
             title: Chapter title
             chapter_num: Chapter number
-            max_keywords: Maximum keywords to extract
-            max_concepts: Maximum concepts to extract
             
         Returns:
             Tuple of (keywords, concepts, summary)
         """
         return asyncio.run(
             self._extract_via_orchestrator_async(
-                text, title, chapter_num, max_keywords, max_concepts
+                text, title, chapter_num
             )
         )
 
     async def _extract_batch_via_orchestrator_async(
         self,
         chapters_data: List[Dict[str, Any]],
-        max_keywords: int = 15,
-        max_concepts: int = 10,
     ) -> Dict[str, Tuple[List[str], List[str], str]]:
         """
         Extract metadata for all chapters in a single batch request.
@@ -480,10 +503,10 @@ class UniversalMetadataGenerator:
         Optimized for large books - reduces HTTP overhead by sending all chapters
         in one request instead of one request per chapter.
         
+        No limits on keywords/concepts - extracts all, filters, and dedupes.
+        
         Args:
             chapters_data: List of dicts with 'id', 'text', 'title' for each chapter
-            max_keywords: Maximum keywords per chapter
-            max_concepts: Maximum concepts per chapter
             
         Returns:
             Dict mapping chapter_id to (keywords, concepts, summary) tuple
@@ -501,8 +524,6 @@ class UniversalMetadataGenerator:
                 ]
                 
                 options = MetadataExtractionOptions(
-                    top_k_keywords=max_keywords,
-                    top_k_concepts=max_concepts,
                     enable_summary=True,
                     summary_ratio=0.2,
                 )
@@ -544,15 +565,13 @@ class UniversalMetadataGenerator:
     def _extract_batch_via_orchestrator(
         self,
         chapters_data: List[Dict[str, Any]],
-        max_keywords: int = 15,
-        max_concepts: int = 10,
     ) -> Dict[str, Tuple[List[str], List[str], str]]:
         """
         Synchronous wrapper for batch orchestrator extraction.
         """
         return asyncio.run(
             self._extract_batch_via_orchestrator_async(
-                chapters_data, max_keywords, max_concepts
+                chapters_data
             )
         )
 
@@ -561,11 +580,11 @@ class UniversalMetadataGenerator:
         text: str,
         title: str,
         chapter_num: int,
-        max_keywords: int = 15,
-        max_concepts: int = 10,
     ) -> Tuple[List[str], List[str], str]:
         """
         Extract metadata using local StatisticalExtractor.
+        
+        No limits on keywords/concepts - extracts all valid terms.
         
         AC Reference:
             - AC-5.2: Local extraction when use_orchestrator=False
@@ -575,14 +594,12 @@ class UniversalMetadataGenerator:
             text: Chapter text content
             title: Chapter title
             chapter_num: Chapter number
-            max_keywords: Maximum keywords to extract
-            max_concepts: Maximum concepts to extract
             
         Returns:
             Tuple of (keywords, concepts, summary)
         """
-        keywords = self.extract_keywords(text, max_keywords=max_keywords)
-        concepts = self.extract_concepts(text, max_concepts=max_concepts)
+        keywords = self.extract_keywords(text, chapter_title=title, chapter_num=chapter_num)
+        concepts = self.extract_concepts(text, chapter_title=title, chapter_num=chapter_num)
         summary = self.generate_summary(text, title, chapter_num)
         return keywords, concepts, summary
 
@@ -591,13 +608,12 @@ class UniversalMetadataGenerator:
         text: str,
         title: str,
         chapter_num: int,
-        max_keywords: int = 15,
-        max_concepts: int = 10,
     ) -> Tuple[List[str], List[str], str]:
         """
         Extract metadata for a chapter using configured extraction mode.
         
         Routes to orchestrator or local extraction based on self._use_orchestrator.
+        No limits on keywords/concepts - extracts all valid terms.
         
         AC Reference:
             - AC-5.1: Routes to orchestrator when use_orchestrator=True
@@ -607,19 +623,17 @@ class UniversalMetadataGenerator:
             text: Chapter text content
             title: Chapter title
             chapter_num: Chapter number
-            max_keywords: Maximum keywords to extract
-            max_concepts: Maximum concepts to extract
             
         Returns:
             Tuple of (keywords, concepts, summary)
         """
         if self._use_orchestrator:
             return self._extract_via_orchestrator(
-                text, title, chapter_num, max_keywords, max_concepts
+                text, title, chapter_num
             )
         else:
             return self._extract_local(
-                text, title, chapter_num, max_keywords, max_concepts
+                text, title, chapter_num
             )
     
     def _validate_chapter_ranges(self, chapters: List[Tuple[int, str, int, int]]) -> None:
@@ -771,7 +785,7 @@ class UniversalMetadataGenerator:
             print(f"\n🚀 Using BATCH orchestrator extraction for {len(chapters_data)} chapters...")
             try:
                 batch_results = self._extract_batch_via_orchestrator(
-                    chapters_data, max_keywords=15, max_concepts=10
+                    chapters_data
                 )
                 
                 # Build metadata from batch results
@@ -800,7 +814,24 @@ class UniversalMetadataGenerator:
                         concepts=concepts,
                     ))
                 
+                # Calculate unique totals across all chapters
+                all_keywords = set()
+                all_concepts = set()
+                for m in metadata_list:
+                    all_keywords.update(m.keywords)
+                    all_concepts.update(m.concepts)
+                
                 print(f"\n✅ Batch extraction complete: {len(metadata_list)} chapters processed")
+                print(f"📊 Book totals (unique): {len(all_keywords):,} keywords | {len(all_concepts):,} concepts")
+                
+                # Log book-level summary for analysis
+                logger.info(
+                    f"Book extraction complete: book='{self.book_name}' "
+                    f"chapters={len(metadata_list)} "
+                    f"unique_keywords={len(all_keywords)} "
+                    f"unique_concepts={len(all_concepts)} "
+                    f"mode=batch"
+                )
                 
             except (MetadataClientError, Exception) as e:
                 print(f"\n⚠️ Batch extraction failed: {e}")
@@ -853,7 +884,7 @@ class UniversalMetadataGenerator:
             
             try:
                 keywords, concepts, summary = self.extract_chapter_metadata(
-                    chapter_text, title, ch_num, max_keywords=15, max_concepts=10
+                    chapter_text, title, ch_num
                 )
                 
                 print(f"  Keywords: {', '.join(keywords[:5])}..." if keywords else "  Keywords: (none)")
@@ -875,6 +906,25 @@ class UniversalMetadataGenerator:
                     ch_num, title, start_page, end_page,
                     error_suffix="(metadata extraction failed)"
                 ))
+        
+        # Calculate unique totals across all chapters
+        all_keywords = set()
+        all_concepts = set()
+        for m in metadata_list:
+            all_keywords.update(m.keywords)
+            all_concepts.update(m.concepts)
+        
+        print(f"\n✅ Per-chapter extraction complete: {len(metadata_list)} chapters processed")
+        print(f"📊 Book totals (unique): {len(all_keywords):,} keywords | {len(all_concepts):,} concepts")
+        
+        # Log book-level summary for analysis
+        logger.info(
+            f"Book extraction complete: book='{self.book_name}' "
+            f"chapters={len(metadata_list)} "
+            f"unique_keywords={len(all_keywords)} "
+            f"unique_concepts={len(all_concepts)} "
+            f"mode=per-chapter"
+        )
         
         return metadata_list
     

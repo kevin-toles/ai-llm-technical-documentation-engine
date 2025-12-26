@@ -9,6 +9,9 @@ AC Reference:
 Anti-Patterns Avoided:
 - S1192: Constants extracted to module level
 - Anti-Pattern #12: Singleton pattern for settings
+
+NOTE: No limits on keywords/concepts. Extract ALL valid terms, filter via 
+confirmed concepts list, then dedupe. Limits removed per architecture decision.
 """
 
 from __future__ import annotations
@@ -27,8 +30,9 @@ DEFAULT_ORCHESTRATOR_TIMEOUT: Final[float] = 30.0
 DEFAULT_ORCHESTRATOR_MAX_RETRIES: Final[int] = 3
 DEFAULT_MIN_KEYWORD_CONFIDENCE: Final[float] = 0.3
 DEFAULT_MIN_CONCEPT_CONFIDENCE: Final[float] = 0.3
-DEFAULT_TOP_K_KEYWORDS: Final[int] = 15
-DEFAULT_TOP_K_CONCEPTS: Final[int] = 10
+
+# REMOVED: DEFAULT_TOP_K_KEYWORDS and DEFAULT_TOP_K_CONCEPTS
+# No limits on extraction - pull all available, filter through confirmed, dedupe
 
 
 # =============================================================================
@@ -49,8 +53,9 @@ class ExtractionSettings(BaseSettings):
         fallback_on_error: Fallback to local if orchestrator fails.
         min_keyword_confidence: Min confidence for keywords.
         min_concept_confidence: Min confidence for concepts.
-        top_k_keywords: Number of keywords to extract.
-        top_k_concepts: Number of concepts to extract.
+
+    NOTE: No top_k_keywords or top_k_concepts limits. Extract ALL valid terms,
+    filter via confirmed concepts list, then dedupe.
 
     AC Reference:
         - AC-1.3: Default use_orchestrator_extraction=True (orchestrator mode)
@@ -71,8 +76,9 @@ class ExtractionSettings(BaseSettings):
     # Quality thresholds
     min_keyword_confidence: float = DEFAULT_MIN_KEYWORD_CONFIDENCE
     min_concept_confidence: float = DEFAULT_MIN_CONCEPT_CONFIDENCE
-    top_k_keywords: int = DEFAULT_TOP_K_KEYWORDS
-    top_k_concepts: int = DEFAULT_TOP_K_CONCEPTS
+
+    # REMOVED: top_k_keywords and top_k_concepts
+    # No limits - extract all, filter via confirmed list, dedupe
 
     model_config = SettingsConfigDict(
         env_prefix="EXTRACTION_",

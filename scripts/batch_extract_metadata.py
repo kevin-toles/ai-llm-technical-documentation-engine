@@ -57,6 +57,7 @@ METADATA_EXTRACTION_CONFIG = {
     "input_dir": WORKFLOWS_DIR / "pdf_to_json" / "output" / "textbooks_json",
     "input_ext": ".json",
     "output_dir": WORKFLOWS_DIR / "metadata_extraction" / "output",
+    "reports_dir": WORKFLOWS_DIR / "metadata_extraction" / "reports",
     "script": WORKFLOWS_DIR / "metadata_extraction" / "scripts" / "generate_metadata_universal.py"
 }
 
@@ -238,18 +239,41 @@ def main():
         result = run_metadata_extraction(book, script_path, args.use_orchestrator)
         
         if result["success"]:
-            print(f"         ✓ Success")
             successful.append(book.name)
             
-            # Show summary from output (last few lines)
+            # Parse output for detailed info
             if result["stdout"]:
                 lines = result["stdout"].strip().split('\n')
-                # Look for chapter count in output
-                for line in lines[-10:]:
-                    if "chapter" in line.lower() or "metadata" in line.lower():
-                        print(f"           {line.strip()}")
+                total_chapters = 0
+                keywords_extracted = 0
+                concepts_extracted = 0
+                
+                import re
+                for line in lines:
+                    # Find total chapters detected
+                    # e.g., "✅ Collected 16 chapters with text content"
+                    if "chapters" in line.lower() and "collected" in line.lower():
+                        match = re.search(r'(\d+)\s+chapters', line)
+                        if match:
+                            total_chapters = int(match.group(1))
+                    
+                    # Look for unique book totals line (preferred)
+                    # e.g., "📊 Book totals (unique): 1,687 keywords | 45 concepts"
+                    if "Book totals (unique)" in line:
+                        match = re.search(r'([\d,]+)\s+keywords.*?([\d,]+)\s+concepts', line)
+                        if match:
+                            keywords_extracted = int(match.group(1).replace(',', ''))
+                            concepts_extracted = int(match.group(2).replace(',', ''))
+                    
+                    # Also capture batch summary for chapter count
+                    if "Batch extraction complete" in line or "Per-chapter extraction complete" in line:
+                        match = re.search(r'(\d+)\s+chapters processed', line)
+                        if match and total_chapters == 0:
+                            total_chapters = int(match.group(1))
+                
+                print(f"         ✅ Complete: {total_chapters} chapters | {keywords_extracted:,} keywords (unique) | {concepts_extracted:,} concepts (unique)")
         else:
-            print(f"         ✗ Failed: {result['stderr'][:200] if result['stderr'] else 'Unknown error'}")
+            print(f"         ❌ Failed: {result['stderr'][:200] if result['stderr'] else 'Unknown error'}")
             failed.append({
                 "book": book.name,
                 "error": result["stderr"][:500] if result["stderr"] else "Unknown error"
@@ -272,8 +296,10 @@ def main():
         for f in failed:
             print(f"  - {f['book']}: {f['error'][:100]}")
     
-    # Save run report
-    report_path = output_dir / f"extraction_report_{start_time.strftime('%Y%m%d_%H%M%S')}.json"
+    # Save run report to dedicated reports directory
+    reports_dir = METADATA_EXTRACTION_CONFIG["reports_dir"]
+    reports_dir.mkdir(parents=True, exist_ok=True)
+    report_path = reports_dir / f"extraction_report_{start_time.strftime('%Y%m%d_%H%M%S')}.json"
     report = {
         "started_at": start_time.isoformat(),
         "completed_at": end_time.isoformat(),

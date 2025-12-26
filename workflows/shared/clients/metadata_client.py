@@ -143,10 +143,12 @@ class MetadataExtractionResult:
 
 @dataclass
 class MetadataExtractionOptions:
-    """Options for metadata extraction request."""
+    """Options for metadata extraction request.
+    
+    No limits on keywords/concepts - extract all, filter via confirmed list, dedupe.
+    """
 
-    top_k_keywords: int = 15
-    top_k_concepts: int = 10
+    # No top_k limits - extract ALL keywords/concepts
     min_keyword_confidence: float = 0.3
     min_concept_confidence: float = 0.3
     enable_summary: bool = False
@@ -303,8 +305,7 @@ class MetadataExtractionClient:
             "title": title,
             "book_title": book_title,
             "options": {
-                "top_k_keywords": opts.top_k_keywords,
-                "top_k_concepts": opts.top_k_concepts,
+                # No top_k limits - extract ALL, filter/dedupe downstream
                 "min_keyword_confidence": opts.min_keyword_confidence,
                 "min_concept_confidence": opts.min_concept_confidence,
                 "enable_summary": opts.enable_summary,
@@ -459,8 +460,7 @@ class MetadataExtractionClient:
             ],
             "book_title": book_title,
             "options": {
-                "top_k_keywords": opts.top_k_keywords,
-                "top_k_concepts": opts.top_k_concepts,
+                # No top_k limits - extract ALL, filter/dedupe downstream
                 "min_keyword_confidence": opts.min_keyword_confidence,
                 "min_concept_confidence": opts.min_concept_confidence,
                 "enable_summary": opts.enable_summary,

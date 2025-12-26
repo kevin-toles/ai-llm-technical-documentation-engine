@@ -18,13 +18,93 @@ Environment Variables (optional configuration):
 - EXTRACTION_YAKE_DEDUPLIM: YAKE deduplication threshold (default: 0.9)
 - EXTRACTION_STEM_DEDUP_ENABLED: Enable stem-based deduplication (default: true)
 - EXTRACTION_NGRAM_CLEAN_ENABLED: Enable n-gram cleaning (default: true)
+- EXTRACTION_VERBOSE_LOG: Path to verbose log file for pre-filter keywords (default: None)
 """
 
+import json
 import os
 import re
-from typing import List, Tuple, Set, Union, cast
+from datetime import datetime
+from pathlib import Path
+from typing import List, Tuple, Set, Union, cast, Optional
 import yake  # type: ignore[import-untyped]
 from summa import keywords as summa_keywords, summarizer  # type: ignore[import-untyped]
+
+# Global verbose log file handle
+_VERBOSE_LOG_PATH: Optional[Path] = None
+_VERBOSE_LOG_ENABLED = False
+
+def _init_verbose_logging():
+    """Initialize verbose logging if enabled via environment variable."""
+    global _VERBOSE_LOG_PATH, _VERBOSE_LOG_ENABLED
+    log_path = os.environ.get("EXTRACTION_VERBOSE_LOG")
+    if log_path:
+        _VERBOSE_LOG_PATH = Path(log_path)
+        _VERBOSE_LOG_ENABLED = True
+        # Create parent directories if needed
+        _VERBOSE_LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
+        # Write header if new file
+        if not _VERBOSE_LOG_PATH.exists():
+            with open(_VERBOSE_LOG_PATH, 'w') as f:
+                f.write(f"# Extraction Verbose Log - Started {datetime.now().isoformat()}\n")
+                f.write("# Format: JSON objects with raw and filtered keywords per source\n\n")
+
+def _log_extraction_details(
+    source_name: str,
+    raw_keywords: List[Tuple[str, float]],
+    filtered_keywords: List[Tuple[str, float]],
+    raw_concepts: Optional[List[str]] = None,
+    filtered_concepts: Optional[List[str]] = None
+):
+    """
+    Log raw vs filtered keywords/concepts to verbose log file.
+    
+    Args:
+        source_name: Name of the source text (book/chapter)
+        raw_keywords: Keywords before filtering
+        filtered_keywords: Keywords after filtering
+        raw_concepts: Concepts before filtering (optional)
+        filtered_concepts: Concepts after filtering (optional)
+    """
+    if not _VERBOSE_LOG_ENABLED or not _VERBOSE_LOG_PATH:
+        return
+    
+    # Calculate what was filtered out
+    raw_kw_set = {kw for kw, _ in raw_keywords}
+    filtered_kw_set = {kw for kw, _ in filtered_keywords}
+    removed_keywords = raw_kw_set - filtered_kw_set
+    
+    log_entry = {
+        "timestamp": datetime.now().isoformat(),
+        "source": source_name,
+        "keywords": {
+            "raw_count": len(raw_keywords),
+            "filtered_count": len(filtered_keywords),
+            "removed_count": len(removed_keywords),
+            "raw": [kw for kw, _ in raw_keywords],
+            "kept": [kw for kw, _ in filtered_keywords],
+            "removed": list(removed_keywords)
+        }
+    }
+    
+    if raw_concepts is not None and filtered_concepts is not None:
+        raw_concept_set = set(raw_concepts) if raw_concepts else set()
+        filtered_concept_set = set(filtered_concepts) if filtered_concepts else set()
+        removed_concepts = raw_concept_set - filtered_concept_set
+        log_entry["concepts"] = {
+            "raw_count": len(raw_concepts) if raw_concepts else 0,
+            "filtered_count": len(filtered_concepts) if filtered_concepts else 0,
+            "removed_count": len(removed_concepts),
+            "raw": raw_concepts or [],
+            "kept": filtered_concepts or [],
+            "removed": list(removed_concepts)
+        }
+    
+    with open(_VERBOSE_LOG_PATH, 'a') as f:
+        f.write(json.dumps(log_entry, indent=2) + "\n\n")
+
+# Initialize verbose logging on module load
+_init_verbose_logging()
 
 # Try to import WordNet for dictionary validation
 try:
@@ -441,7 +521,7 @@ class StatisticalExtractor:
             features=None
         )
     
-    def extract_keywords(self, text: str, top_n: int = 20) -> List[Tuple[str, float]]:
+    def extract_keywords(self, text: str, top_n: int | None = None, source_name: str = "") -> List[Tuple[str, float]]:
         """
         Extract keywords using YAKE (Yet Another Keyword Extractor).
         
@@ -450,14 +530,15 @@ class StatisticalExtractor:
         
         Args:
             text: Input text to extract keywords from
-            top_n: Number of top keywords to return (default: 20)
+            top_n: Optional limit on keywords to return (None = all valid keywords)
+            source_name: Optional name for logging (e.g., "Accelerate - Chapter 1")
         
         Returns:
             List of (keyword, score) tuples sorted by score (ascending).
             Lower YAKE scores indicate more important keywords.
         
         Raises:
-            ValueError: If text is empty or top_n is invalid
+            ValueError: If text is empty
         
         Document References:
         - DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN: Part 1.2.1 (YAKE integration)
@@ -465,17 +546,14 @@ class StatisticalExtractor:
         
         Example:
             >>> extractor = StatisticalExtractor()
-            >>> keywords = extractor.extract_keywords("Python is a programming language", top_n=5)
+            >>> keywords = extractor.extract_keywords("Python is a programming language")
             >>> # Returns: [('programming language', 0.05), ('python', 0.12), ...]
         """
         # Input validation - Per PYTHON_GUIDELINES Ch. 8
         if not text or not text.strip():
             raise ValueError(_ERROR_EMPTY_TEXT)
         
-        if top_n <= 0:
-            raise ValueError(_ERROR_INVALID_TOP_N)
-        
-        # Extract keywords using YAKE (request more to account for filtering)
+        # Extract keywords using YAKE
         keywords = self.kw_extractor.extract_keywords(text)
         
         # Step 1: Filter out noisy keywords
@@ -493,10 +571,20 @@ class StatisticalExtractor:
         else:
             deduped_keywords = cleaned_keywords
         
-        # Return top N keywords (already sorted by score ascending)
-        return deduped_keywords[:top_n]
+        # Log extraction details if verbose logging enabled
+        if _VERBOSE_LOG_ENABLED and source_name:
+            _log_extraction_details(
+                source_name=source_name,
+                raw_keywords=keywords,
+                filtered_keywords=deduped_keywords
+            )
+        
+        # Return all keywords (optionally limited) - sorted by score ascending
+        if top_n is not None and top_n > 0:
+            return deduped_keywords[:top_n]
+        return deduped_keywords
     
-    def _extract_concepts_from_summa(self, text: str, top_n: int) -> List[str]:
+    def _extract_concepts_from_summa(self, text: str, max_words: int = 100) -> List[str]:
         """
         Extract concepts using Summa TextRank.
         
@@ -504,22 +592,22 @@ class StatisticalExtractor:
         
         Args:
             text: Input text
-            top_n: Number of concepts to extract
+            max_words: Maximum words to request from Summa (to avoid overload)
             
         Returns:
-            List of concepts or empty list on failure
+            List of all valid concepts (no limit applied)
         """
         try:
-            # Request more than needed to account for filtering
-            concepts = summa_keywords.keywords(text, words=top_n * 2, split=True)
+            # Request many words from Summa, then filter
+            concepts = summa_keywords.keywords(text, words=max_words, split=True)
             if not concepts:
                 return []
-            # Filter noisy concepts
-            return [c for c in concepts if _is_valid_concept(c)][:top_n]
+            # Filter noisy concepts - return ALL valid ones
+            return [c for c in concepts if _is_valid_concept(c)]
         except Exception:
             return []
     
-    def _extract_concepts_from_keywords(self, text: str, top_n: int) -> List[str]:
+    def _extract_concepts_from_keywords(self, text: str) -> List[str]:
         """
         Fallback: Extract single-word concepts from YAKE keywords.
         
@@ -527,14 +615,13 @@ class StatisticalExtractor:
         
         Args:
             text: Input text
-            top_n: Number of concepts to extract
             
         Returns:
-            List of concepts or empty list on failure
+            List of all valid concepts (no limit applied)
         """
         try:
             keywords = self.kw_extractor.extract_keywords(text)
-            concept_set = set()
+            concept_set: set[str] = set()
             
             for keyword, score in keywords:
                 # Split multi-word keywords into single words
@@ -543,16 +630,12 @@ class StatisticalExtractor:
                     # Use semantic filter instead of basic length/alpha check
                     if _is_valid_concept(word):
                         concept_set.add(word)
-                        if len(concept_set) >= top_n:
-                            break
-                if len(concept_set) >= top_n:
-                    break
             
-            return list(concept_set)[:top_n]
+            return list(concept_set)
         except Exception:
             return []
     
-    def extract_concepts(self, text: str, top_n: int = 10) -> List[str]:
+    def extract_concepts(self, text: str, top_n: int | None = None, source_name: str = "") -> List[str]:
         """
         Extract single-word concepts using Summa TextRank keywords.
         
@@ -564,13 +647,14 @@ class StatisticalExtractor:
         
         Args:
             text: Input text to extract concepts from
-            top_n: Number of top concepts to return (default: 10)
+            top_n: Optional limit on concepts to return (None = all valid concepts)
+            source_name: Optional name for logging (e.g., "Accelerate - Chapter 1")
         
         Returns:
             List of concept strings (single words) sorted by importance.
         
         Raises:
-            ValueError: If text is empty or top_n is invalid
+            ValueError: If text is empty
         
         Document References:
         - DOMAIN_AGNOSTIC_IMPLEMENTATION_PLAN: Part 1.2.2 (Summa integration)
@@ -578,28 +662,49 @@ class StatisticalExtractor:
         
         Example:
             >>> extractor = StatisticalExtractor()
-            >>> concepts = extractor.extract_concepts("Biology cell text", top_n=5)
+            >>> concepts = extractor.extract_concepts("Biology cell text")
             >>> # Returns: ['cell', 'biology', 'protein', ...]
         """
         # Input validation
         if not text or not text.strip():
             raise ValueError(_ERROR_EMPTY_TEXT)
         
-        if top_n <= 0:
-            raise ValueError(_ERROR_INVALID_TOP_N)
+        # Get raw concepts before filtering (for logging)
+        raw_concepts: List[str] = []
+        try:
+            raw_summa = summa_keywords.keywords(text, words=100, split=True)
+            if raw_summa:
+                raw_concepts = raw_summa
+        except Exception:
+            pass
         
-        # Try Summa first (request more to account for deduplication)
-        concepts = self._extract_concepts_from_summa(text, top_n * 2)
+        # Try Summa first
+        concepts = self._extract_concepts_from_summa(text)
         
         # Fallback to YAKE keywords if Summa fails
         if not concepts:
-            concepts = self._extract_concepts_from_keywords(text, top_n * 2)
+            concepts = self._extract_concepts_from_keywords(text)
+            # For fallback, raw concepts are same as extracted
+            if not raw_concepts:
+                raw_concepts = concepts.copy()
         
         # Deduplicate by stem (e.g., model/models/modeling → model)
         deduped_concepts = cast(List[str], _deduplicate_by_stem(concepts))
         
-        # Return top_n concepts
-        return deduped_concepts[:top_n] if deduped_concepts else []
+        # Log extraction details if verbose logging enabled
+        if _VERBOSE_LOG_ENABLED and source_name:
+            _log_extraction_details(
+                source_name=source_name + " [concepts]",
+                raw_keywords=[],
+                filtered_keywords=[],
+                raw_concepts=raw_concepts,
+                filtered_concepts=deduped_concepts
+            )
+        
+        # Return all concepts (optionally limited)
+        if top_n is not None and top_n > 0:
+            return deduped_concepts[:top_n]
+        return deduped_concepts if deduped_concepts else []
     
     def generate_summary(self, text: str, ratio: float = 0.2) -> str:
         """
