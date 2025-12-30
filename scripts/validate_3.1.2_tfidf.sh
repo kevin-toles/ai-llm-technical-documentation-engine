@@ -6,13 +6,17 @@ TESTS_PASSED=0
 TESTS_FAILED=0
 
 pass() {
-    echo "✓ $1"
+    local msg="$1"
+    echo "✓ $msg"
     ((TESTS_PASSED++))
+    return 0
 }
 
 fail() {
-    echo "✗ $1"
+    local msg="$1"
+    echo "✗ $msg"
     ((TESTS_FAILED++))
+    return 0
 }
 
 echo "=== WBS 3.1.2 Validation: TF-IDF Similarity ==="
@@ -28,7 +32,7 @@ SCRIPT_OUTPUT=$(python3 workflows/metadata_enrichment/scripts/enrich_metadata_pe
   --input "$INPUT" \
   --output "$OUTPUT" 2>&1)
 SCRIPT_EXIT=$?
-if [ $SCRIPT_EXIT -eq 0 ]; then
+if [[ $SCRIPT_EXIT -eq 0 ]]; then
     pass "Script runs (exit code: $SCRIPT_EXIT)"
 else
     fail "Script crashed (exit code: $SCRIPT_EXIT)"
@@ -37,7 +41,7 @@ fi
 
 # Test 2: Output created (Acceptance Criteria Row 2)
 echo "2. Output file created..."
-if test -f "$OUTPUT"; then
+if [[ -f "$OUTPUT" ]]; then
     pass "Output file exists: test_book_enriched.json"
 else
     fail "Output file missing"
@@ -52,7 +56,7 @@ with open('$OUTPUT') as f:
 has_field = 'tfidf_similar' in data['chapters'][0]
 print('true' if has_field else 'false')
 " 2>&1)
-if [ "$HAS_TFIDF" = "true" ]; then
+if [[ "$HAS_TFIDF" = "true" ]]; then
     pass "Has tfidf_similar field"
 else
     fail "Missing tfidf_similar field"
@@ -73,7 +77,7 @@ for ch in data['chapters']:
             break
 print('true' if all_valid else 'false')
 " 2>&1)
-if [ "$SCORES_VALID" = "true" ]; then
+if [[ "$SCORES_VALID" = "true" ]]; then
     pass "All scores in [0, 1]"
 else
     fail "Some scores outside [0, 1]"
@@ -88,7 +92,7 @@ with open('$OUTPUT') as f:
 count = len(data['chapters'][0].get('tfidf_similar', []))
 print(count)
 " 2>&1)
-if [ "$TOP5_COUNT" -le 5 ]; then
+if [[ "$TOP5_COUNT" -le 5 ]]; then
     pass "Top-5 populated (count: $TOP5_COUNT <= 5)"
 else
     fail "Too many similar chapters (count: $TOP5_COUNT > 5)"
@@ -109,7 +113,7 @@ for ch in data['chapters']:
             break
 print('true' if no_self_ref else 'false')
 " 2>&1)
-if [ "$NO_SELF" = "true" ]; then
+if [[ "$NO_SELF" = "true" ]]; then
     pass "No self-references"
 else
     fail "Self-reference found in similar chapters"
@@ -132,7 +136,7 @@ with open('$OUTPUT') as f:
 all_have = all('tfidf_similar' in ch for ch in data['chapters'])
 print('true' if all_have else 'false')
 " 2>&1)
-if [ "$ALL_HAVE_SIMILAR" = "true" ]; then
+if [[ "$ALL_HAVE_SIMILAR" = "true" ]]; then
     pass "All chapters have tfidf_similar"
 else
     fail "Some chapters missing tfidf_similar"
@@ -157,7 +161,7 @@ for i, ch in enumerate(data['chapters'][:3]):
         print(f\"  -> Ch {sim['chapter_id']}: {sim['title']} (score: {sim['score']})\")
 "
 
-if [ $TESTS_FAILED -eq 0 ]; then
+if [[ $TESTS_FAILED -eq 0 ]]; then
     echo ""
     echo "=== WBS 3.1.2 PASSED ==="
     exit 0

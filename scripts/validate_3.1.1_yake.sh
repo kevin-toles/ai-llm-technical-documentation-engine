@@ -6,13 +6,17 @@ TESTS_PASSED=0
 TESTS_FAILED=0
 
 pass() {
-    echo "✓ $1"
+    local msg="$1"
+    echo "✓ $msg"
     ((TESTS_PASSED++))
+    return 0
 }
 
 fail() {
-    echo "✗ $1"
+    local msg="$1"
+    echo "✗ $msg"
     ((TESTS_FAILED++))
+    return 0
 }
 
 echo "=== WBS 3.1.1 Validation: YAKE Keyword Extraction ==="
@@ -44,7 +48,7 @@ Evaluation metrics like accuracy and F1 score measure model performance.
 result = extractor.extract_keywords(sample, top_n=10)
 print(len(result))
 " 2>&1)
-if [ "$KW_COUNT" -ge 5 ]; then
+if [[ "$KW_COUNT" -ge 5 ]]; then
     pass "Extracts keywords (Found: $KW_COUNT >= 5)"
 else
     fail "Too few keywords (Found: $KW_COUNT, Expected: >= 5)"
@@ -91,7 +95,7 @@ for ch in data.get('chapters', data):
                 count += 1
 print(count)
 " 2>&1)
-if [ "$HARDCODE_COUNT" = "0" ]; then
+if [[ "$HARDCODE_COUNT" = "0" ]]; then
     pass "No Python-specific hardcoding in keywords"
 else
     fail "Found $HARDCODE_COUNT keywords with code patterns"
@@ -99,7 +103,7 @@ fi
 
 # Test 5: Output JSON created (Acceptance Criteria Row 5)
 echo "5. Output JSON created..."
-if test -f "$OUTPUT"; then
+if [[ -f "$OUTPUT" ]]; then
     pass "Output file exists: test_book_metadata.json"
 else
     fail "Output file missing"
@@ -115,7 +119,7 @@ chapters = data.get('chapters', data)
 result = all(len(ch.get('keywords', [])) > 0 for ch in chapters)
 print('true' if result else 'false')
 " 2>&1)
-if [ "$ALL_HAVE_KW" = "true" ]; then
+if [[ "$ALL_HAVE_KW" = "true" ]]; then
     pass "All chapters have keywords"
 else
     fail "Not all chapters have keywords"
@@ -141,7 +145,7 @@ chapters = data.get('chapters', data)
 result = all(len(ch.get('concepts', [])) > 0 for ch in chapters)
 print('true' if result else 'false')
 " 2>&1)
-if [ "$ALL_HAVE_CONCEPTS" = "true" ]; then
+if [[ "$ALL_HAVE_CONCEPTS" = "true" ]]; then
     pass "All chapters have concepts"
 else
     fail "Not all chapters have concepts"
@@ -157,7 +161,7 @@ chapters = data.get('chapters', data)
 result = all(len(ch.get('summary', '')) > 0 for ch in chapters)
 print('true' if result else 'false')
 " 2>&1)
-if [ "$ALL_HAVE_SUMMARY" = "true" ]; then
+if [[ "$ALL_HAVE_SUMMARY" = "true" ]]; then
     pass "All chapters have summaries"
 else
     fail "Not all chapters have summaries"
@@ -169,7 +173,7 @@ echo "=== Summary ==="
 echo "Tests passed: $TESTS_PASSED"
 echo "Tests failed: $TESTS_FAILED"
 
-if [ $TESTS_FAILED -eq 0 ]; then
+if [[ $TESTS_FAILED -eq 0 ]]; then
     echo ""
     echo "=== WBS 3.1.1 PASSED ==="
     exit 0

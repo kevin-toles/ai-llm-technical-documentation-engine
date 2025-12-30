@@ -163,7 +163,7 @@ class JSONBookRepository:
         print(f"\n📚 Loading companion books from: {self._directory}")
         
         if not self._directory.exists():
-            print(f"  ❌ Directory not found!")
+            print("  ❌ Directory not found!")
             return
         
         for json_file in self._directory.glob("*.json"):
@@ -396,7 +396,7 @@ def main():
     # Load input book
     print(f"\n📄 Loading input book: {INPUT_JSON.name}")
     with open(INPUT_JSON, 'r') as f:
-        input_data = json.load(f)
+        _input_data = json.load(f)  # Load to verify valid JSON
     
     input_book_name = INPUT_JSON.stem
     print(f"  Book name: {input_book_name}")
@@ -417,7 +417,7 @@ def main():
         print(f"  Cascades to: {book_role.cascades_to}")
     
     # Extract sample concepts from first few chapters
-    print(f"\n🔬 Extracting concepts from input book...")
+    print("\n🔬 Extracting concepts from input book...")
     sample_concepts = ['model', 'training', 'inference', 'agent', 'transformer', 
                        'attention', 'embedding', 'api', 'prompt', 'fine-tuning']
     

@@ -14,7 +14,7 @@ TOTAL=8
 
 # Test 1: File exists
 echo "1. File exists..."
-if [ -f "$CLIENT_PATH" ]; then
+if [[ -f "$CLIENT_PATH" ]]; then
     echo "   ✓ search_client.py exists"
     ((PASS++))
 else
@@ -71,13 +71,13 @@ async def test():
 print(asyncio.run(test()))
 " 2>/dev/null || echo "0")
 
-if [ "$EMBED_RESULT" = "768" ]; then
+if [[ "$EMBED_RESULT" = "768" ]]; then
     echo "   ✓ embed() returns 768-dimension vectors"
     ((PASS++))
 else
     echo "   ⚠ embed() returned $EMBED_RESULT dimensions (service may be unavailable)"
     # Still count as pass if service is unavailable - client works
-    if [ "$EMBED_RESULT" = "0" ]; then
+    if [[ "$EMBED_RESULT" = "0" ]]; then
         echo "     (Service unavailable - testing client structure instead)"
         if python3 -c "
 import asyncio
@@ -107,7 +107,7 @@ async def test():
 print(asyncio.run(test()))
 " 2>/dev/null || echo "ERROR")
 
-if [ "$SEARCH_RESULT" = "OK" ]; then
+if [[ "$SEARCH_RESULT" = "OK" ]]; then
     echo "   ✓ search() returns list of results"
     ((PASS++))
 else
@@ -132,7 +132,7 @@ TEST_OUTPUT=$(python3 -m pytest "$TEST_PATH" -v --tb=short 2>&1)
 TEST_EXIT=$?
 TESTS_PASSED=$(echo "$TEST_OUTPUT" | grep -o "[0-9]* passed" | head -1)
 
-if [ $TEST_EXIT -eq 0 ]; then
+if [[ $TEST_EXIT -eq 0 ]]; then
     echo "   ✓ All unit tests pass ($TESTS_PASSED)"
     ((PASS++))
 else
@@ -146,7 +146,7 @@ echo "=== SUMMARY ==="
 echo "Passed: $PASS / $TOTAL"
 echo ""
 
-if [ $PASS -eq $TOTAL ]; then
+if [[ $PASS -eq $TOTAL ]]; then
     echo "=== WBS 3.2.3 PASSED ==="
     exit 0
 else

@@ -81,7 +81,7 @@ run_test "SearchClient has hybrid_search method" \
     "python3 -c 'import sys; sys.path.insert(0, \"$PROJECT_ROOT\"); from workflows.shared.clients.search_client import SemanticSearchClient; c = SemanticSearchClient(\"http://localhost:8081\"); assert hasattr(c, \"hybrid_search\")'"
 
 # Test 5: Output files exist from previous run (semantic)
-if [ -f "$OUTPUT_DIR/test_book_semantic_enriched.json" ]; then
+if [[ -f "$OUTPUT_DIR/test_book_semantic_enriched.json" ]]; then
     run_test "Semantic enrichment output exists" \
         "test -f '$OUTPUT_DIR/test_book_semantic_enriched.json'"
     
@@ -101,7 +101,7 @@ else
 fi
 
 # Test 9: TF-IDF output for comparison
-if [ -f "$OUTPUT_DIR/test_book_tfidf_enriched.json" ]; then
+if [[ -f "$OUTPUT_DIR/test_book_tfidf_enriched.json" ]]; then
     run_test "TF-IDF output exists" \
         "test -f '$OUTPUT_DIR/test_book_tfidf_enriched.json'"
     
@@ -129,7 +129,7 @@ echo -e "Passed: ${GREEN}$PASSED${NC}"
 echo -e "Failed: ${RED}$FAILED${NC}"
 echo ""
 
-if [ $FAILED -eq 0 ]; then
+if [[ $FAILED -eq 0 ]]; then
     echo -e "${GREEN}✓ All WBS 3.2.4 validation tests passed!${NC}"
     exit 0
 else

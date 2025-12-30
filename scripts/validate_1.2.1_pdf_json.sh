@@ -16,18 +16,19 @@ run_test() {
     local result="$2"
     local expected="$3"
     
-    if [ "$result" = "$expected" ]; then
+    if [[ "$result" = "$expected" ]]; then
         echo "✓ $name"
         TESTS_PASSED=$((TESTS_PASSED + 1))
     else
         echo "✗ $name (expected: $expected, got: $result)"
         TESTS_FAILED=$((TESTS_FAILED + 1))
     fi
+    return 0
 }
 
 echo ""
 echo "1. Checking output file exists..."
-if [ -f "$OUTPUT" ]; then
+if [[ -f "$OUTPUT" ]]; then
     run_test "Output file exists" "true" "true"
 else
     run_test "Output file exists" "false" "true"
@@ -57,7 +58,7 @@ echo "   Found: $CHAPTER_COUNT chapters (expected: $EXPECTED)"
 
 DIFF=$((CHAPTER_COUNT - EXPECTED))
 DIFF=${DIFF#-}  # Absolute value
-if [ "$DIFF" -le 2 ]; then
+if [[ "$DIFF" -le 2 ]]; then
     run_test "Chapter count within tolerance (±2)" "true" "true"
 else
     run_test "Chapter count within tolerance (±2)" "off by $DIFF" "within 2"
@@ -77,7 +78,7 @@ AVG_CONTENT=$(jq '[.chapters[] | .content | length] | add / length | floor' "$OU
 echo "   Min content: $MIN_CONTENT chars"
 echo "   Average content: $AVG_CONTENT chars"
 
-if [ "$MIN_CONTENT" -gt 100 ]; then
+if [[ "$MIN_CONTENT" -gt 100 ]]; then
     run_test "Min content > 100 chars" "true" "true"
 else
     run_test "Min content > 100 chars" "$MIN_CONTENT" ">100"
@@ -90,7 +91,7 @@ FIRST_CHAPTER=$(jq '.chapters[0].number' "$OUTPUT")
 LAST_CHAPTER=$(jq '.chapters[-1].number' "$OUTPUT")
 echo "   Chapter range: $FIRST_CHAPTER to $LAST_CHAPTER"
 
-if [ "$FIRST_CHAPTER" -eq 1 ]; then
+if [[ "$FIRST_CHAPTER" -eq 1 ]]; then
     run_test "First chapter is 1" "true" "true"
 else
     run_test "First chapter is 1" "$FIRST_CHAPTER" "1"
@@ -109,7 +110,7 @@ HAS_OVERLAPS=$(jq '
     map($chapters[.].start_page <= $chapters[.-1].end_page) | 
     any
 ' "$OUTPUT")
-if [ "$HAS_OVERLAPS" = "false" ]; then
+if [[ "$HAS_OVERLAPS" = "false" ]]; then
     run_test "No overlapping page ranges" "true" "true"
 else
     run_test "No overlapping page ranges" "overlap found" "no overlap"
@@ -124,7 +125,7 @@ echo "=== Summary ==="
 echo "Tests passed: $TESTS_PASSED"
 echo "Tests failed: $TESTS_FAILED"
 
-if [ "$TESTS_FAILED" -eq 0 ]; then
+if [[ "$TESTS_FAILED" -eq 0 ]]; then
     echo ""
     echo "=== WBS 1.2.1 PASSED ==="
     exit 0

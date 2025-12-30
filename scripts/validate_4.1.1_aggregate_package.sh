@@ -108,7 +108,7 @@ echo -e "Passed: ${GREEN}$PASSED${NC}"
 echo -e "Failed: ${RED}$FAILED${NC}"
 echo ""
 
-if [ $FAILED -eq 0 ]; then
+if [[ $FAILED -eq 0 ]]; then
     echo -e "${GREEN}✓ All WBS 4.1.1 validation tests passed!${NC}"
     exit 0
 else

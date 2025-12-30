@@ -15,7 +15,7 @@ TOTAL=7
 
 # Test 1: Script exists
 echo "1. Script exists..."
-if [ -f "$SCRIPT_PATH" ]; then
+if [[ -f "$SCRIPT_PATH" ]]; then
     echo "   ✓ seed_qdrant.py exists"
     ((PASS++))
 else
@@ -26,7 +26,7 @@ fi
 echo "2. Script runs (checking collection exists as evidence)..."
 # Check Qdrant is running using root endpoint (returns version info)
 VERSION=$(curl -s "$QDRANT_URL/" 2>/dev/null | jq -r '.version // ""')
-if [ -n "$VERSION" ]; then
+if [[ -n "$VERSION" ]]; then
     echo "   ✓ Qdrant v$VERSION is running (script ran successfully earlier)"
     ((PASS++))
 else
@@ -36,7 +36,7 @@ fi
 # Test 3: Collection exists with status green
 echo "3. Collection exists (status green)..."
 COLLECTION_STATUS=$(curl -s "$QDRANT_URL/collections/$COLLECTION" 2>/dev/null | jq -r '.result.status // "not_found"')
-if [ "$COLLECTION_STATUS" = "green" ]; then
+if [[ "$COLLECTION_STATUS" = "green" ]]; then
     echo "   ✓ Collection '$COLLECTION' status: green"
     ((PASS++))
 else
@@ -46,7 +46,7 @@ fi
 # Test 4: Vectors seeded (> 0)
 echo "4. Vectors seeded (> 0)..."
 VECTOR_COUNT=$(curl -s "$QDRANT_URL/collections/$COLLECTION" 2>/dev/null | jq '.result.points_count // 0')
-if [ "$VECTOR_COUNT" -gt 0 ]; then
+if [[ "$VECTOR_COUNT" -gt 0 ]]; then
     echo "   ✓ $VECTOR_COUNT vectors in collection"
     ((PASS++))
 else
@@ -55,7 +55,7 @@ fi
 
 # Test 5: Vector count matches chapter count
 echo "5. Vector count matches chapter count (== $EXPECTED_CHAPTERS)..."
-if [ "$VECTOR_COUNT" -eq "$EXPECTED_CHAPTERS" ]; then
+if [[ "$VECTOR_COUNT" -eq "$EXPECTED_CHAPTERS" ]]; then
     echo "   ✓ Vector count ($VECTOR_COUNT) matches expected chapters ($EXPECTED_CHAPTERS)"
     ((PASS++))
 else
@@ -69,7 +69,7 @@ FIRST_POINT=$(curl -s -X POST "$QDRANT_URL/collections/$COLLECTION/points/scroll
   -H "Content-Type: application/json" \
   -d '{"limit":1,"with_payload":true}' 2>/dev/null)
 HAS_TITLE=$(echo "$FIRST_POINT" | jq '.result.points[0].payload | has("title")')
-if [ "$HAS_TITLE" = "true" ]; then
+if [[ "$HAS_TITLE" = "true" ]]; then
     TITLE=$(echo "$FIRST_POINT" | jq -r '.result.points[0].payload.title')
     echo "   ✓ Payload has title: '$TITLE'"
     ((PASS++))
@@ -84,7 +84,7 @@ SEARCH_RESULT=$(curl -s -X POST "$QDRANT_URL/collections/$COLLECTION/points/reco
   -H "Content-Type: application/json" \
   -d '{"positive":[0],"limit":3}' 2>/dev/null)
 RESULT_COUNT=$(echo "$SEARCH_RESULT" | jq '.result | length // 0')
-if [ "$RESULT_COUNT" -ge 1 ]; then
+if [[ "$RESULT_COUNT" -ge 1 ]]; then
     echo "   ✓ Search returned $RESULT_COUNT results"
     ((PASS++))
 else
@@ -93,7 +93,7 @@ else
       -H "Content-Type: application/json" \
       -d '{"positive":[1],"limit":3}' 2>/dev/null)
     RESULT_COUNT=$(echo "$SEARCH_RESULT" | jq '.result | length // 0')
-    if [ "$RESULT_COUNT" -ge 1 ]; then
+    if [[ "$RESULT_COUNT" -ge 1 ]]; then
         echo "   ✓ Search returned $RESULT_COUNT results"
         ((PASS++))
     else
@@ -107,7 +107,7 @@ echo "=== SUMMARY ==="
 echo "Passed: $PASS / $TOTAL"
 echo ""
 
-if [ $PASS -eq $TOTAL ]; then
+if [[ $PASS -eq $TOTAL ]]; then
     echo "=== WBS 3.2.1 PASSED ==="
     exit 0
 else

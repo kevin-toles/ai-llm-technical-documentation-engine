@@ -41,9 +41,9 @@ def batch_convert(input_dir: Path, output_dir: Path, dry_run: bool = False) -> d
     pdf_files = sorted(input_dir.glob("*.pdf"))
     total = len(pdf_files)
     
-    print(f"\n{'='*80}")
-    print(f"📚 BATCH PDF TO JSON CONVERSION")
-    print(f"{'='*80}")
+    print("\n" + "="*80)
+    print("📚 BATCH PDF TO JSON CONVERSION")
+    print("="*80)
     print(f"Input:  {input_dir}")
     print(f"Output: {output_dir}")
     print(f"Total PDFs: {total}")
@@ -104,9 +104,9 @@ def batch_convert(input_dir: Path, output_dir: Path, dry_run: bool = False) -> d
     # Print summary
     results["end_time"] = datetime.now().isoformat()
     
-    print(f"\n{'='*80}")
-    print(f"📊 CONVERSION SUMMARY")
-    print(f"{'='*80}")
+    print("\n" + "="*80)
+    print("📊 CONVERSION SUMMARY")
+    print("="*80)
     print(f"✅ Successful: {len(results['success'])}")
     print(f"⏭️  Skipped:    {len(results['skipped'])}")
     print(f"❌ Failed:     {len(results['failed'])}")

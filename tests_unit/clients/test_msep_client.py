@@ -40,13 +40,13 @@ import httpx
 class TestMSEPClientInstantiation:
     """AC-6.1.5: Test client instantiates with correct defaults."""
 
-    def test_client_default_base_url_is_8082(self) -> None:
-        """AC-6.1.5: Default base_url is http://localhost:8082 (ai-agents port)."""
+    def test_client_default_base_url_is_8080(self) -> None:
+        """AC-6.1.5: Default base_url is http://localhost:8080 (Gateway port, routes to ai-agents)."""
         from workflows.shared.clients.msep_client import MSEPClient
 
         client = MSEPClient()
 
-        assert client.base_url == "http://localhost:8082"
+        assert client.base_url == "http://localhost:8080"
 
     def test_client_instantiates_with_defaults(self) -> None:
         """AC-6.1.1: Client should instantiate with default configuration."""

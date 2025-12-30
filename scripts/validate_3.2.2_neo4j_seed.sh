@@ -14,15 +14,17 @@ TOTAL=7
 
 # Helper function to run Cypher queries
 run_cypher() {
+    local query="$1"
     curl -s -X POST "$NEO4J_URL/db/neo4j/query/v2" \
       -H "Content-Type: application/json" \
       -u "$NEO4J_AUTH" \
-      -d "{\"statement\":\"$1\"}" 2>/dev/null
+      -d "{\"statement\":\"$query\"}" 2>/dev/null
+    return 0
 }
 
 # Test 1: Script exists
 echo "1. Script exists..."
-if [ -f "$SCRIPT_PATH" ]; then
+if [[ -f "$SCRIPT_PATH" ]]; then
     echo "   ✓ seed_neo4j.py exists"
     ((PASS++))
 else
@@ -32,7 +34,7 @@ fi
 # Test 2: Script runs (we check by verifying connection works)
 echo "2. Script runs (checking Neo4j connection)..."
 NEO4J_INFO=$(curl -s "$NEO4J_URL" 2>/dev/null | grep -o '"neo4j_version":"[^"]*"' || echo "")
-if [ -n "$NEO4J_INFO" ]; then
+if [[ -n "$NEO4J_INFO" ]]; then
     VERSION=$(echo "$NEO4J_INFO" | cut -d'"' -f4)
     echo "   ✓ Neo4j v$VERSION accessible (script ran successfully earlier)"
     ((PASS++))
@@ -43,7 +45,7 @@ fi
 # Test 3: Neo4j accessible (browser endpoint)
 echo "3. Neo4j accessible..."
 ACCESSIBLE=$(curl -s "$NEO4J_URL" | grep -q "neo4j" && echo "OK" || echo "")
-if [ "$ACCESSIBLE" = "OK" ]; then
+if [[ "$ACCESSIBLE" = "OK" ]]; then
     echo "   ✓ Neo4j browser accessible"
     ((PASS++))
 else
@@ -54,7 +56,7 @@ fi
 echo "4. Tier nodes exist (expected: 3)..."
 TIER_RESULT=$(run_cypher "MATCH (t:Tier) RETURN count(t) AS count")
 TIER_COUNT=$(echo "$TIER_RESULT" | jq -r '.data.values[0][0] // 0')
-if [ "$TIER_COUNT" -eq 3 ]; then
+if [[ "$TIER_COUNT" -eq 3 ]]; then
     echo "   ✓ $TIER_COUNT Tier nodes (T1, T2, T3)"
     ((PASS++))
 else
@@ -65,7 +67,7 @@ fi
 echo "5. Book nodes exist (≥ 1)..."
 BOOK_RESULT=$(run_cypher "MATCH (b:Book) RETURN count(b) AS count")
 BOOK_COUNT=$(echo "$BOOK_RESULT" | jq -r '.data.values[0][0] // 0')
-if [ "$BOOK_COUNT" -ge 1 ]; then
+if [[ "$BOOK_COUNT" -ge 1 ]]; then
     echo "   ✓ $BOOK_COUNT Book node(s)"
     ((PASS++))
 else
@@ -76,7 +78,7 @@ fi
 echo "6. Chapter nodes exist (≥ 1)..."
 CHAPTER_RESULT=$(run_cypher "MATCH (c:Chapter) RETURN count(c) AS count")
 CHAPTER_COUNT=$(echo "$CHAPTER_RESULT" | jq -r '.data.values[0][0] // 0')
-if [ "$CHAPTER_COUNT" -ge 1 ]; then
+if [[ "$CHAPTER_COUNT" -ge 1 ]]; then
     echo "   ✓ $CHAPTER_COUNT Chapter node(s)"
     ((PASS++))
 else
@@ -87,7 +89,7 @@ fi
 echo "7. Relationships exist..."
 REL_RESULT=$(run_cypher "MATCH ()-[r]->() RETURN type(r) AS type, count(r) AS count ORDER BY count DESC")
 REL_TYPES=$(echo "$REL_RESULT" | jq -r '.data.values[] | "\(.[0]): \(.[1])"')
-if [ -n "$REL_TYPES" ]; then
+if [[ -n "$REL_TYPES" ]]; then
     echo "   ✓ Relationships found:"
     echo "$REL_TYPES" | while read line; do echo "      - $line"; done
     ((PASS++))
@@ -108,7 +110,7 @@ echo "Book nodes:    $BOOK_COUNT"
 echo "Chapter nodes: $CHAPTER_COUNT"
 echo ""
 
-if [ $PASS -eq $TOTAL ]; then
+if [[ $PASS -eq $TOTAL ]]; then
     echo "=== WBS 3.2.2 PASSED ==="
     exit 0
 else
