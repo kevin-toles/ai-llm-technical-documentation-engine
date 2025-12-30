@@ -1,0 +1,333 @@
+{
+  "book": {
+    "title": "Certified Kubernetes Security Specialist - Benjamin Muschko"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:42:18.219482",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Certified Kubernetes Security Specialist - Benjamin Muschko",
+      "chapter": 1,
+      "title": "Exam Details and Resources",
+      "chapter_id": "Certified Kubernetes Security Specialist - Benjamin Muschko:ch1",
+      "cross_references": [
+        {
+          "target": "Certified Kubernetes Security Specialist - Benjamin Muschko:ch5",
+          "score": 0.5593846386382193,
+          "base_score": 0.6082336569896247,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "exam",
+          "cks",
+          "certification",
+          "security",
+          "cka"
+        ],
+        "semantic": [],
+        "merged": [
+          "exam",
+          "cks",
+          "certification",
+          "security",
+          "cka"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_container_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5584789587042588,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:18.209224+00:00"
+      }
+    },
+    {
+      "book": "Certified Kubernetes Security Specialist - Benjamin Muschko",
+      "chapter": 2,
+      "title": "Cluster Setup",
+      "chapter_id": "Certified Kubernetes Security Specialist - Benjamin Muschko:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "ingress",
+          "accounting",
+          "namespace",
+          "backend",
+          "dashboard"
+        ],
+        "semantic": [],
+        "merged": [
+          "ingress",
+          "accounting",
+          "namespace",
+          "backend",
+          "dashboard"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_command",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5605075637698776,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:18.209326+00:00"
+      }
+    },
+    {
+      "book": "Certified Kubernetes Security Specialist - Benjamin Muschko",
+      "chapter": 3,
+      "title": "Cluster Hardening",
+      "chapter_id": "Certified Kubernetes Security Specialist - Benjamin Muschko:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "api",
+          "service",
+          "service account",
+          "account",
+          "k97"
+        ],
+        "semantic": [],
+        "merged": [
+          "api",
+          "service",
+          "service account",
+          "account",
+          "k97"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5722030756793105,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:42:18.209373+00:00"
+      }
+    },
+    {
+      "book": "Certified Kubernetes Security Specialist - Benjamin Muschko",
+      "chapter": 4,
+      "title": "System Hardening",
+      "chapter_id": "Certified Kubernetes Security Specialist - Benjamin Muschko:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "profile",
+          "command",
+          "user",
+          "file",
+          "apparmor"
+        ],
+        "semantic": [],
+        "merged": [
+          "profile",
+          "command",
+          "user",
+          "file",
+          "apparmor"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_command",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6035137574289754,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:18.209408+00:00"
+      }
+    },
+    {
+      "book": "Certified Kubernetes Security Specialist - Benjamin Muschko",
+      "chapter": 5,
+      "title": "Minimizing Microservice Vulnerabilities",
+      "chapter_id": "Certified Kubernetes Security Specialist - Benjamin Muschko:ch5",
+      "cross_references": [
+        {
+          "target": "Certified Kubernetes Security Specialist - Benjamin Muschko:ch1",
+          "score": 0.5593846386382193,
+          "base_score": 0.6082336569896247,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Certified Kubernetes Security Specialist - Benjamin Muschko:ch7",
+          "score": 0.5466097267151053,
+          "base_score": 0.586942137117768,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Certified Kubernetes Security Specialist - Benjamin Muschko:ch6",
+          "score": 0.5216386238165346,
+          "base_score": 0.5453236322868169,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "security",
+          "container",
+          "non",
+          "pod security",
+          "65"
+        ],
+        "semantic": [],
+        "merged": [
+          "security",
+          "container",
+          "non",
+          "pod security",
+          "65"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_container_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.672088525461161,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:18.209505+00:00"
+      }
+    },
+    {
+      "book": "Certified Kubernetes Security Specialist - Benjamin Muschko",
+      "chapter": 6,
+      "title": "Supply Chain Security",
+      "chapter_id": "Certified Kubernetes Security Specialist - Benjamin Muschko:ch6",
+      "cross_references": [
+        {
+          "target": "Certified Kubernetes Security Specialist - Benjamin Muschko:ch7",
+          "score": 0.5256030642394405,
+          "base_score": 0.55193103299166,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Certified Kubernetes Security Specialist - Benjamin Muschko:ch5",
+          "score": 0.5216386238165346,
+          "base_score": 0.5453236322868169,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "container",
+          "container image",
+          "digest",
+          "image digest",
+          "images"
+        ],
+        "semantic": [],
+        "merged": [
+          "container",
+          "container image",
+          "digest",
+          "image digest",
+          "images"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_container_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5421133723325119,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:18.209541+00:00"
+      }
+    },
+    {
+      "book": "Certified Kubernetes Security Specialist - Benjamin Muschko",
+      "chapter": 7,
+      "title": "Monitoring, Logging, and Runtime Security",
+      "chapter_id": "Certified Kubernetes Security Specialist - Benjamin Muschko:ch7",
+      "cross_references": [
+        {
+          "target": "Certified Kubernetes Security Specialist - Benjamin Muschko:ch5",
+          "score": 0.5466097267151053,
+          "base_score": 0.586942137117768,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Certified Kubernetes Security Specialist - Benjamin Muschko:ch6",
+          "score": 0.5256030642394405,
+          "base_score": 0.55193103299166,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "falco",
+          "audit",
+          "file",
+          "container",
+          "log"
+        ],
+        "semantic": [],
+        "merged": [
+          "falco",
+          "audit",
+          "file",
+          "container",
+          "log"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_container_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5676051937253874,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:18.209583+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

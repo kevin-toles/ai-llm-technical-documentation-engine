@@ -1,0 +1,415 @@
+{
+  "book": {
+    "title": "Pro DevOps with Google Cloud Platform - With Docker, Jenkins, and Kubernetes"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:53:46.646103",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Pro DevOps with Google Cloud Platform - With Docker, Jenkins, and Kubernetes",
+      "chapter": 1,
+      "title": "Introduction to DevOps ���������������������������������������������������������������������������1",
+      "chapter_id": "Pro DevOps with Google Cloud Platform - With Docker, Jenkins, and Kubernetes:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "software",
+          "devops",
+          "team",
+          "development",
+          "operations"
+        ],
+        "semantic": [],
+        "merged": [
+          "software",
+          "devops",
+          "team",
+          "development",
+          "operations"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5278073481947038,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:46.634243+00:00"
+      }
+    },
+    {
+      "book": "Pro DevOps with Google Cloud Platform - With Docker, Jenkins, and Kubernetes",
+      "chapter": 2,
+      "title": "Introduction to GCP",
+      "chapter_id": "Pro DevOps with Google Cloud Platform - With Docker, Jenkins, and Kubernetes:ch2",
+      "cross_references": [
+        {
+          "target": "Pro DevOps with Google Cloud Platform - With Docker, Jenkins, and Kubernetes:ch6",
+          "score": 0.5082210593149931,
+          "base_score": 0.5970350988583218,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cloud",
+          "model",
+          "models",
+          "google",
+          "different"
+        ],
+        "semantic": [],
+        "merged": [
+          "cloud",
+          "model",
+          "models",
+          "google",
+          "different"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_network",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4916690425672371,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:46.634372+00:00"
+      }
+    },
+    {
+      "book": "Pro DevOps with Google Cloud Platform - With Docker, Jenkins, and Kubernetes",
+      "chapter": 3,
+      "title": "Introduction to Continuous Integration and Delivery",
+      "chapter_id": "Pro DevOps with Google Cloud Platform - With Docker, Jenkins, and Kubernetes:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "software",
+          "ci",
+          "release",
+          "build",
+          "code"
+        ],
+        "semantic": [],
+        "merged": [
+          "software",
+          "ci",
+          "release",
+          "build",
+          "code"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33401431828120565,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:53:46.634423+00:00"
+      }
+    },
+    {
+      "book": "Pro DevOps with Google Cloud Platform - With Docker, Jenkins, and Kubernetes",
+      "chapter": 4,
+      "title": "Containerization with Docker and Kubernetes",
+      "chapter_id": "Pro DevOps with Google Cloud Platform - With Docker, Jenkins, and Kubernetes:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "kubernetes",
+          "cluster",
+          "engine",
+          "instance",
+          "compute engine"
+        ],
+        "semantic": [],
+        "merged": [
+          "kubernetes",
+          "cluster",
+          "engine",
+          "instance",
+          "compute engine"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39859039176689304,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:46.634489+00:00"
+      }
+    },
+    {
+      "book": "Pro DevOps with Google Cloud Platform - With Docker, Jenkins, and Kubernetes",
+      "chapter": 5,
+      "title": "Continuous Delivery with GCP and Jenkins",
+      "chapter_id": "Pro DevOps with Google Cloud Platform - With Docker, Jenkins, and Kubernetes:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "jenkins",
+          "namespace",
+          "kubernetes",
+          "cd",
+          "cluster"
+        ],
+        "semantic": [],
+        "merged": [
+          "jenkins",
+          "namespace",
+          "kubernetes",
+          "cd",
+          "cluster"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4735213800024411,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:46.634535+00:00"
+      }
+    },
+    {
+      "book": "Pro DevOps with Google Cloud Platform - With Docker, Jenkins, and Kubernetes",
+      "chapter": 6,
+      "title": "Microservices Architecture with GCP",
+      "chapter_id": "Pro DevOps with Google Cloud Platform - With Docker, Jenkins, and Kubernetes:ch6",
+      "cross_references": [
+        {
+          "target": "Pro DevOps with Google Cloud Platform - With Docker, Jenkins, and Kubernetes:ch2",
+          "score": 0.5082210593149931,
+          "base_score": 0.5970350988583218,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Pro DevOps with Google Cloud Platform - With Docker, Jenkins, and Kubernetes:ch10",
+          "score": 0.5043191680286098,
+          "base_score": 0.5905319467143496,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "microservices",
+          "microservices architecture",
+          "architecture",
+          "architecture gcp",
+          "gcp"
+        ],
+        "semantic": [],
+        "merged": [
+          "microservices",
+          "microservices architecture",
+          "architecture",
+          "architecture gcp",
+          "gcp"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_network",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5163404034989132,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:46.634584+00:00"
+      }
+    },
+    {
+      "book": "Pro DevOps with Google Cloud Platform - With Docker, Jenkins, and Kubernetes",
+      "chapter": 7,
+      "title": "Monitoring in GCP",
+      "chapter_id": "Pro DevOps with Google Cloud Platform - With Docker, Jenkins, and Kubernetes:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "monitoring",
+          "monitoring gcp",
+          "alert",
+          "stackdriver",
+          "monitor"
+        ],
+        "semantic": [],
+        "merged": [
+          "monitoring",
+          "monitoring gcp",
+          "alert",
+          "stackdriver",
+          "monitor"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43762467777434094,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:53:46.634629+00:00"
+      }
+    },
+    {
+      "book": "Pro DevOps with Google Cloud Platform - With Docker, Jenkins, and Kubernetes",
+      "chapter": 8,
+      "title": "Creating and Managing Infrastructure in GCP",
+      "chapter_id": "Pro DevOps with Google Cloud Platform - With Docker, Jenkins, and Kubernetes:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "file",
+          "configuration",
+          "configuration file",
+          "gcp",
+          "template"
+        ],
+        "semantic": [],
+        "merged": [
+          "file",
+          "configuration",
+          "configuration file",
+          "gcp",
+          "template"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4473142768413024,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:53:46.634696+00:00"
+      }
+    },
+    {
+      "book": "Pro DevOps with Google Cloud Platform - With Docker, Jenkins, and Kubernetes",
+      "chapter": 9,
+      "title": "Identity and Access Management with Google Cloud Platform",
+      "chapter_id": "Pro DevOps with Google Cloud Platform - With Docker, Jenkins, and Kubernetes:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "iam",
+          "roles",
+          "user",
+          "iam policy",
+          "role"
+        ],
+        "semantic": [],
+        "merged": [
+          "iam",
+          "roles",
+          "user",
+          "iam policy",
+          "role"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_network",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44703918157800937,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:46.634740+00:00"
+      }
+    },
+    {
+      "book": "Pro DevOps with Google Cloud Platform - With Docker, Jenkins, and Kubernetes",
+      "chapter": 10,
+      "title": "Network Configuration and Management in GCP",
+      "chapter_id": "Pro DevOps with Google Cloud Platform - With Docker, Jenkins, and Kubernetes:ch10",
+      "cross_references": [
+        {
+          "target": "Pro DevOps with Google Cloud Platform - With Docker, Jenkins, and Kubernetes:ch6",
+          "score": 0.5043191680286098,
+          "base_score": 0.5905319467143496,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "network",
+          "subnet",
+          "firewall",
+          "vpc",
+          "mode"
+        ],
+        "semantic": [],
+        "merged": [
+          "network",
+          "subnet",
+          "firewall",
+          "vpc",
+          "mode"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_network",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4599102523115861,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:46.634786+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

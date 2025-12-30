@@ -1,0 +1,162 @@
+{
+  "book": {
+    "title": "compliance-at-speed"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:00:47.834928",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "compliance-at-speed",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-9)",
+      "chapter_id": "compliance-at-speed:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "challenges",
+          "mobile",
+          "ops",
+          "regulations",
+          "users"
+        ],
+        "semantic": [],
+        "merged": [
+          "challenges",
+          "mobile",
+          "ops",
+          "regulations",
+          "users"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "performance_compliance_business",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7123218695306133,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:47.821280+00:00"
+      }
+    },
+    {
+      "book": "compliance-at-speed",
+      "chapter": 2,
+      "title": "Segment 2 (pages 10-18)",
+      "chapter_id": "compliance-at-speed:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "service",
+          "access",
+          "service level",
+          "requires",
+          "slas"
+        ],
+        "semantic": [],
+        "merged": [
+          "service",
+          "access",
+          "service level",
+          "requires",
+          "slas"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "service_requirements_performance",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7006686212496915,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:47.821339+00:00"
+      }
+    },
+    {
+      "book": "compliance-at-speed",
+      "chapter": 3,
+      "title": "Segment 3 (pages 19-26)",
+      "chapter_id": "compliance-at-speed:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "test",
+          "performance test",
+          "functional",
+          "constraints",
+          "users"
+        ],
+        "semantic": [],
+        "merged": [
+          "test",
+          "performance test",
+          "functional",
+          "constraints",
+          "users"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "performance_test_business",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7135746406830059,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:47.821361+00:00"
+      }
+    },
+    {
+      "book": "compliance-at-speed",
+      "chapter": 4,
+      "title": "Segment 4 (pages 27-34)",
+      "chapter_id": "compliance-at-speed:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "monitoring",
+          "performance monitoring",
+          "ensure",
+          "application",
+          "levels"
+        ],
+        "semantic": [],
+        "merged": [
+          "monitoring",
+          "performance monitoring",
+          "ensure",
+          "application",
+          "levels"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "performance_monitoring_ensure",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6695397904315041,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:47.821381+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

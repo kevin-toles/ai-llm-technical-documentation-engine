@@ -1,0 +1,3350 @@
+{
+  "book": {
+    "title": "AI Agents and Applications"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:37:36.488128",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-8)",
+      "chapter_id": "AI Agents and Applications:ch1",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch4",
+          "score": 0.5093165822008743,
+          "base_score": 0.6821943036681238,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "applications",
+          "agents",
+          "ai agents",
+          "langchain",
+          "ai"
+        ],
+        "semantic": [],
+        "merged": [
+          "applications",
+          "agents",
+          "ai agents",
+          "langchain",
+          "ai"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36138327174277546,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:37:36.445358+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 2,
+      "title": "Segment 2 (pages 9-16)",
+      "chapter_id": "AI Agents and Applications:ch2",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch21",
+          "score": 0.6082076093762987,
+          "base_score": 0.6896052748864236,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch24",
+          "score": 0.5622368456506975,
+          "base_score": 0.6870614094178292,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch27",
+          "score": 0.5471173007394404,
+          "base_score": 0.6618621678990673,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch36",
+          "score": 0.5157303806873402,
+          "base_score": 0.6095506344789003,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "document",
+          "objects",
+          "document objects",
+          "stores",
+          "vector stores"
+        ],
+        "semantic": [],
+        "merged": [
+          "document",
+          "objects",
+          "document objects",
+          "stores",
+          "vector stores"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_question_vector",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3215211389056007,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.445690+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 3,
+      "title": "Segment 3 (pages 17-24)",
+      "chapter_id": "AI Agents and Applications:ch3",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch23",
+          "score": 0.5564838553911942,
+          "base_score": 0.6774730923186569,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch36",
+          "score": 0.532603221000396,
+          "base_score": 0.6376720350006602,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch27",
+          "score": 0.5147118461284524,
+          "base_score": 0.6078530768807542,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch24",
+          "score": 0.5089335604055821,
+          "base_score": 0.5982226006759701,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch32",
+          "score": 0.5086691794734749,
+          "base_score": 0.5977819657891249,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "engine",
+          "summarization",
+          "llm based",
+          "summarization engine",
+          "llm"
+        ],
+        "semantic": [],
+        "merged": [
+          "engine",
+          "summarization",
+          "llm based",
+          "summarization engine",
+          "llm"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_question_vector",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3878897556344896,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.445997+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 4,
+      "title": "Segment 4 (pages 25-33)",
+      "chapter_id": "AI Agents and Applications:ch4",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch17",
+          "score": 0.5845689276411139,
+          "base_score": 0.6502074719944491,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch45",
+          "score": 0.5254618535389357,
+          "base_score": 0.5516956818241521,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch47",
+          "score": 0.521848306503869,
+          "base_score": 0.5456731034323744,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch1",
+          "score": 0.5093165822008743,
+          "base_score": 0.6821943036681238,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "agent",
+          "holiday",
+          "agents",
+          "llm",
+          "ai"
+        ],
+        "semantic": [],
+        "merged": [
+          "agent",
+          "holiday",
+          "agents",
+          "llm",
+          "ai"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "agent_travel_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3376455903425344,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.446419+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 5,
+      "title": "Segment 5 (pages 34-41)",
+      "chapter_id": "AI Agents and Applications:ch5",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch55",
+          "score": 0.530160619822371,
+          "base_score": 0.46693436637061836,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "models",
+          "llm",
+          "model",
+          "fine",
+          "tuning"
+        ],
+        "semantic": [],
+        "merged": [
+          "models",
+          "llm",
+          "model",
+          "fine",
+          "tuning"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "models_open_source",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3090812535419062,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.446734+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 6,
+      "title": "Segment 6 (pages 42-49)",
+      "chapter_id": "AI Agents and Applications:ch6",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch53",
+          "score": 0.644688038746317,
+          "base_score": 0.7504059905031208,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "applications ch02",
+          "ch02",
+          "env_ch02",
+          "env_ch02 github",
+          "github building"
+        ],
+        "semantic": [],
+        "merged": [
+          "applications ch02",
+          "ch02",
+          "env_ch02",
+          "env_ch02 github",
+          "github building"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "applications_github_building",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3137913410173404,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.447046+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 7,
+      "title": "Segment 7 (pages 50-59)",
+      "chapter_id": "AI Agents and Applications:ch7",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch10",
+          "score": 0.5509223651728218,
+          "base_score": 0.5941298678806288,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "diver",
+          "text",
+          "prompt",
+          "instruction",
+          "watches"
+        ],
+        "semantic": [],
+        "merged": [
+          "diver",
+          "text",
+          "prompt",
+          "instruction",
+          "watches"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "prompt_text_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2705014194132691,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.447330+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 8,
+      "title": "Segment 8 (pages 60-67)",
+      "chapter_id": "AI Agents and Applications:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "palindromes",
+          "palindromes sequence",
+          "sequence",
+          "sum palindromes",
+          "1331"
+        ],
+        "semantic": [],
+        "merged": [
+          "palindromes",
+          "palindromes sequence",
+          "sequence",
+          "sum palindromes",
+          "1331"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.22565614561205824,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:37:36.447612+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 9,
+      "title": "Segment 9 (pages 68-75)",
+      "chapter_id": "AI Agents and Applications:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "abra",
+          "abra kadabra",
+          "kadabra",
+          "numbers",
+          "number"
+        ],
+        "semantic": [],
+        "merged": [
+          "abra",
+          "abra kadabra",
+          "kadabra",
+          "numbers",
+          "number"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "prompt_text_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.19620860209537175,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.447888+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 10,
+      "title": "Segment 10 (pages 76-83)",
+      "chapter_id": "AI Agents and Applications:ch10",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch7",
+          "score": 0.5509223651728218,
+          "base_score": 0.5941298678806288,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "prompt",
+          "llm",
+          "summarizing",
+          "llm context",
+          "context"
+        ],
+        "semantic": [],
+        "merged": [
+          "prompt",
+          "llm",
+          "summarizing",
+          "llm context",
+          "context"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "prompt_text_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2940733507098375,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.448190+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 11,
+      "title": "Segment 11 (pages 84-95)",
+      "chapter_id": "AI Agents and Applications:ch11",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch12",
+          "score": 0.5940849178072685,
+          "base_score": 0.6660674556047066,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch30",
+          "score": 0.5069951339519366,
+          "base_score": 0.5949918899198945,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "document",
+          "map",
+          "summarizing",
+          "summarize_map_chain",
+          "summary"
+        ],
+        "semantic": [],
+        "merged": [
+          "document",
+          "map",
+          "summarizing",
+          "summarize_map_chain",
+          "summary"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_question_vector",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29728370345075056,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.448480+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 12,
+      "title": "Segment 12 (pages 96-103)",
+      "chapter_id": "AI Agents and Applications:ch12",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch11",
+          "score": 0.5940849178072685,
+          "base_score": 0.6660674556047066,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "summary",
+          "final summary",
+          "final",
+          "current_refined_summary",
+          "refine_summary"
+        ],
+        "semantic": [],
+        "merged": [
+          "summary",
+          "final summary",
+          "final",
+          "current_refined_summary",
+          "refine_summary"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_question_vector",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2627394216025178,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.448789+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 13,
+      "title": "Segment 13 (pages 104-111)",
+      "chapter_id": "AI Agents and Applications:ch13",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "visual",
+          "studio code",
+          "visual studio",
+          "studio",
+          "code"
+        ],
+        "semantic": [],
+        "merged": [
+          "visual",
+          "studio code",
+          "visual studio",
+          "studio",
+          "code"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "search_web_chain",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.281827175602056,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.449099+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 14,
+      "title": "Segment 14 (pages 112-119)",
+      "chapter_id": "AI Agents and Applications:ch14",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch15",
+          "score": 0.6694571901951732,
+          "base_score": 0.6990953169919554,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch16",
+          "score": 0.6098267594843118,
+          "base_score": 0.5997112658071863,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch19",
+          "score": 0.5383894929557048,
+          "base_score": 0.5732417475187672,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "web",
+          "research",
+          "searches",
+          "web search",
+          "search"
+        ],
+        "semantic": [],
+        "merged": [
+          "web",
+          "research",
+          "searches",
+          "web search",
+          "search"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "search_web_chain",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33016923537989684,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.449406+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 15,
+      "title": "Segment 15 (pages 120-128)",
+      "chapter_id": "AI Agents and Applications:ch15",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch16",
+          "score": 0.6880930521517311,
+          "base_score": 0.6111074678719328,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch14",
+          "score": 0.6694571901951732,
+          "base_score": 0.6990953169919554,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch19",
+          "score": 0.5779925492600582,
+          "base_score": 0.6392468413593563,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "web",
+          "search",
+          "chain",
+          "summarization chain",
+          "search summarization"
+        ],
+        "semantic": [],
+        "merged": [
+          "web",
+          "search",
+          "chain",
+          "summarization chain",
+          "search summarization"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "search_web_chain",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.302924887896108,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.449710+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 16,
+      "title": "Segment 16 (pages 129-139)",
+      "chapter_id": "AI Agents and Applications:ch16",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch15",
+          "score": 0.6880930521517311,
+          "base_score": 0.6111074678719328,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch14",
+          "score": 0.6098267594843118,
+          "base_score": 0.5997112658071863,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch19",
+          "score": 0.5605287945354998,
+          "base_score": 0.6101405834850923,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "chain",
+          "web",
+          "search",
+          "search result",
+          "result"
+        ],
+        "semantic": [],
+        "merged": [
+          "chain",
+          "web",
+          "search",
+          "search result",
+          "result"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "search_web_chain",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34578825170911015,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.450032+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 17,
+      "title": "Segment 17 (pages 140-148)",
+      "chapter_id": "AI Agents and Applications:ch17",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch4",
+          "score": 0.5845689276411139,
+          "base_score": 0.6502074719944491,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "workflows",
+          "agents",
+          "agentic workflows",
+          "agentic",
+          "workflows agents"
+        ],
+        "semantic": [],
+        "merged": [
+          "workflows",
+          "agents",
+          "agentic workflows",
+          "agentic",
+          "workflows agents"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "agent_travel_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3233335517712731,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.450335+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 18,
+      "title": "Segment 18 (pages 149-157)",
+      "chapter_id": "AI Agents and Applications:ch18",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch50",
+          "score": 0.5306642183725993,
+          "base_score": 0.5603662898802579,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "state",
+          "dict",
+          "optional",
+          "research",
+          "research state"
+        ],
+        "semantic": [],
+        "merged": [
+          "state",
+          "dict",
+          "optional",
+          "research",
+          "research state"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "tool_state_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3498753126247396,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.450634+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 19,
+      "title": "Segment 19 (pages 158-165)",
+      "chapter_id": "AI Agents and Applications:ch19",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch15",
+          "score": 0.5779925492600582,
+          "base_score": 0.6392468413593563,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch16",
+          "score": 0.5605287945354998,
+          "base_score": 0.6101405834850923,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch14",
+          "score": 0.5383894929557048,
+          "base_score": 0.5732417475187672,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "semantic search",
+          "generate_search_queries",
+          "semantic",
+          "search",
+          "graph"
+        ],
+        "semantic": [],
+        "merged": [
+          "semantic search",
+          "generate_search_queries",
+          "semantic",
+          "search",
+          "graph"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "search_web_chain",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3157410783652291,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.450957+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 20,
+      "title": "Segment 20 (pages 166-173)",
+      "chapter_id": "AI Agents and Applications:ch20",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "temples",
+          "chatbot",
+          "chatgpt",
+          "answer",
+          "columns"
+        ],
+        "semantic": [],
+        "merged": [
+          "temples",
+          "chatbot",
+          "chatgpt",
+          "answer",
+          "columns"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_question_vector",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2357944735151136,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.451246+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 21,
+      "title": "Segment 21 (pages 174-182)",
+      "chapter_id": "AI Agents and Applications:ch21",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch27",
+          "score": 0.6492124855493653,
+          "base_score": 0.6653541425822755,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch23",
+          "score": 0.6479977476722905,
+          "base_score": 0.6633295794538175,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch24",
+          "score": 0.6398069621741842,
+          "base_score": 0.7422708628828995,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch2",
+          "score": 0.6082076093762987,
+          "base_score": 0.6896052748864236,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch36",
+          "score": 0.54689729575154,
+          "base_score": 0.6614954929192334,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "vector",
+          "vector vector",
+          "embeddings",
+          "store",
+          "stores"
+        ],
+        "semantic": [],
+        "merged": [
+          "vector",
+          "vector vector",
+          "embeddings",
+          "store",
+          "stores"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_question_vector",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29738499009077113,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.451551+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 22,
+      "title": "Segment 22 (pages 183-190)",
+      "chapter_id": "AI Agents and Applications:ch22",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "paestum",
+          "question",
+          "trick_question",
+          "br",
+          "paestum br"
+        ],
+        "semantic": [],
+        "merged": [
+          "paestum",
+          "question",
+          "trick_question",
+          "br",
+          "paestum br"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_question_vector",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32940200708816764,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.451863+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 23,
+      "title": "Segment 23 (pages 191-199)",
+      "chapter_id": "AI Agents and Applications:ch23",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch27",
+          "score": 0.7159391356130519,
+          "base_score": 0.776565226021753,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch21",
+          "score": 0.6479977476722905,
+          "base_score": 0.6633295794538175,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch24",
+          "score": 0.6023506240561181,
+          "base_score": 0.6798436326861226,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch3",
+          "score": 0.5564838553911942,
+          "base_score": 0.6774730923186569,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch25",
+          "score": 0.5400132959300064,
+          "base_score": 0.6500221598833439,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "text",
+          "vector",
+          "vector store",
+          "store",
+          "rag"
+        ],
+        "semantic": [],
+        "merged": [
+          "text",
+          "vector",
+          "vector store",
+          "store",
+          "rag"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_question_vector",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4053104446133717,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.452285+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 24,
+      "title": "Segment 24 (pages 200-208)",
+      "chapter_id": "AI Agents and Applications:ch24",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch27",
+          "score": 0.6698029391995762,
+          "base_score": 0.699671565332627,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch21",
+          "score": 0.6398069621741842,
+          "base_score": 0.7422708628828995,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch23",
+          "score": 0.6023506240561181,
+          "base_score": 0.6798436326861226,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch2",
+          "score": 0.5622368456506975,
+          "base_score": 0.6870614094178292,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch31",
+          "score": 0.5567857689806547,
+          "base_score": 0.6039022075603504,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "vector_db",
+          "vector",
+          "chunks",
+          "vector_db add_documents",
+          "split_and_import"
+        ],
+        "semantic": [],
+        "merged": [
+          "vector_db",
+          "vector",
+          "chunks",
+          "vector_db add_documents",
+          "split_and_import"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_question_vector",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36070810229640166,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.452661+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 25,
+      "title": "Segment 25 (pages 209-219)",
+      "chapter_id": "AI Agents and Applications:ch25",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch40",
+          "score": 0.5802781881042361,
+          "base_score": 0.7171303135070602,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch23",
+          "score": 0.5400132959300064,
+          "base_score": 0.6500221598833439,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "history",
+          "message history",
+          "message",
+          "chat_history_memory",
+          "chat"
+        ],
+        "semantic": [],
+        "merged": [
+          "history",
+          "message history",
+          "message",
+          "chat_history_memory",
+          "chat"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_question_vector",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3931327867181091,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.452978+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 26,
+      "title": "Segment 26 (pages 220-229)",
+      "chapter_id": "AI Agents and Applications:ch26",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "langsmith",
+          "trace",
+          "tracing",
+          "panel shows",
+          "panel"
+        ],
+        "semantic": [],
+        "merged": [
+          "langsmith",
+          "trace",
+          "tracing",
+          "panel shows",
+          "panel"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3130136556522108,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:37:36.453290+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 27,
+      "title": "Segment 27 (pages 230-240)",
+      "chapter_id": "AI Agents and Applications:ch27",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch23",
+          "score": 0.7159391356130519,
+          "base_score": 0.776565226021753,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch24",
+          "score": 0.6698029391995762,
+          "base_score": 0.699671565332627,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch21",
+          "score": 0.6492124855493653,
+          "base_score": 0.6653541425822755,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch32",
+          "score": 0.6142298950669354,
+          "base_score": 0.6996424177041515,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch31",
+          "score": 0.5841797633607736,
+          "base_score": 0.6495588648605486,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "retrieval",
+          "store",
+          "chunks",
+          "vector",
+          "indexing"
+        ],
+        "semantic": [],
+        "merged": [
+          "retrieval",
+          "store",
+          "chunks",
+          "vector",
+          "indexing"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_question_vector",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37392870523977695,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.453708+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 28,
+      "title": "Segment 28 (pages 241-248)",
+      "chapter_id": "AI Agents and Applications:ch28",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch31",
+          "score": 0.699314477248319,
+          "base_score": 0.7488574620805315,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch29",
+          "score": 0.6012582115760607,
+          "base_score": 0.6780229452193605,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch30",
+          "score": 0.5342767958667525,
+          "base_score": 0.5663872523705133,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch27",
+          "score": 0.5015168490711108,
+          "base_score": 0.5117873410444439,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "chunks",
+          "granular",
+          "coarse chunks",
+          "coarse",
+          "granular chunks"
+        ],
+        "semantic": [],
+        "merged": [
+          "chunks",
+          "granular",
+          "coarse chunks",
+          "coarse",
+          "granular chunks"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_question_vector",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25809088434333716,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.454060+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 29,
+      "title": "Segment 29 (pages 249-256)",
+      "chapter_id": "AI Agents and Applications:ch29",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch31",
+          "score": 0.6476964084230667,
+          "base_score": 0.7554199399643704,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch28",
+          "score": 0.6012582115760607,
+          "base_score": 0.6780229452193605,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch30",
+          "score": 0.578015509772992,
+          "base_score": 0.6392851088809126,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch27",
+          "score": 0.5537056341579139,
+          "base_score": 0.5987686495224489,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch32",
+          "score": 0.5470880324186038,
+          "base_score": 0.6618133873643397,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "child",
+          "chunk",
+          "child chunks",
+          "chunks",
+          "embedding child"
+        ],
+        "semantic": [],
+        "merged": [
+          "child",
+          "chunk",
+          "child chunks",
+          "chunks",
+          "embedding child"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_question_vector",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.303831108322894,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.454363+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 30,
+      "title": "Segment 30 (pages 257-264)",
+      "chapter_id": "AI Agents and Applications:ch30",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch29",
+          "score": 0.578015509772992,
+          "base_score": 0.6392851088809126,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch31",
+          "score": 0.5656355318083467,
+          "base_score": 0.6927258863472445,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch28",
+          "score": 0.5342767958667525,
+          "base_score": 0.5663872523705133,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch32",
+          "score": 0.5278081831500508,
+          "base_score": 0.6296803052500848,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch11",
+          "score": 0.5069951339519366,
+          "base_score": 0.5949918899198945,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "coarse",
+          "embedding",
+          "hypothetical",
+          "chunk",
+          "hypothetical question"
+        ],
+        "semantic": [],
+        "merged": [
+          "coarse",
+          "embedding",
+          "hypothetical",
+          "chunk",
+          "hypothetical question"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_question_vector",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31717972105350767,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.454695+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 31,
+      "title": "Segment 31 (pages 265-272)",
+      "chapter_id": "AI Agents and Applications:ch31",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch28",
+          "score": 0.699314477248319,
+          "base_score": 0.7488574620805315,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch29",
+          "score": 0.6476964084230667,
+          "base_score": 0.7554199399643704,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch27",
+          "score": 0.5841797633607736,
+          "base_score": 0.6495588648605486,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch30",
+          "score": 0.5656355318083467,
+          "base_score": 0.6927258863472445,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch24",
+          "score": 0.5567857689806547,
+          "base_score": 0.6039022075603504,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "granular",
+          "expanded_chunk_text",
+          "chunks",
+          "granular chunk",
+          "expanded chunks"
+        ],
+        "semantic": [],
+        "merged": [
+          "granular",
+          "expanded_chunk_text",
+          "chunks",
+          "granular chunk",
+          "expanded chunks"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_question_vector",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34011608937432614,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.455011+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 32,
+      "title": "Segment 32 (pages 273-281)",
+      "chapter_id": "AI Agents and Applications:ch32",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch27",
+          "score": 0.6142298950669354,
+          "base_score": 0.6996424177041515,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch29",
+          "score": 0.5470880324186038,
+          "base_score": 0.6618133873643397,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch31",
+          "score": 0.5340125930674269,
+          "base_score": 0.6400209884457114,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch30",
+          "score": 0.5278081831500508,
+          "base_score": 0.6296803052500848,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch35",
+          "score": 0.5099865399593292,
+          "base_score": 0.599977566598882,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "summary",
+          "multi modal",
+          "modal",
+          "embeddings",
+          "retrieval"
+        ],
+        "semantic": [],
+        "merged": [
+          "summary",
+          "multi modal",
+          "modal",
+          "embeddings",
+          "retrieval"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_question_vector",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3444919781510637,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.455543+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 33,
+      "title": "Segment 33 (pages 282-289)",
+      "chapter_id": "AI Agents and Applications:ch33",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch34",
+          "score": 0.5694752876272784,
+          "base_score": 0.6250514053047233,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch35",
+          "score": 0.5468728868754898,
+          "base_score": 0.5873807373850757,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch36",
+          "score": 0.5422959060658961,
+          "base_score": 0.5797524360357527,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "question",
+          "annually",
+          "held annually",
+          "held",
+          "query"
+        ],
+        "semantic": [],
+        "merged": [
+          "question",
+          "annually",
+          "held annually",
+          "held",
+          "query"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_question_vector",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2647304842702357,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.455830+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 34,
+      "title": "Segment 34 (pages 290-300)",
+      "chapter_id": "AI Agents and Applications:ch34",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch35",
+          "score": 0.5787523784794227,
+          "base_score": 0.547920630799038,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch41",
+          "score": 0.5731790272755429,
+          "base_score": 0.7052983787925716,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch33",
+          "score": 0.5694752876272784,
+          "base_score": 0.6250514053047233,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch40",
+          "score": 0.5145145093429896,
+          "base_score": 0.6075241822383161,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "question",
+          "step question",
+          "user_question",
+          "step",
+          "broader question"
+        ],
+        "semantic": [],
+        "merged": [
+          "question",
+          "step question",
+          "user_question",
+          "step",
+          "broader question"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_question_vector",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3580426446514422,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.456139+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 35,
+      "title": "Segment 35 (pages 301-308)",
+      "chapter_id": "AI Agents and Applications:ch35",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch34",
+          "score": 0.5787523784794227,
+          "base_score": 0.547920630799038,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch36",
+          "score": 0.549936878027741,
+          "base_score": 0.6665614633795685,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch33",
+          "score": 0.5468728868754898,
+          "base_score": 0.5873807373850757,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch31",
+          "score": 0.5347809674104179,
+          "base_score": 0.6413016123506966,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch40",
+          "score": 0.513433616312765,
+          "base_score": 0.6057226938546083,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "question",
+          "answer",
+          "hypothetical",
+          "user_question",
+          "question document"
+        ],
+        "semantic": [],
+        "merged": [
+          "question",
+          "answer",
+          "hypothetical",
+          "user_question",
+          "question document"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_question_vector",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37058324694856387,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.456473+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 36,
+      "title": "Segment 36 (pages 309-316)",
+      "chapter_id": "AI Agents and Applications:ch36",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch35",
+          "score": 0.549936878027741,
+          "base_score": 0.6665614633795685,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch27",
+          "score": 0.5490400435897644,
+          "base_score": 0.665066739316274,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch21",
+          "score": 0.54689729575154,
+          "base_score": 0.6614954929192334,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch33",
+          "score": 0.5422959060658961,
+          "base_score": 0.5797524360357527,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch3",
+          "score": 0.532603221000396,
+          "base_score": 0.6376720350006602,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "metadata",
+          "query",
+          "queries",
+          "user questions",
+          "user"
+        ],
+        "semantic": [],
+        "merged": [
+          "metadata",
+          "query",
+          "queries",
+          "user questions",
+          "user"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_question_vector",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33096792638870637,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.456770+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 37,
+      "title": "Segment 37 (pages 317-324)",
+      "chapter_id": "AI Agents and Applications:ch37",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch31",
+          "score": 0.5040716622042108,
+          "base_score": 0.5901194370070182,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "metadata",
+          "region",
+          "structured",
+          "region cornwall",
+          "destination"
+        ],
+        "semantic": [],
+        "merged": [
+          "metadata",
+          "region",
+          "structured",
+          "region cornwall",
+          "destination"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_question_vector",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31323259852341656,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.457095+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 38,
+      "title": "Segment 38 (pages 325-336)",
+      "chapter_id": "AI Agents and Applications:ch38",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "sql",
+          "semantic sql",
+          "semantic",
+          "sql search",
+          "sql query"
+        ],
+        "semantic": [],
+        "merged": [
+          "sql",
+          "semantic sql",
+          "semantic",
+          "sql search",
+          "sql query"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24986137373186984,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:37:36.457388+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 39,
+      "title": "Segment 39 (pages 337-346)",
+      "chapter_id": "AI Agents and Applications:ch39",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "question",
+          "graph",
+          "knowledge graph",
+          "knowledge",
+          "route"
+        ],
+        "semantic": [],
+        "merged": [
+          "question",
+          "graph",
+          "knowledge graph",
+          "knowledge",
+          "route"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_question_vector",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3062356575660941,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.457678+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 40,
+      "title": "Segment 40 (pages 347-354)",
+      "chapter_id": "AI Agents and Applications:ch40",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch25",
+          "score": 0.5802781881042361,
+          "base_score": 0.7171303135070602,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch27",
+          "score": 0.5621519385953749,
+          "base_score": 0.6869198976589583,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch41",
+          "score": 0.528470962067726,
+          "base_score": 0.6307849367795433,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch23",
+          "score": 0.5148289368444297,
+          "base_score": 0.6080482280740495,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch34",
+          "score": 0.5145145093429896,
+          "base_score": 0.6075241822383161,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "rank",
+          "execute_rag_chain",
+          "question chosen_retriever",
+          "chosen_retriever",
+          "rrf"
+        ],
+        "semantic": [],
+        "merged": [
+          "rank",
+          "execute_rag_chain",
+          "question chosen_retriever",
+          "chosen_retriever",
+          "rrf"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_question_vector",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.385791410552664,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.457984+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 41,
+      "title": "Segment 41 (pages 355-362)",
+      "chapter_id": "AI Agents and Applications:ch41",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch34",
+          "score": 0.5731790272755429,
+          "base_score": 0.7052983787925716,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch40",
+          "score": 0.528470962067726,
+          "base_score": 0.6307849367795433,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch23",
+          "score": 0.5237038190045905,
+          "base_score": 0.5487656242669101,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "fusion",
+          "rag",
+          "chain",
+          "rag fusion",
+          "ps github"
+        ],
+        "semantic": [],
+        "merged": [
+          "fusion",
+          "rag",
+          "chain",
+          "rag fusion",
+          "ps github"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_question_vector",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3407072543963674,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.458276+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 42,
+      "title": "Segment 42 (pages 363-371)",
+      "chapter_id": "AI Agents and Applications:ch42",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch45",
+          "score": 0.5398238742449046,
+          "base_score": 0.5756323830007669,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tool",
+          "calling",
+          "tool calling",
+          "tools",
+          "11"
+        ],
+        "semantic": [],
+        "merged": [
+          "tool",
+          "calling",
+          "tool calling",
+          "tools",
+          "11"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "agent_travel_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38529895649286966,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.458552+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 43,
+      "title": "Segment 43 (pages 372-379)",
+      "chapter_id": "AI Agents and Applications:ch43",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch44",
+          "score": 0.6607067507544061,
+          "base_score": 0.777103843849936,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tool",
+          "node",
+          "tools",
+          "agent",
+          "llm node"
+        ],
+        "semantic": [],
+        "merged": [
+          "tool",
+          "node",
+          "tools",
+          "agent",
+          "llm node"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "tool_state_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33782951581309895,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.458824+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 44,
+      "title": "Segment 44 (pages 380-388)",
+      "chapter_id": "AI Agents and Applications:ch44",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch43",
+          "score": 0.6607067507544061,
+          "base_score": 0.777103843849936,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tool",
+          "weather",
+          "town",
+          "tool_calls",
+          "forecast"
+        ],
+        "semantic": [],
+        "merged": [
+          "tool",
+          "weather",
+          "town",
+          "tool_calls",
+          "forecast"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "tool_state_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33677604923071996,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.459108+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 45,
+      "title": "Segment 45 (pages 389-396)",
+      "chapter_id": "AI Agents and Applications:ch45",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch46",
+          "score": 0.5535557081575846,
+          "base_score": 0.505926180262641,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch42",
+          "score": 0.5398238742449046,
+          "base_score": 0.5756323830007669,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch4",
+          "score": 0.5254618535389357,
+          "base_score": 0.5516956818241521,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch52",
+          "score": 0.5232311206633894,
+          "base_score": 0.455385201105649,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch47",
+          "score": 0.5007132997853628,
+          "base_score": 0.4178554996422714,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "agent",
+          "tool",
+          "booking",
+          "hotel",
+          "travel"
+        ],
+        "semantic": [],
+        "merged": [
+          "agent",
+          "tool",
+          "booking",
+          "hotel",
+          "travel"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "agent_travel_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2930253309189293,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.459456+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 46,
+      "title": "Segment 46 (pages 397-404)",
+      "chapter_id": "AI Agents and Applications:ch46",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch47",
+          "score": 0.6807454495814024,
+          "base_score": 0.8105016752282632,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch52",
+          "score": 0.5739473750301675,
+          "base_score": 0.6325048843095383,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch51",
+          "score": 0.5653527323121509,
+          "base_score": 0.5255878871869182,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch45",
+          "score": 0.5535557081575846,
+          "base_score": 0.505926180262641,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "agent",
+          "accommodation booking",
+          "router",
+          "booking",
+          "accommodation"
+        ],
+        "semantic": [],
+        "merged": [
+          "agent",
+          "accommodation booking",
+          "router",
+          "booking",
+          "accommodation"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "agent_travel_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23041207748424058,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.459849+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 47,
+      "title": "Segment 47 (pages 405-412)",
+      "chapter_id": "AI Agents and Applications:ch47",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch46",
+          "score": 0.6807454495814024,
+          "base_score": 0.8105016752282632,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch52",
+          "score": 0.6402002041291583,
+          "base_score": 0.6503336735485974,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch51",
+          "score": 0.570981744570519,
+          "base_score": 0.5349695742841983,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch4",
+          "score": 0.521848306503869,
+          "base_score": 0.5456731034323744,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch45",
+          "score": 0.5007132997853628,
+          "base_score": 0.4178554996422714,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "agent",
+          "supervisor",
+          "travel_info_agent",
+          "travel",
+          "multi agent"
+        ],
+        "semantic": [],
+        "merged": [
+          "agent",
+          "supervisor",
+          "travel_info_agent",
+          "travel",
+          "multi agent"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "agent_travel_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2311713316175294,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.460198+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 48,
+      "title": "Segment 48 (pages 413-424)",
+      "chapter_id": "AI Agents and Applications:ch48",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "mcp",
+          "servers",
+          "mcp servers",
+          "mcp server",
+          "server"
+        ],
+        "semantic": [],
+        "merged": [
+          "mcp",
+          "servers",
+          "mcp servers",
+          "mcp server",
+          "server"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1584023578269068,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:37:36.460546+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 49,
+      "title": "Segment 49 (pages 425-432)",
+      "chapter_id": "AI Agents and Applications:ch49",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "memory",
+          "checkpoint",
+          "checkpoints",
+          "mcp",
+          "term"
+        ],
+        "semantic": [],
+        "merged": [
+          "memory",
+          "checkpoint",
+          "checkpoints",
+          "mcp",
+          "term"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30117628129769264,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:37:36.460850+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 50,
+      "title": "Segment 50 (pages 433-440)",
+      "chapter_id": "AI Agents and Applications:ch50",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch18",
+          "score": 0.5306642183725993,
+          "base_score": 0.5603662898802579,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "config",
+          "travel_assistant",
+          "state",
+          "thread_id",
+          "travel_assistant invoke"
+        ],
+        "semantic": [],
+        "merged": [
+          "config",
+          "travel_assistant",
+          "state",
+          "thread_id",
+          "travel_assistant invoke"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "tool_state_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3002617956671173,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.461185+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 51,
+      "title": "Segment 51 (pages 441-449)",
+      "chapter_id": "AI Agents and Applications:ch51",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch52",
+          "score": 0.6800426157205012,
+          "base_score": 0.716737692867502,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch47",
+          "score": 0.570981744570519,
+          "base_score": 0.5349695742841983,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch46",
+          "score": 0.5653527323121509,
+          "base_score": 0.5255878871869182,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "guardrail_refusal",
+          "router",
+          "travel",
+          "agent",
+          "guardrail_refusal node"
+        ],
+        "semantic": [],
+        "merged": [
+          "guardrail_refusal",
+          "router",
+          "travel",
+          "agent",
+          "guardrail_refusal node"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "agent_travel_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23570796173136588,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.461477+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 52,
+      "title": "Segment 52 (pages 450-457)",
+      "chapter_id": "AI Agents and Applications:ch52",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch51",
+          "score": 0.6800426157205012,
+          "base_score": 0.716737692867502,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch47",
+          "score": 0.6402002041291583,
+          "base_score": 0.6503336735485974,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch46",
+          "score": 0.5739473750301675,
+          "base_score": 0.6325048843095383,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch45",
+          "score": 0.5232311206633894,
+          "base_score": 0.455385201105649,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "travel",
+          "guardrail",
+          "guardrails",
+          "agent",
+          "14"
+        ],
+        "semantic": [],
+        "merged": [
+          "travel",
+          "guardrail",
+          "guardrails",
+          "agent",
+          "14"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "agent_travel_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26406043621365244,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.461753+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 53,
+      "title": "Segment 53 (pages 458-465)",
+      "chapter_id": "AI Agents and Applications:ch53",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch54",
+          "score": 0.7192942813022376,
+          "base_score": 0.6631095164561103,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch6",
+          "score": 0.644688038746317,
+          "base_score": 0.7504059905031208,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "applications ch01",
+          "ch01",
+          "env_ch01",
+          "github building",
+          "openai"
+        ],
+        "semantic": [],
+        "merged": [
+          "applications ch01",
+          "ch01",
+          "env_ch01",
+          "github building",
+          "openai"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "applications_github_building",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27673376987938725,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.462047+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 54,
+      "title": "Segment 54 (pages 466-473)",
+      "chapter_id": "AI Agents and Applications:ch54",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch53",
+          "score": 0.7192942813022376,
+          "base_score": 0.6631095164561103,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ch01",
+          "applications ch01",
+          "env_ch01",
+          "virtual",
+          "python"
+        ],
+        "semantic": [],
+        "merged": [
+          "ch01",
+          "applications ch01",
+          "env_ch01",
+          "virtual",
+          "python"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "applications_github_building",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25338717158678536,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.462322+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 55,
+      "title": "Segment 55 (pages 474-483)",
+      "chapter_id": "AI Agents and Applications:ch55",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch5",
+          "score": 0.530160619822371,
+          "base_score": 0.46693436637061836,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "models",
+          "model",
+          "parameters",
+          "open",
+          "language"
+        ],
+        "semantic": [],
+        "merged": [
+          "models",
+          "model",
+          "parameters",
+          "open",
+          "language"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "models_open_source",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28344093126908626,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.462605+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 56,
+      "title": "Segment 56 (pages 484-491)",
+      "chapter_id": "AI Agents and Applications:ch56",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "models",
+          "code",
+          "python",
+          "llms",
+          "coder"
+        ],
+        "semantic": [],
+        "merged": [
+          "models",
+          "code",
+          "python",
+          "llms",
+          "coder"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33049264877302953,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:37:36.462876+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 57,
+      "title": "Segment 57 (pages 492-499)",
+      "chapter_id": "AI Agents and Applications:ch57",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "open source",
+          "open",
+          "source",
+          "source llms",
+          "llms"
+        ],
+        "semantic": [],
+        "merged": [
+          "open source",
+          "open",
+          "source",
+          "source llms",
+          "llms"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "models_open_source",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25492543232094533,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.463169+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 58,
+      "title": "Segment 58 (pages 500-510)",
+      "chapter_id": "AI Agents and Applications:ch58",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch61",
+          "score": 0.6354854473431087,
+          "base_score": 0.642475745571848,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch62",
+          "score": 0.5223492032209027,
+          "base_score": 0.5465079312940972,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cpp",
+          "llama cpp",
+          "llama",
+          "inference",
+          "local"
+        ],
+        "semantic": [],
+        "merged": [
+          "cpp",
+          "llama cpp",
+          "llama",
+          "inference",
+          "local"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "local_inference_llama",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28059310813000776,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.463441+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 59,
+      "title": "Segment 59 (pages 511-519)",
+      "chapter_id": "AI Agents and Applications:ch59",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "model mistral",
+          "mistral",
+          "ollama",
+          "llamafile",
+          "vllm"
+        ],
+        "semantic": [],
+        "merged": [
+          "model mistral",
+          "mistral",
+          "ollama",
+          "llamafile",
+          "vllm"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "local_inference_llama",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26014109191094364,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.463710+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 60,
+      "title": "Segment 60 (pages 520-527)",
+      "chapter_id": "AI Agents and Applications:ch60",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "2024 12",
+          "12 30",
+          "info",
+          "studio server",
+          "30 13"
+        ],
+        "semantic": [],
+        "merged": [
+          "2024 12",
+          "12 30",
+          "info",
+          "studio server",
+          "30 13"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.13859368661122248,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:37:36.463989+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 61,
+      "title": "Segment 61 (pages 528-535)",
+      "chapter_id": "AI Agents and Applications:ch61",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch58",
+          "score": 0.6354854473431087,
+          "base_score": 0.642475745571848,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch62",
+          "score": 0.5147443262586736,
+          "base_score": 0.5338331363570487,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "gpt4all",
+          "inference",
+          "local",
+          "localai",
+          "engines"
+        ],
+        "semantic": [],
+        "merged": [
+          "gpt4all",
+          "inference",
+          "local",
+          "localai",
+          "engines"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "local_inference_llama",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.22731184249907344,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.464261+00:00"
+      }
+    },
+    {
+      "book": "AI Agents and Applications",
+      "chapter": 62,
+      "title": "Segment 62 (pages 536-543)",
+      "chapter_id": "AI Agents and Applications:ch62",
+      "cross_references": [
+        {
+          "target": "AI Agents and Applications:ch58",
+          "score": 0.5223492032209027,
+          "base_score": 0.5465079312940972,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AI Agents and Applications:ch61",
+          "score": 0.5147443262586736,
+          "base_score": 0.5338331363570487,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "open source",
+          "local",
+          "open",
+          "source",
+          "source llm"
+        ],
+        "semantic": [],
+        "merged": [
+          "open source",
+          "local",
+          "open",
+          "source",
+          "source llm"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "local_inference_llama",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33272325114718865,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:37:36.464561+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

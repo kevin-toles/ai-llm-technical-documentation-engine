@@ -1,0 +1,1425 @@
+{
+  "book": {
+    "title": "Thinking in Systems"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:59:52.519214",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Thinking in Systems",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-9)",
+      "chapter_id": "Thinking in Systems:ch1",
+      "cross_references": [
+        {
+          "target": "Thinking in Systems:ch29",
+          "score": 0.6435568199067825,
+          "base_score": 0.6559280331779708,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Thinking in Systems:ch2",
+          "score": 0.6290598635603131,
+          "base_score": 0.724359031859781,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Thinking in Systems:ch24",
+          "score": 0.5656097942873739,
+          "base_score": 0.6186089164048825,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Thinking in Systems:ch26",
+          "score": 0.5633092380099506,
+          "base_score": 0.6147746559425102,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Thinking in Systems:ch3",
+          "score": 0.5480735867362301,
+          "base_score": 0.5893819038196426,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "systems",
+          "meadows",
+          "living world",
+          "thinking systems",
+          "dennis"
+        ],
+        "semantic": [],
+        "merged": [
+          "systems",
+          "meadows",
+          "living world",
+          "thinking systems",
+          "dennis"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3825783864818616,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:52.495276+00:00"
+      }
+    },
+    {
+      "book": "Thinking in Systems",
+      "chapter": 2,
+      "title": "Segment 2 (pages 10-17)",
+      "chapter_id": "Thinking in Systems:ch2",
+      "cross_references": [
+        {
+          "target": "Thinking in Systems:ch1",
+          "score": 0.6290598635603131,
+          "base_score": 0.724359031859781,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Thinking in Systems:ch29",
+          "score": 0.5861206582510774,
+          "base_score": 0.6527936896777214,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Thinking in Systems:ch3",
+          "score": 0.556838586989894,
+          "base_score": 0.6039902375757491,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Thinking in Systems:ch24",
+          "score": 0.5328301111535675,
+          "base_score": 0.5639761111818717,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Thinking in Systems:ch26",
+          "score": 0.529681438421411,
+          "base_score": 0.5587283232949443,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "systems",
+          "complex systems",
+          "dana",
+          "complex",
+          "world"
+        ],
+        "semantic": [],
+        "merged": [
+          "systems",
+          "complex systems",
+          "dana",
+          "complex",
+          "world"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39680366328982997,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:52.495457+00:00"
+      }
+    },
+    {
+      "book": "Thinking in Systems",
+      "chapter": 3,
+      "title": "Segment 3 (pages 18-25)",
+      "chapter_id": "Thinking in Systems:ch3",
+      "cross_references": [
+        {
+          "target": "Thinking in Systems:ch24",
+          "score": 0.7158896773152388,
+          "base_score": 0.6574351764777789,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Thinking in Systems:ch29",
+          "score": 0.686975059434463,
+          "base_score": 0.6092441466764859,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Thinking in Systems:ch26",
+          "score": 0.5902161171706819,
+          "base_score": 0.6596194545437291,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Thinking in Systems:ch2",
+          "score": 0.556838586989894,
+          "base_score": 0.6039902375757491,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Thinking in Systems:ch1",
+          "score": 0.5480735867362301,
+          "base_score": 0.5893819038196426,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "systems",
+          "thinking",
+          "things",
+          "problems",
+          "systems thinking"
+        ],
+        "semantic": [],
+        "merged": [
+          "systems",
+          "thinking",
+          "things",
+          "problems",
+          "systems thinking"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38255923621290866,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:52.495594+00:00"
+      }
+    },
+    {
+      "book": "Thinking in Systems",
+      "chapter": 4,
+      "title": "Segment 4 (pages 26-33)",
+      "chapter_id": "Thinking in Systems:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "purpose",
+          "interconnections",
+          "elements",
+          "purposes",
+          "tree"
+        ],
+        "semantic": [],
+        "merged": [
+          "purpose",
+          "interconnections",
+          "elements",
+          "purposes",
+          "tree"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2749841798646522,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:52.495747+00:00"
+      }
+    },
+    {
+      "book": "Thinking in Systems",
+      "chapter": 5,
+      "title": "Segment 5 (pages 34-42)",
+      "chapter_id": "Thinking in Systems:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "stock",
+          "stocks",
+          "sum",
+          "level",
+          "flows"
+        ],
+        "semantic": [],
+        "merged": [
+          "stock",
+          "stocks",
+          "sum",
+          "level",
+          "flows"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30117399091466984,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:52.495878+00:00"
+      }
+    },
+    {
+      "book": "Thinking in Systems",
+      "chapter": 6,
+      "title": "Segment 6 (pages 43-50)",
+      "chapter_id": "Thinking in Systems:ch6",
+      "cross_references": [
+        {
+          "target": "Thinking in Systems:ch22",
+          "score": 0.6006039672081197,
+          "base_score": 0.46529232629924716,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Thinking in Systems:ch27",
+          "score": 0.5683353664430018,
+          "base_score": 0.623151536664262,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "loop",
+          "feedback",
+          "feedback loop",
+          "coffee",
+          "balancing"
+        ],
+        "semantic": [],
+        "merged": [
+          "loop",
+          "feedback",
+          "feedback loop",
+          "coffee",
+          "balancing"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34444169279819964,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:52.496033+00:00"
+      }
+    },
+    {
+      "book": "Thinking in Systems",
+      "chapter": 7,
+      "title": "Segment 7 (pages 51-59)",
+      "chapter_id": "Thinking in Systems:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "room",
+          "heat",
+          "furnace",
+          "temperature",
+          "outside"
+        ],
+        "semantic": [],
+        "merged": [
+          "room",
+          "heat",
+          "furnace",
+          "temperature",
+          "outside"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.279766931193906,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:52.496161+00:00"
+      }
+    },
+    {
+      "book": "Thinking in Systems",
+      "chapter": 8,
+      "title": "Segment 8 (pages 60-69)",
+      "chapter_id": "Thinking in Systems:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "fertility",
+          "mortality",
+          "population",
+          "loop",
+          "reinforcing"
+        ],
+        "semantic": [],
+        "merged": [
+          "fertility",
+          "mortality",
+          "population",
+          "loop",
+          "reinforcing"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3018626072467067,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:52.496286+00:00"
+      }
+    },
+    {
+      "book": "Thinking in Systems",
+      "chapter": 9,
+      "title": "Segment 9 (pages 70-77)",
+      "chapter_id": "Thinking in Systems:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "inventory",
+          "car",
+          "sales",
+          "dealer",
+          "delay"
+        ],
+        "semantic": [],
+        "merged": [
+          "inventory",
+          "car",
+          "sales",
+          "dealer",
+          "delay"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29381399762538263,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:52.496411+00:00"
+      }
+    },
+    {
+      "book": "Thinking in Systems",
+      "chapter": 10,
+      "title": "Segment 10 (pages 78-85)",
+      "chapter_id": "Thinking in Systems:ch10",
+      "cross_references": [
+        {
+          "target": "Thinking in Systems:ch11",
+          "score": 0.5921666322235641,
+          "base_score": 0.5702777203726069,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Thinking in Systems:ch12",
+          "score": 0.5724097548182817,
+          "base_score": 0.6299421839563955,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "capital",
+          "extraction",
+          "resource",
+          "nonrenewable",
+          "growth"
+        ],
+        "semantic": [],
+        "merged": [
+          "capital",
+          "extraction",
+          "resource",
+          "nonrenewable",
+          "growth"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3860170194082817,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:52.496549+00:00"
+      }
+    },
+    {
+      "book": "Thinking in Systems",
+      "chapter": 11,
+      "title": "Segment 11 (pages 86-93)",
+      "chapter_id": "Thinking in Systems:ch11",
+      "cross_references": [
+        {
+          "target": "Thinking in Systems:ch10",
+          "score": 0.5921666322235641,
+          "base_score": 0.5702777203726069,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Thinking in Systems:ch12",
+          "score": 0.502681367847219,
+          "base_score": 0.5137282056712908,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "fish",
+          "capital",
+          "harvest",
+          "renewable",
+          "resource"
+        ],
+        "semantic": [],
+        "merged": [
+          "fish",
+          "capital",
+          "harvest",
+          "renewable",
+          "resource"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3108050138944943,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:52.496687+00:00"
+      }
+    },
+    {
+      "book": "Thinking in Systems",
+      "chapter": 12,
+      "title": "Segment 12 (pages 94-101)",
+      "chapter_id": "Thinking in Systems:ch12",
+      "cross_references": [
+        {
+          "target": "Thinking in Systems:ch10",
+          "score": 0.5724097548182817,
+          "base_score": 0.6299421839563955,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Thinking in Systems:ch11",
+          "score": 0.502681367847219,
+          "base_score": 0.5137282056712908,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "resilience",
+          "resilient",
+          "resource",
+          "ability",
+          "meta"
+        ],
+        "semantic": [],
+        "merged": [
+          "resilience",
+          "resilient",
+          "resource",
+          "ability",
+          "meta"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3975226975636268,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:52.496816+00:00"
+      }
+    },
+    {
+      "book": "Thinking in Systems",
+      "chapter": 13,
+      "title": "Segment 13 (pages 102-110)",
+      "chapter_id": "Thinking in Systems:ch13",
+      "cross_references": [
+        {
+          "target": "Thinking in Systems:ch23",
+          "score": 0.638819880875427,
+          "base_score": 0.814699801459045,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "self",
+          "self organization",
+          "organizing",
+          "organization",
+          "systems"
+        ],
+        "semantic": [],
+        "merged": [
+          "self",
+          "self organization",
+          "organizing",
+          "organization",
+          "systems"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33997597133477,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:52.496944+00:00"
+      }
+    },
+    {
+      "book": "Thinking in Systems",
+      "chapter": 14,
+      "title": "Segment 14 (pages 111-118)",
+      "chapter_id": "Thinking in Systems:ch14",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "budworm",
+          "spruce",
+          "fir",
+          "behavior",
+          "nonlinear"
+        ],
+        "semantic": [],
+        "merged": [
+          "budworm",
+          "spruce",
+          "fir",
+          "behavior",
+          "nonlinear"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3400152997692988,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:52.497069+00:00"
+      }
+    },
+    {
+      "book": "Thinking in Systems",
+      "chapter": 15,
+      "title": "Segment 15 (pages 119-127)",
+      "chapter_id": "Thinking in Systems:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "boundaries",
+          "boundary",
+          "limiting",
+          "limits",
+          "materials"
+        ],
+        "semantic": [],
+        "merged": [
+          "boundaries",
+          "boundary",
+          "limiting",
+          "limits",
+          "materials"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2507042965261517,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:59:52.497193+00:00"
+      }
+    },
+    {
+      "book": "Thinking in Systems",
+      "chapter": 16,
+      "title": "Segment 16 (pages 128-135)",
+      "chapter_id": "Thinking in Systems:ch16",
+      "cross_references": [
+        {
+          "target": "Thinking in Systems:ch22",
+          "score": 0.5027733041528774,
+          "base_score": 0.5879555069214624,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "bounded",
+          "bounded rationality",
+          "rationality",
+          "information",
+          "decisions"
+        ],
+        "semantic": [],
+        "merged": [
+          "bounded",
+          "bounded rationality",
+          "rationality",
+          "information",
+          "decisions"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36661491369164484,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:52.497321+00:00"
+      }
+    },
+    {
+      "book": "Thinking in Systems",
+      "chapter": 17,
+      "title": "Segment 17 (pages 136-143)",
+      "chapter_id": "Thinking in Systems:ch17",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "policy",
+          "resistance",
+          "policy resistance",
+          "actors",
+          "commons"
+        ],
+        "semantic": [],
+        "merged": [
+          "policy",
+          "resistance",
+          "policy resistance",
+          "actors",
+          "commons"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29622310182030914,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:52.497447+00:00"
+      }
+    },
+    {
+      "book": "Thinking in Systems",
+      "chapter": 18,
+      "title": "Segment 18 (pages 144-152)",
+      "chapter_id": "Thinking in Systems:ch18",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "performance",
+          "escalation",
+          "use",
+          "commons",
+          "state"
+        ],
+        "semantic": [],
+        "merged": [
+          "performance",
+          "escalation",
+          "use",
+          "commons",
+          "state"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2974570636710687,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:52.497571+00:00"
+      }
+    },
+    {
+      "book": "Thinking in Systems",
+      "chapter": 19,
+      "title": "Segment 19 (pages 153-160)",
+      "chapter_id": "Thinking in Systems:ch19",
+      "cross_references": [
+        {
+          "target": "Thinking in Systems:ch27",
+          "score": 0.5335096405334481,
+          "base_score": 0.6391827342224135,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "success",
+          "success successful",
+          "successful",
+          "intervenor",
+          "game"
+        ],
+        "semantic": [],
+        "merged": [
+          "success",
+          "success successful",
+          "successful",
+          "intervenor",
+          "game"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37363314910112777,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:52.497706+00:00"
+      }
+    },
+    {
+      "book": "Thinking in Systems",
+      "chapter": 20,
+      "title": "Segment 20 (pages 161-168)",
+      "chapter_id": "Thinking in Systems:ch20",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "beating",
+          "rule",
+          "rule beating",
+          "rules",
+          "defined"
+        ],
+        "semantic": [],
+        "merged": [
+          "beating",
+          "rule",
+          "rule beating",
+          "rules",
+          "defined"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2501951703607123,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:52.497830+00:00"
+      }
+    },
+    {
+      "book": "Thinking in Systems",
+      "chapter": 21,
+      "title": "Segment 21 (pages 169-176)",
+      "chapter_id": "Thinking in Systems:ch21",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "leverage",
+          "points",
+          "leverage points",
+          "buffers",
+          "forrester"
+        ],
+        "semantic": [],
+        "merged": [
+          "leverage",
+          "points",
+          "leverage points",
+          "buffers",
+          "forrester"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3584896084261515,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:52.498023+00:00"
+      }
+    },
+    {
+      "book": "Thinking in Systems",
+      "chapter": 22,
+      "title": "Segment 22 (pages 177-184)",
+      "chapter_id": "Thinking in Systems:ch22",
+      "cross_references": [
+        {
+          "target": "Thinking in Systems:ch6",
+          "score": 0.6006039672081197,
+          "base_score": 0.46529232629924716,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Thinking in Systems:ch16",
+          "score": 0.5027733041528774,
+          "base_score": 0.5879555069214624,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "feedback",
+          "leverage",
+          "balancing",
+          "loops",
+          "loop"
+        ],
+        "semantic": [],
+        "merged": [
+          "feedback",
+          "leverage",
+          "balancing",
+          "loops",
+          "loop"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31866333042618805,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:52.498159+00:00"
+      }
+    },
+    {
+      "book": "Thinking in Systems",
+      "chapter": 23,
+      "title": "Segment 23 (pages 185-192)",
+      "chapter_id": "Thinking in Systems:ch23",
+      "cross_references": [
+        {
+          "target": "Thinking in Systems:ch13",
+          "score": 0.638819880875427,
+          "base_score": 0.814699801459045,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "leverage",
+          "paradigms",
+          "new",
+          "power",
+          "paradigm"
+        ],
+        "semantic": [],
+        "merged": [
+          "leverage",
+          "paradigms",
+          "new",
+          "power",
+          "paradigm"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3636472449462219,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:52.498292+00:00"
+      }
+    },
+    {
+      "book": "Thinking in Systems",
+      "chapter": 24,
+      "title": "Segment 24 (pages 193-200)",
+      "chapter_id": "Thinking in Systems:ch24",
+      "cross_references": [
+        {
+          "target": "Thinking in Systems:ch29",
+          "score": 0.7222671764426756,
+          "base_score": 0.6680643416901735,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Thinking in Systems:ch3",
+          "score": 0.7158896773152388,
+          "base_score": 0.6574351764777789,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Thinking in Systems:ch26",
+          "score": 0.596312189791935,
+          "base_score": 0.669779575579151,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Thinking in Systems:ch1",
+          "score": 0.5656097942873739,
+          "base_score": 0.6186089164048825,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Thinking in Systems:ch2",
+          "score": 0.5328301111535675,
+          "base_score": 0.5639761111818717,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "systems",
+          "thinking",
+          "systems thinking",
+          "questions",
+          "control systems"
+        ],
+        "semantic": [],
+        "merged": [
+          "systems",
+          "thinking",
+          "systems thinking",
+          "questions",
+          "control systems"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3379984789650004,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:52.498431+00:00"
+      }
+    },
+    {
+      "book": "Thinking in Systems",
+      "chapter": 25,
+      "title": "Segment 25 (pages 201-208)",
+      "chapter_id": "Thinking in Systems:ch25",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "language",
+          "quantity",
+          "means",
+          "jobs",
+          "attention"
+        ],
+        "semantic": [],
+        "merged": [
+          "language",
+          "quantity",
+          "means",
+          "jobs",
+          "attention"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21347407609143917,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:52.498563+00:00"
+      }
+    },
+    {
+      "book": "Thinking in Systems",
+      "chapter": 26,
+      "title": "Segment 26 (pages 209-216)",
+      "chapter_id": "Thinking in Systems:ch26",
+      "cross_references": [
+        {
+          "target": "Thinking in Systems:ch24",
+          "score": 0.596312189791935,
+          "base_score": 0.669779575579151,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Thinking in Systems:ch3",
+          "score": 0.5902161171706819,
+          "base_score": 0.6596194545437291,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Thinking in Systems:ch29",
+          "score": 0.5641718173973234,
+          "base_score": 0.6162122882547981,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Thinking in Systems:ch1",
+          "score": 0.5633092380099506,
+          "base_score": 0.6147746559425102,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Thinking in Systems:ch2",
+          "score": 0.529681438421411,
+          "base_score": 0.5587283232949443,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "stock",
+          "sum",
+          "systems",
+          "feedback",
+          "outflows"
+        ],
+        "semantic": [],
+        "merged": [
+          "stock",
+          "sum",
+          "systems",
+          "feedback",
+          "outflows"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4135301188204539,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:52.498745+00:00"
+      }
+    },
+    {
+      "book": "Thinking in Systems",
+      "chapter": 27,
+      "title": "Segment 27 (pages 217-225)",
+      "chapter_id": "Thinking in Systems:ch27",
+      "cross_references": [
+        {
+          "target": "Thinking in Systems:ch6",
+          "score": 0.5683353664430018,
+          "base_score": 0.623151536664262,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Thinking in Systems:ch19",
+          "score": 0.5335096405334481,
+          "base_score": 0.6391827342224135,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "dt",
+          "temperature",
+          "coffee",
+          "coffee temperature",
+          "figures"
+        ],
+        "semantic": [],
+        "merged": [
+          "dt",
+          "temperature",
+          "coffee",
+          "coffee temperature",
+          "figures"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42843941986976114,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:52.498880+00:00"
+      }
+    },
+    {
+      "book": "Thinking in Systems",
+      "chapter": 28,
+      "title": "Segment 28 (pages 226-234)",
+      "chapter_id": "Thinking in Systems:ch28",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "capital",
+          "dt",
+          "december",
+          "tribune december",
+          "international herald"
+        ],
+        "semantic": [],
+        "merged": [
+          "capital",
+          "dt",
+          "december",
+          "tribune december",
+          "international herald"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24062991581356208,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:52.499010+00:00"
+      }
+    },
+    {
+      "book": "Thinking in Systems",
+      "chapter": 29,
+      "title": "Segment 29 (pages 235-240)",
+      "chapter_id": "Thinking in Systems:ch29",
+      "cross_references": [
+        {
+          "target": "Thinking in Systems:ch24",
+          "score": 0.7222671764426756,
+          "base_score": 0.6680643416901735,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Thinking in Systems:ch3",
+          "score": 0.686975059434463,
+          "base_score": 0.6092441466764859,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Thinking in Systems:ch1",
+          "score": 0.6435568199067825,
+          "base_score": 0.6559280331779708,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Thinking in Systems:ch2",
+          "score": 0.5861206582510774,
+          "base_score": 0.6527936896777214,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Thinking in Systems:ch26",
+          "score": 0.5641718173973234,
+          "base_score": 0.6162122882547981,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "systems thinking",
+          "thinking",
+          "systems",
+          "dynamics",
+          "meadows"
+        ],
+        "semantic": [],
+        "merged": [
+          "systems thinking",
+          "thinking",
+          "systems",
+          "dynamics",
+          "meadows"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36256448544022424,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:52.499142+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

@@ -1,0 +1,162 @@
+{
+  "book": {
+    "title": "Kubernetes in Action 2nd Edition - Marko Luksa"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:49:41.231074",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Kubernetes in Action 2nd Edition - Marko Luksa",
+      "chapter": 1,
+      "title": "you learned how different microservices running in the same operating system may require different, potentially conflicting versions of dynamically linked libraries or have different environment requi",
+      "chapter_id": "Kubernetes in Action 2nd Edition - Marko Luksa:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "docker",
+          "vm",
+          "processes",
+          "container image",
+          "docker run"
+        ],
+        "semantic": [],
+        "merged": [
+          "docker",
+          "vm",
+          "processes",
+          "container image",
+          "docker run"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "container_docker_run",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6015647830881699,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:41.226726+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes in Action 2nd Edition - Marko Luksa",
+      "chapter": 2,
+      "title": "explains how",
+      "chapter_id": "Kubernetes in Action 2nd Edition - Marko Luksa:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "pod",
+          "init",
+          "probe",
+          "kiada",
+          "liveness"
+        ],
+        "semantic": [],
+        "merged": [
+          "pod",
+          "init",
+          "probe",
+          "kiada",
+          "liveness"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "pod_container_containers",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6328794775712423,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:41.226767+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes in Action 2nd Edition - Marko Luksa",
+      "chapter": 3,
+      "title": "explains how to avoid this issue. The hostPath volume allows a pod to access any path in filesystem of the worker node. This volume type is dangerous because it allows users to make changes to the con",
+      "chapter_id": "Kubernetes in Action 2nd Edition - Marko Luksa:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "volume",
+          "persistent",
+          "persistent volume",
+          "claim",
+          "storage"
+        ],
+        "semantic": [],
+        "merged": [
+          "volume",
+          "persistent",
+          "persistent volume",
+          "claim",
+          "storage"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "volume_persistent_claim",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.603531601094768,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:41.226810+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes in Action 2nd Edition - Marko Luksa",
+      "chapter": 4,
+      "title": "explains how to set the number of CPU cores and the amount of memory a container may consume. These settings are called CPU and",
+      "chapter_id": "Kubernetes in Action 2nd Edition - Marko Luksa:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "label",
+          "pod",
+          "pods",
+          "kiada",
+          "labels"
+        ],
+        "semantic": [],
+        "merged": [
+          "label",
+          "pod",
+          "pods",
+          "kiada",
+          "labels"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "label_pod_pods",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6029881011211814,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:41.226831+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

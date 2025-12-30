@@ -1,0 +1,509 @@
+{
+  "book": {
+    "title": "Cloud Native Infrastructure - Justin Garrison Kris Nova"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:43:16.988847",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Cloud Native Infrastructure - Justin Garrison Kris Nova",
+      "chapter": 1,
+      "title": "What Is Cloud Native Infrastructure?",
+      "chapter_id": "Cloud Native Infrastructure - Justin Garrison Kris Nova:ch1",
+      "cross_references": [
+        {
+          "target": "Cloud Native Infrastructure - Justin Garrison Kris Nova:ch9",
+          "score": 0.7596231756835704,
+          "base_score": 0.8493719594726172,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Cloud Native Infrastructure - Justin Garrison Kris Nova:ch7",
+          "score": 0.7146903151246338,
+          "base_score": 0.8670764511336487,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Cloud Native Infrastructure - Justin Garrison Kris Nova:ch2",
+          "score": 0.6395802182573053,
+          "base_score": 0.8159670304288422,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Cloud Native Infrastructure - Justin Garrison Kris Nova:ch6",
+          "score": 0.5350878649863301,
+          "base_score": 0.6418131083105503,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "native applications",
+          "run",
+          "platform",
+          "applications cloud",
+          "native application"
+        ],
+        "semantic": [],
+        "merged": [
+          "native applications",
+          "run",
+          "platform",
+          "applications cloud",
+          "native application"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "infrastructure_cloud_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7360305105686177,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:16.965551+00:00"
+      }
+    },
+    {
+      "book": "Cloud Native Infrastructure - Justin Garrison Kris Nova",
+      "chapter": 2,
+      "title": "When to Adopt Cloud Native",
+      "chapter_id": "Cloud Native Infrastructure - Justin Garrison Kris Nova:ch2",
+      "cross_references": [
+        {
+          "target": "Cloud Native Infrastructure - Justin Garrison Kris Nova:ch9",
+          "score": 0.6679292860735924,
+          "base_score": 0.8632154767893205,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Cloud Native Infrastructure - Justin Garrison Kris Nova:ch1",
+          "score": 0.6395802182573053,
+          "base_score": 0.8159670304288422,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Cloud Native Infrastructure - Justin Garrison Kris Nova:ch7",
+          "score": 0.6338159732427311,
+          "base_score": 0.8063599554045519,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ready",
+          "adopt cloud",
+          "adopt",
+          "ready adopt",
+          "ready cloud"
+        ],
+        "semantic": [],
+        "merged": [
+          "ready",
+          "adopt cloud",
+          "adopt",
+          "ready adopt",
+          "ready cloud"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "infrastructure_cloud_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6738138936905408,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:16.965661+00:00"
+      }
+    },
+    {
+      "book": "Cloud Native Infrastructure - Justin Garrison Kris Nova",
+      "chapter": 3,
+      "title": "Evolution of Cloud Native Deployments",
+      "chapter_id": "Cloud Native Infrastructure - Justin Garrison Kris Nova:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "representation",
+          "script",
+          "representation infrastructure",
+          "deployment tools",
+          "tools"
+        ],
+        "semantic": [],
+        "merged": [
+          "representation",
+          "script",
+          "representation infrastructure",
+          "deployment tools",
+          "tools"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_infrastructure_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5155881535268816,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:16.965707+00:00"
+      }
+    },
+    {
+      "book": "Cloud Native Infrastructure - Justin Garrison Kris Nova",
+      "chapter": 4,
+      "title": "Designing Infrastructure Applications",
+      "chapter_id": "Cloud Native Infrastructure - Justin Garrison Kris Nova:ch4",
+      "cross_references": [
+        {
+          "target": "Cloud Native Infrastructure - Justin Garrison Kris Nova:ch5",
+          "score": 0.5846086418998033,
+          "base_score": 0.7243477364996722,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Cloud Native Infrastructure - Justin Garrison Kris Nova:ch8",
+          "score": 0.5354504567520432,
+          "base_score": 0.6424174279200721,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "structure",
+          "data structure",
+          "reconciler",
+          "data",
+          "state"
+        ],
+        "semantic": [],
+        "merged": [
+          "structure",
+          "data structure",
+          "reconciler",
+          "data",
+          "state"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_infrastructure_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6882325326502436,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:16.965779+00:00"
+      }
+    },
+    {
+      "book": "Cloud Native Infrastructure - Justin Garrison Kris Nova",
+      "chapter": 5,
+      "title": "Developing Infrastructure Applications",
+      "chapter_id": "Cloud Native Infrastructure - Justin Garrison Kris Nova:ch5",
+      "cross_references": [
+        {
+          "target": "Cloud Native Infrastructure - Justin Garrison Kris Nova:ch4",
+          "score": 0.5846086418998033,
+          "base_score": 0.7243477364996722,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Cloud Native Infrastructure - Justin Garrison Kris Nova:ch8",
+          "score": 0.5499853958383008,
+          "base_score": 0.6666423263971679,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "api",
+          "operator",
+          "applications manage",
+          "version",
+          "infrastructure api"
+        ],
+        "semantic": [],
+        "merged": [
+          "api",
+          "operator",
+          "applications manage",
+          "version",
+          "infrastructure api"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_infrastructure_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6876052402830669,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:16.965846+00:00"
+      }
+    },
+    {
+      "book": "Cloud Native Infrastructure - Justin Garrison Kris Nova",
+      "chapter": 6,
+      "title": "Testing Cloud Native Infrastructure",
+      "chapter_id": "Cloud Native Infrastructure - Justin Garrison Kris Nova:ch6",
+      "cross_references": [
+        {
+          "target": "Cloud Native Infrastructure - Justin Garrison Kris Nova:ch9",
+          "score": 0.5414004675492645,
+          "base_score": 0.6523341125821075,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Cloud Native Infrastructure - Justin Garrison Kris Nova:ch1",
+          "score": 0.5350878649863301,
+          "base_score": 0.6418131083105503,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "testing",
+          "tests",
+          "confidence",
+          "test",
+          "testing infrastructure"
+        ],
+        "semantic": [],
+        "merged": [
+          "testing",
+          "tests",
+          "confidence",
+          "test",
+          "testing infrastructure"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "infrastructure_cloud_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6188276422845675,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:16.965892+00:00"
+      }
+    },
+    {
+      "book": "Cloud Native Infrastructure - Justin Garrison Kris Nova",
+      "chapter": 7,
+      "title": "Managing Cloud Native Applications",
+      "chapter_id": "Cloud Native Infrastructure - Justin Garrison Kris Nova:ch7",
+      "cross_references": [
+        {
+          "target": "Cloud Native Infrastructure - Justin Garrison Kris Nova:ch1",
+          "score": 0.7146903151246338,
+          "base_score": 0.8670764511336487,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Cloud Native Infrastructure - Justin Garrison Kris Nova:ch9",
+          "score": 0.6920148797654074,
+          "base_score": 0.8292840588682715,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Cloud Native Infrastructure - Justin Garrison Kris Nova:ch2",
+          "score": 0.6338159732427311,
+          "base_score": 0.8063599554045519,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "services",
+          "run",
+          "provide",
+          "metrics",
+          "logging"
+        ],
+        "semantic": [],
+        "merged": [
+          "services",
+          "run",
+          "provide",
+          "metrics",
+          "logging"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "infrastructure_cloud_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7122767929346676,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:16.965943+00:00"
+      }
+    },
+    {
+      "book": "Cloud Native Infrastructure - Justin Garrison Kris Nova",
+      "chapter": 8,
+      "title": "Securing Applications",
+      "chapter_id": "Cloud Native Infrastructure - Justin Garrison Kris Nova:ch8",
+      "cross_references": [
+        {
+          "target": "Cloud Native Infrastructure - Justin Garrison Kris Nova:ch5",
+          "score": 0.5499853958383008,
+          "base_score": 0.6666423263971679,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Cloud Native Infrastructure - Justin Garrison Kris Nova:ch4",
+          "score": 0.5354504567520432,
+          "base_score": 0.6424174279200721,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "policy",
+          "testing",
+          "components",
+          "compliance",
+          "enforce"
+        ],
+        "semantic": [],
+        "merged": [
+          "policy",
+          "testing",
+          "components",
+          "compliance",
+          "enforce"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_infrastructure_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6232965446303191,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:16.965986+00:00"
+      }
+    },
+    {
+      "book": "Cloud Native Infrastructure - Justin Garrison Kris Nova",
+      "chapter": 9,
+      "title": "Implementing Cloud Native Infrastructure",
+      "chapter_id": "Cloud Native Infrastructure - Justin Garrison Kris Nova:ch9",
+      "cross_references": [
+        {
+          "target": "Cloud Native Infrastructure - Justin Garrison Kris Nova:ch1",
+          "score": 0.7596231756835704,
+          "base_score": 0.8493719594726172,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Cloud Native Infrastructure - Justin Garrison Kris Nova:ch7",
+          "score": 0.6920148797654074,
+          "base_score": 0.8292840588682715,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Cloud Native Infrastructure - Justin Garrison Kris Nova:ch2",
+          "score": 0.6679292860735924,
+          "base_score": 0.8632154767893205,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Cloud Native Infrastructure - Justin Garrison Kris Nova:ch6",
+          "score": 0.5414004675492645,
+          "base_score": 0.6523341125821075,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "native applications",
+          "implementing cloud",
+          "run",
+          "implementing",
+          "infrastructure applications"
+        ],
+        "semantic": [],
+        "merged": [
+          "native applications",
+          "implementing cloud",
+          "run",
+          "implementing",
+          "infrastructure applications"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "infrastructure_cloud_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7319122706805169,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:16.966030+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

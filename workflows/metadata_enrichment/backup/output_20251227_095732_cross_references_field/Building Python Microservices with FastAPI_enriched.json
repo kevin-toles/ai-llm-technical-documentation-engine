@@ -1,0 +1,2227 @@
+{
+  "book": {
+    "title": "Building Python Microservices with FastAPI"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:41:29.569591",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-12)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "layer",
+          "implementing",
+          "database",
+          "transactions",
+          "crud"
+        ],
+        "semantic": [],
+        "merged": [
+          "layer",
+          "implementing",
+          "database",
+          "transactions",
+          "crud"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25921989797120093,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.546061+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 2,
+      "title": "Segment 2 (pages 13-21)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch2",
+      "cross_references": [
+        {
+          "target": "Building Python Microservices with FastAPI:ch41",
+          "score": 0.5552116503737409,
+          "base_score": 0.6753527506229015,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch3",
+          "score": 0.5534555113166447,
+          "base_score": 0.6724258521944079,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch45",
+          "score": 0.5208089931510664,
+          "base_score": 0.5439409145110367,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "chapter",
+          "python",
+          "fastapi",
+          "creating",
+          "using"
+        ],
+        "semantic": [],
+        "merged": [
+          "chapter",
+          "python",
+          "fastapi",
+          "creating",
+          "using"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3333770463366303,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.546419+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 3,
+      "title": "Segment 3 (pages 22-31)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch3",
+      "cross_references": [
+        {
+          "target": "Building Python Microservices with FastAPI:ch41",
+          "score": 0.6236275846041636,
+          "base_score": 0.7893793076736059,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch4",
+          "score": 0.6172576710494933,
+          "base_score": 0.49304849936820305,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch45",
+          "score": 0.5906756354588593,
+          "base_score": 0.7344593924314322,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch8",
+          "score": 0.5620408388787099,
+          "base_score": 0.52006806479785,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch2",
+          "score": 0.5534555113166447,
+          "base_score": 0.6724258521944079,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "username",
+          "profile",
+          "new_names",
+          "return message",
+          "user"
+        ],
+        "semantic": [],
+        "merged": [
+          "username",
+          "profile",
+          "new_names",
+          "return message",
+          "user"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39151739569474786,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.546762+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 4,
+      "title": "Segment 4 (pages 32-42)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch4",
+      "cross_references": [
+        {
+          "target": "Building Python Microservices with FastAPI:ch3",
+          "score": 0.6172576710494933,
+          "base_score": 0.49304849936820305,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch33",
+          "score": 0.5517877774092161,
+          "base_score": 0.5955722216079529,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch8",
+          "score": 0.5274282236584271,
+          "base_score": 0.5549729653566378,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch5",
+          "score": 0.5172177865534643,
+          "base_score": 0.6120296442557738,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch27",
+          "score": 0.5037262965501531,
+          "base_score": 0.5895438275835886,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "username",
+          "user",
+          "valid_users",
+          "valid_users username",
+          "return message"
+        ],
+        "semantic": [],
+        "merged": [
+          "username",
+          "user",
+          "valid_users",
+          "valid_users username",
+          "return message"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37472839507708144,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.547009+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 5,
+      "title": "Segment 5 (pages 43-50)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch5",
+      "cross_references": [
+        {
+          "target": "Building Python Microservices with FastAPI:ch27",
+          "score": 0.5313170463838531,
+          "base_score": 0.6355284106397552,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch4",
+          "score": 0.5172177865534643,
+          "base_score": 0.6120296442557738,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "form",
+          "cookie",
+          "cookies",
+          "header",
+          "fastapi module"
+        ],
+        "semantic": [],
+        "merged": [
+          "form",
+          "cookie",
+          "cookies",
+          "header",
+          "fastapi module"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3702648228315314,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.547313+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 6,
+      "title": "Segment 6 (pages 51-58)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch6",
+      "cross_references": [
+        {
+          "target": "Building Python Microservices with FastAPI:ch7",
+          "score": 0.6024017340287011,
+          "base_score": 0.6799288159737612,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tour",
+          "tid",
+          "status",
+          "tid tour",
+          "status_code"
+        ],
+        "semantic": [],
+        "merged": [
+          "tour",
+          "tid",
+          "status",
+          "tid tour",
+          "status_code"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_db_tour",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31335844749383107,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.547539+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 7,
+      "title": "Segment 7 (pages 59-69)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch7",
+      "cross_references": [
+        {
+          "target": "Building Python Microservices with FastAPI:ch6",
+          "score": 0.6024017340287011,
+          "base_score": 0.6799288159737612,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tourist",
+          "tours",
+          "jsonresponse",
+          "touristid",
+          "tid"
+        ],
+        "semantic": [],
+        "merged": [
+          "tourist",
+          "tours",
+          "jsonresponse",
+          "touristid",
+          "tid"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_db_tour",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.255586875229994,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.547787+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 8,
+      "title": "Segment 8 (pages 70-78)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch8",
+      "cross_references": [
+        {
+          "target": "Building Python Microservices with FastAPI:ch9",
+          "score": 0.6147696850725346,
+          "base_score": 0.6079494751208911,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch3",
+          "score": 0.5620408388787099,
+          "base_score": 0.52006806479785,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch27",
+          "score": 0.5605641941773875,
+          "base_score": 0.6842736569623125,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch11",
+          "score": 0.5332828822723173,
+          "base_score": 0.6388048037871956,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch4",
+          "score": 0.5274282236584271,
+          "base_score": 0.5549729653566378,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "profile",
+          "login",
+          "jsonable_encoder profile",
+          "user",
+          "login_details"
+        ],
+        "semantic": [],
+        "merged": [
+          "profile",
+          "login",
+          "jsonable_encoder profile",
+          "user",
+          "login_details"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40806799746069816,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.548008+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 9,
+      "title": "Segment 9 (pages 79-88)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch9",
+      "cross_references": [
+        {
+          "target": "Building Python Microservices with FastAPI:ch8",
+          "score": 0.6147696850725346,
+          "base_score": 0.6079494751208911,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch10",
+          "score": 0.5587968441076553,
+          "base_score": 0.6813280735127589,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "login",
+          "depends",
+          "profile",
+          "dependencies",
+          "injectable"
+        ],
+        "semantic": [],
+        "merged": [
+          "login",
+          "depends",
+          "profile",
+          "dependencies",
+          "injectable"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30782590449397795,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.548252+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 10,
+      "title": "Segment 10 (pages 89-96)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch10",
+      "cross_references": [
+        {
+          "target": "Building Python Microservices with FastAPI:ch9",
+          "score": 0.5587968441076553,
+          "base_score": 0.6813280735127589,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch11",
+          "score": 0.5424937547002147,
+          "base_score": 0.6541562578336911,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch8",
+          "score": 0.5177101504057805,
+          "base_score": 0.6128502506763008,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "providers",
+          "container",
+          "containers",
+          "injector",
+          "dependency injector"
+        ],
+        "semantic": [],
+        "merged": [
+          "providers",
+          "container",
+          "containers",
+          "injector",
+          "dependency injector"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3418591908071783,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.548479+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 11,
+      "title": "Segment 11 (pages 97-108)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch11",
+      "cross_references": [
+        {
+          "target": "Building Python Microservices with FastAPI:ch10",
+          "score": 0.5424937547002147,
+          "base_score": 0.6541562578336911,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch8",
+          "score": 0.5332828822723173,
+          "base_score": 0.6388048037871956,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ch04",
+          "sub application",
+          "sub",
+          "main",
+          "application"
+        ],
+        "semantic": [],
+        "merged": [
+          "ch04",
+          "sub application",
+          "sub",
+          "main",
+          "application"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3413145071285829,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.548698+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 12,
+      "title": "Segment 12 (pages 109-116)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch12",
+      "cross_references": [
+        {
+          "target": "Building Python Microservices with FastAPI:ch34",
+          "score": 0.5331537964648057,
+          "base_score": 0.5645155867006021,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "request",
+          "level",
+          "ch04",
+          "log",
+          "faculty"
+        ],
+        "semantic": [],
+        "merged": [
+          "request",
+          "level",
+          "ch04",
+          "log",
+          "faculty"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3544829942073042,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.548921+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 13,
+      "title": "Segment 13 (pages 117-124)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch13",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "self",
+          "assignment",
+          "assgn_id",
+          "bin_id",
+          "int"
+        ],
+        "semantic": [],
+        "merged": [
+          "self",
+          "assignment",
+          "assgn_id",
+          "bin_id",
+          "int"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_class_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27326501704758405,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.549173+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 14,
+      "title": "Segment 14 (pages 125-134)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch14",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "database",
+          "config",
+          "sqlalchemy",
+          "chapter",
+          "application"
+        ],
+        "semantic": [],
+        "merged": [
+          "database",
+          "config",
+          "sqlalchemy",
+          "chapter",
+          "application"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3185124284975418,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:41:29.549432+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 15,
+      "title": "Segment 15 (pages 135-143)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "column",
+          "false",
+          "index",
+          "false index",
+          "unique false"
+        ],
+        "semantic": [],
+        "merged": [
+          "column",
+          "false",
+          "index",
+          "false index",
+          "unique false"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_class_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2513592359765803,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.549646+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 16,
+      "title": "Segment 16 (pages 144-157)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch16",
+      "cross_references": [
+        {
+          "target": "Building Python Microservices with FastAPI:ch22",
+          "score": 0.5610336488451455,
+          "base_score": 0.6109820073345018,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "db",
+          "column",
+          "sess",
+          "attendance",
+          "sqlalchemy"
+        ],
+        "semantic": [],
+        "merged": [
+          "db",
+          "column",
+          "sess",
+          "attendance",
+          "sqlalchemy"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_db_tour",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3178574667697133,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.549889+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 17,
+      "title": "Segment 17 (pages 158-166)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch17",
+      "cross_references": [
+        {
+          "target": "Building Python Microservices with FastAPI:ch18",
+          "score": 0.6754901924913809,
+          "base_score": 0.709150320818968,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch19",
+          "score": 0.5399766516358843,
+          "base_score": 0.6499610860598072,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "gym_class",
+          "profile_trainers",
+          "profile_members",
+          "required",
+          "db"
+        ],
+        "semantic": [],
+        "merged": [
+          "gym_class",
+          "profile_trainers",
+          "profile_members",
+          "required",
+          "db"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_class_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24388654608284463,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.550102+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 18,
+      "title": "Segment 18 (pages 167-175)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch18",
+      "cross_references": [
+        {
+          "target": "Building Python Microservices with FastAPI:ch17",
+          "score": 0.6754901924913809,
+          "base_score": 0.709150320818968,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch19",
+          "score": 0.573899676797858,
+          "base_score": 0.7064994613297633,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "db_session",
+          "db",
+          "class",
+          "profile_members",
+          "db_table"
+        ],
+        "semantic": [],
+        "merged": [
+          "db_session",
+          "db",
+          "class",
+          "profile_members",
+          "db_table"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_class_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3168173946042492,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.550345+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 19,
+      "title": "Segment 19 (pages 176-183)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch19",
+      "cross_references": [
+        {
+          "target": "Building Python Microservices with FastAPI:ch18",
+          "score": 0.573899676797858,
+          "base_score": 0.7064994613297633,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch17",
+          "score": 0.5399766516358843,
+          "base_score": 0.6499610860598072,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "query",
+          "cqrs",
+          "profiletrainerlistquery",
+          "self",
+          "command"
+        ],
+        "semantic": [],
+        "merged": [
+          "query",
+          "cqrs",
+          "profiletrainerlistquery",
+          "self",
+          "command"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_class_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29550905247716874,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.550565+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 20,
+      "title": "Segment 20 (pages 184-194)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch20",
+      "cross_references": [
+        {
+          "target": "Building Python Microservices with FastAPI:ch23",
+          "score": 0.506497099316488,
+          "base_score": 0.5200877581200726,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "mongodb",
+          "document",
+          "bson",
+          "database",
+          "mongodb database"
+        ],
+        "semantic": [],
+        "merged": [
+          "mongodb",
+          "document",
+          "bson",
+          "database",
+          "mongodb database"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_class_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2686403257291244,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.550789+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 21,
+      "title": "Segment 21 (pages 195-202)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch21",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "buyer",
+          "buyers",
+          "datetime",
+          "self buyers",
+          "self"
+        ],
+        "semantic": [],
+        "merged": [
+          "buyer",
+          "buyers",
+          "datetime",
+          "self buyers",
+          "self"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_class_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21406170390875762,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.551012+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 22,
+      "title": "Segment 22 (pages 203-210)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch22",
+      "cross_references": [
+        {
+          "target": "Building Python Microservices with FastAPI:ch16",
+          "score": 0.5610336488451455,
+          "base_score": 0.6109820073345018,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "db",
+          "buyerrepository",
+          "buyers",
+          "buyer",
+          "create_db_collections"
+        ],
+        "semantic": [],
+        "merged": [
+          "db",
+          "buyerrepository",
+          "buyers",
+          "buyer",
+          "create_db_collections"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_db_tour",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30185629181762,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.551221+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 23,
+      "title": "Segment 23 (pages 211-227)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch23",
+      "cross_references": [
+        {
+          "target": "Building Python Microservices with FastAPI:ch20",
+          "score": 0.506497099316488,
+          "base_score": 0.5200877581200726,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "document",
+          "field",
+          "login",
+          "cart",
+          "class"
+        ],
+        "semantic": [],
+        "merged": [
+          "document",
+          "field",
+          "login",
+          "cart",
+          "class"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_class_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3016547968240152,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.551486+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 24,
+      "title": "Segment 24 (pages 228-235)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch24",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "category",
+          "mongoframes",
+          "frame",
+          "book",
+          "frame api"
+        ],
+        "semantic": [],
+        "merged": [
+          "category",
+          "mongoframes",
+          "frame",
+          "book",
+          "frame api"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_class_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3542722660328567,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.551705+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 25,
+      "title": "Segment 25 (pages 236-244)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch25",
+      "cross_references": [
+        {
+          "target": "Building Python Microservices with FastAPI:ch45",
+          "score": 0.5906054418707082,
+          "base_score": 0.734342403117847,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch28",
+          "score": 0.5597147202743123,
+          "base_score": 0.6087837930497798,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch33",
+          "score": 0.5550118897192918,
+          "base_score": 0.6750198161988197,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch3",
+          "score": 0.5192337513045455,
+          "base_score": 0.6153895855075758,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch4",
+          "score": 0.5022747164481091,
+          "base_score": 0.5871245274135151,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "authentication",
+          "digest",
+          "digest authentication",
+          "basic",
+          "credentials"
+        ],
+        "semantic": [],
+        "merged": [
+          "authentication",
+          "digest",
+          "digest authentication",
+          "basic",
+          "credentials"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3585934084918477,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.551928+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 26,
+      "title": "Segment 26 (pages 245-256)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch26",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "token",
+          "username",
+          "form_data",
+          "password",
+          "login token"
+        ],
+        "semantic": [],
+        "merged": [
+          "token",
+          "username",
+          "form_data",
+          "password",
+          "login token"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29815582428778903,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:41:29.552148+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 27,
+      "title": "Segment 27 (pages 257-264)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch27",
+      "cross_references": [
+        {
+          "target": "Building Python Microservices with FastAPI:ch8",
+          "score": 0.5605641941773875,
+          "base_score": 0.6842736569623125,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch5",
+          "score": 0.5313170463838531,
+          "base_score": 0.6355284106397552,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch28",
+          "score": 0.5168388045432412,
+          "base_score": 0.6113980075720686,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch34",
+          "score": 0.5157618852727517,
+          "base_score": 0.5355290680471787,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch4",
+          "score": 0.5037262965501531,
+          "base_score": 0.5895438275835886,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "scopes",
+          "redirect_uri",
+          "state",
+          "authorizationurl",
+          "scope"
+        ],
+        "semantic": [],
+        "merged": [
+          "scopes",
+          "redirect_uri",
+          "state",
+          "authorizationurl",
+          "scope"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40202079079258757,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.552385+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 28,
+      "title": "Segment 28 (pages 265-274)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch28",
+      "cross_references": [
+        {
+          "target": "Building Python Microservices with FastAPI:ch25",
+          "score": 0.5597147202743123,
+          "base_score": 0.6087837930497798,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch27",
+          "score": 0.5168388045432412,
+          "base_score": 0.6113980075720686,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch33",
+          "score": 0.510074727112108,
+          "base_score": 0.6001245451868467,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "token",
+          "config",
+          "client",
+          "authentication",
+          "uri"
+        ],
+        "semantic": [],
+        "merged": [
+          "token",
+          "config",
+          "client",
+          "authentication",
+          "uri"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29560759780988277,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.552626+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 29,
+      "title": "Segment 29 (pages 275-283)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch29",
+      "cross_references": [
+        {
+          "target": "Building Python Microservices with FastAPI:ch30",
+          "score": 0.5143609155364138,
+          "base_score": 0.6072681925606896,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch32",
+          "score": 0.5106259517632038,
+          "base_score": 0.6010432529386731,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "coroutine",
+          "asyncio",
+          "yield",
+          "asyncio coroutine",
+          "asyncio gather"
+        ],
+        "semantic": [],
+        "merged": [
+          "coroutine",
+          "asyncio",
+          "yield",
+          "asyncio coroutine",
+          "asyncio gather"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_coroutine_tasks",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35326550805663054,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.552872+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 30,
+      "title": "Segment 30 (pages 284-291)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch30",
+      "cross_references": [
+        {
+          "target": "Building Python Microservices with FastAPI:ch29",
+          "score": 0.5143609155364138,
+          "base_score": 0.6072681925606896,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tasks",
+          "celery",
+          "task",
+          "billing",
+          "billing_date"
+        ],
+        "semantic": [],
+        "merged": [
+          "tasks",
+          "celery",
+          "task",
+          "billing",
+          "billing_date"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_coroutine_tasks",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26571179053178207,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.553113+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 31,
+      "title": "Segment 31 (pages 292-300)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch31",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "kafka",
+          "websocket",
+          "consumer",
+          "messages",
+          "newstopic"
+        ],
+        "semantic": [],
+        "merged": [
+          "kafka",
+          "websocket",
+          "consumer",
+          "messages",
+          "newstopic"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_coroutine_tasks",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.16821422947273848,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.553372+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 32,
+      "title": "Segment 32 (pages 301-309)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch32",
+      "cross_references": [
+        {
+          "target": "Building Python Microservices with FastAPI:ch29",
+          "score": 0.5106259517632038,
+          "base_score": 0.6010432529386731,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "observable",
+          "loop",
+          "rx",
+          "observable function",
+          "function"
+        ],
+        "semantic": [],
+        "merged": [
+          "observable",
+          "loop",
+          "rx",
+          "observable function",
+          "function"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_coroutine_tasks",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2309961850312324,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.553607+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 33,
+      "title": "Segment 33 (pages 310-317)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch33",
+      "cross_references": [
+        {
+          "target": "Building Python Microservices with FastAPI:ch45",
+          "score": 0.5584614162810903,
+          "base_score": 0.6807690271351503,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch25",
+          "score": 0.5550118897192918,
+          "base_score": 0.6750198161988197,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch4",
+          "score": 0.5517877774092161,
+          "base_score": 0.5955722216079529,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch3",
+          "score": 0.5487117337433253,
+          "base_score": 0.5904454821648013,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch28",
+          "score": 0.510074727112108,
+          "base_score": 0.6001245451868467,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "session",
+          "user",
+          "sessions",
+          "user session",
+          "session data"
+        ],
+        "semantic": [],
+        "merged": [
+          "session",
+          "user",
+          "sessions",
+          "user session",
+          "session data"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37532208649550636,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.553848+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 34,
+      "title": "Segment 34 (pages 318-325)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch34",
+      "cross_references": [
+        {
+          "target": "Building Python Microservices with FastAPI:ch12",
+          "score": 0.5331537964648057,
+          "base_score": 0.5645155867006021,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch27",
+          "score": 0.5157618852727517,
+          "base_score": 0.5355290680471787,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "body",
+          "stats",
+          "sum",
+          "request",
+          "state"
+        ],
+        "semantic": [],
+        "merged": [
+          "body",
+          "stats",
+          "sum",
+          "request",
+          "state"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34282004277812433,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.554078+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 35,
+      "title": "Segment 35 (pages 326-333)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch35",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "engine",
+          "user str",
+          "depends get_current_user",
+          "jinja2",
+          "repo"
+        ],
+        "semantic": [],
+        "merged": [
+          "engine",
+          "user str",
+          "depends get_current_user",
+          "jinja2",
+          "repo"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_coroutine_tasks",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2990597540536833,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.554367+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 36,
+      "title": "Segment 36 (pages 334-341)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch36",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "paths",
+          "openapi_schema",
+          "paths ch09",
+          "openapi_schema paths",
+          "ch09 login"
+        ],
+        "semantic": [],
+        "merged": [
+          "paths",
+          "openapi_schema",
+          "paths ch09",
+          "openapi_schema paths",
+          "ch09 login"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3000992006696858,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.554590+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 37,
+      "title": "Segment 37 (pages 342-352)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch37",
+      "cross_references": [
+        {
+          "target": "Building Python Microservices with FastAPI:ch33",
+          "score": 0.5002125910520986,
+          "base_score": 0.5836876517534977,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "test",
+          "piccolo",
+          "project",
+          "testclient",
+          "pytest"
+        ],
+        "semantic": [],
+        "merged": [
+          "test",
+          "piccolo",
+          "project",
+          "testclient",
+          "pytest"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.351856517875265,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.554816+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 38,
+      "title": "Segment 38 (pages 353-362)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch38",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "sympy",
+          "loc_q",
+          "qid",
+          "arr",
+          "loc_data"
+        ],
+        "semantic": [],
+        "merged": [
+          "sympy",
+          "loc_q",
+          "qid",
+          "arr",
+          "loc_data"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2909625539568595,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.555044+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 39,
+      "title": "Segment 39 (pages 363-372)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch39",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "survey",
+          "set queue",
+          "queue default",
+          "queue",
+          "df"
+        ],
+        "semantic": [],
+        "merged": [
+          "survey",
+          "set queue",
+          "queue default",
+          "queue",
+          "df"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_coroutine_tasks",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27404410660501394,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.555268+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 40,
+      "title": "Segment 40 (pages 373-382)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch40",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "location",
+          "node",
+          "query",
+          "session session",
+          "session"
+        ],
+        "semantic": [],
+        "merged": [
+          "location",
+          "node",
+          "query",
+          "session session",
+          "session"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3570473763300785,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:41:29.555491+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 41,
+      "title": "Segment 41 (pages 383-391)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch41",
+      "cross_references": [
+        {
+          "target": "Building Python Microservices with FastAPI:ch3",
+          "score": 0.6236275846041636,
+          "base_score": 0.7893793076736059,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch2",
+          "score": 0.5552116503737409,
+          "base_score": 0.6753527506229015,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch45",
+          "score": 0.5489956288766418,
+          "base_score": 0.6649927147944029,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "opentelemetry",
+          "jaeger",
+          "virtual",
+          "virtual environment",
+          "environment"
+        ],
+        "semantic": [],
+        "merged": [
+          "opentelemetry",
+          "jaeger",
+          "virtual",
+          "virtual environment",
+          "environment"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3678734710154279,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.555703+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 42,
+      "title": "Segment 42 (pages 392-399)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch42",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "docker",
+          "image",
+          "ch11",
+          "command",
+          "eureka"
+        ],
+        "semantic": [],
+        "merged": [
+          "docker",
+          "image",
+          "ch11",
+          "command",
+          "eureka"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3077500646057517,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.555911+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 43,
+      "title": "Segment 43 (pages 400-407)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch43",
+      "cross_references": [
+        {
+          "target": "Building Python Microservices with FastAPI:ch3",
+          "score": 0.5025499512825303,
+          "base_score": 0.5875832521375506,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "creating",
+          "django",
+          "flask",
+          "layer",
+          "transactions"
+        ],
+        "semantic": [],
+        "merged": [
+          "creating",
+          "django",
+          "flask",
+          "layer",
+          "transactions"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3000719362189067,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.556128+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 44,
+      "title": "Segment 44 (pages 408-416)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch44",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "creating",
+          "layer",
+          "crud transactions",
+          "transactions",
+          "crud"
+        ],
+        "semantic": [],
+        "merged": [
+          "creating",
+          "layer",
+          "crud transactions",
+          "transactions",
+          "crud"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3022521549729486,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:41:29.556353+00:00"
+      }
+    },
+    {
+      "book": "Building Python Microservices with FastAPI",
+      "chapter": 45,
+      "title": "Segment 45 (pages 417-419)",
+      "chapter_id": "Building Python Microservices with FastAPI:ch45",
+      "cross_references": [
+        {
+          "target": "Building Python Microservices with FastAPI:ch3",
+          "score": 0.5906756354588593,
+          "base_score": 0.7344593924314322,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch25",
+          "score": 0.5906054418707082,
+          "base_score": 0.734342403117847,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch33",
+          "score": 0.5584614162810903,
+          "base_score": 0.6807690271351503,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch41",
+          "score": 0.5489956288766418,
+          "base_score": 0.6649927147944029,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Python Microservices with FastAPI:ch2",
+          "score": 0.5208089931510664,
+          "base_score": 0.5439409145110367,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "fastapi application",
+          "fastapi",
+          "application",
+          "authentication fastapi",
+          "fully"
+        ],
+        "semantic": [],
+        "merged": [
+          "fastapi application",
+          "fastapi",
+          "application",
+          "authentication fastapi",
+          "fully"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39279997693882635,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:29.556645+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

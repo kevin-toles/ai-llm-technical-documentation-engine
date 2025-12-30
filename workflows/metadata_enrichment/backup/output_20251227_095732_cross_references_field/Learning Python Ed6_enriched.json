@@ -1,0 +1,462 @@
+{
+  "book": {
+    "title": "Learning Python Ed6"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:50:04.151008",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Learning Python Ed6",
+      "chapter": 1,
+      "title": "A Python Q&A Session",
+      "chapter_id": "Learning Python Ed6:ch1",
+      "cross_references": [
+        {
+          "target": "Learning Python Ed6:ch2",
+          "score": 0.560456577813094,
+          "base_score": 0.6840942963551566,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "compiled",
+          "language",
+          "programming",
+          "python programs",
+          "bytecode"
+        ],
+        "semantic": [],
+        "merged": [
+          "compiled",
+          "language",
+          "programming",
+          "python programs",
+          "bytecode"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "python_in_code",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4912518802559623,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:04.142799+00:00"
+      }
+    },
+    {
+      "book": "Learning Python Ed6",
+      "chapter": 2,
+      "title": "How Python Runs Programs",
+      "chapter_id": "Learning Python Ed6:ch2",
+      "cross_references": [
+        {
+          "target": "Learning Python Ed6:ch1",
+          "score": 0.560456577813094,
+          "base_score": 0.6840942963551566,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Learning Python Ed6:ch3",
+          "score": 0.5203086135385793,
+          "base_score": 0.5431069484902247,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "python code",
+          "command",
+          "run python",
+          "files",
+          "run code"
+        ],
+        "semantic": [],
+        "merged": [
+          "python code",
+          "command",
+          "run python",
+          "files",
+          "run code"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "python_in_code",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4738300667620107,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:04.142890+00:00"
+      }
+    },
+    {
+      "book": "Learning Python Ed6",
+      "chapter": 3,
+      "title": "How You Run Programs",
+      "chapter_id": "Learning Python Ed6:ch3",
+      "cross_references": [
+        {
+          "target": "Learning Python Ed6:ch2",
+          "score": 0.5203086135385793,
+          "base_score": 0.5431069484902247,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "file",
+          "module",
+          "objects",
+          "object",
+          "command"
+        ],
+        "semantic": [],
+        "merged": [
+          "file",
+          "module",
+          "objects",
+          "object",
+          "command"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "python_in_code",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39741496519456515,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:04.142941+00:00"
+      }
+    },
+    {
+      "book": "Learning Python Ed6",
+      "chapter": 4,
+      "title": "Introducing Python Object Types",
+      "chapter_id": "Learning Python Ed6:ch4",
+      "cross_references": [
+        {
+          "target": "Learning Python Ed6:ch5",
+          "score": 0.653406268670371,
+          "base_score": 0.5532961620696659,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "object",
+          "type",
+          "objects",
+          "types",
+          "floating"
+        ],
+        "semantic": [],
+        "merged": [
+          "object",
+          "type",
+          "objects",
+          "types",
+          "floating"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4923118061814967,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:04.142997+00:00"
+      }
+    },
+    {
+      "book": "Learning Python Ed6",
+      "chapter": 5,
+      "title": "Numeric Types",
+      "chapter_id": "Learning Python Ed6:ch5",
+      "cross_references": [
+        {
+          "target": "Learning Python Ed6:ch4",
+          "score": 0.653406268670371,
+          "base_score": 0.5532961620696659,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Learning Python Ed6:ch8",
+          "score": 0.5140401152406887,
+          "base_score": 0.44006685873448126,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "object",
+          "objects",
+          "references",
+          "type",
+          "reference"
+        ],
+        "semantic": [],
+        "merged": [
+          "object",
+          "objects",
+          "references",
+          "type",
+          "reference"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4965051992168596,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:04.143064+00:00"
+      }
+    },
+    {
+      "book": "Learning Python Ed6",
+      "chapter": 6,
+      "title": "The Dynamic Typing Interlude",
+      "chapter_id": "Learning Python Ed6:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "string",
+          "strings",
+          "format",
+          "formatting",
+          "string methods"
+        ],
+        "semantic": [],
+        "merged": [
+          "string",
+          "strings",
+          "format",
+          "formatting",
+          "string methods"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3949475372661085,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:04.143117+00:00"
+      }
+    },
+    {
+      "book": "Learning Python Ed6",
+      "chapter": 7,
+      "title": "String Fundamentals",
+      "chapter_id": "Learning Python Ed6:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "list",
+          "key",
+          "keys",
+          "dictionary",
+          "lists"
+        ],
+        "semantic": [],
+        "merged": [
+          "list",
+          "key",
+          "keys",
+          "dictionary",
+          "lists"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4125172452003857,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:04.143164+00:00"
+      }
+    },
+    {
+      "book": "Learning Python Ed6",
+      "chapter": 8,
+      "title": "Lists and Dictionaries",
+      "chapter_id": "Learning Python Ed6:ch8",
+      "cross_references": [
+        {
+          "target": "Learning Python Ed6:ch5",
+          "score": 0.5140401152406887,
+          "base_score": 0.44006685873448126,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "file",
+          "object",
+          "objects",
+          "list",
+          "files"
+        ],
+        "semantic": [],
+        "merged": [
+          "file",
+          "object",
+          "objects",
+          "list",
+          "files"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3194859222961361,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:04.143210+00:00"
+      }
+    },
+    {
+      "book": "Learning Python Ed6",
+      "chapter": 9,
+      "title": "Tuples, Files, and Everything Else",
+      "chapter_id": "Learning Python Ed6:ch9",
+      "cross_references": [
+        {
+          "target": "Learning Python Ed6:ch10",
+          "score": 0.5356539731382912,
+          "base_score": 0.47608995523048536,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "statement",
+          "assignment",
+          "statements",
+          "line",
+          "tuple"
+        ],
+        "semantic": [],
+        "merged": [
+          "statement",
+          "assignment",
+          "statements",
+          "line",
+          "tuple"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4927900632477288,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:04.143265+00:00"
+      }
+    },
+    {
+      "book": "Learning Python Ed6",
+      "chapter": 10,
+      "title": "Introducing Python Statements",
+      "chapter_id": "Learning Python Ed6:ch10",
+      "cross_references": [
+        {
+          "target": "Learning Python Ed6:ch9",
+          "score": 0.5356539731382912,
+          "base_score": 0.47608995523048536,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "print",
+          "statement",
+          "statements",
+          "match",
+          "stdout"
+        ],
+        "semantic": [],
+        "merged": [
+          "print",
+          "statement",
+          "statements",
+          "match",
+          "stdout"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5020518750240143,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:04.143310+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

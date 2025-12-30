@@ -1,0 +1,2071 @@
+{
+  "book": {
+    "title": "Kubernetes Microservices with Docker"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:49:22.789903",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-11)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "creating",
+          "creating service",
+          "apress",
+          "creating replication",
+          "apress com"
+        ],
+        "semantic": [],
+        "merged": [
+          "creating",
+          "creating service",
+          "apress",
+          "creating replication",
+          "apress com"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2848029781775298,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:22.772811+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 2,
+      "title": "Segment 2 (pages 12-22)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "creating",
+          "pro",
+          "creating replication",
+          "service",
+          "creating service"
+        ],
+        "semantic": [],
+        "merged": [
+          "creating",
+          "pro",
+          "creating replication",
+          "service",
+          "creating service"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "couchbase_the_creating",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3051707443441381,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.773003+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 3,
+      "title": "Segment 3 (pages 23-30)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "apt",
+          "docker",
+          "sources",
+          "apt sources",
+          "docker list"
+        ],
+        "semantic": [],
+        "merged": [
+          "apt",
+          "docker",
+          "sources",
+          "apt sources",
+          "docker list"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41132769696570104,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:22.773179+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 4,
+      "title": "Segment 4 (pages 31-43)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "kernel",
+          "package",
+          "package manager",
+          "shown",
+          "following"
+        ],
+        "semantic": [],
+        "merged": [
+          "kernel",
+          "package",
+          "package manager",
+          "shown",
+          "following"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "docker_the_run",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2659433397417836,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.773364+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 5,
+      "title": "Segment 5 (pages 44-52)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch5",
+      "cross_references": [
+        {
+          "target": "Kubernetes Microservices with Docker:ch37",
+          "score": 0.5705197822568834,
+          "base_score": 0.6267922296873982,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch38",
+          "score": 0.529009823829272,
+          "base_score": 0.6316830397154533,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "docker run",
+          "etcd",
+          "docker",
+          "run command",
+          "container"
+        ],
+        "semantic": [],
+        "merged": [
+          "docker run",
+          "etcd",
+          "docker",
+          "run command",
+          "container"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "docker_the_run",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4122813100696197,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.773539+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 6,
+      "title": "Segment 6 (pages 53-62)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch6",
+      "cross_references": [
+        {
+          "target": "Kubernetes Microservices with Docker:ch39",
+          "score": 0.602302791918944,
+          "base_score": 0.6797639124574992,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch38",
+          "score": 0.5331841101281106,
+          "base_score": 0.7219735168801844,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "application",
+          "nginx",
+          "service",
+          "applications",
+          "containers"
+        ],
+        "semantic": [],
+        "merged": [
+          "application",
+          "nginx",
+          "service",
+          "applications",
+          "containers"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "creation_kafka_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49074986807658844,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.773713+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 7,
+      "title": "Segment 7 (pages 63-70)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch7",
+      "cross_references": [
+        {
+          "target": "Kubernetes Microservices with Docker:ch8",
+          "score": 0.8296745861948825,
+          "base_score": 0.8470766912771852,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch9",
+          "score": 0.8129921725889758,
+          "base_score": 0.8192726686006739,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch21",
+          "score": 0.6536742454917801,
+          "base_score": 0.7653830017455594,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch12",
+          "score": 0.6144442940244385,
+          "base_score": 0.69999974929999,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch34",
+          "score": 0.5810232384821645,
+          "base_score": 0.7183720641369409,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "hello world",
+          "hello",
+          "world",
+          "pods",
+          "replication"
+        ],
+        "semantic": [],
+        "merged": [
+          "hello world",
+          "hello",
+          "world",
+          "pods",
+          "replication"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_hello_world",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5466831132616349,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.773890+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 8,
+      "title": "Segment 8 (pages 71-87)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch8",
+      "cross_references": [
+        {
+          "target": "Kubernetes Microservices with Docker:ch9",
+          "score": 0.9132298371171076,
+          "base_score": 0.8276052840840682,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch7",
+          "score": 0.8296745861948825,
+          "base_score": 0.8470766912771852,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch12",
+          "score": 0.596800272627712,
+          "base_score": 0.6705930469721124,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch21",
+          "score": 0.5653193058952255,
+          "base_score": 0.618124769084635,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch34",
+          "score": 0.5335225132750336,
+          "base_score": 0.6392041887917227,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "hello",
+          "hello world",
+          "world",
+          "world service",
+          "service"
+        ],
+        "semantic": [],
+        "merged": [
+          "hello",
+          "hello world",
+          "world",
+          "world service",
+          "service"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_hello_world",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5099414362032321,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.774108+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 9,
+      "title": "Segment 9 (pages 88-95)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch9",
+      "cross_references": [
+        {
+          "target": "Kubernetes Microservices with Docker:ch8",
+          "score": 0.9132298371171076,
+          "base_score": 0.8276052840840682,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch7",
+          "score": 0.8129921725889758,
+          "base_score": 0.8192726686006739,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch21",
+          "score": 0.5733350146540385,
+          "base_score": 0.7055583577567308,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch12",
+          "score": 0.5608910904349752,
+          "base_score": 0.6848184840582919,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch34",
+          "score": 0.534392591492247,
+          "base_score": 0.6406543191537452,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "hello",
+          "hello world",
+          "world",
+          "json",
+          "world service"
+        ],
+        "semantic": [],
+        "merged": [
+          "hello",
+          "hello world",
+          "world",
+          "json",
+          "world service"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_hello_world",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5080263424210487,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.774298+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 10,
+      "title": "Segment 10 (pages 96-113)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "entrypoint",
+          "cmd",
+          "environment variables",
+          "variables",
+          "custom"
+        ],
+        "semantic": [],
+        "merged": [
+          "entrypoint",
+          "cmd",
+          "environment variables",
+          "variables",
+          "custom"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4003145727472442,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:22.774483+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 11,
+      "title": "Segment 11 (pages 114-128)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch11",
+      "cross_references": [
+        {
+          "target": "Kubernetes Microservices with Docker:ch22",
+          "score": 0.5889461852977067,
+          "base_score": 0.7315769754961778,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch19",
+          "score": 0.5688181786454566,
+          "base_score": 0.6980302977424275,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch16",
+          "score": 0.5682578121643501,
+          "base_score": 0.6970963536072501,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch31",
+          "score": 0.5478173770668914,
+          "base_score": 0.6630289617781523,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "mysql",
+          "app",
+          "app mysql",
+          "mysql app",
+          "mysql database"
+        ],
+        "semantic": [],
+        "merged": [
+          "mysql",
+          "app",
+          "app mysql",
+          "mysql app",
+          "mysql database"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_solr_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5061733692991194,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.774657+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 12,
+      "title": "Segment 12 (pages 129-143)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch12",
+      "cross_references": [
+        {
+          "target": "Kubernetes Microservices with Docker:ch21",
+          "score": 0.6528789447348796,
+          "base_score": 0.6714649078914661,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch7",
+          "score": 0.6144442940244385,
+          "base_score": 0.69999974929999,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch8",
+          "score": 0.596800272627712,
+          "base_score": 0.6705930469721124,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch9",
+          "score": 0.5608910904349752,
+          "base_score": 0.6848184840582919,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch34",
+          "score": 0.5207403619167551,
+          "base_score": 0.6179006031945917,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "postgres",
+          "mysql",
+          "service",
+          "postgresql",
+          "replication"
+        ],
+        "semantic": [],
+        "merged": [
+          "postgres",
+          "mysql",
+          "service",
+          "postgresql",
+          "replication"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_hello_world",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49370210761836164,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.774832+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 13,
+      "title": "Segment 13 (pages 144-152)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch13",
+      "cross_references": [
+        {
+          "target": "Kubernetes Microservices with Docker:ch14",
+          "score": 0.6936659756329563,
+          "base_score": 0.8320358853141863,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch18",
+          "score": 0.5524176166008714,
+          "base_score": 0.670696027668119,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "postgres",
+          "replication",
+          "command",
+          "following",
+          "run"
+        ],
+        "semantic": [],
+        "merged": [
+          "postgres",
+          "replication",
+          "command",
+          "following",
+          "run"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_as",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4730653634738242,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.775006+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 14,
+      "title": "Segment 14 (pages 153-176)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch14",
+      "cross_references": [
+        {
+          "target": "Kubernetes Microservices with Docker:ch13",
+          "score": 0.6936659756329563,
+          "base_score": 0.8320358853141863,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch35",
+          "score": 0.5963909233215808,
+          "base_score": 0.6699107981285606,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch21",
+          "score": 0.5808219286565041,
+          "base_score": 0.6823222620465543,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch18",
+          "score": 0.5672233571776921,
+          "base_score": 0.6953722619628202,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "oradb",
+          "replication",
+          "controller",
+          "replication controller",
+          "pod"
+        ],
+        "semantic": [],
+        "merged": [
+          "oradb",
+          "replication",
+          "controller",
+          "replication controller",
+          "pod"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_as",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.525420055466174,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.775196+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 15,
+      "title": "Segment 15 (pages 177-184)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "oe",
+          "database",
+          "sql",
+          "mongodb",
+          "oe catalog"
+        ],
+        "semantic": [],
+        "merged": [
+          "oe",
+          "database",
+          "sql",
+          "mongodb",
+          "oe catalog"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_as",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3862137321070408,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.775378+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 16,
+      "title": "Segment 16 (pages 185-198)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch16",
+      "cross_references": [
+        {
+          "target": "Kubernetes Microservices with Docker:ch22",
+          "score": 0.6188093304608897,
+          "base_score": 0.7813488841014828,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch19",
+          "score": 0.594173733059692,
+          "base_score": 0.7402895550994868,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch11",
+          "score": 0.5682578121643501,
+          "base_score": 0.6970963536072501,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch31",
+          "score": 0.5661445006222654,
+          "base_score": 0.6935741677037757,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "mongo",
+          "volume",
+          "mongo rc",
+          "containers",
+          "spec"
+        ],
+        "semantic": [],
+        "merged": [
+          "mongo",
+          "volume",
+          "mongo rc",
+          "containers",
+          "spec"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_solr_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5213625920519233,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.775582+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 17,
+      "title": "Segment 17 (pages 199-208)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch17",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "collection",
+          "catalog collection",
+          "catalog",
+          "mongo",
+          "command"
+        ],
+        "semantic": [],
+        "merged": [
+          "collection",
+          "catalog collection",
+          "catalog",
+          "mongo",
+          "command"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_as",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.19665163442245095,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.775774+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 18,
+      "title": "Segment 18 (pages 209-216)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch18",
+      "cross_references": [
+        {
+          "target": "Kubernetes Microservices with Docker:ch14",
+          "score": 0.5672233571776921,
+          "base_score": 0.6953722619628202,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch13",
+          "score": 0.5524176166008714,
+          "base_score": 0.670696027668119,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch35",
+          "score": 0.5048303457525545,
+          "base_score": 0.5913839095875908,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "mongo",
+          "mongo service",
+          "pods",
+          "service mongo",
+          "mongo replication"
+        ],
+        "semantic": [],
+        "merged": [
+          "mongo",
+          "mongo service",
+          "pods",
+          "service mongo",
+          "mongo replication"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_as",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5112124088477759,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.776001+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 19,
+      "title": "Segment 19 (pages 217-230)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch19",
+      "cross_references": [
+        {
+          "target": "Kubernetes Microservices with Docker:ch21",
+          "score": 0.6514612698284894,
+          "base_score": 0.8000544973331964,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch22",
+          "score": 0.6493181188970268,
+          "base_score": 0.758122790754304,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch31",
+          "score": 0.6319135170861708,
+          "base_score": 0.7291151210695439,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch16",
+          "score": 0.594173733059692,
+          "base_score": 0.7402895550994868,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch11",
+          "score": 0.5688181786454566,
+          "base_score": 0.6980302977424275,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cassandra",
+          "cassandra service",
+          "cassandra rc",
+          "service",
+          "replication"
+        ],
+        "semantic": [],
+        "merged": [
+          "cassandra",
+          "cassandra service",
+          "cassandra rc",
+          "service",
+          "replication"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_solr_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5270646456515024,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.776191+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 20,
+      "title": "Segment 20 (pages 231-238)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch20",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "cassandra",
+          "keyspace",
+          "table",
+          "data",
+          "cql"
+        ],
+        "semantic": [],
+        "merged": [
+          "cassandra",
+          "keyspace",
+          "table",
+          "data",
+          "cql"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24253234194544093,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:22.776376+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 21,
+      "title": "Segment 21 (pages 239-246)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch21",
+      "cross_references": [
+        {
+          "target": "Kubernetes Microservices with Docker:ch7",
+          "score": 0.6536742454917801,
+          "base_score": 0.7653830017455594,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch12",
+          "score": 0.6528789447348796,
+          "base_score": 0.6714649078914661,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch19",
+          "score": 0.6514612698284894,
+          "base_score": 0.8000544973331964,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch14",
+          "score": 0.5808219286565041,
+          "base_score": 0.6823222620465543,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch9",
+          "score": 0.5733350146540385,
+          "base_score": 0.7055583577567308,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cassandra",
+          "replication",
+          "controller",
+          "service",
+          "replication controller"
+        ],
+        "semantic": [],
+        "merged": [
+          "cassandra",
+          "replication",
+          "controller",
+          "service",
+          "replication controller"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_hello_world",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5422945017384839,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.776556+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 22,
+      "title": "Segment 22 (pages 247-255)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch22",
+      "cross_references": [
+        {
+          "target": "Kubernetes Microservices with Docker:ch19",
+          "score": 0.6493181188970268,
+          "base_score": 0.758122790754304,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch16",
+          "score": 0.6188093304608897,
+          "base_score": 0.7813488841014828,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch31",
+          "score": 0.6148395450352568,
+          "base_score": 0.7006585009846874,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch26",
+          "score": 0.6078943782692661,
+          "base_score": 0.8464906304487768,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch11",
+          "score": 0.5889461852977067,
+          "base_score": 0.7315769754961778,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "couchbase",
+          "couchbase service",
+          "service",
+          "pod",
+          "definition file"
+        ],
+        "semantic": [],
+        "merged": [
+          "couchbase",
+          "couchbase service",
+          "service",
+          "pod",
+          "definition file"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_solr_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5743979783330049,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.776735+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 23,
+      "title": "Segment 23 (pages 256-263)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch23",
+      "cross_references": [
+        {
+          "target": "Kubernetes Microservices with Docker:ch26",
+          "score": 0.7236852645869262,
+          "base_score": 0.7894754409782103,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch22",
+          "score": 0.532952716319572,
+          "base_score": 0.72158786053262,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "couchbase",
+          "console",
+          "pod",
+          "web console",
+          "web"
+        ],
+        "semantic": [],
+        "merged": [
+          "couchbase",
+          "console",
+          "pod",
+          "web console",
+          "web"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "couchbase_the_creating",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4595237978559856,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.776906+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 24,
+      "title": "Segment 24 (pages 264-271)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch24",
+      "cross_references": [
+        {
+          "target": "Kubernetes Microservices with Docker:ch26",
+          "score": 0.5234338797986237,
+          "base_score": 0.6223897996643728,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "click",
+          "click shown",
+          "server",
+          "select",
+          "tab"
+        ],
+        "semantic": [],
+        "merged": [
+          "click",
+          "click shown",
+          "server",
+          "select",
+          "tab"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "couchbase_the_creating",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3570841498549016,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.777077+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 25,
+      "title": "Segment 25 (pages 272-279)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch25",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "document",
+          "bucket",
+          "default bucket",
+          "documents",
+          "document shown"
+        ],
+        "semantic": [],
+        "merged": [
+          "document",
+          "bucket",
+          "default bucket",
+          "documents",
+          "document shown"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_as",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.281072631951217,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.777246+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 26,
+      "title": "Segment 26 (pages 280-287)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch26",
+      "cross_references": [
+        {
+          "target": "Kubernetes Microservices with Docker:ch23",
+          "score": 0.7236852645869262,
+          "base_score": 0.7894754409782103,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch22",
+          "score": 0.6078943782692661,
+          "base_score": 0.8464906304487768,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch24",
+          "score": 0.5234338797986237,
+          "base_score": 0.6223897996643728,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "couchbase",
+          "command",
+          "run",
+          "couchbase replicas",
+          "pod"
+        ],
+        "semantic": [],
+        "merged": [
+          "couchbase",
+          "command",
+          "run",
+          "couchbase replicas",
+          "pod"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "couchbase_the_creating",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5523527626318476,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.777535+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 27,
+      "title": "Segment 27 (pages 288-296)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch27",
+      "cross_references": [
+        {
+          "target": "Kubernetes Microservices with Docker:ch22",
+          "score": 0.5829642978924001,
+          "base_score": 0.8049404964873335,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cdh",
+          "service",
+          "definition file",
+          "definition",
+          "file"
+        ],
+        "semantic": [],
+        "merged": [
+          "cdh",
+          "service",
+          "definition file",
+          "definition",
+          "file"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5609636172537447,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:22.777736+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 28,
+      "title": "Segment 28 (pages 297-305)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch28",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "txt",
+          "input",
+          "hdfs",
+          "input2 txt",
+          "input1 txt"
+        ],
+        "semantic": [],
+        "merged": [
+          "txt",
+          "input",
+          "hdfs",
+          "input2 txt",
+          "input1 txt"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_as",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.387717054232426,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.777915+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 29,
+      "title": "Segment 29 (pages 306-315)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch29",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "hive",
+          "mapreduce job",
+          "job",
+          "mapreduce",
+          "figure 10"
+        ],
+        "semantic": [],
+        "merged": [
+          "hive",
+          "mapreduce job",
+          "job",
+          "mapreduce",
+          "figure 10"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_as",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.16320656950472373,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.778091+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 30,
+      "title": "Segment 30 (pages 316-325)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch30",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "figure 10",
+          "cdh",
+          "10",
+          "wlslog",
+          "shown"
+        ],
+        "semantic": [],
+        "merged": [
+          "figure 10",
+          "cdh",
+          "10",
+          "wlslog",
+          "shown"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_as",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34871743469812194,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.778262+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 31,
+      "title": "Segment 31 (pages 326-341)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch31",
+      "cross_references": [
+        {
+          "target": "Kubernetes Microservices with Docker:ch19",
+          "score": 0.6319135170861708,
+          "base_score": 0.7291151210695439,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch22",
+          "score": 0.6148395450352568,
+          "base_score": 0.7006585009846874,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch16",
+          "score": 0.5661445006222654,
+          "base_score": 0.6935741677037757,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch11",
+          "score": 0.5478173770668914,
+          "base_score": 0.6630289617781523,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "solr",
+          "solr service",
+          "11",
+          "figure 11",
+          "service"
+        ],
+        "semantic": [],
+        "merged": [
+          "solr",
+          "solr service",
+          "11",
+          "figure 11",
+          "service"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_solr_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4866463413768068,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.778480+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 32,
+      "title": "Segment 32 (pages 342-358)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch32",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "solr",
+          "document",
+          "curl",
+          "wlslog",
+          "handler"
+        ],
+        "semantic": [],
+        "merged": [
+          "solr",
+          "document",
+          "curl",
+          "wlslog",
+          "handler"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_solr_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.20437526197780276,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.778651+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 33,
+      "title": "Segment 33 (pages 359-371)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch33",
+      "cross_references": [
+        {
+          "target": "Kubernetes Microservices with Docker:ch34",
+          "score": 0.5960390074059543,
+          "base_score": 0.7076840599623047,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "kafka",
+          "server",
+          "dockerkafka",
+          "dockerkafka kafka",
+          "kafka server"
+        ],
+        "semantic": [],
+        "merged": [
+          "kafka",
+          "server",
+          "dockerkafka",
+          "dockerkafka kafka",
+          "kafka server"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "creation_kafka_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4361596911521848,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.778827+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 34,
+      "title": "Segment 34 (pages 372-383)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch34",
+      "cross_references": [
+        {
+          "target": "Kubernetes Microservices with Docker:ch33",
+          "score": 0.5960390074059543,
+          "base_score": 0.7076840599623047,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch7",
+          "score": 0.5810232384821645,
+          "base_score": 0.7183720641369409,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch21",
+          "score": 0.5528362787391271,
+          "base_score": 0.6713937978985451,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch9",
+          "score": 0.534392591492247,
+          "base_score": 0.6406543191537452,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch8",
+          "score": 0.5335225132750336,
+          "base_score": 0.6392041887917227,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "kafka",
+          "kafka server",
+          "server",
+          "zookeeper",
+          "starting kafka"
+        ],
+        "semantic": [],
+        "merged": [
+          "kafka",
+          "kafka server",
+          "server",
+          "zookeeper",
+          "starting kafka"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_hello_world",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47680282569487176,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.779005+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 35,
+      "title": "Segment 35 (pages 384-401)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch35",
+      "cross_references": [
+        {
+          "target": "Kubernetes Microservices with Docker:ch14",
+          "score": 0.5963909233215808,
+          "base_score": 0.6699107981285606,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch18",
+          "score": 0.5048303457525545,
+          "base_score": 0.5913839095875908,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "container pod",
+          "multi container",
+          "multi",
+          "pod",
+          "13 creating"
+        ],
+        "semantic": [],
+        "merged": [
+          "container pod",
+          "multi container",
+          "multi",
+          "pod",
+          "13 creating"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_as",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4976667261682327,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.779178+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 36,
+      "title": "Segment 36 (pages 402-416)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch36",
+      "cross_references": [
+        {
+          "target": "Kubernetes Microservices with Docker:ch37",
+          "score": 0.5200295835029022,
+          "base_score": 0.7000493058381703,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "node",
+          "multi",
+          "multi node",
+          "docker",
+          "node cluster"
+        ],
+        "semantic": [],
+        "merged": [
+          "node",
+          "multi",
+          "multi node",
+          "docker",
+          "node cluster"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5051736532900055,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:22.779358+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 37,
+      "title": "Segment 37 (pages 417-425)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch37",
+      "cross_references": [
+        {
+          "target": "Kubernetes Microservices with Docker:ch38",
+          "score": 0.7076075005779696,
+          "base_score": 0.8552717602225418,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch5",
+          "score": 0.5705197822568834,
+          "base_score": 0.6267922296873982,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch36",
+          "score": 0.5200295835029022,
+          "base_score": 0.7000493058381703,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "bootstrap",
+          "docker",
+          "node",
+          "docker bootstrap",
+          "var"
+        ],
+        "semantic": [],
+        "merged": [
+          "bootstrap",
+          "docker",
+          "node",
+          "docker bootstrap",
+          "var"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "docker_the_run",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45704962172255453,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.779532+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 38,
+      "title": "Segment 38 (pages 426-435)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch38",
+      "cross_references": [
+        {
+          "target": "Kubernetes Microservices with Docker:ch37",
+          "score": 0.7076075005779696,
+          "base_score": 0.8552717602225418,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch6",
+          "score": 0.5331841101281106,
+          "base_score": 0.7219735168801844,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch5",
+          "score": 0.529009823829272,
+          "base_score": 0.6316830397154533,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "figure 14",
+          "14",
+          "nginx",
+          "node",
+          "service"
+        ],
+        "semantic": [],
+        "merged": [
+          "figure 14",
+          "14",
+          "nginx",
+          "node",
+          "service"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "docker_the_run",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48372313798194544,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.779701+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Microservices with Docker",
+      "chapter": 39,
+      "title": "Segment 39 (pages 436-440)",
+      "chapter_id": "Kubernetes Microservices with Docker:ch39",
+      "cross_references": [
+        {
+          "target": "Kubernetes Microservices with Docker:ch6",
+          "score": 0.602302791918944,
+          "base_score": 0.6797639124574992,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Microservices with Docker:ch21",
+          "score": 0.5308486643833203,
+          "base_score": 0.718081107305534,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "creation",
+          "controller creation",
+          "service creation",
+          "service",
+          "replication controller"
+        ],
+        "semantic": [],
+        "merged": [
+          "creation",
+          "controller creation",
+          "service creation",
+          "service",
+          "replication controller"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "creation_kafka_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5192101792190105,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:22.779874+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

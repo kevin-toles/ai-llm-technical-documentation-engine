@@ -1,0 +1,1455 @@
+{
+  "book": {
+    "title": "xUnit Test Patterns"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:02:35.608920",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "xUnit Test Patterns",
+      "chapter": 1,
+      "title": "of Refactoring [Ref], Martin Fowler writes:",
+      "chapter_id": "xUnit Test Patterns:ch1",
+      "cross_references": [
+        {
+          "target": "xUnit Test Patterns:ch2",
+          "score": 0.5429729809991497,
+          "base_score": 0.6549549683319161,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch4",
+          "score": 0.5379237063539949,
+          "base_score": 0.6465395105899914,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "invoice",
+          "bigdecimal",
+          "testing",
+          "cust_discount_pc",
+          "ﬁnal"
+        ],
+        "semantic": [],
+        "merged": [
+          "invoice",
+          "bigdecimal",
+          "testing",
+          "cust_discount_pc",
+          "ﬁnal"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_test_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45969413597660974,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:35.585262+00:00"
+      }
+    },
+    {
+      "book": "xUnit Test Patterns",
+      "chapter": 2,
+      "title": "A Brief Tour",
+      "chapter_id": "xUnit Test Patterns:ch2",
+      "cross_references": [
+        {
+          "target": "xUnit Test Patterns:ch4",
+          "score": 0.5650022695167272,
+          "base_score": 0.6916704491945452,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch6",
+          "score": 0.5553803185720297,
+          "base_score": 0.6756338642867161,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch1",
+          "score": 0.5429729809991497,
+          "base_score": 0.6549549683319161,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "development",
+          "unit tests",
+          "unit",
+          "applications",
+          "driven"
+        ],
+        "semantic": [],
+        "merged": [
+          "development",
+          "unit tests",
+          "unit",
+          "applications",
+          "driven"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_test_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5085251059225911,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:35.585410+00:00"
+      }
+    },
+    {
+      "book": "xUnit Test Patterns",
+      "chapter": 3,
+      "title": "Test Smells",
+      "chapter_id": "xUnit Test Patterns:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "smells",
+          "test smells",
+          "behavior smells",
+          "smell",
+          "code smells"
+        ],
+        "semantic": [],
+        "merged": [
+          "smells",
+          "test smells",
+          "behavior smells",
+          "smell",
+          "code smells"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3834492396506166,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:02:35.585535+00:00"
+      }
+    },
+    {
+      "book": "xUnit Test Patterns",
+      "chapter": 4,
+      "title": "Goals of Test Automation",
+      "chapter_id": "xUnit Test Patterns:ch4",
+      "cross_references": [
+        {
+          "target": "xUnit Test Patterns:ch2",
+          "score": 0.5650022695167272,
+          "base_score": 0.6916704491945452,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch1",
+          "score": 0.5379237063539949,
+          "base_score": 0.6465395105899914,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch6",
+          "score": 0.5084247081186187,
+          "base_score": 0.5973745135310311,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "goals",
+          "goals test",
+          "goal",
+          "automation",
+          "test automation"
+        ],
+        "semantic": [],
+        "merged": [
+          "goals",
+          "goals test",
+          "goal",
+          "automation",
+          "test automation"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_test_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44370330811777314,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:35.585662+00:00"
+      }
+    },
+    {
+      "book": "xUnit Test Patterns",
+      "chapter": 5,
+      "title": "Principles of Test Automation",
+      "chapter_id": "xUnit Test Patterns:ch5",
+      "cross_references": [
+        {
+          "target": "xUnit Test Patterns:ch16",
+          "score": 0.5055798035919452,
+          "base_score": 0.5926330059865753,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "principle",
+          "principles test",
+          "behavior",
+          "principles",
+          "chapter principles"
+        ],
+        "semantic": [],
+        "merged": [
+          "principle",
+          "principles test",
+          "behavior",
+          "principles",
+          "chapter principles"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_tests_test",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5273625925458509,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:35.585788+00:00"
+      }
+    },
+    {
+      "book": "xUnit Test Patterns",
+      "chapter": 6,
+      "title": "Test Automation Strategy",
+      "chapter_id": "xUnit Test Patterns:ch6",
+      "cross_references": [
+        {
+          "target": "xUnit Test Patterns:ch2",
+          "score": 0.5553803185720297,
+          "base_score": 0.6756338642867161,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch4",
+          "score": 0.5084247081186187,
+          "base_score": 0.5973745135310311,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "xture",
+          "automation strategy",
+          "strategy",
+          "fixture",
+          "chapter test"
+        ],
+        "semantic": [],
+        "merged": [
+          "xture",
+          "automation strategy",
+          "strategy",
+          "fixture",
+          "chapter test"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_test_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4727050056326572,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:35.585912+00:00"
+      }
+    },
+    {
+      "book": "xUnit Test Patterns",
+      "chapter": 7,
+      "title": "xUnit Basics",
+      "chapter_id": "xUnit Test Patterns:ch7",
+      "cross_references": [
+        {
+          "target": "xUnit Test Patterns:ch19",
+          "score": 1.0,
+          "base_score": 0.7769889763737967,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch24",
+          "score": 0.7269372461958007,
+          "base_score": 0.7948954103263345,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch12",
+          "score": 0.6546731904014376,
+          "base_score": 0.7670479099283218,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "suite",
+          "test suite",
+          "testcase",
+          "method",
+          "suite object"
+        ],
+        "semantic": [],
+        "merged": [
+          "suite",
+          "test suite",
+          "testcase",
+          "method",
+          "suite object"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "test_the_testcase",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.514501619207825,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:35.586047+00:00"
+      }
+    },
+    {
+      "book": "xUnit Test Patterns",
+      "chapter": 8,
+      "title": "Transient Fixture Management",
+      "chapter_id": "xUnit Test Patterns:ch8",
+      "cross_references": [
+        {
+          "target": "xUnit Test Patterns:ch20",
+          "score": 0.7257965899977915,
+          "base_score": 0.6739466976153667,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch9",
+          "score": 0.5881163075451378,
+          "base_score": 0.6561197718344889,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch22",
+          "score": 0.5116966907883117,
+          "base_score": 0.6028278179805194,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "setup",
+          "method",
+          "xture",
+          "setup method",
+          "creation"
+        ],
+        "semantic": [],
+        "merged": [
+          "setup",
+          "method",
+          "xture",
+          "setup method",
+          "creation"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_setup_xture",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4803689272739519,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:35.586194+00:00"
+      }
+    },
+    {
+      "book": "xUnit Test Patterns",
+      "chapter": 9,
+      "title": "Persistent Fixture Management",
+      "chapter_id": "xUnit Test Patterns:ch9",
+      "cross_references": [
+        {
+          "target": "xUnit Test Patterns:ch22",
+          "score": 0.5926262644736704,
+          "base_score": 0.7377104407894507,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch20",
+          "score": 0.592568670925823,
+          "base_score": 0.6635403774689642,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch8",
+          "score": 0.5881163075451378,
+          "base_score": 0.6561197718344889,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "xture",
+          "persistent",
+          "fixtures",
+          "tear",
+          "fresh"
+        ],
+        "semantic": [],
+        "merged": [
+          "xture",
+          "persistent",
+          "fixtures",
+          "tear",
+          "fresh"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_setup_xture",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47165886065295765,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:35.586317+00:00"
+      }
+    },
+    {
+      "book": "xUnit Test Patterns",
+      "chapter": 10,
+      "title": "Result Veriﬁ cation",
+      "chapter_id": "xUnit Test Patterns:ch10",
+      "cross_references": [
+        {
+          "target": "xUnit Test Patterns:ch21",
+          "score": 0.6894016209893635,
+          "base_score": 0.6132884159346534,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch14",
+          "score": 0.5465488548083214,
+          "base_score": 0.660914758013869,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch11",
+          "score": 0.516583232446744,
+          "base_score": 0.6109720540779067,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "assertion",
+          "assertions",
+          "custom",
+          "method",
+          "veriﬁ cation"
+        ],
+        "semantic": [],
+        "merged": [
+          "assertion",
+          "assertions",
+          "custom",
+          "method",
+          "veriﬁ cation"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_test_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49216459458489753,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:35.586447+00:00"
+      }
+    },
+    {
+      "book": "xUnit Test Patterns",
+      "chapter": 11,
+      "title": "Using Test Doubles",
+      "chapter_id": "xUnit Test Patterns:ch11",
+      "cross_references": [
+        {
+          "target": "xUnit Test Patterns:ch23",
+          "score": 0.7283795715921692,
+          "base_score": 0.7972992859869485,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch26",
+          "score": 0.6441027732168318,
+          "base_score": 0.6568379553613866,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch14",
+          "score": 0.5583767125033574,
+          "base_score": 0.6065537800981883,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch10",
+          "score": 0.516583232446744,
+          "base_score": 0.6109720540779067,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch21",
+          "score": 0.5033646419992556,
+          "base_score": 0.5889410699987594,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "doc",
+          "doubles",
+          "test double",
+          "double",
+          "stub"
+        ],
+        "semantic": [],
+        "merged": [
+          "doc",
+          "doubles",
+          "test double",
+          "double",
+          "stub"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_test_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48523399863689326,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:35.586573+00:00"
+      }
+    },
+    {
+      "book": "xUnit Test Patterns",
+      "chapter": 12,
+      "title": "Organizing Our Tests",
+      "chapter_id": "xUnit Test Patterns:ch12",
+      "cross_references": [
+        {
+          "target": "xUnit Test Patterns:ch24",
+          "score": 0.7501553944371491,
+          "base_score": 0.714544705014296,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch19",
+          "score": 0.6562656833107334,
+          "base_score": 0.7697020647771483,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch7",
+          "score": 0.6546731904014376,
+          "base_score": 0.7670479099283218,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "testcase",
+          "class",
+          "testcase class",
+          "methods",
+          "test methods"
+        ],
+        "semantic": [],
+        "merged": [
+          "testcase",
+          "class",
+          "testcase class",
+          "methods",
+          "test methods"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "test_the_testcase",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49720162314136496,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:35.586716+00:00"
+      }
+    },
+    {
+      "book": "xUnit Test Patterns",
+      "chapter": 13,
+      "title": "Testing with Databases",
+      "chapter_id": "xUnit Test Patterns:ch13",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "databases",
+          "testing databases",
+          "database",
+          "testing",
+          "13 testing"
+        ],
+        "semantic": [],
+        "merged": [
+          "databases",
+          "testing databases",
+          "database",
+          "testing",
+          "13 testing"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4372300309130119,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:02:35.586839+00:00"
+      }
+    },
+    {
+      "book": "xUnit Test Patterns",
+      "chapter": 14,
+      "title": "A Roadmap to Effective Test Automation",
+      "chapter_id": "xUnit Test Patterns:ch14",
+      "cross_references": [
+        {
+          "target": "xUnit Test Patterns:ch21",
+          "score": 0.5706086878536606,
+          "base_score": 0.7010144797561011,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch11",
+          "score": 0.5583767125033574,
+          "base_score": 0.6065537800981883,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch10",
+          "score": 0.5465488548083214,
+          "base_score": 0.660914758013869,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch23",
+          "score": 0.5263961168629253,
+          "base_score": 0.6273268614382089,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "happy path",
+          "test stub",
+          "stub",
+          "test state",
+          "happy"
+        ],
+        "semantic": [],
+        "merged": [
+          "happy path",
+          "test stub",
+          "stub",
+          "test state",
+          "happy"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_test_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5317348252454946,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:35.586961+00:00"
+      }
+    },
+    {
+      "book": "xUnit Test Patterns",
+      "chapter": 15,
+      "title": "Code Smells",
+      "chapter_id": "xUnit Test Patterns:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "logic",
+          "test logic",
+          "conditional",
+          "conditional test",
+          "logic production"
+        ],
+        "semantic": [],
+        "merged": [
+          "logic",
+          "test logic",
+          "conditional",
+          "conditional test",
+          "logic production"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.487739397116495,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:02:35.587080+00:00"
+      }
+    },
+    {
+      "book": "xUnit Test Patterns",
+      "chapter": 16,
+      "title": "Behavior Smells",
+      "chapter_id": "xUnit Test Patterns:ch16",
+      "cross_references": [
+        {
+          "target": "xUnit Test Patterns:ch17",
+          "score": 0.5461843849707051,
+          "base_score": 0.5862332342104343,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch5",
+          "score": 0.5055798035919452,
+          "base_score": 0.5926330059865753,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "run",
+          "erratic",
+          "erratic test",
+          "cause",
+          "sensitivity"
+        ],
+        "semantic": [],
+        "merged": [
+          "run",
+          "erratic",
+          "erratic test",
+          "cause",
+          "sensitivity"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_tests_test",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4632656702238239,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:35.587211+00:00"
+      }
+    },
+    {
+      "book": "xUnit Test Patterns",
+      "chapter": 17,
+      "title": "Project Smells",
+      "chapter_id": "xUnit Test Patterns:ch17",
+      "cross_references": [
+        {
+          "target": "xUnit Test Patterns:ch16",
+          "score": 0.5461843849707051,
+          "base_score": 0.5862332342104343,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "developers",
+          "cause",
+          "developers writing",
+          "writing tests",
+          "buggy"
+        ],
+        "semantic": [],
+        "merged": [
+          "developers",
+          "cause",
+          "developers writing",
+          "writing tests",
+          "buggy"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_tests_test",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.454008250890394,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:35.587332+00:00"
+      }
+    },
+    {
+      "book": "xUnit Test Patterns",
+      "chapter": 18,
+      "title": "Test Strategy Patterns",
+      "chapter_id": "xUnit Test Patterns:ch18",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "xture",
+          "data driven",
+          "fixture",
+          "driven test",
+          "data"
+        ],
+        "semantic": [],
+        "merged": [
+          "xture",
+          "data driven",
+          "fixture",
+          "driven test",
+          "data"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_test_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4508667126870059,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:35.587452+00:00"
+      }
+    },
+    {
+      "book": "xUnit Test Patterns",
+      "chapter": 19,
+      "title": "xUnit Basics Patterns",
+      "chapter_id": "xUnit Test Patterns:ch19",
+      "cross_references": [
+        {
+          "target": "xUnit Test Patterns:ch7",
+          "score": 1.0,
+          "base_score": 0.7769889763737967,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch24",
+          "score": 0.6857673634674047,
+          "base_score": 0.7262789391123412,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch12",
+          "score": 0.6562656833107334,
+          "base_score": 0.7697020647771483,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch25",
+          "score": 0.5053148757992442,
+          "base_score": 0.592191459665407,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "suite",
+          "test suite",
+          "testcase",
+          "method",
+          "suite object"
+        ],
+        "semantic": [],
+        "merged": [
+          "suite",
+          "test suite",
+          "testcase",
+          "method",
+          "suite object"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "test_the_testcase",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5419601201529297,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:35.587575+00:00"
+      }
+    },
+    {
+      "book": "xUnit Test Patterns",
+      "chapter": 20,
+      "title": "Fixture Setup Patterns",
+      "chapter_id": "xUnit Test Patterns:ch20",
+      "cross_references": [
+        {
+          "target": "xUnit Test Patterns:ch8",
+          "score": 0.7257965899977915,
+          "base_score": 0.6739466976153667,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch9",
+          "score": 0.592568670925823,
+          "base_score": 0.6635403774689642,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch22",
+          "score": 0.5236685744368883,
+          "base_score": 0.6227809573948139,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "setup",
+          "xture",
+          "method",
+          "decorator",
+          "setup decorator"
+        ],
+        "semantic": [],
+        "merged": [
+          "setup",
+          "xture",
+          "method",
+          "decorator",
+          "setup decorator"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_setup_xture",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5304279216125746,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:35.587715+00:00"
+      }
+    },
+    {
+      "book": "xUnit Test Patterns",
+      "chapter": 21,
+      "title": "Result Verification Patterns",
+      "chapter_id": "xUnit Test Patterns:ch21",
+      "cross_references": [
+        {
+          "target": "xUnit Test Patterns:ch10",
+          "score": 0.6894016209893635,
+          "base_score": 0.6132884159346534,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch14",
+          "score": 0.5706086878536606,
+          "base_score": 0.7010144797561011,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch11",
+          "score": 0.5033646419992556,
+          "base_score": 0.5889410699987594,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "assertion",
+          "custom",
+          "custom assertion",
+          "cation",
+          "assertions"
+        ],
+        "semantic": [],
+        "merged": [
+          "assertion",
+          "custom",
+          "custom assertion",
+          "cation",
+          "assertions"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_test_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5027121289699432,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:35.587837+00:00"
+      }
+    },
+    {
+      "book": "xUnit Test Patterns",
+      "chapter": 22,
+      "title": "Fixture Teardown Patterns",
+      "chapter_id": "xUnit Test Patterns:ch22",
+      "cross_references": [
+        {
+          "target": "xUnit Test Patterns:ch9",
+          "score": 0.5926262644736704,
+          "base_score": 0.7377104407894507,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch20",
+          "score": 0.5236685744368883,
+          "base_score": 0.6227809573948139,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch8",
+          "score": 0.5116966907883117,
+          "base_score": 0.6028278179805194,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "teardown",
+          "inboundairport",
+          "outboundairport",
+          "teardown logic",
+          "line teardown"
+        ],
+        "semantic": [],
+        "merged": [
+          "teardown",
+          "inboundairport",
+          "outboundairport",
+          "teardown logic",
+          "line teardown"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_setup_xture",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5002220938911335,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:35.587959+00:00"
+      }
+    },
+    {
+      "book": "xUnit Test Patterns",
+      "chapter": 23,
+      "title": "Test Double Patterns",
+      "chapter_id": "xUnit Test Patterns:ch23",
+      "cross_references": [
+        {
+          "target": "xUnit Test Patterns:ch11",
+          "score": 0.7283795715921692,
+          "base_score": 0.7972992859869485,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch26",
+          "score": 0.6193346337340419,
+          "base_score": 0.6155577228900698,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch14",
+          "score": 0.5263961168629253,
+          "base_score": 0.6273268614382089,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "test double",
+          "double",
+          "conﬁ",
+          "conﬁ gurable",
+          "gurable"
+        ],
+        "semantic": [],
+        "merged": [
+          "test double",
+          "double",
+          "conﬁ",
+          "conﬁ gurable",
+          "gurable"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_test_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4717109597607348,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:35.588087+00:00"
+      }
+    },
+    {
+      "book": "xUnit Test Patterns",
+      "chapter": 24,
+      "title": "Test Organization Patterns",
+      "chapter_id": "xUnit Test Patterns:ch24",
+      "cross_references": [
+        {
+          "target": "xUnit Test Patterns:ch12",
+          "score": 0.7501553944371491,
+          "base_score": 0.714544705014296,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch7",
+          "score": 0.7269372461958007,
+          "base_score": 0.7948954103263345,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch19",
+          "score": 0.6857673634674047,
+          "base_score": 0.7262789391123412,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "testcase",
+          "class",
+          "method",
+          "utility",
+          "testcase class"
+        ],
+        "semantic": [],
+        "merged": [
+          "testcase",
+          "class",
+          "method",
+          "utility",
+          "testcase class"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "test_the_testcase",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4804865681482437,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:35.588254+00:00"
+      }
+    },
+    {
+      "book": "xUnit Test Patterns",
+      "chapter": 25,
+      "title": "Database Patterns",
+      "chapter_id": "xUnit Test Patterns:ch25",
+      "cross_references": [
+        {
+          "target": "xUnit Test Patterns:ch19",
+          "score": 0.5053148757992442,
+          "base_score": 0.592191459665407,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "stored",
+          "stored procedure",
+          "procedure",
+          "stored procedures",
+          "database"
+        ],
+        "semantic": [],
+        "merged": [
+          "stored",
+          "stored procedure",
+          "procedure",
+          "stored procedures",
+          "database"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "test_the_testcase",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4587006780350646,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:35.588379+00:00"
+      }
+    },
+    {
+      "book": "xUnit Test Patterns",
+      "chapter": 26,
+      "title": "Design-for-Testability Patterns",
+      "chapter_id": "xUnit Test Patterns:ch26",
+      "cross_references": [
+        {
+          "target": "xUnit Test Patterns:ch11",
+          "score": 0.6441027732168318,
+          "base_score": 0.6568379553613866,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "xUnit Test Patterns:ch23",
+          "score": 0.6193346337340419,
+          "base_score": 0.6155577228900698,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "humble",
+          "object",
+          "humble object",
+          "test double",
+          "double"
+        ],
+        "semantic": [],
+        "merged": [
+          "humble",
+          "object",
+          "humble object",
+          "test double",
+          "double"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_test_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4262874680641555,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:35.588501+00:00"
+      }
+    },
+    {
+      "book": "xUnit Test Patterns",
+      "chapter": 27,
+      "title": "Value Patterns",
+      "chapter_id": "xUnit Test Patterns:ch27",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "chapter",
+          "patterns",
+          "chapter 18",
+          "18",
+          "strategy patterns"
+        ],
+        "semantic": [],
+        "merged": [
+          "chapter",
+          "patterns",
+          "chapter 18",
+          "18",
+          "strategy patterns"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41839945290053865,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:02:35.588621+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

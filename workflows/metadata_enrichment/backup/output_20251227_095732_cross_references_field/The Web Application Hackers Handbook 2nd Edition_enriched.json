@@ -1,0 +1,2285 @@
+{
+  "book": {
+    "title": "The Web Application Hackers Handbook 2nd Edition"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:59:46.920493",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-24)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "08",
+          "stuttard",
+          "indd",
+          "2011",
+          "2011 page"
+        ],
+        "semantic": [],
+        "merged": [
+          "08",
+          "stuttard",
+          "indd",
+          "2011",
+          "2011 page"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "web_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.364358079062955,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.900118+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 2,
+      "title": "Segment 2 (pages 25-43)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch2",
+      "cross_references": [
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch31",
+          "score": 0.5537638870249685,
+          "base_score": 0.6729398117082809,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch4",
+          "score": 0.5408476996318102,
+          "base_score": 0.6514128327196836,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch44",
+          "score": 0.514111644746642,
+          "base_score": 0.6068527412444031,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch3",
+          "score": 0.511724766955157,
+          "base_score": 0.6862079449252616,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "web application",
+          "web applications",
+          "security",
+          "book",
+          "chapter"
+        ],
+        "semantic": [],
+        "merged": [
+          "web application",
+          "web applications",
+          "security",
+          "book",
+          "chapter"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "web_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4814363989725972,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.900404+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 3,
+      "title": "Segment 3 (pages 44-66)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch3",
+      "cross_references": [
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch8",
+          "score": 0.602607165656721,
+          "base_score": 0.7543452760945349,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch2",
+          "score": 0.511724766955157,
+          "base_score": 0.6862079449252616,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "input",
+          "web application",
+          "users",
+          "security",
+          "attacks"
+        ],
+        "semantic": [],
+        "merged": [
+          "input",
+          "web application",
+          "users",
+          "security",
+          "attacks"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_application_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5321856807649824,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.900631+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 4,
+      "title": "Segment 4 (pages 67-84)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch4",
+      "cross_references": [
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch2",
+          "score": 0.5408476996318102,
+          "base_score": 0.6514128327196836,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch31",
+          "score": 0.5336027670748743,
+          "base_score": 0.6393379451247905,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "request",
+          "body",
+          "application technologies",
+          "chapter web",
+          "message body"
+        ],
+        "semantic": [],
+        "merged": [
+          "request",
+          "body",
+          "application technologies",
+          "chapter web",
+          "message body"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "web_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47010031839924926,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.900862+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 5,
+      "title": "Segment 5 (pages 85-106)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "chapter web",
+          "application technologies",
+          "technologies",
+          "web application",
+          "web applications"
+        ],
+        "semantic": [],
+        "merged": [
+          "chapter web",
+          "application technologies",
+          "technologies",
+          "web application",
+          "web applications"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27711477039015936,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:59:46.901070+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 6,
+      "title": "Segment 6 (pages 107-129)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch6",
+      "cross_references": [
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch7",
+          "score": 0.5394852204868454,
+          "base_score": 0.6134277484304567,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "content",
+          "spider",
+          "chapter mapping",
+          "mapping application",
+          "mapping"
+        ],
+        "semantic": [],
+        "merged": [
+          "content",
+          "spider",
+          "chapter mapping",
+          "mapping application",
+          "mapping"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3530860062661767,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:59:46.901274+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 7,
+      "title": "Segment 7 (pages 130-152)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch7",
+      "cross_references": [
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch6",
+          "score": 0.5394852204868454,
+          "base_score": 0.6134277484304567,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "chapter mapping",
+          "mapping application",
+          "mapping",
+          "functionality",
+          "chapter"
+        ],
+        "semantic": [],
+        "merged": [
+          "chapter mapping",
+          "mapping application",
+          "mapping",
+          "functionality",
+          "chapter"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_application_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3284879486866986,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.901479+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 8,
+      "title": "Segment 8 (pages 153-174)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch8",
+      "cross_references": [
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch3",
+          "score": 0.602607165656721,
+          "base_score": 0.7543452760945349,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "client",
+          "form",
+          "browser",
+          "data client",
+          "browser extension"
+        ],
+        "semantic": [],
+        "merged": [
+          "client",
+          "form",
+          "browser",
+          "data client",
+          "browser extension"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_application_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4449535026239363,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.901680+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 9,
+      "title": "Segment 9 (pages 175-194)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "bytecode",
+          "source code",
+          "source",
+          "code",
+          "component"
+        ],
+        "semantic": [],
+        "merged": [
+          "bytecode",
+          "source code",
+          "source",
+          "code",
+          "component"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_xss",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33670605975989715,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.901989+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 10,
+      "title": "Segment 10 (pages 195-212)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch10",
+      "cross_references": [
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch11",
+          "score": 0.6912023150314262,
+          "base_score": 0.6162895726714245,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch15",
+          "score": 0.5217572607527815,
+          "base_score": 0.6195954345879691,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch23",
+          "score": 0.5212367831778119,
+          "base_score": 0.6187279719630198,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch14",
+          "score": 0.5117669018267009,
+          "base_score": 0.6029448363778348,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch12",
+          "score": 0.5093115238696491,
+          "base_score": 0.5988525397827484,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "password",
+          "login",
+          "username",
+          "challenge",
+          "usernames"
+        ],
+        "semantic": [],
+        "merged": [
+          "password",
+          "login",
+          "username",
+          "challenge",
+          "usernames"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_application",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45598640596915485,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.902389+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 11,
+      "title": "Segment 11 (pages 213-230)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch11",
+      "cross_references": [
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch10",
+          "score": 0.6912023150314262,
+          "base_score": 0.6162895726714245,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch14",
+          "score": 0.5667948430157783,
+          "base_score": 0.6946580716929639,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch12",
+          "score": 0.530556713345541,
+          "base_score": 0.634261188909235,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch23",
+          "score": 0.5167298023477335,
+          "base_score": 0.6112163372462225,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch13",
+          "score": 0.5166648967446014,
+          "base_score": 0.6111081612410023,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "password",
+          "stage",
+          "login",
+          "username",
+          "users"
+        ],
+        "semantic": [],
+        "merged": [
+          "password",
+          "stage",
+          "login",
+          "username",
+          "users"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_application",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4092498902614731,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.902680+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 12,
+      "title": "Segment 12 (pages 231-251)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch12",
+      "cross_references": [
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch42",
+          "score": 0.634794811578659,
+          "base_score": 0.6413246859644317,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch14",
+          "score": 0.5596605572524272,
+          "base_score": 0.5161009287540455,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch11",
+          "score": 0.530556713345541,
+          "base_score": 0.634261188909235,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch10",
+          "score": 0.5093115238696491,
+          "base_score": 0.5988525397827484,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "session",
+          "session management",
+          "tokens",
+          "management",
+          "attacking session"
+        ],
+        "semantic": [],
+        "merged": [
+          "session",
+          "session management",
+          "tokens",
+          "management",
+          "attacking session"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_application",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3989960739455984,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.902928+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 13,
+      "title": "Segment 13 (pages 252-269)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch13",
+      "cross_references": [
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch14",
+          "score": 0.6029615030341517,
+          "base_score": 0.5882691717235864,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch11",
+          "score": 0.5166648967446014,
+          "base_score": 0.6111081612410023,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "token",
+          "tokens",
+          "decrypted",
+          "encrypted",
+          "decrypted token"
+        ],
+        "semantic": [],
+        "merged": [
+          "token",
+          "tokens",
+          "decrypted",
+          "encrypted",
+          "decrypted token"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_application",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4048686347156639,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.903141+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 14,
+      "title": "Segment 14 (pages 270-291)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch14",
+      "cross_references": [
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch42",
+          "score": 0.6495178182562202,
+          "base_score": 0.388085252649256,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch13",
+          "score": 0.6029615030341517,
+          "base_score": 0.5882691717235864,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch11",
+          "score": 0.5667948430157783,
+          "base_score": 0.6946580716929639,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch12",
+          "score": 0.5596605572524272,
+          "base_score": 0.5161009287540455,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch10",
+          "score": 0.5117669018267009,
+          "base_score": 0.6029448363778348,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "session",
+          "token",
+          "tokens",
+          "session tokens",
+          "session token"
+        ],
+        "semantic": [],
+        "merged": [
+          "session",
+          "token",
+          "tokens",
+          "session tokens",
+          "session token"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_application",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41220299126390475,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.903355+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 15,
+      "title": "Segment 15 (pages 292-310)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch15",
+      "cross_references": [
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch16",
+          "score": 0.8753516155969211,
+          "base_score": 0.7644749148837574,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch35",
+          "score": 0.5756567492729062,
+          "base_score": 0.7094279154548437,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch23",
+          "score": 0.5512727506093414,
+          "base_score": 0.6687879176822358,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch10",
+          "score": 0.5217572607527815,
+          "base_score": 0.6195954345879691,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch11",
+          "score": 0.5063218094075931,
+          "base_score": 0.5938696823459886,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "access",
+          "access controls",
+          "controls",
+          "control",
+          "access control"
+        ],
+        "semantic": [],
+        "merged": [
+          "access",
+          "access controls",
+          "controls",
+          "control",
+          "access control"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_application",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47985741903269624,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.903567+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 16,
+      "title": "Segment 16 (pages 311-328)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch16",
+      "cross_references": [
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch15",
+          "score": 0.8753516155969211,
+          "base_score": 0.7644749148837574,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch35",
+          "score": 0.556886554192464,
+          "base_score": 0.6781442569874401,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "access",
+          "access controls",
+          "access control",
+          "controls",
+          "attacking access"
+        ],
+        "semantic": [],
+        "merged": [
+          "access",
+          "access controls",
+          "access control",
+          "controls",
+          "attacking access"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_application",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4569593320125186,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.903796+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 17,
+      "title": "Segment 17 (pages 329-348)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch17",
+      "cross_references": [
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch18",
+          "score": 0.5177148199024133,
+          "base_score": 0.5771437474564032,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "query",
+          "sql",
+          "column",
+          "database",
+          "columns"
+        ],
+        "semantic": [],
+        "merged": [
+          "query",
+          "sql",
+          "column",
+          "database",
+          "columns"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_application",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2826522801608113,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.904004+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 18,
+      "title": "Segment 18 (pages 349-366)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch18",
+      "cross_references": [
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch17",
+          "score": 0.5177148199024133,
+          "base_score": 0.5771437474564032,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "database",
+          "sql",
+          "sql injection",
+          "query",
+          "injection"
+        ],
+        "semantic": [],
+        "merged": [
+          "database",
+          "sql",
+          "sql injection",
+          "query",
+          "injection"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3758951421571296,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:59:46.904208+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 19,
+      "title": "Segment 19 (pages 367-386)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch19",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "sql",
+          "info",
+          "14 54",
+          "sql injection",
+          "54"
+        ],
+        "semantic": [],
+        "merged": [
+          "sql",
+          "info",
+          "14 54",
+          "sql injection",
+          "54"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28710160155191494,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:59:46.904409+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 20,
+      "title": "Segment 20 (pages 387-407)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch20",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "command",
+          "commands",
+          "injection",
+          "input",
+          "user supplied"
+        ],
+        "semantic": [],
+        "merged": [
+          "command",
+          "commands",
+          "injection",
+          "input",
+          "user supplied"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_application",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3809584339195643,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.904616+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 21,
+      "title": "Segment 21 (pages 408-429)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch21",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "traversal",
+          "end",
+          "file",
+          "le",
+          "path"
+        ],
+        "semantic": [],
+        "merged": [
+          "traversal",
+          "end",
+          "file",
+          "le",
+          "path"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_to_server",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33194231459942924,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.904827+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 22,
+      "title": "Segment 22 (pages 430-450)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch22",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "parameter",
+          "11 attacking",
+          "chapter 11",
+          "logic",
+          "end"
+        ],
+        "semantic": [],
+        "merged": [
+          "parameter",
+          "11 attacking",
+          "chapter 11",
+          "logic",
+          "end"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3398971220406935,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:59:46.905035+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 23,
+      "title": "Segment 23 (pages 451-469)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch23",
+      "cross_references": [
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch35",
+          "score": 0.6038446501722731,
+          "base_score": 0.6823336762130476,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch15",
+          "score": 0.5512727506093414,
+          "base_score": 0.6687879176822358,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch10",
+          "score": 0.5212367831778119,
+          "base_score": 0.6187279719630198,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch11",
+          "score": 0.5167298023477335,
+          "base_score": 0.6112163372462225,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "chapter 11",
+          "11 attacking",
+          "attacking application",
+          "11",
+          "logic"
+        ],
+        "semantic": [],
+        "merged": [
+          "chapter 11",
+          "11 attacking",
+          "attacking application",
+          "11",
+          "logic"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_application",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47172545298497637,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.905242+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 24,
+      "title": "Segment 24 (pages 470-487)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch24",
+      "cross_references": [
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch27",
+          "score": 0.9013553909862695,
+          "base_score": 0.8078145405326713,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch26",
+          "score": 0.5537741660490387,
+          "base_score": 0.5988828693409904,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch25",
+          "score": 0.5331042846092849,
+          "base_score": 0.6385071410154748,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch28",
+          "score": 0.5316512535096588,
+          "base_score": 0.5620113484420239,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "xss",
+          "12 attacking",
+          "users cross",
+          "attacking users",
+          "attacker"
+        ],
+        "semantic": [],
+        "merged": [
+          "xss",
+          "12 attacking",
+          "users cross",
+          "attacking users",
+          "attacker"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_xss",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4417885393681639,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.905450+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 25,
+      "title": "Segment 25 (pages 488-507)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch25",
+      "cross_references": [
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch27",
+          "score": 0.6013410442693838,
+          "base_score": 0.7522350737823064,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch26",
+          "score": 0.5374441398103488,
+          "base_score": 0.6457402330172479,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch24",
+          "score": 0.5331042846092849,
+          "base_score": 0.6385071410154748,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tag",
+          "lters",
+          "script",
+          "input",
+          "attribute"
+        ],
+        "semantic": [],
+        "merged": [
+          "tag",
+          "lters",
+          "script",
+          "input",
+          "attribute"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_xss",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3561070392362497,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.905658+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 26,
+      "title": "Segment 26 (pages 508-525)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch26",
+      "cross_references": [
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch27",
+          "score": 0.6061198153738152,
+          "base_score": 0.6861256182156178,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch24",
+          "score": 0.5537741660490387,
+          "base_score": 0.5988828693409904,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch25",
+          "score": 0.5374441398103488,
+          "base_score": 0.6457402330172479,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "xss",
+          "xss lter",
+          "reﬂ ected",
+          "ected",
+          "reﬂ"
+        ],
+        "semantic": [],
+        "merged": [
+          "xss",
+          "xss lter",
+          "reﬂ ected",
+          "ected",
+          "reﬂ"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_xss",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34649763948621704,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.905912+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 27,
+      "title": "Segment 27 (pages 526-543)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch27",
+      "cross_references": [
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch24",
+          "score": 0.9013553909862695,
+          "base_score": 0.8078145405326713,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch26",
+          "score": 0.6061198153738152,
+          "base_score": 0.6861256182156178,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch25",
+          "score": 0.6013410442693838,
+          "base_score": 0.7522350737823064,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "attacking users",
+          "xss",
+          "12 attacking",
+          "users cross",
+          "users"
+        ],
+        "semantic": [],
+        "merged": [
+          "attacking users",
+          "xss",
+          "12 attacking",
+          "users cross",
+          "users"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_xss",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42311255392411307,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.906119+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 28,
+      "title": "Segment 28 (pages 544-566)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch28",
+      "cross_references": [
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch24",
+          "score": 0.5316512535096588,
+          "base_score": 0.5620113484420239,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "csrf",
+          "anti csrf",
+          "anti",
+          "domain",
+          "attacker"
+        ],
+        "semantic": [],
+        "merged": [
+          "csrf",
+          "anti csrf",
+          "anti",
+          "domain",
+          "attacker"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_xss",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3807031481748395,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.906360+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 29,
+      "title": "Segment 29 (pages 567-586)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch29",
+      "cross_references": [
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch30",
+          "score": 0.853666808098288,
+          "base_score": 0.50611134683048,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "13 attacking",
+          "users techniques",
+          "attacking users",
+          "chapter 13",
+          "13"
+        ],
+        "semantic": [],
+        "merged": [
+          "13 attacking",
+          "users techniques",
+          "attacking users",
+          "chapter 13",
+          "13"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "the_to_attacker",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46804549755266356,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.906570+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 30,
+      "title": "Segment 30 (pages 587-606)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch30",
+      "cross_references": [
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch29",
+          "score": 0.853666808098288,
+          "base_score": 0.50611134683048,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "users techniques",
+          "13 attacking",
+          "attacking users",
+          "chapter 13",
+          "13"
+        ],
+        "semantic": [],
+        "merged": [
+          "users techniques",
+          "13 attacking",
+          "attacking users",
+          "chapter 13",
+          "13"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "the_to_attacker",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.413873299982838,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.906787+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 31,
+      "title": "Segment 31 (pages 607-629)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch31",
+      "cross_references": [
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch32",
+          "score": 0.5750064748554092,
+          "base_score": 0.513899680314571,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch2",
+          "score": 0.5537638870249685,
+          "base_score": 0.6729398117082809,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch4",
+          "score": 0.5336027670748743,
+          "base_score": 0.6393379451247905,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "automating",
+          "customized",
+          "customized attacks",
+          "automating customized",
+          "14 automating"
+        ],
+        "semantic": [],
+        "merged": [
+          "automating",
+          "customized",
+          "customized attacks",
+          "automating customized",
+          "14 automating"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "web_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45990470349985635,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.906999+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 32,
+      "title": "Segment 32 (pages 630-651)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch32",
+      "cross_references": [
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch31",
+          "score": 0.5750064748554092,
+          "base_score": 0.513899680314571,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "automating",
+          "automating customized",
+          "14 automating",
+          "customized attacks",
+          "14"
+        ],
+        "semantic": [],
+        "merged": [
+          "automating",
+          "automating customized",
+          "14 automating",
+          "customized attacks",
+          "14"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42684620094678755,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:59:46.907203+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 33,
+      "title": "Segment 33 (pages 652-669)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch33",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "error",
+          "error messages",
+          "messages",
+          "information",
+          "message"
+        ],
+        "semantic": [],
+        "merged": [
+          "error",
+          "error messages",
+          "messages",
+          "information",
+          "message"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4279809036865839,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:59:46.907405+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 34,
+      "title": "Segment 34 (pages 670-690)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch34",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "buffer",
+          "overﬂ",
+          "overﬂ ow",
+          "tier",
+          "ow"
+        ],
+        "semantic": [],
+        "merged": [
+          "buffer",
+          "overﬂ",
+          "overﬂ ow",
+          "tier",
+          "ow"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_to_server",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44312705019225435,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.907615+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 35,
+      "title": "Segment 35 (pages 691-713)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch35",
+      "cross_references": [
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch23",
+          "score": 0.6038446501722731,
+          "base_score": 0.6823336762130476,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch15",
+          "score": 0.5756567492729062,
+          "base_score": 0.7094279154548437,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch16",
+          "score": 0.556886554192464,
+          "base_score": 0.6781442569874401,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "shared",
+          "customers",
+          "attacking application",
+          "application server",
+          "17 attacking"
+        ],
+        "semantic": [],
+        "merged": [
+          "shared",
+          "customers",
+          "attacking application",
+          "application server",
+          "17 attacking"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_application",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4406239566926233,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.907831+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 36,
+      "title": "Segment 36 (pages 714-736)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch36",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "18 attacking",
+          "chapter 18",
+          "18",
+          "web server",
+          "application server"
+        ],
+        "semantic": [],
+        "merged": [
+          "18 attacking",
+          "chapter 18",
+          "18",
+          "web server",
+          "application server"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_to_server",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4464952896479042,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.908036+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 37,
+      "title": "Segment 37 (pages 737-755)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch37",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "finding vulnerabilities",
+          "vulnerabilities source",
+          "19 finding",
+          "finding",
+          "chapter 19"
+        ],
+        "semantic": [],
+        "merged": [
+          "finding vulnerabilities",
+          "vulnerabilities source",
+          "19 finding",
+          "finding",
+          "chapter 19"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_to_server",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3875597711950876,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.908245+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 38,
+      "title": "Segment 38 (pages 756-777)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch38",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "php",
+          "controllable",
+          "user controllable",
+          "data passed",
+          "application probably"
+        ],
+        "semantic": [],
+        "merged": [
+          "php",
+          "controllable",
+          "user controllable",
+          "data passed",
+          "application probably"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_application",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3049719131875452,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.908451+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 39,
+      "title": "Segment 39 (pages 778-800)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch39",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "proxy",
+          "20",
+          "20 web",
+          "hacker toolkit",
+          "toolkit"
+        ],
+        "semantic": [],
+        "merged": [
+          "proxy",
+          "20",
+          "20 web",
+          "hacker toolkit",
+          "toolkit"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_application_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41686405399344667,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.908654+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 40,
+      "title": "Segment 40 (pages 801-821)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch40",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "scanner",
+          "scanners",
+          "vulnerability",
+          "scan",
+          "vulnerability scanner"
+        ],
+        "semantic": [],
+        "merged": [
+          "scanner",
+          "scanners",
+          "vulnerability",
+          "scan",
+          "vulnerability scanner"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37106570840324304,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:59:46.908876+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 41,
+      "title": "Segment 41 (pages 822-841)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch41",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "application hacker",
+          "hacker",
+          "chapter 21",
+          "21 web",
+          "21"
+        ],
+        "semantic": [],
+        "merged": [
+          "application hacker",
+          "hacker",
+          "chapter 21",
+          "21 web",
+          "21"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4568968322925648,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:59:46.909112+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 42,
+      "title": "Segment 42 (pages 842-861)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch42",
+      "cross_references": [
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch14",
+          "score": 0.6495178182562202,
+          "base_score": 0.388085252649256,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch12",
+          "score": 0.634794811578659,
+          "base_score": 0.6413246859644317,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tokens",
+          "token",
+          "session",
+          "session tokens",
+          "users"
+        ],
+        "semantic": [],
+        "merged": [
+          "tokens",
+          "token",
+          "session",
+          "session tokens",
+          "users"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_application",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34973738645876734,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.909321+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 43,
+      "title": "Segment 43 (pages 862-881)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch43",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "test",
+          "input",
+          "injection",
+          "command",
+          "try"
+        ],
+        "semantic": [],
+        "merged": [
+          "test",
+          "input",
+          "injection",
+          "command",
+          "try"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36505802702734985,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:59:46.909523+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 44,
+      "title": "Segment 44 (pages 882-899)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch44",
+      "cross_references": [
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch45",
+          "score": 0.5545445399457113,
+          "base_score": 0.6742408999095189,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch46",
+          "score": 0.5276010995991963,
+          "base_score": 0.6293351659986605,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch2",
+          "score": 0.514111644746642,
+          "base_score": 0.6068527412444031,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "660",
+          "737",
+          "738",
+          "logic aws",
+          "811"
+        ],
+        "semantic": [],
+        "merged": [
+          "660",
+          "737",
+          "738",
+          "logic aws",
+          "811"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "web_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4372131982278146,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.909766+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 45,
+      "title": "Segment 45 (pages 900-912)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch45",
+      "cross_references": [
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch44",
+          "score": 0.5545445399457113,
+          "base_score": 0.6742408999095189,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch46",
+          "score": 0.5277175334469635,
+          "base_score": 0.6295292224116058,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "817",
+          "hacker methodology",
+          "hacker",
+          "816",
+          "219"
+        ],
+        "semantic": [],
+        "merged": [
+          "817",
+          "hacker methodology",
+          "hacker",
+          "816",
+          "219"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "web_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44693821114290067,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.909967+00:00"
+      }
+    },
+    {
+      "book": "The Web Application Hackers Handbook 2nd Edition",
+      "chapter": 46,
+      "title": "Segment 46 (pages 913-914)",
+      "chapter_id": "The Web Application Hackers Handbook 2nd Edition:ch46",
+      "cross_references": [
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch45",
+          "score": 0.5277175334469635,
+          "base_score": 0.6295292224116058,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Web Application Hackers Handbook 2nd Edition:ch44",
+          "score": 0.5276010995991963,
+          "base_score": 0.6293351659986605,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "56",
+          "57",
+          "348",
+          "55",
+          "web services"
+        ],
+        "semantic": [],
+        "merged": [
+          "56",
+          "57",
+          "348",
+          "55",
+          "web services"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "web_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3387659829888496,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:46.910166+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

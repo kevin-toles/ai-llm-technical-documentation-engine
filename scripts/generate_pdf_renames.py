@@ -9,6 +9,7 @@ import re
 import json
 from pathlib import Path
 from datetime import datetime
+from typing import Optional
 
 # Try to import PyMuPDF (fitz)
 try:
@@ -19,7 +20,7 @@ except ImportError:
     print("⚠️  PyMuPDF not installed. Install with: pip install PyMuPDF")
 
 
-def sanitize_filename(title: str) -> str:
+def sanitize_filename(title: str) -> Optional[str]:
     """Convert a title to a safe filename."""
     if not title:
         return None

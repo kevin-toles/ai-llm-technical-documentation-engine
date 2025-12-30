@@ -1,0 +1,1506 @@
+{
+  "book": {
+    "title": "Database Reliability Engineering"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:44:25.346582",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-9)",
+      "chapter_id": "Database Reliability Engineering:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "protecting",
+          "wrapping",
+          "155",
+          "service",
+          "16"
+        ],
+        "semantic": [],
+        "merged": [
+          "protecting",
+          "wrapping",
+          "155",
+          "service",
+          "16"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5200019866715292,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:44:25.318290+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 2,
+      "title": "Segment 2 (pages 10-19)",
+      "chapter_id": "Database Reliability Engineering:ch2",
+      "cross_references": [
+        {
+          "target": "Database Reliability Engineering:ch33",
+          "score": 0.5989843850839652,
+          "base_score": 0.7483073084732754,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database Reliability Engineering:ch26",
+          "score": 0.511597740104737,
+          "base_score": 0.6026629001745616,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "engineering",
+          "engineer",
+          "database engineering",
+          "systems",
+          "book"
+        ],
+        "semantic": [],
+        "merged": [
+          "engineering",
+          "engineer",
+          "database engineering",
+          "systems",
+          "book"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5197609000744915,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:25.318535+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 3,
+      "title": "Segment 3 (pages 20-28)",
+      "chapter_id": "Database Reliability Engineering:ch3",
+      "cross_references": [
+        {
+          "target": "Database Reliability Engineering:ch18",
+          "score": 0.5941825217935007,
+          "base_score": 0.6662301289150938,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "engineers",
+          "reliability",
+          "engineering",
+          "reliability engineering",
+          "principles"
+        ],
+        "semantic": [],
+        "merged": [
+          "engineers",
+          "reliability",
+          "engineering",
+          "reliability engineering",
+          "principles"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_and_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4006722466971458,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:25.318689+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 4,
+      "title": "Segment 4 (pages 29-37)",
+      "chapter_id": "Database Reliability Engineering:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "service level",
+          "service",
+          "need",
+          "level",
+          "healthy"
+        ],
+        "semantic": [],
+        "merged": [
+          "service level",
+          "service",
+          "need",
+          "level",
+          "healthy"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4855986051363295,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:44:25.318837+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 5,
+      "title": "Segment 5 (pages 38-45)",
+      "chapter_id": "Database Reliability Engineering:ch5",
+      "cross_references": [
+        {
+          "target": "Database Reliability Engineering:ch6",
+          "score": 0.5429694699565428,
+          "base_score": 0.5808750425201639,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "time",
+          "ms",
+          "latency",
+          "99",
+          "availability"
+        ],
+        "semantic": [],
+        "merged": [
+          "time",
+          "ms",
+          "latency",
+          "99",
+          "availability"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2989875437888577,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:25.318984+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 6,
+      "title": "Segment 6 (pages 46-54)",
+      "chapter_id": "Database Reliability Engineering:ch6",
+      "cross_references": [
+        {
+          "target": "Database Reliability Engineering:ch33",
+          "score": 0.5676978310429545,
+          "base_score": 0.6961630517382574,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database Reliability Engineering:ch11",
+          "score": 0.5478620437135248,
+          "base_score": 0.663103406189208,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database Reliability Engineering:ch5",
+          "score": 0.5429694699565428,
+          "base_score": 0.5808750425201639,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "slo",
+          "week",
+          "violation",
+          "time",
+          "service"
+        ],
+        "semantic": [],
+        "merged": [
+          "slo",
+          "week",
+          "violation",
+          "time",
+          "service"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41911390775646296,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:25.319129+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 7,
+      "title": "Segment 7 (pages 55-64)",
+      "chapter_id": "Database Reliability Engineering:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "risk",
+          "risk management",
+          "risks",
+          "servers mysql",
+          "unlikely"
+        ],
+        "semantic": [],
+        "merged": [
+          "risk",
+          "risk management",
+          "risks",
+          "servers mysql",
+          "unlikely"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "recovery_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23423430011818466,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:25.319278+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 8,
+      "title": "Segment 8 (pages 65-73)",
+      "chapter_id": "Database Reliability Engineering:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "risk",
+          "process",
+          "risk management",
+          "management",
+          "management process"
+        ],
+        "semantic": [],
+        "merged": [
+          "risk",
+          "process",
+          "risk management",
+          "management",
+          "management process"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4448605140144188,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:44:25.319472+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 9,
+      "title": "Segment 9 (pages 74-81)",
+      "chapter_id": "Database Reliability Engineering:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "opviz",
+          "platform",
+          "metrics",
+          "good",
+          "opviz platform"
+        ],
+        "semantic": [],
+        "merged": [
+          "opviz",
+          "platform",
+          "metrics",
+          "good",
+          "opviz platform"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3956625293320694,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:25.319624+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 10,
+      "title": "Segment 10 (pages 82-89)",
+      "chapter_id": "Database Reliability Engineering:ch10",
+      "cross_references": [
+        {
+          "target": "Database Reliability Engineering:ch29",
+          "score": 0.5102914874456211,
+          "base_score": 0.6004858124093685,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "checks",
+          "health",
+          "check",
+          "monitoring",
+          "health checks"
+        ],
+        "semantic": [],
+        "merged": [
+          "checks",
+          "health",
+          "check",
+          "monitoring",
+          "health checks"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_data_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4672453211078139,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:25.319788+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 11,
+      "title": "Segment 11 (pages 90-97)",
+      "chapter_id": "Database Reliability Engineering:ch11",
+      "cross_references": [
+        {
+          "target": "Database Reliability Engineering:ch33",
+          "score": 0.561419007251586,
+          "base_score": 0.6856983454193101,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database Reliability Engineering:ch6",
+          "score": 0.5478620437135248,
+          "base_score": 0.663103406189208,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "connection",
+          "errors",
+          "connection layer",
+          "pool",
+          "connections"
+        ],
+        "semantic": [],
+        "merged": [
+          "connection",
+          "errors",
+          "connection layer",
+          "pool",
+          "connections"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46377682803585907,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:25.319956+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 12,
+      "title": "Segment 12 (pages 98-105)",
+      "chapter_id": "Database Reliability Engineering:ch12",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "semaphore",
+          "innodb",
+          "sync array",
+          "array",
+          "spin"
+        ],
+        "semantic": [],
+        "merged": [
+          "semaphore",
+          "innodb",
+          "sync array",
+          "array",
+          "spin"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4004024981445375,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:25.320113+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 13,
+      "title": "Segment 13 (pages 106-113)",
+      "chapter_id": "Database Reliability Engineering:ch13",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "raid",
+          "disks",
+          "memory",
+          "swapping",
+          "tb"
+        ],
+        "semantic": [],
+        "merged": [
+          "raid",
+          "disks",
+          "memory",
+          "swapping",
+          "tb"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_data_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3192466310209543,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:25.320259+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 14,
+      "title": "Segment 14 (pages 114-122)",
+      "chapter_id": "Database Reliability Engineering:ch14",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "dbaas",
+          "virtual",
+          "cloud",
+          "infrastructure",
+          "virtualization"
+        ],
+        "semantic": [],
+        "merged": [
+          "dbaas",
+          "virtual",
+          "cloud",
+          "infrastructure",
+          "virtualization"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40843247605822475,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:44:25.320433+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 15,
+      "title": "Segment 15 (pages 123-130)",
+      "chapter_id": "Database Reliability Engineering:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "definition",
+          "configuration",
+          "infrastructure",
+          "configuration definition",
+          "stack"
+        ],
+        "semantic": [],
+        "merged": [
+          "definition",
+          "configuration",
+          "infrastructure",
+          "configuration definition",
+          "stack"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3736066754841046,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:44:25.320596+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 16,
+      "title": "Segment 16 (pages 131-140)",
+      "chapter_id": "Database Reliability Engineering:ch16",
+      "cross_references": [
+        {
+          "target": "Database Reliability Engineering:ch17",
+          "score": 0.6067287263326655,
+          "base_score": 0.5945478772211092,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "backup",
+          "recovery",
+          "point time",
+          "backup recovery",
+          "point"
+        ],
+        "semantic": [],
+        "merged": [
+          "backup",
+          "recovery",
+          "point time",
+          "backup recovery",
+          "point"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "recovery_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4546618817530655,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:25.320768+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 17,
+      "title": "Segment 17 (pages 141-153)",
+      "chapter_id": "Database Reliability Engineering:ch17",
+      "cross_references": [
+        {
+          "target": "Database Reliability Engineering:ch16",
+          "score": 0.6067287263326655,
+          "base_score": 0.5945478772211092,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "recovery",
+          "backups",
+          "backup",
+          "strategy",
+          "scenarios"
+        ],
+        "semantic": [],
+        "merged": [
+          "recovery",
+          "backups",
+          "backup",
+          "strategy",
+          "scenarios"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "recovery_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36127228188114907,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:25.320917+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 18,
+      "title": "Segment 18 (pages 154-161)",
+      "chapter_id": "Database Reliability Engineering:ch18",
+      "cross_references": [
+        {
+          "target": "Database Reliability Engineering:ch3",
+          "score": 0.5941825217935007,
+          "base_score": 0.6662301289150938,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database Reliability Engineering:ch31",
+          "score": 0.5341067695652489,
+          "base_score": 0.6401779492754149,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database Reliability Engineering:ch20",
+          "score": 0.5142409144748794,
+          "base_score": 0.5329941167173916,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "software",
+          "engineers",
+          "development process",
+          "development",
+          "dbre"
+        ],
+        "semantic": [],
+        "merged": [
+          "software",
+          "engineers",
+          "development process",
+          "development",
+          "dbre"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_and_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41750732040224514,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:25.321070+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 19,
+      "title": "Segment 19 (pages 162-169)",
+      "chapter_id": "Database Reliability Engineering:ch19",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "changes",
+          "applied",
+          "tests",
+          "testing",
+          "run"
+        ],
+        "semantic": [],
+        "merged": [
+          "changes",
+          "applied",
+          "tests",
+          "testing",
+          "run"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_and_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36200451480349255,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:25.321218+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 20,
+      "title": "Segment 20 (pages 170-177)",
+      "chapter_id": "Database Reliability Engineering:ch20",
+      "cross_references": [
+        {
+          "target": "Database Reliability Engineering:ch18",
+          "score": 0.5142409144748794,
+          "base_score": 0.5329941167173916,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "migration",
+          "migrations",
+          "pattern",
+          "security",
+          "dbre"
+        ],
+        "semantic": [],
+        "merged": [
+          "migration",
+          "migrations",
+          "pattern",
+          "security",
+          "dbre"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_and_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37780866618987674,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:25.321379+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 21,
+      "title": "Segment 21 (pages 178-185)",
+      "chapter_id": "Database Reliability Engineering:ch21",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "security",
+          "access",
+          "database layer",
+          "attacks",
+          "vulnerabilities"
+        ],
+        "semantic": [],
+        "merged": [
+          "security",
+          "access",
+          "database layer",
+          "attacks",
+          "vulnerabilities"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_data_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4099905880227401,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:25.321541+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 22,
+      "title": "Segment 22 (pages 186-193)",
+      "chapter_id": "Database Reliability Engineering:ch22",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "sql",
+          "sql injection",
+          "injection",
+          "encryption",
+          "attack"
+        ],
+        "semantic": [],
+        "merged": [
+          "sql",
+          "sql injection",
+          "injection",
+          "encryption",
+          "attack"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_data_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.321925500815912,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:25.321689+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 23,
+      "title": "Segment 23 (pages 194-202)",
+      "chapter_id": "Database Reliability Engineering:ch23",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "encryption",
+          "encrypted",
+          "encryption data",
+          "data encryption",
+          "access"
+        ],
+        "semantic": [],
+        "merged": [
+          "encryption",
+          "encrypted",
+          "encryption data",
+          "data encryption",
+          "access"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_data_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29498191450693506,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:25.321837+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 24,
+      "title": "Segment 24 (pages 203-210)",
+      "chapter_id": "Database Reliability Engineering:ch24",
+      "cross_references": [
+        {
+          "target": "Database Reliability Engineering:ch29",
+          "score": 0.5356869986158274,
+          "base_score": 0.6428116643597124,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database Reliability Engineering:ch27",
+          "score": 0.5274555835044673,
+          "base_score": 0.6290926391741123,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tree",
+          "indexing",
+          "data structure",
+          "storage",
+          "structure"
+        ],
+        "semantic": [],
+        "merged": [
+          "tree",
+          "indexing",
+          "data structure",
+          "storage",
+          "structure"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_data_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43253677585102573,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:25.321986+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 25,
+      "title": "Segment 25 (pages 211-221)",
+      "chapter_id": "Database Reliability Engineering:ch25",
+      "cross_references": [
+        {
+          "target": "Database Reliability Engineering:ch26",
+          "score": 0.5869570606817196,
+          "base_score": 0.5615951011361995,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "leader",
+          "replication",
+          "replicas",
+          "single leader",
+          "synchronous"
+        ],
+        "semantic": [],
+        "merged": [
+          "leader",
+          "replication",
+          "replicas",
+          "single leader",
+          "synchronous"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3235389457564482,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:25.322134+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 26,
+      "title": "Segment 26 (pages 222-230)",
+      "chapter_id": "Database Reliability Engineering:ch26",
+      "cross_references": [
+        {
+          "target": "Database Reliability Engineering:ch25",
+          "score": 0.5869570606817196,
+          "base_score": 0.5615951011361995,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database Reliability Engineering:ch33",
+          "score": 0.5467011058720307,
+          "base_score": 0.6611685097867178,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database Reliability Engineering:ch2",
+          "score": 0.511597740104737,
+          "base_score": 0.6026629001745616,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "replication",
+          "writes",
+          "leader",
+          "write",
+          "nodes"
+        ],
+        "semantic": [],
+        "merged": [
+          "replication",
+          "writes",
+          "leader",
+          "write",
+          "nodes"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4338951488650697,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:25.322297+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 27,
+      "title": "Segment 27 (pages 231-239)",
+      "chapter_id": "Database Reliability Engineering:ch27",
+      "cross_references": [
+        {
+          "target": "Database Reliability Engineering:ch29",
+          "score": 0.5850514208976151,
+          "base_score": 0.7250857014960252,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database Reliability Engineering:ch24",
+          "score": 0.5274555835044673,
+          "base_score": 0.6290926391741123,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "model",
+          "relational",
+          "relational model",
+          "data model",
+          "models"
+        ],
+        "semantic": [],
+        "merged": [
+          "model",
+          "relational",
+          "relational model",
+          "data model",
+          "models"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_data_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47088244951442143,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:25.322467+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 28,
+      "title": "Segment 28 (pages 240-250)",
+      "chapter_id": "Database Reliability Engineering:ch28",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "consistency",
+          "read",
+          "availability",
+          "locks",
+          "consistency availability"
+        ],
+        "semantic": [],
+        "merged": [
+          "consistency",
+          "read",
+          "availability",
+          "locks",
+          "consistency availability"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26062723588768083,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:44:25.322627+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 29,
+      "title": "Segment 29 (pages 251-259)",
+      "chapter_id": "Database Reliability Engineering:ch29",
+      "cross_references": [
+        {
+          "target": "Database Reliability Engineering:ch27",
+          "score": 0.5850514208976151,
+          "base_score": 0.7250857014960252,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database Reliability Engineering:ch24",
+          "score": 0.5356869986158274,
+          "base_score": 0.6428116643597124,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database Reliability Engineering:ch30",
+          "score": 0.5260610052224304,
+          "base_score": 0.626768342037384,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database Reliability Engineering:ch10",
+          "score": 0.5102914874456211,
+          "base_score": 0.6004858124093685,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cache",
+          "caching",
+          "persistence",
+          "datastores",
+          "memory"
+        ],
+        "semantic": [],
+        "merged": [
+          "cache",
+          "caching",
+          "persistence",
+          "datastores",
+          "memory"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_data_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49204722566546943,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:25.322810+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 30,
+      "title": "Segment 30 (pages 260-273)",
+      "chapter_id": "Database Reliability Engineering:ch30",
+      "cross_references": [
+        {
+          "target": "Database Reliability Engineering:ch29",
+          "score": 0.5260610052224304,
+          "base_score": 0.626768342037384,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "real time",
+          "real",
+          "processing",
+          "event",
+          "lambda"
+        ],
+        "semantic": [],
+        "merged": [
+          "real time",
+          "real",
+          "processing",
+          "event",
+          "lambda"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_data_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.413098525920461,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:25.322957+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 31,
+      "title": "Segment 31 (pages 274-281)",
+      "chapter_id": "Database Reliability Engineering:ch31",
+      "cross_references": [
+        {
+          "target": "Database Reliability Engineering:ch18",
+          "score": 0.5341067695652489,
+          "base_score": 0.6401779492754149,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "encryption",
+          "173",
+          "data integrity",
+          "integrity",
+          "monitoring"
+        ],
+        "semantic": [],
+        "merged": [
+          "encryption",
+          "173",
+          "data integrity",
+          "integrity",
+          "monitoring"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_and_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42667361065332704,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:25.323105+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 32,
+      "title": "Segment 32 (pages 282-289)",
+      "chapter_id": "Database Reliability Engineering:ch32",
+      "cross_references": [
+        {
+          "target": "Database Reliability Engineering:ch33",
+          "score": 0.5238816129977114,
+          "base_score": 0.7064693549961857,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "replication",
+          "monitoring",
+          "leader",
+          "storage",
+          "75"
+        ],
+        "semantic": [],
+        "merged": [
+          "replication",
+          "monitoring",
+          "leader",
+          "storage",
+          "75"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43515183803233226,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:44:25.323253+00:00"
+      }
+    },
+    {
+      "book": "Database Reliability Engineering",
+      "chapter": 33,
+      "title": "Segment 33 (pages 290-294)",
+      "chapter_id": "Database Reliability Engineering:ch33",
+      "cross_references": [
+        {
+          "target": "Database Reliability Engineering:ch2",
+          "score": 0.5989843850839652,
+          "base_score": 0.7483073084732754,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database Reliability Engineering:ch6",
+          "score": 0.5676978310429545,
+          "base_score": 0.6961630517382574,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database Reliability Engineering:ch11",
+          "score": 0.561419007251586,
+          "base_score": 0.6856983454193101,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database Reliability Engineering:ch26",
+          "score": 0.5467011058720307,
+          "base_score": 0.6611685097867178,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database Reliability Engineering:ch32",
+          "score": 0.5238816129977114,
+          "base_score": 0.7064693549961857,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "storage",
+          "monitoring",
+          "recovery",
+          "recovery strategy",
+          "strategy"
+        ],
+        "semantic": [],
+        "merged": [
+          "storage",
+          "monitoring",
+          "recovery",
+          "recovery strategy",
+          "strategy"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.509147752080678,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:25.323454+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

@@ -1,0 +1,310 @@
+{
+  "book": {
+    "title": "LLM Engineers Handbook - Paul Iusztin"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:49:47.401062",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "LLM Engineers Handbook - Paul Iusztin",
+      "chapter": 1,
+      "title": "on fine-tuning and Chapters 4 and 9 on RAG, but for now, let’s look at a few examples to intuitively understand",
+      "chapter_id": "LLM Engineers Handbook - Paul Iusztin:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "llm twin",
+          "twin",
+          "features",
+          "feature",
+          "fti"
+        ],
+        "semantic": [],
+        "merged": [
+          "llm twin",
+          "twin",
+          "features",
+          "feature",
+          "fti"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37402651257522657,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:47.393381+00:00"
+      }
+    },
+    {
+      "book": "LLM Engineers Handbook - Paul Iusztin",
+      "chapter": 2,
+      "title": "For now, you must know it is an MLOps concept used to wrap data and enrich it with the properties listed before",
+      "chapter_id": "LLM Engineers Handbook - Paul Iusztin:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "zenml",
+          "python",
+          "poetry",
+          "run",
+          "mlops"
+        ],
+        "semantic": [],
+        "merged": [
+          "zenml",
+          "python",
+          "poetry",
+          "run",
+          "mlops"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49697168324934776,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:47.393445+00:00"
+      }
+    },
+    {
+      "book": "LLM Engineers Handbook - Paul Iusztin",
+      "chapter": 3,
+      "title": "However, to quickly give you some understanding, you cannot use standard logging tools as prompts are complex and unstructured chains",
+      "chapter_id": "LLM Engineers Handbook - Paul Iusztin:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "aws",
+          "warehouse",
+          "data warehouse",
+          "data collection",
+          "aws amazon"
+        ],
+        "semantic": [],
+        "merged": [
+          "aws",
+          "warehouse",
+          "data warehouse",
+          "data collection",
+          "aws amazon"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_data_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3630376377152349,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:47.393486+00:00"
+      }
+    },
+    {
+      "book": "LLM Engineers Handbook - Paul Iusztin",
+      "chapter": 4,
+      "title": "provides more information on the feature pipeline. The ETL process is independent of the feature pipeline. The two pipelines communicate with each other strictly through the MongoDB data warehouse. Th",
+      "chapter_id": "LLM Engineers Handbook - Paul Iusztin:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "class",
+          "vector",
+          "mongodb",
+          "embeddings",
+          "query"
+        ],
+        "semantic": [],
+        "merged": [
+          "class",
+          "vector",
+          "mongodb",
+          "embeddings",
+          "query"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39196784881957647,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:47.393522+00:00"
+      }
+    },
+    {
+      "book": "LLM Engineers Handbook - Paul Iusztin",
+      "chapter": 5,
+      "title": "We called it OVM because we work with embedding and vector DBs instead of structured data and SQL tables. Otherwise, it follows the same principles as an ORM pattern",
+      "chapter_id": "LLM Engineers Handbook - Paul Iusztin:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data_model",
+          "instruction",
+          "quality",
+          "instructions",
+          "samples"
+        ],
+        "semantic": [],
+        "merged": [
+          "data_model",
+          "instruction",
+          "quality",
+          "instructions",
+          "samples"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_data_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4394829143302941,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:47.393558+00:00"
+      }
+    },
+    {
+      "book": "LLM Engineers Handbook - Paul Iusztin",
+      "chapter": 6,
+      "title": "when we create a preference dataset",
+      "chapter_id": "LLM Engineers Handbook - Paul Iusztin:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "preference",
+          "dataset",
+          "preference datasets",
+          "datasets",
+          "human"
+        ],
+        "semantic": [],
+        "merged": [
+          "preference",
+          "dataset",
+          "preference datasets",
+          "datasets",
+          "human"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3626222716192019,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:47.393595+00:00"
+      }
+    },
+    {
+      "book": "LLM Engineers Handbook - Paul Iusztin",
+      "chapter": 7,
+      "title": "Now, let’s start by looking at the implementation of the retrieval module",
+      "chapter_id": "LLM Engineers Handbook - Paul Iusztin:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "query",
+          "rag",
+          "retrieval",
+          "search",
+          "latency"
+        ],
+        "semantic": [],
+        "merged": [
+          "query",
+          "rag",
+          "retrieval",
+          "search",
+          "latency"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4510267328134427,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:47.393631+00:00"
+      }
+    },
+    {
+      "book": "LLM Engineers Handbook - Paul Iusztin",
+      "chapter": 8,
+      "title": "with our fine-tuned LLM Twin, ultimately being able to test out the inference pipeline end to end",
+      "chapter_id": "LLM Engineers Handbook - Paul Iusztin:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "sagemaker",
+          "aws",
+          "endpoint",
+          "deployment",
+          "infrastructure"
+        ],
+        "semantic": [],
+        "merged": [
+          "sagemaker",
+          "aws",
+          "endpoint",
+          "deployment",
+          "infrastructure"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42513924735785114,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:47.393667+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

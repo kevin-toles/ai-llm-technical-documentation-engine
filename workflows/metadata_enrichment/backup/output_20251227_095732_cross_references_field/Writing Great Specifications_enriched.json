@@ -1,0 +1,497 @@
+{
+  "book": {
+    "title": "Writing Great Specifications"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:00:21.094884",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Writing Great Specifications",
+      "chapter": 1,
+      "title": "Introduction to specification by example and Gherkin",
+      "chapter_id": "Writing Great Specifications:ch1",
+      "cross_references": [
+        {
+          "target": "Writing Great Specifications:ch2",
+          "score": 0.5849356720176956,
+          "base_score": 0.7248927866961592,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Writing Great Specifications:ch6",
+          "score": 0.5226359926700488,
+          "base_score": 0.5469859137093405,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "conversations",
+          "requirements",
+          "specification example",
+          "specifications",
+          "example gherkin"
+        ],
+        "semantic": [],
+        "merged": [
+          "conversations",
+          "requirements",
+          "specification example",
+          "specifications",
+          "example gherkin"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_specification_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5210733049440658,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:21.078172+00:00"
+      }
+    },
+    {
+      "book": "Writing Great Specifications",
+      "chapter": 2,
+      "title": "The specification layer and the automation layer",
+      "chapter_id": "Writing Great Specifications:ch2",
+      "cross_references": [
+        {
+          "target": "Writing Great Specifications:ch1",
+          "score": 0.5849356720176956,
+          "base_score": 0.7248927866961592,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "layer",
+          "specification layer",
+          "meeting",
+          "testing",
+          "automation"
+        ],
+        "semantic": [],
+        "merged": [
+          "layer",
+          "specification layer",
+          "meeting",
+          "testing",
+          "automation"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_specification_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5279489238319897,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:21.078260+00:00"
+      }
+    },
+    {
+      "book": "Writing Great Specifications",
+      "chapter": 3,
+      "title": "Mastering the Given-When-Then template",
+      "chapter_id": "Writing Great Specifications:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "vladimir",
+          "write",
+          "user",
+          "writing",
+          "gherkin scenarios"
+        ],
+        "semantic": [],
+        "merged": [
+          "vladimir",
+          "write",
+          "user",
+          "writing",
+          "gherkin scenarios"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_specification_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4698052016945533,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:21.078313+00:00"
+      }
+    },
+    {
+      "book": "Writing Great Specifications",
+      "chapter": 4,
+      "title": "The basics of scenario outlines",
+      "chapter_id": "Writing Great Specifications:ch4",
+      "cross_references": [
+        {
+          "target": "Writing Great Specifications:ch5",
+          "score": 0.5832136088549456,
+          "base_score": 0.5553560147582426,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Writing Great Specifications:ch9",
+          "score": 0.5193515642117789,
+          "base_score": 0.6155859403529647,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "shipped",
+          "outlines",
+          "scenario outlines",
+          "shipping",
+          "book shipped"
+        ],
+        "semantic": [],
+        "merged": [
+          "shipped",
+          "outlines",
+          "scenario outlines",
+          "shipping",
+          "book shipped"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_scenario_examples",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4906379420668659,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:21.078366+00:00"
+      }
+    },
+    {
+      "book": "Writing Great Specifications",
+      "chapter": 5,
+      "title": "Choosing examples for scenario outlines",
+      "chapter_id": "Writing Great Specifications:ch5",
+      "cross_references": [
+        {
+          "target": "Writing Great Specifications:ch4",
+          "score": 0.5832136088549456,
+          "base_score": 0.5553560147582426,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Writing Great Specifications:ch9",
+          "score": 0.5150490614188321,
+          "base_score": 0.6084151023647202,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "outlines",
+          "scenario outlines",
+          "examples scenario",
+          "example",
+          "table"
+        ],
+        "semantic": [],
+        "merged": [
+          "outlines",
+          "scenario outlines",
+          "examples scenario",
+          "example",
+          "table"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_scenario_examples",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5232925609352423,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:21.078418+00:00"
+      }
+    },
+    {
+      "book": "Writing Great Specifications",
+      "chapter": 6,
+      "title": "The life cycle of executable specifications",
+      "chapter_id": "Writing Great Specifications:ch6",
+      "cross_references": [
+        {
+          "target": "Writing Great Specifications:ch1",
+          "score": 0.5226359926700488,
+          "base_score": 0.5469859137093405,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "business",
+          "businesses",
+          "executable",
+          "goals",
+          "specifications"
+        ],
+        "semantic": [],
+        "merged": [
+          "business",
+          "businesses",
+          "executable",
+          "goals",
+          "specifications"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_specification_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4869588998531706,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:21.078467+00:00"
+      }
+    },
+    {
+      "book": "Writing Great Specifications",
+      "chapter": 7,
+      "title": "Living documentation",
+      "chapter_id": "Writing Great Specifications:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "documentation",
+          "domain",
+          "living",
+          "living documentation",
+          "concept"
+        ],
+        "semantic": [],
+        "merged": [
+          "documentation",
+          "domain",
+          "living",
+          "living documentation",
+          "concept"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "domain_the_documentation",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45323544633700125,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:21.078530+00:00"
+      }
+    },
+    {
+      "book": "Writing Great Specifications",
+      "chapter": 8,
+      "title": "talks about organizing scenarios into specifications. Chapter 9",
+      "chapter_id": "Writing Great Specifications:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "feature",
+          "organizing scenarios",
+          "organizing",
+          "employee",
+          "keyword"
+        ],
+        "semantic": [],
+        "merged": [
+          "feature",
+          "organizing scenarios",
+          "organizing",
+          "employee",
+          "keyword"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5944883731527386,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:00:21.078579+00:00"
+      }
+    },
+    {
+      "book": "Writing Great Specifications",
+      "chapter": 9,
+      "title": "discusses that",
+      "chapter_id": "Writing Great Specifications:ch9",
+      "cross_references": [
+        {
+          "target": "Writing Great Specifications:ch4",
+          "score": 0.5193515642117789,
+          "base_score": 0.6155859403529647,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Writing Great Specifications:ch5",
+          "score": 0.5150490614188321,
+          "base_score": 0.6084151023647202,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "user",
+          "user stories",
+          "events",
+          "abilities",
+          "stories"
+        ],
+        "semantic": [],
+        "merged": [
+          "user",
+          "user stories",
+          "events",
+          "abilities",
+          "stories"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_scenario_examples",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5534838412851693,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:21.078639+00:00"
+      }
+    },
+    {
+      "book": "Writing Great Specifications",
+      "chapter": 10,
+      "title": "Building a domain-driven specification suite",
+      "chapter_id": "Writing Great Specifications:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "domain",
+          "domains",
+          "core domain",
+          "core",
+          "subdomains"
+        ],
+        "semantic": [],
+        "merged": [
+          "domain",
+          "domains",
+          "core domain",
+          "core",
+          "subdomains"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "domain_the_documentation",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4384834935600281,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:21.078690+00:00"
+      }
+    },
+    {
+      "book": "Writing Great Specifications",
+      "chapter": 11,
+      "title": "Managing large projects with bounded contexts",
+      "chapter_id": "Writing Great Specifications:ch11",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "contexts",
+          "bounded",
+          "bounded contexts",
+          "domain",
+          "context"
+        ],
+        "semantic": [],
+        "merged": [
+          "contexts",
+          "bounded",
+          "bounded contexts",
+          "domain",
+          "context"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5138483759044592,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:00:21.078738+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

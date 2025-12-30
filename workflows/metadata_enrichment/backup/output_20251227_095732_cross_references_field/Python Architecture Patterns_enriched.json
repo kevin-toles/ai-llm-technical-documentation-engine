@@ -1,0 +1,622 @@
+{
+  "book": {
+    "title": "Python Architecture Patterns"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:54:19.854251",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Python Architecture Patterns",
+      "chapter": 1,
+      "title": "EBSCOhost - printed on 2/9/2023 8:47 AM via . All use subject to https://www.ebsco.com/terms-of-use",
+      "chapter_id": "Python Architecture Patterns:ch1",
+      "cross_references": [
+        {
+          "target": "Python Architecture Patterns:ch9",
+          "score": 0.5151333469791092,
+          "base_score": 0.6085555782985153,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "architecture",
+          "software",
+          "software architecture",
+          "teams",
+          "data"
+        ],
+        "semantic": [],
+        "merged": [
+          "architecture",
+          "software",
+          "software architecture",
+          "teams",
+          "data"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36418894815248015,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:19.846908+00:00"
+      }
+    },
+    {
+      "book": "Python Architecture Patterns",
+      "chapter": 2,
+      "title": "EBSCOhost - printed on 2/9/2023 8:47 AM via . All use subject to https://www.ebsco.com/terms-of-use",
+      "chapter_id": "Python Architecture Patterns:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "user",
+          "resource",
+          "api",
+          "username",
+          "interface"
+        ],
+        "semantic": [],
+        "merged": [
+          "user",
+          "resource",
+          "api",
+          "username",
+          "interface"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32309808477826235,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:19.847032+00:00"
+      }
+    },
+    {
+      "book": "Python Architecture Patterns",
+      "chapter": 3,
+      "title": "EBSCOhost - printed on 2/9/2023 8:47 AM via . All use subject to https://www.ebsco.com/terms-of-use",
+      "chapter_id": "Python Architecture Patterns:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "shard",
+          "table",
+          "shard key",
+          "databases"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "shard",
+          "table",
+          "shard key",
+          "databases"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2692738084440819,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:54:19.847129+00:00"
+      }
+    },
+    {
+      "book": "Python Architecture Patterns",
+      "chapter": 4,
+      "title": "EBSCOhost - printed on 2/9/2023 8:47 AM via . All use subject to https://www.ebsco.com/terms-of-use",
+      "chapter_id": "Python Architecture Patterns:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "database",
+          "orm",
+          "schema",
+          "migrations",
+          "sql"
+        ],
+        "semantic": [],
+        "merged": [
+          "database",
+          "orm",
+          "schema",
+          "migrations",
+          "sql"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2894464439073691,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:54:19.847218+00:00"
+      }
+    },
+    {
+      "book": "Python Architecture Patterns",
+      "chapter": 5,
+      "title": "EBSCOhost - printed on 2/9/2023 8:47 AM via . All use subject to https://www.ebsco.com/terms-of-use",
+      "chapter_id": "Python Architecture Patterns:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "factor",
+          "environment",
+          "configuration",
+          "code base",
+          "base"
+        ],
+        "semantic": [],
+        "merged": [
+          "factor",
+          "environment",
+          "configuration",
+          "code base",
+          "base"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2782601795689345,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:19.847299+00:00"
+      }
+    },
+    {
+      "book": "Python Architecture Patterns",
+      "chapter": 6,
+      "title": "EBSCOhost - printed on 2/9/2023 8:47 AM via . All use subject to https://www.ebsco.com/terms-of-use",
+      "chapter_id": "Python Architecture Patterns:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "request",
+          "uwsgi",
+          "web",
+          "server",
+          "requests"
+        ],
+        "semantic": [],
+        "merged": [
+          "request",
+          "uwsgi",
+          "web",
+          "server",
+          "requests"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2876626917773393,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:54:19.847399+00:00"
+      }
+    },
+    {
+      "book": "Python Architecture Patterns",
+      "chapter": 7,
+      "title": "EBSCOhost - printed on 2/9/2023 8:47 AM via . All use subject to https://www.ebsco.com/terms-of-use",
+      "chapter_id": "Python Architecture Patterns:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "task",
+          "tasks",
+          "06",
+          "2021 06",
+          "info"
+        ],
+        "semantic": [],
+        "merged": [
+          "task",
+          "tasks",
+          "06",
+          "2021 06",
+          "info"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3131398612721095,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:54:19.847483+00:00"
+      }
+    },
+    {
+      "book": "Python Architecture Patterns",
+      "chapter": 8,
+      "title": "EBSCOhost - printed on 2/9/2023 8:47 AM via . All use subject to https://www.ebsco.com/terms-of-use",
+      "chapter_id": "Python Architecture Patterns:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "video",
+          "events",
+          "08",
+          "2021 07",
+          "07 08"
+        ],
+        "semantic": [],
+        "merged": [
+          "video",
+          "events",
+          "08",
+          "2021 07",
+          "07 08"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27143568676025787,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:54:19.847561+00:00"
+      }
+    },
+    {
+      "book": "Python Architecture Patterns",
+      "chapter": 9,
+      "title": "EBSCOhost - printed on 2/9/2023 8:47 AM via . All use subject to https://www.ebsco.com/terms-of-use",
+      "chapter_id": "Python Architecture Patterns:ch9",
+      "cross_references": [
+        {
+          "target": "Python Architecture Patterns:ch1",
+          "score": 0.5151333469791092,
+          "base_score": 0.6085555782985153,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "microservices",
+          "monolith",
+          "microservice",
+          "opt",
+          "monolithic"
+        ],
+        "semantic": [],
+        "merged": [
+          "microservices",
+          "monolith",
+          "microservice",
+          "opt",
+          "monolithic"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31937390861968096,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:19.847652+00:00"
+      }
+    },
+    {
+      "book": "Python Architecture Patterns",
+      "chapter": 10,
+      "title": "EBSCOhost - printed on 2/9/2023 8:47 AM via . All use subject to https://www.ebsco.com/terms-of-use",
+      "chapter_id": "Python Architecture Patterns:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "test",
+          "tests",
+          "assert",
+          "def",
+          "parameter_tdd"
+        ],
+        "semantic": [],
+        "merged": [
+          "test",
+          "tests",
+          "assert",
+          "def",
+          "parameter_tdd"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30172439034400783,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:54:19.847726+00:00"
+      }
+    },
+    {
+      "book": "Python Architecture Patterns",
+      "chapter": 11,
+      "title": "EBSCOhost - printed on 2/9/2023 8:47 AM via . All use subject to https://www.ebsco.com/terms-of-use",
+      "chapter_id": "Python Architecture Patterns:ch11",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "package",
+          "wheel",
+          "wheel package",
+          "packages",
+          "src"
+        ],
+        "semantic": [],
+        "merged": [
+          "package",
+          "wheel",
+          "wheel package",
+          "packages",
+          "src"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2197496156197502,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:19.847932+00:00"
+      }
+    },
+    {
+      "book": "Python Architecture Patterns",
+      "chapter": 12,
+      "title": "EBSCOhost - printed on 2/9/2023 8:47 AM via . All use subject to https://www.ebsco.com/terms-of-use",
+      "chapter_id": "Python Architecture Patterns:ch12",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "logs",
+          "error",
+          "logging",
+          "severity",
+          "status_code"
+        ],
+        "semantic": [],
+        "merged": [
+          "logs",
+          "error",
+          "logging",
+          "severity",
+          "status_code"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.19804515747643214,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:19.848066+00:00"
+      }
+    },
+    {
+      "book": "Python Architecture Patterns",
+      "chapter": 13,
+      "title": "EBSCOhost - printed on 2/9/2023 8:47 AM via . All use subject to https://www.ebsco.com/terms-of-use",
+      "chapter_id": "Python Architecture Patterns:ch13",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "metrics",
+          "prometheus",
+          "django",
+          "metric",
+          "display"
+        ],
+        "semantic": [],
+        "merged": [
+          "metrics",
+          "prometheus",
+          "django",
+          "metric",
+          "display"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3398161039892304,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:19.848171+00:00"
+      }
+    },
+    {
+      "book": "Python Architecture Patterns",
+      "chapter": 14,
+      "title": "EBSCOhost - printed on 2/9/2023 8:47 AM via . All use subject to https://www.ebsco.com/terms-of-use",
+      "chapter_id": "Python Architecture Patterns:ch14",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "mib",
+          "profiling",
+          "profile",
+          "000",
+          "py"
+        ],
+        "semantic": [],
+        "merged": [
+          "mib",
+          "profiling",
+          "profile",
+          "000",
+          "py"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23849952188411744,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:54:19.848277+00:00"
+      }
+    },
+    {
+      "book": "Python Architecture Patterns",
+      "chapter": 15,
+      "title": "EBSCOhost - printed on 2/9/2023 8:47 AM via . All use subject to https://www.ebsco.com/terms-of-use",
+      "chapter_id": "Python Architecture Patterns:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "logs",
+          "problem",
+          "debugging",
+          "debug",
+          "request id"
+        ],
+        "semantic": [],
+        "merged": [
+          "logs",
+          "problem",
+          "debugging",
+          "debug",
+          "request id"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33069679801841806,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:19.848363+00:00"
+      }
+    },
+    {
+      "book": "Python Architecture Patterns",
+      "chapter": 16,
+      "title": "EBSCOhost - printed on 2/9/2023 8:47 AM via . All use subject to https://www.ebsco.com/terms-of-use",
+      "chapter_id": "Python Architecture Patterns:ch16",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "changes",
+          "version",
+          "load",
+          "new",
+          "service"
+        ],
+        "semantic": [],
+        "merged": [
+          "changes",
+          "version",
+          "load",
+          "new",
+          "service"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28326630220100435,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:19.848448+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

@@ -1,0 +1,2963 @@
+{
+  "book": {
+    "title": "Production Kubernetes - Josh Rosso"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:53:55.321071",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-9)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch1",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch5",
+          "score": 0.6134332643213602,
+          "base_score": 0.7723887738689338,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch4",
+          "score": 0.592083441826233,
+          "base_score": 0.736805736377055,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch43",
+          "score": 0.5818074824807266,
+          "base_score": 0.7196791374678776,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch9",
+          "score": 0.5785411623077991,
+          "base_score": 0.7142352705129985,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch3",
+          "score": 0.5752325707134466,
+          "base_score": 0.7087209511890775,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "203",
+          "encryption",
+          "storage",
+          "summary",
+          "ingress"
+        ],
+        "semantic": [],
+        "merged": [
+          "203",
+          "encryption",
+          "storage",
+          "summary",
+          "ingress"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5505209470048245,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.281465+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 2,
+      "title": "Segment 2 (pages 10-18)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch2",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch52",
+          "score": 0.5809676051962677,
+          "base_score": 0.7182793419937795,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch51",
+          "score": 0.5580870191675272,
+          "base_score": 0.6801450319458786,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "book",
+          "probes",
+          "350",
+          "production",
+          "ecosystem"
+        ],
+        "semantic": [],
+        "merged": [
+          "book",
+          "probes",
+          "350",
+          "production",
+          "ecosystem"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "service_mesh_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47485483330227274,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.281754+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 3,
+      "title": "Segment 3 (pages 19-28)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch3",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch1",
+          "score": 0.5752325707134466,
+          "base_score": 0.7087209511890775,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch5",
+          "score": 0.5656565612377321,
+          "base_score": 0.6927609353962201,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch49",
+          "score": 0.5606432726199775,
+          "base_score": 0.6844054543666291,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch4",
+          "score": 0.5441423378535067,
+          "base_score": 0.6569038964225111,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch50",
+          "score": 0.5352677973375249,
+          "base_score": 0.6421129955625415,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "interfaces",
+          "core",
+          "functionality",
+          "code",
+          "defining kubernetes"
+        ],
+        "semantic": [],
+        "merged": [
+          "interfaces",
+          "core",
+          "functionality",
+          "code",
+          "defining kubernetes"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5079084816733174,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.282003+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 4,
+      "title": "Segment 4 (pages 29-36)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch4",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch5",
+          "score": 0.7870227582753087,
+          "base_score": 0.7759903114112287,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch50",
+          "score": 0.6438885994010973,
+          "base_score": 0.6564809990018289,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch43",
+          "score": 0.6170498429864437,
+          "base_score": 0.7043423309033321,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch1",
+          "score": 0.592083441826233,
+          "base_score": 0.736805736377055,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch49",
+          "score": 0.5837073214121808,
+          "base_score": 0.7228455356869681,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "application platforms",
+          "platforms",
+          "application",
+          "platform",
+          "building"
+        ],
+        "semantic": [],
+        "merged": [
+          "application platforms",
+          "platforms",
+          "application",
+          "platform",
+          "building"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5454583571564859,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.282255+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 5,
+      "title": "Segment 5 (pages 37-45)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch5",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch4",
+          "score": 0.7870227582753087,
+          "base_score": 0.7759903114112287,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch50",
+          "score": 0.6374251846406374,
+          "base_score": 0.7383012336603214,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch1",
+          "score": 0.6134332643213602,
+          "base_score": 0.7723887738689338,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch43",
+          "score": 0.607445593826853,
+          "base_score": 0.688335248970681,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch49",
+          "score": 0.5913977844531588,
+          "base_score": 0.735662974088598,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "application",
+          "application platforms",
+          "building application",
+          "platforms kubernetes",
+          "platform"
+        ],
+        "semantic": [],
+        "merged": [
+          "application",
+          "application platforms",
+          "building application",
+          "platforms kubernetes",
+          "platform"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.543588890294958,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.282534+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 6,
+      "title": "Segment 6 (pages 46-54)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch6",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch7",
+          "score": 0.5947480049002571,
+          "base_score": 0.6671726007596879,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch4",
+          "score": 0.5688326205042208,
+          "base_score": 0.6980543675070348,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch43",
+          "score": 0.552664163724815,
+          "base_score": 0.6711069395413582,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch5",
+          "score": 0.5502839709481954,
+          "base_score": 0.6671399515803256,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch1",
+          "score": 0.5496511059148051,
+          "base_score": 0.6660851765246754,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "clusters",
+          "pools",
+          "distinct clusters",
+          "node pools",
+          "managed"
+        ],
+        "semantic": [],
+        "merged": [
+          "clusters",
+          "pools",
+          "distinct clusters",
+          "node pools",
+          "managed"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5289761661657834,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.282797+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 7,
+      "title": "Segment 7 (pages 55-62)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch7",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch6",
+          "score": 0.5947480049002571,
+          "base_score": 0.6671726007596879,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch8",
+          "score": 0.5820095368196918,
+          "base_score": 0.6459418206254123,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch43",
+          "score": 0.5776306589054071,
+          "base_score": 0.7127177648423453,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch42",
+          "score": 0.5677554405583959,
+          "base_score": 0.6221849935232524,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch45",
+          "score": 0.5166881922950126,
+          "base_score": 0.6111469871583544,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "clusters",
+          "management",
+          "cluster",
+          "management cluster",
+          "infrastructure"
+        ],
+        "semantic": [],
+        "merged": [
+          "clusters",
+          "management",
+          "cluster",
+          "management cluster",
+          "infrastructure"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47205164255045007,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.283095+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 8,
+      "title": "Segment 8 (pages 63-71)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch8",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch7",
+          "score": 0.5820095368196918,
+          "base_score": 0.6459418206254123,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch42",
+          "score": 0.546238408989457,
+          "base_score": 0.5863232742416875,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch6",
+          "score": 0.5359446653804515,
+          "base_score": 0.6432411089674193,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch9",
+          "score": 0.5328845836968111,
+          "base_score": 0.5640668987539444,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch45",
+          "score": 0.5276839764616693,
+          "base_score": 0.6294732941027821,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "machine",
+          "machines",
+          "cluster",
+          "join",
+          "etcd"
+        ],
+        "semantic": [],
+        "merged": [
+          "machine",
+          "machines",
+          "cluster",
+          "join",
+          "etcd"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4574813785482274,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.283355+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 9,
+      "title": "Segment 9 (pages 72-79)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch9",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch1",
+          "score": 0.5785411623077991,
+          "base_score": 0.7142352705129985,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch4",
+          "score": 0.5680533506792377,
+          "base_score": 0.6967555844653961,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch6",
+          "score": 0.5473079378468791,
+          "base_score": 0.6621798964114654,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch43",
+          "score": 0.5444845346315408,
+          "base_score": 0.6574742243859013,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch49",
+          "score": 0.5412738989092806,
+          "base_score": 0.6521231648488008,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cluster",
+          "add",
+          "new cluster",
+          "add ons",
+          "ons"
+        ],
+        "semantic": [],
+        "merged": [
+          "cluster",
+          "add",
+          "new cluster",
+          "add ons",
+          "ons"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5007570634480889,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.283633+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 10,
+      "title": "Segment 10 (pages 80-88)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch10",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch11",
+          "score": 0.556652301073856,
+          "base_score": 0.3920395494088077,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch8",
+          "score": 0.516744279818743,
+          "base_score": 0.6112404663645717,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch1",
+          "score": 0.5033694900266633,
+          "base_score": 0.5889491500444388,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch9",
+          "score": 0.5007801319662596,
+          "base_score": 0.5846335532770992,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "container",
+          "runtime",
+          "oci",
+          "container runtime",
+          "oci runtime"
+        ],
+        "semantic": [],
+        "merged": [
+          "container",
+          "runtime",
+          "oci",
+          "container runtime",
+          "oci runtime"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4080804266341597,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.283878+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 11,
+      "title": "Segment 11 (pages 89-100)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch11",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch10",
+          "score": 0.556652301073856,
+          "base_score": 0.3920395494088077,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch43",
+          "score": 0.5072478376959807,
+          "base_score": 0.5954130628266345,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch45",
+          "score": 0.5016427098717343,
+          "base_score": 0.5860711831195571,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "runtime",
+          "container runtime",
+          "container",
+          "containerd",
+          "cri"
+        ],
+        "semantic": [],
+        "merged": [
+          "runtime",
+          "container runtime",
+          "container",
+          "containerd",
+          "cri"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4732381165539995,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.284119+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 12,
+      "title": "Segment 12 (pages 101-114)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch12",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch13",
+          "score": 0.6263239441250744,
+          "base_score": 0.7581589544941716,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "storage",
+          "csi",
+          "volume",
+          "ebs",
+          "driver"
+        ],
+        "semantic": [],
+        "merged": [
+          "storage",
+          "csi",
+          "volume",
+          "ebs",
+          "driver"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46102313682381435,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:53:55.284357+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 13,
+      "title": "Segment 13 (pages 115-123)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch13",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch12",
+          "score": 0.6263239441250744,
+          "base_score": 0.7581589544941716,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "storage",
+          "snapshot",
+          "volume",
+          "driver",
+          "block"
+        ],
+        "semantic": [],
+        "merged": [
+          "storage",
+          "snapshot",
+          "volume",
+          "driver",
+          "block"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4372283753669141,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:53:55.284604+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 14,
+      "title": "Segment 14 (pages 124-131)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch14",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch16",
+          "score": 0.6490135346748143,
+          "base_score": 0.6650225577913571,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch19",
+          "score": 0.5997877434700376,
+          "base_score": 0.6755721650426552,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch17",
+          "score": 0.5869877600165092,
+          "base_score": 0.6542388592867746,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch20",
+          "score": 0.5405875743603724,
+          "base_score": 0.6509792906006207,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch18",
+          "score": 0.5047399096078441,
+          "base_score": 0.5912331826797401,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pod",
+          "ips",
+          "network",
+          "pod network",
+          "ip"
+        ],
+        "semantic": [],
+        "merged": [
+          "pod",
+          "ips",
+          "network",
+          "pod network",
+          "ip"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_ingress_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47773049043913035,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.284847+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 15,
+      "title": "Segment 15 (pages 132-139)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch15",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch20",
+          "score": 0.5307228336067726,
+          "base_score": 0.6345380560112878,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch16",
+          "score": 0.5284914511484227,
+          "base_score": 0.5567450111732971,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cni",
+          "plug",
+          "networking",
+          "cni plug",
+          "plug ins"
+        ],
+        "semantic": [],
+        "merged": [
+          "cni",
+          "plug",
+          "networking",
+          "cni plug",
+          "plug ins"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_ingress_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46882425576915704,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.285090+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 16,
+      "title": "Segment 16 (pages 140-148)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch16",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch14",
+          "score": 0.6490135346748143,
+          "base_score": 0.6650225577913571,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch15",
+          "score": 0.5284914511484227,
+          "base_score": 0.5567450111732971,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cilium",
+          "network",
+          "cni",
+          "calico",
+          "pod"
+        ],
+        "semantic": [],
+        "merged": [
+          "cilium",
+          "network",
+          "cni",
+          "calico",
+          "pod"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_ingress_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42418266520693065,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.285330+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 17,
+      "title": "Segment 17 (pages 149-156)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch17",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch19",
+          "score": 0.6486318006663785,
+          "base_score": 0.6643863344439641,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch14",
+          "score": 0.5869877600165092,
+          "base_score": 0.6542388592867746,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch18",
+          "score": 0.5815591488034292,
+          "base_score": 0.6451911739316412,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch20",
+          "score": 0.5044622845065961,
+          "base_score": 0.5907704741776603,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "service",
+          "load",
+          "port",
+          "services",
+          "ip"
+        ],
+        "semantic": [],
+        "merged": [
+          "service",
+          "load",
+          "port",
+          "services",
+          "ip"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_ingress_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4986554384628697,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.285585+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 18,
+      "title": "Segment 18 (pages 157-164)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch18",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch19",
+          "score": 0.6114220574790568,
+          "base_score": 0.6949626883910206,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch17",
+          "score": 0.5815591488034292,
+          "base_score": 0.6451911739316412,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch20",
+          "score": 0.5223926187388303,
+          "base_score": 0.620654364564717,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch14",
+          "score": 0.5047399096078441,
+          "base_score": 0.5912331826797401,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "endpoints",
+          "service",
+          "service endpoint",
+          "endpoint",
+          "chain"
+        ],
+        "semantic": [],
+        "merged": [
+          "endpoints",
+          "service",
+          "service endpoint",
+          "endpoint",
+          "chain"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_ingress_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5102470008464406,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.285829+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 19,
+      "title": "Segment 19 (pages 165-172)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch19",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch17",
+          "score": 0.6486318006663785,
+          "base_score": 0.6643863344439641,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch18",
+          "score": 0.6114220574790568,
+          "base_score": 0.6949626883910206,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch14",
+          "score": 0.5997877434700376,
+          "base_score": 0.6755721650426552,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch20",
+          "score": 0.5321119290591233,
+          "base_score": 0.6368532150985388,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ipvs",
+          "service",
+          "virtual service",
+          "ipvs virtual",
+          "ip"
+        ],
+        "semantic": [],
+        "merged": [
+          "ipvs",
+          "service",
+          "virtual service",
+          "ipvs virtual",
+          "ip"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_ingress_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48725838244447806,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.286068+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 20,
+      "title": "Segment 20 (pages 173-188)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch20",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch14",
+          "score": 0.5405875743603724,
+          "base_score": 0.6509792906006207,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch19",
+          "score": 0.5321119290591233,
+          "base_score": 0.6368532150985388,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch15",
+          "score": 0.5307228336067726,
+          "base_score": 0.6345380560112878,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch18",
+          "score": 0.5223926187388303,
+          "base_score": 0.620654364564717,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch17",
+          "score": 0.5044622845065961,
+          "base_score": 0.5907704741776603,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ingress",
+          "ingress controller",
+          "ingress controllers",
+          "controller",
+          "tls"
+        ],
+        "semantic": [],
+        "merged": [
+          "ingress",
+          "ingress controller",
+          "ingress controllers",
+          "controller",
+          "tls"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_ingress_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5049349254360016,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.286344+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 21,
+      "title": "Segment 21 (pages 189-200)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch21",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch22",
+          "score": 0.7027139116196006,
+          "base_score": 0.6354755669850486,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch52",
+          "score": 0.6437230762394701,
+          "base_score": 0.5371575080181645,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch51",
+          "score": 0.5089434435589761,
+          "base_score": 0.5241649985242195,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "mesh",
+          "service mesh",
+          "service",
+          "istio",
+          "envoy"
+        ],
+        "semantic": [],
+        "merged": [
+          "mesh",
+          "service mesh",
+          "service",
+          "istio",
+          "envoy"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "service_mesh_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4628282717754095,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.286679+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 22,
+      "title": "Segment 22 (pages 201-210)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch22",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch21",
+          "score": 0.7027139116196006,
+          "base_score": 0.6354755669850486,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch52",
+          "score": 0.6808335982029363,
+          "base_score": 0.5990083779572748,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "mesh",
+          "service mesh",
+          "service",
+          "proxy",
+          "upgrade"
+        ],
+        "semantic": [],
+        "merged": [
+          "mesh",
+          "service mesh",
+          "service",
+          "proxy",
+          "upgrade"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "service_mesh_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42174739958954544,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.286942+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 23,
+      "title": "Segment 23 (pages 211-232)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch23",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch24",
+          "score": 0.5991798458963743,
+          "base_score": 0.5819664098272905,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "secret",
+          "secrets",
+          "vault",
+          "secret data",
+          "encryption"
+        ],
+        "semantic": [],
+        "merged": [
+          "secret",
+          "secrets",
+          "vault",
+          "secret data",
+          "encryption"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "secret_the_secrets",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44490519378328164,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.287187+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 24,
+      "title": "Segment 24 (pages 233-241)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch24",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch23",
+          "score": 0.5991798458963743,
+          "base_score": 0.5819664098272905,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "secret",
+          "sealed",
+          "sealed secret",
+          "secrets",
+          "key"
+        ],
+        "semantic": [],
+        "merged": [
+          "secret",
+          "sealed",
+          "sealed secret",
+          "secrets",
+          "key"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "secret_the_secrets",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2992432262555045,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.287481+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 25,
+      "title": "Segment 25 (pages 242-250)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch25",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch26",
+          "score": 0.6403494933673451,
+          "base_score": 0.7431750815381678,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch37",
+          "score": 0.5407535367214027,
+          "base_score": 0.6512558945356711,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "admission",
+          "mutating",
+          "controllers",
+          "webhooks",
+          "admission controllers"
+        ],
+        "semantic": [],
+        "merged": [
+          "admission",
+          "mutating",
+          "controllers",
+          "webhooks",
+          "admission controllers"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_to_admission",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49072732504094246,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.287729+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 26,
+      "title": "Segment 26 (pages 251-261)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch26",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch25",
+          "score": 0.6403494933673451,
+          "base_score": 0.7431750815381678,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "admission",
+          "gatekeeper",
+          "namespace",
+          "ingress",
+          "input"
+        ],
+        "semantic": [],
+        "merged": [
+          "admission",
+          "gatekeeper",
+          "namespace",
+          "ingress",
+          "input"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_to_admission",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44114167312388924,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.287973+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 27,
+      "title": "Segment 27 (pages 262-270)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch27",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "logs",
+          "log",
+          "backend",
+          "request",
+          "body"
+        ],
+        "semantic": [],
+        "merged": [
+          "logs",
+          "log",
+          "backend",
+          "request",
+          "body"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4620908959893689,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:53:55.288210+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 28,
+      "title": "Segment 28 (pages 271-278)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch28",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch30",
+          "score": 0.6275779096395676,
+          "base_score": 0.7959631827326128,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch29",
+          "score": 0.5018020318628347,
+          "base_score": 0.4196700531047245,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "prometheus",
+          "metrics",
+          "prometheus server",
+          "prometheus metrics",
+          "metrics prometheus"
+        ],
+        "semantic": [],
+        "merged": [
+          "prometheus",
+          "metrics",
+          "prometheus server",
+          "prometheus metrics",
+          "metrics prometheus"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38055129293142614,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.288464+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 29,
+      "title": "Segment 29 (pages 279-287)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch29",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch45",
+          "score": 0.5203653941285729,
+          "base_score": 0.5432015828068806,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch28",
+          "score": 0.5018020318628347,
+          "base_score": 0.4196700531047245,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "prometheus",
+          "metrics",
+          "monitoring",
+          "scrape",
+          "rules"
+        ],
+        "semantic": [],
+        "merged": [
+          "prometheus",
+          "metrics",
+          "monitoring",
+          "scrape",
+          "rules"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39092857616366555,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.288701+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 30,
+      "title": "Segment 30 (pages 288-298)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch30",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch28",
+          "score": 0.6275779096395676,
+          "base_score": 0.7959631827326128,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tracing",
+          "distributed",
+          "application",
+          "identity",
+          "user"
+        ],
+        "semantic": [],
+        "merged": [
+          "tracing",
+          "distributed",
+          "application",
+          "identity",
+          "user"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43473123275473136,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.288994+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 31,
+      "title": "Segment 31 (pages 299-306)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch31",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "kind kind",
+          "kind",
+          "certificate",
+          "user",
+          "public key"
+        ],
+        "semantic": [],
+        "merged": [
+          "kind kind",
+          "kind",
+          "certificate",
+          "user",
+          "public key"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "secret_the_secrets",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40097782544574045,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.289249+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 32,
+      "title": "Segment 32 (pages 307-317)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch32",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch33",
+          "score": 0.6746698333726829,
+          "base_score": 0.7077830556211383,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "service account",
+          "account",
+          "token",
+          "service",
+          "identity"
+        ],
+        "semantic": [],
+        "merged": [
+          "service account",
+          "account",
+          "token",
+          "service",
+          "identity"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "secret_the_secrets",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45410706300901865,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.289515+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 33,
+      "title": "Segment 33 (pages 318-326)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch33",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch32",
+          "score": 0.6746698333726829,
+          "base_score": 0.7077830556211383,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "iam",
+          "aws",
+          "aws iam",
+          "service account",
+          "account"
+        ],
+        "semantic": [],
+        "merged": [
+          "iam",
+          "aws",
+          "aws iam",
+          "service account",
+          "account"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "secret_the_secrets",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4873389552024598,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.289749+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 34,
+      "title": "Segment 34 (pages 327-336)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch34",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "spire",
+          "spiffe",
+          "trust",
+          "spiffe production",
+          "production trust"
+        ],
+        "semantic": [],
+        "merged": [
+          "spire",
+          "spiffe",
+          "trust",
+          "spiffe production",
+          "production trust"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36904241502724416,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:53:55.289983+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 35,
+      "title": "Segment 35 (pages 337-344)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch35",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "api",
+          "extensions",
+          "resources",
+          "api server",
+          "server"
+        ],
+        "semantic": [],
+        "merged": [
+          "api",
+          "extensions",
+          "resources",
+          "api server",
+          "server"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45981079324061136,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:53:55.290216+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 36,
+      "title": "Segment 36 (pages 345-352)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch36",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch5",
+          "score": 0.5572285585235329,
+          "base_score": 0.6787142642058883,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch4",
+          "score": 0.5404231893583912,
+          "base_score": 0.6507053155973187,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch1",
+          "score": 0.534361918889977,
+          "base_score": 0.6406031981499617,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch50",
+          "score": 0.5222561414648011,
+          "base_score": 0.6204269024413354,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch49",
+          "score": 0.5137887103485014,
+          "base_score": 0.6063145172475022,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "operator",
+          "operators",
+          "developing",
+          "developing operators",
+          "custom"
+        ],
+        "semantic": [],
+        "merged": [
+          "operator",
+          "operators",
+          "developing",
+          "developing operators",
+          "custom"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48686675531945695,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.290530+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 37,
+      "title": "Segment 37 (pages 353-361)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch37",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch25",
+          "score": 0.5407535367214027,
+          "base_score": 0.6512558945356711,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "acmenamespace",
+          "controller",
+          "namespace",
+          "child",
+          "phase"
+        ],
+        "semantic": [],
+        "merged": [
+          "acmenamespace",
+          "controller",
+          "namespace",
+          "child",
+          "phase"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_to_admission",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42228466003298043,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.290791+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 38,
+      "title": "Segment 38 (pages 362-374)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch38",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "err",
+          "acmenamespace",
+          "ctrl",
+          "scheduler",
+          "log"
+        ],
+        "semantic": [],
+        "merged": [
+          "err",
+          "acmenamespace",
+          "ctrl",
+          "scheduler",
+          "log"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_to_admission",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23066278957620165,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.291030+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 39,
+      "title": "Segment 39 (pages 375-383)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch39",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "tenants",
+          "tenant",
+          "multitenant",
+          "isolation",
+          "cluster"
+        ],
+        "semantic": [],
+        "merged": [
+          "tenants",
+          "tenant",
+          "multitenant",
+          "isolation",
+          "cluster"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4983013280704701,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:53:55.291267+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 40,
+      "title": "Segment 40 (pages 384-392)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch40",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "cpu",
+          "limits",
+          "memory",
+          "cpu requests",
+          "requests"
+        ],
+        "semantic": [],
+        "merged": [
+          "cpu",
+          "limits",
+          "memory",
+          "cpu requests",
+          "requests"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5019886712901526,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:53:55.291681+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 41,
+      "title": "Segment 41 (pages 393-402)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch41",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "autoscaling",
+          "capacity",
+          "workload",
+          "psp",
+          "scaling"
+        ],
+        "semantic": [],
+        "merged": [
+          "autoscaling",
+          "capacity",
+          "workload",
+          "psp",
+          "scaling"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4765833755304944,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:53:55.291967+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 42,
+      "title": "Segment 42 (pages 403-414)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch42",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch45",
+          "score": 0.6024115553417376,
+          "base_score": 0.6799451848288219,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch43",
+          "score": 0.5793443008546916,
+          "base_score": 0.7155738347578193,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch7",
+          "score": 0.5677554405583959,
+          "base_score": 0.6221849935232524,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch8",
+          "score": 0.546238408989457,
+          "base_score": 0.5863232742416875,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "metrics",
+          "autoscaling",
+          "cpu",
+          "cluster",
+          "metrics server"
+        ],
+        "semantic": [],
+        "merged": [
+          "metrics",
+          "autoscaling",
+          "cpu",
+          "cluster",
+          "metrics server"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4951760476847803,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.292213+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 43,
+      "title": "Segment 43 (pages 415-425)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch43",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch4",
+          "score": 0.6170498429864437,
+          "base_score": 0.7043423309033321,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch5",
+          "score": 0.607445593826853,
+          "base_score": 0.688335248970681,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch45",
+          "score": 0.5919857932710088,
+          "base_score": 0.6625689147109405,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch1",
+          "score": 0.5818074824807266,
+          "base_score": 0.7196791374678776,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch42",
+          "score": 0.5793443008546916,
+          "base_score": 0.7155738347578193,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "secrets",
+          "configmaps",
+          "application",
+          "configmaps secrets",
+          "applications"
+        ],
+        "semantic": [],
+        "merged": [
+          "secrets",
+          "configmaps",
+          "application",
+          "configmaps secrets",
+          "applications"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5537952816039642,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.292484+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 44,
+      "title": "Segment 44 (pages 426-434)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch44",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "probe",
+          "probes",
+          "liveness",
+          "readiness",
+          "liveness probe"
+        ],
+        "semantic": [],
+        "merged": [
+          "probe",
+          "probes",
+          "liveness",
+          "readiness",
+          "liveness probe"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4695259968747248,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:53:55.292725+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 45,
+      "title": "Segment 45 (pages 435-446)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch45",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch42",
+          "score": 0.6024115553417376,
+          "base_score": 0.6799451848288219,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch43",
+          "score": 0.5919857932710088,
+          "base_score": 0.6625689147109405,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch4",
+          "score": 0.5646733294851984,
+          "base_score": 0.61704814173459,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch5",
+          "score": 0.5288667621995468,
+          "base_score": 0.5573705295918372,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch8",
+          "score": 0.5276839764616693,
+          "base_score": 0.6294732941027821,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "metrics",
+          "application",
+          "tracer",
+          "logs",
+          "resource"
+        ],
+        "semantic": [],
+        "merged": [
+          "metrics",
+          "application",
+          "tracer",
+          "logs",
+          "resource"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5247531515034644,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.292968+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 46,
+      "title": "Segment 46 (pages 447-454)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch46",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch47",
+          "score": 0.6361725774785831,
+          "base_score": 0.6436209624643052,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch48",
+          "score": 0.5232822536955198,
+          "base_score": 0.622137089492533,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "image",
+          "container",
+          "building container",
+          "images",
+          "container image"
+        ],
+        "semantic": [],
+        "merged": [
+          "image",
+          "container",
+          "building container",
+          "images",
+          "container image"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "image_the_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41398997885523126,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.293226+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 47,
+      "title": "Segment 47 (pages 455-464)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch47",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch46",
+          "score": 0.6361725774785831,
+          "base_score": 0.6436209624643052,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "image",
+          "images",
+          "registry",
+          "registries",
+          "pipeline"
+        ],
+        "semantic": [],
+        "merged": [
+          "image",
+          "images",
+          "registry",
+          "registries",
+          "pipeline"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "image_the_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3821382187118274,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.293470+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 48,
+      "title": "Segment 48 (pages 465-474)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch48",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch46",
+          "score": 0.5232822536955198,
+          "base_score": 0.622137089492533,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "teams",
+          "deployment",
+          "development teams",
+          "development",
+          "gitops"
+        ],
+        "semantic": [],
+        "merged": [
+          "teams",
+          "deployment",
+          "development teams",
+          "development",
+          "gitops"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "image_the_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4572111385210194,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.293706+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 49,
+      "title": "Segment 49 (pages 475-482)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch49",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch5",
+          "score": 0.5913977844531588,
+          "base_score": 0.735662974088598,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch4",
+          "score": 0.5837073214121808,
+          "base_score": 0.7228455356869681,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch50",
+          "score": 0.5661002697738958,
+          "base_score": 0.6935004496231598,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch3",
+          "score": 0.5606432726199775,
+          "base_score": 0.6844054543666291,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch43",
+          "score": 0.5601859233594028,
+          "base_score": 0.6836432055990045,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "helm",
+          "developers",
+          "objects",
+          "values",
+          "underlying"
+        ],
+        "semantic": [],
+        "merged": [
+          "helm",
+          "developers",
+          "objects",
+          "values",
+          "underlying"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5370732979592812,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.294682+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 50,
+      "title": "Segment 50 (pages 483-490)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch50",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch4",
+          "score": 0.6438885994010973,
+          "base_score": 0.6564809990018289,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch5",
+          "score": 0.6374251846406374,
+          "base_score": 0.7383012336603214,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch49",
+          "score": 0.5661002697738958,
+          "base_score": 0.6935004496231598,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch3",
+          "score": 0.5352677973375249,
+          "base_score": 0.6421129955625415,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch36",
+          "score": 0.5222561414648011,
+          "base_score": 0.6204269024413354,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "20",
+          "platform",
+          "platforms",
+          "development teams",
+          "development"
+        ],
+        "semantic": [],
+        "merged": [
+          "20",
+          "platform",
+          "platforms",
+          "development teams",
+          "development"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47912200937195754,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.294952+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 51,
+      "title": "Segment 51 (pages 491-498)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch51",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch52",
+          "score": 0.6443659784547411,
+          "base_score": 0.7498692233504944,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch2",
+          "score": 0.5580870191675272,
+          "base_score": 0.6801450319458786,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch21",
+          "score": 0.5089434435589761,
+          "base_score": 0.5241649985242195,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "service",
+          "ingress",
+          "controller",
+          "network",
+          "container"
+        ],
+        "semantic": [],
+        "merged": [
+          "service",
+          "ingress",
+          "controller",
+          "network",
+          "container"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "service_mesh_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47528127499334577,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.295211+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 52,
+      "title": "Segment 52 (pages 499-506)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch52",
+      "cross_references": [
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch22",
+          "score": 0.6808335982029363,
+          "base_score": 0.5990083779572748,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch51",
+          "score": 0.6443659784547411,
+          "base_score": 0.7498692233504944,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch21",
+          "score": 0.6437230762394701,
+          "base_score": 0.5371575080181645,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Production Kubernetes - Josh Rosso:ch2",
+          "score": 0.5809676051962677,
+          "base_score": 0.7182793419937795,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "service",
+          "service mesh",
+          "mesh",
+          "169",
+          "services"
+        ],
+        "semantic": [],
+        "merged": [
+          "service",
+          "service mesh",
+          "mesh",
+          "169",
+          "services"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "service_mesh_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4525749570817344,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.295514+00:00"
+      }
+    },
+    {
+      "book": "Production Kubernetes - Josh Rosso",
+      "chapter": 53,
+      "title": "Segment 53 (pages 507-509)",
+      "chapter_id": "Production Kubernetes - Josh Rosso:ch53",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "beaked",
+          "whale",
+          "species",
+          "beaked whale",
+          "whales"
+        ],
+        "semantic": [],
+        "merged": [
+          "beaked",
+          "whale",
+          "species",
+          "beaked whale",
+          "whales"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3891923820633942,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:55.295751+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

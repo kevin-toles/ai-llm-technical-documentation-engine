@@ -1,0 +1,2004 @@
+{
+  "book": {
+    "title": "High Performance MySQL 4th Edition"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:48:37.375335",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-9)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch1",
+      "cross_references": [
+        {
+          "target": "High Performance MySQL 4th Edition:ch3",
+          "score": 0.5356508138728225,
+          "base_score": 0.6427513564547043,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "High Performance MySQL 4th Edition:ch44",
+          "score": 0.5158348877878685,
+          "base_score": 0.6097248129797808,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "high performance",
+          "performance mysql",
+          "high",
+          "silvia",
+          "edition"
+        ],
+        "semantic": [],
+        "merged": [
+          "high performance",
+          "performance mysql",
+          "high",
+          "silvia",
+          "edition"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "of_the_is",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3644586227721995,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.331901+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 2,
+      "title": "Segment 2 (pages 10-17)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch2",
+      "cross_references": [
+        {
+          "target": "High Performance MySQL 4th Edition:ch24",
+          "score": 0.5706823575608775,
+          "base_score": 0.6270631885273883,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "High Performance MySQL 4th Edition:ch17",
+          "score": 0.5259812054828106,
+          "base_score": 0.5525612683972769,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "High Performance MySQL 4th Edition:ch21",
+          "score": 0.5197622983130107,
+          "base_score": 0.5421964231142771,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "optimizing",
+          "270",
+          "types",
+          "indexes",
+          "145"
+        ],
+        "semantic": [],
+        "merged": [
+          "optimizing",
+          "270",
+          "types",
+          "indexes",
+          "145"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_index_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40735999399612377,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.332257+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 3,
+      "title": "Segment 3 (pages 18-27)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch3",
+      "cross_references": [
+        {
+          "target": "High Performance MySQL 4th Edition:ch1",
+          "score": 0.5356508138728225,
+          "base_score": 0.6427513564547043,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "locks",
+          "locking",
+          "concurrent",
+          "lock",
+          "client"
+        ],
+        "semantic": [],
+        "merged": [
+          "locks",
+          "locking",
+          "concurrent",
+          "lock",
+          "client"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "of_the_is",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3808029430478776,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.332472+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 4,
+      "title": "Segment 4 (pages 28-36)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "transactions",
+          "transaction",
+          "isolation",
+          "level",
+          "storage"
+        ],
+        "semantic": [],
+        "merged": [
+          "transactions",
+          "transaction",
+          "isolation",
+          "level",
+          "storage"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3263247908450014,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:48:37.332676+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 5,
+      "title": "Segment 5 (pages 37-44)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "innodb",
+          "engine",
+          "storage",
+          "storage engine",
+          "service"
+        ],
+        "semantic": [],
+        "merged": [
+          "innodb",
+          "engine",
+          "storage",
+          "storage engine",
+          "service"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_backup_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3550178659298988,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.332887+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 6,
+      "title": "Segment 6 (pages 45-53)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "database",
+          "growth",
+          "monitoring",
+          "connections",
+          "experience"
+        ],
+        "semantic": [],
+        "merged": [
+          "database",
+          "growth",
+          "monitoring",
+          "connections",
+          "experience"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "of_the_is",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28428550499942956,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.333115+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 7,
+      "title": "Segment 7 (pages 54-62)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "long term",
+          "term",
+          "metrics",
+          "long",
+          "business"
+        ],
+        "semantic": [],
+        "merged": [
+          "long term",
+          "term",
+          "metrics",
+          "long",
+          "business"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30361689087992655,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.333312+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 8,
+      "title": "Segment 8 (pages 63-71)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch8",
+      "cross_references": [
+        {
+          "target": "High Performance MySQL 4th Edition:ch11",
+          "score": 0.582990162645417,
+          "base_score": 0.647576197001621,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "High Performance MySQL 4th Edition:ch9",
+          "score": 0.5076736039869464,
+          "base_score": 0.5220485992375032,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "performance_schema",
+          "performance schema",
+          "setup_instruments",
+          "schema",
+          "instrument"
+        ],
+        "semantic": [],
+        "merged": [
+          "performance_schema",
+          "performance schema",
+          "setup_instruments",
+          "schema",
+          "instrument"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "performance_schema_select_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3338635771672227,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.333510+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 9,
+      "title": "Segment 9 (pages 72-79)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch9",
+      "cross_references": [
+        {
+          "target": "High Performance MySQL 4th Edition:ch11",
+          "score": 0.5180487722479779,
+          "base_score": 0.5393405463392222,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "High Performance MySQL 4th Edition:ch8",
+          "score": 0.5076736039869464,
+          "base_score": 0.5220485992375032,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "statements",
+          "performance_schema",
+          "sql",
+          "rows_examined",
+          "table"
+        ],
+        "semantic": [],
+        "merged": [
+          "statements",
+          "performance_schema",
+          "sql",
+          "rows_examined",
+          "table"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "performance_schema_select_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24986130852557623,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.333738+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 10,
+      "title": "Segment 10 (pages 80-87)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "statement",
+          "event_name",
+          "statement sql",
+          "sql",
+          "0000"
+        ],
+        "semantic": [],
+        "merged": [
+          "statement",
+          "event_name",
+          "statement sql",
+          "sql",
+          "0000"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_query_rows",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2158367532808285,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.333934+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 11,
+      "title": "Segment 11 (pages 88-96)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch11",
+      "cross_references": [
+        {
+          "target": "High Performance MySQL 4th Edition:ch8",
+          "score": 0.582990162645417,
+          "base_score": 0.647576197001621,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "High Performance MySQL 4th Edition:ch9",
+          "score": 0.5180487722479779,
+          "base_score": 0.5393405463392222,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "performance_schema",
+          "00",
+          "mib",
+          "variable_name",
+          "00 00"
+        ],
+        "semantic": [],
+        "merged": [
+          "performance_schema",
+          "00",
+          "mib",
+          "variable_name",
+          "00 00"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "performance_schema_select_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29623356507286486,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.334157+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 12,
+      "title": "Segment 12 (pages 97-107)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch12",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "raid",
+          "controller",
+          "cache",
+          "raid cache",
+          "raid controller"
+        ],
+        "semantic": [],
+        "merged": [
+          "raid",
+          "controller",
+          "cache",
+          "raid cache",
+          "raid controller"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3116909686725122,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.334350+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 13,
+      "title": "Segment 13 (pages 108-115)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch13",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "memory",
+          "swap",
+          "filesystem",
+          "linux",
+          "gnu"
+        ],
+        "semantic": [],
+        "merged": [
+          "memory",
+          "swap",
+          "filesystem",
+          "linux",
+          "gnu"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3624237524451208,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:48:37.334541+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 14,
+      "title": "Segment 14 (pages 116-126)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch14",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "configuration",
+          "configuration file",
+          "settings",
+          "variable",
+          "global"
+        ],
+        "semantic": [],
+        "merged": [
+          "configuration",
+          "configuration file",
+          "settings",
+          "variable",
+          "global"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.348425294048592,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.334732+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 15,
+      "title": "Segment 15 (pages 127-136)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "buffer",
+          "innodb",
+          "buffer pool",
+          "log buffer",
+          "log"
+        ],
+        "semantic": [],
+        "merged": [
+          "buffer",
+          "innodb",
+          "buffer pool",
+          "log buffer",
+          "log"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3350894965133017,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:48:37.334927+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 16,
+      "title": "Segment 16 (pages 137-144)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch16",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "tablespace",
+          "innodb",
+          "1g",
+          "option",
+          "files"
+        ],
+        "semantic": [],
+        "merged": [
+          "tablespace",
+          "innodb",
+          "1g",
+          "option",
+          "files"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_backup_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3173986084412983,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.335138+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 17,
+      "title": "Segment 17 (pages 145-152)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch17",
+      "cross_references": [
+        {
+          "target": "High Performance MySQL 4th Edition:ch2",
+          "score": 0.5259812054828106,
+          "base_score": 0.5525612683972769,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "High Performance MySQL 4th Edition:ch18",
+          "score": 0.5019863066290944,
+          "base_score": 0.5125697703077499,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "store",
+          "varchar",
+          "values",
+          "bytes",
+          "types"
+        ],
+        "semantic": [],
+        "merged": [
+          "store",
+          "varchar",
+          "values",
+          "bytes",
+          "types"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_index_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32233899713686043,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.335336+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 18,
+      "title": "Segment 18 (pages 153-160)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch18",
+      "cross_references": [
+        {
+          "target": "High Performance MySQL 4th Edition:ch17",
+          "score": 0.5019863066290944,
+          "base_score": 0.5125697703077499,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "perms",
+          "column",
+          "types",
+          "can_read",
+          "value"
+        ],
+        "semantic": [],
+        "merged": [
+          "perms",
+          "column",
+          "types",
+          "can_read",
+          "value"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_index_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2828989353709851,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.335528+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 19,
+      "title": "Segment 19 (pages 161-168)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch19",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "yes null",
+          "type",
+          "yes",
+          "json",
+          "designation"
+        ],
+        "semantic": [],
+        "merged": [
+          "yes null",
+          "type",
+          "yes",
+          "json",
+          "designation"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_index_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.18543167697258245,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.335722+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 20,
+      "title": "Segment 20 (pages 169-176)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch20",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "schema",
+          "schema changes",
+          "schema change",
+          "online schema",
+          "changes"
+        ],
+        "semantic": [],
+        "merged": [
+          "schema",
+          "schema changes",
+          "schema change",
+          "online schema",
+          "changes"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "to_you_schema",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.19469109443427077,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.335914+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 21,
+      "title": "Segment 21 (pages 177-184)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch21",
+      "cross_references": [
+        {
+          "target": "High Performance MySQL 4th Edition:ch24",
+          "score": 0.5779798089807341,
+          "base_score": 0.5466330149678902,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "High Performance MySQL 4th Edition:ch2",
+          "score": 0.5197622983130107,
+          "base_score": 0.5421964231142771,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "High Performance MySQL 4th Edition:ch23",
+          "score": 0.5050291597389625,
+          "base_score": 0.5176411921575299,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "index",
+          "tree",
+          "tree indexes",
+          "tree index",
+          "indexes"
+        ],
+        "semantic": [],
+        "merged": [
+          "index",
+          "tree",
+          "tree indexes",
+          "tree index",
+          "indexes"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_index_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2805102290335753,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.336119+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 22,
+      "title": "Segment 22 (pages 185-192)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch22",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "index",
+          "order",
+          "column",
+          "pref",
+          "selective"
+        ],
+        "semantic": [],
+        "merged": [
+          "index",
+          "order",
+          "column",
+          "pref",
+          "selective"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_query_rows",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.11199502399524285,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.336311+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 23,
+      "title": "Segment 23 (pages 193-206)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch23",
+      "cross_references": [
+        {
+          "target": "High Performance MySQL 4th Edition:ch24",
+          "score": 0.5465195022030982,
+          "base_score": 0.5867917629310896,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "High Performance MySQL 4th Edition:ch21",
+          "score": 0.5050291597389625,
+          "base_score": 0.5176411921575299,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "index",
+          "primary key",
+          "primary",
+          "key",
+          "secondary"
+        ],
+        "semantic": [],
+        "merged": [
+          "index",
+          "primary key",
+          "primary",
+          "key",
+          "secondary"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_index_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2729601439066327,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.336504+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 24,
+      "title": "Segment 24 (pages 207-214)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch24",
+      "cross_references": [
+        {
+          "target": "High Performance MySQL 4th Edition:ch21",
+          "score": 0.5779798089807341,
+          "base_score": 0.5466330149678902,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "High Performance MySQL 4th Edition:ch2",
+          "score": 0.5706823575608775,
+          "base_score": 0.6270631885273883,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "High Performance MySQL 4th Edition:ch23",
+          "score": 0.5465195022030982,
+          "base_score": 0.5867917629310896,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "index",
+          "query",
+          "indexes",
+          "queries",
+          "table"
+        ],
+        "semantic": [],
+        "merged": [
+          "index",
+          "query",
+          "indexes",
+          "queries",
+          "table"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_index_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.333660878755558,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.336761+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 25,
+      "title": "Segment 25 (pages 215-222)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch25",
+      "cross_references": [
+        {
+          "target": "High Performance MySQL 4th Edition:ch26",
+          "score": 0.5880961914417958,
+          "base_score": 0.6560862449955855,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "High Performance MySQL 4th Edition:ch27",
+          "score": 0.5721186302506646,
+          "base_score": 0.6294569763437001,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "query",
+          "rows",
+          "access",
+          "row",
+          "index"
+        ],
+        "semantic": [],
+        "merged": [
+          "query",
+          "rows",
+          "access",
+          "row",
+          "index"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_query_rows",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3349636327557388,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.336976+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 26,
+      "title": "Segment 26 (pages 223-232)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch26",
+      "cross_references": [
+        {
+          "target": "High Performance MySQL 4th Edition:ch27",
+          "score": 0.6245115422462939,
+          "base_score": 0.6241859037438231,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "High Performance MySQL 4th Edition:ch25",
+          "score": 0.5880961914417958,
+          "base_score": 0.6560862449955855,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "High Performance MySQL 4th Edition:ch28",
+          "score": 0.5248727238515709,
+          "base_score": 0.5507137990118773,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "query",
+          "result",
+          "execution",
+          "optimization",
+          "optimizer"
+        ],
+        "semantic": [],
+        "merged": [
+          "query",
+          "result",
+          "execution",
+          "optimization",
+          "optimizer"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_query_rows",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.331866411836145,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.337197+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 27,
+      "title": "Segment 27 (pages 233-240)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch27",
+      "cross_references": [
+        {
+          "target": "High Performance MySQL 4th Edition:ch26",
+          "score": 0.6245115422462939,
+          "base_score": 0.6241859037438231,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "High Performance MySQL 4th Edition:ch25",
+          "score": 0.5721186302506646,
+          "base_score": 0.6294569763437001,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "High Performance MySQL 4th Edition:ch28",
+          "score": 0.5375581358398136,
+          "base_score": 0.5718561523256153,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "query",
+          "join",
+          "table",
+          "execution",
+          "table join"
+        ],
+        "semantic": [],
+        "merged": [
+          "query",
+          "join",
+          "table",
+          "execution",
+          "table join"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_query_rows",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3232141043924592,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.337393+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 28,
+      "title": "Segment 28 (pages 241-248)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch28",
+      "cross_references": [
+        {
+          "target": "High Performance MySQL 4th Edition:ch27",
+          "score": 0.5375581358398136,
+          "base_score": 0.5718561523256153,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "High Performance MySQL 4th Edition:ch26",
+          "score": 0.5248727238515709,
+          "base_score": 0.5507137990118773,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "union",
+          "query",
+          "limit",
+          "rows",
+          "temporary table"
+        ],
+        "semantic": [],
+        "merged": [
+          "union",
+          "query",
+          "limit",
+          "rows",
+          "temporary table"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_query_rows",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2542035080600489,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.337589+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 29,
+      "title": "Segment 29 (pages 249-257)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch29",
+      "cross_references": [
+        {
+          "target": "High Performance MySQL 4th Edition:ch31",
+          "score": 0.6258560720583155,
+          "base_score": 0.5073791677162401,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "High Performance MySQL 4th Edition:ch30",
+          "score": 0.5792029279775002,
+          "base_score": 0.42962392758154794,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "replication",
+          "replica",
+          "log",
+          "source",
+          "events"
+        ],
+        "semantic": [],
+        "merged": [
+          "replication",
+          "replica",
+          "log",
+          "source",
+          "events"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29750694616892737,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.337803+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 30,
+      "title": "Segment 30 (pages 258-265)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch30",
+      "cross_references": [
+        {
+          "target": "High Performance MySQL 4th Edition:ch31",
+          "score": 0.6461971485366572,
+          "base_score": 0.382550803116651,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "High Performance MySQL 4th Edition:ch29",
+          "score": 0.5792029279775002,
+          "base_score": 0.42962392758154794,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "source",
+          "replication",
+          "replicas",
+          "replica",
+          "read pool"
+        ],
+        "semantic": [],
+        "merged": [
+          "source",
+          "replication",
+          "replicas",
+          "replica",
+          "read pool"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3470735083794999,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.338030+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 31,
+      "title": "Segment 31 (pages 266-275)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch31",
+      "cross_references": [
+        {
+          "target": "High Performance MySQL 4th Edition:ch30",
+          "score": 0.6461971485366572,
+          "base_score": 0.382550803116651,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "High Performance MySQL 4th Edition:ch29",
+          "score": 0.6258560720583155,
+          "base_score": 0.5073791677162401,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "replica",
+          "replication",
+          "source",
+          "replicas",
+          "source replica"
+        ],
+        "semantic": [],
+        "merged": [
+          "replica",
+          "replication",
+          "source",
+          "replicas",
+          "source replica"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21373213254615947,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.338227+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 32,
+      "title": "Segment 32 (pages 276-284)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch32",
+      "cross_references": [
+        {
+          "target": "High Performance MySQL 4th Edition:ch33",
+          "score": 0.6309274884620475,
+          "base_score": 0.6348791474367458,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "backup",
+          "recovery",
+          "backups",
+          "backup recovery",
+          "server"
+        ],
+        "semantic": [],
+        "merged": [
+          "backup",
+          "recovery",
+          "backups",
+          "backup recovery",
+          "server"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_backup_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2673628221854535,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.338421+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 33,
+      "title": "Segment 33 (pages 285-292)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch33",
+      "cross_references": [
+        {
+          "target": "High Performance MySQL 4th Edition:ch32",
+          "score": 0.6309274884620475,
+          "base_score": 0.6348791474367458,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "High Performance MySQL 4th Edition:ch35",
+          "score": 0.500342465268846,
+          "base_score": 0.41723744211474334,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "backup",
+          "backups",
+          "raw",
+          "logical",
+          "files"
+        ],
+        "semantic": [],
+        "merged": [
+          "backup",
+          "backups",
+          "raw",
+          "logical",
+          "files"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_backup_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30789294486078245,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.338614+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 34,
+      "title": "Segment 34 (pages 293-301)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch34",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "snapshot",
+          "17 01",
+          "210821 17",
+          "210821",
+          "copy"
+        ],
+        "semantic": [],
+        "merged": [
+          "snapshot",
+          "17 01",
+          "210821 17",
+          "210821",
+          "copy"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_backup_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24743581154790395,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.338807+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 35,
+      "title": "Segment 35 (pages 302-309)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch35",
+      "cross_references": [
+        {
+          "target": "High Performance MySQL 4th Edition:ch33",
+          "score": 0.500342465268846,
+          "base_score": 0.41723744211474334,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "backup",
+          "files",
+          "xbstream",
+          "encrypt",
+          "file"
+        ],
+        "semantic": [],
+        "merged": [
+          "backup",
+          "files",
+          "xbstream",
+          "encrypt",
+          "file"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_backup_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.15336331839650927,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.339020+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 36,
+      "title": "Segment 36 (pages 310-318)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch36",
+      "cross_references": [
+        {
+          "target": "High Performance MySQL 4th Edition:ch37",
+          "score": 0.535643596118971,
+          "base_score": 0.6427393268649517,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "read",
+          "pools",
+          "replicas",
+          "bound",
+          "read pools"
+        ],
+        "semantic": [],
+        "merged": [
+          "read",
+          "pools",
+          "replicas",
+          "bound",
+          "read pools"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3482328318257448,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.339215+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 37,
+      "title": "Segment 37 (pages 319-328)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch37",
+      "cross_references": [
+        {
+          "target": "High Performance MySQL 4th Edition:ch36",
+          "score": 0.535643596118971,
+          "base_score": 0.6427393268649517,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "shard",
+          "sharding",
+          "data",
+          "shards",
+          "partitioning"
+        ],
+        "semantic": [],
+        "merged": [
+          "shard",
+          "sharding",
+          "data",
+          "shards",
+          "partitioning"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34276104731332263,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.339408+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 38,
+      "title": "Segment 38 (pages 329-338)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch38",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "aurora",
+          "proxysql",
+          "aurora mysql",
+          "database",
+          "connections"
+        ],
+        "semantic": [],
+        "merged": [
+          "aurora",
+          "proxysql",
+          "aurora mysql",
+          "database",
+          "connections"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.289507602804405,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:48:37.339600+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 39,
+      "title": "Segment 39 (pages 339-346)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch39",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "attached",
+          "network attached",
+          "machine",
+          "cloud",
+          "network"
+        ],
+        "semantic": [],
+        "merged": [
+          "attached",
+          "network attached",
+          "machine",
+          "cloud",
+          "network"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3062529393323411,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:48:37.339792+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 40,
+      "title": "Segment 40 (pages 347-354)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch40",
+      "cross_references": [
+        {
+          "target": "High Performance MySQL 4th Edition:ch41",
+          "score": 0.5501763660706096,
+          "base_score": 0.5928865360436085,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "secret",
+          "secret management",
+          "compliance",
+          "controls",
+          "management"
+        ],
+        "semantic": [],
+        "merged": [
+          "secret",
+          "secret management",
+          "compliance",
+          "controls",
+          "management"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "to_you_schema",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2052157481119071,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.339999+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 41,
+      "title": "Segment 41 (pages 355-362)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch41",
+      "cross_references": [
+        {
+          "target": "High Performance MySQL 4th Edition:ch40",
+          "score": 0.5501763660706096,
+          "base_score": 0.5928865360436085,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "audit",
+          "plug",
+          "audit log",
+          "log plug",
+          "compliance"
+        ],
+        "semantic": [],
+        "merged": [
+          "audit",
+          "plug",
+          "audit log",
+          "log plug",
+          "compliance"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "to_you_schema",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2023165256169536,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.340192+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 42,
+      "title": "Segment 42 (pages 363-374)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch42",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "kubernetes",
+          "upgrade",
+          "upgrading mysql",
+          "upgrading",
+          "mysql kubernetes"
+        ],
+        "semantic": [],
+        "merged": [
+          "kubernetes",
+          "upgrade",
+          "upgrading mysql",
+          "upgrading",
+          "mysql kubernetes"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "and_mysql_kubernetes",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30161592051909336,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.340386+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 43,
+      "title": "Segment 43 (pages 375-382)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch43",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "backups",
+          "replication",
+          "option 123",
+          "123",
+          "option"
+        ],
+        "semantic": [],
+        "merged": [
+          "backups",
+          "replication",
+          "option 123",
+          "123",
+          "option"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "and_mysql_kubernetes",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38265481892049197,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.340580+00:00"
+      }
+    },
+    {
+      "book": "High Performance MySQL 4th Edition",
+      "chapter": 44,
+      "title": "Segment 44 (pages 383-389)",
+      "chapter_id": "High Performance MySQL 4th Edition:ch44",
+      "cross_references": [
+        {
+          "target": "High Performance MySQL 4th Edition:ch1",
+          "score": 0.5158348877878685,
+          "base_score": 0.6097248129797808,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pt",
+          "level",
+          "view 57",
+          "227",
+          "view"
+        ],
+        "semantic": [],
+        "merged": [
+          "pt",
+          "level",
+          "view 57",
+          "227",
+          "view"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "of_the_is",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39455318732719624,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:37.340776+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

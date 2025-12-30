@@ -1,0 +1,125 @@
+{
+  "book": {
+    "title": "Assessing the Quality and Security of AI-Generated Code- A Quantitative Analysis"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:40:34.326495",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Assessing the Quality and Security of AI-Generated Code- A Quantitative Analysis",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-10)",
+      "chapter_id": "Assessing the Quality and Security of AI-Generated Code- A Quantitative Analysis:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "quality",
+          "functional performance",
+          "442 tasks",
+          "quality security",
+          "442"
+        ],
+        "semantic": [],
+        "merged": [
+          "quality",
+          "functional performance",
+          "442 tasks",
+          "quality security",
+          "442"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "code_generated_quality",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7595366226389902,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:34.313761+00:00"
+      }
+    },
+    {
+      "book": "Assessing the Quality and Security of AI-Generated Code- A Quantitative Analysis",
+      "chapter": 2,
+      "title": "Segment 2 (pages 11-18)",
+      "chapter_id": "Assessing the Quality and Security of AI-Generated Code- A Quantitative Analysis:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "type",
+          "training data",
+          "llms face",
+          "exception"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "type",
+          "training data",
+          "llms face",
+          "exception"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "code_llms_generated",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7199110352718713,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:34.313855+00:00"
+      }
+    },
+    {
+      "book": "Assessing the Quality and Security of AI-Generated Code- A Quantitative Analysis",
+      "chapter": 3,
+      "title": "Segment 3 (pages 19-27)",
+      "chapter_id": "Assessing the Quality and Security of AI-Generated Code- A Quantitative Analysis:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "https",
+          "tools",
+          "owasp",
+          "software",
+          "quality"
+        ],
+        "semantic": [],
+        "merged": [
+          "https",
+          "tools",
+          "owasp",
+          "software",
+          "quality"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "code_https_analysis",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.753582309445831,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:34.313883+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

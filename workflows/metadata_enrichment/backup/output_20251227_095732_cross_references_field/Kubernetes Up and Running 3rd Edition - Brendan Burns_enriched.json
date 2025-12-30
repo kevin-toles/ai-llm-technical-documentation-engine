@@ -1,0 +1,772 @@
+{
+  "book": {
+    "title": "Kubernetes Up and Running 3rd Edition - Brendan Burns"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:49:38.994907",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Kubernetes Up and Running 3rd Edition - Brendan Burns",
+      "chapter": 1,
+      "title": "Service Discovery",
+      "chapter_id": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch1",
+      "cross_references": [
+        {
+          "target": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch4",
+          "score": 0.5339943454636589,
+          "base_score": 0.6399905757727647,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch7",
+          "score": 0.5058176051449838,
+          "base_score": 0.5189552678342322,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "service",
+          "prod",
+          "alpaca",
+          "ip",
+          "alpaca prod"
+        ],
+        "semantic": [],
+        "merged": [
+          "service",
+          "prod",
+          "alpaca",
+          "ip",
+          "alpaca prod"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_pod",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5209120883802585,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:38.973227+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Up and Running 3rd Edition - Brendan Burns",
+      "chapter": 2,
+      "title": "Creating and Running Containers",
+      "chapter_id": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch2",
+      "cross_references": [
+        {
+          "target": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch5",
+          "score": 0.5131952106989048,
+          "base_score": 0.5312512770907674,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "image",
+          "container",
+          "docker",
+          "container image",
+          "images"
+        ],
+        "semantic": [],
+        "merged": [
+          "image",
+          "container",
+          "docker",
+          "container image",
+          "images"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_pod",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3770471508071262,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:38.973376+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Up and Running 3rd Edition - Brendan Burns",
+      "chapter": 3,
+      "title": "Deploying a Kubernetes Cluster",
+      "chapter_id": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "kubernetes",
+          "minikube",
+          "kubernetes cluster",
+          "local",
+          "cloud"
+        ],
+        "semantic": [],
+        "merged": [
+          "kubernetes",
+          "minikube",
+          "kubernetes cluster",
+          "local",
+          "cloud"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.476920677624167,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:38.973452+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Up and Running 3rd Edition - Brendan Burns",
+      "chapter": 4,
+      "title": "Common kubectl Commands",
+      "chapter_id": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch4",
+      "cross_references": [
+        {
+          "target": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch1",
+          "score": 0.5339943454636589,
+          "base_score": 0.6399905757727647,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch13",
+          "score": 0.5299601904675574,
+          "base_score": 0.5591929100385216,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "kubectl",
+          "objects",
+          "command",
+          "kubernetes",
+          "commands"
+        ],
+        "semantic": [],
+        "merged": [
+          "kubectl",
+          "objects",
+          "command",
+          "kubernetes",
+          "commands"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_pod",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5200855676867283,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:38.973525+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Up and Running 3rd Edition - Brendan Burns",
+      "chapter": 5,
+      "title": "Pods",
+      "chapter_id": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch5",
+      "cross_references": [
+        {
+          "target": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch10",
+          "score": 0.6533190257376643,
+          "base_score": 0.7647909688220331,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch14",
+          "score": 0.6208753702899248,
+          "base_score": 0.6181256171498748,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch8",
+          "score": 0.5436643708035169,
+          "base_score": 0.582033210598454,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch2",
+          "score": 0.5131952106989048,
+          "base_score": 0.5312512770907674,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pod",
+          "kuard",
+          "containers",
+          "container",
+          "cpu"
+        ],
+        "semantic": [],
+        "merged": [
+          "pod",
+          "kuard",
+          "containers",
+          "container",
+          "cpu"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_pod",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5844775144118899,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:38.973599+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Up and Running 3rd Edition - Brendan Burns",
+      "chapter": 6,
+      "title": "Labels and Annotations",
+      "chapter_id": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "alpaca",
+          "labels",
+          "label",
+          "ver",
+          "prod"
+        ],
+        "semantic": [],
+        "merged": [
+          "alpaca",
+          "labels",
+          "label",
+          "ver",
+          "prod"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4896083659477748,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:38.973670+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Up and Running 3rd Edition - Brendan Burns",
+      "chapter": 7,
+      "title": "HTTP Load Balancing with Ingress",
+      "chapter_id": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch7",
+      "cross_references": [
+        {
+          "target": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch1",
+          "score": 0.5058176051449838,
+          "base_score": 0.5189552678342322,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ingress",
+          "ingress controller",
+          "controllers",
+          "ingress objects",
+          "alpaca"
+        ],
+        "semantic": [],
+        "merged": [
+          "ingress",
+          "ingress controller",
+          "controllers",
+          "ingress objects",
+          "alpaca"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_pod",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5119371168888904,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:38.973741+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Up and Running 3rd Edition - Brendan Burns",
+      "chapter": 8,
+      "title": "ReplicaSets",
+      "chapter_id": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch8",
+      "cross_references": [
+        {
+          "target": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch10",
+          "score": 0.616881109886937,
+          "base_score": 0.7040611090708209,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch5",
+          "score": 0.5436643708035169,
+          "base_score": 0.582033210598454,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "replicaset",
+          "pods",
+          "pod",
+          "replicaset controller",
+          "number"
+        ],
+        "semantic": [],
+        "merged": [
+          "replicaset",
+          "pods",
+          "pod",
+          "replicaset controller",
+          "number"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_pod",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46225914948111346,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:38.973814+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Up and Running 3rd Edition - Brendan Burns",
+      "chapter": 9,
+      "title": "Deployments",
+      "chapter_id": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch9",
+      "cross_references": [
+        {
+          "target": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch12",
+          "score": 0.5074710189321573,
+          "base_score": 0.5957850315535955,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "deployment",
+          "kuard",
+          "rollout",
+          "kubectl rollout",
+          "deployments"
+        ],
+        "semantic": [],
+        "merged": [
+          "deployment",
+          "kuard",
+          "rollout",
+          "kubectl rollout",
+          "deployments"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_deployment_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5288057641738874,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:38.973910+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Up and Running 3rd Edition - Brendan Burns",
+      "chapter": 10,
+      "title": "DaemonSets",
+      "chapter_id": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch10",
+      "cross_references": [
+        {
+          "target": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch5",
+          "score": 0.6533190257376643,
+          "base_score": 0.7647909688220331,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch8",
+          "score": 0.616881109886937,
+          "base_score": 0.7040611090708209,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch14",
+          "score": 0.56445983703459,
+          "base_score": 0.616692320983576,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "daemonset",
+          "node",
+          "nodes",
+          "fluentd",
+          "pod"
+        ],
+        "semantic": [],
+        "merged": [
+          "daemonset",
+          "node",
+          "nodes",
+          "fluentd",
+          "pod"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_pod",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6071180319534919,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:38.973988+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Up and Running 3rd Edition - Brendan Burns",
+      "chapter": 11,
+      "title": "Jobs",
+      "chapter_id": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch11",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "job",
+          "queue",
+          "jobs",
+          "batch",
+          "oneshot"
+        ],
+        "semantic": [],
+        "merged": [
+          "job",
+          "queue",
+          "jobs",
+          "batch",
+          "oneshot"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_pod",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46369254602851295,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:38.974057+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Up and Running 3rd Edition - Brendan Burns",
+      "chapter": 12,
+      "title": "Integrating Storage Solutions and Kubernetes",
+      "chapter_id": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch12",
+      "cross_references": [
+        {
+          "target": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch9",
+          "score": 0.5074710189321573,
+          "base_score": 0.5957850315535955,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "mongo",
+          "volume",
+          "database",
+          "storage",
+          "persistent"
+        ],
+        "semantic": [],
+        "merged": [
+          "mongo",
+          "volume",
+          "database",
+          "storage",
+          "persistent"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_deployment_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5562309030121061,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:38.974126+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Up and Running 3rd Edition - Brendan Burns",
+      "chapter": 13,
+      "title": "Accessing Kubernetes from Common Programming Languages",
+      "chapter_id": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch13",
+      "cross_references": [
+        {
+          "target": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch4",
+          "score": 0.5299601904675574,
+          "base_score": 0.5591929100385216,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "client",
+          "api",
+          "kubernetes api",
+          "kubernetes",
+          "var"
+        ],
+        "semantic": [],
+        "merged": [
+          "client",
+          "api",
+          "kubernetes api",
+          "kubernetes",
+          "var"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_pod",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4917357056669696,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:38.974196+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Up and Running 3rd Edition - Brendan Burns",
+      "chapter": 14,
+      "title": "Securing Pods",
+      "chapter_id": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch14",
+      "cross_references": [
+        {
+          "target": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch5",
+          "score": 0.6208753702899248,
+          "base_score": 0.6181256171498748,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch10",
+          "score": 0.56445983703459,
+          "base_score": 0.616692320983576,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch15",
+          "score": 0.5160694086172171,
+          "base_score": 0.6101156810286951,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "security",
+          "pod",
+          "securitycontext",
+          "pod security",
+          "kuard"
+        ],
+        "semantic": [],
+        "merged": [
+          "security",
+          "pod",
+          "securitycontext",
+          "pod security",
+          "kuard"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_pod",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5133067773753511,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:38.974269+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Up and Running 3rd Edition - Brendan Burns",
+      "chapter": 15,
+      "title": "Policy and Governance for Kubernetes Clusters",
+      "chapter_id": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch15",
+      "cross_references": [
+        {
+          "target": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch14",
+          "score": 0.5160694086172171,
+          "base_score": 0.6101156810286951,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "gatekeeper",
+          "policy",
+          "sh",
+          "gatekeeper sh",
+          "constraint"
+        ],
+        "semantic": [],
+        "merged": [
+          "gatekeeper",
+          "policy",
+          "sh",
+          "gatekeeper sh",
+          "constraint"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_pod",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5021502984572042,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:38.974342+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Up and Running 3rd Edition - Brendan Burns",
+      "chapter": 16,
+      "title": "Multi-cluster Application Deployments",
+      "chapter_id": "Kubernetes Up and Running 3rd Edition - Brendan Burns:ch16",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "application",
+          "multi",
+          "multi cluster",
+          "clusters",
+          "multiple"
+        ],
+        "semantic": [],
+        "merged": [
+          "application",
+          "multi",
+          "multi cluster",
+          "clusters",
+          "multiple"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49080507413248586,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:38.974428+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

@@ -8,12 +8,8 @@ TDD Phase: RED - Tests written before implementation.
 from __future__ import annotations
 
 import asyncio
-from typing import TYPE_CHECKING, Protocol, runtime_checkable
 
 import pytest
-
-if TYPE_CHECKING:
-    pass
 
 
 # =============================================================================
@@ -28,7 +24,7 @@ class TestMetadataClientImport:
         """AC-3.1: MetadataExtractionClient exists."""
         from workflows.shared.clients.metadata_client import MetadataExtractionClient
 
-        assert MetadataExtractionClient is not None
+        assert MetadataExtractionClient  # Class exists and is truthy
 
     def test_can_import_protocol(self) -> None:
         """AC-3.1: MetadataExtractionClientProtocol exists."""
@@ -36,7 +32,7 @@ class TestMetadataClientImport:
             MetadataExtractionClientProtocol,
         )
 
-        assert MetadataExtractionClientProtocol is not None
+        assert MetadataExtractionClientProtocol  # Protocol exists and is truthy
 
     def test_can_import_result_types(self) -> None:
         """Result dataclasses can be imported."""
@@ -46,9 +42,9 @@ class TestMetadataClientImport:
             ConceptResult,
         )
 
-        assert MetadataExtractionResult is not None
-        assert KeywordResult is not None
-        assert ConceptResult is not None
+        assert MetadataExtractionResult  # Class exists and is truthy
+        assert KeywordResult  # Class exists and is truthy
+        assert ConceptResult  # Class exists and is truthy
 
 
 # =============================================================================
@@ -161,7 +157,7 @@ class TestClientConfiguration:
         from workflows.shared.clients.metadata_client import MetadataExtractionClient
 
         client = MetadataExtractionClient(timeout=60.0)
-        assert client._timeout == 60.0
+        assert client._timeout == pytest.approx(60.0)
 
     def test_client_accepts_max_retries(self) -> None:
         """AC-3.4: Client accepts max_retries parameter."""
@@ -183,19 +179,19 @@ class TestExceptionClasses:
         """AC-6.3: MetadataClientError exists."""
         from workflows.shared.clients.metadata_client import MetadataClientError
 
-        assert MetadataClientError is not None
+        assert MetadataClientError  # Exception class exists and is truthy
 
     def test_can_import_timeout_error(self) -> None:
         """AC-6.3: MetadataClientTimeoutError exists."""
         from workflows.shared.clients.metadata_client import MetadataClientTimeoutError
 
-        assert MetadataClientTimeoutError is not None
+        assert MetadataClientTimeoutError  # Exception class exists and is truthy
 
     def test_can_import_connection_error(self) -> None:
         """AC-6.3: MetadataClientConnectionError exists."""
         from workflows.shared.clients.metadata_client import MetadataClientConnectionError
 
-        assert MetadataClientConnectionError is not None
+        assert MetadataClientConnectionError  # Exception class exists and is truthy
 
     def test_timeout_error_inherits_from_client_error(self) -> None:
         """Timeout error inherits from base error."""
@@ -219,7 +215,7 @@ class TestExceptionClasses:
         """AC-6.3: MetadataClientAPIError exists."""
         from workflows.shared.clients.metadata_client import MetadataClientAPIError
 
-        assert MetadataClientAPIError is not None
+        assert MetadataClientAPIError  # Exception class exists and is truthy
 
     def test_api_error_inherits_from_client_error(self) -> None:
         """API error inherits from base error."""
@@ -268,7 +264,7 @@ class TestRetryLogic:
                 new_callable=AsyncMock,
                 side_effect=[mock_response_503, mock_response_200],
             ) as mock_post:
-                result = await client.extract_metadata("test text")
+                _result = await client.extract_metadata("test text")
                 assert mock_post.call_count == 2  # Retried once
 
     @pytest.mark.asyncio
@@ -368,6 +364,7 @@ class TestRetryLogic:
 
             async def track_calls(*args, **kwargs):
                 call_times.append(time.time())
+                await asyncio.sleep(0)  # Yield to event loop
                 if len(call_times) < 3:
                     raise httpx.HTTPStatusError(
                         "Service Unavailable",
@@ -565,13 +562,13 @@ class TestExtractMetadataWithMocks:
                 )
                 assert len(result.keywords) == 1
                 assert result.keywords[0].term == "python"
-                assert result.keywords[0].score == 0.9
+                assert result.keywords[0].score == pytest.approx(0.9)
                 assert result.keywords[0].is_technical is True
                 assert len(result.concepts) == 1
                 assert result.concepts[0].name == "Machine Learning"
                 assert result.summary == "Test summary"
                 assert result.metadata is not None
-                assert result.metadata.processing_time_ms == 150.5
+                assert result.metadata.processing_time_ms == pytest.approx(150.5)
                 assert result.metadata.detected_domain == "AI/ML"
                 assert result.rejected is not None
                 assert "the" in result.rejected.keywords
@@ -671,9 +668,8 @@ class TestExtractMetadataWithMocks:
         mock_response.json.return_value = {"keywords": [], "concepts": []}
 
         options = MetadataExtractionOptions(
-            top_k_keywords=20,
-            top_k_concepts=15,
             min_keyword_confidence=0.5,
+            min_concept_confidence=0.4,
             filter_noise=False,
         )
 
@@ -688,7 +684,7 @@ class TestExtractMetadataWithMocks:
                 # Verify options were passed in payload
                 call_args = mock_post.call_args
                 payload = call_args.kwargs.get("json") or call_args[1].get("json")
-                assert payload["options"]["top_k_keywords"] == 20
+                assert payload["options"]["min_keyword_confidence"] == pytest.approx(0.5)
                 assert payload["options"]["filter_noise"] is False
 
 
@@ -704,7 +700,7 @@ class TestFakeMetadataExtractionClient:
         """AC-4.1: FakeMetadataExtractionClient exists."""
         from workflows.shared.clients.metadata_client import FakeMetadataExtractionClient
 
-        assert FakeMetadataExtractionClient is not None
+        assert FakeMetadataExtractionClient  # Class exists and is truthy
 
     def test_fake_client_passes_protocol(self) -> None:
         """AC-4.1: FakeClient passes protocol check."""

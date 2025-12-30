@@ -1,0 +1,141 @@
+{
+  "book": {
+    "title": "patrolling-the-dark-net"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:02:12.112427",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "patrolling-the-dark-net",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-11)",
+      "chapter_id": "patrolling-the-dark-net:ch1",
+      "cross_references": [
+        {
+          "target": "patrolling-the-dark-net:ch2",
+          "score": 0.5232968766853754,
+          "base_score": 0.7054947944756256,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "dark net",
+          "net",
+          "dark",
+          "patrolling dark",
+          "patrolling"
+        ],
+        "semantic": [],
+        "merged": [
+          "dark net",
+          "net",
+          "dark",
+          "patrolling dark",
+          "patrolling"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "dark_net_patrolling",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6705564973763662,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:12.091509+00:00"
+      }
+    },
+    {
+      "book": "patrolling-the-dark-net",
+      "chapter": 2,
+      "title": "Segment 2 (pages 12-19)",
+      "chapter_id": "patrolling-the-dark-net:ch2",
+      "cross_references": [
+        {
+          "target": "patrolling-the-dark-net:ch1",
+          "score": 0.5232968766853754,
+          "base_score": 0.7054947944756256,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "dark",
+          "dark web",
+          "web",
+          "security",
+          "net"
+        ],
+        "semantic": [],
+        "merged": [
+          "dark",
+          "dark web",
+          "web",
+          "security",
+          "net"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "dark_web_security",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.647635894377052,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:12.091594+00:00"
+      }
+    },
+    {
+      "book": "patrolling-the-dark-net",
+      "chapter": 3,
+      "title": "Segment 3 (pages 20-21)",
+      "chapter_id": "patrolling-the-dark-net:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "wiley",
+          "enterprise",
+          "strategy",
+          "company",
+          "decision makers"
+        ],
+        "semantic": [],
+        "merged": [
+          "wiley",
+          "enterprise",
+          "strategy",
+          "company",
+          "decision makers"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "wiley_enterprise_company",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5145291954363347,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:12.091612+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

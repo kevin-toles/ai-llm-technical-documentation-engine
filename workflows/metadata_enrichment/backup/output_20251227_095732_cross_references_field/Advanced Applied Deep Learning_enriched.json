@@ -1,0 +1,1487 @@
+{
+  "book": {
+    "title": "Advanced Applied Deep Learning"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:39:26.441446",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-8)",
+      "chapter_id": "Advanced Applied Deep Learning:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "apress",
+          "www",
+          "apress com",
+          "www apress",
+          "com"
+        ],
+        "semantic": [],
+        "merged": [
+          "apress",
+          "www",
+          "apress com",
+          "www apress",
+          "com"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31911928092492964,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:26.412266+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 2,
+      "title": "Segment 2 (pages 9-17)",
+      "chapter_id": "Advanced Applied Deep Learning:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "book",
+          "topics",
+          "learning",
+          "deep",
+          "deep learning"
+        ],
+        "semantic": [],
+        "merged": [
+          "book",
+          "topics",
+          "learning",
+          "deep",
+          "deep learning"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.254761945773277,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:26.412476+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 3,
+      "title": "Segment 3 (pages 18-26)",
+      "chapter_id": "Advanced Applied Deep Learning:ch3",
+      "cross_references": [
+        {
+          "target": "Advanced Applied Deep Learning:ch4",
+          "score": 0.5363011624602098,
+          "base_score": 0.6438352707670163,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "google",
+          "colab",
+          "environment",
+          "google colab",
+          "anaconda"
+        ],
+        "semantic": [],
+        "merged": [
+          "google",
+          "colab",
+          "environment",
+          "google colab",
+          "anaconda"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "you_gpu_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2731678863774084,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:26.412654+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 4,
+      "title": "Segment 4 (pages 27-34)",
+      "chapter_id": "Advanced Applied Deep Learning:ch4",
+      "cross_references": [
+        {
+          "target": "Advanced Applied Deep Learning:ch5",
+          "score": 0.5847326974388485,
+          "base_score": 0.6504804216573401,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Advanced Applied Deep Learning:ch3",
+          "score": 0.5363011624602098,
+          "base_score": 0.6438352707670163,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tensorflow",
+          "pull",
+          "pull complete",
+          "jupyter",
+          "tensorflow tensorflow"
+        ],
+        "semantic": [],
+        "merged": [
+          "tensorflow",
+          "pull",
+          "pull complete",
+          "jupyter",
+          "tensorflow tensorflow"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "you_gpu_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2598871590649495,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:26.412925+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 5,
+      "title": "Segment 5 (pages 35-44)",
+      "chapter_id": "Advanced Applied Deep Learning:ch5",
+      "cross_references": [
+        {
+          "target": "Advanced Applied Deep Learning:ch4",
+          "score": 0.5847326974388485,
+          "base_score": 0.6504804216573401,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "docker",
+          "local",
+          "notebooks",
+          "folder",
+          "tensorflow"
+        ],
+        "semantic": [],
+        "merged": [
+          "docker",
+          "local",
+          "notebooks",
+          "folder",
+          "tensorflow"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "you_gpu_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2584021596689561,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:26.413151+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 6,
+      "title": "Segment 6 (pages 45-52)",
+      "chapter_id": "Advanced Applied Deep Learning:ch6",
+      "cross_references": [
+        {
+          "target": "Advanced Applied Deep Learning:ch18",
+          "score": 0.5745712490409448,
+          "base_score": 0.7076187484015747,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Advanced Applied Deep Learning:ch11",
+          "score": 0.5581033360992674,
+          "base_score": 0.6801722268321124,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tf",
+          "optimizer",
+          "mnist_model",
+          "loss",
+          "loss function"
+        ],
+        "semantic": [],
+        "merged": [
+          "tf",
+          "optimizer",
+          "mnist_model",
+          "loss",
+          "loss function"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_model",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3837865553287805,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:26.413314+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 7,
+      "title": "Segment 7 (pages 53-60)",
+      "chapter_id": "Advanced Applied Deep Learning:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "gpu",
+          "device",
+          "device gpu",
+          "tf",
+          "cpu"
+        ],
+        "semantic": [],
+        "merged": [
+          "gpu",
+          "device",
+          "device gpu",
+          "tf",
+          "cpu"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "you_gpu_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.272586885585409,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:26.413468+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 8,
+      "title": "Segment 8 (pages 61-68)",
+      "chapter_id": "Advanced Applied Deep Learning:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "_______________________________________________________________",
+          "trainable",
+          "params",
+          "dense 32",
+          "dense"
+        ],
+        "semantic": [],
+        "merged": [
+          "_______________________________________________________________",
+          "trainable",
+          "params",
+          "dense 32",
+          "dense"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_model",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2554208543363413,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:26.413621+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 9,
+      "title": "Segment 9 (pages 69-76)",
+      "chapter_id": "Advanced Applied Deep Learning:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "logs",
+          "epoch",
+          "callbacks",
+          "self",
+          "5000"
+        ],
+        "semantic": [],
+        "merged": [
+          "logs",
+          "epoch",
+          "callbacks",
+          "self",
+          "5000"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_model",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34674595187050966,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:26.413772+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 10,
+      "title": "Segment 10 (pages 77-86)",
+      "chapter_id": "Advanced Applied Deep Learning:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "model",
+          "weights",
+          "new model",
+          "save",
+          "dataset"
+        ],
+        "semantic": [],
+        "merged": [
+          "model",
+          "weights",
+          "new model",
+          "save",
+          "dataset"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37443400174776187,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:39:26.413936+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 11,
+      "title": "Segment 11 (pages 87-98)",
+      "chapter_id": "Advanced Applied Deep Learning:ch11",
+      "cross_references": [
+        {
+          "target": "Advanced Applied Deep Learning:ch6",
+          "score": 0.5581033360992674,
+          "base_score": 0.6801722268321124,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "region",
+          "kernel",
+          "convolution",
+          "sess",
+          "sess run"
+        ],
+        "semantic": [],
+        "merged": [
+          "region",
+          "kernel",
+          "convolution",
+          "sess",
+          "sess run"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_model",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35927188445492364,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:26.414100+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 12,
+      "title": "Segment 12 (pages 99-108)",
+      "chapter_id": "Advanced Applied Deep Learning:ch12",
+      "cross_references": [
+        {
+          "target": "Advanced Applied Deep Learning:ch13",
+          "score": 0.5739465758803226,
+          "base_score": 0.6325035523931302,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Advanced Applied Deep Learning:ch14",
+          "score": 0.5021169730311241,
+          "base_score": 0.5868616217185402,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "matrix",
+          "chessboard",
+          "kernel",
+          "convolution",
+          "element"
+        ],
+        "semantic": [],
+        "merged": [
+          "matrix",
+          "chessboard",
+          "kernel",
+          "convolution",
+          "element"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27685841490438473,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:26.414250+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 13,
+      "title": "Segment 13 (pages 109-116)",
+      "chapter_id": "Advanced Applied Deep Learning:ch13",
+      "cross_references": [
+        {
+          "target": "Advanced Applied Deep Learning:ch12",
+          "score": 0.5739465758803226,
+          "base_score": 0.6325035523931302,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "10 10",
+          "10",
+          "matrix",
+          "region",
+          "nk"
+        ],
+        "semantic": [],
+        "merged": [
+          "10 10",
+          "10",
+          "matrix",
+          "region",
+          "nk"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2711162337476216,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:26.414401+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 14,
+      "title": "Segment 14 (pages 117-124)",
+      "chapter_id": "Advanced Applied Deep Learning:ch14",
+      "cross_references": [
+        {
+          "target": "Advanced Applied Deep Learning:ch16",
+          "score": 0.6841182905939194,
+          "base_score": 0.7235304843231989,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Advanced Applied Deep Learning:ch12",
+          "score": 0.5021169730311241,
+          "base_score": 0.5868616217185402,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pooling",
+          "layer",
+          "convolutional",
+          "pooling layer",
+          "convolutional layer"
+        ],
+        "semantic": [],
+        "merged": [
+          "pooling",
+          "layer",
+          "convolutional",
+          "pooling layer",
+          "convolutional layer"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3185417929354157,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:26.414556+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 15,
+      "title": "Segment 15 (pages 125-132)",
+      "chapter_id": "Advanced Applied Deep Learning:ch15",
+      "cross_references": [
+        {
+          "target": "Advanced Applied Deep Learning:ch19",
+          "score": 0.5471925492115105,
+          "base_score": 0.6262732963048985,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "model",
+          "model add",
+          "add",
+          "model layers",
+          "compile"
+        ],
+        "semantic": [],
+        "merged": [
+          "model",
+          "model add",
+          "add",
+          "model layers",
+          "compile"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "model_pkl_add",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44603964602949503,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:26.414708+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 16,
+      "title": "Segment 16 (pages 133-141)",
+      "chapter_id": "Advanced Applied Deep Learning:ch16",
+      "cross_references": [
+        {
+          "target": "Advanced Applied Deep Learning:ch14",
+          "score": 0.6841182905939194,
+          "base_score": 0.7235304843231989,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Advanced Applied Deep Learning:ch17",
+          "score": 0.5393216176620166,
+          "base_score": 0.5747952886959535,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "kernels",
+          "convolutional layer",
+          "tensors",
+          "dimensions",
+          "layer"
+        ],
+        "semantic": [],
+        "merged": [
+          "kernels",
+          "convolutional layer",
+          "tensors",
+          "dimensions",
+          "layer"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38568014776085446,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:26.414865+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 17,
+      "title": "Segment 17 (pages 142-149)",
+      "chapter_id": "Advanced Applied Deep Learning:ch17",
+      "cross_references": [
+        {
+          "target": "Advanced Applied Deep Learning:ch16",
+          "score": 0.5393216176620166,
+          "base_score": 0.5747952886959535,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "convolutions",
+          "parameters",
+          "inception",
+          "kernels",
+          "module"
+        ],
+        "semantic": [],
+        "merged": [
+          "convolutions",
+          "parameters",
+          "inception",
+          "kernels",
+          "module"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4134187838632902,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:26.415022+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 18,
+      "title": "Segment 18 (pages 150-159)",
+      "chapter_id": "Advanced Applied Deep Learning:ch18",
+      "cross_references": [
+        {
+          "target": "Advanced Applied Deep Learning:ch6",
+          "score": 0.5745712490409448,
+          "base_score": 0.7076187484015747,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Advanced Applied Deep Learning:ch31",
+          "score": 0.5111071198145866,
+          "base_score": 0.6018451996909775,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "network",
+          "base",
+          "trained",
+          "base network",
+          "model"
+        ],
+        "semantic": [],
+        "merged": [
+          "network",
+          "base",
+          "trained",
+          "base network",
+          "model"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_model",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38217707053391137,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:26.415188+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 19,
+      "title": "Segment 19 (pages 160-167)",
+      "chapter_id": "Advanced Applied Deep Learning:ch19",
+      "cross_references": [
+        {
+          "target": "Advanced Applied Deep Learning:ch15",
+          "score": 0.5471925492115105,
+          "base_score": 0.6262732963048985,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "model",
+          "model add",
+          "train_imgs",
+          "add",
+          "activation"
+        ],
+        "semantic": [],
+        "merged": [
+          "model",
+          "model add",
+          "train_imgs",
+          "add",
+          "activation"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41909265794581557,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:39:26.415342+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 20,
+      "title": "Segment 20 (pages 168-176)",
+      "chapter_id": "Advanced Applied Deep Learning:ch20",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "network",
+          "function",
+          "training network",
+          "neural",
+          "neural network"
+        ],
+        "semantic": [],
+        "merged": [
+          "network",
+          "function",
+          "training network",
+          "neural",
+          "neural network"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37425858191611594,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:39:26.415495+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 21,
+      "title": "Segment 21 (pages 177-187)",
+      "chapter_id": "Advanced Applied Deep Learning:ch21",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "probability",
+          "mass",
+          "probability mass",
+          "function",
+          "mass function"
+        ],
+        "semantic": [],
+        "merged": [
+          "probability",
+          "mass",
+          "probability mass",
+          "function",
+          "mass function"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.19923834879130708,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:39:26.415649+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 22,
+      "title": "Segment 22 (pages 188-195)",
+      "chapter_id": "Advanced Applied Deep Learning:ch22",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "style",
+          "image",
+          "cost",
+          "cost functions",
+          "functions style"
+        ],
+        "semantic": [],
+        "merged": [
+          "style",
+          "image",
+          "cost",
+          "cost functions",
+          "functions style"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33108778993900306,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:26.415801+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 23,
+      "title": "Segment 23 (pages 196-203)",
+      "chapter_id": "Advanced Applied Deep Learning:ch23",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "outputs",
+          "image",
+          "extractor",
+          "content",
+          "style_outputs"
+        ],
+        "semantic": [],
+        "merged": [
+          "outputs",
+          "image",
+          "extractor",
+          "content",
+          "style_outputs"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34574531710193535,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:39:26.415952+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 24,
+      "title": "Segment 24 (pages 204-211)",
+      "chapter_id": "Advanced Applied Deep Learning:ch24",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "object",
+          "image",
+          "instances",
+          "instance",
+          "draw"
+        ],
+        "semantic": [],
+        "merged": [
+          "object",
+          "image",
+          "instances",
+          "instance",
+          "draw"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25396263983378836,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:26.416149+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 25,
+      "title": "Segment 25 (pages 212-219)",
+      "chapter_id": "Advanced Applied Deep Learning:ch25",
+      "cross_references": [
+        {
+          "target": "Advanced Applied Deep Learning:ch26",
+          "score": 0.5628380590682056,
+          "base_score": 0.6880634317803427,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "window",
+          "wy",
+          "wx wy",
+          "wx",
+          "sliding window"
+        ],
+        "semantic": [],
+        "merged": [
+          "window",
+          "wy",
+          "wx wy",
+          "wx",
+          "sliding window"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2455243100297219,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:26.416303+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 26,
+      "title": "Segment 26 (pages 220-231)",
+      "chapter_id": "Advanced Applied Deep Learning:ch26",
+      "cross_references": [
+        {
+          "target": "Advanced Applied Deep Learning:ch25",
+          "score": 0.5628380590682056,
+          "base_score": 0.6880634317803427,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cnn",
+          "regions",
+          "faster cnn",
+          "algorithm",
+          "fast"
+        ],
+        "semantic": [],
+        "merged": [
+          "cnn",
+          "regions",
+          "faster cnn",
+          "algorithm",
+          "fast"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3258992332072847,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:26.416476+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 27,
+      "title": "Segment 27 (pages 232-241)",
+      "chapter_id": "Advanced Applied Deep Learning:ch27",
+      "cross_references": [
+        {
+          "target": "Advanced Applied Deep Learning:ch28",
+          "score": 0.5616481741028386,
+          "base_score": 0.6860802901713978,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Advanced Applied Deep Learning:ch29",
+          "score": 0.5539639481939228,
+          "base_score": 0.6732732469898712,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cell",
+          "bounding",
+          "object",
+          "boxes",
+          "box"
+        ],
+        "semantic": [],
+        "merged": [
+          "cell",
+          "bounding",
+          "object",
+          "boxes",
+          "box"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32626814306453533,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:26.416628+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 28,
+      "title": "Segment 28 (pages 242-249)",
+      "chapter_id": "Advanced Applied Deep Learning:ch28",
+      "cross_references": [
+        {
+          "target": "Advanced Applied Deep Learning:ch29",
+          "score": 0.6524718064655,
+          "base_score": 0.8374530107758332,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Advanced Applied Deep Learning:ch27",
+          "score": 0.5616481741028386,
+          "base_score": 0.6860802901713978,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "yolov3",
+          "files",
+          "need",
+          "trained models",
+          "weights"
+        ],
+        "semantic": [],
+        "merged": [
+          "yolov3",
+          "files",
+          "need",
+          "trained models",
+          "weights"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37019356498177053,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:26.416777+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 29,
+      "title": "Segment 29 (pages 250-257)",
+      "chapter_id": "Advanced Applied Deep Learning:ch29",
+      "cross_references": [
+        {
+          "target": "Advanced Applied Deep Learning:ch28",
+          "score": 0.6524718064655,
+          "base_score": 0.8374530107758332,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Advanced Applied Deep Learning:ch27",
+          "score": 0.5539639481939228,
+          "base_score": 0.6732732469898712,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "drive",
+          "df",
+          "drive book2",
+          "content drive",
+          "book2 ch8"
+        ],
+        "semantic": [],
+        "merged": [
+          "drive",
+          "df",
+          "drive book2",
+          "content drive",
+          "book2 ch8"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38247971359835303,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:26.416934+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 30,
+      "title": "Segment 30 (pages 258-265)",
+      "chapter_id": "Advanced Applied Deep Learning:ch30",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "pkl",
+          "load open",
+          "pkl rb",
+          "rb",
+          "pickle load"
+        ],
+        "semantic": [],
+        "merged": [
+          "pkl",
+          "load open",
+          "pkl rb",
+          "rb",
+          "pickle load"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "model_pkl_add",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3328503332892281,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:26.417098+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 31,
+      "title": "Segment 31 (pages 266-273)",
+      "chapter_id": "Advanced Applied Deep Learning:ch31",
+      "cross_references": [
+        {
+          "target": "Advanced Applied Deep Learning:ch18",
+          "score": 0.5111071198145866,
+          "base_score": 0.6018451996909775,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "_________________________________________________________________",
+          "dense",
+          "37",
+          "add tf",
+          "75"
+        ],
+        "semantic": [],
+        "merged": [
+          "_________________________________________________________________",
+          "dense",
+          "37",
+          "add tf",
+          "75"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_model",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.397741999496481,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:26.417254+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 32,
+      "title": "Segment 32 (pages 274-281)",
+      "chapter_id": "Advanced Applied Deep Learning:ch32",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "images",
+          "transformation",
+          "shifting",
+          "rotating",
+          "horizontally"
+        ],
+        "semantic": [],
+        "merged": [
+          "images",
+          "transformation",
+          "shifting",
+          "rotating",
+          "horizontally"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3070226841836689,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:26.417408+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 33,
+      "title": "Segment 33 (pages 282-289)",
+      "chapter_id": "Advanced Applied Deep Learning:ch33",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "function",
+          "fit",
+          "augmentation",
+          "train_on_batch function",
+          "fit_generator"
+        ],
+        "semantic": [],
+        "merged": [
+          "function",
+          "fit",
+          "augmentation",
+          "train_on_batch function",
+          "fit_generator"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40526257661672316,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:39:26.417568+00:00"
+      }
+    },
+    {
+      "book": "Advanced Applied Deep Learning",
+      "chapter": 34,
+      "title": "Segment 34 (pages 290-294)",
+      "chapter_id": "Advanced Applied Deep Learning:ch34",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "function",
+          "116",
+          "variable",
+          "200",
+          "dataset"
+        ],
+        "semantic": [],
+        "merged": [
+          "function",
+          "116",
+          "variable",
+          "200",
+          "dataset"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37658722815295914,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:39:26.417721+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

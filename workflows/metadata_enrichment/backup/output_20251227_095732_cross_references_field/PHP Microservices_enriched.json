@@ -1,0 +1,1640 @@
+{
+  "book": {
+    "title": "PHP Microservices"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:53:01.508613",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "PHP Microservices",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-9)",
+      "chapter_id": "PHP Microservices:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "packt",
+          "book",
+          "packtpub com",
+          "packtpub",
+          "com"
+        ],
+        "semantic": [],
+        "merged": [
+          "packt",
+          "book",
+          "packtpub com",
+          "packtpub",
+          "com"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1006070697339258,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.485820+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 2,
+      "title": "Segment 2 (pages 10-17)",
+      "chapter_id": "PHP Microservices:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "chapter",
+          "microservices",
+          "practices",
+          "best practices",
+          "installing"
+        ],
+        "semantic": [],
+        "merged": [
+          "chapter",
+          "microservices",
+          "practices",
+          "best practices",
+          "installing"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3642243444793752,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:53:01.486059+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 3,
+      "title": "Segment 3 (pages 18-26)",
+      "chapter_id": "PHP Microservices:ch3",
+      "cross_references": [
+        {
+          "target": "PHP Microservices:ch4",
+          "score": 0.5603130367063363,
+          "base_score": 0.6097809871031529,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "PHP Microservices:ch29",
+          "score": 0.50465809353784,
+          "base_score": 0.5170227484889927,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "book",
+          "microservices",
+          "monolithic",
+          "joe",
+          "problem"
+        ],
+        "semantic": [],
+        "merged": [
+          "book",
+          "microservices",
+          "monolithic",
+          "joe",
+          "problem"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33133297851453936,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.486303+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 4,
+      "title": "Segment 4 (pages 27-34)",
+      "chapter_id": "PHP Microservices:ch4",
+      "cross_references": [
+        {
+          "target": "PHP Microservices:ch29",
+          "score": 0.5811166700133757,
+          "base_score": 0.6444537092815521,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "PHP Microservices:ch3",
+          "score": 0.5603130367063363,
+          "base_score": 0.6097809871031529,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "microservices",
+          "application",
+          "soa",
+          "microservice",
+          "architecture"
+        ],
+        "semantic": [],
+        "merged": [
+          "microservices",
+          "application",
+          "soa",
+          "microservice",
+          "architecture"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2632960669997552,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.486534+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 5,
+      "title": "Segment 5 (pages 35-42)",
+      "chapter_id": "PHP Microservices:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "php",
+          "language",
+          "programming",
+          "programming language",
+          "release"
+        ],
+        "semantic": [],
+        "merged": [
+          "php",
+          "language",
+          "programming",
+          "programming language",
+          "release"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.16856396168165683,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.486743+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 6,
+      "title": "Segment 6 (pages 43-50)",
+      "chapter_id": "PHP Microservices:ch6",
+      "cross_references": [
+        {
+          "target": "PHP Microservices:ch39",
+          "score": 0.5066099966273019,
+          "base_score": 0.5202759203047624,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "docker",
+          "install docker",
+          "install",
+          "installing docker",
+          "machine"
+        ],
+        "semantic": [],
+        "merged": [
+          "docker",
+          "install docker",
+          "install",
+          "installing docker",
+          "machine"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "docker_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.18346783033579303,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.486952+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 7,
+      "title": "Segment 7 (pages 51-60)",
+      "chapter_id": "PHP Microservices:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "docker",
+          "git",
+          "branch",
+          "execute git",
+          "remote"
+        ],
+        "semantic": [],
+        "merged": [
+          "docker",
+          "git",
+          "branch",
+          "execute git",
+          "remote"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "docker_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.12376786675076715,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.487158+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 8,
+      "title": "Segment 8 (pages 61-71)",
+      "chapter_id": "PHP Microservices:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "consul",
+          "fpm",
+          "php fpm",
+          "containerpilot",
+          "container"
+        ],
+        "semantic": [],
+        "merged": [
+          "consul",
+          "fpm",
+          "php fpm",
+          "containerpilot",
+          "container"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "docker_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30792378917711866,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.487360+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 9,
+      "title": "Segment 9 (pages 72-82)",
+      "chapter_id": "PHP Microservices:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "response",
+          "request",
+          "middleware",
+          "http",
+          "responseinterface"
+        ],
+        "semantic": [],
+        "merged": [
+          "response",
+          "request",
+          "middleware",
+          "http",
+          "responseinterface"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28336472865242796,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.487570+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 10,
+      "title": "Segment 10 (pages 83-92)",
+      "chapter_id": "PHP Microservices:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "service",
+          "application",
+          "microframeworks",
+          "microframework"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "service",
+          "application",
+          "microframeworks",
+          "microframework"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2963754332036677,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.487768+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 11,
+      "title": "Segment 11 (pages 93-100)",
+      "chapter_id": "PHP Microservices:ch11",
+      "cross_references": [
+        {
+          "target": "PHP Microservices:ch20",
+          "score": 0.5218719966936877,
+          "base_score": 0.545712587082072,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cache",
+          "data",
+          "caching",
+          "copy",
+          "strategy"
+        ],
+        "semantic": [],
+        "merged": [
+          "cache",
+          "data",
+          "caching",
+          "copy",
+          "strategy"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_to_our",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.251841034943973,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.487963+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 12,
+      "title": "Segment 12 (pages 101-111)",
+      "chapter_id": "PHP Microservices:ch12",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "domain",
+          "model",
+          "event",
+          "domain model",
+          "ddd"
+        ],
+        "semantic": [],
+        "merged": [
+          "domain",
+          "model",
+          "event",
+          "domain model",
+          "ddd"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1901990023989942,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.488155+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 13,
+      "title": "Segment 13 (pages 112-121)",
+      "chapter_id": "PHP Microservices:ch13",
+      "cross_references": [
+        {
+          "target": "PHP Microservices:ch14",
+          "score": 0.5327189807960961,
+          "base_score": 0.35215068227920787,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "unit",
+          "tdd",
+          "test",
+          "tests",
+          "testing"
+        ],
+        "semantic": [],
+        "merged": [
+          "unit",
+          "tdd",
+          "test",
+          "tests",
+          "testing"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2804459895089745,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.488348+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 14,
+      "title": "Segment 14 (pages 122-139)",
+      "chapter_id": "PHP Microservices:ch14",
+      "cross_references": [
+        {
+          "target": "PHP Microservices:ch13",
+          "score": 0.5327189807960961,
+          "base_score": 0.35215068227920787,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tests",
+          "unit",
+          "test",
+          "assertions",
+          "acceptance"
+        ],
+        "semantic": [],
+        "merged": [
+          "tests",
+          "unit",
+          "test",
+          "assertions",
+          "acceptance"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.11207200559874841,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.488564+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 15,
+      "title": "Segment 15 (pages 140-148)",
+      "chapter_id": "PHP Microservices:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "distance",
+          "pointa",
+          "pointb",
+          "latitude",
+          "function"
+        ],
+        "semantic": [],
+        "merged": [
+          "distance",
+          "pointa",
+          "pointb",
+          "latitude",
+          "function"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.07888540907864872,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.488770+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 16,
+      "title": "Segment 16 (pages 149-156)",
+      "chapter_id": "PHP Microservices:ch16",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "id",
+          "json method",
+          "app",
+          "method",
+          "usercontroller"
+        ],
+        "semantic": [],
+        "merged": [
+          "id",
+          "json method",
+          "app",
+          "method",
+          "usercontroller"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2629754820337377,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.488976+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 17,
+      "title": "Segment 17 (pages 157-164)",
+      "chapter_id": "PHP Microservices:ch17",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "api_key",
+          "battle",
+          "dice",
+          "duel",
+          "app"
+        ],
+        "semantic": [],
+        "merged": [
+          "api_key",
+          "battle",
+          "dice",
+          "duel",
+          "app"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2615687124150047,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.489180+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 18,
+      "title": "Segment 18 (pages 165-175)",
+      "chapter_id": "PHP Microservices:ch18",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "database",
+          "migration",
+          "secret",
+          "secrets",
+          "latitude"
+        ],
+        "semantic": [],
+        "merged": [
+          "database",
+          "migration",
+          "secret",
+          "secrets",
+          "latitude"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_to_our",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26428865104436977,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.489400+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 19,
+      "title": "Segment 19 (pages 176-183)",
+      "chapter_id": "PHP Microservices:ch19",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "redis",
+          "microservice",
+          "user",
+          "microservice_user_fpm",
+          "secret"
+        ],
+        "semantic": [],
+        "merged": [
+          "redis",
+          "microservice",
+          "user",
+          "microservice_user_fpm",
+          "secret"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23872104086098916,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:53:01.489604+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 20,
+      "title": "Segment 20 (pages 184-195)",
+      "chapter_id": "PHP Microservices:ch20",
+      "cross_references": [
+        {
+          "target": "PHP Microservices:ch11",
+          "score": 0.5218719966936877,
+          "base_score": 0.545712587082072,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "xdebug",
+          "usr",
+          "apt",
+          "php",
+          "cache"
+        ],
+        "semantic": [],
+        "merged": [
+          "xdebug",
+          "usr",
+          "apt",
+          "php",
+          "cache"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_to_our",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2580308514808721,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.489812+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 21,
+      "title": "Segment 21 (pages 196-205)",
+      "chapter_id": "PHP Microservices:ch21",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "error",
+          "handling",
+          "error handling",
+          "errors",
+          "sentry"
+        ],
+        "semantic": [],
+        "merged": [
+          "error",
+          "handling",
+          "error handling",
+          "errors",
+          "sentry"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25483288410369537,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.490016+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 22,
+      "title": "Segment 22 (pages 206-215)",
+      "chapter_id": "PHP Microservices:ch22",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "log",
+          "logs",
+          "metrics",
+          "error log",
+          "application"
+        ],
+        "semantic": [],
+        "merged": [
+          "log",
+          "logs",
+          "metrics",
+          "error log",
+          "application"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23606987694078388,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.490220+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 23,
+      "title": "Segment 23 (pages 216-228)",
+      "chapter_id": "PHP Microservices:ch23",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "encryption",
+          "encrypt",
+          "ssl",
+          "tsl",
+          "tsl ssl"
+        ],
+        "semantic": [],
+        "merged": [
+          "encryption",
+          "encrypt",
+          "ssl",
+          "tsl",
+          "tsl ssl"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_to_our",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.16743308620265168,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.490441+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 24,
+      "title": "Segment 24 (pages 229-236)",
+      "chapter_id": "PHP Microservices:ch24",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "user",
+          "access token",
+          "token",
+          "oauth",
+          "user microservice"
+        ],
+        "semantic": [],
+        "merged": [
+          "user",
+          "access token",
+          "token",
+          "oauth",
+          "user microservice"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23982702199012698,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:53:01.490646+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 25,
+      "title": "Segment 25 (pages 237-244)",
+      "chapter_id": "PHP Microservices:ch25",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "app",
+          "email",
+          "user",
+          "class app",
+          "class"
+        ],
+        "semantic": [],
+        "merged": [
+          "app",
+          "email",
+          "user",
+          "class app",
+          "class"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "app_user_class",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.17952737564687482,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.490849+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 26,
+      "title": "Segment 26 (pages 245-254)",
+      "chapter_id": "PHP Microservices:ch26",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "composer",
+          "libraries",
+          "repository",
+          "production",
+          "vendor folder"
+        ],
+        "semantic": [],
+        "merged": [
+          "composer",
+          "libraries",
+          "repository",
+          "production",
+          "vendor folder"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "app_user_class",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.18834258222473255,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.491054+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 27,
+      "title": "Segment 27 (pages 255-262)",
+      "chapter_id": "PHP Microservices:ch27",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "ansible",
+          "ansistrano",
+          "install",
+          "js",
+          "node"
+        ],
+        "semantic": [],
+        "merged": [
+          "ansible",
+          "ansistrano",
+          "install",
+          "js",
+          "node"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.14111457364016822,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.491257+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 28,
+      "title": "Segment 28 (pages 263-274)",
+      "chapter_id": "PHP Microservices:ch28",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "backup",
+          "hosts",
+          "deploy",
+          "deployment",
+          "deploy yml"
+        ],
+        "semantic": [],
+        "merged": [
+          "backup",
+          "hosts",
+          "deploy",
+          "deployment",
+          "deploy yml"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "docker_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.16655149682016257,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.491486+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 29,
+      "title": "Segment 29 (pages 275-283)",
+      "chapter_id": "PHP Microservices:ch29",
+      "cross_references": [
+        {
+          "target": "PHP Microservices:ch4",
+          "score": 0.5811166700133757,
+          "base_score": 0.6444537092815521,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "PHP Microservices:ch3",
+          "score": 0.50465809353784,
+          "base_score": 0.5170227484889927,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "monolithic",
+          "monolithic application",
+          "application",
+          "new functionality",
+          "new"
+        ],
+        "semantic": [],
+        "merged": [
+          "monolithic",
+          "monolithic application",
+          "application",
+          "new functionality",
+          "new"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24891609354464317,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.491695+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 30,
+      "title": "Segment 30 (pages 284-292)",
+      "chapter_id": "PHP Microservices:ch30",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "div",
+          "php echo",
+          "php",
+          "panel",
+          "class"
+        ],
+        "semantic": [],
+        "merged": [
+          "div",
+          "php echo",
+          "php",
+          "panel",
+          "class"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "app_user_class",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.10220531940210882,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.491901+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 31,
+      "title": "Segment 31 (pages 293-302)",
+      "chapter_id": "PHP Microservices:ch31",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "category",
+          "categories",
+          "id",
+          "controller",
+          "categories microservice"
+        ],
+        "semantic": [],
+        "merged": [
+          "category",
+          "categories",
+          "id",
+          "controller",
+          "categories microservice"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.19623211311310607,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.492109+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 32,
+      "title": "Segment 32 (pages 303-310)",
+      "chapter_id": "PHP Microservices:ch32",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "application",
+          "capacity",
+          "availability",
+          "time",
+          "limits"
+        ],
+        "semantic": [],
+        "merged": [
+          "application",
+          "capacity",
+          "availability",
+          "time",
+          "limits"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "your_the_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.18833634033206426,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.492313+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 33,
+      "title": "Segment 33 (pages 311-319)",
+      "chapter_id": "PHP Microservices:ch33",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "apache",
+          "apache jmeter",
+          "jmeter",
+          "thread group",
+          "thread"
+        ],
+        "semantic": [],
+        "merged": [
+          "apache",
+          "apache jmeter",
+          "jmeter",
+          "thread group",
+          "thread"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.17270304528412678,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.492527+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 34,
+      "title": "Segment 34 (pages 320-327)",
+      "chapter_id": "PHP Microservices:ch34",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "artillery",
+          "command",
+          "test",
+          "seconds",
+          "siege"
+        ],
+        "semantic": [],
+        "merged": [
+          "artillery",
+          "command",
+          "test",
+          "seconds",
+          "siege"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21941992298516325,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.492730+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 35,
+      "title": "Segment 35 (pages 328-335)",
+      "chapter_id": "PHP Microservices:ch35",
+      "cross_references": [
+        {
+          "target": "PHP Microservices:ch38",
+          "score": 0.5118843370317344,
+          "base_score": 0.6031405617195573,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cache",
+          "performance",
+          "layer",
+          "application",
+          "step"
+        ],
+        "semantic": [],
+        "merged": [
+          "cache",
+          "performance",
+          "layer",
+          "application",
+          "step"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "your_the_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31895816711123093,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.492933+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 36,
+      "title": "Segment 36 (pages 336-343)",
+      "chapter_id": "PHP Microservices:ch36",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "number",
+          "version number",
+          "images",
+          "code",
+          "image"
+        ],
+        "semantic": [],
+        "merged": [
+          "number",
+          "version number",
+          "images",
+          "code",
+          "image"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "your_the_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.19329639198425844,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.493137+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 37,
+      "title": "Segment 37 (pages 344-351)",
+      "chapter_id": "PHP Microservices:ch37",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "request",
+          "server",
+          "release",
+          "branch",
+          "client"
+        ],
+        "semantic": [],
+        "merged": [
+          "request",
+          "server",
+          "release",
+          "branch",
+          "client"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.11446117760072534,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.493339+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 38,
+      "title": "Segment 38 (pages 352-362)",
+      "chapter_id": "PHP Microservices:ch38",
+      "cross_references": [
+        {
+          "target": "PHP Microservices:ch35",
+          "score": 0.5118843370317344,
+          "base_score": 0.6031405617195573,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "swarm",
+          "manager",
+          "node",
+          "command",
+          "cluster"
+        ],
+        "semantic": [],
+        "merged": [
+          "swarm",
+          "manager",
+          "node",
+          "command",
+          "cluster"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "your_the_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.20217838768937663,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.493561+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 39,
+      "title": "Segment 39 (pages 363-370)",
+      "chapter_id": "PHP Microservices:ch39",
+      "cross_references": [
+        {
+          "target": "PHP Microservices:ch6",
+          "score": 0.5066099966273019,
+          "base_score": 0.5202759203047624,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "triton",
+          "docker",
+          "command",
+          "containers",
+          "pingtest"
+        ],
+        "semantic": [],
+        "merged": [
+          "triton",
+          "docker",
+          "command",
+          "containers",
+          "pingtest"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "docker_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2640297162197928,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.493762+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 40,
+      "title": "Segment 40 (pages 371-378)",
+      "chapter_id": "PHP Microservices:ch40",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "248",
+          "docker",
+          "installing",
+          "242",
+          "255"
+        ],
+        "semantic": [],
+        "merged": [
+          "248",
+          "docker",
+          "installing",
+          "242",
+          "255"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26500637497877144,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:01.493964+00:00"
+      }
+    },
+    {
+      "book": "PHP Microservices",
+      "chapter": 41,
+      "title": "Segment 41 (pages 379-382)",
+      "chapter_id": "PHP Microservices:ch41",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "73",
+          "231",
+          "324",
+          "313",
+          "308"
+        ],
+        "semantic": [],
+        "merged": [
+          "73",
+          "231",
+          "324",
+          "313",
+          "308"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.17982263527815773,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:53:01.494163+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

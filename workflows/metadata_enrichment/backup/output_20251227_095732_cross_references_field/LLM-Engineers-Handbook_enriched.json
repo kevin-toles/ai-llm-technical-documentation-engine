@@ -1,0 +1,3071 @@
+{
+  "book": {
+    "title": "LLM-Engineers-Handbook"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:49:55.252863",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-10)",
+      "chapter_id": "LLM-Engineers-Handbook:ch1",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch3",
+          "score": 0.5779034365584816,
+          "base_score": 0.639098320190062,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch48",
+          "score": 0.5432146982949876,
+          "base_score": 0.5812837564175719,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch47",
+          "score": 0.5125182468694652,
+          "base_score": 0.5301230040417013,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ai",
+          "engineer",
+          "llm engineer",
+          "llm",
+          "ml"
+        ],
+        "semantic": [],
+        "merged": [
+          "ai",
+          "engineer",
+          "llm engineer",
+          "llm",
+          "ml"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_llm",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32380588306666036,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.219192+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 2,
+      "title": "Segment 2 (pages 11-18)",
+      "chapter_id": "LLM-Engineers-Handbook:ch2",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch56",
+          "score": 0.7389222721070993,
+          "base_score": 0.8148704535118322,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch57",
+          "score": 0.6797081896624696,
+          "base_score": 0.716180316104116,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "pipeline",
+          "138",
+          "pipeline 105",
+          "105"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "pipeline",
+          "138",
+          "pipeline 105",
+          "105"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "pipeline_data_llm",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3947426843578214,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.219494+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 3,
+      "title": "Segment 3 (pages 19-27)",
+      "chapter_id": "LLM-Engineers-Handbook:ch3",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch5",
+          "score": 0.5934560895174752,
+          "base_score": 0.6650194084550513,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch4",
+          "score": 0.5910100496454139,
+          "base_score": 0.4493024636947375,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch1",
+          "score": 0.5779034365584816,
+          "base_score": 0.639098320190062,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch56",
+          "score": 0.5443292211636924,
+          "base_score": 0.7405487019394874,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch47",
+          "score": 0.5394195471813489,
+          "base_score": 0.6490325786355814,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "book",
+          "llm",
+          "pipeline",
+          "llm twin",
+          "twin"
+        ],
+        "semantic": [],
+        "merged": [
+          "book",
+          "llm",
+          "pipeline",
+          "llm twin",
+          "twin"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_llm",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4319475288273865,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.219792+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 4,
+      "title": "Segment 4 (pages 28-36)",
+      "chapter_id": "LLM-Engineers-Handbook:ch4",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch3",
+          "score": 0.5910100496454139,
+          "base_score": 0.4493024636947375,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "llm",
+          "llm twin",
+          "twin",
+          "product",
+          "mvp"
+        ],
+        "semantic": [],
+        "merged": [
+          "llm",
+          "llm twin",
+          "twin",
+          "product",
+          "mvp"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_llm",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28318772345393944,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.220045+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 5,
+      "title": "Segment 5 (pages 37-46)",
+      "chapter_id": "LLM-Engineers-Handbook:ch5",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch3",
+          "score": 0.5934560895174752,
+          "base_score": 0.6650194084550513,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch42",
+          "score": 0.5175908711717208,
+          "base_score": 0.612651451952868,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "fti",
+          "training",
+          "features",
+          "pipeline",
+          "feature"
+        ],
+        "semantic": [],
+        "merged": [
+          "fti",
+          "training",
+          "features",
+          "pipeline",
+          "feature"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_llm",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38909421899034724,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.220297+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 6,
+      "title": "Segment 6 (pages 47-58)",
+      "chapter_id": "LLM-Engineers-Handbook:ch6",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch14",
+          "score": 0.5895603494141785,
+          "base_score": 0.7326005823569641,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch17",
+          "score": 0.5714676331038142,
+          "base_score": 0.6283719810989497,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch18",
+          "score": 0.5493432815410118,
+          "base_score": 0.5914980618276122,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch38",
+          "score": 0.5142570920386217,
+          "base_score": 0.6070951533977028,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch15",
+          "score": 0.5003515442697926,
+          "base_score": 0.5839192404496543,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "python",
+          "poetry",
+          "pipeline",
+          "pyenv",
+          "python version"
+        ],
+        "semantic": [],
+        "merged": [
+          "python",
+          "poetry",
+          "pipeline",
+          "pyenv",
+          "python version"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_query_rag",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4279856717002754,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.220551+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 7,
+      "title": "Segment 7 (pages 59-66)",
+      "chapter_id": "LLM-Engineers-Handbook:ch7",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch8",
+          "score": 0.6305185114156587,
+          "base_score": 0.6341975190260979,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch50",
+          "score": 0.5578390498095684,
+          "base_score": 0.5130650830159473,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch52",
+          "score": 0.5552077266585567,
+          "base_score": 0.6012721370235202,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch44",
+          "score": 0.5050400436897885,
+          "base_score": 0.5917334061496474,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch45",
+          "score": 0.5035600123558696,
+          "base_score": 0.5892666872597825,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "zenml",
+          "run",
+          "pipeline",
+          "dashboard",
+          "pipeline run"
+        ],
+        "semantic": [],
+        "merged": [
+          "zenml",
+          "run",
+          "pipeline",
+          "dashboard",
+          "pipeline run"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "aws_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34910644771864247,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.220816+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 8,
+      "title": "Segment 8 (pages 67-75)",
+      "chapter_id": "LLM-Engineers-Handbook:ch8",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch7",
+          "score": 0.6305185114156587,
+          "base_score": 0.6341975190260979,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch52",
+          "score": 0.5096776706875015,
+          "base_score": 0.5994627844791691,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "artifact",
+          "digital_data_etl",
+          "zenml",
+          "run",
+          "instruct_datasets"
+        ],
+        "semantic": [],
+        "merged": [
+          "artifact",
+          "digital_data_etl",
+          "zenml",
+          "run",
+          "instruct_datasets"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "aws_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31806807311239976,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.221073+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 9,
+      "title": "Segment 9 (pages 76-83)",
+      "chapter_id": "LLM-Engineers-Handbook:ch9",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch49",
+          "score": 0.5001890820392257,
+          "base_score": 0.5836484700653763,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "aws",
+          "aws account",
+          "cli",
+          "com",
+          "account"
+        ],
+        "semantic": [],
+        "merged": [
+          "aws",
+          "aws account",
+          "cli",
+          "com",
+          "account"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "aws_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23635102618179415,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.221331+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 10,
+      "title": "Segment 10 (pages 84-97)",
+      "chapter_id": "LLM-Engineers-Handbook:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "crawler",
+          "link",
+          "data",
+          "data collection",
+          "links"
+        ],
+        "semantic": [],
+        "merged": [
+          "crawler",
+          "link",
+          "data",
+          "data collection",
+          "links"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38418377620077077,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:55.221596+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 11,
+      "title": "Segment 11 (pages 98-105)",
+      "chapter_id": "LLM-Engineers-Handbook:ch11",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch12",
+          "score": 0.5432020519400758,
+          "base_score": 0.5812626791593856,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "options",
+          "link",
+          "add_argument",
+          "options add_argument",
+          "class"
+        ],
+        "semantic": [],
+        "merged": [
+          "options",
+          "link",
+          "add_argument",
+          "options add_argument",
+          "class"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "class_the_document",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.19216311781033715,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.221877+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 12,
+      "title": "Segment 12 (pages 106-115)",
+      "chapter_id": "LLM-Engineers-Handbook:ch12",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch11",
+          "score": 0.5432020519400758,
+          "base_score": 0.5812626791593856,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch20",
+          "score": 0.5386226811241813,
+          "base_score": 0.48103780187363565,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch13",
+          "score": 0.5001760533278917,
+          "base_score": 0.5836267555464861,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "class",
+          "document",
+          "cls",
+          "instance",
+          "class method"
+        ],
+        "semantic": [],
+        "merged": [
+          "class",
+          "document",
+          "cls",
+          "instance",
+          "class method"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "class_the_document",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30667716630524905,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.222144+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 13,
+      "title": "Segment 13 (pages 116-123)",
+      "chapter_id": "LLM-Engineers-Handbook:ch13",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch20",
+          "score": 0.5118798091154196,
+          "base_score": 0.6031330151923661,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch12",
+          "score": 0.5001760533278917,
+          "base_score": 0.5836267555464861,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data collection",
+          "data",
+          "collection",
+          "collection pipeline",
+          "run"
+        ],
+        "semantic": [],
+        "merged": [
+          "data collection",
+          "data",
+          "collection",
+          "collection pipeline",
+          "run"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "class_the_document",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.305228073389014,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.222406+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 14,
+      "title": "Segment 14 (pages 124-132)",
+      "chapter_id": "LLM-Engineers-Handbook:ch14",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch6",
+          "score": 0.5895603494141785,
+          "base_score": 0.7326005823569641,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch41",
+          "score": 0.5737748153624774,
+          "base_score": 0.6322172848633882,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch38",
+          "score": 0.5727841824297971,
+          "base_score": 0.7046403040496618,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch17",
+          "score": 0.5716445263986706,
+          "base_score": 0.6286668032570435,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch33",
+          "score": 0.5497709056710047,
+          "base_score": 0.5922107687109337,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "rag",
+          "data",
+          "llm",
+          "rag feature",
+          "generative ai"
+        ],
+        "semantic": [],
+        "merged": [
+          "rag",
+          "data",
+          "llm",
+          "rag feature",
+          "generative ai"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_query_rag",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43072799724265903,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.222679+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 15,
+      "title": "Segment 15 (pages 133-140)",
+      "chapter_id": "LLM-Engineers-Handbook:ch15",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch17",
+          "score": 0.548055640498382,
+          "base_score": 0.6634260674973034,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch38",
+          "score": 0.509231762566252,
+          "base_score": 0.5987196042770866,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch6",
+          "score": 0.5003515442697926,
+          "base_score": 0.5839192404496543,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "embeddings",
+          "vector",
+          "input",
+          "embedding",
+          "user input"
+        ],
+        "semantic": [],
+        "merged": [
+          "embeddings",
+          "vector",
+          "input",
+          "embedding",
+          "user input"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_query_rag",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36035632436990706,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.222932+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 16,
+      "title": "Segment 16 (pages 141-148)",
+      "chapter_id": "LLM-Engineers-Handbook:ch16",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "vector",
+          "dbs",
+          "vector dbs",
+          "index",
+          "data"
+        ],
+        "semantic": [],
+        "merged": [
+          "vector",
+          "dbs",
+          "vector dbs",
+          "index",
+          "data"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_query_rag",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.20640051533004394,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.223184+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 17,
+      "title": "Segment 17 (pages 149-163)",
+      "chapter_id": "LLM-Engineers-Handbook:ch17",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch18",
+          "score": 0.7426667575974408,
+          "base_score": 0.5433334848846236,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch14",
+          "score": 0.5716445263986706,
+          "base_score": 0.6286668032570435,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch6",
+          "score": 0.5714676331038142,
+          "base_score": 0.6283719810989497,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch38",
+          "score": 0.5549653823214057,
+          "base_score": 0.6749423038690094,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch15",
+          "score": 0.548055640498382,
+          "base_score": 0.6634260674973034,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "feature",
+          "pipeline",
+          "batch",
+          "feature pipeline"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "feature",
+          "pipeline",
+          "batch",
+          "feature pipeline"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_query_rag",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36738283302461844,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.223442+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 18,
+      "title": "Segment 18 (pages 164-171)",
+      "chapter_id": "LLM-Engineers-Handbook:ch18",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch17",
+          "score": 0.7426667575974408,
+          "base_score": 0.5433334848846236,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch6",
+          "score": 0.5493432815410118,
+          "base_score": 0.5914980618276122,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch14",
+          "score": 0.534360450985847,
+          "base_score": 0.47393408497641154,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "feature",
+          "pipeline",
+          "feature pipeline",
+          "data",
+          "rag feature"
+        ],
+        "semantic": [],
+        "merged": [
+          "feature",
+          "pipeline",
+          "feature pipeline",
+          "data",
+          "rag feature"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_query_rag",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.314398107651827,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.223703+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 19,
+      "title": "Segment 19 (pages 172-179)",
+      "chapter_id": "LLM-Engineers-Handbook:ch19",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "metadata",
+          "documents",
+          "cleaned_documents",
+          "chunking",
+          "_get_metadata"
+        ],
+        "semantic": [],
+        "merged": [
+          "metadata",
+          "documents",
+          "cleaned_documents",
+          "chunking",
+          "_get_metadata"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "class_the_document",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27291874107349523,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.223954+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 20,
+      "title": "Segment 20 (pages 180-188)",
+      "chapter_id": "LLM-Engineers-Handbook:ch20",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch12",
+          "score": 0.5386226811241813,
+          "base_score": 0.48103780187363565,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch13",
+          "score": 0.5118798091154196,
+          "base_score": 0.6031330151923661,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "vectorbasedocument",
+          "cls",
+          "class",
+          "abc",
+          "cls type"
+        ],
+        "semantic": [],
+        "merged": [
+          "vectorbasedocument",
+          "cls",
+          "class",
+          "abc",
+          "cls type"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "class_the_document",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24247700005450085,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.224201+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 21,
+      "title": "Segment 21 (pages 189-197)",
+      "chapter_id": "LLM-Engineers-Handbook:ch21",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "handler",
+          "data_model",
+          "clean",
+          "cleaning",
+          "chunk"
+        ],
+        "semantic": [],
+        "merged": [
+          "handler",
+          "data_model",
+          "clean",
+          "cleaning",
+          "chunk"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "class_the_document",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3371105435713467,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.224449+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 22,
+      "title": "Segment 22 (pages 198-207)",
+      "chapter_id": "LLM-Engineers-Handbook:ch22",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data_model",
+          "self",
+          "embedding",
+          "embedding_model",
+          "_model"
+        ],
+        "semantic": [],
+        "merged": [
+          "data_model",
+          "self",
+          "embedding",
+          "embedding_model",
+          "_model"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_query_rag",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.337849569485144,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.224709+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 23,
+      "title": "Segment 23 (pages 208-215)",
+      "chapter_id": "LLM-Engineers-Handbook:ch23",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch24",
+          "score": 0.5884651894176092,
+          "base_score": 0.5641086490293485,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "samples",
+          "data",
+          "quality",
+          "specific",
+          "specific models"
+        ],
+        "semantic": [],
+        "merged": [
+          "samples",
+          "data",
+          "quality",
+          "specific",
+          "specific models"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "model_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32555919160480534,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.224960+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 24,
+      "title": "Segment 24 (pages 216-225)",
+      "chapter_id": "LLM-Engineers-Handbook:ch24",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch23",
+          "score": 0.5884651894176092,
+          "base_score": 0.5641086490293485,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch29",
+          "score": 0.5370336502978933,
+          "base_score": 0.6450560838298223,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch26",
+          "score": 0.5140193921539822,
+          "base_score": 0.6066989869233036,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "instruction",
+          "data",
+          "quality",
+          "instructions",
+          "data quality"
+        ],
+        "semantic": [],
+        "merged": [
+          "instruction",
+          "data",
+          "quality",
+          "instructions",
+          "data quality"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "model_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3278601927981696,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.225216+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 25,
+      "title": "Segment 25 (pages 226-234)",
+      "chapter_id": "LLM-Engineers-Handbook:ch25",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "dataset",
+          "instruction",
+          "json",
+          "pairs",
+          "instructions"
+        ],
+        "semantic": [],
+        "merged": [
+          "dataset",
+          "instruction",
+          "json",
+          "pairs",
+          "instructions"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_query_rag",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2635948864374557,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.225478+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 26,
+      "title": "Segment 26 (pages 235-244)",
+      "chapter_id": "LLM-Engineers-Handbook:ch26",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch31",
+          "score": 0.616435661381993,
+          "base_score": 0.7033186948959143,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch32",
+          "score": 0.5230719826273108,
+          "base_score": 0.6217866377121846,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch24",
+          "score": 0.5140193921539822,
+          "base_score": 0.6066989869233036,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "fine",
+          "fine tuning",
+          "tuning",
+          "lora",
+          "model"
+        ],
+        "semantic": [],
+        "merged": [
+          "fine",
+          "fine tuning",
+          "tuning",
+          "lora",
+          "model"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "model_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3567272926803489,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.225761+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 27,
+      "title": "Segment 27 (pages 245-252)",
+      "chapter_id": "LLM-Engineers-Handbook:ch27",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch36",
+          "score": 0.6042061389237589,
+          "base_score": 0.5903435648729315,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch35",
+          "score": 0.5233662417534205,
+          "base_score": 0.5482029955149601,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "model",
+          "dataset",
+          "training",
+          "memory",
+          "batch"
+        ],
+        "semantic": [],
+        "merged": [
+          "model",
+          "dataset",
+          "training",
+          "memory",
+          "batch"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "model_the_quantization",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.324164769037355,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.226013+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 28,
+      "title": "Segment 28 (pages 253-265)",
+      "chapter_id": "LLM-Engineers-Handbook:ch28",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch29",
+          "score": 0.5736838200986953,
+          "base_score": 0.632065626090418,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "preference",
+          "datasets",
+          "preference datasets",
+          "human",
+          "preferences"
+        ],
+        "semantic": [],
+        "merged": [
+          "preference",
+          "datasets",
+          "preference datasets",
+          "human",
+          "preferences"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "model_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33014595361804294,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.226291+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 29,
+      "title": "Segment 29 (pages 266-274)",
+      "chapter_id": "LLM-Engineers-Handbook:ch29",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch28",
+          "score": 0.5736838200986953,
+          "base_score": 0.632065626090418,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch24",
+          "score": 0.5370336502978933,
+          "base_score": 0.6450560838298223,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "dataset",
+          "preference",
+          "answers",
+          "dataset dataset",
+          "preference dataset"
+        ],
+        "semantic": [],
+        "merged": [
+          "dataset",
+          "preference",
+          "answers",
+          "dataset dataset",
+          "preference dataset"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "model_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36435940742667644,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.226549+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 30,
+      "title": "Segment 30 (pages 275-282)",
+      "chapter_id": "LLM-Engineers-Handbook:ch30",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "reward",
+          "model",
+          "reward model",
+          "dpo",
+          "rlhf"
+        ],
+        "semantic": [],
+        "merged": [
+          "reward",
+          "model",
+          "reward model",
+          "dpo",
+          "rlhf"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "model_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21267972510305522,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.226819+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 31,
+      "title": "Segment 31 (pages 283-291)",
+      "chapter_id": "LLM-Engineers-Handbook:ch31",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch26",
+          "score": 0.616435661381993,
+          "base_score": 0.7033186948959143,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "model",
+          "models",
+          "evaluation",
+          "dpo model",
+          "dpo"
+        ],
+        "semantic": [],
+        "merged": [
+          "model",
+          "models",
+          "evaluation",
+          "dpo model",
+          "dpo"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "model_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3134701672243375,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.227068+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 32,
+      "title": "Segment 32 (pages 292-299)",
+      "chapter_id": "LLM-Engineers-Handbook:ch32",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch26",
+          "score": 0.5230719826273108,
+          "base_score": 0.6217866377121846,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "evaluations",
+          "general purpose",
+          "purpose",
+          "general",
+          "evaluates"
+        ],
+        "semantic": [],
+        "merged": [
+          "evaluations",
+          "general purpose",
+          "purpose",
+          "general",
+          "evaluates"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "model_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3206925302139618,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.227318+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 33,
+      "title": "Segment 33 (pages 300-308)",
+      "chapter_id": "LLM-Engineers-Handbook:ch33",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch14",
+          "score": 0.5497709056710047,
+          "base_score": 0.5922107687109337,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch41",
+          "score": 0.5403102447618177,
+          "base_score": 0.5764430005289554,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch38",
+          "score": 0.5129685611199041,
+          "base_score": 0.6049476018665069,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "evaluation",
+          "rag",
+          "rag evaluation",
+          "ares",
+          "ragas"
+        ],
+        "semantic": [],
+        "merged": [
+          "evaluation",
+          "rag",
+          "rag evaluation",
+          "ares",
+          "ragas"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_query_rag",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34276628381290547,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.227571+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 34,
+      "title": "Segment 34 (pages 309-317)",
+      "chapter_id": "LLM-Engineers-Handbook:ch34",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "bias",
+          "algorithm bias",
+          "style",
+          "algorithm",
+          "8b"
+        ],
+        "semantic": [],
+        "merged": [
+          "bias",
+          "algorithm bias",
+          "style",
+          "algorithm",
+          "8b"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32874845184948503,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:55.228007+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 35,
+      "title": "Segment 35 (pages 318-325)",
+      "chapter_id": "LLM-Engineers-Handbook:ch35",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch36",
+          "score": 0.5371163771109203,
+          "base_score": 0.5711198877774597,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch27",
+          "score": 0.5233662417534205,
+          "base_score": 0.5482029955149601,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "model",
+          "token",
+          "tokenizer",
+          "cache",
+          "tokens"
+        ],
+        "semantic": [],
+        "merged": [
+          "model",
+          "token",
+          "tokenizer",
+          "cache",
+          "tokens"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "model_the_quantization",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32191853323562536,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.228296+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 36,
+      "title": "Segment 36 (pages 326-334)",
+      "chapter_id": "LLM-Engineers-Handbook:ch36",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch27",
+          "score": 0.6042061389237589,
+          "base_score": 0.5903435648729315,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch35",
+          "score": 0.5371163771109203,
+          "base_score": 0.5711198877774597,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "parallelism",
+          "memory",
+          "pipeline parallelism",
+          "gpus",
+          "model"
+        ],
+        "semantic": [],
+        "merged": [
+          "parallelism",
+          "memory",
+          "pipeline parallelism",
+          "gpus",
+          "model"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "model_the_quantization",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3102680344455036,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.228601+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 37,
+      "title": "Segment 37 (pages 335-343)",
+      "chapter_id": "LLM-Engineers-Handbook:ch37",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "quantization",
+          "gguf",
+          "precision",
+          "bit",
+          "bit precision"
+        ],
+        "semantic": [],
+        "merged": [
+          "quantization",
+          "gguf",
+          "precision",
+          "bit",
+          "bit precision"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "model_the_quantization",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.16444747325539902,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.228887+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 38,
+      "title": "Segment 38 (pages 344-356)",
+      "chapter_id": "LLM-Engineers-Handbook:ch38",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch41",
+          "score": 0.7315106753189156,
+          "base_score": 0.8025177921981925,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch40",
+          "score": 0.5746176454667534,
+          "base_score": 0.6336220017038483,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch14",
+          "score": 0.5727841824297971,
+          "base_score": 0.7046403040496618,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch17",
+          "score": 0.5549653823214057,
+          "base_score": 0.6749423038690094,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch53",
+          "score": 0.5321294296376918,
+          "base_score": 0.5628083086554123,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "query",
+          "expansion",
+          "query expansion",
+          "rag inference",
+          "retrieval"
+        ],
+        "semantic": [],
+        "merged": [
+          "query",
+          "expansion",
+          "query expansion",
+          "rag inference",
+          "retrieval"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_query_rag",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42062870856866497,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.229161+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 39,
+      "title": "Segment 39 (pages 357-366)",
+      "chapter_id": "LLM-Engineers-Handbook:ch39",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch40",
+          "score": 0.6172290214961398,
+          "base_score": 0.6120483691602331,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch41",
+          "score": 0.5656512821314147,
+          "base_score": 0.6186780628116171,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch38",
+          "score": 0.523309601744802,
+          "base_score": 0.548108595500596,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch53",
+          "score": 0.5052746033205457,
+          "base_score": 0.5180502647935021,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "query",
+          "self",
+          "chunks",
+          "chunk",
+          "vector"
+        ],
+        "semantic": [],
+        "merged": [
+          "query",
+          "self",
+          "chunks",
+          "chunk",
+          "vector"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_query_rag",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28505502223913926,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.229417+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 40,
+      "title": "Segment 40 (pages 367-374)",
+      "chapter_id": "LLM-Engineers-Handbook:ch40",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch41",
+          "score": 0.6541960756558932,
+          "base_score": 0.6736601260931553,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch39",
+          "score": 0.6172290214961398,
+          "base_score": 0.6120483691602331,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch38",
+          "score": 0.5746176454667534,
+          "base_score": 0.6336220017038483,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch17",
+          "score": 0.5017433271240479,
+          "base_score": 0.5862388785400798,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "query",
+          "author_id",
+          "search",
+          "embedded_query",
+          "self"
+        ],
+        "semantic": [],
+        "merged": [
+          "query",
+          "author_id",
+          "search",
+          "embedded_query",
+          "self"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_query_rag",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31196776942828025,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.229721+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 41,
+      "title": "Segment 41 (pages 375-383)",
+      "chapter_id": "LLM-Engineers-Handbook:ch41",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch38",
+          "score": 0.7315106753189156,
+          "base_score": 0.8025177921981925,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch40",
+          "score": 0.6541960756558932,
+          "base_score": 0.6736601260931553,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch53",
+          "score": 0.6229557627941256,
+          "base_score": 0.7141855305828019,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch14",
+          "score": 0.5737748153624774,
+          "base_score": 0.6322172848633882,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch39",
+          "score": 0.5656512821314147,
+          "base_score": 0.6186780628116171,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "rag",
+          "search",
+          "query",
+          "retrieval",
+          "superlinked"
+        ],
+        "semantic": [],
+        "merged": [
+          "rag",
+          "search",
+          "query",
+          "retrieval",
+          "superlinked"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_query_rag",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38890954266509664,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.229983+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 42,
+      "title": "Segment 42 (pages 384-392)",
+      "chapter_id": "LLM-Engineers-Handbook:ch42",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch3",
+          "score": 0.5283229426033113,
+          "base_score": 0.6305382376721853,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch43",
+          "score": 0.5280002531127416,
+          "base_score": 0.6300004218545692,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch5",
+          "score": 0.5175908711717208,
+          "base_score": 0.612651451952868,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch47",
+          "score": 0.5030955749765288,
+          "base_score": 0.5144185508868072,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "latency",
+          "throughput",
+          "requests",
+          "request",
+          "ml"
+        ],
+        "semantic": [],
+        "merged": [
+          "latency",
+          "throughput",
+          "requests",
+          "request",
+          "ml"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_llm",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34776554643479585,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.230239+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 43,
+      "title": "Segment 43 (pages 393-400)",
+      "chapter_id": "LLM-Engineers-Handbook:ch43",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch42",
+          "score": 0.5280002531127416,
+          "base_score": 0.6300004218545692,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "business logic",
+          "business",
+          "microservices",
+          "microservice",
+          "architecture"
+        ],
+        "semantic": [],
+        "merged": [
+          "business logic",
+          "business",
+          "microservices",
+          "microservice",
+          "architecture"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_llm",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.303357341446567,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.230494+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 44,
+      "title": "Segment 44 (pages 401-411)",
+      "chapter_id": "LLM-Engineers-Handbook:ch44",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch45",
+          "score": 0.7214256734094481,
+          "base_score": 0.7857094556824133,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch46",
+          "score": 0.6480666226444363,
+          "base_score": 0.6634443710740605,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch50",
+          "score": 0.5222274143143217,
+          "base_score": 0.5463049497831287,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch49",
+          "score": 0.5092263278721304,
+          "base_score": 0.5987105464535506,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch7",
+          "score": 0.5050400436897885,
+          "base_score": 0.5917334061496474,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sagemaker",
+          "deployment",
+          "deploy",
+          "aws",
+          "endpoint"
+        ],
+        "semantic": [],
+        "merged": [
+          "sagemaker",
+          "deployment",
+          "deploy",
+          "aws",
+          "endpoint"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "aws_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3077754149074451,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.230771+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 45,
+      "title": "Segment 45 (pages 412-421)",
+      "chapter_id": "LLM-Engineers-Handbook:ch45",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch44",
+          "score": 0.7214256734094481,
+          "base_score": 0.7857094556824133,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch46",
+          "score": 0.5972206424570664,
+          "base_score": 0.6712936633543699,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch7",
+          "score": 0.5035600123558696,
+          "base_score": 0.5892666872597825,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "inference",
+          "sagemaker",
+          "endpoint",
+          "settings",
+          "aws sagemaker"
+        ],
+        "semantic": [],
+        "merged": [
+          "inference",
+          "sagemaker",
+          "endpoint",
+          "settings",
+          "aws sagemaker"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "aws_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3053018759106381,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.231025+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 46,
+      "title": "Segment 46 (pages 422-429)",
+      "chapter_id": "LLM-Engineers-Handbook:ch46",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch44",
+          "score": 0.6480666226444363,
+          "base_score": 0.6634443710740605,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch45",
+          "score": 0.5972206424570664,
+          "base_score": 0.6712936633543699,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "scaling",
+          "sagemaker",
+          "target",
+          "aws",
+          "scale"
+        ],
+        "semantic": [],
+        "merged": [
+          "scaling",
+          "sagemaker",
+          "target",
+          "aws",
+          "scale"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "aws_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2982027578493631,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.231278+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 47,
+      "title": "Segment 47 (pages 430-437)",
+      "chapter_id": "LLM-Engineers-Handbook:ch47",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch48",
+          "score": 0.7893547769551794,
+          "base_score": 0.7798770092110131,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch3",
+          "score": 0.5394195471813489,
+          "base_score": 0.6490325786355814,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch1",
+          "score": 0.5125182468694652,
+          "base_score": 0.5301230040417013,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch42",
+          "score": 0.5030955749765288,
+          "base_score": 0.5144185508868072,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "mlops",
+          "devops",
+          "llmops",
+          "ml",
+          "mlops llmops"
+        ],
+        "semantic": [],
+        "merged": [
+          "mlops",
+          "devops",
+          "llmops",
+          "ml",
+          "mlops llmops"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_llm",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3398827125021809,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.231532+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 48,
+      "title": "Segment 48 (pages 438-445)",
+      "chapter_id": "LLM-Engineers-Handbook:ch48",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch47",
+          "score": 0.7893547769551794,
+          "base_score": 0.7798770092110131,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch1",
+          "score": 0.5432146982949876,
+          "base_score": 0.5812837564175719,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch3",
+          "score": 0.5269128913826739,
+          "base_score": 0.6281881523044566,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "mlops",
+          "llmops",
+          "engineer",
+          "mlops engineer",
+          "mlops llmops"
+        ],
+        "semantic": [],
+        "merged": [
+          "mlops",
+          "llmops",
+          "engineer",
+          "mlops engineer",
+          "mlops llmops"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_llm",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3367362458325135,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.231809+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 49,
+      "title": "Segment 49 (pages 446-455)",
+      "chapter_id": "LLM-Engineers-Handbook:ch49",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch50",
+          "score": 0.6454029288810695,
+          "base_score": 0.6590048814684493,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch44",
+          "score": 0.5092263278721304,
+          "base_score": 0.5987105464535506,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch9",
+          "score": 0.5001890820392257,
+          "base_score": 0.5836484700653763,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "docker",
+          "cluster",
+          "docker image",
+          "cloud",
+          "zenml"
+        ],
+        "semantic": [],
+        "merged": [
+          "docker",
+          "cluster",
+          "docker image",
+          "cloud",
+          "zenml"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "aws_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.19703384275553312,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.232535+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 50,
+      "title": "Segment 50 (pages 456-464)",
+      "chapter_id": "LLM-Engineers-Handbook:ch50",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch49",
+          "score": 0.6454029288810695,
+          "base_score": 0.6590048814684493,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch7",
+          "score": 0.5578390498095684,
+          "base_score": 0.5130650830159473,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch52",
+          "score": 0.5296152280070257,
+          "base_score": 0.5586179726043019,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch44",
+          "score": 0.5222274143143217,
+          "base_score": 0.5463049497831287,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "docker",
+          "aws",
+          "zenml",
+          "pipeline",
+          "ecr"
+        ],
+        "semantic": [],
+        "merged": [
+          "docker",
+          "aws",
+          "zenml",
+          "pipeline",
+          "ecr"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "aws_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.22199085980409203,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.232872+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 51,
+      "title": "Segment 51 (pages 465-475)",
+      "chapter_id": "LLM-Engineers-Handbook:ch51",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "workflow",
+          "actions",
+          "docker",
+          "github",
+          "github actions"
+        ],
+        "semantic": [],
+        "merged": [
+          "workflow",
+          "actions",
+          "docker",
+          "github",
+          "github actions"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2304877662079248,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:55.233128+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 52,
+      "title": "Segment 52 (pages 476-483)",
+      "chapter_id": "LLM-Engineers-Handbook:ch52",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch7",
+          "score": 0.5552077266585567,
+          "base_score": 0.6012721370235202,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch50",
+          "score": 0.5296152280070257,
+          "base_score": 0.5586179726043019,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch8",
+          "score": 0.5096776706875015,
+          "base_score": 0.5994627844791691,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pipeline",
+          "trigger",
+          "pipelines",
+          "triggers",
+          "end"
+        ],
+        "semantic": [],
+        "merged": [
+          "pipeline",
+          "trigger",
+          "pipelines",
+          "triggers",
+          "end"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "aws_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3185460895653512,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.233383+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 53,
+      "title": "Segment 53 (pages 484-491)",
+      "chapter_id": "LLM-Engineers-Handbook:ch53",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch41",
+          "score": 0.6229557627941256,
+          "base_score": 0.7141855305828019,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch38",
+          "score": 0.5321294296376918,
+          "base_score": 0.5628083086554123,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch39",
+          "score": 0.5052746033205457,
+          "base_score": 0.5180502647935021,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "mlops",
+          "query",
+          "str",
+          "zenml",
+          "llmops"
+        ],
+        "semantic": [],
+        "merged": [
+          "mlops",
+          "query",
+          "str",
+          "zenml",
+          "llmops"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_query_rag",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33722746180150825,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.233653+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 54,
+      "title": "Segment 54 (pages 492-500)",
+      "chapter_id": "LLM-Engineers-Handbook:ch54",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "model",
+          "drift",
+          "data",
+          "testing",
+          "changes"
+        ],
+        "semantic": [],
+        "merged": [
+          "model",
+          "drift",
+          "data",
+          "testing",
+          "changes"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_llm",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24947890743088974,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.233911+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 55,
+      "title": "Segment 55 (pages 501-509)",
+      "chapter_id": "LLM-Engineers-Handbook:ch55",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "books",
+          "enjoy",
+          "books enjoy",
+          "window",
+          "drifts"
+        ],
+        "semantic": [],
+        "merged": [
+          "books",
+          "enjoy",
+          "books enjoy",
+          "window",
+          "drifts"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_llm",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.17243610845759025,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.234166+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 56,
+      "title": "Segment 56 (pages 510-517)",
+      "chapter_id": "LLM-Engineers-Handbook:ch56",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch2",
+          "score": 0.7389222721070993,
+          "base_score": 0.8148704535118322,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch57",
+          "score": 0.6663326403187168,
+          "base_score": 0.6938877338645278,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch3",
+          "score": 0.5443292211636924,
+          "base_score": 0.7405487019394874,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pipeline",
+          "llm",
+          "data",
+          "263",
+          "ci"
+        ],
+        "semantic": [],
+        "merged": [
+          "pipeline",
+          "llm",
+          "data",
+          "263",
+          "ci"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "pipeline_data_llm",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3914332553392201,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.234420+00:00"
+      }
+    },
+    {
+      "book": "LLM-Engineers-Handbook",
+      "chapter": 57,
+      "title": "Segment 57 (pages 518-522)",
+      "chapter_id": "LLM-Engineers-Handbook:ch57",
+      "cross_references": [
+        {
+          "target": "LLM-Engineers-Handbook:ch2",
+          "score": 0.6797081896624696,
+          "base_score": 0.716180316104116,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "LLM-Engineers-Handbook:ch56",
+          "score": 0.6663326403187168,
+          "base_score": 0.6938877338645278,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "246",
+          "data",
+          "pipeline",
+          "book",
+          "learning"
+        ],
+        "semantic": [],
+        "merged": [
+          "246",
+          "data",
+          "pipeline",
+          "book",
+          "learning"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "pipeline_data_llm",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36810537343190686,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:55.234684+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

@@ -1,0 +1,1988 @@
+{
+  "book": {
+    "title": "Python Distilled"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:54:37.105165",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Python Distilled",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-9)",
+      "chapter_id": "Python Distilled:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "protocol",
+          "pearson",
+          "permissions",
+          "exceptions",
+          "com"
+        ],
+        "semantic": [],
+        "merged": [
+          "protocol",
+          "pearson",
+          "permissions",
+          "exceptions",
+          "com"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_self",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36765691337634887,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.071170+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 2,
+      "title": "Segment 2 (pages 10-18)",
+      "chapter_id": "Python Distilled:ch2",
+      "cross_references": [
+        {
+          "target": "Python Distilled:ch27",
+          "score": 0.57979723329754,
+          "base_score": 0.6422546480884925,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "python",
+          "book",
+          "module",
+          "interpreter",
+          "python python"
+        ],
+        "semantic": [],
+        "merged": [
+          "python",
+          "book",
+          "module",
+          "interpreter",
+          "python python"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "module_import_python",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3661297501097081,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.071434+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 3,
+      "title": "Segment 3 (pages 19-26)",
+      "chapter_id": "Python Distilled:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "string",
+          "format",
+          "2f",
+          "print",
+          "principal"
+        ],
+        "semantic": [],
+        "merged": [
+          "string",
+          "format",
+          "2f",
+          "print",
+          "principal"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_self",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23010743207944934,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.071615+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 4,
+      "title": "Segment 4 (pages 27-35)",
+      "chapter_id": "Python Distilled:ch4",
+      "cross_references": [
+        {
+          "target": "Python Distilled:ch30",
+          "score": 0.5890591672729077,
+          "base_score": 0.6576912047141054,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch32",
+          "score": 0.5093674995752195,
+          "base_score": 0.5248717585512919,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "list",
+          "ibm",
+          "lists",
+          "prices",
+          "file"
+        ],
+        "semantic": [],
+        "merged": [
+          "list",
+          "ibm",
+          "lists",
+          "prices",
+          "file"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "file_data_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27376078359756445,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.071794+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 5,
+      "title": "Segment 5 (pages 36-45)",
+      "chapter_id": "Python Distilled:ch5",
+      "cross_references": [
+        {
+          "target": "Python Distilled:ch20",
+          "score": 0.5174168863723729,
+          "base_score": 0.5382874032132142,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch35",
+          "score": 0.5054176616952556,
+          "base_score": 0.5923627694920928,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "self",
+          "pop",
+          "push",
+          "stack",
+          "self pop"
+        ],
+        "semantic": [],
+        "merged": [
+          "self",
+          "pop",
+          "push",
+          "stack",
+          "self pop"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_self",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4308186296609268,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.071991+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 6,
+      "title": "Segment 6 (pages 46-53)",
+      "chapter_id": "Python Distilled:ch6",
+      "cross_references": [
+        {
+          "target": "Python Distilled:ch27",
+          "score": 0.5604671085877129,
+          "base_score": 0.610037773572114,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "readport",
+          "import",
+          "py",
+          "readport py",
+          "read_portfolio"
+        ],
+        "semantic": [],
+        "merged": [
+          "readport",
+          "import",
+          "py",
+          "readport py",
+          "read_portfolio"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "module_import_python",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28186034342337507,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.072198+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 7,
+      "title": "Segment 7 (pages 54-61)",
+      "chapter_id": "Python Distilled:ch7",
+      "cross_references": [
+        {
+          "target": "Python Distilled:ch9",
+          "score": 0.5624008885039465,
+          "base_score": 0.6873348141732443,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "operators",
+          "operator",
+          "data manipulation",
+          "operators expressions",
+          "manipulation"
+        ],
+        "semantic": [],
+        "merged": [
+          "operators",
+          "operator",
+          "data manipulation",
+          "operators expressions",
+          "manipulation"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_self",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3276973604957703,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.072377+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 8,
+      "title": "Segment 8 (pages 62-70)",
+      "chapter_id": "Python Distilled:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "list",
+          "sequence",
+          "operations",
+          "operator",
+          "generator expression"
+        ],
+        "semantic": [],
+        "merged": [
+          "list",
+          "sequence",
+          "operations",
+          "operator",
+          "generator expression"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_self",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26387871326162965,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.072570+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 9,
+      "title": "Segment 9 (pages 71-78)",
+      "chapter_id": "Python Distilled:ch9",
+      "cross_references": [
+        {
+          "target": "Python Distilled:ch7",
+          "score": 0.5624008885039465,
+          "base_score": 0.6873348141732443,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "statements",
+          "statements statements",
+          "iteration",
+          "loop",
+          "extra"
+        ],
+        "semantic": [],
+        "merged": [
+          "statements",
+          "statements statements",
+          "iteration",
+          "loop",
+          "extra"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_self",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3763400942467216,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.072742+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 10,
+      "title": "Segment 10 (pages 79-89)",
+      "chapter_id": "Python Distilled:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "exception",
+          "exceptions",
+          "exception exception",
+          "raise",
+          "handling"
+        ],
+        "semantic": [],
+        "merged": [
+          "exception",
+          "exceptions",
+          "exception exception",
+          "raise",
+          "handling"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_self",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.19748080927167924,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.072914+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 11,
+      "title": "Segment 11 (pages 90-99)",
+      "chapter_id": "Python Distilled:ch11",
+      "cross_references": [
+        {
+          "target": "Python Distilled:ch12",
+          "score": 0.5008327558799719,
+          "base_score": 0.5106471857258792,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "object",
+          "objects",
+          "count",
+          "reference count",
+          "reference"
+        ],
+        "semantic": [],
+        "merged": [
+          "object",
+          "objects",
+          "count",
+          "reference count",
+          "reference"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_self",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3752702399240797,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.073100+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 12,
+      "title": "Segment 12 (pages 100-107)",
+      "chapter_id": "Python Distilled:ch12",
+      "cross_references": [
+        {
+          "target": "Python Distilled:ch13",
+          "score": 0.6880591199870569,
+          "base_score": 0.45232075553398376,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch20",
+          "score": 0.5387610442353946,
+          "base_score": 0.5738609996515835,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch25",
+          "score": 0.5211535452648026,
+          "base_score": 0.5445151680339302,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch24",
+          "score": 0.5176702574511612,
+          "base_score": 0.538709688344528,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch26",
+          "score": 0.5141541110162892,
+          "base_score": 0.6069235183604819,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "self self",
+          "self",
+          "method",
+          "objects",
+          "methods"
+        ],
+        "semantic": [],
+        "merged": [
+          "self self",
+          "self",
+          "method",
+          "objects",
+          "methods"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_self",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3932238545097462,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.073276+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 13,
+      "title": "Segment 13 (pages 108-115)",
+      "chapter_id": "Python Distilled:ch13",
+      "cross_references": [
+        {
+          "target": "Python Distilled:ch12",
+          "score": 0.6880591199870569,
+          "base_score": 0.45232075553398376,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch22",
+          "score": 0.5004257296086543,
+          "base_score": 0.5099688086070164,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "self",
+          "method",
+          "methods",
+          "self self",
+          "method invoked"
+        ],
+        "semantic": [],
+        "merged": [
+          "self",
+          "method",
+          "methods",
+          "self self",
+          "method invoked"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_self",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3886627552808424,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.073589+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 14,
+      "title": "Segment 14 (pages 116-123)",
+      "chapter_id": "Python Distilled:ch14",
+      "cross_references": [
+        {
+          "target": "Python Distilled:ch17",
+          "score": 0.6619016441685488,
+          "base_score": 0.6865027402809146,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch15",
+          "score": 0.6149766093957014,
+          "base_score": 0.6082943489928356,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch16",
+          "score": 0.608763129935559,
+          "base_score": 0.690531142485191,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "function",
+          "arguments",
+          "keyword",
+          "parameter",
+          "functions"
+        ],
+        "semantic": [],
+        "merged": [
+          "function",
+          "arguments",
+          "keyword",
+          "parameter",
+          "functions"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "function_functions_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3732994250526935,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.073796+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 15,
+      "title": "Segment 15 (pages 124-132)",
+      "chapter_id": "Python Distilled:ch15",
+      "cross_references": [
+        {
+          "target": "Python Distilled:ch14",
+          "score": 0.6149766093957014,
+          "base_score": 0.6082943489928356,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch17",
+          "score": 0.5983777767184161,
+          "base_score": 0.5806296278640268,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "function",
+          "functions",
+          "parse_value",
+          "value",
+          "parse_value text"
+        ],
+        "semantic": [],
+        "merged": [
+          "function",
+          "functions",
+          "parse_value",
+          "value",
+          "parse_value text"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "function_functions_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3776939676486215,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.073978+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 16,
+      "title": "Segment 16 (pages 133-141)",
+      "chapter_id": "Python Distilled:ch16",
+      "cross_references": [
+        {
+          "target": "Python Distilled:ch14",
+          "score": 0.608763129935559,
+          "base_score": 0.690531142485191,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch17",
+          "score": 0.5252748334387795,
+          "base_score": 0.551383981657225,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "func",
+          "func args",
+          "args",
+          "function",
+          "seconds func"
+        ],
+        "semantic": [],
+        "merged": [
+          "func",
+          "func args",
+          "args",
+          "function",
+          "seconds func"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "function_functions_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27660804370256004,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.074188+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 17,
+      "title": "Segment 17 (pages 142-149)",
+      "chapter_id": "Python Distilled:ch17",
+      "cross_references": [
+        {
+          "target": "Python Distilled:ch14",
+          "score": 0.6619016441685488,
+          "base_score": 0.6865027402809146,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch15",
+          "score": 0.5983777767184161,
+          "base_score": 0.5806296278640268,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch16",
+          "score": 0.5252748334387795,
+          "base_score": 0.551383981657225,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "f_locals",
+          "inspect",
+          "functions",
+          "function",
+          "reduce"
+        ],
+        "semantic": [],
+        "merged": [
+          "f_locals",
+          "inspect",
+          "functions",
+          "function",
+          "reduce"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "function_functions_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39920789923580324,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.074368+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 18,
+      "title": "Segment 18 (pages 150-158)",
+      "chapter_id": "Python Distilled:ch18",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "async",
+          "yield",
+          "generator",
+          "function",
+          "generators"
+        ],
+        "semantic": [],
+        "merged": [
+          "async",
+          "yield",
+          "generator",
+          "function",
+          "generators"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "function_functions_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2995658968857339,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.074545+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 19,
+      "title": "Segment 19 (pages 159-166)",
+      "chapter_id": "Python Distilled:ch19",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "generator",
+          "generators",
+          "yield",
+          "generators yield",
+          "enhanced generators"
+        ],
+        "semantic": [],
+        "merged": [
+          "generator",
+          "generators",
+          "yield",
+          "generators yield",
+          "enhanced generators"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_self",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31406079295183315,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.074719+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 20,
+      "title": "Segment 20 (pages 167-175)",
+      "chapter_id": "Python Distilled:ch20",
+      "cross_references": [
+        {
+          "target": "Python Distilled:ch22",
+          "score": 0.7814136193396098,
+          "base_score": 0.7666417465183972,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch23",
+          "score": 0.6515870977875279,
+          "base_score": 0.6693118296458798,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch26",
+          "score": 0.6432035674053991,
+          "base_score": 0.6553392790089985,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch21",
+          "score": 0.6303942387958632,
+          "base_score": 0.6339903979931054,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch25",
+          "score": 0.6151940321649797,
+          "base_score": 0.6086567202749662,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "self",
+          "account",
+          "class",
+          "balance",
+          "self balance"
+        ],
+        "semantic": [],
+        "merged": [
+          "self",
+          "account",
+          "class",
+          "balance",
+          "self balance"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_self",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40048940840322605,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.074908+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 21,
+      "title": "Segment 21 (pages 176-183)",
+      "chapter_id": "Python Distilled:ch21",
+      "cross_references": [
+        {
+          "target": "Python Distilled:ch22",
+          "score": 0.7663294405725607,
+          "base_score": 0.7415014485733153,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch23",
+          "score": 0.7032069454145333,
+          "base_score": 0.7553449090242222,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch24",
+          "score": 0.647631452927139,
+          "base_score": 0.5436714691642792,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch20",
+          "score": 0.6303942387958632,
+          "base_score": 0.6339903979931054,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch25",
+          "score": 0.580058640658355,
+          "base_score": 0.5500977344305917,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "self",
+          "class",
+          "def",
+          "stack",
+          "class evilaccount"
+        ],
+        "semantic": [],
+        "merged": [
+          "self",
+          "class",
+          "def",
+          "stack",
+          "class evilaccount"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_self",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3144170013335474,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.075110+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 22,
+      "title": "Segment 22 (pages 184-191)",
+      "chapter_id": "Python Distilled:ch22",
+      "cross_references": [
+        {
+          "target": "Python Distilled:ch20",
+          "score": 0.7814136193396098,
+          "base_score": 0.7666417465183972,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch21",
+          "score": 0.7663294405725607,
+          "base_score": 0.7415014485733153,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch23",
+          "score": 0.7247039411081705,
+          "base_score": 0.791173235180284,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch24",
+          "score": 0.67667635678289,
+          "base_score": 0.5920796422571974,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch25",
+          "score": 0.6619024520356377,
+          "base_score": 0.6865040867260628,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "class",
+          "account",
+          "self",
+          "def",
+          "def deposit"
+        ],
+        "semantic": [],
+        "merged": [
+          "class",
+          "account",
+          "self",
+          "def",
+          "def deposit"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_self",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37636424526544615,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.075291+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 23,
+      "title": "Segment 23 (pages 192-207)",
+      "chapter_id": "Python Distilled:ch23",
+      "cross_references": [
+        {
+          "target": "Python Distilled:ch22",
+          "score": 0.7247039411081705,
+          "base_score": 0.791173235180284,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch21",
+          "score": 0.7032069454145333,
+          "base_score": 0.7553449090242222,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch25",
+          "score": 0.6994383573449621,
+          "base_score": 0.630016309860651,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch20",
+          "score": 0.6515870977875279,
+          "base_score": 0.6693118296458798,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch24",
+          "score": 0.620724883364271,
+          "base_score": 0.6178748056071184,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "class",
+          "classes",
+          "base",
+          "self",
+          "noise"
+        ],
+        "semantic": [],
+        "merged": [
+          "class",
+          "classes",
+          "base",
+          "self",
+          "noise"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_self",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33802515826576046,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.075468+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 24,
+      "title": "Segment 24 (pages 208-218)",
+      "chapter_id": "Python Distilled:ch24",
+      "cross_references": [
+        {
+          "target": "Python Distilled:ch22",
+          "score": 0.67667635678289,
+          "base_score": 0.5920796422571974,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch21",
+          "score": 0.647631452927139,
+          "base_score": 0.5436714691642792,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch23",
+          "score": 0.620724883364271,
+          "base_score": 0.6178748056071184,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch20",
+          "score": 0.6097679126198725,
+          "base_score": 0.5996131876997877,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch25",
+          "score": 0.5890557089980764,
+          "base_score": 0.5650928483301272,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "class",
+          "self",
+          "def",
+          "cls",
+          "__init_subclass__ cls"
+        ],
+        "semantic": [],
+        "merged": [
+          "class",
+          "self",
+          "def",
+          "cls",
+          "__init_subclass__ cls"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_self",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36731230567448603,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.075647+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 25,
+      "title": "Segment 25 (pages 219-229)",
+      "chapter_id": "Python Distilled:ch25",
+      "cross_references": [
+        {
+          "target": "Python Distilled:ch23",
+          "score": 0.6994383573449621,
+          "base_score": 0.630016309860651,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch22",
+          "score": 0.6619024520356377,
+          "base_score": 0.6865040867260628,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch20",
+          "score": 0.6151940321649797,
+          "base_score": 0.6086567202749662,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch24",
+          "score": 0.5890557089980764,
+          "base_score": 0.5650928483301272,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch26",
+          "score": 0.5824408674112524,
+          "base_score": 0.6466607049446801,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "class",
+          "self",
+          "instance",
+          "attribute",
+          "classes"
+        ],
+        "semantic": [],
+        "merged": [
+          "class",
+          "self",
+          "instance",
+          "attribute",
+          "classes"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_self",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3343487720253932,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.075826+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 26,
+      "title": "Segment 26 (pages 230-237)",
+      "chapter_id": "Python Distilled:ch26",
+      "cross_references": [
+        {
+          "target": "Python Distilled:ch22",
+          "score": 0.6457735126554199,
+          "base_score": 0.6596225210923666,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch20",
+          "score": 0.6432035674053991,
+          "base_score": 0.6553392790089985,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch25",
+          "score": 0.5824408674112524,
+          "base_score": 0.6466607049446801,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch21",
+          "score": 0.5455758819090021,
+          "base_score": 0.5852190624409294,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch23",
+          "score": 0.5218698589997883,
+          "base_score": 0.5457090242589065,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "class",
+          "metaclass",
+          "class namespace",
+          "account",
+          "namespace"
+        ],
+        "semantic": [],
+        "merged": [
+          "class",
+          "metaclass",
+          "class namespace",
+          "account",
+          "namespace"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_self",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3661721495226799,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.076026+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 27,
+      "title": "Segment 27 (pages 238-246)",
+      "chapter_id": "Python Distilled:ch27",
+      "cross_references": [
+        {
+          "target": "Python Distilled:ch28",
+          "score": 0.6018321063864791,
+          "base_score": 0.6789794365700578,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch2",
+          "score": 0.57979723329754,
+          "base_score": 0.6422546480884925,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch6",
+          "score": 0.5604671085877129,
+          "base_score": 0.610037773572114,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "module",
+          "import",
+          "module import",
+          "func",
+          "module module"
+        ],
+        "semantic": [],
+        "merged": [
+          "module",
+          "import",
+          "module import",
+          "func",
+          "module module"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "module_import_python",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3868988740572945,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.076212+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 28,
+      "title": "Segment 28 (pages 247-257)",
+      "chapter_id": "Python Distilled:ch28",
+      "cross_references": [
+        {
+          "target": "Python Distilled:ch27",
+          "score": 0.6018321063864791,
+          "base_score": 0.6789794365700578,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "package",
+          "py",
+          "import",
+          "__init__ py",
+          "py file"
+        ],
+        "semantic": [],
+        "merged": [
+          "package",
+          "py",
+          "import",
+          "__init__ py",
+          "py file"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "module_import_python",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2658101381559205,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.076390+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 29,
+      "title": "Segment 29 (pages 258-268)",
+      "chapter_id": "Python Distilled:ch29",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "format",
+          "2f",
+          "text",
+          "format 10",
+          "2f format"
+        ],
+        "semantic": [],
+        "merged": [
+          "format",
+          "2f",
+          "text",
+          "format 10",
+          "2f format"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "module_import_python",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23366155722420834,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.076564+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 30,
+      "title": "Segment 30 (pages 269-279)",
+      "chapter_id": "Python Distilled:ch30",
+      "cross_references": [
+        {
+          "target": "Python Distilled:ch4",
+          "score": 0.5890591672729077,
+          "base_score": 0.6576912047141054,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch32",
+          "score": 0.5011603265540939,
+          "base_score": 0.5111931368494158,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "file",
+          "mode",
+          "open",
+          "mode file",
+          "read"
+        ],
+        "semantic": [],
+        "merged": [
+          "file",
+          "mode",
+          "open",
+          "mode file",
+          "read"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "file_data_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27561732862501365,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.076737+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 31,
+      "title": "Segment 31 (pages 280-288)",
+      "chapter_id": "Python Distilled:ch31",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "sock",
+          "8192",
+          "reader2",
+          "reader1"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "sock",
+          "8192",
+          "reader2",
+          "reader1"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "file_data_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3029436911889936,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.076908+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 32,
+      "title": "Segment 32 (pages 289-298)",
+      "chapter_id": "Python Distilled:ch32",
+      "cross_references": [
+        {
+          "target": "Python Distilled:ch4",
+          "score": 0.5093674995752195,
+          "base_score": 0.5248717585512919,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Python Distilled:ch30",
+          "score": 0.5011603265540939,
+          "base_score": 0.5111931368494158,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "file",
+          "module",
+          "csv",
+          "path",
+          "os"
+        ],
+        "semantic": [],
+        "merged": [
+          "file",
+          "module",
+          "csv",
+          "path",
+          "os"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "file_data_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2772696287868855,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.077150+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 33,
+      "title": "Segment 33 (pages 299-307)",
+      "chapter_id": "Python Distilled:ch33",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "module",
+          "socket",
+          "import",
+          "client",
+          "threading"
+        ],
+        "semantic": [],
+        "merged": [
+          "module",
+          "socket",
+          "import",
+          "client",
+          "threading"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "file_data_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30773615719546843,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.077328+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 34,
+      "title": "Segment 34 (pages 308-315)",
+      "chapter_id": "Python Distilled:ch34",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "string",
+          "characters",
+          "checks",
+          "byte",
+          "bytes"
+        ],
+        "semantic": [],
+        "merged": [
+          "string",
+          "characters",
+          "checks",
+          "byte",
+          "bytes"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "file_data_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24874466232524065,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.077569+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 35,
+      "title": "Segment 35 (pages 316-323)",
+      "chapter_id": "Python Distilled:ch35",
+      "cross_references": [
+        {
+          "target": "Python Distilled:ch5",
+          "score": 0.5054176616952556,
+          "base_score": 0.5923627694920928,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "returns",
+          "object",
+          "value",
+          "returned",
+          "integer"
+        ],
+        "semantic": [],
+        "merged": [
+          "returns",
+          "object",
+          "value",
+          "returned",
+          "integer"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_self",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35363416322325336,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.077745+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 36,
+      "title": "Segment 36 (pages 324-332)",
+      "chapter_id": "Python Distilled:ch36",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "string",
+          "exceptions",
+          "items",
+          "returns",
+          "checks"
+        ],
+        "semantic": [],
+        "merged": [
+          "string",
+          "exceptions",
+          "items",
+          "returns",
+          "checks"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_self",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27939534787425413,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.077917+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 37,
+      "title": "Segment 37 (pages 333-344)",
+      "chapter_id": "Python Distilled:ch37",
+      "cross_references": [
+        {
+          "target": "Python Distilled:ch38",
+          "score": 0.570983395384383,
+          "base_score": 0.627564918233231,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "method",
+          "95",
+          "92",
+          "91",
+          "91 92"
+        ],
+        "semantic": [],
+        "merged": [
+          "method",
+          "95",
+          "92",
+          "91",
+          "91 92"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_self",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3274304286040065,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.078118+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 38,
+      "title": "Segment 38 (pages 345-352)",
+      "chapter_id": "Python Distilled:ch38",
+      "cross_references": [
+        {
+          "target": "Python Distilled:ch37",
+          "score": 0.570983395384383,
+          "base_score": 0.627564918233231,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "90",
+          "94",
+          "84",
+          "module",
+          "method"
+        ],
+        "semantic": [],
+        "merged": [
+          "90",
+          "94",
+          "84",
+          "module",
+          "method"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_self",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3005294655558213,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:37.078292+00:00"
+      }
+    },
+    {
+      "book": "Python Distilled",
+      "chapter": 39,
+      "title": "Segment 39 (pages 353-355)",
+      "chapter_id": "Python Distilled:ch39",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "video",
+          "informit com",
+          "informit",
+          "com",
+          "discount"
+        ],
+        "semantic": [],
+        "merged": [
+          "video",
+          "informit com",
+          "informit",
+          "com",
+          "discount"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.18846932969615918,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:54:37.078531+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

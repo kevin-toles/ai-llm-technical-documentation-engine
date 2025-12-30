@@ -1,0 +1,1479 @@
+{
+  "book": {
+    "title": "SQL Performance Explained"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:55:38.564630",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "SQL Performance Explained",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-9)",
+      "chapter_id": "SQL Performance Explained:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "chapter",
+          "indexing",
+          "indexes",
+          "anatomy",
+          "anatomy index"
+        ],
+        "semantic": [],
+        "merged": [
+          "chapter",
+          "indexing",
+          "indexes",
+          "anatomy",
+          "anatomy index"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_index_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4259904659930585,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:38.549063+00:00"
+      }
+    },
+    {
+      "book": "SQL Performance Explained",
+      "chapter": 2,
+      "title": "Segment 2 (pages 10-20)",
+      "chapter_id": "SQL Performance Explained:ch2",
+      "cross_references": [
+        {
+          "target": "SQL Performance Explained:ch26",
+          "score": 0.5215910583526449,
+          "base_score": 0.6193184305877414,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "leaf",
+          "node",
+          "tree",
+          "leaf nodes",
+          "nodes"
+        ],
+        "semantic": [],
+        "merged": [
+          "leaf",
+          "node",
+          "tree",
+          "leaf nodes",
+          "nodes"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_index_table",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35268551914199747,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:38.549282+00:00"
+      }
+    },
+    {
+      "book": "SQL Performance Explained",
+      "chapter": 3,
+      "title": "Segment 3 (pages 21-30)",
+      "chapter_id": "SQL Performance Explained:ch3",
+      "cross_references": [
+        {
+          "target": "SQL Performance Explained:ch16",
+          "score": 0.5847106514083321,
+          "base_score": 0.7245177523472202,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch8",
+          "score": 0.5611572926201495,
+          "base_score": 0.6852621543669157,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch4",
+          "score": 0.5381900664057365,
+          "base_score": 0.646983444009561,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch20",
+          "score": 0.5299164525093928,
+          "base_score": 0.6331940875156546,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch10",
+          "score": 0.5140914761843484,
+          "base_score": 0.6068191269739138,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "unique",
+          "primary",
+          "key",
+          "primary key",
+          "index unique"
+        ],
+        "semantic": [],
+        "merged": [
+          "unique",
+          "primary",
+          "key",
+          "primary key",
+          "index unique"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_index_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48900859019171034,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:38.549451+00:00"
+      }
+    },
+    {
+      "book": "SQL Performance Explained",
+      "chapter": 4,
+      "title": "Segment 4 (pages 31-43)",
+      "chapter_id": "SQL Performance Explained:ch4",
+      "cross_references": [
+        {
+          "target": "SQL Performance Explained:ch12",
+          "score": 0.6064696230643247,
+          "base_score": 0.4750684193929221,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch16",
+          "score": 0.5432134180304196,
+          "base_score": 0.5812816226432919,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch3",
+          "score": 0.5381900664057365,
+          "base_score": 0.646983444009561,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch15",
+          "score": 0.5232353382733927,
+          "base_score": 0.5479848230482472,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch8",
+          "score": 0.5066149745729661,
+          "base_score": 0.5943582909549435,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "execution plan",
+          "plan",
+          "employees",
+          "subsidiary_id",
+          "execution"
+        ],
+        "semantic": [],
+        "merged": [
+          "execution plan",
+          "plan",
+          "employees",
+          "subsidiary_id",
+          "execution"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_index_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.457345906231145,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:38.549617+00:00"
+      }
+    },
+    {
+      "book": "SQL Performance Explained",
+      "chapter": 5,
+      "title": "Segment 5 (pages 44-58)",
+      "chapter_id": "SQL Performance Explained:ch5",
+      "cross_references": [
+        {
+          "target": "SQL Performance Explained:ch3",
+          "score": 0.5101890154436809,
+          "base_score": 0.6003150257394683,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "function based",
+          "based",
+          "function",
+          "statistics",
+          "based index"
+        ],
+        "semantic": [],
+        "merged": [
+          "function based",
+          "based",
+          "function",
+          "statistics",
+          "based index"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_index_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4654439989655597,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:38.549756+00:00"
+      }
+    },
+    {
+      "book": "SQL Performance Explained",
+      "chapter": 6,
+      "title": "Segment 6 (pages 59-74)",
+      "chapter_id": "SQL Performance Explained:ch6",
+      "cross_references": [
+        {
+          "target": "SQL Performance Explained:ch12",
+          "score": 0.6710491935362605,
+          "base_score": 0.5827010368461483,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "values",
+          "bind",
+          "99",
+          "variables",
+          "plan"
+        ],
+        "semantic": [],
+        "merged": [
+          "values",
+          "bind",
+          "99",
+          "variables",
+          "plan"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_index_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3727602220516867,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:38.549897+00:00"
+      }
+    },
+    {
+      "book": "SQL Performance Explained",
+      "chapter": 7,
+      "title": "Segment 7 (pages 75-84)",
+      "chapter_id": "SQL Performance Explained:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "subsidiary_id",
+          "select first_name",
+          "first_name last_name",
+          "first_name",
+          "bind"
+        ],
+        "semantic": [],
+        "merged": [
+          "subsidiary_id",
+          "select first_name",
+          "first_name last_name",
+          "first_name",
+          "bind"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_index_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.20847004770540875,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:38.550077+00:00"
+      }
+    },
+    {
+      "book": "SQL Performance Explained",
+      "chapter": 8,
+      "title": "Segment 8 (pages 85-99)",
+      "chapter_id": "SQL Performance Explained:ch8",
+      "cross_references": [
+        {
+          "target": "SQL Performance Explained:ch10",
+          "score": 0.62216014267067,
+          "base_score": 0.7869335711177833,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch3",
+          "score": 0.5611572926201495,
+          "base_score": 0.6852621543669157,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch16",
+          "score": 0.5607551316521461,
+          "base_score": 0.6845918860869101,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch4",
+          "score": 0.5066149745729661,
+          "base_score": 0.5943582909549435,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch20",
+          "score": 0.5056575459580961,
+          "base_score": 0.5927625765968269,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "expression",
+          "wildcard",
+          "like expression",
+          "like",
+          "search"
+        ],
+        "semantic": [],
+        "merged": [
+          "expression",
+          "wildcard",
+          "like expression",
+          "like",
+          "search"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_index_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47789862770716024,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:38.550218+00:00"
+      }
+    },
+    {
+      "book": "SQL Performance Explained",
+      "chapter": 9,
+      "title": "Segment 9 (pages 100-115)",
+      "chapter_id": "SQL Performance Explained:ch9",
+      "cross_references": [
+        {
+          "target": "SQL Performance Explained:ch25",
+          "score": 0.5092087466761835,
+          "base_score": 0.598681244460306,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "null",
+          "date_of_birth",
+          "date_of_birth null",
+          "column",
+          "employees"
+        ],
+        "semantic": [],
+        "merged": [
+          "null",
+          "date_of_birth",
+          "date_of_birth null",
+          "column",
+          "employees"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_index_table",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4341495741974314,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:38.550379+00:00"
+      }
+    },
+    {
+      "book": "SQL Performance Explained",
+      "chapter": 10,
+      "title": "Segment 10 (pages 116-125)",
+      "chapter_id": "SQL Performance Explained:ch10",
+      "cross_references": [
+        {
+          "target": "SQL Performance Explained:ch8",
+          "score": 0.62216014267067,
+          "base_score": 0.7869335711177833,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch16",
+          "score": 0.5308539254653439,
+          "base_score": 0.6347565424422399,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch3",
+          "score": 0.5140914761843484,
+          "base_score": 0.6068191269739138,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "dt",
+          "datetime",
+          "create function",
+          "return",
+          "function"
+        ],
+        "semantic": [],
+        "merged": [
+          "dt",
+          "datetime",
+          "create function",
+          "return",
+          "function"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_index_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42170756580924035,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:38.550528+00:00"
+      }
+    },
+    {
+      "book": "SQL Performance Explained",
+      "chapter": 11,
+      "title": "Segment 11 (pages 126-136)",
+      "chapter_id": "SQL Performance Explained:ch11",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "mm",
+          "numbers",
+          "strings",
+          "01",
+          "sale_date"
+        ],
+        "semantic": [],
+        "merged": [
+          "mm",
+          "numbers",
+          "strings",
+          "01",
+          "sale_date"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_index_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2742690113521599,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:38.550667+00:00"
+      }
+    },
+    {
+      "book": "SQL Performance Explained",
+      "chapter": 12,
+      "title": "Segment 12 (pages 137-147)",
+      "chapter_id": "SQL Performance Explained:ch12",
+      "cross_references": [
+        {
+          "target": "SQL Performance Explained:ch6",
+          "score": 0.6710491935362605,
+          "base_score": 0.5827010368461483,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch4",
+          "score": 0.6064696230643247,
+          "base_score": 0.4750684193929221,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch8",
+          "score": 0.5008540008225969,
+          "base_score": 0.5847566680376615,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "plan",
+          "execution",
+          "execution plan",
+          "values",
+          "bind"
+        ],
+        "semantic": [],
+        "merged": [
+          "plan",
+          "execution",
+          "execution plan",
+          "values",
+          "bind"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_index_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46733041358104294,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:38.550808+00:00"
+      }
+    },
+    {
+      "book": "SQL Performance Explained",
+      "chapter": 13,
+      "title": "Segment 13 (pages 148-159)",
+      "chapter_id": "SQL Performance Explained:ch13",
+      "cross_references": [
+        {
+          "target": "SQL Performance Explained:ch14",
+          "score": 0.5647669044038807,
+          "base_score": 0.6912781740064677,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch18",
+          "score": 0.5176961221751918,
+          "base_score": 0.6128268702919862,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data volume",
+          "volume",
+          "3000",
+          "972",
+          "scale_slow"
+        ],
+        "semantic": [],
+        "merged": [
+          "data volume",
+          "volume",
+          "3000",
+          "972",
+          "scale_slow"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_index_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45038385316884527,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:38.550949+00:00"
+      }
+    },
+    {
+      "book": "SQL Performance Explained",
+      "chapter": 14,
+      "title": "Segment 14 (pages 160-173)",
+      "chapter_id": "SQL Performance Explained:ch14",
+      "cross_references": [
+        {
+          "target": "SQL Performance Explained:ch13",
+          "score": 0.5647669044038807,
+          "base_score": 0.6912781740064677,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "response",
+          "time",
+          "response time",
+          "process",
+          "seek time"
+        ],
+        "semantic": [],
+        "merged": [
+          "response",
+          "time",
+          "response time",
+          "process",
+          "seek time"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_index_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3682059189834979,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:38.551108+00:00"
+      }
+    },
+    {
+      "book": "SQL Performance Explained",
+      "chapter": 15,
+      "title": "Segment 15 (pages 174-186)",
+      "chapter_id": "SQL Performance Explained:ch15",
+      "cross_references": [
+        {
+          "target": "SQL Performance Explained:ch16",
+          "score": 0.5394525103961717,
+          "base_score": 0.48242085066028617,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch4",
+          "score": 0.5232353382733927,
+          "base_score": 0.5479848230482472,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sales",
+          "employee_id",
+          "subsidiary_id",
+          "join",
+          "left"
+        ],
+        "semantic": [],
+        "merged": [
+          "sales",
+          "employee_id",
+          "subsidiary_id",
+          "join",
+          "left"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_index_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3752275264924446,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:38.551248+00:00"
+      }
+    },
+    {
+      "book": "SQL Performance Explained",
+      "chapter": 16,
+      "title": "Segment 16 (pages 187-198)",
+      "chapter_id": "SQL Performance Explained:ch16",
+      "cross_references": [
+        {
+          "target": "SQL Performance Explained:ch3",
+          "score": 0.5847106514083321,
+          "base_score": 0.7245177523472202,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch8",
+          "score": 0.5607551316521461,
+          "base_score": 0.6845918860869101,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch22",
+          "score": 0.5537793449170964,
+          "base_score": 0.6729655748618273,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch20",
+          "score": 0.5498572088785808,
+          "base_score": 0.6664286814643015,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch4",
+          "score": 0.5432134180304196,
+          "base_score": 0.5812816226432919,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "s0_",
+          "subsidiary_id",
+          "employee",
+          "e1_",
+          "employee_id"
+        ],
+        "semantic": [],
+        "merged": [
+          "s0_",
+          "subsidiary_id",
+          "employee",
+          "e1_",
+          "employee_id"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_index_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4768801521444276,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:38.551396+00:00"
+      }
+    },
+    {
+      "book": "SQL Performance Explained",
+      "chapter": 17,
+      "title": "Segment 17 (pages 199-208)",
+      "chapter_id": "SQL Performance Explained:ch17",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "17",
+          "data",
+          "cluster",
+          "cluster data",
+          "access"
+        ],
+        "semantic": [],
+        "merged": [
+          "17",
+          "data",
+          "cluster",
+          "cluster data",
+          "access"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_index_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45144722274453847,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:38.551536+00:00"
+      }
+    },
+    {
+      "book": "SQL Performance Explained",
+      "chapter": 18,
+      "title": "Segment 18 (pages 209-224)",
+      "chapter_id": "SQL Performance Explained:ch18",
+      "cross_references": [
+        {
+          "target": "SQL Performance Explained:ch13",
+          "score": 0.5176961221751918,
+          "base_score": 0.6128268702919862,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch3",
+          "score": 0.5100222662000437,
+          "base_score": 0.6000371103334061,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "index scan",
+          "scan",
+          "clustering factor",
+          "factor",
+          "clustering"
+        ],
+        "semantic": [],
+        "merged": [
+          "index scan",
+          "scan",
+          "clustering factor",
+          "factor",
+          "clustering"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_index_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44722844924349897,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:38.551687+00:00"
+      }
+    },
+    {
+      "book": "SQL Performance Explained",
+      "chapter": 19,
+      "title": "Segment 19 (pages 225-235)",
+      "chapter_id": "SQL Performance Explained:ch19",
+      "cross_references": [
+        {
+          "target": "SQL Performance Explained:ch26",
+          "score": 0.5194982531459843,
+          "base_score": 0.615830421909974,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "organized",
+          "index organized",
+          "clustered",
+          "secondary index",
+          "tables"
+        ],
+        "semantic": [],
+        "merged": [
+          "organized",
+          "index organized",
+          "clustered",
+          "secondary index",
+          "tables"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_index_table",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.370252849978928,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:38.551838+00:00"
+      }
+    },
+    {
+      "book": "SQL Performance Explained",
+      "chapter": 20,
+      "title": "Segment 20 (pages 236-247)",
+      "chapter_id": "SQL Performance Explained:ch20",
+      "cross_references": [
+        {
+          "target": "SQL Performance Explained:ch22",
+          "score": 0.6111367675503085,
+          "base_score": 0.6944872051764401,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch21",
+          "score": 0.589133623772418,
+          "base_score": 0.5652227062873633,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch16",
+          "score": 0.5498572088785808,
+          "base_score": 0.6664286814643015,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch23",
+          "score": 0.5369481686797414,
+          "base_score": 0.6449136144662357,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch3",
+          "score": 0.5299164525093928,
+          "base_score": 0.6331940875156546,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "320",
+          "sort",
+          "order",
+          "sort operation",
+          "days"
+        ],
+        "semantic": [],
+        "merged": [
+          "320",
+          "sort",
+          "order",
+          "sort operation",
+          "days"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_index_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4658813125680609,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:38.551994+00:00"
+      }
+    },
+    {
+      "book": "SQL Performance Explained",
+      "chapter": 21,
+      "title": "Segment 21 (pages 248-262)",
+      "chapter_id": "SQL Performance Explained:ch21",
+      "cross_references": [
+        {
+          "target": "SQL Performance Explained:ch20",
+          "score": 0.589133623772418,
+          "base_score": 0.5652227062873633,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "group",
+          "pipelined",
+          "order",
+          "pipelined group",
+          "sort"
+        ],
+        "semantic": [],
+        "merged": [
+          "group",
+          "pipelined",
+          "order",
+          "pipelined group",
+          "sort"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_index_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3699947573078112,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:38.552133+00:00"
+      }
+    },
+    {
+      "book": "SQL Performance Explained",
+      "chapter": 22,
+      "title": "Segment 22 (pages 263-275)",
+      "chapter_id": "SQL Performance Explained:ch22",
+      "cross_references": [
+        {
+          "target": "SQL Performance Explained:ch20",
+          "score": 0.6111367675503085,
+          "base_score": 0.6944872051764401,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch23",
+          "score": 0.5781651813921485,
+          "base_score": 0.7136086356535808,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch16",
+          "score": 0.5537793449170964,
+          "base_score": 0.6729655748618273,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch3",
+          "score": 0.5112275845394091,
+          "base_score": 0.6020459742323484,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "10",
+          "rows",
+          "row",
+          "order",
+          "row sequence"
+        ],
+        "semantic": [],
+        "merged": [
+          "10",
+          "rows",
+          "row",
+          "order",
+          "row sequence"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_index_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4537751504847611,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:38.552276+00:00"
+      }
+    },
+    {
+      "book": "SQL Performance Explained",
+      "chapter": 23,
+      "title": "Segment 23 (pages 276-286)",
+      "chapter_id": "SQL Performance Explained:ch23",
+      "cross_references": [
+        {
+          "target": "SQL Performance Explained:ch22",
+          "score": 0.5781651813921485,
+          "base_score": 0.7136086356535808,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch20",
+          "score": 0.5369481686797414,
+          "base_score": 0.6449136144662357,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch16",
+          "score": 0.5064030502636201,
+          "base_score": 0.5940050837727001,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "insert",
+          "indexes",
+          "1004k",
+          "1004k 36877",
+          "insert performance"
+        ],
+        "semantic": [],
+        "merged": [
+          "insert",
+          "indexes",
+          "1004k",
+          "1004k 36877",
+          "insert performance"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_index_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.486250348783407,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:38.552418+00:00"
+      }
+    },
+    {
+      "book": "SQL Performance Explained",
+      "chapter": 24,
+      "title": "Segment 24 (pages 287-305)",
+      "chapter_id": "SQL Performance Explained:ch24",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "plan",
+          "execution",
+          "execution plan",
+          "explain",
+          "explain plan"
+        ],
+        "semantic": [],
+        "merged": [
+          "plan",
+          "execution",
+          "execution plan",
+          "explain",
+          "explain plan"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_index_table",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32796019373608837,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:38.552559+00:00"
+      }
+    },
+    {
+      "book": "SQL Performance Explained",
+      "chapter": 25,
+      "title": "Segment 25 (pages 306-317)",
+      "chapter_id": "SQL Performance Explained:ch25",
+      "cross_references": [
+        {
+          "target": "SQL Performance Explained:ch26",
+          "score": 0.6448326418204445,
+          "base_score": 0.7506469956266668,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch9",
+          "score": 0.5092087466761835,
+          "base_score": 0.598681244460306,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "filter",
+          "predicates",
+          "index scan",
+          "filter predicates",
+          "scale_data"
+        ],
+        "semantic": [],
+        "merged": [
+          "filter",
+          "predicates",
+          "index scan",
+          "filter predicates",
+          "scale_data"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_index_table",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47032589816099113,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:38.552703+00:00"
+      }
+    },
+    {
+      "book": "SQL Performance Explained",
+      "chapter": 26,
+      "title": "Segment 26 (pages 318-326)",
+      "chapter_id": "SQL Performance Explained:ch26",
+      "cross_references": [
+        {
+          "target": "SQL Performance Explained:ch25",
+          "score": 0.6448326418204445,
+          "base_score": 0.7506469956266668,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch2",
+          "score": 0.5215910583526449,
+          "base_score": 0.6193184305877414,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL Performance Explained:ch19",
+          "score": 0.5194982531459843,
+          "base_score": 0.615830421909974,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "extra",
+          "extra column",
+          "id2",
+          "predicates",
+          "predicate"
+        ],
+        "semantic": [],
+        "merged": [
+          "extra",
+          "extra column",
+          "id2",
+          "predicates",
+          "predicate"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_index_table",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4832335549682088,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:38.552848+00:00"
+      }
+    },
+    {
+      "book": "SQL Performance Explained",
+      "chapter": 27,
+      "title": "Segment 27 (pages 327-334)",
+      "chapter_id": "SQL Performance Explained:ch27",
+      "cross_references": [
+        {
+          "target": "SQL Performance Explained:ch28",
+          "score": 0.5033385126788203,
+          "base_score": 0.5148234470572932,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "postgresql",
+          "server",
+          "sql server",
+          "sql",
+          "mysql"
+        ],
+        "semantic": [],
+        "merged": [
+          "postgresql",
+          "server",
+          "sql server",
+          "sql",
+          "mysql"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_index_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4215624840789807,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:38.553000+00:00"
+      }
+    },
+    {
+      "book": "SQL Performance Explained",
+      "chapter": 28,
+      "title": "Segment 28 (pages 335-337)",
+      "chapter_id": "SQL Performance Explained:ch28",
+      "cross_references": [
+        {
+          "target": "SQL Performance Explained:ch27",
+          "score": 0.5033385126788203,
+          "base_score": 0.5148234470572932,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "performance explained",
+          "performance",
+          "sql",
+          "explained",
+          "sql performance"
+        ],
+        "semantic": [],
+        "merged": [
+          "performance explained",
+          "performance",
+          "sql",
+          "explained",
+          "sql performance"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_index_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38899101657841,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:38.553142+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

@@ -1,0 +1,378 @@
+{
+  "book": {
+    "title": "PostgreSQL Up and Running"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:53:18.372834",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "PostgreSQL Up and Running",
+      "chapter": 1,
+      "title": "The Basics",
+      "chapter_id": "PostgreSQL Up and Running:ch1",
+      "cross_references": [
+        {
+          "target": "PostgreSQL Up and Running:ch2",
+          "score": 0.521628563669736,
+          "base_score": 0.5453068653754858,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "PostgreSQL Up and Running:ch4",
+          "score": 0.5074815616750574,
+          "base_score": 0.5217285287176883,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "database",
+          "data",
+          "features",
+          "types",
+          "adminer"
+        ],
+        "semantic": [],
+        "merged": [
+          "database",
+          "data",
+          "features",
+          "types",
+          "adminer"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_postgresql",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5387196702852663,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:18.366630+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL Up and Running",
+      "chapter": 2,
+      "title": "Database Administration",
+      "chapter_id": "PostgreSQL Up and Running:ch2",
+      "cross_references": [
+        {
+          "target": "PostgreSQL Up and Running:ch1",
+          "score": 0.521628563669736,
+          "base_score": 0.5453068653754858,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "database",
+          "role",
+          "file",
+          "psql",
+          "conf"
+        ],
+        "semantic": [],
+        "merged": [
+          "database",
+          "role",
+          "file",
+          "psql",
+          "conf"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_postgresql",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3940448816226584,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:18.366686+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL Up and Running",
+      "chapter": 3,
+      "title": "Using pgAdmin",
+      "chapter_id": "PostgreSQL Up and Running:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "pgadmin",
+          "pgadmin4",
+          "pgagent",
+          "database",
+          "interface"
+        ],
+        "semantic": [],
+        "merged": [
+          "pgadmin",
+          "pgadmin4",
+          "pgagent",
+          "database",
+          "interface"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42493316247015067,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:53:18.366729+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL Up and Running",
+      "chapter": 4,
+      "title": "Data Types",
+      "chapter_id": "PostgreSQL Up and Running:ch4",
+      "cross_references": [
+        {
+          "target": "PostgreSQL Up and Running:ch1",
+          "score": 0.5074815616750574,
+          "base_score": 0.5217285287176883,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "array",
+          "json",
+          "type",
+          "data",
+          "operators"
+        ],
+        "semantic": [],
+        "merged": [
+          "array",
+          "json",
+          "type",
+          "data",
+          "operators"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_postgresql",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4300109348652659,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:18.366772+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL Up and Running",
+      "chapter": 5,
+      "title": "Tables, Constraints, and Indexes",
+      "chapter_id": "PostgreSQL Up and Running:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "indexes",
+          "index",
+          "constraints",
+          "constraint",
+          "tables"
+        ],
+        "semantic": [],
+        "merged": [
+          "indexes",
+          "index",
+          "constraints",
+          "constraint",
+          "tables"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_as_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47063725282164737,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:18.366813+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL Up and Running",
+      "chapter": 6,
+      "title": "SQL: The PostgreSQL Way",
+      "chapter_id": "PostgreSQL Up and Running:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "00",
+          "00 00",
+          "tract_id",
+          "student",
+          "census"
+        ],
+        "semantic": [],
+        "merged": [
+          "00",
+          "00 00",
+          "tract_id",
+          "student",
+          "census"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_as_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.22750157436231078,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:18.366855+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL Up and Running",
+      "chapter": 7,
+      "title": "Writing Functions",
+      "chapter_id": "PostgreSQL Up and Running:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "function",
+          "pl",
+          "pl v8",
+          "v8",
+          "returns"
+        ],
+        "semantic": [],
+        "merged": [
+          "function",
+          "pl",
+          "pl v8",
+          "v8",
+          "returns"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40957938806895644,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:53:18.366895+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL Up and Running",
+      "chapter": 8,
+      "title": "Query Performance Tuning",
+      "chapter_id": "PostgreSQL Up and Running:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "loops",
+          "actual time",
+          "time",
+          "rows",
+          "cost"
+        ],
+        "semantic": [],
+        "merged": [
+          "loops",
+          "actual time",
+          "time",
+          "rows",
+          "cost"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_as_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40032689955929435,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:18.366935+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL Up and Running",
+      "chapter": 9,
+      "title": "Replication and External Data",
+      "chapter_id": "PostgreSQL Up and Running:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "foreign",
+          "server",
+          "database",
+          "dump",
+          "pattern"
+        ],
+        "semantic": [],
+        "merged": [
+          "foreign",
+          "server",
+          "database",
+          "dump",
+          "pattern"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38254690097680843,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:53:18.366978+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

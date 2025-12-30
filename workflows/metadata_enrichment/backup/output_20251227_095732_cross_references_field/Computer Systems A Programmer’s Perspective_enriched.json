@@ -1,0 +1,2745 @@
+{
+  "book": {
+    "title": "Computer Systems A Programmer’s Perspective"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:43:33.936321",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-20)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "programs",
+          "systems",
+          "memory",
+          "floating",
+          "floating point"
+        ],
+        "semantic": [],
+        "merged": [
+          "programs",
+          "systems",
+          "memory",
+          "floating",
+          "floating point"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4778810249869108,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:33.901865+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 2,
+      "title": "Segment 2 (pages 21-38)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "hello",
+          "students",
+          "course",
+          "lab",
+          "ics"
+        ],
+        "semantic": [],
+        "merged": [
+          "hello",
+          "students",
+          "course",
+          "lab",
+          "ics"
+        ]
+      },
+      "topic_id": 8,
+      "topic_name": "page_virtual_address",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4224119327578321,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.902158+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 3,
+      "title": "Segment 3 (pages 39-59)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "main memory",
+          "memory",
+          "main",
+          "hello",
+          "processor"
+        ],
+        "semantic": [],
+        "merged": [
+          "main memory",
+          "memory",
+          "main",
+          "hello",
+          "processor"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39770451116054417,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:33.902416+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 4,
+      "title": "Segment 4 (pages 60-78)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch4",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch15",
+          "score": 0.5764018467697979,
+          "base_score": 0.6365956705422557,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "byte",
+          "type",
+          "data",
+          "bytes",
+          "show_bytes"
+        ],
+        "semantic": [],
+        "merged": [
+          "byte",
+          "type",
+          "data",
+          "bytes",
+          "show_bytes"
+        ]
+      },
+      "topic_id": 9,
+      "topic_name": "type_of_pointer",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43231152141324036,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.902702+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 5,
+      "title": "Segment 5 (pages 79-99)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch5",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch6",
+          "score": 0.5780049241201886,
+          "base_score": 0.5466748735336476,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "bit",
+          "value",
+          "bit vector",
+          "complement",
+          "ranges"
+        ],
+        "semantic": [],
+        "merged": [
+          "bit",
+          "value",
+          "bit vector",
+          "complement",
+          "ranges"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "bit_unsigned_value",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30515381535069475,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.902991+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 6,
+      "title": "Segment 6 (pages 100-121)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch6",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch7",
+          "score": 0.66060455603431,
+          "base_score": 0.565293307676231,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch5",
+          "score": 0.5780049241201886,
+          "base_score": 0.5466748735336476,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch9",
+          "score": 0.5421413119399177,
+          "base_score": 0.5794947791591221,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch8",
+          "score": 0.5103838577850518,
+          "base_score": 0.6006397629750863,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "unsigned",
+          "complement",
+          "2w",
+          "bit",
+          "representation"
+        ],
+        "semantic": [],
+        "merged": [
+          "unsigned",
+          "complement",
+          "2w",
+          "bit",
+          "representation"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "bit_unsigned_value",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2899561887280867,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.903283+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 7,
+      "title": "Segment 7 (pages 122-139)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch7",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch6",
+          "score": 0.66060455603431,
+          "base_score": 0.565293307676231,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch10",
+          "score": 0.6359125668168265,
+          "base_score": 0.8098542780280442,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch9",
+          "score": 0.5496555224359109,
+          "base_score": 0.5920184633191107,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "complement",
+          "unsigned",
+          "bit",
+          "xw",
+          "x0"
+        ],
+        "semantic": [],
+        "merged": [
+          "complement",
+          "unsigned",
+          "bit",
+          "xw",
+          "x0"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "bit_unsigned_value",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3166861683169163,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.903525+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 8,
+      "title": "Segment 8 (pages 140-157)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch8",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch6",
+          "score": 0.5103838577850518,
+          "base_score": 0.6006397629750863,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "value",
+          "values",
+          "exponent",
+          "ﬂoating point",
+          "ﬂoating"
+        ],
+        "semantic": [],
+        "merged": [
+          "value",
+          "values",
+          "exponent",
+          "ﬂoating point",
+          "ﬂoating"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "bit_unsigned_value",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3077278698959612,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.903960+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 9,
+      "title": "Segment 9 (pages 158-179)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch9",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch7",
+          "score": 0.5496555224359109,
+          "base_score": 0.5920184633191107,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch6",
+          "score": 0.5421413119399177,
+          "base_score": 0.5794947791591221,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch10",
+          "score": 0.514825228258697,
+          "base_score": 0.6080420470978284,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "int",
+          "bit",
+          "coding rules",
+          "coding",
+          "rules"
+        ],
+        "semantic": [],
+        "merged": [
+          "int",
+          "bit",
+          "coding rules",
+          "coding",
+          "rules"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "bit_unsigned_value",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.373807049448278,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.904233+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 10,
+      "title": "Segment 10 (pages 180-198)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch10",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch7",
+          "score": 0.6359125668168265,
+          "base_score": 0.8098542780280442,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch9",
+          "score": 0.514825228258697,
+          "base_score": 0.6080420470978284,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "machine",
+          "machine code",
+          "x86",
+          "assembly"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "machine",
+          "machine code",
+          "x86",
+          "assembly"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "bit_unsigned_value",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3276727505227352,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.904490+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 11,
+      "title": "Segment 11 (pages 199-218)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch11",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch13",
+          "score": 0.5298141065521796,
+          "base_score": 0.5973092252060137,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "register",
+          "assembly",
+          "assembly code",
+          "instructions"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "register",
+          "assembly",
+          "assembly code",
+          "instructions"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44158710642273863,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:33.904740+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 12,
+      "title": "Segment 12 (pages 219-238)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch12",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch21",
+          "score": 0.6664902909346687,
+          "base_score": 0.6941504848911144,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch22",
+          "score": 0.5723038892310782,
+          "base_score": 0.6297657413110562,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch26",
+          "score": 0.5507994428923078,
+          "base_score": 0.5939249974131054,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch23",
+          "score": 0.5154927994043557,
+          "base_score": 0.5350805915998521,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch20",
+          "score": 0.5088450313506249,
+          "base_score": 0.5980750522510414,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "instruction",
+          "instructions",
+          "jump",
+          "code",
+          "rax"
+        ],
+        "semantic": [],
+        "merged": [
+          "instruction",
+          "instructions",
+          "jump",
+          "code",
+          "rax"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_instruction_stage",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4108966311714731,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.905012+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 13,
+      "title": "Segment 13 (pages 239-261)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch13",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch18",
+          "score": 0.6995496700349952,
+          "base_score": 0.6302018310107064,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch17",
+          "score": 0.6395161961698856,
+          "base_score": 0.6491936602831428,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch14",
+          "score": 0.5593366208105073,
+          "base_score": 0.6081536272767712,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch11",
+          "score": 0.5298141065521796,
+          "base_score": 0.5973092252060137,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "loop",
+          "goto",
+          "assembly",
+          "assembly code"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "loop",
+          "goto",
+          "assembly",
+          "assembly code"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "code_the_assembly",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4388490288569388,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.905264+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 14,
+      "title": "Segment 14 (pages 262-284)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch14",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch13",
+          "score": 0.5593366208105073,
+          "base_score": 0.6081536272767712,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch17",
+          "score": 0.5230509470244462,
+          "base_score": 0.5476775043000028,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch18",
+          "score": 0.5080134924709512,
+          "base_score": 0.522615080044178,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "stack",
+          "stack frame",
+          "frame",
+          "procedure",
+          "code"
+        ],
+        "semantic": [],
+        "merged": [
+          "stack",
+          "stack frame",
+          "frame",
+          "procedure",
+          "code"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "code_the_assembly",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4061575396422955,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.905513+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 15,
+      "title": "Segment 15 (pages 285-307)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch15",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch4",
+          "score": 0.5764018467697979,
+          "base_score": 0.6365956705422557,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "structure",
+          "pointer",
+          "type",
+          "code",
+          "element"
+        ],
+        "semantic": [],
+        "merged": [
+          "structure",
+          "pointer",
+          "type",
+          "code",
+          "element"
+        ]
+      },
+      "topic_id": 9,
+      "topic_name": "type_of_pointer",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41987327022191334,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.905770+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 16,
+      "title": "Segment 16 (pages 308-330)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch16",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "stack",
+          "xmm",
+          "register",
+          "double",
+          "code"
+        ],
+        "semantic": [],
+        "merged": [
+          "stack",
+          "xmm",
+          "register",
+          "double",
+          "code"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "stack_function_code",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4408836666988003,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.906021+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 17,
+      "title": "Segment 17 (pages 331-351)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch17",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch18",
+          "score": 0.7123910748927794,
+          "base_score": 0.6516041724403465,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch13",
+          "score": 0.6395161961698856,
+          "base_score": 0.6491936602831428,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch14",
+          "score": 0.5230509470244462,
+          "base_score": 0.5476775043000028,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "rsi",
+          "long",
+          "rdi",
+          "assembly code"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "rsi",
+          "long",
+          "rdi",
+          "assembly code"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "code_the_assembly",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4624444622822817,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.906272+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 18,
+      "title": "Segment 18 (pages 352-373)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch18",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch17",
+          "score": 0.7123910748927794,
+          "base_score": 0.6516041724403465,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch13",
+          "score": 0.6995496700349952,
+          "base_score": 0.6302018310107064,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch14",
+          "score": 0.5080134924709512,
+          "base_score": 0.522615080044178,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "short",
+          "assembly code",
+          "assembly",
+          "rdi"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "short",
+          "assembly code",
+          "assembly",
+          "rdi"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "code_the_assembly",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36586639153146194,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.906515+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 19,
+      "title": "Segment 19 (pages 374-394)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch19",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "instruction",
+          "y86",
+          "y86 64",
+          "instructions",
+          "64"
+        ],
+        "semantic": [],
+        "merged": [
+          "instruction",
+          "y86",
+          "y86 64",
+          "instructions",
+          "64"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4128320186563942,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:33.906800+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 20,
+      "title": "Segment 20 (pages 395-412)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch20",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch12",
+          "score": 0.5088450313506249,
+          "base_score": 0.5980750522510414,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch26",
+          "score": 0.5077604761743352,
+          "base_score": 0.5962674602905587,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch21",
+          "score": 0.5076298045366011,
+          "base_score": 0.5219756001535945,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch22",
+          "score": 0.5070924558728465,
+          "base_score": 0.5210800190473368,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "input",
+          "register",
+          "circuit",
+          "circuits",
+          "inputs"
+        ],
+        "semantic": [],
+        "merged": [
+          "input",
+          "register",
+          "circuit",
+          "circuits",
+          "inputs"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_instruction_stage",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4045351488643081,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.907069+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 21,
+      "title": "Segment 21 (pages 413-432)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch21",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch24",
+          "score": 0.7523082270180643,
+          "base_score": 0.7181327593158214,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch22",
+          "score": 0.7467151788541416,
+          "base_score": 0.7088110123759502,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch12",
+          "score": 0.6664902909346687,
+          "base_score": 0.6941504848911144,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch23",
+          "score": 0.6206621891201505,
+          "base_score": 0.6177703152002507,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch25",
+          "score": 0.5404014456897732,
+          "base_score": 0.4840024094829555,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "instruction",
+          "register",
+          "instructions",
+          "condition",
+          "stage"
+        ],
+        "semantic": [],
+        "merged": [
+          "instruction",
+          "register",
+          "instructions",
+          "condition",
+          "stage"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_instruction_stage",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4512648106965788,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.907320+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 22,
+      "title": "Segment 22 (pages 433-453)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch22",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch24",
+          "score": 0.7971365203554329,
+          "base_score": 0.6341164228146104,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch21",
+          "score": 0.7467151788541416,
+          "base_score": 0.7088110123759502,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch23",
+          "score": 0.6630900814183774,
+          "base_score": 0.5694358499830099,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch12",
+          "score": 0.5723038892310782,
+          "base_score": 0.6297657413110562,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch26",
+          "score": 0.5361304496657945,
+          "base_score": 0.6435507494429907,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "stage",
+          "pipeline",
+          "stages",
+          "instruction",
+          "register"
+        ],
+        "semantic": [],
+        "merged": [
+          "stage",
+          "pipeline",
+          "stages",
+          "instruction",
+          "register"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_instruction_stage",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42826381447211725,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.907567+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 23,
+      "title": "Segment 23 (pages 454-475)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch23",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch24",
+          "score": 0.7255955490887613,
+          "base_score": 0.6736116294336498,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch22",
+          "score": 0.6630900814183774,
+          "base_score": 0.5694358499830099,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch21",
+          "score": 0.6206621891201505,
+          "base_score": 0.6177703152002507,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch25",
+          "score": 0.584284946008965,
+          "base_score": 0.5571415766816084,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch12",
+          "score": 0.5154927994043557,
+          "base_score": 0.5350805915998521,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "stage",
+          "instruction",
+          "pipeline",
+          "addq",
+          "addq instruction"
+        ],
+        "semantic": [],
+        "merged": [
+          "stage",
+          "instruction",
+          "pipeline",
+          "addq",
+          "addq instruction"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_instruction_stage",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38185307212394004,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.907841+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 24,
+      "title": "Segment 24 (pages 476-493)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch24",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch22",
+          "score": 0.7971365203554329,
+          "base_score": 0.6341164228146104,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch21",
+          "score": 0.7523082270180643,
+          "base_score": 0.7181327593158214,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch23",
+          "score": 0.7255955490887613,
+          "base_score": 0.6736116294336498,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch25",
+          "score": 0.5725227002328669,
+          "base_score": 0.5375378337214448,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch26",
+          "score": 0.51097177541725,
+          "base_score": 0.6016196256954167,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pipeline",
+          "stage",
+          "instruction",
+          "pipeline register",
+          "register"
+        ],
+        "semantic": [],
+        "merged": [
+          "pipeline",
+          "stage",
+          "instruction",
+          "pipeline register",
+          "register"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_instruction_stage",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4202612719062977,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.908090+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 25,
+      "title": "Segment 25 (pages 494-513)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch25",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch23",
+          "score": 0.584284946008965,
+          "base_score": 0.5571415766816084,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch24",
+          "score": 0.5725227002328669,
+          "base_score": 0.5375378337214448,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch21",
+          "score": 0.5404014456897732,
+          "base_score": 0.4840024094829555,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch22",
+          "score": 0.5004143085224,
+          "base_score": 0.4173571808706667,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "instruction",
+          "pipeline",
+          "logic",
+          "instructions",
+          "hcl"
+        ],
+        "semantic": [],
+        "merged": [
+          "instruction",
+          "pipeline",
+          "logic",
+          "instructions",
+          "hcl"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_instruction_stage",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29276610001237546,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.908335+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 26,
+      "title": "Segment 26 (pages 514-536)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch26",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch12",
+          "score": 0.5507994428923078,
+          "base_score": 0.5939249974131054,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch22",
+          "score": 0.5361304496657945,
+          "base_score": 0.6435507494429907,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch24",
+          "score": 0.51097177541725,
+          "base_score": 0.6016196256954167,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch21",
+          "score": 0.5094122810635145,
+          "base_score": 0.5990204684391909,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch20",
+          "score": 0.5077604761743352,
+          "base_score": 0.5962674602905587,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "program",
+          "performance",
+          "optimization",
+          "compiler"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "program",
+          "performance",
+          "optimization",
+          "compiler"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_instruction_stage",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3984695990170974,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.908582+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 27,
+      "title": "Segment 27 (pages 537-558)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch27",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch29",
+          "score": 0.5678566130504266,
+          "base_score": 0.6223536143433035,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch28",
+          "score": 0.5662774419985884,
+          "base_score": 0.61972166259024,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "operations",
+          "operation",
+          "data",
+          "functional",
+          "functional units"
+        ],
+        "semantic": [],
+        "merged": [
+          "operations",
+          "operation",
+          "data",
+          "functional",
+          "functional units"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "operations_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3774022604103015,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.908986+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 28,
+      "title": "Segment 28 (pages 559-577)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch28",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch27",
+          "score": 0.5662774419985884,
+          "base_score": 0.61972166259024,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "unrolling",
+          "loop",
+          "loop unrolling",
+          "combine5",
+          "operations"
+        ],
+        "semantic": [],
+        "merged": [
+          "unrolling",
+          "loop",
+          "loop unrolling",
+          "combine5",
+          "operations"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "operations_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27377835163980874,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.909264+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 29,
+      "title": "Segment 29 (pages 578-600)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch29",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch27",
+          "score": 0.5678566130504266,
+          "base_score": 0.6223536143433035,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "function",
+          "load",
+          "s_data",
+          "operations",
+          "load operation"
+        ],
+        "semantic": [],
+        "merged": [
+          "function",
+          "load",
+          "s_data",
+          "operations",
+          "load operation"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "operations_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4182889699178361,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.909546+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 30,
+      "title": "Segment 30 (pages 601-619)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch30",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "dram",
+          "memory",
+          "bus",
+          "main memory",
+          "memory bus"
+        ],
+        "semantic": [],
+        "merged": [
+          "dram",
+          "memory",
+          "bus",
+          "main memory",
+          "memory bus"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "cache_the_memory",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4078458961211577,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.909890+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 31,
+      "title": "Segment 31 (pages 620-638)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch31",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "disk",
+          "disks",
+          "sector",
+          "locality",
+          "cpu"
+        ],
+        "semantic": [],
+        "merged": [
+          "disk",
+          "disks",
+          "sector",
+          "locality",
+          "cpu"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2400039253434133,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:33.910334+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 32,
+      "title": "Segment 32 (pages 639-661)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch32",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch33",
+          "score": 0.56508259507585,
+          "base_score": 0.6177302510523427,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch34",
+          "score": 0.549116130500284,
+          "base_score": 0.5911194767597325,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cache",
+          "block",
+          "cache block",
+          "block cache",
+          "cache cache"
+        ],
+        "semantic": [],
+        "merged": [
+          "cache",
+          "block",
+          "cache block",
+          "block cache",
+          "cache cache"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "cache_the_memory",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32525289509263916,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.910686+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 33,
+      "title": "Segment 33 (pages 662-682)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch33",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch32",
+          "score": 0.56508259507585,
+          "base_score": 0.6177302510523427,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch34",
+          "score": 0.5593540428887006,
+          "base_score": 0.6081826640737602,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cache",
+          "size",
+          "locality",
+          "stride",
+          "memory"
+        ],
+        "semantic": [],
+        "merged": [
+          "cache",
+          "size",
+          "locality",
+          "stride",
+          "memory"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "cache_the_memory",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2889037356999381,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.910948+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 34,
+      "title": "Segment 34 (pages 683-702)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch34",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch33",
+          "score": 0.5593540428887006,
+          "base_score": 0.6081826640737602,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch32",
+          "score": 0.549116130500284,
+          "base_score": 0.5911194767597325,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cache",
+          "object",
+          "object ﬁle",
+          "ﬁle",
+          "hit cache"
+        ],
+        "semantic": [],
+        "merged": [
+          "cache",
+          "object",
+          "object ﬁle",
+          "ﬁle",
+          "hit cache"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "cache_the_memory",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3504974352464848,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.911225+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 35,
+      "title": "Segment 35 (pages 703-721)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch35",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "symbol",
+          "linker",
+          "symbols",
+          "modules",
+          "module"
+        ],
+        "semantic": [],
+        "merged": [
+          "symbol",
+          "linker",
+          "symbols",
+          "modules",
+          "module"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3342009582918534,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:33.911478+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 36,
+      "title": "Segment 36 (pages 722-740)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch36",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "shared",
+          "shared library",
+          "library",
+          "run time",
+          "shared libraries"
+        ],
+        "semantic": [],
+        "merged": [
+          "shared",
+          "shared library",
+          "library",
+          "run time",
+          "shared libraries"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44525035724798917,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:33.911824+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 37,
+      "title": "Segment 37 (pages 741-758)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch37",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "exception",
+          "handler",
+          "exceptions",
+          "exception handler",
+          "instruction"
+        ],
+        "semantic": [],
+        "merged": [
+          "exception",
+          "handler",
+          "exceptions",
+          "exception handler",
+          "instruction"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42311803194375935,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:33.912149+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 38,
+      "title": "Segment 38 (pages 759-776)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch38",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch40",
+          "score": 0.5632565222523181,
+          "base_score": 0.5220942037538636,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch39",
+          "score": 0.5385924853496875,
+          "base_score": 0.5735800681754051,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "process",
+          "child",
+          "parent",
+          "terminated",
+          "kernel"
+        ],
+        "semantic": [],
+        "merged": [
+          "process",
+          "child",
+          "parent",
+          "terminated",
+          "kernel"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "process_signal_thread",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3680172441927471,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.912540+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 39,
+      "title": "Segment 39 (pages 777-794)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch39",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch40",
+          "score": 0.5535788849901419,
+          "base_score": 0.5059648083169032,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch38",
+          "score": 0.5385924853496875,
+          "base_score": 0.5735800681754051,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "signal",
+          "process",
+          "handler",
+          "signals",
+          "process group"
+        ],
+        "semantic": [],
+        "merged": [
+          "signal",
+          "process",
+          "handler",
+          "signals",
+          "process group"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "process_signal_thread",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3683716090744269,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.912823+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 40,
+      "title": "Segment 40 (pages 795-814)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch40",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch38",
+          "score": 0.5632565222523181,
+          "base_score": 0.5220942037538636,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch39",
+          "score": 0.5535788849901419,
+          "base_score": 0.5059648083169032,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "handler",
+          "signal",
+          "sigchld",
+          "parent",
+          "child"
+        ],
+        "semantic": [],
+        "merged": [
+          "handler",
+          "signal",
+          "sigchld",
+          "parent",
+          "child"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "process_signal_thread",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33567969685129345,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.913127+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 41,
+      "title": "Segment 41 (pages 815-837)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch41",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "virtual",
+          "physical",
+          "memory",
+          "page",
+          "virtual memory"
+        ],
+        "semantic": [],
+        "merged": [
+          "virtual",
+          "physical",
+          "memory",
+          "page",
+          "virtual memory"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4331641395901378,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:33.913400+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 42,
+      "title": "Segment 42 (pages 838-857)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch42",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "page",
+          "page table",
+          "physical",
+          "virtual",
+          "virtual address"
+        ],
+        "semantic": [],
+        "merged": [
+          "page",
+          "page table",
+          "physical",
+          "virtual",
+          "virtual address"
+        ]
+      },
+      "topic_id": 8,
+      "topic_name": "page_virtual_address",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3597849937026352,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.913694+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 43,
+      "title": "Segment 43 (pages 858-879)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch43",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch44",
+          "score": 0.5222539533840279,
+          "base_score": 0.4259788111956022,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "free",
+          "block",
+          "allocated",
+          "blocks",
+          "free block"
+        ],
+        "semantic": [],
+        "merged": [
+          "free",
+          "block",
+          "allocated",
+          "blocks",
+          "free block"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "process_signal_thread",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36636341404570194,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.914056+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 44,
+      "title": "Segment 44 (pages 880-902)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch44",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch45",
+          "score": 0.6495684299193358,
+          "base_score": 0.665947383198893,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch43",
+          "score": 0.5222539533840279,
+          "base_score": 0.4259788111956022,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "block",
+          "free",
+          "blocks",
+          "free block",
+          "size"
+        ],
+        "semantic": [],
+        "merged": [
+          "block",
+          "free",
+          "blocks",
+          "free block",
+          "size"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "block_ﬁle_size",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3733950920971085,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.914408+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 45,
+      "title": "Segment 45 (pages 903-922)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch45",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch44",
+          "score": 0.6495684299193358,
+          "base_score": 0.665947383198893,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch46",
+          "score": 0.5798647479406924,
+          "base_score": 0.5497745799011542,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ﬁle",
+          "open",
+          "fd",
+          "size",
+          "block"
+        ],
+        "semantic": [],
+        "merged": [
+          "ﬁle",
+          "open",
+          "fd",
+          "size",
+          "block"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "block_ﬁle_size",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4255216057424286,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.914743+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 46,
+      "title": "Segment 46 (pages 923-940)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch46",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch45",
+          "score": 0.5798647479406924,
+          "base_score": 0.5497745799011542,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "open",
+          "descriptor",
+          "ﬁle",
+          "functions",
+          "rio_read"
+        ],
+        "semantic": [],
+        "merged": [
+          "open",
+          "descriptor",
+          "ﬁle",
+          "functions",
+          "rio_read"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "block_ﬁle_size",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3275614960130342,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.915110+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 47,
+      "title": "Segment 47 (pages 941-960)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch47",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "host",
+          "internet",
+          "client",
+          "socket",
+          "host host"
+        ],
+        "semantic": [],
+        "merged": [
+          "host",
+          "internet",
+          "client",
+          "socket",
+          "host host"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24017122377354475,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:33.915469+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 48,
+      "title": "Segment 48 (pages 961-980)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch48",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "server",
+          "socket",
+          "client",
+          "connection",
+          "content"
+        ],
+        "semantic": [],
+        "merged": [
+          "server",
+          "socket",
+          "client",
+          "connection",
+          "content"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24490360529233549,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:33.916024+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 49,
+      "title": "Segment 49 (pages 981-999)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch49",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "client",
+          "server",
+          "content",
+          "request",
+          "tiny"
+        ],
+        "semantic": [],
+        "merged": [
+          "client",
+          "server",
+          "content",
+          "request",
+          "tiny"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23755763456797488,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:33.916403+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 50,
+      "title": "Segment 50 (pages 1000-1022)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch50",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "thread",
+          "threads",
+          "peer",
+          "peer thread",
+          "main thread"
+        ],
+        "semantic": [],
+        "merged": [
+          "thread",
+          "threads",
+          "peer",
+          "peer thread",
+          "main thread"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27030024164512784,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:33.916709+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 51,
+      "title": "Segment 51 (pages 1023-1040)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch51",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch52",
+          "score": 0.5810526207864783,
+          "base_score": 0.551754367977464,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "thread",
+          "mutex",
+          "threads",
+          "sp",
+          "peer"
+        ],
+        "semantic": [],
+        "merged": [
+          "thread",
+          "mutex",
+          "threads",
+          "sp",
+          "peer"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "process_signal_thread",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2602159493814414,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.917118+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 52,
+      "title": "Segment 52 (pages 1041-1063)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch52",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch51",
+          "score": 0.5810526207864783,
+          "base_score": 0.551754367977464,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "thread",
+          "thread unsafe",
+          "unsafe",
+          "threads",
+          "thread safe"
+        ],
+        "semantic": [],
+        "merged": [
+          "thread",
+          "thread unsafe",
+          "unsafe",
+          "threads",
+          "thread safe"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "process_signal_thread",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26284197645332785,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.917473+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 53,
+      "title": "Segment 53 (pages 1064-1083)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch53",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "pages",
+          "631",
+          "free",
+          "769",
+          "989"
+        ],
+        "semantic": [],
+        "merged": [
+          "pages",
+          "631",
+          "free",
+          "769",
+          "989"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "stack_function_code",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27258368198279115,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.917890+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 54,
+      "title": "Segment 54 (pages 1084-1102)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch54",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch55",
+          "score": 0.5770315807427453,
+          "base_score": 0.7117193012379088,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "743",
+          "933",
+          "93",
+          "741",
+          "instruction"
+        ],
+        "semantic": [],
+        "merged": [
+          "743",
+          "933",
+          "93",
+          "741",
+          "instruction"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "stack_function_code",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.415737575420109,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.918940+00:00"
+      }
+    },
+    {
+      "book": "Computer Systems A Programmer’s Perspective",
+      "chapter": 55,
+      "title": "Segment 55 (pages 1103-1105)",
+      "chapter_id": "Computer Systems A Programmer’s Perspective:ch55",
+      "cross_references": [
+        {
+          "target": "Computer Systems A Programmer’s Perspective:ch54",
+          "score": 0.5770315807427453,
+          "base_score": 0.7117193012379088,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "841",
+          "853",
+          "861",
+          "779",
+          "840"
+        ],
+        "semantic": [],
+        "merged": [
+          "841",
+          "853",
+          "861",
+          "779",
+          "840"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "stack_function_code",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3949826536576014,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:33.919220+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

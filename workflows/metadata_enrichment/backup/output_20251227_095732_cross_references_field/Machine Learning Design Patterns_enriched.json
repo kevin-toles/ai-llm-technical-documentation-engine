@@ -1,0 +1,2525 @@
+{
+  "book": {
+    "title": "Machine Learning Design Patterns"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:50:21.894355",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-9)",
+      "chapter_id": "Machine Learning Design Patterns:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "book",
+          "permission",
+          "reilly",
+          "does require",
+          "require permission"
+        ],
+        "semantic": [],
+        "merged": [
+          "book",
+          "permission",
+          "reilly",
+          "does require",
+          "require permission"
+        ]
+      },
+      "topic_id": 8,
+      "topic_name": "book_machine_learning",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24811734901538815,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.846549+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 2,
+      "title": "Segment 2 (pages 10-17)",
+      "chapter_id": "Machine Learning Design Patterns:ch2",
+      "cross_references": [
+        {
+          "target": "Machine Learning Design Patterns:ch58",
+          "score": 0.554195244093841,
+          "base_score": 0.5069920734897351,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Machine Learning Design Patterns:ch55",
+          "score": 0.5038994005246162,
+          "base_score": 0.5157582601336196,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "patterns",
+          "book",
+          "catalog",
+          "teams",
+          "design patterns"
+        ],
+        "semantic": [],
+        "merged": [
+          "patterns",
+          "book",
+          "catalog",
+          "teams",
+          "design patterns"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "design_solution_pattern",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2856734155132463,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.846941+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 3,
+      "title": "Segment 3 (pages 18-27)",
+      "chapter_id": "Machine Learning Design Patterns:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "machine learning",
+          "machine",
+          "learning",
+          "training",
+          "roles"
+        ],
+        "semantic": [],
+        "merged": [
+          "machine learning",
+          "machine",
+          "learning",
+          "training",
+          "roles"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3037636009308311,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.847217+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 4,
+      "title": "Segment 4 (pages 28-35)",
+      "chapter_id": "Machine Learning Design Patterns:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "training",
+          "incorrectly",
+          "training model",
+          "let say",
+          "cause"
+        ],
+        "semantic": [],
+        "merged": [
+          "training",
+          "incorrectly",
+          "training model",
+          "let say",
+          "cause"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_model_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2913170707018149,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.847495+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 5,
+      "title": "Segment 5 (pages 36-43)",
+      "chapter_id": "Machine Learning Design Patterns:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "tree",
+          "decision tree",
+          "decision",
+          "input",
+          "mathematical"
+        ],
+        "semantic": [],
+        "merged": [
+          "tree",
+          "decision tree",
+          "decision",
+          "input",
+          "mathematical"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2623669292662705,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.847757+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 6,
+      "title": "Segment 6 (pages 44-51)",
+      "chapter_id": "Machine Learning Design Patterns:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "categorical",
+          "sales",
+          "categorical input",
+          "input",
+          "numeric feature"
+        ],
+        "semantic": [],
+        "merged": [
+          "categorical",
+          "sales",
+          "categorical input",
+          "input",
+          "numeric feature"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_model_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.16818386880029704,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.848021+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 7,
+      "title": "Segment 7 (pages 52-61)",
+      "chapter_id": "Machine Learning Design Patterns:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "airports",
+          "hash",
+          "airport",
+          "buckets",
+          "hash bucket"
+        ],
+        "semantic": [],
+        "merged": [
+          "airports",
+          "hash",
+          "airport",
+          "buckets",
+          "hash bucket"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28381269321305314,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.848281+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 8,
+      "title": "Segment 8 (pages 62-71)",
+      "chapter_id": "Machine Learning Design Patterns:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "hot",
+          "encoding",
+          "plurality",
+          "embedding",
+          "hot encoding"
+        ],
+        "semantic": [],
+        "merged": [
+          "hot",
+          "encoding",
+          "plurality",
+          "embedding",
+          "hot encoding"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2694876384458272,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:50:21.848552+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 9,
+      "title": "Segment 9 (pages 72-80)",
+      "chapter_id": "Machine Learning Design Patterns:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "embedding",
+          "embeddings",
+          "low dimensional",
+          "vector",
+          "dimensional"
+        ],
+        "semantic": [],
+        "merged": [
+          "embedding",
+          "embeddings",
+          "low dimensional",
+          "vector",
+          "dimensional"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_text_layer",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27985411136906096,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.848814+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 10,
+      "title": "Segment 10 (pages 81-92)",
+      "chapter_id": "Machine Learning Design Patterns:ch10",
+      "cross_references": [
+        {
+          "target": "Machine Learning Design Patterns:ch11",
+          "score": 0.5366469470914546,
+          "base_score": 0.6444115784857576,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "feature cross",
+          "cross",
+          "feature",
+          "is_male plurality",
+          "crosses"
+        ],
+        "semantic": [],
+        "merged": [
+          "feature cross",
+          "cross",
+          "feature",
+          "is_male plurality",
+          "crosses"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27273583122048584,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.849078+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 11,
+      "title": "Segment 11 (pages 93-100)",
+      "chapter_id": "Machine Learning Design Patterns:ch11",
+      "cross_references": [
+        {
+          "target": "Machine Learning Design Patterns:ch10",
+          "score": 0.5366469470914546,
+          "base_score": 0.6444115784857576,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "01",
+          "generate_array",
+          "ml bucketize",
+          "bucketize",
+          "represent"
+        ],
+        "semantic": [],
+        "merged": [
+          "01",
+          "generate_array",
+          "ml bucketize",
+          "bucketize",
+          "represent"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25411774151425703,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.849347+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 12,
+      "title": "Segment 12 (pages 101-108)",
+      "chapter_id": "Machine Learning Design Patterns:ch12",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "bow",
+          "text",
+          "words",
+          "bow encoding",
+          "encoding"
+        ],
+        "semantic": [],
+        "merged": [
+          "bow",
+          "text",
+          "words",
+          "bow encoding",
+          "encoding"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_text_layer",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2875207774409478,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.849607+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 13,
+      "title": "Segment 13 (pages 109-116)",
+      "chapter_id": "Machine Learning Design Patterns:ch13",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "tiled_layer",
+          "image",
+          "pixel",
+          "28",
+          "image_input"
+        ],
+        "semantic": [],
+        "merged": [
+          "tiled_layer",
+          "image",
+          "pixel",
+          "28",
+          "image_input"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_text_layer",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2698871601138734,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.849866+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 14,
+      "title": "Segment 14 (pages 117-125)",
+      "chapter_id": "Machine Learning Design Patterns:ch14",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "distribution",
+          "regression",
+          "pounds",
+          "reframing",
+          "task"
+        ],
+        "semantic": [],
+        "merged": [
+          "distribution",
+          "regression",
+          "pounds",
+          "reframing",
+          "task"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_model_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2545961153322255,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.850121+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 15,
+      "title": "Segment 15 (pages 126-133)",
+      "chapter_id": "Machine Learning Design Patterns:ch15",
+      "cross_references": [
+        {
+          "target": "Machine Learning Design Patterns:ch17",
+          "score": 0.5324721496778277,
+          "base_score": 0.5633795087223054,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "output",
+          "sigmoid",
+          "activation function",
+          "softmax",
+          "classification"
+        ],
+        "semantic": [],
+        "merged": [
+          "output",
+          "sigmoid",
+          "activation function",
+          "softmax",
+          "classification"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_model_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3255325700683135,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.850447+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 16,
+      "title": "Segment 16 (pages 134-144)",
+      "chapter_id": "Machine Learning Design Patterns:ch16",
+      "cross_references": [
+        {
+          "target": "Machine Learning Design Patterns:ch17",
+          "score": 0.5171192042084899,
+          "base_score": 0.5377912662734091,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ensemble",
+          "ensemble model",
+          "bagging",
+          "models",
+          "variance"
+        ],
+        "semantic": [],
+        "merged": [
+          "ensemble",
+          "ensemble model",
+          "bagging",
+          "models",
+          "variance"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_model_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30796168785602374,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.850709+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 17,
+      "title": "Segment 17 (pages 145-152)",
+      "chapter_id": "Machine Learning Design Patterns:ch17",
+      "cross_references": [
+        {
+          "target": "Machine Learning Design Patterns:ch15",
+          "score": 0.5324721496778277,
+          "base_score": 0.5633795087223054,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Machine Learning Design Patterns:ch16",
+          "score": 0.5171192042084899,
+          "base_score": 0.5377912662734091,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cascade",
+          "retail",
+          "models",
+          "classification",
+          "classification model"
+        ],
+        "semantic": [],
+        "merged": [
+          "cascade",
+          "retail",
+          "models",
+          "classification",
+          "classification model"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_model_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32419686776820134,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.850980+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 18,
+      "title": "Segment 18 (pages 153-163)",
+      "chapter_id": "Machine Learning Design Patterns:ch18",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "class",
+          "imbalanced",
+          "dataset",
+          "minority",
+          "imbalanced datasets"
+        ],
+        "semantic": [],
+        "merged": [
+          "class",
+          "imbalanced",
+          "dataset",
+          "minority",
+          "imbalanced datasets"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_model_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2925570078541565,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.851239+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 19,
+      "title": "Segment 19 (pages 164-171)",
+      "chapter_id": "Machine Learning Design Patterns:ch19",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "class",
+          "clusters",
+          "weight_pounds",
+          "project dataset",
+          "minority class"
+        ],
+        "semantic": [],
+        "merged": [
+          "class",
+          "clusters",
+          "weight_pounds",
+          "project dataset",
+          "minority class"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_model_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.22123829710267112,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.851514+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 20,
+      "title": "Segment 20 (pages 172-179)",
+      "chapter_id": "Machine Learning Design Patterns:ch20",
+      "cross_references": [
+        {
+          "target": "Machine Learning Design Patterns:ch22",
+          "score": 0.5036398366512609,
+          "base_score": 0.5153256536780275,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "training",
+          "dataset",
+          "training dataset",
+          "batches",
+          "loop"
+        ],
+        "semantic": [],
+        "merged": [
+          "training",
+          "dataset",
+          "training dataset",
+          "batches",
+          "loop"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "training_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3796725546974002,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.851778+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 21,
+      "title": "Segment 21 (pages 180-188)",
+      "chapter_id": "Machine Learning Design Patterns:ch21",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "batch",
+          "fit",
+          "training",
+          "state",
+          "overfitting"
+        ],
+        "semantic": [],
+        "merged": [
+          "batch",
+          "fit",
+          "training",
+          "state",
+          "overfitting"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "training_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.288826340987497,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.852039+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 22,
+      "title": "Segment 22 (pages 189-197)",
+      "chapter_id": "Machine Learning Design Patterns:ch22",
+      "cross_references": [
+        {
+          "target": "Machine Learning Design Patterns:ch20",
+          "score": 0.5036398366512609,
+          "base_score": 0.5153256536780275,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "stopping",
+          "early stopping",
+          "early",
+          "validation error",
+          "training"
+        ],
+        "semantic": [],
+        "merged": [
+          "stopping",
+          "early stopping",
+          "early",
+          "validation error",
+          "training"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "training_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2713735725831097,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.852310+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 23,
+      "title": "Segment 23 (pages 198-205)",
+      "chapter_id": "Machine Learning Design Patterns:ch23",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "num_checkpoints",
+          "transfer learning",
+          "transfer",
+          "batch_size",
+          "steps_per_epoch"
+        ],
+        "semantic": [],
+        "merged": [
+          "num_checkpoints",
+          "transfer learning",
+          "transfer",
+          "batch_size",
+          "steps_per_epoch"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "training_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2845493606815659,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.852595+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 24,
+      "title": "Segment 24 (pages 206-213)",
+      "chapter_id": "Machine Learning Design Patterns:ch24",
+      "cross_references": [
+        {
+          "target": "Machine Learning Design Patterns:ch25",
+          "score": 0.6043400060199179,
+          "base_score": 0.5905666766998632,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "layer",
+          "bottleneck",
+          "layers",
+          "pre trained",
+          "bottleneck layer"
+        ],
+        "semantic": [],
+        "merged": [
+          "layer",
+          "bottleneck",
+          "layers",
+          "pre trained",
+          "bottleneck layer"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_text_layer",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30015580445468154,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.852930+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 25,
+      "title": "Segment 25 (pages 214-221)",
+      "chapter_id": "Machine Learning Design Patterns:ch25",
+      "cross_references": [
+        {
+          "target": "Machine Learning Design Patterns:ch24",
+          "score": 0.6043400060199179,
+          "base_score": 0.5905666766998632,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "fine",
+          "fine tuning",
+          "tuning",
+          "layers",
+          "pre trained"
+        ],
+        "semantic": [],
+        "merged": [
+          "fine",
+          "fine tuning",
+          "tuning",
+          "layers",
+          "pre trained"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_text_layer",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3153349385057854,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.853198+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 26,
+      "title": "Segment 26 (pages 222-231)",
+      "chapter_id": "Machine Learning Design Patterns:ch26",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "workers",
+          "parallelism",
+          "parameter",
+          "batch",
+          "mini batch"
+        ],
+        "semantic": [],
+        "merged": [
+          "workers",
+          "parallelism",
+          "parameter",
+          "batch",
+          "mini batch"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "training_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2888167904163825,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.853474+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 27,
+      "title": "Segment 27 (pages 232-239)",
+      "chapter_id": "Machine Learning Design Patterns:ch27",
+      "cross_references": [
+        {
+          "target": "Machine Learning Design Patterns:ch28",
+          "score": 0.531929776909988,
+          "base_score": 0.5624755541092392,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "hyperparameter",
+          "try",
+          "values",
+          "search",
+          "grid search"
+        ],
+        "semantic": [],
+        "merged": [
+          "hyperparameter",
+          "try",
+          "values",
+          "search",
+          "grid search"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "training_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30801689735982296,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.853733+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 28,
+      "title": "Segment 28 (pages 240-247)",
+      "chapter_id": "Machine Learning Design Patterns:ch28",
+      "cross_references": [
+        {
+          "target": "Machine Learning Design Patterns:ch29",
+          "score": 0.5405125434149686,
+          "base_score": 0.6508542390249477,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Machine Learning Design Patterns:ch27",
+          "score": 0.531929776909988,
+          "base_score": 0.5624755541092392,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "hyperparameter",
+          "optimization",
+          "combination hyperparameters",
+          "hyperparameter tuning",
+          "bayesian"
+        ],
+        "semantic": [],
+        "merged": [
+          "hyperparameter",
+          "optimization",
+          "combination hyperparameters",
+          "hyperparameter tuning",
+          "bayesian"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "training_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2627498994243537,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.853996+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 29,
+      "title": "Segment 29 (pages 248-255)",
+      "chapter_id": "Machine Learning Design Patterns:ch29",
+      "cross_references": [
+        {
+          "target": "Machine Learning Design Patterns:ch28",
+          "score": 0.5405125434149686,
+          "base_score": 0.6508542390249477,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "stateless",
+          "function",
+          "production ml",
+          "design",
+          "training"
+        ],
+        "semantic": [],
+        "merged": [
+          "stateless",
+          "function",
+          "production ml",
+          "design",
+          "training"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "training_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3137075242491473,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.854254+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 30,
+      "title": "Segment 30 (pages 256-263)",
+      "chapter_id": "Machine Learning Design Patterns:ch30",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "serving_fn",
+          "tf",
+          "positive_review_logits",
+          "review",
+          "tf keras"
+        ],
+        "semantic": [],
+        "merged": [
+          "serving_fn",
+          "tf",
+          "positive_review_logits",
+          "review",
+          "tf keras"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2352204587145552,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:50:21.854644+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 31,
+      "title": "Segment 31 (pages 264-272)",
+      "chapter_id": "Machine Learning Design Patterns:ch31",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "serving",
+          "logits",
+          "reviews",
+          "consumer_complaint_narrative",
+          "select"
+        ],
+        "semantic": [],
+        "merged": [
+          "serving",
+          "logits",
+          "reviews",
+          "consumer_complaint_narrative",
+          "select"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30429933261405506,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:50:21.854949+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 32,
+      "title": "Segment 32 (pages 273-280)",
+      "chapter_id": "Machine Learning Design Patterns:ch32",
+      "cross_references": [
+        {
+          "target": "Machine Learning Design Patterns:ch44",
+          "score": 0.5339885223475443,
+          "base_score": 0.5659067965051665,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "drift",
+          "online",
+          "data drift",
+          "serving",
+          "drift data"
+        ],
+        "semantic": [],
+        "merged": [
+          "drift",
+          "online",
+          "data drift",
+          "serving",
+          "drift data"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "model_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3417656353557837,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.855228+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 33,
+      "title": "Segment 33 (pages 281-288)",
+      "chapter_id": "Machine Learning Design Patterns:ch33",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "ground",
+          "ground truth",
+          "truth",
+          "table",
+          "prediction"
+        ],
+        "semantic": [],
+        "merged": [
+          "ground",
+          "ground truth",
+          "truth",
+          "table",
+          "prediction"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "model_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3138060813979205,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.855530+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 34,
+      "title": "Segment 34 (pages 289-296)",
+      "chapter_id": "Machine Learning Design Patterns:ch34",
+      "cross_references": [
+        {
+          "target": "Machine Learning Design Patterns:ch42",
+          "score": 0.5297600278394107,
+          "base_score": 0.6329333797323511,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "evaluation provides",
+          "retraining",
+          "stale",
+          "retrain",
+          "retrain model"
+        ],
+        "semantic": [],
+        "merged": [
+          "evaluation provides",
+          "retraining",
+          "stale",
+          "retrain",
+          "retrain model"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "the_pipeline_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33077591711610355,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.855800+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 35,
+      "title": "Segment 35 (pages 297-305)",
+      "chapter_id": "Machine Learning Design Patterns:ch35",
+      "cross_references": [
+        {
+          "target": "Machine Learning Design Patterns:ch36",
+          "score": 0.5487465773335544,
+          "base_score": 0.5905035548151831,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "instrument",
+          "phase",
+          "cloud",
+          "lite",
+          "tf lite"
+        ],
+        "semantic": [],
+        "merged": [
+          "instrument",
+          "phase",
+          "cloud",
+          "lite",
+          "tf lite"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "model_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24649545219015737,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.856092+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 36,
+      "title": "Segment 36 (pages 306-314)",
+      "chapter_id": "Machine Learning Design Patterns:ch36",
+      "cross_references": [
+        {
+          "target": "Machine Learning Design Patterns:ch35",
+          "score": 0.5487465773335544,
+          "base_score": 0.5905035548151831,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "offline",
+          "key",
+          "keyed_prediction",
+          "connectivity",
+          "cloud"
+        ],
+        "semantic": [],
+        "merged": [
+          "offline",
+          "key",
+          "keyed_prediction",
+          "connectivity",
+          "cloud"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "model_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30600852654252436,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.856417+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 37,
+      "title": "Segment 37 (pages 315-322)",
+      "chapter_id": "Machine Learning Design Patterns:ch37",
+      "cross_references": [
+        {
+          "target": "Machine Learning Design Patterns:ch52",
+          "score": 0.514803309400443,
+          "base_score": 0.6080055156674051,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Machine Learning Design Patterns:ch42",
+          "score": 0.5147496898459255,
+          "base_score": 0.6079161497432091,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Machine Learning Design Patterns:ch45",
+          "score": 0.504063288800655,
+          "base_score": 0.5901054813344251,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "start_date",
+          "inputs",
+          "dayofweek",
+          "start_date string",
+          "duration"
+        ],
+        "semantic": [],
+        "merged": [
+          "start_date",
+          "inputs",
+          "dayofweek",
+          "start_date string",
+          "duration"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "the_pipeline_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3860660848870917,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.856687+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 38,
+      "title": "Segment 38 (pages 323-331)",
+      "chapter_id": "Machine Learning Design Patterns:ch38",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "transformed",
+          "lambda",
+          "tf",
+          "transformations",
+          "keras layers"
+        ],
+        "semantic": [],
+        "merged": [
+          "transformed",
+          "lambda",
+          "tf",
+          "transformations",
+          "keras layers"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1584036666283766,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.856973+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 39,
+      "title": "Segment 39 (pages 332-340)",
+      "chapter_id": "Machine Learning Design Patterns:ch39",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "split",
+          "older",
+          "newer",
+          "days",
+          "card"
+        ],
+        "semantic": [],
+        "merged": [
+          "split",
+          "older",
+          "newer",
+          "days",
+          "card"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.281911989435475,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.857275+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 40,
+      "title": "Segment 40 (pages 341-348)",
+      "chapter_id": "Machine Learning Design Patterns:ch40",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "older",
+          "examples",
+          "value",
+          "older data",
+          "evaluation"
+        ],
+        "semantic": [],
+        "merged": [
+          "older",
+          "examples",
+          "value",
+          "older data",
+          "evaluation"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3078678438680128,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:50:21.857562+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 41,
+      "title": "Segment 41 (pages 349-356)",
+      "chapter_id": "Machine Learning Design Patterns:ch41",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "window",
+          "flight",
+          "state",
+          "model state",
+          "model parameters"
+        ],
+        "semantic": [],
+        "merged": [
+          "window",
+          "flight",
+          "state",
+          "model state",
+          "model parameters"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23514807482590924,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:50:21.857828+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 42,
+      "title": "Segment 42 (pages 357-370)",
+      "chapter_id": "Machine Learning Design Patterns:ch42",
+      "cross_references": [
+        {
+          "target": "Machine Learning Design Patterns:ch34",
+          "score": 0.5297600278394107,
+          "base_score": 0.6329333797323511,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Machine Learning Design Patterns:ch37",
+          "score": 0.5147496898459255,
+          "base_score": 0.6079161497432091,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pipeline",
+          "tfx",
+          "run",
+          "pipelines",
+          "component"
+        ],
+        "semantic": [],
+        "merged": [
+          "pipeline",
+          "tfx",
+          "run",
+          "pipelines",
+          "component"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "the_pipeline_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.344931060884052,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.858108+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 43,
+      "title": "Segment 43 (pages 371-380)",
+      "chapter_id": "Machine Learning Design Patterns:ch43",
+      "cross_references": [
+        {
+          "target": "Machine Learning Design Patterns:ch44",
+          "score": 0.5862228189462776,
+          "base_score": 0.7270380315771294,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "feature set",
+          "feature",
+          "feast",
+          "feature data",
+          "featureset"
+        ],
+        "semantic": [],
+        "merged": [
+          "feature set",
+          "feature",
+          "feast",
+          "feature data",
+          "featureset"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "model_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31916925287087505,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.858386+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 44,
+      "title": "Segment 44 (pages 381-396)",
+      "chapter_id": "Machine Learning Design Patterns:ch44",
+      "cross_references": [
+        {
+          "target": "Machine Learning Design Patterns:ch43",
+          "score": 0.5862228189462776,
+          "base_score": 0.7270380315771294,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Machine Learning Design Patterns:ch32",
+          "score": 0.5339885223475443,
+          "base_score": 0.5659067965051665,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "version",
+          "versions",
+          "model version",
+          "serving",
+          "endpoint"
+        ],
+        "semantic": [],
+        "merged": [
+          "version",
+          "versions",
+          "model version",
+          "serving",
+          "endpoint"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "model_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3560964485615734,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.858648+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 45,
+      "title": "Segment 45 (pages 397-404)",
+      "chapter_id": "Machine Learning Design Patterns:ch45",
+      "cross_references": [
+        {
+          "target": "Machine Learning Design Patterns:ch52",
+          "score": 0.6898355981757697,
+          "base_score": 0.7330593302929495,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Machine Learning Design Patterns:ch37",
+          "score": 0.504063288800655,
+          "base_score": 0.5901054813344251,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ml model",
+          "ml",
+          "business",
+          "pattern",
+          "benchmark"
+        ],
+        "semantic": [],
+        "merged": [
+          "ml model",
+          "ml",
+          "business",
+          "pattern",
+          "benchmark"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "the_pipeline_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34784541494952,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.858911+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 46,
+      "title": "Segment 46 (pages 405-421)",
+      "chapter_id": "Machine Learning Design Patterns:ch46",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "baseline",
+          "attribution values",
+          "attribution",
+          "feature",
+          "values"
+        ],
+        "semantic": [],
+        "merged": [
+          "baseline",
+          "attribution values",
+          "attribution",
+          "feature",
+          "values"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_model_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3052703582917169,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.859177+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 47,
+      "title": "Segment 47 (pages 422-429)",
+      "chapter_id": "Machine Learning Design Patterns:ch47",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "ai",
+          "explainable ai",
+          "attributions",
+          "explanations",
+          "feature attributions"
+        ],
+        "semantic": [],
+        "merged": [
+          "ai",
+          "explainable ai",
+          "attributions",
+          "explanations",
+          "feature attributions"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31883755306047845,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:50:21.859574+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 48,
+      "title": "Segment 48 (pages 430-437)",
+      "chapter_id": "Machine Learning Design Patterns:ch48",
+      "cross_references": [
+        {
+          "target": "Machine Learning Design Patterns:ch50",
+          "score": 0.5710743428393561,
+          "base_score": 0.6277164973248527,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "bias",
+          "groups",
+          "fairness",
+          "data bias",
+          "fairness lens"
+        ],
+        "semantic": [],
+        "merged": [
+          "bias",
+          "groups",
+          "fairness",
+          "data bias",
+          "fairness lens"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_model_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29877272393414656,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.859899+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 49,
+      "title": "Segment 49 (pages 438-445)",
+      "chapter_id": "Machine Learning Design Patterns:ch49",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "approved",
+          "tool",
+          "hud",
+          "loans",
+          "bias"
+        ],
+        "semantic": [],
+        "merged": [
+          "approved",
+          "tool",
+          "hud",
+          "loans",
+          "bias"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2849688872894751,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.860167+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 50,
+      "title": "Segment 50 (pages 446-453)",
+      "chapter_id": "Machine Learning Design Patterns:ch50",
+      "cross_references": [
+        {
+          "target": "Machine Learning Design Patterns:ch48",
+          "score": 0.5710743428393561,
+          "base_score": 0.6277164973248527,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "fairness",
+          "tools",
+          "analysis",
+          "model fairness",
+          "discussed"
+        ],
+        "semantic": [],
+        "merged": [
+          "fairness",
+          "tools",
+          "analysis",
+          "model fairness",
+          "discussed"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_model_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2822113018200563,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.860457+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 51,
+      "title": "Segment 51 (pages 454-461)",
+      "chapter_id": "Machine Learning Design Patterns:ch51",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "machine learning",
+          "machine",
+          "model predictions",
+          "learning",
+          "models"
+        ],
+        "semantic": [],
+        "merged": [
+          "machine learning",
+          "machine",
+          "model predictions",
+          "learning",
+          "models"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42303965256514847,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:50:21.860726+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 52,
+      "title": "Segment 52 (pages 462-472)",
+      "chapter_id": "Machine Learning Design Patterns:ch52",
+      "cross_references": [
+        {
+          "target": "Machine Learning Design Patterns:ch45",
+          "score": 0.6898355981757697,
+          "base_score": 0.7330593302929495,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Machine Learning Design Patterns:ch37",
+          "score": 0.514803309400443,
+          "base_score": 0.6080055156674051,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "stage",
+          "business",
+          "pattern",
+          "development",
+          "step figure"
+        ],
+        "semantic": [],
+        "merged": [
+          "stage",
+          "business",
+          "pattern",
+          "development",
+          "step figure"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "the_pipeline_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3485027497236834,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.861019+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 53,
+      "title": "Segment 53 (pages 473-480)",
+      "chapter_id": "Machine Learning Design Patterns:ch53",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "development",
+          "ml",
+          "automated",
+          "pipelines",
+          "phase"
+        ],
+        "semantic": [],
+        "merged": [
+          "development",
+          "ml",
+          "automated",
+          "pipelines",
+          "phase"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3552306888925731,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:50:21.861287+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 54,
+      "title": "Segment 54 (pages 481-488)",
+      "chapter_id": "Machine Learning Design Patterns:ch54",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "solution",
+          "predictive",
+          "versioning managed",
+          "managed",
+          "managed service"
+        ],
+        "semantic": [],
+        "merged": [
+          "solution",
+          "predictive",
+          "versioning managed",
+          "managed",
+          "managed service"
+        ]
+      },
+      "topic_id": 8,
+      "topic_name": "book_machine_learning",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3870509802518142,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.861566+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 55,
+      "title": "Segment 55 (pages 489-497)",
+      "chapter_id": "Machine Learning Design Patterns:ch55",
+      "cross_references": [
+        {
+          "target": "Machine Learning Design Patterns:ch58",
+          "score": 0.6774667894412422,
+          "base_score": 0.7124446490687368,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Machine Learning Design Patterns:ch56",
+          "score": 0.611504088064316,
+          "base_score": 0.7691734801071934,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Machine Learning Design Patterns:ch57",
+          "score": 0.5720476691761671,
+          "base_score": 0.6293387078862045,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Machine Learning Design Patterns:ch2",
+          "score": 0.5038994005246162,
+          "base_score": 0.5157582601336196,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "representation design",
+          "data representation",
+          "design patterns",
+          "design",
+          "representation"
+        ],
+        "semantic": [],
+        "merged": [
+          "representation design",
+          "data representation",
+          "design patterns",
+          "design",
+          "representation"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "design_solution_pattern",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3066943110701288,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.861847+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 56,
+      "title": "Segment 56 (pages 498-505)",
+      "chapter_id": "Machine Learning Design Patterns:ch56",
+      "cross_references": [
+        {
+          "target": "Machine Learning Design Patterns:ch55",
+          "score": 0.611504088064316,
+          "base_score": 0.7691734801071934,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Machine Learning Design Patterns:ch58",
+          "score": 0.5681535847710374,
+          "base_score": 0.6228485672109882,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Machine Learning Design Patterns:ch57",
+          "score": 0.5114680672402903,
+          "base_score": 0.528372704659743,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "solution",
+          "problem",
+          "models frameworks",
+          "learning process",
+          "data feature"
+        ],
+        "semantic": [],
+        "merged": [
+          "solution",
+          "problem",
+          "models frameworks",
+          "learning process",
+          "data feature"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "design_solution_pattern",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35487511416573203,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.862116+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 57,
+      "title": "Segment 57 (pages 506-513)",
+      "chapter_id": "Machine Learning Design Patterns:ch57",
+      "cross_references": [
+        {
+          "target": "Machine Learning Design Patterns:ch58",
+          "score": 0.6470587709200891,
+          "base_score": 0.6617646182001485,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Machine Learning Design Patterns:ch55",
+          "score": 0.5720476691761671,
+          "base_score": 0.6293387078862045,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Machine Learning Design Patterns:ch56",
+          "score": 0.5114680672402903,
+          "base_score": 0.528372704659743,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pattern",
+          "problem",
+          "design",
+          "interactions",
+          "pattern interactions"
+        ],
+        "semantic": [],
+        "merged": [
+          "pattern",
+          "problem",
+          "design",
+          "interactions",
+          "pattern interactions"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "design_solution_pattern",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31628155266904856,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.862393+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Design Patterns",
+      "chapter": 58,
+      "title": "Segment 58 (pages 514-521)",
+      "chapter_id": "Machine Learning Design Patterns:ch58",
+      "cross_references": [
+        {
+          "target": "Machine Learning Design Patterns:ch55",
+          "score": 0.6774667894412422,
+          "base_score": 0.7124446490687368,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Machine Learning Design Patterns:ch57",
+          "score": 0.6470587709200891,
+          "base_score": 0.6617646182001485,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Machine Learning Design Patterns:ch56",
+          "score": 0.5681535847710374,
+          "base_score": 0.6228485672109882,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Machine Learning Design Patterns:ch2",
+          "score": 0.554195244093841,
+          "base_score": 0.5069920734897351,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "design",
+          "pattern",
+          "design patterns",
+          "patterns",
+          "data feature"
+        ],
+        "semantic": [],
+        "merged": [
+          "design",
+          "pattern",
+          "design patterns",
+          "patterns",
+          "data feature"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "design_solution_pattern",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33278039386895714,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:21.862654+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

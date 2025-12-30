@@ -1,0 +1,244 @@
+{
+  "book": {
+    "title": "HTTP2-high-perf-browser-networking"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:48:19.605964",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "HTTP2-high-perf-browser-networking",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-12)",
+      "chapter_id": "HTTP2-high-perf-browser-networking:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "spdy",
+          "new",
+          "performance",
+          "spdy http",
+          "goals"
+        ],
+        "semantic": [],
+        "merged": [
+          "spdy",
+          "new",
+          "performance",
+          "spdy http",
+          "goals"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "http_spdy_new",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7477014479362005,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:19.599939+00:00"
+      }
+    },
+    {
+      "book": "HTTP2-high-perf-browser-networking",
+      "chapter": 2,
+      "title": "Segment 2 (pages 13-20)",
+      "chapter_id": "HTTP2-high-perf-browser-networking:ch2",
+      "cross_references": [
+        {
+          "target": "HTTP2-high-perf-browser-networking:ch4",
+          "score": 0.5614628828746591,
+          "base_score": 0.7691048047910984,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "HTTP2-high-perf-browser-networking:ch3",
+          "score": 0.5390050988055878,
+          "base_score": 0.8242677572685723,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "stream",
+          "messages",
+          "binary",
+          "frames",
+          "client"
+        ],
+        "semantic": [],
+        "merged": [
+          "stream",
+          "messages",
+          "binary",
+          "frames",
+          "client"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "http_stream_messages",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7640171453785738,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:19.600026+00:00"
+      }
+    },
+    {
+      "book": "HTTP2-high-perf-browser-networking",
+      "chapter": 3,
+      "title": "Segment 3 (pages 21-28)",
+      "chapter_id": "HTTP2-high-perf-browser-networking:ch3",
+      "cross_references": [
+        {
+          "target": "HTTP2-high-perf-browser-networking:ch4",
+          "score": 0.5677360764614624,
+          "base_score": 0.7795601274357707,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "HTTP2-high-perf-browser-networking:ch2",
+          "score": 0.5390050988055878,
+          "base_score": 0.8242677572685723,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "control",
+          "client",
+          "flow control",
+          "server",
+          "push"
+        ],
+        "semantic": [],
+        "merged": [
+          "control",
+          "client",
+          "flow control",
+          "server",
+          "push"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "http_control_client",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7923433338909087,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:19.600071+00:00"
+      }
+    },
+    {
+      "book": "HTTP2-high-perf-browser-networking",
+      "chapter": 4,
+      "title": "Segment 4 (pages 29-36)",
+      "chapter_id": "HTTP2-high-perf-browser-networking:ch4",
+      "cross_references": [
+        {
+          "target": "HTTP2-high-perf-browser-networking:ch3",
+          "score": 0.5677360764614624,
+          "base_score": 0.7795601274357707,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "HTTP2-high-perf-browser-networking:ch2",
+          "score": 0.5614628828746591,
+          "base_score": 0.7691048047910984,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "frame",
+          "data",
+          "stream",
+          "server",
+          "client"
+        ],
+        "semantic": [],
+        "merged": [
+          "frame",
+          "data",
+          "stream",
+          "server",
+          "client"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "http_frame_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7820886023533238,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:19.600097+00:00"
+      }
+    },
+    {
+      "book": "HTTP2-high-perf-browser-networking",
+      "chapter": 5,
+      "title": "Segment 5 (pages 37-37)",
+      "chapter_id": "HTTP2-high-perf-browser-networking:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "steps",
+          "steps http",
+          "good news",
+          "http faq",
+          "modification"
+        ],
+        "semantic": [],
+        "merged": [
+          "steps",
+          "steps http",
+          "good news",
+          "http faq",
+          "modification"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "http_steps_faq",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7032868041604445,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:19.600130+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

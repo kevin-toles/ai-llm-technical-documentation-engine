@@ -1,0 +1,252 @@
+{
+  "book": {
+    "title": "docker-security"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:01:02.631098",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "docker-security",
+      "chapter": 1,
+      "title": "Segment 1 (pages 3-11)",
+      "chapter_id": "docker-security:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "security",
+          "containers",
+          "kernel",
+          "container",
+          "security limiting"
+        ],
+        "semantic": [],
+        "merged": [
+          "security",
+          "containers",
+          "kernel",
+          "container",
+          "security limiting"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "security_containers_kernel",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6875151950222421,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:02.627084+00:00"
+      }
+    },
+    {
+      "book": "docker-security",
+      "chapter": 2,
+      "title": "Segment 2 (pages 12-19)",
+      "chapter_id": "docker-security:ch2",
+      "cross_references": [
+        {
+          "target": "docker-security:ch5",
+          "score": 0.5442388241348347,
+          "base_score": 0.6570647068913911,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "containers",
+          "image",
+          "host",
+          "images",
+          "users"
+        ],
+        "semantic": [],
+        "merged": [
+          "containers",
+          "image",
+          "host",
+          "images",
+          "users"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "docker_containers_run",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6834322194502912,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:02.627167+00:00"
+      }
+    },
+    {
+      "book": "docker-security",
+      "chapter": 3,
+      "title": "Segment 3 (pages 20-27)",
+      "chapter_id": "docker-security:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "trust",
+          "content",
+          "content trust",
+          "unsigned",
+          "key"
+        ],
+        "semantic": [],
+        "merged": [
+          "trust",
+          "content",
+          "content trust",
+          "unsigned",
+          "key"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "trust_content_unsigned",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5727335513607416,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:02.627198+00:00"
+      }
+    },
+    {
+      "book": "docker-security",
+      "chapter": 4,
+      "title": "Segment 4 (pages 28-36)",
+      "chapter_id": "docker-security:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "stress",
+          "nc",
+          "amouat",
+          "docker run",
+          "5001"
+        ],
+        "semantic": [],
+        "merged": [
+          "stress",
+          "nc",
+          "amouat",
+          "docker run",
+          "5001"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "stress_nc_amouat",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6491725255588344,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:02.627227+00:00"
+      }
+    },
+    {
+      "book": "docker-security",
+      "chapter": 5,
+      "title": "Segment 5 (pages 37-46)",
+      "chapter_id": "docker-security:ch5",
+      "cross_references": [
+        {
+          "target": "docker-security:ch2",
+          "score": 0.5442388241348347,
+          "base_score": 0.6570647068913911,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "file",
+          "docker run",
+          "pwd",
+          "new_data",
+          "selinux"
+        ],
+        "semantic": [],
+        "merged": [
+          "file",
+          "docker run",
+          "pwd",
+          "new_data",
+          "selinux"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "docker_containers_run",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6248698572785146,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:02.627257+00:00"
+      }
+    },
+    {
+      "book": "docker-security",
+      "chapter": 6,
+      "title": "Segment 6 (pages 47-51)",
+      "chapter_id": "docker-security:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "apparmor",
+          "profile",
+          "container",
+          "running",
+          "auditing"
+        ],
+        "semantic": [],
+        "merged": [
+          "apparmor",
+          "profile",
+          "container",
+          "running",
+          "auditing"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "profile_apparmor_container",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6286524459648053,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:02.627285+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

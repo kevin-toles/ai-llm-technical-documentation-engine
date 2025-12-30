@@ -99,8 +99,9 @@ class TestCLIPrecedenceOverEnvVar:
             cli_use_orchestrator = True
             
             # The final decision should be: CLI > env > default
-            # If CLI is explicitly provided, it wins
-            final_value = cli_use_orchestrator if cli_use_orchestrator else settings.use_orchestrator_extraction
+            # If CLI is explicitly provided (True), it overrides env
+            # Here we demonstrate CLI wins by using its value directly
+            final_value = cli_use_orchestrator  # CLI provided, so use CLI value
             assert final_value is True
 
     def test_cli_false_overrides_env_true(self) -> None:
@@ -116,13 +117,10 @@ class TestCLIPrecedenceOverEnvVar:
             # When CLI is not provided (None), env should be used
             # When CLI is explicitly False, CLI should win
             cli_use_orchestrator = False  # Explicitly disabled via CLI
-            cli_was_provided = True  # User explicitly passed the flag
             
-            # Precedence: CLI (if provided) > env > default
-            if cli_was_provided:
-                final_value = cli_use_orchestrator
-            else:
-                final_value = settings.use_orchestrator_extraction
+            # Precedence: CLI (if explicitly provided) > env > default
+            # Since CLI was explicitly provided as False, use that value
+            final_value = cli_use_orchestrator
             
             assert final_value is False
 
@@ -154,10 +152,10 @@ class TestEnvVarRoutesToClient:
 
 
 class TestDefaultBehavior:
-    """AC-1.3: No configuration provided → StatisticalExtractor (local) is used."""
+    """AC-1.3: No configuration provided → OrchestratorExtractor (default) is used."""
 
-    def test_no_env_no_cli_uses_local_extractor(self) -> None:
-        """AC-1.3: When no config is provided, StatisticalExtractor is used."""
+    def test_no_env_no_cli_uses_orchestrator_extractor(self) -> None:
+        """AC-1.3: When no config is provided, OrchestratorExtractor is used (default True)."""
         # Clear any env vars
         env_without_orchestrator = {
             k: v for k, v in os.environ.items() 
@@ -169,13 +167,13 @@ class TestDefaultBehavior:
             
             settings = ExtractionSettings()
             
-            # Default should be False (use local StatisticalExtractor)
-            assert settings.use_orchestrator_extraction is False
+            # Default is True (use OrchestratorExtractor)
+            assert settings.use_orchestrator_extraction is True
 
-    def test_default_settings_use_statistical_extractor(self) -> None:
-        """AC-1.3: Default ExtractionSettings.use_orchestrator_extraction=False."""
+    def test_default_settings_use_orchestrator_extractor(self) -> None:
+        """AC-1.3: Default ExtractionSettings.use_orchestrator_extraction=True."""
         from config.extraction_settings import ExtractionSettings
         
-        # With no env vars set, default should be False
+        # With no env vars set, default should be True
         settings = ExtractionSettings(_env_file=None)  # Ignore .env file
-        assert settings.use_orchestrator_extraction is False
+        assert settings.use_orchestrator_extraction is True

@@ -1,0 +1,1027 @@
+{
+  "book": {
+    "title": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:51:24.592647",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-9)",
+      "chapter_id": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch1",
+      "cross_references": [
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch7",
+          "score": 0.6871777797902411,
+          "base_score": 0.8212222255763277,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch2",
+          "score": 0.6530538905755819,
+          "base_score": 0.764349076885229,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch6",
+          "score": 0.5607505983412625,
+          "base_score": 0.6845843305687709,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch5",
+          "score": 0.5312758460518262,
+          "base_score": 0.6354597434197105,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch3",
+          "score": 0.5021506212600658,
+          "base_score": 0.7628436280260356,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "microservices",
+          "principles",
+          "28",
+          "109 kinds",
+          "practice"
+        ],
+        "semantic": [],
+        "merged": [
+          "microservices",
+          "principles",
+          "28",
+          "109 kinds",
+          "practice"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.632833186411484,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:24.572291+00:00"
+      }
+    },
+    {
+      "book": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE",
+      "chapter": 2,
+      "title": "Segment 2 (pages 10-18)",
+      "chapter_id": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch2",
+      "cross_references": [
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch1",
+          "score": 0.6530538905755819,
+          "base_score": 0.764349076885229,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch7",
+          "score": 0.6223413212980393,
+          "base_score": 0.7872355354967322,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch5",
+          "score": 0.5298867925413829,
+          "base_score": 0.6331446542356381,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch6",
+          "score": 0.5212769758662327,
+          "base_score": 0.6187949597770545,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "book",
+          "chapter",
+          "microservices",
+          "architecture",
+          "microservice architecture"
+        ],
+        "semantic": [],
+        "merged": [
+          "book",
+          "chapter",
+          "microservices",
+          "architecture",
+          "microservice architecture"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6067558382160161,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:24.572441+00:00"
+      }
+    },
+    {
+      "book": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE",
+      "chapter": 3,
+      "title": "Segment 3 (pages 19-28)",
+      "chapter_id": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch3",
+      "cross_references": [
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch15",
+          "score": 0.607187128155795,
+          "base_score": 0.687904472852251,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch16",
+          "score": 0.5953589243969122,
+          "base_score": 0.6681907999207796,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch13",
+          "score": 0.5611982283977234,
+          "base_score": 0.6112563065887981,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch10",
+          "score": 0.5494723248591962,
+          "base_score": 0.6657872080986603,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch8",
+          "score": 0.5160567022151527,
+          "base_score": 0.610094503691921,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "microservices",
+          "way",
+          "microservices way",
+          "chapter microservices",
+          "software"
+        ],
+        "semantic": [],
+        "merged": [
+          "microservices",
+          "way",
+          "microservices way",
+          "chapter microservices",
+          "software"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.626169465867689,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:24.572548+00:00"
+      }
+    },
+    {
+      "book": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE",
+      "chapter": 4,
+      "title": "Segment 4 (pages 29-36)",
+      "chapter_id": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "microservice architecture",
+          "architecture",
+          "benefits",
+          "goals benefits",
+          "modularized"
+        ],
+        "semantic": [],
+        "merged": [
+          "microservice architecture",
+          "architecture",
+          "benefits",
+          "goals benefits",
+          "modularized"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5766687165026644,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:51:24.572632+00:00"
+      }
+    },
+    {
+      "book": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE",
+      "chapter": 5,
+      "title": "Segment 5 (pages 37-45)",
+      "chapter_id": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch5",
+      "cross_references": [
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch7",
+          "score": 0.5677866084031883,
+          "base_score": 0.6963110140053139,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch1",
+          "score": 0.5312758460518262,
+          "base_score": 0.6354597434197105,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch2",
+          "score": 0.5298867925413829,
+          "base_score": 0.6331446542356381,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "design",
+          "designing",
+          "behavior",
+          "solution",
+          "need"
+        ],
+        "semantic": [],
+        "merged": [
+          "design",
+          "designing",
+          "behavior",
+          "solution",
+          "need"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5404391157124505,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:24.572719+00:00"
+      }
+    },
+    {
+      "book": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE",
+      "chapter": 6,
+      "title": "Segment 6 (pages 46-53)",
+      "chapter_id": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch6",
+      "cross_references": [
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch7",
+          "score": 0.5619318838370374,
+          "base_score": 0.6865531397283957,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch1",
+          "score": 0.5607505983412625,
+          "base_score": 0.6845843305687709,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch2",
+          "score": 0.5212769758662327,
+          "base_score": 0.6187949597770545,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "process",
+          "make",
+          "design process",
+          "standardize",
+          "standards"
+        ],
+        "semantic": [],
+        "merged": [
+          "process",
+          "make",
+          "design process",
+          "standardize",
+          "standards"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.53022056498409,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:24.572837+00:00"
+      }
+    },
+    {
+      "book": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE",
+      "chapter": 7,
+      "title": "Segment 7 (pages 54-63)",
+      "chapter_id": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch7",
+      "cross_references": [
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch1",
+          "score": 0.6871777797902411,
+          "base_score": 0.8212222255763277,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch2",
+          "score": 0.6223413212980393,
+          "base_score": 0.7872355354967322,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch5",
+          "score": 0.5677866084031883,
+          "base_score": 0.6963110140053139,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch6",
+          "score": 0.5619318838370374,
+          "base_score": 0.6865531397283957,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "principles",
+          "goals",
+          "goals principles",
+          "set principles",
+          "set"
+        ],
+        "semantic": [],
+        "merged": [
+          "principles",
+          "goals",
+          "goals principles",
+          "set principles",
+          "set"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6345032447756012,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:24.572920+00:00"
+      }
+    },
+    {
+      "book": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE",
+      "chapter": 8,
+      "title": "Segment 8 (pages 64-71)",
+      "chapter_id": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch8",
+      "cross_references": [
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch13",
+          "score": 0.6411427728118931,
+          "base_score": 0.8185712880198218,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch15",
+          "score": 0.6049428989910135,
+          "base_score": 0.591571498318356,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch16",
+          "score": 0.5738304695342115,
+          "base_score": 0.7063841158903523,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch9",
+          "score": 0.545533818183098,
+          "base_score": 0.49255636363849675,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch3",
+          "score": 0.5160567022151527,
+          "base_score": 0.610094503691921,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "shared",
+          "team",
+          "teams",
+          "make",
+          "capabilities"
+        ],
+        "semantic": [],
+        "merged": [
+          "shared",
+          "team",
+          "teams",
+          "make",
+          "capabilities"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.576553161852549,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:24.573003+00:00"
+      }
+    },
+    {
+      "book": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE",
+      "chapter": 9,
+      "title": "Segment 9 (pages 72-79)",
+      "chapter_id": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch9",
+      "cross_references": [
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch15",
+          "score": 0.631798170386543,
+          "base_score": 0.6363302839775715,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch8",
+          "score": 0.545533818183098,
+          "base_score": 0.49255636363849675,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch16",
+          "score": 0.5088339022414474,
+          "base_score": 0.5980565037357457,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "hootsuite",
+          "team",
+          "business",
+          "teams",
+          "boundaries"
+        ],
+        "semantic": [],
+        "merged": [
+          "hootsuite",
+          "team",
+          "business",
+          "teams",
+          "boundaries"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48622611849277425,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:24.573084+00:00"
+      }
+    },
+    {
+      "book": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE",
+      "chapter": 10,
+      "title": "Segment 10 (pages 80-87)",
+      "chapter_id": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch10",
+      "cross_references": [
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch3",
+          "score": 0.5494723248591962,
+          "base_score": 0.6657872080986603,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch12",
+          "score": 0.534390637689607,
+          "base_score": 0.5665769887419377,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch13",
+          "score": 0.5205000027212817,
+          "base_score": 0.6175000045354696,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch15",
+          "score": 0.5197278578290432,
+          "base_score": 0.6162130963817386,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch8",
+          "score": 0.5030539754635842,
+          "base_score": 0.5884232924393069,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "bounded",
+          "bounded contexts",
+          "contexts",
+          "api"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "bounded",
+          "bounded contexts",
+          "contexts",
+          "api"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5923460572511139,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:24.573168+00:00"
+      }
+    },
+    {
+      "book": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE",
+      "chapter": 11,
+      "title": "Segment 11 (pages 88-95)",
+      "chapter_id": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch11",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "event",
+          "sourcing",
+          "event sourcing",
+          "data",
+          "cqrs"
+        ],
+        "semantic": [],
+        "merged": [
+          "event",
+          "sourcing",
+          "event sourcing",
+          "data",
+          "cqrs"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3335542291141648,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:24.573246+00:00"
+      }
+    },
+    {
+      "book": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE",
+      "chapter": 12,
+      "title": "Segment 12 (pages 96-104)",
+      "chapter_id": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch12",
+      "cross_references": [
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch10",
+          "score": 0.534390637689607,
+          "base_score": 0.5665769887419377,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "center",
+          "data center",
+          "dependency",
+          "sharing"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "center",
+          "data center",
+          "dependency",
+          "sharing"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4397934237183055,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:24.573365+00:00"
+      }
+    },
+    {
+      "book": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE",
+      "chapter": 13,
+      "title": "Segment 13 (pages 105-112)",
+      "chapter_id": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch13",
+      "cross_references": [
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch8",
+          "score": 0.6411427728118931,
+          "base_score": 0.8185712880198218,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch16",
+          "score": 0.6114447081875183,
+          "base_score": 0.6950004395717896,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch3",
+          "score": 0.5611982283977234,
+          "base_score": 0.6112563065887981,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch15",
+          "score": 0.55052003317799,
+          "base_score": 0.5934593145559094,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch10",
+          "score": 0.5205000027212817,
+          "base_score": 0.6175000045354696,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "containers",
+          "docker",
+          "deploy",
+          "microservices",
+          "load"
+        ],
+        "semantic": [],
+        "merged": [
+          "containers",
+          "docker",
+          "deploy",
+          "microservices",
+          "load"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5879496464866434,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:24.573449+00:00"
+      }
+    },
+    {
+      "book": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE",
+      "chapter": 14,
+      "title": "Segment 14 (pages 113-120)",
+      "chapter_id": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch14",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "api",
+          "gateway",
+          "api gateway",
+          "microservices",
+          "provided"
+        ],
+        "semantic": [],
+        "merged": [
+          "api",
+          "gateway",
+          "api gateway",
+          "microservices",
+          "provided"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5082935506726018,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:51:24.573526+00:00"
+      }
+    },
+    {
+      "book": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE",
+      "chapter": 15,
+      "title": "Segment 15 (pages 121-128)",
+      "chapter_id": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch15",
+      "cross_references": [
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch9",
+          "score": 0.631798170386543,
+          "base_score": 0.6363302839775715,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch16",
+          "score": 0.6159380657123881,
+          "base_score": 0.7024893687799061,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch3",
+          "score": 0.607187128155795,
+          "base_score": 0.687904472852251,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch8",
+          "score": 0.6049428989910135,
+          "base_score": 0.591571498318356,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch13",
+          "score": 0.55052003317799,
+          "base_score": 0.5934593145559094,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "team",
+          "organization",
+          "teams",
+          "security",
+          "microservices"
+        ],
+        "semantic": [],
+        "merged": [
+          "team",
+          "organization",
+          "teams",
+          "security",
+          "microservices"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.611753498241368,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:24.573608+00:00"
+      }
+    },
+    {
+      "book": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE",
+      "chapter": 16,
+      "title": "Segment 16 (pages 129-142)",
+      "chapter_id": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch16",
+      "cross_references": [
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch15",
+          "score": 0.6159380657123881,
+          "base_score": 0.7024893687799061,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch13",
+          "score": 0.6114447081875183,
+          "base_score": 0.6950004395717896,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch3",
+          "score": 0.5953589243969122,
+          "base_score": 0.6681907999207796,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch8",
+          "score": 0.5738304695342115,
+          "base_score": 0.7063841158903523,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch9",
+          "score": 0.5088339022414474,
+          "base_score": 0.5980565037357457,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "microservices",
+          "design",
+          "change",
+          "architecture",
+          "70"
+        ],
+        "semantic": [],
+        "merged": [
+          "microservices",
+          "design",
+          "change",
+          "architecture",
+          "70"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5989118852384936,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:24.573689+00:00"
+      }
+    },
+    {
+      "book": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE",
+      "chapter": 17,
+      "title": "Segment 17 (pages 143-144)",
+      "chapter_id": "Microservice Architecture - ALIGNING PRINCIPLES, PRACTICES, AND CULTURE:ch17",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "academy",
+          "api academy",
+          "api",
+          "cowry snail",
+          "snail"
+        ],
+        "semantic": [],
+        "merged": [
+          "academy",
+          "api academy",
+          "api",
+          "cowry snail",
+          "snail"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3903988594972754,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:24.573778+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

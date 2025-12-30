@@ -1,0 +1,2003 @@
+{
+  "book": {
+    "title": "AWS in Action 3rd Edition - Andreas Wittig"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:38:54.286167",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-23)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch1",
+      "cross_references": [
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch3",
+          "score": 0.5239709588439935,
+          "base_score": 0.7992108573325817,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch7",
+          "score": 0.5231367919694241,
+          "base_score": 0.7052279866157067,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch16",
+          "score": 0.5183583788167532,
+          "base_score": 0.6972639646945886,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "virtual",
+          "controlling",
+          "virtual machine",
+          "aws lambda",
+          "lambda"
+        ],
+        "semantic": [],
+        "merged": [
+          "virtual",
+          "controlling",
+          "virtual machine",
+          "aws lambda",
+          "lambda"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4974449703096099,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:38:54.264580+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 2,
+      "title": "Segment 2 (pages 24-41)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch2",
+      "cross_references": [
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch3",
+          "score": 0.557905283263459,
+          "base_score": 0.644127853058146,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch44",
+          "score": 0.5549894297967911,
+          "base_score": 0.6009083089205778,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "amazon web",
+          "book",
+          "web services",
+          "services",
+          "amazon"
+        ],
+        "semantic": [],
+        "merged": [
+          "amazon web",
+          "book",
+          "web services",
+          "services",
+          "amazon"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_bucket_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45216441871352675,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.264837+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 3,
+      "title": "Segment 3 (pages 42-61)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch3",
+      "cross_references": [
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch4",
+          "score": 0.6535954447670423,
+          "base_score": 0.7652516672043298,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch2",
+          "score": 0.557905283263459,
+          "base_score": 0.644127853058146,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch16",
+          "score": 0.5285122835933485,
+          "base_score": 0.630853805988914,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch1",
+          "score": 0.5239709588439935,
+          "base_score": 0.7992108573325817,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "services",
+          "virtual",
+          "web services",
+          "cloud",
+          "amazon web"
+        ],
+        "semantic": [],
+        "merged": [
+          "services",
+          "virtual",
+          "web services",
+          "cloud",
+          "amazon web"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "aws_services_lambda",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4592531382883273,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.265089+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 4,
+      "title": "Segment 4 (pages 62-84)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch4",
+      "cross_references": [
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch3",
+          "score": 0.6535954447670423,
+          "base_score": 0.7652516672043298,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch16",
+          "score": 0.520926850781696,
+          "base_score": 0.6182114179694933,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "services",
+          "manage access",
+          "account",
+          "aws services",
+          "aws account"
+        ],
+        "semantic": [],
+        "merged": [
+          "services",
+          "manage access",
+          "account",
+          "aws services",
+          "aws account"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "aws_services_lambda",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39241960692288647,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.265348+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 5,
+      "title": "Segment 5 (pages 86-109)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "budget",
+          "aws account",
+          "account",
+          "infrastructure",
+          "figure"
+        ],
+        "semantic": [],
+        "merged": [
+          "budget",
+          "aws account",
+          "account",
+          "infrastructure",
+          "figure"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37984556543539194,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:38:54.265595+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 6,
+      "title": "Segment 6 (pages 110-132)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch6",
+      "cross_references": [
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch8",
+          "score": 0.5730996095275456,
+          "base_score": 0.5384993492125759,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch7",
+          "score": 0.519682864269769,
+          "base_score": 0.5420640330422075,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "infrastructure",
+          "blogging infrastructure",
+          "blogging",
+          "virtual",
+          "virtual machines"
+        ],
+        "semantic": [],
+        "merged": [
+          "infrastructure",
+          "blogging infrastructure",
+          "blogging",
+          "virtual",
+          "virtual machines"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "virtual_the_machine",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38862571725194167,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.265819+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 7,
+      "title": "Segment 7 (pages 133-152)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch7",
+      "cross_references": [
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch8",
+          "score": 0.7458191156495746,
+          "base_score": 0.7073175737016718,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch30",
+          "score": 0.5773416830256446,
+          "base_score": 0.6765218526617887,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch1",
+          "score": 0.5231367919694241,
+          "base_score": 0.7052279866157067,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch6",
+          "score": 0.519682864269769,
+          "base_score": 0.5420640330422075,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "virtual",
+          "virtual machine",
+          "machine",
+          "instance",
+          "instance types"
+        ],
+        "semantic": [],
+        "merged": [
+          "virtual",
+          "virtual machine",
+          "machine",
+          "instance",
+          "instance types"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "virtual_the_machine",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4181573984955163,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.266070+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 8,
+      "title": "Segment 8 (pages 153-170)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch8",
+      "cross_references": [
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch7",
+          "score": 0.7458191156495746,
+          "base_score": 0.7073175737016718,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch6",
+          "score": 0.5730996095275456,
+          "base_score": 0.5384993492125759,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch30",
+          "score": 0.5558280774065554,
+          "base_score": 0.6406658432966399,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "virtual",
+          "virtual machine",
+          "machine",
+          "virtual machines",
+          "machines"
+        ],
+        "semantic": [],
+        "merged": [
+          "virtual",
+          "virtual machine",
+          "machine",
+          "virtual machines",
+          "machines"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "virtual_the_machine",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3994580301451499,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.266319+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 9,
+      "title": "Segment 9 (pages 171-193)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "ip",
+          "ip address",
+          "address",
+          "public ip",
+          "public"
+        ],
+        "semantic": [],
+        "merged": [
+          "ip",
+          "ip address",
+          "address",
+          "public ip",
+          "public"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "virtual_the_machine",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31509180065010045,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.266573+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 10,
+      "title": "Segment 10 (pages 194-216)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "cli",
+          "aws cli",
+          "zip",
+          "linux",
+          "windows"
+        ],
+        "semantic": [],
+        "merged": [
+          "cli",
+          "aws cli",
+          "zip",
+          "linux",
+          "windows"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "virtual_the_machine",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4118123545451153,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.266797+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 11,
+      "title": "Segment 11 (pages 217-236)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch11",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "instanceid",
+          "nodecc",
+          "js",
+          "ec2",
+          "virtual"
+        ],
+        "semantic": [],
+        "merged": [
+          "instanceid",
+          "nodecc",
+          "js",
+          "ec2",
+          "virtual"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_ec2_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26616157131344287,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.266997+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 12,
+      "title": "Segment 12 (pages 237-256)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch12",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "cloudformation",
+          "ec2",
+          "aws ec2",
+          "id",
+          "id list"
+        ],
+        "semantic": [],
+        "merged": [
+          "cloudformation",
+          "ec2",
+          "aws ec2",
+          "id",
+          "id list"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_ec2_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3202534909643618,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.267209+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 13,
+      "title": "Segment 13 (pages 257-279)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch13",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "values ref",
+          "aws account",
+          "account",
+          "account root",
+          "user"
+        ],
+        "semantic": [],
+        "merged": [
+          "values ref",
+          "aws account",
+          "account",
+          "account root",
+          "user"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "aws_to_lambda",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3215524090577177,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.267449+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 14,
+      "title": "Segment 14 (pages 280-299)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch14",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "traffic",
+          "security group",
+          "ec2",
+          "security",
+          "inbound"
+        ],
+        "semantic": [],
+        "merged": [
+          "traffic",
+          "security group",
+          "ec2",
+          "security",
+          "inbound"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "aws_to_lambda",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3453377583954279,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.267680+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 15,
+      "title": "Segment 15 (pages 300-321)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "subnet",
+          "ref",
+          "internet",
+          "private subnet",
+          "gateway"
+        ],
+        "semantic": [],
+        "merged": [
+          "subnet",
+          "ref",
+          "internet",
+          "private subnet",
+          "gateway"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2809647742676995,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:38:54.267901+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 16,
+      "title": "Segment 16 (pages 322-341)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch16",
+      "cross_references": [
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch18",
+          "score": 0.6198932080879052,
+          "base_score": 0.5887109023687309,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch3",
+          "score": 0.5285122835933485,
+          "base_score": 0.630853805988914,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch4",
+          "score": 0.520926850781696,
+          "base_score": 0.6182114179694933,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch1",
+          "score": 0.5183583788167532,
+          "base_score": 0.6972639646945886,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch17",
+          "score": 0.5128888355933544,
+          "base_score": 0.5691004402746382,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "lambda",
+          "function",
+          "lambda function",
+          "aws lambda",
+          "health"
+        ],
+        "semantic": [],
+        "merged": [
+          "lambda",
+          "function",
+          "lambda function",
+          "aws lambda",
+          "health"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "aws_services_lambda",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4145083269920772,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.268109+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 17,
+      "title": "Segment 17 (pages 342-363)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch17",
+      "cross_references": [
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch16",
+          "score": 0.5128888355933544,
+          "base_score": 0.5691004402746382,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "function",
+          "lambda function",
+          "lambda",
+          "event",
+          "cloudtrail"
+        ],
+        "semantic": [],
+        "merged": [
+          "function",
+          "lambda function",
+          "lambda",
+          "event",
+          "cloudtrail"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3164567134041926,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:38:54.268343+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 18,
+      "title": "Segment 18 (pages 364-381)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch18",
+      "cross_references": [
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch16",
+          "score": 0.6198932080879052,
+          "base_score": 0.5887109023687309,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "lambda",
+          "aws lambda",
+          "function",
+          "lambda function",
+          "data"
+        ],
+        "semantic": [],
+        "merged": [
+          "lambda",
+          "aws lambda",
+          "function",
+          "lambda function",
+          "data"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "aws_to_lambda",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3882602071904431,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.268559+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 19,
+      "title": "Segment 19 (pages 382-404)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch19",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "bucket",
+          "objects",
+          "object",
+          "s3",
+          "s3 bucket"
+        ],
+        "semantic": [],
+        "merged": [
+          "bucket",
+          "objects",
+          "object",
+          "s3",
+          "s3 bucket"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_bucket_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31138986824528153,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.268767+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 20,
+      "title": "Segment 20 (pages 405-427)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch20",
+      "cross_references": [
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch21",
+          "score": 0.5308439199349683,
+          "base_score": 0.6347398665582804,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "volume",
+          "ebs",
+          "ebs volume",
+          "volumes",
+          "snapshot"
+        ],
+        "semantic": [],
+        "merged": [
+          "volume",
+          "ebs",
+          "ebs volume",
+          "volumes",
+          "snapshot"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_bucket_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36146752480220423,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.268978+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 21,
+      "title": "Segment 21 (pages 428-450)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch21",
+      "cross_references": [
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch20",
+          "score": 0.5308439199349683,
+          "base_score": 0.6347398665582804,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "mount",
+          "efs",
+          "filesystem",
+          "mount target",
+          "instance"
+        ],
+        "semantic": [],
+        "merged": [
+          "mount",
+          "efs",
+          "filesystem",
+          "mount target",
+          "instance"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_bucket_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42360383938443497,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.269192+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 22,
+      "title": "Segment 22 (pages 451-473)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch22",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "efs",
+          "filesystem",
+          "efs filesystem",
+          "throughput",
+          "backup"
+        ],
+        "semantic": [],
+        "merged": [
+          "efs",
+          "filesystem",
+          "efs filesystem",
+          "throughput",
+          "backup"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3480959956756914,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:38:54.269414+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 23,
+      "title": "Segment 23 (pages 474-491)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch23",
+      "cross_references": [
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch25",
+          "score": 0.5970838967811667,
+          "base_score": 0.6710657538945372,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "rds",
+          "database",
+          "rds database",
+          "database instance",
+          "mysql"
+        ],
+        "semantic": [],
+        "merged": [
+          "rds",
+          "database",
+          "rds database",
+          "database instance",
+          "mysql"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "database_the_rds",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3218395700744858,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.269619+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 24,
+      "title": "Segment 24 (pages 492-511)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch24",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "rds",
+          "snapshot",
+          "database",
+          "db",
+          "rds database"
+        ],
+        "semantic": [],
+        "merged": [
+          "rds",
+          "snapshot",
+          "database",
+          "db",
+          "rds database"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2991415417416992,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:38:54.269820+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 25,
+      "title": "Segment 25 (pages 512-534)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch25",
+      "cross_references": [
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch23",
+          "score": 0.5970838967811667,
+          "base_score": 0.6710657538945372,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "database",
+          "read",
+          "cache",
+          "read replication",
+          "data"
+        ],
+        "semantic": [],
+        "merged": [
+          "database",
+          "read",
+          "cache",
+          "read replication",
+          "data"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "database_the_rds",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3408726136195393,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.270320+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 26,
+      "title": "Segment 26 (pages 535-556)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch26",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "cluster",
+          "cache",
+          "redis",
+          "ref",
+          "elasticache"
+        ],
+        "semantic": [],
+        "merged": [
+          "cluster",
+          "cache",
+          "redis",
+          "ref",
+          "elasticache"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2916331508952707,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:38:54.270579+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 27,
+      "title": "Segment 27 (pages 557-577)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch27",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "nodetodo",
+          "uid",
+          "key",
+          "table",
+          "node"
+        ],
+        "semantic": [],
+        "merged": [
+          "nodetodo",
+          "uid",
+          "key",
+          "table",
+          "node"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "database_the_rds",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31311762679037775,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.270800+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 28,
+      "title": "Segment 28 (pages 578-596)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch28",
+      "cross_references": [
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch37",
+          "score": 0.5296141272634705,
+          "base_score": 0.5586161380317101,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch29",
+          "score": 0.5041109120694572,
+          "base_score": 0.5901848534490954,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "params",
+          "input",
+          "err",
+          "yyyymmdd",
+          "err console"
+        ],
+        "semantic": [],
+        "merged": [
+          "params",
+          "input",
+          "err",
+          "yyyymmdd",
+          "err console"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_ec2_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.17818783572277244,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.271018+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 29,
+      "title": "Segment 29 (pages 597-618)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch29",
+      "cross_references": [
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch28",
+          "score": 0.5041109120694572,
+          "base_score": 0.5901848534490954,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "dynamodb",
+          "capacity",
+          "item",
+          "partition",
+          "partition key"
+        ],
+        "semantic": [],
+        "merged": [
+          "dynamodb",
+          "capacity",
+          "item",
+          "partition",
+          "partition key"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_ec2_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23457394053214975,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.271267+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 30,
+      "title": "Segment 30 (pages 619-640)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch30",
+      "cross_references": [
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch7",
+          "score": 0.5773416830256446,
+          "base_score": 0.6765218526617887,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch8",
+          "score": 0.5558280774065554,
+          "base_score": 0.6406658432966399,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch36",
+          "score": 0.523806967196048,
+          "base_score": 0.6230116119934133,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch32",
+          "score": 0.5191730786661256,
+          "base_score": 0.6152884644435427,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "virtual",
+          "virtual machine",
+          "machine",
+          "recovery",
+          "recover"
+        ],
+        "semantic": [],
+        "merged": [
+          "virtual",
+          "virtual machine",
+          "machine",
+          "recovery",
+          "recover"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_message_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.415115874485436,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.271506+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 31,
+      "title": "Segment 31 (pages 641-661)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch31",
+      "cross_references": [
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch38",
+          "score": 0.5648625891215856,
+          "base_score": 0.6914376485359761,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "jenkins",
+          "virtual machine",
+          "zone",
+          "availability zone",
+          "virtual"
+        ],
+        "semantic": [],
+        "merged": [
+          "jenkins",
+          "virtual machine",
+          "zone",
+          "availability zone",
+          "virtual"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_ec2_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3536997833354334,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.271721+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 32,
+      "title": "Segment 32 (pages 662-679)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch32",
+      "cross_references": [
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch30",
+          "score": 0.5191730786661256,
+          "base_score": 0.6152884644435427,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "load",
+          "load balancer",
+          "balancer",
+          "ec2",
+          "requests"
+        ],
+        "semantic": [],
+        "merged": [
+          "load",
+          "load balancer",
+          "balancer",
+          "ec2",
+          "requests"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_message_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41451894432638203,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.271928+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 33,
+      "title": "Segment 33 (pages 680-697)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch33",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "message",
+          "queue",
+          "message queue",
+          "sqs",
+          "messages"
+        ],
+        "semantic": [],
+        "merged": [
+          "message",
+          "queue",
+          "message queue",
+          "sqs",
+          "messages"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_message_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.19827575853134843,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.272151+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 34,
+      "title": "Segment 34 (pages 698-719)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch34",
+      "cross_references": [
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch35",
+          "score": 0.54627797097121,
+          "base_score": 0.5863892108779425,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch38",
+          "score": 0.5072990230223849,
+          "base_score": 0.5954983717039748,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "etherpad",
+          "codedeploy",
+          "etherpad codedeploy",
+          "deployment",
+          "deploy"
+        ],
+        "semantic": [],
+        "merged": [
+          "etherpad",
+          "codedeploy",
+          "etherpad codedeploy",
+          "deployment",
+          "deploy"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_ec2_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3854160731972114,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.272370+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 35,
+      "title": "Segment 35 (pages 720-739)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch35",
+      "cross_references": [
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch34",
+          "score": 0.54627797097121,
+          "base_score": 0.5863892108779425,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "etherpad",
+          "packer",
+          "ami",
+          "fault",
+          "build"
+        ],
+        "semantic": [],
+        "merged": [
+          "etherpad",
+          "packer",
+          "ami",
+          "fault",
+          "build"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_ec2_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27442508716187447,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.272652+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 36,
+      "title": "Segment 36 (pages 740-760)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch36",
+      "cross_references": [
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch30",
+          "score": 0.523806967196048,
+          "base_score": 0.6230116119934133,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "process",
+          "uploaded",
+          "processid",
+          "state",
+          "figure 16"
+        ],
+        "semantic": [],
+        "merged": [
+          "process",
+          "uploaded",
+          "processid",
+          "state",
+          "figure 16"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_message_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36211151664685387,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.272895+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 37,
+      "title": "Segment 37 (pages 761-779)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch37",
+      "cross_references": [
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch28",
+          "score": 0.5296141272634705,
+          "base_score": 0.5586161380317101,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "image",
+          "imagery",
+          "await",
+          "id",
+          "err"
+        ],
+        "semantic": [],
+        "merged": [
+          "image",
+          "imagery",
+          "await",
+          "id",
+          "err"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_ec2_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32303840284845325,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.273105+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 38,
+      "title": "Segment 38 (pages 780-800)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch38",
+      "cross_references": [
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch31",
+          "score": 0.5648625891215856,
+          "base_score": 0.6914376485359761,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch34",
+          "score": 0.5072990230223849,
+          "base_score": 0.5954983717039748,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "scaling",
+          "auto",
+          "auto scaling",
+          "scaling group",
+          "group"
+        ],
+        "semantic": [],
+        "merged": [
+          "scaling",
+          "auto",
+          "auto scaling",
+          "scaling group",
+          "group"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_ec2_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39928342338381806,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.273325+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 39,
+      "title": "Segment 39 (pages 801-819)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch39",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "scaling",
+          "number",
+          "instances",
+          "cloudwatch",
+          "ec2"
+        ],
+        "semantic": [],
+        "merged": [
+          "scaling",
+          "number",
+          "instances",
+          "cloudwatch",
+          "ec2"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41588187644838864,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:38:54.273560+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 40,
+      "title": "Segment 40 (pages 820-837)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch40",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "containers",
+          "container",
+          "ecs",
+          "18",
+          "task"
+        ],
+        "semantic": [],
+        "merged": [
+          "containers",
+          "container",
+          "ecs",
+          "18",
+          "task"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "aws_services_lambda",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3893221574780848,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.273773+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 41,
+      "title": "Segment 41 (pages 838-858)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch41",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "ecs",
+          "ecs service",
+          "service",
+          "access",
+          "cluster"
+        ],
+        "semantic": [],
+        "merged": [
+          "ecs",
+          "ecs service",
+          "service",
+          "access",
+          "cluster"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "aws_to_lambda",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39375480552777886,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.273973+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 42,
+      "title": "Segment 42 (pages 859-876)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch42",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "319",
+          "438",
+          "321",
+          "320",
+          "309"
+        ],
+        "semantic": [],
+        "merged": [
+          "319",
+          "438",
+          "321",
+          "320",
+          "309"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46319849175232286,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:38:54.274170+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 43,
+      "title": "Segment 43 (pages 877-884)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch43",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "allowing http",
+          "http traffic",
+          "261",
+          "allowing",
+          "traffic"
+        ],
+        "semantic": [],
+        "merged": [
+          "allowing http",
+          "http traffic",
+          "261",
+          "allowing",
+          "traffic"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4555847676112075,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:38:54.274451+00:00"
+      }
+    },
+    {
+      "book": "AWS in Action 3rd Edition - Andreas Wittig",
+      "chapter": 44,
+      "title": "Segment 44 (pages 885-886)",
+      "chapter_id": "AWS in Action 3rd Edition - Andreas Wittig:ch44",
+      "cross_references": [
+        {
+          "target": "AWS in Action 3rd Edition - Andreas Wittig:ch2",
+          "score": 0.5549894297967911,
+          "base_score": 0.6009083089205778,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "amazon",
+          "amazon simple",
+          "service amazon",
+          "amazon ec2",
+          "simple"
+        ],
+        "semantic": [],
+        "merged": [
+          "amazon",
+          "amazon simple",
+          "service amazon",
+          "amazon ec2",
+          "simple"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_bucket_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38518572036958515,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:54.274662+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

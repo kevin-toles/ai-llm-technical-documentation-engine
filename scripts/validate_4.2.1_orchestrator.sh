@@ -23,14 +23,19 @@ PASSED=0
 FAILED=0
 
 pass() {
-    echo -e "Testing: $1...\t\t\t  \033[32mPASS\033[0m"
+    local message="$1"
+    echo -e "Testing: $message...\t\t\t  \033[32mPASS\033[0m"
     PASSED=$((PASSED + 1))
+    return 0
 }
 
 fail() {
-    echo -e "Testing: $1...\t\t\t  \033[31mFAIL\033[0m"
-    echo "  Error: $2"
+    local message="$1"
+    local error="$2"
+    echo -e "Testing: $message...\t\t\t  \033[31mFAIL\033[0m"
+    echo "  Error: $error" >&2
     FAILED=$((FAILED + 1))
+    return 0
 }
 
 # =============================================================================
@@ -45,7 +50,7 @@ fi
 # =============================================================================
 # Test 2: Input files exist
 # =============================================================================
-if [ -f "$AGGREGATE" ] && [ -f "$GUIDELINE" ]; then
+if [[ -f "$AGGREGATE" ]] && [[ -f "$GUIDELINE" ]]; then
     pass "Input files exist"
 else
     fail "Input files exist" "Missing aggregate or guideline file"
@@ -55,7 +60,7 @@ fi
 # Test 3: Script runs without crash (uses cached results for speed)
 # =============================================================================
 # Note: Using existing output if available to avoid API costs
-if [ -f "$OUTPUT" ]; then
+if [[ -f "$OUTPUT" ]]; then
     pass "Script produced output"
 else
     # Run with 1 chapter if no output exists
@@ -68,7 +73,7 @@ else
         --chapters 1 > /dev/null 2>&1; then
         END_TIME=$(date +%s)
         RUNTIME=$((END_TIME - START_TIME))
-        if [ "$RUNTIME" -lt 300 ]; then
+        if [[ "$RUNTIME" -lt 300 ]]; then
             pass "Script runs (${RUNTIME}s < 300s)"
         else
             fail "Script runs" "Runtime ${RUNTIME}s exceeded 5 minutes"
@@ -81,7 +86,7 @@ fi
 # =============================================================================
 # Test 4: Output file created
 # =============================================================================
-if [ -f "$OUTPUT" ]; then
+if [[ -f "$OUTPUT" ]]; then
     pass "Output file created"
 else
     fail "Output file created" "File not found: $OUTPUT"
@@ -90,10 +95,10 @@ fi
 # =============================================================================
 # Test 5: Output > Input size (more content added)
 # =============================================================================
-if [ -f "$OUTPUT" ] && [ -f "$GUIDELINE" ]; then
+if [[ -f "$OUTPUT" ]] && [[ -f "$GUIDELINE" ]]; then
     INPUT_SIZE=$(wc -c < "$GUIDELINE" | tr -d ' ')
     OUTPUT_SIZE=$(wc -c < "$OUTPUT" | tr -d ' ')
-    if [ "$OUTPUT_SIZE" -gt "$INPUT_SIZE" ]; then
+    if [[ "$OUTPUT_SIZE" -gt "$INPUT_SIZE" ]]; then
         pass "Output > Input size"
     else
         fail "Output > Input size" "Input: $INPUT_SIZE, Output: $OUTPUT_SIZE"
@@ -106,7 +111,7 @@ fi
 # Test 6: Phase 1 logged (check for orchestrator or phase messages)
 # =============================================================================
 LATEST_LOG=$(ls -t "$LOG_DIR"/llm_enhancement_*.log 2>/dev/null | head -1)
-if [ -n "$LATEST_LOG" ]; then
+if [[ -n "$LATEST_LOG" ]]; then
     if grep -qi "phase\|orchestrator" "$LATEST_LOG" 2>/dev/null; then
         pass "Phase logging present"
     else
@@ -120,9 +125,9 @@ fi
 # Test 7: Token count logged (check API logs)
 # =============================================================================
 API_LOG_DIR="$PROJECT_ROOT/logs/llm_api"
-if [ -d "$API_LOG_DIR" ]; then
+if [[ -d "$API_LOG_DIR" ]]; then
     LATEST_API_LOG=$(ls -t "$API_LOG_DIR"/*.json 2>/dev/null | head -1)
-    if [ -n "$LATEST_API_LOG" ]; then
+    if [[ -n "$LATEST_API_LOG" ]]; then
         if jq -e '.response.output_tokens' "$LATEST_API_LOG" > /dev/null 2>&1; then
             pass "Token count logged"
         else
@@ -173,7 +178,7 @@ echo "Passed: $PASSED"
 echo "Failed: $FAILED"
 echo ""
 
-if [ $FAILED -eq 0 ]; then
+if [[ $FAILED -eq 0 ]]; then
     echo "✓ All WBS 4.2.1 validation tests passed!"
     exit 0
 else

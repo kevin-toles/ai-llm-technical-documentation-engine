@@ -1,0 +1,991 @@
+{
+  "book": {
+    "title": "Serverless Architectures with AWS - Mohit Gupta"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:56:20.303295",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Serverless Architectures with AWS - Mohit Gupta",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-9)",
+      "chapter_id": "Serverless Architectures with AWS - Mohit Gupta:ch1",
+      "cross_references": [
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch2",
+          "score": 0.6932441976813792,
+          "base_score": 0.7387403294689654,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch12",
+          "score": 0.5915533287955972,
+          "base_score": 0.7359222146593286,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch10",
+          "score": 0.5755850227259276,
+          "base_score": 0.7093083712098793,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "serverless",
+          "aws",
+          "architectures",
+          "serverless architectures",
+          "architectures aws"
+        ],
+        "semantic": [],
+        "merged": [
+          "serverless",
+          "aws",
+          "architectures",
+          "serverless architectures",
+          "architectures aws"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "aws_data_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.552109296841143,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:20.279377+00:00"
+      }
+    },
+    {
+      "book": "Serverless Architectures with AWS - Mohit Gupta",
+      "chapter": 2,
+      "title": "Segment 2 (pages 10-17)",
+      "chapter_id": "Serverless Architectures with AWS - Mohit Gupta:ch2",
+      "cross_references": [
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch1",
+          "score": 0.6932441976813792,
+          "base_score": 0.7387403294689654,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "serverless",
+          "aws",
+          "model",
+          "lambda",
+          "aws lambda"
+        ],
+        "semantic": [],
+        "merged": [
+          "serverless",
+          "aws",
+          "model",
+          "lambda",
+          "aws lambda"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "aws_data_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42978652151039615,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:20.279506+00:00"
+      }
+    },
+    {
+      "book": "Serverless Architectures with AWS - Mohit Gupta",
+      "chapter": 3,
+      "title": "Segment 3 (pages 18-28)",
+      "chapter_id": "Serverless Architectures with AWS - Mohit Gupta:ch3",
+      "cross_references": [
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch16",
+          "score": 0.5375895488205377,
+          "base_score": 0.6459825813675628,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch7",
+          "score": 0.5112914180502535,
+          "base_score": 0.5280782893430152,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "lambda",
+          "function",
+          "aws",
+          "lambda function",
+          "memory"
+        ],
+        "semantic": [],
+        "merged": [
+          "lambda",
+          "function",
+          "aws",
+          "lambda function",
+          "memory"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_lambda_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4050889850113912,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:20.279606+00:00"
+      }
+    },
+    {
+      "book": "Serverless Architectures with AWS - Mohit Gupta",
+      "chapter": 4,
+      "title": "Segment 4 (pages 29-37)",
+      "chapter_id": "Serverless Architectures with AWS - Mohit Gupta:ch4",
+      "cross_references": [
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch9",
+          "score": 0.7110409939701999,
+          "base_score": 0.6493540375693808,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "bucket",
+          "create bucket",
+          "file",
+          "s3 bucket",
+          "s3"
+        ],
+        "semantic": [],
+        "merged": [
+          "bucket",
+          "create bucket",
+          "file",
+          "s3 bucket",
+          "s3"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_api_bucket",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4109995525042493,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:20.279698+00:00"
+      }
+    },
+    {
+      "book": "Serverless Architectures with AWS - Mohit Gupta",
+      "chapter": 5,
+      "title": "Segment 5 (pages 38-45)",
+      "chapter_id": "Serverless Architectures with AWS - Mohit Gupta:ch5",
+      "cross_references": [
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch9",
+          "score": 0.57267202766697,
+          "base_score": 0.6303793053708759,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "api",
+          "gateway",
+          "api gateway",
+          "new api",
+          "api api"
+        ],
+        "semantic": [],
+        "merged": [
+          "api",
+          "gateway",
+          "api gateway",
+          "new api",
+          "api api"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_api_bucket",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43642495376185686,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:20.279784+00:00"
+      }
+    },
+    {
+      "book": "Serverless Architectures with AWS - Mohit Gupta",
+      "chapter": 6,
+      "title": "Segment 6 (pages 46-53)",
+      "chapter_id": "Serverless Architectures with AWS - Mohit Gupta:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "sns",
+          "messages",
+          "subscription",
+          "topic",
+          "amazon"
+        ],
+        "semantic": [],
+        "merged": [
+          "sns",
+          "messages",
+          "subscription",
+          "topic",
+          "amazon"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "aws_data_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4152089630341851,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:20.279866+00:00"
+      }
+    },
+    {
+      "book": "Serverless Architectures with AWS - Mohit Gupta",
+      "chapter": 7,
+      "title": "Segment 7 (pages 54-63)",
+      "chapter_id": "Serverless Architectures with AWS - Mohit Gupta:ch7",
+      "cross_references": [
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch16",
+          "score": 0.5806577548194146,
+          "base_score": 0.7177629246990245,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch3",
+          "score": 0.5112914180502535,
+          "base_score": 0.5280782893430152,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "media",
+          "web",
+          "role",
+          "function",
+          "serverless"
+        ],
+        "semantic": [],
+        "merged": [
+          "media",
+          "web",
+          "role",
+          "function",
+          "serverless"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_lambda_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5079980403720762,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:20.279948+00:00"
+      }
+    },
+    {
+      "book": "Serverless Architectures with AWS - Mohit Gupta",
+      "chapter": 8,
+      "title": "Segment 8 (pages 64-72)",
+      "chapter_id": "Serverless Architectures with AWS - Mohit Gupta:ch8",
+      "cross_references": [
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch9",
+          "score": 0.5264797860850224,
+          "base_score": 0.627466310141704,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "request",
+          "method",
+          "method request",
+          "path",
+          "content type"
+        ],
+        "semantic": [],
+        "merged": [
+          "request",
+          "method",
+          "method request",
+          "path",
+          "content type"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_api_bucket",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2915997640176049,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:20.280055+00:00"
+      }
+    },
+    {
+      "book": "Serverless Architectures with AWS - Mohit Gupta",
+      "chapter": 9,
+      "title": "Segment 9 (pages 73-80)",
+      "chapter_id": "Serverless Architectures with AWS - Mohit Gupta:ch9",
+      "cross_references": [
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch4",
+          "score": 0.7110409939701999,
+          "base_score": 0.6493540375693808,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch5",
+          "score": 0.57267202766697,
+          "base_score": 0.6303793053708759,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch16",
+          "score": 0.5451567968952551,
+          "base_score": 0.6228803757778061,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch8",
+          "score": 0.5264797860850224,
+          "base_score": 0.627466310141704,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "bucket",
+          "api",
+          "created",
+          "s3",
+          "s3 bucket"
+        ],
+        "semantic": [],
+        "merged": [
+          "bucket",
+          "api",
+          "created",
+          "s3",
+          "s3 bucket"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_api_bucket",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5095566933622748,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:20.280140+00:00"
+      }
+    },
+    {
+      "book": "Serverless Architectures with AWS - Mohit Gupta",
+      "chapter": 10,
+      "title": "Segment 10 (pages 81-88)",
+      "chapter_id": "Serverless Architectures with AWS - Mohit Gupta:ch10",
+      "cross_references": [
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch12",
+          "score": 0.6099244269483226,
+          "base_score": 0.6924666375064635,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch11",
+          "score": 0.6023376367061644,
+          "base_score": 0.6798219871028666,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch1",
+          "score": 0.5755850227259276,
+          "base_score": 0.7093083712098793,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "athena",
+          "data",
+          "amazon athena",
+          "amazon",
+          "query"
+        ],
+        "semantic": [],
+        "merged": [
+          "athena",
+          "data",
+          "amazon athena",
+          "amazon",
+          "query"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "aws_data_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4593071122444486,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:20.280226+00:00"
+      }
+    },
+    {
+      "book": "Serverless Architectures with AWS - Mohit Gupta",
+      "chapter": 11,
+      "title": "Segment 11 (pages 89-96)",
+      "chapter_id": "Serverless Architectures with AWS - Mohit Gupta:ch11",
+      "cross_references": [
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch12",
+          "score": 0.6295064208525338,
+          "base_score": 0.7251032940134824,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch10",
+          "score": 0.6023376367061644,
+          "base_score": 0.6798219871028666,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "data catalog",
+          "glue",
+          "catalog",
+          "crawlers"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "data catalog",
+          "glue",
+          "catalog",
+          "crawlers"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "aws_data_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40979979480013423,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:20.280330+00:00"
+      }
+    },
+    {
+      "book": "Serverless Architectures with AWS - Mohit Gupta",
+      "chapter": 12,
+      "title": "Segment 12 (pages 97-106)",
+      "chapter_id": "Serverless Architectures with AWS - Mohit Gupta:ch12",
+      "cross_references": [
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch11",
+          "score": 0.6295064208525338,
+          "base_score": 0.7251032940134824,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch10",
+          "score": 0.6099244269483226,
+          "base_score": 0.6924666375064635,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch1",
+          "score": 0.5915533287955972,
+          "base_score": 0.7359222146593286,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch14",
+          "score": 0.5313593981621114,
+          "base_score": 0.7189323302701857,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "kinesis",
+          "data",
+          "streams",
+          "kinesis data",
+          "data streams"
+        ],
+        "semantic": [],
+        "merged": [
+          "kinesis",
+          "data",
+          "streams",
+          "kinesis data",
+          "data streams"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "aws_data_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5213925578369422,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:20.280418+00:00"
+      }
+    },
+    {
+      "book": "Serverless Architectures with AWS - Mohit Gupta",
+      "chapter": 13,
+      "title": "Segment 13 (pages 107-116)",
+      "chapter_id": "Serverless Architectures with AWS - Mohit Gupta:ch13",
+      "cross_references": [
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch14",
+          "score": 0.7622989989324438,
+          "base_score": 0.8538316648874062,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch17",
+          "score": 0.74595874345737,
+          "base_score": 0.8265979057622833,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch15",
+          "score": 0.5822903415941111,
+          "base_score": 0.6464098285827777,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "firehose",
+          "kinesis",
+          "showing",
+          "screenshot showing"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "firehose",
+          "kinesis",
+          "showing",
+          "screenshot showing"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "data_the_kinesis",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.566404136083705,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:20.280510+00:00"
+      }
+    },
+    {
+      "book": "Serverless Architectures with AWS - Mohit Gupta",
+      "chapter": 14,
+      "title": "Segment 14 (pages 117-125)",
+      "chapter_id": "Serverless Architectures with AWS - Mohit Gupta:ch14",
+      "cross_references": [
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch13",
+          "score": 0.7622989989324438,
+          "base_score": 0.8538316648874062,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch15",
+          "score": 0.7184303418086045,
+          "base_score": 0.6616696173000551,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch17",
+          "score": 0.7005005800083154,
+          "base_score": 0.8434268926064514,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch12",
+          "score": 0.5313593981621114,
+          "base_score": 0.7189323302701857,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "kinesis",
+          "analytics",
+          "data analytics",
+          "stream"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "kinesis",
+          "analytics",
+          "data analytics",
+          "stream"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "data_the_kinesis",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5706754905414188,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:20.280607+00:00"
+      }
+    },
+    {
+      "book": "Serverless Architectures with AWS - Mohit Gupta",
+      "chapter": 15,
+      "title": "Segment 15 (pages 126-137)",
+      "chapter_id": "Serverless Architectures with AWS - Mohit Gupta:ch15",
+      "cross_references": [
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch14",
+          "score": 0.7184303418086045,
+          "base_score": 0.6616696173000551,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch13",
+          "score": 0.5822903415941111,
+          "base_score": 0.6464098285827777,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch17",
+          "score": 0.5630505621115511,
+          "base_score": 0.6143435294451777,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch18",
+          "score": 0.5395048544754192,
+          "base_score": 0.6491747574590319,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "analytics",
+          "data analytics",
+          "real",
+          "real time"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "analytics",
+          "data analytics",
+          "real",
+          "real time"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "data_the_kinesis",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39456402758832665,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:20.280703+00:00"
+      }
+    },
+    {
+      "book": "Serverless Architectures with AWS - Mohit Gupta",
+      "chapter": 16,
+      "title": "Segment 16 (pages 138-145)",
+      "chapter_id": "Serverless Architectures with AWS - Mohit Gupta:ch16",
+      "cross_references": [
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch7",
+          "score": 0.5806577548194146,
+          "base_score": 0.7177629246990245,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch9",
+          "score": 0.5451567968952551,
+          "base_score": 0.6228803757778061,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch3",
+          "score": 0.5375895488205377,
+          "base_score": 0.6459825813675628,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "bucket",
+          "s3 bucket",
+          "click",
+          "s3",
+          "configuration"
+        ],
+        "semantic": [],
+        "merged": [
+          "bucket",
+          "s3 bucket",
+          "click",
+          "s3",
+          "configuration"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_lambda_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46337683713705125,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:20.280786+00:00"
+      }
+    },
+    {
+      "book": "Serverless Architectures with AWS - Mohit Gupta",
+      "chapter": 17,
+      "title": "Segment 17 (pages 146-154)",
+      "chapter_id": "Serverless Architectures with AWS - Mohit Gupta:ch17",
+      "cross_references": [
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch13",
+          "score": 0.74595874345737,
+          "base_score": 0.8265979057622833,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch14",
+          "score": 0.7005005800083154,
+          "base_score": 0.8434268926064514,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch15",
+          "score": 0.5630505621115511,
+          "base_score": 0.6143435294451777,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "figure",
+          "reference",
+          "reference data",
+          "showing"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "figure",
+          "reference",
+          "reference data",
+          "showing"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "data_the_kinesis",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5270062844657984,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:20.280867+00:00"
+      }
+    },
+    {
+      "book": "Serverless Architectures with AWS - Mohit Gupta",
+      "chapter": 18,
+      "title": "Segment 18 (pages 155-156)",
+      "chapter_id": "Serverless Architectures with AWS - Mohit Gupta:ch18",
+      "cross_references": [
+        {
+          "target": "Serverless Architectures with AWS - Mohit Gupta:ch15",
+          "score": 0.5395048544754192,
+          "base_score": 0.6491747574590319,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "source_sql_stream_001",
+          "ticker_symbol",
+          "kar",
+          "join",
+          "sql"
+        ],
+        "semantic": [],
+        "merged": [
+          "source_sql_stream_001",
+          "ticker_symbol",
+          "kar",
+          "join",
+          "sql"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "data_the_kinesis",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2809969681814638,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:20.280947+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

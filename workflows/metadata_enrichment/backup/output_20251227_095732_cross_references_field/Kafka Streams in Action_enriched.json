@@ -1,0 +1,1549 @@
+{
+  "book": {
+    "title": "Kafka Streams in Action"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:49:11.593209",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Kafka Streams in Action",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-9)",
+      "chapter_id": "Kafka Streams in Action:ch1",
+      "cross_references": [
+        {
+          "target": "Kafka Streams in Action:ch2",
+          "score": 0.7353048488311256,
+          "base_score": 0.6897937956709235,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch3",
+          "score": 0.7234429858180932,
+          "base_score": 0.6700240239825361,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch21",
+          "score": 0.5889055590355893,
+          "base_score": 0.6574351909852414,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch5",
+          "score": 0.5085845782593996,
+          "base_score": 0.5619266780513803,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "kafka",
+          "streams",
+          "kafka streams",
+          "manning",
+          "publications"
+        ],
+        "semantic": [],
+        "merged": [
+          "kafka",
+          "streams",
+          "kafka streams",
+          "manning",
+          "publications"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "streams_kafka_consumer",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5073366547483453,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:11.534618+00:00"
+      }
+    },
+    {
+      "book": "Kafka Streams in Action",
+      "chapter": 2,
+      "title": "Segment 2 (pages 10-18)",
+      "chapter_id": "Kafka Streams in Action:ch2",
+      "cross_references": [
+        {
+          "target": "Kafka Streams in Action:ch1",
+          "score": 0.7353048488311256,
+          "base_score": 0.6897937956709235,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch3",
+          "score": 0.7212796643393334,
+          "base_score": 0.6664184881846034,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch21",
+          "score": 0.6323975995936302,
+          "base_score": 0.7299219252486427,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch27",
+          "score": 0.6004165200182464,
+          "base_score": 0.714979914316125,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch5",
+          "score": 0.5937200469963743,
+          "base_score": 0.7038191259463381,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "streams",
+          "kafka",
+          "kafka streams",
+          "stream",
+          "stream processing"
+        ],
+        "semantic": [],
+        "merged": [
+          "streams",
+          "kafka",
+          "kafka streams",
+          "stream",
+          "stream processing"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "streams_kafka_consumer",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5785072646024667,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:11.535085+00:00"
+      }
+    },
+    {
+      "book": "Kafka Streams in Action",
+      "chapter": 3,
+      "title": "Segment 3 (pages 19-27)",
+      "chapter_id": "Kafka Streams in Action:ch3",
+      "cross_references": [
+        {
+          "target": "Kafka Streams in Action:ch1",
+          "score": 0.7234429858180932,
+          "base_score": 0.6700240239825361,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch2",
+          "score": 0.7212796643393334,
+          "base_score": 0.6664184881846034,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch21",
+          "score": 0.5471533050781513,
+          "base_score": 0.587848101056178,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch5",
+          "score": 0.5449323666519309,
+          "base_score": 0.6225063253722658,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch9",
+          "score": 0.511984450123275,
+          "base_score": 0.5675931311578393,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "big data",
+          "streams",
+          "kafka streams",
+          "kafka",
+          "big"
+        ],
+        "semantic": [],
+        "merged": [
+          "big data",
+          "streams",
+          "kafka streams",
+          "kafka",
+          "big"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "streams_kafka_consumer",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5196441265529563,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:11.535346+00:00"
+      }
+    },
+    {
+      "book": "Kafka Streams in Action",
+      "chapter": 4,
+      "title": "Segment 4 (pages 28-36)",
+      "chapter_id": "Kafka Streams in Action:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "node",
+          "stream processing",
+          "processing",
+          "graph"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "node",
+          "stream processing",
+          "processing",
+          "graph"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3887550573226177,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:11.535672+00:00"
+      }
+    },
+    {
+      "book": "Kafka Streams in Action",
+      "chapter": 5,
+      "title": "Segment 5 (pages 37-44)",
+      "chapter_id": "Kafka Streams in Action:ch5",
+      "cross_references": [
+        {
+          "target": "Kafka Streams in Action:ch19",
+          "score": 0.6145307375234579,
+          "base_score": 0.7001438217983558,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch2",
+          "score": 0.5937200469963743,
+          "base_score": 0.7038191259463381,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch3",
+          "score": 0.5449323666519309,
+          "base_score": 0.6225063253722658,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch9",
+          "score": 0.5109695813157353,
+          "base_score": 0.5659016831452731,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch1",
+          "score": 0.5085845782593996,
+          "base_score": 0.5619266780513803,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "kafka",
+          "kafka streams",
+          "streams",
+          "processor",
+          "child"
+        ],
+        "semantic": [],
+        "merged": [
+          "kafka",
+          "kafka streams",
+          "streams",
+          "processor",
+          "child"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "processor_the_kafka",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5768623015585432,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:11.536167+00:00"
+      }
+    },
+    {
+      "book": "Kafka Streams in Action",
+      "chapter": 6,
+      "title": "Segment 6 (pages 45-53)",
+      "chapter_id": "Kafka Streams in Action:ch6",
+      "cross_references": [
+        {
+          "target": "Kafka Streams in Action:ch7",
+          "score": 0.6725794075085519,
+          "base_score": 0.7042990125142533,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch8",
+          "score": 0.6006177552824589,
+          "base_score": 0.6769555180633573,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "kafka",
+          "partition",
+          "log",
+          "partitions",
+          "messages"
+        ],
+        "semantic": [],
+        "merged": [
+          "kafka",
+          "partition",
+          "log",
+          "partitions",
+          "messages"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "partition_kafka_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5478362327001756,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:11.536400+00:00"
+      }
+    },
+    {
+      "book": "Kafka Streams in Action",
+      "chapter": 7,
+      "title": "Segment 7 (pages 54-61)",
+      "chapter_id": "Kafka Streams in Action:ch7",
+      "cross_references": [
+        {
+          "target": "Kafka Streams in Action:ch6",
+          "score": 0.6725794075085519,
+          "base_score": 0.7042990125142533,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch8",
+          "score": 0.5575662084784346,
+          "base_score": 0.6792770141307245,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "partition",
+          "broker",
+          "follower",
+          "kafka",
+          "leader"
+        ],
+        "semantic": [],
+        "merged": [
+          "partition",
+          "broker",
+          "follower",
+          "kafka",
+          "leader"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "partition_kafka_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5265476445692745,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:11.536774+00:00"
+      }
+    },
+    {
+      "book": "Kafka Streams in Action",
+      "chapter": 8,
+      "title": "Segment 8 (pages 62-70)",
+      "chapter_id": "Kafka Streams in Action:ch8",
+      "cross_references": [
+        {
+          "target": "Kafka Streams in Action:ch6",
+          "score": 0.6006177552824589,
+          "base_score": 0.6769555180633573,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch7",
+          "score": 0.5575662084784346,
+          "base_score": 0.6792770141307245,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "consumer",
+          "consumers",
+          "consumer consumer",
+          "messages",
+          "producer"
+        ],
+        "semantic": [],
+        "merged": [
+          "consumer",
+          "consumers",
+          "consumer consumer",
+          "messages",
+          "producer"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "partition_kafka_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5361236167025173,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:11.537256+00:00"
+      }
+    },
+    {
+      "book": "Kafka Streams in Action",
+      "chapter": 9,
+      "title": "Segment 9 (pages 71-84)",
+      "chapter_id": "Kafka Streams in Action:ch9",
+      "cross_references": [
+        {
+          "target": "Kafka Streams in Action:ch25",
+          "score": 0.6596246568221635,
+          "base_score": 0.5636601423226535,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch28",
+          "score": 0.6587884606512034,
+          "base_score": 0.5622664820377199,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch24",
+          "score": 0.5555958665326926,
+          "base_score": 0.6019190368137468,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch23",
+          "score": 0.5155802326733377,
+          "base_score": 0.6093003877888962,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch10",
+          "score": 0.5120089255297848,
+          "base_score": 0.6866815425496413,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "kafka",
+          "kafka streams",
+          "streams",
+          "topic",
+          "zookeeper"
+        ],
+        "semantic": [],
+        "merged": [
+          "kafka",
+          "kafka streams",
+          "streams",
+          "topic",
+          "zookeeper"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "kafka_streams_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5107737881136983,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:11.537781+00:00"
+      }
+    },
+    {
+      "book": "Kafka Streams in Action",
+      "chapter": 10,
+      "title": "Segment 10 (pages 85-93)",
+      "chapter_id": "Kafka Streams in Action:ch10",
+      "cross_references": [
+        {
+          "target": "Kafka Streams in Action:ch9",
+          "score": 0.5120089255297848,
+          "base_score": 0.6866815425496413,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "purchase",
+          "kstream",
+          "mapvalues",
+          "kafka",
+          "topic"
+        ],
+        "semantic": [],
+        "merged": [
+          "purchase",
+          "kstream",
+          "mapvalues",
+          "kafka",
+          "topic"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6055177372080855,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:11.538175+00:00"
+      }
+    },
+    {
+      "book": "Kafka Streams in Action",
+      "chapter": 11,
+      "title": "Segment 11 (pages 94-101)",
+      "chapter_id": "Kafka Streams in Action:ch11",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "purchases",
+          "purchase",
+          "branch",
+          "print",
+          "string"
+        ],
+        "semantic": [],
+        "merged": [
+          "purchases",
+          "purchase",
+          "branch",
+          "print",
+          "string"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4305394817087778,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:11.538388+00:00"
+      }
+    },
+    {
+      "book": "Kafka Streams in Action",
+      "chapter": 12,
+      "title": "Segment 12 (pages 102-114)",
+      "chapter_id": "Kafka Streams in Action:ch12",
+      "cross_references": [
+        {
+          "target": "Kafka Streams in Action:ch14",
+          "score": 0.6315484085467912,
+          "base_score": 0.7285066068372446,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch18",
+          "score": 0.5045760843485019,
+          "base_score": 0.5909601405808365,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "state",
+          "purchase",
+          "purchases",
+          "key",
+          "stateful"
+        ],
+        "semantic": [],
+        "merged": [
+          "state",
+          "purchase",
+          "purchases",
+          "key",
+          "stateful"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4989094603703429,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:11.538668+00:00"
+      }
+    },
+    {
+      "book": "Kafka Streams in Action",
+      "chapter": 13,
+      "title": "Segment 13 (pages 115-122)",
+      "chapter_id": "Kafka Streams in Action:ch13",
+      "cross_references": [
+        {
+          "target": "Kafka Streams in Action:ch26",
+          "score": 0.5972344263922968,
+          "base_score": 0.7096764249395424,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "state",
+          "store",
+          "state store",
+          "stores",
+          "state stores"
+        ],
+        "semantic": [],
+        "merged": [
+          "state",
+          "store",
+          "state store",
+          "stores",
+          "state stores"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5274406194671137,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:11.538920+00:00"
+      }
+    },
+    {
+      "book": "Kafka Streams in Action",
+      "chapter": 14,
+      "title": "Segment 14 (pages 123-132)",
+      "chapter_id": "Kafka Streams in Action:ch14",
+      "cross_references": [
+        {
+          "target": "Kafka Streams in Action:ch12",
+          "score": 0.6315484085467912,
+          "base_score": 0.7285066068372446,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch18",
+          "score": 0.5451120160775635,
+          "base_score": 0.6585200267959392,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "join",
+          "purchase",
+          "outer",
+          "purchase purchase",
+          "outer join"
+        ],
+        "semantic": [],
+        "merged": [
+          "join",
+          "purchase",
+          "outer",
+          "purchase purchase",
+          "outer join"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48241915127707635,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:11.539256+00:00"
+      }
+    },
+    {
+      "book": "Kafka Streams in Action",
+      "chapter": 15,
+      "title": "Segment 15 (pages 133-142)",
+      "chapter_id": "Kafka Streams in Action:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "timestamp",
+          "event",
+          "timestamp set",
+          "event time",
+          "time"
+        ],
+        "semantic": [],
+        "merged": [
+          "timestamp",
+          "event",
+          "timestamp set",
+          "event time",
+          "time"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4863137046942026,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:11.539457+00:00"
+      }
+    },
+    {
+      "book": "Kafka Streams in Action",
+      "chapter": 16,
+      "title": "Segment 16 (pages 143-154)",
+      "chapter_id": "Kafka Streams in Action:ch16",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "ktable",
+          "updates",
+          "records",
+          "aggregation",
+          "sharevolume"
+        ],
+        "semantic": [],
+        "merged": [
+          "ktable",
+          "updates",
+          "records",
+          "aggregation",
+          "sharevolume"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39614382700846207,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:11.539613+00:00"
+      }
+    },
+    {
+      "book": "Kafka Streams in Action",
+      "chapter": 17,
+      "title": "Segment 17 (pages 155-162)",
+      "chapter_id": "Kafka Streams in Action:ch17",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "windows",
+          "session",
+          "session windows",
+          "window",
+          "tumbling"
+        ],
+        "semantic": [],
+        "merged": [
+          "windows",
+          "session",
+          "session windows",
+          "window",
+          "tumbling"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3259722550450006,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:11.539747+00:00"
+      }
+    },
+    {
+      "book": "Kafka Streams in Action",
+      "chapter": 18,
+      "title": "Segment 18 (pages 163-171)",
+      "chapter_id": "Kafka Streams in Action:ch18",
+      "cross_references": [
+        {
+          "target": "Kafka Streams in Action:ch14",
+          "score": 0.5451120160775635,
+          "base_score": 0.6585200267959392,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch27",
+          "score": 0.5403148764163039,
+          "base_score": 0.576450719953099,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch12",
+          "score": 0.5045760843485019,
+          "base_score": 0.5909601405808365,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "processor api",
+          "api",
+          "processor",
+          "kafka",
+          "node"
+        ],
+        "semantic": [],
+        "merged": [
+          "processor api",
+          "api",
+          "processor",
+          "kafka",
+          "node"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5516238889072427,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:11.539883+00:00"
+      }
+    },
+    {
+      "book": "Kafka Streams in Action",
+      "chapter": 19,
+      "title": "Segment 19 (pages 172-181)",
+      "chapter_id": "Kafka Streams in Action:ch19",
+      "cross_references": [
+        {
+          "target": "Kafka Streams in Action:ch5",
+          "score": 0.6145307375234579,
+          "base_score": 0.7001438217983558,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "processor",
+          "punctuate",
+          "punctuator",
+          "stock",
+          "method"
+        ],
+        "semantic": [],
+        "merged": [
+          "processor",
+          "punctuate",
+          "punctuator",
+          "stock",
+          "method"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "processor_the_kafka",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5202322655218563,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:11.540019+00:00"
+      }
+    },
+    {
+      "book": "Kafka Streams in Action",
+      "chapter": 20,
+      "title": "Segment 20 (pages 182-191)",
+      "chapter_id": "Kafka Streams in Action:ch20",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "processor",
+          "tuple",
+          "grouping",
+          "grouping processor",
+          "cogrouping"
+        ],
+        "semantic": [],
+        "merged": [
+          "processor",
+          "tuple",
+          "grouping",
+          "grouping processor",
+          "cogrouping"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3779578017665775,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:11.540150+00:00"
+      }
+    },
+    {
+      "book": "Kafka Streams in Action",
+      "chapter": 21,
+      "title": "Segment 21 (pages 192-203)",
+      "chapter_id": "Kafka Streams in Action:ch21",
+      "cross_references": [
+        {
+          "target": "Kafka Streams in Action:ch2",
+          "score": 0.6323975995936302,
+          "base_score": 0.7299219252486427,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch1",
+          "score": 0.5889055590355893,
+          "base_score": 0.6574351909852414,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch3",
+          "score": 0.5471533050781513,
+          "base_score": 0.587848101056178,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "consumer",
+          "consumer lag",
+          "interceptor",
+          "kafka",
+          "producer"
+        ],
+        "semantic": [],
+        "merged": [
+          "consumer",
+          "consumer lag",
+          "interceptor",
+          "kafka",
+          "producer"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "streams_kafka_consumer",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5723292755678612,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:11.540334+00:00"
+      }
+    },
+    {
+      "book": "Kafka Streams in Action",
+      "chapter": 22,
+      "title": "Segment 22 (pages 204-212)",
+      "chapter_id": "Kafka Streams in Action:ch22",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "metrics",
+          "collected",
+          "jconsole",
+          "levels",
+          "debug"
+        ],
+        "semantic": [],
+        "merged": [
+          "metrics",
+          "collected",
+          "jconsole",
+          "levels",
+          "debug"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5103162597575919,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:11.540505+00:00"
+      }
+    },
+    {
+      "book": "Kafka Streams in Action",
+      "chapter": 23,
+      "title": "Segment 23 (pages 213-220)",
+      "chapter_id": "Kafka Streams in Action:ch23",
+      "cross_references": [
+        {
+          "target": "Kafka Streams in Action:ch28",
+          "score": 0.6475092258622152,
+          "base_score": 0.7551079690296179,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch25",
+          "score": 0.5344408636630654,
+          "base_score": 0.6407347727717757,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch9",
+          "score": 0.5155802326733377,
+          "base_score": 0.6093003877888962,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch24",
+          "score": 0.504666625360599,
+          "base_score": 0.591111042267665,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "application",
+          "rebalancing",
+          "state",
+          "restore",
+          "states"
+        ],
+        "semantic": [],
+        "merged": [
+          "application",
+          "rebalancing",
+          "state",
+          "restore",
+          "states"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "kafka_streams_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5735858840527492,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:11.540749+00:00"
+      }
+    },
+    {
+      "book": "Kafka Streams in Action",
+      "chapter": 24,
+      "title": "Segment 24 (pages 221-231)",
+      "chapter_id": "Kafka Streams in Action:ch24",
+      "cross_references": [
+        {
+          "target": "Kafka Streams in Action:ch25",
+          "score": 0.6200484699779516,
+          "base_score": 0.7093400425558452,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch9",
+          "score": 0.5555958665326926,
+          "base_score": 0.6019190368137468,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch28",
+          "score": 0.5126846568773654,
+          "base_score": 0.5304003540548683,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch23",
+          "score": 0.504666625360599,
+          "base_score": 0.591111042267665,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "test",
+          "testing",
+          "topology",
+          "integration",
+          "kafka"
+        ],
+        "semantic": [],
+        "merged": [
+          "test",
+          "testing",
+          "topology",
+          "integration",
+          "kafka"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "kafka_streams_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.504090442877256,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:11.540995+00:00"
+      }
+    },
+    {
+      "book": "Kafka Streams in Action",
+      "chapter": 25,
+      "title": "Segment 25 (pages 232-247)",
+      "chapter_id": "Kafka Streams in Action:ch25",
+      "cross_references": [
+        {
+          "target": "Kafka Streams in Action:ch28",
+          "score": 0.6837915876539097,
+          "base_score": 0.6039383603755637,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch9",
+          "score": 0.6596246568221635,
+          "base_score": 0.5636601423226535,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch24",
+          "score": 0.6200484699779516,
+          "base_score": 0.7093400425558452,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch23",
+          "score": 0.5344408636630654,
+          "base_score": 0.6407347727717757,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "connect",
+          "kafka",
+          "kafka connect",
+          "kafka streams",
+          "streams"
+        ],
+        "semantic": [],
+        "merged": [
+          "connect",
+          "kafka",
+          "kafka connect",
+          "kafka streams",
+          "streams"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "kafka_streams_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4952458575075613,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:11.541299+00:00"
+      }
+    },
+    {
+      "book": "Kafka Streams in Action",
+      "chapter": 26,
+      "title": "Segment 26 (pages 248-258)",
+      "chapter_id": "Kafka Streams in Action:ch26",
+      "cross_references": [
+        {
+          "target": "Kafka Streams in Action:ch13",
+          "score": 0.5972344263922968,
+          "base_score": 0.7096764249395424,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "store",
+          "state",
+          "state store",
+          "query",
+          "streams"
+        ],
+        "semantic": [],
+        "merged": [
+          "store",
+          "state",
+          "state store",
+          "query",
+          "streams"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5604428782223463,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:11.541528+00:00"
+      }
+    },
+    {
+      "book": "Kafka Streams in Action",
+      "chapter": 27,
+      "title": "Segment 27 (pages 259-266)",
+      "chapter_id": "Kafka Streams in Action:ch27",
+      "cross_references": [
+        {
+          "target": "Kafka Streams in Action:ch2",
+          "score": 0.6004165200182464,
+          "base_score": 0.714979914316125,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch18",
+          "score": 0.5403148764163039,
+          "base_score": 0.576450719953099,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch5",
+          "score": 0.507237727682991,
+          "base_score": 0.5596819270906993,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ksql",
+          "streams",
+          "ksql ksql",
+          "kafka",
+          "kafka streams"
+        ],
+        "semantic": [],
+        "merged": [
+          "ksql",
+          "streams",
+          "ksql ksql",
+          "kafka",
+          "kafka streams"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5039084229764627,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:11.541811+00:00"
+      }
+    },
+    {
+      "book": "Kafka Streams in Action",
+      "chapter": 28,
+      "title": "Segment 28 (pages 267-274)",
+      "chapter_id": "Kafka Streams in Action:ch28",
+      "cross_references": [
+        {
+          "target": "Kafka Streams in Action:ch25",
+          "score": 0.6837915876539097,
+          "base_score": 0.6039383603755637,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch9",
+          "score": 0.6587884606512034,
+          "base_score": 0.5622664820377199,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch23",
+          "score": 0.6475092258622152,
+          "base_score": 0.7551079690296179,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kafka Streams in Action:ch24",
+          "score": 0.5126846568773654,
+          "base_score": 0.5304003540548683,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "kafka",
+          "streams",
+          "kafka streams",
+          "application",
+          "streams application"
+        ],
+        "semantic": [],
+        "merged": [
+          "kafka",
+          "streams",
+          "kafka streams",
+          "application",
+          "streams application"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "kafka_streams_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5037378571654226,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:11.542048+00:00"
+      }
+    },
+    {
+      "book": "Kafka Streams in Action",
+      "chapter": 29,
+      "title": "Segment 29 (pages 275-282)",
+      "chapter_id": "Kafka Streams in Action:ch29",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "139",
+          "44",
+          "123",
+          "119",
+          "49"
+        ],
+        "semantic": [],
+        "merged": [
+          "139",
+          "44",
+          "123",
+          "119",
+          "49"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4969016348586717,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:11.542189+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

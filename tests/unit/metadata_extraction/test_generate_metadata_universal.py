@@ -395,7 +395,7 @@ class TestStatisticalExtractorIntegration:
         generator = UniversalMetadataGenerator(json_path=json_file)
         
         text = "Python is a programming language. Functions are first-class objects."
-        concepts = generator.extract_concepts(text, max_concepts=5)
+        concepts = generator.extract_concepts(text, chapter_title="Test Chapter", chapter_num=1)
         
         # Should return list of strings (concepts)
         assert isinstance(concepts, list)

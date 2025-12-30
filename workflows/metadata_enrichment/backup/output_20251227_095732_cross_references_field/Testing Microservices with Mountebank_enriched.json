@@ -1,0 +1,547 @@
+{
+  "book": {
+    "title": "Testing Microservices with Mountebank"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:57:44.463390",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Testing Microservices with Mountebank",
+      "chapter": 1,
+      "title": "Testing microservices",
+      "chapter_id": "Testing Microservices with Mountebank:ch1",
+      "cross_references": [
+        {
+          "target": "Testing Microservices with Mountebank:ch9",
+          "score": 0.6605534822519822,
+          "base_score": 0.6842558037533035,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Testing Microservices with Mountebank:ch10",
+          "score": 0.531328539081837,
+          "base_score": 0.5614734910623209,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "testing",
+          "service virtualization",
+          "virtualization",
+          "microservices",
+          "tests"
+        ],
+        "semantic": [],
+        "merged": [
+          "testing",
+          "service virtualization",
+          "virtualization",
+          "microservices",
+          "tests"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "test_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4620143299459675,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:44.449977+00:00"
+      }
+    },
+    {
+      "book": "Testing Microservices with Mountebank",
+      "chapter": 2,
+      "title": "Taking mountebank for a test drive",
+      "chapter_id": "Testing Microservices with Mountebank:ch2",
+      "cross_references": [
+        {
+          "target": "Testing Microservices with Mountebank:ch3",
+          "score": 0.6254644728255907,
+          "base_score": 0.6257741213759846,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Testing Microservices with Mountebank:ch8",
+          "score": 0.5471388041876099,
+          "base_score": 0.6618980069793496,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "http",
+          "product",
+          "catalog",
+          "product catalog",
+          "imposter"
+        ],
+        "semantic": [],
+        "merged": [
+          "http",
+          "product",
+          "catalog",
+          "product catalog",
+          "imposter"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_response",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4847342386466841,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:44.450069+00:00"
+      }
+    },
+    {
+      "book": "Testing Microservices with Mountebank",
+      "chapter": 3,
+      "title": "Testing using canned responses",
+      "chapter_id": "Testing Microservices with Mountebank:ch3",
+      "cross_references": [
+        {
+          "target": "Testing Microservices with Mountebank:ch5",
+          "score": 0.6462287320140445,
+          "base_score": 0.6603812200234075,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Testing Microservices with Mountebank:ch2",
+          "score": 0.6254644728255907,
+          "base_score": 0.6257741213759846,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Testing Microservices with Mountebank:ch7",
+          "score": 0.5684394592036376,
+          "base_score": 0.5307324320060627,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Testing Microservices with Mountebank:ch8",
+          "score": 0.5674246774061472,
+          "base_score": 0.695707795676912,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Testing Microservices with Mountebank:ch6",
+          "score": 0.5594027269615245,
+          "base_score": 0.6082638041951334,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "response",
+          "certificate",
+          "imposter",
+          "http",
+          "responses"
+        ],
+        "semantic": [],
+        "merged": [
+          "response",
+          "certificate",
+          "imposter",
+          "http",
+          "responses"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_response",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5481356914020858,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:44.450122+00:00"
+      }
+    },
+    {
+      "book": "Testing Microservices with Mountebank",
+      "chapter": 4,
+      "title": "Using predicates to send diﬀerent responses",
+      "chapter_id": "Testing Microservices with Mountebank:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "predicate",
+          "predicates",
+          "matches",
+          "match",
+          "regular"
+        ],
+        "semantic": [],
+        "merged": [
+          "predicate",
+          "predicates",
+          "matches",
+          "match",
+          "regular"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_response",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4254420315781264,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:44.450169+00:00"
+      }
+    },
+    {
+      "book": "Testing Microservices with Mountebank",
+      "chapter": 5,
+      "title": "Adding record/replay behavior",
+      "chapter_id": "Testing Microservices with Mountebank:ch5",
+      "cross_references": [
+        {
+          "target": "Testing Microservices with Mountebank:ch3",
+          "score": 0.6462287320140445,
+          "base_score": 0.6603812200234075,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Testing Microservices with Mountebank:ch7",
+          "score": 0.6115253348390197,
+          "base_score": 0.6025422247316995,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "proxy",
+          "responses",
+          "response",
+          "downstream service",
+          "downstream"
+        ],
+        "semantic": [],
+        "merged": [
+          "proxy",
+          "responses",
+          "response",
+          "downstream service",
+          "downstream"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_response",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5173703747169787,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:44.450216+00:00"
+      }
+    },
+    {
+      "book": "Testing Microservices with Mountebank",
+      "chapter": 6,
+      "title": "Programming mountebank",
+      "chapter_id": "Testing Microservices with Mountebank:ch6",
+      "cross_references": [
+        {
+          "target": "Testing Microservices with Mountebank:ch3",
+          "score": 0.5594027269615245,
+          "base_score": 0.6082638041951334,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Testing Microservices with Mountebank:ch7",
+          "score": 0.518945452331411,
+          "base_score": 0.5408350131449443,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "function",
+          "response",
+          "injection",
+          "humidity",
+          "response injection"
+        ],
+        "semantic": [],
+        "merged": [
+          "function",
+          "response",
+          "injection",
+          "humidity",
+          "response injection"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_response",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48649660371384346,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:44.450264+00:00"
+      }
+    },
+    {
+      "book": "Testing Microservices with Mountebank",
+      "chapter": 7,
+      "title": "Adding behaviors",
+      "chapter_id": "Testing Microservices with Mountebank:ch7",
+      "cross_references": [
+        {
+          "target": "Testing Microservices with Mountebank:ch5",
+          "score": 0.6115253348390197,
+          "base_score": 0.6025422247316995,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Testing Microservices with Mountebank:ch3",
+          "score": 0.5684394592036376,
+          "base_score": 0.5307324320060627,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Testing Microservices with Mountebank:ch6",
+          "score": 0.518945452331411,
+          "base_score": 0.5408350131449443,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "response",
+          "responses",
+          "decorate",
+          "rate",
+          "rate limit"
+        ],
+        "semantic": [],
+        "merged": [
+          "response",
+          "responses",
+          "decorate",
+          "rate",
+          "rate limit"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_response",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4607105580124255,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:44.450310+00:00"
+      }
+    },
+    {
+      "book": "Testing Microservices with Mountebank",
+      "chapter": 8,
+      "title": "Protocols",
+      "chapter_id": "Testing Microservices with Mountebank:ch8",
+      "cross_references": [
+        {
+          "target": "Testing Microservices with Mountebank:ch3",
+          "score": 0.5674246774061472,
+          "base_score": 0.695707795676912,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Testing Microservices with Mountebank:ch2",
+          "score": 0.5471388041876099,
+          "base_score": 0.6618980069793496,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tcp",
+          "protocol",
+          "net",
+          "net remoting",
+          "remoting"
+        ],
+        "semantic": [],
+        "merged": [
+          "tcp",
+          "protocol",
+          "net",
+          "net remoting",
+          "remoting"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_response",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5614584292668703,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:44.450357+00:00"
+      }
+    },
+    {
+      "book": "Testing Microservices with Mountebank",
+      "chapter": 9,
+      "title": "Mountebank and continuous delivery",
+      "chapter_id": "Testing Microservices with Mountebank:ch9",
+      "cross_references": [
+        {
+          "target": "Testing Microservices with Mountebank:ch1",
+          "score": 0.6605534822519822,
+          "base_score": 0.6842558037533035,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Testing Microservices with Mountebank:ch10",
+          "score": 0.5429499506853972,
+          "base_score": 0.580842510401588,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "testing",
+          "tests",
+          "unit",
+          "service tests",
+          "contract"
+        ],
+        "semantic": [],
+        "merged": [
+          "testing",
+          "tests",
+          "unit",
+          "service tests",
+          "contract"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "test_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3798379813065874,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:44.450404+00:00"
+      }
+    },
+    {
+      "book": "Testing Microservices with Mountebank",
+      "chapter": 10,
+      "title": "Performance testing with mountebank",
+      "chapter_id": "Testing Microservices with Mountebank:ch10",
+      "cross_references": [
+        {
+          "target": "Testing Microservices with Mountebank:ch9",
+          "score": 0.5429499506853972,
+          "base_score": 0.580842510401588,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Testing Microservices with Mountebank:ch1",
+          "score": 0.531328539081837,
+          "base_score": 0.5614734910623209,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "performance",
+          "testing",
+          "responses",
+          "response",
+          "data"
+        ],
+        "semantic": [],
+        "merged": [
+          "performance",
+          "testing",
+          "responses",
+          "response",
+          "data"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "test_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42328559874017346,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:44.450452+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

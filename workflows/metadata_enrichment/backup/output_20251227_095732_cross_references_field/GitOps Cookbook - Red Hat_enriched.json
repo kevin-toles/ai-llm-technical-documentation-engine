@@ -1,0 +1,1343 @@
+{
+  "book": {
+    "title": "GitOps Cookbook - Red Hat"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:48:08.930150",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "GitOps Cookbook - Red Hat",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-9)",
+      "chapter_id": "GitOps Cookbook - Red Hat:ch1",
+      "cross_references": [
+        {
+          "target": "GitOps Cookbook - Red Hat:ch3",
+          "score": 0.629071120927921,
+          "base_score": 0.7243777941391274,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch2",
+          "score": 0.6094506588202178,
+          "base_score": 0.7657510980336962,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch4",
+          "score": 0.5002623052254113,
+          "base_score": 0.5837705087090188,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "kubernetes",
+          "natale",
+          "gitops",
+          "task",
+          "vinto"
+        ],
+        "semantic": [],
+        "merged": [
+          "kubernetes",
+          "natale",
+          "gitops",
+          "task",
+          "vinto"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "tekton_name_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44029977137509363,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:08.878713+00:00"
+      }
+    },
+    {
+      "book": "GitOps Cookbook - Red Hat",
+      "chapter": 2,
+      "title": "Segment 2 (pages 10-19)",
+      "chapter_id": "GitOps Cookbook - Red Hat:ch2",
+      "cross_references": [
+        {
+          "target": "GitOps Cookbook - Red Hat:ch1",
+          "score": 0.6094506588202178,
+          "base_score": 0.7657510980336962,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch12",
+          "score": 0.5673292581369794,
+          "base_score": 0.6955487635616323,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch3",
+          "score": 0.5493149084525725,
+          "base_score": 0.59145077334688,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "book",
+          "permission",
+          "code",
+          "examples",
+          "require"
+        ],
+        "semantic": [],
+        "merged": [
+          "book",
+          "permission",
+          "code",
+          "examples",
+          "require"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "tekton_name_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46158011187470827,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:08.878919+00:00"
+      }
+    },
+    {
+      "book": "GitOps Cookbook - Red Hat",
+      "chapter": 3,
+      "title": "Segment 3 (pages 20-30)",
+      "chapter_id": "GitOps Cookbook - Red Hat:ch3",
+      "cross_references": [
+        {
+          "target": "GitOps Cookbook - Red Hat:ch1",
+          "score": 0.629071120927921,
+          "base_score": 0.7243777941391274,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch2",
+          "score": 0.5493149084525725,
+          "base_score": 0.59145077334688,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "git",
+          "gitops",
+          "infrastructure",
+          "code",
+          "git service"
+        ],
+        "semantic": [],
+        "merged": [
+          "git",
+          "gitops",
+          "infrastructure",
+          "code",
+          "git service"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "tekton_name_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35900049884175717,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:08.879055+00:00"
+      }
+    },
+    {
+      "book": "GitOps Cookbook - Red Hat",
+      "chapter": 4,
+      "title": "Segment 4 (pages 31-40)",
+      "chapter_id": "GitOps Cookbook - Red Hat:ch4",
+      "cross_references": [
+        {
+          "target": "GitOps Cookbook - Red Hat:ch5",
+          "score": 0.6622202833602631,
+          "base_score": 0.5679861865528193,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch6",
+          "score": 0.5077665019933965,
+          "base_score": 0.5222034292482534,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch1",
+          "score": 0.5002623052254113,
+          "base_score": 0.5837705087090188,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "container",
+          "kb",
+          "container images",
+          "images",
+          "image"
+        ],
+        "semantic": [],
+        "merged": [
+          "container",
+          "kb",
+          "container images",
+          "images",
+          "image"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "tekton_name_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4306782956451314,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:08.879172+00:00"
+      }
+    },
+    {
+      "book": "GitOps Cookbook - Red Hat",
+      "chapter": 5,
+      "title": "Segment 5 (pages 41-49)",
+      "chapter_id": "GitOps Cookbook - Red Hat:ch5",
+      "cross_references": [
+        {
+          "target": "GitOps Cookbook - Red Hat:ch4",
+          "score": 0.6622202833602631,
+          "base_score": 0.5679861865528193,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch6",
+          "score": 0.5393229098046517,
+          "base_score": 0.5747974422670121,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "container",
+          "info",
+          "jib",
+          "image",
+          "images"
+        ],
+        "semantic": [],
+        "merged": [
+          "container",
+          "info",
+          "jib",
+          "image",
+          "images"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "tekton_name_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3462513110599475,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:08.879284+00:00"
+      }
+    },
+    {
+      "book": "GitOps Cookbook - Red Hat",
+      "chapter": 6,
+      "title": "Segment 6 (pages 50-58)",
+      "chapter_id": "GitOps Cookbook - Red Hat:ch6",
+      "cross_references": [
+        {
+          "target": "GitOps Cookbook - Red Hat:ch5",
+          "score": 0.5393229098046517,
+          "base_score": 0.5747974422670121,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch4",
+          "score": 0.5077665019933965,
+          "base_score": 0.5222034292482534,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "buildpacks",
+          "kaniko",
+          "build",
+          "container",
+          "shipwright"
+        ],
+        "semantic": [],
+        "merged": [
+          "buildpacks",
+          "kaniko",
+          "build",
+          "container",
+          "shipwright"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "tekton_name_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3811702006857364,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:08.879395+00:00"
+      }
+    },
+    {
+      "book": "GitOps Cookbook - Red Hat",
+      "chapter": 7,
+      "title": "Segment 7 (pages 59-67)",
+      "chapter_id": "GitOps Cookbook - Red Hat:ch7",
+      "cross_references": [
+        {
+          "target": "GitOps Cookbook - Red Hat:ch9",
+          "score": 0.5486814168093739,
+          "base_score": 0.6287547423013373,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pacman",
+          "kustomization",
+          "kikd",
+          "pacman kikd",
+          "kustomize"
+        ],
+        "semantic": [],
+        "merged": [
+          "pacman",
+          "kustomization",
+          "kikd",
+          "pacman kikd",
+          "kustomize"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4985517669126233,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:48:08.879508+00:00"
+      }
+    },
+    {
+      "book": "GitOps Cookbook - Red Hat",
+      "chapter": 8,
+      "title": "Segment 8 (pages 68-75)",
+      "chapter_id": "GitOps Cookbook - Red Hat:ch8",
+      "cross_references": [
+        {
+          "target": "GitOps Cookbook - Red Hat:ch9",
+          "score": 0.7062093953691182,
+          "base_score": 0.6413013732342446,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch10",
+          "score": 0.6125917157662402,
+          "base_score": 0.6043195262770671,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pacman",
+          "pacman kikd",
+          "kikd",
+          "io pacman",
+          "kubernetes io"
+        ],
+        "semantic": [],
+        "merged": [
+          "pacman",
+          "pacman kikd",
+          "kikd",
+          "io pacman",
+          "kubernetes io"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_name_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4073347026412422,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:08.879621+00:00"
+      }
+    },
+    {
+      "book": "GitOps Cookbook - Red Hat",
+      "chapter": 9,
+      "title": "Segment 9 (pages 76-89)",
+      "chapter_id": "GitOps Cookbook - Red Hat:ch9",
+      "cross_references": [
+        {
+          "target": "GitOps Cookbook - Red Hat:ch8",
+          "score": 0.7062093953691182,
+          "base_score": 0.6413013732342446,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch7",
+          "score": 0.5486814168093739,
+          "base_score": 0.6287547423013373,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch10",
+          "score": 0.513362423963166,
+          "base_score": 0.531529965864536,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pacman",
+          "configmap",
+          "kikd",
+          "pacman kikd",
+          "db"
+        ],
+        "semantic": [],
+        "merged": [
+          "pacman",
+          "configmap",
+          "kikd",
+          "pacman kikd",
+          "db"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_name_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4605104882666881,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:08.879742+00:00"
+      }
+    },
+    {
+      "book": "GitOps Cookbook - Red Hat",
+      "chapter": 10,
+      "title": "Segment 10 (pages 90-106)",
+      "chapter_id": "GitOps Cookbook - Red Hat:ch10",
+      "cross_references": [
+        {
+          "target": "GitOps Cookbook - Red Hat:ch11",
+          "score": 0.6816330373924259,
+          "base_score": 0.7193883956540431,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch8",
+          "score": 0.6125917157662402,
+          "base_score": 0.6043195262770671,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch9",
+          "score": 0.513362423963166,
+          "base_score": 0.531529965864536,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "chart",
+          "pacman",
+          "helm",
+          "kubernetes io",
+          "app kubernetes"
+        ],
+        "semantic": [],
+        "merged": [
+          "chart",
+          "pacman",
+          "helm",
+          "kubernetes io",
+          "app kubernetes"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_name_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38168872993184827,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:08.879891+00:00"
+      }
+    },
+    {
+      "book": "GitOps Cookbook - Red Hat",
+      "chapter": 11,
+      "title": "Segment 11 (pages 107-117)",
+      "chapter_id": "GitOps Cookbook - Red Hat:ch11",
+      "cross_references": [
+        {
+          "target": "GitOps Cookbook - Red Hat:ch10",
+          "score": 0.6816330373924259,
+          "base_score": 0.7193883956540431,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "chart",
+          "values",
+          "values image",
+          "io chart",
+          "kubernetes io"
+        ],
+        "semantic": [],
+        "merged": [
+          "chart",
+          "values",
+          "values image",
+          "io chart",
+          "kubernetes io"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_name_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3704516481823377,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:08.880003+00:00"
+      }
+    },
+    {
+      "book": "GitOps Cookbook - Red Hat",
+      "chapter": 12,
+      "title": "Segment 12 (pages 118-125)",
+      "chapter_id": "GitOps Cookbook - Red Hat:ch12",
+      "cross_references": [
+        {
+          "target": "GitOps Cookbook - Red Hat:ch13",
+          "score": 0.6317852309560599,
+          "base_score": 0.7289013108526923,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch14",
+          "score": 0.6297674458013112,
+          "base_score": 0.7255383355947778,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch15",
+          "score": 0.5832058400050013,
+          "base_score": 0.6479356592675947,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch2",
+          "score": 0.5673292581369794,
+          "base_score": 0.6955487635616323,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch16",
+          "score": 0.5632451482311938,
+          "base_score": 0.6146678396445823,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tekton",
+          "created",
+          "triggers",
+          "k8s io",
+          "k8s"
+        ],
+        "semantic": [],
+        "merged": [
+          "tekton",
+          "created",
+          "triggers",
+          "k8s io",
+          "k8s"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "tekton_name_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4782471259007961,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:08.880143+00:00"
+      }
+    },
+    {
+      "book": "GitOps Cookbook - Red Hat",
+      "chapter": 13,
+      "title": "Segment 13 (pages 126-135)",
+      "chapter_id": "GitOps Cookbook - Red Hat:ch13",
+      "cross_references": [
+        {
+          "target": "GitOps Cookbook - Red Hat:ch14",
+          "score": 0.7228807964188159,
+          "base_score": 0.7881346606980265,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch15",
+          "score": 0.7112917658199343,
+          "base_score": 0.7688196096998904,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch16",
+          "score": 0.636779992490692,
+          "base_score": 0.7372259134104124,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch12",
+          "score": 0.6317852309560599,
+          "base_score": 0.7289013108526923,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "task",
+          "tekton",
+          "build app",
+          "git",
+          "build"
+        ],
+        "semantic": [],
+        "merged": [
+          "task",
+          "tekton",
+          "build app",
+          "git",
+          "build"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "tekton_name_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4642929021312708,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:08.880260+00:00"
+      }
+    },
+    {
+      "book": "GitOps Cookbook - Red Hat",
+      "chapter": 14,
+      "title": "Segment 14 (pages 136-143)",
+      "chapter_id": "GitOps Cookbook - Red Hat:ch14",
+      "cross_references": [
+        {
+          "target": "GitOps Cookbook - Red Hat:ch13",
+          "score": 0.7228807964188159,
+          "base_score": 0.7881346606980265,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch16",
+          "score": 0.6362047470681989,
+          "base_score": 0.7362671710395907,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch12",
+          "score": 0.6297674458013112,
+          "base_score": 0.7255383355947778,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch15",
+          "score": 0.6205155328983308,
+          "base_score": 0.7101184807564773,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tekton",
+          "task",
+          "params",
+          "sa",
+          "description"
+        ],
+        "semantic": [],
+        "merged": [
+          "tekton",
+          "task",
+          "params",
+          "sa",
+          "description"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "tekton_name_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.466710680999941,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:08.880372+00:00"
+      }
+    },
+    {
+      "book": "GitOps Cookbook - Red Hat",
+      "chapter": 15,
+      "title": "Segment 15 (pages 144-153)",
+      "chapter_id": "GitOps Cookbook - Red Hat:ch15",
+      "cross_references": [
+        {
+          "target": "GitOps Cookbook - Red Hat:ch13",
+          "score": 0.7112917658199343,
+          "base_score": 0.7688196096998904,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch14",
+          "score": 0.6205155328983308,
+          "base_score": 0.7101184807564773,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch16",
+          "score": 0.5940767428720113,
+          "base_score": 0.6660538307126115,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch12",
+          "score": 0.5832058400050013,
+          "base_score": 0.6479356592675947,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "build",
+          "push image",
+          "build push",
+          "tekton",
+          "image build"
+        ],
+        "semantic": [],
+        "merged": [
+          "build",
+          "push image",
+          "build push",
+          "tekton",
+          "image build"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "tekton_name_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.474553021719794,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:08.880486+00:00"
+      }
+    },
+    {
+      "book": "GitOps Cookbook - Red Hat",
+      "chapter": 16,
+      "title": "Segment 16 (pages 154-167)",
+      "chapter_id": "GitOps Cookbook - Red Hat:ch16",
+      "cross_references": [
+        {
+          "target": "GitOps Cookbook - Red Hat:ch13",
+          "score": 0.636779992490692,
+          "base_score": 0.7372259134104124,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch14",
+          "score": 0.6362047470681989,
+          "base_score": 0.7362671710395907,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch15",
+          "score": 0.5940767428720113,
+          "base_score": 0.6660538307126115,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch12",
+          "score": 0.5632451482311938,
+          "base_score": 0.6146678396445823,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "upgrade repo",
+          "upgrade",
+          "repo",
+          "pacman",
+          "tekton"
+        ],
+        "semantic": [],
+        "merged": [
+          "upgrade repo",
+          "upgrade",
+          "repo",
+          "pacman",
+          "tekton"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "tekton_name_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36300130582257534,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:08.880599+00:00"
+      }
+    },
+    {
+      "book": "GitOps Cookbook - Red Hat",
+      "chapter": 17,
+      "title": "Segment 17 (pages 168-178)",
+      "chapter_id": "GitOps Cookbook - Red Hat:ch17",
+      "cross_references": [
+        {
+          "target": "GitOps Cookbook - Red Hat:ch19",
+          "score": 0.5535455333402937,
+          "base_score": 0.5059092222338228,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch18",
+          "score": 0.5473296148831857,
+          "base_score": 0.3765017390910237,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "argo",
+          "argo cd",
+          "cd",
+          "application",
+          "kikd git"
+        ],
+        "semantic": [],
+        "merged": [
+          "argo",
+          "argo cd",
+          "cd",
+          "application",
+          "kikd git"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_name_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3890950352818105,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:08.880738+00:00"
+      }
+    },
+    {
+      "book": "GitOps Cookbook - Red Hat",
+      "chapter": 18,
+      "title": "Segment 18 (pages 179-187)",
+      "chapter_id": "GitOps Cookbook - Red Hat:ch18",
+      "cross_references": [
+        {
+          "target": "GitOps Cookbook - Red Hat:ch19",
+          "score": 0.6510102182932549,
+          "base_score": 0.6683503638220915,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch23",
+          "score": 0.5817435319492987,
+          "base_score": 0.645498479174757,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch17",
+          "score": 0.5473296148831857,
+          "base_score": 0.3765017390910237,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch20",
+          "score": 0.5096457935195089,
+          "base_score": 0.5994096558658482,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "argo",
+          "argo cd",
+          "cd",
+          "bgd",
+          "bgdk"
+        ],
+        "semantic": [],
+        "merged": [
+          "argo",
+          "argo cd",
+          "cd",
+          "bgd",
+          "bgdk"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_name_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40749954821783363,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:08.880852+00:00"
+      }
+    },
+    {
+      "book": "GitOps Cookbook - Red Hat",
+      "chapter": 19,
+      "title": "Segment 19 (pages 188-200)",
+      "chapter_id": "GitOps Cookbook - Red Hat:ch19",
+      "cross_references": [
+        {
+          "target": "GitOps Cookbook - Red Hat:ch18",
+          "score": 0.6510102182932549,
+          "base_score": 0.6683503638220915,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch23",
+          "score": 0.5953908871267665,
+          "base_score": 0.6682440711372033,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch17",
+          "score": 0.5535455333402937,
+          "base_score": 0.5059092222338228,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch20",
+          "score": 0.539369383106534,
+          "base_score": 0.6489489718442234,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "argocd",
+          "argo",
+          "argo cd",
+          "image updater",
+          "updater"
+        ],
+        "semantic": [],
+        "merged": [
+          "argocd",
+          "argo",
+          "argo cd",
+          "image updater",
+          "updater"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_name_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5192024884380646,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:08.880984+00:00"
+      }
+    },
+    {
+      "book": "GitOps Cookbook - Red Hat",
+      "chapter": 20,
+      "title": "Segment 20 (pages 201-209)",
+      "chapter_id": "GitOps Cookbook - Red Hat:ch20",
+      "cross_references": [
+        {
+          "target": "GitOps Cookbook - Red Hat:ch19",
+          "score": 0.539369383106534,
+          "base_score": 0.6489489718442234,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch18",
+          "score": 0.5096457935195089,
+          "base_score": 0.5994096558658482,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sync",
+          "todo",
+          "wave",
+          "database",
+          "sync wave"
+        ],
+        "semantic": [],
+        "merged": [
+          "sync",
+          "todo",
+          "wave",
+          "database",
+          "sync wave"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_name_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4371668192637337,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:08.881094+00:00"
+      }
+    },
+    {
+      "book": "GitOps Cookbook - Red Hat",
+      "chapter": 21,
+      "title": "Segment 21 (pages 210-217)",
+      "chapter_id": "GitOps Cookbook - Red Hat:ch21",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "secrets",
+          "vault",
+          "external",
+          "external secrets",
+          "secret"
+        ],
+        "semantic": [],
+        "merged": [
+          "secrets",
+          "vault",
+          "external",
+          "external secrets",
+          "secret"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_name_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4154156704571828,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:08.881202+00:00"
+      }
+    },
+    {
+      "book": "GitOps Cookbook - Red Hat",
+      "chapter": 22,
+      "title": "Segment 22 (pages 218-227)",
+      "chapter_id": "GitOps Cookbook - Red Hat:ch22",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "git",
+          "application",
+          "default",
+          "applicationset",
+          "path"
+        ],
+        "semantic": [],
+        "merged": [
+          "git",
+          "application",
+          "default",
+          "applicationset",
+          "path"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_name_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44989718063394474,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:08.881312+00:00"
+      }
+    },
+    {
+      "book": "GitOps Cookbook - Red Hat",
+      "chapter": 23,
+      "title": "Segment 23 (pages 228-243)",
+      "chapter_id": "GitOps Cookbook - Red Hat:ch23",
+      "cross_references": [
+        {
+          "target": "GitOps Cookbook - Red Hat:ch19",
+          "score": 0.5953908871267665,
+          "base_score": 0.6682440711372033,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "GitOps Cookbook - Red Hat:ch18",
+          "score": 0.5817435319492987,
+          "base_score": 0.645498479174757,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "rollouts",
+          "argo",
+          "argo rollouts",
+          "istio",
+          "creating"
+        ],
+        "semantic": [],
+        "merged": [
+          "rollouts",
+          "argo",
+          "argo rollouts",
+          "istio",
+          "creating"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_name_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4290525943371379,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:08.881426+00:00"
+      }
+    },
+    {
+      "book": "GitOps Cookbook - Red Hat",
+      "chapter": 24,
+      "title": "Segment 24 (pages 244-245)",
+      "chapter_id": "GitOps Cookbook - Red Hat:ch24",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "yellow",
+          "java",
+          "architect",
+          "solution architect",
+          "smaller"
+        ],
+        "semantic": [],
+        "merged": [
+          "yellow",
+          "java",
+          "architect",
+          "solution architect",
+          "smaller"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_name_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1717597190598751,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:08.881537+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

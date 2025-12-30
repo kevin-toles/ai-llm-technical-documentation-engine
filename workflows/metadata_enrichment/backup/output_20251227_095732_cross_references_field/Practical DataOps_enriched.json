@@ -1,0 +1,461 @@
+{
+  "book": {
+    "title": "Practical DataOps"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:53:23.847392",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Practical DataOps",
+      "chapter": 1,
+      "title": "The Problem with Data Science ��������������������������������������������������������������3",
+      "chapter_id": "Practical DataOps:ch1",
+      "cross_references": [
+        {
+          "target": "Practical DataOps:ch10",
+          "score": 0.6261593237682095,
+          "base_score": 0.6269322062803492,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "science",
+          "data science",
+          "data scientists",
+          "scientists",
+          "problem data"
+        ],
+        "semantic": [],
+        "merged": [
+          "science",
+          "data science",
+          "data scientists",
+          "scientists",
+          "problem data"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_the_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5353141461989612,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:23.833052+00:00"
+      }
+    },
+    {
+      "book": "Practical DataOps",
+      "chapter": 2,
+      "title": "Data Strategy",
+      "chapter_id": "Practical DataOps:ch2",
+      "cross_references": [
+        {
+          "target": "Practical DataOps:ch10",
+          "score": 0.6032652916165085,
+          "base_score": 0.755442152694181,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data strategy",
+          "strategy",
+          "initiatives",
+          "data lifecycle",
+          "objectives"
+        ],
+        "semantic": [],
+        "merged": [
+          "data strategy",
+          "strategy",
+          "initiatives",
+          "data lifecycle",
+          "objectives"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_the_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5617423028912519,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:23.833159+00:00"
+      }
+    },
+    {
+      "book": "Practical DataOps",
+      "chapter": 3,
+      "title": "Lean Thinking",
+      "chapter_id": "Practical DataOps:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "product",
+          "lean",
+          "product development",
+          "toyota",
+          "waste"
+        ],
+        "semantic": [],
+        "merged": [
+          "product",
+          "lean",
+          "product development",
+          "toyota",
+          "waste"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46662627712509475,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:53:23.833225+00:00"
+      }
+    },
+    {
+      "book": "Practical DataOps",
+      "chapter": 4,
+      "title": "Agile Collaboration",
+      "chapter_id": "Practical DataOps:ch4",
+      "cross_references": [
+        {
+          "target": "Practical DataOps:ch10",
+          "score": 0.559819331243475,
+          "base_score": 0.6089581446650509,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "scrum",
+          "kanban",
+          "agile",
+          "team",
+          "sprint"
+        ],
+        "semantic": [],
+        "merged": [
+          "scrum",
+          "kanban",
+          "agile",
+          "team",
+          "sprint"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_the_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5396113524294394,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:23.833276+00:00"
+      }
+    },
+    {
+      "book": "Practical DataOps",
+      "chapter": 5,
+      "title": "Build Feedback and Measurement",
+      "chapter_id": "Practical DataOps:ch5",
+      "cross_references": [
+        {
+          "target": "Practical DataOps:ch8",
+          "score": 0.5046184452671819,
+          "base_score": 0.5910307421119699,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "product",
+          "data product",
+          "benefit measurement",
+          "improvement",
+          "kpis"
+        ],
+        "semantic": [],
+        "merged": [
+          "product",
+          "data product",
+          "benefit measurement",
+          "improvement",
+          "kpis"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5647591869413696,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:23.833327+00:00"
+      }
+    },
+    {
+      "book": "Practical DataOps",
+      "chapter": 6,
+      "title": "Building Trust",
+      "chapter_id": "Practical DataOps:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "metadata",
+          "users",
+          "trust",
+          "access",
+          "quality"
+        ],
+        "semantic": [],
+        "merged": [
+          "metadata",
+          "users",
+          "trust",
+          "access",
+          "quality"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_the_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45161151200641986,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:23.833378+00:00"
+      }
+    },
+    {
+      "book": "Practical DataOps",
+      "chapter": 7,
+      "title": "DevOps for DataOps",
+      "chapter_id": "Practical DataOps:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "pipeline",
+          "production",
+          "deployment",
+          "test"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "pipeline",
+          "production",
+          "deployment",
+          "test"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48494475394860775,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:23.833446+00:00"
+      }
+    },
+    {
+      "book": "Practical DataOps",
+      "chapter": 8,
+      "title": "Organizing for DataOps",
+      "chapter_id": "Practical DataOps:ch8",
+      "cross_references": [
+        {
+          "target": "Practical DataOps:ch5",
+          "score": 0.5046184452671819,
+          "base_score": 0.5910307421119699,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "team",
+          "functional",
+          "domain",
+          "orientated",
+          "roles"
+        ],
+        "semantic": [],
+        "merged": [
+          "team",
+          "functional",
+          "domain",
+          "orientated",
+          "roles"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5685009748462324,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:23.833497+00:00"
+      }
+    },
+    {
+      "book": "Practical DataOps",
+      "chapter": 9,
+      "title": "DataOps Technology",
+      "chapter_id": "Practical DataOps:ch9",
+      "cross_references": [
+        {
+          "target": "Practical DataOps:ch10",
+          "score": 0.5027674129799685,
+          "base_score": 0.5879456882999476,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tools",
+          "apache",
+          "sources",
+          "service",
+          "technology"
+        ],
+        "semantic": [],
+        "merged": [
+          "tools",
+          "apache",
+          "sources",
+          "service",
+          "technology"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_the_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5602708411643391,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:23.833563+00:00"
+      }
+    },
+    {
+      "book": "Practical DataOps",
+      "chapter": 10,
+      "title": "The DataOps Factory",
+      "chapter_id": "Practical DataOps:ch10",
+      "cross_references": [
+        {
+          "target": "Practical DataOps:ch1",
+          "score": 0.6261593237682095,
+          "base_score": 0.6269322062803492,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Practical DataOps:ch2",
+          "score": 0.6032652916165085,
+          "base_score": 0.755442152694181,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Practical DataOps:ch4",
+          "score": 0.559819331243475,
+          "base_score": 0.6089581446650509,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Practical DataOps:ch9",
+          "score": 0.5027674129799685,
+          "base_score": 0.5879456882999476,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "dataops",
+          "team",
+          "data science",
+          "science",
+          "science analytics"
+        ],
+        "semantic": [],
+        "merged": [
+          "dataops",
+          "team",
+          "data science",
+          "science",
+          "science analytics"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_the_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6075182566688032,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:23.833616+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

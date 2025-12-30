@@ -1,0 +1,985 @@
+{
+  "book": {
+    "title": "The Unicorn Project - Gene Kim"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:59:39.493504",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "The Unicorn Project - Gene Kim",
+      "chapter": 1,
+      "title": "Wednesday, September 3",
+      "chapter_id": "The Unicorn Project - Gene Kim:ch1",
+      "cross_references": [
+        {
+          "target": "The Unicorn Project - Gene Kim:ch17",
+          "score": 0.5054496168298789,
+          "base_score": 0.5924160280497981,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "chris",
+          "randy",
+          "chris says",
+          "vacation",
+          "thinks"
+        ],
+        "semantic": [],
+        "merged": [
+          "chris",
+          "randy",
+          "chris says",
+          "vacation",
+          "thinks"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_maxine",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45784788114939257,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:39.471418+00:00"
+      }
+    },
+    {
+      "book": "The Unicorn Project - Gene Kim",
+      "chapter": 2,
+      "title": "Friday, September 5th",
+      "chapter_id": "The Unicorn Project - Gene Kim:ch2",
+      "cross_references": [
+        {
+          "target": "The Unicorn Project - Gene Kim:ch3",
+          "score": 0.5680135195344694,
+          "base_score": 0.6966891992241158,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "phoenix",
+          "project",
+          "phoenix project",
+          "customers",
+          "steve"
+        ],
+        "semantic": [],
+        "merged": [
+          "phoenix",
+          "project",
+          "phoenix project",
+          "customers",
+          "steve"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_maxine",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4972159700596017,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:39.471547+00:00"
+      }
+    },
+    {
+      "book": "The Unicorn Project - Gene Kim",
+      "chapter": 3,
+      "title": "Monday, September 8",
+      "chapter_id": "The Unicorn Project - Gene Kim:ch3",
+      "cross_references": [
+        {
+          "target": "The Unicorn Project - Gene Kim:ch2",
+          "score": 0.5680135195344694,
+          "base_score": 0.6966891992241158,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Unicorn Project - Gene Kim:ch18",
+          "score": 0.5233237666929147,
+          "base_score": 0.6222062778215245,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Unicorn Project - Gene Kim:ch4",
+          "score": 0.5019309555018326,
+          "base_score": 0.5865515925030543,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "environment",
+          "dev environment",
+          "ticket",
+          "derek",
+          "help"
+        ],
+        "semantic": [],
+        "merged": [
+          "environment",
+          "dev environment",
+          "ticket",
+          "derek",
+          "help"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_maxine",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5274613560198164,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:39.471640+00:00"
+      }
+    },
+    {
+      "book": "The Unicorn Project - Gene Kim",
+      "chapter": 4,
+      "title": "Thursday, September 11",
+      "chapter_id": "The Unicorn Project - Gene Kim:ch4",
+      "cross_references": [
+        {
+          "target": "The Unicorn Project - Gene Kim:ch6",
+          "score": 0.6029745491558002,
+          "base_score": 0.588290915259667,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Unicorn Project - Gene Kim:ch3",
+          "score": 0.5019309555018326,
+          "base_score": 0.5865515925030543,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "release",
+          "john",
+          "release team",
+          "wes",
+          "sarah"
+        ],
+        "semantic": [],
+        "merged": [
+          "release",
+          "john",
+          "release team",
+          "wes",
+          "sarah"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_maxine",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5189839644956419,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:39.471744+00:00"
+      }
+    },
+    {
+      "book": "The Unicorn Project - Gene Kim",
+      "chapter": 5,
+      "title": "Thursday, September 11",
+      "chapter_id": "The Unicorn Project - Gene Kim:ch5",
+      "cross_references": [
+        {
+          "target": "The Unicorn Project - Gene Kim:ch18",
+          "score": 0.53762648035623,
+          "base_score": 0.5719700598529758,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Unicorn Project - Gene Kim:ch7",
+          "score": 0.5291869187192302,
+          "base_score": 0.5579041237913095,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "kurt",
+          "dwayne",
+          "dave",
+          "kurt continues",
+          "adam"
+        ],
+        "semantic": [],
+        "merged": [
+          "kurt",
+          "dwayne",
+          "dave",
+          "kurt continues",
+          "adam"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_maxine",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4943876278489247,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:39.471830+00:00"
+      }
+    },
+    {
+      "book": "The Unicorn Project - Gene Kim",
+      "chapter": 6,
+      "title": "Friday, September 12",
+      "chapter_id": "The Unicorn Project - Gene Kim:ch6",
+      "cross_references": [
+        {
+          "target": "The Unicorn Project - Gene Kim:ch4",
+          "score": 0.6029745491558002,
+          "base_score": 0.588290915259667,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "brent",
+          "wes",
+          "phoenix",
+          "sarah",
+          "file"
+        ],
+        "semantic": [],
+        "merged": [
+          "brent",
+          "wes",
+          "phoenix",
+          "sarah",
+          "file"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_maxine",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5275781102293869,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:39.471916+00:00"
+      }
+    },
+    {
+      "book": "The Unicorn Project - Gene Kim",
+      "chapter": 7,
+      "title": "Thursday, September 18",
+      "chapter_id": "The Unicorn Project - Gene Kim:ch7",
+      "cross_references": [
+        {
+          "target": "The Unicorn Project - Gene Kim:ch18",
+          "score": 0.5821174001700353,
+          "base_score": 0.6461215928759848,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Unicorn Project - Gene Kim:ch5",
+          "score": 0.5291869187192302,
+          "base_score": 0.5579041237913095,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Unicorn Project - Gene Kim:ch17",
+          "score": 0.5182541899337535,
+          "base_score": 0.6137569832229226,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "kirsten",
+          "simplicity",
+          "kurt",
+          "complected",
+          "bartender"
+        ],
+        "semantic": [],
+        "merged": [
+          "kirsten",
+          "simplicity",
+          "kurt",
+          "complected",
+          "bartender"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_maxine",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48493353207373574,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:39.472002+00:00"
+      }
+    },
+    {
+      "book": "The Unicorn Project - Gene Kim",
+      "chapter": 8,
+      "title": "Tuesday, September 23",
+      "chapter_id": "The Unicorn Project - Gene Kim:ch8",
+      "cross_references": [
+        {
+          "target": "The Unicorn Project - Gene Kim:ch11",
+          "score": 0.7488571801165431,
+          "base_score": 0.7123810144799528,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Unicorn Project - Gene Kim:ch12",
+          "score": 0.7268203981401058,
+          "base_score": 0.6756530445192239,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Unicorn Project - Gene Kim:ch13",
+          "score": 0.5741343124506166,
+          "base_score": 0.6328164466769536,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "erik",
+          "hub",
+          "data hub",
+          "tom",
+          "data"
+        ],
+        "semantic": [],
+        "merged": [
+          "erik",
+          "hub",
+          "data hub",
+          "tom",
+          "data"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5582047794891033,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:39.472089+00:00"
+      }
+    },
+    {
+      "book": "The Unicorn Project - Gene Kim",
+      "chapter": 9,
+      "title": "Monday, September 29",
+      "chapter_id": "The Unicorn Project - Gene Kim:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "qa",
+          "tom",
+          "testing day",
+          "testing",
+          "data"
+        ],
+        "semantic": [],
+        "merged": [
+          "qa",
+          "tom",
+          "testing day",
+          "testing",
+          "data"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_maxine",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4788452609634624,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:39.472174+00:00"
+      }
+    },
+    {
+      "book": "The Unicorn Project - Gene Kim",
+      "chapter": 10,
+      "title": "Monday, September 29",
+      "chapter_id": "The Unicorn Project - Gene Kim:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "jared",
+          "changes",
+          "merge",
+          "branch",
+          "room"
+        ],
+        "semantic": [],
+        "merged": [
+          "jared",
+          "changes",
+          "merge",
+          "branch",
+          "room"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_maxine",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43495987755304705,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:39.472257+00:00"
+      }
+    },
+    {
+      "book": "The Unicorn Project - Gene Kim",
+      "chapter": 11,
+      "title": "Wednesday, October 1",
+      "chapter_id": "The Unicorn Project - Gene Kim:ch11",
+      "cross_references": [
+        {
+          "target": "The Unicorn Project - Gene Kim:ch12",
+          "score": 0.8148070481481059,
+          "base_score": 0.6635673024690655,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Unicorn Project - Gene Kim:ch8",
+          "score": 0.7488571801165431,
+          "base_score": 0.7123810144799528,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Unicorn Project - Gene Kim:ch13",
+          "score": 0.6315101883973444,
+          "base_score": 0.7284429065881665,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "hub",
+          "data hub",
+          "data",
+          "qa",
+          "kurt"
+        ],
+        "semantic": [],
+        "merged": [
+          "hub",
+          "data hub",
+          "data",
+          "qa",
+          "kurt"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4848431036034042,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:39.472342+00:00"
+      }
+    },
+    {
+      "book": "The Unicorn Project - Gene Kim",
+      "chapter": 12,
+      "title": "Monday, October 13",
+      "chapter_id": "The Unicorn Project - Gene Kim:ch12",
+      "cross_references": [
+        {
+          "target": "The Unicorn Project - Gene Kim:ch11",
+          "score": 0.8148070481481059,
+          "base_score": 0.6635673024690655,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Unicorn Project - Gene Kim:ch8",
+          "score": 0.7268203981401058,
+          "base_score": 0.6756530445192239,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Unicorn Project - Gene Kim:ch15",
+          "score": 0.5428157087902828,
+          "base_score": 0.5806187739097306,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Unicorn Project - Gene Kim:ch13",
+          "score": 0.5396581816436842,
+          "base_score": 0.5753562286653995,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ellen",
+          "data hub",
+          "hub",
+          "data",
+          "kurt"
+        ],
+        "semantic": [],
+        "merged": [
+          "ellen",
+          "data hub",
+          "hub",
+          "data",
+          "kurt"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5073766262440528,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:39.472428+00:00"
+      }
+    },
+    {
+      "book": "The Unicorn Project - Gene Kim",
+      "chapter": 13,
+      "title": "Thursday, November 6th",
+      "chapter_id": "The Unicorn Project - Gene Kim:ch13",
+      "cross_references": [
+        {
+          "target": "The Unicorn Project - Gene Kim:ch11",
+          "score": 0.6315101883973444,
+          "base_score": 0.7284429065881665,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Unicorn Project - Gene Kim:ch8",
+          "score": 0.5741343124506166,
+          "base_score": 0.6328164466769536,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Unicorn Project - Gene Kim:ch12",
+          "score": 0.5396581816436842,
+          "base_score": 0.5753562286653995,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "matt",
+          "maggie",
+          "data",
+          "matt says",
+          "customer"
+        ],
+        "semantic": [],
+        "merged": [
+          "matt",
+          "maggie",
+          "data",
+          "matt says",
+          "customer"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4935448370343167,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:39.472513+00:00"
+      }
+    },
+    {
+      "book": "The Unicorn Project - Gene Kim",
+      "chapter": 14,
+      "title": "Monday, November 10",
+      "chapter_id": "The Unicorn Project - Gene Kim:ch14",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "team",
+          "narwhal",
+          "need",
+          "unicorn"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "team",
+          "narwhal",
+          "need",
+          "unicorn"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.460919895776052,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:59:39.472595+00:00"
+      }
+    },
+    {
+      "book": "The Unicorn Project - Gene Kim",
+      "chapter": 15,
+      "title": "Tuesday, November 25",
+      "chapter_id": "The Unicorn Project - Gene Kim:ch15",
+      "cross_references": [
+        {
+          "target": "The Unicorn Project - Gene Kim:ch12",
+          "score": 0.5428157087902828,
+          "base_score": 0.5806187739097306,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Unicorn Project - Gene Kim:ch16",
+          "score": 0.5192192023653899,
+          "base_score": 0.5412912632015756,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "launch",
+          "wes",
+          "maggie",
+          "room",
+          "kurt"
+        ],
+        "semantic": [],
+        "merged": [
+          "launch",
+          "wes",
+          "maggie",
+          "room",
+          "kurt"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5113385475654812,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:39.472682+00:00"
+      }
+    },
+    {
+      "book": "The Unicorn Project - Gene Kim",
+      "chapter": 16,
+      "title": "Friday, December 5",
+      "chapter_id": "The Unicorn Project - Gene Kim:ch16",
+      "cross_references": [
+        {
+          "target": "The Unicorn Project - Gene Kim:ch15",
+          "score": 0.5192192023653899,
+          "base_score": 0.5412912632015756,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "horizon",
+          "maggie",
+          "steve",
+          "risk",
+          "ideas"
+        ],
+        "semantic": [],
+        "merged": [
+          "horizon",
+          "maggie",
+          "steve",
+          "risk",
+          "ideas"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3988254087444342,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:39.472827+00:00"
+      }
+    },
+    {
+      "book": "The Unicorn Project - Gene Kim",
+      "chapter": 17,
+      "title": "Friday, December 12",
+      "chapter_id": "The Unicorn Project - Gene Kim:ch17",
+      "cross_references": [
+        {
+          "target": "The Unicorn Project - Gene Kim:ch7",
+          "score": 0.5182541899337535,
+          "base_score": 0.6137569832229226,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Unicorn Project - Gene Kim:ch1",
+          "score": 0.5054496168298789,
+          "base_score": 0.5924160280497981,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Unicorn Project - Gene Kim:ch19",
+          "score": 0.5028495959177143,
+          "base_score": 0.588082659862857,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "steve",
+          "dick",
+          "steve says",
+          "erik",
+          "unikitty"
+        ],
+        "semantic": [],
+        "merged": [
+          "steve",
+          "dick",
+          "steve says",
+          "erik",
+          "unikitty"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_maxine",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.503768272878129,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:39.472917+00:00"
+      }
+    },
+    {
+      "book": "The Unicorn Project - Gene Kim",
+      "chapter": 18,
+      "title": "Thursday, December 18",
+      "chapter_id": "The Unicorn Project - Gene Kim:ch18",
+      "cross_references": [
+        {
+          "target": "The Unicorn Project - Gene Kim:ch7",
+          "score": 0.5821174001700353,
+          "base_score": 0.6461215928759848,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Unicorn Project - Gene Kim:ch5",
+          "score": 0.53762648035623,
+          "base_score": 0.5719700598529758,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Unicorn Project - Gene Kim:ch3",
+          "score": 0.5233237666929147,
+          "base_score": 0.6222062778215245,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "kurt",
+          "debra",
+          "maggie",
+          "team",
+          "stage"
+        ],
+        "semantic": [],
+        "merged": [
+          "kurt",
+          "debra",
+          "maggie",
+          "team",
+          "stage"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_maxine",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5304949489597823,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:39.473003+00:00"
+      }
+    },
+    {
+      "book": "The Unicorn Project - Gene Kim",
+      "chapter": 19,
+      "title": "Tuesday, January 13",
+      "chapter_id": "The Unicorn Project - Gene Kim:ch19",
+      "cross_references": [
+        {
+          "target": "The Unicorn Project - Gene Kim:ch17",
+          "score": 0.5028495959177143,
+          "base_score": 0.588082659862857,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "youtube",
+          "video",
+          "youtube video",
+          "https",
+          "video posted"
+        ],
+        "semantic": [],
+        "merged": [
+          "youtube",
+          "video",
+          "youtube video",
+          "https",
+          "video posted"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_maxine",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48740558569216286,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:39.473088+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

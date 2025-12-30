@@ -1,0 +1,268 @@
+{
+  "book": {
+    "title": "fast-data-smart-and-at-scale"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:01:16.445849",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "fast-data-smart-and-at-scale",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-10)",
+      "chapter_id": "fast-data-smart-and-at-scale:ch1",
+      "cross_references": [
+        {
+          "target": "fast-data-smart-and-at-scale:ch2",
+          "score": 0.7352136407672263,
+          "base_score": 0.8086894012787105,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "fast",
+          "fast data",
+          "smart scale",
+          "data smart",
+          "value"
+        ],
+        "semantic": [],
+        "merged": [
+          "fast",
+          "fast data",
+          "smart scale",
+          "data smart",
+          "value"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "data_fast_applications",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6587889357267748,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:16.441928+00:00"
+      }
+    },
+    {
+      "book": "fast-data-smart-and-at-scale",
+      "chapter": 2,
+      "title": "Segment 2 (pages 11-18)",
+      "chapter_id": "fast-data-smart-and-at-scale:ch2",
+      "cross_references": [
+        {
+          "target": "fast-data-smart-and-at-scale:ch1",
+          "score": 0.7352136407672263,
+          "base_score": 0.8086894012787105,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "fast",
+          "fast data",
+          "end",
+          "hadoop",
+          "streams"
+        ],
+        "semantic": [],
+        "merged": [
+          "fast",
+          "fast data",
+          "end",
+          "hadoop",
+          "streams"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "data_fast_applications",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6654229528545587,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:16.441976+00:00"
+      }
+    },
+    {
+      "book": "fast-data-smart-and-at-scale",
+      "chapter": 3,
+      "title": "Segment 3 (pages 19-27)",
+      "chapter_id": "fast-data-smart-and-at-scale:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "cap",
+          "transaction",
+          "state",
+          "offer",
+          "analytics"
+        ],
+        "semantic": [],
+        "merged": [
+          "cap",
+          "transaction",
+          "state",
+          "offer",
+          "analytics"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "cap_state_transaction",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.52878871980314,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:16.442007+00:00"
+      }
+    },
+    {
+      "book": "fast-data-smart-and-at-scale",
+      "chapter": 4,
+      "title": "Segment 4 (pages 28-38)",
+      "chapter_id": "fast-data-smart-and-at-scale:ch4",
+      "cross_references": [
+        {
+          "target": "fast-data-smart-and-at-scale:ch6",
+          "score": 0.5235889930977049,
+          "base_score": 0.7059816551628415,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "oriented",
+          "pipeline",
+          "events",
+          "real time",
+          "real"
+        ],
+        "semantic": [],
+        "merged": [
+          "oriented",
+          "pipeline",
+          "events",
+          "real time",
+          "real"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "data_processing_oriented",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.651103207647219,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:16.442035+00:00"
+      }
+    },
+    {
+      "book": "fast-data-smart-and-at-scale",
+      "chapter": 5,
+      "title": "Segment 5 (pages 39-47)",
+      "chapter_id": "fast-data-smart-and-at-scale:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "idempotent",
+          "unique",
+          "idempotent processing",
+          "ids",
+          "kafka"
+        ],
+        "semantic": [],
+        "merged": [
+          "idempotent",
+          "unique",
+          "idempotent processing",
+          "ids",
+          "kafka"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "idempotent_unique_ids",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5584220075634662,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:16.442063+00:00"
+      }
+    },
+    {
+      "book": "fast-data-smart-and-at-scale",
+      "chapter": 6,
+      "title": "Segment 6 (pages 48-51)",
+      "chapter_id": "fast-data-smart-and-at-scale:ch6",
+      "cross_references": [
+        {
+          "target": "fast-data-smart-and-at-scale:ch4",
+          "score": 0.5235889930977049,
+          "base_score": 0.7059816551628415,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "real time",
+          "real",
+          "analytics",
+          "action",
+          "data real"
+        ],
+        "semantic": [],
+        "merged": [
+          "real time",
+          "real",
+          "analytics",
+          "action",
+          "data real"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "time_real_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.653247517113206,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:16.442092+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

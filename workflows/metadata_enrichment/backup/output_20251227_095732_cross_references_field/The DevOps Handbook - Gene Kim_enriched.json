@@ -1,0 +1,3934 @@
+{
+  "book": {
+    "title": "The DevOps Handbook - Gene Kim"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:58:26.265449",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 1,
+      "title": "Segment 1 (pages 3-11)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "devops",
+          "itil",
+          "book",
+          "authors",
+          "isbn 978"
+        ],
+        "semantic": [],
+        "merged": [
+          "devops",
+          "itil",
+          "book",
+          "authors",
+          "isbn 978"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "devops_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24823377617791964,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.206068+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 2,
+      "title": "Segment 2 (pages 12-19)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch2",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch54",
+          "score": 0.5049424052105027,
+          "base_score": 0.5915706753508378,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "work",
+          "devops",
+          "operations",
+          "organizations",
+          "outcomes"
+        ],
+        "semantic": [],
+        "merged": [
+          "work",
+          "devops",
+          "operations",
+          "organizations",
+          "outcomes"
+        ]
+      },
+      "topic_id": 9,
+      "topic_name": "security_and_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48273314441464676,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.206579+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 3,
+      "title": "Segment 3 (pages 20-27)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch3",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch9",
+          "score": 0.594261374184942,
+          "base_score": 0.7404356236415699,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch29",
+          "score": 0.5518969330805322,
+          "base_score": 0.6698282218008871,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch41",
+          "score": 0.5507892882572504,
+          "base_score": 0.6679821470954173,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch22",
+          "score": 0.5389760415746355,
+          "base_score": 0.6482934026243925,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "organizations",
+          "market",
+          "organization",
+          "competitive",
+          "features"
+        ],
+        "semantic": [],
+        "merged": [
+          "organizations",
+          "market",
+          "organization",
+          "competitive",
+          "features"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "production_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48076884797611597,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.206926+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 4,
+      "title": "Segment 4 (pages 28-35)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "goals",
+          "times",
+          "code",
+          "teams",
+          "profitability"
+        ],
+        "semantic": [],
+        "merged": [
+          "goals",
+          "times",
+          "code",
+          "teams",
+          "profitability"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5079161957421319,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:58:26.207255+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 5,
+      "title": "Segment 5 (pages 36-44)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch5",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch14",
+          "score": 0.5427429129807099,
+          "base_score": 0.5804974475604423,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch13",
+          "score": 0.5307786353167566,
+          "base_score": 0.6346310588612611,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch60",
+          "score": 0.505674850136478,
+          "base_score": 0.7687173428200558,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "devops",
+          "deploys day",
+          "organizations",
+          "book",
+          "deploys"
+        ],
+        "semantic": [],
+        "merged": [
+          "devops",
+          "deploys day",
+          "organizations",
+          "book",
+          "deploys"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "devops_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46789483386004244,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.207637+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 6,
+      "title": "Segment 6 (pages 45-53)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch6",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch7",
+          "score": 0.7230878931365698,
+          "base_score": 0.788479821894283,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch15",
+          "score": 0.5624621720508562,
+          "base_score": 0.651722667703808,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "stream",
+          "value",
+          "value stream",
+          "lead",
+          "deployment lead"
+        ],
+        "semantic": [],
+        "merged": [
+          "stream",
+          "value",
+          "value stream",
+          "lead",
+          "deployment lead"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "work_time_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4026691902261103,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.207998+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 7,
+      "title": "Segment 7 (pages 54-61)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch7",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch6",
+          "score": 0.7230878931365698,
+          "base_score": 0.788479821894283,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch15",
+          "score": 0.5236565089634075,
+          "base_score": 0.7060941816056793,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "work",
+          "value",
+          "flow",
+          "work visible",
+          "value stream"
+        ],
+        "semantic": [],
+        "merged": [
+          "work",
+          "value",
+          "flow",
+          "work visible",
+          "value stream"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "work_time_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4370842080189439,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.208329+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 8,
+      "title": "Segment 8 (pages 62-69)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "batch",
+          "sizes",
+          "wip",
+          "large batch",
+          "batch sizes"
+        ],
+        "semantic": [],
+        "merged": [
+          "batch",
+          "sizes",
+          "wip",
+          "large batch",
+          "batch sizes"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "work_time_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27606194514614496,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.208675+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 9,
+      "title": "Segment 9 (pages 70-77)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch9",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch22",
+          "score": 0.601996153607604,
+          "base_score": 0.7533269226793399,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch3",
+          "score": 0.594261374184942,
+          "base_score": 0.7404356236415699,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch29",
+          "score": 0.5504244011640907,
+          "base_score": 0.6673740019401513,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch41",
+          "score": 0.5445481293319427,
+          "base_score": 0.6575802155532379,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch30",
+          "score": 0.508418766871562,
+          "base_score": 0.5973646114526033,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "work",
+          "complex",
+          "complex systems",
+          "waste",
+          "systems"
+        ],
+        "semantic": [],
+        "merged": [
+          "work",
+          "complex",
+          "complex systems",
+          "waste",
+          "systems"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "production_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4605354166697593,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.209002+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 10,
+      "title": "Segment 10 (pages 78-85)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "problem",
+          "feedback",
+          "quality",
+          "problems",
+          "swarm"
+        ],
+        "semantic": [],
+        "merged": [
+          "problem",
+          "feedback",
+          "quality",
+          "problems",
+          "swarm"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_and_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3519014954882195,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.209326+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 11,
+      "title": "Segment 11 (pages 86-93)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch11",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch12",
+          "score": 0.6169687563862538,
+          "base_score": 0.7042071865696822,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch48",
+          "score": 0.5142405079473276,
+          "base_score": 0.607067513245546,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch49",
+          "score": 0.5117756845041155,
+          "base_score": 0.6029594741735258,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "work",
+          "daily work",
+          "daily",
+          "safety",
+          "culture"
+        ],
+        "semantic": [],
+        "merged": [
+          "work",
+          "daily work",
+          "daily",
+          "safety",
+          "culture"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_and_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4245638835481011,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.209672+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 12,
+      "title": "Segment 12 (pages 94-101)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch12",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch11",
+          "score": 0.6169687563862538,
+          "base_score": 0.7042071865696822,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch49",
+          "score": 0.508721906061254,
+          "base_score": 0.5978698434354234,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "work",
+          "solve",
+          "leaders",
+          "similar",
+          "organization"
+        ],
+        "semantic": [],
+        "merged": [
+          "work",
+          "solve",
+          "leaders",
+          "similar",
+          "organization"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_and_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4401244728784319,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.210057+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 13,
+      "title": "Segment 13 (pages 102-110)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch13",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch14",
+          "score": 0.5515279925184994,
+          "base_score": 0.6692133208641655,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch5",
+          "score": 0.5307786353167566,
+          "base_score": 0.6346310588612611,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch63",
+          "score": 0.5079652793566596,
+          "base_score": 0.596608798927766,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "kissler",
+          "start",
+          "value",
+          "nordstrom",
+          "technology"
+        ],
+        "semantic": [],
+        "merged": [
+          "kissler",
+          "start",
+          "value",
+          "nordstrom",
+          "technology"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "devops_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3840317542200541,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.210401+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 14,
+      "title": "Segment 14 (pages 111-118)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch14",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch13",
+          "score": 0.5515279925184994,
+          "base_score": 0.6692133208641655,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch5",
+          "score": 0.5427429129807099,
+          "base_score": 0.5804974475604423,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "brownfield",
+          "projects",
+          "greenfield",
+          "brownfield projects",
+          "devops"
+        ],
+        "semantic": [],
+        "merged": [
+          "brownfield",
+          "projects",
+          "greenfield",
+          "brownfield projects",
+          "devops"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "devops_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4025786295663462,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.210792+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 15,
+      "title": "Segment 15 (pages 119-126)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch15",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch6",
+          "score": 0.5624621720508562,
+          "base_score": 0.651722667703808,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch7",
+          "score": 0.5236565089634075,
+          "base_score": 0.7060941816056793,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "stream",
+          "value",
+          "value stream",
+          "stream map",
+          "map"
+        ],
+        "semantic": [],
+        "merged": [
+          "stream",
+          "value",
+          "value stream",
+          "stream map",
+          "map"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.387197691521897,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:58:26.211129+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 16,
+      "title": "Segment 16 (pages 127-136)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch16",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch60",
+          "score": 0.5575613499417613,
+          "base_score": 0.6792689165696022,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch52",
+          "score": 0.5217197968965065,
+          "base_score": 0.6195329948275109,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "linkedin",
+          "dedicated",
+          "rest organization",
+          "team",
+          "engineering"
+        ],
+        "semantic": [],
+        "merged": [
+          "linkedin",
+          "dedicated",
+          "rest organization",
+          "team",
+          "engineering"
+        ]
+      },
+      "topic_id": 8,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42565794647094307,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.211460+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 17,
+      "title": "Segment 17 (pages 137-145)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch17",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch19",
+          "score": 0.6084173402308031,
+          "base_score": 0.6899548263105977,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch20",
+          "score": 0.5742881883714119,
+          "base_score": 0.6330729065449457,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch21",
+          "score": 0.5474491734239884,
+          "base_score": 0.5883412149659064,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch18",
+          "score": 0.5104481598707724,
+          "base_score": 0.600746933117954,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sprouter",
+          "teams",
+          "law",
+          "conway law",
+          "conway"
+        ],
+        "semantic": [],
+        "merged": [
+          "sprouter",
+          "teams",
+          "law",
+          "conway law",
+          "conway"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "teams_the_team",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4528775221809547,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.211805+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 18,
+      "title": "Segment 18 (pages 146-153)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch18",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch20",
+          "score": 0.5185152268169761,
+          "base_score": 0.6141920446949602,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch17",
+          "score": 0.5104481598707724,
+          "base_score": 0.600746933117954,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "orientation",
+          "functional",
+          "functional orientation",
+          "oriented",
+          "market"
+        ],
+        "semantic": [],
+        "merged": [
+          "orientation",
+          "functional",
+          "functional orientation",
+          "oriented",
+          "market"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "teams_the_team",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4159807279725443,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.212136+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 19,
+      "title": "Segment 19 (pages 154-162)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch19",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch21",
+          "score": 0.6375099702628163,
+          "base_score": 0.6458499504380272,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch17",
+          "score": 0.6084173402308031,
+          "base_score": 0.6899548263105977,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch20",
+          "score": 0.6073174043113906,
+          "base_score": 0.6881215997782435,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "teams",
+          "team",
+          "communication",
+          "small",
+          "different"
+        ],
+        "semantic": [],
+        "merged": [
+          "teams",
+          "team",
+          "communication",
+          "small",
+          "different"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "teams_the_team",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4228321971251675,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.212497+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 20,
+      "title": "Segment 20 (pages 163-173)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch20",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch21",
+          "score": 0.7032209217659959,
+          "base_score": 0.7553682029433265,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch19",
+          "score": 0.6073174043113906,
+          "base_score": 0.6881215997782435,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch17",
+          "score": 0.5742881883714119,
+          "base_score": 0.6330729065449457,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch18",
+          "score": 0.5185152268169761,
+          "base_score": 0.6141920446949602,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "teams",
+          "ops",
+          "dev",
+          "dev teams",
+          "ops engineers"
+        ],
+        "semantic": [],
+        "merged": [
+          "teams",
+          "ops",
+          "dev",
+          "dev teams",
+          "ops engineers"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "teams_the_team",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4220702986549766,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.212841+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 21,
+      "title": "Segment 21 (pages 174-182)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch21",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch20",
+          "score": 0.7032209217659959,
+          "base_score": 0.7553682029433265,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch19",
+          "score": 0.6375099702628163,
+          "base_score": 0.6458499504380272,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch17",
+          "score": 0.5474491734239884,
+          "base_score": 0.5883412149659064,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ops",
+          "teams",
+          "product teams",
+          "team",
+          "product"
+        ],
+        "semantic": [],
+        "merged": [
+          "ops",
+          "teams",
+          "product teams",
+          "team",
+          "product"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "teams_the_team",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4011995591820277,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.213176+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 22,
+      "title": "Segment 22 (pages 183-190)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch22",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch23",
+          "score": 0.7487787191363409,
+          "base_score": 0.7122502461796156,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch41",
+          "score": 0.6169209534052884,
+          "base_score": 0.7041275149347399,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch9",
+          "score": 0.601996153607604,
+          "base_score": 0.7533269226793399,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch29",
+          "score": 0.5611731857991616,
+          "base_score": 0.6112145689245286,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch42",
+          "score": 0.5463332669442517,
+          "base_score": 0.586481370833012,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "environments",
+          "production",
+          "environment",
+          "production like",
+          "like environments"
+        ],
+        "semantic": [],
+        "merged": [
+          "environments",
+          "production",
+          "environment",
+          "production like",
+          "like environments"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "production_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4705863491129003,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.213539+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 23,
+      "title": "Segment 23 (pages 191-198)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch23",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch22",
+          "score": 0.7487787191363409,
+          "base_score": 0.7122502461796156,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch41",
+          "score": 0.5120170948123494,
+          "base_score": 0.5292877506131749,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "environments",
+          "production",
+          "production like",
+          "version control",
+          "version"
+        ],
+        "semantic": [],
+        "merged": [
+          "environments",
+          "production",
+          "production like",
+          "version control",
+          "version"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "production_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34035134091822156,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.213869+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 24,
+      "title": "Segment 24 (pages 199-209)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch24",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch25",
+          "score": 0.7521325162538772,
+          "base_score": 0.7178399080421762,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch26",
+          "score": 0.6877800982019878,
+          "base_score": 0.6105858779556939,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch55",
+          "score": 0.5397671724881701,
+          "base_score": 0.5755378800728761,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "automated",
+          "testing",
+          "code",
+          "tests",
+          "test"
+        ],
+        "semantic": [],
+        "merged": [
+          "automated",
+          "testing",
+          "code",
+          "tests",
+          "test"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "tests_automated_testing",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44221630968281306,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.214202+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 25,
+      "title": "Segment 25 (pages 210-221)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch25",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch24",
+          "score": 0.7521325162538772,
+          "base_score": 0.7178399080421762,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch26",
+          "score": 0.6707654022560985,
+          "base_score": 0.7012756704268308,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch55",
+          "score": 0.5296880003544413,
+          "base_score": 0.5587392598499948,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tests",
+          "automated tests",
+          "acceptance",
+          "automated",
+          "testing"
+        ],
+        "semantic": [],
+        "merged": [
+          "tests",
+          "automated tests",
+          "acceptance",
+          "automated",
+          "testing"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "tests_automated_testing",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3592619116274741,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.214558+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 26,
+      "title": "Segment 26 (pages 222-229)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch26",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch24",
+          "score": 0.6877800982019878,
+          "base_score": 0.6105858779556939,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch25",
+          "score": 0.6707654022560985,
+          "base_score": 0.7012756704268308,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tests",
+          "integration",
+          "automated",
+          "build",
+          "test"
+        ],
+        "semantic": [],
+        "merged": [
+          "tests",
+          "integration",
+          "automated",
+          "build",
+          "test"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "tests_automated_testing",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3841906485500468,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.214885+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 27,
+      "title": "Segment 27 (pages 230-237)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch27",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "trunk",
+          "trunk based",
+          "based development",
+          "based",
+          "developers"
+        ],
+        "semantic": [],
+        "merged": [
+          "trunk",
+          "trunk based",
+          "based development",
+          "based",
+          "developers"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4270648357664545,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:58:26.215234+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 28,
+      "title": "Segment 28 (pages 238-247)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch28",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch29",
+          "score": 0.6660740239812153,
+          "base_score": 0.5744090875877398,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch41",
+          "score": 0.5622264316043312,
+          "base_score": 0.5203773860072186,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch22",
+          "score": 0.5277429105132831,
+          "base_score": 0.5554974434480646,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "deployment",
+          "production",
+          "deployments",
+          "development test",
+          "facebook"
+        ],
+        "semantic": [],
+        "merged": [
+          "deployment",
+          "production",
+          "deployments",
+          "development test",
+          "facebook"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "production_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3948637784954342,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.215598+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 29,
+      "title": "Segment 29 (pages 248-255)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch29",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch41",
+          "score": 0.6700118880607097,
+          "base_score": 0.7000198134345161,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch28",
+          "score": 0.6660740239812153,
+          "base_score": 0.5744090875877398,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch22",
+          "score": 0.5611731857991616,
+          "base_score": 0.6112145689245286,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch3",
+          "score": 0.5518969330805322,
+          "base_score": 0.6698282218008871,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch9",
+          "score": 0.5504244011640907,
+          "base_score": 0.6673740019401513,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "deployment",
+          "production",
+          "deployments",
+          "packages",
+          "code"
+        ],
+        "semantic": [],
+        "merged": [
+          "deployment",
+          "production",
+          "deployments",
+          "packages",
+          "code"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "production_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44105176550521674,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.215947+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 30,
+      "title": "Segment 30 (pages 256-263)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch30",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch41",
+          "score": 0.5485830520795364,
+          "base_score": 0.6643050867992273,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch31",
+          "score": 0.5290207100755037,
+          "base_score": 0.6317011834591727,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch32",
+          "score": 0.528080399527986,
+          "base_score": 0.6301339992133099,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch29",
+          "score": 0.5277199932824309,
+          "base_score": 0.6295333221373848,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch22",
+          "score": 0.5217677783898896,
+          "base_score": 0.6196129639831494,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "blue green",
+          "release",
+          "blue",
+          "green",
+          "patterns"
+        ],
+        "semantic": [],
+        "merged": [
+          "blue green",
+          "release",
+          "blue",
+          "green",
+          "patterns"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "production_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3943789032852846,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.216365+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 31,
+      "title": "Segment 31 (pages 264-271)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch31",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch30",
+          "score": 0.5290207100755037,
+          "base_score": 0.6317011834591727,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch41",
+          "score": 0.5183793123095072,
+          "base_score": 0.6139655205158454,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "feature",
+          "feature toggles",
+          "toggles",
+          "new feature",
+          "chat"
+        ],
+        "semantic": [],
+        "merged": [
+          "feature",
+          "feature toggles",
+          "toggles",
+          "new feature",
+          "chat"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "production_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33287389205797024,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.216724+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 32,
+      "title": "Segment 32 (pages 272-279)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch32",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch30",
+          "score": 0.528080399527986,
+          "base_score": 0.6301339992133099,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "architecture",
+          "different",
+          "using different",
+          "servers",
+          "using"
+        ],
+        "semantic": [],
+        "merged": [
+          "architecture",
+          "different",
+          "using different",
+          "servers",
+          "using"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "production_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37873478813635286,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.217053+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 33,
+      "title": "Segment 33 (pages 280-289)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch33",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "architecture",
+          "building blocks",
+          "blocks",
+          "building",
+          "functionality"
+        ],
+        "semantic": [],
+        "merged": [
+          "architecture",
+          "building blocks",
+          "blocks",
+          "building",
+          "functionality"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "teams_the_team",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36875936104560003,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.217380+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 34,
+      "title": "Segment 34 (pages 290-298)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch34",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "telemetry",
+          "feedback",
+          "problems",
+          "enable",
+          "work"
+        ],
+        "semantic": [],
+        "merged": [
+          "telemetry",
+          "feedback",
+          "problems",
+          "enable",
+          "work"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45735725013461215,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:58:26.218193+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 35,
+      "title": "Segment 35 (pages 299-306)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch35",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch36",
+          "score": 0.6688792905556938,
+          "base_score": 0.6981321509261564,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch38",
+          "score": 0.6014241337362851,
+          "base_score": 0.6782994821530678,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch37",
+          "score": 0.5713859815158283,
+          "base_score": 0.628235895118973,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "telemetry",
+          "logging",
+          "logs",
+          "monitoring",
+          "metrics"
+        ],
+        "semantic": [],
+        "merged": [
+          "telemetry",
+          "logging",
+          "logs",
+          "monitoring",
+          "metrics"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "telemetry_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3354632877444242,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.219605+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 36,
+      "title": "Segment 36 (pages 307-314)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch36",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch35",
+          "score": 0.6688792905556938,
+          "base_score": 0.6981321509261564,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch38",
+          "score": 0.6191995785681306,
+          "base_score": 0.7079252235394768,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch37",
+          "score": 0.5911909010346033,
+          "base_score": 0.6612440943169314,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch40",
+          "score": 0.5599732996474928,
+          "base_score": 0.6092147586717471,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "telemetry",
+          "production telemetry",
+          "metrics",
+          "production",
+          "create"
+        ],
+        "semantic": [],
+        "merged": [
+          "telemetry",
+          "production telemetry",
+          "metrics",
+          "production",
+          "create"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "telemetry_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3691709103689913,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.220619+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 37,
+      "title": "Segment 37 (pages 315-322)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch37",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch36",
+          "score": 0.5911909010346033,
+          "base_score": 0.6612440943169314,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch35",
+          "score": 0.5713859815158283,
+          "base_score": 0.628235895118973,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch38",
+          "score": 0.502210975340556,
+          "base_score": 0.5870182922342599,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "metrics",
+          "application",
+          "infrastructure",
+          "business metrics",
+          "examples include"
+        ],
+        "semantic": [],
+        "merged": [
+          "metrics",
+          "application",
+          "infrastructure",
+          "business metrics",
+          "examples include"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "telemetry_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3574220199478075,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.221605+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 38,
+      "title": "Segment 38 (pages 323-330)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch38",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch36",
+          "score": 0.6191995785681306,
+          "base_score": 0.7079252235394768,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch35",
+          "score": 0.6014241337362851,
+          "base_score": 0.6782994821530678,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch37",
+          "score": 0.502210975340556,
+          "base_score": 0.5870182922342599,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch40",
+          "score": 0.5009688665803612,
+          "base_score": 0.5849481109672687,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "telemetry",
+          "metric",
+          "data",
+          "standard deviations",
+          "problems"
+        ],
+        "semantic": [],
+        "merged": [
+          "telemetry",
+          "metric",
+          "data",
+          "standard deviations",
+          "problems"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "telemetry_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37478489402055143,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.222476+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 39,
+      "title": "Segment 39 (pages 331-338)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch39",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "scryer",
+          "downloads",
+          "netflix",
+          "deviations"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "scryer",
+          "downloads",
+          "netflix",
+          "deviations"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "telemetry_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.11726300786191741,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.223782+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 40,
+      "title": "Segment 40 (pages 339-346)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch40",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch36",
+          "score": 0.5599732996474928,
+          "base_score": 0.6092147586717471,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch38",
+          "score": 0.5009688665803612,
+          "base_score": 0.5849481109672687,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "production",
+          "transaction volume",
+          "transaction",
+          "fear"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "production",
+          "transaction volume",
+          "transaction",
+          "fear"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "telemetry_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38119211876313086,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.224681+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 41,
+      "title": "Segment 41 (pages 347-354)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch41",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch29",
+          "score": 0.6700118880607097,
+          "base_score": 0.7000198134345161,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch42",
+          "score": 0.6208630281306033,
+          "base_score": 0.7106976394769315,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch22",
+          "score": 0.6169209534052884,
+          "base_score": 0.7041275149347399,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch28",
+          "score": 0.5622264316043312,
+          "base_score": 0.5203773860072186,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch3",
+          "score": 0.5507892882572504,
+          "base_score": 0.6679821470954173,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "production",
+          "product",
+          "help",
+          "issues",
+          "deployments"
+        ],
+        "semantic": [],
+        "merged": [
+          "production",
+          "product",
+          "help",
+          "issues",
+          "deployments"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "production_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48157294771352527,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.226768+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 42,
+      "title": "Segment 42 (pages 355-362)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch42",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch41",
+          "score": 0.6208630281306033,
+          "base_score": 0.7106976394769315,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch22",
+          "score": 0.5463332669442517,
+          "base_score": 0.586481370833012,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch29",
+          "score": 0.5285773224180328,
+          "base_score": 0.5568881299559805,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "product teams",
+          "production",
+          "service",
+          "services",
+          "teams"
+        ],
+        "semantic": [],
+        "merged": [
+          "product teams",
+          "production",
+          "service",
+          "services",
+          "teams"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "production_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.446690489753624,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.227173+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 43,
+      "title": "Segment 43 (pages 363-370)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch43",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "testing",
+          "feature",
+          "experiments",
+          "hypothesis",
+          "user research"
+        ],
+        "semantic": [],
+        "merged": [
+          "testing",
+          "feature",
+          "experiments",
+          "hypothesis",
+          "user research"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "production_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3092656515832708,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.227566+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 44,
+      "title": "Segment 44 (pages 371-378)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch44",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "answer",
+          "answers",
+          "github",
+          "user",
+          "deployments"
+        ],
+        "semantic": [],
+        "merged": [
+          "answer",
+          "answers",
+          "github",
+          "user",
+          "deployments"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "production_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35168335958942554,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.227917+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 45,
+      "title": "Segment 45 (pages 379-386)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch45",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch57",
+          "score": 0.6262691640029292,
+          "base_score": 0.6271152733382155,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch46",
+          "score": 0.5234917593895019,
+          "base_score": 0.5484121915750958,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "changes",
+          "review",
+          "change",
+          "peer",
+          "code"
+        ],
+        "semantic": [],
+        "merged": [
+          "changes",
+          "review",
+          "change",
+          "peer",
+          "code"
+        ]
+      },
+      "topic_id": 10,
+      "topic_name": "changes_change_review",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40429902171307697,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.228260+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 46,
+      "title": "Segment 46 (pages 387-394)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch46",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch45",
+          "score": 0.5234917593895019,
+          "base_score": 0.5484121915750958,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pair",
+          "pair programming",
+          "programming",
+          "review",
+          "code review"
+        ],
+        "semantic": [],
+        "merged": [
+          "pair",
+          "pair programming",
+          "programming",
+          "review",
+          "code review"
+        ]
+      },
+      "topic_id": 10,
+      "topic_name": "changes_change_review",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3427641719042337,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.228845+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 47,
+      "title": "Segment 47 (pages 395-403)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch47",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "larb",
+          "teap larb",
+          "teap",
+          "learning",
+          "practices"
+        ],
+        "semantic": [],
+        "merged": [
+          "larb",
+          "teap larb",
+          "teap",
+          "learning",
+          "practices"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4090670250465493,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:58:26.229190+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 48,
+      "title": "Segment 48 (pages 404-412)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch48",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch49",
+          "score": 0.5260405733206405,
+          "base_score": 0.6267342888677341,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch11",
+          "score": 0.5142405079473276,
+          "base_score": 0.607067513245546,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "post",
+          "post mortem",
+          "mortem",
+          "blameless",
+          "blameless post"
+        ],
+        "semantic": [],
+        "merged": [
+          "post",
+          "post mortem",
+          "mortem",
+          "blameless",
+          "blameless post"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_and_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3019455688821153,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.229550+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 49,
+      "title": "Segment 49 (pages 413-420)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch49",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch48",
+          "score": 0.5260405733206405,
+          "base_score": 0.6267342888677341,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch11",
+          "score": 0.5117756845041155,
+          "base_score": 0.6029594741735258,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch12",
+          "score": 0.508721906061254,
+          "base_score": 0.5978698434354234,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "failure",
+          "failures",
+          "failure signals",
+          "signals",
+          "modes"
+        ],
+        "semantic": [],
+        "merged": [
+          "failure",
+          "failures",
+          "failure signals",
+          "signals",
+          "modes"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_and_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3738968666287102,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.229886+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 50,
+      "title": "Segment 50 (pages 421-429)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch50",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "chat",
+          "repository",
+          "code repository",
+          "rooms",
+          "chat rooms"
+        ],
+        "semantic": [],
+        "merged": [
+          "chat",
+          "repository",
+          "code repository",
+          "rooms",
+          "chat rooms"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33015263023011504,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:58:26.230219+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 51,
+      "title": "Segment 51 (pages 430-437)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch51",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "library",
+          "libraries",
+          "work",
+          "owner",
+          "versions"
+        ],
+        "semantic": [],
+        "merged": [
+          "library",
+          "libraries",
+          "work",
+          "owner",
+          "versions"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "tests_automated_testing",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34085102117496113,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.230563+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 52,
+      "title": "Segment 52 (pages 438-445)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch52",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch16",
+          "score": 0.5217197968965065,
+          "base_score": 0.6195329948275109,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch60",
+          "score": 0.5175420400293099,
+          "base_score": 0.6125700667155166,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "improvement",
+          "dojo",
+          "blitz",
+          "work",
+          "improvement blitzes"
+        ],
+        "semantic": [],
+        "merged": [
+          "improvement",
+          "dojo",
+          "blitz",
+          "work",
+          "improvement blitzes"
+        ]
+      },
+      "topic_id": 8,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4667234477319913,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.230900+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 53,
+      "title": "Segment 53 (pages 446-453)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch53",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch60",
+          "score": 0.5168839497144796,
+          "base_score": 0.6114732495241327,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "internal",
+          "conferences",
+          "testing",
+          "automated testing",
+          "automated"
+        ],
+        "semantic": [],
+        "merged": [
+          "internal",
+          "conferences",
+          "testing",
+          "automated testing",
+          "automated"
+        ]
+      },
+      "topic_id": 8,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36372357541356864,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.231231+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 54,
+      "title": "Segment 54 (pages 454-462)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch54",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch59",
+          "score": 0.5203625422927198,
+          "base_score": 0.6172709038211998,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch2",
+          "score": 0.5049424052105027,
+          "base_score": 0.5915706753508378,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "security",
+          "infosec",
+          "information security",
+          "objectives",
+          "security issues"
+        ],
+        "semantic": [],
+        "merged": [
+          "security",
+          "infosec",
+          "information security",
+          "objectives",
+          "security issues"
+        ]
+      },
+      "topic_id": 9,
+      "topic_name": "security_and_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3731491763681708,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.231610+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 55,
+      "title": "Segment 55 (pages 463-470)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch55",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch24",
+          "score": 0.5397671724881701,
+          "base_score": 0.5755378800728761,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch25",
+          "score": 0.5296880003544413,
+          "base_score": 0.5587392598499948,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "security",
+          "static",
+          "security tests",
+          "testing",
+          "battle"
+        ],
+        "semantic": [],
+        "merged": [
+          "security",
+          "static",
+          "security tests",
+          "testing",
+          "battle"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "tests_automated_testing",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31417961537127026,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.231951+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 56,
+      "title": "Segment 56 (pages 471-478)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch56",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "vulnerabilities",
+          "security",
+          "known vulnerabilities",
+          "open source",
+          "components"
+        ],
+        "semantic": [],
+        "merged": [
+          "vulnerabilities",
+          "security",
+          "known vulnerabilities",
+          "open source",
+          "components"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3484808870713747,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:58:26.232287+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 57,
+      "title": "Segment 57 (pages 479-487)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch57",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch45",
+          "score": 0.6262691640029292,
+          "base_score": 0.6271152733382155,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "changes",
+          "security",
+          "change",
+          "approval",
+          "change management"
+        ],
+        "semantic": [],
+        "merged": [
+          "changes",
+          "security",
+          "change",
+          "approval",
+          "change management"
+        ]
+      },
+      "topic_id": 10,
+      "topic_name": "changes_change_review",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37873599758611315,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.232632+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 58,
+      "title": "Segment 58 (pages 488-496)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch58",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "change",
+          "changes",
+          "change management",
+          "rest",
+          "link"
+        ],
+        "semantic": [],
+        "merged": [
+          "change",
+          "changes",
+          "change management",
+          "rest",
+          "link"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "telemetry_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3510786228580409,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.232960+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 59,
+      "title": "Segment 59 (pages 497-504)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch59",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch54",
+          "score": 0.5203625422927198,
+          "base_score": 0.6172709038211998,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "audit",
+          "controls",
+          "auditors",
+          "control",
+          "evidence"
+        ],
+        "semantic": [],
+        "merged": [
+          "audit",
+          "controls",
+          "auditors",
+          "control",
+          "evidence"
+        ]
+      },
+      "topic_id": 9,
+      "topic_name": "security_and_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3863545008180325,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.233294+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 60,
+      "title": "Segment 60 (pages 505-513)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch60",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch16",
+          "score": 0.5575613499417613,
+          "base_score": 0.6792689165696022,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch52",
+          "score": 0.5175420400293099,
+          "base_score": 0.6125700667155166,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch53",
+          "score": 0.5168839497144796,
+          "base_score": 0.6114732495241327,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch5",
+          "score": 0.505674850136478,
+          "base_score": 0.7687173428200558,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "devops",
+          "convergence",
+          "technology",
+          "increased",
+          "started"
+        ],
+        "semantic": [],
+        "merged": [
+          "devops",
+          "convergence",
+          "technology",
+          "increased",
+          "started"
+        ]
+      },
+      "topic_id": 8,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45853018143611535,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.233639+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 61,
+      "title": "Segment 61 (pages 514-521)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch61",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "wait",
+          "percent",
+          "wait time",
+          "busy",
+          "time"
+        ],
+        "semantic": [],
+        "merged": [
+          "wait",
+          "percent",
+          "wait time",
+          "busy",
+          "time"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "work_time_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.19861744386962887,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.233964+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 62,
+      "title": "Segment 62 (pages 522-529)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch62",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "meeting",
+          "monkey",
+          "post",
+          "reach agreement",
+          "agreement"
+        ],
+        "semantic": [],
+        "merged": [
+          "meeting",
+          "monkey",
+          "post",
+          "reach agreement",
+          "agreement"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "telemetry_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26541876806469034,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.234290+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 63,
+      "title": "Segment 63 (pages 530-538)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch63",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch64",
+          "score": 0.5378202515764771,
+          "base_score": 0.45192264151635064,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch65",
+          "score": 0.53464636070178,
+          "base_score": 0.44663282339185556,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch13",
+          "score": 0.5079652793566596,
+          "base_score": 0.596608798927766,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "com",
+          "http",
+          "www",
+          "http www",
+          "youtube"
+        ],
+        "semantic": [],
+        "merged": [
+          "com",
+          "http",
+          "www",
+          "http www",
+          "youtube"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "devops_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36401357652739574,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.234642+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 64,
+      "title": "Segment 64 (pages 539-546)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch64",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch65",
+          "score": 0.5425272644930322,
+          "base_score": 0.45976766304394273,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch63",
+          "score": 0.5378202515764771,
+          "base_score": 0.45192264151635064,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "www",
+          "com",
+          "youtube",
+          "http",
+          "net"
+        ],
+        "semantic": [],
+        "merged": [
+          "www",
+          "com",
+          "youtube",
+          "http",
+          "net"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2635827768889123,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:58:26.235023+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 65,
+      "title": "Segment 65 (pages 547-558)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch65",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch64",
+          "score": 0.5425272644930322,
+          "base_score": 0.45976766304394273,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch63",
+          "score": 0.53464636070178,
+          "base_score": 0.44663282339185556,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "com",
+          "www",
+          "http",
+          "https",
+          "youtube"
+        ],
+        "semantic": [],
+        "merged": [
+          "com",
+          "www",
+          "http",
+          "https",
+          "youtube"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36989387219332703,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:58:26.235349+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 66,
+      "title": "Segment 66 (pages 559-567)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch66",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "www",
+          "com",
+          "slideshare",
+          "net",
+          "slideshare net"
+        ],
+        "semantic": [],
+        "merged": [
+          "www",
+          "com",
+          "slideshare",
+          "net",
+          "slideshare net"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2434399048822733,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:58:26.235696+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 67,
+      "title": "Segment 67 (pages 568-575)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch67",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch69",
+          "score": 0.6193344885696292,
+          "base_score": 0.7822241476160487,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch73",
+          "score": 0.6091074700192144,
+          "base_score": 0.6911050426246166,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch70",
+          "score": 0.5974830264509224,
+          "base_score": 0.7458050440848708,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch68",
+          "score": 0.5805656358582801,
+          "base_score": 0.7176093930971336,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch71",
+          "score": 0.5236270192484216,
+          "base_score": 0.6227116987473693,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "185",
+          "180",
+          "134",
+          "135",
+          "test driven"
+        ],
+        "semantic": [],
+        "merged": [
+          "185",
+          "180",
+          "134",
+          "135",
+          "test driven"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "testing_134_deployment",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4649835315126383,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.236108+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 68,
+      "title": "Segment 68 (pages 576-583)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch68",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch69",
+          "score": 0.59263322743749,
+          "base_score": 0.73772204572915,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch70",
+          "score": 0.5808002108125918,
+          "base_score": 0.7180003513543197,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch67",
+          "score": 0.5805656358582801,
+          "base_score": 0.7176093930971336,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch73",
+          "score": 0.5602425895330189,
+          "base_score": 0.683737649221698,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch71",
+          "score": 0.5307774765652932,
+          "base_score": 0.6346291276088221,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "160",
+          "164",
+          "22",
+          "162",
+          "changes 334"
+        ],
+        "semantic": [],
+        "merged": [
+          "160",
+          "164",
+          "22",
+          "162",
+          "changes 334"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "testing_134_deployment",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42254285068650393,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.236469+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 69,
+      "title": "Segment 69 (pages 584-591)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch69",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch67",
+          "score": 0.6193344885696292,
+          "base_score": 0.7822241476160487,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch68",
+          "score": 0.59263322743749,
+          "base_score": 0.73772204572915,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch73",
+          "score": 0.5913995080981908,
+          "base_score": 0.7356658468303179,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch70",
+          "score": 0.5747920069939177,
+          "base_score": 0.7079866783231963,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch71",
+          "score": 0.5360978334577423,
+          "base_score": 0.6434963890962373,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "115",
+          "118",
+          "environment",
+          "115 environment",
+          "113 115"
+        ],
+        "semantic": [],
+        "merged": [
+          "115",
+          "118",
+          "environment",
+          "115 environment",
+          "113 115"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "testing_134_deployment",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4339995730623835,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.236833+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 70,
+      "title": "Segment 70 (pages 592-599)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch70",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch67",
+          "score": 0.5974830264509224,
+          "base_score": 0.7458050440848708,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch68",
+          "score": 0.5808002108125918,
+          "base_score": 0.7180003513543197,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch69",
+          "score": 0.5747920069939177,
+          "base_score": 0.7079866783231963,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch71",
+          "score": 0.5470722822575685,
+          "base_score": 0.6617871370959475,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch73",
+          "score": 0.535937642213505,
+          "base_score": 0.6432294036891751,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "case study",
+          "study",
+          "case",
+          "320",
+          "323"
+        ],
+        "semantic": [],
+        "merged": [
+          "case study",
+          "study",
+          "case",
+          "320",
+          "323"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "testing_134_deployment",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4547703081428479,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.237175+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 71,
+      "title": "Segment 71 (pages 600-607)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch71",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch72",
+          "score": 0.5581309615800011,
+          "base_score": 0.6802182693000017,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch70",
+          "score": 0.5470722822575685,
+          "base_score": 0.6617871370959475,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch69",
+          "score": 0.5360978334577423,
+          "base_score": 0.6434963890962373,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch68",
+          "score": 0.5307774765652932,
+          "base_score": 0.6346291276088221,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch67",
+          "score": 0.5236270192484216,
+          "base_score": 0.6227116987473693,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "239",
+          "98",
+          "readiness",
+          "99",
+          "launch"
+        ],
+        "semantic": [],
+        "merged": [
+          "239",
+          "98",
+          "readiness",
+          "99",
+          "launch"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "testing_134_deployment",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4107743934086887,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.237699+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 72,
+      "title": "Segment 72 (pages 608-615)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch72",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch71",
+          "score": 0.5581309615800011,
+          "base_score": 0.6802182693000017,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch69",
+          "score": 0.506092331343612,
+          "base_score": 0.5934872189060199,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "204",
+          "90 91",
+          "90",
+          "91",
+          "metrics"
+        ],
+        "semantic": [],
+        "merged": [
+          "204",
+          "90 91",
+          "90",
+          "91",
+          "metrics"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "testing_134_deployment",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3532810991472926,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.238038+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 73,
+      "title": "Segment 73 (pages 616-623)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch73",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch67",
+          "score": 0.6091074700192144,
+          "base_score": 0.6911050426246166,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch69",
+          "score": 0.5913995080981908,
+          "base_score": 0.7356658468303179,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch68",
+          "score": 0.5602425895330189,
+          "base_score": 0.683737649221698,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook - Gene Kim:ch70",
+          "score": 0.535937642213505,
+          "base_score": 0.6432294036891751,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "134",
+          "testing",
+          "133",
+          "133 134",
+          "132"
+        ],
+        "semantic": [],
+        "merged": [
+          "134",
+          "testing",
+          "133",
+          "133 134",
+          "132"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "testing_134_deployment",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35179433241296165,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.238374+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook - Gene Kim",
+      "chapter": 74,
+      "title": "Segment 74 (pages 624-629)",
+      "chapter_id": "The DevOps Handbook - Gene Kim:ch74",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "mark",
+          "gene",
+          "authors",
+          "brown",
+          "thank"
+        ],
+        "semantic": [],
+        "merged": [
+          "mark",
+          "gene",
+          "authors",
+          "brown",
+          "thank"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "devops_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.20227564359507788,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:26.238728+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

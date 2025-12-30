@@ -516,7 +516,7 @@ def create_aggregate_from_enriched(
         print(f"\n📋 Loading taxonomy: {taxonomy_path.name}...")
         try:
             taxonomy_data = load_json(taxonomy_path)
-            print(f"  ✓ Taxonomy loaded")
+            print("  ✓ Taxonomy loaded")
         except Exception as e:
             print(f"  ⚠️  Error loading taxonomy: {e}")
     
@@ -742,11 +742,11 @@ Reference: END_TO_END_INTEGRATION_WBS.md WBS 4.1.1
             sys.exit(1)
         
         if not args.metadata_dir or not args.metadata_dir.exists():
-            print(f"❌ Error: Metadata directory required for full mode", file=sys.stderr)
+            print("❌ Error: Metadata directory required for full mode", file=sys.stderr)
             sys.exit(1)
         
         if not args.guideline_dir:
-            print(f"⚠️  Warning: Guideline directory not specified")
+            print("⚠️  Warning: Guideline directory not specified")
             args.guideline_dir = Path("workflows/base_guideline_generation/output")
         
         if not args.guideline_dir.exists():

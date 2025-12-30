@@ -558,13 +558,16 @@ class FakeOrchestratorClient:
         domain: Optional[str] = None,
         top_k: int = 5,
         threshold: float = SEMANTIC_SIMILARITY_THRESHOLD,
-        skip_cache: bool = False,
+        _skip_cache: bool = False,
     ) -> list[dict[str, Any]]:
         """
         Fake search implementation.
 
         Records call parameters for assertion and returns configured results.
         """
+        import asyncio
+        await asyncio.sleep(0)  # Yield to event loop to make async meaningful
+        
         self.search_calls.append({
             "query": query,
             "domain": domain,

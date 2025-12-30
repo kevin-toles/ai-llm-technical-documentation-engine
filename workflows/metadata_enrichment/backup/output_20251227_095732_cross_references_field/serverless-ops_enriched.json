@@ -1,0 +1,162 @@
+{
+  "book": {
+    "title": "serverless-ops"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:02:20.954948",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "serverless-ops",
+      "chapter": 1,
+      "title": "Overview",
+      "chapter_id": "serverless-ops:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "function",
+          "concept",
+          "concept serverless",
+          "event driven",
+          "event"
+        ],
+        "semantic": [],
+        "merged": [
+          "function",
+          "concept",
+          "concept serverless",
+          "event driven",
+          "event"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "computing_serverless_function",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7653389026178823,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:20.951091+00:00"
+      }
+    },
+    {
+      "book": "serverless-ops",
+      "chapter": 2,
+      "title": "The Ecosystem",
+      "chapter_id": "serverless-ops:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "cloud",
+          "offering",
+          "public",
+          "aws",
+          "lambda"
+        ],
+        "semantic": [],
+        "merged": [
+          "cloud",
+          "offering",
+          "public",
+          "aws",
+          "lambda"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "cloud_offering_public",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7235631237710997,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:20.951154+00:00"
+      }
+    },
+    {
+      "book": "serverless-ops",
+      "chapter": 3,
+      "title": "Serverless from an Operations Perspective",
+      "chapter_id": "serverless-ops:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "team",
+          "operations",
+          "infrastructure",
+          "new",
+          "appops"
+        ],
+        "semantic": [],
+        "merged": [
+          "team",
+          "operations",
+          "infrastructure",
+          "new",
+          "appops"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "serverless_team_operations",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7417294557511894,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:20.951176+00:00"
+      }
+    },
+    {
+      "book": "serverless-ops",
+      "chapter": 4,
+      "title": "Serverless Operations Field Guide",
+      "chapter_id": "serverless-ops:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "function",
+          "lambda",
+          "fob",
+          "lambda function",
+          "figure"
+        ],
+        "semantic": [],
+        "merged": [
+          "function",
+          "lambda",
+          "fob",
+          "lambda function",
+          "figure"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "function_serverless_lambda",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7662560745684847,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:20.951196+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

@@ -1,0 +1,125 @@
+{
+  "book": {
+    "title": "learning-from-first-responders"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:01:35.374627",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "learning-from-first-responders",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-10)",
+      "chapter_id": "learning-from-first-responders:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "focus",
+          "campaign",
+          "needed",
+          "teams",
+          "things"
+        ],
+        "semantic": [],
+        "merged": [
+          "focus",
+          "campaign",
+          "needed",
+          "teams",
+          "things"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "team_focus_campaign",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5902119725948051,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:35.371571+00:00"
+      }
+    },
+    {
+      "book": "learning-from-first-responders",
+      "chapter": 2,
+      "title": "Segment 2 (pages 11-21)",
+      "chapter_id": "learning-from-first-responders:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "failure",
+          "engineers",
+          "time",
+          "master",
+          "database"
+        ],
+        "semantic": [],
+        "merged": [
+          "failure",
+          "engineers",
+          "time",
+          "master",
+          "database"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "failure_engineers_day",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7246250729742387,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:35.371615+00:00"
+      }
+    },
+    {
+      "book": "learning-from-first-responders",
+      "chapter": 3,
+      "title": "Segment 3 (pages 22-27)",
+      "chapter_id": "learning-from-first-responders:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "failure",
+          "incident",
+          "process",
+          "response",
+          "incident response"
+        ],
+        "semantic": [],
+        "merged": [
+          "failure",
+          "incident",
+          "process",
+          "response",
+          "incident response"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "failure_incident_day",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6562570621607063,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:35.371634+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

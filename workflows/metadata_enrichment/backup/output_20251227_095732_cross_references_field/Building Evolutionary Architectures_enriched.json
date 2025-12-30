@@ -1,0 +1,408 @@
+{
+  "book": {
+    "title": "Building Evolutionary Architectures"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:41:01.032375",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Building Evolutionary Architectures",
+      "chapter": 1,
+      "title": "Evolving Software Architecture",
+      "chapter_id": "Building Evolutionary Architectures:ch1",
+      "cross_references": [
+        {
+          "target": "Building Evolutionary Architectures:ch9",
+          "score": 0.5198521258561235,
+          "base_score": 0.6164202097602058,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "characteristics",
+          "protect",
+          "architectural characteristics",
+          "changes",
+          "software architecture"
+        ],
+        "semantic": [],
+        "merged": [
+          "characteristics",
+          "protect",
+          "architectural characteristics",
+          "changes",
+          "software architecture"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_architecture_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6052504566954805,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:01.020481+00:00"
+      }
+    },
+    {
+      "book": "Building Evolutionary Architectures",
+      "chapter": 2,
+      "title": "Fitness Functions",
+      "chapter_id": "Building Evolutionary Architectures:ch2",
+      "cross_references": [
+        {
+          "target": "Building Evolutionary Architectures:ch4",
+          "score": 0.7269364922932097,
+          "base_score": 0.794894153822016,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Evolutionary Architectures:ch7",
+          "score": 0.5342328320879233,
+          "base_score": 0.6403880534798722,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "fitness function",
+          "function",
+          "measure",
+          "objective",
+          "architectural fitness"
+        ],
+        "semantic": [],
+        "merged": [
+          "fitness function",
+          "function",
+          "measure",
+          "objective",
+          "architectural fitness"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_fitness_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6041554573576526,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:01.020585+00:00"
+      }
+    },
+    {
+      "book": "Building Evolutionary Architectures",
+      "chapter": 3,
+      "title": "Engineering Incremental Change",
+      "chapter_id": "Building Evolutionary Architectures:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "deployment",
+          "pipeline",
+          "deployment pipeline",
+          "stages",
+          "changes"
+        ],
+        "semantic": [],
+        "merged": [
+          "deployment",
+          "pipeline",
+          "deployment pipeline",
+          "stages",
+          "changes"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5541515813084668,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:41:01.020631+00:00"
+      }
+    },
+    {
+      "book": "Building Evolutionary Architectures",
+      "chapter": 4,
+      "title": "Automating Architectural Governance",
+      "chapter_id": "Building Evolutionary Architectures:ch4",
+      "cross_references": [
+        {
+          "target": "Building Evolutionary Architectures:ch2",
+          "score": 0.7269364922932097,
+          "base_score": 0.794894153822016,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Evolutionary Architectures:ch7",
+          "score": 0.5867715984765796,
+          "base_score": 0.6538785900535584,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "function",
+          "fitness function",
+          "code",
+          "governance",
+          "shown"
+        ],
+        "semantic": [],
+        "merged": [
+          "function",
+          "fitness function",
+          "code",
+          "governance",
+          "shown"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_fitness_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6089551260828879,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:01.020674+00:00"
+      }
+    },
+    {
+      "book": "Building Evolutionary Architectures",
+      "chapter": 5,
+      "title": "Evolutionary Architecture Topologies",
+      "chapter_id": "Building Evolutionary Architectures:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "quantum",
+          "coupling",
+          "architecture quantum",
+          "service",
+          "static"
+        ],
+        "semantic": [],
+        "merged": [
+          "quantum",
+          "coupling",
+          "architecture quantum",
+          "service",
+          "static"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4622678455867704,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:41:01.020716+00:00"
+      }
+    },
+    {
+      "book": "Building Evolutionary Architectures",
+      "chapter": 6,
+      "title": "Evolutionary Data",
+      "chapter_id": "Building Evolutionary Architectures:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "database",
+          "data team",
+          "data teams",
+          "column"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "database",
+          "data team",
+          "data teams",
+          "column"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5462881209205477,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:41:01.020767+00:00"
+      }
+    },
+    {
+      "book": "Building Evolutionary Architectures",
+      "chapter": 7,
+      "title": "Building Evolvable Architectures",
+      "chapter_id": "Building Evolutionary Architectures:ch7",
+      "cross_references": [
+        {
+          "target": "Building Evolutionary Architectures:ch4",
+          "score": 0.5867715984765796,
+          "base_score": 0.6538785900535584,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Building Evolutionary Architectures:ch2",
+          "score": 0.5342328320879233,
+          "base_score": 0.6403880534798722,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "building",
+          "coupling",
+          "service",
+          "migration"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "building",
+          "coupling",
+          "service",
+          "migration"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_fitness_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6372796182199691,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:01.020811+00:00"
+      }
+    },
+    {
+      "book": "Building Evolutionary Architectures",
+      "chapter": 8,
+      "title": "Evolutionary Architecture Pitfalls and Antipatterns",
+      "chapter_id": "Building Evolutionary Architectures:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "cycle time",
+          "time",
+          "cycle",
+          "vendor",
+          "faster"
+        ],
+        "semantic": [],
+        "merged": [
+          "cycle time",
+          "time",
+          "cycle",
+          "vendor",
+          "faster"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5864340608762774,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:41:01.020852+00:00"
+      }
+    },
+    {
+      "book": "Building Evolutionary Architectures",
+      "chapter": 9,
+      "title": "Putting Evolutionary Architecture into Practice",
+      "chapter_id": "Building Evolutionary Architectures:ch9",
+      "cross_references": [
+        {
+          "target": "Building Evolutionary Architectures:ch1",
+          "score": 0.5198521258561235,
+          "base_score": 0.6164202097602058,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "team",
+          "cross functional",
+          "building",
+          "cross",
+          "functional"
+        ],
+        "semantic": [],
+        "merged": [
+          "team",
+          "cross functional",
+          "building",
+          "cross",
+          "functional"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_architecture_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5896684614221938,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:01.020975+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

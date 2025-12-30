@@ -1,0 +1,518 @@
+{
+  "book": {
+    "title": "Kubeflow for Machine Learning - Trevor Grant"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:49:16.172571",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Kubeflow for Machine Learning - Trevor Grant",
+      "chapter": 1,
+      "title": "Kubeflow: What It Is and Who It Is For",
+      "chapter_id": "Kubeflow for Machine Learning - Trevor Grant:ch1",
+      "cross_references": [
+        {
+          "target": "Kubeflow for Machine Learning - Trevor Grant:ch10",
+          "score": 0.6478532589329422,
+          "base_score": 0.663088764888237,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubeflow for Machine Learning - Trevor Grant:ch7",
+          "score": 0.5999625295173359,
+          "base_score": 0.6758634751214856,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubeflow for Machine Learning - Trevor Grant:ch8",
+          "score": 0.5349650577563886,
+          "base_score": 0.5675343555199068,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "machine learning",
+          "machine",
+          "learning",
+          "model"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "machine learning",
+          "machine",
+          "learning",
+          "model"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "model_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6361862554641223,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:16.161933+00:00"
+      }
+    },
+    {
+      "book": "Kubeflow for Machine Learning - Trevor Grant",
+      "chapter": 2,
+      "title": "Hello Kubeflow",
+      "chapter_id": "Kubeflow for Machine Learning - Trevor Grant:ch2",
+      "cross_references": [
+        {
+          "target": "Kubeflow for Machine Learning - Trevor Grant:ch3",
+          "score": 0.5227485429820394,
+          "base_score": 0.6212475716367325,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "install",
+          "kubernetes",
+          "use",
+          "https",
+          "install kubeflow"
+        ],
+        "semantic": [],
+        "merged": [
+          "install",
+          "kubernetes",
+          "use",
+          "https",
+          "install kubeflow"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_kubeflow_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5056065360659554,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:16.162019+00:00"
+      }
+    },
+    {
+      "book": "Kubeflow for Machine Learning - Trevor Grant",
+      "chapter": 3,
+      "title": "Kubeflow Design: Beyond the Basics",
+      "chapter_id": "Kubeflow for Machine Learning - Trevor Grant:ch3",
+      "cross_references": [
+        {
+          "target": "Kubeflow for Machine Learning - Trevor Grant:ch4",
+          "score": 0.5950889490170903,
+          "base_score": 0.5751482483618173,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubeflow for Machine Learning - Trevor Grant:ch2",
+          "score": 0.5227485429820394,
+          "base_score": 0.6212475716367325,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubeflow for Machine Learning - Trevor Grant:ch6",
+          "score": 0.5006688718259173,
+          "base_score": 0.5844481197098622,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "components",
+          "pipeline",
+          "istio",
+          "supporting",
+          "pipelines"
+        ],
+        "semantic": [],
+        "merged": [
+          "components",
+          "pipeline",
+          "istio",
+          "supporting",
+          "pipelines"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_kubeflow_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5069169611550501,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:16.162095+00:00"
+      }
+    },
+    {
+      "book": "Kubeflow for Machine Learning - Trevor Grant",
+      "chapter": 4,
+      "title": "Kubeflow Pipelines",
+      "chapter_id": "Kubeflow for Machine Learning - Trevor Grant:ch4",
+      "cross_references": [
+        {
+          "target": "Kubeflow for Machine Learning - Trevor Grant:ch3",
+          "score": 0.5950889490170903,
+          "base_score": 0.5751482483618173,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubeflow for Machine Learning - Trevor Grant:ch6",
+          "score": 0.5115558036037411,
+          "base_score": 0.6025930060062351,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pipeline",
+          "pipelines",
+          "execution",
+          "argo",
+          "kubeflow pipelines"
+        ],
+        "semantic": [],
+        "merged": [
+          "pipeline",
+          "pipelines",
+          "execution",
+          "argo",
+          "kubeflow pipelines"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_kubeflow_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5466387360484427,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:16.162143+00:00"
+      }
+    },
+    {
+      "book": "Kubeflow for Machine Learning - Trevor Grant",
+      "chapter": 5,
+      "title": "Data and Feature Preparation",
+      "chapter_id": "Kubeflow for Machine Learning - Trevor Grant:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "preparation",
+          "spark",
+          "feature",
+          "feature preparation"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "preparation",
+          "spark",
+          "feature",
+          "feature preparation"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5554612689666011,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:16.162189+00:00"
+      }
+    },
+    {
+      "book": "Kubeflow for Machine Learning - Trevor Grant",
+      "chapter": 6,
+      "title": "Artifact and Metadata Store",
+      "chapter_id": "Kubeflow for Machine Learning - Trevor Grant:ch6",
+      "cross_references": [
+        {
+          "target": "Kubeflow for Machine Learning - Trevor Grant:ch4",
+          "score": 0.5115558036037411,
+          "base_score": 0.6025930060062351,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubeflow for Machine Learning - Trevor Grant:ch3",
+          "score": 0.5006688718259173,
+          "base_score": 0.5844481197098622,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "mlflow",
+          "metadata",
+          "tracking",
+          "mlflow tracking",
+          "tracking server"
+        ],
+        "semantic": [],
+        "merged": [
+          "mlflow",
+          "metadata",
+          "tracking",
+          "mlflow tracking",
+          "tracking server"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_kubeflow_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5425108910381271,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:16.162235+00:00"
+      }
+    },
+    {
+      "book": "Kubeflow for Machine Learning - Trevor Grant",
+      "chapter": 7,
+      "title": "Training a Machine Learning Model",
+      "chapter_id": "Kubeflow for Machine Learning - Trevor Grant:ch7",
+      "cross_references": [
+        {
+          "target": "Kubeflow for Machine Learning - Trevor Grant:ch1",
+          "score": 0.5999625295173359,
+          "base_score": 0.6758634751214856,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubeflow for Machine Learning - Trevor Grant:ch10",
+          "score": 0.5328087042632514,
+          "base_score": 0.5639404330313449,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubeflow for Machine Learning - Trevor Grant:ch8",
+          "score": 0.5115890715206965,
+          "base_score": 0.5285743784604202,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "training",
+          "model",
+          "tfjob",
+          "learn",
+          "tensorflow"
+        ],
+        "semantic": [],
+        "merged": [
+          "training",
+          "model",
+          "tfjob",
+          "learn",
+          "tensorflow"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "model_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5141980550218628,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:16.162302+00:00"
+      }
+    },
+    {
+      "book": "Kubeflow for Machine Learning - Trevor Grant",
+      "chapter": 8,
+      "title": "Model Inference",
+      "chapter_id": "Kubeflow for Machine Learning - Trevor Grant:ch8",
+      "cross_references": [
+        {
+          "target": "Kubeflow for Machine Learning - Trevor Grant:ch1",
+          "score": 0.5349650577563886,
+          "base_score": 0.5675343555199068,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubeflow for Machine Learning - Trevor Grant:ch7",
+          "score": 0.5115890715206965,
+          "base_score": 0.5285743784604202,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "model",
+          "seldon",
+          "seldon core",
+          "core",
+          "serving"
+        ],
+        "semantic": [],
+        "merged": [
+          "model",
+          "seldon",
+          "seldon core",
+          "core",
+          "serving"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "model_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4750655688674593,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:16.162349+00:00"
+      }
+    },
+    {
+      "book": "Kubeflow for Machine Learning - Trevor Grant",
+      "chapter": 9,
+      "title": "Case Study Using Multiple Tools",
+      "chapter_id": "Kubeflow for Machine Learning - Trevor Grant:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "dicom",
+          "ct",
+          "denoising",
+          "covid",
+          "scan"
+        ],
+        "semantic": [],
+        "merged": [
+          "dicom",
+          "ct",
+          "denoising",
+          "covid",
+          "scan"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.20161166759048715,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:16.162393+00:00"
+      }
+    },
+    {
+      "book": "Kubeflow for Machine Learning - Trevor Grant",
+      "chapter": 10,
+      "title": "Hyperparameter Tuning and Automated Machine Learning",
+      "chapter_id": "Kubeflow for Machine Learning - Trevor Grant:ch10",
+      "cross_references": [
+        {
+          "target": "Kubeflow for Machine Learning - Trevor Grant:ch1",
+          "score": 0.6478532589329422,
+          "base_score": 0.663088764888237,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubeflow for Machine Learning - Trevor Grant:ch7",
+          "score": 0.5328087042632514,
+          "base_score": 0.5639404330313449,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "katib",
+          "model",
+          "data",
+          "keeping data",
+          "keeping"
+        ],
+        "semantic": [],
+        "merged": [
+          "katib",
+          "model",
+          "data",
+          "keeping data",
+          "keeping"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "model_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5216827872938976,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:16.162439+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

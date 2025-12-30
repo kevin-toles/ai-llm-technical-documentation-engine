@@ -1,0 +1,3891 @@
+{
+  "book": {
+    "title": "Incident Response and Computer Forensics 3e - Jason Luttgens"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:48:51.183339",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-10)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch1",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch3",
+          "score": 0.7396253414033734,
+          "base_score": 0.6969946166246699,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch4",
+          "score": 0.5131934362821571,
+          "base_score": 0.5312483197295211,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch6",
+          "score": 0.5046734009181106,
+          "base_score": 0.5170482607894438,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "incident response",
+          "incident",
+          "response",
+          "forensics",
+          "mandiant"
+        ],
+        "semantic": [],
+        "merged": [
+          "incident response",
+          "incident",
+          "response",
+          "forensics",
+          "mandiant"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3163231789679735,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.136411+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 2,
+      "title": "Segment 2 (pages 11-18)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch2",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch19",
+          "score": 0.6186012618256198,
+          "base_score": 0.7069280289686255,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch20",
+          "score": 0.58351460870471,
+          "base_score": 0.6484502737671092,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "remediation",
+          "evidence analysis",
+          "analysis",
+          "network",
+          "collection"
+        ],
+        "semantic": [],
+        "merged": [
+          "remediation",
+          "evidence analysis",
+          "analysis",
+          "network",
+          "collection"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "live_the_response",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36474650380165397,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.136874+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 3,
+      "title": "Segment 3 (pages 19-26)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch3",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch1",
+          "score": 0.7396253414033734,
+          "base_score": 0.6969946166246699,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch6",
+          "score": 0.6452229153665057,
+          "base_score": 0.6587048589441762,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch4",
+          "score": 0.6172712004926149,
+          "base_score": 0.7047112600802841,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch8",
+          "score": 0.5764151996255283,
+          "base_score": 0.6366179253018065,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch7",
+          "score": 0.5449098232174179,
+          "base_score": 0.5841089646216223,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "incident",
+          "incident response",
+          "response",
+          "book",
+          "ir"
+        ],
+        "semantic": [],
+        "merged": [
+          "incident",
+          "incident response",
+          "response",
+          "book",
+          "ir"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31415582812558274,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.137277+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 4,
+      "title": "Segment 4 (pages 27-38)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch4",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch6",
+          "score": 0.6650772609485783,
+          "base_score": 0.7843880275068897,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch3",
+          "score": 0.6172712004926149,
+          "base_score": 0.7047112600802841,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch8",
+          "score": 0.6126811935509419,
+          "base_score": 0.697061248510829,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch5",
+          "score": 0.6015566251207057,
+          "base_score": 0.5859277085345096,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch66",
+          "score": 0.5578891105764283,
+          "base_score": 0.6057411102199731,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "attacker",
+          "financial",
+          "financial environment",
+          "environment",
+          "incident"
+        ],
+        "semantic": [],
+        "merged": [
+          "attacker",
+          "financial",
+          "financial environment",
+          "environment",
+          "incident"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3618075978383996,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.137688+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 5,
+      "title": "Segment 5 (pages 39-47)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch5",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch4",
+          "score": 0.6015566251207057,
+          "base_score": 0.5859277085345096,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch68",
+          "score": 0.5203724650085289,
+          "base_score": 0.5432133676068074,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "attacker",
+          "environment",
+          "study attacker",
+          "case study",
+          "study"
+        ],
+        "semantic": [],
+        "merged": [
+          "attacker",
+          "environment",
+          "study attacker",
+          "case study",
+          "study"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30996130784239917,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.138079+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 6,
+      "title": "Segment 6 (pages 48-56)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch6",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch4",
+          "score": 0.6650772609485783,
+          "base_score": 0.7843880275068897,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch3",
+          "score": 0.6452229153665057,
+          "base_score": 0.6587048589441762,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch8",
+          "score": 0.6143286374567836,
+          "base_score": 0.6998069883538985,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch9",
+          "score": 0.5636030984814058,
+          "base_score": 0.522671830802343,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch13",
+          "score": 0.5609355957342081,
+          "base_score": 0.6108185854829395,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "incident",
+          "team",
+          "ir",
+          "security incident",
+          "security"
+        ],
+        "semantic": [],
+        "merged": [
+          "incident",
+          "team",
+          "ir",
+          "security incident",
+          "security"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3410850650601183,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.138471+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 7,
+      "title": "Segment 7 (pages 57-66)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch7",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch8",
+          "score": 0.5603243989132388,
+          "base_score": 0.6838739981887314,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch4",
+          "score": 0.5556638948168685,
+          "base_score": 0.6761064913614476,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch17",
+          "score": 0.5521021310879269,
+          "base_score": 0.6701702184798781,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch6",
+          "score": 0.5465236492002915,
+          "base_score": 0.6608727486671525,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch3",
+          "score": 0.5449098232174179,
+          "base_score": 0.5841089646216223,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "iocs",
+          "response",
+          "leads",
+          "live response",
+          "investigation"
+        ],
+        "semantic": [],
+        "merged": [
+          "iocs",
+          "response",
+          "leads",
+          "live response",
+          "investigation"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34780049668438756,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.138861+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 8,
+      "title": "Segment 8 (pages 67-74)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch8",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch6",
+          "score": 0.6143286374567836,
+          "base_score": 0.6998069883538985,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch4",
+          "score": 0.6126811935509419,
+          "base_score": 0.697061248510829,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch13",
+          "score": 0.6020395972338206,
+          "base_score": 0.6793252546489603,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch17",
+          "score": 0.5765030710052603,
+          "base_score": 0.7108384516754339,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch3",
+          "score": 0.5764151996255283,
+          "base_score": 0.6366179253018065,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "organization",
+          "incident",
+          "preparing",
+          "area includes",
+          "successful"
+        ],
+        "semantic": [],
+        "merged": [
+          "organization",
+          "incident",
+          "preparing",
+          "area includes",
+          "successful"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3510887245243978,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.139245+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 9,
+      "title": "Segment 9 (pages 75-83)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch9",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch6",
+          "score": 0.5636030984814058,
+          "base_score": 0.522671830802343,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch8",
+          "score": 0.5092533109314905,
+          "base_score": 0.5246814441450767,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "team",
+          "ir",
+          "ir team",
+          "organization",
+          "work"
+        ],
+        "semantic": [],
+        "merged": [
+          "team",
+          "ir",
+          "ir team",
+          "organization",
+          "work"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2926365422787822,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.139630+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 10,
+      "title": "Segment 10 (pages 84-91)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch10",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch25",
+          "score": 0.5325216813940556,
+          "base_score": 0.6375361356567594,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ir",
+          "ir team",
+          "team",
+          "tools",
+          "cables"
+        ],
+        "semantic": [],
+        "merged": [
+          "ir",
+          "ir team",
+          "team",
+          "tools",
+          "cables"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31344910281250893,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.140008+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 11,
+      "title": "Segment 11 (pages 92-100)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch11",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch29",
+          "score": 0.5859311704276531,
+          "base_score": 0.6524778766386811,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "organization",
+          "centralized logging",
+          "logging",
+          "centralized",
+          "systems"
+        ],
+        "semantic": [],
+        "merged": [
+          "organization",
+          "centralized logging",
+          "logging",
+          "centralized",
+          "systems"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "network_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3965116688921119,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.140391+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 12,
+      "title": "Segment 12 (pages 101-110)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch12",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "traffic",
+          "servers",
+          "finance",
+          "proxy servers",
+          "proxy"
+        ],
+        "semantic": [],
+        "merged": [
+          "traffic",
+          "servers",
+          "finance",
+          "proxy servers",
+          "proxy"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "network_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21334518983483655,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.140782+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 13,
+      "title": "Segment 13 (pages 111-118)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch13",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch8",
+          "score": 0.6020395972338206,
+          "base_score": 0.6793252546489603,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch6",
+          "score": 0.5609355957342081,
+          "base_score": 0.6108185854829395,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch4",
+          "score": 0.5467003759377589,
+          "base_score": 0.587093219155524,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch3",
+          "score": 0.5324379078709456,
+          "base_score": 0.5633224390441685,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "detection",
+          "incident",
+          "details",
+          "checklist",
+          "incident detected"
+        ],
+        "semantic": [],
+        "merged": [
+          "detection",
+          "incident",
+          "details",
+          "checklist",
+          "incident detected"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36344106280663757,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.141174+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 14,
+      "title": "Segment 14 (pages 119-127)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch14",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch35",
+          "score": 0.5024476356691744,
+          "base_score": 0.5874127261152907,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "lead",
+          "potential lead",
+          "leads",
+          "investigation",
+          "legal"
+        ],
+        "semantic": [],
+        "merged": [
+          "lead",
+          "potential lead",
+          "leads",
+          "investigation",
+          "legal"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40420076662159926,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.141619+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 15,
+      "title": "Segment 15 (pages 128-138)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "ioc",
+          "indicator",
+          "sethc",
+          "indicators",
+          "based indicators"
+        ],
+        "semantic": [],
+        "merged": [
+          "ioc",
+          "indicator",
+          "sethc",
+          "indicators",
+          "based indicators"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2807751022249011,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.142009+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 16,
+      "title": "Segment 16 (pages 139-146)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch16",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "indicator",
+          "malware",
+          "properties",
+          "second stage",
+          "indicator environment"
+        ],
+        "semantic": [],
+        "merged": [
+          "indicator",
+          "malware",
+          "properties",
+          "second stage",
+          "indicator environment"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "malware_the_that",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26827153852880126,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.142392+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 17,
+      "title": "Segment 17 (pages 147-154)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch17",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch8",
+          "score": 0.5765030710052603,
+          "base_score": 0.7108384516754339,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch7",
+          "score": 0.5521021310879269,
+          "base_score": 0.6701702184798781,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch66",
+          "score": 0.5038997961893031,
+          "base_score": 0.5898329936488387,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch4",
+          "score": 0.5029585988140196,
+          "base_score": 0.5882643313566993,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "evidence sources",
+          "scenarios",
+          "sources",
+          "evidence",
+          "preliminary evidence"
+        ],
+        "semantic": [],
+        "merged": [
+          "evidence sources",
+          "scenarios",
+          "sources",
+          "evidence",
+          "preliminary evidence"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3035667150319696,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.142789+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 18,
+      "title": "Segment 18 (pages 155-163)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch18",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "customer",
+          "mail",
+          "cfo",
+          "mail addresses",
+          "cfo computer"
+        ],
+        "semantic": [],
+        "merged": [
+          "customer",
+          "mail",
+          "cfo",
+          "mail addresses",
+          "cfo computer"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.18117810064227757,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.143177+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 19,
+      "title": "Segment 19 (pages 164-171)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch19",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch20",
+          "score": 0.7126023768421753,
+          "base_score": 0.7710039614036255,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch2",
+          "score": 0.6186012618256198,
+          "base_score": 0.7069280289686255,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch22",
+          "score": 0.5015483833634797,
+          "base_score": 0.5859139722724662,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "collection",
+          "live",
+          "live data",
+          "data collection",
+          "data"
+        ],
+        "semantic": [],
+        "merged": [
+          "collection",
+          "live",
+          "live data",
+          "data collection",
+          "data"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "live_the_response",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3366663312623534,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.143590+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 20,
+      "title": "Segment 20 (pages 172-180)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch20",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch19",
+          "score": 0.7126023768421753,
+          "base_score": 0.7710039614036255,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch2",
+          "score": 0.58351460870471,
+          "base_score": 0.6484502737671092,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch22",
+          "score": 0.5042702553875467,
+          "base_score": 0.5904504256459111,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "live response",
+          "live",
+          "response",
+          "collection",
+          "redline"
+        ],
+        "semantic": [],
+        "merged": [
+          "live response",
+          "live",
+          "response",
+          "collection",
+          "redline"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "live_the_response",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3003483053292528,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.143984+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 21,
+      "title": "Segment 21 (pages 181-188)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch21",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "memory",
+          "memoryze",
+          "ftk imager",
+          "imager",
+          "option"
+        ],
+        "semantic": [],
+        "merged": [
+          "memory",
+          "memoryze",
+          "ftk imager",
+          "imager",
+          "option"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29232340718991967,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:48:51.144370+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 22,
+      "title": "Segment 22 (pages 189-197)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch22",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch20",
+          "score": 0.5042702553875467,
+          "base_score": 0.5904504256459111,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch19",
+          "score": 0.5015483833634797,
+          "base_score": 0.5859139722724662,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "memory",
+          "lime",
+          "unix",
+          "linux",
+          "unix based"
+        ],
+        "semantic": [],
+        "merged": [
+          "memory",
+          "lime",
+          "unix",
+          "linux",
+          "unix based"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "live_the_response",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24568656996974736,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.144763+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 23,
+      "title": "Segment 23 (pages 198-207)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch23",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch24",
+          "score": 0.6163280569172425,
+          "base_score": 0.7031393541213299,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch25",
+          "score": 0.5175483194479411,
+          "base_score": 0.6125805324132352,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "image",
+          "partition",
+          "medium",
+          "complete disk",
+          "partition image"
+        ],
+        "semantic": [],
+        "merged": [
+          "image",
+          "partition",
+          "medium",
+          "complete disk",
+          "partition image"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3077457779742064,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.145153+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 24,
+      "title": "Segment 24 (pages 208-216)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch24",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch23",
+          "score": 0.6163280569172425,
+          "base_score": 0.7031393541213299,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch25",
+          "score": 0.5598711269092986,
+          "base_score": 0.683118544848831,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "dc3dd",
+          "image",
+          "imager",
+          "duplication",
+          "dd"
+        ],
+        "semantic": [],
+        "merged": [
+          "dc3dd",
+          "image",
+          "imager",
+          "duplication",
+          "dd"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2756058929805149,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.145547+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 25,
+      "title": "Segment 25 (pages 217-224)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch25",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch24",
+          "score": 0.5598711269092986,
+          "base_score": 0.683118544848831,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch10",
+          "score": 0.5325216813940556,
+          "base_score": 0.6375361356567594,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch23",
+          "score": 0.5175483194479411,
+          "base_score": 0.6125805324132352,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "event based",
+          "monitoring",
+          "network",
+          "network monitoring",
+          "based"
+        ],
+        "semantic": [],
+        "merged": [
+          "event based",
+          "monitoring",
+          "network",
+          "network monitoring",
+          "based"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3047514159103067,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.145934+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 26,
+      "title": "Segment 26 (pages 225-233)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch26",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch29",
+          "score": 0.5459279409929765,
+          "base_score": 0.5858058275808866,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch27",
+          "score": 0.5357421640767868,
+          "base_score": 0.6429036067946446,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "network",
+          "sensor",
+          "monitoring",
+          "monitor",
+          "deploy"
+        ],
+        "semantic": [],
+        "merged": [
+          "network",
+          "sensor",
+          "monitoring",
+          "monitor",
+          "deploy"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "network_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2894937198046683,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.146316+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 27,
+      "title": "Segment 27 (pages 234-241)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch27",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch26",
+          "score": 0.5357421640767868,
+          "base_score": 0.6429036067946446,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch29",
+          "score": 0.5026964203252141,
+          "base_score": 0.5878273672086901,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ftp",
+          "data",
+          "capture data",
+          "capture",
+          "pcap"
+        ],
+        "semantic": [],
+        "merged": [
+          "ftp",
+          "data",
+          "capture data",
+          "capture",
+          "pcap"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "network_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3400666055114299,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.146718+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 28,
+      "title": "Segment 28 (pages 242-250)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch28",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "sqlmap",
+          "session",
+          "rar",
+          "ssl",
+          "php"
+        ],
+        "semantic": [],
+        "merged": [
+          "sqlmap",
+          "session",
+          "rar",
+          "ssl",
+          "php"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "network_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2104264278359489,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.147105+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 29,
+      "title": "Segment 29 (pages 251-260)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch29",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch11",
+          "score": 0.5859311704276531,
+          "base_score": 0.6524778766386811,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch26",
+          "score": 0.5459279409929765,
+          "base_score": 0.5858058275808866,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch27",
+          "score": 0.5026964203252141,
+          "base_score": 0.5878273672086901,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "dhcp",
+          "microsoft dhcp",
+          "logging",
+          "network",
+          "microsoft"
+        ],
+        "semantic": [],
+        "merged": [
+          "dhcp",
+          "microsoft dhcp",
+          "logging",
+          "network",
+          "microsoft"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "network_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35877657306465427,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.147489+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 30,
+      "title": "Segment 30 (pages 261-269)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch30",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "dns",
+          "log",
+          "logging",
+          "query",
+          "microsoft dns"
+        ],
+        "semantic": [],
+        "merged": [
+          "dns",
+          "log",
+          "logging",
+          "query",
+          "microsoft dns"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.12283384332577513,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:48:51.147880+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 31,
+      "title": "Segment 31 (pages 270-277)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch31",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "symantec",
+          "quarantine",
+          "endpoint protection",
+          "symantec endpoint",
+          "antivirus"
+        ],
+        "semantic": [],
+        "merged": [
+          "symantec",
+          "quarantine",
+          "endpoint protection",
+          "symantec endpoint",
+          "antivirus"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4046573851536719,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.148266+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 32,
+      "title": "Segment 32 (pages 278-285)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch32",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "files",
+          "web",
+          "log",
+          "micro",
+          "trend micro"
+        ],
+        "semantic": [],
+        "merged": [
+          "files",
+          "web",
+          "log",
+          "micro",
+          "trend micro"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30956948509207927,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.148662+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 33,
+      "title": "Segment 33 (pages 286-297)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch33",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "log",
+          "log file",
+          "database",
+          "oracle",
+          "file"
+        ],
+        "semantic": [],
+        "merged": [
+          "log",
+          "log file",
+          "database",
+          "oracle",
+          "file"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_in_files",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21386308131844475,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.149048+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 34,
+      "title": "Segment 34 (pages 298-305)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch34",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch35",
+          "score": 0.5515255181335048,
+          "base_score": 0.5951351228151005,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch36",
+          "score": 0.5074138240787078,
+          "base_score": 0.5956897067978464,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "user data",
+          "user",
+          "data stored",
+          "analysis"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "user data",
+          "user",
+          "data stored",
+          "analysis"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38958476867488534,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.149425+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 35,
+      "title": "Segment 35 (pages 306-314)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch35",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch34",
+          "score": 0.5515255181335048,
+          "base_score": 0.5951351228151005,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch14",
+          "score": 0.5024476356691744,
+          "base_score": 0.5874127261152907,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "sorting",
+          "sorting filtering",
+          "filtering",
+          "data sources"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "sorting",
+          "sorting filtering",
+          "filtering",
+          "data sources"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33547182960007116,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.149871+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 36,
+      "title": "Segment 36 (pages 315-331)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch36",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch37",
+          "score": 0.5386926686368696,
+          "base_score": 0.5737470403207086,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch34",
+          "score": 0.5074138240787078,
+          "base_score": 0.5956897067978464,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "mft",
+          "mft entry",
+          "file",
+          "entry",
+          "ntfs"
+        ],
+        "semantic": [],
+        "merged": [
+          "mft",
+          "mft entry",
+          "file",
+          "entry",
+          "ntfs"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32428383299947644,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.150247+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 37,
+      "title": "Segment 37 (pages 332-339)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch37",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch36",
+          "score": 0.5386926686368696,
+          "base_score": 0.5737470403207086,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "indx",
+          "directory",
+          "bit",
+          "files",
+          "file"
+        ],
+        "semantic": [],
+        "merged": [
+          "indx",
+          "directory",
+          "bit",
+          "files",
+          "file"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28086870744262427,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.150632+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 38,
+      "title": "Segment 38 (pages 340-347)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch38",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "prefetch",
+          "prefetch files",
+          "prefetch file",
+          "ran",
+          "files"
+        ],
+        "semantic": [],
+        "merged": [
+          "prefetch",
+          "prefetch files",
+          "prefetch file",
+          "ran",
+          "files"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21766540591264996,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.151003+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 39,
+      "title": "Segment 39 (pages 348-356)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch39",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch50",
+          "score": 0.5469029225543354,
+          "base_score": 0.5874307968498182,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "logon",
+          "event",
+          "service",
+          "events",
+          "event log"
+        ],
+        "semantic": [],
+        "merged": [
+          "logon",
+          "event",
+          "service",
+          "events",
+          "event log"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26346102693970613,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.151373+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 40,
+      "title": "Segment 40 (pages 357-364)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch40",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "task",
+          "scheduled",
+          "tasks",
+          "job files",
+          "job"
+        ],
+        "semantic": [],
+        "merged": [
+          "task",
+          "scheduled",
+          "tasks",
+          "job files",
+          "job"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1697846535705988,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.151776+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 41,
+      "title": "Segment 41 (pages 365-372)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch41",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch42",
+          "score": 0.5345970746095399,
+          "base_score": 0.5669210502751589,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch50",
+          "score": 0.506551513862138,
+          "base_score": 0.5942525231035635,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "hives",
+          "registry",
+          "hive",
+          "dat",
+          "user"
+        ],
+        "semantic": [],
+        "merged": [
+          "hives",
+          "registry",
+          "hive",
+          "dat",
+          "user"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27368548053327685,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.152308+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 42,
+      "title": "Segment 42 (pages 373-380)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch42",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch45",
+          "score": 0.6393237331506214,
+          "base_score": 0.6488728885843691,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch41",
+          "score": 0.5345970746095399,
+          "base_score": 0.5669210502751589,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch50",
+          "score": 0.5152961662398302,
+          "base_score": 0.6088269437330505,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch46",
+          "score": 0.5132383424838548,
+          "base_score": 0.6053972374730913,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "registry",
+          "bit",
+          "keys",
+          "registry keys",
+          "key"
+        ],
+        "semantic": [],
+        "merged": [
+          "registry",
+          "bit",
+          "keys",
+          "registry keys",
+          "key"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2623067881329161,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.152707+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 43,
+      "title": "Segment 43 (pages 381-388)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch43",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch49",
+          "score": 0.5125276336080077,
+          "base_score": 0.6042127226800127,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "service",
+          "services",
+          "svchost exe",
+          "svchost",
+          "run"
+        ],
+        "semantic": [],
+        "merged": [
+          "service",
+          "services",
+          "svchost exe",
+          "svchost",
+          "run"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.22392970561835931,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.153096+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 44,
+      "title": "Segment 44 (pages 389-396)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch44",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "winlogon",
+          "currentversion",
+          "software microsoft",
+          "hklm software",
+          "hklm"
+        ],
+        "semantic": [],
+        "merged": [
+          "winlogon",
+          "currentversion",
+          "software microsoft",
+          "hklm software",
+          "hklm"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.22099021821120035,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.153469+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 45,
+      "title": "Segment 45 (pages 397-406)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch45",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch42",
+          "score": 0.6393237331506214,
+          "base_score": 0.6488728885843691,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch46",
+          "score": 0.5535123042909574,
+          "base_score": 0.6725205071515958,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch50",
+          "score": 0.5075214779855449,
+          "base_score": 0.5958691299759082,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "key",
+          "explorer",
+          "keys",
+          "modified time",
+          "windows"
+        ],
+        "semantic": [],
+        "merged": [
+          "key",
+          "explorer",
+          "keys",
+          "modified time",
+          "windows"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32031527104494584,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.153896+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 46,
+      "title": "Segment 46 (pages 407-417)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch46",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch50",
+          "score": 0.5955287462455305,
+          "base_score": 0.6684738363351433,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch45",
+          "score": 0.5535123042909574,
+          "base_score": 0.6725205071515958,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch42",
+          "score": 0.5132383424838548,
+          "base_score": 0.6053972374730913,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "recycle bin",
+          "recycle",
+          "bin",
+          "recycler",
+          "file"
+        ],
+        "semantic": [],
+        "merged": [
+          "recycle bin",
+          "recycle",
+          "bin",
+          "recycler",
+          "file"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35107306632556734,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.154288+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 47,
+      "title": "Segment 47 (pages 418-425)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch47",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch48",
+          "score": 0.5829390347716953,
+          "base_score": 0.6474909838787514,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "memory",
+          "handles",
+          "kernel",
+          "running",
+          "processes"
+        ],
+        "semantic": [],
+        "merged": [
+          "memory",
+          "handles",
+          "kernel",
+          "running",
+          "processes"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2888623265520747,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.154682+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 48,
+      "title": "Segment 48 (pages 426-433)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch48",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch47",
+          "score": 0.5829390347716953,
+          "base_score": 0.6474909838787514,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "memory",
+          "process",
+          "injection",
+          "process memory",
+          "process injection"
+        ],
+        "semantic": [],
+        "merged": [
+          "memory",
+          "process",
+          "injection",
+          "process memory",
+          "process injection"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31893230188797167,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.155068+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 49,
+      "title": "Segment 49 (pages 434-441)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch49",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch43",
+          "score": 0.5125276336080077,
+          "base_score": 0.6042127226800127,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch63",
+          "score": 0.5046410305980449,
+          "base_score": 0.5910683843300748,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "dll",
+          "load",
+          "exe",
+          "dlls",
+          "executable"
+        ],
+        "semantic": [],
+        "merged": [
+          "dll",
+          "load",
+          "exe",
+          "dlls",
+          "executable"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2997273307004341,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.155458+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 50,
+      "title": "Segment 50 (pages 442-449)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch50",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch46",
+          "score": 0.5955287462455305,
+          "base_score": 0.6684738363351433,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch39",
+          "score": 0.5469029225543354,
+          "base_score": 0.5874307968498182,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch42",
+          "score": 0.5152961662398302,
+          "base_score": 0.6088269437330505,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch45",
+          "score": 0.5075214779855449,
+          "base_score": 0.5958691299759082,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch41",
+          "score": 0.506551513862138,
+          "base_score": 0.5942525231035635,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "file",
+          "logon",
+          "mac os",
+          "mac",
+          "os"
+        ],
+        "semantic": [],
+        "merged": [
+          "file",
+          "logon",
+          "mac os",
+          "mac",
+          "os"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39169853905540974,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.155863+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 51,
+      "title": "Segment 51 (pages 450-457)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch51",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch53",
+          "score": 0.5585797334482168,
+          "base_score": 0.514299555747028,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "file",
+          "mac os",
+          "db",
+          "stored",
+          "mac"
+        ],
+        "semantic": [],
+        "merged": [
+          "file",
+          "mac os",
+          "db",
+          "stored",
+          "mac"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_in_files",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24572938388234478,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.156237+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 52,
+      "title": "Segment 52 (pages 458-466)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch52",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch55",
+          "score": 0.5415101071213332,
+          "base_score": 0.48585017853555534,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch56",
+          "score": 0.5164116965777656,
+          "base_score": 0.5366120868888686,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "directory",
+          "library",
+          "applications",
+          "application",
+          "user"
+        ],
+        "semantic": [],
+        "merged": [
+          "directory",
+          "library",
+          "applications",
+          "application",
+          "user"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_in_files",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.16636340577507083,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.156618+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 53,
+      "title": "Segment 53 (pages 467-475)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch53",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch51",
+          "score": 0.5585797334482168,
+          "base_score": 0.514299555747028,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "asl",
+          "log",
+          "mac os",
+          "2013",
+          "mac"
+        ],
+        "semantic": [],
+        "merged": [
+          "asl",
+          "log",
+          "mac os",
+          "2013",
+          "mac"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_in_files",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29175750856891663,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.157037+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 54,
+      "title": "Segment 54 (pages 476-483)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch54",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "log",
+          "services",
+          "excerpt",
+          "xml",
+          "sshd"
+        ],
+        "semantic": [],
+        "merged": [
+          "log",
+          "services",
+          "excerpt",
+          "xml",
+          "sshd"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2586690946766943,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.157407+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 55,
+      "title": "Segment 55 (pages 484-492)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch55",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch56",
+          "score": 0.6186315877370507,
+          "base_score": 0.7069785721543438,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch52",
+          "score": 0.5415101071213332,
+          "base_score": 0.48585017853555534,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "application",
+          "applications",
+          "application data",
+          "data",
+          "applications installed"
+        ],
+        "semantic": [],
+        "merged": [
+          "application",
+          "applications",
+          "application data",
+          "data",
+          "applications installed"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_in_files",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27651951635745886,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.157801+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 56,
+      "title": "Segment 56 (pages 493-502)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch56",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch55",
+          "score": 0.6186315877370507,
+          "base_score": 0.7069785721543438,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch52",
+          "score": 0.5164116965777656,
+          "base_score": 0.5366120868888686,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "application",
+          "browsers",
+          "web browsers",
+          "artifacts",
+          "web"
+        ],
+        "semantic": [],
+        "merged": [
+          "application",
+          "browsers",
+          "web browsers",
+          "artifacts",
+          "web"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_in_files",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2879779882944336,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.158190+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 57,
+      "title": "Segment 57 (pages 503-517)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch57",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "index",
+          "index dat",
+          "chrome",
+          "history",
+          "dat"
+        ],
+        "semantic": [],
+        "merged": [
+          "index",
+          "index dat",
+          "chrome",
+          "history",
+          "dat"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_in_files",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.22647480747299825,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.158582+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 58,
+      "title": "Segment 58 (pages 518-525)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch58",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "mail",
+          "outlook",
+          "microsoft outlook",
+          "mail clients",
+          "based mail"
+        ],
+        "semantic": [],
+        "merged": [
+          "mail",
+          "outlook",
+          "microsoft outlook",
+          "mail clients",
+          "based mail"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2912068294267694,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:48:51.159031+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 59,
+      "title": "Segment 59 (pages 526-538)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch59",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "message",
+          "facebook",
+          "profile",
+          "chat",
+          "aim"
+        ],
+        "semantic": [],
+        "merged": [
+          "message",
+          "facebook",
+          "profile",
+          "chat",
+          "aim"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_in_files",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.17833770380877076,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.159415+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 60,
+      "title": "Segment 60 (pages 539-546)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch60",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch61",
+          "score": 0.6799345523223131,
+          "base_score": 0.7165575872038552,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "malware",
+          "triage",
+          "suspected malware",
+          "suspected",
+          "handling"
+        ],
+        "semantic": [],
+        "merged": [
+          "malware",
+          "triage",
+          "suspected malware",
+          "suspected",
+          "handling"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "malware_the_that",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34539111131824435,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.159812+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 61,
+      "title": "Segment 61 (pages 547-554)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch61",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch60",
+          "score": 0.6799345523223131,
+          "base_score": 0.7165575872038552,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "virtual",
+          "virtual environment",
+          "triage",
+          "environment",
+          "malware"
+        ],
+        "semantic": [],
+        "merged": [
+          "virtual",
+          "virtual environment",
+          "triage",
+          "environment",
+          "malware"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "malware_the_that",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2562376503795879,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.160200+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 62,
+      "title": "Segment 62 (pages 555-562)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch62",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "strings",
+          "strings file",
+          "file",
+          "file command",
+          "cygwin"
+        ],
+        "semantic": [],
+        "merged": [
+          "strings",
+          "strings file",
+          "file",
+          "file command",
+          "cygwin"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.22677330328996265,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.160594+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 63,
+      "title": "Segment 63 (pages 563-570)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch63",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch49",
+          "score": 0.5046410305980449,
+          "base_score": 0.5910683843300748,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "dynamic",
+          "dynamic analysis",
+          "malware",
+          "analysis",
+          "unpack"
+        ],
+        "semantic": [],
+        "merged": [
+          "dynamic",
+          "dynamic analysis",
+          "malware",
+          "analysis",
+          "unpack"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28276579289604886,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.160980+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 64,
+      "title": "Segment 64 (pages 571-578)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch64",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "process monitor",
+          "process",
+          "monitor",
+          "events",
+          "filter"
+        ],
+        "semantic": [],
+        "merged": [
+          "process monitor",
+          "process",
+          "monitor",
+          "events",
+          "filter"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2536330259825449,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.161364+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 65,
+      "title": "Segment 65 (pages 579-588)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch65",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "report",
+          "reports",
+          "analysis reports",
+          "title page",
+          "individual analysis"
+        ],
+        "semantic": [],
+        "merged": [
+          "report",
+          "reports",
+          "analysis reports",
+          "title page",
+          "individual analysis"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2418751697881324,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.161759+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 66,
+      "title": "Segment 66 (pages 589-598)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch66",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch67",
+          "score": 0.6232357468574043,
+          "base_score": 0.7146521706882664,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch69",
+          "score": 0.5834926642359108,
+          "base_score": 0.648413699652444,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch8",
+          "score": 0.5584815063666542,
+          "base_score": 0.6067284365370162,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch4",
+          "score": 0.5578891105764283,
+          "base_score": 0.6057411102199731,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch3",
+          "score": 0.5209455263374835,
+          "base_score": 0.5441684698217317,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "remediation",
+          "actions",
+          "remediation plan",
+          "plan",
+          "incident"
+        ],
+        "semantic": [],
+        "merged": [
+          "remediation",
+          "actions",
+          "remediation plan",
+          "plan",
+          "incident"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25799081191447504,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.162175+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 67,
+      "title": "Segment 67 (pages 599-606)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch67",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch66",
+          "score": 0.6232357468574043,
+          "base_score": 0.7146521706882664,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch69",
+          "score": 0.571079297858731,
+          "base_score": 0.6277247556904776,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch71",
+          "score": 0.5414070523200148,
+          "base_score": 0.5782710131259506,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch4",
+          "score": 0.5284532778401058,
+          "base_score": 0.6307554630668429,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "remediation",
+          "remediation approach",
+          "owner",
+          "approach",
+          "remediation owner"
+        ],
+        "semantic": [],
+        "merged": [
+          "remediation",
+          "remediation approach",
+          "owner",
+          "approach",
+          "remediation owner"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2633612924838966,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.162590+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 68,
+      "title": "Segment 68 (pages 607-619)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch68",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch71",
+          "score": 0.528019577785807,
+          "base_score": 0.5559585555689375,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch5",
+          "score": 0.5203724650085289,
+          "base_score": 0.5432133676068074,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "attacker",
+          "eradication",
+          "plan",
+          "access environment",
+          "containment plan"
+        ],
+        "semantic": [],
+        "merged": [
+          "attacker",
+          "eradication",
+          "plan",
+          "access environment",
+          "containment plan"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28023496950484045,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.162978+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 69,
+      "title": "Segment 69 (pages 620-628)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch69",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch71",
+          "score": 0.6562015307541101,
+          "base_score": 0.3992247734790724,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch66",
+          "score": 0.5834926642359108,
+          "base_score": 0.648413699652444,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch67",
+          "score": 0.571079297858731,
+          "base_score": 0.6277247556904776,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "eradication",
+          "eradication event",
+          "remediation",
+          "event",
+          "remediation team"
+        ],
+        "semantic": [],
+        "merged": [
+          "eradication",
+          "eradication event",
+          "remediation",
+          "event",
+          "remediation team"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.20644025431036073,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.163370+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 70,
+      "title": "Segment 70 (pages 629-645)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch70",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "remediation",
+          "implement",
+          "environment",
+          "restricted",
+          "actions"
+        ],
+        "semantic": [],
+        "merged": [
+          "remediation",
+          "implement",
+          "environment",
+          "restricted",
+          "actions"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21251589805058077,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.163764+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 71,
+      "title": "Segment 71 (pages 646-659)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch71",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch69",
+          "score": 0.6562015307541101,
+          "base_score": 0.3992247734790724,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch67",
+          "score": 0.5414070523200148,
+          "base_score": 0.5782710131259506,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch68",
+          "score": 0.528019577785807,
+          "base_score": 0.5559585555689375,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch66",
+          "score": 0.5058501426897593,
+          "base_score": 0.5190094970755248,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch6",
+          "score": 0.5042297926420496,
+          "base_score": 0.5163089136626753,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "remediation team",
+          "remediation",
+          "team",
+          "eradication",
+          "eradication event"
+        ],
+        "semantic": [],
+        "merged": [
+          "remediation team",
+          "remediation",
+          "team",
+          "eradication",
+          "eradication event"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3313867992888901,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.164162+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 72,
+      "title": "Segment 72 (pages 660-667)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch72",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch77",
+          "score": 0.5973191723833299,
+          "base_score": 0.7455319539722164,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch76",
+          "score": 0.5233564486160885,
+          "base_score": 0.6222607476934809,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch73",
+          "score": 0.5076117189888224,
+          "base_score": 0.5960195316480373,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "387",
+          "15",
+          "562",
+          "data",
+          "445"
+        ],
+        "semantic": [],
+        "merged": [
+          "387",
+          "15",
+          "562",
+          "data",
+          "445"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "tool_data_59",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3347942135814361,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.164560+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 73,
+      "title": "Segment 73 (pages 668-675)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch73",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch77",
+          "score": 0.5519015876636465,
+          "base_score": 0.6698359794394109,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch72",
+          "score": 0.5076117189888224,
+          "base_score": 0.5960195316480373,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "56",
+          "172",
+          "55",
+          "170",
+          "59"
+        ],
+        "semantic": [],
+        "merged": [
+          "56",
+          "172",
+          "55",
+          "170",
+          "59"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "tool_data_59",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2674161957377757,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.164946+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 74,
+      "title": "Segment 74 (pages 676-683)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch74",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "internet",
+          "host",
+          "66",
+          "144",
+          "67"
+        ],
+        "semantic": [],
+        "merged": [
+          "internet",
+          "host",
+          "66",
+          "144",
+          "67"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "tool_data_59",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2777983061411066,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.165326+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 75,
+      "title": "Segment 75 (pages 684-691)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch75",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch77",
+          "score": 0.5121821600435003,
+          "base_score": 0.6036369334058338,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "413",
+          "392",
+          "memory",
+          "outlook",
+          "microsoft"
+        ],
+        "semantic": [],
+        "merged": [
+          "413",
+          "392",
+          "memory",
+          "outlook",
+          "microsoft"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "tool_data_59",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30836182077253266,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.165724+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 76,
+      "title": "Segment 76 (pages 692-699)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch76",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch77",
+          "score": 0.5458884092234689,
+          "base_score": 0.6598140153724482,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch72",
+          "score": 0.5233564486160885,
+          "base_score": 0.6222607476934809,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "50",
+          "remediation",
+          "440",
+          "49",
+          "523"
+        ],
+        "semantic": [],
+        "merged": [
+          "50",
+          "remediation",
+          "440",
+          "49",
+          "523"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "tool_data_59",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3316910407851472,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.166110+00:00"
+      }
+    },
+    {
+      "book": "Incident Response and Computer Forensics 3e - Jason Luttgens",
+      "chapter": 77,
+      "title": "Segment 77 (pages 700-705)",
+      "chapter_id": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch77",
+      "cross_references": [
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch72",
+          "score": 0.5973191723833299,
+          "base_score": 0.7455319539722164,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch73",
+          "score": 0.5519015876636465,
+          "base_score": 0.6698359794394109,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch76",
+          "score": 0.5458884092234689,
+          "base_score": 0.6598140153724482,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Incident Response and Computer Forensics 3e - Jason Luttgens:ch75",
+          "score": 0.5121821600435003,
+          "base_score": 0.6036369334058338,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "windows",
+          "319",
+          "324",
+          "346",
+          "338"
+        ],
+        "semantic": [],
+        "merged": [
+          "windows",
+          "319",
+          "324",
+          "346",
+          "338"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "tool_data_59",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34475421186139704,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:51.166499+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

@@ -1,0 +1,609 @@
+{
+  "book": {
+    "title": "Designing Cloud Data Platforms"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:44:54.419567",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Designing Cloud Data Platforms",
+      "chapter": 1,
+      "title": "Introducing the data platform",
+      "chapter_id": "Designing Cloud Data Platforms:ch1",
+      "cross_references": [
+        {
+          "target": "Designing Cloud Data Platforms:ch2",
+          "score": 0.6410312880594117,
+          "base_score": 0.8183854800990196,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Cloud Data Platforms:ch9",
+          "score": 0.6123331757922384,
+          "base_score": 0.7705552929870642,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Cloud Data Platforms:ch10",
+          "score": 0.5760439331982459,
+          "base_score": 0.7100732219970765,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Cloud Data Platforms:ch4",
+          "score": 0.5546172270463476,
+          "base_score": 0.6743620450772461,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Cloud Data Platforms:ch7",
+          "score": 0.5245929099251595,
+          "base_score": 0.6243215165419326,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "processing",
+          "lake",
+          "data lake",
+          "introducing data",
+          "introducing"
+        ],
+        "semantic": [],
+        "merged": [
+          "processing",
+          "lake",
+          "data lake",
+          "introducing data",
+          "introducing"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7271787105880152,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:54.408510+00:00"
+      }
+    },
+    {
+      "book": "Designing Cloud Data Platforms",
+      "chapter": 2,
+      "title": "Why a data platform and not just a data warehouse",
+      "chapter_id": "Designing Cloud Data Platforms:ch2",
+      "cross_references": [
+        {
+          "target": "Designing Cloud Data Platforms:ch1",
+          "score": 0.6410312880594117,
+          "base_score": 0.8183854800990196,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Cloud Data Platforms:ch9",
+          "score": 0.5445025729915244,
+          "base_score": 0.6575042883192074,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Cloud Data Platforms:ch10",
+          "score": 0.5397449832210265,
+          "base_score": 0.6495749720350442,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Cloud Data Platforms:ch7",
+          "score": 0.5065265631792544,
+          "base_score": 0.5942109386320906,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Cloud Data Platforms:ch4",
+          "score": 0.5042232794642437,
+          "base_score": 0.5903721324404062,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "azure",
+          "factory",
+          "data factory",
+          "azure data",
+          "azure synapse"
+        ],
+        "semantic": [],
+        "merged": [
+          "azure",
+          "factory",
+          "data factory",
+          "azure data",
+          "azure synapse"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6752711292125974,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:54.408608+00:00"
+      }
+    },
+    {
+      "book": "Designing Cloud Data Platforms",
+      "chapter": 3,
+      "title": "Getting bigger and leveraging the Big 3: Amazon, Microsoft Azure, and Google",
+      "chapter_id": "Designing Cloud Data Platforms:ch3",
+      "cross_references": [
+        {
+          "target": "Designing Cloud Data Platforms:ch5",
+          "score": 0.7000351073670997,
+          "base_score": 0.7500585122784995,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "layer",
+          "processing",
+          "data ingestion",
+          "data processing",
+          "layers"
+        ],
+        "semantic": [],
+        "merged": [
+          "layer",
+          "processing",
+          "data ingestion",
+          "data processing",
+          "layers"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "data_the_processing",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6463447070423707,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:54.408658+00:00"
+      }
+    },
+    {
+      "book": "Designing Cloud Data Platforms",
+      "chapter": 4,
+      "title": "Getting data into the platform",
+      "chapter_id": "Designing Cloud Data Platforms:ch4",
+      "cross_references": [
+        {
+          "target": "Designing Cloud Data Platforms:ch10",
+          "score": 0.566771741245666,
+          "base_score": 0.6946195687427767,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Cloud Data Platforms:ch1",
+          "score": 0.5546172270463476,
+          "base_score": 0.6743620450772461,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Cloud Data Platforms:ch7",
+          "score": 0.5258528510719933,
+          "base_score": 0.6264214184533222,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Cloud Data Platforms:ch9",
+          "score": 0.5076599619845329,
+          "base_score": 0.5960999366408881,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Cloud Data Platforms:ch2",
+          "score": 0.5042232794642437,
+          "base_score": 0.5903721324404062,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ingestion application",
+          "data types",
+          "files",
+          "ingesting",
+          "types"
+        ],
+        "semantic": [],
+        "merged": [
+          "ingestion application",
+          "data types",
+          "files",
+          "ingesting",
+          "types"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6551078445930137,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:54.408708+00:00"
+      }
+    },
+    {
+      "book": "Designing Cloud Data Platforms",
+      "chapter": 5,
+      "title": "Organizing and processing data",
+      "chapter_id": "Designing Cloud Data Platforms:ch5",
+      "cross_references": [
+        {
+          "target": "Designing Cloud Data Platforms:ch3",
+          "score": 0.7000351073670997,
+          "base_score": 0.7500585122784995,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Cloud Data Platforms:ch1",
+          "score": 0.5170690974433612,
+          "base_score": 0.7877077549981945,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "processing",
+          "data processing",
+          "area",
+          "staging",
+          "processing data"
+        ],
+        "semantic": [],
+        "merged": [
+          "processing",
+          "data processing",
+          "area",
+          "staging",
+          "processing data"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "data_the_processing",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.677087706350848,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:54.408754+00:00"
+      }
+    },
+    {
+      "book": "Designing Cloud Data Platforms",
+      "chapter": 6,
+      "title": "Real-time data processing and analytics",
+      "chapter_id": "Designing Cloud Data Platforms:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "real",
+          "real time",
+          "time",
+          "time processing",
+          "processing"
+        ],
+        "semantic": [],
+        "merged": [
+          "real",
+          "real time",
+          "time",
+          "time processing",
+          "processing"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5356720428567173,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:44:54.408799+00:00"
+      }
+    },
+    {
+      "book": "Designing Cloud Data Platforms",
+      "chapter": 7,
+      "title": "Metadata layer architecture",
+      "chapter_id": "Designing Cloud Data Platforms:ch7",
+      "cross_references": [
+        {
+          "target": "Designing Cloud Data Platforms:ch10",
+          "score": 0.5656225604972039,
+          "base_score": 0.69270426749534,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Cloud Data Platforms:ch4",
+          "score": 0.5258528510719933,
+          "base_score": 0.6264214184533222,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Cloud Data Platforms:ch1",
+          "score": 0.5245929099251595,
+          "base_score": 0.6243215165419326,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Cloud Data Platforms:ch2",
+          "score": 0.5065265631792544,
+          "base_score": 0.5942109386320906,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "metadata",
+          "pipeline",
+          "pipeline metadata",
+          "pipelines",
+          "configuration"
+        ],
+        "semantic": [],
+        "merged": [
+          "metadata",
+          "pipeline",
+          "pipeline metadata",
+          "pipelines",
+          "configuration"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.619878116243205,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:54.408847+00:00"
+      }
+    },
+    {
+      "book": "Designing Cloud Data Platforms",
+      "chapter": 8,
+      "title": "Schema management",
+      "chapter_id": "Designing Cloud Data Platforms:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "schema",
+          "schema management",
+          "schema changes",
+          "changes",
+          "management"
+        ],
+        "semantic": [],
+        "merged": [
+          "schema",
+          "schema management",
+          "schema changes",
+          "changes",
+          "management"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5955003609825387,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:44:54.408892+00:00"
+      }
+    },
+    {
+      "book": "Designing Cloud Data Platforms",
+      "chapter": 9,
+      "title": "Data access and security",
+      "chapter_id": "Designing Cloud Data Platforms:ch9",
+      "cross_references": [
+        {
+          "target": "Designing Cloud Data Platforms:ch1",
+          "score": 0.6123331757922384,
+          "base_score": 0.7705552929870642,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Cloud Data Platforms:ch2",
+          "score": 0.5445025729915244,
+          "base_score": 0.6575042883192074,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Cloud Data Platforms:ch10",
+          "score": 0.5116968600473514,
+          "base_score": 0.602828100078919,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Cloud Data Platforms:ch4",
+          "score": 0.5076599619845329,
+          "base_score": 0.5960999366408881,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "access",
+          "slice",
+          "data slice",
+          "security",
+          "slice data"
+        ],
+        "semantic": [],
+        "merged": [
+          "access",
+          "slice",
+          "data slice",
+          "security",
+          "slice data"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6537601280061457,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:54.408939+00:00"
+      }
+    },
+    {
+      "book": "Designing Cloud Data Platforms",
+      "chapter": 10,
+      "title": "Fueling business value with data platforms",
+      "chapter_id": "Designing Cloud Data Platforms:ch10",
+      "cross_references": [
+        {
+          "target": "Designing Cloud Data Platforms:ch1",
+          "score": 0.5760439331982459,
+          "base_score": 0.7100732219970765,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Cloud Data Platforms:ch4",
+          "score": 0.566771741245666,
+          "base_score": 0.6946195687427767,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Cloud Data Platforms:ch7",
+          "score": 0.5656225604972039,
+          "base_score": 0.69270426749534,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Cloud Data Platforms:ch2",
+          "score": 0.5397449832210265,
+          "base_score": 0.6495749720350442,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Cloud Data Platforms:ch9",
+          "score": 0.5116968600473514,
+          "base_score": 0.602828100078919,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "business",
+          "data strategy",
+          "strategy",
+          "platforms",
+          "data platforms"
+        ],
+        "semantic": [],
+        "merged": [
+          "business",
+          "data strategy",
+          "strategy",
+          "platforms",
+          "data platforms"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6509491518722352,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:54.408986+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

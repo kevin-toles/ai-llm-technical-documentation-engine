@@ -1,0 +1,580 @@
+{
+  "book": {
+    "title": "Microservices Architecture for eCommerce"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:51:29.009128",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Microservices Architecture for eCommerce",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-9)",
+      "chapter_id": "Microservices Architecture for eCommerce:ch1",
+      "cross_references": [
+        {
+          "target": "Microservices Architecture for eCommerce:ch12",
+          "score": 0.5054418640394953,
+          "base_score": 0.5924031067324922,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ecommerce",
+          "microservices",
+          "software",
+          "developer",
+          "development"
+        ],
+        "semantic": [],
+        "merged": [
+          "ecommerce",
+          "microservices",
+          "software",
+          "developer",
+          "development"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39070409374725434,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:29.000190+00:00"
+      }
+    },
+    {
+      "book": "Microservices Architecture for eCommerce",
+      "chapter": 2,
+      "title": "Segment 2 (pages 10-17)",
+      "chapter_id": "Microservices Architecture for eCommerce:ch2",
+      "cross_references": [
+        {
+          "target": "Microservices Architecture for eCommerce:ch3",
+          "score": 0.5224804522225912,
+          "base_score": 0.7041340870376521,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "microservices",
+          "services",
+          "microservice",
+          "approach",
+          "microservice approach"
+        ],
+        "semantic": [],
+        "merged": [
+          "microservices",
+          "services",
+          "microservice",
+          "approach",
+          "microservice approach"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47097870669581543,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:51:29.000288+00:00"
+      }
+    },
+    {
+      "book": "Microservices Architecture for eCommerce",
+      "chapter": 3,
+      "title": "Segment 3 (pages 18-25)",
+      "chapter_id": "Microservices Architecture for eCommerce:ch3",
+      "cross_references": [
+        {
+          "target": "Microservices Architecture for eCommerce:ch2",
+          "score": 0.5224804522225912,
+          "base_score": 0.7041340870376521,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "microservices",
+          "tool",
+          "deploy",
+          "microservice",
+          "separate"
+        ],
+        "semantic": [],
+        "merged": [
+          "microservices",
+          "tool",
+          "deploy",
+          "microservice",
+          "separate"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "to_the_run",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4789466571863582,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:29.000368+00:00"
+      }
+    },
+    {
+      "book": "Microservices Architecture for eCommerce",
+      "chapter": 4,
+      "title": "Segment 4 (pages 26-33)",
+      "chapter_id": "Microservices Architecture for eCommerce:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "model",
+          "data",
+          "read",
+          "read model",
+          "command"
+        ],
+        "semantic": [],
+        "merged": [
+          "model",
+          "data",
+          "read",
+          "read model",
+          "command"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41275267561195805,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:29.000433+00:00"
+      }
+    },
+    {
+      "book": "Microservices Architecture for eCommerce",
+      "chapter": 5,
+      "title": "Segment 5 (pages 34-51)",
+      "chapter_id": "Microservices Architecture for eCommerce:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "authorization",
+          "api",
+          "tokens",
+          "events",
+          "gateway"
+        ],
+        "semantic": [],
+        "merged": [
+          "authorization",
+          "api",
+          "tokens",
+          "events",
+          "gateway"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.278926882876397,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:51:29.000497+00:00"
+      }
+    },
+    {
+      "book": "Microservices Architecture for eCommerce",
+      "chapter": 6,
+      "title": "Segment 6 (pages 52-59)",
+      "chapter_id": "Microservices Architecture for eCommerce:ch6",
+      "cross_references": [
+        {
+          "target": "Microservices Architecture for eCommerce:ch8",
+          "score": 0.5536907506594467,
+          "base_score": 0.506151251099078,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "docker",
+          "run",
+          "image",
+          "docker compose",
+          "container"
+        ],
+        "semantic": [],
+        "merged": [
+          "docker",
+          "run",
+          "image",
+          "docker compose",
+          "container"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "to_the_run",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31475298060457557,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:29.000562+00:00"
+      }
+    },
+    {
+      "book": "Microservices Architecture for eCommerce",
+      "chapter": 7,
+      "title": "Segment 7 (pages 60-67)",
+      "chapter_id": "Microservices Architecture for eCommerce:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "function",
+          "serverless",
+          "run",
+          "functions",
+          "lambda"
+        ],
+        "semantic": [],
+        "merged": [
+          "function",
+          "serverless",
+          "run",
+          "functions",
+          "lambda"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "to_the_run",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.400526511889144,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:29.000625+00:00"
+      }
+    },
+    {
+      "book": "Microservices Architecture for eCommerce",
+      "chapter": 8,
+      "title": "Segment 8 (pages 68-75)",
+      "chapter_id": "Microservices Architecture for eCommerce:ch8",
+      "cross_references": [
+        {
+          "target": "Microservices Architecture for eCommerce:ch6",
+          "score": 0.5536907506594467,
+          "base_score": 0.506151251099078,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "docker",
+          "pipeline",
+          "build",
+          "running",
+          "container"
+        ],
+        "semantic": [],
+        "merged": [
+          "docker",
+          "pipeline",
+          "build",
+          "running",
+          "container"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "to_the_run",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3632260193915523,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:29.000687+00:00"
+      }
+    },
+    {
+      "book": "Microservices Architecture for eCommerce",
+      "chapter": 9,
+      "title": "Segment 9 (pages 76-85)",
+      "chapter_id": "Microservices Architecture for eCommerce:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "node",
+          "php",
+          "js",
+          "node js",
+          "nginx"
+        ],
+        "semantic": [],
+        "merged": [
+          "node",
+          "php",
+          "js",
+          "node js",
+          "nginx"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "to_the_run",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.288595200461026,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:29.000767+00:00"
+      }
+    },
+    {
+      "book": "Microservices Architecture for eCommerce",
+      "chapter": 10,
+      "title": "Segment 10 (pages 86-93)",
+      "chapter_id": "Microservices Architecture for eCommerce:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "type",
+          "graylog",
+          "http",
+          "apis",
+          "string"
+        ],
+        "semantic": [],
+        "merged": [
+          "type",
+          "graylog",
+          "http",
+          "apis",
+          "string"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1402839602735372,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:51:29.000829+00:00"
+      }
+    },
+    {
+      "book": "Microservices Architecture for eCommerce",
+      "chapter": 11,
+      "title": "Segment 11 (pages 94-101)",
+      "chapter_id": "Microservices Architecture for eCommerce:ch11",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "new relic",
+          "relic",
+          "new",
+          "nrql",
+          "business requirements"
+        ],
+        "semantic": [],
+        "merged": [
+          "new relic",
+          "relic",
+          "new",
+          "nrql",
+          "business requirements"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27657768522800513,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:29.000902+00:00"
+      }
+    },
+    {
+      "book": "Microservices Architecture for eCommerce",
+      "chapter": 12,
+      "title": "Segment 12 (pages 102-109)",
+      "chapter_id": "Microservices Architecture for eCommerce:ch12",
+      "cross_references": [
+        {
+          "target": "Microservices Architecture for eCommerce:ch1",
+          "score": 0.5054418640394953,
+          "base_score": 0.5924031067324922,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "implementation",
+          "services",
+          "analysis",
+          "frontend",
+          "team"
+        ],
+        "semantic": [],
+        "merged": [
+          "implementation",
+          "services",
+          "analysis",
+          "frontend",
+          "team"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40531013064277527,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:29.000967+00:00"
+      }
+    },
+    {
+      "book": "Microservices Architecture for eCommerce",
+      "chapter": 13,
+      "title": "Segment 13 (pages 110-117)",
+      "chapter_id": "Microservices Architecture for eCommerce:ch13",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "microservices",
+          "approach",
+          "developers",
+          "know",
+          "content"
+        ],
+        "semantic": [],
+        "merged": [
+          "microservices",
+          "approach",
+          "developers",
+          "know",
+          "content"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3546488160358704,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:29.001029+00:00"
+      }
+    },
+    {
+      "book": "Microservices Architecture for eCommerce",
+      "chapter": 14,
+      "title": "Segment 14 (pages 118-122)",
+      "chapter_id": "Microservices Architecture for eCommerce:ch14",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "https",
+          "com",
+          "com microservices",
+          "microservices",
+          "microservices https"
+        ],
+        "semantic": [],
+        "merged": [
+          "https",
+          "com",
+          "com microservices",
+          "microservices",
+          "microservices https"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4168883154276579,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:29.001092+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

@@ -1,0 +1,1831 @@
+{
+  "book": {
+    "title": "Microservices Up and Running"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:51:52.122262",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Microservices Up and Running",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-10)",
+      "chapter_id": "Microservices Up and Running:ch1",
+      "cross_references": [
+        {
+          "target": "Microservices Up and Running:ch2",
+          "score": 0.5994734402054226,
+          "base_score": 0.6750483262682969,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch9",
+          "score": 0.579497653610382,
+          "base_score": 0.6417553486098958,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch4",
+          "score": 0.5248621277819585,
+          "base_score": 0.5506961388958567,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch5",
+          "score": 0.5080169398779787,
+          "base_score": 0.5966948997966312,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch29",
+          "score": 0.5052446529365626,
+          "base_score": 0.5180003474868637,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "microservice",
+          "microservices",
+          "microservices running",
+          "staging",
+          "configuring"
+        ],
+        "semantic": [],
+        "merged": [
+          "microservice",
+          "microservices",
+          "microservices running",
+          "staging",
+          "configuring"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40213149478562005,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:52.091359+00:00"
+      }
+    },
+    {
+      "book": "Microservices Up and Running",
+      "chapter": 2,
+      "title": "Segment 2 (pages 11-19)",
+      "chapter_id": "Microservices Up and Running:ch2",
+      "cross_references": [
+        {
+          "target": "Microservices Up and Running:ch1",
+          "score": 0.5994734402054226,
+          "base_score": 0.6750483262682969,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch29",
+          "score": 0.5715259318346226,
+          "base_score": 0.6284691456502969,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch28",
+          "score": 0.560121728378799,
+          "base_score": 0.683536213964665,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch9",
+          "score": 0.5184065861488302,
+          "base_score": 0.5399369028406429,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch5",
+          "score": 0.5101588192444415,
+          "base_score": 0.6002646987407358,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "microservices",
+          "book",
+          "architecture",
+          "software",
+          "style"
+        ],
+        "semantic": [],
+        "merged": [
+          "microservices",
+          "book",
+          "architecture",
+          "software",
+          "style"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3845487903055883,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:52.091638+00:00"
+      }
+    },
+    {
+      "book": "Microservices Up and Running",
+      "chapter": 3,
+      "title": "Segment 3 (pages 20-30)",
+      "chapter_id": "Microservices Up and Running:ch3",
+      "cross_references": [
+        {
+          "target": "Microservices Up and Running:ch29",
+          "score": 0.5606225680461178,
+          "base_score": 0.6843709467435295,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch28",
+          "score": 0.5256161118308539,
+          "base_score": 0.6260268530514232,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch4",
+          "score": 0.514533192449388,
+          "base_score": 0.6075553207489799,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch9",
+          "score": 0.5142122396984516,
+          "base_score": 0.6070203994974194,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "decision",
+          "decision record",
+          "decisions",
+          "record",
+          "ll"
+        ],
+        "semantic": [],
+        "merged": [
+          "decision",
+          "decision record",
+          "decisions",
+          "record",
+          "ll"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3656665640929175,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:52.091812+00:00"
+      }
+    },
+    {
+      "book": "Microservices Up and Running",
+      "chapter": 4,
+      "title": "Segment 4 (pages 31-50)",
+      "chapter_id": "Microservices Up and Running:ch4",
+      "cross_references": [
+        {
+          "target": "Microservices Up and Running:ch9",
+          "score": 0.5863616017556195,
+          "base_score": 0.6531952621852916,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch1",
+          "score": 0.5248621277819585,
+          "base_score": 0.5506961388958567,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch3",
+          "score": 0.514533192449388,
+          "base_score": 0.6075553207489799,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch2",
+          "score": 0.5064457920838311,
+          "base_score": 0.5200022460656445,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "team",
+          "design",
+          "teams",
+          "design team",
+          "microservices"
+        ],
+        "semantic": [],
+        "merged": [
+          "team",
+          "design",
+          "teams",
+          "design team",
+          "microservices"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3732343186306279,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:52.091982+00:00"
+      }
+    },
+    {
+      "book": "Microservices Up and Running",
+      "chapter": 5,
+      "title": "Segment 5 (pages 51-58)",
+      "chapter_id": "Microservices Up and Running:ch5",
+      "cross_references": [
+        {
+          "target": "Microservices Up and Running:ch7",
+          "score": 0.5608996941967898,
+          "base_score": 0.6848328236613164,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch2",
+          "score": 0.5101588192444415,
+          "base_score": 0.6002646987407358,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch1",
+          "score": 0.5080169398779787,
+          "base_score": 0.5966948997966312,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "actors",
+          "seed",
+          "design",
+          "seed process",
+          "process"
+        ],
+        "semantic": [],
+        "merged": [
+          "actors",
+          "seed",
+          "design",
+          "seed process",
+          "process"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3762893308624329,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:52.092140+00:00"
+      }
+    },
+    {
+      "book": "Microservices Up and Running",
+      "chapter": 6,
+      "title": "Segment 6 (pages 59-67)",
+      "chapter_id": "Microservices Up and Running:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "queries",
+          "actions",
+          "action",
+          "job stories",
+          "stories"
+        ],
+        "semantic": [],
+        "merged": [
+          "queries",
+          "actions",
+          "action",
+          "job stories",
+          "stories"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2955031725142787,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:52.092296+00:00"
+      }
+    },
+    {
+      "book": "Microservices Up and Running",
+      "chapter": 7,
+      "title": "Segment 7 (pages 68-75)",
+      "chapter_id": "Microservices Up and Running:ch7",
+      "cross_references": [
+        {
+          "target": "Microservices Up and Running:ch5",
+          "score": 0.5608996941967898,
+          "base_score": 0.6848328236613164,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch29",
+          "score": 0.5403989996324118,
+          "base_score": 0.5765909253132788,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch1",
+          "score": 0.5034263222081975,
+          "base_score": 0.5149697962729217,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "apis",
+          "microservices",
+          "apis microservices",
+          "microservices chapter",
+          "microservices just"
+        ],
+        "semantic": [],
+        "merged": [
+          "apis",
+          "microservices",
+          "apis microservices",
+          "microservices chapter",
+          "microservices just"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35588445268281244,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:52.092463+00:00"
+      }
+    },
+    {
+      "book": "Microservices Up and Running",
+      "chapter": 8,
+      "title": "Segment 8 (pages 76-85)",
+      "chapter_id": "Microservices Up and Running:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "ddd",
+          "domain",
+          "bounded",
+          "contexts",
+          "storming"
+        ],
+        "semantic": [],
+        "merged": [
+          "ddd",
+          "domain",
+          "bounded",
+          "contexts",
+          "storming"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2926014494853285,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:52.092649+00:00"
+      }
+    },
+    {
+      "book": "Microservices Up and Running",
+      "chapter": 9,
+      "title": "Segment 9 (pages 86-94)",
+      "chapter_id": "Microservices Up and Running:ch9",
+      "cross_references": [
+        {
+          "target": "Microservices Up and Running:ch4",
+          "score": 0.5863616017556195,
+          "base_score": 0.6531952621852916,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch1",
+          "score": 0.579497653610382,
+          "base_score": 0.6417553486098958,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch28",
+          "score": 0.5230044941487013,
+          "base_score": 0.547600082840428,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch2",
+          "score": 0.5184065861488302,
+          "base_score": 0.5399369028406429,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch3",
+          "score": 0.5142122396984516,
+          "base_score": 0.6070203994974194,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "microservices",
+          "microservices embed",
+          "embed data",
+          "embed"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "microservices",
+          "microservices embed",
+          "embed data",
+          "embed"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3881708320569589,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:52.092804+00:00"
+      }
+    },
+    {
+      "book": "Microservices Up and Running",
+      "chapter": 10,
+      "title": "Segment 10 (pages 95-107)",
+      "chapter_id": "Microservices Up and Running:ch10",
+      "cross_references": [
+        {
+          "target": "Microservices Up and Running:ch11",
+          "score": 0.6275048531882116,
+          "base_score": 0.510127136266067,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch21",
+          "score": 0.5017979276872063,
+          "base_score": 0.5863298794786771,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "event",
+          "state",
+          "data",
+          "event sourcing",
+          "sourcing"
+        ],
+        "semantic": [],
+        "merged": [
+          "event",
+          "state",
+          "data",
+          "event sourcing",
+          "sourcing"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2801591017187762,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:52.092958+00:00"
+      }
+    },
+    {
+      "book": "Microservices Up and Running",
+      "chapter": 11,
+      "title": "Segment 11 (pages 108-118)",
+      "chapter_id": "Microservices Up and Running:ch11",
+      "cross_references": [
+        {
+          "target": "Microservices Up and Running:ch10",
+          "score": 0.6275048531882116,
+          "base_score": 0.510127136266067,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "infrastructure",
+          "event",
+          "event sourcing",
+          "sourcing",
+          "cqrs"
+        ],
+        "semantic": [],
+        "merged": [
+          "infrastructure",
+          "event",
+          "event sourcing",
+          "sourcing",
+          "cqrs"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2966927743213098,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:52.093680+00:00"
+      }
+    },
+    {
+      "book": "Microservices Up and Running",
+      "chapter": 12,
+      "title": "Segment 12 (pages 119-130)",
+      "chapter_id": "Microservices Up and Running:ch12",
+      "cross_references": [
+        {
+          "target": "Microservices Up and Running:ch16",
+          "score": 0.6612810994241801,
+          "base_score": 0.6854684990403002,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch13",
+          "score": 0.6015104605473717,
+          "base_score": 0.6784433601715454,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch19",
+          "score": 0.5879765998900293,
+          "base_score": 0.7299609998167155,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch14",
+          "score": 0.5803461716463175,
+          "base_score": 0.7172436194105292,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch25",
+          "score": 0.5379425894054662,
+          "base_score": 0.6465709823424438,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ops",
+          "account",
+          "aws",
+          "user",
+          "ll"
+        ],
+        "semantic": [],
+        "merged": [
+          "ops",
+          "account",
+          "aws",
+          "user",
+          "ll"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39512550407159336,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:52.093875+00:00"
+      }
+    },
+    {
+      "book": "Microservices Up and Running",
+      "chapter": 13,
+      "title": "Segment 13 (pages 131-139)",
+      "chapter_id": "Microservices Up and Running:ch13",
+      "cross_references": [
+        {
+          "target": "Microservices Up and Running:ch14",
+          "score": 0.6155197241177147,
+          "base_score": 0.7017921327887837,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch16",
+          "score": 0.6071014630032414,
+          "base_score": 0.687761697597995,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch12",
+          "score": 0.6015104605473717,
+          "base_score": 0.6784433601715454,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch19",
+          "score": 0.5215588340877354,
+          "base_score": 0.6192647234795591,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "terraform",
+          "state",
+          "file",
+          "sandbox",
+          "ll"
+        ],
+        "semantic": [],
+        "merged": [
+          "terraform",
+          "state",
+          "file",
+          "sandbox",
+          "ll"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34328461540732264,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:52.094040+00:00"
+      }
+    },
+    {
+      "book": "Microservices Up and Running",
+      "chapter": 14,
+      "title": "Segment 14 (pages 140-147)",
+      "chapter_id": "Microservices Up and Running:ch14",
+      "cross_references": [
+        {
+          "target": "Microservices Up and Running:ch13",
+          "score": 0.6155197241177147,
+          "base_score": 0.7017921327887837,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch12",
+          "score": 0.5803461716463175,
+          "base_score": 0.7172436194105292,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch19",
+          "score": 0.5597766475884991,
+          "base_score": 0.6829610793141652,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch15",
+          "score": 0.5568158585757609,
+          "base_score": 0.6780264309596015,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch25",
+          "score": 0.5429093112583551,
+          "base_score": 0.6548488520972584,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "workflow",
+          "github",
+          "actions",
+          "github actions",
+          "terraform"
+        ],
+        "semantic": [],
+        "merged": [
+          "workflow",
+          "github",
+          "actions",
+          "github actions",
+          "terraform"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37503258280248847,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:52.094204+00:00"
+      }
+    },
+    {
+      "book": "Microservices Up and Running",
+      "chapter": 15,
+      "title": "Segment 15 (pages 148-156)",
+      "chapter_id": "Microservices Up and Running:ch15",
+      "cross_references": [
+        {
+          "target": "Microservices Up and Running:ch14",
+          "score": 0.5568158585757609,
+          "base_score": 0.6780264309596015,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ll",
+          "network",
+          "ll need",
+          "need",
+          "infrastructure"
+        ],
+        "semantic": [],
+        "merged": [
+          "ll",
+          "network",
+          "ll need",
+          "need",
+          "infrastructure"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2821038204370176,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:52.094364+00:00"
+      }
+    },
+    {
+      "book": "Microservices Up and Running",
+      "chapter": 16,
+      "title": "Segment 16 (pages 157-170)",
+      "chapter_id": "Microservices Up and Running:ch16",
+      "cross_references": [
+        {
+          "target": "Microservices Up and Running:ch12",
+          "score": 0.6612810994241801,
+          "base_score": 0.6854684990403002,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch18",
+          "score": 0.6365514473664609,
+          "base_score": 0.7368450048700272,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch13",
+          "score": 0.6071014630032414,
+          "base_score": 0.687761697597995,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch19",
+          "score": 0.5974741508185079,
+          "base_score": 0.7457902513641798,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch17",
+          "score": 0.5901626550798095,
+          "base_score": 0.6595303510589416,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ll",
+          "network",
+          "aws",
+          "module",
+          "subnet"
+        ],
+        "semantic": [],
+        "merged": [
+          "ll",
+          "network",
+          "aws",
+          "module",
+          "subnet"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4064733739030411,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:52.094541+00:00"
+      }
+    },
+    {
+      "book": "Microservices Up and Running",
+      "chapter": 17,
+      "title": "Segment 17 (pages 171-183)",
+      "chapter_id": "Microservices Up and Running:ch17",
+      "cross_references": [
+        {
+          "target": "Microservices Up and Running:ch16",
+          "score": 0.5901626550798095,
+          "base_score": 0.6595303510589416,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch18",
+          "score": 0.5731587826108342,
+          "base_score": 0.6311905636106496,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch19",
+          "score": 0.5293319490399647,
+          "base_score": 0.6322199150666079,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch14",
+          "score": 0.5234868821979008,
+          "base_score": 0.6224781369965015,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "module",
+          "module aws",
+          "aws_eks_cluster ms",
+          "aws_eks_cluster",
+          "ms running"
+        ],
+        "semantic": [],
+        "merged": [
+          "module",
+          "module aws",
+          "aws_eks_cluster ms",
+          "aws_eks_cluster",
+          "ms running"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28939276890083704,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:52.094724+00:00"
+      }
+    },
+    {
+      "book": "Microservices Up and Running",
+      "chapter": 18,
+      "title": "Segment 18 (pages 184-192)",
+      "chapter_id": "Microservices Up and Running:ch18",
+      "cross_references": [
+        {
+          "target": "Microservices Up and Running:ch27",
+          "score": 0.6521930114104764,
+          "base_score": 0.5512740666365082,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch16",
+          "score": 0.6365514473664609,
+          "base_score": 0.7368450048700272,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch19",
+          "score": 0.5810299694618886,
+          "base_score": 0.718383282436481,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch17",
+          "score": 0.5731587826108342,
+          "base_score": 0.6311905636106496,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch31",
+          "score": 0.5602322473634911,
+          "base_score": 0.609646338198411,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "module",
+          "argo cd",
+          "argo",
+          "cd",
+          "kubernetes"
+        ],
+        "semantic": [],
+        "merged": [
+          "module",
+          "argo cd",
+          "argo",
+          "cd",
+          "kubernetes"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3409255183541985,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:52.094887+00:00"
+      }
+    },
+    {
+      "book": "Microservices Up and Running",
+      "chapter": 19,
+      "title": "Segment 19 (pages 193-200)",
+      "chapter_id": "Microservices Up and Running:ch19",
+      "cross_references": [
+        {
+          "target": "Microservices Up and Running:ch16",
+          "score": 0.5974741508185079,
+          "base_score": 0.7457902513641798,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch12",
+          "score": 0.5879765998900293,
+          "base_score": 0.7299609998167155,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch18",
+          "score": 0.5810299694618886,
+          "base_score": 0.718383282436481,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch14",
+          "score": 0.5597766475884991,
+          "base_score": 0.6829610793141652,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch31",
+          "score": 0.5438872222525643,
+          "base_score": 0.6564787037542738,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "developer",
+          "code",
+          "setup",
+          "coding",
+          "developers"
+        ],
+        "semantic": [],
+        "merged": [
+          "developer",
+          "code",
+          "setup",
+          "coding",
+          "developers"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44356861017172994,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:52.095046+00:00"
+      }
+    },
+    {
+      "book": "Microservices Up and Running",
+      "chapter": 20,
+      "title": "Segment 20 (pages 201-210)",
+      "chapter_id": "Microservices Up and Running:ch20",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "ubuntu",
+          "dubuntu",
+          "docker",
+          "ubuntu dubuntu",
+          "multipass"
+        ],
+        "semantic": [],
+        "merged": [
+          "ubuntu",
+          "dubuntu",
+          "docker",
+          "ubuntu dubuntu",
+          "multipass"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2913410968591862,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:52.095201+00:00"
+      }
+    },
+    {
+      "book": "Microservices Up and Running",
+      "chapter": 21,
+      "title": "Segment 21 (pages 211-221)",
+      "chapter_id": "Microservices Up and Running:ch21",
+      "cross_references": [
+        {
+          "target": "Microservices Up and Running:ch22",
+          "score": 0.5244316494281737,
+          "base_score": 0.6240527490469561,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch10",
+          "score": 0.5017979276872063,
+          "base_score": 0.5863298794786771,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ms",
+          "api",
+          "flights",
+          "seating",
+          "ms reservations"
+        ],
+        "semantic": [],
+        "merged": [
+          "ms",
+          "api",
+          "flights",
+          "seating",
+          "ms reservations"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27016066233847613,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:52.095361+00:00"
+      }
+    },
+    {
+      "book": "Microservices Up and Running",
+      "chapter": 22,
+      "title": "Segment 22 (pages 222-229)",
+      "chapter_id": "Microservices Up and Running:ch22",
+      "cross_references": [
+        {
+          "target": "Microservices Up and Running:ch21",
+          "score": 0.5244316494281737,
+          "base_score": 0.6240527490469561,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "reservations",
+          "seat",
+          "seat_no",
+          "microservice",
+          "redis"
+        ],
+        "semantic": [],
+        "merged": [
+          "reservations",
+          "seat",
+          "seat_no",
+          "microservice",
+          "redis"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21349519809991674,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:52.095517+00:00"
+      }
+    },
+    {
+      "book": "Microservices Up and Running",
+      "chapter": 23,
+      "title": "Segment 23 (pages 230-238)",
+      "chapter_id": "Microservices Up and Running:ch23",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "sql",
+          "flights",
+          "ms",
+          "migration",
+          "migrations"
+        ],
+        "semantic": [],
+        "merged": [
+          "sql",
+          "flights",
+          "ms",
+          "migration",
+          "migrations"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2549682515420069,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:52.095696+00:00"
+      }
+    },
+    {
+      "book": "Microservices Up and Running",
+      "chapter": 24,
+      "title": "Segment 24 (pages 239-250)",
+      "chapter_id": "Microservices Up and Running:ch24",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "ms",
+          "reservations",
+          "ms template",
+          "ll",
+          "traefik"
+        ],
+        "semantic": [],
+        "merged": [
+          "ms",
+          "reservations",
+          "ms template",
+          "ll",
+          "traefik"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21551765502509282,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:52.095869+00:00"
+      }
+    },
+    {
+      "book": "Microservices Up and Running",
+      "chapter": 25,
+      "title": "Segment 25 (pages 251-262)",
+      "chapter_id": "Microservices Up and Running:ch25",
+      "cross_references": [
+        {
+          "target": "Microservices Up and Running:ch14",
+          "score": 0.5429093112583551,
+          "base_score": 0.6548488520972584,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch19",
+          "score": 0.5413353156320707,
+          "base_score": 0.6522255260534513,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch12",
+          "score": 0.5379425894054662,
+          "base_score": 0.6465709823424438,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "docker",
+          "docker hub",
+          "hub",
+          "staging",
+          "registry"
+        ],
+        "semantic": [],
+        "merged": [
+          "docker",
+          "docker hub",
+          "hub",
+          "staging",
+          "registry"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29956713061752815,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:52.096025+00:00"
+      }
+    },
+    {
+      "book": "Microservices Up and Running",
+      "chapter": 26,
+      "title": "Segment 26 (pages 263-270)",
+      "chapter_id": "Microservices Up and Running:ch26",
+      "cross_references": [
+        {
+          "target": "Microservices Up and Running:ch27",
+          "score": 0.5706780310158638,
+          "base_score": 0.6270559776190322,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch16",
+          "score": 0.5191283889153887,
+          "base_score": 0.5411399074515738,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch31",
+          "score": 0.5081208344433765,
+          "base_score": 0.5968680574056275,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "deployment",
+          "helm",
+          "chart",
+          "values",
+          "ll"
+        ],
+        "semantic": [],
+        "merged": [
+          "deployment",
+          "helm",
+          "chart",
+          "values",
+          "ll"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3785985706183853,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:52.096179+00:00"
+      }
+    },
+    {
+      "book": "Microservices Up and Running",
+      "chapter": 27,
+      "title": "Segment 27 (pages 271-280)",
+      "chapter_id": "Microservices Up and Running:ch27",
+      "cross_references": [
+        {
+          "target": "Microservices Up and Running:ch18",
+          "score": 0.6521930114104764,
+          "base_score": 0.5512740666365082,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch26",
+          "score": 0.5706780310158638,
+          "base_score": 0.6270559776190322,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "argo cd",
+          "argo",
+          "deployment",
+          "cd",
+          "flight"
+        ],
+        "semantic": [],
+        "merged": [
+          "argo cd",
+          "argo",
+          "deployment",
+          "cd",
+          "flight"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35445375611216884,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:52.096335+00:00"
+      }
+    },
+    {
+      "book": "Microservices Up and Running",
+      "chapter": 28,
+      "title": "Segment 28 (pages 281-296)",
+      "chapter_id": "Microservices Up and Running:ch28",
+      "cross_references": [
+        {
+          "target": "Microservices Up and Running:ch2",
+          "score": 0.560121728378799,
+          "base_score": 0.683536213964665,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch29",
+          "score": 0.5375144121684574,
+          "base_score": 0.6458573536140957,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch3",
+          "score": 0.5256161118308539,
+          "base_score": 0.6260268530514232,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch9",
+          "score": 0.5230044941487013,
+          "base_score": 0.547600082840428,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "changes",
+          "change",
+          "costs",
+          "data",
+          "make"
+        ],
+        "semantic": [],
+        "merged": [
+          "changes",
+          "change",
+          "costs",
+          "data",
+          "make"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3997397401857567,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:52.096491+00:00"
+      }
+    },
+    {
+      "book": "Microservices Up and Running",
+      "chapter": 29,
+      "title": "Segment 29 (pages 297-304)",
+      "chapter_id": "Microservices Up and Running:ch29",
+      "cross_references": [
+        {
+          "target": "Microservices Up and Running:ch2",
+          "score": 0.5715259318346226,
+          "base_score": 0.6284691456502969,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch3",
+          "score": 0.5606225680461178,
+          "base_score": 0.6843709467435295,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch7",
+          "score": 0.5403989996324118,
+          "base_score": 0.5765909253132788,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch28",
+          "score": 0.5375144121684574,
+          "base_score": 0.6458573536140957,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch1",
+          "score": 0.5052446529365626,
+          "base_score": 0.5180003474868637,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "microservices",
+          "transformation",
+          "complexity",
+          "complex",
+          "measuring"
+        ],
+        "semantic": [],
+        "merged": [
+          "microservices",
+          "transformation",
+          "complexity",
+          "complex",
+          "measuring"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34313359851231395,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:52.096662+00:00"
+      }
+    },
+    {
+      "book": "Microservices Up and Running",
+      "chapter": 30,
+      "title": "Segment 30 (pages 305-313)",
+      "chapter_id": "Microservices Up and Running:ch30",
+      "cross_references": [
+        {
+          "target": "Microservices Up and Running:ch31",
+          "score": 0.6283455874133218,
+          "base_score": 0.7972426456888697,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch19",
+          "score": 0.5212929986055036,
+          "base_score": 0.618821664342506,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "274",
+          "data",
+          "variables",
+          "270",
+          "272"
+        ],
+        "semantic": [],
+        "merged": [
+          "274",
+          "data",
+          "variables",
+          "270",
+          "272"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3654989770712569,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:52.096831+00:00"
+      }
+    },
+    {
+      "book": "Microservices Up and Running",
+      "chapter": 31,
+      "title": "Segment 31 (pages 314-319)",
+      "chapter_id": "Microservices Up and Running:ch31",
+      "cross_references": [
+        {
+          "target": "Microservices Up and Running:ch30",
+          "score": 0.6283455874133218,
+          "base_score": 0.7972426456888697,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch18",
+          "score": 0.5602322473634911,
+          "base_score": 0.609646338198411,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch19",
+          "score": 0.5438872222525643,
+          "base_score": 0.6564787037542738,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Up and Running:ch26",
+          "score": 0.5081208344433765,
+          "base_score": 0.5968680574056275,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "182",
+          "250",
+          "kubernetes",
+          "157",
+          "247"
+        ],
+        "semantic": [],
+        "merged": [
+          "182",
+          "250",
+          "kubernetes",
+          "157",
+          "247"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38444545403244407,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:52.096987+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

@@ -1,0 +1,104 @@
+{
+  "book": {
+    "title": "Investigating The Smells of LLM Generated Code"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:49:03.804181",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Investigating The Smells of LLM Generated Code",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-11)",
+      "chapter_id": "Investigating The Smells of LLM Generated Code:ch1",
+      "cross_references": [
+        {
+          "target": "Investigating The Smells of LLM Generated Code:ch2",
+          "score": 0.7165036421032172,
+          "base_score": 0.5275060701720284,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "smells",
+          "smell",
+          "code smells",
+          "generated"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "smells",
+          "smell",
+          "code smells",
+          "generated"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "code_smells_smell",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7637530106639954,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:03.800987+00:00"
+      }
+    },
+    {
+      "book": "Investigating The Smells of LLM Generated Code",
+      "chapter": 2,
+      "title": "Segment 2 (pages 12-17)",
+      "chapter_id": "Investigating The Smells of LLM Generated Code:ch2",
+      "cross_references": [
+        {
+          "target": "Investigating The Smells of LLM Generated Code:ch1",
+          "score": 0.7165036421032172,
+          "base_score": 0.5275060701720284,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "smells",
+          "smell",
+          "code smells",
+          "generated"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "smells",
+          "smell",
+          "code smells",
+          "generated"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "code_smells_smell",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7637530350860142,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:03.801010+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

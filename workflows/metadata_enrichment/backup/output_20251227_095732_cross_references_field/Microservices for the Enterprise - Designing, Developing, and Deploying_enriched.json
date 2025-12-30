@@ -1,0 +1,586 @@
+{
+  "book": {
+    "title": "Microservices for the Enterprise - Designing, Developing, and Deploying"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:51:56.564280",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Microservices for the Enterprise - Designing, Developing, and Deploying",
+      "chapter": 1,
+      "title": "The Case for Microservices ���������������������������������������������������������������������1",
+      "chapter_id": "Microservices for the Enterprise - Designing, Developing, and Deploying:ch1",
+      "cross_references": [
+        {
+          "target": "Microservices for the Enterprise - Designing, Developing, and Deploying:ch7",
+          "score": 0.5239564036444718,
+          "base_score": 0.6232606727407863,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices for the Enterprise - Designing, Developing, and Deploying:ch12",
+          "score": 0.5227207526520358,
+          "base_score": 0.6212012544200597,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "services",
+          "architecture",
+          "microservices architecture",
+          "esb",
+          "business"
+        ],
+        "semantic": [],
+        "merged": [
+          "services",
+          "architecture",
+          "microservices architecture",
+          "esb",
+          "business"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5566917493995922,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:56.554046+00:00"
+      }
+    },
+    {
+      "book": "Microservices for the Enterprise - Designing, Developing, and Deploying",
+      "chapter": 2,
+      "title": "Designing Microservices",
+      "chapter_id": "Microservices for the Enterprise - Designing, Developing, and Deploying:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "bounded",
+          "bounded context",
+          "contexts",
+          "bounded contexts",
+          "domain"
+        ],
+        "semantic": [],
+        "merged": [
+          "bounded",
+          "bounded context",
+          "contexts",
+          "bounded contexts",
+          "domain"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48693110354316355,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:51:56.554126+00:00"
+      }
+    },
+    {
+      "book": "Microservices for the Enterprise - Designing, Developing, and Deploying",
+      "chapter": 3,
+      "title": "APIs, Events and Streams",
+      "chapter_id": "Microservices for the Enterprise - Designing, Developing, and Deploying:ch3",
+      "cross_references": [
+        {
+          "target": "Microservices for the Enterprise - Designing, Developing, and Deploying:ch4",
+          "score": 0.5208104980795434,
+          "base_score": 0.618017496799239,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "customer",
+          "domain",
+          "designing",
+          "designing microservices",
+          "bounded"
+        ],
+        "semantic": [],
+        "merged": [
+          "customer",
+          "domain",
+          "designing",
+          "designing microservices",
+          "bounded"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_service_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4869896641979242,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:56.554207+00:00"
+      }
+    },
+    {
+      "book": "Microservices for the Enterprise - Designing, Developing, and Deploying",
+      "chapter": 4,
+      "title": "There we discuss how they are used in practice with most of the common microservice development frameworks",
+      "chapter_id": "Microservices for the Enterprise - Designing, Developing, and Deploying:ch4",
+      "cross_references": [
+        {
+          "target": "Microservices for the Enterprise - Designing, Developing, and Deploying:ch3",
+          "score": 0.5208104980795434,
+          "base_score": 0.618017496799239,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices for the Enterprise - Designing, Developing, and Deploying:ch11",
+          "score": 0.5013260622617898,
+          "base_score": 0.5855434371029831,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "test",
+          "gradle",
+          "deployment",
+          "automation",
+          "endpoint"
+        ],
+        "semantic": [],
+        "merged": [
+          "test",
+          "gradle",
+          "deployment",
+          "automation",
+          "endpoint"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_service_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5601455700664569,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:56.554292+00:00"
+      }
+    },
+    {
+      "book": "Microservices for the Enterprise - Designing, Developing, and Deploying",
+      "chapter": 5,
+      "title": "This is opposed to having multiple monolithic applications per server model, where each application contributes to the server startup time, which is usually in minutes (not even in seconds)",
+      "chapter_id": "Microservices for the Enterprise - Designing, Developing, and Deploying:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "microservice deployments",
+          "designing",
+          "designing microservices",
+          "logging",
+          "deployments"
+        ],
+        "semantic": [],
+        "merged": [
+          "microservice deployments",
+          "designing",
+          "designing microservices",
+          "logging",
+          "deployments"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.562253414863743,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:51:56.554364+00:00"
+      }
+    },
+    {
+      "book": "Microservices for the Enterprise - Designing, Developing, and Deploying",
+      "chapter": 6,
+      "title": "Inter-Service Communication",
+      "chapter_id": "Microservices for the Enterprise - Designing, Developing, and Deploying:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "messaging",
+          "message",
+          "asynchronous",
+          "messages",
+          "communication"
+        ],
+        "semantic": [],
+        "merged": [
+          "messaging",
+          "message",
+          "asynchronous",
+          "messages",
+          "communication"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5448772022818206,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:51:56.554435+00:00"
+      }
+    },
+    {
+      "book": "Microservices for the Enterprise - Designing, Developing, and Deploying",
+      "chapter": 7,
+      "title": "Developing Services",
+      "chapter_id": "Microservices for the Enterprise - Designing, Developing, and Deploying:ch7",
+      "cross_references": [
+        {
+          "target": "Microservices for the Enterprise - Designing, Developing, and Deploying:ch12",
+          "score": 0.554852485709335,
+          "base_score": 0.6747541428488917,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices for the Enterprise - Designing, Developing, and Deploying:ch1",
+          "score": 0.5239564036444718,
+          "base_score": 0.6232606727407863,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "spring",
+          "developers",
+          "netflix",
+          "developer",
+          "spring boot"
+        ],
+        "semantic": [],
+        "merged": [
+          "spring",
+          "developers",
+          "netflix",
+          "developer",
+          "spring boot"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5503634147272121,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:56.554536+00:00"
+      }
+    },
+    {
+      "book": "Microservices for the Enterprise - Designing, Developing, and Deploying",
+      "chapter": 8,
+      "title": "Dropwizard",
+      "chapter_id": "Microservices for the Enterprise - Designing, Developing, and Deploying:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "https",
+          "spring",
+          "git",
+          "samples",
+          "https www"
+        ],
+        "semantic": [],
+        "merged": [
+          "https",
+          "spring",
+          "git",
+          "samples",
+          "https www"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44855303261998386,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:56.554624+00:00"
+      }
+    },
+    {
+      "book": "Microservices for the Enterprise - Designing, Developing, and Deploying",
+      "chapter": 9,
+      "title": "In this section, we explore some of the monitoring capabilities provided in Spring Boot out-of-the-box via the actuator endpoint40. There are multiple services running behind the actuator endpoint, an",
+      "chapter_id": "Microservices for the Enterprise - Designing, Developing, and Deploying:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "ch04",
+          "java",
+          "src",
+          "src main",
+          "inventory"
+        ],
+        "semantic": [],
+        "merged": [
+          "ch04",
+          "java",
+          "src",
+          "src main",
+          "inventory"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40226536867854884,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:56.554734+00:00"
+      }
+    },
+    {
+      "book": "Microservices for the Enterprise - Designing, Developing, and Deploying",
+      "chapter": 10,
+      "title": "Data Management",
+      "chapter_id": "Microservices for the Enterprise - Designing, Developing, and Deploying:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "database",
+          "transactions",
+          "transaction",
+          "data",
+          "table"
+        ],
+        "semantic": [],
+        "merged": [
+          "database",
+          "transactions",
+          "transaction",
+          "data",
+          "table"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_service_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4981674235240078,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:56.554814+00:00"
+      }
+    },
+    {
+      "book": "Microservices for the Enterprise - Designing, Developing, and Deploying",
+      "chapter": 11,
+      "title": "Microservices Governance",
+      "chapter_id": "Microservices for the Enterprise - Designing, Developing, and Deploying:ch11",
+      "cross_references": [
+        {
+          "target": "Microservices for the Enterprise - Designing, Developing, and Deploying:ch4",
+          "score": 0.5013260622617898,
+          "base_score": 0.5855434371029831,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "integrating microservices",
+          "integrating",
+          "services",
+          "integration",
+          "registry"
+        ],
+        "semantic": [],
+        "merged": [
+          "integrating microservices",
+          "integrating",
+          "services",
+          "integration",
+          "registry"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_service_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5780089140812434,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:56.554899+00:00"
+      }
+    },
+    {
+      "book": "Microservices for the Enterprise - Designing, Developing, and Deploying",
+      "chapter": 12,
+      "title": "Microservices Security Fundamentals",
+      "chapter_id": "Microservices for the Enterprise - Designing, Developing, and Deploying:ch12",
+      "cross_references": [
+        {
+          "target": "Microservices for the Enterprise - Designing, Developing, and Deploying:ch13",
+          "score": 0.6404818465975409,
+          "base_score": 0.7433956702551607,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices for the Enterprise - Designing, Developing, and Deploying:ch7",
+          "score": 0.554852485709335,
+          "base_score": 0.6747541428488917,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices for the Enterprise - Designing, Developing, and Deploying:ch1",
+          "score": 0.5227207526520358,
+          "base_score": 0.6212012544200597,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "security fundamentals",
+          "microservices security",
+          "token",
+          "security",
+          "fundamentals"
+        ],
+        "semantic": [],
+        "merged": [
+          "security fundamentals",
+          "microservices security",
+          "token",
+          "security",
+          "fundamentals"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.571325233228159,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:56.554969+00:00"
+      }
+    },
+    {
+      "book": "Microservices for the Enterprise - Designing, Developing, and Deploying",
+      "chapter": 13,
+      "title": "Securing Microservices",
+      "chapter_id": "Microservices for the Enterprise - Designing, Developing, and Deploying:ch13",
+      "cross_references": [
+        {
+          "target": "Microservices for the Enterprise - Designing, Developing, and Deploying:ch12",
+          "score": 0.6404818465975409,
+          "base_score": 0.7433956702551607,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "token",
+          "order",
+          "processing microservice",
+          "zipkin",
+          "processing"
+        ],
+        "semantic": [],
+        "merged": [
+          "token",
+          "order",
+          "processing microservice",
+          "zipkin",
+          "processing"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5080042568949924,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:56.555031+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

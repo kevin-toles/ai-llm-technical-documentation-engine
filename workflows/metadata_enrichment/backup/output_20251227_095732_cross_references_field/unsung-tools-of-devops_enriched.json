@@ -1,0 +1,125 @@
+{
+  "book": {
+    "title": "unsung-tools-of-devops"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:02:29.777558",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "unsung-tools-of-devops",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-12)",
+      "chapter_id": "unsung-tools-of-devops:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "rancid",
+          "devices",
+          "data",
+          "cacti",
+          "user"
+        ],
+        "semantic": [],
+        "merged": [
+          "rancid",
+          "devices",
+          "data",
+          "cacti",
+          "user"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "rancid_data_devices",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5213194411895306,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:29.774496+00:00"
+      }
+    },
+    {
+      "book": "unsung-tools-of-devops",
+      "chapter": 2,
+      "title": "Segment 2 (pages 13-20)",
+      "chapter_id": "unsung-tools-of-devops:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "port",
+          "server",
+          "192",
+          "192 168",
+          "168"
+        ],
+        "semantic": [],
+        "merged": [
+          "port",
+          "server",
+          "192",
+          "192 168",
+          "168"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "port_server_192",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5152463583914174,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:29.774524+00:00"
+      }
+    },
+    {
+      "book": "unsung-tools-of-devops",
+      "chapter": 3,
+      "title": "Segment 3 (pages 21-21)",
+      "chapter_id": "unsung-tools-of-devops:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "thurman",
+          "systems networking",
+          "reliability engineer",
+          "reliability",
+          "jonathan thurman"
+        ],
+        "semantic": [],
+        "merged": [
+          "thurman",
+          "systems networking",
+          "reliability engineer",
+          "reliability",
+          "jonathan thurman"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "jonathan_skills_networking",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43841580112562806,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:29.774540+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

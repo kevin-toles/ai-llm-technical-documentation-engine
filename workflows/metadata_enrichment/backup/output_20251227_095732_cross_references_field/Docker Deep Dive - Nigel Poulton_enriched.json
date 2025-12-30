@@ -1,0 +1,1431 @@
+{
+  "book": {
+    "title": "Docker Deep Dive - Nigel Poulton"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:45:55.592443",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Docker Deep Dive - Nigel Poulton",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-10)",
+      "chapter_id": "Docker Deep Dive - Nigel Poulton:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "deep dive",
+          "deep",
+          "dive",
+          "tldr docker",
+          "tldr"
+        ],
+        "semantic": [],
+        "merged": [
+          "deep dive",
+          "deep",
+          "dive",
+          "tldr docker",
+          "tldr"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "docker_the_container",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.436856054121538,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:55.577236+00:00"
+      }
+    },
+    {
+      "book": "Docker Deep Dive - Nigel Poulton",
+      "chapter": 2,
+      "title": "Segment 2 (pages 11-21)",
+      "chapter_id": "Docker Deep Dive - Nigel Poulton:ch2",
+      "cross_references": [
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch3",
+          "score": 0.5903939298698453,
+          "base_score": 0.6599158090423347,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch9",
+          "score": 0.5792734205296168,
+          "base_score": 0.6413816268086207,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "containers",
+          "linux containers",
+          "windows",
+          "linux",
+          "windows containers"
+        ],
+        "semantic": [],
+        "merged": [
+          "containers",
+          "linux containers",
+          "windows",
+          "linux",
+          "windows containers"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "docker_the_container",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4383245735392359,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:55.577415+00:00"
+      }
+    },
+    {
+      "book": "Docker Deep Dive - Nigel Poulton",
+      "chapter": 3,
+      "title": "Segment 3 (pages 22-31)",
+      "chapter_id": "Docker Deep Dive - Nigel Poulton:ch3",
+      "cross_references": [
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch2",
+          "score": 0.5903939298698453,
+          "base_score": 0.6599158090423347,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch9",
+          "score": 0.5751211087430538,
+          "base_score": 0.7085351812384231,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch24",
+          "score": 0.5156854127437603,
+          "base_score": 0.6094756879062673,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "desktop",
+          "docker desktop",
+          "windows",
+          "installation",
+          "desktop windows"
+        ],
+        "semantic": [],
+        "merged": [
+          "desktop",
+          "docker desktop",
+          "windows",
+          "installation",
+          "desktop windows"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "docker_the_container",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4927329183997503,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:55.577571+00:00"
+      }
+    },
+    {
+      "book": "Docker Deep Dive - Nigel Poulton",
+      "chapter": 4,
+      "title": "Segment 4 (pages 32-41)",
+      "chapter_id": "Docker Deep Dive - Nigel Poulton:ch4",
+      "cross_references": [
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch9",
+          "score": 0.5928572434522673,
+          "base_score": 0.5714287390871122,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "container",
+          "run",
+          "command",
+          "docker ps",
+          "ps"
+        ],
+        "semantic": [],
+        "merged": [
+          "container",
+          "run",
+          "command",
+          "docker ps",
+          "ps"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "docker_the_container",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4665883726914549,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:55.577690+00:00"
+      }
+    },
+    {
+      "book": "Docker Deep Dive - Nigel Poulton",
+      "chapter": 5,
+      "title": "Segment 5 (pages 42-51)",
+      "chapter_id": "Docker Deep Dive - Nigel Poulton:ch5",
+      "cross_references": [
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch12",
+          "score": 0.6895687901002211,
+          "base_score": 0.7326146501670352,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch13",
+          "score": 0.6559020951523686,
+          "base_score": 0.6765034919206143,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch11",
+          "score": 0.5539986880173294,
+          "base_score": 0.599257072621475,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch8",
+          "score": 0.5454327917588522,
+          "base_score": 0.5849805788573461,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch6",
+          "score": 0.5232302273956108,
+          "base_score": 0.5479763049186105,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "docker engine",
+          "engine",
+          "image",
+          "build",
+          "docker image"
+        ],
+        "semantic": [],
+        "merged": [
+          "docker engine",
+          "engine",
+          "image",
+          "build",
+          "docker image"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_image_docker",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4682622382780586,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:55.577810+00:00"
+      }
+    },
+    {
+      "book": "Docker Deep Dive - Nigel Poulton",
+      "chapter": 6,
+      "title": "Segment 6 (pages 52-61)",
+      "chapter_id": "Docker Deep Dive - Nigel Poulton:ch6",
+      "cross_references": [
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch8",
+          "score": 0.5719700034608355,
+          "base_score": 0.5366166724347258,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch13",
+          "score": 0.5608659445647525,
+          "base_score": 0.6107025002005133,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch11",
+          "score": 0.5545784603163406,
+          "base_score": 0.6002233597864935,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch5",
+          "score": 0.5232302273956108,
+          "base_score": 0.5479763049186105,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch12",
+          "score": 0.5023801438294269,
+          "base_score": 0.5132261656416373,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "images",
+          "image",
+          "oci",
+          "daemon",
+          "containerd"
+        ],
+        "semantic": [],
+        "merged": [
+          "images",
+          "image",
+          "oci",
+          "daemon",
+          "containerd"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_image_docker",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4692108004699994,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:55.577964+00:00"
+      }
+    },
+    {
+      "book": "Docker Deep Dive - Nigel Poulton",
+      "chapter": 7,
+      "title": "Segment 7 (pages 62-71)",
+      "chapter_id": "Docker Deep Dive - Nigel Poulton:ch7",
+      "cross_references": [
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch8",
+          "score": 0.7176638784094364,
+          "base_score": 0.7516620195712829,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "images",
+          "repository",
+          "image",
+          "pull",
+          "latest"
+        ],
+        "semantic": [],
+        "merged": [
+          "images",
+          "repository",
+          "image",
+          "pull",
+          "latest"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43578291869815805,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:55.578080+00:00"
+      }
+    },
+    {
+      "book": "Docker Deep Dive - Nigel Poulton",
+      "chapter": 8,
+      "title": "Segment 8 (pages 72-81)",
+      "chapter_id": "Docker Deep Dive - Nigel Poulton:ch8",
+      "cross_references": [
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch7",
+          "score": 0.7176638784094364,
+          "base_score": 0.7516620195712829,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch13",
+          "score": 0.5918526130680114,
+          "base_score": 0.6623469477059449,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch6",
+          "score": 0.5719700034608355,
+          "base_score": 0.5366166724347258,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch5",
+          "score": 0.5454327917588522,
+          "base_score": 0.5849805788573461,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch11",
+          "score": 0.5089715863696049,
+          "base_score": 0.5242119032086009,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pull",
+          "image",
+          "latest",
+          "alpine",
+          "images"
+        ],
+        "semantic": [],
+        "merged": [
+          "pull",
+          "image",
+          "latest",
+          "alpine",
+          "images"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_image_docker",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4161520009712998,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:55.578215+00:00"
+      }
+    },
+    {
+      "book": "Docker Deep Dive - Nigel Poulton",
+      "chapter": 9,
+      "title": "Segment 9 (pages 82-89)",
+      "chapter_id": "Docker Deep Dive - Nigel Poulton:ch9",
+      "cross_references": [
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch10",
+          "score": 0.6002437478421776,
+          "base_score": 0.5837395797369627,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch4",
+          "score": 0.5928572434522673,
+          "base_score": 0.5714287390871122,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch2",
+          "score": 0.5792734205296168,
+          "base_score": 0.6413816268086207,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch3",
+          "score": 0.5751211087430538,
+          "base_score": 0.7085351812384231,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "bash",
+          "container",
+          "run",
+          "start",
+          "containers"
+        ],
+        "semantic": [],
+        "merged": [
+          "bash",
+          "container",
+          "run",
+          "start",
+          "containers"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "docker_the_container",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5002683624819775,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:55.578338+00:00"
+      }
+    },
+    {
+      "book": "Docker Deep Dive - Nigel Poulton",
+      "chapter": 10,
+      "title": "Segment 10 (pages 90-101)",
+      "chapter_id": "Docker Deep Dive - Nigel Poulton:ch10",
+      "cross_references": [
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch9",
+          "score": 0.6002437478421776,
+          "base_score": 0.5837395797369627,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "container",
+          "stop",
+          "docker stop",
+          "containers",
+          "container id"
+        ],
+        "semantic": [],
+        "merged": [
+          "container",
+          "stop",
+          "docker stop",
+          "containers",
+          "container id"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "docker_the_container",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3966260314102736,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:55.578455+00:00"
+      }
+    },
+    {
+      "book": "Docker Deep Dive - Nigel Poulton",
+      "chapter": 11,
+      "title": "Segment 11 (pages 102-111)",
+      "chapter_id": "Docker Deep Dive - Nigel Poulton:ch11",
+      "cross_references": [
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch6",
+          "score": 0.5545784603163406,
+          "base_score": 0.6002233597864935,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch5",
+          "score": 0.5539986880173294,
+          "base_score": 0.599257072621475,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch12",
+          "score": 0.5492539963050055,
+          "base_score": 0.591349253100935,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch13",
+          "score": 0.5424346727246325,
+          "base_score": 0.5799837138003133,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch8",
+          "score": 0.5089715863696049,
+          "base_score": 0.5242119032086009,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ddd book",
+          "ch8",
+          "ddd",
+          "book ch8",
+          "image"
+        ],
+        "semantic": [],
+        "merged": [
+          "ddd book",
+          "ch8",
+          "ddd",
+          "book ch8",
+          "image"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_image_docker",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4859988745197456,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:55.578584+00:00"
+      }
+    },
+    {
+      "book": "Docker Deep Dive - Nigel Poulton",
+      "chapter": 12,
+      "title": "Segment 12 (pages 112-119)",
+      "chapter_id": "Docker Deep Dive - Nigel Poulton:ch12",
+      "cross_references": [
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch5",
+          "score": 0.6895687901002211,
+          "base_score": 0.7326146501670352,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch13",
+          "score": 0.6427915826916819,
+          "base_score": 0.6546526378194699,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch11",
+          "score": 0.5492539963050055,
+          "base_score": 0.591349253100935,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch6",
+          "score": 0.5023801438294269,
+          "base_score": 0.5132261656416373,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "stage",
+          "build",
+          "client",
+          "image",
+          "server"
+        ],
+        "semantic": [],
+        "merged": [
+          "stage",
+          "build",
+          "client",
+          "image",
+          "server"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_image_docker",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44128176360427607,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:55.578702+00:00"
+      }
+    },
+    {
+      "book": "Docker Deep Dive - Nigel Poulton",
+      "chapter": 13,
+      "title": "Segment 13 (pages 120-131)",
+      "chapter_id": "Docker Deep Dive - Nigel Poulton:ch13",
+      "cross_references": [
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch5",
+          "score": 0.6559020951523686,
+          "base_score": 0.6765034919206143,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch12",
+          "score": 0.6427915826916819,
+          "base_score": 0.6546526378194699,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch8",
+          "score": 0.5918526130680114,
+          "base_score": 0.6623469477059449,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch6",
+          "score": 0.5608659445647525,
+          "base_score": 0.6107025002005133,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch11",
+          "score": 0.5424346727246325,
+          "base_score": 0.5799837138003133,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "compose",
+          "instruction",
+          "image",
+          "dockerfile",
+          "build"
+        ],
+        "semantic": [],
+        "merged": [
+          "compose",
+          "instruction",
+          "image",
+          "dockerfile",
+          "build"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_image_docker",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4283343345835316,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:55.578820+00:00"
+      }
+    },
+    {
+      "book": "Docker Deep Dive - Nigel Poulton",
+      "chapter": 14,
+      "title": "Segment 14 (pages 132-140)",
+      "chapter_id": "Docker Deep Dive - Nigel Poulton:ch14",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "compose",
+          "multi",
+          "docker compose",
+          "multi container",
+          "multi container_counter"
+        ],
+        "semantic": [],
+        "merged": [
+          "compose",
+          "multi",
+          "docker compose",
+          "multi container",
+          "multi container_counter"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4651435133051127,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:55.578965+00:00"
+      }
+    },
+    {
+      "book": "Docker Deep Dive - Nigel Poulton",
+      "chapter": 15,
+      "title": "Segment 15 (pages 141-152)",
+      "chapter_id": "Docker Deep Dive - Nigel Poulton:ch15",
+      "cross_references": [
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch16",
+          "score": 0.6033366001268191,
+          "base_score": 0.6814869261372911,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch17",
+          "score": 0.594239266489317,
+          "base_score": 0.5737321108155284,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "swarm",
+          "docker swarm",
+          "join",
+          "manager",
+          "nodes"
+        ],
+        "semantic": [],
+        "merged": [
+          "swarm",
+          "docker swarm",
+          "join",
+          "manager",
+          "nodes"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "swarm_the_docker",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5003673915423537,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:55.579082+00:00"
+      }
+    },
+    {
+      "book": "Docker Deep Dive - Nigel Poulton",
+      "chapter": 16,
+      "title": "Segment 16 (pages 153-164)",
+      "chapter_id": "Docker Deep Dive - Nigel Poulton:ch16",
+      "cross_references": [
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch15",
+          "score": 0.6033366001268191,
+          "base_score": 0.6814869261372911,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch17",
+          "score": 0.5919439849313788,
+          "base_score": 0.569906641552298,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch25",
+          "score": 0.5023046372518453,
+          "base_score": 0.587174395419742,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "service",
+          "docker service",
+          "replicas",
+          "running",
+          "swarm"
+        ],
+        "semantic": [],
+        "merged": [
+          "service",
+          "docker service",
+          "replicas",
+          "running",
+          "swarm"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "swarm_the_docker",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.430389080921457,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:55.579197+00:00"
+      }
+    },
+    {
+      "book": "Docker Deep Dive - Nigel Poulton",
+      "chapter": 17,
+      "title": "Segment 17 (pages 165-175)",
+      "chapter_id": "Docker Deep Dive - Nigel Poulton:ch17",
+      "cross_references": [
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch15",
+          "score": 0.594239266489317,
+          "base_score": 0.5737321108155284,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch16",
+          "score": 0.5919439849313788,
+          "base_score": 0.569906641552298,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "swarm",
+          "docker swarm",
+          "networking",
+          "docker networking",
+          "service"
+        ],
+        "semantic": [],
+        "merged": [
+          "swarm",
+          "docker swarm",
+          "networking",
+          "docker networking",
+          "service"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "swarm_the_docker",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3904014874150644,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:55.579312+00:00"
+      }
+    },
+    {
+      "book": "Docker Deep Dive - Nigel Poulton",
+      "chapter": 18,
+      "title": "Segment 18 (pages 176-184)",
+      "chapter_id": "Docker Deep Dive - Nigel Poulton:ch18",
+      "cross_references": [
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch20",
+          "score": 0.6028071164809482,
+          "base_score": 0.6806044533941729,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch19",
+          "score": 0.5552167480654968,
+          "base_score": 0.601287172701754,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch21",
+          "score": 0.5242187619589427,
+          "base_score": 0.6236979365982378,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "bridge",
+          "network",
+          "bridge network",
+          "host bridge",
+          "single host"
+        ],
+        "semantic": [],
+        "merged": [
+          "bridge",
+          "network",
+          "bridge network",
+          "host bridge",
+          "single host"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "network_the_docker",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42505076301044087,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:55.579426+00:00"
+      }
+    },
+    {
+      "book": "Docker Deep Dive - Nigel Poulton",
+      "chapter": 19,
+      "title": "Segment 19 (pages 185-195)",
+      "chapter_id": "Docker Deep Dive - Nigel Poulton:ch19",
+      "cross_references": [
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch21",
+          "score": 0.6275165658062204,
+          "base_score": 0.7958609430103672,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch20",
+          "score": 0.6220413555070781,
+          "base_score": 0.7126615184377227,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch18",
+          "score": 0.5552167480654968,
+          "base_score": 0.601287172701754,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "logs",
+          "network",
+          "macvlan",
+          "service",
+          "docker networking"
+        ],
+        "semantic": [],
+        "merged": [
+          "logs",
+          "network",
+          "macvlan",
+          "service",
+          "docker networking"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "network_the_docker",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4594200313464645,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:55.579559+00:00"
+      }
+    },
+    {
+      "book": "Docker Deep Dive - Nigel Poulton",
+      "chapter": 20,
+      "title": "Segment 20 (pages 196-204)",
+      "chapter_id": "Docker Deep Dive - Nigel Poulton:ch20",
+      "cross_references": [
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch21",
+          "score": 0.6313211603055019,
+          "base_score": 0.8022019338425032,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch19",
+          "score": 0.6220413555070781,
+          "base_score": 0.7126615184377227,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch18",
+          "score": 0.6028071164809482,
+          "base_score": 0.6806044533941729,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "overlay",
+          "network",
+          "docker overlay",
+          "overlay network",
+          "overlay networking"
+        ],
+        "semantic": [],
+        "merged": [
+          "overlay",
+          "network",
+          "docker overlay",
+          "overlay network",
+          "overlay networking"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "network_the_docker",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48165737009915216,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:55.579673+00:00"
+      }
+    },
+    {
+      "book": "Docker Deep Dive - Nigel Poulton",
+      "chapter": 21,
+      "title": "Segment 21 (pages 205-219)",
+      "chapter_id": "Docker Deep Dive - Nigel Poulton:ch21",
+      "cross_references": [
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch20",
+          "score": 0.6313211603055019,
+          "base_score": 0.8022019338425032,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch19",
+          "score": 0.6275165658062204,
+          "base_score": 0.7958609430103672,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch18",
+          "score": 0.5242187619589427,
+          "base_score": 0.6236979365982378,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "volume",
+          "volumes",
+          "container",
+          "data",
+          "docker volume"
+        ],
+        "semantic": [],
+        "merged": [
+          "volume",
+          "volumes",
+          "container",
+          "data",
+          "docker volume"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "network_the_docker",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47635189874465744,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:55.579789+00:00"
+      }
+    },
+    {
+      "book": "Docker Deep Dive - Nigel Poulton",
+      "chapter": 22,
+      "title": "Segment 22 (pages 220-231)",
+      "chapter_id": "Docker Deep Dive - Nigel Poulton:ch22",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "volume",
+          "ctr",
+          "data",
+          "deploying",
+          "stacks"
+        ],
+        "semantic": [],
+        "merged": [
+          "volume",
+          "ctr",
+          "data",
+          "deploying",
+          "stacks"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_image_docker",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3669924456657854,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:55.579902+00:00"
+      }
+    },
+    {
+      "book": "Docker Deep Dive - Nigel Poulton",
+      "chapter": 23,
+      "title": "Segment 23 (pages 232-241)",
+      "chapter_id": "Docker Deep Dive - Nigel Poulton:ch23",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "stack",
+          "docker stack",
+          "fe",
+          "ddd_web fe",
+          "ddd_web"
+        ],
+        "semantic": [],
+        "merged": [
+          "stack",
+          "docker stack",
+          "fe",
+          "ddd_web fe",
+          "ddd_web"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4322226596820089,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:55.580017+00:00"
+      }
+    },
+    {
+      "book": "Docker Deep Dive - Nigel Poulton",
+      "chapter": 24,
+      "title": "Segment 24 (pages 242-254)",
+      "chapter_id": "Docker Deep Dive - Nigel Poulton:ch24",
+      "cross_references": [
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch3",
+          "score": 0.5156854127437603,
+          "base_score": 0.6094756879062673,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "security",
+          "join",
+          "token",
+          "join token",
+          "security technologies"
+        ],
+        "semantic": [],
+        "merged": [
+          "security",
+          "join",
+          "token",
+          "join token",
+          "security technologies"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "docker_the_container",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4756334065142537,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:55.580134+00:00"
+      }
+    },
+    {
+      "book": "Docker Deep Dive - Nigel Poulton",
+      "chapter": 25,
+      "title": "Segment 25 (pages 255-263)",
+      "chapter_id": "Docker Deep Dive - Nigel Poulton:ch25",
+      "cross_references": [
+        {
+          "target": "Docker Deep Dive - Nigel Poulton:ch16",
+          "score": 0.5023046372518453,
+          "base_score": 0.587174395419742,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "trust",
+          "signed",
+          "ddd trust",
+          "ca",
+          "key"
+        ],
+        "semantic": [],
+        "merged": [
+          "trust",
+          "signed",
+          "ddd trust",
+          "ca",
+          "key"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "swarm_the_docker",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3580716951103283,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:55.580248+00:00"
+      }
+    },
+    {
+      "book": "Docker Deep Dive - Nigel Poulton",
+      "chapter": 26,
+      "title": "Segment 26 (pages 264-267)",
+      "chapter_id": "Docker Deep Dive - Nigel Poulton:ch26",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "kubernetes",
+          "books",
+          "book",
+          "cloud",
+          "kubernetes cloud"
+        ],
+        "semantic": [],
+        "merged": [
+          "kubernetes",
+          "books",
+          "book",
+          "cloud",
+          "kubernetes cloud"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "docker_the_container",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3858622869230605,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:55.580361+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

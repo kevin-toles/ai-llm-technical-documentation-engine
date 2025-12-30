@@ -1,0 +1,922 @@
+{
+  "book": {
+    "title": "Continuous Delivery - Jez Humble David Farley"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:43:48.512668",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Continuous Delivery - Jez Humble David Farley",
+      "chapter": 1,
+      "title": "The Problem of Delivering Software . ................................. Introduction . ................................................................................ Some Common Release Antipatterns",
+      "chapter_id": "Continuous Delivery - Jez Humble David Farley:ch1",
+      "cross_references": [
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch8",
+          "score": 0.7212926500402653,
+          "base_score": 0.6664401310194898,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch16",
+          "score": 0.6413664030876308,
+          "base_score": 0.5332297194317657,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch12",
+          "score": 0.621860705550236,
+          "base_score": 0.7123604351763192,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch7",
+          "score": 0.6012237840836907,
+          "base_score": 0.5853729734728179,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch10",
+          "score": 0.5687498169066947,
+          "base_score": 0.5312496948444911,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "management",
+          "process",
+          "managing",
+          "test",
+          "acceptance"
+        ],
+        "semantic": [],
+        "merged": [
+          "management",
+          "process",
+          "managing",
+          "test",
+          "acceptance"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5932915465780135,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:48.489837+00:00"
+      }
+    },
+    {
+      "book": "Continuous Delivery - Jez Humble David Farley",
+      "chapter": 2,
+      "title": "we dive into the ecosystem that supports continuous delivery",
+      "chapter_id": "Continuous Delivery - Jez Humble David Farley:ch2",
+      "cross_references": [
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch3",
+          "score": 0.7167630134725759,
+          "base_score": 0.6588907367400073,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch5",
+          "score": 0.5932105578588939,
+          "base_score": 0.6646101890240823,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch12",
+          "score": 0.5423864440721694,
+          "base_score": 0.6182631210726632,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "process",
+          "release",
+          "production",
+          "deploy",
+          "environment"
+        ],
+        "semantic": [],
+        "merged": [
+          "process",
+          "release",
+          "production",
+          "deploy",
+          "environment"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.589350975893264,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:48.489965+00:00"
+      }
+    },
+    {
+      "book": "Continuous Delivery - Jez Humble David Farley",
+      "chapter": 3,
+      "title": "This executable code should be the same executable code that is deployed into every environment, whether it is a testing environment or a production environ- ment. If your system uses a compiled langu",
+      "chapter_id": "Continuous Delivery - Jez Humble David Farley:ch3",
+      "cross_references": [
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch2",
+          "score": 0.7167630134725759,
+          "base_score": 0.6588907367400073,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch5",
+          "score": 0.6776841697671515,
+          "base_score": 0.7128069496119193,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch8",
+          "score": 0.5091515916308049,
+          "base_score": 0.5628717003370558,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "process",
+          "environment",
+          "release",
+          "test",
+          "conﬁguration"
+        ],
+        "semantic": [],
+        "merged": [
+          "process",
+          "environment",
+          "release",
+          "test",
+          "conﬁguration"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5715300636790521,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:48.490051+00:00"
+      }
+    },
+    {
+      "book": "Continuous Delivery - Jez Humble David Farley",
+      "chapter": 4,
+      "title": "Conﬁguration Management",
+      "chapter_id": "Continuous Delivery - Jez Humble David Farley:ch4",
+      "cross_references": [
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch14",
+          "score": 0.7200909013250898,
+          "base_score": 0.7834848355418164,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "control",
+          "version control",
+          "using version",
+          "source",
+          "control systems"
+        ],
+        "semantic": [],
+        "merged": [
+          "control",
+          "version control",
+          "using version",
+          "source",
+          "control systems"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_control",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47992360166291054,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:48.490161+00:00"
+      }
+    },
+    {
+      "book": "Continuous Delivery - Jez Humble David Farley",
+      "chapter": 5,
+      "title": "Managing Software Conﬁguration",
+      "chapter_id": "Continuous Delivery - Jez Humble David Farley:ch5",
+      "cross_references": [
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch3",
+          "score": 0.6776841697671515,
+          "base_score": 0.7128069496119193,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch2",
+          "score": 0.5932105578588939,
+          "base_score": 0.6646101890240823,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "conﬁguration",
+          "environment",
+          "run",
+          "managing",
+          "software conﬁguration"
+        ],
+        "semantic": [],
+        "merged": [
+          "conﬁguration",
+          "environment",
+          "run",
+          "managing",
+          "software conﬁguration"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5856014240416597,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:48.490247+00:00"
+      }
+    },
+    {
+      "book": "Continuous Delivery - Jez Humble David Farley",
+      "chapter": 6,
+      "title": "The second stage should take the binaries from the ﬁrst stage and run the ac- ceptance tests, as well as integration tests, and performance tests if you have them. Modern CI servers make it easy to cr",
+      "chapter_id": "Continuous Delivery - Jez Humble David Farley:ch6",
+      "cross_references": [
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch8",
+          "score": 0.5745860220164152,
+          "base_score": 0.6335692959532845,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch7",
+          "score": 0.562550591541575,
+          "base_score": 0.6135102451618843,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch1",
+          "score": 0.5036908671612216,
+          "base_score": 0.5154107045279619,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "build",
+          "test",
+          "ci",
+          "run",
+          "local"
+        ],
+        "semantic": [],
+        "merged": [
+          "build",
+          "test",
+          "ci",
+          "run",
+          "local"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49891783445683746,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:48.490324+00:00"
+      }
+    },
+    {
+      "book": "Continuous Delivery - Jez Humble David Farley",
+      "chapter": 7,
+      "title": "Implementing a Testing Strategy",
+      "chapter_id": "Continuous Delivery - Jez Humble David Farley:ch7",
+      "cross_references": [
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch10",
+          "score": 0.7496504697985694,
+          "base_score": 0.7137031639499967,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch8",
+          "score": 0.6357160120552365,
+          "base_score": 0.6428600200920609,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch1",
+          "score": 0.6012237840836907,
+          "base_score": 0.5853729734728179,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch11",
+          "score": 0.5794409997176111,
+          "base_score": 0.6416609254552776,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch6",
+          "score": 0.562550591541575,
+          "base_score": 0.6135102451618843,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "acceptance",
+          "acceptance tests",
+          "test",
+          "automated tests",
+          "write"
+        ],
+        "semantic": [],
+        "merged": [
+          "acceptance",
+          "acceptance tests",
+          "test",
+          "automated tests",
+          "write"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5373023185938813,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:48.490405+00:00"
+      }
+    },
+    {
+      "book": "Continuous Delivery - Jez Humble David Farley",
+      "chapter": 8,
+      "title": "Anatomy of the Deployment Pipeline",
+      "chapter_id": "Continuous Delivery - Jez Humble David Farley:ch8",
+      "cross_references": [
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch1",
+          "score": 0.7212926500402653,
+          "base_score": 0.6664401310194898,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch7",
+          "score": 0.6357160120552365,
+          "base_score": 0.6428600200920609,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch16",
+          "score": 0.6343845109519326,
+          "base_score": 0.5215932325389354,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch12",
+          "score": 0.6174471531669804,
+          "base_score": 0.7050045145375599,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch6",
+          "score": 0.5745860220164152,
+          "base_score": 0.6335692959532845,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "acceptance",
+          "process",
+          "test",
+          "stage",
+          "release"
+        ],
+        "semantic": [],
+        "merged": [
+          "acceptance",
+          "process",
+          "test",
+          "stage",
+          "release"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6017308342760083,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:48.490488+00:00"
+      }
+    },
+    {
+      "book": "Continuous Delivery - Jez Humble David Farley",
+      "chapter": 9,
+      "title": "Build and Deployment Scripting",
+      "chapter_id": "Continuous Delivery - Jez Humble David Farley:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "build",
+          "build deployment",
+          "scripting",
+          "stage",
+          "commit"
+        ],
+        "semantic": [],
+        "merged": [
+          "build",
+          "build deployment",
+          "scripting",
+          "stage",
+          "commit"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47758583314687686,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:48.490574+00:00"
+      }
+    },
+    {
+      "book": "Continuous Delivery - Jez Humble David Farley",
+      "chapter": 10,
+      "title": "Automated Acceptance Testing",
+      "chapter_id": "Continuous Delivery - Jez Humble David Farley:ch10",
+      "cross_references": [
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch7",
+          "score": 0.7496504697985694,
+          "base_score": 0.7137031639499967,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch8",
+          "score": 0.5745569630666104,
+          "base_score": 0.540928271777684,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch1",
+          "score": 0.5687498169066947,
+          "base_score": 0.5312496948444911,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch11",
+          "score": 0.525248924695207,
+          "base_score": 0.5513408004179376,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "acceptance",
+          "acceptance tests",
+          "test",
+          "automated acceptance",
+          "acceptance test"
+        ],
+        "semantic": [],
+        "merged": [
+          "acceptance",
+          "acceptance tests",
+          "test",
+          "automated acceptance",
+          "acceptance test"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4895762259833623,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:48.490653+00:00"
+      }
+    },
+    {
+      "book": "Continuous Delivery - Jez Humble David Farley",
+      "chapter": 11,
+      "title": "Testing Nonfunctional Requirements",
+      "chapter_id": "Continuous Delivery - Jez Humble David Farley:ch11",
+      "cross_references": [
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch7",
+          "score": 0.5794409997176111,
+          "base_score": 0.6416609254552776,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch10",
+          "score": 0.525248924695207,
+          "base_score": 0.5513408004179376,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "capacity",
+          "capacity test",
+          "capacity testing",
+          "test",
+          "capacity tests"
+        ],
+        "semantic": [],
+        "merged": [
+          "capacity",
+          "capacity test",
+          "capacity testing",
+          "test",
+          "capacity tests"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44387165302065185,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:48.490729+00:00"
+      }
+    },
+    {
+      "book": "Continuous Delivery - Jez Humble David Farley",
+      "chapter": 12,
+      "title": "Deploying and Releasing Applications",
+      "chapter_id": "Continuous Delivery - Jez Humble David Farley:ch12",
+      "cross_references": [
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch1",
+          "score": 0.621860705550236,
+          "base_score": 0.7123604351763192,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch8",
+          "score": 0.6174471531669804,
+          "base_score": 0.7050045145375599,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch2",
+          "score": 0.5423864440721694,
+          "base_score": 0.6182631210726632,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "environment",
+          "production",
+          "deploying",
+          "process",
+          "environments"
+        ],
+        "semantic": [],
+        "merged": [
+          "environment",
+          "production",
+          "deploying",
+          "process",
+          "environments"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5678987896075232,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:48.490817+00:00"
+      }
+    },
+    {
+      "book": "Continuous Delivery - Jez Humble David Farley",
+      "chapter": 13,
+      "title": "Managing Data",
+      "chapter_id": "Continuous Delivery - Jez Humble David Farley:ch13",
+      "cross_references": [
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch8",
+          "score": 0.5516123670694373,
+          "base_score": 0.5952798710416547,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch1",
+          "score": 0.5479068959242215,
+          "base_score": 0.5891040857996283,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "database",
+          "data",
+          "test",
+          "version database",
+          "test data"
+        ],
+        "semantic": [],
+        "merged": [
+          "database",
+          "data",
+          "test",
+          "version database",
+          "test data"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5294193157392264,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:48.490892+00:00"
+      }
+    },
+    {
+      "book": "Continuous Delivery - Jez Humble David Farley",
+      "chapter": 14,
+      "title": "Advanced Version Control",
+      "chapter_id": "Continuous Delivery - Jez Humble David Farley:ch14",
+      "cross_references": [
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch4",
+          "score": 0.7200909013250898,
+          "base_score": 0.7834848355418164,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch15",
+          "score": 0.5591921038520344,
+          "base_score": 0.6079127656793166,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "control",
+          "branches",
+          "version control",
+          "merge",
+          "branch"
+        ],
+        "semantic": [],
+        "merged": [
+          "control",
+          "branches",
+          "version control",
+          "merge",
+          "branch"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_control",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4607630330803058,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:48.490966+00:00"
+      }
+    },
+    {
+      "book": "Continuous Delivery - Jez Humble David Farley",
+      "chapter": 15,
+      "title": "ROOT STREAM",
+      "chapter_id": "Continuous Delivery - Jez Humble David Farley:ch15",
+      "cross_references": [
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch14",
+          "score": 0.5591921038520344,
+          "base_score": 0.6079127656793166,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "branch",
+          "mainline",
+          "trunk",
+          "merged",
+          "release"
+        ],
+        "semantic": [],
+        "merged": [
+          "branch",
+          "mainline",
+          "trunk",
+          "merged",
+          "release"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_control",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4525076258285139,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:48.491038+00:00"
+      }
+    },
+    {
+      "book": "Continuous Delivery - Jez Humble David Farley",
+      "chapter": 16,
+      "title": "Managing Continuous Delivery",
+      "chapter_id": "Continuous Delivery - Jez Humble David Farley:ch16",
+      "cross_references": [
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch1",
+          "score": 0.6413664030876308,
+          "base_score": 0.5332297194317657,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Continuous Delivery - Jez Humble David Farley:ch8",
+          "score": 0.6343845109519326,
+          "base_score": 0.5215932325389354,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "management",
+          "process",
+          "release",
+          "deﬁnition",
+          "acceptance"
+        ],
+        "semantic": [],
+        "merged": [
+          "management",
+          "process",
+          "release",
+          "deﬁnition",
+          "acceptance"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4520170240032769,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:48.491116+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

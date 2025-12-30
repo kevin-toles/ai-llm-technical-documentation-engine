@@ -1,0 +1,404 @@
+{
+  "book": {
+    "title": "enterprise-devops-playbook"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:01:08.926491",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "enterprise-devops-playbook",
+      "chapter": 1,
+      "title": "Segment 1 (pages 3-13)",
+      "chapter_id": "enterprise-devops-playbook:ch1",
+      "cross_references": [
+        {
+          "target": "enterprise-devops-playbook:ch2",
+          "score": 0.5040379765002774,
+          "base_score": 0.7659892200930548,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "devops",
+          "playbook",
+          "play",
+          "devops playbook",
+          "principles"
+        ],
+        "semantic": [],
+        "merged": [
+          "devops",
+          "playbook",
+          "play",
+          "devops playbook",
+          "principles"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5036368945569001,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:01:08.922012+00:00"
+      }
+    },
+    {
+      "book": "enterprise-devops-playbook",
+      "chapter": 2,
+      "title": "Segment 2 (pages 14-21)",
+      "chapter_id": "enterprise-devops-playbook:ch2",
+      "cross_references": [
+        {
+          "target": "enterprise-devops-playbook:ch9",
+          "score": 0.6336377474928572,
+          "base_score": 0.7319888384140212,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "enterprise-devops-playbook:ch1",
+          "score": 0.5040379765002774,
+          "base_score": 0.7659892200930548,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "devops",
+          "engineer",
+          "automation",
+          "team",
+          "operations"
+        ],
+        "semantic": [],
+        "merged": [
+          "devops",
+          "engineer",
+          "automation",
+          "team",
+          "operations"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "and_the_devops",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5026081735775775,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:08.922072+00:00"
+      }
+    },
+    {
+      "book": "enterprise-devops-playbook",
+      "chapter": 3,
+      "title": "Segment 3 (pages 22-29)",
+      "chapter_id": "enterprise-devops-playbook:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "branch",
+          "development branch",
+          "feature",
+          "code",
+          "development"
+        ],
+        "semantic": [],
+        "merged": [
+          "branch",
+          "development branch",
+          "feature",
+          "code",
+          "development"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4543391564916819,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:01:08.922120+00:00"
+      }
+    },
+    {
+      "book": "enterprise-devops-playbook",
+      "chapter": 4,
+      "title": "Segment 4 (pages 30-37)",
+      "chapter_id": "enterprise-devops-playbook:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "test",
+          "unit",
+          "unit test",
+          "tests",
+          "unit tests"
+        ],
+        "semantic": [],
+        "merged": [
+          "test",
+          "unit",
+          "unit test",
+          "tests",
+          "unit tests"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_continuous_test",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39902560138449744,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:08.922161+00:00"
+      }
+    },
+    {
+      "book": "enterprise-devops-playbook",
+      "chapter": 5,
+      "title": "Segment 5 (pages 38-45)",
+      "chapter_id": "enterprise-devops-playbook:ch5",
+      "cross_references": [
+        {
+          "target": "enterprise-devops-playbook:ch6",
+          "score": 0.5987075541441557,
+          "base_score": 0.7478459235735928,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "automated",
+          "production",
+          "continuous delivery",
+          "delivery",
+          "code"
+        ],
+        "semantic": [],
+        "merged": [
+          "automated",
+          "production",
+          "continuous delivery",
+          "delivery",
+          "code"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_continuous_test",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4867890646246951,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:08.922203+00:00"
+      }
+    },
+    {
+      "book": "enterprise-devops-playbook",
+      "chapter": 6,
+      "title": "Segment 6 (pages 46-53)",
+      "chapter_id": "enterprise-devops-playbook:ch6",
+      "cross_references": [
+        {
+          "target": "enterprise-devops-playbook:ch5",
+          "score": 0.5987075541441557,
+          "base_score": 0.7478459235735928,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "continuous",
+          "continuous monitoring",
+          "monitoring",
+          "deployment",
+          "continuous deployment"
+        ],
+        "semantic": [],
+        "merged": [
+          "continuous",
+          "continuous monitoring",
+          "monitoring",
+          "deployment",
+          "continuous deployment"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_continuous_test",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4758655020059062,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:08.922244+00:00"
+      }
+    },
+    {
+      "book": "enterprise-devops-playbook",
+      "chapter": 7,
+      "title": "Segment 7 (pages 54-61)",
+      "chapter_id": "enterprise-devops-playbook:ch7",
+      "cross_references": [
+        {
+          "target": "enterprise-devops-playbook:ch8",
+          "score": 0.5441855374864879,
+          "base_score": 0.9069758958108133,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "fi",
+          "fi fi"
+        ],
+        "semantic": [],
+        "merged": [
+          "fi",
+          "fi fi"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23756048166362045,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:01:08.922282+00:00"
+      }
+    },
+    {
+      "book": "enterprise-devops-playbook",
+      "chapter": 8,
+      "title": "Segment 8 (pages 62-69)",
+      "chapter_id": "enterprise-devops-playbook:ch8",
+      "cross_references": [
+        {
+          "target": "enterprise-devops-playbook:ch7",
+          "score": 0.5441855374864879,
+          "base_score": 0.9069758958108133,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "time",
+          "devops",
+          "change",
+          "failure",
+          "lead"
+        ],
+        "semantic": [],
+        "merged": [
+          "time",
+          "devops",
+          "change",
+          "failure",
+          "lead"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.20867249305108604,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:01:08.922353+00:00"
+      }
+    },
+    {
+      "book": "enterprise-devops-playbook",
+      "chapter": 9,
+      "title": "Segment 9 (pages 70-76)",
+      "chapter_id": "enterprise-devops-playbook:ch9",
+      "cross_references": [
+        {
+          "target": "enterprise-devops-playbook:ch2",
+          "score": 0.6336377474928572,
+          "base_score": 0.7319888384140212,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "devops",
+          "sharing",
+          "metrics",
+          "teams",
+          "project"
+        ],
+        "semantic": [],
+        "merged": [
+          "devops",
+          "sharing",
+          "metrics",
+          "teams",
+          "project"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "and_the_devops",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46303420240867077,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:08.922396+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

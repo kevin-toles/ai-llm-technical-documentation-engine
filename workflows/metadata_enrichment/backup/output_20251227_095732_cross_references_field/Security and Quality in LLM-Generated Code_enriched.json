@@ -1,0 +1,88 @@
+{
+  "book": {
+    "title": "Security and Quality in LLM-Generated Code"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:55:58.081376",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Security and Quality in LLM-Generated Code",
+      "chapter": 1,
+      "title": "RELATED WORK\n\nS",
+      "chapter_id": "Security and Quality in LLM-Generated Code:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "generated",
+          "llms",
+          "generated code",
+          "quality"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "generated",
+          "llms",
+          "generated code",
+          "quality"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "code_generated_llms",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7872627316137202,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:58.076443+00:00"
+      }
+    },
+    {
+      "book": "Security and Quality in LLM-Generated Code",
+      "chapter": 2,
+      "title": "RESULTS AND DISCUSSION\n\nW",
+      "chapter_id": "Security and Quality in LLM-Generated Code:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "models",
+          "claude",
+          "success",
+          "gemini"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "models",
+          "claude",
+          "success",
+          "gemini"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "code_models_claude",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7872627407487851,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:58.076487+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

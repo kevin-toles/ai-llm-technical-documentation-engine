@@ -31,6 +31,8 @@ from pathlib import Path
 from typing import List, Dict, Any, Tuple, Optional
 from datetime import datetime, timezone
 
+import aiofiles
+
 # NOTE: TF-IDF imports REMOVED per Kitchen Brigade pattern
 # All ML processing now done in ai-agents MSEP service
 # See: MULTI_STAGE_ENRICHMENT_PIPELINE_ARCHITECTURE.md
@@ -698,11 +700,12 @@ async def enrich_chapter_with_orchestrator(
         client: OrchestratorClient instance
         current_book: Book name to exclude from results
         domain: Optional domain filter
-        fallback_enabled: If True, use TF-IDF fallback on error
+        fallback_enabled: If True, fall back to TF-IDF on error (reserved for future)
         
     Returns:
         Enriched chapter dict with related_chapters
     """
+    _use_fallback = fallback_enabled  # Store for potential future use
     chapter_num = chapter.get("chapter_number", 0)
     chapter_title = chapter.get("title", f"Chapter {chapter_num}")
     
@@ -1067,7 +1070,7 @@ def enrich_metadata(
     timestamp = datetime.now().isoformat()
 
     for idx, chapter in enumerate(chapters):
-        chapter_num = chapter.get("chapter_number", idx + 1)
+        _chapter_num = chapter.get("chapter_number", idx + 1)  # Used for logging if needed
 
         # Build enriched chapter (preserve all original fields + empty enrichments)
         enriched = chapter.copy()
@@ -1134,7 +1137,7 @@ def enrich_metadata(
     print(f"\n✅ Fallback metadata saved: {output_path.name}")
     print(f"  File size: {size_kb:.1f} KB")
     print(f"  Chapters: {len(enriched_chapters)}")
-    print(f"  Cross-references: 0 (fallback mode)")
+    print("  Cross-references: 0 (fallback mode)")
     print("  ⚠️  Run with --use-msep when ai-agents is available for full enrichment")
 
 
@@ -1203,7 +1206,7 @@ def enrich_metadata_local(
     timestamp = datetime.now().isoformat()
 
     for idx, chapter in enumerate(chapters):
-        chapter_num = chapter.get("chapter_number", idx + 1)
+        _chapter_num = chapter.get("chapter_number", idx + 1)  # Used for logging if needed
 
         # Build enriched chapter (preserve all original fields + empty MSEP fields)
         enriched_chapter = chapter.copy()
@@ -1256,8 +1259,8 @@ def enrich_metadata_local(
     print(f"\n✅ Fallback metadata saved: {output_path.name}")
     print(f"  File size: {size_kb:.1f} KB")
     print(f"  Chapters: {len(enriched_chapters)}")
-    print(f"  Cross-references: 0 (fallback mode)")
-    print(f"  Schema: MSEP-unified (empty enrichments)")
+    print("  Cross-references: 0 (fallback mode)")
+    print("  Schema: MSEP-unified (empty enrichments)")
     print("  ⚠️  Run with --use-msep when ai-agents is available for full enrichment")
 
 
@@ -1310,8 +1313,9 @@ async def enrich_metadata_semantic(
     if not input_path.exists():
         raise FileNotFoundError(f"Input file not found: {input_path}")
     
-    with open(input_path, encoding='utf-8') as f:
-        book_data = json.load(f)
+    async with aiofiles.open(input_path, encoding='utf-8') as f:
+        content = await f.read()
+        book_data = json.loads(content)
     
     # Handle both formats: list of chapters or {chapters: [...]}
     if isinstance(book_data, list):
@@ -1418,15 +1422,15 @@ async def enrich_metadata_semantic(
     
     # 4. Save enriched metadata
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(output_path, 'w', encoding='utf-8') as f:
-        json.dump(enriched_metadata, f, indent=2, ensure_ascii=False)
+    async with aiofiles.open(output_path, 'w', encoding='utf-8') as f:
+        await f.write(json.dumps(enriched_metadata, indent=2, ensure_ascii=False))
     
     # Report
     size_kb = output_path.stat().st_size / 1024
     print(f"\n✅ Enriched metadata saved: {output_path.name}")
     print(f"  File size: {size_kb:.1f} KB")
     print(f"  Chapters enriched: {len(enriched_chapters)}")
-    print(f"  Similarity source: semantic_search (remote API)")
+    print("  Similarity source: semantic_search (remote API)")
     print("  NO LLM calls made ✓")
 
 
@@ -1537,8 +1541,9 @@ async def enrich_metadata_orchestrator(
     if not input_path.exists():
         raise FileNotFoundError(f"Input file not found: {input_path}")
     
-    with open(input_path, encoding='utf-8') as f:
-        book_data = json.load(f)
+    async with aiofiles.open(input_path, encoding='utf-8') as f:
+        content = await f.read()
+        book_data = json.loads(content)
     
     # Handle both formats: list of chapters or {chapters: [...]}
     if isinstance(book_data, list):
@@ -1621,15 +1626,15 @@ async def enrich_metadata_orchestrator(
     
     # 4. Save enriched metadata
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(output_path, 'w', encoding='utf-8') as f:
-        json.dump(enriched_metadata, f, indent=2, ensure_ascii=False)
+    async with aiofiles.open(output_path, 'w', encoding='utf-8') as f:
+        await f.write(json.dumps(enriched_metadata, indent=2, ensure_ascii=False))
     
     # Report
     size_kb = output_path.stat().st_size / 1024
     print(f"\n✅ Enriched metadata saved: {output_path.name}")
     print(f"  File size: {size_kb:.1f} KB")
     print(f"  Chapters enriched: {len(enriched_chapters)}")
-    print(f"  Similarity source: orchestrator_semantic")
+    print("  Similarity source: orchestrator_semantic")
     print(f"  Threshold: {SEMANTIC_SIMILARITY_THRESHOLD}")
     print("  NO LLM calls made ✓")
 
@@ -1686,8 +1691,9 @@ async def enrich_metadata_msep(
     if not input_path.exists():
         raise FileNotFoundError(f"Input file not found: {input_path}")
 
-    with open(input_path, encoding="utf-8") as f:
-        book_data = json.load(f)
+    async with aiofiles.open(input_path, encoding="utf-8") as f:
+        content = await f.read()
+        book_data = json.loads(content)
 
     # Handle both formats: list of chapters or {chapters: [...]}
     if isinstance(book_data, list):
@@ -1858,8 +1864,8 @@ async def enrich_metadata_msep(
 
     # 6. Write output
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(output_path, "w", encoding="utf-8") as f:
-        json.dump(enriched_metadata, f, indent=2, ensure_ascii=False)
+    async with aiofiles.open(output_path, "w", encoding="utf-8") as f:
+        await f.write(json.dumps(enriched_metadata, indent=2, ensure_ascii=False))
 
     # Report
     size_kb = output_path.stat().st_size / 1024
@@ -1868,7 +1874,7 @@ async def enrich_metadata_msep(
     print(f"  Chapters enriched: {len(enriched_chapters)}")
     print(f"  Cross-references: {enriched_response.total_cross_references}")
     print(f"  Processing time: {enriched_response.processing_time_ms:.1f}ms")
-    print(f"  Similarity source: msep")
+    print("  Similarity source: msep")
     print("  NO local ML processing ✓")
 
 

@@ -1,0 +1,199 @@
+{
+  "book": {
+    "title": "hadoop-with-python"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:01:28.807046",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "hadoop-with-python",
+      "chapter": 1,
+      "title": "Hadoop Distributed File System (HDFS)",
+      "chapter_id": "hadoop-with-python:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "paths",
+          "client",
+          "dfs",
+          "hdfs dfs",
+          "command"
+        ],
+        "semantic": [],
+        "merged": [
+          "paths",
+          "client",
+          "dfs",
+          "hdfs dfs",
+          "command"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "hdfs_paths_client",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4795971789091923,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:28.800421+00:00"
+      }
+    },
+    {
+      "book": "hadoop-with-python",
+      "chapter": 2,
+      "title": "MapReduce with Python",
+      "chapter_id": "hadoop-with-python:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "reducer",
+          "key",
+          "mapper",
+          "key value",
+          "value"
+        ],
+        "semantic": [],
+        "merged": [
+          "reducer",
+          "key",
+          "mapper",
+          "key value",
+          "value"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "reducer_key_mapper",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4917184345946202,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:28.800460+00:00"
+      }
+    },
+    {
+      "book": "hadoop-with-python",
+      "chapter": 3,
+      "title": "Pig and Python",
+      "chapter_id": "hadoop-with-python:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "pig",
+          "data",
+          "udfs",
+          "pig script",
+          "udf"
+        ],
+        "semantic": [],
+        "merged": [
+          "pig",
+          "data",
+          "udfs",
+          "pig script",
+          "udf"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "pig_data_udfs",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5367809931096091,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:28.800488+00:00"
+      }
+    },
+    {
+      "book": "hadoop-with-python",
+      "chapter": 4,
+      "title": "Spark with Python",
+      "chapter_id": "hadoop-with-python:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "rdd",
+          "spark",
+          "collect",
+          "data rdd",
+          "parallelize"
+        ],
+        "semantic": [],
+        "merged": [
+          "rdd",
+          "spark",
+          "collect",
+          "data rdd",
+          "parallelize"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "rdd_spark_collect",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5297156719608911,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:28.800514+00:00"
+      }
+    },
+    {
+      "book": "hadoop-with-python",
+      "chapter": 5,
+      "title": "Workflow Management with Python",
+      "chapter_id": "hadoop-with-python:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "luigi",
+          "task",
+          "self",
+          "input_file",
+          "parameter"
+        ],
+        "semantic": [],
+        "merged": [
+          "luigi",
+          "task",
+          "self",
+          "input_file",
+          "parameter"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "luigi_task_self",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35984360525027703,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:28.800540+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

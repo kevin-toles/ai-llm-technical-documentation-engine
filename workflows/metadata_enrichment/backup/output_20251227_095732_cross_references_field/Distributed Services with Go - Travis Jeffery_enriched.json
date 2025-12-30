@@ -1,0 +1,468 @@
+{
+  "book": {
+    "title": "Distributed Services with Go - Travis Jeffery"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:45:30.509884",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Distributed Services with Go - Travis Jeffery",
+      "chapter": 1,
+      "title": "Let’s Go • 4",
+      "chapter_id": "Distributed Services with Go - Travis Jeffery:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "http",
+          "json",
+          "json http",
+          "server",
+          "http server"
+        ],
+        "semantic": [],
+        "merged": [
+          "http",
+          "json",
+          "json http",
+          "server",
+          "http server"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_server_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3732052384060657,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:30.493923+00:00"
+      }
+    },
+    {
+      "book": "Distributed Services with Go - Travis Jeffery",
+      "chapter": 2,
+      "title": "Structure Data with Protocol Buffers • 14",
+      "chapter_id": "Distributed Services with Go - Travis Jeffery:ch2",
+      "cross_references": [
+        {
+          "target": "Distributed Services with Go - Travis Jeffery:ch4",
+          "score": 0.52385557083496,
+          "base_score": 0.6230926180582668,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "protobuf",
+          "compile",
+          "compile protobuf",
+          "protobuf code",
+          "compiler"
+        ],
+        "semantic": [],
+        "merged": [
+          "protobuf",
+          "compile",
+          "compile protobuf",
+          "protobuf code",
+          "compiler"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_server_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36867393093723994,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:30.494043+00:00"
+      }
+    },
+    {
+      "book": "Distributed Services with Go - Travis Jeffery",
+      "chapter": 3,
+      "title": "Write a Log Package • 24",
+      "chapter_id": "Distributed Services with Go - Travis Jeffery:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "index",
+          "writealogpackage internal",
+          "writealogpackage",
+          "segment",
+          "store"
+        ],
+        "semantic": [],
+        "merged": [
+          "index",
+          "writealogpackage internal",
+          "writealogpackage",
+          "segment",
+          "store"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_log_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24848706765117015,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:30.494098+00:00"
+      }
+    },
+    {
+      "book": "Distributed Services with Go - Travis Jeffery",
+      "chapter": 4,
+      "title": "Serve Requests with gRPC • 56",
+      "chapter_id": "Distributed Services with Go - Travis Jeffery:ch4",
+      "cross_references": [
+        {
+          "target": "Distributed Services with Go - Travis Jeffery:ch5",
+          "score": 0.5874157970520354,
+          "base_score": 0.5623596617533924,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Services with Go - Travis Jeffery:ch2",
+          "score": 0.52385557083496,
+          "base_score": 0.6230926180582668,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "server",
+          "client",
+          "grpc",
+          "api",
+          "grpc server"
+        ],
+        "semantic": [],
+        "merged": [
+          "server",
+          "client",
+          "grpc",
+          "api",
+          "grpc server"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_server_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44703773266684094,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:30.494152+00:00"
+      }
+    },
+    {
+      "book": "Distributed Services with Go - Travis Jeffery",
+      "chapter": 5,
+      "title": "Secure Your Services • 76",
+      "chapter_id": "Distributed Services with Go - Travis Jeffery:ch5",
+      "cross_references": [
+        {
+          "target": "Distributed Services with Go - Travis Jeffery:ch4",
+          "score": 0.5874157970520354,
+          "base_score": 0.5623596617533924,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "server",
+          "client",
+          "ca",
+          "tls",
+          "secureyourservices"
+        ],
+        "semantic": [],
+        "merged": [
+          "server",
+          "client",
+          "ca",
+          "tls",
+          "secureyourservices"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_server_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35391650918637346,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:30.494228+00:00"
+      }
+    },
+    {
+      "book": "Distributed Services with Go - Travis Jeffery",
+      "chapter": 6,
+      "title": "Observe Your Systems • 100",
+      "chapter_id": "Distributed Services with Go - Travis Jeffery:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "metrics",
+          "traces",
+          "opencensus",
+          "service",
+          "trace"
+        ],
+        "semantic": [],
+        "merged": [
+          "metrics",
+          "traces",
+          "opencensus",
+          "service",
+          "trace"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_log_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3049413896174427,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:30.494278+00:00"
+      }
+    },
+    {
+      "book": "Distributed Services with Go - Travis Jeffery",
+      "chapter": 7,
+      "title": "Server-to-Server Service Discovery • 114",
+      "chapter_id": "Distributed Services with Go - Travis Jeffery:ch7",
+      "cross_references": [
+        {
+          "target": "Distributed Services with Go - Travis Jeffery:ch9",
+          "score": 0.5753978981112072,
+          "base_score": 0.7089964968520119,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "serf",
+          "replicator",
+          "discovery",
+          "server",
+          "membership"
+        ],
+        "semantic": [],
+        "merged": [
+          "serf",
+          "replicator",
+          "discovery",
+          "server",
+          "membership"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_log_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44390658762529184,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:30.494356+00:00"
+      }
+    },
+    {
+      "book": "Distributed Services with Go - Travis Jeffery",
+      "chapter": 8,
+      "title": "Coordinate Your Services with Consensus • 142",
+      "chapter_id": "Distributed Services with Go - Travis Jeffery:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "raft",
+          "coordinatewithconsensus internal",
+          "coordinatewithconsensus",
+          "log distributed",
+          "distributed"
+        ],
+        "semantic": [],
+        "merged": [
+          "raft",
+          "coordinatewithconsensus internal",
+          "coordinatewithconsensus",
+          "log distributed",
+          "distributed"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_log_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33460195442156593,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:30.494406+00:00"
+      }
+    },
+    {
+      "book": "Distributed Services with Go - Travis Jeffery",
+      "chapter": 9,
+      "title": "Discover Servers and Load Balance from the Client • 172",
+      "chapter_id": "Distributed Services with Go - Travis Jeffery:ch9",
+      "cross_references": [
+        {
+          "target": "Distributed Services with Go - Travis Jeffery:ch7",
+          "score": 0.5753978981112072,
+          "base_score": 0.7089964968520119,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "resolver",
+          "servers",
+          "picker",
+          "client",
+          "getservers"
+        ],
+        "semantic": [],
+        "merged": [
+          "resolver",
+          "servers",
+          "picker",
+          "client",
+          "getservers"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_log_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43027803150634925,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:30.494455+00:00"
+      }
+    },
+    {
+      "book": "Distributed Services with Go - Travis Jeffery",
+      "chapter": 10,
+      "title": "Deploy Applications with Kubernetes Locally • 194",
+      "chapter_id": "Distributed Services with Go - Travis Jeffery:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "kubernetes",
+          "service",
+          "helm",
+          "proglog",
+          "cluster"
+        ],
+        "semantic": [],
+        "merged": [
+          "kubernetes",
+          "service",
+          "helm",
+          "proglog",
+          "cluster"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3474685894019788,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:30.494504+00:00"
+      }
+    },
+    {
+      "book": "Distributed Services with Go - Travis Jeffery",
+      "chapter": 11,
+      "title": "Deploy Applications with Kubernetes to the Cloud • 220",
+      "chapter_id": "Distributed Services with Go - Travis Jeffery:ch11",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "replication",
+          "134",
+          "building",
+          "testing",
+          "setup"
+        ],
+        "semantic": [],
+        "merged": [
+          "replication",
+          "134",
+          "building",
+          "testing",
+          "setup"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3167033476001136,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:30.494553+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

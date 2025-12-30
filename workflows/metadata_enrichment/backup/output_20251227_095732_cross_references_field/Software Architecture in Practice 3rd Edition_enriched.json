@@ -1,0 +1,3590 @@
+{
+  "book": {
+    "title": "Software Architecture in Practice 3rd Edition"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:56:40.533575",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-9)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch1",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch3",
+          "score": 0.6532649752579572,
+          "base_score": 0.7647008846891878,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch4",
+          "score": 0.6159764673996508,
+          "base_score": 0.7025533715920107,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch33",
+          "score": 0.6057683751647142,
+          "base_score": 0.6855398845337828,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch7",
+          "score": 0.5462763785229039,
+          "base_score": 0.5863865567974325,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch8",
+          "score": 0.5371302588446449,
+          "base_score": 0.6452170980744082,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "software",
+          "design checklist",
+          "checklist",
+          "software engineering",
+          "sei"
+        ],
+        "semantic": [],
+        "merged": [
+          "software",
+          "design checklist",
+          "checklist",
+          "software engineering",
+          "sei"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "architecture_software_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.414983242945618,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.493309+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 2,
+      "title": "Segment 2 (pages 10-17)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch2",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch35",
+          "score": 0.6353234532710049,
+          "base_score": 0.7347983480442675,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch34",
+          "score": 0.6220383053053435,
+          "base_score": 0.6200638421755726,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch9",
+          "score": 0.5396901670756387,
+          "base_score": 0.575409537718657,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "architecture",
+          "material",
+          "15",
+          "18",
+          "14"
+        ],
+        "semantic": [],
+        "merged": [
+          "architecture",
+          "material",
+          "15",
+          "18",
+          "14"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "architecture_the_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43761749135926,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.493728+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 3,
+      "title": "Segment 3 (pages 18-26)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch3",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch4",
+          "score": 0.8144114623052731,
+          "base_score": 0.8216381514611693,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch33",
+          "score": 0.7594436405071028,
+          "base_score": 0.8490727341785046,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch7",
+          "score": 0.7410782418912989,
+          "base_score": 0.699416117437879,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch6",
+          "score": 0.7022440651894014,
+          "base_score": 0.7537401086490024,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch1",
+          "score": 0.6532649752579572,
+          "base_score": 0.7647008846891878,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "architecture",
+          "software",
+          "software architecture",
+          "structures",
+          "chapter"
+        ],
+        "semantic": [],
+        "merged": [
+          "architecture",
+          "software",
+          "software architecture",
+          "structures",
+          "chapter"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "architecture_software_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4439399791713975,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.494113+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 4,
+      "title": "Segment 4 (pages 27-36)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch4",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch3",
+          "score": 0.8144114623052731,
+          "base_score": 0.8216381514611693,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch33",
+          "score": 0.6907846633170717,
+          "base_score": 0.7346411055284527,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch7",
+          "score": 0.6541150859523266,
+          "base_score": 0.6735251432538776,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch6",
+          "score": 0.6459157379439893,
+          "base_score": 0.7524521558325746,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch1",
+          "score": 0.6159764673996508,
+          "base_score": 0.7025533715920107,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "structures",
+          "structure",
+          "architecture",
+          "software",
+          "module structures"
+        ],
+        "semantic": [],
+        "merged": [
+          "structures",
+          "structure",
+          "architecture",
+          "software",
+          "module structures"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "architecture_software_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42794081690825314,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.494461+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 5,
+      "title": "Segment 5 (pages 37-44)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch5",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch42",
+          "score": 0.6041361849994691,
+          "base_score": 0.6828195675917077,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch6",
+          "score": 0.5974048095526945,
+          "base_score": 0.7099603968735384,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch3",
+          "score": 0.5929741330447416,
+          "base_score": 0.7025759360269501,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch4",
+          "score": 0.5828865283546116,
+          "base_score": 0.6857632615434004,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch41",
+          "score": 0.5715579175101275,
+          "base_score": 0.6285224551094717,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "architecture",
+          "structures",
+          "software architecture",
+          "architectural",
+          "structure"
+        ],
+        "semantic": [],
+        "merged": [
+          "architecture",
+          "structures",
+          "software architecture",
+          "architectural",
+          "structure"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "architecture_views_documentation",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45693419596510526,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.494803+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 6,
+      "title": "Segment 6 (pages 45-53)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch6",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch7",
+          "score": 0.75926854761776,
+          "base_score": 0.7297332936486476,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch3",
+          "score": 0.7022440651894014,
+          "base_score": 0.7537401086490024,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch8",
+          "score": 0.7014898560772803,
+          "base_score": 0.7524830934621338,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch33",
+          "score": 0.6462745291515818,
+          "base_score": 0.7530501411785622,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch4",
+          "score": 0.6459157379439893,
+          "base_score": 0.7524521558325746,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "architecture",
+          "software architecture",
+          "architecture important",
+          "architectural",
+          "design"
+        ],
+        "semantic": [],
+        "merged": [
+          "architecture",
+          "software architecture",
+          "architecture important",
+          "architectural",
+          "design"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "architecture_software_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45551579054003694,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.495159+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 7,
+      "title": "Segment 7 (pages 54-61)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch7",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch6",
+          "score": 0.75926854761776,
+          "base_score": 0.7297332936486476,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch3",
+          "score": 0.7410782418912989,
+          "base_score": 0.699416117437879,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch4",
+          "score": 0.6541150859523266,
+          "base_score": 0.6735251432538776,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch33",
+          "score": 0.6303432165483088,
+          "base_score": 0.6339053609138481,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch8",
+          "score": 0.5975362693559357,
+          "base_score": 0.6718197081858188,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "architecture",
+          "software architecture",
+          "software",
+          "inhibit enable",
+          "architecture important"
+        ],
+        "semantic": [],
+        "merged": [
+          "architecture",
+          "software architecture",
+          "software",
+          "inhibit enable",
+          "architecture important"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "architecture_software_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42940622184183835,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.495505+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 8,
+      "title": "Segment 8 (pages 62-69)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch8",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch6",
+          "score": 0.7014898560772803,
+          "base_score": 0.7524830934621338,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch3",
+          "score": 0.6376479443922249,
+          "base_score": 0.7386724999129676,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch33",
+          "score": 0.6187727775494953,
+          "base_score": 0.707213888508418,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch4",
+          "score": 0.6074568357127327,
+          "base_score": 0.688353985447147,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch44",
+          "score": 0.6017732153091658,
+          "base_score": 0.6788812847745356,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "architecture",
+          "ensuring",
+          "design",
+          "evaluating architecture",
+          "contexts software"
+        ],
+        "semantic": [],
+        "merged": [
+          "architecture",
+          "ensuring",
+          "design",
+          "evaluating architecture",
+          "contexts software"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "architecture_software_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48135412372386066,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.495851+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 9,
+      "title": "Segment 9 (pages 70-80)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch9",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch36",
+          "score": 0.5736487653990632,
+          "base_score": 0.6703669899508196,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch35",
+          "score": 0.5412098770522629,
+          "base_score": 0.5779423876796973,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch2",
+          "score": 0.5396901670756387,
+          "base_score": 0.575409537718657,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "architecture",
+          "business",
+          "contexts",
+          "business goals",
+          "goals"
+        ],
+        "semantic": [],
+        "merged": [
+          "architecture",
+          "business",
+          "contexts",
+          "business goals",
+          "goals"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "architecture_the_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43361367052720945,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.496203+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 10,
+      "title": "Segment 10 (pages 81-88)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch10",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch25",
+          "score": 0.8524507421224488,
+          "base_score": 0.7263067924263035,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch24",
+          "score": 0.8174007581032403,
+          "base_score": 0.8266203111244481,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch11",
+          "score": 0.799363247072933,
+          "base_score": 0.7965577927406027,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch32",
+          "score": 0.6238414906051626,
+          "base_score": 0.6230691510086044,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "quality",
+          "attributes",
+          "quality attributes",
+          "quality attribute",
+          "attribute"
+        ],
+        "semantic": [],
+        "merged": [
+          "quality",
+          "attributes",
+          "quality attributes",
+          "quality attribute",
+          "attribute"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "quality_attributes_product",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4575431463778145,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.496548+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 11,
+      "title": "Segment 11 (pages 89-96)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch11",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch10",
+          "score": 0.799363247072933,
+          "base_score": 0.7965577927406027,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch24",
+          "score": 0.7535932342451009,
+          "base_score": 0.7202744380275492,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch25",
+          "score": 0.711169461408944,
+          "base_score": 0.6495681499672876,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch32",
+          "score": 0.5997540849670158,
+          "base_score": 0.675516067537619,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "quality",
+          "quality attributes",
+          "response",
+          "attributes",
+          "decisions"
+        ],
+        "semantic": [],
+        "merged": [
+          "quality",
+          "quality attributes",
+          "response",
+          "attributes",
+          "decisions"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "quality_attributes_product",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4116641255745517,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.496888+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 12,
+      "title": "Segment 12 (pages 97-110)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch12",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch14",
+          "score": 0.6790636870954799,
+          "base_score": 0.7151061451591332,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch13",
+          "score": 0.6295596322480737,
+          "base_score": 0.6325993870801228,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch67",
+          "score": 0.5146686642952667,
+          "base_score": 0.5337070330847038,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch31",
+          "score": 0.5049314804578439,
+          "base_score": 0.5915524674297397,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "fault",
+          "faults",
+          "failure",
+          "occurs",
+          "availability"
+        ],
+        "semantic": [],
+        "merged": [
+          "fault",
+          "faults",
+          "failure",
+          "occurs",
+          "availability"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_fault_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36405628041809523,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.497273+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 13,
+      "title": "Segment 13 (pages 111-119)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch13",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch12",
+          "score": 0.6295596322480737,
+          "base_score": 0.6325993870801228,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch14",
+          "score": 0.5668437090530042,
+          "base_score": 0.6206654410142662,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch31",
+          "score": 0.5322709414869559,
+          "base_score": 0.6371182358115932,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "faults",
+          "fault",
+          "redundant",
+          "redundancy",
+          "tactic"
+        ],
+        "semantic": [],
+        "merged": [
+          "faults",
+          "fault",
+          "redundant",
+          "redundancy",
+          "tactic"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_fault_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24823902109769125,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.497611+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 14,
+      "title": "Segment 14 (pages 120-127)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch14",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch12",
+          "score": 0.6790636870954799,
+          "base_score": 0.7151061451591332,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch67",
+          "score": 0.5829470614666964,
+          "base_score": 0.7215784357778273,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch13",
+          "score": 0.5668437090530042,
+          "base_score": 0.6206654410142662,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "systems",
+          "sos",
+          "availability",
+          "fault",
+          "tactics"
+        ],
+        "semantic": [],
+        "merged": [
+          "systems",
+          "sos",
+          "availability",
+          "fault",
+          "tactics"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_fault_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.337080486992943,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.497949+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 15,
+      "title": "Segment 15 (pages 128-137)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "interoperability",
+          "interoperate",
+          "exchange",
+          "soap",
+          "exchange information"
+        ],
+        "semantic": [],
+        "merged": [
+          "interoperability",
+          "interoperate",
+          "exchange",
+          "soap",
+          "exchange information"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_fault_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3235573608184738,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.498296+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 16,
+      "title": "Segment 16 (pages 138-145)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch16",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "change",
+          "changes",
+          "module",
+          "making change",
+          "cost"
+        ],
+        "semantic": [],
+        "merged": [
+          "change",
+          "changes",
+          "module",
+          "making change",
+          "cost"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30207349494100094,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:56:40.498632+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 17,
+      "title": "Segment 17 (pages 146-153)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch17",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "change",
+          "changes",
+          "change determine",
+          "time",
+          "determine changes"
+        ],
+        "semantic": [],
+        "merged": [
+          "change",
+          "changes",
+          "change determine",
+          "time",
+          "determine changes"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28018619587950283,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:56:40.499008+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 18,
+      "title": "Segment 18 (pages 154-162)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch18",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "events",
+          "event",
+          "resources",
+          "resource",
+          "time"
+        ],
+        "semantic": [],
+        "merged": [
+          "events",
+          "event",
+          "resources",
+          "resource",
+          "time"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_fault_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21762255725396124,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.499363+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 19,
+      "title": "Segment 19 (pages 163-171)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch19",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "performance",
+          "attack",
+          "services",
+          "data services"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "performance",
+          "attack",
+          "services",
+          "data services"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_fault_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35313076434176766,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.499702+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 20,
+      "title": "Segment 20 (pages 172-179)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch20",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "access",
+          "data",
+          "attack",
+          "data services",
+          "actor"
+        ],
+        "semantic": [],
+        "merged": [
+          "access",
+          "data",
+          "attack",
+          "data services",
+          "actor"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_fault_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.214634003331279,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.500047+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 21,
+      "title": "Segment 21 (pages 180-187)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch21",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch22",
+          "score": 0.5640018951218989,
+          "base_score": 0.6542888728222125,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch43",
+          "score": 0.5191434982465157,
+          "base_score": 0.5795248780299072,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "test",
+          "testing",
+          "tests",
+          "tested",
+          "state"
+        ],
+        "semantic": [],
+        "merged": [
+          "test",
+          "testing",
+          "tests",
+          "tested",
+          "state"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30226354435010977,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:56:40.500383+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 22,
+      "title": "Segment 22 (pages 188-195)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch22",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch21",
+          "score": 0.5640018951218989,
+          "base_score": 0.6542888728222125,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "test",
+          "testing",
+          "test data",
+          "tests",
+          "data"
+        ],
+        "semantic": [],
+        "merged": [
+          "test",
+          "testing",
+          "test data",
+          "tests",
+          "data"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.22457579817602377,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:56:40.500733+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 23,
+      "title": "Segment 23 (pages 196-203)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch23",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "user",
+          "user interface",
+          "interface",
+          "initiative",
+          "user initiative"
+        ],
+        "semantic": [],
+        "merged": [
+          "user",
+          "user interface",
+          "interface",
+          "initiative",
+          "user initiative"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2861644337702736,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:56:40.501091+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 24,
+      "title": "Segment 24 (pages 204-211)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch24",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch10",
+          "score": 0.8174007581032403,
+          "base_score": 0.8266203111244481,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch25",
+          "score": 0.7683103079653909,
+          "base_score": 0.7448028942280325,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch11",
+          "score": 0.7535932342451009,
+          "base_score": 0.7202744380275492,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch32",
+          "score": 0.5340067210285442,
+          "base_score": 0.5659371276401661,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch55",
+          "score": 0.5114866279102649,
+          "base_score": 0.6024777131837747,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "quality",
+          "quality attributes",
+          "attributes",
+          "12",
+          "software"
+        ],
+        "semantic": [],
+        "merged": [
+          "quality",
+          "quality attributes",
+          "attributes",
+          "12",
+          "software"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "quality_attributes_product",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42085082181240285,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.501431+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 25,
+      "title": "Segment 25 (pages 212-220)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch25",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch10",
+          "score": 0.8524507421224488,
+          "base_score": 0.7263067924263035,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch24",
+          "score": 0.7683103079653909,
+          "base_score": 0.7448028942280325,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch11",
+          "score": 0.711169461408944,
+          "base_score": 0.6495681499672876,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch32",
+          "score": 0.5144584582998468,
+          "base_score": 0.5333566897590041,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "quality",
+          "quality attribute",
+          "new quality",
+          "quality attributes",
+          "attributes"
+        ],
+        "semantic": [],
+        "merged": [
+          "quality",
+          "quality attribute",
+          "new quality",
+          "quality attributes",
+          "attributes"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "quality_attributes_product",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39032977273867625,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.501774+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 26,
+      "title": "Segment 26 (pages 221-233)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch26",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch30",
+          "score": 0.668202682437755,
+          "base_score": 0.7895970633221843,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch29",
+          "score": 0.6049211729799566,
+          "base_score": 0.6841278808925202,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "layer",
+          "pattern",
+          "layers",
+          "broker",
+          "layered"
+        ],
+        "semantic": [],
+        "merged": [
+          "layer",
+          "pattern",
+          "layers",
+          "broker",
+          "layered"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "pattern_patterns_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34058156516840854,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.502136+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 27,
+      "title": "Segment 27 (pages 234-246)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch27",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "server",
+          "service",
+          "services",
+          "clients",
+          "pattern"
+        ],
+        "semantic": [],
+        "merged": [
+          "server",
+          "service",
+          "services",
+          "clients",
+          "pattern"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "pattern_patterns_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1869019745366777,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.502527+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 28,
+      "title": "Segment 28 (pages 247-256)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch28",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "map",
+          "shared data",
+          "subscribe",
+          "publish subscribe"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "map",
+          "shared data",
+          "subscribe",
+          "publish subscribe"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "data_cloud_virtual",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.20603356145382964,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.502893+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 29,
+      "title": "Segment 29 (pages 257-267)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch29",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch26",
+          "score": 0.6049211729799566,
+          "base_score": 0.6841278808925202,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch30",
+          "score": 0.5413913217934352,
+          "base_score": 0.5782447955816512,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pattern",
+          "13",
+          "patterns",
+          "tactics",
+          "tier"
+        ],
+        "semantic": [],
+        "merged": [
+          "pattern",
+          "13",
+          "patterns",
+          "tactics",
+          "tier"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "pattern_patterns_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36074361959765183,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.503285+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 30,
+      "title": "Segment 30 (pages 268-275)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch30",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch26",
+          "score": 0.668202682437755,
+          "base_score": 0.7895970633221843,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch29",
+          "score": 0.5413913217934352,
+          "base_score": 0.5782447955816512,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pattern",
+          "model",
+          "controller",
+          "14",
+          "view"
+        ],
+        "semantic": [],
+        "merged": [
+          "pattern",
+          "model",
+          "controller",
+          "14",
+          "view"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "pattern_patterns_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34528076842625316,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.503629+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 31,
+      "title": "Segment 31 (pages 276-283)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch31",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch13",
+          "score": 0.5322709414869559,
+          "base_score": 0.6371182358115932,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch12",
+          "score": 0.5049314804578439,
+          "base_score": 0.5915524674297397,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "models",
+          "quality",
+          "analytic",
+          "14",
+          "quality attribute"
+        ],
+        "semantic": [],
+        "merged": [
+          "models",
+          "quality",
+          "analytic",
+          "14",
+          "quality attribute"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_fault_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2915316452118678,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.503957+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 32,
+      "title": "Segment 32 (pages 284-291)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch32",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch10",
+          "score": 0.6238414906051626,
+          "base_score": 0.6230691510086044,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch11",
+          "score": 0.5997540849670158,
+          "base_score": 0.675516067537619,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch24",
+          "score": 0.5340067210285442,
+          "base_score": 0.5659371276401661,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch25",
+          "score": 0.5144584582998468,
+          "base_score": 0.5333566897590041,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "analysis",
+          "experiments",
+          "thought",
+          "quality",
+          "attribute"
+        ],
+        "semantic": [],
+        "merged": [
+          "analysis",
+          "experiments",
+          "thought",
+          "quality",
+          "attribute"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "quality_attributes_product",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3910921056276867,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.504296+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 33,
+      "title": "Segment 33 (pages 292-299)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch33",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch3",
+          "score": 0.7594436405071028,
+          "base_score": 0.8490727341785046,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch4",
+          "score": 0.6907846633170717,
+          "base_score": 0.7346411055284527,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch6",
+          "score": 0.6462745291515818,
+          "base_score": 0.7530501411785622,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch7",
+          "score": 0.6303432165483088,
+          "base_score": 0.6339053609138481,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch8",
+          "score": 0.6187727775494953,
+          "base_score": 0.707213888508418,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "agile",
+          "stakeholders",
+          "architecture",
+          "stakeholders stakeholders",
+          "software"
+        ],
+        "semantic": [],
+        "merged": [
+          "agile",
+          "stakeholders",
+          "architecture",
+          "stakeholders stakeholders",
+          "software"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "architecture_software_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4321547889677474,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.504654+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 34,
+      "title": "Segment 34 (pages 300-307)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch34",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch2",
+          "score": 0.6220383053053435,
+          "base_score": 0.6200638421755726,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch35",
+          "score": 0.5932723461830078,
+          "base_score": 0.6647131695642723,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "architecture",
+          "agile",
+          "15",
+          "architecture risk",
+          "projects"
+        ],
+        "semantic": [],
+        "merged": [
+          "architecture",
+          "agile",
+          "15",
+          "architecture risk",
+          "projects"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "architecture_the_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35846928731418803,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.504992+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 35,
+      "title": "Segment 35 (pages 308-315)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch35",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch2",
+          "score": 0.6353234532710049,
+          "base_score": 0.7347983480442675,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch34",
+          "score": 0.5932723461830078,
+          "base_score": 0.6647131695642723,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch9",
+          "score": 0.5412098770522629,
+          "base_score": 0.5779423876796973,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "requirements",
+          "architecture",
+          "requirements documents",
+          "asrs",
+          "documents"
+        ],
+        "semantic": [],
+        "merged": [
+          "requirements",
+          "architecture",
+          "requirements documents",
+          "asrs",
+          "documents"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "architecture_the_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3959611730703791,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.505370+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 36,
+      "title": "Segment 36 (pages 316-324)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch36",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch37",
+          "score": 0.6721592746358029,
+          "base_score": 0.796191383652264,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch9",
+          "score": 0.5736487653990632,
+          "base_score": 0.6703669899508196,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "goal",
+          "goals",
+          "business",
+          "business goals",
+          "goal object"
+        ],
+        "semantic": [],
+        "merged": [
+          "goal",
+          "goals",
+          "business",
+          "business goals",
+          "goal object"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "business_the_goal",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35821451406320676,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.505707+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 37,
+      "title": "Segment 37 (pages 325-340)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch37",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch36",
+          "score": 0.6721592746358029,
+          "base_score": 0.796191383652264,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch52",
+          "score": 0.5150324269084324,
+          "base_score": 0.6083873781807208,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "design",
+          "business",
+          "requirements",
+          "hypothesis",
+          "design hypothesis"
+        ],
+        "semantic": [],
+        "merged": [
+          "design",
+          "business",
+          "requirements",
+          "hypothesis",
+          "design hypothesis"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "business_the_goal",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3518867305558354,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.506053+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 38,
+      "title": "Segment 38 (pages 341-348)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch38",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "design",
+          "requirement",
+          "element",
+          "chosen element",
+          "chosen"
+        ],
+        "semantic": [],
+        "merged": [
+          "design",
+          "requirement",
+          "element",
+          "chosen element",
+          "chosen"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "quality_attributes_product",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35619003131515553,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.506387+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 39,
+      "title": "Segment 39 (pages 349-359)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch39",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch41",
+          "score": 0.576229996728156,
+          "base_score": 0.71038332788026,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch42",
+          "score": 0.556318356883431,
+          "base_score": 0.6771972614723849,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch5",
+          "score": 0.5362436447350346,
+          "base_score": 0.6437394078917243,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "views",
+          "connector",
+          "module views",
+          "module",
+          "connectors"
+        ],
+        "semantic": [],
+        "merged": [
+          "views",
+          "connector",
+          "module views",
+          "module",
+          "connectors"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "architecture_views_documentation",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36552715672642516,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.506722+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 40,
+      "title": "Segment 40 (pages 360-370)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch40",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "view",
+          "views",
+          "18",
+          "elements",
+          "view view"
+        ],
+        "semantic": [],
+        "merged": [
+          "view",
+          "views",
+          "18",
+          "elements",
+          "view view"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35891558447711946,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:56:40.507068+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 41,
+      "title": "Segment 41 (pages 371-378)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch41",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch42",
+          "score": 0.5898932110301995,
+          "base_score": 0.659081277642925,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch39",
+          "score": 0.576229996728156,
+          "base_score": 0.71038332788026,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch5",
+          "score": 0.5715579175101275,
+          "base_score": 0.6285224551094717,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch66",
+          "score": 0.5329647739188405,
+          "base_score": 0.6382746231980674,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "documentation",
+          "document",
+          "architecture",
+          "diagrams",
+          "diagram"
+        ],
+        "semantic": [],
+        "merged": [
+          "documentation",
+          "document",
+          "architecture",
+          "diagrams",
+          "diagram"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "architecture_views_documentation",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37511728673548,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.507409+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 42,
+      "title": "Segment 42 (pages 379-387)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch42",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch5",
+          "score": 0.6041361849994691,
+          "base_score": 0.6828195675917077,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch41",
+          "score": 0.5898932110301995,
+          "base_score": 0.659081277642925,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch39",
+          "score": 0.556318356883431,
+          "base_score": 0.6771972614723849,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch66",
+          "score": 0.5321346664303458,
+          "base_score": 0.636891110717243,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch3",
+          "score": 0.5033279397331925,
+          "base_score": 0.6722132328886542,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "architecture",
+          "software",
+          "code",
+          "architecture implementation",
+          "implementation"
+        ],
+        "semantic": [],
+        "merged": [
+          "architecture",
+          "software",
+          "code",
+          "architecture implementation",
+          "implementation"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "architecture_views_documentation",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4157088827803464,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.507753+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 43,
+      "title": "Segment 43 (pages 388-396)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch43",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch21",
+          "score": 0.5191434982465157,
+          "base_score": 0.5795248780299072,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "testing",
+          "tests",
+          "test",
+          "unit",
+          "integration testing"
+        ],
+        "semantic": [],
+        "merged": [
+          "testing",
+          "tests",
+          "test",
+          "unit",
+          "integration testing"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34221245587407767,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:56:40.508098+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 44,
+      "title": "Segment 44 (pages 397-404)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch44",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch8",
+          "score": 0.6017732153091658,
+          "base_score": 0.6788812847745356,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch6",
+          "score": 0.5929281479135029,
+          "base_score": 0.664139505781764,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch7",
+          "score": 0.5826952827391225,
+          "base_score": 0.64708473049113,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch3",
+          "score": 0.5651869945545501,
+          "base_score": 0.6179042501835095,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch33",
+          "score": 0.5602270803752686,
+          "base_score": 0.6096377265513735,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "architecture",
+          "reconstruction",
+          "architecture reconstruction",
+          "extraction",
+          "view extraction"
+        ],
+        "semantic": [],
+        "merged": [
+          "architecture",
+          "reconstruction",
+          "architecture reconstruction",
+          "extraction",
+          "view extraction"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "architecture_software_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39324408804980066,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.508442+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 45,
+      "title": "Segment 45 (pages 405-414)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch45",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "20",
+          "figure 20",
+          "information",
+          "extracted",
+          "dynamic"
+        ],
+        "semantic": [],
+        "merged": [
+          "20",
+          "figure 20",
+          "information",
+          "extracted",
+          "dynamic"
+        ]
+      },
+      "topic_id": 8,
+      "topic_name": "evaluation_the_architecture",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34231455689511575,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.508778+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 46,
+      "title": "Segment 46 (pages 415-426)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch46",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch47",
+          "score": 0.8581766561707197,
+          "base_score": 0.7358499825067552,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch61",
+          "score": 0.5582395473295955,
+          "base_score": 0.6803992455493258,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch48",
+          "score": 0.5460245041935439,
+          "base_score": 0.7433741736559065,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "evaluation",
+          "evaluation team",
+          "architecture",
+          "team",
+          "21 architecture"
+        ],
+        "semantic": [],
+        "merged": [
+          "evaluation",
+          "evaluation team",
+          "architecture",
+          "team",
+          "21 architecture"
+        ]
+      },
+      "topic_id": 8,
+      "topic_name": "evaluation_the_architecture",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43136363123768895,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.509133+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 47,
+      "title": "Segment 47 (pages 427-435)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch47",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch46",
+          "score": 0.8581766561707197,
+          "base_score": 0.7358499825067552,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch48",
+          "score": 0.5130857472908017,
+          "base_score": 0.6884762454846696,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch61",
+          "score": 0.5027687863838016,
+          "base_score": 0.587947977306336,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "evaluation team",
+          "evaluation",
+          "step",
+          "team",
+          "architecture"
+        ],
+        "semantic": [],
+        "merged": [
+          "evaluation team",
+          "evaluation",
+          "step",
+          "team",
+          "architecture"
+        ]
+      },
+      "topic_id": 8,
+      "topic_name": "evaluation_the_architecture",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4504577239383088,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.509469+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 48,
+      "title": "Segment 48 (pages 436-446)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch48",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch46",
+          "score": 0.5460245041935439,
+          "base_score": 0.7433741736559065,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch47",
+          "score": 0.5130857472908017,
+          "base_score": 0.6884762454846696,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "project",
+          "project manager",
+          "architecture",
+          "manager",
+          "evaluation"
+        ],
+        "semantic": [],
+        "merged": [
+          "project",
+          "project manager",
+          "architecture",
+          "manager",
+          "evaluation"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43396322308989677,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:56:40.510113+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 49,
+      "title": "Segment 49 (pages 447-454)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch49",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "project",
+          "project manager",
+          "manager",
+          "schedule",
+          "teams"
+        ],
+        "semantic": [],
+        "merged": [
+          "project",
+          "project manager",
+          "manager",
+          "schedule",
+          "teams"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35569273529373663,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:56:40.510450+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 50,
+      "title": "Segment 50 (pages 455-464)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch50",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch52",
+          "score": 0.6716064058548674,
+          "base_score": 0.7026773430914457,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch51",
+          "score": 0.542046803262877,
+          "base_score": 0.6534113387714616,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "utility",
+          "response",
+          "architectural strategy",
+          "utility response",
+          "architectural"
+        ],
+        "semantic": [],
+        "merged": [
+          "utility",
+          "response",
+          "architectural strategy",
+          "utility response",
+          "architectural"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "business_the_goal",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44802475070065245,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.510787+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 51,
+      "title": "Segment 51 (pages 465-472)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch51",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch52",
+          "score": 0.5608226782715714,
+          "base_score": 0.6847044637859523,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch50",
+          "score": 0.542046803262877,
+          "base_score": 0.6534113387714616,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "variation point",
+          "scenarios",
+          "variation",
+          "point",
+          "step"
+        ],
+        "semantic": [],
+        "merged": [
+          "variation point",
+          "scenarios",
+          "variation",
+          "point",
+          "step"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "business_the_goal",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3924257516868486,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.511109+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 52,
+      "title": "Segment 52 (pages 473-485)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch52",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch50",
+          "score": 0.6716064058548674,
+          "base_score": 0.7026773430914457,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch51",
+          "score": 0.5608226782715714,
+          "base_score": 0.6847044637859523,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch37",
+          "score": 0.5150324269084324,
+          "base_score": 0.6083873781807208,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "strategy",
+          "architecture",
+          "architectural strategy",
+          "architectural",
+          "architects"
+        ],
+        "semantic": [],
+        "merged": [
+          "strategy",
+          "architecture",
+          "architectural strategy",
+          "architectural",
+          "architects"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "business_the_goal",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43450697620001116,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.511438+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 53,
+      "title": "Segment 53 (pages 486-494)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch53",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch33",
+          "score": 0.5938685502178848,
+          "base_score": 0.6657068429557338,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch6",
+          "score": 0.5698729527043106,
+          "base_score": 0.6257141804331102,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch3",
+          "score": 0.5649296634428487,
+          "base_score": 0.6174753649973405,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch8",
+          "score": 0.5625626861740454,
+          "base_score": 0.6135304028826682,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch4",
+          "score": 0.534369211587916,
+          "base_score": 0.5665412785724524,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "architecture",
+          "competence",
+          "organization",
+          "24",
+          "knowledge"
+        ],
+        "semantic": [],
+        "merged": [
+          "architecture",
+          "competence",
+          "organization",
+          "24",
+          "knowledge"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "architecture_software_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3921001044078351,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.511782+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 54,
+      "title": "Segment 54 (pages 495-511)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch54",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch55",
+          "score": 0.8224002005303896,
+          "base_score": 0.704000334217316,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch7",
+          "score": 0.5723010697285494,
+          "base_score": 0.703835116214249,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch1",
+          "score": 0.5166810125816076,
+          "base_score": 0.611135020969346,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch3",
+          "score": 0.5121577676248449,
+          "base_score": 0.6035962793747416,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch4",
+          "score": 0.500903514780368,
+          "base_score": 0.5848391913006133,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "product",
+          "product line",
+          "line",
+          "products",
+          "software product"
+        ],
+        "semantic": [],
+        "merged": [
+          "product",
+          "product line",
+          "line",
+          "products",
+          "software product"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "architecture_software_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39423501918196213,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.512133+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 55,
+      "title": "Segment 55 (pages 512-520)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch55",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch54",
+          "score": 0.8224002005303896,
+          "base_score": 0.704000334217316,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch24",
+          "score": 0.5114866279102649,
+          "base_score": 0.6024777131837747,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "product",
+          "product line",
+          "line",
+          "software product",
+          "products"
+        ],
+        "semantic": [],
+        "merged": [
+          "product",
+          "product line",
+          "line",
+          "software product",
+          "products"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "quality_attributes_product",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39380008722650506,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.512469+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 56,
+      "title": "Segment 56 (pages 521-528)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch56",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch57",
+          "score": 0.5064466702173168,
+          "base_score": 0.5940777836955281,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cloud",
+          "cloud cloud",
+          "cloud infrastructure",
+          "data",
+          "computing"
+        ],
+        "semantic": [],
+        "merged": [
+          "cloud",
+          "cloud cloud",
+          "cloud infrastructure",
+          "data",
+          "computing"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "data_cloud_virtual",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.19954513465261797,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.512813+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 57,
+      "title": "Segment 57 (pages 529-538)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch57",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch56",
+          "score": 0.5064466702173168,
+          "base_score": 0.5940777836955281,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "virtual",
+          "virtual machine",
+          "machine",
+          "address",
+          "virtual machines"
+        ],
+        "semantic": [],
+        "merged": [
+          "virtual",
+          "virtual machine",
+          "machine",
+          "address",
+          "virtual machines"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "data_cloud_virtual",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24258864995877133,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.513167+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 58,
+      "title": "Segment 58 (pages 539-546)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch58",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "cloud",
+          "nosql",
+          "data",
+          "nosql databases",
+          "databases"
+        ],
+        "semantic": [],
+        "merged": [
+          "cloud",
+          "nosql",
+          "data",
+          "nosql databases",
+          "databases"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "data_cloud_virtual",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21185995564092486,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.513632+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 59,
+      "title": "Segment 59 (pages 547-554)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch59",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "core",
+          "edge",
+          "edge dominant",
+          "dominant",
+          "dominant systems"
+        ],
+        "semantic": [],
+        "merged": [
+          "core",
+          "edge",
+          "edge dominant",
+          "dominant",
+          "dominant systems"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "architecture_the_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2997622999587658,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.514012+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 60,
+      "title": "Segment 60 (pages 555-562)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch60",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "core",
+          "periphery",
+          "metropolis",
+          "metropolis model",
+          "core periphery"
+        ],
+        "semantic": [],
+        "merged": [
+          "core",
+          "periphery",
+          "metropolis",
+          "metropolis model",
+          "core periphery"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "architecture_the_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2911964835820143,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.514394+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 61,
+      "title": "Segment 61 (pages 563-575)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch61",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch46",
+          "score": 0.5582395473295955,
+          "base_score": 0.6803992455493258,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch47",
+          "score": 0.5027687863838016,
+          "base_score": 0.587947977306336,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "software",
+          "ieee",
+          "proceedings",
+          "conference",
+          "international"
+        ],
+        "semantic": [],
+        "merged": [
+          "software",
+          "ieee",
+          "proceedings",
+          "conference",
+          "international"
+        ]
+      },
+      "topic_id": 8,
+      "topic_name": "evaluation_the_architecture",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3693730836066069,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.514745+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 62,
+      "title": "Segment 62 (pages 576-583)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch62",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "software",
+          "engineering",
+          "ieee",
+          "software engineering",
+          "http"
+        ],
+        "semantic": [],
+        "merged": [
+          "software",
+          "engineering",
+          "ieee",
+          "software engineering",
+          "http"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3834166065508103,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:56:40.515105+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 63,
+      "title": "Segment 63 (pages 584-591)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch63",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "404",
+          "351",
+          "312",
+          "411",
+          "311 312"
+        ],
+        "semantic": [],
+        "merged": [
+          "404",
+          "351",
+          "312",
+          "411",
+          "311 312"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42752390382672284,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:56:40.515449+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 64,
+      "title": "Segment 64 (pages 592-600)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch64",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "430",
+          "198",
+          "423",
+          "255",
+          "252"
+        ],
+        "semantic": [],
+        "merged": [
+          "430",
+          "198",
+          "423",
+          "255",
+          "252"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3733198564884428,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:56:40.515794+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 65,
+      "title": "Segment 65 (pages 601-608)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch65",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "equipment",
+          "utilization",
+          "tactic",
+          "70",
+          "equipment utilization"
+        ],
+        "semantic": [],
+        "merged": [
+          "equipment",
+          "utilization",
+          "tactic",
+          "70",
+          "equipment utilization"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.333286287316987,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:56:40.516149+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 66,
+      "title": "Segment 66 (pages 609-617)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch66",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch41",
+          "score": 0.5329647739188405,
+          "base_score": 0.6382746231980674,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch42",
+          "score": 0.5321346664303458,
+          "base_score": 0.636891110717243,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sei",
+          "cmu",
+          "informit",
+          "cmu sei",
+          "informit com"
+        ],
+        "semantic": [],
+        "merged": [
+          "sei",
+          "cmu",
+          "informit",
+          "cmu sei",
+          "informit com"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "architecture_views_documentation",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38745073460536655,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.516500+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture in Practice 3rd Edition",
+      "chapter": 67,
+      "title": "Segment 67 (pages 618-620)",
+      "chapter_id": "Software Architecture in Practice 3rd Edition:ch67",
+      "cross_references": [
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch14",
+          "score": 0.5829470614666964,
+          "base_score": 0.7215784357778273,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture in Practice 3rd Edition:ch12",
+          "score": 0.5146686642952667,
+          "base_score": 0.5337070330847038,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "limit",
+          "detect",
+          "faults",
+          "maintain",
+          "user maintain"
+        ],
+        "semantic": [],
+        "merged": [
+          "limit",
+          "detect",
+          "faults",
+          "maintain",
+          "user maintain"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_fault_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3460097642007659,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:40.516848+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

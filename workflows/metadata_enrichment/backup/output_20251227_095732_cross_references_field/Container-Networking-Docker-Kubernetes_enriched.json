@@ -1,0 +1,357 @@
+{
+  "book": {
+    "title": "Container-Networking-Docker-Kubernetes"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:43:42.702110",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Container-Networking-Docker-Kubernetes",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-8)",
+      "chapter_id": "Container-Networking-Docker-Kubernetes:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "https",
+          "https www",
+          "nginx",
+          "nginx com",
+          "www nginx"
+        ],
+        "semantic": [],
+        "merged": [
+          "https",
+          "https www",
+          "nginx",
+          "nginx com",
+          "www nginx"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37499657460771385,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:42.694017+00:00"
+      }
+    },
+    {
+      "book": "Container-Networking-Docker-Kubernetes",
+      "chapter": 2,
+      "title": "Segment 2 (pages 9-20)",
+      "chapter_id": "Container-Networking-Docker-Kubernetes:ch2",
+      "cross_references": [
+        {
+          "target": "Container-Networking-Docker-Kubernetes:ch3",
+          "score": 0.7021808030838607,
+          "base_score": 0.7536346718064344,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Container-Networking-Docker-Kubernetes:ch4",
+          "score": 0.5270971374944274,
+          "base_score": 0.554421155083305,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "networking",
+          "container",
+          "mode",
+          "host",
+          "docker"
+        ],
+        "semantic": [],
+        "merged": [
+          "networking",
+          "container",
+          "mode",
+          "host",
+          "docker"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_docker_host",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5410037671853085,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:42.694092+00:00"
+      }
+    },
+    {
+      "book": "Container-Networking-Docker-Kubernetes",
+      "chapter": 3,
+      "title": "Segment 3 (pages 21-29)",
+      "chapter_id": "Container-Networking-Docker-Kubernetes:ch3",
+      "cross_references": [
+        {
+          "target": "Container-Networking-Docker-Kubernetes:ch2",
+          "score": 0.7021808030838607,
+          "base_score": 0.7536346718064344,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "host",
+          "multi host",
+          "multi",
+          "networking",
+          "host networking"
+        ],
+        "semantic": [],
+        "merged": [
+          "host",
+          "multi host",
+          "multi",
+          "networking",
+          "host networking"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_docker_host",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5351430695349273,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:42.694135+00:00"
+      }
+    },
+    {
+      "book": "Container-Networking-Docker-Kubernetes",
+      "chapter": 4,
+      "title": "Segment 4 (pages 30-38)",
+      "chapter_id": "Container-Networking-Docker-Kubernetes:ch4",
+      "cross_references": [
+        {
+          "target": "Container-Networking-Docker-Kubernetes:ch2",
+          "score": 0.5270971374944274,
+          "base_score": 0.554421155083305,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "swarm",
+          "docker",
+          "mesos",
+          "containers",
+          "service"
+        ],
+        "semantic": [],
+        "merged": [
+          "swarm",
+          "docker",
+          "mesos",
+          "containers",
+          "service"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_docker_host",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44076149359606925,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:42.694173+00:00"
+      }
+    },
+    {
+      "book": "Container-Networking-Docker-Kubernetes",
+      "chapter": 5,
+      "title": "Segment 5 (pages 39-52)",
+      "chapter_id": "Container-Networking-Docker-Kubernetes:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "cni",
+          "plug",
+          "service",
+          "discovery",
+          "service discovery"
+        ],
+        "semantic": [],
+        "merged": [
+          "cni",
+          "plug",
+          "service",
+          "discovery",
+          "service discovery"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "kubernetes_the_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37414810108506735,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:42.694210+00:00"
+      }
+    },
+    {
+      "book": "Container-Networking-Docker-Kubernetes",
+      "chapter": 6,
+      "title": "Segment 6 (pages 53-62)",
+      "chapter_id": "Container-Networking-Docker-Kubernetes:ch6",
+      "cross_references": [
+        {
+          "target": "Container-Networking-Docker-Kubernetes:ch7",
+          "score": 0.632662149914308,
+          "base_score": 0.6377702498571801,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pods",
+          "kubernetes",
+          "pod",
+          "service",
+          "networking"
+        ],
+        "semantic": [],
+        "merged": [
+          "pods",
+          "kubernetes",
+          "pod",
+          "service",
+          "networking"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "kubernetes_the_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5321026702738112,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:42.694247+00:00"
+      }
+    },
+    {
+      "book": "Container-Networking-Docker-Kubernetes",
+      "chapter": 7,
+      "title": "Segment 7 (pages 63-71)",
+      "chapter_id": "Container-Networking-Docker-Kubernetes:ch7",
+      "cross_references": [
+        {
+          "target": "Container-Networking-Docker-Kubernetes:ch6",
+          "score": 0.632662149914308,
+          "base_score": 0.6377702498571801,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "kubernetes",
+          "ingress",
+          "networking",
+          "kubernetes networking",
+          "network"
+        ],
+        "semantic": [],
+        "merged": [
+          "kubernetes",
+          "ingress",
+          "networking",
+          "kubernetes networking",
+          "network"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "kubernetes_the_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4553873124268373,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:42.694284+00:00"
+      }
+    },
+    {
+      "book": "Container-Networking-Docker-Kubernetes",
+      "chapter": 8,
+      "title": "Segment 8 (pages 72-72)",
+      "chapter_id": "Container-Networking-Docker-Kubernetes:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "hat",
+          "michael worked",
+          "hat michael",
+          "services hat",
+          "helps"
+        ],
+        "semantic": [],
+        "merged": [
+          "hat",
+          "michael worked",
+          "hat michael",
+          "services hat",
+          "helps"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32953587365040127,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:42.694320+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

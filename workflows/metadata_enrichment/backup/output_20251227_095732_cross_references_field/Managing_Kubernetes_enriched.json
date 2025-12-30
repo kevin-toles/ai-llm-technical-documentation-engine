@@ -1,0 +1,1135 @@
+{
+  "book": {
+    "title": "Managing_Kubernetes"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:50:58.435774",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Managing_Kubernetes",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-8)",
+      "chapter_id": "Managing_Kubernetes:ch1",
+      "cross_references": [
+        {
+          "target": "Managing_Kubernetes:ch2",
+          "score": 0.6547165634189646,
+          "base_score": 0.7671201982908669,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch3",
+          "score": 0.6137255963199343,
+          "base_score": 0.6988019197924831,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch8",
+          "score": 0.6087002344062973,
+          "base_score": 0.6904263166030881,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch18",
+          "score": 0.5922821498618788,
+          "base_score": 0.7371369164364646,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch19",
+          "score": 0.5591621304933717,
+          "base_score": 0.6078628100815454,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "50",
+          "kubernetes",
+          "scheduling",
+          "53 node",
+          "53"
+        ],
+        "semantic": [],
+        "merged": [
+          "50",
+          "kubernetes",
+          "scheduling",
+          "53 node",
+          "53"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.630869983884024,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:58.428448+00:00"
+      }
+    },
+    {
+      "book": "Managing_Kubernetes",
+      "chapter": 2,
+      "title": "Segment 2 (pages 9-19)",
+      "chapter_id": "Managing_Kubernetes:ch2",
+      "cross_references": [
+        {
+          "target": "Managing_Kubernetes:ch1",
+          "score": 0.6547165634189646,
+          "base_score": 0.7671201982908669,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch18",
+          "score": 0.6425204202849466,
+          "base_score": 0.7467932930675036,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch3",
+          "score": 0.6040425404579932,
+          "base_score": 0.6826634933559145,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch19",
+          "score": 0.5647482753197051,
+          "base_score": 0.6171730514587677,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch17",
+          "score": 0.55685485694894,
+          "base_score": 0.6040173541741591,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cluster",
+          "kubernetes",
+          "book",
+          "understand",
+          "devoted"
+        ],
+        "semantic": [],
+        "merged": [
+          "cluster",
+          "kubernetes",
+          "book",
+          "understand",
+          "devoted"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6051083995943065,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:58.428603+00:00"
+      }
+    },
+    {
+      "book": "Managing_Kubernetes",
+      "chapter": 3,
+      "title": "Segment 3 (pages 20-27)",
+      "chapter_id": "Managing_Kubernetes:ch3",
+      "cross_references": [
+        {
+          "target": "Managing_Kubernetes:ch1",
+          "score": 0.6137255963199343,
+          "base_score": 0.6988019197924831,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch2",
+          "score": 0.6040425404579932,
+          "base_score": 0.6826634933559145,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch19",
+          "score": 0.5339530312937059,
+          "base_score": 0.565847644748769,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch18",
+          "score": 0.5322179459845934,
+          "base_score": 0.6370299099743224,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch16",
+          "score": 0.5258267897715242,
+          "base_score": 0.6263779829525404,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "container",
+          "container image",
+          "image",
+          "kubernetes",
+          "containers"
+        ],
+        "semantic": [],
+        "merged": [
+          "container",
+          "container image",
+          "image",
+          "kubernetes",
+          "containers"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5592560171345381,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:58.428708+00:00"
+      }
+    },
+    {
+      "book": "Managing_Kubernetes",
+      "chapter": 4,
+      "title": "Segment 4 (pages 28-36)",
+      "chapter_id": "Managing_Kubernetes:ch4",
+      "cross_references": [
+        {
+          "target": "Managing_Kubernetes:ch14",
+          "score": 0.5628772487061133,
+          "base_score": 0.6881287478435222,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch6",
+          "score": 0.5398224335812662,
+          "base_score": 0.6497040559687771,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch5",
+          "score": 0.5352311864312604,
+          "base_score": 0.56797790331136,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "kubernetes",
+          "objects",
+          "object",
+          "address",
+          "ingress"
+        ],
+        "semantic": [],
+        "merged": [
+          "kubernetes",
+          "objects",
+          "object",
+          "address",
+          "ingress"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_api_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.577686525171888,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:58.428809+00:00"
+      }
+    },
+    {
+      "book": "Managing_Kubernetes",
+      "chapter": 5,
+      "title": "Segment 5 (pages 37-46)",
+      "chapter_id": "Managing_Kubernetes:ch5",
+      "cross_references": [
+        {
+          "target": "Managing_Kubernetes:ch4",
+          "score": 0.5352311864312604,
+          "base_score": 0.56797790331136,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "kubernetes",
+          "components",
+          "cluster",
+          "kubernetes cluster",
+          "nodes"
+        ],
+        "semantic": [],
+        "merged": [
+          "kubernetes",
+          "components",
+          "cluster",
+          "kubernetes cluster",
+          "nodes"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_api_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4977145097662027,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:58.428907+00:00"
+      }
+    },
+    {
+      "book": "Managing_Kubernetes",
+      "chapter": 6,
+      "title": "Segment 6 (pages 47-58)",
+      "chapter_id": "Managing_Kubernetes:ch6",
+      "cross_references": [
+        {
+          "target": "Managing_Kubernetes:ch7",
+          "score": 0.7087927860644021,
+          "base_score": 0.6456070243930511,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch10",
+          "score": 0.5556796827563717,
+          "base_score": 0.6761328045939529,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch4",
+          "score": 0.5398224335812662,
+          "base_score": 0.6497040559687771,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch11",
+          "score": 0.5368585644848205,
+          "base_score": 0.6447642741413675,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch14",
+          "score": 0.5126657107408029,
+          "base_score": 0.6044428512346715,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "api",
+          "server",
+          "api server",
+          "request",
+          "http"
+        ],
+        "semantic": [],
+        "merged": [
+          "api",
+          "server",
+          "api server",
+          "request",
+          "http"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_api_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5914214350497315,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:58.429025+00:00"
+      }
+    },
+    {
+      "book": "Managing_Kubernetes",
+      "chapter": 7,
+      "title": "Segment 7 (pages 59-68)",
+      "chapter_id": "Managing_Kubernetes:ch7",
+      "cross_references": [
+        {
+          "target": "Managing_Kubernetes:ch6",
+          "score": 0.7087927860644021,
+          "base_score": 0.6456070243930511,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "server",
+          "api",
+          "api server",
+          "node",
+          "pod"
+        ],
+        "semantic": [],
+        "merged": [
+          "server",
+          "api",
+          "api server",
+          "node",
+          "pod"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_api_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5243119098750737,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:58.429134+00:00"
+      }
+    },
+    {
+      "book": "Managing_Kubernetes",
+      "chapter": 8,
+      "title": "Segment 8 (pages 69-78)",
+      "chapter_id": "Managing_Kubernetes:ch8",
+      "cross_references": [
+        {
+          "target": "Managing_Kubernetes:ch1",
+          "score": 0.6087002344062973,
+          "base_score": 0.6904263166030881,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch2",
+          "score": 0.5071520426337269,
+          "base_score": 0.5211793303154708,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch18",
+          "score": 0.5010561693873176,
+          "base_score": 0.5850936156455293,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "node",
+          "affinity",
+          "pod",
+          "kubernetes",
+          "label"
+        ],
+        "semantic": [],
+        "merged": [
+          "node",
+          "affinity",
+          "pod",
+          "kubernetes",
+          "label"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4983312732860637,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:58.429248+00:00"
+      }
+    },
+    {
+      "book": "Managing_Kubernetes",
+      "chapter": 9,
+      "title": "Segment 9 (pages 79-90)",
+      "chapter_id": "Managing_Kubernetes:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "kubeadm",
+          "upgrade",
+          "plane",
+          "control plane",
+          "node"
+        ],
+        "semantic": [],
+        "merged": [
+          "kubeadm",
+          "upgrade",
+          "plane",
+          "control plane",
+          "node"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4762092337219784,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:50:58.429356+00:00"
+      }
+    },
+    {
+      "book": "Managing_Kubernetes",
+      "chapter": 10,
+      "title": "Segment 10 (pages 91-99)",
+      "chapter_id": "Managing_Kubernetes:ch10",
+      "cross_references": [
+        {
+          "target": "Managing_Kubernetes:ch11",
+          "score": 0.6334703982614737,
+          "base_score": 0.731709923028382,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch6",
+          "score": 0.5556796827563717,
+          "base_score": 0.6761328045939529,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "user",
+          "authentication",
+          "provider",
+          "identity",
+          "user management"
+        ],
+        "semantic": [],
+        "merged": [
+          "user",
+          "authentication",
+          "provider",
+          "identity",
+          "user management"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_api_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5815982291908196,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:58.429454+00:00"
+      }
+    },
+    {
+      "book": "Managing_Kubernetes",
+      "chapter": 11,
+      "title": "Segment 11 (pages 100-108)",
+      "chapter_id": "Managing_Kubernetes:ch11",
+      "cross_references": [
+        {
+          "target": "Managing_Kubernetes:ch10",
+          "score": 0.6334703982614737,
+          "base_score": 0.731709923028382,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch6",
+          "score": 0.5368585644848205,
+          "base_score": 0.6447642741413675,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch14",
+          "score": 0.5084796844385389,
+          "base_score": 0.5974661407308981,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cluster1",
+          "regular",
+          "context",
+          "user",
+          "config"
+        ],
+        "semantic": [],
+        "merged": [
+          "cluster1",
+          "regular",
+          "context",
+          "user",
+          "config"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_api_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5797610691432972,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:58.429555+00:00"
+      }
+    },
+    {
+      "book": "Managing_Kubernetes",
+      "chapter": 12,
+      "title": "Segment 12 (pages 109-118)",
+      "chapter_id": "Managing_Kubernetes:ch12",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "rbac",
+          "authorization",
+          "policies",
+          "clusterrole",
+          "resources"
+        ],
+        "semantic": [],
+        "merged": [
+          "rbac",
+          "authorization",
+          "policies",
+          "clusterrole",
+          "resources"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5136278864055126,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:50:58.429665+00:00"
+      }
+    },
+    {
+      "book": "Managing_Kubernetes",
+      "chapter": 13,
+      "title": "Segment 13 (pages 119-126)",
+      "chapter_id": "Managing_Kubernetes:ch13",
+      "cross_references": [
+        {
+          "target": "Managing_Kubernetes:ch15",
+          "score": 0.5374460716275128,
+          "base_score": 0.6457434527125214,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "memory",
+          "nginx",
+          "limits",
+          "error",
+          "requests memory"
+        ],
+        "semantic": [],
+        "merged": [
+          "memory",
+          "nginx",
+          "limits",
+          "error",
+          "requests memory"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "memory_the_pod",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45219392455629476,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:58.429765+00:00"
+      }
+    },
+    {
+      "book": "Managing_Kubernetes",
+      "chapter": 14,
+      "title": "Segment 14 (pages 127-136)",
+      "chapter_id": "Managing_Kubernetes:ch14",
+      "cross_references": [
+        {
+          "target": "Managing_Kubernetes:ch4",
+          "score": 0.5628772487061133,
+          "base_score": 0.6881287478435222,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch6",
+          "score": 0.5126657107408029,
+          "base_score": 0.6044428512346715,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch11",
+          "score": 0.5084796844385389,
+          "base_score": 0.5974661407308981,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "kube",
+          "comment",
+          "dashboard",
+          "kubernetes dashboard",
+          "ip"
+        ],
+        "semantic": [],
+        "merged": [
+          "kube",
+          "comment",
+          "dashboard",
+          "kubernetes dashboard",
+          "ip"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_api_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.580096589835156,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:58.429883+00:00"
+      }
+    },
+    {
+      "book": "Managing_Kubernetes",
+      "chapter": 15,
+      "title": "Segment 15 (pages 137-145)",
+      "chapter_id": "Managing_Kubernetes:ch15",
+      "cross_references": [
+        {
+          "target": "Managing_Kubernetes:ch13",
+          "score": 0.5374460716275128,
+          "base_score": 0.6457434527125214,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "monitoring",
+          "cluster",
+          "service",
+          "mesh",
+          "service mesh"
+        ],
+        "semantic": [],
+        "merged": [
+          "monitoring",
+          "cluster",
+          "service",
+          "mesh",
+          "service mesh"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "memory_the_pod",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6107071710353524,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:58.429995+00:00"
+      }
+    },
+    {
+      "book": "Managing_Kubernetes",
+      "chapter": 16,
+      "title": "Segment 16 (pages 146-153)",
+      "chapter_id": "Managing_Kubernetes:ch16",
+      "cross_references": [
+        {
+          "target": "Managing_Kubernetes:ch17",
+          "score": 0.5576146854473361,
+          "base_score": 0.6052837350048192,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch3",
+          "score": 0.5258267897715242,
+          "base_score": 0.6263779829525404,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "prometheus",
+          "monitoring",
+          "data",
+          "metrics",
+          "scrape"
+        ],
+        "semantic": [],
+        "merged": [
+          "prometheus",
+          "monitoring",
+          "data",
+          "metrics",
+          "scrape"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46927016768666263,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:58.430112+00:00"
+      }
+    },
+    {
+      "book": "Managing_Kubernetes",
+      "chapter": 17,
+      "title": "Segment 17 (pages 154-162)",
+      "chapter_id": "Managing_Kubernetes:ch17",
+      "cross_references": [
+        {
+          "target": "Managing_Kubernetes:ch16",
+          "score": 0.5576146854473361,
+          "base_score": 0.6052837350048192,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch2",
+          "score": 0.55685485694894,
+          "base_score": 0.6040173541741591,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch18",
+          "score": 0.5111299625265382,
+          "base_score": 0.5278091968034895,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "etcd",
+          "backup",
+          "failure",
+          "data",
+          "cluster"
+        ],
+        "semantic": [],
+        "merged": [
+          "etcd",
+          "backup",
+          "failure",
+          "data",
+          "cluster"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49070049013835104,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:58.430233+00:00"
+      }
+    },
+    {
+      "book": "Managing_Kubernetes",
+      "chapter": 18,
+      "title": "Segment 18 (pages 163-171)",
+      "chapter_id": "Managing_Kubernetes:ch18",
+      "cross_references": [
+        {
+          "target": "Managing_Kubernetes:ch2",
+          "score": 0.6425204202849466,
+          "base_score": 0.7467932930675036,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch1",
+          "score": 0.5922821498618788,
+          "base_score": 0.7371369164364646,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch3",
+          "score": 0.5322179459845934,
+          "base_score": 0.6370299099743224,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch19",
+          "score": 0.5226010944182552,
+          "base_score": 0.6210018240304254,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch17",
+          "score": 0.5111299625265382,
+          "base_score": 0.5278091968034895,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cluster",
+          "cluster daemon",
+          "daemon",
+          "daemons",
+          "cluster daemons"
+        ],
+        "semantic": [],
+        "merged": [
+          "cluster",
+          "cluster daemon",
+          "daemon",
+          "daemons",
+          "cluster daemons"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5961521055022623,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:58.430335+00:00"
+      }
+    },
+    {
+      "book": "Managing_Kubernetes",
+      "chapter": 19,
+      "title": "Segment 19 (pages 172-181)",
+      "chapter_id": "Managing_Kubernetes:ch19",
+      "cross_references": [
+        {
+          "target": "Managing_Kubernetes:ch2",
+          "score": 0.5647482753197051,
+          "base_score": 0.6171730514587677,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch1",
+          "score": 0.5591621304933717,
+          "base_score": 0.6078628100815454,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch3",
+          "score": 0.5339530312937059,
+          "base_score": 0.565847644748769,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing_Kubernetes:ch18",
+          "score": 0.5226010944182552,
+          "base_score": 0.6210018240304254,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "custom",
+          "api",
+          "custom resource",
+          "kubernetes",
+          "resource"
+        ],
+        "semantic": [],
+        "merged": [
+          "custom",
+          "api",
+          "custom resource",
+          "kubernetes",
+          "resource"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5589451463256034,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:58.430436+00:00"
+      }
+    },
+    {
+      "book": "Managing_Kubernetes",
+      "chapter": 20,
+      "title": "Segment 20 (pages 182-187)",
+      "chapter_id": "Managing_Kubernetes:ch20",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "96",
+          "70",
+          "68",
+          "40",
+          "47"
+        ],
+        "semantic": [],
+        "merged": [
+          "96",
+          "70",
+          "68",
+          "40",
+          "47"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5447520891945242,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:50:58.430546+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

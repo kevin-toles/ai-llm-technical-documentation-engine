@@ -1,0 +1,631 @@
+{
+  "book": {
+    "title": "BDD in Action"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:40:43.820946",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "BDD in Action",
+      "chapter": 1,
+      "title": "Building software that makes a difference",
+      "chapter_id": "BDD in Action:ch1",
+      "cross_references": [
+        {
+          "target": "BDD in Action:ch4",
+          "score": 0.6338725590133498,
+          "base_score": 0.7323801909481756,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "BDD in Action:ch3",
+          "score": 0.5449358105432861,
+          "base_score": 0.5841522768314027,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "BDD in Action:ch12",
+          "score": 0.5034730411929392,
+          "base_score": 0.5891217353215654,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "business",
+          "features",
+          "specifications",
+          "requirements",
+          "tests"
+        ],
+        "semantic": [],
+        "merged": [
+          "business",
+          "features",
+          "specifications",
+          "requirements",
+          "tests"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5042929320036307,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:43.811517+00:00"
+      }
+    },
+    {
+      "book": "BDD in Action",
+      "chapter": 2,
+      "title": "BDD—the whirlwind tour",
+      "chapter_id": "BDD in Action:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "parramatta",
+          "town",
+          "hall",
+          "town hall",
+          "trains"
+        ],
+        "semantic": [],
+        "merged": [
+          "parramatta",
+          "town",
+          "hall",
+          "town hall",
+          "trains"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5035482505097955,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:43.811627+00:00"
+      }
+    },
+    {
+      "book": "BDD in Action",
+      "chapter": 3,
+      "title": "Understanding the business goals: Feature Injection and related techniques",
+      "chapter_id": "BDD in Action:ch3",
+      "cross_references": [
+        {
+          "target": "BDD in Action:ch1",
+          "score": 0.5449358105432861,
+          "base_score": 0.5841522768314027,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "BDD in Action:ch4",
+          "score": 0.5139176592692004,
+          "base_score": 0.606529432115334,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "goals",
+          "business",
+          "business goals",
+          "feature injection",
+          "injection"
+        ],
+        "semantic": [],
+        "merged": [
+          "goals",
+          "business",
+          "business goals",
+          "feature injection",
+          "injection"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4151184994875903,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:43.811691+00:00"
+      }
+    },
+    {
+      "book": "BDD in Action",
+      "chapter": 4,
+      "title": "Defining and illustrating features",
+      "chapter_id": "BDD in Action:ch4",
+      "cross_references": [
+        {
+          "target": "BDD in Action:ch1",
+          "score": 0.6338725590133498,
+          "base_score": 0.7323801909481756,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "BDD in Action:ch3",
+          "score": 0.5139176592692004,
+          "base_score": 0.606529432115334,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "BDD in Action:ch12",
+          "score": 0.5011590433219151,
+          "base_score": 0.5852650722031918,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "features",
+          "user stories",
+          "stories",
+          "user",
+          "story"
+        ],
+        "semantic": [],
+        "merged": [
+          "features",
+          "user stories",
+          "stories",
+          "user",
+          "story"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4673755061498347,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:43.811751+00:00"
+      }
+    },
+    {
+      "book": "BDD in Action",
+      "chapter": 5,
+      "title": "From examples to executable specifications",
+      "chapter_id": "BDD in Action:ch5",
+      "cross_references": [
+        {
+          "target": "BDD in Action:ch6",
+          "score": 0.6080894777197307,
+          "base_score": 0.7634824628662178,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "points",
+          "scenario",
+          "scenarios",
+          "flyer",
+          "earn"
+        ],
+        "semantic": [],
+        "merged": [
+          "points",
+          "scenario",
+          "scenarios",
+          "flyer",
+          "earn"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4805688547694972,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:43.811816+00:00"
+      }
+    },
+    {
+      "book": "BDD in Action",
+      "chapter": 6,
+      "title": "Automating the scenarios",
+      "chapter_id": "BDD in Action:ch6",
+      "cross_references": [
+        {
+          "target": "BDD in Action:ch5",
+          "score": 0.6080894777197307,
+          "base_score": 0.7634824628662178,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "step",
+          "step definitions",
+          "definitions",
+          "step definition",
+          "definition"
+        ],
+        "semantic": [],
+        "merged": [
+          "step",
+          "step definitions",
+          "definitions",
+          "step definition",
+          "definition"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4885340803384276,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:43.811897+00:00"
+      }
+    },
+    {
+      "book": "BDD in Action",
+      "chapter": 7,
+      "title": "From executable specifications to rock-solid automated acceptance tests",
+      "chapter_id": "BDD in Action:ch7",
+      "cross_references": [
+        {
+          "target": "BDD in Action:ch13",
+          "score": 0.7166482384868448,
+          "base_score": 0.6586994450971222,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "BDD in Action:ch8",
+          "score": 0.5362467924553558,
+          "base_score": 0.5696705800181856,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "test",
+          "database",
+          "acceptance",
+          "automated",
+          "tests"
+        ],
+        "semantic": [],
+        "merged": [
+          "test",
+          "database",
+          "acceptance",
+          "automated",
+          "tests"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_web",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4931912129909394,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:43.811968+00:00"
+      }
+    },
+    {
+      "book": "BDD in Action",
+      "chapter": 8,
+      "title": "Automating acceptance criteria for the UI layer",
+      "chapter_id": "BDD in Action:ch8",
+      "cross_references": [
+        {
+          "target": "BDD in Action:ch7",
+          "score": 0.5362467924553558,
+          "base_score": 0.5696705800181856,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "BDD in Action:ch9",
+          "score": 0.5349911255804134,
+          "base_score": 0.5675778018932817,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "page",
+          "web",
+          "webdriver",
+          "web tests",
+          "tests"
+        ],
+        "semantic": [],
+        "merged": [
+          "page",
+          "web",
+          "webdriver",
+          "web tests",
+          "tests"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_web",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39581930018057526,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:43.812054+00:00"
+      }
+    },
+    {
+      "book": "BDD in Action",
+      "chapter": 9,
+      "title": "Automating acceptance criteria for non-UI requirements",
+      "chapter_id": "BDD in Action:ch9",
+      "cross_references": [
+        {
+          "target": "BDD in Action:ch8",
+          "score": 0.5349911255804134,
+          "base_score": 0.5675778018932817,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "web",
+          "service",
+          "ui",
+          "layer",
+          "web service"
+        ],
+        "semantic": [],
+        "merged": [
+          "web",
+          "service",
+          "ui",
+          "layer",
+          "web service"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_web",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41340017382497307,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:43.812125+00:00"
+      }
+    },
+    {
+      "book": "BDD in Action",
+      "chapter": 10,
+      "title": "BDD and unit testing",
+      "chapter_id": "BDD in Action:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "outside",
+          "write",
+          "unit",
+          "application code"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "outside",
+          "write",
+          "unit",
+          "application code"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_web",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3990522794129632,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:43.812193+00:00"
+      }
+    },
+    {
+      "book": "BDD in Action",
+      "chapter": 11,
+      "title": "WHAT SHOULD THE APPLICATION DO NEXT",
+      "chapter_id": "BDD in Action:ch11",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "unit",
+          "unit testing",
+          "status",
+          "test",
+          "bdd unit"
+        ],
+        "semantic": [],
+        "merged": [
+          "unit",
+          "unit testing",
+          "status",
+          "test",
+          "bdd unit"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33526650968011373,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:43.812261+00:00"
+      }
+    },
+    {
+      "book": "BDD in Action",
+      "chapter": 12,
+      "title": "Living Documentation: reporting and project management",
+      "chapter_id": "BDD in Action:ch12",
+      "cross_references": [
+        {
+          "target": "BDD in Action:ch1",
+          "score": 0.5034730411929392,
+          "base_score": 0.5891217353215654,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "BDD in Action:ch4",
+          "score": 0.5011590433219151,
+          "base_score": 0.5852650722031918,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "reporting",
+          "living documentation",
+          "living",
+          "documentation",
+          "11"
+        ],
+        "semantic": [],
+        "merged": [
+          "reporting",
+          "living documentation",
+          "living",
+          "documentation",
+          "11"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4369159237262116,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:43.812324+00:00"
+      }
+    },
+    {
+      "book": "BDD in Action",
+      "chapter": 13,
+      "title": "BDD in the build process",
+      "chapter_id": "BDD in Action:ch13",
+      "cross_references": [
+        {
+          "target": "BDD in Action:ch7",
+          "score": 0.7166482384868448,
+          "base_score": 0.6586994450971222,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tests",
+          "build",
+          "automated",
+          "acceptance",
+          "selenium"
+        ],
+        "semantic": [],
+        "merged": [
+          "tests",
+          "build",
+          "automated",
+          "acceptance",
+          "selenium"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_web",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5078568837588845,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:43.812411+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

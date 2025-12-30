@@ -1,0 +1,1994 @@
+{
+  "book": {
+    "title": "The Phoenix Project - Gene Kim"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:58:55.325066",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 1,
+      "title": "• Tuesday, September 2",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch1",
+      "cross_references": [
+        {
+          "target": "The Phoenix Project - Gene Kim:ch18",
+          "score": 0.5613544160036871,
+          "base_score": 0.6115166192654043,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch19",
+          "score": 0.5462167858030098,
+          "base_score": 0.5862872355976089,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch7",
+          "score": 0.5386425813518531,
+          "base_score": 0.6477376355864217,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch17",
+          "score": 0.5316302054650633,
+          "base_score": 0.6360503424417722,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch13",
+          "score": 0.5281204536834078,
+          "base_score": 0.6302007561390128,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "laura",
+          "steve",
+          "company",
+          "want",
+          "operations"
+        ],
+        "semantic": [],
+        "merged": [
+          "laura",
+          "steve",
+          "company",
+          "want",
+          "operations"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46865298618119106,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:55.305118+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 2,
+      "title": "• Tuesday, September 2",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch2",
+      "cross_references": [
+        {
+          "target": "The Phoenix Project - Gene Kim:ch3",
+          "score": 0.5367073239970371,
+          "base_score": 0.47784553999506196,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch25",
+          "score": 0.5362335143957282,
+          "base_score": 0.5696484499188063,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch18",
+          "score": 0.5295988619495744,
+          "base_score": 0.6326647699159573,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch10",
+          "score": 0.5187380044898064,
+          "base_score": 0.54048926674227,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch7",
+          "score": 0.5154479051416078,
+          "base_score": 0.6090798419026795,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "payroll",
+          "san",
+          "dick",
+          "wes",
+          "ann"
+        ],
+        "semantic": [],
+        "merged": [
+          "payroll",
+          "san",
+          "dick",
+          "wes",
+          "ann"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4568267423962244,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:55.305302+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 3,
+      "title": "• Tuesday, September 2",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch3",
+      "cross_references": [
+        {
+          "target": "The Phoenix Project - Gene Kim:ch13",
+          "score": 0.5376912906464608,
+          "base_score": 0.5720780770033607,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch2",
+          "score": 0.5367073239970371,
+          "base_score": 0.47784553999506196,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch17",
+          "score": 0.536436833498816,
+          "base_score": 0.6440613891646934,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "payroll",
+          "john",
+          "san",
+          "failure",
+          "payroll run"
+        ],
+        "semantic": [],
+        "merged": [
+          "payroll",
+          "john",
+          "san",
+          "failure",
+          "payroll run"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47992570568741716,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:55.305498+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 4,
+      "title": "• Wednesday, September 3",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch4",
+      "cross_references": [
+        {
+          "target": "The Phoenix Project - Gene Kim:ch20",
+          "score": 0.5966588179474689,
+          "base_score": 0.6703572891717073,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch28",
+          "score": 0.5749168977211893,
+          "base_score": 0.7081948295353153,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch12",
+          "score": 0.5616175166283502,
+          "base_score": 0.6119551203065097,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch8",
+          "score": 0.5422830769168043,
+          "base_score": 0.6538051281946738,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sarah",
+          "phoenix",
+          "management",
+          "ask",
+          "project"
+        ],
+        "semantic": [],
+        "merged": [
+          "sarah",
+          "phoenix",
+          "management",
+          "ask",
+          "project"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5410344761537359,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:55.305662+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 5,
+      "title": "• Thursday, September 4",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch5",
+      "cross_references": [
+        {
+          "target": "The Phoenix Project - Gene Kim:ch6",
+          "score": 0.5329730896327453,
+          "base_score": 0.564214408647168,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "audit",
+          "findings",
+          "audit findings",
+          "wes",
+          "nancy"
+        ],
+        "semantic": [],
+        "merged": [
+          "audit",
+          "findings",
+          "audit findings",
+          "wes",
+          "nancy"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "to_the_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4546115261817529,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:55.305823+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 6,
+      "title": "• Friday, September 5",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch6",
+      "cross_references": [
+        {
+          "target": "The Phoenix Project - Gene Kim:ch5",
+          "score": 0.5329730896327453,
+          "base_score": 0.564214408647168,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch22",
+          "score": 0.5270091681724274,
+          "base_score": 0.6283486136207123,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "changes",
+          "change",
+          "database",
+          "wes",
+          "process"
+        ],
+        "semantic": [],
+        "merged": [
+          "changes",
+          "change",
+          "database",
+          "wes",
+          "process"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "to_the_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5163531345851122,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:55.305998+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 7,
+      "title": "• Friday, September 5",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch7",
+      "cross_references": [
+        {
+          "target": "The Phoenix Project - Gene Kim:ch15",
+          "score": 0.5713189185951235,
+          "base_score": 0.6281241235844651,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch17",
+          "score": 0.558320836781515,
+          "base_score": 0.6805347279691918,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch18",
+          "score": 0.5549753407663441,
+          "base_score": 0.6749589012772402,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch10",
+          "score": 0.5393100709621038,
+          "base_score": 0.574776044196099,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch1",
+          "score": 0.5386425813518531,
+          "base_score": 0.6477376355864217,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "work",
+          "discipline",
+          "plant",
+          "wip work",
+          "doughnut"
+        ],
+        "semantic": [],
+        "merged": [
+          "work",
+          "discipline",
+          "plant",
+          "wip work",
+          "doughnut"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48866346826820045,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:55.306162+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 8,
+      "title": "• Monday, September 8",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch8",
+      "cross_references": [
+        {
+          "target": "The Phoenix Project - Gene Kim:ch4",
+          "score": 0.5422830769168043,
+          "base_score": 0.6538051281946738,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch28",
+          "score": 0.5382186600606443,
+          "base_score": 0.6470311001010738,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch20",
+          "score": 0.5226659806131831,
+          "base_score": 0.6211099676886385,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "changes",
+          "wes",
+          "ideas",
+          "let",
+          "change"
+        ],
+        "semantic": [],
+        "merged": [
+          "changes",
+          "wes",
+          "ideas",
+          "let",
+          "change"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5083665003769617,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:55.306335+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 9,
+      "title": "• Tuesday, September 9",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch9",
+      "cross_references": [
+        {
+          "target": "The Phoenix Project - Gene Kim:ch11",
+          "score": 0.61706264396675,
+          "base_score": 0.583993295500139,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "changes",
+          "change",
+          "change cards",
+          "board",
+          "cards"
+        ],
+        "semantic": [],
+        "merged": [
+          "changes",
+          "change",
+          "change cards",
+          "board",
+          "cards"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47434578039019926,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:58:55.306489+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 10,
+      "title": "• Thursday, September 11",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch10",
+      "cross_references": [
+        {
+          "target": "The Phoenix Project - Gene Kim:ch15",
+          "score": 0.559739857268776,
+          "base_score": 0.6088256880405525,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch7",
+          "score": 0.5393100709621038,
+          "base_score": 0.574776044196099,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch2",
+          "score": 0.5187380044898064,
+          "base_score": 0.54048926674227,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch19",
+          "score": 0.5137147487081065,
+          "base_score": 0.5321171737727701,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch18",
+          "score": 0.5080343400869413,
+          "base_score": 0.5967239001449021,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "brent",
+          "problem brent",
+          "wes",
+          "ask",
+          "work"
+        ],
+        "semantic": [],
+        "merged": [
+          "brent",
+          "problem brent",
+          "wes",
+          "ask",
+          "work"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4868373579640215,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:55.306652+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 11,
+      "title": "• Thursday, September 11",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch11",
+      "cross_references": [
+        {
+          "target": "The Phoenix Project - Gene Kim:ch9",
+          "score": 0.61706264396675,
+          "base_score": 0.583993295500139,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "changes",
+          "change",
+          "change cards",
+          "brent",
+          "cards"
+        ],
+        "semantic": [],
+        "merged": [
+          "changes",
+          "change",
+          "change cards",
+          "brent",
+          "cards"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34087845300979813,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:58:55.306803+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 12,
+      "title": "• Friday, September 12",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch12",
+      "cross_references": [
+        {
+          "target": "The Phoenix Project - Gene Kim:ch4",
+          "score": 0.5616175166283502,
+          "base_score": 0.6119551203065097,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch31",
+          "score": 0.5225655196663817,
+          "base_score": 0.5468684587032288,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "phoenix",
+          "pos systems",
+          "pos",
+          "systems",
+          "william"
+        ],
+        "semantic": [],
+        "merged": [
+          "phoenix",
+          "pos systems",
+          "pos",
+          "systems",
+          "william"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3926764756473517,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:55.306957+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 13,
+      "title": "• Monday, September 15",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch13",
+      "cross_references": [
+        {
+          "target": "The Phoenix Project - Gene Kim:ch25",
+          "score": 0.5606055547073916,
+          "base_score": 0.6102685171049118,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch17",
+          "score": 0.5509368279368414,
+          "base_score": 0.6682280465614023,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch18",
+          "score": 0.5487964750922468,
+          "base_score": 0.6646607918204113,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch15",
+          "score": 0.5476897105311253,
+          "base_score": 0.6628161842185422,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch3",
+          "score": 0.5376912906464608,
+          "base_score": 0.5720780770033607,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "john",
+          "john says",
+          "immediately",
+          "say know",
+          "gravely"
+        ],
+        "semantic": [],
+        "merged": [
+          "john",
+          "john says",
+          "immediately",
+          "say know",
+          "gravely"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5436573740872752,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:55.307121+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 14,
+      "title": "• Tuesday, September 16",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch14",
+      "cross_references": [
+        {
+          "target": "The Phoenix Project - Gene Kim:ch18",
+          "score": 0.5364055364476915,
+          "base_score": 0.6440092274128193,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch13",
+          "score": 0.5340121814806696,
+          "base_score": 0.6400203024677827,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch15",
+          "score": 0.5259955377859361,
+          "base_score": 0.6266592296432267,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch17",
+          "score": 0.5244475228114213,
+          "base_score": 0.624079204685702,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch35",
+          "score": 0.5042549799242194,
+          "base_score": 0.5904249665403657,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "chris",
+          "glass",
+          "late say",
+          "opening",
+          "mai"
+        ],
+        "semantic": [],
+        "merged": [
+          "chris",
+          "glass",
+          "late say",
+          "opening",
+          "mai"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49216460019941116,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:55.307277+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 15,
+      "title": "• Wednesday, September 17",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch15",
+      "cross_references": [
+        {
+          "target": "The Phoenix Project - Gene Kim:ch7",
+          "score": 0.5713189185951235,
+          "base_score": 0.6281241235844651,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch19",
+          "score": 0.567120963833643,
+          "base_score": 0.6211275323153308,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch10",
+          "score": 0.559739857268776,
+          "base_score": 0.6088256880405525,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch13",
+          "score": 0.5476897105311253,
+          "base_score": 0.6628161842185422,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch18",
+          "score": 0.5438484881353355,
+          "base_score": 0.6564141468922258,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "work",
+          "unplanned work",
+          "unplanned",
+          "change board",
+          "board"
+        ],
+        "semantic": [],
+        "merged": [
+          "work",
+          "unplanned work",
+          "unplanned",
+          "change board",
+          "board"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.530130534894386,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:55.307508+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 16,
+      "title": "• Thursday, September 18",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch16",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "bed",
+          "daddy",
+          "grant",
+          "invoicing",
+          "glad"
+        ],
+        "semantic": [],
+        "merged": [
+          "bed",
+          "daddy",
+          "grant",
+          "invoicing",
+          "glad"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43372588826712166,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:55.307665+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 17,
+      "title": "• Monday, September 22",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch17",
+      "cross_references": [
+        {
+          "target": "The Phoenix Project - Gene Kim:ch18",
+          "score": 0.5734178528172692,
+          "base_score": 0.7056964213621154,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch19",
+          "score": 0.5693039994771728,
+          "base_score": 0.6988399991286214,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch7",
+          "score": 0.558320836781515,
+          "base_score": 0.6805347279691918,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch13",
+          "score": 0.5509368279368414,
+          "base_score": 0.6682280465614023,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch3",
+          "score": 0.536436833498816,
+          "base_score": 0.6440613891646934,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "grant",
+          "guys",
+          "look guys",
+          "ve",
+          "say look"
+        ],
+        "semantic": [],
+        "merged": [
+          "grant",
+          "guys",
+          "look guys",
+          "ve",
+          "say look"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5403108850185295,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:55.307826+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 18,
+      "title": "• Tuesday, September 23",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch18",
+      "cross_references": [
+        {
+          "target": "The Phoenix Project - Gene Kim:ch19",
+          "score": 0.6186391032474314,
+          "base_score": 0.7069910980049782,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch25",
+          "score": 0.5870309736017785,
+          "base_score": 0.7283849560029642,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch35",
+          "score": 0.5740949031966553,
+          "base_score": 0.7068248386610922,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch17",
+          "score": 0.5734178528172692,
+          "base_score": 0.7056964213621154,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch1",
+          "score": 0.5613544160036871,
+          "base_score": 0.6115166192654043,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "steve",
+          "morning",
+          "steve says",
+          "team trust",
+          "steve looks"
+        ],
+        "semantic": [],
+        "merged": [
+          "steve",
+          "morning",
+          "steve says",
+          "team trust",
+          "steve looks"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5292710795024652,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:55.307996+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 19,
+      "title": "• Tuesday, September 23",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch19",
+      "cross_references": [
+        {
+          "target": "The Phoenix Project - Gene Kim:ch18",
+          "score": 0.6186391032474314,
+          "base_score": 0.7069910980049782,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch17",
+          "score": 0.5693039994771728,
+          "base_score": 0.6988399991286214,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch15",
+          "score": 0.567120963833643,
+          "base_score": 0.6211275323153308,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch1",
+          "score": 0.5462167858030098,
+          "base_score": 0.5862872355976089,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch35",
+          "score": 0.5450783340333961,
+          "base_score": 0.5843898159815861,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "steve",
+          "erik",
+          "erik says",
+          "work",
+          "date"
+        ],
+        "semantic": [],
+        "merged": [
+          "steve",
+          "erik",
+          "erik says",
+          "work",
+          "date"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4418348395245644,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:55.308157+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 20,
+      "title": "• Friday, September 26",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch20",
+      "cross_references": [
+        {
+          "target": "The Phoenix Project - Gene Kim:ch4",
+          "score": 0.5966588179474689,
+          "base_score": 0.6703572891717073,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch8",
+          "score": 0.5226659806131831,
+          "base_score": 0.6211099676886385,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch28",
+          "score": 0.5071118535702692,
+          "base_score": 0.5211123485430413,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "project",
+          "work",
+          "work centers",
+          "centers",
+          "monitoring project"
+        ],
+        "semantic": [],
+        "merged": [
+          "project",
+          "work",
+          "work centers",
+          "centers",
+          "monitoring project"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47312558825391715,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:55.308351+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 21,
+      "title": "• Friday, September 26",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch21",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "john",
+          "partner",
+          "erik",
+          "audit partner",
+          "auditors"
+        ],
+        "semantic": [],
+        "merged": [
+          "john",
+          "partner",
+          "erik",
+          "audit partner",
+          "auditors"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41328235236409283,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:58:55.308506+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 22,
+      "title": "• Monday, September 29",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch22",
+      "cross_references": [
+        {
+          "target": "The Phoenix Project - Gene Kim:ch6",
+          "score": 0.5270091681724274,
+          "base_score": 0.6283486136207123,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "work",
+          "projects",
+          "project",
+          "patty",
+          "monitoring"
+        ],
+        "semantic": [],
+        "merged": [
+          "work",
+          "projects",
+          "project",
+          "patty",
+          "monitoring"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "to_the_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4962681905584567,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:55.308688+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 23,
+      "title": "• Tuesday, October 7",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch23",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "wes",
+          "queue",
+          "wes says",
+          "percent",
+          "task"
+        ],
+        "semantic": [],
+        "merged": [
+          "wes",
+          "queue",
+          "wes says",
+          "percent",
+          "task"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34329268102284866,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:55.308844+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 24,
+      "title": "• Saturday, October 11",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch24",
+      "cross_references": [
+        {
+          "target": "The Phoenix Project - Gene Kim:ch19",
+          "score": 0.5021700611699086,
+          "base_score": 0.5869501019498475,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "john",
+          "paige",
+          "john looks",
+          "trying help",
+          "drinks"
+        ],
+        "semantic": [],
+        "merged": [
+          "john",
+          "paige",
+          "john looks",
+          "trying help",
+          "drinks"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3568516961651925,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:55.308999+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 25,
+      "title": "• Tuesday, October 14",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch25",
+      "cross_references": [
+        {
+          "target": "The Phoenix Project - Gene Kim:ch18",
+          "score": 0.5870309736017785,
+          "base_score": 0.7283849560029642,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch13",
+          "score": 0.5606055547073916,
+          "base_score": 0.6102685171049118,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch35",
+          "score": 0.5389773670073119,
+          "base_score": 0.6482956116788532,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch2",
+          "score": 0.5362335143957282,
+          "base_score": 0.5696484499188063,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch17",
+          "score": 0.5120331408584881,
+          "base_score": 0.60338856809748,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "goals",
+          "dick",
+          "john",
+          "slide",
+          "objectives"
+        ],
+        "semantic": [],
+        "merged": [
+          "goals",
+          "dick",
+          "john",
+          "slide",
+          "objectives"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4761132381385436,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:55.309154+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 26,
+      "title": "• Friday, October 17",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch26",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "sales",
+          "ron",
+          "understanding customer",
+          "customer",
+          "products"
+        ],
+        "semantic": [],
+        "merged": [
+          "sales",
+          "ron",
+          "understanding customer",
+          "customer",
+          "products"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "our_we_sales",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34118145052312754,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:55.309335+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 27,
+      "title": "• Tuesday, October 21",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch27",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "john",
+          "dick",
+          "john says",
+          "nutless monkey",
+          "processes"
+        ],
+        "semantic": [],
+        "merged": [
+          "john",
+          "dick",
+          "john says",
+          "nutless monkey",
+          "processes"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4731105659721432,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:58:55.309491+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 28,
+      "title": "• Monday, October 27",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch28",
+      "cross_references": [
+        {
+          "target": "The Phoenix Project - Gene Kim:ch4",
+          "score": 0.5749168977211893,
+          "base_score": 0.7081948295353153,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch31",
+          "score": 0.5415765895846487,
+          "base_score": 0.5785535752336738,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch8",
+          "score": 0.5382186600606443,
+          "base_score": 0.6470311001010738,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch30",
+          "score": 0.5165504879815119,
+          "base_score": 0.5368434058951126,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch20",
+          "score": 0.5071118535702692,
+          "base_score": 0.5211123485430413,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "deployment",
+          "john",
+          "work",
+          "projects",
+          "phoenix deployment"
+        ],
+        "semantic": [],
+        "merged": [
+          "deployment",
+          "john",
+          "work",
+          "projects",
+          "phoenix deployment"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4777809712293005,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:55.309665+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 29,
+      "title": "• Monday, November 3",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch29",
+      "cross_references": [
+        {
+          "target": "The Phoenix Project - Gene Kim:ch30",
+          "score": 0.5238103472562916,
+          "base_score": 0.6230172454271526,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "erik",
+          "reverse gear",
+          "gear",
+          "reverse",
+          "steve"
+        ],
+        "semantic": [],
+        "merged": [
+          "erik",
+          "reverse gear",
+          "gear",
+          "reverse",
+          "steve"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4626114105253601,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:55.309820+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 30,
+      "title": "• Monday, November 3",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch30",
+      "cross_references": [
+        {
+          "target": "The Phoenix Project - Gene Kim:ch29",
+          "score": 0.5238103472562916,
+          "base_score": 0.6230172454271526,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch31",
+          "score": 0.5172800147990266,
+          "base_score": 0.5380592839243036,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch28",
+          "score": 0.5165504879815119,
+          "base_score": 0.5368434058951126,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "deploys day",
+          "deploys",
+          "deploy",
+          "deployment",
+          "development"
+        ],
+        "semantic": [],
+        "merged": [
+          "deploys day",
+          "deploys",
+          "deploy",
+          "deployment",
+          "development"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4636517758172807,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:55.309974+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 31,
+      "title": "• Monday, November 3",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch31",
+      "cross_references": [
+        {
+          "target": "The Phoenix Project - Gene Kim:ch28",
+          "score": 0.5415765895846487,
+          "base_score": 0.5785535752336738,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch12",
+          "score": 0.5225655196663817,
+          "base_score": 0.5468684587032288,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch30",
+          "score": 0.5172800147990266,
+          "base_score": 0.5380592839243036,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "deployment",
+          "code",
+          "environment",
+          "william",
+          "steps"
+        ],
+        "semantic": [],
+        "merged": [
+          "deployment",
+          "code",
+          "environment",
+          "william",
+          "steps"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4133599838475739,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:55.310130+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 32,
+      "title": "• Monday, November 10",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch32",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "unicorn",
+          "brent",
+          "developers",
+          "dick",
+          "reply"
+        ],
+        "semantic": [],
+        "merged": [
+          "unicorn",
+          "brent",
+          "developers",
+          "dick",
+          "reply"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "unicorn_the_he",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4826073944347307,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:55.310281+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 33,
+      "title": "• Tuesday , November 11",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch33",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "unicorn",
+          "compute",
+          "unicorn security",
+          "unicorn promotion",
+          "testing"
+        ],
+        "semantic": [],
+        "merged": [
+          "unicorn",
+          "compute",
+          "unicorn security",
+          "unicorn promotion",
+          "testing"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "unicorn_the_he",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3363159053931635,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:55.310452+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 34,
+      "title": "• Friday, November 28",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch34",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "sarah",
+          "steve",
+          "outsourcer",
+          "proposal",
+          "sarah says"
+        ],
+        "semantic": [],
+        "merged": [
+          "sarah",
+          "steve",
+          "outsourcer",
+          "proposal",
+          "sarah says"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "our_we_sales",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31352283231955114,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:55.310606+00:00"
+      }
+    },
+    {
+      "book": "The Phoenix Project - Gene Kim",
+      "chapter": 35,
+      "title": "• Friday, January 9",
+      "chapter_id": "The Phoenix Project - Gene Kim:ch35",
+      "cross_references": [
+        {
+          "target": "The Phoenix Project - Gene Kim:ch18",
+          "score": 0.5740949031966553,
+          "base_score": 0.7068248386610922,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch19",
+          "score": 0.5450783340333961,
+          "base_score": 0.5843898159815861,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch25",
+          "score": 0.5389773670073119,
+          "base_score": 0.6482956116788532,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch17",
+          "score": 0.5276979737930757,
+          "base_score": 0.6294966229884595,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Phoenix Project - Gene Kim:ch13",
+          "score": 0.5193885217045892,
+          "base_score": 0.6156475361743152,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "like",
+          "erik",
+          "want",
+          "helping",
+          "years"
+        ],
+        "semantic": [],
+        "merged": [
+          "like",
+          "erik",
+          "want",
+          "helping",
+          "years"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4927081174201422,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:55.310788+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

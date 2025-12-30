@@ -1,0 +1,4522 @@
+{
+  "book": {
+    "title": "Unknown Book - Feb Download"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:00:04.772537",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-11)",
+      "chapter_id": "Unknown Book - Feb Download:ch1",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch74",
+          "score": 0.6586052673038377,
+          "base_score": 0.8476754455063963,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch5",
+          "score": 0.5990626402322777,
+          "base_score": 0.7484377337204628,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch6",
+          "score": 0.5883573702965755,
+          "base_score": 0.7305956171609593,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch3",
+          "score": 0.568943369293712,
+          "base_score": 0.6982389488228534,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch11",
+          "score": 0.5553137588385003,
+          "base_score": 0.6755229313975006,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "chapter",
+          "chapters",
+          "chapter chapter",
+          "university",
+          "edition"
+        ],
+        "semantic": [],
+        "merged": [
+          "chapter",
+          "chapters",
+          "chapter chapter",
+          "university",
+          "edition"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_pages_database",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4118955299131157,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.711574+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 2,
+      "title": "Segment 2 (pages 12-19)",
+      "chapter_id": "Unknown Book - Feb Download:ch2",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch22",
+          "score": 0.6615002987237737,
+          "base_score": 0.6580560534285118,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch7",
+          "score": 0.5252226098475805,
+          "base_score": 0.6253710164126342,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch31",
+          "score": 0.5015574642417776,
+          "base_score": 0.6692624404029627,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "distributed",
+          "query",
+          "query processing",
+          "processing",
+          "optimization"
+        ],
+        "semantic": [],
+        "merged": [
+          "distributed",
+          "query",
+          "query processing",
+          "processing",
+          "optimization"
+        ]
+      },
+      "topic_id": 8,
+      "topic_name": "distributed_global_dbms",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4339706382033417,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.712073+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 3,
+      "title": "Segment 3 (pages 20-28)",
+      "chapter_id": "Unknown Book - Feb Download:ch3",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch5",
+          "score": 0.64098222709804,
+          "base_score": 0.6516370451634,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch74",
+          "score": 0.58283610129428,
+          "base_score": 0.6473194280830592,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch1",
+          "score": 0.568943369293712,
+          "base_score": 0.6982389488228534,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch11",
+          "score": 0.5588694671333173,
+          "base_score": 0.6814491118888621,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch70",
+          "score": 0.5555970207673075,
+          "base_score": 0.6019209605381051,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "distributed",
+          "data",
+          "delivery",
+          "data delivery",
+          "distributed database"
+        ],
+        "semantic": [],
+        "merged": [
+          "distributed",
+          "data",
+          "delivery",
+          "data delivery",
+          "distributed database"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_pages_database",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4155222568372037,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.712465+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 4,
+      "title": "Segment 4 (pages 29-36)",
+      "chapter_id": "Unknown Book - Feb Download:ch4",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch5",
+          "score": 0.6340839342090404,
+          "base_score": 0.5210922713007816,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch3",
+          "score": 0.5220416947493227,
+          "base_score": 0.4534028245822045,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "transparency",
+          "distributed",
+          "data",
+          "user",
+          "database"
+        ],
+        "semantic": [],
+        "merged": [
+          "transparency",
+          "distributed",
+          "data",
+          "user",
+          "database"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_pages_database",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3492564214613574,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.712855+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 5,
+      "title": "Segment 5 (pages 37-45)",
+      "chapter_id": "Unknown Book - Feb Download:ch5",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch3",
+          "score": 0.64098222709804,
+          "base_score": 0.6516370451634,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch4",
+          "score": 0.6340839342090404,
+          "base_score": 0.5210922713007816,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch11",
+          "score": 0.6217236716655995,
+          "base_score": 0.7862061194426659,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch1",
+          "score": 0.5990626402322777,
+          "base_score": 0.7484377337204628,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch74",
+          "score": 0.5804333249586936,
+          "base_score": 0.6433148008570819,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "distributed",
+          "data",
+          "database",
+          "distributed dbms",
+          "concurrency"
+        ],
+        "semantic": [],
+        "merged": [
+          "distributed",
+          "data",
+          "database",
+          "distributed dbms",
+          "concurrency"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_pages_database",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4319198491974219,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.713297+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 6,
+      "title": "Segment 6 (pages 46-53)",
+      "chapter_id": "Unknown Book - Feb Download:ch6",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch1",
+          "score": 0.5883573702965755,
+          "base_score": 0.7305956171609593,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch11",
+          "score": 0.5735827217112115,
+          "base_score": 0.7059712028520192,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch5",
+          "score": 0.5695876888485891,
+          "base_score": 0.6993128147476485,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch74",
+          "score": 0.5499559712381724,
+          "base_score": 0.666593285396954,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch18",
+          "score": 0.5124080347510053,
+          "base_score": 0.6040133912516755,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "server",
+          "client",
+          "client server",
+          "servers",
+          "peer"
+        ],
+        "semantic": [],
+        "merged": [
+          "server",
+          "client",
+          "client server",
+          "servers",
+          "peer"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_pages_database",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39728124978381996,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.713726+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 7,
+      "title": "Segment 7 (pages 54-61)",
+      "chapter_id": "Unknown Book - Feb Download:ch7",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch2",
+          "score": 0.5252226098475805,
+          "base_score": 0.6253710164126342,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "global",
+          "conceptual",
+          "dbmss",
+          "multi",
+          "local"
+        ],
+        "semantic": [],
+        "merged": [
+          "global",
+          "conceptual",
+          "dbmss",
+          "multi",
+          "local"
+        ]
+      },
+      "topic_id": 8,
+      "topic_name": "distributed_global_dbms",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44408965392039884,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.714097+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 8,
+      "title": "Segment 8 (pages 62-69)",
+      "chapter_id": "Unknown Book - Feb Download:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "relation",
+          "relational",
+          "attributes",
+          "relations",
+          "emp"
+        ],
+        "semantic": [],
+        "merged": [
+          "relation",
+          "relational",
+          "attributes",
+          "relations",
+          "emp"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "xml_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3527007258868893,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.714474+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 9,
+      "title": "Segment 9 (pages 70-78)",
+      "chapter_id": "Unknown Book - Feb Download:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "join",
+          "calculus",
+          "relational",
+          "tuple",
+          "relational calculus"
+        ],
+        "semantic": [],
+        "merged": [
+          "join",
+          "calculus",
+          "relational",
+          "tuple",
+          "relational calculus"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "fragmentation_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3038939186877913,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.714862+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 10,
+      "title": "Segment 10 (pages 79-91)",
+      "chapter_id": "Unknown Book - Feb Download:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "networks",
+          "network",
+          "tcp",
+          "computer",
+          "layer"
+        ],
+        "semantic": [],
+        "merged": [
+          "networks",
+          "network",
+          "tcp",
+          "computer",
+          "layer"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "the_peer_network",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.20888153673053314,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.715234+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 11,
+      "title": "Segment 11 (pages 92-99)",
+      "chapter_id": "Unknown Book - Feb Download:ch11",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch5",
+          "score": 0.6217236716655995,
+          "base_score": 0.7862061194426659,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch6",
+          "score": 0.5735827217112115,
+          "base_score": 0.7059712028520192,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch15",
+          "score": 0.5649448851309408,
+          "base_score": 0.6175007344774939,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch3",
+          "score": 0.5588694671333173,
+          "base_score": 0.6814491118888621,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch1",
+          "score": 0.5553137588385003,
+          "base_score": 0.6755229313975006,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "design",
+          "distribution",
+          "conceptual",
+          "view design",
+          "conceptual design"
+        ],
+        "semantic": [],
+        "merged": [
+          "design",
+          "distribution",
+          "conceptual",
+          "view design",
+          "conceptual design"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_pages_database",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4113146930676277,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.715611+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 12,
+      "title": "Segment 12 (pages 100-113)",
+      "chapter_id": "Unknown Book - Feb Download:ch12",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch14",
+          "score": 0.6584967905047298,
+          "base_score": 0.773420576767142,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch13",
+          "score": 0.6504850545096087,
+          "base_score": 0.7600676834419404,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch24",
+          "score": 0.6264800767772614,
+          "base_score": 0.7200593872213614,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "predicates",
+          "minterm",
+          "simple predicates",
+          "fragmentation",
+          "horizontal"
+        ],
+        "semantic": [],
+        "merged": [
+          "predicates",
+          "minterm",
+          "simple predicates",
+          "fragmentation",
+          "horizontal"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "fragmentation_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41161218257535265,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.715988+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 13,
+      "title": "Segment 13 (pages 114-130)",
+      "chapter_id": "Unknown Book - Feb Download:ch13",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch12",
+          "score": 0.6504850545096087,
+          "base_score": 0.7600676834419404,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch24",
+          "score": 0.6478134732208622,
+          "base_score": 0.7556150479606963,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch14",
+          "score": 0.6420272051393917,
+          "base_score": 0.7459712678249121,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "fragmentation",
+          "attributes",
+          "afﬁnity",
+          "attribute",
+          "matrix"
+        ],
+        "semantic": [],
+        "merged": [
+          "fragmentation",
+          "attributes",
+          "afﬁnity",
+          "attribute",
+          "matrix"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "fragmentation_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33287624684945827,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.716384+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 14,
+      "title": "Segment 14 (pages 131-141)",
+      "chapter_id": "Unknown Book - Feb Download:ch14",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch12",
+          "score": 0.6584967905047298,
+          "base_score": 0.773420576767142,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch24",
+          "score": 0.6462491660142382,
+          "base_score": 0.660415276690397,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch13",
+          "score": 0.6420272051393917,
+          "base_score": 0.7459712678249121,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cost",
+          "fragments",
+          "fragment",
+          "fragmentation",
+          "fj"
+        ],
+        "semantic": [],
+        "merged": [
+          "cost",
+          "fragments",
+          "fragment",
+          "fragmentation",
+          "fj"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "fragmentation_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2840161129936473,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.716785+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 15,
+      "title": "Segment 15 (pages 142-149)",
+      "chapter_id": "Unknown Book - Feb Download:ch15",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch11",
+          "score": 0.5649448851309408,
+          "base_score": 0.6175007344774939,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch5",
+          "score": 0.5633038225956467,
+          "base_score": 0.6888397043260779,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "fragmentation",
+          "allocation",
+          "design",
+          "horizontal",
+          "directory"
+        ],
+        "semantic": [],
+        "merged": [
+          "fragmentation",
+          "allocation",
+          "design",
+          "horizontal",
+          "directory"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_pages_database",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.356624270483402,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.717158+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 16,
+      "title": "Segment 16 (pages 150-167)",
+      "chapter_id": "Unknown Book - Feb Download:ch16",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch18",
+          "score": 0.6341359873879581,
+          "base_score": 0.8068933123132633,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch17",
+          "score": 0.623552736059187,
+          "base_score": 0.6225878934319785,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch11",
+          "score": 0.5161051327571965,
+          "base_score": 0.6101752212619942,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "schema",
+          "matching",
+          "element",
+          "similarity",
+          "schemas"
+        ],
+        "semantic": [],
+        "merged": [
+          "schema",
+          "matching",
+          "element",
+          "similarity",
+          "schemas"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_pages_database",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4030855007789717,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.717554+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 17,
+      "title": "Segment 17 (pages 168-179)",
+      "chapter_id": "Unknown Book - Feb Download:ch17",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch16",
+          "score": 0.623552736059187,
+          "base_score": 0.6225878934319785,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "schema",
+          "mappings",
+          "target",
+          "schemas",
+          "mapping"
+        ],
+        "semantic": [],
+        "merged": [
+          "schema",
+          "mappings",
+          "target",
+          "schemas",
+          "mapping"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_pages_database",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3338566841921928,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.717957+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 18,
+      "title": "Segment 18 (pages 180-187)",
+      "chapter_id": "Unknown Book - Feb Download:ch18",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch16",
+          "score": 0.6341359873879581,
+          "base_score": 0.8068933123132633,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch1",
+          "score": 0.5136438365740984,
+          "base_score": 0.6060730609568308,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch6",
+          "score": 0.5124080347510053,
+          "base_score": 0.6040133912516755,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch11",
+          "score": 0.5054933136525562,
+          "base_score": 0.5924888560875937,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch73",
+          "score": 0.5011797141160433,
+          "base_score": 0.5852995235267389,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "int primary",
+          "int",
+          "primary key",
+          "key",
+          "primary"
+        ],
+        "semantic": [],
+        "merged": [
+          "int primary",
+          "int",
+          "primary key",
+          "key",
+          "primary"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_pages_database",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3752915298928605,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.718340+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 19,
+      "title": "Segment 19 (pages 188-201)",
+      "chapter_id": "Unknown Book - Feb Download:ch19",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch54",
+          "score": 0.5154632242427984,
+          "base_score": 0.6091053737379974,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "view",
+          "views",
+          "base",
+          "sysan",
+          "materialized"
+        ],
+        "semantic": [],
+        "merged": [
+          "view",
+          "views",
+          "base",
+          "sysan",
+          "materialized"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "object_objects_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4005326094351325,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.718727+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 20,
+      "title": "Segment 20 (pages 202-212)",
+      "chapter_id": "Unknown Book - Feb Download:ch20",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "access control",
+          "integrity",
+          "control",
+          "constraints",
+          "access"
+        ],
+        "semantic": [],
+        "merged": [
+          "access control",
+          "integrity",
+          "control",
+          "constraints",
+          "access"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "object_objects_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35110146938015707,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.719105+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 21,
+      "title": "Segment 21 (pages 213-225)",
+      "chapter_id": "Unknown Book - Feb Download:ch21",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "constraint",
+          "constraints",
+          "integrity",
+          "relation",
+          "integrity constraints"
+        ],
+        "semantic": [],
+        "merged": [
+          "constraint",
+          "constraints",
+          "integrity",
+          "relation",
+          "integrity constraints"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27671339569135506,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:00:04.719486+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 22,
+      "title": "Segment 22 (pages 226-242)",
+      "chapter_id": "Unknown Book - Feb Download:ch22",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch31",
+          "score": 0.7274414085101679,
+          "base_score": 0.7957356808502798,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch2",
+          "score": 0.6615002987237737,
+          "base_score": 0.6580560534285118,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch75",
+          "score": 0.6423410654135436,
+          "base_score": 0.6539017756892395,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch50",
+          "score": 0.5896565973224448,
+          "base_score": 0.732760995537408,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch53",
+          "score": 0.5711638144857213,
+          "base_score": 0.6278656167354614,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "query",
+          "query processing",
+          "processing",
+          "distributed query",
+          "distributed"
+        ],
+        "semantic": [],
+        "merged": [
+          "query",
+          "query processing",
+          "processing",
+          "distributed query",
+          "distributed"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "query_parallel_processing",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4861716129048457,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.719887+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 23,
+      "title": "Segment 23 (pages 243-251)",
+      "chapter_id": "Unknown Book - Feb Download:ch23",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch27",
+          "score": 0.6087784673811962,
+          "base_score": 0.5979641123019939,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch33",
+          "score": 0.6008900707741669,
+          "base_score": 0.5848167846236116,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch25",
+          "score": 0.5931824683644633,
+          "base_score": 0.6645633732000314,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "query",
+          "query graph",
+          "query decomposition",
+          "p1",
+          "join"
+        ],
+        "semantic": [],
+        "merged": [
+          "query",
+          "query graph",
+          "query decomposition",
+          "p1",
+          "join"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "query_the_cost",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3280167432255741,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.720271+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 24,
+      "title": "Segment 24 (pages 252-261)",
+      "chapter_id": "Unknown Book - Feb Download:ch24",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch13",
+          "score": 0.6478134732208622,
+          "base_score": 0.7556150479606963,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch14",
+          "score": 0.6462491660142382,
+          "base_score": 0.660415276690397,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch12",
+          "score": 0.6264800767772614,
+          "base_score": 0.7200593872213614,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "fragmentation",
+          "fragments",
+          "reduction",
+          "fragmented",
+          "emp2"
+        ],
+        "semantic": [],
+        "merged": [
+          "fragmentation",
+          "fragments",
+          "reduction",
+          "fragmented",
+          "emp2"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "fragmentation_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3965109004838119,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.720659+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 25,
+      "title": "Segment 25 (pages 262-270)",
+      "chapter_id": "Unknown Book - Feb Download:ch25",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch27",
+          "score": 0.7575894843926307,
+          "base_score": 0.7269348549400988,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch30",
+          "score": 0.6971452071831883,
+          "base_score": 0.6261943929243614,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch23",
+          "score": 0.5931824683644633,
+          "base_score": 0.6645633732000314,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch33",
+          "score": 0.5558539169030577,
+          "base_score": 0.6023491207643554,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch32",
+          "score": 0.5239681276863754,
+          "base_score": 0.5492061387365516,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "query",
+          "optimization",
+          "query optimization",
+          "search space",
+          "search"
+        ],
+        "semantic": [],
+        "merged": [
+          "query",
+          "optimization",
+          "query optimization",
+          "search space",
+          "search"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "query_the_cost",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41012749149225813,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.721050+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 26,
+      "title": "Segment 26 (pages 271-278)",
+      "chapter_id": "Unknown Book - Feb Download:ch26",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch27",
+          "score": 0.563981800514516,
+          "base_score": 0.6899696675241933,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch29",
+          "score": 0.5424617833478138,
+          "base_score": 0.6541029722463564,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch30",
+          "score": 0.5396137959942157,
+          "base_score": 0.649356326657026,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch32",
+          "score": 0.5250530809466106,
+          "base_score": 0.6250884682443512,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch28",
+          "score": 0.5130772020846436,
+          "base_score": 0.6051286701410727,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "card",
+          "factor",
+          "selectivity",
+          "attribute",
+          "card card"
+        ],
+        "semantic": [],
+        "merged": [
+          "card",
+          "factor",
+          "selectivity",
+          "attribute",
+          "card card"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "query_the_cost",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4087008444116698,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.721431+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 27,
+      "title": "Segment 27 (pages 279-288)",
+      "chapter_id": "Unknown Book - Feb Download:ch27",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch30",
+          "score": 0.7695479962828761,
+          "base_score": 0.7468657080905077,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch25",
+          "score": 0.7575894843926307,
+          "base_score": 0.7269348549400988,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch23",
+          "score": 0.6087784673811962,
+          "base_score": 0.5979641123019939,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch33",
+          "score": 0.6082551725412606,
+          "base_score": 0.5970919542354345,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch28",
+          "score": 0.5743522729571224,
+          "base_score": 0.6331797141877966,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "query",
+          "optimization",
+          "relation",
+          "query optimization",
+          "join"
+        ],
+        "semantic": [],
+        "merged": [
+          "query",
+          "optimization",
+          "relation",
+          "query optimization",
+          "join"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "query_the_cost",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4105594521988203,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.721846+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 28,
+      "title": "Segment 28 (pages 289-296)",
+      "chapter_id": "Unknown Book - Feb Download:ch28",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch29",
+          "score": 0.5884322793085899,
+          "base_score": 0.6566463914402423,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch27",
+          "score": 0.5743522729571224,
+          "base_score": 0.6331797141877966,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch30",
+          "score": 0.5250113112315632,
+          "base_score": 0.6250188520526054,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch33",
+          "score": 0.523847095850831,
+          "base_score": 0.5490044190106442,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch26",
+          "score": 0.5130772020846436,
+          "base_score": 0.6051286701410727,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "emp",
+          "join",
+          "asg",
+          "semijoin",
+          "site"
+        ],
+        "semantic": [],
+        "merged": [
+          "emp",
+          "join",
+          "asg",
+          "semijoin",
+          "site"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "query_the_cost",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37737854433732887,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.722225+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 29,
+      "title": "Segment 29 (pages 297-307)",
+      "chapter_id": "Unknown Book - Feb Download:ch29",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch28",
+          "score": 0.5884322793085899,
+          "base_score": 0.6566463914402423,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch26",
+          "score": 0.5424617833478138,
+          "base_score": 0.6541029722463564,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch30",
+          "score": 0.5337140222981426,
+          "base_score": 0.6395233704969042,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch27",
+          "score": 0.5200059068515763,
+          "base_score": 0.5426024373452197,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "site",
+          "relation",
+          "cost",
+          "semijoins",
+          "strategy"
+        ],
+        "semantic": [],
+        "merged": [
+          "site",
+          "relation",
+          "cost",
+          "semijoins",
+          "strategy"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "query_the_cost",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40866166619951844,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.722603+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 30,
+      "title": "Segment 30 (pages 308-317)",
+      "chapter_id": "Unknown Book - Feb Download:ch30",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch27",
+          "score": 0.7695479962828761,
+          "base_score": 0.7468657080905077,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch25",
+          "score": 0.6971452071831883,
+          "base_score": 0.6261943929243614,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch26",
+          "score": 0.5396137959942157,
+          "base_score": 0.649356326657026,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch29",
+          "score": 0.5337140222981426,
+          "base_score": 0.6395233704969042,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch28",
+          "score": 0.5250113112315632,
+          "base_score": 0.6250188520526054,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "optimization",
+          "query optimization",
+          "query",
+          "distributed query",
+          "step query"
+        ],
+        "semantic": [],
+        "merged": [
+          "optimization",
+          "query optimization",
+          "query",
+          "distributed query",
+          "step query"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "query_the_cost",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43051623885766876,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.723022+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 31,
+      "title": "Segment 31 (pages 318-327)",
+      "chapter_id": "Unknown Book - Feb Download:ch31",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch22",
+          "score": 0.7274414085101679,
+          "base_score": 0.7957356808502798,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch34",
+          "score": 0.6090212090563724,
+          "base_score": 0.7293210627130015,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch75",
+          "score": 0.6041533219927163,
+          "base_score": 0.6828481292471198,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch53",
+          "score": 0.5701152579855692,
+          "base_score": 0.6261180225685412,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch50",
+          "score": 0.5446671351778966,
+          "base_score": 0.6577785586298277,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "query",
+          "query processing",
+          "multidatabase",
+          "rewriting",
+          "multidatabase query"
+        ],
+        "semantic": [],
+        "merged": [
+          "query",
+          "query processing",
+          "multidatabase",
+          "rewriting",
+          "multidatabase query"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "query_parallel_processing",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44665211672486715,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.723404+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 32,
+      "title": "Segment 32 (pages 328-337)",
+      "chapter_id": "Unknown Book - Feb Download:ch32",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch34",
+          "score": 0.5782748571117211,
+          "base_score": 0.6397173544454611,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch33",
+          "score": 0.5501580826340811,
+          "base_score": 0.5928560636493942,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch27",
+          "score": 0.5463728485043657,
+          "base_score": 0.5865473400998689,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch26",
+          "score": 0.5250530809466106,
+          "base_score": 0.6250884682443512,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch25",
+          "score": 0.5239681276863754,
+          "base_score": 0.5492061387365516,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cost",
+          "cost model",
+          "query",
+          "cost information",
+          "mediator"
+        ],
+        "semantic": [],
+        "merged": [
+          "cost",
+          "cost model",
+          "query",
+          "cost information",
+          "mediator"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "query_the_cost",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.363546509146638,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.723797+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 33,
+      "title": "Segment 33 (pages 338-347)",
+      "chapter_id": "Unknown Book - Feb Download:ch33",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch27",
+          "score": 0.6082551725412606,
+          "base_score": 0.5970919542354345,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch23",
+          "score": 0.6008900707741669,
+          "base_score": 0.5848167846236116,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch34",
+          "score": 0.5969163120507435,
+          "base_score": 0.6707864460104983,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch25",
+          "score": 0.5558539169030577,
+          "base_score": 0.6023491207643554,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch32",
+          "score": 0.5501580826340811,
+          "base_score": 0.5928560636493942,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "eddy",
+          "operator",
+          "query",
+          "tuples",
+          "join"
+        ],
+        "semantic": [],
+        "merged": [
+          "eddy",
+          "operator",
+          "query",
+          "tuples",
+          "join"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "query_the_cost",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3931982518135122,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.724181+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 34,
+      "title": "Segment 34 (pages 348-355)",
+      "chapter_id": "Unknown Book - Feb Download:ch34",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch31",
+          "score": 0.6090212090563724,
+          "base_score": 0.7293210627130015,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch33",
+          "score": 0.5969163120507435,
+          "base_score": 0.6707864460104983,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch32",
+          "score": 0.5782748571117211,
+          "base_score": 0.6397173544454611,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch25",
+          "score": 0.5238901778917011,
+          "base_score": 0.5490762224120944,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch30",
+          "score": 0.5078985678372703,
+          "base_score": 0.5224235389880431,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "query",
+          "multidatabase",
+          "wrapper",
+          "multidatabase query",
+          "component"
+        ],
+        "semantic": [],
+        "merged": [
+          "query",
+          "multidatabase",
+          "wrapper",
+          "multidatabase query",
+          "component"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "query_the_cost",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4014990344179424,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.724569+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 35,
+      "title": "Segment 35 (pages 356-363)",
+      "chapter_id": "Unknown Book - Feb Download:ch35",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch37",
+          "score": 0.8026424133586438,
+          "base_score": 0.6432929111532952,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch36",
+          "score": 0.7317785704450288,
+          "base_score": 0.6839166650274289,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch38",
+          "score": 0.6424462543526699,
+          "base_score": 0.6540770905877831,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch47",
+          "score": 0.6228826856909979,
+          "base_score": 0.6214711428183298,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch43",
+          "score": 0.6115883824290199,
+          "base_score": 0.6952398966409591,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "transaction",
+          "10",
+          "transaction management",
+          "transactions",
+          "deﬁnition transaction"
+        ],
+        "semantic": [],
+        "merged": [
+          "transaction",
+          "10",
+          "transaction management",
+          "transactions",
+          "deﬁnition transaction"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "transaction_the_transactions",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39929713887323537,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.725033+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 36,
+      "title": "Segment 36 (pages 364-374)",
+      "chapter_id": "Unknown Book - Feb Download:ch36",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch35",
+          "score": 0.7317785704450288,
+          "base_score": 0.6839166650274289,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch37",
+          "score": 0.6902804538036444,
+          "base_score": 0.6147531372917884,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch38",
+          "score": 0.6807186710197389,
+          "base_score": 0.7178644516995649,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch40",
+          "score": 0.6731115631790588,
+          "base_score": 0.5861383195841456,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch39",
+          "score": 0.5700638306231901,
+          "base_score": 0.533439717705317,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "transaction",
+          "transactions",
+          "10",
+          "transactions transactions",
+          "nested"
+        ],
+        "semantic": [],
+        "merged": [
+          "transaction",
+          "transactions",
+          "10",
+          "transactions transactions",
+          "nested"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "transaction_the_transactions",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3627055590680069,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.725449+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 37,
+      "title": "Segment 37 (pages 375-383)",
+      "chapter_id": "Unknown Book - Feb Download:ch37",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch35",
+          "score": 0.8026424133586438,
+          "base_score": 0.6432929111532952,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch36",
+          "score": 0.6902804538036444,
+          "base_score": 0.6147531372917884,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch38",
+          "score": 0.6115151430297731,
+          "base_score": 0.6025252383829551,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch39",
+          "score": 0.6027804981268466,
+          "base_score": 0.5879674968780778,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch40",
+          "score": 0.5821022102321702,
+          "base_score": 0.5535036837202838,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "transaction",
+          "transactions",
+          "10",
+          "transaction management",
+          "transactional"
+        ],
+        "semantic": [],
+        "merged": [
+          "transaction",
+          "transactions",
+          "10",
+          "transaction management",
+          "transactional"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "transaction_the_transactions",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35557295465937444,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.725845+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 38,
+      "title": "Segment 38 (pages 384-400)",
+      "chapter_id": "Unknown Book - Feb Download:ch38",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch36",
+          "score": 0.6807186710197389,
+          "base_score": 0.7178644516995649,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch35",
+          "score": 0.6424462543526699,
+          "base_score": 0.6540770905877831,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch39",
+          "score": 0.6226762601324655,
+          "base_score": 0.6211271002207758,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch37",
+          "score": 0.6115151430297731,
+          "base_score": 0.6025252383829551,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch47",
+          "score": 0.5979294902060759,
+          "base_score": 0.5798824836767932,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "lock",
+          "transaction",
+          "transactions",
+          "locks",
+          "locking"
+        ],
+        "semantic": [],
+        "merged": [
+          "lock",
+          "transaction",
+          "transactions",
+          "locks",
+          "locking"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "transaction_the_transactions",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35096807865747937,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.726229+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 39,
+      "title": "Segment 39 (pages 401-409)",
+      "chapter_id": "Unknown Book - Feb Download:ch39",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch47",
+          "score": 0.6309036434540485,
+          "base_score": 0.6348394057567476,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch38",
+          "score": 0.6226762601324655,
+          "base_score": 0.6211271002207758,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch37",
+          "score": 0.6027804981268466,
+          "base_score": 0.5879674968780778,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch40",
+          "score": 0.5912962624350007,
+          "base_score": 0.5688271040583346,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch35",
+          "score": 0.5836187751851273,
+          "base_score": 0.5560312919752122,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "transaction",
+          "transactions",
+          "ti",
+          "tk",
+          "timestamp"
+        ],
+        "semantic": [],
+        "merged": [
+          "transaction",
+          "transactions",
+          "ti",
+          "tk",
+          "timestamp"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "transaction_the_transactions",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34076979084909265,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.726610+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 40,
+      "title": "Segment 40 (pages 410-418)",
+      "chapter_id": "Unknown Book - Feb Download:ch40",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch36",
+          "score": 0.6731115631790588,
+          "base_score": 0.5861383195841456,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch35",
+          "score": 0.6068376708944496,
+          "base_score": 0.5947294514907495,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch39",
+          "score": 0.5912962624350007,
+          "base_score": 0.5688271040583346,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch37",
+          "score": 0.5821022102321702,
+          "base_score": 0.5535036837202838,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch47",
+          "score": 0.5567912177354595,
+          "base_score": 0.5113186962257659,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "transaction",
+          "deadlock",
+          "transactions",
+          "deadlock detection",
+          "nested"
+        ],
+        "semantic": [],
+        "merged": [
+          "transaction",
+          "deadlock",
+          "transactions",
+          "deadlock detection",
+          "nested"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "transaction_the_transactions",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3441538914046599,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.727003+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 41,
+      "title": "Segment 41 (pages 419-427)",
+      "chapter_id": "Unknown Book - Feb Download:ch41",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch35",
+          "score": 0.5794775801222665,
+          "base_score": 0.64172189279637,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch38",
+          "score": 0.5487770557210805,
+          "base_score": 0.5905543521277267,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch47",
+          "score": 0.5340116607379304,
+          "base_score": 0.5659453604891431,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch46",
+          "score": 0.5303539249059364,
+          "base_score": 0.5598491341024866,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch37",
+          "score": 0.5300638343353301,
+          "base_score": 0.5593656498181427,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "concurrency",
+          "distributed",
+          "concurrency control",
+          "transaction",
+          "control"
+        ],
+        "semantic": [],
+        "merged": [
+          "concurrency",
+          "distributed",
+          "concurrency control",
+          "transaction",
+          "control"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "transaction_the_transactions",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38994745505764467,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.727975+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 42,
+      "title": "Segment 42 (pages 428-436)",
+      "chapter_id": "Unknown Book - Feb Download:ch42",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "failures",
+          "failure",
+          "buffer",
+          "time",
+          "rate"
+        ],
+        "semantic": [],
+        "merged": [
+          "failures",
+          "failure",
+          "buffer",
+          "time",
+          "rate"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "transaction_the_transactions",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.14829710123181883,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.728342+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 43,
+      "title": "Segment 43 (pages 437-449)",
+      "chapter_id": "Unknown Book - Feb Download:ch43",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch35",
+          "score": 0.6115883824290199,
+          "base_score": 0.6952398966409591,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch46",
+          "score": 0.5518267815607989,
+          "base_score": 0.5956372285272573,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch38",
+          "score": 0.538754583251312,
+          "base_score": 0.5738502313447792,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch47",
+          "score": 0.5241793046824565,
+          "base_score": 0.5495581003966867,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch36",
+          "score": 0.522481583069182,
+          "base_score": 0.5467285643745625,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "stable",
+          "stable database",
+          "log",
+          "transaction",
+          "database"
+        ],
+        "semantic": [],
+        "merged": [
+          "stable",
+          "stable database",
+          "log",
+          "transaction",
+          "database"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "transaction_the_transactions",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3428800231894871,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.728725+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 44,
+      "title": "Segment 44 (pages 450-471)",
+      "chapter_id": "Unknown Book - Feb Download:ch44",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch45",
+          "score": 0.70596864293893,
+          "base_score": 0.75994773823155,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch40",
+          "score": 0.5033402528918688,
+          "base_score": 0.588900421486448,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "participant",
+          "coordinator",
+          "participants",
+          "commit",
+          "abort"
+        ],
+        "semantic": [],
+        "merged": [
+          "participant",
+          "coordinator",
+          "participants",
+          "commit",
+          "abort"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "transaction_the_transactions",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26057489628685615,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.729122+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 45,
+      "title": "Segment 45 (pages 472-482)",
+      "chapter_id": "Unknown Book - Feb Download:ch45",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch44",
+          "score": 0.70596864293893,
+          "base_score": 0.75994773823155,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch36",
+          "score": 0.5059261589307704,
+          "base_score": 0.5191361908105433,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "commit",
+          "transaction",
+          "coordinator",
+          "protocol",
+          "protocols"
+        ],
+        "semantic": [],
+        "merged": [
+          "commit",
+          "transaction",
+          "coordinator",
+          "protocol",
+          "protocols"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "transaction_the_transactions",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.22334222808692739,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.729506+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 46,
+      "title": "Segment 46 (pages 483-499)",
+      "chapter_id": "Unknown Book - Feb Download:ch46",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch47",
+          "score": 0.7022210961385588,
+          "base_score": 0.7537018268975979,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch35",
+          "score": 0.5848513982730834,
+          "base_score": 0.6506782563810648,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch38",
+          "score": 0.5605030456595345,
+          "base_score": 0.6100976686918167,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch43",
+          "score": 0.5518267815607989,
+          "base_score": 0.5956372285272573,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch36",
+          "score": 0.5304507029861143,
+          "base_score": 0.560010430902783,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "master",
+          "site",
+          "transaction",
+          "copy",
+          "update"
+        ],
+        "semantic": [],
+        "merged": [
+          "master",
+          "site",
+          "transaction",
+          "copy",
+          "update"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "transaction_the_transactions",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3299029308283152,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.729898+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 47,
+      "title": "Segment 47 (pages 500-512)",
+      "chapter_id": "Unknown Book - Feb Download:ch47",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch46",
+          "score": 0.7022210961385588,
+          "base_score": 0.7537018268975979,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch39",
+          "score": 0.6309036434540485,
+          "base_score": 0.6348394057567476,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch35",
+          "score": 0.6228826856909979,
+          "base_score": 0.6214711428183298,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch38",
+          "score": 0.5979294902060759,
+          "base_score": 0.5798824836767932,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch48",
+          "score": 0.5601989254389834,
+          "base_score": 0.683664875731639,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "transaction",
+          "site",
+          "refresh",
+          "transactions",
+          "copy site"
+        ],
+        "semantic": [],
+        "merged": [
+          "transaction",
+          "site",
+          "refresh",
+          "transactions",
+          "copy site"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "transaction_the_transactions",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34109061967193316,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.730286+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 48,
+      "title": "Segment 48 (pages 513-522)",
+      "chapter_id": "Unknown Book - Feb Download:ch48",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch47",
+          "score": 0.5601989254389834,
+          "base_score": 0.683664875731639,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch53",
+          "score": 0.5030362877169778,
+          "base_score": 0.5526795271473439,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "parallel",
+          "parallel database",
+          "database",
+          "database systems",
+          "data"
+        ],
+        "semantic": [],
+        "merged": [
+          "parallel",
+          "parallel database",
+          "database",
+          "database systems",
+          "data"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "transaction_the_transactions",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32665822859024124,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.730689+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 49,
+      "title": "Segment 49 (pages 523-533)",
+      "chapter_id": "Unknown Book - Feb Download:ch49",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "shared",
+          "disk",
+          "memory",
+          "shared disk",
+          "shared memory"
+        ],
+        "semantic": [],
+        "merged": [
+          "shared",
+          "disk",
+          "memory",
+          "shared disk",
+          "shared memory"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34943542436436337,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:00:04.731079+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 50,
+      "title": "Segment 50 (pages 534-542)",
+      "chapter_id": "Unknown Book - Feb Download:ch50",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch51",
+          "score": 0.6140521266318235,
+          "base_score": 0.6993461369789652,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch22",
+          "score": 0.5896565973224448,
+          "base_score": 0.732760995537408,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch53",
+          "score": 0.5808463434819533,
+          "base_score": 0.6440031650625148,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch31",
+          "score": 0.5446671351778966,
+          "base_score": 0.6577785586298277,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "parallel",
+          "join",
+          "join algorithm",
+          "14",
+          "associative join"
+        ],
+        "semantic": [],
+        "merged": [
+          "parallel",
+          "join",
+          "join algorithm",
+          "14",
+          "associative join"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "query_parallel_processing",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4122881070955905,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.731463+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 51,
+      "title": "Segment 51 (pages 543-551)",
+      "chapter_id": "Unknown Book - Feb Download:ch51",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch50",
+          "score": 0.6140521266318235,
+          "base_score": 0.6993461369789652,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch53",
+          "score": 0.5275973595236118,
+          "base_score": 0.46266226587268633,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "operator",
+          "parallel",
+          "parallelism",
+          "pipeline",
+          "balancing"
+        ],
+        "semantic": [],
+        "merged": [
+          "operator",
+          "parallel",
+          "parallelism",
+          "pipeline",
+          "balancing"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "query_parallel_processing",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3973740432257814,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.731854+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 52,
+      "title": "Segment 52 (pages 552-562)",
+      "chapter_id": "Unknown Book - Feb Download:ch52",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "node",
+          "nodes",
+          "sm node",
+          "sm",
+          "transaction"
+        ],
+        "semantic": [],
+        "merged": [
+          "node",
+          "nodes",
+          "sm node",
+          "sm",
+          "transaction"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32074906754231486,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:00:04.732237+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 53,
+      "title": "Segment 53 (pages 563-571)",
+      "chapter_id": "Unknown Book - Feb Download:ch53",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch75",
+          "score": 0.5994059570687755,
+          "base_score": 0.5823432617812925,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch50",
+          "score": 0.5808463434819533,
+          "base_score": 0.6440031650625148,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch22",
+          "score": 0.5711638144857213,
+          "base_score": 0.6278656167354614,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch31",
+          "score": 0.5701152579855692,
+          "base_score": 0.6261180225685412,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch51",
+          "score": 0.5275973595236118,
+          "base_score": 0.46266226587268633,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "parallel",
+          "query",
+          "parallel database",
+          "parallelism",
+          "database"
+        ],
+        "semantic": [],
+        "merged": [
+          "parallel",
+          "query",
+          "parallel database",
+          "parallelism",
+          "database"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "query_parallel_processing",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4266920513123768,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.732625+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 54,
+      "title": "Segment 54 (pages 572-586)",
+      "chapter_id": "Unknown Book - Feb Download:ch54",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch56",
+          "score": 0.6761155442896952,
+          "base_score": 0.5911449547685396,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch58",
+          "score": 0.6283209048367577,
+          "base_score": 0.6305348413945964,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch59",
+          "score": 0.5859983722457619,
+          "base_score": 0.7266639537429366,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch55",
+          "score": 0.5707364625328087,
+          "base_score": 0.6271533634806071,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch57",
+          "score": 0.5237437048593908,
+          "base_score": 0.7062395080989847,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "object",
+          "objects",
+          "class",
+          "object models",
+          "15"
+        ],
+        "semantic": [],
+        "merged": [
+          "object",
+          "objects",
+          "class",
+          "object models",
+          "15"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "object_objects_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43714590605917414,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.733025+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 55,
+      "title": "Segment 55 (pages 587-594)",
+      "chapter_id": "Unknown Book - Feb Download:ch55",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch54",
+          "score": 0.5707364625328087,
+          "base_score": 0.6271533634806071,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch59",
+          "score": 0.5457728393010569,
+          "base_score": 0.6596213988350947,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch58",
+          "score": 0.5226205135560518,
+          "base_score": 0.5469601151860122,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "server",
+          "clients",
+          "client",
+          "page",
+          "object"
+        ],
+        "semantic": [],
+        "merged": [
+          "server",
+          "clients",
+          "client",
+          "page",
+          "object"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "object_objects_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3939954765624167,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.733404+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 56,
+      "title": "Segment 56 (pages 595-602)",
+      "chapter_id": "Unknown Book - Feb Download:ch56",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch54",
+          "score": 0.6761155442896952,
+          "base_score": 0.5911449547685396,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch58",
+          "score": 0.6045692339827139,
+          "base_score": 0.5909487233045232,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "object",
+          "objects",
+          "garbage",
+          "15",
+          "distributed object"
+        ],
+        "semantic": [],
+        "merged": [
+          "object",
+          "objects",
+          "garbage",
+          "15",
+          "distributed object"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "object_objects_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3563390771881931,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.733912+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 57,
+      "title": "Segment 57 (pages 603-611)",
+      "chapter_id": "Unknown Book - Feb Download:ch57",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch54",
+          "score": 0.5237437048593908,
+          "base_score": 0.7062395080989847,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "object",
+          "object query",
+          "query",
+          "objects",
+          "expressions"
+        ],
+        "semantic": [],
+        "merged": [
+          "object",
+          "object query",
+          "query",
+          "objects",
+          "expressions"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4126112575178471,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:00:04.734320+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 58,
+      "title": "Segment 58 (pages 612-623)",
+      "chapter_id": "Unknown Book - Feb Download:ch58",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch54",
+          "score": 0.6283209048367577,
+          "base_score": 0.6305348413945964,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch56",
+          "score": 0.6045692339827139,
+          "base_score": 0.5909487233045232,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch59",
+          "score": 0.5740224960982563,
+          "base_score": 0.7067041601637605,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch55",
+          "score": 0.5226205135560518,
+          "base_score": 0.5469601151860122,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "object",
+          "objects",
+          "lock",
+          "locked",
+          "mode"
+        ],
+        "semantic": [],
+        "merged": [
+          "object",
+          "objects",
+          "lock",
+          "locked",
+          "mode"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "object_objects_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.422041999485318,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.734723+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 59,
+      "title": "Segment 59 (pages 624-642)",
+      "chapter_id": "Unknown Book - Feb Download:ch59",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch54",
+          "score": 0.5859983722457619,
+          "base_score": 0.7266639537429366,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch58",
+          "score": 0.5740224960982563,
+          "base_score": 0.7067041601637605,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch55",
+          "score": 0.5457728393010569,
+          "base_score": 0.6596213988350947,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "p2p",
+          "peer",
+          "network",
+          "data",
+          "networks"
+        ],
+        "semantic": [],
+        "merged": [
+          "p2p",
+          "peer",
+          "network",
+          "data",
+          "networks"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "object_objects_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42897895138975445,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.735183+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 60,
+      "title": "Segment 60 (pages 643-654)",
+      "chapter_id": "Unknown Book - Feb Download:ch60",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch63",
+          "score": 0.5456472977033203,
+          "base_score": 0.5853380887647931,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch62",
+          "score": 0.5223563041264095,
+          "base_score": 0.5465197661366085,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "peer",
+          "data items",
+          "items",
+          "data",
+          "super"
+        ],
+        "semantic": [],
+        "merged": [
+          "peer",
+          "data items",
+          "items",
+          "data",
+          "super"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "the_peer_network",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3365246524320827,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.735565+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 61,
+      "title": "Segment 61 (pages 655-663)",
+      "chapter_id": "Unknown Book - Feb Download:ch61",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "score",
+          "peer",
+          "peers",
+          "scores",
+          "items"
+        ],
+        "semantic": [],
+        "merged": [
+          "score",
+          "peer",
+          "peers",
+          "scores",
+          "items"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1902954655707185,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:00:04.735932+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 62,
+      "title": "Segment 62 (pages 664-671)",
+      "chapter_id": "Unknown Book - Feb Download:ch62",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch60",
+          "score": 0.5223563041264095,
+          "base_score": 0.5465197661366085,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "node",
+          "peer",
+          "range",
+          "peers",
+          "routing"
+        ],
+        "semantic": [],
+        "merged": [
+          "node",
+          "peer",
+          "range",
+          "peers",
+          "routing"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "the_peer_network",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3225299490880543,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.736292+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 63,
+      "title": "Segment 63 (pages 672-683)",
+      "chapter_id": "Unknown Book - Feb Download:ch63",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch60",
+          "score": 0.5456472977033203,
+          "base_score": 0.5853380887647931,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "web",
+          "graph",
+          "web graph",
+          "p2p",
+          "data"
+        ],
+        "semantic": [],
+        "merged": [
+          "web",
+          "graph",
+          "web graph",
+          "p2p",
+          "data"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "the_peer_network",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37472369328930966,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.736675+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 64,
+      "title": "Segment 64 (pages 684-691)",
+      "chapter_id": "Unknown Book - Feb Download:ch64",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch66",
+          "score": 0.5609802890052695,
+          "base_score": 0.5183004816754493,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pages",
+          "web",
+          "page",
+          "web pages",
+          "search"
+        ],
+        "semantic": [],
+        "merged": [
+          "pages",
+          "web",
+          "page",
+          "web pages",
+          "search"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "xml_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.292235636387138,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.737046+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 65,
+      "title": "Segment 65 (pages 692-701)",
+      "chapter_id": "Unknown Book - Feb Download:ch65",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch68",
+          "score": 0.5678645575554824,
+          "base_score": 0.6223668551850631,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch66",
+          "score": 0.5322901943399092,
+          "base_score": 0.5630762498257745,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch67",
+          "score": 0.5213865173376633,
+          "base_score": 0.5449034548220315,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "web",
+          "17",
+          "string",
+          "document",
+          "edge"
+        ],
+        "semantic": [],
+        "merged": [
+          "web",
+          "17",
+          "string",
+          "document",
+          "edge"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "xml_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36347281573306367,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.737443+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 66,
+      "title": "Segment 66 (pages 702-710)",
+      "chapter_id": "Unknown Book - Feb Download:ch66",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch64",
+          "score": 0.5609802890052695,
+          "base_score": 0.5183004816754493,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch65",
+          "score": 0.5322901943399092,
+          "base_score": 0.5630762498257745,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "question",
+          "search",
+          "web",
+          "query",
+          "documents"
+        ],
+        "semantic": [],
+        "merged": [
+          "question",
+          "search",
+          "web",
+          "query",
+          "documents"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "xml_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2792986126700651,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.737837+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 67,
+      "title": "Segment 67 (pages 711-719)",
+      "chapter_id": "Unknown Book - Feb Download:ch67",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch68",
+          "score": 0.7887718529863548,
+          "base_score": 0.7789054692629722,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch69",
+          "score": 0.572259941712758,
+          "base_score": 0.7037665695212633,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch65",
+          "score": 0.5213865173376633,
+          "base_score": 0.5449034548220315,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "xml",
+          "author",
+          "document",
+          "xml document",
+          "book"
+        ],
+        "semantic": [],
+        "merged": [
+          "xml",
+          "author",
+          "document",
+          "xml document",
+          "book"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "xml_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3330511970775449,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.738220+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 68,
+      "title": "Segment 68 (pages 720-730)",
+      "chapter_id": "Unknown Book - Feb Download:ch68",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch67",
+          "score": 0.7887718529863548,
+          "base_score": 0.7789054692629722,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch65",
+          "score": 0.5678645575554824,
+          "base_score": 0.6223668551850631,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch69",
+          "score": 0.5308682360608653,
+          "base_score": 0.6347803934347755,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "xml",
+          "document",
+          "fragmentation",
+          "xml document",
+          "xml data"
+        ],
+        "semantic": [],
+        "merged": [
+          "xml",
+          "document",
+          "fragmentation",
+          "xml document",
+          "xml data"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "xml_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39252428757070407,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.738602+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 69,
+      "title": "Segment 69 (pages 731-739)",
+      "chapter_id": "Unknown Book - Feb Download:ch69",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch67",
+          "score": 0.572259941712758,
+          "base_score": 0.7037665695212633,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch68",
+          "score": 0.5308682360608653,
+          "base_score": 0.6347803934347755,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "proxy",
+          "node",
+          "proxy node",
+          "query",
+          "root proxy"
+        ],
+        "semantic": [],
+        "merged": [
+          "proxy",
+          "node",
+          "proxy node",
+          "query",
+          "root proxy"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "xml_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3758229439577477,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.739000+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 70,
+      "title": "Segment 70 (pages 740-752)",
+      "chapter_id": "Unknown Book - Feb Download:ch70",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch74",
+          "score": 0.5791773836423323,
+          "base_score": 0.641221565329813,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch3",
+          "score": 0.5555970207673075,
+          "base_score": 0.6019209605381051,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch73",
+          "score": 0.5464951106265663,
+          "base_score": 0.5867511103035364,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch72",
+          "score": 0.507821962561747,
+          "base_score": 0.5222958635288376,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "stream",
+          "streams",
+          "data stream",
+          "query",
+          "data"
+        ],
+        "semantic": [],
+        "merged": [
+          "stream",
+          "streams",
+          "data stream",
+          "query",
+          "data"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_pages_database",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.402678954822672,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.739381+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 71,
+      "title": "Segment 71 (pages 753-761)",
+      "chapter_id": "Unknown Book - Feb Download:ch71",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "window",
+          "tuples",
+          "sliding",
+          "windows",
+          "tuple"
+        ],
+        "semantic": [],
+        "merged": [
+          "window",
+          "tuples",
+          "sliding",
+          "windows",
+          "tuple"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2631025324416818,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:00:04.739771+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 72,
+      "title": "Segment 72 (pages 762-773)",
+      "chapter_id": "Unknown Book - Feb Download:ch72",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch70",
+          "score": 0.507821962561747,
+          "base_score": 0.5222958635288376,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cloud",
+          "data",
+          "computing",
+          "grid",
+          "cloud computing"
+        ],
+        "semantic": [],
+        "merged": [
+          "cloud",
+          "data",
+          "computing",
+          "grid",
+          "cloud computing"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_pages_database",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.230448249774624,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.740149+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 73,
+      "title": "Segment 73 (pages 774-785)",
+      "chapter_id": "Unknown Book - Feb Download:ch73",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch3",
+          "score": 0.5521927000161887,
+          "base_score": 0.5962470926195738,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch70",
+          "score": 0.5464951106265663,
+          "base_score": 0.5867511103035364,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch74",
+          "score": 0.5350466987723546,
+          "base_score": 0.5676704238798502,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch1",
+          "score": 0.5054006797676162,
+          "base_score": 0.5923344662793602,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch5",
+          "score": 0.5040756780498794,
+          "base_score": 0.5160520560090583,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "cloud",
+          "cloud data",
+          "management",
+          "data management"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "cloud",
+          "cloud data",
+          "management",
+          "data management"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_pages_database",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36791137933677875,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.740531+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 74,
+      "title": "Segment 74 (pages 786-853)",
+      "chapter_id": "Unknown Book - Feb Download:ch74",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch1",
+          "score": 0.6586052673038377,
+          "base_score": 0.8476754455063963,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch3",
+          "score": 0.58283610129428,
+          "base_score": 0.6473194280830592,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch5",
+          "score": 0.5804333249586936,
+          "base_score": 0.6433148008570819,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch70",
+          "score": 0.5791773836423323,
+          "base_score": 0.641221565329813,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch6",
+          "score": 0.5499559712381724,
+          "base_score": 0.666593285396954,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pages",
+          "data pages",
+          "bases",
+          "data",
+          "bases pages"
+        ],
+        "semantic": [],
+        "merged": [
+          "pages",
+          "data pages",
+          "bases",
+          "data",
+          "bases pages"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_pages_database",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4335014897161904,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.740923+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 75,
+      "title": "Segment 75 (pages 854-861)",
+      "chapter_id": "Unknown Book - Feb Download:ch75",
+      "cross_references": [
+        {
+          "target": "Unknown Book - Feb Download:ch22",
+          "score": 0.6423410654135436,
+          "base_score": 0.6539017756892395,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch31",
+          "score": 0.6041533219927163,
+          "base_score": 0.6828481292471198,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Unknown Book - Feb Download:ch53",
+          "score": 0.5994059570687755,
+          "base_score": 0.5823432617812925,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "query",
+          "distributed",
+          "global",
+          "local",
+          "database"
+        ],
+        "semantic": [],
+        "merged": [
+          "query",
+          "distributed",
+          "global",
+          "local",
+          "database"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "query_parallel_processing",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43449574448206146,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:04.741304+00:00"
+      }
+    },
+    {
+      "book": "Unknown Book - Feb Download",
+      "chapter": 76,
+      "title": "Segment 76 (pages 862-866)",
+      "chapter_id": "Unknown Book - Feb Download:ch76",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "query",
+          "protocol",
+          "service",
+          "web service",
+          "write"
+        ],
+        "semantic": [],
+        "merged": [
+          "query",
+          "protocol",
+          "service",
+          "web service",
+          "write"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3907901244821507,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:00:04.741689+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

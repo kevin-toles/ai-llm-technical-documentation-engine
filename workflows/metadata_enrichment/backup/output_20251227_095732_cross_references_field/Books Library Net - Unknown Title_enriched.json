@@ -1,0 +1,1958 @@
+{
+  "book": {
+    "title": "Books Library Net - Unknown Title"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:40:52.664147",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-8)",
+      "chapter_id": "Books Library Net - Unknown Title:ch1",
+      "cross_references": [
+        {
+          "target": "Books Library Net - Unknown Title:ch3",
+          "score": 0.5989982704504677,
+          "base_score": 0.7483304507507795,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch2",
+          "score": 0.5664598010779175,
+          "base_score": 0.6940996684631957,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch11",
+          "score": 0.535086885516711,
+          "base_score": 0.641811475861185,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch8",
+          "score": 0.5260548574782761,
+          "base_score": 0.6267580957971268,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch4",
+          "score": 0.519673238761022,
+          "base_score": 0.6161220646017033,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "manning",
+          "manning publications",
+          "publications",
+          "books",
+          "printed"
+        ],
+        "semantic": [],
+        "merged": [
+          "manning",
+          "manning publications",
+          "publications",
+          "books",
+          "printed"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_test_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48474031976703125,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.639587+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 2,
+      "title": "Segment 2 (pages 9-16)",
+      "chapter_id": "Books Library Net - Unknown Title:ch2",
+      "cross_references": [
+        {
+          "target": "Books Library Net - Unknown Title:ch8",
+          "score": 0.6557358349891367,
+          "base_score": 0.7688189842411537,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch5",
+          "score": 0.634092283167697,
+          "base_score": 0.640153805279495,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch7",
+          "score": 0.6081231285416525,
+          "base_score": 0.6894644734953468,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch4",
+          "score": 0.6046021455617184,
+          "base_score": 0.6835961685287899,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch3",
+          "score": 0.5907527152875537,
+          "base_score": 0.6605137847385154,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "unit testing",
+          "integration",
+          "integration testing",
+          "unit test",
+          "integration tests"
+        ],
+        "semantic": [],
+        "merged": [
+          "unit testing",
+          "integration",
+          "integration testing",
+          "unit test",
+          "integration tests"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_test_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4975139212256195,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.639816+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 3,
+      "title": "Segment 3 (pages 17-24)",
+      "chapter_id": "Books Library Net - Unknown Title:ch3",
+      "cross_references": [
+        {
+          "target": "Books Library Net - Unknown Title:ch1",
+          "score": 0.5989982704504677,
+          "base_score": 0.7483304507507795,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch2",
+          "score": 0.5907527152875537,
+          "base_score": 0.6605137847385154,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch4",
+          "score": 0.5409950474017782,
+          "base_score": 0.5775843382622229,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch8",
+          "score": 0.5134536334734442,
+          "base_score": 0.6057560557890738,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch5",
+          "score": 0.5047745372126263,
+          "base_score": 0.5172168212803031,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "unit testing",
+          "chapter",
+          "principles",
+          "testing principles",
+          "patterns"
+        ],
+        "semantic": [],
+        "merged": [
+          "unit testing",
+          "chapter",
+          "principles",
+          "testing principles",
+          "patterns"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_test_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4584526755735689,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.639998+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 4,
+      "title": "Segment 4 (pages 25-35)",
+      "chapter_id": "Books Library Net - Unknown Title:ch4",
+      "cross_references": [
+        {
+          "target": "Books Library Net - Unknown Title:ch5",
+          "score": 0.6319651477270207,
+          "base_score": 0.6366085795450347,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch2",
+          "score": 0.6046021455617184,
+          "base_score": 0.6835961685287899,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch3",
+          "score": 0.5409950474017782,
+          "base_score": 0.5775843382622229,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch11",
+          "score": 0.5366013837250718,
+          "base_score": 0.6443356395417864,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch12",
+          "score": 0.5307551695121592,
+          "base_score": 0.6345919491869318,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "coverage",
+          "code",
+          "unit testing",
+          "goal unit",
+          "goal"
+        ],
+        "semantic": [],
+        "merged": [
+          "coverage",
+          "code",
+          "unit testing",
+          "goal unit",
+          "goal"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_test_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44737440035187664,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.640169+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 5,
+      "title": "Segment 5 (pages 36-43)",
+      "chapter_id": "Books Library Net - Unknown Title:ch5",
+      "cross_references": [
+        {
+          "target": "Books Library Net - Unknown Title:ch2",
+          "score": 0.634092283167697,
+          "base_score": 0.640153805279495,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch4",
+          "score": 0.6319651477270207,
+          "base_score": 0.6366085795450347,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch11",
+          "score": 0.5776132868832102,
+          "base_score": 0.6386147373979428,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch8",
+          "score": 0.523062020165862,
+          "base_score": 0.5476959595356959,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch1",
+          "score": 0.5107091559030982,
+          "base_score": 0.6011819265051637,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "unit testing",
+          "test suite",
+          "suite",
+          "goal unit",
+          "unit test"
+        ],
+        "semantic": [],
+        "merged": [
+          "unit testing",
+          "test suite",
+          "suite",
+          "goal unit",
+          "unit test"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_test_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4716485161484753,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.640368+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 6,
+      "title": "Segment 6 (pages 44-51)",
+      "chapter_id": "Books Library Net - Unknown Title:ch6",
+      "cross_references": [
+        {
+          "target": "Books Library Net - Unknown Title:ch7",
+          "score": 0.5583876963407789,
+          "base_score": 0.6806461605679648,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch8",
+          "score": 0.5566800433821867,
+          "base_score": 0.6778000723036444,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch31",
+          "score": 0.5428331602580723,
+          "base_score": 0.5806478596893796,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch2",
+          "score": 0.5144297269652056,
+          "base_score": 0.6073828782753427,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "store",
+          "shared",
+          "customer",
+          "isolating",
+          "class"
+        ],
+        "semantic": [],
+        "merged": [
+          "store",
+          "shared",
+          "customer",
+          "isolating",
+          "class"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_test_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46196678834699123,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.640532+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 7,
+      "title": "Segment 7 (pages 52-61)",
+      "chapter_id": "Books Library Net - Unknown Title:ch7",
+      "cross_references": [
+        {
+          "target": "Books Library Net - Unknown Title:ch8",
+          "score": 0.6820011421284975,
+          "base_score": 0.8125944961400884,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch2",
+          "score": 0.6081231285416525,
+          "base_score": 0.6894644734953468,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch6",
+          "score": 0.5583876963407789,
+          "base_score": 0.6806461605679648,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch9",
+          "score": 0.5009664823972355,
+          "base_score": 0.5108700632546519,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "isolation",
+          "unit test",
+          "classical",
+          "london",
+          "use test"
+        ],
+        "semantic": [],
+        "merged": [
+          "isolation",
+          "unit test",
+          "classical",
+          "london",
+          "use test"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_test_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43060832753030054,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.640696+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 8,
+      "title": "Segment 8 (pages 62-69)",
+      "chapter_id": "Books Library Net - Unknown Title:ch8",
+      "cross_references": [
+        {
+          "target": "Books Library Net - Unknown Title:ch7",
+          "score": 0.6820011421284975,
+          "base_score": 0.8125944961400884,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch2",
+          "score": 0.6557358349891367,
+          "base_score": 0.7688189842411537,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch11",
+          "score": 0.5594388685573904,
+          "base_score": 0.6083240401882433,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch6",
+          "score": 0.5566800433821867,
+          "base_score": 0.6778000723036444,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch9",
+          "score": 0.554495589592066,
+          "base_score": 0.6000852419127025,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "unit test",
+          "structure",
+          "structure unit",
+          "arrange",
+          "act"
+        ],
+        "semantic": [],
+        "merged": [
+          "unit test",
+          "structure",
+          "structure unit",
+          "arrange",
+          "act"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_test_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49287470085533236,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.640849+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 9,
+      "title": "Segment 9 (pages 70-79)",
+      "chapter_id": "Books Library Net - Unknown Title:ch9",
+      "cross_references": [
+        {
+          "target": "Books Library Net - Unknown Title:ch10",
+          "score": 0.5778168086295735,
+          "base_score": 0.6389539403085485,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch8",
+          "score": 0.554495589592066,
+          "base_score": 0.6000852419127025,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch2",
+          "score": 0.5498038731671475,
+          "base_score": 0.5922657145378384,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch11",
+          "score": 0.5023846351764554,
+          "base_score": 0.5132336512200182,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch7",
+          "score": 0.5009664823972355,
+          "base_score": 0.5108700632546519,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "naming",
+          "unit test",
+          "fixtures",
+          "test fixtures",
+          "method"
+        ],
+        "semantic": [],
+        "merged": [
+          "naming",
+          "unit test",
+          "fixtures",
+          "test fixtures",
+          "method"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_test_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44928731177717435,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.641017+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 10,
+      "title": "Segment 10 (pages 80-87)",
+      "chapter_id": "Books Library Net - Unknown Title:ch10",
+      "cross_references": [
+        {
+          "target": "Books Library Net - Unknown Title:ch9",
+          "score": 0.5778168086295735,
+          "base_score": 0.6389539403085485,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "parameterized",
+          "parameterized tests",
+          "test method",
+          "method",
+          "positive test"
+        ],
+        "semantic": [],
+        "merged": [
+          "parameterized",
+          "parameterized tests",
+          "test method",
+          "method",
+          "positive test"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_test_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45975813626503165,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.641166+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 11,
+      "title": "Segment 11 (pages 88-97)",
+      "chapter_id": "Books Library Net - Unknown Title:ch11",
+      "cross_references": [
+        {
+          "target": "Books Library Net - Unknown Title:ch12",
+          "score": 0.6885474023127328,
+          "base_score": 0.8235049297804806,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch2",
+          "score": 0.5865777442759226,
+          "base_score": 0.6535554997191303,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch5",
+          "score": 0.5776132868832102,
+          "base_score": 0.6386147373979428,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch8",
+          "score": 0.5594388685573904,
+          "base_score": 0.6083240401882433,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch4",
+          "score": 0.5366013837250718,
+          "base_score": 0.6443356395417864,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "good",
+          "good unit",
+          "unit test",
+          "pillars good",
+          "pillars"
+        ],
+        "semantic": [],
+        "merged": [
+          "good",
+          "good unit",
+          "unit test",
+          "pillars good",
+          "pillars"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_test_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4735059428034523,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.641333+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 12,
+      "title": "Segment 12 (pages 98-108)",
+      "chapter_id": "Books Library Net - Unknown Title:ch12",
+      "cross_references": [
+        {
+          "target": "Books Library Net - Unknown Title:ch11",
+          "score": 0.6885474023127328,
+          "base_score": 0.8235049297804806,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch13",
+          "score": 0.5802946360067047,
+          "base_score": 0.5504910600111745,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch4",
+          "score": 0.5307551695121592,
+          "base_score": 0.6345919491869318,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch2",
+          "score": 0.5050860467314321,
+          "base_score": 0.5918100778857202,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "end",
+          "ideal test",
+          "good",
+          "end tests",
+          "ideal"
+        ],
+        "semantic": [],
+        "merged": [
+          "end",
+          "ideal test",
+          "good",
+          "end tests",
+          "ideal"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_test_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.443722244161156,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.641481+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 13,
+      "title": "Segment 13 (pages 109-120)",
+      "chapter_id": "Books Library Net - Unknown Title:ch13",
+      "cross_references": [
+        {
+          "target": "Books Library Net - Unknown Title:ch12",
+          "score": 0.5802946360067047,
+          "base_score": 0.5504910600111745,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch11",
+          "score": 0.536037298894673,
+          "base_score": 0.6433954981577883,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch2",
+          "score": 0.50509022059528,
+          "base_score": 0.5918170343254667,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "end",
+          "test double",
+          "double",
+          "mock",
+          "end tests"
+        ],
+        "semantic": [],
+        "merged": [
+          "end",
+          "test double",
+          "double",
+          "mock",
+          "end tests"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_test_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4398847563171452,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.641629+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 14,
+      "title": "Segment 14 (pages 121-131)",
+      "chapter_id": "Books Library Net - Unknown Title:ch14",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "api",
+          "public",
+          "implementation",
+          "public api",
+          "details"
+        ],
+        "semantic": [],
+        "merged": [
+          "api",
+          "public",
+          "implementation",
+          "public api",
+          "details"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_test_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25991231650768726,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.641778+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 15,
+      "title": "Segment 15 (pages 132-139)",
+      "chapter_id": "Books Library Net - Unknown Title:ch15",
+      "cross_references": [
+        {
+          "target": "Books Library Net - Unknown Title:ch24",
+          "score": 0.5093577110863244,
+          "base_score": 0.5989295184772073,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "application",
+          "external",
+          "communications",
+          "intra",
+          "inter"
+        ],
+        "semantic": [],
+        "merged": [
+          "application",
+          "external",
+          "communications",
+          "intra",
+          "inter"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_database_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4447186664503353,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.641923+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 16,
+      "title": "Segment 16 (pages 140-147)",
+      "chapter_id": "Books Library Net - Unknown Title:ch16",
+      "cross_references": [
+        {
+          "target": "Books Library Net - Unknown Title:ch17",
+          "score": 0.595851105427333,
+          "base_score": 0.6690111016381475,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch19",
+          "score": 0.5604030682320446,
+          "base_score": 0.6099310396460002,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch2",
+          "score": 0.5016866631937791,
+          "base_score": 0.5861444386562985,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch8",
+          "score": 0.5007287839344411,
+          "base_score": 0.5845479732240685,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "based",
+          "based testing",
+          "output",
+          "output based",
+          "styles"
+        ],
+        "semantic": [],
+        "merged": [
+          "based",
+          "based testing",
+          "output",
+          "output based",
+          "styles"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_test_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4420728760958652,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.642084+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 17,
+      "title": "Segment 17 (pages 148-156)",
+      "chapter_id": "Books Library Net - Unknown Title:ch17",
+      "cross_references": [
+        {
+          "target": "Books Library Net - Unknown Title:ch19",
+          "score": 0.7389422192733595,
+          "base_score": 0.5371259210111546,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch16",
+          "score": 0.595851105427333,
+          "base_score": 0.6690111016381475,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "functional",
+          "architecture",
+          "based",
+          "functional architecture",
+          "mathematical"
+        ],
+        "semantic": [],
+        "merged": [
+          "functional",
+          "architecture",
+          "based",
+          "functional architecture",
+          "mathematical"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_test_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40865239355860195,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.642297+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 18,
+      "title": "Segment 18 (pages 157-166)",
+      "chapter_id": "Books Library Net - Unknown Title:ch18",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "string",
+          "auditmanager",
+          "public",
+          "files",
+          "file"
+        ],
+        "semantic": [],
+        "merged": [
+          "string",
+          "auditmanager",
+          "public",
+          "files",
+          "file"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_test_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28096535873962286,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.642447+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 19,
+      "title": "Segment 19 (pages 167-178)",
+      "chapter_id": "Books Library Net - Unknown Title:ch19",
+      "cross_references": [
+        {
+          "target": "Books Library Net - Unknown Title:ch17",
+          "score": 0.7389422192733595,
+          "base_score": 0.5371259210111546,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch16",
+          "score": 0.5604030682320446,
+          "base_score": 0.6099310396460002,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "functional",
+          "functional architecture",
+          "based",
+          "architecture",
+          "code"
+        ],
+        "semantic": [],
+        "merged": [
+          "functional",
+          "functional architecture",
+          "based",
+          "architecture",
+          "code"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_test_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39527878041001696,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.642606+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 20,
+      "title": "Segment 20 (pages 179-189)",
+      "chapter_id": "Books Library Net - Unknown Title:ch20",
+      "cross_references": [
+        {
+          "target": "Books Library Net - Unknown Title:ch21",
+          "score": 0.655045083031842,
+          "base_score": 0.6750751383864032,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch25",
+          "score": 0.5497156031440715,
+          "base_score": 0.49952600524011914,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "user",
+          "domain",
+          "company",
+          "class",
+          "email"
+        ],
+        "semantic": [],
+        "merged": [
+          "user",
+          "domain",
+          "company",
+          "class",
+          "email"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_database_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24826258296798767,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.642767+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 21,
+      "title": "Segment 21 (pages 190-200)",
+      "chapter_id": "Books Library Net - Unknown Title:ch21",
+      "cross_references": [
+        {
+          "target": "Books Library Net - Unknown Title:ch20",
+          "score": 0.655045083031842,
+          "base_score": 0.6750751383864032,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch25",
+          "score": 0.5365004114532471,
+          "base_score": 0.5700932783480044,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "email",
+          "domain",
+          "controller",
+          "events",
+          "domain model"
+        ],
+        "semantic": [],
+        "merged": [
+          "email",
+          "domain",
+          "controller",
+          "events",
+          "domain model"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_database_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29211536457298987,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.642921+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 22,
+      "title": "Segment 22 (pages 201-210)",
+      "chapter_id": "Books Library Net - Unknown Title:ch22",
+      "cross_references": [
+        {
+          "target": "Books Library Net - Unknown Title:ch23",
+          "score": 0.6049437107435047,
+          "base_score": 0.5915728512391746,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch24",
+          "score": 0.52248240370664,
+          "base_score": 0.6208040061777333,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "integration",
+          "integration tests",
+          "unit tests",
+          "tests cover",
+          "cover"
+        ],
+        "semantic": [],
+        "merged": [
+          "integration",
+          "integration tests",
+          "unit tests",
+          "tests cover",
+          "cover"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_database_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43631868382446465,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.643083+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 23,
+      "title": "Segment 23 (pages 211-219)",
+      "chapter_id": "Books Library Net - Unknown Title:ch23",
+      "cross_references": [
+        {
+          "target": "Books Library Net - Unknown Title:ch29",
+          "score": 0.6094010725675323,
+          "base_score": 0.5990017876125537,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch22",
+          "score": 0.6049437107435047,
+          "base_score": 0.5915728512391746,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch24",
+          "score": 0.5909766125042083,
+          "base_score": 0.660886946766273,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch27",
+          "score": 0.590491791399252,
+          "base_score": 0.6600789115913458,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch30",
+          "score": 0.5603094186976083,
+          "base_score": 0.6097749570886064,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "integration",
+          "database",
+          "integration tests",
+          "managed",
+          "dependencies"
+        ],
+        "semantic": [],
+        "merged": [
+          "integration",
+          "database",
+          "integration tests",
+          "managed",
+          "dependencies"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_database_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4154306888326458,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.643236+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 24,
+      "title": "Segment 24 (pages 220-231)",
+      "chapter_id": "Books Library Net - Unknown Title:ch24",
+      "cross_references": [
+        {
+          "target": "Books Library Net - Unknown Title:ch23",
+          "score": 0.5909766125042083,
+          "base_score": 0.660886946766273,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch26",
+          "score": 0.5296718059110929,
+          "base_score": 0.6327863431851548,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch22",
+          "score": 0.52248240370664,
+          "base_score": 0.6208040061777333,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch25",
+          "score": 0.5103415421062542,
+          "base_score": 0.5264951627696829,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch15",
+          "score": 0.5093577110863244,
+          "base_score": 0.5989295184772073,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "logging",
+          "interfaces",
+          "dependencies",
+          "log",
+          "interface"
+        ],
+        "semantic": [],
+        "merged": [
+          "logging",
+          "interfaces",
+          "dependencies",
+          "log",
+          "interface"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_database_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39042743546560116,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.643417+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 25,
+      "title": "Segment 25 (pages 232-239)",
+      "chapter_id": "Books Library Net - Unknown Title:ch25",
+      "cross_references": [
+        {
+          "target": "Books Library Net - Unknown Title:ch20",
+          "score": 0.5497156031440715,
+          "base_score": 0.49952600524011914,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch21",
+          "score": 0.5365004114532471,
+          "base_score": 0.5700932783480044,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch24",
+          "score": 0.5103415421062542,
+          "base_score": 0.5264951627696829,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "logging",
+          "user",
+          "domain",
+          "diagnostic",
+          "diagnostic logging"
+        ],
+        "semantic": [],
+        "merged": [
+          "logging",
+          "user",
+          "domain",
+          "diagnostic",
+          "diagnostic logging"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_database_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4183972628430294,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.643566+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 26,
+      "title": "Segment 26 (pages 240-247)",
+      "chapter_id": "Books Library Net - Unknown Title:ch26",
+      "cross_references": [
+        {
+          "target": "Books Library Net - Unknown Title:ch24",
+          "score": 0.5296718059110929,
+          "base_score": 0.6327863431851548,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "imessagebus",
+          "ibus",
+          "mock",
+          "message",
+          "new"
+        ],
+        "semantic": [],
+        "merged": [
+          "imessagebus",
+          "ibus",
+          "mock",
+          "message",
+          "new"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_database_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36197711858407755,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.643711+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 27,
+      "title": "Segment 27 (pages 248-256)",
+      "chapter_id": "Books Library Net - Unknown Title:ch27",
+      "cross_references": [
+        {
+          "target": "Books Library Net - Unknown Title:ch30",
+          "score": 0.6249931956477743,
+          "base_score": 0.7175812520055498,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch23",
+          "score": 0.590491791399252,
+          "base_score": 0.6600789115913458,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch29",
+          "score": 0.5580577655837518,
+          "base_score": 0.6060222018988455,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "database",
+          "database schema",
+          "schema",
+          "migration",
+          "based"
+        ],
+        "semantic": [],
+        "merged": [
+          "database",
+          "database schema",
+          "schema",
+          "migration",
+          "based"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_database_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42921397003100364,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.643873+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 28,
+      "title": "Segment 28 (pages 257-265)",
+      "chapter_id": "Books Library Net - Unknown Title:ch28",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "transaction",
+          "database",
+          "transaction database",
+          "database transaction",
+          "transactions"
+        ],
+        "semantic": [],
+        "merged": [
+          "transaction",
+          "database",
+          "transaction database",
+          "database transaction",
+          "transactions"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_database_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25009062456027364,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.644025+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 29,
+      "title": "Segment 29 (pages 266-273)",
+      "chapter_id": "Books Library Net - Unknown Title:ch29",
+      "cross_references": [
+        {
+          "target": "Books Library Net - Unknown Title:ch23",
+          "score": 0.6094010725675323,
+          "base_score": 0.5990017876125537,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch27",
+          "score": 0.5580577655837518,
+          "base_score": 0.6060222018988455,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch30",
+          "score": 0.5398090233125812,
+          "base_score": 0.5756076314468946,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "user",
+          "new",
+          "database",
+          "integration",
+          "gmail com"
+        ],
+        "semantic": [],
+        "merged": [
+          "user",
+          "new",
+          "database",
+          "integration",
+          "gmail com"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_database_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3627482968720626,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.644191+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 30,
+      "title": "Segment 30 (pages 274-281)",
+      "chapter_id": "Books Library Net - Unknown Title:ch30",
+      "cross_references": [
+        {
+          "target": "Books Library Net - Unknown Title:ch27",
+          "score": 0.6249931956477743,
+          "base_score": 0.7175812520055498,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch23",
+          "score": 0.5603094186976083,
+          "base_score": 0.6097749570886064,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch29",
+          "score": 0.5398090233125812,
+          "base_score": 0.5756076314468946,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "repositories",
+          "database",
+          "test repositories",
+          "anti",
+          "patterns"
+        ],
+        "semantic": [],
+        "merged": [
+          "repositories",
+          "database",
+          "test repositories",
+          "anti",
+          "patterns"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_database_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43125068463084426,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.644462+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 31,
+      "title": "Segment 31 (pages 282-294)",
+      "chapter_id": "Books Library Net - Unknown Title:ch31",
+      "cross_references": [
+        {
+          "target": "Books Library Net - Unknown Title:ch6",
+          "score": 0.5428331602580723,
+          "base_score": 0.5806478596893796,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "public",
+          "private",
+          "class",
+          "public class",
+          "private methods"
+        ],
+        "semantic": [],
+        "merged": [
+          "public",
+          "private",
+          "class",
+          "public class",
+          "private methods"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_test_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3506503948759975,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.644615+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 32,
+      "title": "Segment 32 (pages 295-302)",
+      "chapter_id": "Books Library Net - Unknown Title:ch32",
+      "cross_references": [
+        {
+          "target": "Books Library Net - Unknown Title:ch33",
+          "score": 0.5367794393949357,
+          "base_score": 0.5705583249174853,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch2",
+          "score": 0.5026878060952124,
+          "base_score": 0.5878130101586873,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Books Library Net - Unknown Title:ch1",
+          "score": 0.5014887021228313,
+          "base_score": 0.585814503538052,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "243",
+          "39",
+          "school unit",
+          "30",
+          "school"
+        ],
+        "semantic": [],
+        "merged": [
+          "243",
+          "39",
+          "school unit",
+          "30",
+          "school"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_test_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4798025370270312,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.644762+00:00"
+      }
+    },
+    {
+      "book": "Books Library Net - Unknown Title",
+      "chapter": 33,
+      "title": "Segment 33 (pages 303-305)",
+      "chapter_id": "Books Library Net - Unknown Title:ch33",
+      "cross_references": [
+        {
+          "target": "Books Library Net - Unknown Title:ch32",
+          "score": 0.5367794393949357,
+          "base_score": 0.5705583249174853,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "30",
+          "244",
+          "cycle",
+          "development",
+          "khorikov"
+        ],
+        "semantic": [],
+        "merged": [
+          "30",
+          "244",
+          "cycle",
+          "development",
+          "khorikov"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_test_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39992317016584594,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:52.644926+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

@@ -1,0 +1,178 @@
+{
+  "book": {
+    "title": "effective-performance-engineering"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:01:04.868742",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "effective-performance-engineering",
+      "chapter": 1,
+      "title": "Getting Started",
+      "chapter_id": "effective-performance-engineering:ch1",
+      "cross_references": [
+        {
+          "target": "effective-performance-engineering:ch4",
+          "score": 0.5176487839710325,
+          "base_score": 0.8627479732850543,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "organizations",
+          "revenue",
+          "competitive",
+          "necessary",
+          "engineering necessary"
+        ],
+        "semantic": [],
+        "merged": [
+          "organizations",
+          "revenue",
+          "competitive",
+          "necessary",
+          "engineering necessary"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "performance_engineering_effective",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.8419550952917874,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:04.860895+00:00"
+      }
+    },
+    {
+      "book": "effective-performance-engineering",
+      "chapter": 2,
+      "title": "Overview of Performance Engineering",
+      "chapter_id": "effective-performance-engineering:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "engineering lifecycle",
+          "monitoring",
+          "environments",
+          "automated",
+          "enable"
+        ],
+        "semantic": [],
+        "merged": [
+          "engineering lifecycle",
+          "monitoring",
+          "environments",
+          "automated",
+          "enable"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "performance_engineering_production",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.8088616389660455,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:04.860932+00:00"
+      }
+    },
+    {
+      "book": "effective-performance-engineering",
+      "chapter": 3,
+      "title": "Proven Practices of Performance Engineering",
+      "chapter_id": "effective-performance-engineering:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "proven practices",
+          "proven",
+          "chapter proven",
+          "partner",
+          "chapter"
+        ],
+        "semantic": [],
+        "merged": [
+          "proven practices",
+          "proven",
+          "chapter proven",
+          "partner",
+          "chapter"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "performance_proven_practices",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7723394528461982,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:04.860954+00:00"
+      }
+    },
+    {
+      "book": "effective-performance-engineering",
+      "chapter": 4,
+      "title": "Tying It All Together",
+      "chapter_id": "effective-performance-engineering:ch4",
+      "cross_references": [
+        {
+          "target": "effective-performance-engineering:ch1",
+          "score": 0.5176487839710325,
+          "base_score": 0.8627479732850543,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "teams",
+          "deliver",
+          "high",
+          "years",
+          "managers"
+        ],
+        "semantic": [],
+        "merged": [
+          "teams",
+          "deliver",
+          "high",
+          "years",
+          "managers"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "performance_engineering_results",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.8304955375756295,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:04.860976+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

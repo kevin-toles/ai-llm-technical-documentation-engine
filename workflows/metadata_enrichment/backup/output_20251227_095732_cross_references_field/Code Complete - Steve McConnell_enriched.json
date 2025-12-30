@@ -1,0 +1,1987 @@
+{
+  "book": {
+    "title": "Code Complete - Steve McConnell"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:43:28.051535",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-25)",
+      "chapter_id": "Code Complete - Steve McConnell:ch1",
+      "cross_references": [
+        {
+          "target": "Code Complete - Steve McConnell:ch2",
+          "score": 0.5839828706811186,
+          "base_score": 0.5566381178018645,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Code Complete - Steve McConnell:ch44",
+          "score": 0.5248523066053252,
+          "base_score": 0.5506797702681347,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Code Complete - Steve McConnell:ch46",
+          "score": 0.5169851104255176,
+          "base_score": 0.5375677766351219,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "software",
+          "construction",
+          "book",
+          "software development",
+          "books"
+        ],
+        "semantic": [],
+        "merged": [
+          "software",
+          "construction",
+          "book",
+          "software development",
+          "books"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "software_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31987273277751016,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.021075+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 2,
+      "title": "Segment 2 (pages 27-46)",
+      "chapter_id": "Code Complete - Steve McConnell:ch2",
+      "cross_references": [
+        {
+          "target": "Code Complete - Steve McConnell:ch1",
+          "score": 0.5839828706811186,
+          "base_score": 0.5566381178018645,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Code Complete - Steve McConnell:ch43",
+          "score": 0.5333508878737023,
+          "base_score": 0.5648440723820964,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Code Complete - Steve McConnell:ch44",
+          "score": 0.5084377313281625,
+          "base_score": 0.5233221448061968,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Code Complete - Steve McConnell:ch3",
+          "score": 0.5058504013298832,
+          "base_score": 0.5190099281423981,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "construction",
+          "software",
+          "activities",
+          "software construction",
+          "testing"
+        ],
+        "semantic": [],
+        "merged": [
+          "construction",
+          "software",
+          "activities",
+          "software construction",
+          "testing"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "software_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31401012565424125,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.021313+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 3,
+      "title": "Segment 3 (pages 47-70)",
+      "chapter_id": "Code Complete - Steve McConnell:ch3",
+      "cross_references": [
+        {
+          "target": "Code Complete - Steve McConnell:ch43",
+          "score": 0.5189779109303028,
+          "base_score": 0.5408891108097638,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Code Complete - Steve McConnell:ch2",
+          "score": 0.5058504013298832,
+          "base_score": 0.5190099281423981,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "software",
+          "metaphors",
+          "metaphor",
+          "development",
+          "building"
+        ],
+        "semantic": [],
+        "merged": [
+          "software",
+          "metaphors",
+          "metaphor",
+          "development",
+          "building"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "software_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24663869119783707,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.021526+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 4,
+      "title": "Segment 4 (pages 71-88)",
+      "chapter_id": "Code Complete - Steve McConnell:ch4",
+      "cross_references": [
+        {
+          "target": "Code Complete - Steve McConnell:ch5",
+          "score": 0.5077514022543831,
+          "base_score": 0.42958567042397183,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "requirements",
+          "architecture",
+          "changes",
+          "specified",
+          "strings"
+        ],
+        "semantic": [],
+        "merged": [
+          "requirements",
+          "architecture",
+          "changes",
+          "specified",
+          "strings"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_design_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23455479582882166,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.021733+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 5,
+      "title": "Segment 5 (pages 89-108)",
+      "chapter_id": "Code Complete - Steve McConnell:ch5",
+      "cross_references": [
+        {
+          "target": "Code Complete - Steve McConnell:ch4",
+          "score": 0.5077514022543831,
+          "base_score": 0.42958567042397183,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "language",
+          "architecture",
+          "programming",
+          "requirements",
+          "programming language"
+        ],
+        "semantic": [],
+        "merged": [
+          "language",
+          "architecture",
+          "programming",
+          "requirements",
+          "programming language"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_design_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28225973646359315,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.021963+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 6,
+      "title": "Segment 6 (pages 110-132)",
+      "chapter_id": "Code Complete - Steve McConnell:ch6",
+      "cross_references": [
+        {
+          "target": "Code Complete - Steve McConnell:ch8",
+          "score": 0.6360810201438856,
+          "base_score": 0.643468366906476,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "design",
+          "level",
+          "chapter design",
+          "design construction",
+          "class"
+        ],
+        "semantic": [],
+        "merged": [
+          "design",
+          "level",
+          "chapter design",
+          "design construction",
+          "class"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_design_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3220454321381789,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.022173+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 7,
+      "title": "Segment 7 (pages 133-151)",
+      "chapter_id": "Code Complete - Steve McConnell:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "design",
+          "module",
+          "patterns",
+          "heuristics",
+          "class"
+        ],
+        "semantic": [],
+        "merged": [
+          "design",
+          "module",
+          "patterns",
+          "heuristics",
+          "class"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.22216311852436416,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.022379+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 8,
+      "title": "Segment 8 (pages 152-175)",
+      "chapter_id": "Code Complete - Steve McConnell:ch8",
+      "cross_references": [
+        {
+          "target": "Code Complete - Steve McConnell:ch6",
+          "score": 0.6360810201438856,
+          "base_score": 0.643468366906476,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "design",
+          "abstract data",
+          "class",
+          "abstract",
+          "adts"
+        ],
+        "semantic": [],
+        "merged": [
+          "design",
+          "abstract data",
+          "class",
+          "abstract",
+          "adts"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_design_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25499837764531585,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.022588+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 9,
+      "title": "Segment 9 (pages 176-197)",
+      "chapter_id": "Code Complete - Steve McConnell:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "class",
+          "derived",
+          "implementation",
+          "base class",
+          "classes"
+        ],
+        "semantic": [],
+        "merged": [
+          "class",
+          "derived",
+          "implementation",
+          "base class",
+          "classes"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.20469639878459173,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.022804+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 10,
+      "title": "Segment 10 (pages 198-220)",
+      "chapter_id": "Code Complete - Steve McConnell:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "routine",
+          "cohesion",
+          "routines",
+          "parameters",
+          "routine parameters"
+        ],
+        "semantic": [],
+        "merged": [
+          "routine",
+          "cohesion",
+          "routines",
+          "parameters",
+          "routine parameters"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31707232511807126,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.023014+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 11,
+      "title": "Segment 11 (pages 221-241)",
+      "chapter_id": "Code Complete - Steve McConnell:ch11",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "exception",
+          "handling",
+          "error",
+          "error handling",
+          "exceptions"
+        ],
+        "semantic": [],
+        "merged": [
+          "exception",
+          "handling",
+          "error",
+          "error handling",
+          "exceptions"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31166946237563076,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:28.023217+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 12,
+      "title": "Segment 12 (pages 242-263)",
+      "chapter_id": "Code Complete - Steve McConnell:ch12",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "pseudocode",
+          "routine",
+          "debug",
+          "debug code",
+          "error"
+        ],
+        "semantic": [],
+        "merged": [
+          "pseudocode",
+          "routine",
+          "debug",
+          "debug code",
+          "error"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_loop_code",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2928919833665198,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.023422+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 13,
+      "title": "Segment 13 (pages 264-286)",
+      "chapter_id": "Code Complete - Steve McConnell:ch13",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "variables",
+          "variable",
+          "live",
+          "routine",
+          "references"
+        ],
+        "semantic": [],
+        "merged": [
+          "variables",
+          "variable",
+          "live",
+          "routine",
+          "references"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_loop_code",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2725458388960109,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.023641+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 14,
+      "title": "Segment 14 (pages 287-306)",
+      "chapter_id": "Code Complete - Steve McConnell:ch14",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "variable",
+          "variables",
+          "names",
+          "variable names",
+          "temporary"
+        ],
+        "semantic": [],
+        "merged": [
+          "variable",
+          "variables",
+          "names",
+          "variable names",
+          "temporary"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2679377780646259,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.023859+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 15,
+      "title": "Segment 15 (pages 307-324)",
+      "chapter_id": "Code Complete - Steve McConnell:ch15",
+      "cross_references": [
+        {
+          "target": "Code Complete - Steve McConnell:ch16",
+          "score": 0.5511608584043609,
+          "base_score": 0.6686014306739347,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "names",
+          "naming",
+          "naming conventions",
+          "conventions",
+          "variable"
+        ],
+        "semantic": [],
+        "merged": [
+          "names",
+          "naming",
+          "naming conventions",
+          "conventions",
+          "variable"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.17599249602221959,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.024070+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 16,
+      "title": "Segment 16 (pages 325-347)",
+      "chapter_id": "Code Complete - Steve McConnell:ch16",
+      "cross_references": [
+        {
+          "target": "Code Complete - Steve McConnell:ch15",
+          "score": 0.5511608584043609,
+          "base_score": 0.6686014306739347,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "named",
+          "enumerated",
+          "named constants",
+          "constants",
+          "enumerated types"
+        ],
+        "semantic": [],
+        "merged": [
+          "named",
+          "enumerated",
+          "named constants",
+          "constants",
+          "enumerated types"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1843330706335562,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.024277+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 17,
+      "title": "Segment 17 (pages 348-366)",
+      "chapter_id": "Code Complete - Steve McConnell:ch17",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "type",
+          "types",
+          "data",
+          "pointer",
+          "coordinate"
+        ],
+        "semantic": [],
+        "merged": [
+          "type",
+          "types",
+          "data",
+          "pointer",
+          "coordinate"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.218655383400798,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.024482+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 18,
+      "title": "Segment 18 (pages 367-388)",
+      "chapter_id": "Code Complete - Steve McConnell:ch18",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "global",
+          "access routines",
+          "access",
+          "global data",
+          "data"
+        ],
+        "semantic": [],
+        "merged": [
+          "global",
+          "access routines",
+          "access",
+          "global data",
+          "data"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.20222178056735826,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.024684+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 19,
+      "title": "Segment 19 (pages 389-408)",
+      "chapter_id": "Code Complete - Steve McConnell:ch19",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "case",
+          "case statement",
+          "statement",
+          "case statements",
+          "loop"
+        ],
+        "semantic": [],
+        "merged": [
+          "case",
+          "case statement",
+          "statement",
+          "case statements",
+          "loop"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_loop_code",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23593778049276476,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.024895+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 20,
+      "title": "Segment 20 (pages 409-428)",
+      "chapter_id": "Code Complete - Steve McConnell:ch20",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "loop",
+          "16 controlling",
+          "recordcount",
+          "controlling",
+          "loops"
+        ],
+        "semantic": [],
+        "merged": [
+          "loop",
+          "16 controlling",
+          "recordcount",
+          "controlling",
+          "loops"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_loop_code",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25333895547661495,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.025097+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 21,
+      "title": "Segment 21 (pages 429-448)",
+      "chapter_id": "Code Complete - Steve McConnell:ch21",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "gotos",
+          "goto",
+          "inputfile",
+          "exit sub",
+          "avoids"
+        ],
+        "semantic": [],
+        "merged": [
+          "gotos",
+          "goto",
+          "inputfile",
+          "exit sub",
+          "avoids"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_loop_code",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2537456782372978,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.025297+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 22,
+      "title": "Segment 22 (pages 449-468)",
+      "chapter_id": "Code Complete - Steve McConnell:ch22",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "table",
+          "access tables",
+          "access",
+          "message",
+          "lookup"
+        ],
+        "semantic": [],
+        "merged": [
+          "table",
+          "access tables",
+          "access",
+          "message",
+          "lookup"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1687539446203459,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.025499+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 23,
+      "title": "Segment 23 (pages 469-486)",
+      "chapter_id": "Code Complete - Steve McConnell:ch23",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "boolean",
+          "test",
+          "expressions",
+          "example",
+          "expression"
+        ],
+        "semantic": [],
+        "merged": [
+          "boolean",
+          "test",
+          "expressions",
+          "example",
+          "expression"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_loop_code",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.22662234793480077,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.025700+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 24,
+      "title": "Segment 24 (pages 487-507)",
+      "chapter_id": "Code Complete - Steve McConnell:ch24",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "quality",
+          "transaction",
+          "software quality",
+          "software",
+          "transactiondata"
+        ],
+        "semantic": [],
+        "merged": [
+          "quality",
+          "transaction",
+          "software quality",
+          "software",
+          "transactiondata"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.20985530441578404,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.025920+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 25,
+      "title": "Segment 25 (pages 508-528)",
+      "chapter_id": "Code Complete - Steve McConnell:ch25",
+      "cross_references": [
+        {
+          "target": "Code Complete - Steve McConnell:ch28",
+          "score": 0.6253933827538052,
+          "base_score": 0.6256556379230086,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Code Complete - Steve McConnell:ch26",
+          "score": 0.5953702982259942,
+          "base_score": 0.742283830376657,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "inspection",
+          "inspections",
+          "design code",
+          "defect",
+          "defects"
+        ],
+        "semantic": [],
+        "merged": [
+          "inspection",
+          "inspections",
+          "design code",
+          "defect",
+          "defects"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3059155968968227,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.026126+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 26,
+      "title": "Segment 26 (pages 529-548)",
+      "chapter_id": "Code Complete - Steve McConnell:ch26",
+      "cross_references": [
+        {
+          "target": "Code Complete - Steve McConnell:ch25",
+          "score": 0.5953702982259942,
+          "base_score": 0.742283830376657,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Code Complete - Steve McConnell:ch28",
+          "score": 0.5278751217112417,
+          "base_score": 0.6297918695187363,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "testing",
+          "test",
+          "test cases",
+          "developer testing",
+          "cases"
+        ],
+        "semantic": [],
+        "merged": [
+          "testing",
+          "test",
+          "test cases",
+          "developer testing",
+          "cases"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26160119089230566,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.026332+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 27,
+      "title": "Segment 27 (pages 549-572)",
+      "chapter_id": "Code Complete - Steve McConnell:ch27",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "test",
+          "test cases",
+          "testing",
+          "cases",
+          "test case"
+        ],
+        "semantic": [],
+        "merged": [
+          "test",
+          "test cases",
+          "testing",
+          "cases",
+          "test case"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21302094205726402,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:28.026531+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 28,
+      "title": "Segment 28 (pages 573-594)",
+      "chapter_id": "Code Complete - Steve McConnell:ch28",
+      "cross_references": [
+        {
+          "target": "Code Complete - Steve McConnell:ch25",
+          "score": 0.6253933827538052,
+          "base_score": 0.6256556379230086,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Code Complete - Steve McConnell:ch26",
+          "score": 0.5278751217112417,
+          "base_score": 0.6297918695187363,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "defect",
+          "error",
+          "fix",
+          "defects",
+          "problem"
+        ],
+        "semantic": [],
+        "merged": [
+          "defect",
+          "error",
+          "fix",
+          "defects",
+          "problem"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28309402258564154,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.026774+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 29,
+      "title": "Segment 29 (pages 595-612)",
+      "chapter_id": "Code Complete - Steve McConnell:ch29",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "routine",
+          "class",
+          "changes",
+          "routines",
+          "ahead code"
+        ],
+        "semantic": [],
+        "merged": [
+          "routine",
+          "class",
+          "changes",
+          "routines",
+          "ahead code"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31717769676227586,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:28.027035+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 30,
+      "title": "Segment 30 (pages 613-635)",
+      "chapter_id": "Code Complete - Steve McConnell:ch30",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "tuning",
+          "code tuning",
+          "refactoring",
+          "performance",
+          "speed"
+        ],
+        "semantic": [],
+        "merged": [
+          "tuning",
+          "code tuning",
+          "refactoring",
+          "performance",
+          "speed"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.20146766465057503,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.027262+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 31,
+      "title": "Segment 31 (pages 636-653)",
+      "chapter_id": "Code Complete - Steve McConnell:ch31",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "tuning",
+          "code tuning",
+          "performance",
+          "row",
+          "column"
+        ],
+        "semantic": [],
+        "merged": [
+          "tuning",
+          "code tuning",
+          "performance",
+          "row",
+          "column"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.269877193355593,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:28.027474+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 32,
+      "title": "Segment 32 (pages 654-673)",
+      "chapter_id": "Code Complete - Steve McConnell:ch32",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "loop",
+          "discountlevel",
+          "example",
+          "value",
+          "discounttype"
+        ],
+        "semantic": [],
+        "merged": [
+          "loop",
+          "discountlevel",
+          "example",
+          "value",
+          "discounttype"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_loop_code",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2607202268603275,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.027681+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 33,
+      "title": "Segment 33 (pages 674-698)",
+      "chapter_id": "Code Complete - Steve McConnell:ch33",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "size",
+          "project size",
+          "project",
+          "27",
+          "projects"
+        ],
+        "semantic": [],
+        "merged": [
+          "size",
+          "project size",
+          "project",
+          "27",
+          "projects"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29144441227907775,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:28.027911+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 34,
+      "title": "Segment 34 (pages 699-718)",
+      "chapter_id": "Code Complete - Steve McConnell:ch34",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "software",
+          "project",
+          "change",
+          "change control",
+          "estimate"
+        ],
+        "semantic": [],
+        "merged": [
+          "software",
+          "project",
+          "change",
+          "change control",
+          "estimate"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_design_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24068347272296453,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.028119+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 35,
+      "title": "Segment 35 (pages 719-739)",
+      "chapter_id": "Code Complete - Steve McConnell:ch35",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "integration",
+          "incremental",
+          "29",
+          "incremental integration",
+          "integrate"
+        ],
+        "semantic": [],
+        "merged": [
+          "integration",
+          "incremental",
+          "29",
+          "incremental integration",
+          "integrate"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "software_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2356821262373041,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.028349+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 36,
+      "title": "Segment 36 (pages 740-758)",
+      "chapter_id": "Code Complete - Steve McConnell:ch36",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "tools",
+          "build",
+          "code tools",
+          "30",
+          "smoke test"
+        ],
+        "semantic": [],
+        "merged": [
+          "tools",
+          "build",
+          "code tools",
+          "30",
+          "smoke test"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1942986303171143,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:28.028555+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 37,
+      "title": "Segment 37 (pages 759-783)",
+      "chapter_id": "Code Complete - Steve McConnell:ch37",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "layout",
+          "listing 31",
+          "31",
+          "listing",
+          "block"
+        ],
+        "semantic": [],
+        "merged": [
+          "layout",
+          "listing 31",
+          "31",
+          "listing",
+          "block"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "software_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2786365327452545,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.028809+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 38,
+      "title": "Segment 38 (pages 784-801)",
+      "chapter_id": "Code Complete - Steve McConnell:ch38",
+      "cross_references": [
+        {
+          "target": "Code Complete - Steve McConnell:ch39",
+          "score": 0.557435524164323,
+          "base_score": 0.604985132866464,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "listing 31",
+          "listing",
+          "31",
+          "line",
+          "continuation"
+        ],
+        "semantic": [],
+        "merged": [
+          "listing 31",
+          "listing",
+          "31",
+          "line",
+          "continuation"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_comments_code",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2507311853170201,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.029028+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 39,
+      "title": "Segment 39 (pages 802-822)",
+      "chapter_id": "Code Complete - Steve McConnell:ch39",
+      "cross_references": [
+        {
+          "target": "Code Complete - Steve McConnell:ch41",
+          "score": 0.5978086756755593,
+          "base_score": 0.6722737187185247,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Code Complete - Steve McConnell:ch40",
+          "score": 0.562875959193214,
+          "base_score": 0.5214599319886901,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Code Complete - Steve McConnell:ch38",
+          "score": 0.557435524164323,
+          "base_score": 0.604985132866464,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "comments",
+          "blank",
+          "blank lines",
+          "comment",
+          "listing 31"
+        ],
+        "semantic": [],
+        "merged": [
+          "comments",
+          "blank",
+          "blank lines",
+          "comment",
+          "listing 31"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_comments_code",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29943004001016155,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.029245+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 40,
+      "title": "Segment 40 (pages 823-841)",
+      "chapter_id": "Code Complete - Steve McConnell:ch40",
+      "cross_references": [
+        {
+          "target": "Code Complete - Steve McConnell:ch39",
+          "score": 0.562875959193214,
+          "base_score": 0.5214599319886901,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Code Complete - Steve McConnell:ch41",
+          "score": 0.548625092916631,
+          "base_score": 0.5903010807869775,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "comment",
+          "comments",
+          "endline",
+          "endline comments",
+          "commenting"
+        ],
+        "semantic": [],
+        "merged": [
+          "comment",
+          "comments",
+          "endline",
+          "endline comments",
+          "commenting"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_comments_code",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23797311435440013,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.029465+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 41,
+      "title": "Segment 41 (pages 842-863)",
+      "chapter_id": "Code Complete - Steve McConnell:ch41",
+      "cross_references": [
+        {
+          "target": "Code Complete - Steve McConnell:ch39",
+          "score": 0.5978086756755593,
+          "base_score": 0.6722737187185247,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Code Complete - Steve McConnell:ch40",
+          "score": 0.548625092916631,
+          "base_score": 0.5903010807869775,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ieee",
+          "std",
+          "software",
+          "documentation",
+          "comments"
+        ],
+        "semantic": [],
+        "merged": [
+          "ieee",
+          "std",
+          "software",
+          "documentation",
+          "comments"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_comments_code",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3024943646837535,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.029673+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 42,
+      "title": "Segment 42 (pages 864-885)",
+      "chapter_id": "Code Complete - Steve McConnell:ch42",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "program",
+          "terms",
+          "programming",
+          "domain",
+          "problem domain"
+        ],
+        "semantic": [],
+        "merged": [
+          "program",
+          "terms",
+          "programming",
+          "domain",
+          "problem domain"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "software_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2908566550469964,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.029901+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 43,
+      "title": "Segment 43 (pages 886-909)",
+      "chapter_id": "Code Complete - Steve McConnell:ch43",
+      "cross_references": [
+        {
+          "target": "Code Complete - Steve McConnell:ch44",
+          "score": 0.5709879472383796,
+          "base_score": 0.4159322930163471,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Code Complete - Steve McConnell:ch2",
+          "score": 0.5333508878737023,
+          "base_score": 0.5648440723820964,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Code Complete - Steve McConnell:ch3",
+          "score": 0.5189779109303028,
+          "base_score": 0.5408891108097638,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "software",
+          "ieee",
+          "engineering",
+          "software engineering",
+          "ieee transactions"
+        ],
+        "semantic": [],
+        "merged": [
+          "software",
+          "ieee",
+          "engineering",
+          "software engineering",
+          "ieee transactions"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "software_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2831347947677891,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.030112+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 44,
+      "title": "Segment 44 (pages 910-928)",
+      "chapter_id": "Code Complete - Steve McConnell:ch44",
+      "cross_references": [
+        {
+          "target": "Code Complete - Steve McConnell:ch43",
+          "score": 0.5709879472383796,
+          "base_score": 0.4159322930163471,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Code Complete - Steve McConnell:ch1",
+          "score": 0.5248523066053252,
+          "base_score": 0.5506797702681347,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Code Complete - Steve McConnell:ch2",
+          "score": 0.5084377313281625,
+          "base_score": 0.5233221448061968,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "software",
+          "ieee",
+          "march",
+          "ieee software",
+          "engineering"
+        ],
+        "semantic": [],
+        "merged": [
+          "software",
+          "ieee",
+          "march",
+          "ieee software",
+          "engineering"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "software_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3379698724006544,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.030341+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 45,
+      "title": "Segment 45 (pages 929-951)",
+      "chapter_id": "Code Complete - Steve McConnell:ch45",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "key points",
+          "checklist",
+          "points",
+          "225",
+          "data"
+        ],
+        "semantic": [],
+        "merged": [
+          "key points",
+          "checklist",
+          "points",
+          "225",
+          "data"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3288137309247818,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:28.030545+00:00"
+      }
+    },
+    {
+      "book": "Code Complete - Steve McConnell",
+      "chapter": 46,
+      "title": "Segment 46 (pages 952-952)",
+      "chapter_id": "Code Complete - Steve McConnell:ch46",
+      "cross_references": [
+        {
+          "target": "Code Complete - Steve McConnell:ch1",
+          "score": 0.5169851104255176,
+          "base_score": 0.5375677766351219,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "steve",
+          "knowledge",
+          "software",
+          "engineering body",
+          "swebok"
+        ],
+        "semantic": [],
+        "merged": [
+          "steve",
+          "knowledge",
+          "software",
+          "engineering body",
+          "swebok"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "software_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.15976534541513976,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:28.030761+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

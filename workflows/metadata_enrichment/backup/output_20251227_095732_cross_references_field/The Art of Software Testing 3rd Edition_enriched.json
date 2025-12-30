@@ -1,0 +1,1478 @@
+{
+  "book": {
+    "title": "The Art of Software Testing 3rd Edition"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:57:58.218277",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "The Art of Software Testing 3rd Edition",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-9)",
+      "chapter_id": "The Art of Software Testing 3rd Edition:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "books",
+          "art",
+          "art software",
+          "publisher",
+          "software testing"
+        ],
+        "semantic": [],
+        "merged": [
+          "books",
+          "art",
+          "art software",
+          "publisher",
+          "software testing"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "testing_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2792361636352027,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:58.198806+00:00"
+      }
+    },
+    {
+      "book": "The Art of Software Testing 3rd Edition",
+      "chapter": 2,
+      "title": "Segment 2 (pages 10-17)",
+      "chapter_id": "The Art of Software Testing 3rd Edition:ch2",
+      "cross_references": [
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch18",
+          "score": 0.5928512728914646,
+          "base_score": 0.6640113807450335,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch26",
+          "score": 0.5294067847685265,
+          "base_score": 0.6323446412808776,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "software",
+          "triangle",
+          "valid",
+          "software testing",
+          "case"
+        ],
+        "semantic": [],
+        "merged": [
+          "software",
+          "triangle",
+          "valid",
+          "software testing",
+          "case"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "testing_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4182589654540751,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:58.199001+00:00"
+      }
+    },
+    {
+      "book": "The Art of Software Testing 3rd Edition",
+      "chapter": 3,
+      "title": "Segment 3 (pages 18-26)",
+      "chapter_id": "The Art of Software Testing 3rd Edition:ch3",
+      "cross_references": [
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch4",
+          "score": 0.6915361560892584,
+          "base_score": 0.6168459744344783,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch15",
+          "score": 0.6193171056150235,
+          "base_score": 0.6155285093583727,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch17",
+          "score": 0.6126100486781809,
+          "base_score": 0.6043500811303015,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch21",
+          "score": 0.600499736954019,
+          "base_score": 0.5841662282566984,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch16",
+          "score": 0.588185461416395,
+          "base_score": 0.5636424356939918,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "program",
+          "errors",
+          "testing",
+          "triangle",
+          "exhaustive"
+        ],
+        "semantic": [],
+        "merged": [
+          "program",
+          "errors",
+          "testing",
+          "triangle",
+          "exhaustive"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_is",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4420779014740889,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:58.199142+00:00"
+      }
+    },
+    {
+      "book": "The Art of Software Testing 3rd Edition",
+      "chapter": 4,
+      "title": "Segment 4 (pages 27-38)",
+      "chapter_id": "The Art of Software Testing 3rd Edition:ch4",
+      "cross_references": [
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch3",
+          "score": 0.6915361560892584,
+          "base_score": 0.6168459744344783,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch17",
+          "score": 0.6439646905444566,
+          "base_score": 0.6566078175740944,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch15",
+          "score": 0.5794636426544131,
+          "base_score": 0.5491060710906885,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch16",
+          "score": 0.5691850774902518,
+          "base_score": 0.5319751291504198,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch20",
+          "score": 0.5180128763703181,
+          "base_score": 0.5392807198764561,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "program",
+          "testing",
+          "errors",
+          "principle",
+          "programmer"
+        ],
+        "semantic": [],
+        "merged": [
+          "program",
+          "testing",
+          "errors",
+          "principle",
+          "programmer"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_is",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4214773710472502,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:58.199275+00:00"
+      }
+    },
+    {
+      "book": "The Art of Software Testing 3rd Edition",
+      "chapter": 5,
+      "title": "Segment 5 (pages 39-47)",
+      "chapter_id": "The Art of Software Testing 3rd Edition:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "variable",
+          "reference",
+          "data",
+          "pointer",
+          "attributes"
+        ],
+        "semantic": [],
+        "merged": [
+          "variable",
+          "reference",
+          "data",
+          "pointer",
+          "attributes"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_is",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35519062832735415,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:58.199404+00:00"
+      }
+    },
+    {
+      "book": "The Art of Software Testing 3rd Edition",
+      "chapter": 6,
+      "title": "Segment 6 (pages 48-55)",
+      "chapter_id": "The Art of Software Testing 3rd Edition:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "program",
+          "attributes",
+          "person",
+          "programs",
+          "walkthroughs"
+        ],
+        "semantic": [],
+        "merged": [
+          "program",
+          "attributes",
+          "person",
+          "programs",
+          "walkthroughs"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3714968875427875,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:57:58.199529+00:00"
+      }
+    },
+    {
+      "book": "The Art of Software Testing 3rd Edition",
+      "chapter": 7,
+      "title": "Segment 7 (pages 56-63)",
+      "chapter_id": "The Art of Software Testing 3rd Edition:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "decision",
+          "coverage",
+          "condition",
+          "criterion",
+          "test cases"
+        ],
+        "semantic": [],
+        "merged": [
+          "decision",
+          "coverage",
+          "condition",
+          "criterion",
+          "test cases"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_module_test",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39148102269589674,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:58.199656+00:00"
+      }
+    },
+    {
+      "book": "The Art of Software Testing 3rd Edition",
+      "chapter": 8,
+      "title": "Segment 8 (pages 64-75)",
+      "chapter_id": "The Art of Software Testing 3rd Edition:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "equivalence",
+          "equivalence classes",
+          "classes",
+          "input",
+          "equivalence class"
+        ],
+        "semantic": [],
+        "merged": [
+          "equivalence",
+          "equivalence classes",
+          "classes",
+          "input",
+          "equivalence class"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34877668846054966,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:57:58.199781+00:00"
+      }
+    },
+    {
+      "book": "The Art of Software Testing 3rd Edition",
+      "chapter": 9,
+      "title": "Segment 9 (pages 76-83)",
+      "chapter_id": "The Art of Software Testing 3rd Edition:ch9",
+      "cross_references": [
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch10",
+          "score": 0.6339498520509945,
+          "base_score": 0.6399164200849908,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "operand",
+          "byte",
+          "causes",
+          "graph",
+          "causes effects"
+        ],
+        "semantic": [],
+        "merged": [
+          "operand",
+          "byte",
+          "causes",
+          "graph",
+          "causes effects"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_effect_graph",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.20732787712603493,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:58.199907+00:00"
+      }
+    },
+    {
+      "book": "The Art of Software Testing 3rd Edition",
+      "chapter": 10,
+      "title": "Segment 10 (pages 84-92)",
+      "chapter_id": "The Art of Software Testing 3rd Edition:ch10",
+      "cross_references": [
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch9",
+          "score": 0.6339498520509945,
+          "base_score": 0.6399164200849908,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch11",
+          "score": 0.5053525901536492,
+          "base_score": 0.5922543169227488,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "graph",
+          "effect",
+          "cause effect",
+          "effect graph",
+          "causes"
+        ],
+        "semantic": [],
+        "merged": [
+          "graph",
+          "effect",
+          "cause effect",
+          "effect graph",
+          "causes"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_effect_graph",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2587259977049299,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:58.200050+00:00"
+      }
+    },
+    {
+      "book": "The Art of Software Testing 3rd Edition",
+      "chapter": 11,
+      "title": "Segment 11 (pages 93-100)",
+      "chapter_id": "The Art of Software Testing 3rd Edition:ch11",
+      "cross_references": [
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch10",
+          "score": 0.5053525901536492,
+          "base_score": 0.5922543169227488,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "case design",
+          "cases",
+          "test cases",
+          "case",
+          "test case"
+        ],
+        "semantic": [],
+        "merged": [
+          "case design",
+          "cases",
+          "test cases",
+          "case",
+          "test case"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_effect_graph",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38951487681302477,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:58.200191+00:00"
+      }
+    },
+    {
+      "book": "The Art of Software Testing 3rd Edition",
+      "chapter": 12,
+      "title": "Segment 12 (pages 101-109)",
+      "chapter_id": "The Art of Software Testing 3rd Edition:ch12",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "depttab",
+          "employee",
+          "emptab",
+          "dsize",
+          "sales"
+        ],
+        "semantic": [],
+        "merged": [
+          "depttab",
+          "employee",
+          "emptab",
+          "dsize",
+          "sales"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_is",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2884139585910948,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:58.200325+00:00"
+      }
+    },
+    {
+      "book": "The Art of Software Testing 3rd Edition",
+      "chapter": 13,
+      "title": "Segment 13 (pages 110-119)",
+      "chapter_id": "The Art of Software Testing 3rd Edition:ch13",
+      "cross_references": [
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch14",
+          "score": 0.6297245331707442,
+          "base_score": 0.6050964441734625,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "module",
+          "modules",
+          "tested",
+          "testing",
+          "module test"
+        ],
+        "semantic": [],
+        "merged": [
+          "module",
+          "modules",
+          "tested",
+          "testing",
+          "module test"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_module_test",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38770989749983326,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:58.200462+00:00"
+      }
+    },
+    {
+      "book": "The Art of Software Testing 3rd Edition",
+      "chapter": 14,
+      "title": "Segment 14 (pages 120-127)",
+      "chapter_id": "The Art of Software Testing 3rd Edition:ch14",
+      "cross_references": [
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch13",
+          "score": 0.6297245331707442,
+          "base_score": 0.6050964441734625,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "module",
+          "testing",
+          "modules",
+          "module testing",
+          "module test"
+        ],
+        "semantic": [],
+        "merged": [
+          "module",
+          "testing",
+          "modules",
+          "module testing",
+          "module test"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37482054858608777,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:57:58.200593+00:00"
+      }
+    },
+    {
+      "book": "The Art of Software Testing 3rd Edition",
+      "chapter": 15,
+      "title": "Segment 15 (pages 128-135)",
+      "chapter_id": "The Art of Software Testing 3rd Edition:ch15",
+      "cross_references": [
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch16",
+          "score": 0.6529890538233406,
+          "base_score": 0.552600803991282,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch3",
+          "score": 0.6193171056150235,
+          "base_score": 0.6155285093583727,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch4",
+          "score": 0.5794636426544131,
+          "base_score": 0.5491060710906885,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch17",
+          "score": 0.5794477886628797,
+          "base_score": 0.6416722403640587,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch20",
+          "score": 0.5323052117120887,
+          "base_score": 0.563101278779407,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "objectives",
+          "testing",
+          "function",
+          "program",
+          "external"
+        ],
+        "semantic": [],
+        "merged": [
+          "objectives",
+          "testing",
+          "function",
+          "program",
+          "external"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_is",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4481189172660502,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:58.200725+00:00"
+      }
+    },
+    {
+      "book": "The Art of Software Testing 3rd Edition",
+      "chapter": 16,
+      "title": "Segment 16 (pages 136-143)",
+      "chapter_id": "The Art of Software Testing 3rd Edition:ch16",
+      "cross_references": [
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch15",
+          "score": 0.6529890538233406,
+          "base_score": 0.552600803991282,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch3",
+          "score": 0.588185461416395,
+          "base_score": 0.5636424356939918,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch17",
+          "score": 0.5716414500435123,
+          "base_score": 0.6286616759984464,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch4",
+          "score": 0.5691850774902518,
+          "base_score": 0.5319751291504198,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch20",
+          "score": 0.505962267676227,
+          "base_score": 0.5191963720529709,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "program",
+          "testing",
+          "objectives",
+          "stress",
+          "volume"
+        ],
+        "semantic": [],
+        "merged": [
+          "program",
+          "testing",
+          "objectives",
+          "stress",
+          "volume"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_is",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.456832624137682,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:58.200855+00:00"
+      }
+    },
+    {
+      "book": "The Art of Software Testing 3rd Edition",
+      "chapter": 17,
+      "title": "Segment 17 (pages 144-153)",
+      "chapter_id": "The Art of Software Testing 3rd Edition:ch17",
+      "cross_references": [
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch4",
+          "score": 0.6439646905444566,
+          "base_score": 0.6566078175740944,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch3",
+          "score": 0.6126100486781809,
+          "base_score": 0.6043500811303015,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch15",
+          "score": 0.5794477886628797,
+          "base_score": 0.6416722403640587,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch16",
+          "score": 0.5716414500435123,
+          "base_score": 0.6286616759984464,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "errors",
+          "testing",
+          "completion",
+          "number errors",
+          "phase"
+        ],
+        "semantic": [],
+        "merged": [
+          "errors",
+          "testing",
+          "completion",
+          "number errors",
+          "phase"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_is",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4828796404479138,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:58.201001+00:00"
+      }
+    },
+    {
+      "book": "The Art of Software Testing 3rd Edition",
+      "chapter": 18,
+      "title": "Segment 18 (pages 154-161)",
+      "chapter_id": "The Art of Software Testing 3rd Edition:ch18",
+      "cross_references": [
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch19",
+          "score": 0.9241702767916181,
+          "base_score": 0.6236171279860303,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch2",
+          "score": 0.5928512728914646,
+          "base_score": 0.6640113807450335,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch22",
+          "score": 0.5066442142933247,
+          "base_score": 0.5203329497481337,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "user",
+          "testing",
+          "software",
+          "usability",
+          "users"
+        ],
+        "semantic": [],
+        "merged": [
+          "user",
+          "testing",
+          "software",
+          "usability",
+          "users"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "testing_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4265584631028894,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:58.201131+00:00"
+      }
+    },
+    {
+      "book": "The Art of Software Testing 3rd Edition",
+      "chapter": 19,
+      "title": "Segment 19 (pages 162-169)",
+      "chapter_id": "The Art of Software Testing 3rd Edition:ch19",
+      "cross_references": [
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch18",
+          "score": 0.9241702767916181,
+          "base_score": 0.6236171279860303,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "user",
+          "usability",
+          "software",
+          "testing",
+          "users"
+        ],
+        "semantic": [],
+        "merged": [
+          "user",
+          "usability",
+          "software",
+          "testing",
+          "users"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "testing_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39813869879101543,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:58.201255+00:00"
+      }
+    },
+    {
+      "book": "The Art of Software Testing 3rd Edition",
+      "chapter": 20,
+      "title": "Segment 20 (pages 170-177)",
+      "chapter_id": "The Art of Software Testing 3rd Edition:ch20",
+      "cross_references": [
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch21",
+          "score": 0.6267510649841013,
+          "base_score": 0.5088708225925497,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch15",
+          "score": 0.5323052117120887,
+          "base_score": 0.563101278779407,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch4",
+          "score": 0.5180128763703181,
+          "base_score": 0.5392807198764561,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch3",
+          "score": 0.5179626616056123,
+          "base_score": 0.5391970286019465,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch16",
+          "score": 0.505962267676227,
+          "base_score": 0.5191963720529709,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "debugging",
+          "dump",
+          "program",
+          "error",
+          "memory dump"
+        ],
+        "semantic": [],
+        "merged": [
+          "debugging",
+          "dump",
+          "program",
+          "error",
+          "memory dump"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_is",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.416730023367252,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:58.201384+00:00"
+      }
+    },
+    {
+      "book": "The Art of Software Testing 3rd Edition",
+      "chapter": 21,
+      "title": "Segment 21 (pages 178-188)",
+      "chapter_id": "The Art of Software Testing 3rd Edition:ch21",
+      "cross_references": [
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch20",
+          "score": 0.6267510649841013,
+          "base_score": 0.5088708225925497,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch3",
+          "score": 0.600499736954019,
+          "base_score": 0.5841662282566984,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "error",
+          "debugging",
+          "program",
+          "errors",
+          "cases"
+        ],
+        "semantic": [],
+        "merged": [
+          "error",
+          "debugging",
+          "program",
+          "errors",
+          "cases"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_is",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36377177078327305,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:58.201511+00:00"
+      }
+    },
+    {
+      "book": "The Art of Software Testing 3rd Edition",
+      "chapter": 22,
+      "title": "Segment 22 (pages 189-201)",
+      "chapter_id": "The Art of Software Testing 3rd Edition:ch22",
+      "cross_references": [
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch18",
+          "score": 0.5066442142933247,
+          "base_score": 0.5203329497481337,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "unit tests",
+          "unit",
+          "tests",
+          "acceptance",
+          "testing"
+        ],
+        "semantic": [],
+        "merged": [
+          "unit tests",
+          "unit",
+          "tests",
+          "acceptance",
+          "testing"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "testing_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3638522161810318,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:58.201642+00:00"
+      }
+    },
+    {
+      "book": "The Art of Software Testing 3rd Edition",
+      "chapter": 23,
+      "title": "Segment 23 (pages 202-210)",
+      "chapter_id": "The Art of Software Testing 3rd Edition:ch23",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "prime",
+          "application",
+          "internet",
+          "tests input",
+          "tests"
+        ],
+        "semantic": [],
+        "merged": [
+          "prime",
+          "application",
+          "internet",
+          "tests input",
+          "tests"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_is",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36129799419532416,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:58.201772+00:00"
+      }
+    },
+    {
+      "book": "The Art of Software Testing 3rd Edition",
+      "chapter": 24,
+      "title": "Segment 24 (pages 211-218)",
+      "chapter_id": "The Art of Software Testing 3rd Edition:ch24",
+      "cross_references": [
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch25",
+          "score": 0.6888945331814356,
+          "base_score": 0.7314908886357259,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch26",
+          "score": 0.5654508487160916,
+          "base_score": 0.5257514145268194,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "testing",
+          "internet",
+          "applications",
+          "testing internet",
+          "application"
+        ],
+        "semantic": [],
+        "merged": [
+          "testing",
+          "internet",
+          "applications",
+          "testing internet",
+          "application"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "testing_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34038041035005745,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:58.201943+00:00"
+      }
+    },
+    {
+      "book": "The Art of Software Testing 3rd Edition",
+      "chapter": 25,
+      "title": "Segment 25 (pages 219-226)",
+      "chapter_id": "The Art of Software Testing 3rd Edition:ch25",
+      "cross_references": [
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch24",
+          "score": 0.6888945331814356,
+          "base_score": 0.7314908886357259,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch26",
+          "score": 0.5368623497135909,
+          "base_score": 0.5706965087819108,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "layer",
+          "testing",
+          "data",
+          "response",
+          "applications"
+        ],
+        "semantic": [],
+        "merged": [
+          "layer",
+          "testing",
+          "data",
+          "response",
+          "applications"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "testing_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36088279596131667,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:58.202080+00:00"
+      }
+    },
+    {
+      "book": "The Art of Software Testing 3rd Edition",
+      "chapter": 26,
+      "title": "Segment 26 (pages 227-235)",
+      "chapter_id": "The Art of Software Testing 3rd Edition:ch26",
+      "cross_references": [
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch27",
+          "score": 0.6476842199593258,
+          "base_score": 0.7553996258581356,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch24",
+          "score": 0.5654508487160916,
+          "base_score": 0.5257514145268194,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch25",
+          "score": 0.5368623497135909,
+          "base_score": 0.5706965087819108,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch2",
+          "score": 0.5294067847685265,
+          "base_score": 0.6323446412808776,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "mobile",
+          "application",
+          "device",
+          "mobile application",
+          "testing"
+        ],
+        "semantic": [],
+        "merged": [
+          "mobile",
+          "application",
+          "device",
+          "mobile application",
+          "testing"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "testing_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.341947144500409,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:58.202209+00:00"
+      }
+    },
+    {
+      "book": "The Art of Software Testing 3rd Edition",
+      "chapter": 27,
+      "title": "Segment 27 (pages 236-245)",
+      "chapter_id": "The Art of Software Testing 3rd Edition:ch27",
+      "cross_references": [
+        {
+          "target": "The Art of Software Testing 3rd Edition:ch26",
+          "score": 0.6476842199593258,
+          "base_score": 0.7553996258581356,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "device",
+          "devices",
+          "public",
+          "args",
+          "void"
+        ],
+        "semantic": [],
+        "merged": [
+          "device",
+          "devices",
+          "public",
+          "args",
+          "void"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "testing_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3163193364674081,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:58.202334+00:00"
+      }
+    },
+    {
+      "book": "The Art of Software Testing 3rd Edition",
+      "chapter": 28,
+      "title": "Segment 28 (pages 246-253)",
+      "chapter_id": "The Art of Software Testing 3rd Edition:ch28",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "testing",
+          "45",
+          "31",
+          "13",
+          "08"
+        ],
+        "semantic": [],
+        "merged": [
+          "testing",
+          "45",
+          "31",
+          "13",
+          "08"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_is",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37521240065049927,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:58.202460+00:00"
+      }
+    },
+    {
+      "book": "The Art of Software Testing 3rd Edition",
+      "chapter": 29,
+      "title": "Segment 29 (pages 254-254)",
+      "chapter_id": "The Art of Software Testing 3rd Edition:ch29",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "xerox 143",
+          "xp 179",
+          "179",
+          "xerox",
+          "xp"
+        ],
+        "semantic": [],
+        "merged": [
+          "xerox 143",
+          "xp 179",
+          "179",
+          "xerox",
+          "xp"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.10615390198363973,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:57:58.202585+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

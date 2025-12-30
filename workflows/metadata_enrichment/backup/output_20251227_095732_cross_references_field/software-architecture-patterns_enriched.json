@@ -1,0 +1,236 @@
+{
+  "book": {
+    "title": "software-architecture-patterns"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:02:23.125739",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "software-architecture-patterns",
+      "chapter": 1,
+      "title": "Layered Architecture",
+      "chapter_id": "software-architecture-patterns:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "layer",
+          "layers",
+          "business",
+          "layered",
+          "presentation"
+        ],
+        "semantic": [],
+        "merged": [
+          "layer",
+          "layers",
+          "business",
+          "layered",
+          "presentation"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "pattern_service_layer",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5594947864635588,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:23.122408+00:00"
+      }
+    },
+    {
+      "book": "software-architecture-patterns",
+      "chapter": 2,
+      "title": "Event-Driven Architecture",
+      "chapter_id": "software-architecture-patterns:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "event",
+          "mediator",
+          "topology",
+          "event mediator",
+          "broker"
+        ],
+        "semantic": [],
+        "merged": [
+          "event",
+          "mediator",
+          "topology",
+          "event mediator",
+          "broker"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "event_mediator_topology",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.570272811173984,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:23.122453+00:00"
+      }
+    },
+    {
+      "book": "software-architecture-patterns",
+      "chapter": 3,
+      "title": "Microkernel Architecture",
+      "chapter_id": "software-architecture-patterns:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "plug",
+          "core",
+          "microkernel",
+          "microkernel architecture",
+          "plug modules"
+        ],
+        "semantic": [],
+        "merged": [
+          "plug",
+          "core",
+          "microkernel",
+          "microkernel architecture",
+          "plug modules"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "plug_core_microkernel",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5977059543175857,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:23.122484+00:00"
+      }
+    },
+    {
+      "book": "software-architecture-patterns",
+      "chapter": 4,
+      "title": "Microservices Architecture Pattern",
+      "chapter_id": "software-architecture-patterns:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "service",
+          "microservices",
+          "microservices architecture",
+          "service components",
+          "topology"
+        ],
+        "semantic": [],
+        "merged": [
+          "service",
+          "microservices",
+          "microservices architecture",
+          "service components",
+          "topology"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "pattern_service_layer",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6125498531458369,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:23.122514+00:00"
+      }
+    },
+    {
+      "book": "software-architecture-patterns",
+      "chapter": 5,
+      "title": "Space-Based Architecture",
+      "chapter_id": "software-architecture-patterns:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "processing",
+          "data",
+          "processing units",
+          "grid",
+          "processing unit"
+        ],
+        "semantic": [],
+        "merged": [
+          "processing",
+          "data",
+          "processing units",
+          "grid",
+          "processing unit"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "processing_data_grid",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6391271322581787,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:23.122542+00:00"
+      }
+    },
+    {
+      "book": "software-architecture-patterns",
+      "chapter": 6,
+      "title": "Space-Based Architecture",
+      "chapter_id": "software-architecture-patterns:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "analysis",
+          "tools",
+          "test",
+          "sophisticated",
+          "rating"
+        ],
+        "semantic": [],
+        "merged": [
+          "analysis",
+          "tools",
+          "test",
+          "sophisticated",
+          "rating"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "analysis_tools_architecture",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5394956171947992,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:23.122570+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

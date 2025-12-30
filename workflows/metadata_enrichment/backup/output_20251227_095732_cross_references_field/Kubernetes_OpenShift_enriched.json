@@ -1,0 +1,252 @@
+{
+  "book": {
+    "title": "Kubernetes_OpenShift"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:49:43.503713",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Kubernetes_OpenShift",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-8)",
+      "chapter_id": "Kubernetes_OpenShift:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "responsibility",
+          "36",
+          "work",
+          "containers",
+          "orchestration"
+        ],
+        "semantic": [],
+        "merged": [
+          "responsibility",
+          "36",
+          "work",
+          "containers",
+          "orchestration"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "responsibility_36_containers",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5256450589438141,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:43.500534+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes_OpenShift",
+      "chapter": 2,
+      "title": "Segment 2 (pages 9-16)",
+      "chapter_id": "Kubernetes_OpenShift:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "containers",
+          "pod",
+          "container",
+          "running",
+          "services"
+        ],
+        "semantic": [],
+        "merged": [
+          "containers",
+          "pod",
+          "container",
+          "running",
+          "services"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "containers_pod_container",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5156283895651764,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:43.500575+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes_OpenShift",
+      "chapter": 3,
+      "title": "Segment 3 (pages 17-26)",
+      "chapter_id": "Kubernetes_OpenShift:ch3",
+      "cross_references": [
+        {
+          "target": "Kubernetes_OpenShift:ch4",
+          "score": 0.5268551971019596,
+          "base_score": 0.4614253285032661,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pod",
+          "pods",
+          "volume",
+          "label",
+          "controller"
+        ],
+        "semantic": [],
+        "merged": [
+          "pod",
+          "pods",
+          "volume",
+          "label",
+          "controller"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "pod_pods_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4916748028194002,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:43.500608+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes_OpenShift",
+      "chapter": 4,
+      "title": "Segment 4 (pages 27-34)",
+      "chapter_id": "Kubernetes_OpenShift:ch4",
+      "cross_references": [
+        {
+          "target": "Kubernetes_OpenShift:ch3",
+          "score": 0.5268551971019596,
+          "base_score": 0.4614253285032661,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "service",
+          "pod",
+          "pods",
+          "request",
+          "service proxy"
+        ],
+        "semantic": [],
+        "merged": [
+          "service",
+          "pod",
+          "pods",
+          "request",
+          "service proxy"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "pod_pods_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42886428445733876,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:43.500644+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes_OpenShift",
+      "chapter": 5,
+      "title": "Segment 5 (pages 35-42)",
+      "chapter_id": "Kubernetes_OpenShift:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "kubernetes",
+          "pretty",
+          "metal",
+          "cloud",
+          "public"
+        ],
+        "semantic": [],
+        "merged": [
+          "kubernetes",
+          "pretty",
+          "metal",
+          "cloud",
+          "public"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "kubernetes_pretty_metal",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5002829244898029,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:43.500672+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes_OpenShift",
+      "chapter": 6,
+      "title": "Segment 6 (pages 43-43)",
+      "chapter_id": "Kubernetes_OpenShift:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "like",
+          "valuable",
+          "make right",
+          "com things",
+          "free"
+        ],
+        "semantic": [],
+        "merged": [
+          "like",
+          "valuable",
+          "make right",
+          "com things",
+          "free"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "like_text_hard",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.22486948669900453,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:43.500700+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

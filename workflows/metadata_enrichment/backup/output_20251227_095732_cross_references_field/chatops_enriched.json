@@ -1,0 +1,768 @@
+{
+  "book": {
+    "title": "chatops"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:00:45.295532",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "chatops",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-12)",
+      "chapter_id": "chatops:ch1",
+      "cross_references": [
+        {
+          "target": "chatops:ch9",
+          "score": 0.5874307353894265,
+          "base_score": 0.7290512256490442,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch4",
+          "score": 0.5645819685782977,
+          "base_score": 0.6909699476304962,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch5",
+          "score": 0.5221476884468806,
+          "base_score": 0.6202461474114678,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "applications",
+          "ability quickly",
+          "deliver",
+          "work",
+          "managing"
+        ],
+        "semantic": [],
+        "merged": [
+          "applications",
+          "ability quickly",
+          "deliver",
+          "work",
+          "managing"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6738408974390112,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:45.279058+00:00"
+      }
+    },
+    {
+      "book": "chatops",
+      "chapter": 2,
+      "title": "Segment 2 (pages 13-22)",
+      "chapter_id": "chatops:ch2",
+      "cross_references": [
+        {
+          "target": "chatops:ch11",
+          "score": 0.662025718673834,
+          "base_score": 0.7793021237156492,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch3",
+          "score": 0.6077063657797707,
+          "base_score": 0.7628439429662845,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch6",
+          "score": 0.5989715641534821,
+          "base_score": 0.7482859402558034,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch10",
+          "score": 0.585289939616087,
+          "base_score": 0.7254832326934784,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch8",
+          "score": 0.5439083372567387,
+          "base_score": 0.656513895427898,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "begin",
+          "chatops",
+          "benefits",
+          "organizations",
+          "report"
+        ],
+        "semantic": [],
+        "merged": [
+          "begin",
+          "chatops",
+          "benefits",
+          "organizations",
+          "report"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "to_and_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.678356277053878,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:45.279159+00:00"
+      }
+    },
+    {
+      "book": "chatops",
+      "chapter": 3,
+      "title": "Segment 3 (pages 23-31)",
+      "chapter_id": "chatops:ch3",
+      "cross_references": [
+        {
+          "target": "chatops:ch8",
+          "score": 0.6650926095864029,
+          "base_score": 0.7844136085699307,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch11",
+          "score": 0.6544344754337649,
+          "base_score": 0.7666500516488672,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch10",
+          "score": 0.6423427541018226,
+          "base_score": 0.820571256836371,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch2",
+          "score": 0.6077063657797707,
+          "base_score": 0.7628439429662845,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch6",
+          "score": 0.6025415628737242,
+          "base_score": 0.7542359381228736,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "shared",
+          "team",
+          "actions",
+          "access"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "shared",
+          "team",
+          "actions",
+          "access"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "to_and_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7134376103360563,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:45.279216+00:00"
+      }
+    },
+    {
+      "book": "chatops",
+      "chapter": 4,
+      "title": "Segment 4 (pages 32-39)",
+      "chapter_id": "chatops:ch4",
+      "cross_references": [
+        {
+          "target": "chatops:ch7",
+          "score": 0.5737716054180586,
+          "base_score": 0.6322119349560237,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch1",
+          "score": 0.5645819685782977,
+          "base_score": 0.6909699476304962,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch9",
+          "score": 0.5345396178885079,
+          "base_score": 0.6408993631475131,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch5",
+          "score": 0.5322116284997424,
+          "base_score": 0.6370193808329039,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tools",
+          "integrations",
+          "party",
+          "services",
+          "tools services"
+        ],
+        "semantic": [],
+        "merged": [
+          "tools",
+          "integrations",
+          "party",
+          "services",
+          "tools services"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.685163375335399,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:45.279269+00:00"
+      }
+    },
+    {
+      "book": "chatops",
+      "chapter": 5,
+      "title": "Segment 5 (pages 40-48)",
+      "chapter_id": "chatops:ch5",
+      "cross_references": [
+        {
+          "target": "chatops:ch4",
+          "score": 0.5322116284997424,
+          "base_score": 0.6370193808329039,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch7",
+          "score": 0.5242403104664808,
+          "base_score": 0.623733850777468,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch1",
+          "score": 0.5221476884468806,
+          "base_score": 0.6202461474114678,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch9",
+          "score": 0.5131423997043231,
+          "base_score": 0.6052373328405385,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "language",
+          "bot",
+          "chatbot",
+          "natural",
+          "apache"
+        ],
+        "semantic": [],
+        "merged": [
+          "language",
+          "bot",
+          "chatbot",
+          "natural",
+          "apache"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6003266378064254,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:45.279349+00:00"
+      }
+    },
+    {
+      "book": "chatops",
+      "chapter": 6,
+      "title": "Segment 6 (pages 49-56)",
+      "chapter_id": "chatops:ch6",
+      "cross_references": [
+        {
+          "target": "chatops:ch8",
+          "score": 0.6402136911147958,
+          "base_score": 0.6503561518579929,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch10",
+          "score": 0.6214403211153076,
+          "base_score": 0.7857338685255126,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch11",
+          "score": 0.6131133744001039,
+          "base_score": 0.7718556240001733,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch3",
+          "score": 0.6025415628737242,
+          "base_score": 0.7542359381228736,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch2",
+          "score": 0.5989715641534821,
+          "base_score": 0.7482859402558034,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "real time",
+          "information",
+          "real",
+          "right",
+          "notifications"
+        ],
+        "semantic": [],
+        "merged": [
+          "real time",
+          "information",
+          "real",
+          "right",
+          "notifications"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "to_and_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6936328812847229,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:45.279401+00:00"
+      }
+    },
+    {
+      "book": "chatops",
+      "chapter": 7,
+      "title": "Segment 7 (pages 57-64)",
+      "chapter_id": "chatops:ch7",
+      "cross_references": [
+        {
+          "target": "chatops:ch4",
+          "score": 0.5737716054180586,
+          "base_score": 0.6322119349560237,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch5",
+          "score": 0.5242403104664808,
+          "base_score": 0.623733850777468,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch9",
+          "score": 0.514818985786181,
+          "base_score": 0.6080316429769683,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "infrastructure",
+          "interface",
+          "tools",
+          "update",
+          "apis"
+        ],
+        "semantic": [],
+        "merged": [
+          "infrastructure",
+          "interface",
+          "tools",
+          "update",
+          "apis"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5997971274779581,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:45.279461+00:00"
+      }
+    },
+    {
+      "book": "chatops",
+      "chapter": 8,
+      "title": "Segment 8 (pages 65-74)",
+      "chapter_id": "chatops:ch8",
+      "cross_references": [
+        {
+          "target": "chatops:ch3",
+          "score": 0.6650926095864029,
+          "base_score": 0.7844136085699307,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch6",
+          "score": 0.6402136911147958,
+          "base_score": 0.6503561518579929,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch10",
+          "score": 0.6033178617003729,
+          "base_score": 0.7555297695006216,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch11",
+          "score": 0.5506669314138766,
+          "base_score": 0.6677782190231276,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch2",
+          "score": 0.5439083372567387,
+          "base_score": 0.656513895427898,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "time",
+          "actions",
+          "familiar",
+          "real",
+          "real time"
+        ],
+        "semantic": [],
+        "merged": [
+          "time",
+          "actions",
+          "familiar",
+          "real",
+          "real time"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "to_and_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6724049845402859,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:45.279535+00:00"
+      }
+    },
+    {
+      "book": "chatops",
+      "chapter": 9,
+      "title": "Segment 9 (pages 75-84)",
+      "chapter_id": "chatops:ch9",
+      "cross_references": [
+        {
+          "target": "chatops:ch1",
+          "score": 0.5874307353894265,
+          "base_score": 0.7290512256490442,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch4",
+          "score": 0.5345396178885079,
+          "base_score": 0.6408993631475131,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch7",
+          "score": 0.514818985786181,
+          "base_score": 0.6080316429769683,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch5",
+          "score": 0.5131423997043231,
+          "base_score": 0.6052373328405385,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "conversations",
+          "commands",
+          "conversations context",
+          "concerns",
+          "context"
+        ],
+        "semantic": [],
+        "merged": [
+          "conversations",
+          "commands",
+          "conversations context",
+          "concerns",
+          "context"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6383555723120554,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:45.279587+00:00"
+      }
+    },
+    {
+      "book": "chatops",
+      "chapter": 10,
+      "title": "Segment 10 (pages 85-92)",
+      "chapter_id": "chatops:ch10",
+      "cross_references": [
+        {
+          "target": "chatops:ch3",
+          "score": 0.6423427541018226,
+          "base_score": 0.820571256836371,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch6",
+          "score": 0.6214403211153076,
+          "base_score": 0.7857338685255126,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch8",
+          "score": 0.6033178617003729,
+          "base_score": 0.7555297695006216,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch11",
+          "score": 0.5975945473955553,
+          "base_score": 0.7459909123259255,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch2",
+          "score": 0.585289939616087,
+          "base_score": 0.7254832326934784,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "chat service",
+          "service",
+          "provider",
+          "large",
+          "15"
+        ],
+        "semantic": [],
+        "merged": [
+          "chat service",
+          "service",
+          "provider",
+          "large",
+          "15"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "to_and_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7222277744714419,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:45.279639+00:00"
+      }
+    },
+    {
+      "book": "chatops",
+      "chapter": 11,
+      "title": "Segment 11 (pages 93-98)",
+      "chapter_id": "chatops:ch11",
+      "cross_references": [
+        {
+          "target": "chatops:ch2",
+          "score": 0.662025718673834,
+          "base_score": 0.7793021237156492,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch3",
+          "score": 0.6544344754337649,
+          "base_score": 0.7666500516488672,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch6",
+          "score": 0.6131133744001039,
+          "base_score": 0.7718556240001733,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch10",
+          "score": 0.5975945473955553,
+          "base_score": 0.7459909123259255,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "chatops:ch8",
+          "score": 0.5506669314138766,
+          "base_score": 0.6677782190231276,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "chatops",
+          "team organization",
+          "way",
+          "bring",
+          "team"
+        ],
+        "semantic": [],
+        "merged": [
+          "chatops",
+          "team organization",
+          "way",
+          "bring",
+          "team"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "to_and_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6825064630888622,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:45.279691+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

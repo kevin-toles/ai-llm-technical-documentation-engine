@@ -1,0 +1,925 @@
+{
+  "book": {
+    "title": "Designing Event-Driven Systems"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:45:13.001156",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Designing Event-Driven Systems",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-8)",
+      "chapter_id": "Designing Event-Driven Systems:ch1",
+      "cross_references": [
+        {
+          "target": "Designing Event-Driven Systems:ch8",
+          "score": 0.6237080061870612,
+          "base_score": 0.7154392695710279,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Event-Driven Systems:ch17",
+          "score": 0.5966108589816316,
+          "base_score": 0.7443514316360527,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Event-Driven Systems:ch18",
+          "score": 0.5471032275287432,
+          "base_score": 0.6618387125479053,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "summary",
+          "designing",
+          "designing event",
+          "driven systems",
+          "event"
+        ],
+        "semantic": [],
+        "merged": [
+          "summary",
+          "designing",
+          "designing event",
+          "driven systems",
+          "event"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6123646524726117,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:12.976105+00:00"
+      }
+    },
+    {
+      "book": "Designing Event-Driven Systems",
+      "chapter": 2,
+      "title": "Segment 2 (pages 9-19)",
+      "chapter_id": "Designing Event-Driven Systems:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "teams",
+          "interesting",
+          "bank",
+          "data",
+          "thing"
+        ],
+        "semantic": [],
+        "merged": [
+          "teams",
+          "interesting",
+          "bank",
+          "data",
+          "thing"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5862230738502597,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:12.976250+00:00"
+      }
+    },
+    {
+      "book": "Designing Event-Driven Systems",
+      "chapter": 3,
+      "title": "Segment 3 (pages 20-28)",
+      "chapter_id": "Designing Event-Driven Systems:ch3",
+      "cross_references": [
+        {
+          "target": "Designing Event-Driven Systems:ch12",
+          "score": 0.5744389246274855,
+          "base_score": 0.6333241336384017,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "database",
+          "streaming",
+          "layer",
+          "application",
+          "stream processing"
+        ],
+        "semantic": [],
+        "merged": [
+          "database",
+          "streaming",
+          "layer",
+          "application",
+          "stream processing"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5450636090816673,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:12.976346+00:00"
+      }
+    },
+    {
+      "book": "Designing Event-Driven Systems",
+      "chapter": 4,
+      "title": "Segment 4 (pages 29-36)",
+      "chapter_id": "Designing Event-Driven Systems:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "kafka",
+          "cluster",
+          "messages",
+          "data",
+          "kafka cluster"
+        ],
+        "semantic": [],
+        "merged": [
+          "kafka",
+          "cluster",
+          "messages",
+          "data",
+          "kafka cluster"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "in_data_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.587417834431889,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:12.976434+00:00"
+      }
+    },
+    {
+      "book": "Designing Event-Driven Systems",
+      "chapter": 5,
+      "title": "Segment 5 (pages 37-46)",
+      "chapter_id": "Designing Event-Driven Systems:ch5",
+      "cross_references": [
+        {
+          "target": "Designing Event-Driven Systems:ch7",
+          "score": 0.5912822374908838,
+          "base_score": 0.6613963217440656,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Event-Driven Systems:ch10",
+          "score": 0.5060895782634398,
+          "base_score": 0.5934826304390663,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "commands",
+          "events",
+          "compacted",
+          "queries",
+          "messages"
+        ],
+        "semantic": [],
+        "merged": [
+          "commands",
+          "events",
+          "compacted",
+          "queries",
+          "messages"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_events_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5533672118780432,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:12.976524+00:00"
+      }
+    },
+    {
+      "book": "Designing Event-Driven Systems",
+      "chapter": 6,
+      "title": "Segment 6 (pages 47-55)",
+      "chapter_id": "Designing Event-Driven Systems:ch6",
+      "cross_references": [
+        {
+          "target": "Designing Event-Driven Systems:ch12",
+          "score": 0.5669978495125798,
+          "base_score": 0.6209223417802255,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "shipping",
+          "data",
+          "shipping service",
+          "workflow",
+          "payment"
+        ],
+        "semantic": [],
+        "merged": [
+          "shipping",
+          "data",
+          "shipping service",
+          "workflow",
+          "payment"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44442139777864453,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:12.976613+00:00"
+      }
+    },
+    {
+      "book": "Designing Event-Driven Systems",
+      "chapter": 7,
+      "title": "Segment 7 (pages 56-63)",
+      "chapter_id": "Designing Event-Driven Systems:ch7",
+      "cross_references": [
+        {
+          "target": "Designing Event-Driven Systems:ch10",
+          "score": 0.6540136771025128,
+          "base_score": 0.7659487210967806,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Event-Driven Systems:ch5",
+          "score": 0.5912822374908838,
+          "base_score": 0.6613963217440656,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Event-Driven Systems:ch8",
+          "score": 0.5361493126340745,
+          "base_score": 0.7269155210567908,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "events",
+          "processing",
+          "stateful",
+          "stateless",
+          "event"
+        ],
+        "semantic": [],
+        "merged": [
+          "events",
+          "processing",
+          "stateful",
+          "stateless",
+          "event"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_events_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6152125441071029,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:12.976722+00:00"
+      }
+    },
+    {
+      "book": "Designing Event-Driven Systems",
+      "chapter": 8,
+      "title": "Segment 8 (pages 64-72)",
+      "chapter_id": "Designing Event-Driven Systems:ch8",
+      "cross_references": [
+        {
+          "target": "Designing Event-Driven Systems:ch1",
+          "score": 0.6237080061870612,
+          "base_score": 0.7154392695710279,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Event-Driven Systems:ch17",
+          "score": 0.5951380417779356,
+          "base_score": 0.7418967362965594,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Event-Driven Systems:ch18",
+          "score": 0.5786036906649442,
+          "base_score": 0.7143394844415736,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Event-Driven Systems:ch7",
+          "score": 0.5361493126340745,
+          "base_score": 0.7269155210567908,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "stateful",
+          "stateful streaming",
+          "event",
+          "streaming approach",
+          "buffering"
+        ],
+        "semantic": [],
+        "merged": [
+          "stateful",
+          "stateful streaming",
+          "event",
+          "streaming approach",
+          "buffering"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6029449321649019,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:12.976848+00:00"
+      }
+    },
+    {
+      "book": "Designing Event-Driven Systems",
+      "chapter": 9,
+      "title": "Segment 9 (pages 73-81)",
+      "chapter_id": "Designing Event-Driven Systems:ch9",
+      "cross_references": [
+        {
+          "target": "Designing Event-Driven Systems:ch10",
+          "score": 0.5024013339064168,
+          "base_score": 0.7632614824366206,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "event",
+          "sourcing",
+          "event sourcing",
+          "cqrs",
+          "sourcing cqrs"
+        ],
+        "semantic": [],
+        "merged": [
+          "event",
+          "sourcing",
+          "event sourcing",
+          "cqrs",
+          "sourcing cqrs"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5520260541568609,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:12.976942+00:00"
+      }
+    },
+    {
+      "book": "Designing Event-Driven Systems",
+      "chapter": 10,
+      "title": "Segment 10 (pages 82-90)",
+      "chapter_id": "Designing Event-Driven Systems:ch10",
+      "cross_references": [
+        {
+          "target": "Designing Event-Driven Systems:ch7",
+          "score": 0.6540136771025128,
+          "base_score": 0.7659487210967806,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Event-Driven Systems:ch5",
+          "score": 0.5060895782634398,
+          "base_score": 0.5934826304390663,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Event-Driven Systems:ch9",
+          "score": 0.5024013339064168,
+          "base_score": 0.7632614824366206,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "kafka",
+          "database",
+          "view",
+          "event",
+          "connect"
+        ],
+        "semantic": [],
+        "merged": [
+          "kafka",
+          "database",
+          "view",
+          "event",
+          "connect"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_events_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6186437292870558,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:12.977076+00:00"
+      }
+    },
+    {
+      "book": "Designing Event-Driven Systems",
+      "chapter": 11,
+      "title": "Segment 11 (pages 91-98)",
+      "chapter_id": "Designing Event-Driven Systems:ch11",
+      "cross_references": [
+        {
+          "target": "Designing Event-Driven Systems:ch12",
+          "score": 0.5367315289174353,
+          "base_score": 0.5704784741216513,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "data services",
+          "services",
+          "chapter sharing",
+          "services organization"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "data services",
+          "services",
+          "chapter sharing",
+          "services organization"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37195566425346915,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:12.977164+00:00"
+      }
+    },
+    {
+      "book": "Designing Event-Driven Systems",
+      "chapter": 12,
+      "title": "Segment 12 (pages 99-107)",
+      "chapter_id": "Designing Event-Driven Systems:ch12",
+      "cross_references": [
+        {
+          "target": "Designing Event-Driven Systems:ch3",
+          "score": 0.5744389246274855,
+          "base_score": 0.6333241336384017,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Event-Driven Systems:ch6",
+          "score": 0.5669978495125798,
+          "base_score": 0.6209223417802255,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Event-Driven Systems:ch11",
+          "score": 0.5367315289174353,
+          "base_score": 0.5704784741216513,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "database",
+          "data",
+          "log",
+          "analogy",
+          "inside"
+        ],
+        "semantic": [],
+        "merged": [
+          "database",
+          "data",
+          "log",
+          "analogy",
+          "inside"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5474150825147783,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:12.977271+00:00"
+      }
+    },
+    {
+      "book": "Designing Event-Driven Systems",
+      "chapter": 13,
+      "title": "Segment 13 (pages 108-118)",
+      "chapter_id": "Designing Event-Driven Systems:ch13",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "consistency",
+          "data",
+          "database",
+          "systems",
+          "strong"
+        ],
+        "semantic": [],
+        "merged": [
+          "consistency",
+          "data",
+          "database",
+          "systems",
+          "strong"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "in_data_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43844971681788986,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:12.977356+00:00"
+      }
+    },
+    {
+      "book": "Designing Event-Driven Systems",
+      "chapter": 14,
+      "title": "Segment 14 (pages 119-126)",
+      "chapter_id": "Designing Event-Driven Systems:ch14",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "writer",
+          "single writer",
+          "single",
+          "orders",
+          "writer principle"
+        ],
+        "semantic": [],
+        "merged": [
+          "writer",
+          "single writer",
+          "single",
+          "orders",
+          "writer principle"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4155934476756441,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:12.977442+00:00"
+      }
+    },
+    {
+      "book": "Designing Event-Driven Systems",
+      "chapter": 15,
+      "title": "Segment 15 (pages 127-135)",
+      "chapter_id": "Designing Event-Driven Systems:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "transactions",
+          "kafka",
+          "commit",
+          "transaction",
+          "transactional"
+        ],
+        "semantic": [],
+        "merged": [
+          "transactions",
+          "kafka",
+          "commit",
+          "transaction",
+          "transactional"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5108070175589465,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:12.977529+00:00"
+      }
+    },
+    {
+      "book": "Designing Event-Driven Systems",
+      "chapter": 16,
+      "title": "Segment 16 (pages 136-145)",
+      "chapter_id": "Designing Event-Driven Systems:ch16",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "schema",
+          "schemas",
+          "topics",
+          "backward",
+          "orders"
+        ],
+        "semantic": [],
+        "merged": [
+          "schema",
+          "schemas",
+          "topics",
+          "backward",
+          "orders"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4223728706765479,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:12.977616+00:00"
+      }
+    },
+    {
+      "book": "Designing Event-Driven Systems",
+      "chapter": 17,
+      "title": "Segment 17 (pages 146-154)",
+      "chapter_id": "Designing Event-Driven Systems:ch17",
+      "cross_references": [
+        {
+          "target": "Designing Event-Driven Systems:ch1",
+          "score": 0.5966108589816316,
+          "base_score": 0.7443514316360527,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Event-Driven Systems:ch8",
+          "score": 0.5951380417779356,
+          "base_score": 0.7418967362965594,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Event-Driven Systems:ch18",
+          "score": 0.5603958769931782,
+          "base_score": 0.6839931283219636,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "streams",
+          "kafka",
+          "ksql",
+          "14 kafka",
+          "kafka streams"
+        ],
+        "semantic": [],
+        "merged": [
+          "streams",
+          "kafka",
+          "ksql",
+          "14 kafka",
+          "kafka streams"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5664241321481283,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:12.977704+00:00"
+      }
+    },
+    {
+      "book": "Designing Event-Driven Systems",
+      "chapter": 18,
+      "title": "Segment 18 (pages 155-162)",
+      "chapter_id": "Designing Event-Driven Systems:ch18",
+      "cross_references": [
+        {
+          "target": "Designing Event-Driven Systems:ch8",
+          "score": 0.5786036906649442,
+          "base_score": 0.7143394844415736,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Event-Driven Systems:ch17",
+          "score": 0.5603958769931782,
+          "base_score": 0.6839931283219636,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Event-Driven Systems:ch1",
+          "score": 0.5471032275287432,
+          "base_score": 0.6618387125479053,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "inventory",
+          "orders",
+          "productid",
+          "inventory service",
+          "figure 15"
+        ],
+        "semantic": [],
+        "merged": [
+          "inventory",
+          "orders",
+          "productid",
+          "inventory service",
+          "figure 15"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5765419058643373,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:12.977790+00:00"
+      }
+    },
+    {
+      "book": "Designing Event-Driven Systems",
+      "chapter": 19,
+      "title": "Segment 19 (pages 163-166)",
+      "chapter_id": "Designing Event-Driven Systems:ch19",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "streaming",
+          "chapter",
+          "ecosystem",
+          "15",
+          "leveraging kafka"
+        ],
+        "semantic": [],
+        "merged": [
+          "streaming",
+          "chapter",
+          "ecosystem",
+          "15",
+          "leveraging kafka"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5937038728099285,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:12.977874+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

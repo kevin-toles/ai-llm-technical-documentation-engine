@@ -13,6 +13,7 @@ Usage:
 import argparse
 import asyncio
 import aiohttp
+import aiofiles
 import json
 import sys
 import time
@@ -174,8 +175,9 @@ async def process_file(
     
     try:
         # Load metadata
-        with open(input_path, 'r', encoding='utf-8') as f:
-            metadata = json.load(f)
+        async with aiofiles.open(input_path, 'r', encoding='utf-8') as f:
+            content = await f.read()
+            metadata = json.loads(content)
         
         # Handle both structures:
         # 1. List of chapters (current format): [{"chapter_number": 1, "title": ..., "summary": ...}, ...]
@@ -239,8 +241,8 @@ async def process_file(
         output_name = input_path.stem.replace("_metadata", "") + "_enriched.json"
         output_path = output_dir / output_name
         
-        with open(output_path, 'w', encoding='utf-8') as f:
-            json.dump(enriched_output, f, indent=2, ensure_ascii=False)
+        async with aiofiles.open(output_path, 'w', encoding='utf-8') as f:
+            await f.write(json.dumps(enriched_output, indent=2, ensure_ascii=False))
         
         end_time = time.perf_counter()
         processing_time = (end_time - start_time) * 1000
@@ -285,7 +287,7 @@ async def check_gateway_health() -> bool:
 async def process_batch(
     input_files: list[Path],
     output_dir: Path,
-    concurrency: int = 1,  # Sequential by default to avoid overwhelming services
+    _concurrency: int = 1,  # Sequential by default to avoid overwhelming services
 ) -> BatchStats:
     """Process batch of files through MSEP.
     
@@ -306,7 +308,7 @@ async def process_batch(
         sys.exit(1)
     
     print(f"\n{'='*60}")
-    print(f"MSEP Batch Enrichment")
+    print("MSEP Batch Enrichment")
     print(f"{'='*60}")
     print(f"Input directory: {INPUT_DIR}")
     print(f"Output directory: {output_dir}")

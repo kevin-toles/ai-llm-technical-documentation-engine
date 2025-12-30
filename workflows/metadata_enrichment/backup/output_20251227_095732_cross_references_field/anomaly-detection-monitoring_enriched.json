@@ -1,0 +1,289 @@
+{
+  "book": {
+    "title": "anomaly-detection-monitoring"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:00:24.917747",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "anomaly-detection-monitoring",
+      "chapter": 1,
+      "title": "Introduction",
+      "chapter_id": "anomaly-detection-monitoring:ch1",
+      "cross_references": [
+        {
+          "target": "anomaly-detection-monitoring:ch2",
+          "score": 0.6425841884912413,
+          "base_score": 0.7852593617711167,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "anomaly detection",
+          "detection",
+          "topic",
+          "book",
+          "monitoring"
+        ],
+        "semantic": [],
+        "merged": [
+          "anomaly detection",
+          "detection",
+          "topic",
+          "book",
+          "monitoring"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5901807179816442,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:00:24.877439+00:00"
+      }
+    },
+    {
+      "book": "anomaly-detection-monitoring",
+      "chapter": 2,
+      "title": "A Crash Course in Anomaly Detection",
+      "chapter_id": "anomaly-detection-monitoring:ch2",
+      "cross_references": [
+        {
+          "target": "anomaly-detection-monitoring:ch1",
+          "score": 0.6425841884912413,
+          "base_score": 0.7852593617711167,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "anomaly detection",
+          "detection",
+          "book",
+          "metrics",
+          "use anomaly"
+        ],
+        "semantic": [],
+        "merged": [
+          "anomaly detection",
+          "detection",
+          "book",
+          "metrics",
+          "use anomaly"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.612441539198697,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:00:24.877483+00:00"
+      }
+    },
+    {
+      "book": "anomaly-detection-monitoring",
+      "chapter": 3,
+      "title": "Modeling and Predicting",
+      "chapter_id": "anomaly-detection-monitoring:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "control",
+          "chart",
+          "control chart",
+          "values",
+          "value"
+        ],
+        "semantic": [],
+        "merged": [
+          "control",
+          "chart",
+          "control chart",
+          "values",
+          "value"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5230507197470503,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:00:24.877532+00:00"
+      }
+    },
+    {
+      "book": "anomaly-detection-monitoring",
+      "chapter": 4,
+      "title": "Dealing with Trends and Seasonality",
+      "chapter_id": "anomaly-detection-monitoring:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "trend",
+          "seasonality",
+          "trend seasonality",
+          "time",
+          "trends"
+        ],
+        "semantic": [],
+        "merged": [
+          "trend",
+          "seasonality",
+          "trend seasonality",
+          "time",
+          "trends"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4272778189453765,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:00:24.877565+00:00"
+      }
+    },
+    {
+      "book": "anomaly-detection-monitoring",
+      "chapter": 5,
+      "title": "Practical Anomaly Detection for Monitoring",
+      "chapter_id": "anomaly-detection-monitoring:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "metric",
+          "throughput",
+          "problem",
+          "behavior",
+          "simple"
+        ],
+        "semantic": [],
+        "merged": [
+          "metric",
+          "throughput",
+          "problem",
+          "behavior",
+          "simple"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5763178993206292,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:00:24.877597+00:00"
+      }
+    },
+    {
+      "book": "anomaly-detection-monitoring",
+      "chapter": 6,
+      "title": "The Broader Landscape",
+      "chapter_id": "anomaly-detection-monitoring:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "detection",
+          "anomaly detection",
+          "set",
+          "data",
+          "control"
+        ],
+        "semantic": [],
+        "merged": [
+          "detection",
+          "anomaly detection",
+          "set",
+          "data",
+          "control"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5866548575094689,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:00:24.877629+00:00"
+      }
+    },
+    {
+      "book": "anomaly-detection-monitoring",
+      "chapter": 7,
+      "title": "The Broader Landscape",
+      "chapter_id": "anomaly-detection-monitoring:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "var",
+          "sos",
+          "points",
+          "mean",
+          "newvalue"
+        ],
+        "semantic": [],
+        "merged": [
+          "var",
+          "sos",
+          "points",
+          "mean",
+          "newvalue"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45869762698049793,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:00:24.877659+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

@@ -1,0 +1,125 @@
+{
+  "book": {
+    "title": "hadoop-and-spark-performance-for-the-enterprise"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:01:23.969801",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "hadoop-and-spark-performance-for-the-enterprise",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-10)",
+      "chapter_id": "hadoop-and-spark-performance-for-the-enterprise:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "service",
+          "ensuring",
+          "quality",
+          "quality service",
+          "data"
+        ],
+        "semantic": [],
+        "merged": [
+          "service",
+          "ensuring",
+          "quality",
+          "quality service",
+          "data"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "service_quality_ensuring",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.8338521875144558,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:23.966202+00:00"
+      }
+    },
+    {
+      "book": "hadoop-and-spark-performance-for-the-enterprise",
+      "chapter": 2,
+      "title": "Segment 2 (pages 11-18)",
+      "chapter_id": "hadoop-and-spark-performance-for-the-enterprise:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "resource",
+          "job",
+          "pepperdata",
+          "usage",
+          "use"
+        ],
+        "semantic": [],
+        "merged": [
+          "resource",
+          "job",
+          "pepperdata",
+          "usage",
+          "use"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "resource_job_jobs",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.8281088089565313,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:23.966248+00:00"
+      }
+    },
+    {
+      "book": "hadoop-and-spark-performance-for-the-enterprise",
+      "chapter": 3,
+      "title": "Segment 3 (pages 19-20)",
+      "chapter_id": "hadoop-and-spark-performance-for-the-enterprise:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "andy",
+          "analysis meet",
+          "critical capa",
+          "similar"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "andy",
+          "analysis meet",
+          "critical capa",
+          "similar"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "data_jobs_distributed",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.825911550204902,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:23.966275+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

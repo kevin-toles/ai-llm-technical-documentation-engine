@@ -138,7 +138,7 @@ class TestOrchestratorClientModule:
         """
         try:
             from workflows.shared.clients.orchestrator_client import OrchestratorClient
-            assert OrchestratorClient is not None
+            assert OrchestratorClient
         except ImportError:
             pytest.fail("OrchestratorClient class not found - implement in GREEN phase")
 
@@ -176,7 +176,7 @@ class TestOrchestratorClientInit:
         try:
             from workflows.shared.clients.orchestrator_client import OrchestratorClient
             client = OrchestratorClient(base_url="http://localhost:8083", timeout=60.0)
-            assert client.timeout == 60.0
+            assert client.timeout == pytest.approx(60.0)
         except ImportError:
             pytest.fail("OrchestratorClient not found")
 
@@ -363,6 +363,8 @@ class TestOrchestratorClientErrors:
             call_count = 0
             
             async def mock_request(*_args, **_kwargs):
+                import asyncio
+                await asyncio.sleep(0)  # Yield to event loop
                 nonlocal call_count
                 call_count += 1
                 if call_count < 3:
@@ -393,7 +395,7 @@ class TestFakeOrchestratorClient:
         """
         try:
             from workflows.shared.clients.orchestrator_client import FakeOrchestratorClient
-            assert FakeOrchestratorClient is not None
+            assert FakeOrchestratorClient
         except ImportError:
             pytest.fail("FakeOrchestratorClient not found")
 

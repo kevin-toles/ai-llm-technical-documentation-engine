@@ -1,0 +1,1351 @@
+{
+  "book": {
+    "title": "Microservices from Day One - Build robust and scalable software from the start"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:52:02.239280",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Microservices from Day One - Build robust and scalable software from the start",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-8)",
+      "chapter_id": "Microservices from Day One - Build robust and scalable software from the start:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "chapter",
+          "apress com",
+          "apress",
+          "www apress",
+          "rights"
+        ],
+        "semantic": [],
+        "merged": [
+          "chapter",
+          "apress com",
+          "apress",
+          "www apress",
+          "rights"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "services_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26418936166590806,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:02.209259+00:00"
+      }
+    },
+    {
+      "book": "Microservices from Day One - Build robust and scalable software from the start",
+      "chapter": 2,
+      "title": "Segment 2 (pages 9-16)",
+      "chapter_id": "Microservices from Day One - Build robust and scalable software from the start:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "development",
+          "testing",
+          "chapter",
+          "107",
+          "105"
+        ],
+        "semantic": [],
+        "merged": [
+          "development",
+          "testing",
+          "chapter",
+          "107",
+          "105"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3859794124698,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:02.209440+00:00"
+      }
+    },
+    {
+      "book": "Microservices from Day One - Build robust and scalable software from the start",
+      "chapter": 3,
+      "title": "Segment 3 (pages 17-24)",
+      "chapter_id": "Microservices from Day One - Build robust and scalable software from the start:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "microservices",
+          "architecture",
+          "chapter",
+          "services",
+          "applications"
+        ],
+        "semantic": [],
+        "merged": [
+          "microservices",
+          "architecture",
+          "chapter",
+          "services",
+          "applications"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_service_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33299338441794485,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:02.209593+00:00"
+      }
+    },
+    {
+      "book": "Microservices from Day One - Build robust and scalable software from the start",
+      "chapter": 4,
+      "title": "Segment 4 (pages 25-32)",
+      "chapter_id": "Microservices from Day One - Build robust and scalable software from the start:ch4",
+      "cross_references": [
+        {
+          "target": "Microservices from Day One - Build robust and scalable software from the start:ch5",
+          "score": 0.5389409922712807,
+          "base_score": 0.6125207014045154,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "amazon",
+          "services",
+          "netflix",
+          "architecture",
+          "microservices"
+        ],
+        "semantic": [],
+        "merged": [
+          "amazon",
+          "services",
+          "netflix",
+          "architecture",
+          "microservices"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "services_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3669107446949085,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:02.209787+00:00"
+      }
+    },
+    {
+      "book": "Microservices from Day One - Build robust and scalable software from the start",
+      "chapter": 5,
+      "title": "Segment 5 (pages 33-40)",
+      "chapter_id": "Microservices from Day One - Build robust and scalable software from the start:ch5",
+      "cross_references": [
+        {
+          "target": "Microservices from Day One - Build robust and scalable software from the start:ch15",
+          "score": 0.5389413177386723,
+          "base_score": 0.5741614554903797,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices from Day One - Build robust and scalable software from the start:ch4",
+          "score": 0.5389409922712807,
+          "base_score": 0.6125207014045154,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices from Day One - Build robust and scalable software from the start:ch17",
+          "score": 0.5317604108404232,
+          "base_score": 0.6362673514007054,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "microservices",
+          "development",
+          "point",
+          "services",
+          "amazon"
+        ],
+        "semantic": [],
+        "merged": [
+          "microservices",
+          "development",
+          "point",
+          "services",
+          "amazon"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3828575577502175,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:02.209978+00:00"
+      }
+    },
+    {
+      "book": "Microservices from Day One - Build robust and scalable software from the start",
+      "chapter": 6,
+      "title": "Segment 6 (pages 41-48)",
+      "chapter_id": "Microservices from Day One - Build robust and scalable software from the start:ch6",
+      "cross_references": [
+        {
+          "target": "Microservices from Day One - Build robust and scalable software from the start:ch7",
+          "score": 0.5292951790871571,
+          "base_score": 0.5580845577378544,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices from Day One - Build robust and scalable software from the start:ch12",
+          "score": 0.525997814039491,
+          "base_score": 0.5525889493250775,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "services",
+          "application",
+          "decomposition",
+          "aggregation"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "services",
+          "application",
+          "decomposition",
+          "aggregation"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_service_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34963639293856846,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:02.210129+00:00"
+      }
+    },
+    {
+      "book": "Microservices from Day One - Build robust and scalable software from the start",
+      "chapter": 7,
+      "title": "Segment 7 (pages 49-57)",
+      "chapter_id": "Microservices from Day One - Build robust and scalable software from the start:ch7",
+      "cross_references": [
+        {
+          "target": "Microservices from Day One - Build robust and scalable software from the start:ch6",
+          "score": 0.5292951790871571,
+          "base_score": 0.5580845577378544,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "users",
+          "data",
+          "user",
+          "mobile",
+          "users service"
+        ],
+        "semantic": [],
+        "merged": [
+          "users",
+          "data",
+          "user",
+          "mobile",
+          "users service"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_service_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33594680604052135,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:02.210274+00:00"
+      }
+    },
+    {
+      "book": "Microservices from Day One - Build robust and scalable software from the start",
+      "chapter": 8,
+      "title": "Segment 8 (pages 58-67)",
+      "chapter_id": "Microservices from Day One - Build robust and scalable software from the start:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "api",
+          "clients",
+          "version",
+          "changes",
+          "version api"
+        ],
+        "semantic": [],
+        "merged": [
+          "api",
+          "clients",
+          "version",
+          "changes",
+          "version api"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2648244019956026,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:02.210410+00:00"
+      }
+    },
+    {
+      "book": "Microservices from Day One - Build robust and scalable software from the start",
+      "chapter": 9,
+      "title": "Segment 9 (pages 68-75)",
+      "chapter_id": "Microservices from Day One - Build robust and scalable software from the start:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "5ea3d5c2",
+          "attributes",
+          "data type",
+          "links self",
+          "9d33 693ae38c48e0"
+        ],
+        "semantic": [],
+        "merged": [
+          "5ea3d5c2",
+          "attributes",
+          "data type",
+          "links self",
+          "9d33 693ae38c48e0"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "books_book_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.11909250019391777,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:02.210546+00:00"
+      }
+    },
+    {
+      "book": "Microservices from Day One - Build robust and scalable software from the start",
+      "chapter": 10,
+      "title": "Segment 10 (pages 76-84)",
+      "chapter_id": "Microservices from Day One - Build robust and scalable software from the start:ch10",
+      "cross_references": [
+        {
+          "target": "Microservices from Day One - Build robust and scalable software from the start:ch11",
+          "score": 0.6144753325973094,
+          "base_score": 0.6074588876621823,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "swagger",
+          "users",
+          "user",
+          "description",
+          "api"
+        ],
+        "semantic": [],
+        "merged": [
+          "swagger",
+          "users",
+          "user",
+          "description",
+          "api"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3334172032763165,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:02.210694+00:00"
+      }
+    },
+    {
+      "book": "Microservices from Day One - Build robust and scalable software from the start",
+      "chapter": 11,
+      "title": "Segment 11 (pages 85-94)",
+      "chapter_id": "Microservices from Day One - Build robust and scalable software from the start:ch11",
+      "cross_references": [
+        {
+          "target": "Microservices from Day One - Build robust and scalable software from the start:ch10",
+          "score": 0.6144753325973094,
+          "base_score": 0.6074588876621823,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices from Day One - Build robust and scalable software from the start:ch19",
+          "score": 0.5206796527040157,
+          "base_score": 0.6177994211733595,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "swagger",
+          "client",
+          "users",
+          "client libraries",
+          "key"
+        ],
+        "semantic": [],
+        "merged": [
+          "swagger",
+          "client",
+          "users",
+          "client libraries",
+          "key"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27354261925148077,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:02.210831+00:00"
+      }
+    },
+    {
+      "book": "Microservices from Day One - Build robust and scalable software from the start",
+      "chapter": 12,
+      "title": "Segment 12 (pages 95-102)",
+      "chapter_id": "Microservices from Day One - Build robust and scalable software from the start:ch12",
+      "cross_references": [
+        {
+          "target": "Microservices from Day One - Build robust and scalable software from the start:ch26",
+          "score": 0.5957934496392435,
+          "base_score": 0.7429890827320726,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices from Day One - Build robust and scalable software from the start:ch13",
+          "score": 0.5935973837373285,
+          "base_score": 0.7393289728955476,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices from Day One - Build robust and scalable software from the start:ch6",
+          "score": 0.525997814039491,
+          "base_score": 0.5525889493250775,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "client",
+          "libraries",
+          "data",
+          "client libraries",
+          "bulk"
+        ],
+        "semantic": [],
+        "merged": [
+          "client",
+          "libraries",
+          "data",
+          "client libraries",
+          "bulk"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_service_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34011619395197185,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:02.210967+00:00"
+      }
+    },
+    {
+      "book": "Microservices from Day One - Build robust and scalable software from the start",
+      "chapter": 13,
+      "title": "Segment 13 (pages 103-112)",
+      "chapter_id": "Microservices from Day One - Build robust and scalable software from the start:ch13",
+      "cross_references": [
+        {
+          "target": "Microservices from Day One - Build robust and scalable software from the start:ch12",
+          "score": 0.5935973837373285,
+          "base_score": 0.7393289728955476,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices from Day One - Build robust and scalable software from the start:ch26",
+          "score": 0.5796044353681468,
+          "base_score": 0.7160073922802447,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "request",
+          "headers",
+          "modified",
+          "header",
+          "cache"
+        ],
+        "semantic": [],
+        "merged": [
+          "request",
+          "headers",
+          "modified",
+          "header",
+          "cache"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_service_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3275114902873212,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:02.211100+00:00"
+      }
+    },
+    {
+      "book": "Microservices from Day One - Build robust and scalable software from the start",
+      "chapter": 14,
+      "title": "Segment 14 (pages 113-120)",
+      "chapter_id": "Microservices from Day One - Build robust and scalable software from the start:ch14",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "clients",
+          "topic",
+          "refund",
+          "lists",
+          "creation"
+        ],
+        "semantic": [],
+        "merged": [
+          "clients",
+          "topic",
+          "refund",
+          "lists",
+          "creation"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_service_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2775212286643243,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:02.211230+00:00"
+      }
+    },
+    {
+      "book": "Microservices from Day One - Build robust and scalable software from the start",
+      "chapter": 15,
+      "title": "Segment 15 (pages 121-128)",
+      "chapter_id": "Microservices from Day One - Build robust and scalable software from the start:ch15",
+      "cross_references": [
+        {
+          "target": "Microservices from Day One - Build robust and scalable software from the start:ch17",
+          "score": 0.6141529864524025,
+          "base_score": 0.69951423667993,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices from Day One - Build robust and scalable software from the start:ch5",
+          "score": 0.5389413177386723,
+          "base_score": 0.5741614554903797,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices from Day One - Build robust and scalable software from the start:ch16",
+          "score": 0.5039948447595216,
+          "base_score": 0.515917333858462,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "development",
+          "developer",
+          "test",
+          "developers",
+          "script"
+        ],
+        "semantic": [],
+        "merged": [
+          "development",
+          "developer",
+          "test",
+          "developers",
+          "script"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3115715278499162,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:02.211365+00:00"
+      }
+    },
+    {
+      "book": "Microservices from Day One - Build robust and scalable software from the start",
+      "chapter": 16,
+      "title": "Segment 16 (pages 129-139)",
+      "chapter_id": "Microservices from Day One - Build robust and scalable software from the start:ch16",
+      "cross_references": [
+        {
+          "target": "Microservices from Day One - Build robust and scalable software from the start:ch15",
+          "score": 0.5039948447595216,
+          "base_score": 0.515917333858462,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sandbox",
+          "development",
+          "sandbox environment",
+          "data",
+          "environment"
+        ],
+        "semantic": [],
+        "merged": [
+          "sandbox",
+          "development",
+          "sandbox environment",
+          "data",
+          "environment"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26782630055112094,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:02.211511+00:00"
+      }
+    },
+    {
+      "book": "Microservices from Day One - Build robust and scalable software from the start",
+      "chapter": 17,
+      "title": "Segment 17 (pages 140-150)",
+      "chapter_id": "Microservices from Day One - Build robust and scalable software from the start:ch17",
+      "cross_references": [
+        {
+          "target": "Microservices from Day One - Build robust and scalable software from the start:ch15",
+          "score": 0.6141529864524025,
+          "base_score": 0.69951423667993,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices from Day One - Build robust and scalable software from the start:ch19",
+          "score": 0.5476664557681744,
+          "base_score": 0.5887033522062166,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices from Day One - Build robust and scalable software from the start:ch5",
+          "score": 0.5317604108404232,
+          "base_score": 0.6362673514007054,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tests",
+          "test",
+          "testing",
+          "test doubles",
+          "external"
+        ],
+        "semantic": [],
+        "merged": [
+          "tests",
+          "test",
+          "testing",
+          "test doubles",
+          "external"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3571480593201822,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:02.211655+00:00"
+      }
+    },
+    {
+      "book": "Microservices from Day One - Build robust and scalable software from the start",
+      "chapter": 18,
+      "title": "Segment 18 (pages 151-160)",
+      "chapter_id": "Microservices from Day One - Build robust and scalable software from the start:ch18",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "books",
+          "rb",
+          "features step_definitions",
+          "step_definitions",
+          "bookstore books"
+        ],
+        "semantic": [],
+        "merged": [
+          "books",
+          "rb",
+          "features step_definitions",
+          "step_definitions",
+          "bookstore books"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "books_book_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2207562923547444,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:02.211795+00:00"
+      }
+    },
+    {
+      "book": "Microservices from Day One - Build robust and scalable software from the start",
+      "chapter": 19,
+      "title": "Segment 19 (pages 161-168)",
+      "chapter_id": "Microservices from Day One - Build robust and scalable software from the start:ch19",
+      "cross_references": [
+        {
+          "target": "Microservices from Day One - Build robust and scalable software from the start:ch17",
+          "score": 0.5476664557681744,
+          "base_score": 0.5887033522062166,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices from Day One - Build robust and scalable software from the start:ch11",
+          "score": 0.5206796527040157,
+          "base_score": 0.6177994211733595,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "test",
+          "test suite",
+          "suite",
+          "contract",
+          "code"
+        ],
+        "semantic": [],
+        "merged": [
+          "test",
+          "test suite",
+          "suite",
+          "contract",
+          "code"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3163120809296949,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:02.211930+00:00"
+      }
+    },
+    {
+      "book": "Microservices from Day One - Build robust and scalable software from the start",
+      "chapter": 20,
+      "title": "Segment 20 (pages 169-176)",
+      "chapter_id": "Microservices from Day One - Build robust and scalable software from the start:ch20",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "staging",
+          "pipeline",
+          "delivery",
+          "continuous",
+          "production"
+        ],
+        "semantic": [],
+        "merged": [
+          "staging",
+          "pipeline",
+          "delivery",
+          "continuous",
+          "production"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24199457852429307,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:02.212063+00:00"
+      }
+    },
+    {
+      "book": "Microservices from Day One - Build robust and scalable software from the start",
+      "chapter": 21,
+      "title": "Segment 21 (pages 177-188)",
+      "chapter_id": "Microservices from Day One - Build robust and scalable software from the start:ch21",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "physical",
+          "eas",
+          "vms",
+          "running",
+          "server"
+        ],
+        "semantic": [],
+        "merged": [
+          "physical",
+          "eas",
+          "vms",
+          "running",
+          "server"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31912168436249977,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:02.212201+00:00"
+      }
+    },
+    {
+      "book": "Microservices from Day One - Build robust and scalable software from the start",
+      "chapter": 22,
+      "title": "Segment 22 (pages 189-196)",
+      "chapter_id": "Microservices from Day One - Build robust and scalable software from the start:ch22",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "technology",
+          "new",
+          "new technology",
+          "technologies",
+          "new language"
+        ],
+        "semantic": [],
+        "merged": [
+          "technology",
+          "new",
+          "new technology",
+          "technologies",
+          "new language"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.339351432226275,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:52:02.212346+00:00"
+      }
+    },
+    {
+      "book": "Microservices from Day One - Build robust and scalable software from the start",
+      "chapter": 23,
+      "title": "Segment 23 (pages 197-204)",
+      "chapter_id": "Microservices from Day One - Build robust and scalable software from the start:ch23",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "books",
+          "purchases",
+          "rust",
+          "books service",
+          "ruby"
+        ],
+        "semantic": [],
+        "merged": [
+          "books",
+          "purchases",
+          "rust",
+          "books service",
+          "ruby"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3882349576457885,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:52:02.212491+00:00"
+      }
+    },
+    {
+      "book": "Microservices from Day One - Build robust and scalable software from the start",
+      "chapter": 24,
+      "title": "Segment 24 (pages 205-213)",
+      "chapter_id": "Microservices from Day One - Build robust and scalable software from the start:ch24",
+      "cross_references": [
+        {
+          "target": "Microservices from Day One - Build robust and scalable software from the start:ch25",
+          "score": 0.5884879194654228,
+          "base_score": 0.7308131991090379,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cat",
+          "pete",
+          "pete cat",
+          "featured",
+          "books"
+        ],
+        "semantic": [],
+        "merged": [
+          "cat",
+          "pete",
+          "pete cat",
+          "featured",
+          "books"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "books_book_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.053662732478445996,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:02.212639+00:00"
+      }
+    },
+    {
+      "book": "Microservices from Day One - Build robust and scalable software from the start",
+      "chapter": 25,
+      "title": "Segment 25 (pages 214-221)",
+      "chapter_id": "Microservices from Day One - Build robust and scalable software from the start:ch25",
+      "cross_references": [
+        {
+          "target": "Microservices from Day One - Build robust and scalable software from the start:ch24",
+          "score": 0.5884879194654228,
+          "base_score": 0.7308131991090379,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "b974 4d78",
+          "4fc6ed7b54a2",
+          "b974",
+          "35c082ba b974",
+          "9526 4fc6ed7b54a2"
+        ],
+        "semantic": [],
+        "merged": [
+          "b974 4d78",
+          "4fc6ed7b54a2",
+          "b974",
+          "35c082ba b974",
+          "9526 4fc6ed7b54a2"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "books_book_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.06987116787688767,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:02.212777+00:00"
+      }
+    },
+    {
+      "book": "Microservices from Day One - Build robust and scalable software from the start",
+      "chapter": 26,
+      "title": "Segment 26 (pages 222-229)",
+      "chapter_id": "Microservices from Day One - Build robust and scalable software from the start:ch26",
+      "cross_references": [
+        {
+          "target": "Microservices from Day One - Build robust and scalable software from the start:ch12",
+          "score": 0.5957934496392435,
+          "base_score": 0.7429890827320726,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices from Day One - Build robust and scalable software from the start:ch13",
+          "score": 0.5796044353681468,
+          "base_score": 0.7160073922802447,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "response",
+          "log",
+          "performance",
+          "monitoring",
+          "response time"
+        ],
+        "semantic": [],
+        "merged": [
+          "response",
+          "log",
+          "performance",
+          "monitoring",
+          "response time"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_service_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3445560039497318,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:02.212921+00:00"
+      }
+    },
+    {
+      "book": "Microservices from Day One - Build robust and scalable software from the start",
+      "chapter": 27,
+      "title": "Segment 27 (pages 230-237)",
+      "chapter_id": "Microservices from Day One - Build robust and scalable software from the start:ch27",
+      "cross_references": [
+        {
+          "target": "Microservices from Day One - Build robust and scalable software from the start:ch29",
+          "score": 0.5537183177838584,
+          "base_score": 0.5987897888990232,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "team",
+          "services",
+          "operational",
+          "ownership",
+          "operational support"
+        ],
+        "semantic": [],
+        "merged": [
+          "team",
+          "services",
+          "operational",
+          "ownership",
+          "operational support"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "team_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30161281816980323,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:02.213063+00:00"
+      }
+    },
+    {
+      "book": "Microservices from Day One - Build robust and scalable software from the start",
+      "chapter": 28,
+      "title": "Segment 28 (pages 238-245)",
+      "chapter_id": "Microservices from Day One - Build robust and scalable software from the start:ch28",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "person",
+          "team",
+          "operational",
+          "issues",
+          "issue"
+        ],
+        "semantic": [],
+        "merged": [
+          "person",
+          "team",
+          "operational",
+          "issues",
+          "issue"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "team_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1666355963764651,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:02.213196+00:00"
+      }
+    },
+    {
+      "book": "Microservices from Day One - Build robust and scalable software from the start",
+      "chapter": 29,
+      "title": "Segment 29 (pages 246-254)",
+      "chapter_id": "Microservices from Day One - Build robust and scalable software from the start:ch29",
+      "cross_references": [
+        {
+          "target": "Microservices from Day One - Build robust and scalable software from the start:ch27",
+          "score": 0.5537183177838584,
+          "base_score": 0.5987897888990232,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "issue",
+          "severity",
+          "mortem",
+          "post mortem",
+          "team"
+        ],
+        "semantic": [],
+        "merged": [
+          "issue",
+          "severity",
+          "mortem",
+          "post mortem",
+          "team"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "team_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1773976763378566,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:02.213335+00:00"
+      }
+    },
+    {
+      "book": "Microservices from Day One - Build robust and scalable software from the start",
+      "chapter": 30,
+      "title": "Segment 30 (pages 255-258)",
+      "chapter_id": "Microservices from Day One - Build robust and scalable software from the start:ch30",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "services 34",
+          "34",
+          "35",
+          "32",
+          "89"
+        ],
+        "semantic": [],
+        "merged": [
+          "services 34",
+          "34",
+          "35",
+          "32",
+          "89"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "services_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3429428742685641,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:02.213474+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

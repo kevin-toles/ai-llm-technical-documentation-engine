@@ -1,0 +1,267 @@
+{
+  "book": {
+    "title": "Data Mesh"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:44:13.560457",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Data Mesh",
+      "chapter": 1,
+      "title": "The Inflection Point",
+      "chapter_id": "Data Mesh:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "operational data",
+          "business",
+          "operational",
+          "approach",
+          "plane"
+        ],
+        "semantic": [],
+        "merged": [
+          "operational data",
+          "business",
+          "operational",
+          "approach",
+          "plane"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "data_business_operational",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.68407535591873,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:13.536956+00:00"
+      }
+    },
+    {
+      "book": "Data Mesh",
+      "chapter": 2,
+      "title": "After The Inflection Point",
+      "chapter_id": "Data Mesh:ch2",
+      "cross_references": [
+        {
+          "target": "Data Mesh:ch3",
+          "score": 0.517590776813627,
+          "base_score": 0.6959846280227115,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "change",
+          "product",
+          "business",
+          "complexity",
+          "data product"
+        ],
+        "semantic": [],
+        "merged": [
+          "change",
+          "product",
+          "business",
+          "complexity",
+          "data product"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "data_mesh_change",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7066878433874213,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:13.537069+00:00"
+      }
+    },
+    {
+      "book": "Data Mesh",
+      "chapter": 3,
+      "title": "on the logical architecture of Data Mesh, and Chapter 9 for more details on the data product quantum and Chapter 6, on self-serve data infrastructure",
+      "chapter_id": "Data Mesh:ch3",
+      "cross_references": [
+        {
+          "target": "Data Mesh:ch6",
+          "score": 0.7976380206322303,
+          "base_score": 0.6349522566092728,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Data Mesh:ch2",
+          "score": 0.517590776813627,
+          "base_score": 0.6959846280227115,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "product",
+          "data product",
+          "data products",
+          "products",
+          "self"
+        ],
+        "semantic": [],
+        "merged": [
+          "product",
+          "data product",
+          "data products",
+          "products",
+          "self"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_product_products",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7199153768635919,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:13.537125+00:00"
+      }
+    },
+    {
+      "book": "Data Mesh",
+      "chapter": 4,
+      "title": "Before The Inflection Point",
+      "chapter_id": "Data Mesh:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "architecture",
+          "monolithic",
+          "lake",
+          "data lake",
+          "lake architecture"
+        ],
+        "semantic": [],
+        "merged": [
+          "architecture",
+          "monolithic",
+          "lake",
+          "data lake",
+          "lake architecture"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "data_architecture_monolithic",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6805372972475837,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:13.537164+00:00"
+      }
+    },
+    {
+      "book": "Data Mesh",
+      "chapter": 5,
+      "title": "Principle of Domain ownership",
+      "chapter_id": "Data Mesh:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "aligned domain",
+          "source aligned",
+          "aligned",
+          "domain data",
+          "source"
+        ],
+        "semantic": [],
+        "merged": [
+          "aligned domain",
+          "source aligned",
+          "aligned",
+          "domain data",
+          "source"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "data_domain_aligned",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6822615410288221,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:13.537271+00:00"
+      }
+    },
+    {
+      "book": "Data Mesh",
+      "chapter": 6,
+      "title": "Principle of Data as a Product",
+      "chapter_id": "Data Mesh:ch6",
+      "cross_references": [
+        {
+          "target": "Data Mesh:ch3",
+          "score": 0.7976380206322303,
+          "base_score": 0.6349522566092728,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "product",
+          "data product",
+          "data products",
+          "products",
+          "principle"
+        ],
+        "semantic": [],
+        "merged": [
+          "product",
+          "data product",
+          "data products",
+          "products",
+          "principle"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_product_products",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6427884726121456,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:13.537325+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

@@ -1,0 +1,2166 @@
+{
+  "book": {
+    "title": "Microservices in Action"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:52:16.387116",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Microservices in Action",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-11)",
+      "chapter_id": "Microservices in Action:ch1",
+      "cross_references": [
+        {
+          "target": "Microservices in Action:ch5",
+          "score": 0.5754816368578191,
+          "base_score": 0.6734217757154127,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch3",
+          "score": 0.5444510753038425,
+          "base_score": 0.7407517921730709,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch6",
+          "score": 0.5422826297064327,
+          "base_score": 0.7371377161773878,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch2",
+          "score": 0.504231937706574,
+          "base_score": 0.59038656284429,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "microservices",
+          "manning",
+          "microservice",
+          "books",
+          "designing"
+        ],
+        "semantic": [],
+        "merged": [
+          "microservices",
+          "manning",
+          "microservice",
+          "books",
+          "designing"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "microservices_and_microservice",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4792744710163261,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.340506+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 2,
+      "title": "Segment 2 (pages 12-21)",
+      "chapter_id": "Microservices in Action:ch2",
+      "cross_references": [
+        {
+          "target": "Microservices in Action:ch1",
+          "score": 0.504231937706574,
+          "base_score": 0.59038656284429,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "contents",
+          "pipeline",
+          "acknowledgments",
+          "week",
+          "164"
+        ],
+        "semantic": [],
+        "merged": [
+          "contents",
+          "pipeline",
+          "acknowledgments",
+          "week",
+          "164"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "microservices_and_microservice",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44733479310174734,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.340813+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 3,
+      "title": "Segment 3 (pages 22-31)",
+      "chapter_id": "Microservices in Action:ch3",
+      "cross_references": [
+        {
+          "target": "Microservices in Action:ch5",
+          "score": 0.6823232276847545,
+          "base_score": 0.7205387128079243,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch4",
+          "score": 0.6534514034688989,
+          "base_score": 0.672419005781498,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch7",
+          "score": 0.6046214973029187,
+          "base_score": 0.6836284214307905,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch1",
+          "score": 0.5444510753038425,
+          "base_score": 0.7407517921730709,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch11",
+          "score": 0.5117879875583098,
+          "base_score": 0.5289059051897755,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "microservice",
+          "microservices",
+          "microservices action",
+          "chapter",
+          "book"
+        ],
+        "semantic": [],
+        "merged": [
+          "microservice",
+          "microservices",
+          "microservices action",
+          "chapter",
+          "book"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "to_service_microservice",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4515119746560774,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.341020+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 4,
+      "title": "Segment 4 (pages 32-39)",
+      "chapter_id": "Microservices in Action:ch4",
+      "cross_references": [
+        {
+          "target": "Microservices in Action:ch5",
+          "score": 0.731738546536013,
+          "base_score": 0.6838499585124026,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch3",
+          "score": 0.6534514034688989,
+          "base_score": 0.672419005781498,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch11",
+          "score": 0.5666961759575005,
+          "base_score": 0.5278269599291676,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch7",
+          "score": 0.5634419764232163,
+          "base_score": 0.6149958866312863,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch10",
+          "score": 0.545753592187468,
+          "base_score": 0.6595893203124468,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "microservice",
+          "microservices",
+          "business",
+          "application",
+          "technical"
+        ],
+        "semantic": [],
+        "merged": [
+          "microservice",
+          "microservices",
+          "business",
+          "application",
+          "technical"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "to_service_microservice",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4513188142301551,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.341229+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 5,
+      "title": "Segment 5 (pages 40-47)",
+      "chapter_id": "Microservices in Action:ch5",
+      "cross_references": [
+        {
+          "target": "Microservices in Action:ch4",
+          "score": 0.731738546536013,
+          "base_score": 0.6838499585124026,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch3",
+          "score": 0.6823232276847545,
+          "base_score": 0.7205387128079243,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch11",
+          "score": 0.6431401401216106,
+          "base_score": 0.536185947821732,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch1",
+          "score": 0.5754816368578191,
+          "base_score": 0.6734217757154127,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch7",
+          "score": 0.5644079449902546,
+          "base_score": 0.616605834243017,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "microservice",
+          "microservices",
+          "designing",
+          "application",
+          "microservice application"
+        ],
+        "semantic": [],
+        "merged": [
+          "microservice",
+          "microservices",
+          "designing",
+          "application",
+          "microservice application"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "to_service_microservice",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4741779607611829,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.341440+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 6,
+      "title": "Segment 6 (pages 48-55)",
+      "chapter_id": "Microservices in Action:ch6",
+      "cross_references": [
+        {
+          "target": "Microservices in Action:ch30",
+          "score": 0.568034003790639,
+          "base_score": 0.6967233396510649,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch1",
+          "score": 0.5422826297064327,
+          "base_score": 0.7371377161773878,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch5",
+          "score": 0.5353776010801745,
+          "base_score": 0.7256293351336243,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch26",
+          "score": 0.5279721416801404,
+          "base_score": 0.6299535694669006,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch27",
+          "score": 0.5224121632876679,
+          "base_score": 0.6206869388127799,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "microservices",
+          "microservice",
+          "development",
+          "standardize",
+          "development lifecycle"
+        ],
+        "semantic": [],
+        "merged": [
+          "microservices",
+          "microservice",
+          "development",
+          "standardize",
+          "development lifecycle"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "pipeline_to_deployment",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5167337008174403,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.341696+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 7,
+      "title": "Segment 7 (pages 56-63)",
+      "chapter_id": "Microservices in Action:ch7",
+      "cross_references": [
+        {
+          "target": "Microservices in Action:ch3",
+          "score": 0.6046214973029187,
+          "base_score": 0.6836284214307905,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch5",
+          "score": 0.5644079449902546,
+          "base_score": 0.616605834243017,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch4",
+          "score": 0.5634419764232163,
+          "base_score": 0.6149958866312863,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch10",
+          "score": 0.5074397128984346,
+          "base_score": 0.5957328548307242,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "order",
+          "simplebank",
+          "microservices",
+          "placing",
+          "financial"
+        ],
+        "semantic": [],
+        "merged": [
+          "order",
+          "simplebank",
+          "microservices",
+          "placing",
+          "financial"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "to_service_microservice",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42417554438676897,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.341895+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 8,
+      "title": "Segment 8 (pages 64-71)",
+      "chapter_id": "Microservices in Action:ch8",
+      "cross_references": [
+        {
+          "target": "Microservices in Action:ch10",
+          "score": 0.5625820955382871,
+          "base_score": 0.6876368258971453,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch4",
+          "score": 0.5358119804807929,
+          "base_score": 0.6430199674679882,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch5",
+          "score": 0.5068447391147217,
+          "base_score": 0.5947412318578695,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "orders",
+          "orders service",
+          "responsibility",
+          "instances service",
+          "service service"
+        ],
+        "semantic": [],
+        "merged": [
+          "orders",
+          "orders service",
+          "responsibility",
+          "instances service",
+          "service service"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "to_service_microservice",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46058636165652106,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.342114+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 9,
+      "title": "Segment 9 (pages 72-86)",
+      "chapter_id": "Microservices in Action:ch9",
+      "cross_references": [
+        {
+          "target": "Microservices in Action:ch5",
+          "score": 0.5517616917506587,
+          "base_score": 0.6338885338701454,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch4",
+          "score": 0.5042522235581236,
+          "base_score": 0.5547060868825869,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "microservice",
+          "microservice application",
+          "application",
+          "technical",
+          "microservice platform"
+        ],
+        "semantic": [],
+        "merged": [
+          "microservice",
+          "microservice application",
+          "application",
+          "technical",
+          "microservice platform"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4985567710988691,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:52:16.342304+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 10,
+      "title": "Segment 10 (pages 87-96)",
+      "chapter_id": "Microservices in Action:ch10",
+      "cross_references": [
+        {
+          "target": "Microservices in Action:ch8",
+          "score": 0.5625820955382871,
+          "base_score": 0.6876368258971453,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch5",
+          "score": 0.55402431643957,
+          "base_score": 0.6733738607326166,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch4",
+          "score": 0.545753592187468,
+          "base_score": 0.6595893203124468,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch11",
+          "score": 0.5076919511339353,
+          "base_score": 0.5961532518898921,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch7",
+          "score": 0.5074397128984346,
+          "base_score": 0.5957328548307242,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "gateway",
+          "api",
+          "api gateway",
+          "figure",
+          "client"
+        ],
+        "semantic": [],
+        "merged": [
+          "gateway",
+          "api",
+          "api gateway",
+          "figure",
+          "client"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "to_service_microservice",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48555477943431524,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.342495+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 11,
+      "title": "Segment 11 (pages 97-104)",
+      "chapter_id": "Microservices in Action:ch11",
+      "cross_references": [
+        {
+          "target": "Microservices in Action:ch5",
+          "score": 0.6431401401216106,
+          "base_score": 0.536185947821732,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch4",
+          "score": 0.5666961759575005,
+          "base_score": 0.5278269599291676,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch3",
+          "score": 0.5117879875583098,
+          "base_score": 0.5289059051897755,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch10",
+          "score": 0.5076919511339353,
+          "base_score": 0.5961532518898921,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "microservice",
+          "frontend",
+          "microservice application",
+          "applications",
+          "application"
+        ],
+        "semantic": [],
+        "merged": [
+          "microservice",
+          "frontend",
+          "microservice application",
+          "applications",
+          "application"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "to_service_microservice",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.395687879580023,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.342921+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 12,
+      "title": "Segment 12 (pages 105-112)",
+      "chapter_id": "Microservices in Action:ch12",
+      "cross_references": [
+        {
+          "target": "Microservices in Action:ch13",
+          "score": 0.6716688977804683,
+          "base_score": 0.7027814963007806,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch15",
+          "score": 0.5445452970319394,
+          "base_score": 0.6575754950532324,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "strategies",
+          "investment",
+          "strategy",
+          "investment strategies",
+          "investment strategy"
+        ],
+        "semantic": [],
+        "merged": [
+          "strategies",
+          "investment",
+          "strategy",
+          "investment strategies",
+          "investment strategy"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "team_teams_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43390478723709835,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.343249+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 13,
+      "title": "Segment 13 (pages 113-120)",
+      "chapter_id": "Microservices in Action:ch13",
+      "cross_references": [
+        {
+          "target": "Microservices in Action:ch12",
+          "score": 0.6716688977804683,
+          "base_score": 0.7027814963007806,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch15",
+          "score": 0.5967658792621537,
+          "base_score": 0.5779431321035896,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "orders",
+          "strategy",
+          "strategy orders",
+          "orders service",
+          "investment"
+        ],
+        "semantic": [],
+        "merged": [
+          "orders",
+          "strategy",
+          "strategy orders",
+          "orders service",
+          "investment"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "team_teams_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4147475877549785,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.343605+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 14,
+      "title": "Segment 14 (pages 121-129)",
+      "chapter_id": "Microservices in Action:ch14",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "service service",
+          "new service",
+          "new",
+          "service new",
+          "notification"
+        ],
+        "semantic": [],
+        "merged": [
+          "service service",
+          "new service",
+          "new",
+          "service new",
+          "notification"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "service_the_order",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46864294715959154,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.343816+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 15,
+      "title": "Segment 15 (pages 130-137)",
+      "chapter_id": "Microservices in Action:ch15",
+      "cross_references": [
+        {
+          "target": "Microservices in Action:ch13",
+          "score": 0.5967658792621537,
+          "base_score": 0.5779431321035896,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch38",
+          "score": 0.5560497552076521,
+          "base_score": 0.6767495920127534,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch12",
+          "score": 0.5445452970319394,
+          "base_score": 0.6575754950532324,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch39",
+          "score": 0.5261728852328237,
+          "base_score": 0.6269548087213729,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "orders",
+          "ownership",
+          "order",
+          "transactions",
+          "orders service"
+        ],
+        "semantic": [],
+        "merged": [
+          "orders",
+          "ownership",
+          "order",
+          "transactions",
+          "orders service"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "team_teams_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39827165288068983,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.344006+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 16,
+      "title": "Segment 16 (pages 138-145)",
+      "chapter_id": "Microservices in Action:ch16",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "saga",
+          "order",
+          "cancel",
+          "sagas",
+          "placed"
+        ],
+        "semantic": [],
+        "merged": [
+          "saga",
+          "order",
+          "cancel",
+          "sagas",
+          "placed"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "service_the_order",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3182857607245712,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.344192+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 17,
+      "title": "Segment 17 (pages 146-154)",
+      "chapter_id": "Microservices in Action:ch17",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "query",
+          "queries",
+          "events",
+          "order",
+          "state"
+        ],
+        "semantic": [],
+        "merged": [
+          "query",
+          "queries",
+          "events",
+          "order",
+          "state"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2740439339892319,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:52:16.344378+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 18,
+      "title": "Segment 18 (pages 155-163)",
+      "chapter_id": "Microservices in Action:ch18",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "failure",
+          "availability",
+          "hardware",
+          "service availability",
+          "designing reliable"
+        ],
+        "semantic": [],
+        "merged": [
+          "failure",
+          "availability",
+          "hardware",
+          "service availability",
+          "designing reliable"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49217228942667807,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:52:16.344563+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 19,
+      "title": "Segment 19 (pages 164-171)",
+      "chapter_id": "Microservices in Action:ch19",
+      "cross_references": [
+        {
+          "target": "Microservices in Action:ch20",
+          "score": 0.549723550795302,
+          "base_score": 0.66620591799217,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "retry",
+          "retries",
+          "holdings",
+          "holdings service",
+          "market data"
+        ],
+        "semantic": [],
+        "merged": [
+          "retry",
+          "retries",
+          "holdings",
+          "holdings service",
+          "market data"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38033367013949354,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.344771+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 20,
+      "title": "Segment 20 (pages 172-179)",
+      "chapter_id": "Microservices in Action:ch20",
+      "cross_references": [
+        {
+          "target": "Microservices in Action:ch19",
+          "score": 0.549723550795302,
+          "base_score": 0.66620591799217,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "requests",
+          "deadlines",
+          "request",
+          "designing reliable",
+          "reliable services"
+        ],
+        "semantic": [],
+        "merged": [
+          "requests",
+          "deadlines",
+          "request",
+          "designing reliable",
+          "reliable services"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3723842454830019,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.344960+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 21,
+      "title": "Segment 21 (pages 180-188)",
+      "chapter_id": "Microservices in Action:ch21",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "capacity",
+          "load",
+          "service mesh",
+          "mesh",
+          "capacity service"
+        ],
+        "semantic": [],
+        "merged": [
+          "capacity",
+          "load",
+          "service mesh",
+          "mesh",
+          "capacity service"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37305354758699766,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.345146+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 22,
+      "title": "Segment 22 (pages 189-197)",
+      "chapter_id": "Microservices in Action:ch22",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "publisher_service",
+          "event",
+          "rpc",
+          "event_handler publisher_service",
+          "register"
+        ],
+        "semantic": [],
+        "merged": [
+          "publisher_service",
+          "event",
+          "rpc",
+          "event_handler publisher_service",
+          "register"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4705308191692387,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:52:16.345336+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 23,
+      "title": "Segment 23 (pages 198-205)",
+      "chapter_id": "Microservices in Action:ch23",
+      "cross_references": [
+        {
+          "target": "Microservices in Action:ch33",
+          "score": 0.6216991474399299,
+          "base_score": 0.6194985790665499,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "metrics",
+          "statsd",
+          "error reporting",
+          "error",
+          "library"
+        ],
+        "semantic": [],
+        "merged": [
+          "metrics",
+          "statsd",
+          "error reporting",
+          "error",
+          "library"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34722780422672217,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.345541+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 24,
+      "title": "Segment 24 (pages 206-216)",
+      "chapter_id": "Microservices in Action:ch24",
+      "cross_references": [
+        {
+          "target": "Microservices in Action:ch4",
+          "score": 0.5217131666964187,
+          "base_score": 0.545447870419957,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "deployment",
+          "microservice",
+          "chassis",
+          "feature",
+          "deployment practices"
+        ],
+        "semantic": [],
+        "merged": [
+          "deployment",
+          "microservice",
+          "chassis",
+          "feature",
+          "deployment practices"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "to_service_microservice",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.407929092569733,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.345768+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 25,
+      "title": "Segment 25 (pages 217-225)",
+      "chapter_id": "Microservices in Action:ch25",
+      "cross_references": [
+        {
+          "target": "Microservices in Action:ch29",
+          "score": 0.5198928041950757,
+          "base_score": 0.5424139329177187,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch28",
+          "score": 0.514591168915848,
+          "base_score": 0.533577874119006,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "compute",
+          "gcloud",
+          "gcloud compute",
+          "market data",
+          "data service"
+        ],
+        "semantic": [],
+        "merged": [
+          "compute",
+          "gcloud",
+          "gcloud compute",
+          "market data",
+          "data service"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "pods_jenkins_market",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3962001398822994,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.345962+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 26,
+      "title": "Segment 26 (pages 226-233)",
+      "chapter_id": "Microservices in Action:ch26",
+      "cross_references": [
+        {
+          "target": "Microservices in Action:ch27",
+          "score": 0.6036229284808817,
+          "base_score": 0.5893715474681362,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch6",
+          "score": 0.5279721416801404,
+          "base_score": 0.6299535694669006,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch30",
+          "score": 0.5257039175696502,
+          "base_score": 0.626173195949417,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "artifact",
+          "image",
+          "service artifacts",
+          "container",
+          "artifacts"
+        ],
+        "semantic": [],
+        "merged": [
+          "artifact",
+          "image",
+          "service artifacts",
+          "container",
+          "artifacts"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "pipeline_to_deployment",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39247932457651225,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.346180+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 27,
+      "title": "Segment 27 (pages 234-249)",
+      "chapter_id": "Microservices in Action:ch27",
+      "cross_references": [
+        {
+          "target": "Microservices in Action:ch26",
+          "score": 0.6036229284808817,
+          "base_score": 0.5893715474681362,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch6",
+          "score": 0.5224121632876679,
+          "base_score": 0.6206869388127799,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "container",
+          "image",
+          "market data",
+          "host",
+          "docker"
+        ],
+        "semantic": [],
+        "merged": [
+          "container",
+          "image",
+          "market data",
+          "host",
+          "docker"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "pipeline_to_deployment",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42853265601519663,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.346404+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 28,
+      "title": "Segment 28 (pages 250-261)",
+      "chapter_id": "Microservices in Action:ch28",
+      "cross_references": [
+        {
+          "target": "Microservices in Action:ch29",
+          "score": 0.7369064164753517,
+          "base_score": 0.692463075077967,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch25",
+          "score": 0.514591168915848,
+          "base_score": 0.533577874119006,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch42",
+          "score": 0.5144409557297619,
+          "base_score": 0.6074015928829366,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pods",
+          "pod",
+          "replica set",
+          "market data",
+          "replica"
+        ],
+        "semantic": [],
+        "merged": [
+          "pods",
+          "pod",
+          "replica set",
+          "market data",
+          "replica"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "pods_jenkins_market",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3249349554977058,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.346633+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 29,
+      "title": "Segment 29 (pages 262-269)",
+      "chapter_id": "Microservices in Action:ch29",
+      "cross_references": [
+        {
+          "target": "Microservices in Action:ch28",
+          "score": 0.7369064164753517,
+          "base_score": 0.692463075077967,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch25",
+          "score": 0.5198928041950757,
+          "base_score": 0.5424139329177187,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "deployment",
+          "replica",
+          "canary",
+          "market data",
+          "replica set"
+        ],
+        "semantic": [],
+        "merged": [
+          "deployment",
+          "replica",
+          "canary",
+          "market data",
+          "replica set"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "pods_jenkins_market",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37861032977876313,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.346829+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 30,
+      "title": "Segment 30 (pages 270-277)",
+      "chapter_id": "Microservices in Action:ch30",
+      "cross_references": [
+        {
+          "target": "Microservices in Action:ch6",
+          "score": 0.568034003790639,
+          "base_score": 0.6967233396510649,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch31",
+          "score": 0.5495523330124514,
+          "base_score": 0.5918464809466782,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch32",
+          "score": 0.5474904603442073,
+          "base_score": 0.4958174339070123,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch26",
+          "score": 0.5257039175696502,
+          "base_score": 0.626173195949417,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pipeline",
+          "jenkins",
+          "deployment",
+          "10",
+          "deployment pipeline"
+        ],
+        "semantic": [],
+        "merged": [
+          "pipeline",
+          "jenkins",
+          "deployment",
+          "10",
+          "deployment pipeline"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "pipeline_to_deployment",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41601803690621364,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.347041+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 31,
+      "title": "Segment 31 (pages 278-285)",
+      "chapter_id": "Microservices in Action:ch31",
+      "cross_references": [
+        {
+          "target": "Microservices in Action:ch30",
+          "score": 0.5495523330124514,
+          "base_score": 0.5918464809466782,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "staging",
+          "stage",
+          "pipeline",
+          "docker",
+          "build"
+        ],
+        "semantic": [],
+        "merged": [
+          "staging",
+          "stage",
+          "pipeline",
+          "docker",
+          "build"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "pipeline_to_deployment",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25101784866033267,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.347227+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 32,
+      "title": "Segment 32 (pages 286-293)",
+      "chapter_id": "Microservices in Action:ch32",
+      "cross_references": [
+        {
+          "target": "Microservices in Action:ch30",
+          "score": 0.5474904603442073,
+          "base_score": 0.4958174339070123,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "deploy",
+          "deployment",
+          "production",
+          "10",
+          "canary"
+        ],
+        "semantic": [],
+        "merged": [
+          "deploy",
+          "deployment",
+          "production",
+          "10",
+          "canary"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "pipeline_to_deployment",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2564510426785661,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.347425+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 33,
+      "title": "Segment 33 (pages 294-307)",
+      "chapter_id": "Microservices in Action:ch33",
+      "cross_references": [
+        {
+          "target": "Microservices in Action:ch23",
+          "score": 0.6216991474399299,
+          "base_score": 0.6194985790665499,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch35",
+          "score": 0.592650142882476,
+          "base_score": 0.73775023813746,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "metrics",
+          "statsd",
+          "prometheus",
+          "metric",
+          "monitoring"
+        ],
+        "semantic": [],
+        "merged": [
+          "metrics",
+          "statsd",
+          "prometheus",
+          "metric",
+          "monitoring"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.412652202410397,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.347650+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 34,
+      "title": "Segment 34 (pages 308-317)",
+      "chapter_id": "Microservices in Action:ch34",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "alert",
+          "11",
+          "grafana",
+          "figure 11",
+          "alerts"
+        ],
+        "semantic": [],
+        "merged": [
+          "alert",
+          "11",
+          "grafana",
+          "figure 11",
+          "alerts"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2362593547953274,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.347847+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 35,
+      "title": "Segment 35 (pages 318-332)",
+      "chapter_id": "Microservices in Action:ch35",
+      "cross_references": [
+        {
+          "target": "Microservices in Action:ch33",
+          "score": 0.592650142882476,
+          "base_score": 0.73775023813746,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "log",
+          "logs",
+          "log data",
+          "data",
+          "centralized"
+        ],
+        "semantic": [],
+        "merged": [
+          "log",
+          "logs",
+          "log data",
+          "data",
+          "centralized"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42314363449473674,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.348056+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 36,
+      "title": "Segment 36 (pages 333-340)",
+      "chapter_id": "Microservices in Action:ch36",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "log",
+          "logging",
+          "log data",
+          "fluentd",
+          "kibana"
+        ],
+        "semantic": [],
+        "merged": [
+          "log",
+          "logging",
+          "log data",
+          "fluentd",
+          "kibana"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3005254467041927,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.348252+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 37,
+      "title": "Segment 37 (pages 341-350)",
+      "chapter_id": "Microservices in Action:ch37",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "span",
+          "settings",
+          "profile",
+          "settings service",
+          "spans"
+        ],
+        "semantic": [],
+        "merged": [
+          "span",
+          "settings",
+          "profile",
+          "settings service",
+          "spans"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3454083018049157,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.348437+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 38,
+      "title": "Segment 38 (pages 351-365)",
+      "chapter_id": "Microservices in Action:ch38",
+      "cross_references": [
+        {
+          "target": "Microservices in Action:ch39",
+          "score": 0.7633676894076429,
+          "base_score": 0.7365651966317857,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch15",
+          "score": 0.5560497552076521,
+          "base_score": 0.6767495920127534,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "team",
+          "teams",
+          "13",
+          "figure 13",
+          "team team"
+        ],
+        "semantic": [],
+        "merged": [
+          "team",
+          "teams",
+          "13",
+          "figure 13",
+          "team team"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "team_teams_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3689600710115991,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.348641+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 39,
+      "title": "Segment 39 (pages 366-373)",
+      "chapter_id": "Microservices in Action:ch39",
+      "cross_references": [
+        {
+          "target": "Microservices in Action:ch38",
+          "score": 0.7633676894076429,
+          "base_score": 0.7365651966317857,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices in Action:ch15",
+          "score": 0.5261728852328237,
+          "base_score": 0.6269548087213729,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "team",
+          "teams",
+          "microservice teams",
+          "microservice",
+          "13"
+        ],
+        "semantic": [],
+        "merged": [
+          "team",
+          "teams",
+          "microservice teams",
+          "microservice",
+          "13"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "team_teams_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4280589000715245,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.348831+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 40,
+      "title": "Segment 40 (pages 374-383)",
+      "chapter_id": "Microservices in Action:ch40",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "jenkins",
+          "minikube",
+          "running jenkins",
+          "jenkins minikube",
+          "installing jenkins"
+        ],
+        "semantic": [],
+        "merged": [
+          "jenkins",
+          "minikube",
+          "running jenkins",
+          "jenkins minikube",
+          "installing jenkins"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "pods_jenkins_market",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3422204407833814,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.349019+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 41,
+      "title": "Segment 41 (pages 384-392)",
+      "chapter_id": "Microservices in Action:ch41",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "209",
+          "210",
+          "43",
+          "275",
+          "213"
+        ],
+        "semantic": [],
+        "merged": [
+          "209",
+          "210",
+          "43",
+          "275",
+          "213"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4205829121584363,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:52:16.349199+00:00"
+      }
+    },
+    {
+      "book": "Microservices in Action",
+      "chapter": 42,
+      "title": "Segment 42 (pages 393-394)",
+      "chapter_id": "Microservices in Action:ch42",
+      "cross_references": [
+        {
+          "target": "Microservices in Action:ch28",
+          "score": 0.5144409557297619,
+          "base_score": 0.6074015928829366,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "book",
+          "delivery pipeline",
+          "cover",
+          "delivery",
+          "pipeline"
+        ],
+        "semantic": [],
+        "merged": [
+          "book",
+          "delivery pipeline",
+          "cover",
+          "delivery",
+          "pipeline"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "pods_jenkins_market",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.367132687962058,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:16.349389+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

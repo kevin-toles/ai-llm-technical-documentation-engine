@@ -1,0 +1,3454 @@
+{
+  "book": {
+    "title": "C++ Concurrency in Action"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:41:55.224418",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-8)",
+      "chapter_id": "C++ Concurrency in Action:ch1",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch3",
+          "score": 0.6187493328011594,
+          "base_score": 0.7071748139278582,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch2",
+          "score": 0.6057903734603313,
+          "base_score": 0.7596506224338855,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch4",
+          "score": 0.6042036544100776,
+          "base_score": 0.6829320166093886,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch23",
+          "score": 0.5439727673284017,
+          "base_score": 0.6566212788806696,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch22",
+          "score": 0.5409623250245111,
+          "base_score": 0.6516038750408519,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "concurrency",
+          "concurrency concurrency",
+          "manning",
+          "manning publications",
+          "publications"
+        ],
+        "semantic": [],
+        "merged": [
+          "concurrency",
+          "concurrency concurrency",
+          "manning",
+          "manning publications",
+          "publications"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47545922528734125,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.193346+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 2,
+      "title": "Segment 2 (pages 9-16)",
+      "chapter_id": "C++ Concurrency in Action:ch2",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch26",
+          "score": 0.7806614408396203,
+          "base_score": 0.7653881156850815,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch21",
+          "score": 0.7738937021130547,
+          "base_score": 0.7541085511408054,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch23",
+          "score": 0.7237668200424473,
+          "base_score": 0.7896113667374121,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch22",
+          "score": 0.6483766248154675,
+          "base_score": 0.7565536339517052,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch1",
+          "score": 0.6057903734603313,
+          "base_score": 0.7596506224338855,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "structures",
+          "data structures",
+          "data",
+          "thread",
+          "thread safe"
+        ],
+        "semantic": [],
+        "merged": [
+          "structures",
+          "data structures",
+          "data",
+          "thread",
+          "thread safe"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5496063074618984,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.193638+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 3,
+      "title": "Segment 3 (pages 17-25)",
+      "chapter_id": "C++ Concurrency in Action:ch3",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch1",
+          "score": 0.6187493328011594,
+          "base_score": 0.7071748139278582,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch4",
+          "score": 0.5778455447692665,
+          "base_score": 0.5464092412821109,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch2",
+          "score": 0.5183929810067148,
+          "base_score": 0.613988301677858,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch22",
+          "score": 0.5146927566743643,
+          "base_score": 0.6078212611239406,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch47",
+          "score": 0.512131869144714,
+          "base_score": 0.6035531152411899,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "standard",
+          "concurrency",
+          "library",
+          "facilities",
+          "book"
+        ],
+        "semantic": [],
+        "merged": [
+          "standard",
+          "concurrency",
+          "library",
+          "facilities",
+          "book"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.468081474836366,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.193909+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 4,
+      "title": "Segment 4 (pages 26-36)",
+      "chapter_id": "C++ Concurrency in Action:ch4",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch1",
+          "score": 0.6042036544100776,
+          "base_score": 0.6829320166093886,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch3",
+          "score": 0.5778455447692665,
+          "base_score": 0.5464092412821109,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch2",
+          "score": 0.5675369131614845,
+          "base_score": 0.6218207811950668,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch48",
+          "score": 0.5100606076674905,
+          "base_score": 0.5260269387050767,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "concurrency",
+          "use concurrency",
+          "library",
+          "thread",
+          "thread library"
+        ],
+        "semantic": [],
+        "merged": [
+          "concurrency",
+          "use concurrency",
+          "library",
+          "thread",
+          "thread library"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41604316026104615,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.194193+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 5,
+      "title": "Segment 5 (pages 37-49)",
+      "chapter_id": "C++ Concurrency in Action:ch5",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch6",
+          "score": 0.7411472173867056,
+          "base_score": 0.6995310765968903,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch51",
+          "score": 0.694483818283669,
+          "base_score": 0.6217587447584959,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch12",
+          "score": 0.6188378973956268,
+          "base_score": 0.7073224215853038,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch32",
+          "score": 0.5909091383752362,
+          "base_score": 0.6607744898846528,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch33",
+          "score": 0.5700500729490655,
+          "base_score": 0.6260093808410351,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "thread",
+          "std thread",
+          "thread object",
+          "std",
+          "object"
+        ],
+        "semantic": [],
+        "merged": [
+          "thread",
+          "std thread",
+          "thread object",
+          "std",
+          "object"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_std_thread",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.493236604612197,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.194459+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 6,
+      "title": "Segment 6 (pages 50-58)",
+      "chapter_id": "C++ Concurrency in Action:ch6",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch51",
+          "score": 0.9523030901197916,
+          "base_score": 0.6705051501996527,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch5",
+          "score": 0.7411472173867056,
+          "base_score": 0.6995310765968903,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch12",
+          "score": 0.5628281629141016,
+          "base_score": 0.6139728641160953,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch32",
+          "score": 0.5333753322944981,
+          "base_score": 0.5648848130834228,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch46",
+          "score": 0.5098405554839847,
+          "base_score": 0.5256601850659004,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "std thread",
+          "thread",
+          "std",
+          "thread id",
+          "id"
+        ],
+        "semantic": [],
+        "merged": [
+          "std thread",
+          "thread",
+          "std",
+          "thread id",
+          "id"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_std_thread",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4477500898638582,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.194733+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 7,
+      "title": "Segment 7 (pages 59-66)",
+      "chapter_id": "C++ Concurrency in Action:ch7",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch21",
+          "score": 0.6185042140488816,
+          "base_score": 0.7067662826740618,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch2",
+          "score": 0.5911910105982945,
+          "base_score": 0.6612442769230833,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch26",
+          "score": 0.5791134098843029,
+          "base_score": 0.6411149423997642,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch23",
+          "score": 0.5218767175180168,
+          "base_score": 0.6197945291966946,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch10",
+          "score": 0.5206496343252224,
+          "base_score": 0.6177493905420373,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "sharing data",
+          "protecting",
+          "sharing",
+          "protected"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "sharing data",
+          "protecting",
+          "sharing",
+          "protected"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4524131510475928,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.195033+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 8,
+      "title": "Segment 8 (pages 67-78)",
+      "chapter_id": "C++ Concurrency in Action:ch8",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch22",
+          "score": 0.6832795987136048,
+          "base_score": 0.6030850454750556,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch9",
+          "score": 0.6628704581775043,
+          "base_score": 0.5690698112482215,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch10",
+          "score": 0.6393286682384131,
+          "base_score": 0.6488811137306885,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch21",
+          "score": 0.5587863732111269,
+          "base_score": 0.6072365479444708,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch47",
+          "score": 0.5231539206025352,
+          "base_score": 0.6219232010042253,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "lock",
+          "stack",
+          "mutex",
+          "mutexes",
+          "std"
+        ],
+        "semantic": [],
+        "merged": [
+          "lock",
+          "stack",
+          "mutex",
+          "mutexes",
+          "std"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46248462450463984,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.195305+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 9,
+      "title": "Segment 9 (pages 79-87)",
+      "chapter_id": "C++ Concurrency in Action:ch9",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch22",
+          "score": 0.7508513282877333,
+          "base_score": 0.7157045947652696,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch49",
+          "score": 0.6644984605594901,
+          "base_score": 0.6908307675991502,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch8",
+          "score": 0.6628704581775043,
+          "base_score": 0.5690698112482215,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch10",
+          "score": 0.6294488963469995,
+          "base_score": 0.6324148272449993,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch21",
+          "score": 0.5754609453599586,
+          "base_score": 0.6350275015258569,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "std unique_lock",
+          "unique_lock",
+          "lock",
+          "std",
+          "mutex"
+        ],
+        "semantic": [],
+        "merged": [
+          "std unique_lock",
+          "unique_lock",
+          "lock",
+          "std",
+          "mutex"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45994751240769755,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.195567+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 10,
+      "title": "Segment 10 (pages 88-95)",
+      "chapter_id": "C++ Concurrency in Action:ch10",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch8",
+          "score": 0.6393286682384131,
+          "base_score": 0.6488811137306885,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch9",
+          "score": 0.6294488963469995,
+          "base_score": 0.6324148272449993,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch22",
+          "score": 0.6276306966482981,
+          "base_score": 0.6293844944138303,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch49",
+          "score": 0.6199539286669864,
+          "base_score": 0.7091824737042365,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch21",
+          "score": 0.5947658163884832,
+          "base_score": 0.667202286573398,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "std",
+          "std shared_mutex",
+          "shared_mutex",
+          "mutex",
+          "std mutex"
+        ],
+        "semantic": [],
+        "merged": [
+          "std",
+          "std shared_mutex",
+          "shared_mutex",
+          "mutex",
+          "std mutex"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49272288309916695,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.195835+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 11,
+      "title": "Segment 11 (pages 96-103)",
+      "chapter_id": "C++ Concurrency in Action:ch11",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch48",
+          "score": 0.5543702188331615,
+          "base_score": 0.6739503647219358,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch21",
+          "score": 0.5522957971045785,
+          "base_score": 0.5964189211002235,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch44",
+          "score": 0.5515852836153402,
+          "base_score": 0.6693088060255671,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch47",
+          "score": 0.5441211469450976,
+          "base_score": 0.6568685782418294,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch2",
+          "score": 0.5391383023448132,
+          "base_score": 0.6485638372413554,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data_queue",
+          "condition",
+          "waiting",
+          "queue",
+          "event condition"
+        ],
+        "semantic": [],
+        "merged": [
+          "data_queue",
+          "condition",
+          "waiting",
+          "queue",
+          "event condition"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4646122253852432,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.196121+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 12,
+      "title": "Segment 12 (pages 104-111)",
+      "chapter_id": "C++ Concurrency in Action:ch12",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch13",
+          "score": 0.652750295460033,
+          "base_score": 0.763843085025981,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch5",
+          "score": 0.6188378973956268,
+          "base_score": 0.7073224215853038,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch15",
+          "score": 0.5984244101407014,
+          "base_score": 0.5807073502345023,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch46",
+          "score": 0.5922949272368907,
+          "base_score": 0.6630841379874104,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch30",
+          "score": 0.587277526354544,
+          "base_score": 0.6547218031834993,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "std",
+          "future",
+          "packaged_task",
+          "std packaged_task",
+          "std future"
+        ],
+        "semantic": [],
+        "merged": [
+          "std",
+          "future",
+          "packaged_task",
+          "std packaged_task",
+          "std future"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_std_thread",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5114185788828781,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.196380+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 13,
+      "title": "Segment 13 (pages 112-122)",
+      "chapter_id": "C++ Concurrency in Action:ch13",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch12",
+          "score": 0.652750295460033,
+          "base_score": 0.763843085025981,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch46",
+          "score": 0.6158870410881081,
+          "base_score": 0.7024043277394394,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch15",
+          "score": 0.589678869015022,
+          "base_score": 0.6587240409509625,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch30",
+          "score": 0.56094963558917,
+          "base_score": 0.6108419852412093,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "std",
+          "chrono",
+          "std chrono",
+          "std shared_future",
+          "shared_future"
+        ],
+        "semantic": [],
+        "merged": [
+          "std",
+          "chrono",
+          "std chrono",
+          "std shared_future",
+          "shared_future"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_std_thread",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40133538087456105,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.196639+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 14,
+      "title": "Segment 14 (pages 123-131)",
+      "chapter_id": "C++ Concurrency in Action:ch14",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch36",
+          "score": 0.5240040943590054,
+          "base_score": 0.623340157265009,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "message",
+          "state",
+          "std",
+          "atm",
+          "std list"
+        ],
+        "semantic": [],
+        "merged": [
+          "message",
+          "state",
+          "std",
+          "atm",
+          "std list"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_std_thread",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39675451568066294,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.196902+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 15,
+      "title": "Segment 15 (pages 132-140)",
+      "chapter_id": "C++ Concurrency in Action:ch15",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch12",
+          "score": 0.5984244101407014,
+          "base_score": 0.5807073502345023,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch13",
+          "score": 0.589678869015022,
+          "base_score": 0.6587240409509625,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch30",
+          "score": 0.5265070246660823,
+          "base_score": 0.5534376337027299,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch46",
+          "score": 0.5134933436495814,
+          "base_score": 0.531748165341895,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch31",
+          "score": 0.5052161136720525,
+          "base_score": 0.5179527820460135,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "std experimental",
+          "experimental",
+          "future",
+          "experimental future",
+          "std"
+        ],
+        "semantic": [],
+        "merged": [
+          "std experimental",
+          "experimental",
+          "future",
+          "experimental future",
+          "std"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_std_thread",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35166878555171754,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.197163+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 16,
+      "title": "Segment 16 (pages 141-154)",
+      "chapter_id": "C++ Concurrency in Action:ch16",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch12",
+          "score": 0.5644371037683504,
+          "base_score": 0.61665443220651,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch5",
+          "score": 0.5526580966004229,
+          "base_score": 0.5970227535932973,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch30",
+          "score": 0.5379762834541061,
+          "base_score": 0.5725530650161027,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch31",
+          "score": 0.5165768658944592,
+          "base_score": 0.536887369083358,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch35",
+          "score": 0.5060465064732423,
+          "base_score": 0.5934108441220706,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "atomic",
+          "std atomic",
+          "types",
+          "atomic types",
+          "std"
+        ],
+        "semantic": [],
+        "merged": [
+          "atomic",
+          "std atomic",
+          "types",
+          "atomic types",
+          "std"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_std_thread",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4580521511172332,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.197489+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 17,
+      "title": "Segment 17 (pages 155-167)",
+      "chapter_id": "C++ Concurrency in Action:ch17",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch45",
+          "score": 0.6036742421209632,
+          "base_score": 0.6820496627941979,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch18",
+          "score": 0.5601219571174731,
+          "base_score": 0.6094625211217145,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch52",
+          "score": 0.549531810037733,
+          "base_score": 0.6658863500628883,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch53",
+          "score": 0.5417732660841584,
+          "base_score": 0.5788813693995233,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch19",
+          "score": 0.5004536161398241,
+          "base_score": 0.5100152861589662,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "atomic",
+          "std",
+          "std atomic",
+          "types",
+          "operations"
+        ],
+        "semantic": [],
+        "merged": [
+          "atomic",
+          "std",
+          "std atomic",
+          "types",
+          "operations"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37646993226319253,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.197748+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 18,
+      "title": "Segment 18 (pages 168-175)",
+      "chapter_id": "C++ Concurrency in Action:ch18",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch20",
+          "score": 0.7566354333381764,
+          "base_score": 0.7253447698493415,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch19",
+          "score": 0.6362501987895461,
+          "base_score": 0.6437503313159102,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch17",
+          "score": 0.5601219571174731,
+          "base_score": 0.6094625211217145,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ordering",
+          "load",
+          "memory_order_relaxed",
+          "operations",
+          "memory_order_seq_cst"
+        ],
+        "semantic": [],
+        "merged": [
+          "ordering",
+          "load",
+          "memory_order_relaxed",
+          "operations",
+          "memory_order_seq_cst"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4253620017055635,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.198008+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 19,
+      "title": "Segment 19 (pages 176-183)",
+      "chapter_id": "C++ Concurrency in Action:ch19",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch18",
+          "score": 0.6362501987895461,
+          "base_score": 0.6437503313159102,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch20",
+          "score": 0.5741862361190663,
+          "base_score": 0.5403103935317772,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch8",
+          "score": 0.5080176688450988,
+          "base_score": 0.5226220406677573,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch53",
+          "score": 0.5042217235597282,
+          "base_score": 0.5162954651921396,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch2",
+          "score": 0.5028896005811553,
+          "base_score": 0.5881493343019255,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "load",
+          "store",
+          "load std",
+          "std",
+          "memory_order_relaxed"
+        ],
+        "semantic": [],
+        "merged": [
+          "load",
+          "store",
+          "load std",
+          "std",
+          "memory_order_relaxed"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49405649705146887,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.198258+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 20,
+      "title": "Segment 20 (pages 184-192)",
+      "chapter_id": "C++ Concurrency in Action:ch20",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch18",
+          "score": 0.7566354333381764,
+          "base_score": 0.7253447698493415,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch19",
+          "score": 0.5741862361190663,
+          "base_score": 0.5403103935317772,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ordering",
+          "memory_order_consume",
+          "memory_order_release",
+          "load",
+          "memory_order_relaxed"
+        ],
+        "semantic": [],
+        "merged": [
+          "ordering",
+          "memory_order_consume",
+          "memory_order_release",
+          "load",
+          "memory_order_relaxed"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40921981183531175,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.198500+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 21,
+      "title": "Segment 21 (pages 193-216)",
+      "chapter_id": "C++ Concurrency in Action:ch21",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch2",
+          "score": 0.7738937021130547,
+          "base_score": 0.7541085511408054,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch26",
+          "score": 0.7502580549720197,
+          "base_score": 0.7147158059057471,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch23",
+          "score": 0.7349058300970731,
+          "base_score": 0.8081763834951219,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch22",
+          "score": 0.695434193760604,
+          "base_score": 0.74239032293434,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch7",
+          "score": 0.6185042140488816,
+          "base_score": 0.7067662826740618,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "data_queue",
+          "std",
+          "structures",
+          "data structures"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "data_queue",
+          "std",
+          "structures",
+          "data structures"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48281959362263505,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.198751+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 22,
+      "title": "Segment 22 (pages 217-226)",
+      "chapter_id": "C++ Concurrency in Action:ch22",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch9",
+          "score": 0.7508513282877333,
+          "base_score": 0.7157045947652696,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch21",
+          "score": 0.695434193760604,
+          "base_score": 0.74239032293434,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch8",
+          "score": 0.6832795987136048,
+          "base_score": 0.6030850454750556,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch2",
+          "score": 0.6483766248154675,
+          "base_score": 0.7565536339517052,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch26",
+          "score": 0.6339141679087998,
+          "base_score": 0.7324495391072591,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "key",
+          "std",
+          "lock",
+          "mutex",
+          "structures"
+        ],
+        "semantic": [],
+        "merged": [
+          "key",
+          "std",
+          "lock",
+          "mutex",
+          "structures"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.509138565419688,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.199008+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 23,
+      "title": "Segment 23 (pages 227-245)",
+      "chapter_id": "C++ Concurrency in Action:ch23",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch26",
+          "score": 0.7957230236514725,
+          "base_score": 0.7904907537048351,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch21",
+          "score": 0.7349058300970731,
+          "base_score": 0.8081763834951219,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch2",
+          "score": 0.7237668200424473,
+          "base_score": 0.7896113667374121,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch22",
+          "score": 0.6260436807322387,
+          "base_score": 0.719332060479657,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch1",
+          "score": 0.5439727673284017,
+          "base_score": 0.6566212788806696,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "node",
+          "free",
+          "lock free",
+          "structures",
+          "data structures"
+        ],
+        "semantic": [],
+        "merged": [
+          "node",
+          "free",
+          "lock free",
+          "structures",
+          "data structures"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46786592336733585,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.199250+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 24,
+      "title": "Segment 24 (pages 246-258)",
+      "chapter_id": "C++ Concurrency in Action:ch24",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch25",
+          "score": 0.6319212785478096,
+          "base_score": 0.5174878451987303,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "node",
+          "new_node",
+          "counted_node_ptr",
+          "head",
+          "ptr"
+        ],
+        "semantic": [],
+        "merged": [
+          "node",
+          "new_node",
+          "counted_node_ptr",
+          "head",
+          "ptr"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32811090547196936,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.199487+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 25,
+      "title": "Segment 25 (pages 259-269)",
+      "chapter_id": "C++ Concurrency in Action:ch25",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch24",
+          "score": 0.6319212785478096,
+          "base_score": 0.5174878451987303,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "node",
+          "counted_node_ptr",
+          "ptr",
+          "old_tail",
+          "tail"
+        ],
+        "semantic": [],
+        "merged": [
+          "node",
+          "counted_node_ptr",
+          "ptr",
+          "old_tail",
+          "tail"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3543617629092473,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.199726+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 26,
+      "title": "Segment 26 (pages 270-277)",
+      "chapter_id": "C++ Concurrency in Action:ch26",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch23",
+          "score": 0.7957230236514725,
+          "base_score": 0.7904907537048351,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch2",
+          "score": 0.7806614408396203,
+          "base_score": 0.7653881156850815,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch21",
+          "score": 0.7502580549720197,
+          "base_score": 0.7147158059057471,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch22",
+          "score": 0.6339141679087998,
+          "base_score": 0.7324495391072591,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch7",
+          "score": 0.5791134098843029,
+          "base_score": 0.6411149423997642,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "data structures",
+          "structures",
+          "free data",
+          "free"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "data structures",
+          "structures",
+          "free data",
+          "free"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48062425311158735,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.200014+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 27,
+      "title": "Segment 27 (pages 278-289)",
+      "chapter_id": "C++ Concurrency in Action:ch27",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch29",
+          "score": 0.6531826565622579,
+          "base_score": 0.6719710942704298,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch33",
+          "score": 0.6487842074752672,
+          "base_score": 0.7572329383847045,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch32",
+          "score": 0.5610578589257792,
+          "base_score": 0.6110223574688912,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch5",
+          "score": 0.5503021671670658,
+          "base_score": 0.5930962045377022,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch30",
+          "score": 0.5324847538924463,
+          "base_score": 0.6374745898207439,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "threads",
+          "thread",
+          "cache",
+          "data",
+          "processors"
+        ],
+        "semantic": [],
+        "merged": [
+          "threads",
+          "thread",
+          "cache",
+          "data",
+          "processors"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_std_thread",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46390056147472286,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.200265+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 28,
+      "title": "Segment 28 (pages 290-297)",
+      "chapter_id": "C++ Concurrency in Action:ch28",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch21",
+          "score": 0.5271384060726442,
+          "base_score": 0.5544899360469996,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch19",
+          "score": 0.5013405921560996,
+          "base_score": 0.5114935795194252,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "thread",
+          "threads",
+          "std",
+          "results",
+          "num_threads"
+        ],
+        "semantic": [],
+        "merged": [
+          "thread",
+          "threads",
+          "std",
+          "results",
+          "num_threads"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34755087475323454,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.200508+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 29,
+      "title": "Segment 29 (pages 298-305)",
+      "chapter_id": "C++ Concurrency in Action:ch29",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch27",
+          "score": 0.6531826565622579,
+          "base_score": 0.6719710942704298,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch31",
+          "score": 0.619229465078022,
+          "base_score": 0.7079750343892959,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch30",
+          "score": 0.538337251917329,
+          "base_score": 0.6472287531955483,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch33",
+          "score": 0.5130089278709777,
+          "base_score": 0.5309408057108889,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch32",
+          "score": 0.5114420767252366,
+          "base_score": 0.5283293871346536,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "threads",
+          "thread",
+          "unsigned long",
+          "long",
+          "unsigned"
+        ],
+        "semantic": [],
+        "merged": [
+          "threads",
+          "thread",
+          "unsigned long",
+          "long",
+          "unsigned"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_std_thread",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44517513522257546,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.200749+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 30,
+      "title": "Segment 30 (pages 306-313)",
+      "chapter_id": "C++ Concurrency in Action:ch30",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch31",
+          "score": 0.6332117643614836,
+          "base_score": 0.7312788665283987,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch12",
+          "score": 0.587277526354544,
+          "base_score": 0.6547218031834993,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch13",
+          "score": 0.56094963558917,
+          "base_score": 0.6108419852412093,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch33",
+          "score": 0.5551560079787533,
+          "base_score": 0.6752600132979221,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch5",
+          "score": 0.5482259550712748,
+          "base_score": 0.5896358510447173,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "std",
+          "elements",
+          "async",
+          "std async",
+          "match"
+        ],
+        "semantic": [],
+        "merged": [
+          "std",
+          "elements",
+          "async",
+          "std async",
+          "match"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_std_thread",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47393756343048754,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.201019+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 31,
+      "title": "Segment 31 (pages 314-321)",
+      "chapter_id": "C++ Concurrency in Action:ch31",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch30",
+          "score": 0.6332117643614836,
+          "base_score": 0.7312788665283987,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch29",
+          "score": 0.619229465078022,
+          "base_score": 0.7079750343892959,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch12",
+          "score": 0.5368727754928815,
+          "base_score": 0.5707138850807283,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch27",
+          "score": 0.5301602657820619,
+          "base_score": 0.559526368896029,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch16",
+          "score": 0.5165768658944592,
+          "base_score": 0.536887369083358,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "threads",
+          "barrier",
+          "value_type",
+          "chunk",
+          "std"
+        ],
+        "semantic": [],
+        "merged": [
+          "threads",
+          "barrier",
+          "value_type",
+          "chunk",
+          "std"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_std_thread",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44857498675635793,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.201265+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 32,
+      "title": "Segment 32 (pages 322-329)",
+      "chapter_id": "C++ Concurrency in Action:ch32",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch33",
+          "score": 0.7824604394146493,
+          "base_score": 0.768386446643463,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch5",
+          "score": 0.5909091383752362,
+          "base_score": 0.6607744898846528,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch27",
+          "score": 0.5610578589257792,
+          "base_score": 0.6110223574688912,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch51",
+          "score": 0.5605116187976125,
+          "base_score": 0.61011195725528,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch6",
+          "score": 0.5333753322944981,
+          "base_score": 0.5648848130834228,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pool",
+          "thread pool",
+          "thread",
+          "tasks",
+          "task"
+        ],
+        "semantic": [],
+        "merged": [
+          "pool",
+          "thread pool",
+          "thread",
+          "tasks",
+          "task"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_std_thread",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4619493696707597,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.201508+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 33,
+      "title": "Segment 33 (pages 330-337)",
+      "chapter_id": "C++ Concurrency in Action:ch33",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch32",
+          "score": 0.7824604394146493,
+          "base_score": 0.768386446643463,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch27",
+          "score": 0.6487842074752672,
+          "base_score": 0.7572329383847045,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch5",
+          "score": 0.5700500729490655,
+          "base_score": 0.6260093808410351,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch30",
+          "score": 0.5551560079787533,
+          "base_score": 0.6752600132979221,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch12",
+          "score": 0.5331205939016755,
+          "base_score": 0.6385343231694592,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "task",
+          "queue",
+          "local_work_queue",
+          "pool",
+          "thread"
+        ],
+        "semantic": [],
+        "merged": [
+          "task",
+          "queue",
+          "local_work_queue",
+          "pool",
+          "thread"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_std_thread",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4721403386381308,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.201751+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 34,
+      "title": "Segment 34 (pages 338-346)",
+      "chapter_id": "C++ Concurrency in Action:ch34",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch35",
+          "score": 0.5784386090164318,
+          "base_score": 0.7140643483607196,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch5",
+          "score": 0.5351377897048487,
+          "base_score": 0.6418963161747477,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "this_thread_interrupt_flag",
+          "interrupting",
+          "interruptible_wait",
+          "interruptible_wait std",
+          "interrupt"
+        ],
+        "semantic": [],
+        "merged": [
+          "this_thread_interrupt_flag",
+          "interrupting",
+          "interruptible_wait",
+          "interruptible_wait std",
+          "interrupt"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_std_thread",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4570355864344925,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.202012+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 35,
+      "title": "Segment 35 (pages 347-354)",
+      "chapter_id": "C++ Concurrency in Action:ch35",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch34",
+          "score": 0.5784386090164318,
+          "base_score": 0.7140643483607196,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch30",
+          "score": 0.5414873282164555,
+          "base_score": 0.6524788803607593,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch5",
+          "score": 0.5281969517493698,
+          "base_score": 0.6303282529156162,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch16",
+          "score": 0.5060465064732423,
+          "base_score": 0.5934108441220706,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "execution",
+          "policy",
+          "execution policy",
+          "policies",
+          "execution policies"
+        ],
+        "semantic": [],
+        "merged": [
+          "execution",
+          "policy",
+          "execution policy",
+          "policies",
+          "execution policies"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_std_thread",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4556303192179754,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.202256+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 36,
+      "title": "Segment 36 (pages 355-362)",
+      "chapter_id": "C++ Concurrency in Action:ch36",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch14",
+          "score": 0.5240040943590054,
+          "base_score": 0.623340157265009,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch27",
+          "score": 0.509352249702686,
+          "base_score": 0.5989204161711433,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "execution",
+          "std execution",
+          "parallel algorithms",
+          "algorithms",
+          "visit_map_type"
+        ],
+        "semantic": [],
+        "merged": [
+          "execution",
+          "std execution",
+          "parallel algorithms",
+          "algorithms",
+          "visit_map_type"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_std_thread",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4305598093373522,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.202503+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 37,
+      "title": "Segment 37 (pages 363-372)",
+      "chapter_id": "C++ Concurrency in Action:ch37",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch48",
+          "score": 0.5403611390307028,
+          "base_score": 0.5765278243104307,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "test",
+          "testing",
+          "tested",
+          "thread"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "test",
+          "testing",
+          "tested",
+          "thread"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3759746776020528,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.202748+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 38,
+      "title": "Segment 38 (pages 373-381)",
+      "chapter_id": "C++ Concurrency in Action:ch38",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch5",
+          "score": 0.5207457011735844,
+          "base_score": 0.6179095019559742,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "rvalue",
+          "rvalue references",
+          "code",
+          "test",
+          "rvalue reference"
+        ],
+        "semantic": [],
+        "merged": [
+          "rvalue",
+          "rvalue references",
+          "code",
+          "test",
+          "rvalue reference"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_std_thread",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43492600378678986,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.203045+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 39,
+      "title": "Segment 39 (pages 382-396)",
+      "chapter_id": "C++ Concurrency in Action:ch39",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "constexpr",
+          "functions",
+          "lambda",
+          "int",
+          "function"
+        ],
+        "semantic": [],
+        "merged": [
+          "constexpr",
+          "functions",
+          "lambda",
+          "int",
+          "function"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_std_thread",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23732757285048287,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.203305+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 40,
+      "title": "Segment 40 (pages 397-404)",
+      "chapter_id": "C++ Concurrency in Action:ch40",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "thread local",
+          "local",
+          "pack",
+          "type",
+          "local variables"
+        ],
+        "semantic": [],
+        "merged": [
+          "thread local",
+          "local",
+          "pack",
+          "type",
+          "local variables"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_std_thread",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3247260828980111,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.204033+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 41,
+      "title": "Segment 41 (pages 405-412)",
+      "chapter_id": "C++ Concurrency in Action:ch41",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch11",
+          "score": 0.5122668847693033,
+          "base_score": 0.5297040672080979,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch47",
+          "score": 0.5009687073717148,
+          "base_score": 0.5849478456195247,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "message",
+          "dispatcher",
+          "queue",
+          "class",
+          "messages"
+        ],
+        "semantic": [],
+        "merged": [
+          "message",
+          "dispatcher",
+          "queue",
+          "class",
+          "messages"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44594679530577397,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.204289+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 42,
+      "title": "Segment 42 (pages 413-421)",
+      "chapter_id": "C++ Concurrency in Action:ch42",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "msg",
+          "const msg",
+          "const",
+          "send",
+          "string const"
+        ],
+        "semantic": [],
+        "merged": [
+          "msg",
+          "const msg",
+          "const",
+          "send",
+          "string const"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2978319956066525,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.204536+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 43,
+      "title": "Segment 43 (pages 422-446)",
+      "chapter_id": "C++ Concurrency in Action:ch43",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "duration",
+          "chrono",
+          "std chrono",
+          "time_point",
+          "chrono duration"
+        ],
+        "semantic": [],
+        "merged": [
+          "duration",
+          "chrono",
+          "std chrono",
+          "time_point",
+          "chrono duration"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3076767206207966,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.204782+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 44,
+      "title": "Segment 44 (pages 447-454)",
+      "chapter_id": "C++ Concurrency in Action:ch44",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch48",
+          "score": 0.6231963327546262,
+          "base_score": 0.7145864805169694,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch47",
+          "score": 0.6145261758974361,
+          "base_score": 0.7001362190883194,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch11",
+          "score": 0.5515852836153402,
+          "base_score": 0.6693088060255671,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "notify_",
+          "typename",
+          "predicate",
+          "wait_until",
+          "thread"
+        ],
+        "semantic": [],
+        "merged": [
+          "notify_",
+          "typename",
+          "predicate",
+          "wait_until",
+          "thread"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4388671410161852,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.205061+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 45,
+      "title": "Segment 45 (pages 455-489)",
+      "chapter_id": "C++ Concurrency in Action:ch45",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch17",
+          "score": 0.6036742421209632,
+          "base_score": 0.6820496627941979,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch53",
+          "score": 0.5869873777148913,
+          "base_score": 0.7283122961914855,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch52",
+          "score": 0.5657396070199806,
+          "base_score": 0.6928993450333011,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch2",
+          "score": 0.5051909132411706,
+          "base_score": 0.5919848554019511,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "integral type",
+          "integral",
+          "atomic",
+          "basetype",
+          "noexcept"
+        ],
+        "semantic": [],
+        "merged": [
+          "integral type",
+          "integral",
+          "atomic",
+          "basetype",
+          "noexcept"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42904548384976615,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.205310+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 46,
+      "title": "Segment 46 (pages 490-512)",
+      "chapter_id": "C++ Concurrency in Action:ch46",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch13",
+          "score": 0.6158870410881081,
+          "base_score": 0.7024043277394394,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch12",
+          "score": 0.5922949272368907,
+          "base_score": 0.6630841379874104,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch15",
+          "score": 0.5134933436495814,
+          "base_score": 0.531748165341895,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch6",
+          "score": 0.5098405554839847,
+          "base_score": 0.5256601850659004,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "asynchronous result",
+          "asynchronous",
+          "associated",
+          "result",
+          "std"
+        ],
+        "semantic": [],
+        "merged": [
+          "asynchronous result",
+          "asynchronous",
+          "associated",
+          "result",
+          "std"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_std_thread",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3467008889948422,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.205563+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 47,
+      "title": "Segment 47 (pages 513-528)",
+      "chapter_id": "C++ Concurrency in Action:ch47",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch48",
+          "score": 0.6736772541291296,
+          "base_score": 0.7987213494744753,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch49",
+          "score": 0.6150778563892435,
+          "base_score": 0.7751297606487393,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch44",
+          "score": 0.6145261758974361,
+          "base_score": 0.7001362190883194,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch9",
+          "score": 0.5750082425870255,
+          "base_score": 0.7083470709783759,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch10",
+          "score": 0.5720631140620945,
+          "base_score": 0.7034385234368243,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "typename",
+          "calling thread",
+          "acquire",
+          "returns true",
+          "function fail"
+        ],
+        "semantic": [],
+        "merged": [
+          "typename",
+          "calling thread",
+          "acquire",
+          "returns true",
+          "function fail"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5298718548706388,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.205826+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 48,
+      "title": "Segment 48 (pages 529-537)",
+      "chapter_id": "C++ Concurrency in Action:ch48",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch47",
+          "score": 0.6736772541291296,
+          "base_score": 0.7987213494744753,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch44",
+          "score": 0.6231963327546262,
+          "base_score": 0.7145864805169694,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch2",
+          "score": 0.5945768391548696,
+          "base_score": 0.6668873245173752,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch49",
+          "score": 0.5652159317285504,
+          "base_score": 0.6920265528809173,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch10",
+          "score": 0.5580415390493021,
+          "base_score": 0.6800692317488368,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "calling thread",
+          "thread",
+          "thread hold",
+          "calling",
+          "hold lock"
+        ],
+        "semantic": [],
+        "merged": [
+          "calling thread",
+          "thread",
+          "thread hold",
+          "calling",
+          "hold lock"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5263501308030588,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.206119+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 49,
+      "title": "Segment 49 (pages 538-555)",
+      "chapter_id": "C++ Concurrency in Action:ch49",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch9",
+          "score": 0.6644984605594901,
+          "base_score": 0.6908307675991502,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch10",
+          "score": 0.6199539286669864,
+          "base_score": 0.7091824737042365,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch47",
+          "score": 0.6150778563892435,
+          "base_score": 0.7751297606487393,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch22",
+          "score": 0.5970981729548567,
+          "base_score": 0.6710895475173537,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch48",
+          "score": 0.5652159317285504,
+          "base_score": 0.6920265528809173,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "shared_lock",
+          "mutex",
+          "std shared_lock",
+          "unique_lock",
+          "owns_lock"
+        ],
+        "semantic": [],
+        "merged": [
+          "shared_lock",
+          "mutex",
+          "std shared_lock",
+          "unique_lock",
+          "owns_lock"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45007177574307256,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.206384+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 50,
+      "title": "Segment 50 (pages 556-563)",
+      "chapter_id": "C++ Concurrency in Action:ch50",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "ratio",
+          "std ratio",
+          "r1",
+          "r2",
+          "std"
+        ],
+        "semantic": [],
+        "merged": [
+          "ratio",
+          "std ratio",
+          "r1",
+          "r2",
+          "std"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.321186787189144,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.206638+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 51,
+      "title": "Segment 51 (pages 564-572)",
+      "chapter_id": "C++ Concurrency in Action:ch51",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch6",
+          "score": 0.9523030901197916,
+          "base_score": 0.6705051501996527,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch5",
+          "score": 0.694483818283669,
+          "base_score": 0.6217587447584959,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch12",
+          "score": 0.571806504307006,
+          "base_score": 0.6289367664376024,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch32",
+          "score": 0.5605116187976125,
+          "base_score": 0.61011195725528,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch16",
+          "score": 0.5006812848752124,
+          "base_score": 0.5103947340512799,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "thread id",
+          "id",
+          "std thread",
+          "thread",
+          "std"
+        ],
+        "semantic": [],
+        "merged": [
+          "thread id",
+          "id",
+          "std thread",
+          "thread",
+          "std"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_std_thread",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4438224088249913,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.206904+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 52,
+      "title": "Segment 52 (pages 573-581)",
+      "chapter_id": "C++ Concurrency in Action:ch52",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch53",
+          "score": 0.5719163474067592,
+          "base_score": 0.7031939123445987,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch45",
+          "score": 0.5657396070199806,
+          "base_score": 0.6928993450333011,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch17",
+          "score": 0.549531810037733,
+          "base_score": 0.6658863500628883,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch2",
+          "score": 0.5390221573070451,
+          "base_score": 0.6483702621784084,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch54",
+          "score": 0.5095927273987916,
+          "base_score": 0.5993212123313194,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "164",
+          "templates",
+          "class templates",
+          "194",
+          "137"
+        ],
+        "semantic": [],
+        "merged": [
+          "164",
+          "templates",
+          "class templates",
+          "194",
+          "137"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44878797433827694,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.207152+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 53,
+      "title": "Segment 53 (pages 582-589)",
+      "chapter_id": "C++ Concurrency in Action:ch53",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch45",
+          "score": 0.5869873777148913,
+          "base_score": 0.7283122961914855,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch52",
+          "score": 0.5719163474067592,
+          "base_score": 0.7031939123445987,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch17",
+          "score": 0.5417732660841584,
+          "base_score": 0.5788813693995233,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch19",
+          "score": 0.5042217235597282,
+          "base_score": 0.5162954651921396,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "std",
+          "member",
+          "member std",
+          "function",
+          "member function"
+        ],
+        "semantic": [],
+        "merged": [
+          "std",
+          "member",
+          "member std",
+          "function",
+          "member function"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42645579455752186,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.207409+00:00"
+      }
+    },
+    {
+      "book": "C++ Concurrency in Action",
+      "chapter": 54,
+      "title": "Segment 54 (pages 590-592)",
+      "chapter_id": "C++ Concurrency in Action:ch54",
+      "cross_references": [
+        {
+          "target": "C++ Concurrency in Action:ch2",
+          "score": 0.5817306528000911,
+          "base_score": 0.7195510880001517,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch48",
+          "score": 0.5133494059189887,
+          "base_score": 0.6055823431983145,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch52",
+          "score": 0.5095927273987916,
+          "base_score": 0.5993212123313194,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "C++ Concurrency in Action:ch11",
+          "score": 0.5026461385538802,
+          "base_score": 0.5877435642564669,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "81",
+          "timeouts 98",
+          "98 99",
+          "98",
+          "timeouts"
+        ],
+        "semantic": [],
+        "merged": [
+          "81",
+          "timeouts 98",
+          "98 99",
+          "98",
+          "timeouts"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_std_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45319614152963905,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:41:55.207655+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

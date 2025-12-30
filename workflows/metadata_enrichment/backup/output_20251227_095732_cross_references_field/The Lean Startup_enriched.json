@@ -1,0 +1,1983 @@
+{
+  "book": {
+    "title": "The Lean Startup"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:58:44.285392",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "The Lean Startup",
+      "chapter": 1,
+      "title": "Segment 1 (pages 3-11)",
+      "chapter_id": "The Lean Startup:ch1",
+      "cross_references": [
+        {
+          "target": "The Lean Startup:ch3",
+          "score": 0.7768332829426091,
+          "base_score": 0.7590078525233962,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch2",
+          "score": 0.7279274054595101,
+          "base_score": 0.6774980567182309,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch22",
+          "score": 0.6602607212068052,
+          "base_score": 0.7763604612706013,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch4",
+          "score": 0.5767378426244889,
+          "base_score": 0.6371556636334075,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch8",
+          "score": 0.5341476624980844,
+          "base_score": 0.6402461041634742,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "read",
+          "lean",
+          "lean startup",
+          "read book",
+          "startup"
+        ],
+        "semantic": [],
+        "merged": [
+          "read",
+          "lean",
+          "lean startup",
+          "read book",
+          "startup"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4334715373164103,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.257468+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 2,
+      "title": "Segment 2 (pages 12-19)",
+      "chapter_id": "The Lean Startup:ch2",
+      "cross_references": [
+        {
+          "target": "The Lean Startup:ch1",
+          "score": 0.7279274054595101,
+          "base_score": 0.6774980567182309,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch3",
+          "score": 0.7092698578801521,
+          "base_score": 0.6464021440859677,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch4",
+          "score": 0.6529981823940942,
+          "base_score": 0.6716636373234904,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch8",
+          "score": 0.5913025637463374,
+          "base_score": 0.7355042729105623,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch22",
+          "score": 0.5810623897538509,
+          "base_score": 0.6443632421823442,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "startup",
+          "lean",
+          "lean startup",
+          "ideas",
+          "new"
+        ],
+        "semantic": [],
+        "merged": [
+          "startup",
+          "lean",
+          "lean startup",
+          "ideas",
+          "new"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48826848347172785,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.257802+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 3,
+      "title": "Segment 3 (pages 20-28)",
+      "chapter_id": "The Lean Startup:ch3",
+      "cross_references": [
+        {
+          "target": "The Lean Startup:ch1",
+          "score": 0.7768332829426091,
+          "base_score": 0.7590078525233962,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch2",
+          "score": 0.7092698578801521,
+          "base_score": 0.6464021440859677,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch10",
+          "score": 0.6656130307474349,
+          "base_score": 0.8593550512457249,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch22",
+          "score": 0.6650818715891239,
+          "base_score": 0.7843957119077991,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch4",
+          "score": 0.5952447649390816,
+          "base_score": 0.6680005341577286,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "lean",
+          "ll",
+          "startup",
+          "lean startup",
+          "progress"
+        ],
+        "semantic": [],
+        "merged": [
+          "lean",
+          "ll",
+          "startup",
+          "lean startup",
+          "progress"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5233554712009798,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.258014+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 4,
+      "title": "Segment 4 (pages 29-36)",
+      "chapter_id": "The Lean Startup:ch4",
+      "cross_references": [
+        {
+          "target": "The Lean Startup:ch2",
+          "score": 0.6529981823940942,
+          "base_score": 0.6716636373234904,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch3",
+          "score": 0.5952447649390816,
+          "base_score": 0.6680005341577286,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch22",
+          "score": 0.5939430903869459,
+          "base_score": 0.7399051506449099,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch8",
+          "score": 0.5784736198528623,
+          "base_score": 0.7141226997547705,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch1",
+          "score": 0.5767378426244889,
+          "base_score": 0.6371556636334075,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "startup",
+          "company",
+          "new",
+          "entrepreneurs",
+          "marketing operations"
+        ],
+        "semantic": [],
+        "merged": [
+          "startup",
+          "company",
+          "new",
+          "entrepreneurs",
+          "marketing operations"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5317742991694329,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.258184+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 5,
+      "title": "Segment 5 (pages 37-44)",
+      "chapter_id": "The Lean Startup:ch5",
+      "cross_references": [
+        {
+          "target": "The Lean Startup:ch4",
+          "score": 0.5603972622066427,
+          "base_score": 0.609921362936997,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch2",
+          "score": 0.5207675775008596,
+          "base_score": 0.5438718884273585,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "intuit",
+          "innovation",
+          "management",
+          "cook",
+          "new"
+        ],
+        "semantic": [],
+        "merged": [
+          "intuit",
+          "innovation",
+          "management",
+          "cook",
+          "new"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44577263640642784,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.258347+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 6,
+      "title": "Segment 6 (pages 45-52)",
+      "chapter_id": "The Lean Startup:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "im",
+          "say",
+          "buddy list",
+          "buddy",
+          "avatar"
+        ],
+        "semantic": [],
+        "merged": [
+          "im",
+          "say",
+          "buddy list",
+          "buddy",
+          "avatar"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3273405704464946,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.258554+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 7,
+      "title": "Segment 7 (pages 53-60)",
+      "chapter_id": "The Lean Startup:ch7",
+      "cross_references": [
+        {
+          "target": "The Lean Startup:ch16",
+          "score": 0.5847756536345322,
+          "base_score": 0.650552015316813,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch8",
+          "score": 0.5680181079986036,
+          "base_score": 0.6966968466643395,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch2",
+          "score": 0.5423640265273911,
+          "base_score": 0.6539400442123184,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch10",
+          "score": 0.5189280455888462,
+          "base_score": 0.6148800759814104,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch14",
+          "score": 0.51228149344214,
+          "base_score": 0.5297284149961593,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "customers",
+          "likely",
+          "months",
+          "customers real",
+          "new friends"
+        ],
+        "semantic": [],
+        "merged": [
+          "customers",
+          "likely",
+          "months",
+          "customers real",
+          "new friends"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4889262139711237,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.258728+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 8,
+      "title": "Segment 8 (pages 61-68)",
+      "chapter_id": "The Lean Startup:ch8",
+      "cross_references": [
+        {
+          "target": "The Lean Startup:ch3",
+          "score": 0.5929541626762423,
+          "base_score": 0.7382569377937374,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch2",
+          "score": 0.5913025637463374,
+          "base_score": 0.7355042729105623,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch4",
+          "score": 0.5784736198528623,
+          "base_score": 0.7141226997547705,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch7",
+          "score": 0.5680181079986036,
+          "base_score": 0.6966968466643395,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch10",
+          "score": 0.5599094163893147,
+          "base_score": 0.6831823606488578,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "caroline",
+          "experiment",
+          "volunteer",
+          "employees",
+          "volunteering"
+        ],
+        "semantic": [],
+        "merged": [
+          "caroline",
+          "experiment",
+          "volunteer",
+          "employees",
+          "volunteering"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5309264634122245,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.258966+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 9,
+      "title": "Segment 9 (pages 69-76)",
+      "chapter_id": "The Lean Startup:ch9",
+      "cross_references": [
+        {
+          "target": "The Lean Startup:ch12",
+          "score": 0.5013520289940071,
+          "base_score": 0.5855867149900119,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "experiment",
+          "truck",
+          "agency",
+          "vls",
+          "laundry"
+        ],
+        "semantic": [],
+        "merged": [
+          "experiment",
+          "truck",
+          "agency",
+          "vls",
+          "laundry"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37583945502271376,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.259136+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 10,
+      "title": "Segment 10 (pages 77-85)",
+      "chapter_id": "The Lean Startup:ch10",
+      "cross_references": [
+        {
+          "target": "The Lean Startup:ch3",
+          "score": 0.6656130307474349,
+          "base_score": 0.8593550512457249,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch8",
+          "score": 0.5599094163893147,
+          "base_score": 0.6831823606488578,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch22",
+          "score": 0.5438352293944156,
+          "base_score": 0.6563920489906927,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch20",
+          "score": 0.5407699031454948,
+          "base_score": 0.651283171909158,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch4",
+          "score": 0.5309435086567328,
+          "base_score": 0.6349058477612213,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "loop",
+          "measure",
+          "measure learn",
+          "build measure",
+          "facebook"
+        ],
+        "semantic": [],
+        "merged": [
+          "loop",
+          "measure",
+          "measure learn",
+          "build measure",
+          "facebook"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5132089728107186,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.259305+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 11,
+      "title": "Segment 11 (pages 86-93)",
+      "chapter_id": "The Lean Startup:ch11",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "faith",
+          "assumptions",
+          "leaps faith",
+          "leaps",
+          "leap"
+        ],
+        "semantic": [],
+        "merged": [
+          "faith",
+          "assumptions",
+          "leaps faith",
+          "leaps",
+          "leap"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3977928189268708,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.259463+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 12,
+      "title": "Segment 12 (pages 94-101)",
+      "chapter_id": "The Lean Startup:ch12",
+      "cross_references": [
+        {
+          "target": "The Lean Startup:ch16",
+          "score": 0.5085056819506137,
+          "base_score": 0.5234353958436155,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch9",
+          "score": 0.5013520289940071,
+          "base_score": 0.5855867149900119,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "early",
+          "adopters",
+          "early adopters",
+          "customers",
+          "archetype"
+        ],
+        "semantic": [],
+        "merged": [
+          "early",
+          "adopters",
+          "early adopters",
+          "customers",
+          "archetype"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43527876788467057,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.259697+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 13,
+      "title": "Segment 13 (pages 102-109)",
+      "chapter_id": "The Lean Startup:ch13",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "customers",
+          "ask",
+          "aardvark",
+          "question",
+          "instead"
+        ],
+        "semantic": [],
+        "merged": [
+          "customers",
+          "ask",
+          "aardvark",
+          "question",
+          "instead"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3290467713877183,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.259859+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 14,
+      "title": "Segment 14 (pages 110-117)",
+      "chapter_id": "The Lean Startup:ch14",
+      "cross_references": [
+        {
+          "target": "The Lean Startup:ch7",
+          "score": 0.51228149344214,
+          "base_score": 0.5297284149961593,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "quality",
+          "high quality",
+          "low quality",
+          "mvp",
+          "customers"
+        ],
+        "semantic": [],
+        "merged": [
+          "quality",
+          "high quality",
+          "low quality",
+          "mvp",
+          "customers"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41503747514212624,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.260019+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 15,
+      "title": "Segment 15 (pages 118-125)",
+      "chapter_id": "The Lean Startup:ch15",
+      "cross_references": [
+        {
+          "target": "The Lean Startup:ch4",
+          "score": 0.5488730557990684,
+          "base_score": 0.6647884263317807,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch8",
+          "score": 0.5301877869676441,
+          "base_score": 0.6336463116127402,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch22",
+          "score": 0.5211861030959383,
+          "base_score": 0.6186435051598971,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch3",
+          "score": 0.5155637546118318,
+          "base_score": 0.6092729243530529,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch16",
+          "score": 0.511489057184909,
+          "base_score": 0.43581509530818174,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "baseline",
+          "customers",
+          "new customers",
+          "ideal",
+          "rate new"
+        ],
+        "semantic": [],
+        "merged": [
+          "baseline",
+          "customers",
+          "new customers",
+          "ideal",
+          "rate new"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46698023886488177,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.260182+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 16,
+      "title": "Segment 16 (pages 126-134)",
+      "chapter_id": "The Lean Startup:ch16",
+      "cross_references": [
+        {
+          "target": "The Lean Startup:ch7",
+          "score": 0.5847756536345322,
+          "base_score": 0.650552015316813,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch15",
+          "score": 0.511489057184909,
+          "base_score": 0.43581509530818174,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch21",
+          "score": 0.5086064011455416,
+          "base_score": 0.5976773352425693,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch12",
+          "score": 0.5085056819506137,
+          "base_score": 0.5234353958436155,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch26",
+          "score": 0.5012433885935421,
+          "base_score": 0.5113315735818296,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "customers",
+          "imvu",
+          "development team",
+          "new customers",
+          "team"
+        ],
+        "semantic": [],
+        "merged": [
+          "customers",
+          "imvu",
+          "development team",
+          "new customers",
+          "team"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44089028230705174,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.260344+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 17,
+      "title": "Segment 17 (pages 135-143)",
+      "chapter_id": "The Lean Startup:ch17",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "farb",
+          "grockit",
+          "split",
+          "stories",
+          "feature"
+        ],
+        "semantic": [],
+        "merged": [
+          "farb",
+          "grockit",
+          "split",
+          "stories",
+          "feature"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38066091485494713,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.260500+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 18,
+      "title": "Segment 18 (pages 144-151)",
+      "chapter_id": "The Lean Startup:ch18",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "grockit",
+          "reports",
+          "actions",
+          "customers"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "grockit",
+          "reports",
+          "actions",
+          "customers"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34227818760307444,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.260678+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 19,
+      "title": "Segment 19 (pages 152-159)",
+      "chapter_id": "The Lean Startup:ch19",
+      "cross_references": [
+        {
+          "target": "The Lean Startup:ch21",
+          "score": 0.5737471666632987,
+          "base_score": 0.6321712036980904,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch20",
+          "score": 0.5608830532444427,
+          "base_score": 0.6107310146666636,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "david",
+          "pivot",
+          "decided",
+          "david decided",
+          "percent"
+        ],
+        "semantic": [],
+        "merged": [
+          "david",
+          "pivot",
+          "decided",
+          "david decided",
+          "percent"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4477882429535989,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.260845+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 20,
+      "title": "Segment 20 (pages 160-169)",
+      "chapter_id": "The Lean Startup:ch20",
+      "cross_references": [
+        {
+          "target": "The Lean Startup:ch19",
+          "score": 0.5608830532444427,
+          "base_score": 0.6107310146666636,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch21",
+          "score": 0.5589343052425955,
+          "base_score": 0.6074831013302516,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch10",
+          "score": 0.5407699031454948,
+          "base_score": 0.651283171909158,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch3",
+          "score": 0.5089153493224564,
+          "base_score": 0.5981922488707607,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "wealthfront",
+          "professional",
+          "pivot",
+          "managers",
+          "runway"
+        ],
+        "semantic": [],
+        "merged": [
+          "wealthfront",
+          "professional",
+          "pivot",
+          "managers",
+          "runway"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43263238843560203,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.261004+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 21,
+      "title": "Segment 21 (pages 170-177)",
+      "chapter_id": "The Lean Startup:ch21",
+      "cross_references": [
+        {
+          "target": "The Lean Startup:ch19",
+          "score": 0.5737471666632987,
+          "base_score": 0.6321712036980904,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch20",
+          "score": 0.5589343052425955,
+          "base_score": 0.6074831013302516,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch25",
+          "score": 0.5519996418397006,
+          "base_score": 0.5959253289920936,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch4",
+          "score": 0.5254205375979746,
+          "base_score": 0.6257008959966243,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch16",
+          "score": 0.5086064011455416,
+          "base_score": 0.5976773352425693,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pivot",
+          "originally",
+          "pivot pivot",
+          "growth",
+          "channel"
+        ],
+        "semantic": [],
+        "merged": [
+          "pivot",
+          "originally",
+          "pivot pivot",
+          "growth",
+          "channel"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49085760583689325,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.261165+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 22,
+      "title": "Segment 22 (pages 178-186)",
+      "chapter_id": "The Lean Startup:ch22",
+      "cross_references": [
+        {
+          "target": "The Lean Startup:ch3",
+          "score": 0.6650818715891239,
+          "base_score": 0.7843957119077991,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch1",
+          "score": 0.6602607212068052,
+          "base_score": 0.7763604612706013,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch4",
+          "score": 0.5939430903869459,
+          "base_score": 0.7399051506449099,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch2",
+          "score": 0.5810623897538509,
+          "base_score": 0.6443632421823442,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch8",
+          "score": 0.5559764065158083,
+          "base_score": 0.6766273441930138,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "batch",
+          "lean",
+          "batches",
+          "small",
+          "small batches"
+        ],
+        "semantic": [],
+        "merged": [
+          "batch",
+          "lean",
+          "batches",
+          "small",
+          "small batches"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4967169083490421,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.261334+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 23,
+      "title": "Segment 23 (pages 187-194)",
+      "chapter_id": "The Lean Startup:ch23",
+      "cross_references": [
+        {
+          "target": "The Lean Startup:ch30",
+          "score": 0.5080056885237121,
+          "base_score": 0.5966761475395201,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "batches",
+          "small batches",
+          "assembly",
+          "initial",
+          "design"
+        ],
+        "semantic": [],
+        "merged": [
+          "batches",
+          "small batches",
+          "assembly",
+          "initial",
+          "design"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4278082106183365,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.261526+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 24,
+      "title": "Segment 24 (pages 195-202)",
+      "chapter_id": "The Lean Startup:ch24",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "batches",
+          "batch",
+          "large",
+          "large batches",
+          "pull"
+        ],
+        "semantic": [],
+        "merged": [
+          "batches",
+          "batch",
+          "large",
+          "large batches",
+          "pull"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3067678153748899,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.261688+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 25,
+      "title": "Segment 25 (pages 203-211)",
+      "chapter_id": "The Lean Startup:ch25",
+      "cross_references": [
+        {
+          "target": "The Lean Startup:ch26",
+          "score": 0.6281465019550874,
+          "base_score": 0.5111965508775267,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch21",
+          "score": 0.5519996418397006,
+          "base_score": 0.5959253289920936,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "growth",
+          "rate",
+          "sticky",
+          "engine growth",
+          "engine"
+        ],
+        "semantic": [],
+        "merged": [
+          "growth",
+          "rate",
+          "sticky",
+          "engine growth",
+          "engine"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41717268627415804,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.261846+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 26,
+      "title": "Segment 26 (pages 212-220)",
+      "chapter_id": "The Lean Startup:ch26",
+      "cross_references": [
+        {
+          "target": "The Lean Startup:ch25",
+          "score": 0.6281465019550874,
+          "base_score": 0.5111965508775267,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch16",
+          "score": 0.5012433885935421,
+          "base_score": 0.5113315735818296,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "engine",
+          "engine growth",
+          "viral",
+          "growth",
+          "customers"
+        ],
+        "semantic": [],
+        "merged": [
+          "engine",
+          "engine growth",
+          "viral",
+          "growth",
+          "customers"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3368362388643971,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.262005+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 27,
+      "title": "Segment 27 (pages 221-228)",
+      "chapter_id": "The Lean Startup:ch27",
+      "cross_references": [
+        {
+          "target": "The Lean Startup:ch28",
+          "score": 0.509672786114603,
+          "base_score": 0.5253805694502642,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "training",
+          "program",
+          "training program",
+          "new employees",
+          "stop"
+        ],
+        "semantic": [],
+        "merged": [
+          "training",
+          "program",
+          "training program",
+          "new employees",
+          "stop"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4267233192893147,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.262164+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 28,
+      "title": "Segment 28 (pages 229-236)",
+      "chapter_id": "The Lean Startup:ch28",
+      "cross_references": [
+        {
+          "target": "The Lean Startup:ch29",
+          "score": 0.5915248256385548,
+          "base_score": 0.6618006353235173,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch27",
+          "score": 0.509672786114603,
+          "base_score": 0.5253805694502642,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "whys",
+          "whys meeting",
+          "training",
+          "meeting",
+          "problems"
+        ],
+        "semantic": [],
+        "merged": [
+          "whys",
+          "whys meeting",
+          "training",
+          "meeting",
+          "problems"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41459563977020336,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.262324+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 29,
+      "title": "Segment 29 (pages 237-245)",
+      "chapter_id": "The Lean Startup:ch29",
+      "cross_references": [
+        {
+          "target": "The Lean Startup:ch28",
+          "score": 0.5915248256385548,
+          "base_score": 0.6618006353235173,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "whys",
+          "greg",
+          "team",
+          "year",
+          "process"
+        ],
+        "semantic": [],
+        "merged": [
+          "whys",
+          "greg",
+          "team",
+          "year",
+          "process"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4574640443294553,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.262483+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 30,
+      "title": "Segment 30 (pages 246-253)",
+      "chapter_id": "The Lean Startup:ch30",
+      "cross_references": [
+        {
+          "target": "The Lean Startup:ch31",
+          "score": 0.5487589241802153,
+          "base_score": 0.5905241328929514,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch23",
+          "score": 0.5080056885237121,
+          "base_score": 0.5966761475395201,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "team",
+          "startup teams",
+          "quickbooks team",
+          "quickbooks",
+          "teams"
+        ],
+        "semantic": [],
+        "merged": [
+          "team",
+          "startup teams",
+          "quickbooks team",
+          "quickbooks",
+          "teams"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4584350109638868,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.262652+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 31,
+      "title": "Segment 31 (pages 254-261)",
+      "chapter_id": "The Lean Startup:ch31",
+      "cross_references": [
+        {
+          "target": "The Lean Startup:ch30",
+          "score": 0.5487589241802153,
+          "base_score": 0.5905241328929514,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "team",
+          "innovation",
+          "innovation team",
+          "phase",
+          "metrics"
+        ],
+        "semantic": [],
+        "merged": [
+          "team",
+          "innovation",
+          "innovation team",
+          "phase",
+          "metrics"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4266996255906417,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.262809+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 32,
+      "title": "Segment 32 (pages 262-269)",
+      "chapter_id": "The Lean Startup:ch32",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "sandbox",
+          "taylor",
+          "efficiency",
+          "work",
+          "working"
+        ],
+        "semantic": [],
+        "merged": [
+          "sandbox",
+          "taylor",
+          "efficiency",
+          "work",
+          "working"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40879052765217194,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.262989+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 33,
+      "title": "Segment 33 (pages 270-277)",
+      "chapter_id": "The Lean Startup:ch33",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "management",
+          "ltse",
+          "taylor",
+          "teams",
+          "scientific"
+        ],
+        "semantic": [],
+        "merged": [
+          "management",
+          "ltse",
+          "taylor",
+          "teams",
+          "scientific"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3916970457977384,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.263147+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 34,
+      "title": "Segment 34 (pages 278-285)",
+      "chapter_id": "The Lean Startup:ch34",
+      "cross_references": [
+        {
+          "target": "The Lean Startup:ch36",
+          "score": 0.5980154088302352,
+          "base_score": 0.5800256813837253,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch35",
+          "score": 0.5403726479510877,
+          "base_score": 0.48395441325181293,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch1",
+          "score": 0.5169274131289905,
+          "base_score": 0.6115456885483175,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch22",
+          "score": 0.5075020459861389,
+          "base_score": 0.5958367433102314,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "http",
+          "com",
+          "es",
+          "ericri es",
+          "http ericri"
+        ],
+        "semantic": [],
+        "merged": [
+          "http",
+          "com",
+          "es",
+          "ericri es",
+          "http ericri"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36060073173897794,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.263348+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 35,
+      "title": "Segment 35 (pages 286-294)",
+      "chapter_id": "The Lean Startup:ch35",
+      "cross_references": [
+        {
+          "target": "The Lean Startup:ch36",
+          "score": 0.5928269063604018,
+          "base_score": 0.5713781772673364,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch34",
+          "score": 0.5403726479510877,
+          "base_score": 0.48395441325181293,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "http",
+          "com",
+          "www",
+          "http www",
+          "html"
+        ],
+        "semantic": [],
+        "merged": [
+          "http",
+          "com",
+          "www",
+          "http www",
+          "html"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37591923514268805,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.263578+00:00"
+      }
+    },
+    {
+      "book": "The Lean Startup",
+      "chapter": 36,
+      "title": "Segment 36 (pages 295-302)",
+      "chapter_id": "The Lean Startup:ch36",
+      "cross_references": [
+        {
+          "target": "The Lean Startup:ch34",
+          "score": 0.5980154088302352,
+          "base_score": 0.5800256813837253,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Lean Startup:ch35",
+          "score": 0.5928269063604018,
+          "base_score": 0.5713781772673364,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "http",
+          "com",
+          "book",
+          "thank",
+          "research"
+        ],
+        "semantic": [],
+        "merged": [
+          "http",
+          "com",
+          "book",
+          "thank",
+          "research"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3942947853541569,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:44.263847+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

@@ -1,0 +1,2259 @@
+{
+  "book": {
+    "title": "Software Architecture"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:56:47.405454",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Software Architecture",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-9)",
+      "chapter_id": "Software Architecture:ch1",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch3",
+          "score": 0.5609043483887376,
+          "base_score": 0.6848405806478961,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "databases",
+          "architecture hard",
+          "software architecture",
+          "software",
+          "hard parts"
+        ],
+        "semantic": [],
+        "merged": [
+          "databases",
+          "architecture hard",
+          "software architecture",
+          "software",
+          "hard parts"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38863014093239273,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.388364+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 2,
+      "title": "Segment 2 (pages 10-18)",
+      "chapter_id": "Software Architecture:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "book",
+          "thank",
+          "neal",
+          "require permission",
+          "acknowledgments"
+        ],
+        "semantic": [],
+        "merged": [
+          "book",
+          "thank",
+          "neal",
+          "require permission",
+          "acknowledgments"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4360118953508874,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:56:47.388595+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 3,
+      "title": "Segment 3 (pages 19-26)",
+      "chapter_id": "Software Architecture:ch3",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch4",
+          "score": 0.5933837067956729,
+          "base_score": 0.4532585589451692,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch1",
+          "score": 0.5609043483887376,
+          "base_score": 0.6848405806478961,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "architecture",
+          "fitness",
+          "fitness functions",
+          "functions",
+          "architecture characteristics"
+        ],
+        "semantic": [],
+        "merged": [
+          "architecture",
+          "fitness",
+          "fitness functions",
+          "functions",
+          "architecture characteristics"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3041248898480077,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.388814+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 4,
+      "title": "Segment 4 (pages 27-35)",
+      "chapter_id": "Software Architecture:ch4",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch13",
+          "score": 0.5983753809389017,
+          "base_score": 0.6732182274907621,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch3",
+          "score": 0.5933837067956729,
+          "base_score": 0.4532585589451692,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "fitness",
+          "problem",
+          "fitness functions",
+          "problem ticket",
+          "functions"
+        ],
+        "semantic": [],
+        "merged": [
+          "fitness",
+          "problem",
+          "fitness functions",
+          "problem ticket",
+          "functions"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3409321654055726,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.389057+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 5,
+      "title": "Segment 5 (pages 36-45)",
+      "chapter_id": "Software Architecture:ch5",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch14",
+          "score": 0.5922428181572594,
+          "base_score": 0.5704046969287657,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch15",
+          "score": 0.5542226554524303,
+          "base_score": 0.5996303516799764,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ss",
+          "survey",
+          "ticket",
+          "ss ticket",
+          "architectures"
+        ],
+        "semantic": [],
+        "merged": [
+          "ss",
+          "survey",
+          "ticket",
+          "ss ticket",
+          "architectures"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "ss_the_component",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4296937310538681,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.389268+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 6,
+      "title": "Segment 6 (pages 46-53)",
+      "chapter_id": "Software Architecture:ch6",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch7",
+          "score": 0.8335008426926603,
+          "base_score": 0.7225014044877671,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "quantum",
+          "architecture quantum",
+          "architecture",
+          "coupling",
+          "static"
+        ],
+        "semantic": [],
+        "merged": [
+          "quantum",
+          "architecture quantum",
+          "architecture",
+          "coupling",
+          "static"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "architecture_quantum_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41440668504814493,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.389481+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 7,
+      "title": "Segment 7 (pages 54-62)",
+      "chapter_id": "Software Architecture:ch7",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch6",
+          "score": 0.8335008426926603,
+          "base_score": 0.7225014044877671,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "architecture",
+          "quantum",
+          "coupling",
+          "architecture quantum",
+          "static"
+        ],
+        "semantic": [],
+        "merged": [
+          "architecture",
+          "quantum",
+          "coupling",
+          "architecture quantum",
+          "static"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_saga_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35577054411871034,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.389687+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 8,
+      "title": "Segment 8 (pages 63-71)",
+      "chapter_id": "Software Architecture:ch8",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch10",
+          "score": 0.5609417445236833,
+          "base_score": 0.6849029075394721,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "business",
+          "level",
+          "application",
+          "change",
+          "architectural modularity"
+        ],
+        "semantic": [],
+        "merged": [
+          "business",
+          "level",
+          "application",
+          "change",
+          "architectural modularity"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36727685297550056,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.389894+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 9,
+      "title": "Segment 9 (pages 72-79)",
+      "chapter_id": "Software Architecture:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "application",
+          "testing",
+          "deployment",
+          "deploy",
+          "unit"
+        ],
+        "semantic": [],
+        "merged": [
+          "application",
+          "testing",
+          "deployment",
+          "deploy",
+          "unit"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3559248137047548,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.390116+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 10,
+      "title": "Segment 10 (pages 80-87)",
+      "chapter_id": "Software Architecture:ch10",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch12",
+          "score": 0.8348794222679898,
+          "base_score": 0.6970212593355386,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch11",
+          "score": 0.6971689954434772,
+          "base_score": 0.6262340400248428,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch8",
+          "score": 0.5609417445236833,
+          "base_score": 0.6849029075394721,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "component",
+          "instability",
+          "decomposition",
+          "based decomposition",
+          "component based"
+        ],
+        "semantic": [],
+        "merged": [
+          "component",
+          "instability",
+          "decomposition",
+          "based decomposition",
+          "component based"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4005761053499025,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.390331+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 11,
+      "title": "Segment 11 (pages 88-95)",
+      "chapter_id": "Software Architecture:ch11",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch12",
+          "score": 0.8238038971647172,
+          "base_score": 0.6785620508300843,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch10",
+          "score": 0.6971689954434772,
+          "base_score": 0.6262340400248428,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "decomposition",
+          "based",
+          "based decomposition",
+          "component based",
+          "migrating monolithic"
+        ],
+        "semantic": [],
+        "merged": [
+          "decomposition",
+          "based",
+          "based decomposition",
+          "component based",
+          "migrating monolithic"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4044188046689983,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.390537+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 12,
+      "title": "Segment 12 (pages 96-104)",
+      "chapter_id": "Software Architecture:ch12",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch10",
+          "score": 0.8348794222679898,
+          "base_score": 0.6970212593355386,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch11",
+          "score": 0.8238038971647172,
+          "base_score": 0.6785620508300843,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "component based",
+          "component",
+          "based decomposition",
+          "decomposition",
+          "based"
+        ],
+        "semantic": [],
+        "merged": [
+          "component based",
+          "component",
+          "based decomposition",
+          "decomposition",
+          "based"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4133161559591113,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.390739+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 13,
+      "title": "Segment 13 (pages 105-114)",
+      "chapter_id": "Software Architecture:ch13",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch4",
+          "score": 0.5983753809389017,
+          "base_score": 0.6732182274907621,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "component",
+          "components",
+          "size",
+          "fitness",
+          "fitness function"
+        ],
+        "semantic": [],
+        "merged": [
+          "component",
+          "components",
+          "size",
+          "fitness",
+          "fitness function"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3093395527558291,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.390945+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 14,
+      "title": "Segment 14 (pages 115-125)",
+      "chapter_id": "Software Architecture:ch14",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch5",
+          "score": 0.5922428181572594,
+          "base_score": 0.5704046969287657,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch15",
+          "score": 0.5508009117684518,
+          "base_score": 0.5939274455400123,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ss",
+          "ss survey",
+          "survey",
+          "namespace",
+          "orphaned"
+        ],
+        "semantic": [],
+        "merged": [
+          "ss",
+          "ss survey",
+          "survey",
+          "namespace",
+          "orphaned"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "ss_the_component",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34859119872680117,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.391170+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 15,
+      "title": "Segment 15 (pages 126-147)",
+      "chapter_id": "Software Architecture:ch15",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch5",
+          "score": 0.5542226554524303,
+          "base_score": 0.5996303516799764,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch14",
+          "score": 0.5508009117684518,
+          "base_score": 0.5939274455400123,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "component",
+          "components",
+          "ss",
+          "domain",
+          "component domains"
+        ],
+        "semantic": [],
+        "merged": [
+          "component",
+          "components",
+          "ss",
+          "domain",
+          "component domains"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "ss_the_component",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30424308060728444,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.391482+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 16,
+      "title": "Segment 16 (pages 148-155)",
+      "chapter_id": "Software Architecture:ch16",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch19",
+          "score": 0.515147267441468,
+          "base_score": 0.6919121124024467,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "database",
+          "data",
+          "bounded",
+          "breaking",
+          "bounded context"
+        ],
+        "semantic": [],
+        "merged": [
+          "database",
+          "data",
+          "bounded",
+          "breaking",
+          "bounded context"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4529061800779719,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:56:47.391725+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 17,
+      "title": "Segment 17 (pages 156-163)",
+      "chapter_id": "Software Architecture:ch17",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "connections",
+          "database connections",
+          "database",
+          "quota",
+          "connection"
+        ],
+        "semantic": [],
+        "merged": [
+          "connections",
+          "database connections",
+          "database",
+          "quota",
+          "connection"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "shared_service_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3305612953134022,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.391938+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 18,
+      "title": "Segment 18 (pages 164-172)",
+      "chapter_id": "Software Architecture:ch18",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch19",
+          "score": 0.6091929494593958,
+          "base_score": 0.5986549157656598,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch40",
+          "score": 0.5338634288707362,
+          "base_score": 0.565698307377153,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch44",
+          "score": 0.5271569390739221,
+          "base_score": 0.4619282317898703,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "database",
+          "apart",
+          "foreign",
+          "data domain"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "database",
+          "apart",
+          "foreign",
+          "data domain"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38389513613146403,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.392197+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 19,
+      "title": "Segment 19 (pages 173-180)",
+      "chapter_id": "Software Architecture:ch19",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch18",
+          "score": 0.6091929494593958,
+          "base_score": 0.5986549157656598,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch44",
+          "score": 0.6046487490484056,
+          "base_score": 0.5910812484140093,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch45",
+          "score": 0.5893127706633807,
+          "base_score": 0.6581138770315605,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch16",
+          "score": 0.515147267441468,
+          "base_score": 0.6919121124024467,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "database",
+          "database servers",
+          "servers",
+          "data",
+          "schemas"
+        ],
+        "semantic": [],
+        "merged": [
+          "database",
+          "database servers",
+          "servers",
+          "data",
+          "schemas"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41509731025559404,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.392409+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 20,
+      "title": "Segment 20 (pages 181-194)",
+      "chapter_id": "Software Architecture:ch20",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "databases",
+          "relational databases",
+          "relational",
+          "key value",
+          "key"
+        ],
+        "semantic": [],
+        "merged": [
+          "databases",
+          "relational databases",
+          "relational",
+          "key value",
+          "key"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2584194718479146,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.392618+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 21,
+      "title": "Segment 21 (pages 195-202)",
+      "chapter_id": "Software Architecture:ch21",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "document database",
+          "survey",
+          "database",
+          "document",
+          "customer survey"
+        ],
+        "semantic": [],
+        "merged": [
+          "document database",
+          "survey",
+          "database",
+          "document",
+          "customer survey"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2257444135673297,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.392822+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 22,
+      "title": "Segment 22 (pages 203-212)",
+      "chapter_id": "Software Architecture:ch22",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch24",
+          "score": 0.5375336307866629,
+          "base_score": 0.5718153105703642,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "letter",
+          "sms",
+          "email",
+          "service",
+          "postal"
+        ],
+        "semantic": [],
+        "merged": [
+          "letter",
+          "sms",
+          "email",
+          "service",
+          "postal"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "shared_service_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36297924310268015,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.393036+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 23,
+      "title": "Segment 23 (pages 213-220)",
+      "chapter_id": "Software Architecture:ch23",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "acid",
+          "services",
+          "service",
+          "transactions",
+          "password"
+        ],
+        "semantic": [],
+        "merged": [
+          "acid",
+          "services",
+          "service",
+          "transactions",
+          "password"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3897718665592275,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:56:47.393239+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 24,
+      "title": "Segment 24 (pages 221-230)",
+      "chapter_id": "Software Architecture:ch24",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch27",
+          "score": 0.6006347307516466,
+          "base_score": 0.6769838105120037,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch26",
+          "score": 0.5894897577140886,
+          "base_score": 0.658408855449407,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch25",
+          "score": 0.5567439493574833,
+          "base_score": 0.6779065822624721,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch22",
+          "score": 0.5375336307866629,
+          "base_score": 0.5718153105703642,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "routing",
+          "assignment",
+          "service",
+          "assignment routing",
+          "services"
+        ],
+        "semantic": [],
+        "merged": [
+          "routing",
+          "assignment",
+          "service",
+          "assignment routing",
+          "services"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "shared_service_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39178159725108386,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.393449+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 25,
+      "title": "Segment 25 (pages 231-248)",
+      "chapter_id": "Software Architecture:ch25",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch26",
+          "score": 0.5668560285977091,
+          "base_score": 0.5280933809961819,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch24",
+          "score": 0.5567439493574833,
+          "base_score": 0.6779065822624721,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch27",
+          "score": 0.5410447251936796,
+          "base_score": 0.5776671345820585,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "shared",
+          "library",
+          "shared library",
+          "shared service",
+          "change"
+        ],
+        "semantic": [],
+        "merged": [
+          "shared",
+          "library",
+          "shared library",
+          "shared service",
+          "change"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "shared_service_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3131505795895441,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.393657+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 26,
+      "title": "Segment 26 (pages 249-256)",
+      "chapter_id": "Software Architecture:ch26",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch27",
+          "score": 0.6382349789354986,
+          "base_score": 0.6470582982258312,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch24",
+          "score": 0.5894897577140886,
+          "base_score": 0.658408855449407,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch25",
+          "score": 0.5668560285977091,
+          "base_score": 0.5280933809961819,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "shared",
+          "service",
+          "shared service",
+          "sidecar",
+          "technique"
+        ],
+        "semantic": [],
+        "merged": [
+          "shared",
+          "service",
+          "shared service",
+          "sidecar",
+          "technique"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "shared_service_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35973291572376753,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.393861+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 27,
+      "title": "Segment 27 (pages 257-266)",
+      "chapter_id": "Software Architecture:ch27",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch26",
+          "score": 0.6382349789354986,
+          "base_score": 0.6470582982258312,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch24",
+          "score": 0.6006347307516466,
+          "base_score": 0.6769838105120037,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch25",
+          "score": 0.5410447251936796,
+          "base_score": 0.5776671345820585,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "shared",
+          "data service",
+          "shared data",
+          "service",
+          "database logic"
+        ],
+        "semantic": [],
+        "merged": [
+          "shared",
+          "data service",
+          "shared data",
+          "service",
+          "database logic"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "shared_service_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4005432465621735,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.394077+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 28,
+      "title": "Segment 28 (pages 267-278)",
+      "chapter_id": "Software Architecture:ch28",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "ownership",
+          "table",
+          "inventory",
+          "catalog",
+          "table ownership"
+        ],
+        "semantic": [],
+        "merged": [
+          "ownership",
+          "table",
+          "inventory",
+          "catalog",
+          "table ownership"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38077363472463355,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.394279+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 29,
+      "title": "Segment 29 (pages 279-289)",
+      "chapter_id": "Software Architecture:ch29",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "transaction",
+          "customer",
+          "profile",
+          "request",
+          "business request"
+        ],
+        "semantic": [],
+        "merged": [
+          "transaction",
+          "customer",
+          "profile",
+          "request",
+          "business request"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3329146029651054,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.394485+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 30,
+      "title": "Segment 30 (pages 290-300)",
+      "chapter_id": "Software Architecture:ch30",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch32",
+          "score": 0.5032885245967974,
+          "base_score": 0.5888142076613291,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "service",
+          "request",
+          "table",
+          "survey",
+          "profile"
+        ],
+        "semantic": [],
+        "merged": [
+          "service",
+          "request",
+          "table",
+          "survey",
+          "profile"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_saga_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40787988555237054,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.394688+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 31,
+      "title": "Segment 31 (pages 301-316)",
+      "chapter_id": "Software Architecture:ch31",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch40",
+          "score": 0.500838756597628,
+          "base_score": 0.5106571869219726,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "cache",
+          "wishlist",
+          "replicated",
+          "service"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "cache",
+          "wishlist",
+          "replicated",
+          "service"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3229008235993109,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.394892+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 32,
+      "title": "Segment 32 (pages 317-326)",
+      "chapter_id": "Software Architecture:ch32",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch33",
+          "score": 0.5922811693309117,
+          "base_score": 0.737135282218186,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch34",
+          "score": 0.5552656056584884,
+          "base_score": 0.6754426760974807,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch30",
+          "score": 0.5032885245967974,
+          "base_score": 0.5888142076613291,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "order",
+          "orchestrator",
+          "communication style",
+          "style",
+          "order placement"
+        ],
+        "semantic": [],
+        "merged": [
+          "order",
+          "orchestrator",
+          "communication style",
+          "style",
+          "order placement"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_saga_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39150446945073825,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.395115+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 33,
+      "title": "Segment 33 (pages 327-334)",
+      "chapter_id": "Software Architecture:ch33",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch34",
+          "score": 0.5962460770820588,
+          "base_score": 0.6696693877293571,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch32",
+          "score": 0.5922811693309117,
+          "base_score": 0.737135282218186,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch37",
+          "score": 0.524545407329909,
+          "base_score": 0.5501682714757743,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch35",
+          "score": 0.5084975915117503,
+          "base_score": 0.5974959858529172,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "state",
+          "workflow",
+          "workflow state",
+          "choreography",
+          "error"
+        ],
+        "semantic": [],
+        "merged": [
+          "state",
+          "workflow",
+          "workflow state",
+          "choreography",
+          "error"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_saga_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39398268733211317,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.395319+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 34,
+      "title": "Segment 34 (pages 335-344)",
+      "chapter_id": "Software Architecture:ch34",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch33",
+          "score": 0.5962460770820588,
+          "base_score": 0.6696693877293571,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch32",
+          "score": 0.5552656056584884,
+          "base_score": 0.6754426760974807,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "workflow",
+          "orchestration",
+          "ticket workflow",
+          "saga",
+          "primary ticket"
+        ],
+        "semantic": [],
+        "merged": [
+          "workflow",
+          "orchestration",
+          "ticket workflow",
+          "saga",
+          "primary ticket"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_saga_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3752886000094569,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.395526+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 35,
+      "title": "Segment 35 (pages 345-357)",
+      "chapter_id": "Software Architecture:ch35",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch36",
+          "score": 0.7160551436811581,
+          "base_score": 0.7767585728019302,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch37",
+          "score": 0.673608129512829,
+          "base_score": 0.7986061417806408,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch38",
+          "score": 0.5173021301119655,
+          "base_score": 0.6121702168532759,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch33",
+          "score": 0.5084975915117503,
+          "base_score": 0.5974959858529172,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "saga",
+          "pattern",
+          "sao",
+          "saga sao",
+          "epic saga"
+        ],
+        "semantic": [],
+        "merged": [
+          "saga",
+          "pattern",
+          "sao",
+          "saga sao",
+          "epic saga"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_saga_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41083099060663886,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.395732+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 36,
+      "title": "Segment 36 (pages 358-366)",
+      "chapter_id": "Software Architecture:ch36",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch35",
+          "score": 0.7160551436811581,
+          "base_score": 0.7767585728019302,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch37",
+          "score": 0.6379895973922756,
+          "base_score": 0.7392419215797186,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pattern",
+          "saga",
+          "asynchronous",
+          "asynchronous communication",
+          "saga aeo"
+        ],
+        "semantic": [],
+        "merged": [
+          "pattern",
+          "saga",
+          "asynchronous",
+          "asynchronous communication",
+          "saga aeo"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_saga_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3532958677350984,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.395937+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 37,
+      "title": "Segment 37 (pages 367-376)",
+      "chapter_id": "Software Architecture:ch37",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch35",
+          "score": 0.673608129512829,
+          "base_score": 0.7986061417806408,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch36",
+          "score": 0.6379895973922756,
+          "base_score": 0.7392419215797186,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch33",
+          "score": 0.524545407329909,
+          "base_score": 0.5501682714757743,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch38",
+          "score": 0.5141066886511078,
+          "base_score": 0.5327704070111056,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "saga",
+          "state",
+          "expert",
+          "ticket",
+          "saga state"
+        ],
+        "semantic": [],
+        "merged": [
+          "saga",
+          "state",
+          "expert",
+          "ticket",
+          "saga state"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_saga_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35669586742051657,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.396151+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 38,
+      "title": "Segment 38 (pages 377-384)",
+      "chapter_id": "Software Architecture:ch38",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch35",
+          "score": 0.5173021301119655,
+          "base_score": 0.6121702168532759,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch37",
+          "score": 0.5141066886511078,
+          "base_score": 0.5327704070111056,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "compensating",
+          "ticket",
+          "compensating updates",
+          "ticket service",
+          "updates"
+        ],
+        "semantic": [],
+        "merged": [
+          "compensating",
+          "ticket",
+          "compensating updates",
+          "ticket service",
+          "updates"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_saga_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31947745426328744,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.396356+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 39,
+      "title": "Segment 39 (pages 385-393)",
+      "chapter_id": "Software Architecture:ch39",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "loose",
+          "contracts",
+          "loose contracts",
+          "strict",
+          "contract"
+        ],
+        "semantic": [],
+        "merged": [
+          "loose",
+          "contracts",
+          "loose contracts",
+          "strict",
+          "contract"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3396548721356465,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:56:47.396553+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 40,
+      "title": "Segment 40 (pages 394-416)",
+      "chapter_id": "Software Architecture:ch40",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch18",
+          "score": 0.5338634288707362,
+          "base_score": 0.565698307377153,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch31",
+          "score": 0.500838756597628,
+          "base_score": 0.5106571869219726,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "analytical",
+          "analytical data",
+          "warehouse",
+          "data warehouse"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "analytical",
+          "analytical data",
+          "warehouse",
+          "data warehouse"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40066553645537006,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.396754+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 41,
+      "title": "Segment 41 (pages 417-424)",
+      "chapter_id": "Software Architecture:ch41",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "analysis",
+          "trade",
+          "build trade",
+          "trade analysis",
+          "15"
+        ],
+        "semantic": [],
+        "merged": [
+          "analysis",
+          "trade",
+          "build trade",
+          "trade analysis",
+          "15"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3901540999476708,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.396956+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 42,
+      "title": "Segment 42 (pages 425-432)",
+      "chapter_id": "Software Architecture:ch42",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "architect",
+          "decision",
+          "scenarios",
+          "figure 15",
+          "modeling"
+        ],
+        "semantic": [],
+        "merged": [
+          "architect",
+          "decision",
+          "scenarios",
+          "figure 15",
+          "modeling"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "architecture_quantum_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35752507034867975,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.397167+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 43,
+      "title": "Segment 43 (pages 433-447)",
+      "chapter_id": "Software Architecture:ch43",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch45",
+          "score": 0.5208550988248155,
+          "base_score": 0.6180918313746925,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch44",
+          "score": 0.5155576570820976,
+          "base_score": 0.6092627618034958,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "page",
+          "trade offs",
+          "offs",
+          "trade",
+          "table"
+        ],
+        "semantic": [],
+        "merged": [
+          "page",
+          "trade offs",
+          "offs",
+          "trade",
+          "table"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43315517867675046,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.397367+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 44,
+      "title": "Segment 44 (pages 448-455)",
+      "chapter_id": "Software Architecture:ch44",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch45",
+          "score": 0.8307120864431761,
+          "base_score": 0.8488058583576743,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch19",
+          "score": 0.6046487490484056,
+          "base_score": 0.5910812484140093,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch18",
+          "score": 0.5271569390739221,
+          "base_score": 0.4619282317898703,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch43",
+          "score": 0.5155576570820976,
+          "base_score": 0.6092627618034958,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "saga",
+          "squad saga",
+          "database",
+          "domains"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "saga",
+          "squad saga",
+          "database",
+          "domains"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3905534685310827,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.397570+00:00"
+      }
+    },
+    {
+      "book": "Software Architecture",
+      "chapter": 45,
+      "title": "Segment 45 (pages 456-462)",
+      "chapter_id": "Software Architecture:ch45",
+      "cross_references": [
+        {
+          "target": "Software Architecture:ch44",
+          "score": 0.8307120864431761,
+          "base_score": 0.8488058583576743,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch19",
+          "score": 0.5893127706633807,
+          "base_score": 0.6581138770315605,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Architecture:ch43",
+          "score": 0.5208550988248155,
+          "base_score": 0.6180918313746925,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "granularity",
+          "coupling",
+          "saga",
+          "squad saga"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "granularity",
+          "coupling",
+          "saga",
+          "squad saga"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.429121467690131,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:47.397768+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

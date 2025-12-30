@@ -1,0 +1,617 @@
+{
+  "book": {
+    "title": "Microservices Best Practices for Java"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:51:33.711382",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Microservices Best Practices for Java",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-9)",
+      "chapter_id": "Microservices Best Practices for Java:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "ibm",
+          "products",
+          "programs",
+          "non ibm",
+          "product program"
+        ],
+        "semantic": [],
+        "merged": [
+          "ibm",
+          "products",
+          "programs",
+          "non ibm",
+          "product program"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "ibm_of_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5053255646700233,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:33.696204+00:00"
+      }
+    },
+    {
+      "book": "Microservices Best Practices for Java",
+      "chapter": 2,
+      "title": "Segment 2 (pages 10-17)",
+      "chapter_id": "Microservices Best Practices for Java:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "ibm",
+          "cloud",
+          "redbooks",
+          "applications",
+          "ibm com"
+        ],
+        "semantic": [],
+        "merged": [
+          "ibm",
+          "cloud",
+          "redbooks",
+          "applications",
+          "ibm com"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4042577929642768,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:51:33.696334+00:00"
+      }
+    },
+    {
+      "book": "Microservices Best Practices for Java",
+      "chapter": 3,
+      "title": "Segment 3 (pages 18-25)",
+      "chapter_id": "Microservices Best Practices for Java:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "creating",
+          "creating microservices",
+          "java",
+          "microservices",
+          "microservices java"
+        ],
+        "semantic": [],
+        "merged": [
+          "creating",
+          "creating microservices",
+          "java",
+          "microservices",
+          "microservices java"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_service_that",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5415665815746643,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:33.696407+00:00"
+      }
+    },
+    {
+      "book": "Microservices Best Practices for Java",
+      "chapter": 4,
+      "title": "Segment 4 (pages 26-34)",
+      "chapter_id": "Microservices Best Practices for Java:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "domain",
+          "service",
+          "services",
+          "player",
+          "independent"
+        ],
+        "semantic": [],
+        "merged": [
+          "domain",
+          "service",
+          "services",
+          "player",
+          "independent"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43700472079993774,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:51:33.696476+00:00"
+      }
+    },
+    {
+      "book": "Microservices Best Practices for Java",
+      "chapter": 5,
+      "title": "Segment 5 (pages 35-44)",
+      "chapter_id": "Microservices Best Practices for Java:ch5",
+      "cross_references": [
+        {
+          "target": "Microservices Best Practices for Java:ch6",
+          "score": 0.5169386579809558,
+          "base_score": 0.5374903558941856,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "service registry",
+          "registry",
+          "service",
+          "proxy",
+          "service proxy"
+        ],
+        "semantic": [],
+        "merged": [
+          "service registry",
+          "registry",
+          "service",
+          "proxy",
+          "service proxy"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_service_that",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4523999862945425,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:33.696657+00:00"
+      }
+    },
+    {
+      "book": "Microservices Best Practices for Java",
+      "chapter": 6,
+      "title": "Segment 6 (pages 45-52)",
+      "chapter_id": "Microservices Best Practices for Java:ch6",
+      "cross_references": [
+        {
+          "target": "Microservices Best Practices for Java:ch5",
+          "score": 0.5169386579809558,
+          "base_score": 0.5374903558941856,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "synchronous",
+          "response",
+          "request",
+          "service",
+          "asynchronous"
+        ],
+        "semantic": [],
+        "merged": [
+          "synchronous",
+          "response",
+          "request",
+          "service",
+          "asynchronous"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_service_that",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44553714649233417,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:33.696757+00:00"
+      }
+    },
+    {
+      "book": "Microservices Best Practices for Java",
+      "chapter": 7,
+      "title": "Segment 7 (pages 53-62)",
+      "chapter_id": "Microservices Best Practices for Java:ch7",
+      "cross_references": [
+        {
+          "target": "Microservices Best Practices for Java:ch8",
+          "score": 0.5759611731108528,
+          "base_score": 0.709935288518088,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "store",
+          "microservice",
+          "data store",
+          "event"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "store",
+          "microservice",
+          "data store",
+          "event"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_data_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5191772439554831,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:33.696830+00:00"
+      }
+    },
+    {
+      "book": "Microservices Best Practices for Java",
+      "chapter": 8,
+      "title": "Segment 8 (pages 63-70)",
+      "chapter_id": "Microservices Best Practices for Java:ch8",
+      "cross_references": [
+        {
+          "target": "Microservices Best Practices for Java:ch7",
+          "score": 0.5759611731108528,
+          "base_score": 0.709935288518088,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "persistence",
+          "jpa",
+          "database",
+          "java",
+          "xml"
+        ],
+        "semantic": [],
+        "merged": [
+          "persistence",
+          "jpa",
+          "database",
+          "java",
+          "xml"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_data_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4558544883861951,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:33.696900+00:00"
+      }
+    },
+    {
+      "book": "Microservices Best Practices for Java",
+      "chapter": 9,
+      "title": "Segment 9 (pages 71-80)",
+      "chapter_id": "Microservices Best Practices for Java:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "ejb",
+          "jms",
+          "message",
+          "ejbs",
+          "cdi"
+        ],
+        "semantic": [],
+        "merged": [
+          "ejb",
+          "jms",
+          "message",
+          "ejbs",
+          "cdi"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43612387124181484,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:51:33.696967+00:00"
+      }
+    },
+    {
+      "book": "Microservices Best Practices for Java",
+      "chapter": 10,
+      "title": "Segment 10 (pages 81-88)",
+      "chapter_id": "Microservices Best Practices for Java:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "identity",
+          "user",
+          "jwt",
+          "authentication",
+          "oauth"
+        ],
+        "semantic": [],
+        "merged": [
+          "identity",
+          "user",
+          "jwt",
+          "authentication",
+          "oauth"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_data_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44670429709666704,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:33.697034+00:00"
+      }
+    },
+    {
+      "book": "Microservices Best Practices for Java",
+      "chapter": 11,
+      "title": "Segment 11 (pages 89-96)",
+      "chapter_id": "Microservices Best Practices for Java:ch11",
+      "cross_references": [
+        {
+          "target": "Microservices Best Practices for Java:ch12",
+          "score": 0.636603994962112,
+          "base_score": 0.5252923725559009,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tests",
+          "testing",
+          "integration tests",
+          "integration",
+          "test"
+        ],
+        "semantic": [],
+        "merged": [
+          "tests",
+          "testing",
+          "integration tests",
+          "integration",
+          "test"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4043795796195486,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:33.697102+00:00"
+      }
+    },
+    {
+      "book": "Microservices Best Practices for Java",
+      "chapter": 12,
+      "title": "Segment 12 (pages 97-104)",
+      "chapter_id": "Microservices Best Practices for Java:ch12",
+      "cross_references": [
+        {
+          "target": "Microservices Best Practices for Java:ch11",
+          "score": 0.636603994962112,
+          "base_score": 0.5252923725559009,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "test",
+          "tests",
+          "testing",
+          "services",
+          "test services"
+        ],
+        "semantic": [],
+        "merged": [
+          "test",
+          "tests",
+          "testing",
+          "services",
+          "test services"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4279430477919579,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:33.697168+00:00"
+      }
+    },
+    {
+      "book": "Microservices Best Practices for Java",
+      "chapter": 13,
+      "title": "Segment 13 (pages 105-113)",
+      "chapter_id": "Microservices Best Practices for Java:ch13",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "virtualized",
+          "jar",
+          "docker",
+          "microservice",
+          "deployment"
+        ],
+        "semantic": [],
+        "merged": [
+          "virtualized",
+          "jar",
+          "docker",
+          "microservice",
+          "deployment"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4436847908366646,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:33.697255+00:00"
+      }
+    },
+    {
+      "book": "Microservices Best Practices for Java",
+      "chapter": 14,
+      "title": "Segment 14 (pages 114-124)",
+      "chapter_id": "Microservices Best Practices for Java:ch14",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "configuration",
+          "values",
+          "configuration files",
+          "file",
+          "files"
+        ],
+        "semantic": [],
+        "merged": [
+          "configuration",
+          "values",
+          "configuration files",
+          "file",
+          "files"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4811200881861673,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:33.697440+00:00"
+      }
+    },
+    {
+      "book": "Microservices Best Practices for Java",
+      "chapter": 15,
+      "title": "Segment 15 (pages 125-134)",
+      "chapter_id": "Microservices Best Practices for Java:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "cid",
+          "liberty",
+          "logging",
+          "feature",
+          "http"
+        ],
+        "semantic": [],
+        "merged": [
+          "cid",
+          "liberty",
+          "logging",
+          "feature",
+          "http"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "ibm_of_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4304167204918709,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:33.697512+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

@@ -1,0 +1,125 @@
+{
+  "book": {
+    "title": "managing-kubernetes-performance-at-scale"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:01:44.261783",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "managing-kubernetes-performance-at-scale",
+      "chapter": 1,
+      "title": "Segment 1 (pages 3-11)",
+      "chapter_id": "managing-kubernetes-performance-at-scale:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "managing",
+          "managing kubernetes",
+          "performance scale",
+          "specifications",
+          "kubernetes performance"
+        ],
+        "semantic": [],
+        "merged": [
+          "managing",
+          "managing kubernetes",
+          "performance scale",
+          "specifications",
+          "kubernetes performance"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "managing_services_kubernetes",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7702326986426824,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:44.255582+00:00"
+      }
+    },
+    {
+      "book": "managing-kubernetes-performance-at-scale",
+      "chapter": 2,
+      "title": "Segment 2 (pages 12-19)",
+      "chapter_id": "managing-kubernetes-performance-at-scale:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "want",
+          "hpa",
+          "upper",
+          "limit",
+          "metric"
+        ],
+        "semantic": [],
+        "merged": [
+          "want",
+          "hpa",
+          "upper",
+          "limit",
+          "metric"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "service_want_hpa",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.8123479254351519,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:44.255623+00:00"
+      }
+    },
+    {
+      "book": "managing-kubernetes-performance-at-scale",
+      "chapter": 3,
+      "title": "Segment 3 (pages 20-26)",
+      "chapter_id": "managing-kubernetes-performance-at-scale:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "pending",
+          "managing",
+          "compliance",
+          "nodes",
+          "infrastructure"
+        ],
+        "semantic": [],
+        "merged": [
+          "pending",
+          "managing",
+          "compliance",
+          "nodes",
+          "infrastructure"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "pending_need_managing",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.8015088606913516,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:44.255640+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

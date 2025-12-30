@@ -1,0 +1,2018 @@
+{
+  "book": {
+    "title": "API Security in Action"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:38:14.694790",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "API Security in Action",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-25)",
+      "chapter_id": "API Security in Action:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "api security",
+          "api",
+          "security",
+          "securing",
+          "apis"
+        ],
+        "semantic": [],
+        "merged": [
+          "api security",
+          "api",
+          "security",
+          "securing",
+          "apis"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3276618769223377,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:38:14.648763+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 2,
+      "title": "Segment 2 (pages 26-46)",
+      "chapter_id": "API Security in Action:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "goals",
+          "security goals",
+          "security",
+          "api",
+          "threats"
+        ],
+        "semantic": [],
+        "merged": [
+          "goals",
+          "security goals",
+          "security",
+          "api",
+          "threats"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "to_of_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28935611088858065,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.649060+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 3,
+      "title": "Segment 3 (pages 47-67)",
+      "chapter_id": "API Security in Action:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "database",
+          "space",
+          "maven",
+          "spaces",
+          "import"
+        ],
+        "semantic": [],
+        "merged": [
+          "database",
+          "space",
+          "maven",
+          "spaces",
+          "import"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.17021692757437085,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.649290+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 4,
+      "title": "Segment 4 (pages 68-85)",
+      "chapter_id": "API Security in Action:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "user input",
+          "sql",
+          "input",
+          "statement",
+          "user"
+        ],
+        "semantic": [],
+        "merged": [
+          "user input",
+          "sql",
+          "input",
+          "statement",
+          "user"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_token",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23828432558376492,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.649502+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 5,
+      "title": "Segment 5 (pages 86-107)",
+      "chapter_id": "API Security in Action:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "xss",
+          "response",
+          "content",
+          "browser",
+          "header"
+        ],
+        "semantic": [],
+        "merged": [
+          "xss",
+          "response",
+          "content",
+          "browser",
+          "header"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "content_response_xss",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.19216099785830484,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.649716+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 6,
+      "title": "Segment 6 (pages 108-129)",
+      "chapter_id": "API Security in Action:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "rate",
+          "limiting",
+          "rate limiting",
+          "requests",
+          "password"
+        ],
+        "semantic": [],
+        "merged": [
+          "rate",
+          "limiting",
+          "rate limiting",
+          "requests",
+          "password"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2919084208968183,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:38:14.649929+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 7,
+      "title": "Segment 7 (pages 130-152)",
+      "chapter_id": "API Security in Action:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "request",
+          "audit",
+          "audit_id",
+          "content type",
+          "password"
+        ],
+        "semantic": [],
+        "merged": [
+          "request",
+          "audit",
+          "audit_id",
+          "content type",
+          "password"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2710087909398044,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:38:14.650139+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 8,
+      "title": "Segment 8 (pages 153-172)",
+      "chapter_id": "API Security in Action:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "permissions",
+          "space",
+          "user",
+          "demo2",
+          "spaces"
+        ],
+        "semantic": [],
+        "merged": [
+          "permissions",
+          "space",
+          "user",
+          "demo2",
+          "spaces"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "content_response_xss",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2774784883503258,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.650365+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 9,
+      "title": "Segment 9 (pages 173-194)",
+      "chapter_id": "API Security in Action:ch9",
+      "cross_references": [
+        {
+          "target": "API Security in Action:ch12",
+          "score": 0.5555026223353852,
+          "base_score": 0.6017636298182344,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "API Security in Action:ch13",
+          "score": 0.5452881612344652,
+          "base_score": 0.658813602057442,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "API Security in Action:ch11",
+          "score": 0.5280863946334186,
+          "base_score": 0.6301439910556976,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "api",
+          "token",
+          "authentication",
+          "token based",
+          "endpoint"
+        ],
+        "semantic": [],
+        "merged": [
+          "api",
+          "token",
+          "authentication",
+          "token based",
+          "endpoint"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_token",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38164535092613505,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.650623+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 10,
+      "title": "Segment 10 (pages 195-214)",
+      "chapter_id": "API Security in Action:ch10",
+      "cross_references": [
+        {
+          "target": "API Security in Action:ch12",
+          "score": 0.5681399868225194,
+          "base_score": 0.6611856923232466,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "session",
+          "cookie",
+          "session cookie",
+          "token",
+          "cookie header"
+        ],
+        "semantic": [],
+        "merged": [
+          "session",
+          "cookie",
+          "session cookie",
+          "token",
+          "cookie header"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3835871277508582,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:38:14.650848+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 11,
+      "title": "Segment 11 (pages 215-232)",
+      "chapter_id": "API Security in Action:ch11",
+      "cross_references": [
+        {
+          "target": "API Security in Action:ch12",
+          "score": 0.7380136429979539,
+          "base_score": 0.6943084526156373,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "API Security in Action:ch13",
+          "score": 0.54024319197395,
+          "base_score": 0.6504053199565833,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "API Security in Action:ch9",
+          "score": 0.5280863946334186,
+          "base_score": 0.6301439910556976,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cookie",
+          "csrf",
+          "session cookie",
+          "session",
+          "hash"
+        ],
+        "semantic": [],
+        "merged": [
+          "cookie",
+          "csrf",
+          "session cookie",
+          "session",
+          "hash"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_token",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29676964645860915,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.651092+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 12,
+      "title": "Segment 12 (pages 233-253)",
+      "chapter_id": "API Security in Action:ch12",
+      "cross_references": [
+        {
+          "target": "API Security in Action:ch11",
+          "score": 0.7380136429979539,
+          "base_score": 0.6943084526156373,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "API Security in Action:ch10",
+          "score": 0.5681399868225194,
+          "base_score": 0.6611856923232466,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "API Security in Action:ch9",
+          "score": 0.5555026223353852,
+          "base_score": 0.6017636298182344,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "csrf token",
+          "csrf",
+          "cookie",
+          "token",
+          "session"
+        ],
+        "semantic": [],
+        "merged": [
+          "csrf token",
+          "csrf",
+          "cookie",
+          "token",
+          "session"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_token",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28563126504621056,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.651320+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 13,
+      "title": "Segment 13 (pages 254-271)",
+      "chapter_id": "API Security in Action:ch13",
+      "cross_references": [
+        {
+          "target": "API Security in Action:ch9",
+          "score": 0.5452881612344652,
+          "base_score": 0.658813602057442,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "API Security in Action:ch11",
+          "score": 0.54024319197395,
+          "base_score": 0.6504053199565833,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "origin",
+          "headers",
+          "cors",
+          "control allow",
+          "cross origin"
+        ],
+        "semantic": [],
+        "merged": [
+          "origin",
+          "headers",
+          "cors",
+          "control allow",
+          "cross origin"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_token",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2981796821097173,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.651559+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 14,
+      "title": "Segment 14 (pages 272-294)",
+      "chapter_id": "API Security in Action:ch14",
+      "cross_references": [
+        {
+          "target": "API Security in Action:ch16",
+          "score": 0.6032337313306697,
+          "base_score": 0.6813154781437086,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "API Security in Action:ch18",
+          "score": 0.5957672995351757,
+          "base_score": 0.5762788325586261,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "token",
+          "tokens",
+          "storage",
+          "bearer",
+          "header"
+        ],
+        "semantic": [],
+        "merged": [
+          "token",
+          "tokens",
+          "storage",
+          "bearer",
+          "header"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "token_the_jwt",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3310368621665937,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.651771+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 15,
+      "title": "Segment 15 (pages 295-315)",
+      "chapter_id": "API Security in Action:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "token",
+          "tag",
+          "database",
+          "tokens",
+          "hmac"
+        ],
+        "semantic": [],
+        "merged": [
+          "token",
+          "tag",
+          "database",
+          "tokens",
+          "hmac"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3062455682314992,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:38:14.651980+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 16,
+      "title": "Segment 16 (pages 316-338)",
+      "chapter_id": "API Security in Action:ch16",
+      "cross_references": [
+        {
+          "target": "API Security in Action:ch14",
+          "score": 0.6032337313306697,
+          "base_score": 0.6813154781437086,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "API Security in Action:ch18",
+          "score": 0.5887125308859698,
+          "base_score": 0.5645208848099497,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "jwt",
+          "token",
+          "json",
+          "claims",
+          "key"
+        ],
+        "semantic": [],
+        "merged": [
+          "jwt",
+          "token",
+          "json",
+          "claims",
+          "key"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "token_the_jwt",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3560463760253341,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.652191+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 17,
+      "title": "Segment 17 (pages 339-358)",
+      "chapter_id": "API Security in Action:ch17",
+      "cross_references": [
+        {
+          "target": "API Security in Action:ch40",
+          "score": 0.5332656796293298,
+          "base_score": 0.353061847001264,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "encryption",
+          "encrypted",
+          "key",
+          "jwe",
+          "aes"
+        ],
+        "semantic": [],
+        "merged": [
+          "encryption",
+          "encrypted",
+          "key",
+          "jwe",
+          "aes"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "key_encryption_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.14111479247788444,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.652415+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 18,
+      "title": "Segment 18 (pages 359-376)",
+      "chapter_id": "API Security in Action:ch18",
+      "cross_references": [
+        {
+          "target": "API Security in Action:ch14",
+          "score": 0.5957672995351757,
+          "base_score": 0.5762788325586261,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "API Security in Action:ch16",
+          "score": 0.5887125308859698,
+          "base_score": 0.5645208848099497,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "token",
+          "database",
+          "jwt",
+          "tokens",
+          "database token"
+        ],
+        "semantic": [],
+        "merged": [
+          "token",
+          "database",
+          "jwt",
+          "tokens",
+          "database token"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "token_the_jwt",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35215021501978133,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.652654+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 19,
+      "title": "Segment 19 (pages 377-399)",
+      "chapter_id": "API Security in Action:ch19",
+      "cross_references": [
+        {
+          "target": "API Security in Action:ch20",
+          "score": 0.5506007896144451,
+          "base_score": 0.5010013160240752,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "API Security in Action:ch44",
+          "score": 0.5481286226328654,
+          "base_score": 0.37783341867382336,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "token",
+          "scopes",
+          "scope",
+          "authorization",
+          "access"
+        ],
+        "semantic": [],
+        "merged": [
+          "token",
+          "scopes",
+          "scope",
+          "authorization",
+          "access"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_token",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29592979111281215,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.652865+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 20,
+      "title": "Segment 20 (pages 400-420)",
+      "chapter_id": "API Security in Action:ch20",
+      "cross_references": [
+        {
+          "target": "API Security in Action:ch44",
+          "score": 0.622651234609772,
+          "base_score": 0.5020377719686676,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "API Security in Action:ch19",
+          "score": 0.5506007896144451,
+          "base_score": 0.5010013160240752,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "API Security in Action:ch22",
+          "score": 0.5259145927478854,
+          "base_score": 0.5908100355321899,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "token",
+          "access token",
+          "access",
+          "authorization code",
+          "client"
+        ],
+        "semantic": [],
+        "merged": [
+          "token",
+          "access token",
+          "access",
+          "authorization code",
+          "client"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_token",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31644695337774564,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.653091+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 21,
+      "title": "Segment 21 (pages 421-440)",
+      "chapter_id": "API Security in Action:ch21",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "key",
+          "jwt",
+          "public key",
+          "public",
+          "access"
+        ],
+        "semantic": [],
+        "merged": [
+          "key",
+          "jwt",
+          "public key",
+          "public",
+          "access"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_token",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24767850704121508,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.653316+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 22,
+      "title": "Segment 22 (pages 441-460)",
+      "chapter_id": "API Security in Action:ch22",
+      "cross_references": [
+        {
+          "target": "API Security in Action:ch34",
+          "score": 0.5852619462024582,
+          "base_score": 0.6513625029300228,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "API Security in Action:ch33",
+          "score": 0.5750114328720415,
+          "base_score": 0.634278314045995,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "API Security in Action:ch20",
+          "score": 0.5259145927478854,
+          "base_score": 0.5908100355321899,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "id token",
+          "token",
+          "id",
+          "access",
+          "client"
+        ],
+        "semantic": [],
+        "merged": [
+          "id token",
+          "token",
+          "id",
+          "access",
+          "client"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "client_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34216250421556327,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.653562+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 23,
+      "title": "Segment 23 (pages 461-483)",
+      "chapter_id": "API Security in Action:ch23",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "groups",
+          "permissions",
+          "groups user",
+          "member",
+          "roles"
+        ],
+        "semantic": [],
+        "merged": [
+          "groups",
+          "permissions",
+          "groups user",
+          "member",
+          "roles"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "to_of_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.16907229566578022,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.653775+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 24,
+      "title": "Segment 24 (pages 484-502)",
+      "chapter_id": "API Security in Action:ch24",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "rules",
+          "abac",
+          "rule",
+          "decision",
+          "drools"
+        ],
+        "semantic": [],
+        "merged": [
+          "rules",
+          "abac",
+          "rule",
+          "decision",
+          "drools"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "to_of_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21830772649441577,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.653982+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 25,
+      "title": "Segment 25 (pages 503-520)",
+      "chapter_id": "API Security in Action:ch25",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "policy",
+          "access",
+          "capability",
+          "xacml",
+          "capabilities"
+        ],
+        "semantic": [],
+        "merged": [
+          "policy",
+          "access",
+          "capability",
+          "xacml",
+          "capabilities"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "to_of_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2529422794782191,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.654197+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 26,
+      "title": "Segment 26 (pages 521-540)",
+      "chapter_id": "API Security in Action:ch26",
+      "cross_references": [
+        {
+          "target": "API Security in Action:ch27",
+          "score": 0.5828304564420543,
+          "base_score": 0.5269396496256462,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "capability",
+          "uri",
+          "uris",
+          "capability uri",
+          "capability uris"
+        ],
+        "semantic": [],
+        "merged": [
+          "capability",
+          "uri",
+          "uris",
+          "capability uri",
+          "capability uris"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28695283345293393,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:38:14.654421+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 27,
+      "title": "Segment 27 (pages 541-563)",
+      "chapter_id": "API Security in Action:ch27",
+      "cross_references": [
+        {
+          "target": "API Security in Action:ch26",
+          "score": 0.5828304564420543,
+          "base_score": 0.5269396496256462,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "capability",
+          "capability uri",
+          "uri",
+          "uris",
+          "token"
+        ],
+        "semantic": [],
+        "merged": [
+          "capability",
+          "capability uri",
+          "uri",
+          "uris",
+          "token"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2716714402327084,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:38:14.654629+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 28,
+      "title": "Segment 28 (pages 564-584)",
+      "chapter_id": "API Security in Action:ch28",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "caveat",
+          "macaroon",
+          "party",
+          "party caveats",
+          "caveats"
+        ],
+        "semantic": [],
+        "merged": [
+          "caveat",
+          "macaroon",
+          "party",
+          "party caveats",
+          "caveats"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2822879299179387,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:38:14.654832+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 29,
+      "title": "Segment 29 (pages 585-604)",
+      "chapter_id": "API Security in Action:ch29",
+      "cross_references": [
+        {
+          "target": "API Security in Action:ch36",
+          "score": 0.5047042336563106,
+          "base_score": 0.5170996486864434,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "container",
+          "image",
+          "natter",
+          "kubernetes",
+          "docker"
+        ],
+        "semantic": [],
+        "merged": [
+          "container",
+          "image",
+          "natter",
+          "kubernetes",
+          "docker"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1918942233686083,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.655040+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 30,
+      "title": "Segment 30 (pages 605-624)",
+      "chapter_id": "API Security in Action:ch30",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "preview",
+          "link",
+          "link preview",
+          "service",
+          "preview service"
+        ],
+        "semantic": [],
+        "merged": [
+          "preview",
+          "link",
+          "link preview",
+          "service",
+          "preview service"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.163700100869727,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.655257+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 31,
+      "title": "Segment 31 (pages 625-645)",
+      "chapter_id": "API Security in Action:ch31",
+      "cross_references": [
+        {
+          "target": "API Security in Action:ch37",
+          "score": 0.5512426827051929,
+          "base_score": 0.5946637304345808,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "dns",
+          "service",
+          "ip",
+          "internal",
+          "ssrf"
+        ],
+        "semantic": [],
+        "merged": [
+          "dns",
+          "service",
+          "ip",
+          "internal",
+          "ssrf"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.22324700308280737,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.655466+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 32,
+      "title": "Segment 32 (pages 646-665)",
+      "chapter_id": "API Security in Action:ch32",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "ingress",
+          "172 17",
+          "172",
+          "tls",
+          "17"
+        ],
+        "semantic": [],
+        "merged": [
+          "ingress",
+          "172 17",
+          "172",
+          "tls",
+          "17"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1999700692066522,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.655671+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 33,
+      "title": "Segment 33 (pages 666-683)",
+      "chapter_id": "API Security in Action:ch33",
+      "cross_references": [
+        {
+          "target": "API Security in Action:ch22",
+          "score": 0.5750114328720415,
+          "base_score": 0.634278314045995,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "API Security in Action:ch34",
+          "score": 0.5719657861181429,
+          "base_score": 0.6292022361228307,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "client",
+          "service account",
+          "service",
+          "jwt",
+          "account"
+        ],
+        "semantic": [],
+        "merged": [
+          "client",
+          "service account",
+          "service",
+          "jwt",
+          "account"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "client_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3706297761878946,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.655891+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 34,
+      "title": "Segment 34 (pages 684-703)",
+      "chapter_id": "API Security in Action:ch34",
+      "cross_references": [
+        {
+          "target": "API Security in Action:ch22",
+          "score": 0.5852619462024582,
+          "base_score": 0.6513625029300228,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "API Security in Action:ch33",
+          "score": 0.5719657861181429,
+          "base_score": 0.6292022361228307,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "certiﬁcate",
+          "client certiﬁcate",
+          "client",
+          "certiﬁcate authentication",
+          "authentication"
+        ],
+        "semantic": [],
+        "merged": [
+          "certiﬁcate",
+          "client certiﬁcate",
+          "client",
+          "certiﬁcate authentication",
+          "authentication"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "client_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29684574201078556,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.656132+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 35,
+      "title": "Segment 35 (pages 704-723)",
+      "chapter_id": "API Security in Action:ch35",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "certiﬁcate",
+          "client",
+          "client certiﬁcate",
+          "token",
+          "bound access"
+        ],
+        "semantic": [],
+        "merged": [
+          "certiﬁcate",
+          "client",
+          "client certiﬁcate",
+          "token",
+          "bound access"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2740735421341764,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.656392+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 36,
+      "title": "Segment 36 (pages 724-744)",
+      "chapter_id": "API Security in Action:ch36",
+      "cross_references": [
+        {
+          "target": "API Security in Action:ch29",
+          "score": 0.5047042336563106,
+          "base_score": 0.5170996486864434,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "kms",
+          "secrets",
+          "key",
+          "kubernetes",
+          "kubernetes secrets"
+        ],
+        "semantic": [],
+        "merged": [
+          "kms",
+          "secrets",
+          "key",
+          "kubernetes",
+          "kubernetes secrets"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2361216879765195,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.656607+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 37,
+      "title": "Segment 37 (pages 745-767)",
+      "chapter_id": "API Security in Action:ch37",
+      "cross_references": [
+        {
+          "target": "API Security in Action:ch31",
+          "score": 0.5512426827051929,
+          "base_score": 0.5946637304345808,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "token",
+          "service",
+          "access",
+          "user",
+          "token exchange"
+        ],
+        "semantic": [],
+        "merged": [
+          "token",
+          "service",
+          "access",
+          "user",
+          "token exchange"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2895199930685972,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.656818+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 38,
+      "title": "Segment 38 (pages 768-788)",
+      "chapter_id": "API Security in Action:ch38",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "dtls",
+          "packets",
+          "engine",
+          "unwrap",
+          "receive"
+        ],
+        "semantic": [],
+        "merged": [
+          "dtls",
+          "packets",
+          "engine",
+          "unwrap",
+          "receive"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26516527418589647,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:38:14.657021+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 39,
+      "title": "Segment 39 (pages 789-811)",
+      "chapter_id": "API Security in Action:ch39",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "psk",
+          "cipher",
+          "suites",
+          "psk cipher",
+          "cipher suites"
+        ],
+        "semantic": [],
+        "merged": [
+          "psk",
+          "cipher",
+          "suites",
+          "psk cipher",
+          "cipher suites"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "key_encryption_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1816223403715919,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.657244+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 40,
+      "title": "Segment 40 (pages 812-832)",
+      "chapter_id": "API Security in Action:ch40",
+      "cross_references": [
+        {
+          "target": "API Security in Action:ch17",
+          "score": 0.5332656796293298,
+          "base_score": 0.353061847001264,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "key",
+          "cose",
+          "encryption",
+          "nonce",
+          "aes"
+        ],
+        "semantic": [],
+        "merged": [
+          "key",
+          "cose",
+          "encryption",
+          "nonce",
+          "aes"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "key_encryption_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2821889128119031,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.657454+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 41,
+      "title": "Segment 41 (pages 833-850)",
+      "chapter_id": "API Security in Action:ch41",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "device",
+          "key",
+          "devices",
+          "communications",
+          "distribution server"
+        ],
+        "semantic": [],
+        "merged": [
+          "device",
+          "key",
+          "devices",
+          "communications",
+          "distribution server"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "device_the_key",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21067967829590165,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.657666+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 42,
+      "title": "Segment 42 (pages 851-871)",
+      "chapter_id": "API Security in Action:ch42",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "device",
+          "psk",
+          "device database",
+          "identity",
+          "device proﬁle"
+        ],
+        "semantic": [],
+        "merged": [
+          "device",
+          "psk",
+          "device database",
+          "identity",
+          "device proﬁle"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "device_the_key",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.13873633439235777,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.657908+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 43,
+      "title": "Segment 43 (pages 872-893)",
+      "chapter_id": "API Security in Action:ch43",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "request object",
+          "request",
+          "etag",
+          "object",
+          "headers"
+        ],
+        "semantic": [],
+        "merged": [
+          "request object",
+          "request",
+          "etag",
+          "object",
+          "headers"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "device_the_key",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1898008623774722,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.658119+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 44,
+      "title": "Segment 44 (pages 894-915)",
+      "chapter_id": "API Security in Action:ch44",
+      "cross_references": [
+        {
+          "target": "API Security in Action:ch20",
+          "score": 0.622651234609772,
+          "base_score": 0.5020377719686676,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "API Security in Action:ch19",
+          "score": 0.5481286226328654,
+          "base_score": 0.37783341867382336,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "device",
+          "authorization",
+          "token",
+          "access",
+          "access token"
+        ],
+        "semantic": [],
+        "merged": [
+          "device",
+          "authorization",
+          "token",
+          "access",
+          "access token"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_token",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30458308355631664,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.658387+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 45,
+      "title": "Segment 45 (pages 916-927)",
+      "chapter_id": "API Security in Action:ch45",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "virtualbox",
+          "oauth2",
+          "conﬁgure",
+          "install",
+          "linux"
+        ],
+        "semantic": [],
+        "merged": [
+          "virtualbox",
+          "oauth2",
+          "conﬁgure",
+          "install",
+          "linux"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "client_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27430026113236294,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.658604+00:00"
+      }
+    },
+    {
+      "book": "API Security in Action",
+      "chapter": 46,
+      "title": "Segment 46 (pages 928-929)",
+      "chapter_id": "API Security in Action:ch46",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "minikube",
+          "minikube installed",
+          "installer",
+          "installed",
+          "download"
+        ],
+        "semantic": [],
+        "merged": [
+          "minikube",
+          "minikube installed",
+          "installer",
+          "installed",
+          "download"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.04901319343634326,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:14.658815+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

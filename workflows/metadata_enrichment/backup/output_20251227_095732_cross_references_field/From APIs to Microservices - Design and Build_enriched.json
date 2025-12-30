@@ -1,0 +1,378 @@
+{
+  "book": {
+    "title": "From APIs to Microservices - Design and Build"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:46:40.720227",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "From APIs to Microservices - Design and Build",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-9)",
+      "chapter_id": "From APIs to Microservices - Design and Build:ch1",
+      "cross_references": [
+        {
+          "target": "From APIs to Microservices - Design and Build:ch9",
+          "score": 0.5326159234230021,
+          "base_score": 0.5636191316309295,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "From APIs to Microservices - Design and Build:ch3",
+          "score": 0.5186926463505784,
+          "base_score": 0.6144877439176306,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "academy",
+          "api academy",
+          "api",
+          "apis",
+          "design"
+        ],
+        "semantic": [],
+        "merged": [
+          "academy",
+          "api academy",
+          "api",
+          "apis",
+          "design"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "customer_service_payments",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5212289256446947,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:46:40.708120+00:00"
+      }
+    },
+    {
+      "book": "From APIs to Microservices - Design and Build",
+      "chapter": 2,
+      "title": "Segment 2 (pages 10-25)",
+      "chapter_id": "From APIs to Microservices - Design and Build:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "new",
+          "web api",
+          "apis",
+          "web",
+          "api"
+        ],
+        "semantic": [],
+        "merged": [
+          "new",
+          "web api",
+          "apis",
+          "web",
+          "api"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "languages_apis_new",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49780278479175916,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:46:40.708175+00:00"
+      }
+    },
+    {
+      "book": "From APIs to Microservices - Design and Build",
+      "chapter": 3,
+      "title": "Segment 3 (pages 26-34)",
+      "chapter_id": "From APIs to Microservices - Design and Build:ch3",
+      "cross_references": [
+        {
+          "target": "From APIs to Microservices - Design and Build:ch1",
+          "score": 0.5186926463505784,
+          "base_score": 0.6144877439176306,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "microservices",
+          "www flickr",
+          "goal",
+          "microservice architecture",
+          "microservices focus"
+        ],
+        "semantic": [],
+        "merged": [
+          "microservices",
+          "www flickr",
+          "goal",
+          "microservice architecture",
+          "microservices focus"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "customer_service_payments",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4090101497509588,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:46:40.708219+00:00"
+      }
+    },
+    {
+      "book": "From APIs to Microservices - Design and Build",
+      "chapter": 4,
+      "title": "Segment 4 (pages 35-42)",
+      "chapter_id": "From APIs to Microservices - Design and Build:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "customer",
+          "payments",
+          "service",
+          "payments service",
+          "banking"
+        ],
+        "semantic": [],
+        "merged": [
+          "customer",
+          "payments",
+          "service",
+          "payments service",
+          "banking"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "customer_service_payments",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33443058708442136,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:46:40.708260+00:00"
+      }
+    },
+    {
+      "book": "From APIs to Microservices - Design and Build",
+      "chapter": 5,
+      "title": "Segment 5 (pages 43-52)",
+      "chapter_id": "From APIs to Microservices - Design and Build:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "languages",
+          "description languages",
+          "description",
+          "home definition",
+          "home"
+        ],
+        "semantic": [],
+        "merged": [
+          "languages",
+          "description languages",
+          "description",
+          "home definition",
+          "home"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "languages_apis_new",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26820780544026324,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:46:40.708300+00:00"
+      }
+    },
+    {
+      "book": "From APIs to Microservices - Design and Build",
+      "chapter": 6,
+      "title": "Segment 6 (pages 53-61)",
+      "chapter_id": "From APIs to Microservices - Design and Build:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "functionality",
+          "implementing apis",
+          "implementing",
+          "apis",
+          "design"
+        ],
+        "semantic": [],
+        "merged": [
+          "functionality",
+          "implementing apis",
+          "implementing",
+          "apis",
+          "design"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5141959161359596,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:46:40.708341+00:00"
+      }
+    },
+    {
+      "book": "From APIs to Microservices - Design and Build",
+      "chapter": 7,
+      "title": "Segment 7 (pages 62-70)",
+      "chapter_id": "From APIs to Microservices - Design and Build:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "cost risk",
+          "cost",
+          "reduce",
+          "reduce cost",
+          "risk"
+        ],
+        "semantic": [],
+        "merged": [
+          "cost risk",
+          "cost",
+          "reduce",
+          "reduce cost",
+          "risk"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45949230189671586,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:46:40.708380+00:00"
+      }
+    },
+    {
+      "book": "From APIs to Microservices - Design and Build",
+      "chapter": 8,
+      "title": "Segment 8 (pages 71-82)",
+      "chapter_id": "From APIs to Microservices - Design and Build:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "use",
+          "tools",
+          "prototyping apis",
+          "sketch",
+          "prototyping"
+        ],
+        "semantic": [],
+        "merged": [
+          "use",
+          "tools",
+          "prototyping apis",
+          "sketch",
+          "prototyping"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "languages_apis_new",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4826056644478508,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:46:40.708420+00:00"
+      }
+    },
+    {
+      "book": "From APIs to Microservices - Design and Build",
+      "chapter": 9,
+      "title": "Segment 9 (pages 83-89)",
+      "chapter_id": "From APIs to Microservices - Design and Build:ch9",
+      "cross_references": [
+        {
+          "target": "From APIs to Microservices - Design and Build:ch1",
+          "score": 0.5326159234230021,
+          "base_score": 0.5636191316309295,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "building apis",
+          "building",
+          "apis",
+          "res",
+          "tasks"
+        ],
+        "semantic": [],
+        "merged": [
+          "building apis",
+          "building",
+          "apis",
+          "res",
+          "tasks"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "customer_service_payments",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3937680644837234,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:46:40.708461+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

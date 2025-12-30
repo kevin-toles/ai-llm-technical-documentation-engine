@@ -1,0 +1,694 @@
+{
+  "book": {
+    "title": "Accelerate"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:39:14.203255",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Accelerate",
+      "chapter": 1,
+      "title": "ACCELERATE",
+      "chapter_id": "Accelerate:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "capabilities",
+          "organizations",
+          "technology",
+          "models",
+          "capability models"
+        ],
+        "semantic": [],
+        "merged": [
+          "capabilities",
+          "organizations",
+          "technology",
+          "models",
+          "capability models"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5824871126371827,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:39:14.181182+00:00"
+      }
+    },
+    {
+      "book": "Accelerate",
+      "chapter": 2,
+      "title": "MEASURING PERFORMANCE",
+      "chapter_id": "Accelerate:ch2",
+      "cross_references": [
+        {
+          "target": "Accelerate:ch3",
+          "score": 0.6674847696927028,
+          "base_score": 0.695807949487838,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Accelerate:ch6",
+          "score": 0.6163636903367897,
+          "base_score": 0.7031987431539088,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Accelerate:ch5",
+          "score": 0.5768797616901253,
+          "base_score": 0.6373921954094681,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "performance",
+          "measure",
+          "performers",
+          "time",
+          "software"
+        ],
+        "semantic": [],
+        "merged": [
+          "performance",
+          "measure",
+          "performers",
+          "time",
+          "software"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "and_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5012696111827131,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:14.181393+00:00"
+      }
+    },
+    {
+      "book": "Accelerate",
+      "chapter": 3,
+      "title": ") When you see an arrow linking boxes, this signiﬁes a predictive relationship. You read that right: the research in this book includes analyses that go beyond correlation into prediction. (For detail",
+      "chapter_id": "Accelerate:ch3",
+      "cross_references": [
+        {
+          "target": "Accelerate:ch6",
+          "score": 0.6810937888364622,
+          "base_score": 0.7184896480607703,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Accelerate:ch2",
+          "score": 0.6674847696927028,
+          "base_score": 0.695807949487838,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Accelerate:ch5",
+          "score": 0.5501373284882174,
+          "base_score": 0.5928214734062883,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "performance",
+          "delivery performance",
+          "software",
+          "eﬀect",
+          "practices culture"
+        ],
+        "semantic": [],
+        "merged": [
+          "performance",
+          "delivery performance",
+          "software",
+          "eﬀect",
+          "practices culture"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "and_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5420456409713744,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:14.181502+00:00"
+      }
+    },
+    {
+      "book": "Accelerate",
+      "chapter": 4,
+      "title": "MEASURING AND CHANGING",
+      "chapter_id": "Accelerate:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "culture",
+          "organizational culture",
+          "organizational",
+          "westrum",
+          "level"
+        ],
+        "semantic": [],
+        "merged": [
+          "culture",
+          "organizational culture",
+          "organizational",
+          "westrum",
+          "level"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "and_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3141456423327834,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:14.181582+00:00"
+      }
+    },
+    {
+      "book": "Accelerate",
+      "chapter": 5,
+      "title": "TECHNICAL PRACTICES",
+      "chapter_id": "Accelerate:ch5",
+      "cross_references": [
+        {
+          "target": "Accelerate:ch2",
+          "score": 0.5768797616901253,
+          "base_score": 0.6373921954094681,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Accelerate:ch3",
+          "score": 0.5501373284882174,
+          "base_score": 0.5928214734062883,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Accelerate:ch6",
+          "score": 0.5225906660667056,
+          "base_score": 0.6209844434445093,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "version control",
+          "version",
+          "guration",
+          "control",
+          "software"
+        ],
+        "semantic": [],
+        "merged": [
+          "version control",
+          "version",
+          "guration",
+          "control",
+          "software"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "and_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4739463367487143,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:14.181673+00:00"
+      }
+    },
+    {
+      "book": "Accelerate",
+      "chapter": 6,
+      "title": ") Interestingly, teams that did well with continuous delivery also identi\u0000ed more strongly with the organization they worked for—a key predictor of organizational performance that we discuss in Chapte",
+      "chapter_id": "Accelerate:ch6",
+      "cross_references": [
+        {
+          "target": "Accelerate:ch3",
+          "score": 0.6810937888364622,
+          "base_score": 0.7184896480607703,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Accelerate:ch2",
+          "score": 0.6163636903367897,
+          "base_score": 0.7031987431539088,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Accelerate:ch5",
+          "score": 0.5225906660667056,
+          "base_score": 0.6209844434445093,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "continuous",
+          "continuous delivery",
+          "branches",
+          "performance",
+          "delivery performance"
+        ],
+        "semantic": [],
+        "merged": [
+          "continuous",
+          "continuous delivery",
+          "branches",
+          "performance",
+          "delivery performance"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "and_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5640691996352702,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:14.181783+00:00"
+      }
+    },
+    {
+      "book": "Accelerate",
+      "chapter": 7,
+      "title": "ARCHITECTURE",
+      "chapter_id": "Accelerate:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "systems",
+          "teams",
+          "architectural",
+          "architecture",
+          "services"
+        ],
+        "semantic": [],
+        "merged": [
+          "systems",
+          "teams",
+          "architectural",
+          "architecture",
+          "services"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "and_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.444691747553884,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:14.181867+00:00"
+      }
+    },
+    {
+      "book": "Accelerate",
+      "chapter": 8,
+      "title": "INTEGRATING INFOSEC INTO",
+      "chapter_id": "Accelerate:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "security",
+          "information security",
+          "infosec",
+          "information",
+          "process"
+        ],
+        "semantic": [],
+        "merged": [
+          "security",
+          "information security",
+          "infosec",
+          "information",
+          "process"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4470163866634418,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:39:14.181939+00:00"
+      }
+    },
+    {
+      "book": "Accelerate",
+      "chapter": 9,
+      "title": "MANAGEMENT PRACTICES FOR",
+      "chapter_id": "Accelerate:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "change",
+          "approval",
+          "management",
+          "process",
+          "review"
+        ],
+        "semantic": [],
+        "merged": [
+          "change",
+          "approval",
+          "management",
+          "process",
+          "review"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48094922904376,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:39:14.182046+00:00"
+      }
+    },
+    {
+      "book": "Accelerate",
+      "chapter": 10,
+      "title": "PRODUCT DEVELOPMENT",
+      "chapter_id": "Accelerate:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "product",
+          "development",
+          "lean product",
+          "lean",
+          "software"
+        ],
+        "semantic": [],
+        "merged": [
+          "product",
+          "development",
+          "lean product",
+          "lean",
+          "software"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49743336178132436,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:39:14.182149+00:00"
+      }
+    },
+    {
+      "book": "Accelerate",
+      "chapter": 11,
+      "title": "for more on the importance and impact of leadership and management in DevOps",
+      "chapter_id": "Accelerate:ch11",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "values",
+          "burnout",
+          "organizational values",
+          "employees",
+          "values individual"
+        ],
+        "semantic": [],
+        "merged": [
+          "values",
+          "burnout",
+          "organizational values",
+          "employees",
+          "values individual"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "and_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40051648446751026,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:14.182253+00:00"
+      }
+    },
+    {
+      "book": "Accelerate",
+      "chapter": 12,
+      "title": "EMPLOYEE SATISFACTION,",
+      "chapter_id": "Accelerate:ch12",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "leadership",
+          "teams",
+          "work",
+          "transformational",
+          "leaders"
+        ],
+        "semantic": [],
+        "merged": [
+          "leadership",
+          "teams",
+          "work",
+          "transformational",
+          "leaders"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "and_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4257187882016134,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:14.182326+00:00"
+      }
+    },
+    {
+      "book": "Accelerate",
+      "chapter": 13,
+      "title": "THE SCIENCE BEHIND THIS",
+      "chapter_id": "Accelerate:ch13",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "research",
+          "survey",
+          "analysis",
+          "culture"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "research",
+          "survey",
+          "analysis",
+          "culture"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "and_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30385155999155494,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:14.182414+00:00"
+      }
+    },
+    {
+      "book": "Accelerate",
+      "chapter": 14,
+      "title": "WHY USE A SURVEY",
+      "chapter_id": "Accelerate:ch14",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "survey",
+          "survey data",
+          "surveys",
+          "collect"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "survey",
+          "survey data",
+          "surveys",
+          "collect"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3714076015529202,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:39:14.182484+00:00"
+      }
+    },
+    {
+      "book": "Accelerate",
+      "chapter": 15,
+      "title": "THE DATA FOR THE PROJECT",
+      "chapter_id": "Accelerate:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "sampling",
+          "snowball",
+          "snowball sampling",
+          "devops",
+          "method"
+        ],
+        "semantic": [],
+        "merged": [
+          "sampling",
+          "snowball",
+          "snowball sampling",
+          "devops",
+          "method"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "and_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5316705764061437,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:14.182554+00:00"
+      }
+    },
+    {
+      "book": "Accelerate",
+      "chapter": 16,
+      "title": "HIGH-PERFORMANCE",
+      "chapter_id": "Accelerate:ch16",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "performance",
+          "performers",
+          "high",
+          "218",
+          "organizational"
+        ],
+        "semantic": [],
+        "merged": [
+          "performance",
+          "performers",
+          "high",
+          "218",
+          "organizational"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "and_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5224106512082372,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:14.182626+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

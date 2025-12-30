@@ -1,0 +1,466 @@
+{
+  "book": {
+    "title": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:55:56.052403",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart",
+      "chapter": 1,
+      "title": "Resilience in Software and Systems",
+      "chapter_id": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart:ch1",
+      "cross_references": [
+        {
+          "target": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart:ch2",
+          "score": 0.5967670607810703,
+          "base_score": 0.7446117679684505,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart:ch9",
+          "score": 0.5683335138506809,
+          "base_score": 0.6972225230844681,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart:ch7",
+          "score": 0.5637869352881246,
+          "base_score": 0.6896448921468744,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "complex",
+          "failure",
+          "complex systems",
+          "et",
+          "al"
+        ],
+        "semantic": [],
+        "merged": [
+          "complex",
+          "failure",
+          "complex systems",
+          "et",
+          "al"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7001415519581582,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:56.037202+00:00"
+      }
+    },
+    {
+      "book": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart",
+      "chapter": 2,
+      "title": "Systems-Oriented Security",
+      "chapter_id": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart:ch2",
+      "cross_references": [
+        {
+          "target": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart:ch7",
+          "score": 0.6018574576548457,
+          "base_score": 0.7530957627580761,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart:ch1",
+          "score": 0.5967670607810703,
+          "base_score": 0.7446117679684505,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart:ch9",
+          "score": 0.5603310480397149,
+          "base_score": 0.6838850800661915,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "decision",
+          "tier",
+          "attacker",
+          "decision trees",
+          "trees"
+        ],
+        "semantic": [],
+        "merged": [
+          "decision",
+          "tier",
+          "attacker",
+          "decision trees",
+          "trees"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6941956629703186,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:56.037283+00:00"
+      }
+    },
+    {
+      "book": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart",
+      "chapter": 3,
+      "title": "Architecting and Designing",
+      "chapter_id": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart:ch3",
+      "cross_references": [
+        {
+          "target": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart:ch4",
+          "score": 0.523441104810407,
+          "base_score": 0.6224018413506783,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "coupling",
+          "loose coupling",
+          "loose",
+          "coupled",
+          "tight"
+        ],
+        "semantic": [],
+        "merged": [
+          "coupling",
+          "loose coupling",
+          "loose",
+          "coupled",
+          "tight"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.575093769723213,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:56.037328+00:00"
+      }
+    },
+    {
+      "book": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart",
+      "chapter": 4,
+      "title": "Building and Delivering",
+      "chapter_id": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart:ch4",
+      "cross_references": [
+        {
+          "target": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart:ch3",
+          "score": 0.523441104810407,
+          "base_score": 0.6224018413506783,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart:ch5",
+          "score": 0.5019321086700691,
+          "base_score": 0.5865535144501153,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "building delivering",
+          "testing",
+          "building",
+          "automated"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "building delivering",
+          "testing",
+          "building",
+          "automated"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7060514384120726,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:56.037392+00:00"
+      }
+    },
+    {
+      "book": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart",
+      "chapter": 5,
+      "title": "Operating and Observing",
+      "chapter_id": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart:ch5",
+      "cross_references": [
+        {
+          "target": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart:ch4",
+          "score": 0.5019321086700691,
+          "base_score": 0.5865535144501153,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "metrics",
+          "observability",
+          "deception",
+          "measure",
+          "attackers"
+        ],
+        "semantic": [],
+        "merged": [
+          "metrics",
+          "observability",
+          "deception",
+          "measure",
+          "attackers"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5743379362002705,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:56.037453+00:00"
+      }
+    },
+    {
+      "book": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart",
+      "chapter": 6,
+      "title": "Responding and Recovering",
+      "chapter_id": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "incident",
+          "incident response",
+          "response",
+          "incidents",
+          "action bias"
+        ],
+        "semantic": [],
+        "merged": [
+          "incident",
+          "incident response",
+          "response",
+          "incidents",
+          "action bias"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6660548119981643,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:55:56.037511+00:00"
+      }
+    },
+    {
+      "book": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart",
+      "chapter": 7,
+      "title": "Platform Resilience Engineering",
+      "chapter_id": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart:ch7",
+      "cross_references": [
+        {
+          "target": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart:ch2",
+          "score": 0.6018574576548457,
+          "base_score": 0.7530957627580761,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart:ch1",
+          "score": 0.5637869352881246,
+          "base_score": 0.6896448921468744,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart:ch9",
+          "score": 0.5399272614035967,
+          "base_score": 0.6498787690059946,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "solutions",
+          "platform",
+          "user",
+          "platform engineering",
+          "humans"
+        ],
+        "semantic": [],
+        "merged": [
+          "solutions",
+          "platform",
+          "user",
+          "platform engineering",
+          "humans"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6684586072610466,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:56.037554+00:00"
+      }
+    },
+    {
+      "book": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart",
+      "chapter": 8,
+      "title": "Security Chaos Experiments",
+      "chapter_id": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "experiment",
+          "experiments",
+          "chaos",
+          "chaos experiment",
+          "chaos experiments"
+        ],
+        "semantic": [],
+        "merged": [
+          "experiment",
+          "experiments",
+          "chaos",
+          "chaos experiment",
+          "chaos experiments"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5970412150722948,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:55:56.037616+00:00"
+      }
+    },
+    {
+      "book": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart",
+      "chapter": 9,
+      "title": "Security Chaos Engineering in the Wild",
+      "chapter_id": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart:ch9",
+      "cross_references": [
+        {
+          "target": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart:ch1",
+          "score": 0.5683335138506809,
+          "base_score": 0.6972225230844681,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart:ch2",
+          "score": 0.5603310480397149,
+          "base_score": 0.6838850800661915,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Security Chaos Engineering - Kelly Shortridge Aaron Rinehart:ch7",
+          "score": 0.5399272614035967,
+          "base_score": 0.6498787690059946,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "chaos",
+          "chaos engineering",
+          "applied security",
+          "cluster",
+          "applied"
+        ],
+        "semantic": [],
+        "merged": [
+          "chaos",
+          "chaos engineering",
+          "applied security",
+          "cluster",
+          "applied"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6448973688168476,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:56.037660+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

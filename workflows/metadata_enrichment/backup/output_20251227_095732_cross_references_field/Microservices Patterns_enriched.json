@@ -1,0 +1,2373 @@
+{
+  "book": {
+    "title": "Microservices Patterns"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:51:46.267060",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Microservices Patterns",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-11)",
+      "chapter_id": "Microservices Patterns:ch1",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch43",
+          "score": 0.5139241139663651,
+          "base_score": 0.6065401899439418,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "shelter",
+          "shelter island",
+          "chris richardson",
+          "island",
+          "richardson"
+        ],
+        "semantic": [],
+        "merged": [
+          "shelter",
+          "shelter island",
+          "chris richardson",
+          "island",
+          "richardson"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "service_services_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4006746545398886,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.217105+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 2,
+      "title": "Segment 2 (pages 12-20)",
+      "chapter_id": "Microservices Patterns:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "pattern",
+          "deploying services",
+          "microservice",
+          "deploying",
+          "services"
+        ],
+        "semantic": [],
+        "merged": [
+          "pattern",
+          "deploying services",
+          "microservice",
+          "deploying",
+          "services"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4918450723817605,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:51:46.217398+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 3,
+      "title": "Segment 3 (pages 21-30)",
+      "chapter_id": "Microservices Patterns:ch3",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch7",
+          "score": 0.7126997158410554,
+          "base_score": 0.6521185740208066,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch8",
+          "score": 0.6993351571816969,
+          "base_score": 0.6298443095885424,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch6",
+          "score": 0.5574789368771497,
+          "base_score": 0.6791315614619161,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "book",
+          "architecture",
+          "microservice architecture",
+          "microservice",
+          "chapter"
+        ],
+        "semantic": [],
+        "merged": [
+          "book",
+          "architecture",
+          "microservice architecture",
+          "microservice",
+          "chapter"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "architecture_microservice_patterns",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41973236524416646,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.217655+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 4,
+      "title": "Segment 4 (pages 31-38)",
+      "chapter_id": "Microservices Patterns:ch4",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch40",
+          "score": 0.5103625580072718,
+          "base_score": 0.6006042633454529,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch35",
+          "score": 0.5048546923339453,
+          "base_score": 0.5914244872232423,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ftgo",
+          "application",
+          "architecture",
+          "ftgo application",
+          "monolithic"
+        ],
+        "semantic": [],
+        "merged": [
+          "ftgo",
+          "application",
+          "architecture",
+          "ftgo application",
+          "monolithic"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "service_the_ftgo",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4167577856053404,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.217891+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 5,
+      "title": "Segment 5 (pages 39-46)",
+      "chapter_id": "Microservices Patterns:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "axis",
+          "axis scaling",
+          "scaling",
+          "services",
+          "scale"
+        ],
+        "semantic": [],
+        "merged": [
+          "axis",
+          "axis scaling",
+          "scaling",
+          "services",
+          "scale"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3255552008820832,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:51:46.218116+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 6,
+      "title": "Segment 6 (pages 47-57)",
+      "chapter_id": "Microservices Patterns:ch6",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch3",
+          "score": 0.5574789368771497,
+          "base_score": 0.6791315614619161,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch8",
+          "score": 0.5025061720005234,
+          "base_score": 0.587510286667539,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "patterns",
+          "pattern",
+          "pattern language",
+          "language",
+          "architecture pattern"
+        ],
+        "semantic": [],
+        "merged": [
+          "patterns",
+          "pattern",
+          "pattern language",
+          "language",
+          "architecture pattern"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "architecture_microservice_patterns",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3762079267164414,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.218354+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 7,
+      "title": "Segment 7 (pages 58-66)",
+      "chapter_id": "Microservices Patterns:ch7",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch3",
+          "score": 0.7126997158410554,
+          "base_score": 0.6521185740208066,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch8",
+          "score": 0.6774518965386276,
+          "base_score": 0.5933722085167602,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "architecture",
+          "software",
+          "software architecture",
+          "microservice architecture",
+          "microservice"
+        ],
+        "semantic": [],
+        "merged": [
+          "architecture",
+          "software",
+          "software architecture",
+          "microservice architecture",
+          "microservice"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "architecture_microservice_patterns",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3800284682887005,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.218620+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 8,
+      "title": "Segment 8 (pages 67-76)",
+      "chapter_id": "Microservices Patterns:ch8",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch3",
+          "score": 0.6993351571816969,
+          "base_score": 0.6298443095885424,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch7",
+          "score": 0.6774518965386276,
+          "base_score": 0.5933722085167602,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch6",
+          "score": 0.5025061720005234,
+          "base_score": 0.587510286667539,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "architecture",
+          "architectural",
+          "architectural style",
+          "microservice architecture",
+          "microservice"
+        ],
+        "semantic": [],
+        "merged": [
+          "architecture",
+          "architectural",
+          "architectural style",
+          "microservice architecture",
+          "microservice"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "architecture_microservice_patterns",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3577465837268249,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.218878+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 9,
+      "title": "Segment 9 (pages 77-85)",
+      "chapter_id": "Microservices Patterns:ch9",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch42",
+          "score": 0.5295054192551026,
+          "base_score": 0.6325090320918378,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch10",
+          "score": 0.5272008048603147,
+          "base_score": 0.5545939340264504,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "capabilities",
+          "order",
+          "management",
+          "business",
+          "business capabilities"
+        ],
+        "semantic": [],
+        "merged": [
+          "capabilities",
+          "order",
+          "management",
+          "business",
+          "business capabilities"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "event_the_events",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3399902948000184,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.219091+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 10,
+      "title": "Segment 10 (pages 86-93)",
+      "chapter_id": "Microservices Patterns:ch10",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch42",
+          "score": 0.6556602348826815,
+          "base_score": 0.676100391471136,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch9",
+          "score": 0.5272008048603147,
+          "base_score": 0.5545939340264504,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "services",
+          "delivery service",
+          "order",
+          "delivery",
+          "kitchen service"
+        ],
+        "semantic": [],
+        "merged": [
+          "services",
+          "delivery service",
+          "order",
+          "delivery",
+          "kitchen service"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "event_the_events",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47694086512101036,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.219391+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 11,
+      "title": "Segment 11 (pages 94-101)",
+      "chapter_id": "Microservices Patterns:ch11",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch12",
+          "score": 0.7549249349365159,
+          "base_score": 0.7224939391799073,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch27",
+          "score": 0.6540732452298019,
+          "base_score": 0.6734554087163365,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch14",
+          "score": 0.5998557395419115,
+          "base_score": 0.6756854918291119,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "api",
+          "clients",
+          "request",
+          "client",
+          "services"
+        ],
+        "semantic": [],
+        "merged": [
+          "api",
+          "clients",
+          "request",
+          "client",
+          "services"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "api_gateway_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45605714195562863,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.219608+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 12,
+      "title": "Segment 12 (pages 102-109)",
+      "chapter_id": "Microservices Patterns:ch12",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch11",
+          "score": 0.7549249349365159,
+          "base_score": 0.7224939391799073,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch27",
+          "score": 0.629237846239945,
+          "base_score": 0.632063077066575,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch14",
+          "score": 0.5797375881759297,
+          "base_score": 0.7162293136265495,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch28",
+          "score": 0.509057900580806,
+          "base_score": 0.5243557602272693,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "client",
+          "rest",
+          "request",
+          "grpc",
+          "api"
+        ],
+        "semantic": [],
+        "merged": [
+          "client",
+          "rest",
+          "request",
+          "grpc",
+          "api"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "api_gateway_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44651770415741077,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.219816+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 13,
+      "title": "Segment 13 (pages 110-129)",
+      "chapter_id": "Microservices Patterns:ch13",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "message",
+          "broker",
+          "message broker",
+          "channel",
+          "messaging"
+        ],
+        "semantic": [],
+        "merged": [
+          "message",
+          "broker",
+          "message broker",
+          "channel",
+          "messaging"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4377892031725038,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:51:46.220018+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 14,
+      "title": "Segment 14 (pages 130-138)",
+      "chapter_id": "Microservices Patterns:ch14",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch11",
+          "score": 0.5998557395419115,
+          "base_score": 0.6756854918291119,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch12",
+          "score": 0.5797375881759297,
+          "base_score": 0.7162293136265495,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "order",
+          "order service",
+          "services",
+          "consumer service",
+          "messages"
+        ],
+        "semantic": [],
+        "merged": [
+          "order",
+          "order service",
+          "services",
+          "consumer service",
+          "messages"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "api_gateway_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.457146303356482,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.220224+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 15,
+      "title": "Segment 15 (pages 139-154)",
+      "chapter_id": "Microservices Patterns:ch15",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch16",
+          "score": 0.864712617706159,
+          "base_score": 0.7467432517324872,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch19",
+          "score": 0.6226651932046765,
+          "base_score": 0.6211086553411276,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch17",
+          "score": 0.5880671217853667,
+          "base_score": 0.6560377955682037,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch23",
+          "score": 0.5268083325091232,
+          "base_score": 0.6280138875152053,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "saga",
+          "transactions",
+          "order saga",
+          "order",
+          "sagas"
+        ],
+        "semantic": [],
+        "merged": [
+          "saga",
+          "transactions",
+          "order saga",
+          "order",
+          "sagas"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "saga_order_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4136794406285242,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.220468+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 16,
+      "title": "Segment 16 (pages 155-168)",
+      "chapter_id": "Microservices Patterns:ch16",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch15",
+          "score": 0.864712617706159,
+          "base_score": 0.7467432517324872,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch19",
+          "score": 0.6462916822444068,
+          "base_score": 0.6604861370740114,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch17",
+          "score": 0.6386719166692656,
+          "base_score": 0.7403791203747019,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch23",
+          "score": 0.519829317372207,
+          "base_score": 0.6163821956203449,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "saga",
+          "order saga",
+          "order",
+          "sagas",
+          "create order"
+        ],
+        "semantic": [],
+        "merged": [
+          "saga",
+          "order saga",
+          "order",
+          "sagas",
+          "create order"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "saga_order_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3728031155333017,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.220679+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 17,
+      "title": "Segment 17 (pages 169-189)",
+      "chapter_id": "Microservices Patterns:ch17",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch19",
+          "score": 0.7090464487172495,
+          "base_score": 0.7650774145287491,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch16",
+          "score": 0.6386719166692656,
+          "base_score": 0.7403791203747019,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch15",
+          "score": 0.5880671217853667,
+          "base_score": 0.6560377955682037,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "aggregate",
+          "business",
+          "business logic",
+          "logic",
+          "saga"
+        ],
+        "semantic": [],
+        "merged": [
+          "aggregate",
+          "business",
+          "business logic",
+          "logic",
+          "saga"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "saga_order_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4059064246112719,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.220886+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 18,
+      "title": "Segment 18 (pages 190-205)",
+      "chapter_id": "Microservices Patterns:ch18",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch20",
+          "score": 0.619776126775341,
+          "base_score": 0.6162935446255684,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch22",
+          "score": 0.5575435442453197,
+          "base_score": 0.6051651663347921,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch21",
+          "score": 0.5549697106687825,
+          "base_score": 0.5082828511146376,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "events",
+          "event",
+          "domain",
+          "ticket",
+          "domain events"
+        ],
+        "semantic": [],
+        "merged": [
+          "events",
+          "event",
+          "domain",
+          "ticket",
+          "domain events"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "event_the_events",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3265334965291196,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.221094+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 19,
+      "title": "Segment 19 (pages 206-214)",
+      "chapter_id": "Microservices Patterns:ch19",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch17",
+          "score": 0.7090464487172495,
+          "base_score": 0.7650774145287491,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch16",
+          "score": 0.6462916822444068,
+          "base_score": 0.6604861370740114,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch15",
+          "score": 0.6226651932046765,
+          "base_score": 0.6211086553411276,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "order",
+          "state",
+          "aggregate",
+          "order aggregate",
+          "saga"
+        ],
+        "semantic": [],
+        "merged": [
+          "order",
+          "state",
+          "aggregate",
+          "order aggregate",
+          "saga"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "saga_order_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4018439059130898,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.221381+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 20,
+      "title": "Segment 20 (pages 215-223)",
+      "chapter_id": "Microservices Patterns:ch20",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch21",
+          "score": 0.7329135187152809,
+          "base_score": 0.685808245477849,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch22",
+          "score": 0.6582908838916853,
+          "base_score": 0.6804848064861423,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch18",
+          "score": 0.619776126775341,
+          "base_score": 0.6162935446255684,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "event",
+          "aggregate",
+          "events",
+          "event sourcing",
+          "sourcing"
+        ],
+        "semantic": [],
+        "merged": [
+          "event",
+          "aggregate",
+          "events",
+          "event sourcing",
+          "sourcing"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "event_the_events",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31220138156929167,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.221622+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 21,
+      "title": "Segment 21 (pages 224-234)",
+      "chapter_id": "Microservices Patterns:ch21",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch22",
+          "score": 0.8165529729085307,
+          "base_score": 0.6664771770697734,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch20",
+          "score": 0.7329135187152809,
+          "base_score": 0.685808245477849,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch18",
+          "score": 0.5549697106687825,
+          "base_score": 0.5082828511146376,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "event",
+          "events",
+          "event store",
+          "store",
+          "event sourcing"
+        ],
+        "semantic": [],
+        "merged": [
+          "event",
+          "events",
+          "event store",
+          "store",
+          "event sourcing"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "event_the_events",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33277138024831915,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.221832+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 22,
+      "title": "Segment 22 (pages 235-245)",
+      "chapter_id": "Microservices Patterns:ch22",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch21",
+          "score": 0.8165529729085307,
+          "base_score": 0.6664771770697734,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch20",
+          "score": 0.6582908838916853,
+          "base_score": 0.6804848064861423,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch18",
+          "score": 0.5575435442453197,
+          "base_score": 0.6051651663347921,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "event",
+          "saga",
+          "event store",
+          "store",
+          "event sourcing"
+        ],
+        "semantic": [],
+        "merged": [
+          "event",
+          "saga",
+          "event store",
+          "store",
+          "event sourcing"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "event_the_events",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3792944602214109,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.222042+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 23,
+      "title": "Segment 23 (pages 246-260)",
+      "chapter_id": "Microservices Patterns:ch23",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch15",
+          "score": 0.5268083325091232,
+          "base_score": 0.6280138875152053,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch16",
+          "score": 0.519829317372207,
+          "base_score": 0.6163821956203449,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "query",
+          "api composer",
+          "composer",
+          "api",
+          "api composition"
+        ],
+        "semantic": [],
+        "merged": [
+          "query",
+          "api composer",
+          "composer",
+          "api",
+          "api composition"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "saga_order_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.379884740860958,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.222251+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 24,
+      "title": "Segment 24 (pages 261-268)",
+      "chapter_id": "Microservices Patterns:ch24",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "query",
+          "queries",
+          "query operation",
+          "cqrs",
+          "findavailablerestaurants"
+        ],
+        "semantic": [],
+        "merged": [
+          "query",
+          "queries",
+          "query operation",
+          "cqrs",
+          "findavailablerestaurants"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "api_gateway_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37064020137663356,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.222484+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 25,
+      "title": "Segment 25 (pages 269-277)",
+      "chapter_id": "Microservices Patterns:ch25",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "event",
+          "dynamodb",
+          "view",
+          "event handler",
+          "table"
+        ],
+        "semantic": [],
+        "merged": [
+          "event",
+          "dynamodb",
+          "view",
+          "event handler",
+          "table"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "event_the_events",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27099379319493594,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.222715+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 26,
+      "title": "Segment 26 (pages 278-286)",
+      "chapter_id": "Microservices Patterns:ch26",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "item",
+          "order",
+          "order item",
+          "method",
+          "api"
+        ],
+        "semantic": [],
+        "merged": [
+          "item",
+          "order",
+          "order item",
+          "method",
+          "api"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "event_the_events",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2699674617221761,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.222928+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 27,
+      "title": "Segment 27 (pages 287-298)",
+      "chapter_id": "Microservices Patterns:ch27",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch28",
+          "score": 0.7305519287549269,
+          "base_score": 0.6818722622105924,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch11",
+          "score": 0.6540732452298019,
+          "base_score": 0.6734554087163365,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch12",
+          "score": 0.629237846239945,
+          "base_score": 0.632063077066575,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "api gateway",
+          "gateway",
+          "api",
+          "team",
+          "client"
+        ],
+        "semantic": [],
+        "merged": [
+          "api gateway",
+          "gateway",
+          "api",
+          "team",
+          "client"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "api_gateway_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3610691667200484,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.223143+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 28,
+      "title": "Segment 28 (pages 299-306)",
+      "chapter_id": "Microservices Patterns:ch28",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch27",
+          "score": 0.7305519287549269,
+          "base_score": 0.6818722622105924,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch12",
+          "score": 0.509057900580806,
+          "base_score": 0.5243557602272693,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "gateway",
+          "api gateway",
+          "api",
+          "aws",
+          "aws api"
+        ],
+        "semantic": [],
+        "merged": [
+          "gateway",
+          "api gateway",
+          "api",
+          "aws",
+          "aws api"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "api_gateway_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31942524610173945,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.223364+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 29,
+      "title": "Segment 29 (pages 307-317)",
+      "chapter_id": "Microservices Patterns:ch29",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "query",
+          "graphql",
+          "resolver",
+          "schema",
+          "object"
+        ],
+        "semantic": [],
+        "merged": [
+          "query",
+          "graphql",
+          "resolver",
+          "schema",
+          "object"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "api_gateway_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3878811079933401,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.223566+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 30,
+      "title": "Segment 30 (pages 318-329)",
+      "chapter_id": "Microservices Patterns:ch30",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch32",
+          "score": 0.6129481118430318,
+          "base_score": 0.4858659006907672,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch31",
+          "score": 0.5393116914915287,
+          "base_score": 0.4821861524858812,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch34",
+          "score": 0.5300742527515507,
+          "base_score": 0.46679042125258463,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch33",
+          "score": 0.5010167342746024,
+          "base_score": 0.41836122379100404,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "test",
+          "tests",
+          "testing",
+          "automated",
+          "write"
+        ],
+        "semantic": [],
+        "merged": [
+          "test",
+          "tests",
+          "testing",
+          "automated",
+          "write"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "test_tests_contract",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2793621219160347,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.223771+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 31,
+      "title": "Segment 31 (pages 330-340)",
+      "chapter_id": "Microservices Patterns:ch31",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch33",
+          "score": 0.7896206787639929,
+          "base_score": 0.780320178892369,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch32",
+          "score": 0.7325518657039605,
+          "base_score": 0.6852054904589816,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch34",
+          "score": 0.6268184098199556,
+          "base_score": 0.6280306830332595,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch30",
+          "score": 0.5393116914915287,
+          "base_score": 0.4821861524858812,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "test",
+          "contract",
+          "tests",
+          "unit",
+          "contract test"
+        ],
+        "semantic": [],
+        "merged": [
+          "test",
+          "contract",
+          "tests",
+          "unit",
+          "contract test"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "test_tests_contract",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3186409785087398,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.223974+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 32,
+      "title": "Segment 32 (pages 341-352)",
+      "chapter_id": "Microservices Patterns:ch32",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch31",
+          "score": 0.7325518657039605,
+          "base_score": 0.6852054904589816,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch34",
+          "score": 0.6720691373520244,
+          "base_score": 0.703448562253374,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch33",
+          "score": 0.6271822763945037,
+          "base_score": 0.628637127324173,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch30",
+          "score": 0.6129481118430318,
+          "base_score": 0.4858659006907672,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "test",
+          "tests",
+          "unit",
+          "testing",
+          "unit tests"
+        ],
+        "semantic": [],
+        "merged": [
+          "test",
+          "tests",
+          "unit",
+          "testing",
+          "unit tests"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "test_tests_contract",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36859501840847203,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.224195+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 33,
+      "title": "Segment 33 (pages 353-368)",
+      "chapter_id": "Microservices Patterns:ch33",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch31",
+          "score": 0.7896206787639929,
+          "base_score": 0.780320178892369,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch34",
+          "score": 0.6674889714877912,
+          "base_score": 0.695814952479652,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch32",
+          "score": 0.6271822763945037,
+          "base_score": 0.628637127324173,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch30",
+          "score": 0.5010167342746024,
+          "base_score": 0.41836122379100404,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "test",
+          "contract",
+          "tests",
+          "integration",
+          "provider"
+        ],
+        "semantic": [],
+        "merged": [
+          "test",
+          "contract",
+          "tests",
+          "integration",
+          "provider"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "test_tests_contract",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34264299953380833,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.224409+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 34,
+      "title": "Segment 34 (pages 369-377)",
+      "chapter_id": "Microservices Patterns:ch34",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch32",
+          "score": 0.6720691373520244,
+          "base_score": 0.703448562253374,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch33",
+          "score": 0.6674889714877912,
+          "base_score": 0.695814952479652,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch31",
+          "score": 0.6268184098199556,
+          "base_score": 0.6280306830332595,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch30",
+          "score": 0.5300742527515507,
+          "base_score": 0.46679042125258463,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tests",
+          "component",
+          "test",
+          "component tests",
+          "order service"
+        ],
+        "semantic": [],
+        "merged": [
+          "tests",
+          "component",
+          "test",
+          "component tests",
+          "order service"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "test_tests_contract",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3135543109581917,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.224614+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 35,
+      "title": "Segment 35 (pages 378-394)",
+      "chapter_id": "Microservices Patterns:ch35",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch4",
+          "score": 0.5048546923339453,
+          "base_score": 0.5914244872232423,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "token",
+          "security",
+          "session",
+          "api gateway",
+          "gateway"
+        ],
+        "semantic": [],
+        "merged": [
+          "token",
+          "security",
+          "session",
+          "api gateway",
+          "gateway"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "service_the_ftgo",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3352953822526804,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.224831+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 36,
+      "title": "Segment 36 (pages 395-405)",
+      "chapter_id": "Microservices Patterns:ch36",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch37",
+          "score": 0.5168849474138891,
+          "base_score": 0.6114749123564818,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "metrics",
+          "health",
+          "logging",
+          "log",
+          "service instance"
+        ],
+        "semantic": [],
+        "merged": [
+          "metrics",
+          "health",
+          "logging",
+          "log",
+          "service instance"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "service_services_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3370884828675129,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.225174+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 37,
+      "title": "Segment 37 (pages 406-413)",
+      "chapter_id": "Microservices Patterns:ch37",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch36",
+          "score": 0.5168849474138891,
+          "base_score": 0.6114749123564818,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "mesh",
+          "service mesh",
+          "exception tracking",
+          "exception",
+          "tracking"
+        ],
+        "semantic": [],
+        "merged": [
+          "mesh",
+          "service mesh",
+          "exception tracking",
+          "exception",
+          "tracking"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "service_services_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34165546444961803,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.225472+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 38,
+      "title": "Segment 38 (pages 414-438)",
+      "chapter_id": "Microservices Patterns:ch38",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch40",
+          "score": 0.5389228452547031,
+          "base_score": 0.6482047420911718,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "restaurant service",
+          "ftgo restaurant",
+          "kubernetes",
+          "deploying",
+          "service instances"
+        ],
+        "semantic": [],
+        "merged": [
+          "restaurant service",
+          "ftgo restaurant",
+          "kubernetes",
+          "deploying",
+          "service instances"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "service_the_ftgo",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3279788948330478,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.225698+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 39,
+      "title": "Segment 39 (pages 439-454)",
+      "chapter_id": "Microservices Patterns:ch39",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "ftgo consumer",
+          "lambda",
+          "consumer service",
+          "consumer",
+          "aws"
+        ],
+        "semantic": [],
+        "merged": [
+          "ftgo consumer",
+          "lambda",
+          "consumer service",
+          "consumer",
+          "aws"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "service_the_ftgo",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26732364335381287,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.225913+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 40,
+      "title": "Segment 40 (pages 455-465)",
+      "chapter_id": "Microservices Patterns:ch40",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch38",
+          "score": 0.5389228452547031,
+          "base_score": 0.6482047420911718,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch4",
+          "score": 0.5103625580072718,
+          "base_score": 0.6006042633454529,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "monolith",
+          "new",
+          "service monolith",
+          "implement new",
+          "service service"
+        ],
+        "semantic": [],
+        "merged": [
+          "monolith",
+          "new",
+          "service monolith",
+          "implement new",
+          "service service"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "service_the_ftgo",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3793013509312494,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.226129+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 41,
+      "title": "Segment 41 (pages 466-483)",
+      "chapter_id": "Microservices Patterns:ch41",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "monolith",
+          "service monolith",
+          "extract",
+          "delivery",
+          "extracting"
+        ],
+        "semantic": [],
+        "merged": [
+          "monolith",
+          "service monolith",
+          "extract",
+          "delivery",
+          "extracting"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3439246603616334,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:51:46.226376+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 42,
+      "title": "Segment 42 (pages 484-499)",
+      "chapter_id": "Microservices Patterns:ch42",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch10",
+          "score": 0.6556602348826815,
+          "base_score": 0.676100391471136,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch9",
+          "score": 0.5295054192551026,
+          "base_score": 0.6325090320918378,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "delivery",
+          "delivery service",
+          "monolith",
+          "delayed",
+          "service delivery"
+        ],
+        "semantic": [],
+        "merged": [
+          "delivery",
+          "delivery service",
+          "monolith",
+          "delayed",
+          "service delivery"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "event_the_events",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44283150580408825,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.226589+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 43,
+      "title": "Segment 43 (pages 500-508)",
+      "chapter_id": "Microservices Patterns:ch43",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch44",
+          "score": 0.6353869873928849,
+          "base_score": 0.7349042382474007,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch45",
+          "score": 0.5621339032746832,
+          "base_score": 0.6868898387911386,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch1",
+          "score": 0.5139241139663651,
+          "base_score": 0.6065401899439418,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "419",
+          "426",
+          "160",
+          "pattern",
+          "overview"
+        ],
+        "semantic": [],
+        "merged": [
+          "419",
+          "426",
+          "160",
+          "pattern",
+          "overview"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "service_services_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4384955253374508,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.226799+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 44,
+      "title": "Segment 44 (pages 509-516)",
+      "chapter_id": "Microservices Patterns:ch44",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch43",
+          "score": 0.6353869873928849,
+          "base_score": 0.7349042382474007,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch45",
+          "score": 0.5301673120662239,
+          "base_score": 0.6336121867770399,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "194",
+          "186",
+          "195",
+          "194 195",
+          "overview"
+        ],
+        "semantic": [],
+        "merged": [
+          "194",
+          "186",
+          "195",
+          "194 195",
+          "overview"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "service_services_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3925017763824339,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.227008+00:00"
+      }
+    },
+    {
+      "book": "Microservices Patterns",
+      "chapter": 45,
+      "title": "Segment 45 (pages 517-522)",
+      "chapter_id": "Microservices Patterns:ch45",
+      "cross_references": [
+        {
+          "target": "Microservices Patterns:ch43",
+          "score": 0.5621339032746832,
+          "base_score": 0.6868898387911386,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Patterns:ch44",
+          "score": 0.5301673120662239,
+          "base_score": 0.6336121867770399,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tests",
+          "310",
+          "312",
+          "298",
+          "299"
+        ],
+        "semantic": [],
+        "merged": [
+          "tests",
+          "310",
+          "312",
+          "298",
+          "299"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "service_services_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37922326561693354,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:46.227293+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

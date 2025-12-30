@@ -1,0 +1,518 @@
+{
+  "book": {
+    "title": "Learning GitHub Copilot"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:49:59.582646",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Learning GitHub Copilot",
+      "chapter": 1,
+      "title": "Foundations",
+      "chapter_id": "Learning GitHub Copilot:ch1",
+      "cross_references": [
+        {
+          "target": "Learning GitHub Copilot:ch9",
+          "score": 0.5410420936433653,
+          "base_score": 0.6517368227389422,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Learning GitHub Copilot:ch10",
+          "score": 0.5310205686488921,
+          "base_score": 0.635034281081487,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ai",
+          "suggestions",
+          "model",
+          "coding",
+          "data"
+        ],
+        "semantic": [],
+        "merged": [
+          "ai",
+          "suggestions",
+          "model",
+          "coding",
+          "data"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "copilot_the_extensions",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5795275807762965,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:59.577012+00:00"
+      }
+    },
+    {
+      "book": "Learning GitHub Copilot",
+      "chapter": 2,
+      "title": "Coding with Copilot",
+      "chapter_id": "Learning GitHub Copilot:ch2",
+      "cross_references": [
+        {
+          "target": "Learning GitHub Copilot:ch3",
+          "score": 0.5289051136641737,
+          "base_score": 0.6315085227736228,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "suggestions",
+          "option",
+          "inline",
+          "completions",
+          "review"
+        ],
+        "semantic": [],
+        "merged": [
+          "suggestions",
+          "option",
+          "inline",
+          "completions",
+          "review"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_copilot",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5466433185965567,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:59.577070+00:00"
+      }
+    },
+    {
+      "book": "Learning GitHub Copilot",
+      "chapter": 3,
+      "title": "Chatting with Copilot in the IDE",
+      "chapter_id": "Learning GitHub Copilot:ch3",
+      "cross_references": [
+        {
+          "target": "Learning GitHub Copilot:ch6",
+          "score": 0.5824098297560922,
+          "base_score": 0.6466089755194129,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Learning GitHub Copilot:ch2",
+          "score": 0.5289051136641737,
+          "base_score": 0.6315085227736228,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Learning GitHub Copilot:ch7",
+          "score": 0.528611954317933,
+          "base_score": 0.6310199238632217,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Learning GitHub Copilot:ch8",
+          "score": 0.5078812302778951,
+          "base_score": 0.5223946430557511,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "participant",
+          "chat participant",
+          "participants",
+          "prompt",
+          "copilot chat"
+        ],
+        "semantic": [],
+        "merged": [
+          "participant",
+          "chat participant",
+          "participants",
+          "prompt",
+          "copilot chat"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_copilot",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6191909899326571,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:59.577120+00:00"
+      }
+    },
+    {
+      "book": "Learning GitHub Copilot",
+      "chapter": 4,
+      "title": "Advanced Editing and Autonomous Workflows in the IDE",
+      "chapter_id": "Learning GitHub Copilot:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "edits",
+          "mode",
+          "agent",
+          "agent mode",
+          "changes"
+        ],
+        "semantic": [],
+        "merged": [
+          "edits",
+          "mode",
+          "agent",
+          "agent mode",
+          "changes"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_copilot",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.516381200146597,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:59.577165+00:00"
+      }
+    },
+    {
+      "book": "Learning GitHub Copilot",
+      "chapter": 5,
+      "title": "Testing with Copilot",
+      "chapter_id": "Learning GitHub Copilot:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "tests",
+          "test",
+          "test cases",
+          "testing",
+          "unit"
+        ],
+        "semantic": [],
+        "merged": [
+          "tests",
+          "test",
+          "test cases",
+          "testing",
+          "unit"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_copilot",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46761041793546926,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:59.577209+00:00"
+      }
+    },
+    {
+      "book": "Learning GitHub Copilot",
+      "chapter": 6,
+      "title": "Using Copilot to Document and Explain Code",
+      "chapter_id": "Learning GitHub Copilot:ch6",
+      "cross_references": [
+        {
+          "target": "Learning GitHub Copilot:ch3",
+          "score": 0.5824098297560922,
+          "base_score": 0.6466089755194129,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Learning GitHub Copilot:ch8",
+          "score": 0.5497683037525194,
+          "base_score": 0.5922064321801248,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Learning GitHub Copilot:ch7",
+          "score": 0.5222249818720075,
+          "base_score": 0.6203749697866792,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "documentation",
+          "explain",
+          "copilot explain",
+          "swagger",
+          "prompt"
+        ],
+        "semantic": [],
+        "merged": [
+          "documentation",
+          "explain",
+          "copilot explain",
+          "swagger",
+          "prompt"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_copilot",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.604970270609244,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:59.577283+00:00"
+      }
+    },
+    {
+      "book": "Learning GitHub Copilot",
+      "chapter": 7,
+      "title": "Keeping Copilot Timely and Relevant",
+      "chapter_id": "Learning GitHub Copilot:ch7",
+      "cross_references": [
+        {
+          "target": "Learning GitHub Copilot:ch3",
+          "score": 0.528611954317933,
+          "base_score": 0.6310199238632217,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Learning GitHub Copilot:ch6",
+          "score": 0.5222249818720075,
+          "base_score": 0.6203749697866792,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "model",
+          "deprecated",
+          "workspace",
+          "content",
+          "draw"
+        ],
+        "semantic": [],
+        "merged": [
+          "model",
+          "deprecated",
+          "workspace",
+          "content",
+          "draw"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_copilot",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.584063513647854,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:59.577331+00:00"
+      }
+    },
+    {
+      "book": "Learning GitHub Copilot",
+      "chapter": 8,
+      "title": "Other Ways to Leverage Copilot",
+      "chapter_id": "Learning GitHub Copilot:ch8",
+      "cross_references": [
+        {
+          "target": "Learning GitHub Copilot:ch6",
+          "score": 0.5497683037525194,
+          "base_score": 0.5922064321801248,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Learning GitHub Copilot:ch3",
+          "score": 0.5078812302778951,
+          "base_score": 0.5223946430557511,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sql",
+          "prompt",
+          "kubernetes",
+          "data",
+          "generate"
+        ],
+        "semantic": [],
+        "merged": [
+          "sql",
+          "prompt",
+          "kubernetes",
+          "data",
+          "generate"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_copilot",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5191217359172258,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:59.577377+00:00"
+      }
+    },
+    {
+      "book": "Learning GitHub Copilot",
+      "chapter": 9,
+      "title": "Using Copilot in GitHub",
+      "chapter_id": "Learning GitHub Copilot:ch9",
+      "cross_references": [
+        {
+          "target": "Learning GitHub Copilot:ch10",
+          "score": 0.5807196504501025,
+          "base_score": 0.7178660840835042,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Learning GitHub Copilot:ch1",
+          "score": 0.5410420936433653,
+          "base_score": 0.6517368227389422,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pull",
+          "pull request",
+          "request",
+          "pull requests",
+          "requests"
+        ],
+        "semantic": [],
+        "merged": [
+          "pull",
+          "pull request",
+          "request",
+          "pull requests",
+          "requests"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "copilot_the_extensions",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5640314003830318,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:59.577424+00:00"
+      }
+    },
+    {
+      "book": "Learning GitHub Copilot",
+      "chapter": 10,
+      "title": "Extending Copilot’s Functionality",
+      "chapter_id": "Learning GitHub Copilot:ch10",
+      "cross_references": [
+        {
+          "target": "Learning GitHub Copilot:ch9",
+          "score": 0.5807196504501025,
+          "base_score": 0.7178660840835042,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Learning GitHub Copilot:ch1",
+          "score": 0.5310205686488921,
+          "base_score": 0.635034281081487,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "extensions",
+          "copilot extensions",
+          "extensions copilot",
+          "code extensions",
+          "extension"
+        ],
+        "semantic": [],
+        "merged": [
+          "extensions",
+          "copilot extensions",
+          "extensions copilot",
+          "code extensions",
+          "extension"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "copilot_the_extensions",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5815281612216575,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:59.577470+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

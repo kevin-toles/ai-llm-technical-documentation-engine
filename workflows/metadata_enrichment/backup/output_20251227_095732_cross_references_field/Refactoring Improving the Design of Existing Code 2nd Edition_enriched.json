@@ -1,0 +1,1891 @@
+{
+  "book": {
+    "title": "Refactoring Improving the Design of Existing Code 2nd Edition"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:55:15.014731",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-8)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "perf",
+          "program",
+          "thisamount",
+          "audience",
+          "perf audience"
+        ],
+        "semantic": [],
+        "merged": [
+          "perf",
+          "program",
+          "thisamount",
+          "audience",
+          "perf audience"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "refactoring_code_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24479793320048676,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.975187+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 2,
+      "title": "Segment 2 (pages 9-19)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "perf",
+          "audience",
+          "thisamount",
+          "result",
+          "aperformance"
+        ],
+        "semantic": [],
+        "merged": [
+          "perf",
+          "audience",
+          "thisamount",
+          "result",
+          "aperformance"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "test_tests_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35616417610426454,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.975593+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 3,
+      "title": "Segment 3 (pages 20-42)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch3",
+      "cross_references": [
+        {
+          "target": "Refactoring Improving the Design of Existing Code 2nd Edition:ch4",
+          "score": 0.6634803888902361,
+          "base_score": 0.6891339814837268,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "perf",
+          "result",
+          "invoice",
+          "totalamount",
+          "aperformance"
+        ],
+        "semantic": [],
+        "merged": [
+          "perf",
+          "result",
+          "invoice",
+          "totalamount",
+          "aperformance"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "result_function_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2041001768256486,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.975951+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 4,
+      "title": "Segment 4 (pages 43-51)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch4",
+      "cross_references": [
+        {
+          "target": "Refactoring Improving the Design of Existing Code 2nd Edition:ch3",
+          "score": 0.6634803888902361,
+          "base_score": 0.6891339814837268,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "aperformance",
+          "result",
+          "performance",
+          "calculator",
+          "audience"
+        ],
+        "semantic": [],
+        "merged": [
+          "aperformance",
+          "result",
+          "performance",
+          "calculator",
+          "audience"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "result_function_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30114567337026943,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.976167+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 5,
+      "title": "Segment 5 (pages 52-59)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch5",
+      "cross_references": [
+        {
+          "target": "Refactoring Improving the Design of Existing Code 2nd Edition:ch6",
+          "score": 0.6398748892732566,
+          "base_score": 0.6497914821220945,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring Improving the Design of Existing Code 2nd Edition:ch7",
+          "score": 0.5680712322622954,
+          "base_score": 0.5301187204371589,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring Improving the Design of Existing Code 2nd Edition:ch8",
+          "score": 0.5664601566785217,
+          "base_score": 0.6200261870567954,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "refactoring",
+          "make",
+          "make code",
+          "refactoring helps"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "refactoring",
+          "make",
+          "make code",
+          "refactoring helps"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "refactoring_code_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2954150637585838,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.976376+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 6,
+      "title": "Segment 6 (pages 60-68)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch6",
+      "cross_references": [
+        {
+          "target": "Refactoring Improving the Design of Existing Code 2nd Edition:ch5",
+          "score": 0.6398748892732566,
+          "base_score": 0.6497914821220945,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring Improving the Design of Existing Code 2nd Edition:ch8",
+          "score": 0.5878881698150067,
+          "base_score": 0.6557395422842704,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring Improving the Design of Existing Code 2nd Edition:ch7",
+          "score": 0.5785245495323258,
+          "base_score": 0.5475409158872098,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "refactoring",
+          "code",
+          "refactor",
+          "understand",
+          "review"
+        ],
+        "semantic": [],
+        "merged": [
+          "refactoring",
+          "code",
+          "refactor",
+          "understand",
+          "review"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "refactoring_code_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2764808445989516,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.976583+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 7,
+      "title": "Segment 7 (pages 69-76)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch7",
+      "cross_references": [
+        {
+          "target": "Refactoring Improving the Design of Existing Code 2nd Edition:ch6",
+          "score": 0.5785245495323258,
+          "base_score": 0.5475409158872098,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring Improving the Design of Existing Code 2nd Edition:ch5",
+          "score": 0.5680712322622954,
+          "base_score": 0.5301187204371589,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "refactoring",
+          "changes",
+          "code",
+          "branch",
+          "self testing"
+        ],
+        "semantic": [],
+        "merged": [
+          "refactoring",
+          "changes",
+          "code",
+          "branch",
+          "self testing"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "refactoring_code_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2750488137624165,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.976835+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 8,
+      "title": "Segment 8 (pages 77-84)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch8",
+      "cross_references": [
+        {
+          "target": "Refactoring Improving the Design of Existing Code 2nd Edition:ch6",
+          "score": 0.5878881698150067,
+          "base_score": 0.6557395422842704,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring Improving the Design of Existing Code 2nd Edition:ch5",
+          "score": 0.5664601566785217,
+          "base_score": 0.6200261870567954,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "refactoring",
+          "tool",
+          "performance",
+          "refactoring tool",
+          "refactorings"
+        ],
+        "semantic": [],
+        "merged": [
+          "refactoring",
+          "tool",
+          "performance",
+          "refactoring tool",
+          "refactorings"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "refactoring_code_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.20683457286804435,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.977044+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 9,
+      "title": "Segment 9 (pages 85-92)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch9",
+      "cross_references": [
+        {
+          "target": "Refactoring Improving the Design of Existing Code 2nd Edition:ch13",
+          "score": 0.5904322873277532,
+          "base_score": 0.659979738138848,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring Improving the Design of Existing Code 2nd Edition:ch27",
+          "score": 0.5387887224957508,
+          "base_score": 0.6479812041595847,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring Improving the Design of Existing Code 2nd Edition:ch15",
+          "score": 0.521275234234553,
+          "base_score": 0.5447179829835143,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "function",
+          "data",
+          "functions",
+          "use",
+          "module"
+        ],
+        "semantic": [],
+        "merged": [
+          "function",
+          "data",
+          "functions",
+          "use",
+          "module"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "function_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3432209132052228,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.977251+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 10,
+      "title": "Segment 10 (pages 93-102)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "tests",
+          "class",
+          "code",
+          "writing",
+          "test"
+        ],
+        "semantic": [],
+        "merged": [
+          "tests",
+          "class",
+          "code",
+          "writing",
+          "test"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_type",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3401402168578669,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.977455+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 11,
+      "title": "Segment 11 (pages 103-112)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch11",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "test",
+          "tests",
+          "fixture",
+          "run",
+          "framework"
+        ],
+        "semantic": [],
+        "merged": [
+          "test",
+          "tests",
+          "fixture",
+          "run",
+          "framework"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "test_tests_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1629491955973985,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.977681+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 12,
+      "title": "Segment 12 (pages 113-120)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch12",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "refactoring",
+          "tests",
+          "refactorings",
+          "bug",
+          "test"
+        ],
+        "semantic": [],
+        "merged": [
+          "refactoring",
+          "tests",
+          "refactorings",
+          "bug",
+          "test"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "test_tests_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24262626964869122,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.977907+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 13,
+      "title": "Segment 13 (pages 121-131)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch13",
+      "cross_references": [
+        {
+          "target": "Refactoring Improving the Design of Existing Code 2nd Edition:ch9",
+          "score": 0.5904322873277532,
+          "base_score": 0.659979738138848,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring Improving the Design of Existing Code 2nd Edition:ch27",
+          "score": 0.5366729894790243,
+          "base_score": 0.6444549824650405,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "function",
+          "outstanding",
+          "invoice",
+          "extracted",
+          "extracted code"
+        ],
+        "semantic": [],
+        "merged": [
+          "function",
+          "outstanding",
+          "invoice",
+          "extracted",
+          "extracted code"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "function_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3510289934844967,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.978114+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 14,
+      "title": "Segment 14 (pages 132-140)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch14",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "order",
+          "itemprice",
+          "quantity",
+          "order itemprice",
+          "order quantity"
+        ],
+        "semantic": [],
+        "merged": [
+          "order",
+          "itemprice",
+          "quantity",
+          "order itemprice",
+          "order quantity"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "function_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2969485487127053,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.978317+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 15,
+      "title": "Segment 15 (pages 141-150)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch15",
+      "cross_references": [
+        {
+          "target": "Refactoring Improving the Design of Existing Code 2nd Edition:ch9",
+          "score": 0.521275234234553,
+          "base_score": 0.5447179829835143,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "function",
+          "old",
+          "old function",
+          "new function",
+          "parameter"
+        ],
+        "semantic": [],
+        "merged": [
+          "function",
+          "old",
+          "old function",
+          "new function",
+          "parameter"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "function_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3263987776371757,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.978539+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 16,
+      "title": "Segment 16 (pages 151-158)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch16",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "variable",
+          "defaultownerdata",
+          "data",
+          "export function",
+          "export"
+        ],
+        "semantic": [],
+        "merged": [
+          "variable",
+          "defaultownerdata",
+          "data",
+          "export function",
+          "export"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32472897522061805,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:55:14.978745+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 17,
+      "title": "Segment 17 (pages 159-169)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch17",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "areading",
+          "range",
+          "station",
+          "operatingplan",
+          "min"
+        ],
+        "semantic": [],
+        "merged": [
+          "areading",
+          "range",
+          "station",
+          "operatingplan",
+          "min"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "result_function_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3660480882972724,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.978994+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 18,
+      "title": "Segment 18 (pages 170-177)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch18",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "areading",
+          "year",
+          "enrichreading",
+          "const",
+          "areading year"
+        ],
+        "semantic": [],
+        "merged": [
+          "areading",
+          "year",
+          "enrichreading",
+          "const",
+          "areading year"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "result_function_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31927960857242,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.979243+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 19,
+      "title": "Segment 19 (pages 178-185)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch19",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "product",
+          "baseprice",
+          "shippingmethod",
+          "quantity",
+          "pricedata"
+        ],
+        "semantic": [],
+        "merged": [
+          "product",
+          "baseprice",
+          "shippingmethod",
+          "quantity",
+          "pricedata"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "result_function_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.22770682500952938,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.979466+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 20,
+      "title": "Segment 20 (pages 186-193)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch20",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "customerid",
+          "month",
+          "lateryear",
+          "lateryear month",
+          "customerdata"
+        ],
+        "semantic": [],
+        "merged": [
+          "customerid",
+          "month",
+          "lateryear",
+          "lateryear month",
+          "customerdata"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "return_this_result",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.325506661502737,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.979700+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 21,
+      "title": "Segment 21 (pages 194-204)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch21",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "collection",
+          "priority",
+          "class",
+          "_priority",
+          "value"
+        ],
+        "semantic": [],
+        "merged": [
+          "collection",
+          "priority",
+          "class",
+          "_priority",
+          "value"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_type",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23458742917137784,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.979935+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 22,
+      "title": "Segment 22 (pages 205-212)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch22",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "class",
+          "discountfactor",
+          "class person",
+          "person",
+          "telephone number"
+        ],
+        "semantic": [],
+        "merged": [
+          "class",
+          "discountfactor",
+          "class person",
+          "person",
+          "telephone number"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "result_function_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34779858651064194,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.980139+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 23,
+      "title": "Segment 23 (pages 213-221)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch23",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "delegate",
+          "client",
+          "department",
+          "manager",
+          "delegating"
+        ],
+        "semantic": [],
+        "merged": [
+          "delegate",
+          "client",
+          "department",
+          "manager",
+          "delegating"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_type",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30716374414713543,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.980368+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 24,
+      "title": "Segment 24 (pages 222-231)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch24",
+      "cross_references": [
+        {
+          "target": "Refactoring Improving the Design of Existing Code 2nd Edition:ch27",
+          "score": 0.529018727113577,
+          "base_score": 0.6316978785226284,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "points",
+          "totaltime",
+          "totaldistance",
+          "pace",
+          "distance"
+        ],
+        "semantic": [],
+        "merged": [
+          "points",
+          "totaltime",
+          "totaldistance",
+          "pace",
+          "distance"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "function_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.313754390956931,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.980571+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 25,
+      "title": "Segment 25 (pages 232-241)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch25",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "account",
+          "field",
+          "daysoverdrawn",
+          "rate",
+          "type"
+        ],
+        "semantic": [],
+        "merged": [
+          "account",
+          "field",
+          "daysoverdrawn",
+          "rate",
+          "type"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "result_function_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2594766849542994,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.980837+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 26,
+      "title": "Segment 26 (pages 242-250)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch26",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "outstream",
+          "photo",
+          "outstream write",
+          "person",
+          "location"
+        ],
+        "semantic": [],
+        "merged": [
+          "outstream",
+          "photo",
+          "outstream write",
+          "person",
+          "location"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "return_this_result",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2112998101844911,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.981049+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 27,
+      "title": "Segment 27 (pages 251-260)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch27",
+      "cross_references": [
+        {
+          "target": "Refactoring Improving the Design of Existing Code 2nd Edition:ch9",
+          "score": 0.5387887224957508,
+          "base_score": 0.6479812041595847,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring Improving the Design of Existing Code 2nd Edition:ch13",
+          "score": 0.5366729894790243,
+          "base_score": 0.6444549824650405,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring Improving the Design of Existing Code 2nd Edition:ch24",
+          "score": 0.529018727113577,
+          "base_score": 0.6316978785226284,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "slide",
+          "totalsalary",
+          "age",
+          "fragment",
+          "sliding"
+        ],
+        "semantic": [],
+        "merged": [
+          "slide",
+          "totalsalary",
+          "age",
+          "fragment",
+          "sliding"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "function_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.326252660618389,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.981256+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 28,
+      "title": "Segment 28 (pages 261-268)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch28",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "trim",
+          "line",
+          "record trim",
+          "record",
+          "lines"
+        ],
+        "semantic": [],
+        "merged": [
+          "trim",
+          "line",
+          "record trim",
+          "record",
+          "lines"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "return_this_result",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26377750241349623,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.981480+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 29,
+      "title": "Segment 29 (pages 269-276)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch29",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "scenario",
+          "secondarytime",
+          "country",
+          "_country",
+          "_title"
+        ],
+        "semantic": [],
+        "merged": [
+          "scenario",
+          "secondarytime",
+          "country",
+          "_country",
+          "_title"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "result_function_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2572809556195867,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.981677+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 30,
+      "title": "Segment 30 (pages 277-284)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch30",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "_telephonenumber",
+          "production",
+          "_production",
+          "arg",
+          "officenumber"
+        ],
+        "semantic": [],
+        "merged": [
+          "_telephonenumber",
+          "production",
+          "_production",
+          "arg",
+          "officenumber"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "result_function_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3171500170775681,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.981959+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 31,
+      "title": "Segment 31 (pages 285-292)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch31",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "customer",
+          "plan",
+          "id",
+          "customer object",
+          "adate"
+        ],
+        "semantic": [],
+        "merged": [
+          "customer",
+          "plan",
+          "id",
+          "customer object",
+          "adate"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "return_this_result",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24264572697996067,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.982159+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 32,
+      "title": "Segment 32 (pages 293-301)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch32",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "aninstrument",
+          "result",
+          "employee",
+          "conditional",
+          "ut"
+        ],
+        "semantic": [],
+        "merged": [
+          "aninstrument",
+          "result",
+          "employee",
+          "conditional",
+          "ut"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2722247057971983,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:55:14.982356+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 33,
+      "title": "Segment 33 (pages 302-320)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch33",
+      "cross_references": [
+        {
+          "target": "Refactoring Improving the Design of Existing Code 2nd Edition:ch44",
+          "score": 0.5456384008144609,
+          "base_score": 0.6593973346907682,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "voyage",
+          "result",
+          "length",
+          "result voyage",
+          "history"
+        ],
+        "semantic": [],
+        "merged": [
+          "voyage",
+          "result",
+          "length",
+          "result voyage",
+          "history"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "return_this_result",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28091038872445906,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.982556+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 34,
+      "title": "Segment 34 (pages 321-338)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch34",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "isunknown",
+          "special case",
+          "unknown",
+          "special",
+          "acustomer"
+        ],
+        "semantic": [],
+        "merged": [
+          "isunknown",
+          "special case",
+          "unknown",
+          "special",
+          "acustomer"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "return_this_result",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32825920560714505,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.982777+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 35,
+      "title": "Segment 35 (pages 339-346)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch35",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "anumber",
+          "setoffalarms",
+          "assertion",
+          "setoffalarms return",
+          "john"
+        ],
+        "semantic": [],
+        "merged": [
+          "anumber",
+          "setoffalarms",
+          "assertion",
+          "setoffalarms return",
+          "john"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "result_function_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.22711245160198107,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.982990+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 36,
+      "title": "Segment 36 (pages 347-356)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch36",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "anorder",
+          "usage",
+          "deliverytime",
+          "function",
+          "deliverystate deliverytime"
+        ],
+        "semantic": [],
+        "merged": [
+          "anorder",
+          "usage",
+          "deliverytime",
+          "function",
+          "deliverystate deliverytime"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "result_function_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.318427094976288,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.983212+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 37,
+      "title": "Segment 37 (pages 357-365)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch37",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "high",
+          "low",
+          "daystemprange",
+          "aroom daystemprange",
+          "aroom"
+        ],
+        "semantic": [],
+        "merged": [
+          "high",
+          "low",
+          "daystemprange",
+          "aroom daystemprange",
+          "aroom"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "result_function_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2791652265146554,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.983415+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 38,
+      "title": "Segment 38 (pages 366-373)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch38",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "setting method",
+          "setting",
+          "method",
+          "function",
+          "constructor"
+        ],
+        "semantic": [],
+        "merged": [
+          "setting method",
+          "setting",
+          "method",
+          "function",
+          "constructor"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "function_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3272560317219078,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.983684+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 39,
+      "title": "Segment 39 (pages 374-388)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch39",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "command",
+          "healthlevel",
+          "function",
+          "scoringguide",
+          "medicalexam"
+        ],
+        "semantic": [],
+        "merged": [
+          "command",
+          "healthlevel",
+          "function",
+          "scoringguide",
+          "medicalexam"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_type",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3017301301156781,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.983948+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 40,
+      "title": "Segment 40 (pages 389-397)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch40",
+      "cross_references": [
+        {
+          "target": "Refactoring Improving the Design of Existing Code 2nd Edition:ch43",
+          "score": 0.5182997655329551,
+          "base_score": 0.539758868480851,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pull",
+          "method",
+          "pull method",
+          "subclass",
+          "superclass"
+        ],
+        "semantic": [],
+        "merged": [
+          "pull",
+          "method",
+          "pull method",
+          "subclass",
+          "superclass"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_type",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28720050941986075,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.984163+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 41,
+      "title": "Segment 41 (pages 398-409)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch41",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "type",
+          "type code",
+          "employee type",
+          "engineer",
+          "employee"
+        ],
+        "semantic": [],
+        "merged": [
+          "type",
+          "type code",
+          "employee type",
+          "engineer",
+          "employee"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_type",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2971242770942895,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.984374+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 42,
+      "title": "Segment 42 (pages 410-422)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch42",
+      "cross_references": [
+        {
+          "target": "Refactoring Improving the Design of Existing Code 2nd Edition:ch44",
+          "score": 0.525508167253722,
+          "base_score": 0.5517728713487958,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "arecord",
+          "person arecord",
+          "new person",
+          "person",
+          "return new"
+        ],
+        "semantic": [],
+        "merged": [
+          "arecord",
+          "person arecord",
+          "new person",
+          "person",
+          "return new"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "return_this_result",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3026019940677752,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.984582+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 43,
+      "title": "Segment 43 (pages 423-435)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch43",
+      "cross_references": [
+        {
+          "target": "Refactoring Improving the Design of Existing Code 2nd Edition:ch40",
+          "score": 0.5182997655329551,
+          "base_score": 0.539758868480851,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "delegate",
+          "subclass",
+          "booking",
+          "extras",
+          "premium"
+        ],
+        "semantic": [],
+        "merged": [
+          "delegate",
+          "subclass",
+          "booking",
+          "extras",
+          "premium"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_type",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29209973795510175,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.984882+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 44,
+      "title": "Segment 44 (pages 436-446)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch44",
+      "cross_references": [
+        {
+          "target": "Refactoring Improving the Design of Existing Code 2nd Edition:ch33",
+          "score": 0.5456384008144609,
+          "base_score": 0.6593973346907682,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring Improving the Design of Existing Code 2nd Edition:ch42",
+          "score": 0.525508167253722,
+          "base_score": 0.5517728713487958,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "bird",
+          "return",
+          "return new",
+          "plumage"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "bird",
+          "return",
+          "return new",
+          "plumage"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "return_this_result",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28153872848365225,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.985087+00:00"
+      }
+    },
+    {
+      "book": "Refactoring Improving the Design of Existing Code 2nd Edition",
+      "chapter": 45,
+      "title": "Segment 45 (pages 447-455)",
+      "chapter_id": "Refactoring Improving the Design of Existing Code 2nd Edition:ch45",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "id",
+          "catalog",
+          "tags",
+          "title tags",
+          "title"
+        ],
+        "semantic": [],
+        "merged": [
+          "id",
+          "catalog",
+          "tags",
+          "title tags",
+          "title"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_type",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24697821129772263,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:14.985285+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

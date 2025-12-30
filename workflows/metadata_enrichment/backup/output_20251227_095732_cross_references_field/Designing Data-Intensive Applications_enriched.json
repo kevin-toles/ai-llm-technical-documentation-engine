@@ -1,0 +1,2835 @@
+{
+  "book": {
+    "title": "Designing Data-Intensive Applications"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:45:02.460824",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-8)",
+      "chapter_id": "Designing Data-Intensive Applications:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data intensive",
+          "intensive",
+          "reilly",
+          "designing",
+          "designing data"
+        ],
+        "semantic": [],
+        "merged": [
+          "data intensive",
+          "intensive",
+          "reilly",
+          "designing",
+          "designing data"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3244514186675608,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:02.416297+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 2,
+      "title": "Segment 2 (pages 9-17)",
+      "chapter_id": "Designing Data-Intensive Applications:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "systems",
+          "data systems",
+          "processing",
+          "applications",
+          "technologies"
+        ],
+        "semantic": [],
+        "merged": [
+          "systems",
+          "data systems",
+          "processing",
+          "applications",
+          "technologies"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45289638312468244,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:02.416649+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 3,
+      "title": "Segment 3 (pages 18-26)",
+      "chapter_id": "Designing Data-Intensive Applications:ch3",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch51",
+          "score": 0.5010846343684353,
+          "base_score": 0.5851410572807255,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "intensive",
+          "data intensive",
+          "book",
+          "chapter",
+          "applications"
+        ],
+        "semantic": [],
+        "merged": [
+          "intensive",
+          "data intensive",
+          "book",
+          "chapter",
+          "applications"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41312654185004255,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.416946+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 4,
+      "title": "Segment 4 (pages 27-35)",
+      "chapter_id": "Designing Data-Intensive Applications:ch4",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch6",
+          "score": 0.5186483723158893,
+          "base_score": 0.6144139538598156,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "faults",
+          "tweets",
+          "user",
+          "load",
+          "home"
+        ],
+        "semantic": [],
+        "merged": [
+          "faults",
+          "tweets",
+          "user",
+          "load",
+          "home"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "of_the_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29829561652010367,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.417246+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 5,
+      "title": "Segment 5 (pages 36-43)",
+      "chapter_id": "Designing Data-Intensive Applications:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "response",
+          "response time",
+          "time",
+          "requests",
+          "request"
+        ],
+        "semantic": [],
+        "merged": [
+          "response",
+          "response time",
+          "time",
+          "requests",
+          "request"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_time_network",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.17182476675303426,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.417519+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 6,
+      "title": "Segment 6 (pages 44-51)",
+      "chapter_id": "Designing Data-Intensive Applications:ch6",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch4",
+          "score": 0.5186483723158893,
+          "base_score": 0.6144139538598156,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch31",
+          "score": 0.509365839233101,
+          "base_score": 0.5989430653885017,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "model",
+          "relational",
+          "relational model",
+          "data model",
+          "data models"
+        ],
+        "semantic": [],
+        "merged": [
+          "model",
+          "relational",
+          "relational model",
+          "data model",
+          "data models"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "of_the_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4022609906714753,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.417798+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 7,
+      "title": "Segment 7 (pages 52-61)",
+      "chapter_id": "Designing Data-Intensive Applications:ch7",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch8",
+          "score": 0.6078081029850301,
+          "base_score": 0.688939430900976,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "document",
+          "model",
+          "relational",
+          "document databases",
+          "document model"
+        ],
+        "semantic": [],
+        "merged": [
+          "document",
+          "model",
+          "relational",
+          "document databases",
+          "document model"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2660065811704991,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.418082+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 8,
+      "title": "Segment 8 (pages 62-70)",
+      "chapter_id": "Designing Data-Intensive Applications:ch8",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch7",
+          "score": 0.6078081029850301,
+          "base_score": 0.688939430900976,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "query",
+          "declarative",
+          "query languages",
+          "document",
+          "sharks"
+        ],
+        "semantic": [],
+        "merged": [
+          "query",
+          "declarative",
+          "query languages",
+          "document",
+          "sharks"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3400754498754096,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.418354+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 9,
+      "title": "Segment 9 (pages 71-80)",
+      "chapter_id": "Designing Data-Intensive Applications:ch9",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch10",
+          "score": 0.5148465530342385,
+          "base_score": 0.6080775883903976,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "edges",
+          "vertex",
+          "vertex_id",
+          "vertices",
+          "edge"
+        ],
+        "semantic": [],
+        "merged": [
+          "edges",
+          "vertex",
+          "vertex_id",
+          "vertices",
+          "edge"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25807470768132623,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.418624+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 10,
+      "title": "Segment 10 (pages 81-88)",
+      "chapter_id": "Designing Data-Intensive Applications:ch10",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch9",
+          "score": 0.5148465530342385,
+          "base_score": 0.6080775883903976,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sparql",
+          "datalog",
+          "graph",
+          "query",
+          "data models"
+        ],
+        "semantic": [],
+        "merged": [
+          "sparql",
+          "datalog",
+          "graph",
+          "query",
+          "data models"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27530375648062894,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.418893+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 11,
+      "title": "Segment 11 (pages 89-108)",
+      "chapter_id": "Designing Data-Intensive Applications:ch11",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "key",
+          "tree",
+          "value",
+          "segment",
+          "key value"
+        ],
+        "semantic": [],
+        "merged": [
+          "key",
+          "tree",
+          "value",
+          "segment",
+          "key value"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3456184097333683,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.419172+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 12,
+      "title": "Segment 12 (pages 109-118)",
+      "chapter_id": "Designing Data-Intensive Applications:ch12",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch13",
+          "score": 0.5177479078822232,
+          "base_score": 0.6129131798037055,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data warehouse",
+          "warehouse",
+          "oltp",
+          "memory",
+          "analytic"
+        ],
+        "semantic": [],
+        "merged": [
+          "data warehouse",
+          "warehouse",
+          "oltp",
+          "memory",
+          "analytic"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3274849425527203,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.419442+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 13,
+      "title": "Segment 13 (pages 119-126)",
+      "chapter_id": "Designing Data-Intensive Applications:ch13",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch12",
+          "score": 0.5177479078822232,
+          "base_score": 0.6129131798037055,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "column",
+          "column oriented",
+          "oriented",
+          "row",
+          "oriented storage"
+        ],
+        "semantic": [],
+        "merged": [
+          "column",
+          "column oriented",
+          "oriented",
+          "row",
+          "oriented storage"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32102398681281497,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.419749+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 14,
+      "title": "Segment 14 (pages 127-134)",
+      "chapter_id": "Designing Data-Intensive Applications:ch14",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "conference",
+          "international",
+          "acm",
+          "volume",
+          "international conference"
+        ],
+        "semantic": [],
+        "merged": [
+          "conference",
+          "international",
+          "acm",
+          "volume",
+          "international conference"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37672025024736305,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:02.420024+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 15,
+      "title": "Segment 15 (pages 135-143)",
+      "chapter_id": "Designing Data-Intensive Applications:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "field",
+          "encoded",
+          "encoding",
+          "binary",
+          "tag"
+        ],
+        "semantic": [],
+        "merged": [
+          "field",
+          "encoded",
+          "encoding",
+          "binary",
+          "tag"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.20450660995077122,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.420305+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 16,
+      "title": "Segment 16 (pages 144-152)",
+      "chapter_id": "Designing Data-Intensive Applications:ch16",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "schema",
+          "writer schema",
+          "avro",
+          "writer",
+          "reader"
+        ],
+        "semantic": [],
+        "merged": [
+          "schema",
+          "writer schema",
+          "avro",
+          "writer",
+          "reader"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.22774819970996496,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.420605+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 17,
+      "title": "Segment 17 (pages 153-160)",
+      "chapter_id": "Designing Data-Intensive Applications:ch17",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "service",
+          "rpc",
+          "web",
+          "requests",
+          "api"
+        ],
+        "semantic": [],
+        "merged": [
+          "service",
+          "rpc",
+          "web",
+          "requests",
+          "api"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28007340219731425,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:02.420875+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 18,
+      "title": "Segment 18 (pages 161-168)",
+      "chapter_id": "Designing Data-Intensive Applications:ch18",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "com",
+          "2014",
+          "org",
+          "apache",
+          "avro"
+        ],
+        "semantic": [],
+        "merged": [
+          "com",
+          "2014",
+          "org",
+          "apache",
+          "avro"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.188886337330146,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:02.421164+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 19,
+      "title": "Segment 19 (pages 169-182)",
+      "chapter_id": "Designing Data-Intensive Applications:ch19",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch20",
+          "score": 0.674851222578183,
+          "base_score": 0.7080853709636382,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch21",
+          "score": 0.5823910343487837,
+          "base_score": 0.6465776498405654,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "leader",
+          "replication",
+          "follower",
+          "new leader",
+          "followers"
+        ],
+        "semantic": [],
+        "merged": [
+          "leader",
+          "replication",
+          "follower",
+          "new leader",
+          "followers"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_leader_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34856464992934577,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.421439+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 20,
+      "title": "Segment 20 (pages 183-196)",
+      "chapter_id": "Designing Data-Intensive Applications:ch20",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch19",
+          "score": 0.674851222578183,
+          "base_score": 0.7080853709636382,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch21",
+          "score": 0.610471495406451,
+          "base_score": 0.6933784182700109,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch36",
+          "score": 0.5805231261582532,
+          "base_score": 0.7175385435970887,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "leader",
+          "multi leader",
+          "replication",
+          "user",
+          "multi"
+        ],
+        "semantic": [],
+        "merged": [
+          "leader",
+          "multi leader",
+          "replication",
+          "user",
+          "multi"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_leader_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39685844611800153,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.421726+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 21,
+      "title": "Segment 21 (pages 197-206)",
+      "chapter_id": "Designing Data-Intensive Applications:ch21",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch20",
+          "score": 0.610471495406451,
+          "base_score": 0.6933784182700109,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch19",
+          "score": 0.5823910343487837,
+          "base_score": 0.6465776498405654,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "nodes",
+          "node",
+          "writes",
+          "unavailable",
+          "leader"
+        ],
+        "semantic": [],
+        "merged": [
+          "nodes",
+          "node",
+          "writes",
+          "unavailable",
+          "leader"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_leader_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3354158429565962,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.422016+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 22,
+      "title": "Segment 22 (pages 207-215)",
+      "chapter_id": "Designing Data-Intensive Applications:ch22",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch38",
+          "score": 0.5287175169760447,
+          "base_score": 0.6311958616267412,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "version",
+          "version number",
+          "concurrent",
+          "milk",
+          "values"
+        ],
+        "semantic": [],
+        "merged": [
+          "version",
+          "version number",
+          "concurrent",
+          "milk",
+          "values"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_leader_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36617128881851835,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.422305+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 23,
+      "title": "Segment 23 (pages 216-227)",
+      "chapter_id": "Designing Data-Intensive Applications:ch23",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "partitioning",
+          "partition",
+          "key",
+          "partitions",
+          "hash"
+        ],
+        "semantic": [],
+        "merged": [
+          "partitioning",
+          "partition",
+          "key",
+          "partitions",
+          "hash"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4080764348280795,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:02.422578+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 24,
+      "title": "Segment 24 (pages 228-238)",
+      "chapter_id": "Designing Data-Intensive Applications:ch24",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch25",
+          "score": 0.7402305533326032,
+          "base_score": 0.8170509222210054,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "partitions",
+          "partitioning",
+          "partitions nodes",
+          "partitioned",
+          "secondary"
+        ],
+        "semantic": [],
+        "merged": [
+          "partitions",
+          "partitioning",
+          "partitions nodes",
+          "partitioned",
+          "secondary"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2825426474165506,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.422851+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 25,
+      "title": "Segment 25 (pages 239-247)",
+      "chapter_id": "Designing Data-Intensive Applications:ch25",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch24",
+          "score": 0.7402305533326032,
+          "base_score": 0.8170509222210054,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "transactions",
+          "database",
+          "transaction",
+          "partitioning",
+          "secondary"
+        ],
+        "semantic": [],
+        "merged": [
+          "transactions",
+          "database",
+          "transaction",
+          "partitioning",
+          "secondary"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3429994093219207,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.423132+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 26,
+      "title": "Segment 26 (pages 248-255)",
+      "chapter_id": "Designing Data-Intensive Applications:ch26",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch29",
+          "score": 0.6460517772337674,
+          "base_score": 0.6600862953896124,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch30",
+          "score": 0.6304834130425792,
+          "base_score": 0.634139021737632,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch27",
+          "score": 0.6012167499272241,
+          "base_score": 0.6779538424712994,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch54",
+          "score": 0.5882467152395728,
+          "base_score": 0.7304111920659546,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch39",
+          "score": 0.5547524122907255,
+          "base_score": 0.6005132797438018,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "transaction",
+          "transactions",
+          "object",
+          "multi object",
+          "object transactions"
+        ],
+        "semantic": [],
+        "merged": [
+          "transaction",
+          "transactions",
+          "object",
+          "multi object",
+          "object transactions"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "transaction_transactions_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4207019598632478,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.423411+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 27,
+      "title": "Segment 27 (pages 256-263)",
+      "chapter_id": "Designing Data-Intensive Applications:ch27",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch26",
+          "score": 0.6012167499272241,
+          "base_score": 0.6779538424712994,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch30",
+          "score": 0.5681706530845454,
+          "base_score": 0.6228770144001683,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch29",
+          "score": 0.5578848649010338,
+          "base_score": 0.6057340340943156,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch28",
+          "score": 0.5194072239291929,
+          "base_score": 0.6156787065486549,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "transaction",
+          "committed",
+          "read committed",
+          "read",
+          "dirty"
+        ],
+        "semantic": [],
+        "merged": [
+          "transaction",
+          "committed",
+          "read committed",
+          "read",
+          "dirty"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "transaction_transactions_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32543061188962075,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.423683+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 28,
+      "title": "Segment 28 (pages 264-271)",
+      "chapter_id": "Designing Data-Intensive Applications:ch28",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch26",
+          "score": 0.5222369742813526,
+          "base_score": 0.6203949571355877,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch27",
+          "score": 0.5194072239291929,
+          "base_score": 0.6156787065486549,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch30",
+          "score": 0.5165190573461508,
+          "base_score": 0.6108650955769179,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "lost",
+          "lost updates",
+          "update",
+          "updates",
+          "lost update"
+        ],
+        "semantic": [],
+        "merged": [
+          "lost",
+          "lost updates",
+          "update",
+          "updates",
+          "lost update"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "transaction_transactions_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34746914685441616,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.423955+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 29,
+      "title": "Segment 29 (pages 272-282)",
+      "chapter_id": "Designing Data-Intensive Applications:ch29",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch26",
+          "score": 0.6460517772337674,
+          "base_score": 0.6600862953896124,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch30",
+          "score": 0.6287482933057957,
+          "base_score": 0.6312471555096596,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch27",
+          "score": 0.5578848649010338,
+          "base_score": 0.6057340340943156,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch39",
+          "score": 0.5457795717604806,
+          "base_score": 0.5855585455267269,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "transaction",
+          "transactions",
+          "lock",
+          "transaction wants",
+          "locking"
+        ],
+        "semantic": [],
+        "merged": [
+          "transaction",
+          "transactions",
+          "lock",
+          "transaction wants",
+          "locking"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "transaction_transactions_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36416789401688215,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.424356+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 30,
+      "title": "Segment 30 (pages 283-290)",
+      "chapter_id": "Designing Data-Intensive Applications:ch30",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch26",
+          "score": 0.6304834130425792,
+          "base_score": 0.634139021737632,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch29",
+          "score": 0.6287482933057957,
+          "base_score": 0.6312471555096596,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch27",
+          "score": 0.5681706530845454,
+          "base_score": 0.6228770144001683,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch28",
+          "score": 0.5165190573461508,
+          "base_score": 0.6108650955769179,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch54",
+          "score": 0.5100386092028631,
+          "base_score": 0.6000643486714387,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "transaction",
+          "transactions",
+          "snapshot",
+          "transaction reads",
+          "transaction 43"
+        ],
+        "semantic": [],
+        "merged": [
+          "transaction",
+          "transactions",
+          "snapshot",
+          "transaction reads",
+          "transaction 43"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "transaction_transactions_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3854471477871808,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.424680+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 31,
+      "title": "Segment 31 (pages 291-298)",
+      "chapter_id": "Designing Data-Intensive Applications:ch31",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch6",
+          "score": 0.509365839233101,
+          "base_score": 0.5989430653885017,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "com",
+          "international",
+          "conference",
+          "distributed",
+          "distributed systems"
+        ],
+        "semantic": [],
+        "merged": [
+          "com",
+          "international",
+          "conference",
+          "distributed",
+          "distributed systems"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "of_the_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3218867366331897,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.424972+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 32,
+      "title": "Segment 32 (pages 299-308)",
+      "chapter_id": "Designing Data-Intensive Applications:ch32",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "network",
+          "networks",
+          "delays",
+          "packet",
+          "unreliable networks"
+        ],
+        "semantic": [],
+        "merged": [
+          "network",
+          "networks",
+          "delays",
+          "packet",
+          "unreliable networks"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_time_network",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.22341143835213703,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.425298+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 33,
+      "title": "Segment 33 (pages 309-318)",
+      "chapter_id": "Designing Data-Intensive Applications:ch33",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch34",
+          "score": 0.5157197238175251,
+          "base_score": 0.5354587989551345,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "clock",
+          "clocks",
+          "time day",
+          "day",
+          "time"
+        ],
+        "semantic": [],
+        "merged": [
+          "clock",
+          "clocks",
+          "time day",
+          "day",
+          "time"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_time_network",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23156512395242806,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.425574+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 34,
+      "title": "Segment 34 (pages 319-327)",
+      "chapter_id": "Designing Data-Intensive Applications:ch34",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch33",
+          "score": 0.5157197238175251,
+          "base_score": 0.5354587989551345,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch35",
+          "score": 0.5058532027890359,
+          "base_score": 0.5930886713150598,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "node",
+          "nodes",
+          "paused",
+          "time",
+          "real time"
+        ],
+        "semantic": [],
+        "merged": [
+          "node",
+          "nodes",
+          "paused",
+          "time",
+          "real time"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_time_network",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3065825740787642,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.425852+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 35,
+      "title": "Segment 35 (pages 328-340)",
+      "chapter_id": "Designing Data-Intensive Applications:ch35",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch34",
+          "score": 0.5058532027890359,
+          "base_score": 0.5930886713150598,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "com",
+          "systems",
+          "acm",
+          "distributed systems",
+          "distributed"
+        ],
+        "semantic": [],
+        "merged": [
+          "com",
+          "systems",
+          "acm",
+          "distributed systems",
+          "distributed"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_time_network",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31559019470832544,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.426166+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 36,
+      "title": "Segment 36 (pages 341-350)",
+      "chapter_id": "Designing Data-Intensive Applications:ch36",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch20",
+          "score": 0.5805231261582532,
+          "base_score": 0.7175385435970887,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch38",
+          "score": 0.5209286650320476,
+          "base_score": 0.6182144417200793,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "value",
+          "read",
+          "new value",
+          "return",
+          "client"
+        ],
+        "semantic": [],
+        "merged": [
+          "value",
+          "read",
+          "new value",
+          "return",
+          "client"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_leader_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39413069066424145,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.426444+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 37,
+      "title": "Segment 37 (pages 351-358)",
+      "chapter_id": "Designing Data-Intensive Applications:ch37",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "linearizability",
+          "linearizable",
+          "reads",
+          "leader",
+          "linearizability linearizability"
+        ],
+        "semantic": [],
+        "merged": [
+          "linearizability",
+          "linearizable",
+          "reads",
+          "leader",
+          "linearizability linearizability"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_leader_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35737293827171135,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.426744+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 38,
+      "title": "Segment 38 (pages 359-381)",
+      "chapter_id": "Designing Data-Intensive Applications:ch38",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch55",
+          "score": 0.534303052782194,
+          "base_score": 0.6405050879703234,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch22",
+          "score": 0.5287175169760447,
+          "base_score": 0.6311958616267412,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch36",
+          "score": 0.5209286650320476,
+          "base_score": 0.6182144417200793,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "total",
+          "total order",
+          "commit",
+          "order",
+          "order broadcast"
+        ],
+        "semantic": [],
+        "merged": [
+          "total",
+          "total order",
+          "commit",
+          "order",
+          "order broadcast"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_leader_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4148275672322008,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.427024+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 39,
+      "title": "Segment 39 (pages 382-391)",
+      "chapter_id": "Designing Data-Intensive Applications:ch39",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch26",
+          "score": 0.5547524122907255,
+          "base_score": 0.6005132797438018,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch29",
+          "score": 0.5457795717604806,
+          "base_score": 0.5855585455267269,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch30",
+          "score": 0.5076581957393429,
+          "base_score": 0.5220229188248308,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "consensus",
+          "transactions",
+          "nodes",
+          "distributed transactions",
+          "distributed"
+        ],
+        "semantic": [],
+        "merged": [
+          "consensus",
+          "transactions",
+          "nodes",
+          "distributed transactions",
+          "distributed"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "transaction_transactions_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3609733975508031,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.427338+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 40,
+      "title": "Segment 40 (pages 392-405)",
+      "chapter_id": "Designing Data-Intensive Applications:ch40",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "doi",
+          "doi 10",
+          "10 1145",
+          "1145",
+          "acm"
+        ],
+        "semantic": [],
+        "merged": [
+          "doi",
+          "doi 10",
+          "10 1145",
+          "1145",
+          "acm"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4106601446323562,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:02.427633+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 41,
+      "title": "Segment 41 (pages 406-415)",
+      "chapter_id": "Designing Data-Intensive Applications:ch41",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "url",
+          "batch",
+          "batch processing",
+          "processing",
+          "systems"
+        ],
+        "semantic": [],
+        "merged": [
+          "url",
+          "batch",
+          "batch processing",
+          "processing",
+          "systems"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3635664949782031,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.427910+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 42,
+      "title": "Segment 42 (pages 416-425)",
+      "chapter_id": "Designing Data-Intensive Applications:ch42",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "input",
+          "output",
+          "file",
+          "program",
+          "unix"
+        ],
+        "semantic": [],
+        "merged": [
+          "input",
+          "output",
+          "file",
+          "program",
+          "unix"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2868450280757761,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.428196+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 43,
+      "title": "Segment 43 (pages 426-436)",
+      "chapter_id": "Designing Data-Intensive Applications:ch43",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "join",
+          "user",
+          "activity",
+          "activity events",
+          "key"
+        ],
+        "semantic": [],
+        "merged": [
+          "join",
+          "user",
+          "activity",
+          "activity events",
+          "key"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_batch_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2840578707842704,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.428478+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 44,
+      "title": "Segment 44 (pages 437-445)",
+      "chapter_id": "Designing Data-Intensive Applications:ch44",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "mapreduce",
+          "jobs",
+          "task",
+          "intermediate",
+          "job"
+        ],
+        "semantic": [],
+        "merged": [
+          "mapreduce",
+          "jobs",
+          "task",
+          "intermediate",
+          "job"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3808019952798795,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:02.428783+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 45,
+      "title": "Segment 45 (pages 446-458)",
+      "chapter_id": "Designing Data-Intensive Applications:ch45",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch52",
+          "score": 0.5294128215475338,
+          "base_score": 0.5582806285051488,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "batch",
+          "processing",
+          "batch processing",
+          "com",
+          "graph"
+        ],
+        "semantic": [],
+        "merged": [
+          "batch",
+          "processing",
+          "batch processing",
+          "com",
+          "graph"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_batch_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36154514572342167,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.429094+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 46,
+      "title": "Segment 46 (pages 459-473)",
+      "chapter_id": "Designing Data-Intensive Applications:ch46",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "messages",
+          "message",
+          "consumer",
+          "message brokers",
+          "brokers"
+        ],
+        "semantic": [],
+        "merged": [
+          "messages",
+          "message",
+          "consumer",
+          "message brokers",
+          "brokers"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_time_network",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3203229991713261,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.429381+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 47,
+      "title": "Segment 47 (pages 474-481)",
+      "chapter_id": "Designing Data-Intensive Applications:ch47",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "log",
+          "event",
+          "change",
+          "change data",
+          "capture"
+        ],
+        "semantic": [],
+        "merged": [
+          "log",
+          "event",
+          "change",
+          "change data",
+          "capture"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39360685171661486,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:02.429688+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 48,
+      "title": "Segment 48 (pages 482-489)",
+      "chapter_id": "Designing Data-Intensive Applications:ch48",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch50",
+          "score": 0.5548058120751242,
+          "base_score": 0.6006022793844664,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "event",
+          "events",
+          "stream",
+          "event log",
+          "streams"
+        ],
+        "semantic": [],
+        "merged": [
+          "event",
+          "events",
+          "stream",
+          "event log",
+          "streams"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "stream_processing_com",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3637642870779922,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.429966+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 49,
+      "title": "Segment 49 (pages 490-497)",
+      "chapter_id": "Designing Data-Intensive Applications:ch49",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "events",
+          "event",
+          "window",
+          "stream",
+          "activity"
+        ],
+        "semantic": [],
+        "merged": [
+          "events",
+          "event",
+          "window",
+          "stream",
+          "activity"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29037414469309175,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:02.430254+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 50,
+      "title": "Segment 50 (pages 498-509)",
+      "chapter_id": "Designing Data-Intensive Applications:ch50",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch62",
+          "score": 0.5573513258237311,
+          "base_score": 0.6432045906585995,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch48",
+          "score": 0.5548058120751242,
+          "base_score": 0.6006022793844664,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "com",
+          "stream",
+          "stream processing",
+          "processing",
+          "kafka"
+        ],
+        "semantic": [],
+        "merged": [
+          "com",
+          "stream",
+          "stream processing",
+          "processing",
+          "kafka"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "stream_processing_com",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3894742184615152,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.430535+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 51,
+      "title": "Segment 51 (pages 510-517)",
+      "chapter_id": "Designing Data-Intensive Applications:ch51",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch3",
+          "score": 0.5010846343684353,
+          "base_score": 0.5851410572807255,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "events",
+          "order",
+          "derived",
+          "event",
+          "total"
+        ],
+        "semantic": [],
+        "merged": [
+          "events",
+          "order",
+          "derived",
+          "event",
+          "total"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36409837069537165,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.430811+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 52,
+      "title": "Segment 52 (pages 518-525)",
+      "chapter_id": "Designing Data-Intensive Applications:ch52",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch45",
+          "score": 0.5294128215475338,
+          "base_score": 0.5582806285051488,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "stream",
+          "batch",
+          "unbundling",
+          "batch stream",
+          "systems"
+        ],
+        "semantic": [],
+        "merged": [
+          "stream",
+          "batch",
+          "unbundling",
+          "batch stream",
+          "systems"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_batch_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38931999427934294,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.431094+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 53,
+      "title": "Segment 53 (pages 526-536)",
+      "chapter_id": "Designing Data-Intensive Applications:ch53",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "path",
+          "state",
+          "read path",
+          "write path",
+          "changes"
+        ],
+        "semantic": [],
+        "merged": [
+          "path",
+          "state",
+          "read path",
+          "write path",
+          "changes"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.352980859041971,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.431369+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 54,
+      "title": "Segment 54 (pages 537-545)",
+      "chapter_id": "Designing Data-Intensive Applications:ch54",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch26",
+          "score": 0.5882467152395728,
+          "base_score": 0.7304111920659546,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch30",
+          "score": 0.5100386092028631,
+          "base_score": 0.6000643486714387,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "request",
+          "request id",
+          "id",
+          "duplicate",
+          "example 12"
+        ],
+        "semantic": [],
+        "merged": [
+          "request",
+          "request id",
+          "id",
+          "duplicate",
+          "example 12"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "transaction_transactions_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37722254067992433,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.431645+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 55,
+      "title": "Segment 55 (pages 546-554)",
+      "chapter_id": "Designing Data-Intensive Applications:ch55",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch38",
+          "score": 0.534303052782194,
+          "base_score": 0.6405050879703234,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "integrity",
+          "integrity data",
+          "timeliness",
+          "systems",
+          "data systems"
+        ],
+        "semantic": [],
+        "merged": [
+          "integrity",
+          "integrity data",
+          "timeliness",
+          "systems",
+          "data systems"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_leader_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43207797000926856,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.431922+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 56,
+      "title": "Segment 56 (pages 555-562)",
+      "chapter_id": "Designing Data-Intensive Applications:ch56",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "users",
+          "people",
+          "service",
+          "user",
+          "tracking"
+        ],
+        "semantic": [],
+        "merged": [
+          "users",
+          "people",
+          "service",
+          "user",
+          "tracking"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3123740309573469,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:02.432205+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 57,
+      "title": "Segment 57 (pages 563-574)",
+      "chapter_id": "Designing Data-Intensive Applications:ch57",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "com",
+          "2016",
+          "data systems",
+          "systems",
+          "innovative data"
+        ],
+        "semantic": [],
+        "merged": [
+          "com",
+          "2016",
+          "data systems",
+          "systems",
+          "innovative data"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3441225335708042,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:02.432481+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 58,
+      "title": "Segment 58 (pages 575-582)",
+      "chapter_id": "Designing Data-Intensive Applications:ch58",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "page",
+          "transaction",
+          "page 152",
+          "leader",
+          "speed"
+        ],
+        "semantic": [],
+        "merged": [
+          "page",
+          "transaction",
+          "page 152",
+          "leader",
+          "speed"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4756983383509649,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:02.432755+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 59,
+      "title": "Segment 59 (pages 583-590)",
+      "chapter_id": "Designing Data-Intensive Applications:ch59",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch60",
+          "score": 0.5915341783019479,
+          "base_score": 0.7358902971699132,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch62",
+          "score": 0.5859768544955224,
+          "base_score": 0.7266280908258707,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "transactions",
+          "capture",
+          "event",
+          "model",
+          "498"
+        ],
+        "semantic": [],
+        "merged": [
+          "transactions",
+          "capture",
+          "event",
+          "model",
+          "498"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "data_processing_stream",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4115122908464184,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.433052+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 60,
+      "title": "Segment 60 (pages 591-598)",
+      "chapter_id": "Designing Data-Intensive Applications:ch60",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch62",
+          "score": 0.6360865917229852,
+          "base_score": 0.7360702454642345,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch59",
+          "score": 0.5915341783019479,
+          "base_score": 0.7358902971699132,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "processing",
+          "409",
+          "joins 409",
+          "hash",
+          "batch"
+        ],
+        "semantic": [],
+        "merged": [
+          "processing",
+          "409",
+          "joins 409",
+          "hash",
+          "batch"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "data_processing_stream",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4190698941052177,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.433331+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 61,
+      "title": "Segment 61 (pages 599-606)",
+      "chapter_id": "Designing Data-Intensive Applications:ch61",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "replication",
+          "based replication",
+          "leader based",
+          "leader",
+          "partitioning"
+        ],
+        "semantic": [],
+        "merged": [
+          "replication",
+          "based replication",
+          "leader based",
+          "leader",
+          "partitioning"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38623528482517805,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:02.434063+00:00"
+      }
+    },
+    {
+      "book": "Designing Data-Intensive Applications",
+      "chapter": 62,
+      "title": "Segment 62 (pages 607-613)",
+      "chapter_id": "Designing Data-Intensive Applications:ch62",
+      "cross_references": [
+        {
+          "target": "Designing Data-Intensive Applications:ch60",
+          "score": 0.6360865917229852,
+          "base_score": 0.7360702454642345,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch59",
+          "score": 0.5859768544955224,
+          "base_score": 0.7266280908258707,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Data-Intensive Applications:ch50",
+          "score": 0.5573513258237311,
+          "base_score": 0.6432045906585995,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "stream",
+          "processing",
+          "stream processing",
+          "466",
+          "streams"
+        ],
+        "semantic": [],
+        "merged": [
+          "stream",
+          "processing",
+          "stream processing",
+          "466",
+          "streams"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "data_processing_stream",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44994192426699214,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:02.434386+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

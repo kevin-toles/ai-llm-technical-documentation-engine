@@ -1,0 +1,104 @@
+{
+  "book": {
+    "title": "Vibe Coding The Future of Programming"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:00:06.931057",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Vibe Coding The Future of Programming",
+      "chapter": 1,
+      "title": "The 70% Problem: AI-Assisted Workflows That Actually Work",
+      "chapter_id": "Vibe Coding The Future of Programming:ch1",
+      "cross_references": [
+        {
+          "target": "Vibe Coding The Future of Programming:ch2",
+          "score": 0.5723365733886928,
+          "base_score": 0.7872276223144881,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ai",
+          "code",
+          "human",
+          "tools",
+          "coding"
+        ],
+        "semantic": [],
+        "merged": [
+          "ai",
+          "code",
+          "human",
+          "tools",
+          "coding"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "ai_code_human",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.893613811157244,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:06.927451+00:00"
+      }
+    },
+    {
+      "book": "Vibe Coding The Future of Programming",
+      "chapter": 2,
+      "title": "Beyond the 70%: Maximizing Human Contribution",
+      "chapter_id": "Vibe Coding The Future of Programming:ch2",
+      "cross_references": [
+        {
+          "target": "Vibe Coding The Future of Programming:ch1",
+          "score": 0.5723365733886928,
+          "base_score": 0.7872276223144881,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ai",
+          "code",
+          "skills",
+          "junior",
+          "engineering"
+        ],
+        "semantic": [],
+        "merged": [
+          "ai",
+          "code",
+          "skills",
+          "junior",
+          "engineering"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "ai_code_skills",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.893613811157244,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:06.927475+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

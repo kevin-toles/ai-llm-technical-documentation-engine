@@ -1,0 +1,3020 @@
+{
+  "book": {
+    "title": "Distributed Systems 4e - Tanenbaum van Steen"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:45:39.864010",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-11)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch1",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch20",
+          "score": 0.5697104944130776,
+          "base_score": 0.6995174906884627,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch6",
+          "score": 0.5030546057620663,
+          "base_score": 0.5884243429367773,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "maarten",
+          "maarten van",
+          "van",
+          "van steen",
+          "architectures"
+        ],
+        "semantic": [],
+        "merged": [
+          "maarten",
+          "maarten van",
+          "van",
+          "van steen",
+          "architectures"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_socket_layer",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3983591541258026,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.789308+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 2,
+      "title": "Segment 2 (pages 12-21)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch2",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch4",
+          "score": 0.5814457733962934,
+          "base_score": 0.6450022149197482,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "systems",
+          "networked",
+          "networked computer",
+          "computer",
+          "computer systems"
+        ],
+        "semantic": [],
+        "merged": [
+          "systems",
+          "networked",
+          "networked computer",
+          "computer",
+          "computer systems"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "systems_security_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3956026119490955,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.789701+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 3,
+      "title": "Segment 3 (pages 22-32)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "distributed",
+          "transparency",
+          "distribution",
+          "systems",
+          "distributed systems"
+        ],
+        "semantic": [],
+        "merged": [
+          "distributed",
+          "transparency",
+          "distribution",
+          "systems",
+          "distributed systems"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3580508498948019,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:39.790010+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 4,
+      "title": "Segment 4 (pages 33-42)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch4",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch2",
+          "score": 0.5814457733962934,
+          "base_score": 0.6450022149197482,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch55",
+          "score": 0.5189521890013227,
+          "base_score": 0.5408462409281304,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "key",
+          "systems",
+          "service",
+          "distributed systems"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "key",
+          "systems",
+          "service",
+          "distributed systems"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "systems_security_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3950162226548968,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.790353+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 5,
+      "title": "Segment 5 (pages 43-51)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "high",
+          "computing",
+          "systems",
+          "high performance",
+          "performance"
+        ],
+        "semantic": [],
+        "merged": [
+          "high",
+          "computing",
+          "systems",
+          "high performance",
+          "performance"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3815464699452038,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:39.790672+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 6,
+      "title": "Segment 6 (pages 52-62)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch6",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch20",
+          "score": 0.5264482887141528,
+          "base_score": 0.627413814523588,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch1",
+          "score": 0.5030546057620663,
+          "base_score": 0.5884243429367773,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "transaction",
+          "applications",
+          "systems",
+          "application",
+          "distributed"
+        ],
+        "semantic": [],
+        "merged": [
+          "transaction",
+          "applications",
+          "systems",
+          "application",
+          "distributed"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_socket_layer",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36527048598879724,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.791025+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 7,
+      "title": "Segment 7 (pages 63-70)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch7",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch13",
+          "score": 0.5732141854063748,
+          "base_score": 0.6312829016032173,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch64",
+          "score": 0.5005007670797097,
+          "base_score": 0.5100938710587755,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sensor",
+          "mobile",
+          "sensor networks",
+          "computing",
+          "mobile computing"
+        ],
+        "semantic": [],
+        "merged": [
+          "sensor",
+          "mobile",
+          "sensor networks",
+          "computing",
+          "mobile computing"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "computing_pages_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3073247739885081,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.791348+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 8,
+      "title": "Segment 8 (pages 71-78)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch8",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch9",
+          "score": 0.5341827152057718,
+          "base_score": 0.640304525342953,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "layered",
+          "architectural",
+          "layer",
+          "architectural styles",
+          "styles"
+        ],
+        "semantic": [],
+        "merged": [
+          "layered",
+          "architectural",
+          "layer",
+          "architectural styles",
+          "styles"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_socket_layer",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34092596045765955,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.791681+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 9,
+      "title": "Segment 9 (pages 79-86)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch9",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch8",
+          "score": 0.5341827152057718,
+          "base_score": 0.640304525342953,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "object",
+          "interface",
+          "bucket",
+          "service",
+          "tuple"
+        ],
+        "semantic": [],
+        "merged": [
+          "object",
+          "interface",
+          "bucket",
+          "service",
+          "tuple"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_socket_layer",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3075960496802439,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.791988+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 10,
+      "title": "Segment 10 (pages 87-94)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "middleware",
+          "middleware distributed",
+          "object",
+          "distributed",
+          "application"
+        ],
+        "semantic": [],
+        "merged": [
+          "middleware",
+          "middleware distributed",
+          "object",
+          "distributed",
+          "application"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40015221532962475,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:39.792319+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 11,
+      "title": "Segment 11 (pages 95-104)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch11",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch17",
+          "score": 0.6352689494642925,
+          "base_score": 0.6421149157738207,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "server",
+          "client",
+          "client server",
+          "file",
+          "document"
+        ],
+        "semantic": [],
+        "merged": [
+          "server",
+          "client",
+          "client server",
+          "file",
+          "document"
+        ]
+      },
+      "topic_id": 10,
+      "topic_name": "server_client_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42744117123573383,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.794831+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 12,
+      "title": "Segment 12 (pages 105-113)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch12",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch32",
+          "score": 0.5595467511415987,
+          "base_score": 0.5159112519026645,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch26",
+          "score": 0.5537567049312044,
+          "base_score": 0.5062611748853407,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "node",
+          "nodes",
+          "peer",
+          "item",
+          "data item"
+        ],
+        "semantic": [],
+        "merged": [
+          "node",
+          "nodes",
+          "peer",
+          "item",
+          "data item"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "node_nodes_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3540228849843582,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.795231+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 13,
+      "title": "Segment 13 (pages 114-124)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch13",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch7",
+          "score": 0.5732141854063748,
+          "base_score": 0.6312829016032173,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cloud",
+          "edge",
+          "infrastructure",
+          "computing",
+          "edge infrastructure"
+        ],
+        "semantic": [],
+        "merged": [
+          "cloud",
+          "edge",
+          "infrastructure",
+          "computing",
+          "edge infrastructure"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "computing_pages_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25013319703545395,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.795541+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 14,
+      "title": "Segment 14 (pages 125-138)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch14",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "threads",
+          "thread",
+          "kernel",
+          "kernel threads",
+          "user"
+        ],
+        "semantic": [],
+        "merged": [
+          "threads",
+          "thread",
+          "kernel",
+          "kernel threads",
+          "user"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3409282496973836,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:39.795841+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 15,
+      "title": "Segment 15 (pages 139-149)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "virtualization",
+          "virtual",
+          "virtual machine",
+          "machine",
+          "instruction"
+        ],
+        "semantic": [],
+        "merged": [
+          "virtualization",
+          "virtual",
+          "virtual machine",
+          "machine",
+          "instruction"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33333015115558884,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:39.796140+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 16,
+      "title": "Segment 16 (pages 150-157)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch16",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "container",
+          "containers",
+          "virtual",
+          "virtual machines",
+          "vservers"
+        ],
+        "semantic": [],
+        "merged": [
+          "container",
+          "containers",
+          "virtual",
+          "virtual machines",
+          "vservers"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27504066603048555,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:39.796597+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 17,
+      "title": "Segment 17 (pages 158-169)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch17",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch11",
+          "score": 0.6352689494642925,
+          "base_score": 0.6421149157738207,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "server",
+          "client",
+          "end point",
+          "stateless",
+          "servers"
+        ],
+        "semantic": [],
+        "merged": [
+          "server",
+          "client",
+          "end point",
+          "stateless",
+          "servers"
+        ]
+      },
+      "topic_id": 10,
+      "topic_name": "server_client_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.306829934668831,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.796918+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 18,
+      "title": "Segment 18 (pages 170-180)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch18",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "object",
+          "server",
+          "adapter",
+          "object adapter",
+          "objects"
+        ],
+        "semantic": [],
+        "merged": [
+          "object",
+          "server",
+          "adapter",
+          "object adapter",
+          "objects"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32089841103453415,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:39.797260+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 19,
+      "title": "Segment 19 (pages 181-193)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch19",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "migration",
+          "code",
+          "code migration",
+          "client",
+          "server"
+        ],
+        "semantic": [],
+        "merged": [
+          "migration",
+          "code",
+          "code migration",
+          "client",
+          "server"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2431290595008069,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:39.797555+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 20,
+      "title": "Segment 20 (pages 194-202)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch20",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch1",
+          "score": 0.5697104944130776,
+          "base_score": 0.6995174906884627,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch6",
+          "score": 0.5264482887141528,
+          "base_score": 0.627413814523588,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch21",
+          "score": 0.5155991570789499,
+          "base_score": 0.6093319284649164,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "layer",
+          "communication",
+          "osi",
+          "protocols",
+          "physical layer"
+        ],
+        "semantic": [],
+        "merged": [
+          "layer",
+          "communication",
+          "osi",
+          "protocols",
+          "physical layer"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_socket_layer",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4010072953741879,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.797856+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 21,
+      "title": "Segment 21 (pages 203-214)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch21",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch20",
+          "score": 0.5155991570789499,
+          "base_score": 0.6093319284649164,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch23",
+          "score": 0.5011433516836489,
+          "base_score": 0.5852389194727481,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "stub",
+          "append",
+          "procedure",
+          "message",
+          "server stub"
+        ],
+        "semantic": [],
+        "merged": [
+          "stub",
+          "append",
+          "procedure",
+          "message",
+          "server stub"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_socket_layer",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3081848112183776,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.798153+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 22,
+      "title": "Segment 22 (pages 215-223)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch22",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "client",
+          "server",
+          "object",
+          "reference",
+          "client server"
+        ],
+        "semantic": [],
+        "merged": [
+          "client",
+          "server",
+          "object",
+          "reference",
+          "client server"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28492168260330575,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:39.798470+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 23,
+      "title": "Segment 23 (pages 224-233)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch23",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch21",
+          "score": 0.5011433516836489,
+          "base_score": 0.5852389194727481,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "socket",
+          "client",
+          "server",
+          "connection",
+          "connect"
+        ],
+        "semantic": [],
+        "merged": [
+          "socket",
+          "client",
+          "server",
+          "connection",
+          "connect"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_socket_layer",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32733404708976976,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.798763+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 24,
+      "title": "Segment 24 (pages 234-245)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch24",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "message",
+          "queuing",
+          "message queuing",
+          "queuing systems",
+          "queue"
+        ],
+        "semantic": [],
+        "merged": [
+          "message",
+          "queuing",
+          "message queuing",
+          "queuing systems",
+          "queue"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2954544270527246,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:39.799055+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 25,
+      "title": "Segment 25 (pages 246-255)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch25",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "node",
+          "nodes",
+          "tree",
+          "overlay",
+          "message"
+        ],
+        "semantic": [],
+        "merged": [
+          "node",
+          "nodes",
+          "tree",
+          "overlay",
+          "message"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3362960292960691,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:39.799365+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 26,
+      "title": "Segment 26 (pages 256-264)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch26",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch32",
+          "score": 0.5881088253680404,
+          "base_score": 0.5635147089467342,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch34",
+          "score": 0.5807052438991054,
+          "base_score": 0.5511754064985089,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch12",
+          "score": 0.5537567049312044,
+          "base_score": 0.5062611748853407,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "nodes",
+          "node",
+          "updated",
+          "infected",
+          "updates"
+        ],
+        "semantic": [],
+        "merged": [
+          "nodes",
+          "node",
+          "updated",
+          "infected",
+          "updates"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "node_nodes_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3165664817764305,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.799660+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 27,
+      "title": "Segment 27 (pages 265-273)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch27",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch28",
+          "score": 0.521258855561262,
+          "base_score": 0.5446906851946959,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "clock",
+          "clocks",
+          "time",
+          "clock synchronization",
+          "synchronization"
+        ],
+        "semantic": [],
+        "merged": [
+          "clock",
+          "clocks",
+          "time",
+          "clock synchronization",
+          "synchronization"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "clock_time_message",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24307584041999425,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.799955+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 28,
+      "title": "Segment 28 (pages 274-282)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch28",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch29",
+          "score": 0.6526258770806004,
+          "base_score": 0.6710431284676672,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch27",
+          "score": 0.521258855561262,
+          "base_score": 0.5446906851946959,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "message",
+          "clock",
+          "enter",
+          "queue",
+          "process"
+        ],
+        "semantic": [],
+        "merged": [
+          "message",
+          "clock",
+          "enter",
+          "queue",
+          "process"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "clock_time_message",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35145717419952727,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.800270+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 29,
+      "title": "Segment 29 (pages 283-291)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch29",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch28",
+          "score": 0.6526258770806004,
+          "base_score": 0.6710431284676672,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "message",
+          "process",
+          "pi",
+          "p2",
+          "resource"
+        ],
+        "semantic": [],
+        "merged": [
+          "message",
+          "process",
+          "pi",
+          "p2",
+          "resource"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "clock_time_message",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3102696308849151,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.800568+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 30,
+      "title": "Segment 30 (pages 292-301)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch30",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch48",
+          "score": 0.5356768124262871,
+          "base_score": 0.47612802071047844,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch51",
+          "score": 0.5275328332593309,
+          "base_score": 0.4625547220988848,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "process",
+          "coordinator",
+          "token",
+          "processes",
+          "election"
+        ],
+        "semantic": [],
+        "merged": [
+          "process",
+          "coordinator",
+          "token",
+          "processes",
+          "election"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "process_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31582346059308514,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.800867+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 31,
+      "title": "Segment 31 (pages 302-310)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch31",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "leader",
+          "election",
+          "leader election",
+          "self",
+          "voteid"
+        ],
+        "semantic": [],
+        "merged": [
+          "leader",
+          "election",
+          "leader election",
+          "self",
+          "voteid"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "process_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30671566451196686,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.801158+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 32,
+      "title": "Segment 32 (pages 311-318)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch32",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch26",
+          "score": 0.5881088253680404,
+          "base_score": 0.5635147089467342,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch34",
+          "score": 0.5665494706127917,
+          "base_score": 0.5275824510213195,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch12",
+          "score": 0.5595467511415987,
+          "base_score": 0.5159112519026645,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "node",
+          "nodes",
+          "links",
+          "exchange",
+          "neighbors"
+        ],
+        "semantic": [],
+        "merged": [
+          "node",
+          "nodes",
+          "links",
+          "exchange",
+          "neighbors"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "node_nodes_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3008299908704415,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.801521+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 33,
+      "title": "Segment 33 (pages 319-327)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch33",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "attackers",
+          "notifications",
+          "node",
+          "subscriptions",
+          "notification"
+        ],
+        "semantic": [],
+        "merged": [
+          "attackers",
+          "notifications",
+          "node",
+          "subscriptions",
+          "notification"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "node_nodes_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2076416838523572,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.801815+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 34,
+      "title": "Segment 34 (pages 328-335)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch34",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch26",
+          "score": 0.5807052438991054,
+          "base_score": 0.5511754064985089,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch32",
+          "score": 0.5665494706127917,
+          "base_score": 0.5275824510213195,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "nodes",
+          "node",
+          "position",
+          "si",
+          "satellite"
+        ],
+        "semantic": [],
+        "merged": [
+          "nodes",
+          "node",
+          "position",
+          "si",
+          "satellite"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "node_nodes_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25676628937529994,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.802135+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 35,
+      "title": "Segment 35 (pages 336-345)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch35",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch37",
+          "score": 0.52343887516351,
+          "base_score": 0.6223981252725166,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "entity",
+          "access point",
+          "names",
+          "address",
+          "access"
+        ],
+        "semantic": [],
+        "merged": [
+          "entity",
+          "access point",
+          "names",
+          "address",
+          "access"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "name_the_node",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3920024291262372,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.802455+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 36,
+      "title": "Segment 36 (pages 346-358)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch36",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "node",
+          "directory node",
+          "location record",
+          "directory",
+          "location"
+        ],
+        "semantic": [],
+        "merged": [
+          "node",
+          "directory node",
+          "location record",
+          "directory",
+          "location"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "name_the_node",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26476227026167276,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.802745+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 37,
+      "title": "Segment 37 (pages 359-381)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch37",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch35",
+          "score": 0.52343887516351,
+          "base_score": 0.6223981252725166,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "nl",
+          "vu",
+          "cs",
+          "node",
+          "server"
+        ],
+        "semantic": [],
+        "merged": [
+          "nl",
+          "vu",
+          "cs",
+          "node",
+          "server"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "name_the_node",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28131993612622525,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.803040+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 38,
+      "title": "Segment 38 (pages 382-390)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch38",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "file",
+          "file handle",
+          "mounted",
+          "mount",
+          "directory"
+        ],
+        "semantic": [],
+        "merged": [
+          "file",
+          "file handle",
+          "mounted",
+          "mount",
+          "directory"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "name_the_node",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24354156188458947,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.803350+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 39,
+      "title": "Segment 39 (pages 391-400)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch39",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "attribute",
+          "attributes",
+          "naming",
+          "based naming",
+          "attribute based"
+        ],
+        "semantic": [],
+        "merged": [
+          "attribute",
+          "attributes",
+          "naming",
+          "based naming",
+          "attribute based"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "name_the_node",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.22357350414010663,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.803644+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 40,
+      "title": "Segment 40 (pages 401-415)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch40",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "consistency",
+          "named data",
+          "named",
+          "data store"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "consistency",
+          "named data",
+          "named",
+          "data store"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "name_the_node",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2586839148863935,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.803940+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 41,
+      "title": "Segment 41 (pages 416-423)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch41",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch42",
+          "score": 0.6156967839287358,
+          "base_score": 0.702087232473819,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "write",
+          "read",
+          "write operations",
+          "r1",
+          "operations"
+        ],
+        "semantic": [],
+        "merged": [
+          "write",
+          "read",
+          "write operations",
+          "r1",
+          "operations"
+        ]
+      },
+      "topic_id": 8,
+      "topic_name": "write_consistency_read",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2734150147423028,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.804257+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 42,
+      "title": "Segment 42 (pages 424-439)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch42",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch41",
+          "score": 0.6156967839287358,
+          "base_score": 0.702087232473819,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch44",
+          "score": 0.5367145859183047,
+          "base_score": 0.5704502357897671,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "consistency",
+          "write",
+          "x1",
+          "operation",
+          "monotonic"
+        ],
+        "semantic": [],
+        "merged": [
+          "consistency",
+          "write",
+          "x1",
+          "operation",
+          "monotonic"
+        ]
+      },
+      "topic_id": 8,
+      "topic_name": "write_consistency_read",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2894704856737229,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.804606+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 43,
+      "title": "Segment 43 (pages 440-450)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch43",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch46",
+          "score": 0.5484443769519493,
+          "base_score": 0.589999887512508,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch45",
+          "score": 0.5085205352358898,
+          "base_score": 0.43086755872648314,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "server",
+          "replica",
+          "client",
+          "caches",
+          "placement"
+        ],
+        "semantic": [],
+        "merged": [
+          "server",
+          "replica",
+          "client",
+          "caches",
+          "placement"
+        ]
+      },
+      "topic_id": 9,
+      "topic_name": "server_client_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29321746977252605,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.804908+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 44,
+      "title": "Segment 44 (pages 451-458)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch44",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch42",
+          "score": 0.5367145859183047,
+          "base_score": 0.5704502357897671,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "primary",
+          "write",
+          "replicated",
+          "backup",
+          "replicated object"
+        ],
+        "semantic": [],
+        "merged": [
+          "primary",
+          "write",
+          "replicated",
+          "backup",
+          "replicated object"
+        ]
+      },
+      "topic_id": 8,
+      "topic_name": "write_consistency_read",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36531625522513533,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.805265+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 45,
+      "title": "Segment 45 (pages 459-466)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch45",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch46",
+          "score": 0.585022639389085,
+          "base_score": 0.6509636582410676,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch43",
+          "score": 0.5085205352358898,
+          "base_score": 0.43086755872648314,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "write",
+          "server",
+          "writes",
+          "client",
+          "si"
+        ],
+        "semantic": [],
+        "merged": [
+          "write",
+          "server",
+          "writes",
+          "client",
+          "si"
+        ]
+      },
+      "topic_id": 9,
+      "topic_name": "server_client_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.324979186733829,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.805560+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 46,
+      "title": "Segment 46 (pages 467-475)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch46",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch45",
+          "score": 0.585022639389085,
+          "base_score": 0.6509636582410676,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch43",
+          "score": 0.5484443769519493,
+          "base_score": 0.589999887512508,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "caching",
+          "server",
+          "web",
+          "cache",
+          "edge server"
+        ],
+        "semantic": [],
+        "merged": [
+          "caching",
+          "server",
+          "web",
+          "cache",
+          "edge server"
+        ]
+      },
+      "topic_id": 9,
+      "topic_name": "server_client_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32082085644793584,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.805881+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 47,
+      "title": "Segment 47 (pages 476-485)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch47",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch54",
+          "score": 0.5240712952655161,
+          "base_score": 0.6234521587758602,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch51",
+          "score": 0.5008558710855114,
+          "base_score": 0.5847597851425191,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "failure",
+          "failures",
+          "fault",
+          "omission",
+          "omission failure"
+        ],
+        "semantic": [],
+        "merged": [
+          "failure",
+          "failures",
+          "fault",
+          "omission",
+          "omission failure"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "process_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34831911068438115,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.806185+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 48,
+      "title": "Segment 48 (pages 486-495)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch48",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch51",
+          "score": 0.6661490765249781,
+          "base_score": 0.6935817942082968,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch52",
+          "score": 0.5729962040692318,
+          "base_score": 0.6309195993746455,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch30",
+          "score": 0.5356768124262871,
+          "base_score": 0.47612802071047844,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch53",
+          "score": 0.5050186033926579,
+          "base_score": 0.5916976723210966,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "group",
+          "process",
+          "processes",
+          "leader",
+          "groups"
+        ],
+        "semantic": [],
+        "merged": [
+          "group",
+          "process",
+          "processes",
+          "leader",
+          "groups"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "process_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3323609830944527,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.806524+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 49,
+      "title": "Segment 49 (pages 496-506)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch49",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "operation",
+          "proposal",
+          "o1",
+          "accept",
+          "acceptors"
+        ],
+        "semantic": [],
+        "merged": [
+          "operation",
+          "proposal",
+          "o1",
+          "accept",
+          "acceptors"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "process_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34582181506504944,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.806821+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 50,
+      "title": "Segment 50 (pages 507-517)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch50",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "backups",
+          "backup",
+          "primary",
+          "nonfaulty",
+          "b2"
+        ],
+        "semantic": [],
+        "merged": [
+          "backups",
+          "backup",
+          "primary",
+          "nonfaulty",
+          "b2"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "process_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3161044828343909,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.807113+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 51,
+      "title": "Segment 51 (pages 518-528)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch51",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch48",
+          "score": 0.6661490765249781,
+          "base_score": 0.6935817942082968,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch53",
+          "score": 0.5621294742188999,
+          "base_score": 0.6868824570315,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch54",
+          "score": 0.5309765087634356,
+          "base_score": 0.5608867738649852,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch30",
+          "score": 0.5275328332593309,
+          "base_score": 0.4625547220988848,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch52",
+          "score": 0.50879277569881,
+          "base_score": 0.5979879594980166,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "server",
+          "document",
+          "client",
+          "processes",
+          "process"
+        ],
+        "semantic": [],
+        "merged": [
+          "server",
+          "document",
+          "client",
+          "processes",
+          "process"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "process_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3895230527379432,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.807439+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 52,
+      "title": "Segment 52 (pages 529-537)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch52",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch53",
+          "score": 0.5909757196451217,
+          "base_score": 0.6608854586677955,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch54",
+          "score": 0.5754419333223828,
+          "base_score": 0.6349958147965639,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch48",
+          "score": 0.5729962040692318,
+          "base_score": 0.6309195993746455,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch51",
+          "score": 0.50879277569881,
+          "base_score": 0.5979879594980166,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "message",
+          "reliable",
+          "group",
+          "feedback",
+          "receivers"
+        ],
+        "semantic": [],
+        "merged": [
+          "message",
+          "reliable",
+          "group",
+          "feedback",
+          "receivers"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "process_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37450407550889736,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.807738+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 53,
+      "title": "Segment 53 (pages 538-551)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch53",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch52",
+          "score": 0.5909757196451217,
+          "base_score": 0.6608854586677955,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch51",
+          "score": 0.5621294742188999,
+          "base_score": 0.6868824570315,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch54",
+          "score": 0.5348420438524162,
+          "base_score": 0.5673293323466194,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch48",
+          "score": 0.5050186033926579,
+          "base_score": 0.5916976723210966,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "participant",
+          "message",
+          "coordinator",
+          "commit",
+          "participants"
+        ],
+        "semantic": [],
+        "merged": [
+          "participant",
+          "message",
+          "coordinator",
+          "commit",
+          "participants"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "process_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3899138758681851,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.808094+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 54,
+      "title": "Segment 54 (pages 552-559)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch54",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch52",
+          "score": 0.5754419333223828,
+          "base_score": 0.6349958147965639,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch53",
+          "score": 0.5348420438524162,
+          "base_score": 0.5673293323466194,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch51",
+          "score": 0.5309765087634356,
+          "base_score": 0.5608867738649852,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch47",
+          "score": 0.5240712952655161,
+          "base_score": 0.6234521587758602,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "process",
+          "message",
+          "checkpointing",
+          "recovery",
+          "dep"
+        ],
+        "semantic": [],
+        "merged": [
+          "process",
+          "message",
+          "checkpointing",
+          "recovery",
+          "dep"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "process_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34152688372322304,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.808439+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 55,
+      "title": "Segment 55 (pages 560-567)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch55",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch4",
+          "score": 0.5189521890013227,
+          "base_score": 0.5408462409281304,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "security",
+          "secure",
+          "security mechanisms",
+          "mechanisms",
+          "systems"
+        ],
+        "semantic": [],
+        "merged": [
+          "security",
+          "secure",
+          "security mechanisms",
+          "mechanisms",
+          "systems"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "systems_security_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32826142131541614,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.808734+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 56,
+      "title": "Segment 56 (pages 568-576)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch56",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "encryption",
+          "bloom",
+          "encrypted",
+          "key",
+          "homomorphic encryption"
+        ],
+        "semantic": [],
+        "merged": [
+          "encryption",
+          "bloom",
+          "encrypted",
+          "key",
+          "homomorphic encryption"
+        ]
+      },
+      "topic_id": 11,
+      "topic_name": "access_control_rights",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31534385047118746,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.809031+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 57,
+      "title": "Segment 57 (pages 577-586)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch57",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch58",
+          "score": 0.6771576727790016,
+          "base_score": 0.5928818355840503,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "key",
+          "public",
+          "public key",
+          "bob",
+          "alice"
+        ],
+        "semantic": [],
+        "merged": [
+          "key",
+          "public",
+          "public key",
+          "bob",
+          "alice"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "key_bob_alice",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.22742635917995085,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.809338+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 58,
+      "title": "Segment 58 (pages 587-599)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch58",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch57",
+          "score": 0.6771576727790016,
+          "base_score": 0.5928818355840503,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "bob",
+          "alice",
+          "key",
+          "ka",
+          "secret key"
+        ],
+        "semantic": [],
+        "merged": [
+          "bob",
+          "alice",
+          "key",
+          "ka",
+          "secret key"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "key_bob_alice",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.18607732545527472,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.810124+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 59,
+      "title": "Segment 59 (pages 600-607)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch59",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "sybil",
+          "work",
+          "attack",
+          "trust",
+          "sybils"
+        ],
+        "semantic": [],
+        "merged": [
+          "sybil",
+          "work",
+          "attack",
+          "trust",
+          "sybils"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "key_bob_alice",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24845941179032294,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.810482+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 60,
+      "title": "Segment 60 (pages 608-619)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch60",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "access",
+          "access control",
+          "control",
+          "rights",
+          "alice"
+        ],
+        "semantic": [],
+        "merged": [
+          "access",
+          "access control",
+          "control",
+          "rights",
+          "alice"
+        ]
+      },
+      "topic_id": 11,
+      "topic_name": "access_control_rights",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2654815305227542,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.810786+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 61,
+      "title": "Segment 61 (pages 620-627)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch61",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "authorization",
+          "authorization server",
+          "client",
+          "entity",
+          "permissions"
+        ],
+        "semantic": [],
+        "merged": [
+          "authorization",
+          "authorization server",
+          "client",
+          "entity",
+          "permissions"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "key_bob_alice",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2494434515908739,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.811090+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 62,
+      "title": "Segment 62 (pages 628-635)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch62",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "intrusion",
+          "detection",
+          "distributed",
+          "intrusion detection",
+          "community"
+        ],
+        "semantic": [],
+        "merged": [
+          "intrusion",
+          "detection",
+          "distributed",
+          "intrusion detection",
+          "community"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.282788608425523,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:39.811463+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 63,
+      "title": "Segment 63 (pages 636-643)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch63",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "service",
+          "based",
+          "protocol",
+          "network",
+          "139"
+        ],
+        "semantic": [],
+        "merged": [
+          "service",
+          "based",
+          "protocol",
+          "network",
+          "139"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31628616620801664,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:39.811759+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 64,
+      "title": "Segment 64 (pages 644-667)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch64",
+      "cross_references": [
+        {
+          "target": "Distributed Systems 4e - Tanenbaum van Steen:ch7",
+          "score": 0.5005007670797097,
+          "base_score": 0.5100938710587755,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pages",
+          "acm",
+          "systems",
+          "conference",
+          "computing"
+        ],
+        "semantic": [],
+        "merged": [
+          "pages",
+          "acm",
+          "systems",
+          "conference",
+          "computing"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "computing_pages_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28957155669318485,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.812057+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 65,
+      "title": "Segment 65 (pages 668-679)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch65",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "pages",
+          "conference",
+          "acm",
+          "ieee",
+          "computing"
+        ],
+        "semantic": [],
+        "merged": [
+          "pages",
+          "conference",
+          "acm",
+          "ieee",
+          "computing"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "systems_security_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3100651532976493,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:39.812358+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems 4e - Tanenbaum van Steen",
+      "chapter": 66,
+      "title": "Segment 66 (pages 680-685)",
+      "chapter_id": "Distributed Systems 4e - Tanenbaum van Steen:ch66",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "distributed",
+          "processes",
+          "operating",
+          "scaling",
+          "computer processes"
+        ],
+        "semantic": [],
+        "merged": [
+          "distributed",
+          "processes",
+          "operating",
+          "scaling",
+          "computer processes"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4197028637047426,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:39.812656+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

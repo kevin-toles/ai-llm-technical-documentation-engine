@@ -1,0 +1,1113 @@
+{
+  "book": {
+    "title": "Prometheus Up and Running 2nd Edition - Brian Brazil"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:54:14.908969",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Prometheus Up and Running 2nd Edition - Brian Brazil",
+      "chapter": 1,
+      "title": "What Is Prometheus?",
+      "chapter_id": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch1",
+      "cross_references": [
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch2",
+          "score": 0.6143922244255047,
+          "base_score": 0.7739870407091745,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch18",
+          "score": 0.5509645491993428,
+          "base_score": 0.6682742486655713,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch21",
+          "score": 0.5464695057561363,
+          "base_score": 0.8367084355194864,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch17",
+          "score": 0.5402052335872394,
+          "base_score": 0.6503420559787323,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch6",
+          "score": 0.5369153076393963,
+          "base_score": 0.6448588460656606,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "monitoring",
+          "data",
+          "metrics",
+          "events",
+          "systems"
+        ],
+        "semantic": [],
+        "merged": [
+          "monitoring",
+          "data",
+          "metrics",
+          "events",
+          "systems"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_prometheus",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5885112545837051,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:14.885358+00:00"
+      }
+    },
+    {
+      "book": "Prometheus Up and Running 2nd Edition - Brian Brazil",
+      "chapter": 2,
+      "title": "Getting Started with Prometheus",
+      "chapter_id": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch2",
+      "cross_references": [
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch1",
+          "score": 0.6143922244255047,
+          "base_score": 0.7739870407091745,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch17",
+          "score": 0.6086792063347007,
+          "base_score": 0.7644653438911679,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch20",
+          "score": 0.5910127418943485,
+          "base_score": 0.7350212364905808,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch18",
+          "score": 0.5872908694065617,
+          "base_score": 0.7288181156776029,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "level info",
+          "targets",
+          "page",
+          "level",
+          "figure"
+        ],
+        "semantic": [],
+        "merged": [
+          "level info",
+          "targets",
+          "page",
+          "level",
+          "figure"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_prometheus",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5867816261336986,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:14.885529+00:00"
+      }
+    },
+    {
+      "book": "Prometheus Up and Running 2nd Edition - Brian Brazil",
+      "chapter": 3,
+      "title": "Instrumentation",
+      "chapter_id": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch3",
+      "cross_references": [
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch5",
+          "score": 0.6392381069639269,
+          "base_score": 0.7413227708658041,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch4",
+          "score": 0.5922875305678094,
+          "base_score": 0.7371458842796823,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch13",
+          "score": 0.5401799858505697,
+          "base_score": 0.6502999764176163,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch12",
+          "score": 0.5247128879061581,
+          "base_score": 0.624521479843597,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "self",
+          "hello",
+          "hello world",
+          "world",
+          "latency"
+        ],
+        "semantic": [],
+        "merged": [
+          "self",
+          "hello",
+          "hello world",
+          "world",
+          "latency"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5402939988514089,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:14.885640+00:00"
+      }
+    },
+    {
+      "book": "Prometheus Up and Running 2nd Edition - Brian Brazil",
+      "chapter": 4,
+      "title": "Exposition",
+      "chapter_id": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch4",
+      "cross_references": [
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch5",
+          "score": 0.5958057811823426,
+          "base_score": 0.7430096353039043,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch3",
+          "score": 0.5922875305678094,
+          "base_score": 0.7371458842796823,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch12",
+          "score": 0.5421747577597983,
+          "base_score": 0.5795505221922563,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch13",
+          "score": 0.5221659174305017,
+          "base_score": 0.6202765290508361,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch1",
+          "score": 0.504603897273161,
+          "base_score": 0.7669324213811943,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "import",
+          "metrics",
+          "exposition",
+          "client",
+          "pushgateway"
+        ],
+        "semantic": [],
+        "merged": [
+          "import",
+          "metrics",
+          "exposition",
+          "client",
+          "pushgateway"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.563841006843249,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:14.885739+00:00"
+      }
+    },
+    {
+      "book": "Prometheus Up and Running 2nd Edition - Brian Brazil",
+      "chapter": 5,
+      "title": "Labels",
+      "chapter_id": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch5",
+      "cross_references": [
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch3",
+          "score": 0.6392381069639269,
+          "base_score": 0.7413227708658041,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch4",
+          "score": 0.5958057811823426,
+          "base_score": 0.7430096353039043,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch13",
+          "score": 0.5907249966574589,
+          "base_score": 0.7345416610957649,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch12",
+          "score": 0.5102989304022884,
+          "base_score": 0.6004982173371471,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "labels",
+          "label",
+          "self",
+          "metric",
+          "path"
+        ],
+        "semantic": [],
+        "merged": [
+          "labels",
+          "label",
+          "self",
+          "metric",
+          "path"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5631877019595676,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:14.885834+00:00"
+      }
+    },
+    {
+      "book": "Prometheus Up and Running 2nd Edition - Brian Brazil",
+      "chapter": 6,
+      "title": "Dashboarding with Grafana",
+      "chapter_id": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch6",
+      "cross_references": [
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch1",
+          "score": 0.5369153076393963,
+          "base_score": 0.6448588460656606,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "panel",
+          "dashboard",
+          "click",
+          "panels",
+          "grafana"
+        ],
+        "semantic": [],
+        "merged": [
+          "panel",
+          "dashboard",
+          "click",
+          "panels",
+          "grafana"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_prometheus",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4507086566188891,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:14.885928+00:00"
+      }
+    },
+    {
+      "book": "Prometheus Up and Running 2nd Edition - Brian Brazil",
+      "chapter": 7,
+      "title": "Node Exporter",
+      "chapter_id": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "textfile",
+          "collector",
+          "node exporter",
+          "exporter",
+          "metrics"
+        ],
+        "semantic": [],
+        "merged": [
+          "textfile",
+          "collector",
+          "node exporter",
+          "exporter",
+          "metrics"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35275394293228335,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:54:14.886023+00:00"
+      }
+    },
+    {
+      "book": "Prometheus Up and Running 2nd Edition - Brian Brazil",
+      "chapter": 8,
+      "title": "Service Discovery",
+      "chapter_id": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "target",
+          "team",
+          "source_labels",
+          "regex",
+          "action"
+        ],
+        "semantic": [],
+        "merged": [
+          "target",
+          "team",
+          "source_labels",
+          "regex",
+          "action"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.529116542666873,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:54:14.886115+00:00"
+      }
+    },
+    {
+      "book": "Prometheus Up and Running 2nd Edition - Brian Brazil",
+      "chapter": 9,
+      "title": "Containers and Kubernetes",
+      "chapter_id": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "kubernetes",
+          "service",
+          "var",
+          "run secrets",
+          "kubernetes service"
+        ],
+        "semantic": [],
+        "merged": [
+          "kubernetes",
+          "service",
+          "var",
+          "run secrets",
+          "kubernetes service"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5254213437555944,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:54:14.886225+00:00"
+      }
+    },
+    {
+      "book": "Prometheus Up and Running 2nd Edition - Brian Brazil",
+      "chapter": 10,
+      "title": "Common Exporters",
+      "chapter_id": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch10",
+      "cross_references": [
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch12",
+          "score": 0.5014950939000499,
+          "base_score": 0.585825156500083,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "blackbox",
+          "probe",
+          "blackbox exporter",
+          "module",
+          "exporter"
+        ],
+        "semantic": [],
+        "merged": [
+          "blackbox",
+          "probe",
+          "blackbox exporter",
+          "module",
+          "exporter"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.374465434087936,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:14.886318+00:00"
+      }
+    },
+    {
+      "book": "Prometheus Up and Running 2nd Edition - Brian Brazil",
+      "chapter": 11,
+      "title": "Working with Other Monitoring Systems",
+      "chapter_id": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch11",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "statsd",
+          "exporter",
+          "statsd exporter",
+          "influxdb",
+          "metrics"
+        ],
+        "semantic": [],
+        "merged": [
+          "statsd",
+          "exporter",
+          "statsd exporter",
+          "influxdb",
+          "metrics"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5151797866020116,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:54:14.886430+00:00"
+      }
+    },
+    {
+      "book": "Prometheus Up and Running 2nd Edition - Brian Brazil",
+      "chapter": 12,
+      "title": "Writing Exporters",
+      "chapter_id": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch12",
+      "cross_references": [
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch4",
+          "score": 0.5421747577597983,
+          "base_score": 0.5795505221922563,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch3",
+          "score": 0.5247128879061581,
+          "base_score": 0.624521479843597,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch5",
+          "score": 0.5102989304022884,
+          "base_score": 0.6004982173371471,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch10",
+          "score": 0.5014950939000499,
+          "base_score": 0.585825156500083,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "consul",
+          "consul metric",
+          "ch",
+          "metrics",
+          "nil"
+        ],
+        "semantic": [],
+        "merged": [
+          "consul",
+          "consul metric",
+          "ch",
+          "metrics",
+          "nil"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48940438911560075,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:14.886542+00:00"
+      }
+    },
+    {
+      "book": "Prometheus Up and Running 2nd Edition - Brian Brazil",
+      "chapter": 13,
+      "title": "Introduction to PromQL",
+      "chapter_id": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch13",
+      "cross_references": [
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch5",
+          "score": 0.5907249966574589,
+          "base_score": 0.7345416610957649,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch3",
+          "score": 0.5401799858505697,
+          "base_score": 0.6502999764176163,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch4",
+          "score": 0.5221659174305017,
+          "base_score": 0.6202765290508361,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "time",
+          "vector",
+          "instant",
+          "query",
+          "time series"
+        ],
+        "semantic": [],
+        "merged": [
+          "time",
+          "vector",
+          "instant",
+          "query",
+          "time series"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5248985093851039,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:14.886674+00:00"
+      }
+    },
+    {
+      "book": "Prometheus Up and Running 2nd Edition - Brian Brazil",
+      "chapter": 14,
+      "title": "Aggregation Operators",
+      "chapter_id": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch14",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "tmpfs",
+          "group",
+          "node_filesystem_size_bytes",
+          "node_filesystem_size_bytes device",
+          "fstype"
+        ],
+        "semantic": [],
+        "merged": [
+          "tmpfs",
+          "group",
+          "node_filesystem_size_bytes",
+          "node_filesystem_size_bytes device",
+          "fstype"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28152981451681347,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:14.886784+00:00"
+      }
+    },
+    {
+      "book": "Prometheus Up and Running 2nd Edition - Brian Brazil",
+      "chapter": 15,
+      "title": "Binary Operators",
+      "chapter_id": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "lefthand",
+          "labels",
+          "operator",
+          "node_hwmon_sensor_label",
+          "samples"
+        ],
+        "semantic": [],
+        "merged": [
+          "lefthand",
+          "labels",
+          "operator",
+          "node_hwmon_sensor_label",
+          "samples"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_you",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.22225550461766308,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:14.886878+00:00"
+      }
+    },
+    {
+      "book": "Prometheus Up and Running 2nd Edition - Brian Brazil",
+      "chapter": 16,
+      "title": "Functions",
+      "chapter_id": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch16",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "vector",
+          "instant",
+          "instant vector",
+          "functions",
+          "range"
+        ],
+        "semantic": [],
+        "merged": [
+          "vector",
+          "instant",
+          "instant vector",
+          "functions",
+          "range"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26414909361973005,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:54:14.886969+00:00"
+      }
+    },
+    {
+      "book": "Prometheus Up and Running 2nd Edition - Brian Brazil",
+      "chapter": 17,
+      "title": "Recording Rules",
+      "chapter_id": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch17",
+      "cross_references": [
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch2",
+          "score": 0.6086792063347007,
+          "base_score": 0.7644653438911679,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch18",
+          "score": 0.5659160322579125,
+          "base_score": 0.693193387096521,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch1",
+          "score": 0.5402052335872394,
+          "base_score": 0.6503420559787323,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch20",
+          "score": 0.5257469321281307,
+          "base_score": 0.6262448868802178,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "rules",
+          "recording",
+          "recording rules",
+          "rate5m",
+          "rule"
+        ],
+        "semantic": [],
+        "merged": [
+          "rules",
+          "recording",
+          "recording rules",
+          "rate5m",
+          "rule"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_prometheus",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5439906210480049,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:14.887064+00:00"
+      }
+    },
+    {
+      "book": "Prometheus Up and Running 2nd Edition - Brian Brazil",
+      "chapter": 18,
+      "title": "Alerting",
+      "chapter_id": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch18",
+      "cross_references": [
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch2",
+          "score": 0.5872908694065617,
+          "base_score": 0.7288181156776029,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch17",
+          "score": 0.5659160322579125,
+          "base_score": 0.693193387096521,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch1",
+          "score": 0.5509645491993428,
+          "base_score": 0.6682742486655713,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch19",
+          "score": 0.5423510708429942,
+          "base_score": 0.8298443773309162,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "alert",
+          "alerts",
+          "alerting",
+          "labels",
+          "severity"
+        ],
+        "semantic": [],
+        "merged": [
+          "alert",
+          "alerts",
+          "alerting",
+          "labels",
+          "severity"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_prometheus",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5169518823191857,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:14.887157+00:00"
+      }
+    },
+    {
+      "book": "Prometheus Up and Running 2nd Edition - Brian Brazil",
+      "chapter": 19,
+      "title": "Alertmanager",
+      "chapter_id": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch19",
+      "cross_references": [
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch18",
+          "score": 0.5423510708429942,
+          "base_score": 0.8298443773309162,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "alerts",
+          "notification",
+          "receiver",
+          "firing",
+          "alertmanager"
+        ],
+        "semantic": [],
+        "merged": [
+          "alerts",
+          "notification",
+          "receiver",
+          "firing",
+          "alertmanager"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4304875535263902,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:54:14.887249+00:00"
+      }
+    },
+    {
+      "book": "Prometheus Up and Running 2nd Edition - Brian Brazil",
+      "chapter": 20,
+      "title": "Server-Side Security",
+      "chapter_id": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch20",
+      "cross_references": [
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch2",
+          "score": 0.5910127418943485,
+          "base_score": 0.7350212364905808,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch17",
+          "score": 0.5257469321281307,
+          "base_score": 0.6262448868802178,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch1",
+          "score": 0.5211035306176174,
+          "base_score": 0.6185058843626957,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "basic authentication",
+          "authentication",
+          "web",
+          "web yml",
+          "prometheus crt"
+        ],
+        "semantic": [],
+        "merged": [
+          "basic authentication",
+          "authentication",
+          "web",
+          "web yml",
+          "prometheus crt"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_prometheus",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4710711109215376,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:14.887344+00:00"
+      }
+    },
+    {
+      "book": "Prometheus Up and Running 2nd Edition - Brian Brazil",
+      "chapter": 21,
+      "title": "Putting It All Together",
+      "chapter_id": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch21",
+      "cross_references": [
+        {
+          "target": "Prometheus Up and Running 2nd Edition - Brian Brazil:ch1",
+          "score": 0.5464695057561363,
+          "base_score": 0.8367084355194864,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "prometheus servers",
+          "servers",
+          "metrics",
+          "datacenter",
+          "global prometheus"
+        ],
+        "semantic": [],
+        "merged": [
+          "prometheus servers",
+          "servers",
+          "metrics",
+          "datacenter",
+          "global prometheus"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5748713279776825,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:54:14.887453+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

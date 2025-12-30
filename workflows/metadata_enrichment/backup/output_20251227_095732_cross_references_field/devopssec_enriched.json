@@ -1,0 +1,252 @@
+{
+  "book": {
+    "title": "devopssec"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:00:54.594838",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "devopssec",
+      "chapter": 1,
+      "title": "DevOpsSec: Delivering Secure Software through Continuous Delivery",
+      "chapter_id": "devopssec:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "systems",
+          "design build",
+          "delivery",
+          "run",
+          "ideas"
+        ],
+        "semantic": [],
+        "merged": [
+          "systems",
+          "design build",
+          "delivery",
+          "run",
+          "ideas"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "devops_systems_continuous",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6504470598385965,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:54.581851+00:00"
+      }
+    },
+    {
+      "book": "devopssec",
+      "chapter": 2,
+      "title": "Security and Compliance Challenges and Constraints in DevOps",
+      "chapter_id": "devopssec:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "changes",
+          "developers",
+          "make",
+          "need",
+          "production"
+        ],
+        "semantic": [],
+        "merged": [
+          "changes",
+          "developers",
+          "make",
+          "need",
+          "production"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "changes_developers_make",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6705121073135615,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:54.581908+00:00"
+      }
+    },
+    {
+      "book": "devopssec",
+      "chapter": 3,
+      "title": "Keys to Injecting Security into DevOps",
+      "chapter_id": "devopssec:ch3",
+      "cross_references": [
+        {
+          "target": "devopssec:ch4",
+          "score": 0.5361130619473363,
+          "base_score": 0.6435217699122273,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "engineers",
+          "software",
+          "changes",
+          "secure",
+          "attackers"
+        ],
+        "semantic": [],
+        "merged": [
+          "engineers",
+          "software",
+          "changes",
+          "secure",
+          "attackers"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "security_code_continuous",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7067157891631819,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:54.581952+00:00"
+      }
+    },
+    {
+      "book": "devopssec",
+      "chapter": 4,
+      "title": "Security as Code: Security Tools and Practices in Continuous Delivery",
+      "chapter_id": "devopssec:ch4",
+      "cross_references": [
+        {
+          "target": "devopssec:ch3",
+          "score": 0.5361130619473363,
+          "base_score": 0.6435217699122273,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "delivery",
+          "continuous delivery",
+          "tools",
+          "testing",
+          "security code"
+        ],
+        "semantic": [],
+        "merged": [
+          "delivery",
+          "continuous delivery",
+          "tools",
+          "testing",
+          "security code"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "security_code_continuous",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7178475940625849,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:54.581983+00:00"
+      }
+    },
+    {
+      "book": "devopssec",
+      "chapter": 5,
+      "title": "Compliance as Code",
+      "chapter_id": "devopssec:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "changes",
+          "automated",
+          "delivery",
+          "toolkit",
+          "audit"
+        ],
+        "semantic": [],
+        "merged": [
+          "changes",
+          "automated",
+          "delivery",
+          "toolkit",
+          "audit"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "changes_automated_delivery",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7065363191980775,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:54.582011+00:00"
+      }
+    },
+    {
+      "book": "devopssec",
+      "chapter": 6,
+      "title": "Conclusion: Building a Secure DevOps Capability and Culture",
+      "chapter_id": "devopssec:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "culture",
+          "secure devops",
+          "conclusion building",
+          "capability culture",
+          "conclusion"
+        ],
+        "semantic": [],
+        "merged": [
+          "culture",
+          "secure devops",
+          "conclusion building",
+          "capability culture",
+          "conclusion"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "culture_devops_capability",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7442940964975859,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:54.582039+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

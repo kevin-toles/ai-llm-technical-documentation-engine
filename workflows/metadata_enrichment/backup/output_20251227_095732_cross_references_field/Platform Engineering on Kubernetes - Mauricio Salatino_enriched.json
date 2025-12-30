@@ -1,0 +1,1696 @@
+{
+  "book": {
+    "title": "Platform Engineering on Kubernetes - Mauricio Salatino"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:53:07.125517",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Platform Engineering on Kubernetes - Mauricio Salatino",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-8)",
+      "chapter_id": "Platform Engineering on Kubernetes - Mauricio Salatino:ch1",
+      "cross_references": [
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch9",
+          "score": 0.6161916458697745,
+          "base_score": 0.6103194097829574,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch6",
+          "score": 0.6065017605146715,
+          "base_score": 0.6867621934503785,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch5",
+          "score": 0.5487470210084415,
+          "base_score": 0.5905042942733285,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "manning",
+          "application",
+          "service",
+          "books",
+          "pipeline"
+        ],
+        "semantic": [],
+        "merged": [
+          "manning",
+          "application",
+          "service",
+          "books",
+          "pipeline"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "application_the_applications",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.541819110079743,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:07.098209+00:00"
+      }
+    },
+    {
+      "book": "Platform Engineering on Kubernetes - Mauricio Salatino",
+      "chapter": 2,
+      "title": "Segment 2 (pages 9-16)",
+      "chapter_id": "Platform Engineering on Kubernetes - Mauricio Salatino:ch2",
+      "cross_references": [
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch4",
+          "score": 0.7206737852355053,
+          "base_score": 0.665408689678223,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch18",
+          "score": 0.7013410851846397,
+          "base_score": 0.7522351419743994,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch16",
+          "score": 0.6784174115642979,
+          "base_score": 0.7140290192738299,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch3",
+          "score": 0.6165880461758796,
+          "base_score": 0.7776467436264659,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch27",
+          "score": 0.6049049321973973,
+          "base_score": 0.7581748869956622,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "book",
+          "platform",
+          "projects",
+          "teams",
+          "platforms"
+        ],
+        "semantic": [],
+        "merged": [
+          "book",
+          "platform",
+          "projects",
+          "teams",
+          "platforms"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "platform_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5521016632829332,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:07.098389+00:00"
+      }
+    },
+    {
+      "book": "Platform Engineering on Kubernetes - Mauricio Salatino",
+      "chapter": 3,
+      "title": "Segment 3 (pages 17-27)",
+      "chapter_id": "Platform Engineering on Kubernetes - Mauricio Salatino:ch3",
+      "cross_references": [
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch4",
+          "score": 0.6808998008815974,
+          "base_score": 0.8107589273952549,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch27",
+          "score": 0.6683133143311917,
+          "base_score": 0.7897814498112453,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch16",
+          "score": 0.62938306457988,
+          "base_score": 0.7989717742998002,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch2",
+          "score": 0.6165880461758796,
+          "base_score": 0.7776467436264659,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch18",
+          "score": 0.6122169399342415,
+          "base_score": 0.7703615665570692,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cloud",
+          "cloud provider",
+          "provider",
+          "cloud providers",
+          "providers"
+        ],
+        "semantic": [],
+        "merged": [
+          "cloud",
+          "cloud provider",
+          "provider",
+          "cloud providers",
+          "providers"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "platform_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6030336923534909,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:07.098523+00:00"
+      }
+    },
+    {
+      "book": "Platform Engineering on Kubernetes - Mauricio Salatino",
+      "chapter": 4,
+      "title": "Segment 4 (pages 28-37)",
+      "chapter_id": "Platform Engineering on Kubernetes - Mauricio Salatino:ch4",
+      "cross_references": [
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch16",
+          "score": 0.7521040890203408,
+          "base_score": 0.8368401483672345,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch2",
+          "score": 0.7206737852355053,
+          "base_score": 0.665408689678223,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch3",
+          "score": 0.6808998008815974,
+          "base_score": 0.8107589273952549,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch18",
+          "score": 0.6501058643532104,
+          "base_score": 0.6668431072553507,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch27",
+          "score": 0.5852351011562893,
+          "base_score": 0.6513177611864082,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "platform",
+          "tools",
+          "teams",
+          "cloud",
+          "platforms"
+        ],
+        "semantic": [],
+        "merged": [
+          "platform",
+          "tools",
+          "teams",
+          "cloud",
+          "platforms"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "platform_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.575571781710186,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:07.098650+00:00"
+      }
+    },
+    {
+      "book": "Platform Engineering on Kubernetes - Mauricio Salatino",
+      "chapter": 5,
+      "title": "Segment 5 (pages 38-45)",
+      "chapter_id": "Platform Engineering on Kubernetes - Mauricio Salatino:ch5",
+      "cross_references": [
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch6",
+          "score": 0.6185676963345645,
+          "base_score": 0.7068720864835334,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch9",
+          "score": 0.5641403930140395,
+          "base_score": 0.6161599142826584,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch1",
+          "score": 0.5487470210084415,
+          "base_score": 0.5905042942733285,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "application",
+          "monolith",
+          "conference",
+          "monolithic",
+          "monolith application"
+        ],
+        "semantic": [],
+        "merged": [
+          "application",
+          "monolith",
+          "conference",
+          "monolithic",
+          "monolith application"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "application_the_applications",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5104083026492005,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:07.098777+00:00"
+      }
+    },
+    {
+      "book": "Platform Engineering on Kubernetes - Mauricio Salatino",
+      "chapter": 6,
+      "title": "Segment 6 (pages 46-55)",
+      "chapter_id": "Platform Engineering on Kubernetes - Mauricio Salatino:ch6",
+      "cross_references": [
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch9",
+          "score": 0.6210198879664437,
+          "base_score": 0.7109590725366655,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch5",
+          "score": 0.6185676963345645,
+          "base_score": 0.7068720864835334,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch1",
+          "score": 0.6065017605146715,
+          "base_score": 0.6867621934503785,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "application",
+          "applications",
+          "cluster",
+          "running",
+          "cloud native"
+        ],
+        "semantic": [],
+        "merged": [
+          "application",
+          "applications",
+          "cluster",
+          "running",
+          "cloud native"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "application_the_applications",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.589801468593131,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:07.098901+00:00"
+      }
+    },
+    {
+      "book": "Platform Engineering on Kubernetes - Mauricio Salatino",
+      "chapter": 7,
+      "title": "Segment 7 (pages 56-64)",
+      "chapter_id": "Platform Engineering on Kubernetes - Mauricio Salatino:ch7",
+      "cross_references": [
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch8",
+          "score": 0.5427592430814239,
+          "base_score": 0.6545987384690398,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch26",
+          "score": 0.534836565785471,
+          "base_score": 0.6413942763091184,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch21",
+          "score": 0.5022811197052813,
+          "base_score": 0.5871351995088023,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "deployment",
+          "frontend deployment",
+          "conference frontend",
+          "conference",
+          "frontend"
+        ],
+        "semantic": [],
+        "merged": [
+          "deployment",
+          "frontend deployment",
+          "conference frontend",
+          "conference",
+          "frontend"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "service_the_services",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49760623489074357,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:07.099049+00:00"
+      }
+    },
+    {
+      "book": "Platform Engineering on Kubernetes - Mauricio Salatino",
+      "chapter": 8,
+      "title": "Segment 8 (pages 65-76)",
+      "chapter_id": "Platform Engineering on Kubernetes - Mauricio Salatino:ch8",
+      "cross_references": [
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch21",
+          "score": 0.6296022671917731,
+          "base_score": 0.7252630379122145,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch26",
+          "score": 0.6084460991879959,
+          "base_score": 0.6900027579059189,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch7",
+          "score": 0.5427592430814239,
+          "base_score": 0.6545987384690398,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch19",
+          "score": 0.5394571744237393,
+          "base_score": 0.5750212166321581,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch13",
+          "score": 0.5023914285751564,
+          "base_score": 0.5873190476252607,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "service",
+          "agenda service",
+          "agenda",
+          "service agenda",
+          "service service"
+        ],
+        "semantic": [],
+        "merged": [
+          "service",
+          "agenda service",
+          "agenda",
+          "service agenda",
+          "service service"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "service_the_services",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5124782290315175,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:07.099179+00:00"
+      }
+    },
+    {
+      "book": "Platform Engineering on Kubernetes - Mauricio Salatino",
+      "chapter": 9,
+      "title": "Segment 9 (pages 77-84)",
+      "chapter_id": "Platform Engineering on Kubernetes - Mauricio Salatino:ch9",
+      "cross_references": [
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch6",
+          "score": 0.6210198879664437,
+          "base_score": 0.7109590725366655,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch1",
+          "score": 0.6161916458697745,
+          "base_score": 0.6103194097829574,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch5",
+          "score": 0.5641403930140395,
+          "base_score": 0.6161599142826584,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch18",
+          "score": 0.507867166420432,
+          "base_score": 0.5607309916531009,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "application",
+          "service",
+          "native application",
+          "services",
+          "identity"
+        ],
+        "semantic": [],
+        "merged": [
+          "application",
+          "service",
+          "native application",
+          "services",
+          "identity"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "application_the_applications",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5609525649104197,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:07.099302+00:00"
+      }
+    },
+    {
+      "book": "Platform Engineering on Kubernetes - Mauricio Salatino",
+      "chapter": 10,
+      "title": "Segment 10 (pages 85-95)",
+      "chapter_id": "Platform Engineering on Kubernetes - Mauricio Salatino:ch10",
+      "cross_references": [
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch12",
+          "score": 0.7063265435043946,
+          "base_score": 0.7605442391739909,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch11",
+          "score": 0.6660723535948598,
+          "base_score": 0.7860465152506922,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pipeline",
+          "service",
+          "service pipeline",
+          "pipelines",
+          "service pipelines"
+        ],
+        "semantic": [],
+        "merged": [
+          "pipeline",
+          "service",
+          "service pipeline",
+          "pipelines",
+          "service pipelines"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "environment_pipeline_pipelines",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.558747107827996,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:07.099465+00:00"
+      }
+    },
+    {
+      "book": "Platform Engineering on Kubernetes - Mauricio Salatino",
+      "chapter": 11,
+      "title": "Segment 11 (pages 96-108)",
+      "chapter_id": "Platform Engineering on Kubernetes - Mauricio Salatino:ch11",
+      "cross_references": [
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch10",
+          "score": 0.6660723535948598,
+          "base_score": 0.7860465152506922,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch12",
+          "score": 0.6324515715474818,
+          "base_score": 0.7300118785050622,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pipeline",
+          "hello",
+          "world",
+          "hello world",
+          "tekton"
+        ],
+        "semantic": [],
+        "merged": [
+          "pipeline",
+          "hello",
+          "world",
+          "hello world",
+          "tekton"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "environment_pipeline_pipelines",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4790820012792179,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:07.099588+00:00"
+      }
+    },
+    {
+      "book": "Platform Engineering on Kubernetes - Mauricio Salatino",
+      "chapter": 12,
+      "title": "Segment 12 (pages 109-140)",
+      "chapter_id": "Platform Engineering on Kubernetes - Mauricio Salatino:ch12",
+      "cross_references": [
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch10",
+          "score": 0.7063265435043946,
+          "base_score": 0.7605442391739909,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch11",
+          "score": 0.6324515715474818,
+          "base_score": 0.7300118785050622,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "environment",
+          "pipelines",
+          "environment pipelines",
+          "pipeline",
+          "environments"
+        ],
+        "semantic": [],
+        "merged": [
+          "environment",
+          "pipelines",
+          "environment pipelines",
+          "pipeline",
+          "environments"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "environment_pipeline_pipelines",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5170197124590021,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:07.099712+00:00"
+      }
+    },
+    {
+      "book": "Platform Engineering on Kubernetes - Mauricio Salatino",
+      "chapter": 13,
+      "title": "Segment 13 (pages 141-148)",
+      "chapter_id": "Platform Engineering on Kubernetes - Mauricio Salatino:ch13",
+      "cross_references": [
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch21",
+          "score": 0.5382919772724255,
+          "base_score": 0.6471532954540425,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch19",
+          "score": 0.5362943837201447,
+          "base_score": 0.5697498987928338,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch26",
+          "score": 0.5269011102882867,
+          "base_score": 0.6281685171471444,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch15",
+          "score": 0.5092234501985589,
+          "base_score": 0.6820390836642647,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch8",
+          "score": 0.5023914285751564,
+          "base_score": 0.5873190476252607,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "infrastructure",
+          "chart",
+          "application infrastructure",
+          "helm",
+          "application"
+        ],
+        "semantic": [],
+        "merged": [
+          "infrastructure",
+          "chart",
+          "application infrastructure",
+          "helm",
+          "application"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "service_the_services",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5513453041489238,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:07.099837+00:00"
+      }
+    },
+    {
+      "book": "Platform Engineering on Kubernetes - Mauricio Salatino",
+      "chapter": 14,
+      "title": "Segment 14 (pages 149-156)",
+      "chapter_id": "Platform Engineering on Kubernetes - Mauricio Salatino:ch14",
+      "cross_references": [
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch16",
+          "score": 0.6101724723696661,
+          "base_score": 0.7669541206161101,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch4",
+          "score": 0.5590845528979871,
+          "base_score": 0.6818075881633118,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch3",
+          "score": 0.5349398742357352,
+          "base_score": 0.5674923829854845,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "crossplane",
+          "provider",
+          "resources",
+          "resource",
+          "managed resource"
+        ],
+        "semantic": [],
+        "merged": [
+          "crossplane",
+          "provider",
+          "resources",
+          "resource",
+          "managed resource"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "platform_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4907994353689993,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:07.099959+00:00"
+      }
+    },
+    {
+      "book": "Platform Engineering on Kubernetes - Mauricio Salatino",
+      "chapter": 15,
+      "title": "Segment 15 (pages 157-170)",
+      "chapter_id": "Platform Engineering on Kubernetes - Mauricio Salatino:ch15",
+      "cross_references": [
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch13",
+          "score": 0.5092234501985589,
+          "base_score": 0.6820390836642647,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "composition",
+          "helm",
+          "chart",
+          "crossplane",
+          "helm chart"
+        ],
+        "semantic": [],
+        "merged": [
+          "composition",
+          "helm",
+          "chart",
+          "crossplane",
+          "helm chart"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4753575913874683,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:53:07.100078+00:00"
+      }
+    },
+    {
+      "book": "Platform Engineering on Kubernetes - Mauricio Salatino",
+      "chapter": 16,
+      "title": "Segment 16 (pages 171-178)",
+      "chapter_id": "Platform Engineering on Kubernetes - Mauricio Salatino:ch16",
+      "cross_references": [
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch4",
+          "score": 0.7521040890203408,
+          "base_score": 0.8368401483672345,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch18",
+          "score": 0.7047372364855018,
+          "base_score": 0.757895394142503,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch2",
+          "score": 0.6784174115642979,
+          "base_score": 0.7140290192738299,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch3",
+          "score": 0.62938306457988,
+          "base_score": 0.7989717742998002,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch14",
+          "score": 0.6101724723696661,
+          "base_score": 0.7669541206161101,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "platform",
+          "platform apis",
+          "teams",
+          "apis",
+          "development"
+        ],
+        "semantic": [],
+        "merged": [
+          "platform",
+          "platform apis",
+          "teams",
+          "apis",
+          "development"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "platform_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6063072640767909,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:07.100201+00:00"
+      }
+    },
+    {
+      "book": "Platform Engineering on Kubernetes - Mauricio Salatino",
+      "chapter": 17,
+      "title": "Segment 17 (pages 179-192)",
+      "chapter_id": "Platform Engineering on Kubernetes - Mauricio Salatino:ch17",
+      "cross_references": [
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch18",
+          "score": 0.5937887355545683,
+          "base_score": 0.8229812259242806,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch16",
+          "score": 0.568038810979987,
+          "base_score": 0.780064684966645,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch4",
+          "score": 0.521742884073888,
+          "base_score": 0.7029048067898135,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch22",
+          "score": 0.5077906428689622,
+          "base_score": 0.522243664040863,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch2",
+          "score": 0.5004462332364112,
+          "base_score": 0.667410388727352,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "platform",
+          "clusters",
+          "api",
+          "vcluster",
+          "teams"
+        ],
+        "semantic": [],
+        "merged": [
+          "platform",
+          "clusters",
+          "api",
+          "vcluster",
+          "teams"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "platform_to_kubernetes",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5955406079405628,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:07.100324+00:00"
+      }
+    },
+    {
+      "book": "Platform Engineering on Kubernetes - Mauricio Salatino",
+      "chapter": 18,
+      "title": "Segment 18 (pages 193-201)",
+      "chapter_id": "Platform Engineering on Kubernetes - Mauricio Salatino:ch18",
+      "cross_references": [
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch16",
+          "score": 0.7047372364855018,
+          "base_score": 0.757895394142503,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch2",
+          "score": 0.7013410851846397,
+          "base_score": 0.7522351419743994,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch4",
+          "score": 0.6501058643532104,
+          "base_score": 0.6668431072553507,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch3",
+          "score": 0.6122169399342415,
+          "base_score": 0.7703615665570692,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch17",
+          "score": 0.5937887355545683,
+          "base_score": 0.8229812259242806,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "platform",
+          "service",
+          "services",
+          "application",
+          "teams"
+        ],
+        "semantic": [],
+        "merged": [
+          "platform",
+          "service",
+          "services",
+          "application",
+          "teams"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "platform_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5776654956212783,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:07.100462+00:00"
+      }
+    },
+    {
+      "book": "Platform Engineering on Kubernetes - Mauricio Salatino",
+      "chapter": 19,
+      "title": "Segment 19 (pages 202-224)",
+      "chapter_id": "Platform Engineering on Kubernetes - Mauricio Salatino:ch19",
+      "cross_references": [
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch26",
+          "score": 0.5648459698812434,
+          "base_score": 0.5247432831354055,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch8",
+          "score": 0.5394571744237393,
+          "base_score": 0.5750212166321581,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch13",
+          "score": 0.5362943837201447,
+          "base_score": 0.5697498987928338,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch21",
+          "score": 0.5083429352428344,
+          "base_score": 0.52316415133065,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "dapr",
+          "service",
+          "application",
+          "services",
+          "apis"
+        ],
+        "semantic": [],
+        "merged": [
+          "dapr",
+          "service",
+          "application",
+          "services",
+          "apis"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "service_the_services",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4516596802789816,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:07.100583+00:00"
+      }
+    },
+    {
+      "book": "Platform Engineering on Kubernetes - Mauricio Salatino",
+      "chapter": 20,
+      "title": "Segment 20 (pages 225-233)",
+      "chapter_id": "Platform Engineering on Kubernetes - Mauricio Salatino:ch20",
+      "cross_references": [
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch18",
+          "score": 0.5734178642961916,
+          "base_score": 0.6316223664195786,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch16",
+          "score": 0.5314000276266269,
+          "base_score": 0.5615926386369706,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch3",
+          "score": 0.5273132058115906,
+          "base_score": 0.6288553430193177,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch4",
+          "score": 0.5211475569769237,
+          "base_score": 0.5445051875541321,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch2",
+          "score": 0.5045165901889361,
+          "base_score": 0.5167869095741527,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "teams",
+          "release",
+          "new version",
+          "canary",
+          "strategies"
+        ],
+        "semantic": [],
+        "merged": [
+          "teams",
+          "release",
+          "new version",
+          "canary",
+          "strategies"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "platform_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4345252124684383,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:07.100704+00:00"
+      }
+    },
+    {
+      "book": "Platform Engineering on Kubernetes - Mauricio Salatino",
+      "chapter": 21,
+      "title": "Segment 21 (pages 234-264)",
+      "chapter_id": "Platform Engineering on Kubernetes - Mauricio Salatino:ch21",
+      "cross_references": [
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch8",
+          "score": 0.6296022671917731,
+          "base_score": 0.7252630379122145,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch26",
+          "score": 0.6082662873548715,
+          "base_score": 0.6897030715173784,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch13",
+          "score": 0.5382919772724255,
+          "base_score": 0.6471532954540425,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch19",
+          "score": 0.5083429352428344,
+          "base_score": 0.52316415133065,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch7",
+          "score": 0.5022811197052813,
+          "base_score": 0.5871351995088023,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "service",
+          "rollouts",
+          "knative",
+          "argo rollouts",
+          "notifications service"
+        ],
+        "semantic": [],
+        "merged": [
+          "service",
+          "rollouts",
+          "knative",
+          "argo rollouts",
+          "notifications service"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "service_the_services",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5710789788996133,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:07.100838+00:00"
+      }
+    },
+    {
+      "book": "Platform Engineering on Kubernetes - Mauricio Salatino",
+      "chapter": 22,
+      "title": "Segment 22 (pages 265-273)",
+      "chapter_id": "Platform Engineering on Kubernetes - Mauricio Salatino:ch22",
+      "cross_references": [
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch17",
+          "score": 0.5077906428689622,
+          "base_score": 0.522243664040863,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "metrics",
+          "teams",
+          "dora",
+          "istio",
+          "rollouts"
+        ],
+        "semantic": [],
+        "merged": [
+          "metrics",
+          "teams",
+          "dora",
+          "istio",
+          "rollouts"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "platform_to_kubernetes",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4449870308851423,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:07.100958+00:00"
+      }
+    },
+    {
+      "book": "Platform Engineering on Kubernetes - Mauricio Salatino",
+      "chapter": 23,
+      "title": "Segment 23 (pages 274-286)",
+      "chapter_id": "Platform Engineering on Kubernetes - Mauricio Salatino:ch23",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "cloudevents",
+          "cdevents",
+          "sources",
+          "events",
+          "event"
+        ],
+        "semantic": [],
+        "merged": [
+          "cloudevents",
+          "cdevents",
+          "sources",
+          "events",
+          "event"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44310761638731233,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:53:07.101075+00:00"
+      }
+    },
+    {
+      "book": "Platform Engineering on Kubernetes - Mauricio Salatino",
+      "chapter": 24,
+      "title": "Segment 24 (pages 287-295)",
+      "chapter_id": "Platform Engineering on Kubernetes - Mauricio Salatino:ch24",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "keptn",
+          "deployment",
+          "metrics",
+          "functions",
+          "frequency"
+        ],
+        "semantic": [],
+        "merged": [
+          "keptn",
+          "deployment",
+          "metrics",
+          "functions",
+          "frequency"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41915502205357136,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:53:07.101192+00:00"
+      }
+    },
+    {
+      "book": "Platform Engineering on Kubernetes - Mauricio Salatino",
+      "chapter": 25,
+      "title": "Segment 25 (pages 296-303)",
+      "chapter_id": "Platform Engineering on Kubernetes - Mauricio Salatino:ch25",
+      "cross_references": [
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch2",
+          "score": 0.5729861071228922,
+          "base_score": 0.5383101785381538,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch18",
+          "score": 0.5382403141342724,
+          "base_score": 0.5729931161497132,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch4",
+          "score": 0.5362319924397254,
+          "base_score": 0.47705332073287576,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "platform",
+          "metrics",
+          "overview",
+          "platforms",
+          "216"
+        ],
+        "semantic": [],
+        "merged": [
+          "platform",
+          "metrics",
+          "overview",
+          "platforms",
+          "216"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "platform_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42949308516132867,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:07.101314+00:00"
+      }
+    },
+    {
+      "book": "Platform Engineering on Kubernetes - Mauricio Salatino",
+      "chapter": 26,
+      "title": "Segment 26 (pages 304-311)",
+      "chapter_id": "Platform Engineering on Kubernetes - Mauricio Salatino:ch26",
+      "cross_references": [
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch8",
+          "score": 0.6084460991879959,
+          "base_score": 0.6900027579059189,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch21",
+          "score": 0.6082662873548715,
+          "base_score": 0.6897030715173784,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch19",
+          "score": 0.5648459698812434,
+          "base_score": 0.5247432831354055,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch7",
+          "score": 0.534836565785471,
+          "base_score": 0.6413942763091184,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch13",
+          "score": 0.5269011102882867,
+          "base_score": 0.6281685171471444,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "service",
+          "services",
+          "overview",
+          "50",
+          "environments"
+        ],
+        "semantic": [],
+        "merged": [
+          "service",
+          "services",
+          "overview",
+          "50",
+          "environments"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "service_the_services",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5733710742088165,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:07.101451+00:00"
+      }
+    },
+    {
+      "book": "Platform Engineering on Kubernetes - Mauricio Salatino",
+      "chapter": 27,
+      "title": "Segment 27 (pages 312-312)",
+      "chapter_id": "Platform Engineering on Kubernetes - Mauricio Salatino:ch27",
+      "cross_references": [
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch3",
+          "score": 0.6683133143311917,
+          "base_score": 0.7897814498112453,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch2",
+          "score": 0.6049049321973973,
+          "base_score": 0.7581748869956622,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch4",
+          "score": 0.5852351011562893,
+          "base_score": 0.6513177611864082,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch16",
+          "score": 0.555781455779062,
+          "base_score": 0.6763024262984367,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Platform Engineering on Kubernetes - Mauricio Salatino:ch18",
+          "score": 0.531616346967729,
+          "base_score": 0.6360272449462149,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "engineering",
+          "platform engineering",
+          "deliver cloud",
+          "native software",
+          "cloud"
+        ],
+        "semantic": [],
+        "merged": [
+          "engineering",
+          "platform engineering",
+          "deliver cloud",
+          "native software",
+          "cloud"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "platform_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5393894462537321,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:07.101574+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

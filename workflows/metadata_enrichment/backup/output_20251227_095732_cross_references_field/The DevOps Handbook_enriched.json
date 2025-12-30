@@ -1,0 +1,3636 @@
+{
+  "book": {
+    "title": "The DevOps Handbook"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:58:35.515470",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 1,
+      "title": "Segment 1 (pages 3-12)",
+      "chapter_id": "The DevOps Handbook:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "devops",
+          "practices",
+          "isbn 978",
+          "ebook",
+          "isbn"
+        ],
+        "semantic": [],
+        "merged": [
+          "devops",
+          "practices",
+          "isbn 978",
+          "ebook",
+          "isbn"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "com_http_www",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3400361589004337,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.477967+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 2,
+      "title": "Segment 2 (pages 13-20)",
+      "chapter_id": "The DevOps Handbook:ch2",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch18",
+          "score": 0.5151207297496984,
+          "base_score": 0.6085345495828307,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "organizations",
+          "principles practices",
+          "devops",
+          "features",
+          "required develop"
+        ],
+        "semantic": [],
+        "merged": [
+          "organizations",
+          "principles practices",
+          "devops",
+          "features",
+          "required develop"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "the_product_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43321483506779285,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.478345+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 3,
+      "title": "Segment 3 (pages 21-28)",
+      "chapter_id": "The DevOps Handbook:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "little",
+          "spiral",
+          "downward spiral",
+          "downward",
+          "chronic"
+        ],
+        "semantic": [],
+        "merged": [
+          "little",
+          "spiral",
+          "downward spiral",
+          "downward",
+          "chronic"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44765444106245733,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:58:35.478675+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 4,
+      "title": "Segment 4 (pages 29-36)",
+      "chapter_id": "The DevOps Handbook:ch4",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch36",
+          "score": 0.5757639631548729,
+          "base_score": 0.7096066052581214,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch16",
+          "score": 0.5277654563830044,
+          "base_score": 0.629609093971674,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "performers",
+          "devops",
+          "high performers",
+          "practices",
+          "phoenix"
+        ],
+        "semantic": [],
+        "merged": [
+          "performers",
+          "devops",
+          "high performers",
+          "practices",
+          "phoenix"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.468889943675932,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.478984+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 5,
+      "title": "Segment 5 (pages 37-45)",
+      "chapter_id": "The DevOps Handbook:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "principles",
+          "continual",
+          "high trust",
+          "trust",
+          "continual learning"
+        ],
+        "semantic": [],
+        "merged": [
+          "principles",
+          "continual",
+          "high trust",
+          "trust",
+          "continual learning"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45609501732155694,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:58:35.479294+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 6,
+      "title": "Segment 6 (pages 46-56)",
+      "chapter_id": "The DevOps Handbook:ch6",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch8",
+          "score": 0.7900352160169091,
+          "base_score": 0.6222809155837373,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch13",
+          "score": 0.6514940580134384,
+          "base_score": 0.5501091443081115,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch7",
+          "score": 0.5526717352926797,
+          "base_score": 0.5970454847470587,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch11",
+          "score": 0.5491710431951016,
+          "base_score": 0.5912109979177618,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "work",
+          "value",
+          "stream",
+          "value stream",
+          "lead"
+        ],
+        "semantic": [],
+        "merged": [
+          "work",
+          "value",
+          "stream",
+          "value stream",
+          "lead"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_work_value",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37068479164932433,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.479627+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 7,
+      "title": "Segment 7 (pages 57-64)",
+      "chapter_id": "The DevOps Handbook:ch7",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch6",
+          "score": 0.5526717352926797,
+          "base_score": 0.5970454847470587,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch8",
+          "score": 0.5268950858681829,
+          "base_score": 0.5540844023728975,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "batch",
+          "wip",
+          "large batch",
+          "work",
+          "envelope"
+        ],
+        "semantic": [],
+        "merged": [
+          "batch",
+          "wip",
+          "large batch",
+          "work",
+          "envelope"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_work_value",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35438451827323353,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.479937+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 8,
+      "title": "Segment 8 (pages 65-72)",
+      "chapter_id": "The DevOps Handbook:ch8",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch6",
+          "score": 0.7900352160169091,
+          "base_score": 0.6222809155837373,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch13",
+          "score": 0.7046959188609727,
+          "base_score": 0.6387789123873354,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch11",
+          "score": 0.6296511896505995,
+          "base_score": 0.7253445753435918,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch7",
+          "score": 0.5268950858681829,
+          "base_score": 0.5540844023728975,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "work",
+          "value",
+          "value stream",
+          "stream",
+          "complex systems"
+        ],
+        "semantic": [],
+        "merged": [
+          "work",
+          "value",
+          "value stream",
+          "stream",
+          "complex systems"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_work_value",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41755641911956975,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.480283+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 9,
+      "title": "Segment 9 (pages 73-81)",
+      "chapter_id": "The DevOps Handbook:ch9",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch30",
+          "score": 0.5117370860948691,
+          "base_score": 0.5288210694173744,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "work",
+          "cord",
+          "plant",
+          "andon cord",
+          "andon"
+        ],
+        "semantic": [],
+        "merged": [
+          "work",
+          "cord",
+          "plant",
+          "andon cord",
+          "andon"
+        ]
+      },
+      "topic_id": 9,
+      "topic_name": "work_and_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36249753773641397,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.480601+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 10,
+      "title": "Segment 10 (pages 82-89)",
+      "chapter_id": "The DevOps Handbook:ch10",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch42",
+          "score": 0.5733346544536936,
+          "base_score": 0.7055577574228227,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "work",
+          "safety",
+          "problems",
+          "daily",
+          "daily work"
+        ],
+        "semantic": [],
+        "merged": [
+          "work",
+          "safety",
+          "problems",
+          "daily",
+          "daily work"
+        ]
+      },
+      "topic_id": 8,
+      "topic_name": "post_failure_failures",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3224135286247506,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.480905+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 11,
+      "title": "Segment 11 (pages 90-99)",
+      "chapter_id": "The DevOps Handbook:ch11",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch8",
+          "score": 0.6296511896505995,
+          "base_score": 0.7253445753435918,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch13",
+          "score": 0.5949275884907197,
+          "base_score": 0.667471906743792,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch53",
+          "score": 0.5559047205115307,
+          "base_score": 0.6765078675192179,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch46",
+          "score": 0.5526868460977937,
+          "base_score": 0.6711447434963229,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch6",
+          "score": 0.5491710431951016,
+          "base_score": 0.5912109979177618,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "transformation",
+          "nordstrom",
+          "mobile",
+          "devops transformation",
+          "value"
+        ],
+        "semantic": [],
+        "merged": [
+          "transformation",
+          "nordstrom",
+          "mobile",
+          "devops transformation",
+          "value"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_work_value",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46806837906822496,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.481232+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 12,
+      "title": "Segment 12 (pages 100-107)",
+      "chapter_id": "The DevOps Handbook:ch12",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch11",
+          "score": 0.5359878087713058,
+          "base_score": 0.6433130146188429,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch53",
+          "score": 0.5161735974875041,
+          "base_score": 0.6102893291458402,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch13",
+          "score": 0.5014507645794526,
+          "base_score": 0.5857512742990877,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch46",
+          "score": 0.5013280373697248,
+          "base_score": 0.5855467289495413,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "brownfield",
+          "greenfield",
+          "projects",
+          "systems",
+          "brownfield projects"
+        ],
+        "semantic": [],
+        "merged": [
+          "brownfield",
+          "greenfield",
+          "projects",
+          "systems",
+          "brownfield projects"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_work_value",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.442718952127931,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.481556+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 13,
+      "title": "Segment 13 (pages 108-115)",
+      "chapter_id": "The DevOps Handbook:ch13",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch8",
+          "score": 0.7046959188609727,
+          "base_score": 0.6387789123873354,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch6",
+          "score": 0.6514940580134384,
+          "base_score": 0.5501091443081115,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch11",
+          "score": 0.5949275884907197,
+          "base_score": 0.667471906743792,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch12",
+          "score": 0.5014507645794526,
+          "base_score": 0.5857512742990877,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "value",
+          "stream",
+          "value stream",
+          "create value",
+          "stream map"
+        ],
+        "semantic": [],
+        "merged": [
+          "value",
+          "stream",
+          "value stream",
+          "create value",
+          "stream map"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_work_value",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39482163249619884,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.481865+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 14,
+      "title": "Segment 14 (pages 116-125)",
+      "chapter_id": "The DevOps Handbook:ch14",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch17",
+          "score": 0.5135548961897105,
+          "base_score": 0.5318507529087767,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "debt",
+          "technical debt",
+          "linkedin",
+          "team",
+          "technical"
+        ],
+        "semantic": [],
+        "merged": [
+          "debt",
+          "technical debt",
+          "linkedin",
+          "team",
+          "technical"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "teams_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4106302305313531,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.482167+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 15,
+      "title": "Segment 15 (pages 126-137)",
+      "chapter_id": "The DevOps Handbook:ch15",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch17",
+          "score": 0.6322109609802995,
+          "base_score": 0.7296108608930918,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch19",
+          "score": 0.5795612007152658,
+          "base_score": 0.6418612604513689,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "teams",
+          "functional",
+          "orientation",
+          "functional orientation",
+          "work"
+        ],
+        "semantic": [],
+        "merged": [
+          "teams",
+          "functional",
+          "orientation",
+          "functional orientation",
+          "work"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "teams_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44239274202364093,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.482474+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 16,
+      "title": "Segment 16 (pages 138-145)",
+      "chapter_id": "The DevOps Handbook:ch16",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch36",
+          "score": 0.556612584947599,
+          "base_score": 0.6776876415793318,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch4",
+          "score": 0.5277654563830044,
+          "base_score": 0.629609093971674,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "teams",
+          "people",
+          "generalists",
+          "outcomes",
+          "people teams"
+        ],
+        "semantic": [],
+        "merged": [
+          "teams",
+          "people",
+          "generalists",
+          "outcomes",
+          "people teams"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4544291889336665,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.482801+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 17,
+      "title": "Segment 17 (pages 146-154)",
+      "chapter_id": "The DevOps Handbook:ch17",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch15",
+          "score": 0.6322109609802995,
+          "base_score": 0.7296108608930918,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch14",
+          "score": 0.5135548961897105,
+          "base_score": 0.5318507529087767,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "teams",
+          "team",
+          "needed",
+          "api enablement",
+          "enablement"
+        ],
+        "semantic": [],
+        "merged": [
+          "teams",
+          "team",
+          "needed",
+          "api enablement",
+          "enablement"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "teams_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37498353695568937,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.483102+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 18,
+      "title": "Segment 18 (pages 155-162)",
+      "chapter_id": "The DevOps Handbook:ch18",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch2",
+          "score": 0.5151207297496984,
+          "base_score": 0.6085345495828307,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ops engineers",
+          "ops",
+          "teams",
+          "product",
+          "product teams"
+        ],
+        "semantic": [],
+        "merged": [
+          "ops engineers",
+          "ops",
+          "teams",
+          "product",
+          "product teams"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "the_product_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4317613261789282,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.483404+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 19,
+      "title": "Segment 19 (pages 163-173)",
+      "chapter_id": "The DevOps Handbook:ch19",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch15",
+          "score": 0.5795612007152658,
+          "base_score": 0.6418612604513689,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "environments",
+          "production",
+          "development",
+          "production like",
+          "work"
+        ],
+        "semantic": [],
+        "merged": [
+          "environments",
+          "production",
+          "development",
+          "production like",
+          "work"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "teams_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39691418331725187,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.483730+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 20,
+      "title": "Segment 20 (pages 174-181)",
+      "chapter_id": "The DevOps Handbook:ch20",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch21",
+          "score": 0.5385639118353003,
+          "base_score": 0.5735324456514264,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch23",
+          "score": 0.53533565031708,
+          "base_score": 0.6422260838618,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch25",
+          "score": 0.5258665739529234,
+          "base_score": 0.5523702158474649,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "production like",
+          "environments",
+          "production",
+          "version control",
+          "version"
+        ],
+        "semantic": [],
+        "merged": [
+          "production like",
+          "environments",
+          "production",
+          "version control",
+          "version"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39577059888164245,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.484046+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 21,
+      "title": "Segment 21 (pages 182-191)",
+      "chapter_id": "The DevOps Handbook:ch21",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch22",
+          "score": 0.7197457650323431,
+          "base_score": 0.6638619893396195,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch24",
+          "score": 0.5532595849958326,
+          "base_score": 0.5980252342523137,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch20",
+          "score": 0.5385639118353003,
+          "base_score": 0.5735324456514264,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch25",
+          "score": 0.5289819268643565,
+          "base_score": 0.5575624706998534,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch48",
+          "score": 0.5118988028946615,
+          "base_score": 0.6031646714911025,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "automated",
+          "code",
+          "test",
+          "version control",
+          "tests"
+        ],
+        "semantic": [],
+        "merged": [
+          "automated",
+          "code",
+          "test",
+          "version control",
+          "tests"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4015404435897818,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.484384+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 22,
+      "title": "Segment 22 (pages 192-204)",
+      "chapter_id": "The DevOps Handbook:ch22",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch21",
+          "score": 0.7197457650323431,
+          "base_score": 0.6638619893396195,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch48",
+          "score": 0.5409964433999374,
+          "base_score": 0.6516607389998956,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch25",
+          "score": 0.5096819431168206,
+          "base_score": 0.599469905194701,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tests",
+          "automated tests",
+          "automated",
+          "test",
+          "tests tests"
+        ],
+        "semantic": [],
+        "merged": [
+          "tests",
+          "automated tests",
+          "automated",
+          "test",
+          "tests tests"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30796739481733015,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.484712+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 23,
+      "title": "Segment 23 (pages 205-212)",
+      "chapter_id": "The DevOps Handbook:ch23",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch25",
+          "score": 0.5486089938047488,
+          "base_score": 0.6643483230079148,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch24",
+          "score": 0.5395779540170158,
+          "base_score": 0.5752225159542855,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch20",
+          "score": 0.53533565031708,
+          "base_score": 0.6422260838618,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch28",
+          "score": 0.5187228044368385,
+          "base_score": 0.6145380073947309,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch21",
+          "score": 0.5111805716895311,
+          "base_score": 0.6019676194825518,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "trunk",
+          "integration",
+          "continuous integration",
+          "developers",
+          "based development"
+        ],
+        "semantic": [],
+        "merged": [
+          "trunk",
+          "integration",
+          "continuous integration",
+          "developers",
+          "based development"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.411027902620338,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.485022+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 24,
+      "title": "Segment 24 (pages 213-220)",
+      "chapter_id": "The DevOps Handbook:ch24",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch28",
+          "score": 0.5575155843363263,
+          "base_score": 0.6791926405605437,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch21",
+          "score": 0.5532595849958326,
+          "base_score": 0.5980252342523137,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch23",
+          "score": 0.5395779540170158,
+          "base_score": 0.5752225159542855,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch27",
+          "score": 0.5258748160196256,
+          "base_score": 0.552383952625302,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch25",
+          "score": 0.5177886772054546,
+          "base_score": 0.5389070546016836,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "release",
+          "code",
+          "releases",
+          "2012",
+          "continuous integration"
+        ],
+        "semantic": [],
+        "merged": [
+          "release",
+          "code",
+          "releases",
+          "2012",
+          "continuous integration"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43845648068310294,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.485349+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 25,
+      "title": "Segment 25 (pages 221-228)",
+      "chapter_id": "The DevOps Handbook:ch25",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch26",
+          "score": 0.5825255395806991,
+          "base_score": 0.5542092326344985,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch23",
+          "score": 0.5486089938047488,
+          "base_score": 0.6643483230079148,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch28",
+          "score": 0.5333562509558379,
+          "base_score": 0.6389270849263966,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch48",
+          "score": 0.529240471099527,
+          "base_score": 0.632067451832545,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch21",
+          "score": 0.5289819268643565,
+          "base_score": 0.5575624706998534,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "deployment",
+          "deployments",
+          "deployment process",
+          "production",
+          "code"
+        ],
+        "semantic": [],
+        "merged": [
+          "deployment",
+          "deployments",
+          "deployment process",
+          "production",
+          "code"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40845881064627404,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.485683+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 26,
+      "title": "Segment 26 (pages 229-237)",
+      "chapter_id": "The DevOps Handbook:ch26",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch25",
+          "score": 0.5825255395806991,
+          "base_score": 0.5542092326344985,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch28",
+          "score": 0.5429006980596552,
+          "base_score": 0.654834496766092,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "blue green",
+          "blue",
+          "deployments",
+          "green",
+          "deployment"
+        ],
+        "semantic": [],
+        "merged": [
+          "blue green",
+          "blue",
+          "deployments",
+          "green",
+          "deployment"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4203845330070917,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.485998+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 27,
+      "title": "Segment 27 (pages 238-246)",
+      "chapter_id": "The DevOps Handbook:ch27",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch24",
+          "score": 0.5258748160196256,
+          "base_score": 0.552383952625302,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "feature",
+          "feature toggles",
+          "toggles",
+          "release",
+          "features"
+        ],
+        "semantic": [],
+        "merged": [
+          "feature",
+          "feature toggles",
+          "toggles",
+          "release",
+          "features"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3802173559860753,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.486311+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 28,
+      "title": "Segment 28 (pages 247-254)",
+      "chapter_id": "The DevOps Handbook:ch28",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch24",
+          "score": 0.5575155843363263,
+          "base_score": 0.6791926405605437,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch26",
+          "score": 0.5429006980596552,
+          "base_score": 0.654834496766092,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch25",
+          "score": 0.5333562509558379,
+          "base_score": 0.6389270849263966,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch23",
+          "score": 0.5187228044368385,
+          "base_score": 0.6145380073947309,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "architecture",
+          "google",
+          "architectures",
+          "ebay",
+          "different"
+        ],
+        "semantic": [],
+        "merged": [
+          "architecture",
+          "google",
+          "architectures",
+          "ebay",
+          "different"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43465213202736175,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.486632+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 29,
+      "title": "Segment 29 (pages 255-263)",
+      "chapter_id": "The DevOps Handbook:ch29",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "architecture",
+          "building blocks",
+          "blocks",
+          "building",
+          "functionality"
+        ],
+        "semantic": [],
+        "merged": [
+          "architecture",
+          "building blocks",
+          "blocks",
+          "building",
+          "functionality"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "the_product_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3310900007075808,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.486934+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 30,
+      "title": "Segment 30 (pages 264-272)",
+      "chapter_id": "The DevOps Handbook:ch30",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch9",
+          "score": 0.5117370860948691,
+          "base_score": 0.5288210694173744,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "telemetry",
+          "work",
+          "problems",
+          "solving problems",
+          "feedback"
+        ],
+        "semantic": [],
+        "merged": [
+          "telemetry",
+          "work",
+          "problems",
+          "solving problems",
+          "feedback"
+        ]
+      },
+      "topic_id": 9,
+      "topic_name": "work_and_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4730033918970184,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.487238+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 31,
+      "title": "Segment 31 (pages 273-280)",
+      "chapter_id": "The DevOps Handbook:ch31",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch33",
+          "score": 0.6317811107118326,
+          "base_score": 0.6363018511863877,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch32",
+          "score": 0.6120943292529942,
+          "base_score": 0.6034905487549904,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch35",
+          "score": 0.5448278167105954,
+          "base_score": 0.5839722871102516,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "telemetry",
+          "logging",
+          "events",
+          "metrics",
+          "level"
+        ],
+        "semantic": [],
+        "merged": [
+          "telemetry",
+          "logging",
+          "events",
+          "metrics",
+          "level"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "telemetry_we_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3346631885873221,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.487564+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 32,
+      "title": "Segment 32 (pages 281-289)",
+      "chapter_id": "The DevOps Handbook:ch32",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch33",
+          "score": 0.6506221993061506,
+          "base_score": 0.548656046462632,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch31",
+          "score": 0.6120943292529942,
+          "base_score": 0.6034905487549904,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch35",
+          "score": 0.6097241758928409,
+          "base_score": 0.4804926741071159,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "telemetry",
+          "production telemetry",
+          "metrics",
+          "production",
+          "create"
+        ],
+        "semantic": [],
+        "merged": [
+          "telemetry",
+          "production telemetry",
+          "metrics",
+          "production",
+          "create"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "telemetry_we_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33275172185782637,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.487883+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 33,
+      "title": "Segment 33 (pages 290-297)",
+      "chapter_id": "The DevOps Handbook:ch33",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch32",
+          "score": 0.6506221993061506,
+          "base_score": 0.548656046462632,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch31",
+          "score": 0.6317811107118326,
+          "base_score": 0.6363018511863877,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch35",
+          "score": 0.5482986590870036,
+          "base_score": 0.4971644318116727,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "telemetry",
+          "production",
+          "infrastructure",
+          "metrics",
+          "services"
+        ],
+        "semantic": [],
+        "merged": [
+          "telemetry",
+          "production",
+          "infrastructure",
+          "metrics",
+          "services"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "telemetry_we_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3815295136097348,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.488184+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 34,
+      "title": "Segment 34 (pages 298-306)",
+      "chapter_id": "The DevOps Handbook:ch34",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "standard",
+          "deviations",
+          "standard deviations",
+          "distribution",
+          "gaussian"
+        ],
+        "semantic": [],
+        "merged": [
+          "standard",
+          "deviations",
+          "standard deviations",
+          "distribution",
+          "gaussian"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "telemetry_we_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.17835915565302338,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.488488+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 35,
+      "title": "Segment 35 (pages 307-315)",
+      "chapter_id": "The DevOps Handbook:ch35",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch32",
+          "score": 0.6097241758928409,
+          "base_score": 0.4804926741071159,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch33",
+          "score": 0.5482986590870036,
+          "base_score": 0.4971644318116727,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch31",
+          "score": 0.5448278167105954,
+          "base_score": 0.5839722871102516,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "production",
+          "code",
+          "production telemetry",
+          "telemetry",
+          "deployment"
+        ],
+        "semantic": [],
+        "merged": [
+          "production",
+          "code",
+          "production telemetry",
+          "telemetry",
+          "deployment"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "telemetry_we_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4221744705181544,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.488806+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 36,
+      "title": "Segment 36 (pages 316-323)",
+      "chapter_id": "The DevOps Handbook:ch36",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch4",
+          "score": 0.5757639631548729,
+          "base_score": 0.7096066052581214,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch16",
+          "score": 0.556612584947599,
+          "base_score": 0.6776876415793318,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "production",
+          "manage",
+          "self manage",
+          "services production",
+          "help"
+        ],
+        "semantic": [],
+        "merged": [
+          "production",
+          "manage",
+          "self manage",
+          "services production",
+          "help"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46800667998664347,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.489122+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 37,
+      "title": "Segment 37 (pages 324-331)",
+      "chapter_id": "The DevOps Handbook:ch37",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "product teams",
+          "lrr",
+          "product",
+          "production",
+          "teams"
+        ],
+        "semantic": [],
+        "merged": [
+          "product teams",
+          "lrr",
+          "product",
+          "production",
+          "teams"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40222453011289455,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.489444+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 38,
+      "title": "Segment 38 (pages 332-339)",
+      "chapter_id": "The DevOps Handbook:ch38",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "testing",
+          "experiment",
+          "user",
+          "feature",
+          "users"
+        ],
+        "semantic": [],
+        "merged": [
+          "testing",
+          "experiment",
+          "user",
+          "feature",
+          "users"
+        ]
+      },
+      "topic_id": 10,
+      "topic_name": "security_testing_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3097588243052844,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.489821+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 39,
+      "title": "Segment 39 (pages 340-350)",
+      "chapter_id": "The DevOps Handbook:ch39",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch50",
+          "score": 0.6136351465242433,
+          "base_score": 0.6060585775404057,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch40",
+          "score": 0.6058064206482923,
+          "base_score": 0.5930107010804873,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch24",
+          "score": 0.5063723478320103,
+          "base_score": 0.5198798389792765,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "changes",
+          "change",
+          "review",
+          "risk",
+          "code"
+        ],
+        "semantic": [],
+        "merged": [
+          "changes",
+          "change",
+          "review",
+          "risk",
+          "code"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3985241073878724,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.490143+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 40,
+      "title": "Segment 40 (pages 351-358)",
+      "chapter_id": "The DevOps Handbook:ch40",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch39",
+          "score": 0.6058064206482923,
+          "base_score": 0.5930107010804873,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "review",
+          "reviews",
+          "pair",
+          "pair programming"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "review",
+          "reviews",
+          "pair",
+          "pair programming"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2930703122209478,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.490451+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 41,
+      "title": "Segment 41 (pages 359-367)",
+      "chapter_id": "The DevOps Handbook:ch41",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "learning",
+          "work",
+          "way technical",
+          "practices",
+          "technical practices"
+        ],
+        "semantic": [],
+        "merged": [
+          "learning",
+          "work",
+          "way technical",
+          "practices",
+          "technical practices"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43085230217046644,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:58:35.490779+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 42,
+      "title": "Segment 42 (pages 368-375)",
+      "chapter_id": "The DevOps Handbook:ch42",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch10",
+          "score": 0.5733346544536936,
+          "base_score": 0.7055577574228227,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "post",
+          "mortem",
+          "post mortem",
+          "blameless post",
+          "post mortems"
+        ],
+        "semantic": [],
+        "merged": [
+          "post",
+          "mortem",
+          "post mortem",
+          "blameless post",
+          "post mortems"
+        ]
+      },
+      "topic_id": 8,
+      "topic_name": "post_failure_failures",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2956496255810202,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.491089+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 43,
+      "title": "Segment 43 (pages 376-383)",
+      "chapter_id": "The DevOps Handbook:ch43",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "failure",
+          "failures",
+          "game",
+          "failure signals",
+          "signals"
+        ],
+        "semantic": [],
+        "merged": [
+          "failure",
+          "failures",
+          "game",
+          "failure signals",
+          "signals"
+        ]
+      },
+      "topic_id": 8,
+      "topic_name": "post_failure_failures",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3210220741348985,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.491391+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 44,
+      "title": "Segment 44 (pages 384-391)",
+      "chapter_id": "The DevOps Handbook:ch44",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "repository",
+          "google",
+          "chat",
+          "rooms",
+          "chat rooms"
+        ],
+        "semantic": [],
+        "merged": [
+          "repository",
+          "google",
+          "chat",
+          "rooms",
+          "chat rooms"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3689661608935743,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.491729+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 45,
+      "title": "Segment 45 (pages 392-399)",
+      "chapter_id": "The DevOps Handbook:ch45",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch25",
+          "score": 0.512450127834905,
+          "base_score": 0.6040835463915083,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "technologies",
+          "supported",
+          "work",
+          "platforms",
+          "library"
+        ],
+        "semantic": [],
+        "merged": [
+          "technologies",
+          "supported",
+          "work",
+          "platforms",
+          "library"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40645735480626616,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.492032+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 46,
+      "title": "Segment 46 (pages 400-409)",
+      "chapter_id": "The DevOps Handbook:ch46",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch11",
+          "score": 0.5526868460977937,
+          "base_score": 0.6711447434963229,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch12",
+          "score": 0.5013280373697248,
+          "base_score": 0.5855467289495413,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "improvement",
+          "blitz",
+          "blitzes",
+          "internal",
+          "conferences"
+        ],
+        "semantic": [],
+        "merged": [
+          "improvement",
+          "blitz",
+          "blitzes",
+          "internal",
+          "conferences"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_work_value",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4194014541960827,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.492338+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 47,
+      "title": "Segment 47 (pages 410-420)",
+      "chapter_id": "The DevOps Handbook:ch47",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "security",
+          "information security",
+          "infosec",
+          "information",
+          "dev ops"
+        ],
+        "semantic": [],
+        "merged": [
+          "security",
+          "information security",
+          "infosec",
+          "information",
+          "dev ops"
+        ]
+      },
+      "topic_id": 10,
+      "topic_name": "security_testing_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44695401897692105,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.492668+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 48,
+      "title": "Segment 48 (pages 421-429)",
+      "chapter_id": "The DevOps Handbook:ch48",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch22",
+          "score": 0.5409964433999374,
+          "base_score": 0.6516607389998956,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch25",
+          "score": 0.529240471099527,
+          "base_score": 0.632067451832545,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch49",
+          "score": 0.5246679581682356,
+          "base_score": 0.5503725228729852,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch21",
+          "score": 0.5118988028946615,
+          "base_score": 0.6031646714911025,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "security",
+          "vulnerabilities",
+          "battle",
+          "twitter",
+          "security testing"
+        ],
+        "semantic": [],
+        "merged": [
+          "security",
+          "vulnerabilities",
+          "battle",
+          "twitter",
+          "security testing"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3410490584707669,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.493375+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 49,
+      "title": "Segment 49 (pages 430-437)",
+      "chapter_id": "The DevOps Handbook:ch49",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch48",
+          "score": 0.5246679581682356,
+          "base_score": 0.5503725228729852,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch50",
+          "score": 0.5039343225407519,
+          "base_score": 0.5898905375679199,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "security",
+          "sql injection",
+          "sql",
+          "telemetry",
+          "injection"
+        ],
+        "semantic": [],
+        "merged": [
+          "security",
+          "sql injection",
+          "sql",
+          "telemetry",
+          "injection"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3756417651114558,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.493747+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 50,
+      "title": "Segment 50 (pages 438-445)",
+      "chapter_id": "The DevOps Handbook:ch50",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch39",
+          "score": 0.6136351465242433,
+          "base_score": 0.6060585775404057,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch52",
+          "score": 0.5583433953734079,
+          "base_score": 0.6064982515482724,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch51",
+          "score": 0.5223598245821642,
+          "base_score": 0.6205997076369405,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch49",
+          "score": 0.5039343225407519,
+          "base_score": 0.5898905375679199,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "changes",
+          "change",
+          "change management",
+          "management",
+          "approval"
+        ],
+        "semantic": [],
+        "merged": [
+          "changes",
+          "change",
+          "change management",
+          "management",
+          "approval"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.346894895125591,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.494112+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 51,
+      "title": "Segment 51 (pages 446-455)",
+      "chapter_id": "The DevOps Handbook:ch51",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch50",
+          "score": 0.5223598245821642,
+          "base_score": 0.6205997076369405,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "controls",
+          "pci",
+          "separation",
+          "massie",
+          "control"
+        ],
+        "semantic": [],
+        "merged": [
+          "controls",
+          "pci",
+          "separation",
+          "massie",
+          "control"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37384582731231164,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.494458+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 52,
+      "title": "Segment 52 (pages 456-464)",
+      "chapter_id": "The DevOps Handbook:ch52",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch50",
+          "score": 0.5583433953734079,
+          "base_score": 0.6064982515482724,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "devops",
+          "management",
+          "devops handbook",
+          "technology",
+          "handbook"
+        ],
+        "semantic": [],
+        "merged": [
+          "devops",
+          "management",
+          "devops handbook",
+          "technology",
+          "handbook"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4644328146252348,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.494789+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 53,
+      "title": "Segment 53 (pages 465-472)",
+      "chapter_id": "The DevOps Handbook:ch53",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch11",
+          "score": 0.5559047205115307,
+          "base_score": 0.6765078675192179,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch12",
+          "score": 0.5161735974875041,
+          "base_score": 0.6102893291458402,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "wait",
+          "wait time",
+          "busy",
+          "resource",
+          "queue"
+        ],
+        "semantic": [],
+        "merged": [
+          "wait",
+          "wait time",
+          "busy",
+          "resource",
+          "queue"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_work_value",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4407055051801352,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.495090+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 54,
+      "title": "Segment 54 (pages 473-480)",
+      "chapter_id": "The DevOps Handbook:ch54",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "meeting",
+          "monkey",
+          "time",
+          "seconds",
+          "list"
+        ],
+        "semantic": [],
+        "merged": [
+          "meeting",
+          "monkey",
+          "time",
+          "seconds",
+          "list"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3979364723613658,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:58:35.495393+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 55,
+      "title": "Segment 55 (pages 481-488)",
+      "chapter_id": "The DevOps Handbook:ch55",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "com",
+          "http",
+          "www",
+          "amazon com",
+          "2015"
+        ],
+        "semantic": [],
+        "merged": [
+          "com",
+          "http",
+          "www",
+          "amazon com",
+          "2015"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3510273310753197,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.495721+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 56,
+      "title": "Segment 56 (pages 489-496)",
+      "chapter_id": "The DevOps Handbook:ch56",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch59",
+          "score": 0.5703463121469186,
+          "base_score": 0.5339105202448643,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch57",
+          "score": 0.5409674183098923,
+          "base_score": 0.48494569718315383,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "http",
+          "linkedin",
+          "www",
+          "http www",
+          "slideshare"
+        ],
+        "semantic": [],
+        "merged": [
+          "http",
+          "linkedin",
+          "www",
+          "http www",
+          "slideshare"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "com_http_www",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34604301695405926,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.496030+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 57,
+      "title": "Segment 57 (pages 497-504)",
+      "chapter_id": "The DevOps Handbook:ch57",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch59",
+          "score": 0.6055848173218485,
+          "base_score": 0.473593743155462,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch58",
+          "score": 0.5567504359587253,
+          "base_score": 0.39220310755025645,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch60",
+          "score": 0.5460113384002693,
+          "base_score": 0.49335223066711553,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch56",
+          "score": 0.5409674183098923,
+          "base_score": 0.48494569718315383,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "com",
+          "www",
+          "youtube",
+          "http",
+          "net"
+        ],
+        "semantic": [],
+        "merged": [
+          "com",
+          "www",
+          "youtube",
+          "http",
+          "net"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "com_http_www",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2975909783347898,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.496337+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 58,
+      "title": "Segment 58 (pages 505-512)",
+      "chapter_id": "The DevOps Handbook:ch58",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch57",
+          "score": 0.5567504359587253,
+          "base_score": 0.39220310755025645,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "com",
+          "https",
+          "www",
+          "facebook",
+          "youtube"
+        ],
+        "semantic": [],
+        "merged": [
+          "com",
+          "https",
+          "www",
+          "facebook",
+          "youtube"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "com_http_www",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3193281088192569,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.496678+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 59,
+      "title": "Segment 59 (pages 513-520)",
+      "chapter_id": "The DevOps Handbook:ch59",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch57",
+          "score": 0.6055848173218485,
+          "base_score": 0.473593743155462,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch56",
+          "score": 0.5703463121469186,
+          "base_score": 0.5339105202448643,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch62",
+          "score": 0.5390563095994511,
+          "base_score": 0.362712896951466,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "http",
+          "com",
+          "net",
+          "slideshare",
+          "slideshare net"
+        ],
+        "semantic": [],
+        "merged": [
+          "http",
+          "com",
+          "net",
+          "slideshare",
+          "slideshare net"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "com_http_www",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3212781198639393,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.496990+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 60,
+      "title": "Segment 60 (pages 521-528)",
+      "chapter_id": "The DevOps Handbook:ch60",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch57",
+          "score": 0.5460113384002693,
+          "base_score": 0.49335223066711553,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "com",
+          "http",
+          "https",
+          "2011",
+          "2014"
+        ],
+        "semantic": [],
+        "merged": [
+          "com",
+          "http",
+          "https",
+          "2011",
+          "2014"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "com_http_www",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37187300354292274,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.497290+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 61,
+      "title": "Segment 61 (pages 529-536)",
+      "chapter_id": "The DevOps Handbook:ch61",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "com",
+          "www",
+          "youtube",
+          "https",
+          "https www"
+        ],
+        "semantic": [],
+        "merged": [
+          "com",
+          "www",
+          "youtube",
+          "https",
+          "https www"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "115_164_case",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.16586892261557518,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.497616+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 62,
+      "title": "Segment 62 (pages 537-544)",
+      "chapter_id": "The DevOps Handbook:ch62",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch59",
+          "score": 0.5390563095994511,
+          "base_score": 0.362712896951466,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ibid",
+          "185",
+          "slideshare net",
+          "net",
+          "slideshare"
+        ],
+        "semantic": [],
+        "merged": [
+          "ibid",
+          "185",
+          "slideshare net",
+          "net",
+          "slideshare"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "com_http_www",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36058366014987636,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.497920+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 63,
+      "title": "Segment 63 (pages 545-552)",
+      "chapter_id": "The DevOps Handbook:ch63",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch65",
+          "score": 0.5851661255438415,
+          "base_score": 0.7252768759064026,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch68",
+          "score": 0.5757928160428657,
+          "base_score": 0.7096546934047763,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch66",
+          "score": 0.5020032946617953,
+          "base_score": 0.5866721577696588,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "251",
+          "259",
+          "258",
+          "257",
+          "320"
+        ],
+        "semantic": [],
+        "merged": [
+          "251",
+          "259",
+          "258",
+          "257",
+          "320"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "115_164_case",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4098735880490538,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.498224+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 64,
+      "title": "Segment 64 (pages 553-560)",
+      "chapter_id": "The DevOps Handbook:ch64",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch66",
+          "score": 0.6537382536140984,
+          "base_score": 0.7654896819494232,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch65",
+          "score": 0.5560219374620486,
+          "base_score": 0.6767032291034145,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch68",
+          "score": 0.542660573580959,
+          "base_score": 0.6544342893015984,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch67",
+          "score": 0.523360619027066,
+          "base_score": 0.6222676983784432,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "115",
+          "118",
+          "164",
+          "version control",
+          "version"
+        ],
+        "semantic": [],
+        "merged": [
+          "115",
+          "118",
+          "164",
+          "version control",
+          "version"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "115_164_case",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4119705985330531,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.498549+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 65,
+      "title": "Segment 65 (pages 561-568)",
+      "chapter_id": "The DevOps Handbook:ch65",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch68",
+          "score": 0.6241393920061368,
+          "base_score": 0.790232320010228,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch63",
+          "score": 0.5851661255438415,
+          "base_score": 0.7252768759064026,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch66",
+          "score": 0.5741072005218311,
+          "base_score": 0.7068453342030517,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch64",
+          "score": 0.5560219374620486,
+          "base_score": 0.6767032291034145,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch67",
+          "score": 0.5363764374549033,
+          "base_score": 0.6439607290915055,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "126",
+          "318",
+          "296n",
+          "automated testing",
+          "239"
+        ],
+        "semantic": [],
+        "merged": [
+          "126",
+          "318",
+          "296n",
+          "automated testing",
+          "239"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "115_164_case",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39741813593941117,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.498858+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 66,
+      "title": "Segment 66 (pages 569-576)",
+      "chapter_id": "The DevOps Handbook:ch66",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch64",
+          "score": 0.6537382536140984,
+          "base_score": 0.7654896819494232,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch65",
+          "score": 0.5741072005218311,
+          "base_score": 0.7068453342030517,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch67",
+          "score": 0.5391583705259015,
+          "base_score": 0.6485972842098359,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch68",
+          "score": 0.5383711307815952,
+          "base_score": 0.6472852179693254,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch63",
+          "score": 0.5020032946617953,
+          "base_score": 0.5866721577696588,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "164",
+          "175",
+          "deployment",
+          "169",
+          "171"
+        ],
+        "semantic": [],
+        "merged": [
+          "164",
+          "175",
+          "deployment",
+          "169",
+          "171"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "115_164_case",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43963473192490515,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.499164+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 67,
+      "title": "Segment 67 (pages 577-584)",
+      "chapter_id": "The DevOps Handbook:ch67",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch66",
+          "score": 0.5391583705259015,
+          "base_score": 0.6485972842098359,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch65",
+          "score": 0.5363764374549033,
+          "base_score": 0.6439607290915055,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch64",
+          "score": 0.523360619027066,
+          "base_score": 0.6222676983784432,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch68",
+          "score": 0.5221838853928796,
+          "base_score": 0.6203064756547993,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "91",
+          "90 91",
+          "90",
+          "87",
+          "83"
+        ],
+        "semantic": [],
+        "merged": [
+          "91",
+          "90 91",
+          "90",
+          "87",
+          "83"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "115_164_case",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38736595714690114,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.499466+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 68,
+      "title": "Segment 68 (pages 585-592)",
+      "chapter_id": "The DevOps Handbook:ch68",
+      "cross_references": [
+        {
+          "target": "The DevOps Handbook:ch65",
+          "score": 0.6241393920061368,
+          "base_score": 0.790232320010228,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch63",
+          "score": 0.5757928160428657,
+          "base_score": 0.7096546934047763,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch64",
+          "score": 0.542660573580959,
+          "base_score": 0.6544342893015984,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch66",
+          "score": 0.5383711307815952,
+          "base_score": 0.6472852179693254,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The DevOps Handbook:ch67",
+          "score": 0.5221838853928796,
+          "base_score": 0.6203064756547993,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "132",
+          "137",
+          "136",
+          "133",
+          "132 133"
+        ],
+        "semantic": [],
+        "merged": [
+          "132",
+          "137",
+          "136",
+          "133",
+          "132 133"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "115_164_case",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38456991494292736,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.499786+00:00"
+      }
+    },
+    {
+      "book": "The DevOps Handbook",
+      "chapter": 69,
+      "title": "Segment 69 (pages 593-600)",
+      "chapter_id": "The DevOps Handbook:ch69",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "24",
+          "thank",
+          "25",
+          "chris",
+          "john"
+        ],
+        "semantic": [],
+        "merged": [
+          "24",
+          "thank",
+          "25",
+          "chris",
+          "john"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "com_http_www",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37766803567454266,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:35.500086+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

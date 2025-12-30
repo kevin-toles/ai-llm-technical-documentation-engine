@@ -1,0 +1,215 @@
+{
+  "book": {
+    "title": "security-data-lake"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:02:18.724308",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "security-data-lake",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-10)",
+      "chapter_id": "security-data-lake:ch1",
+      "cross_references": [
+        {
+          "target": "security-data-lake:ch4",
+          "score": 0.5367323145473989,
+          "base_score": 0.7278871909123314,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "security",
+          "lake",
+          "data lake",
+          "security data",
+          "contextual data"
+        ],
+        "semantic": [],
+        "merged": [
+          "security",
+          "lake",
+          "data lake",
+          "security data",
+          "contextual data"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "data_security_lake",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6979535657677097,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:18.715889+00:00"
+      }
+    },
+    {
+      "book": "security-data-lake",
+      "chapter": 2,
+      "title": "Segment 2 (pages 11-18)",
+      "chapter_id": "security-data-lake:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "parsed",
+          "need",
+          "use",
+          "cases",
+          "raw"
+        ],
+        "semantic": [],
+        "merged": [
+          "parsed",
+          "need",
+          "use",
+          "cases",
+          "raw"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_parsed_need",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6829248339743453,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:18.715956+00:00"
+      }
+    },
+    {
+      "book": "security-data-lake",
+      "chapter": 3,
+      "title": "Segment 3 (pages 19-26)",
+      "chapter_id": "security-data-lake:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "stores",
+          "data stores",
+          "time",
+          "based",
+          "query"
+        ],
+        "semantic": [],
+        "merged": [
+          "stores",
+          "data stores",
+          "time",
+          "based",
+          "query"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "data_store_stores",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6654273844628106,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:18.715985+00:00"
+      }
+    },
+    {
+      "book": "security-data-lake",
+      "chapter": 4,
+      "title": "Segment 4 (pages 27-34)",
+      "chapter_id": "security-data-lake:ch4",
+      "cross_references": [
+        {
+          "target": "security-data-lake:ch1",
+          "score": 0.5367323145473989,
+          "base_score": 0.7278871909123314,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "siem",
+          "lake",
+          "data lake",
+          "read",
+          "hdfs"
+        ],
+        "semantic": [],
+        "merged": [
+          "siem",
+          "lake",
+          "data lake",
+          "read",
+          "hdfs"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "data_siem_lake",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6565158810328963,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:18.716012+00:00"
+      }
+    },
+    {
+      "book": "security-data-lake",
+      "chapter": 5,
+      "title": "Segment 5 (pages 35-37)",
+      "chapter_id": "security-data-lake:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "engine",
+          "data stored",
+          "query",
+          "sql",
+          "engines"
+        ],
+        "semantic": [],
+        "merged": [
+          "engine",
+          "data stored",
+          "query",
+          "sql",
+          "engines"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "data_engine_query",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6748190942797558,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:18.716038+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

@@ -1,0 +1,51 @@
+{
+  "book": {
+    "title": "microservices-in-production"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:01:48.272265",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "microservices-in-production",
+      "chapter": 1,
+      "title": "Microservices in Production",
+      "chapter_id": "microservices-in-production:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "microservice",
+          "production",
+          "availability",
+          "requirements",
+          "production readiness"
+        ],
+        "semantic": [],
+        "merged": [
+          "microservice",
+          "production",
+          "availability",
+          "requirements",
+          "production readiness"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.999999979035542,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:01:48.269384+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

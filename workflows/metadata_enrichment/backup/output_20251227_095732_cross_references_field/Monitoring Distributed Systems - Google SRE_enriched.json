@@ -1,0 +1,125 @@
+{
+  "book": {
+    "title": "Monitoring Distributed Systems - Google SRE"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:52:36.650373",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Monitoring Distributed Systems - Google SRE",
+      "chapter": 1,
+      "title": "Segment 1 (pages 3-11)",
+      "chapter_id": "Monitoring Distributed Systems - Google SRE:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "systems",
+          "distributed",
+          "monitoring distributed",
+          "distributed systems",
+          "versus"
+        ],
+        "semantic": [],
+        "merged": [
+          "systems",
+          "distributed",
+          "monitoring distributed",
+          "distributed systems",
+          "versus"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "monitoring_systems_distributed",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6954943853273816,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:36.632766+00:00"
+      }
+    },
+    {
+      "book": "Monitoring Distributed Systems - Google SRE",
+      "chapter": 2,
+      "title": "Segment 2 (pages 12-19)",
+      "chapter_id": "Monitoring Distributed Systems - Google SRE:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "requests",
+          "response",
+          "load",
+          "latency",
+          "time"
+        ],
+        "semantic": [],
+        "merged": [
+          "requests",
+          "response",
+          "load",
+          "latency",
+          "time"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "monitoring_response_requests",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6874504428584159,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:36.632852+00:00"
+      }
+    },
+    {
+      "book": "Monitoring Distributed Systems - Google SRE",
+      "chapter": 3,
+      "title": "Segment 3 (pages 20-22)",
+      "chapter_id": "Monitoring Distributed Systems - Google SRE:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "long",
+          "long term",
+          "term",
+          "fixes",
+          "term fixes"
+        ],
+        "semantic": [],
+        "merged": [
+          "long",
+          "long term",
+          "term",
+          "fixes",
+          "term fixes"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "long_term_fixes",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6380335068125459,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:36.632872+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

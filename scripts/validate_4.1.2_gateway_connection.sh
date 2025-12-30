@@ -19,21 +19,24 @@ PASSED=0
 FAILED=0
 
 pass() {
-    echo -e "Testing: $1...\t\t\t  \033[32mPASS\033[0m"
+    local message="$1"
+    echo -e "Testing: $message...\t\t\t  \033[32mPASS\033[0m"
     PASSED=$((PASSED + 1))
+    return 0
 }
-
 fail() {
-    echo -e "Testing: $1...\t\t\t  \033[31mFAIL\033[0m"
-    echo "  Error: $2"
+    local message="$1"
+    local error="$2"
+    echo -e "Testing: $message...\t\t\t  \033[31mFAIL\033[0m"
+    echo "  Error: $error" >&2
     FAILED=$((FAILED + 1))
+    return 0
 }
-
 # =============================================================================
 # Test 1: Gateway healthy (HTTP 200, status "healthy")
 # =============================================================================
 HEALTH_STATUS=$(curl -s "$GATEWAY_URL/health" | jq -r '.status' 2>/dev/null || echo "")
-if [ "$HEALTH_STATUS" = "healthy" ]; then
+if [[ "$HEALTH_STATUS" = "healthy" ]]; then
     pass "Gateway healthy"
 else
     fail "Gateway healthy" "Expected 'healthy', got '$HEALTH_STATUS'"
@@ -43,7 +46,7 @@ fi
 # Test 2: Client importable
 # =============================================================================
 IMPORT_RESULT=$(python3 -c "from workflows.shared.clients.llm_gateway import LLMGatewayClient; print('OK')" 2>&1)
-if [ "$IMPORT_RESULT" = "OK" ]; then
+if [[ "$IMPORT_RESULT" = "OK" ]]; then
     pass "Client importable"
 else
     fail "Client importable" "Import error: $IMPORT_RESULT"
@@ -59,7 +62,7 @@ assert hasattr(client, 'chat_completion'), 'Missing chat_completion'
 assert hasattr(client, 'health_check'), 'Missing health_check'
 print('OK')
 " 2>&1)
-if [ "$METHODS_RESULT" = "OK" ]; then
+if [[ "$METHODS_RESULT" = "OK" ]]; then
     pass "Client has required methods"
 else
     fail "Client has required methods" "$METHODS_RESULT"
@@ -68,7 +71,7 @@ fi
 # =============================================================================
 # Test 4: API key is set
 # =============================================================================
-if [ -n "$OPENAI_API_KEY" ] || [ -n "$ANTHROPIC_API_KEY" ]; then
+if [[ -n "$OPENAI_API_KEY" ]] || [[ -n "$ANTHROPIC_API_KEY" ]]; then
     pass "API key set"
 else
     fail "API key set" "Neither OPENAI_API_KEY nor ANTHROPIC_API_KEY is set"
@@ -88,7 +91,7 @@ async def check():
 
 asyncio.run(check())
 " 2>&1)
-if [ "$HEALTH_RESULT" = "OK" ]; then
+if [[ "$HEALTH_RESULT" = "OK" ]]; then
     pass "Health check via client"
 else
     fail "Health check via client" "$HEALTH_RESULT"
@@ -113,7 +116,7 @@ async def test():
 
 asyncio.run(test())
 " 2>&1)
-if [ "$COMPLETION_RESULT" = "OK" ]; then
+if [[ "$COMPLETION_RESULT" = "OK" ]]; then
     pass "Simple completion"
 else
     fail "Simple completion" "$COMPLETION_RESULT"
@@ -130,7 +133,7 @@ echo "Passed: $PASSED"
 echo "Failed: $FAILED"
 echo ""
 
-if [ $FAILED -eq 0 ]; then
+if [[ $FAILED -eq 0 ]]; then
     echo "✓ All WBS 4.1.2 validation tests passed!"
     exit 0
 else

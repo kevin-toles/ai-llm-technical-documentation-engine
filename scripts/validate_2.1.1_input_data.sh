@@ -17,20 +17,21 @@ run_test() {
     local result="$2"
     local expected="$3"
     
-    if [ "$result" = "$expected" ]; then
+    if [[ "$result" == "$expected" ]]; then
         echo "✓ $name"
         TESTS_PASSED=$((TESTS_PASSED + 1))
     else
-        echo "✗ $name (expected: $expected, got: $result)"
+        echo "✗ $name (expected: $expected, got: $result)" >&2
         TESTS_FAILED=$((TESTS_FAILED + 1))
     fi
+    return 0
 }
 
 echo ""
 echo "1. Checking input JSON accessible..."
-if [ -f "$JSON_FILE" ] || [ -L "$JSON_FILE" ]; then
+if [[ -f "$JSON_FILE" ]] || [[ -L "$JSON_FILE" ]]; then
     # Verify symlink target exists
-    if [ -r "$JSON_FILE" ]; then
+    if [[ -r "$JSON_FILE" ]]; then
         run_test "Input JSON accessible" "true" "true"
     else
         run_test "Input JSON accessible (broken symlink)" "false" "true"
@@ -41,7 +42,7 @@ fi
 
 echo ""
 echo "2. Checking book manifest exists..."
-if [ -f "$MANIFEST" ]; then
+if [[ -f "$MANIFEST" ]]; then
     run_test "Book manifest exists" "true" "true"
 else
     run_test "Book manifest exists" "false" "true"
@@ -58,7 +59,7 @@ fi
 echo ""
 echo "4. Checking manifest has author..."
 AUTHOR=$(jq -r '.author // empty' "$MANIFEST" 2>/dev/null)
-if [ -n "$AUTHOR" ]; then
+if [[ -n "$AUTHOR" ]]; then
     run_test "Manifest has author" "true" "true"
     echo "   Author: $AUTHOR"
 else
@@ -68,7 +69,7 @@ fi
 echo ""
 echo "5. Checking manifest has title..."
 TITLE=$(jq -r '.title // empty' "$MANIFEST" 2>/dev/null)
-if [ -n "$TITLE" ]; then
+if [[ -n "$TITLE" ]]; then
     run_test "Manifest has title" "true" "true"
     echo "   Title: $TITLE"
 else
@@ -78,7 +79,7 @@ fi
 echo ""
 echo "6. Checking manifest has tier..."
 TIER=$(jq -r '.tier // empty' "$MANIFEST" 2>/dev/null)
-if [ -n "$TIER" ]; then
+if [[ -n "$TIER" ]]; then
     run_test "Manifest has tier" "true" "true"
     echo "   Tier: $TIER"
 else
@@ -88,12 +89,12 @@ fi
 echo ""
 echo "7. Checking json_source reference..."
 JSON_SOURCE=$(jq -r '.json_source // empty' "$MANIFEST" 2>/dev/null)
-if [ -n "$JSON_SOURCE" ]; then
+if [[ -n "$JSON_SOURCE" ]]; then
     run_test "Manifest has json_source" "true" "true"
     echo "   JSON Source: $JSON_SOURCE"
     
     # Verify json_source file exists
-    if [ -f "$INPUT_DIR/$JSON_SOURCE" ] || [ -L "$INPUT_DIR/$JSON_SOURCE" ]; then
+    if [[ -f "$INPUT_DIR/$JSON_SOURCE" ]] || [[ -L "$INPUT_DIR/$JSON_SOURCE" ]]; then
         run_test "JSON source file exists" "true" "true"
     else
         run_test "JSON source file exists" "false" "true"
@@ -105,7 +106,7 @@ fi
 echo ""
 echo "8. Verifying input JSON has chapters..."
 CHAPTER_COUNT=$(jq '.chapters | length' "$JSON_FILE" 2>/dev/null || echo "0")
-if [ "$CHAPTER_COUNT" -ge 1 ]; then
+if [[ "$CHAPTER_COUNT" -ge 1 ]]; then
     run_test "Input JSON has chapters" "true" "true"
     echo "   Chapters in JSON: $CHAPTER_COUNT"
 else
@@ -117,7 +118,7 @@ echo "=== Summary ==="
 echo "Tests passed: $TESTS_PASSED"
 echo "Tests failed: $TESTS_FAILED"
 
-if [ "$TESTS_FAILED" -eq 0 ]; then
+if [[ "$TESTS_FAILED" -eq 0 ]]; then
     echo ""
     echo "=== WBS 2.1.1 PASSED ==="
     exit 0

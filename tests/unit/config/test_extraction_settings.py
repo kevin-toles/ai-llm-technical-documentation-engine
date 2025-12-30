@@ -8,13 +8,9 @@ TDD Phase: RED - Tests written before implementation.
 from __future__ import annotations
 
 import os
-from typing import TYPE_CHECKING
 from unittest.mock import patch
 
 import pytest
-
-if TYPE_CHECKING:
-    pass
 
 
 # =============================================================================
@@ -29,14 +25,14 @@ class TestExtractionSettingsImport:
         """AC-1.4: ExtractionSettings class exists."""
         from config.extraction_settings import ExtractionSettings
 
-        assert ExtractionSettings is not None
+        assert ExtractionSettings
 
     def test_can_instantiate_extraction_settings(self) -> None:
         """AC-1.4: ExtractionSettings can be instantiated."""
         from config.extraction_settings import ExtractionSettings
 
         settings = ExtractionSettings()
-        assert settings is not None
+        assert settings
 
 
 # =============================================================================
@@ -47,12 +43,12 @@ class TestExtractionSettingsImport:
 class TestExtractionSettingsDefaults:
     """Test default values for ExtractionSettings."""
 
-    def test_use_orchestrator_extraction_default_false(self) -> None:
-        """AC-1.3: Default behavior uses local StatisticalExtractor."""
+    def test_use_orchestrator_extraction_default_true(self) -> None:
+        """AC-1.3: Default behavior uses orchestrator for high-quality extraction."""
         from config.extraction_settings import ExtractionSettings
 
         settings = ExtractionSettings()
-        assert settings.use_orchestrator_extraction is False
+        assert settings.use_orchestrator_extraction is True
 
     def test_orchestrator_url_default(self) -> None:
         """Default orchestrator URL is localhost:8083."""
@@ -66,7 +62,7 @@ class TestExtractionSettingsDefaults:
         from config.extraction_settings import ExtractionSettings
 
         settings = ExtractionSettings()
-        assert settings.orchestrator_timeout == 30.0
+        assert settings.orchestrator_timeout == pytest.approx(30.0)
 
     def test_orchestrator_max_retries_default(self) -> None:
         """Default max retries is 3."""
@@ -87,28 +83,14 @@ class TestExtractionSettingsDefaults:
         from config.extraction_settings import ExtractionSettings
 
         settings = ExtractionSettings()
-        assert settings.min_keyword_confidence == 0.3
+        assert settings.min_keyword_confidence == pytest.approx(0.3)
 
     def test_min_concept_confidence_default(self) -> None:
         """Default min concept confidence is 0.3."""
         from config.extraction_settings import ExtractionSettings
 
         settings = ExtractionSettings()
-        assert settings.min_concept_confidence == 0.3
-
-    def test_top_k_keywords_default(self) -> None:
-        """Default top_k_keywords is 15."""
-        from config.extraction_settings import ExtractionSettings
-
-        settings = ExtractionSettings()
-        assert settings.top_k_keywords == 15
-
-    def test_top_k_concepts_default(self) -> None:
-        """Default top_k_concepts is 10."""
-        from config.extraction_settings import ExtractionSettings
-
-        settings = ExtractionSettings()
-        assert settings.top_k_concepts == 10
+        assert settings.min_concept_confidence == pytest.approx(0.3)
 
 
 # =============================================================================
@@ -141,7 +123,7 @@ class TestExtractionSettingsEnvOverrides:
             from config.extraction_settings import ExtractionSettings
 
             settings = ExtractionSettings()
-            assert settings.orchestrator_timeout == 60.0
+            assert settings.orchestrator_timeout == pytest.approx(60.0)
 
     def test_orchestrator_max_retries_env_override(self) -> None:
         """AC-1.4: EXTRACTION_ORCHESTRATOR_MAX_RETRIES overrides default."""
@@ -165,15 +147,7 @@ class TestExtractionSettingsEnvOverrides:
             from config.extraction_settings import ExtractionSettings
 
             settings = ExtractionSettings()
-            assert settings.min_keyword_confidence == 0.5
-
-    def test_top_k_keywords_env_override(self) -> None:
-        """AC-1.4: EXTRACTION_TOP_K_KEYWORDS overrides default."""
-        with patch.dict(os.environ, {"EXTRACTION_TOP_K_KEYWORDS": "20"}):
-            from config.extraction_settings import ExtractionSettings
-
-            settings = ExtractionSettings()
-            assert settings.top_k_keywords == 20
+            assert settings.min_keyword_confidence == pytest.approx(0.5)
 
 
 # =============================================================================
@@ -189,7 +163,7 @@ class TestExtractionSettingsSingleton:
         from config.extraction_settings import get_extraction_settings
 
         settings = get_extraction_settings()
-        assert settings is not None
+        assert settings
 
     def test_get_extraction_settings_returns_same_instance(self) -> None:
         """get_extraction_settings() returns cached singleton."""

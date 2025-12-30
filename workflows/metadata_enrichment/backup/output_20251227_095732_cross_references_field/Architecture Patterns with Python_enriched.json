@@ -1,0 +1,630 @@
+{
+  "book": {
+    "title": "Architecture Patterns with Python"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:40:21.660444",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Architecture Patterns with Python",
+      "chapter": 1,
+      "title": "Domain Modeling",
+      "chapter_id": "Architecture Patterns with Python:ch1",
+      "cross_references": [
+        {
+          "target": "Architecture Patterns with Python:ch2",
+          "score": 0.5005312292272062,
+          "base_score": 0.5101446413046028,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "batch",
+          "line",
+          "domain",
+          "self",
+          "allocate"
+        ],
+        "semantic": [],
+        "merged": [
+          "batch",
+          "line",
+          "domain",
+          "self",
+          "allocate"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "batch_model_domain",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3054240202806558,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:21.654093+00:00"
+      }
+    },
+    {
+      "book": "Architecture Patterns with Python",
+      "chapter": 2,
+      "title": "Repository Pattern",
+      "chapter_id": "Architecture Patterns with Python:ch2",
+      "cross_references": [
+        {
+          "target": "Architecture Patterns with Python:ch1",
+          "score": 0.5005312292272062,
+          "base_score": 0.5101446413046028,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "model",
+          "domain model",
+          "domain",
+          "repository",
+          "orm"
+        ],
+        "semantic": [],
+        "merged": [
+          "model",
+          "domain model",
+          "domain",
+          "repository",
+          "orm"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "batch_model_domain",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4622417233448562,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:21.654192+00:00"
+      }
+    },
+    {
+      "book": "Architecture Patterns with Python",
+      "chapter": 3,
+      "title": "A Brief Interlude: On Coupling and Abstractions",
+      "chapter_id": "Architecture Patterns with Python:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "path",
+          "source",
+          "file",
+          "dest",
+          "source_hashes"
+        ],
+        "semantic": [],
+        "merged": [
+          "path",
+          "source",
+          "file",
+          "dest",
+          "source_hashes"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_layer_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30258436472948896,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:21.654269+00:00"
+      }
+    },
+    {
+      "book": "Architecture Patterns with Python",
+      "chapter": 4,
+      "title": "Our First Use Case: Flask API and Service Layer",
+      "chapter_id": "Architecture Patterns with Python:ch4",
+      "cross_references": [
+        {
+          "target": "Architecture Patterns with Python:ch5",
+          "score": 0.5505424649059275,
+          "base_score": 0.6318564891289268,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "layer",
+          "service layer",
+          "service",
+          "sku",
+          "json"
+        ],
+        "semantic": [],
+        "merged": [
+          "layer",
+          "service layer",
+          "service",
+          "sku",
+          "json"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_layer_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46310532642448254,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:21.654336+00:00"
+      }
+    },
+    {
+      "book": "Architecture Patterns with Python",
+      "chapter": 5,
+      "title": "TDD in High Gear and Low Gear",
+      "chapter_id": "Architecture Patterns with Python:ch5",
+      "cross_references": [
+        {
+          "target": "Architecture Patterns with Python:ch4",
+          "score": 0.5505424649059275,
+          "base_score": 0.6318564891289268,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tests",
+          "layer",
+          "service layer",
+          "service",
+          "repo"
+        ],
+        "semantic": [],
+        "merged": [
+          "tests",
+          "layer",
+          "service layer",
+          "service",
+          "repo"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4411332545214424,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:40:21.654450+00:00"
+      }
+    },
+    {
+      "book": "Architecture Patterns with Python",
+      "chapter": 6,
+      "title": "Unit of Work Pattern",
+      "chapter_id": "Architecture Patterns with Python:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "uow",
+          "uow batches",
+          "session_factory",
+          "commit",
+          "session"
+        ],
+        "semantic": [],
+        "merged": [
+          "uow",
+          "uow batches",
+          "session_factory",
+          "commit",
+          "session"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43080451616780846,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:40:21.654510+00:00"
+      }
+    },
+    {
+      "book": "Architecture Patterns with Python",
+      "chapter": 7,
+      "title": "Aggregates and Consistency Boundaries",
+      "chapter_id": "Architecture Patterns with Python:ch7",
+      "cross_references": [
+        {
+          "target": "Architecture Patterns with Python:ch12",
+          "score": 0.5359864787285199,
+          "base_score": 0.6433107978808665,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Architecture Patterns with Python:ch9",
+          "score": 0.5220585276703106,
+          "base_score": 0.6200975461171843,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "product",
+          "sku",
+          "batches",
+          "version",
+          "line"
+        ],
+        "semantic": [],
+        "merged": [
+          "product",
+          "sku",
+          "batches",
+          "version",
+          "line"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_events",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42806681416408476,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:21.654584+00:00"
+      }
+    },
+    {
+      "book": "Architecture Patterns with Python",
+      "chapter": 8,
+      "title": "Events and the Message Bus",
+      "chapter_id": "Architecture Patterns with Python:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "events",
+          "product",
+          "bus",
+          "sku",
+          "message bus"
+        ],
+        "semantic": [],
+        "merged": [
+          "events",
+          "product",
+          "bus",
+          "sku",
+          "message bus"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_events",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3992417731944317,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:21.654643+00:00"
+      }
+    },
+    {
+      "book": "Architecture Patterns with Python",
+      "chapter": 9,
+      "title": "Going to Town on the Message Bus",
+      "chapter_id": "Architecture Patterns with Python:ch9",
+      "cross_references": [
+        {
+          "target": "Architecture Patterns with Python:ch11",
+          "score": 0.676069174967541,
+          "base_score": 0.7101152916125684,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Architecture Patterns with Python:ch10",
+          "score": 0.645748735815548,
+          "base_score": 0.5405336073116276,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Architecture Patterns with Python:ch12",
+          "score": 0.5644995245268325,
+          "base_score": 0.6167584668039799,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Architecture Patterns with Python:ch7",
+          "score": 0.5220585276703106,
+          "base_score": 0.6200975461171843,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "events",
+          "event",
+          "uow",
+          "allocationrequired",
+          "handler"
+        ],
+        "semantic": [],
+        "merged": [
+          "events",
+          "event",
+          "uow",
+          "allocationrequired",
+          "handler"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_events",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4575108541202494,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:21.654704+00:00"
+      }
+    },
+    {
+      "book": "Architecture Patterns with Python",
+      "chapter": 10,
+      "title": "Commands and Command Handler",
+      "chapter_id": "Architecture Patterns with Python:ch10",
+      "cross_references": [
+        {
+          "target": "Architecture Patterns with Python:ch9",
+          "score": 0.645748735815548,
+          "base_score": 0.5405336073116276,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Architecture Patterns with Python:ch11",
+          "score": 0.554503487234472,
+          "base_score": 0.5075058120574534,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "event",
+          "commands",
+          "events",
+          "command",
+          "uow"
+        ],
+        "semantic": [],
+        "merged": [
+          "event",
+          "commands",
+          "events",
+          "command",
+          "uow"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_events",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4003434179124457,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:21.654802+00:00"
+      }
+    },
+    {
+      "book": "Architecture Patterns with Python",
+      "chapter": 11,
+      "title": "Event-Driven Architecture: Using Events to Integrate Microservices",
+      "chapter_id": "Architecture Patterns with Python:ch11",
+      "cross_references": [
+        {
+          "target": "Architecture Patterns with Python:ch9",
+          "score": 0.676069174967541,
+          "base_score": 0.7101152916125684,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Architecture Patterns with Python:ch10",
+          "score": 0.554503487234472,
+          "base_score": 0.5075058120574534,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Architecture Patterns with Python:ch12",
+          "score": 0.511468193850505,
+          "base_score": 0.6024469897508417,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "redis",
+          "event",
+          "events",
+          "channel",
+          "allocated"
+        ],
+        "semantic": [],
+        "merged": [
+          "redis",
+          "event",
+          "events",
+          "channel",
+          "allocated"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_events",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45569156252508847,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:21.654864+00:00"
+      }
+    },
+    {
+      "book": "Architecture Patterns with Python",
+      "chapter": 12,
+      "title": "Command-Query Responsibility Segregation (CQRS)",
+      "chapter_id": "Architecture Patterns with Python:ch12",
+      "cross_references": [
+        {
+          "target": "Architecture Patterns with Python:ch9",
+          "score": 0.5644995245268325,
+          "base_score": 0.6167584668039799,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Architecture Patterns with Python:ch7",
+          "score": 0.5359864787285199,
+          "base_score": 0.6433107978808665,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Architecture Patterns with Python:ch11",
+          "score": 0.511468193850505,
+          "base_score": 0.6024469897508417,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "orderid",
+          "read",
+          "model",
+          "uow",
+          "read model"
+        ],
+        "semantic": [],
+        "merged": [
+          "orderid",
+          "read",
+          "model",
+          "uow",
+          "read model"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_events",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48178318252960384,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:21.654924+00:00"
+      }
+    },
+    {
+      "book": "Architecture Patterns with Python",
+      "chapter": 13,
+      "title": "Dependency Injection (and Bootstrapping)",
+      "chapter_id": "Architecture Patterns with Python:ch13",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "sku",
+          "uow",
+          "bootstrap",
+          "csv",
+          "row"
+        ],
+        "semantic": [],
+        "merged": [
+          "sku",
+          "uow",
+          "bootstrap",
+          "csv",
+          "row"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40522143443300085,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:40:21.654979+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

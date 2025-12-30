@@ -1,0 +1,1419 @@
+{
+  "book": {
+    "title": "Seeking SRE - David Blank-Edelman"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:56:06.127049",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Seeking SRE - David Blank-Edelman",
+      "chapter": 1,
+      "title": "Context\tVersus\tControl\tin SRE",
+      "chapter_id": "Seeking SRE - David Blank-Edelman:ch1",
+      "cross_references": [
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch13",
+          "score": 0.5412642095285668,
+          "base_score": 0.6521070158809446,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "availability",
+          "context",
+          "microservice",
+          "microservice availability",
+          "coburn"
+        ],
+        "semantic": [],
+        "merged": [
+          "availability",
+          "context",
+          "microservice",
+          "microservice availability",
+          "coburn"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_to_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38096847168813264,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:06.095555+00:00"
+      }
+    },
+    {
+      "book": "Seeking SRE - David Blank-Edelman",
+      "chapter": 2,
+      "title": "Interviewing\tSite Reliability\tEngineers",
+      "chapter_id": "Seeking SRE - David Blank-Edelman:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "candidate",
+          "questions",
+          "interview",
+          "candidates",
+          "hiring"
+        ],
+        "semantic": [],
+        "merged": [
+          "candidate",
+          "questions",
+          "interview",
+          "candidates",
+          "hiring"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "and_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2908315599777984,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:06.095754+00:00"
+      }
+    },
+    {
+      "book": "Seeking SRE - David Blank-Edelman",
+      "chapter": 3,
+      "title": "So,\tYou\tWant\tto\tBuild\tan SRE\tTeam?",
+      "chapter_id": "Seeking SRE - David Blank-Edelman:ch3",
+      "cross_references": [
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch31",
+          "score": 0.5487017448149096,
+          "base_score": 0.5904288339507753,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch18",
+          "score": 0.5008784118460073,
+          "base_score": 0.5107232790026048,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sre",
+          "sre team",
+          "people",
+          "reliability",
+          "teams"
+        ],
+        "semantic": [],
+        "merged": [
+          "sre",
+          "sre team",
+          "people",
+          "reliability",
+          "teams"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "sre_mental_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43681831786536685,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:06.095914+00:00"
+      }
+    },
+    {
+      "book": "Seeking SRE - David Blank-Edelman",
+      "chapter": 4,
+      "title": "Using\tIncident\tMetrics\tto Improve\tSRE\tat\tScale",
+      "chapter_id": "Seeking SRE - David Blank-Edelman:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "repair",
+          "metrics",
+          "debt",
+          "repair debt",
+          "incident"
+        ],
+        "semantic": [],
+        "merged": [
+          "repair",
+          "metrics",
+          "debt",
+          "repair debt",
+          "incident"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39251974332721457,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:06.096058+00:00"
+      }
+    },
+    {
+      "book": "Seeking SRE - David Blank-Edelman",
+      "chapter": 5,
+      "title": "Working\twith\tThird Parties\tShouldn’t\tSuck",
+      "chapter_id": "Seeking SRE - David Blank-Edelman:ch5",
+      "cross_references": [
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch8",
+          "score": 0.557524409809671,
+          "base_score": 0.679207349682785,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch11",
+          "score": 0.5100739436937374,
+          "base_score": 0.6001232394895623,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "party",
+          "vendor",
+          "solution",
+          "cdn",
+          "apis"
+        ],
+        "semantic": [],
+        "merged": [
+          "party",
+          "vendor",
+          "solution",
+          "cdn",
+          "apis"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "and_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45559035153620947,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:06.096203+00:00"
+      }
+    },
+    {
+      "book": "Seeking SRE - David Blank-Edelman",
+      "chapter": 6,
+      "title": "How\tto\tApply\tSRE Principles\tWithout\tDedicated\tSRE Teams",
+      "chapter_id": "Seeking SRE - David Blank-Edelman:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "soundcloud",
+          "sysops",
+          "teams",
+          "prodeng",
+          "sre"
+        ],
+        "semantic": [],
+        "merged": [
+          "soundcloud",
+          "sysops",
+          "teams",
+          "prodeng",
+          "sre"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4071325497889887,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:56:06.096346+00:00"
+      }
+    },
+    {
+      "book": "Seeking SRE - David Blank-Edelman",
+      "chapter": 7,
+      "title": "SRE\tWithout\tSRE:\tThe Spotify\tCase\tStudy",
+      "chapter_id": "Seeking SRE - David Blank-Edelman:ch7",
+      "cross_references": [
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch12",
+          "score": 0.5238835205020492,
+          "base_score": 0.6231392008367488,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch11",
+          "score": 0.5076461603998069,
+          "base_score": 0.5960769339996783,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ops",
+          "backend",
+          "spotify",
+          "services",
+          "owner"
+        ],
+        "semantic": [],
+        "merged": [
+          "ops",
+          "backend",
+          "spotify",
+          "services",
+          "owner"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "and_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4403416688888878,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:06.096535+00:00"
+      }
+    },
+    {
+      "book": "Seeking SRE - David Blank-Edelman",
+      "chapter": 8,
+      "title": "Introducing\tSRE\tin\tLarge Enterprises",
+      "chapter_id": "Seeking SRE - David Blank-Edelman:ch8",
+      "cross_references": [
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch5",
+          "score": 0.557524409809671,
+          "base_score": 0.679207349682785,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch11",
+          "score": 0.5508231064007143,
+          "base_score": 0.593964436593783,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch17",
+          "score": 0.5150107733324853,
+          "base_score": 0.5342772148134015,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sre",
+          "product",
+          "products",
+          "engineering",
+          "sre function"
+        ],
+        "semantic": [],
+        "merged": [
+          "sre",
+          "product",
+          "products",
+          "engineering",
+          "sre function"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "and_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43278591726038684,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:06.096688+00:00"
+      }
+    },
+    {
+      "book": "Seeking SRE - David Blank-Edelman",
+      "chapter": 9,
+      "title": "From\tSysAdmin\tto\tSRE\tin 8,963\tWords",
+      "chapter_id": "Seeking SRE - David Blank-Edelman:ch9",
+      "cross_references": [
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch19",
+          "score": 0.5529824370229885,
+          "base_score": 0.5975633209642403,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "service",
+          "sla",
+          "component",
+          "messages",
+          "capacity"
+        ],
+        "semantic": [],
+        "merged": [
+          "service",
+          "sla",
+          "component",
+          "messages",
+          "capacity"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_service_load",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3648144713894502,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:06.096833+00:00"
+      }
+    },
+    {
+      "book": "Seeking SRE - David Blank-Edelman",
+      "chapter": 10,
+      "title": "Clearing\tthe\tWay\tfor SRE\tin\tthe\tEnterprise",
+      "chapter_id": "Seeking SRE - David Blank-Edelman:ch10",
+      "cross_references": [
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch11",
+          "score": 0.5099116261978529,
+          "base_score": 0.5257786362556807,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "toil",
+          "work",
+          "operations",
+          "engineering work",
+          "teams"
+        ],
+        "semantic": [],
+        "merged": [
+          "toil",
+          "work",
+          "operations",
+          "engineering work",
+          "teams"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "and_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3695522081500141,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:06.096976+00:00"
+      }
+    },
+    {
+      "book": "Seeking SRE - David Blank-Edelman",
+      "chapter": 11,
+      "title": "SRE\tPatterns\tLoved\tby DevOps\tPeople\tEverywhere",
+      "chapter_id": "Seeking SRE - David Blank-Edelman:ch11",
+      "cross_references": [
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch12",
+          "score": 0.5970150277622416,
+          "base_score": 0.6709509721963285,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch8",
+          "score": 0.5508231064007143,
+          "base_score": 0.593964436593783,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch5",
+          "score": 0.5100739436937374,
+          "base_score": 0.6001232394895623,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch10",
+          "score": 0.5099116261978529,
+          "base_score": 0.5257786362556807,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch7",
+          "score": 0.5076461603998069,
+          "base_score": 0.5960769339996783,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "devops",
+          "sre",
+          "devops sre",
+          "software",
+          "operations"
+        ],
+        "semantic": [],
+        "merged": [
+          "devops",
+          "sre",
+          "devops sre",
+          "software",
+          "operations"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "and_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4472049358355345,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:06.097123+00:00"
+      }
+    },
+    {
+      "book": "Seeking SRE - David Blank-Edelman",
+      "chapter": 12,
+      "title": "Production\tEngineering at\tFacebook",
+      "chapter_id": "Seeking SRE - David Blank-Edelman:ch12",
+      "cross_references": [
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch11",
+          "score": 0.5970150277622416,
+          "base_score": 0.6709509721963285,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch7",
+          "score": 0.5238835205020492,
+          "base_score": 0.6231392008367488,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pe",
+          "swe",
+          "software",
+          "production engineers",
+          "production"
+        ],
+        "semantic": [],
+        "merged": [
+          "pe",
+          "swe",
+          "software",
+          "production engineers",
+          "production"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "and_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40670526469029644,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:06.097283+00:00"
+      }
+    },
+    {
+      "book": "Seeking SRE - David Blank-Edelman",
+      "chapter": 13,
+      "title": "In\tthe\tBeginning,\tThere Was\tChaos",
+      "chapter_id": "Seeking SRE - David Blank-Edelman:ch13",
+      "cross_references": [
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch1",
+          "score": 0.5412642095285668,
+          "base_score": 0.6521070158809446,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "chaos",
+          "chaos engineering",
+          "engineering",
+          "netflix",
+          "personalization service"
+        ],
+        "semantic": [],
+        "merged": [
+          "chaos",
+          "chaos engineering",
+          "engineering",
+          "netflix",
+          "personalization service"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_to_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36681386612393974,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:06.097467+00:00"
+      }
+    },
+    {
+      "book": "Seeking SRE - David Blank-Edelman",
+      "chapter": 14,
+      "title": "The\tIntersection\tof Reliability\tand\tPrivacy",
+      "chapter_id": "Seeking SRE - David Blank-Edelman:ch14",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "privacy",
+          "privacy engineering",
+          "engineering",
+          "reliability privacy",
+          "privacy engineer"
+        ],
+        "semantic": [],
+        "merged": [
+          "privacy",
+          "privacy engineering",
+          "engineering",
+          "reliability privacy",
+          "privacy engineer"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_data_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3455658054492278,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:06.097610+00:00"
+      }
+    },
+    {
+      "book": "Seeking SRE - David Blank-Edelman",
+      "chapter": 15,
+      "title": "Database\tReliability Engineering",
+      "chapter_id": "Seeking SRE - David Blank-Edelman:ch15",
+      "cross_references": [
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch16",
+          "score": 0.5398940355730857,
+          "base_score": 0.5757493185477354,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "database",
+          "recovery",
+          "data stores",
+          "backups"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "database",
+          "recovery",
+          "data stores",
+          "backups"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_data_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3651294121302815,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:06.097749+00:00"
+      }
+    },
+    {
+      "book": "Seeking SRE - David Blank-Edelman",
+      "chapter": 16,
+      "title": "Engineering\tfor\tData Durability",
+      "chapter_id": "Seeking SRE - David Blank-Edelman:ch16",
+      "cross_references": [
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch15",
+          "score": 0.5398940355730857,
+          "base_score": 0.5757493185477354,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "machine learning",
+          "machine",
+          "learning",
+          "disk"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "machine learning",
+          "machine",
+          "learning",
+          "disk"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_data_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.22856463676742608,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:06.097887+00:00"
+      }
+    },
+    {
+      "book": "Seeking SRE - David Blank-Edelman",
+      "chapter": 17,
+      "title": "Do\tDocs\tBetter: Integrating\tDocumentation\tinto\tthe Engineering\tWorkflow",
+      "chapter_id": "Seeking SRE - David Blank-Edelman:ch17",
+      "cross_references": [
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch8",
+          "score": 0.5150107733324853,
+          "base_score": 0.5342772148134015,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "documentation",
+          "docs",
+          "quality",
+          "engineering",
+          "code"
+        ],
+        "semantic": [],
+        "merged": [
+          "documentation",
+          "docs",
+          "quality",
+          "engineering",
+          "code"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "and_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38187400307976005,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:06.098025+00:00"
+      }
+    },
+    {
+      "book": "Seeking SRE - David Blank-Edelman",
+      "chapter": 18,
+      "title": "Active\tTeaching\tand Learning",
+      "chapter_id": "Seeking SRE - David Blank-Edelman:ch18",
+      "cross_references": [
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch31",
+          "score": 0.5581996502451143,
+          "base_score": 0.6062586763344496,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch3",
+          "score": 0.5008784118460073,
+          "base_score": 0.5107232790026048,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "learning",
+          "sre",
+          "incident",
+          "game",
+          "learn"
+        ],
+        "semantic": [],
+        "merged": [
+          "learning",
+          "sre",
+          "incident",
+          "game",
+          "learn"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "sre_mental_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37548561689744914,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:06.098167+00:00"
+      }
+    },
+    {
+      "book": "Seeking SRE - David Blank-Edelman",
+      "chapter": 19,
+      "title": "The\tArt\tand\tScience\tof the\tService-Level\tObjective",
+      "chapter_id": "Seeking SRE - David Blank-Edelman:ch19",
+      "cross_references": [
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch9",
+          "score": 0.5529824370229885,
+          "base_score": 0.5975633209642403,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sla",
+          "assurance",
+          "ms",
+          "99",
+          "transactions"
+        ],
+        "semantic": [],
+        "merged": [
+          "sla",
+          "assurance",
+          "ms",
+          "99",
+          "transactions"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_service_load",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3291923259672322,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:06.098307+00:00"
+      }
+    },
+    {
+      "book": "Seeking SRE - David Blank-Edelman",
+      "chapter": 20,
+      "title": "SRE\tas\ta\tSuccess\tCulture",
+      "chapter_id": "Seeking SRE - David Blank-Edelman:ch20",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "sre",
+          "teams",
+          "sre teams",
+          "site",
+          "services"
+        ],
+        "semantic": [],
+        "merged": [
+          "sre",
+          "teams",
+          "sre teams",
+          "site",
+          "services"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_data_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45290478674341045,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:06.098459+00:00"
+      }
+    },
+    {
+      "book": "Seeking SRE - David Blank-Edelman",
+      "chapter": 21,
+      "title": "SRE\tAntipatterns",
+      "chapter_id": "Seeking SRE - David Blank-Edelman:ch21",
+      "cross_references": [
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch28",
+          "score": 0.559186025742084,
+          "base_score": 0.5153100429034733,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch26",
+          "score": 0.5209364471637219,
+          "base_score": 0.5441533378654624,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "production",
+          "product",
+          "systems",
+          "human",
+          "engineering"
+        ],
+        "semantic": [],
+        "merged": [
+          "production",
+          "product",
+          "systems",
+          "human",
+          "engineering"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4455703287010008,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:06.098601+00:00"
+      }
+    },
+    {
+      "book": "Seeking SRE - David Blank-Edelman",
+      "chapter": 22,
+      "title": "Immutable Infrastructure\tand\tSRE",
+      "chapter_id": "Seeking SRE - David Blank-Edelman:ch22",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "image",
+          "immutable",
+          "immutable infrastructure",
+          "infrastructure",
+          "configuration"
+        ],
+        "semantic": [],
+        "merged": [
+          "image",
+          "immutable",
+          "immutable infrastructure",
+          "infrastructure",
+          "configuration"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25448417501622533,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:56:06.098739+00:00"
+      }
+    },
+    {
+      "book": "Seeking SRE - David Blank-Edelman",
+      "chapter": 23,
+      "title": "Scriptable\tLoad Balancers",
+      "chapter_id": "Seeking SRE - David Blank-Edelman:ch23",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "load",
+          "balancers",
+          "load balancers",
+          "scriptable load",
+          "scriptable"
+        ],
+        "semantic": [],
+        "merged": [
+          "load",
+          "balancers",
+          "load balancers",
+          "scriptable load",
+          "scriptable"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_service_load",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26013907923540985,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:06.098887+00:00"
+      }
+    },
+    {
+      "book": "Seeking SRE - David Blank-Edelman",
+      "chapter": 24,
+      "title": "The\tService\tMesh: Wrangler\tof\tYour\tMicroservices?",
+      "chapter_id": "Seeking SRE - David Blank-Edelman:ch24",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "mesh",
+          "service mesh",
+          "proxy",
+          "service",
+          "sidecar"
+        ],
+        "semantic": [],
+        "merged": [
+          "mesh",
+          "service mesh",
+          "proxy",
+          "service",
+          "sidecar"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_to_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3723367883287951,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:06.099027+00:00"
+      }
+    },
+    {
+      "book": "Seeking SRE - David Blank-Edelman",
+      "chapter": 25,
+      "title": "Psychological\tSafety\tin SRE",
+      "chapter_id": "Seeking SRE - David Blank-Edelman:ch25",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "karen",
+          "work",
+          "people",
+          "teams",
+          "operations"
+        ],
+        "semantic": [],
+        "merged": [
+          "karen",
+          "work",
+          "people",
+          "teams",
+          "operations"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37942847370197114,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:56:06.099166+00:00"
+      }
+    },
+    {
+      "book": "Seeking SRE - David Blank-Edelman",
+      "chapter": 26,
+      "title": "SRE\tCognitive\tWork",
+      "chapter_id": "Seeking SRE - David Blank-Edelman:ch26",
+      "cross_references": [
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch21",
+          "score": 0.5209364471637219,
+          "base_score": 0.5441533378654624,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch30",
+          "score": 0.5025502322882377,
+          "base_score": 0.5875837204803962,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "incidents",
+          "incident",
+          "systems",
+          "work",
+          "calibration"
+        ],
+        "semantic": [],
+        "merged": [
+          "incidents",
+          "incident",
+          "systems",
+          "work",
+          "calibration"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3739648650848264,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:06.099310+00:00"
+      }
+    },
+    {
+      "book": "Seeking SRE - David Blank-Edelman",
+      "chapter": 27,
+      "title": "Beyond\tBurnout",
+      "chapter_id": "Seeking SRE - David Blank-Edelman:ch27",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "disorders",
+          "mental disorders",
+          "mental",
+          "people mental",
+          "people"
+        ],
+        "semantic": [],
+        "merged": [
+          "disorders",
+          "mental disorders",
+          "mental",
+          "people mental",
+          "people"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "sre_mental_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2992889081168259,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:06.099504+00:00"
+      }
+    },
+    {
+      "book": "Seeking SRE - David Blank-Edelman",
+      "chapter": 28,
+      "title": "Against\tOn-Call:\tA Polemic",
+      "chapter_id": "Seeking SRE - David Blank-Edelman:ch28",
+      "cross_references": [
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch21",
+          "score": 0.559186025742084,
+          "base_score": 0.5153100429034733,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "software",
+          "today",
+          "systems",
+          "unknown",
+          "human"
+        ],
+        "semantic": [],
+        "merged": [
+          "software",
+          "today",
+          "systems",
+          "unknown",
+          "human"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36679468835861884,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:06.099648+00:00"
+      }
+    },
+    {
+      "book": "Seeking SRE - David Blank-Edelman",
+      "chapter": 29,
+      "title": "Elegy\tfor\tComplex Systems",
+      "chapter_id": "Seeking SRE - David Blank-Edelman:ch29",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "nation",
+          "systems",
+          "tech",
+          "healthcare",
+          "dozen"
+        ],
+        "semantic": [],
+        "merged": [
+          "nation",
+          "systems",
+          "tech",
+          "healthcare",
+          "dozen"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23293204857104363,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:06.099786+00:00"
+      }
+    },
+    {
+      "book": "Seeking SRE - David Blank-Edelman",
+      "chapter": 30,
+      "title": "Intersections\tBetween Operations\tand\tSocial\tActivism",
+      "chapter_id": "Seeking SRE - David Blank-Edelman:ch30",
+      "cross_references": [
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch26",
+          "score": 0.5025502322882377,
+          "base_score": 0.5875837204803962,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "activists",
+          "event",
+          "activism",
+          "planning",
+          "crisis"
+        ],
+        "semantic": [],
+        "merged": [
+          "activists",
+          "event",
+          "activism",
+          "planning",
+          "crisis"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43054372620940795,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:06.099922+00:00"
+      }
+    },
+    {
+      "book": "Seeking SRE - David Blank-Edelman",
+      "chapter": 31,
+      "title": "Conclusion",
+      "chapter_id": "Seeking SRE - David Blank-Edelman:ch31",
+      "cross_references": [
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch18",
+          "score": 0.5581996502451143,
+          "base_score": 0.6062586763344496,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Seeking SRE - David Blank-Edelman:ch3",
+          "score": 0.5487017448149096,
+          "base_score": 0.5904288339507753,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sre",
+          "engineering",
+          "sre sre",
+          "production engineering",
+          "engineering facebook"
+        ],
+        "semantic": [],
+        "merged": [
+          "sre",
+          "engineering",
+          "sre sre",
+          "production engineering",
+          "engineering facebook"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "sre_mental_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3719338796160376,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:06.100064+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

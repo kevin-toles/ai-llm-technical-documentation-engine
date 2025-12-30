@@ -1,0 +1,3997 @@
+{
+  "book": {
+    "title": "The Data Warehouse Toolkit 3rd Edition"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:58:07.010757",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 1,
+      "title": "Segment 1 (pages 3-12)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch1",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch8",
+          "score": 0.651557842414578,
+          "base_score": 0.7618556632835559,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch5",
+          "score": 0.6240031849118846,
+          "base_score": 0.7159312341124001,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch50",
+          "score": 0.5767679653234606,
+          "base_score": 0.6372058681316937,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch7",
+          "score": 0.5560254661937561,
+          "base_score": 0.6026350362488528,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch49",
+          "score": 0.5535514155288053,
+          "base_score": 0.5985116184739347,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "wiley",
+          "publisher",
+          "dimensional",
+          "myth dimensional",
+          "myth"
+        ],
+        "semantic": [],
+        "merged": [
+          "wiley",
+          "publisher",
+          "dimensional",
+          "myth dimensional",
+          "myth"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_business_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49420328345245723,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.960319+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 2,
+      "title": "Segment 2 (pages 13-20)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch2",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch9",
+          "score": 0.5508767401595602,
+          "base_score": 0.6324136145516479,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch11",
+          "score": 0.5315857587278976,
+          "base_score": 0.6002619788322103,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch54",
+          "score": 0.5258933304399085,
+          "base_score": 0.7098222173998474,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch18",
+          "score": 0.5025051599208614,
+          "base_score": 0.6708419332014357,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "dimension",
+          "dimensions",
+          "dimensions step",
+          "fact",
+          "tables"
+        ],
+        "semantic": [],
+        "merged": [
+          "dimension",
+          "dimensions",
+          "dimensions step",
+          "fact",
+          "tables"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6012340309047991,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:58:06.960665+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 3,
+      "title": "Segment 3 (pages 21-32)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch3",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch55",
+          "score": 0.616259119642701,
+          "base_score": 0.7030244586637608,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch54",
+          "score": 0.6110567256005653,
+          "base_score": 0.7684278760009422,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch53",
+          "score": 0.6059543531806578,
+          "base_score": 0.7599239219677631,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch8",
+          "score": 0.5820428448037296,
+          "base_score": 0.6843571222919302,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch49",
+          "score": 0.5498642339678175,
+          "base_score": 0.6307261042320768,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "dimensional",
+          "dimensional modeling",
+          "modeling",
+          "subsystem",
+          "data"
+        ],
+        "semantic": [],
+        "merged": [
+          "dimensional",
+          "dimensional modeling",
+          "modeling",
+          "subsystem",
+          "data"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_type_dimension",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5710364950637258,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.960998+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 4,
+      "title": "Segment 4 (pages 33-40)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch4",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch48",
+          "score": 0.7562484368624526,
+          "base_score": 0.7246997757231353,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch7",
+          "score": 0.6764357079958753,
+          "base_score": 0.7107261799931255,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch46",
+          "score": 0.669537936528618,
+          "base_score": 0.5801822751667444,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch62",
+          "score": 0.6204838597642526,
+          "base_score": 0.7100656921996802,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch61",
+          "score": 0.5968088740879502,
+          "base_score": 0.6706073827391763,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "dw",
+          "dw bi",
+          "bi",
+          "data",
+          "chapter"
+        ],
+        "semantic": [],
+        "merged": [
+          "dw",
+          "dw bi",
+          "bi",
+          "data",
+          "chapter"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_business_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5132052131980852,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.961320+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 5,
+      "title": "Segment 5 (pages 41-49)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch5",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch8",
+          "score": 0.6538581319499359,
+          "base_score": 0.7656894791758191,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch7",
+          "score": 0.6277989429949257,
+          "base_score": 0.7222574975841354,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch1",
+          "score": 0.6240031849118846,
+          "base_score": 0.7159312341124001,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch50",
+          "score": 0.5931142729381039,
+          "base_score": 0.6644497141560991,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch46",
+          "score": 0.5628165987404581,
+          "base_score": 0.6880276645674301,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "fact",
+          "tables",
+          "table",
+          "dimensional",
+          "fact table"
+        ],
+        "semantic": [],
+        "merged": [
+          "fact",
+          "tables",
+          "table",
+          "dimensional",
+          "fact table"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_business_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49016025927293116,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.961649+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 6,
+      "title": "Segment 6 (pages 50-58)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch6",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch14",
+          "score": 0.6240528492943224,
+          "base_score": 0.7900880821572038,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch58",
+          "score": 0.5656771970385189,
+          "base_score": 0.6927953283975316,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch18",
+          "score": 0.5523504174966035,
+          "base_score": 0.6705840291610059,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch16",
+          "score": 0.5511854121412626,
+          "base_score": 0.6686423535687709,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "dimensional",
+          "area",
+          "presentation",
+          "presentation area"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "dimensional",
+          "area",
+          "presentation",
+          "presentation area"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "dimension_the_product",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5297681822549993,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.961966+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 7,
+      "title": "Segment 7 (pages 59-68)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch7",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch4",
+          "score": 0.6764357079958753,
+          "base_score": 0.7107261799931255,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch5",
+          "score": 0.6277989429949257,
+          "base_score": 0.7222574975841354,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch48",
+          "score": 0.6159162763962412,
+          "base_score": 0.7024530532529947,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch8",
+          "score": 0.6062513670561012,
+          "base_score": 0.6863448710194279,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch61",
+          "score": 0.5673986028542535,
+          "base_score": 0.6215902640163484,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "dimensional",
+          "restaurant",
+          "kitchen",
+          "bi"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "dimensional",
+          "restaurant",
+          "kitchen",
+          "bi"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_business_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4816275872207958,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.962285+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 8,
+      "title": "Segment 8 (pages 69-77)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch8",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch49",
+          "score": 0.7390228856684472,
+          "base_score": 0.6959905237331262,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch50",
+          "score": 0.7042805136996311,
+          "base_score": 0.757134189499385,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch12",
+          "score": 0.6766053986437071,
+          "base_score": 0.7110089977395118,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch5",
+          "score": 0.6538581319499359,
+          "base_score": 0.7656894791758191,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch1",
+          "score": 0.651557842414578,
+          "base_score": 0.7618556632835559,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "dimensional modeling",
+          "dimensional",
+          "modeling",
+          "business",
+          "process"
+        ],
+        "semantic": [],
+        "merged": [
+          "dimensional modeling",
+          "dimensional",
+          "modeling",
+          "business",
+          "process"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_business_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5208520208047653,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.962601+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 9,
+      "title": "Segment 9 (pages 78-87)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch9",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch11",
+          "score": 0.6875502006987515,
+          "base_score": 0.7014725567201415,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch17",
+          "score": 0.6406814939407867,
+          "base_score": 0.817802489901311,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch41",
+          "score": 0.5908631414304643,
+          "base_score": 0.660697828310033,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch59",
+          "score": 0.5559243339814974,
+          "base_score": 0.6408262709215433,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch2",
+          "score": 0.5508767401595602,
+          "base_score": 0.6324136145516479,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "fact",
+          "dimension",
+          "table",
+          "tables",
+          "fact tables"
+        ],
+        "semantic": [],
+        "merged": [
+          "fact",
+          "dimension",
+          "table",
+          "tables",
+          "fact tables"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "fact_table_tables",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5078614834102638,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.962915+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 10,
+      "title": "Segment 10 (pages 88-95)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch10",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch20",
+          "score": 0.7846040966483592,
+          "base_score": 0.7719592086996461,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch53",
+          "score": 0.7130262877920147,
+          "base_score": 0.7717104796533578,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch55",
+          "score": 0.6210159933480323,
+          "base_score": 0.7109525815059796,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch59",
+          "score": 0.5830722041957559,
+          "base_score": 0.6477129329188525,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch54",
+          "score": 0.5788716535153223,
+          "base_score": 0.6407120151181298,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "dimension",
+          "type",
+          "mini dimension",
+          "attribute",
+          "mini"
+        ],
+        "semantic": [],
+        "merged": [
+          "dimension",
+          "type",
+          "mini dimension",
+          "attribute",
+          "mini"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_type_dimension",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5145972711836362,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.963231+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 11,
+      "title": "Segment 11 (pages 96-103)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch11",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch9",
+          "score": 0.6875502006987515,
+          "base_score": 0.7014725567201415,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch54",
+          "score": 0.5530448013292671,
+          "base_score": 0.47729689110433415,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch13",
+          "score": 0.540615030728567,
+          "base_score": 0.6153107654999925,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch2",
+          "score": 0.5315857587278976,
+          "base_score": 0.6002619788322103,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch15",
+          "score": 0.5189085909253136,
+          "base_score": 0.5791333658279036,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "fact",
+          "table",
+          "fact table",
+          "dimension",
+          "tables"
+        ],
+        "semantic": [],
+        "merged": [
+          "fact",
+          "table",
+          "fact table",
+          "dimension",
+          "tables"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4695745955033312,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:58:06.963533+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 12,
+      "title": "Segment 12 (pages 104-111)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch12",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch8",
+          "score": 0.6766053986437071,
+          "base_score": 0.7110089977395118,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch46",
+          "score": 0.6135282448298566,
+          "base_score": 0.6984730006423535,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch50",
+          "score": 0.6074528666635418,
+          "base_score": 0.7624214444392363,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch36",
+          "score": 0.5530430826924689,
+          "base_score": 0.671738471154115,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch4",
+          "score": 0.5427040784680381,
+          "base_score": 0.5804327233726561,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "business",
+          "business process",
+          "process",
+          "grain",
+          "data"
+        ],
+        "semantic": [],
+        "merged": [
+          "business",
+          "business process",
+          "process",
+          "grain",
+          "data"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_business_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5184177213723246,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.963951+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 13,
+      "title": "Segment 13 (pages 112-119)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch13",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch15",
+          "score": 0.5437477310004236,
+          "base_score": 0.7395795516673727,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch11",
+          "score": 0.540615030728567,
+          "base_score": 0.6153107654999925,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch43",
+          "score": 0.517227886951236,
+          "base_score": 0.5763321925377743,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch9",
+          "score": 0.512065653785238,
+          "base_score": 0.5677284705944444,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch16",
+          "score": 0.5053561115858912,
+          "base_score": 0.5565459002621996,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "date",
+          "dimension",
+          "date dimension",
+          "table",
+          "fact"
+        ],
+        "semantic": [],
+        "merged": [
+          "date",
+          "dimension",
+          "date dimension",
+          "table",
+          "fact"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4885760520695365,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:58:06.964276+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 14,
+      "title": "Segment 14 (pages 120-127)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch14",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch16",
+          "score": 0.677696424445759,
+          "base_score": 0.712827374076265,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch6",
+          "score": 0.6240528492943224,
+          "base_score": 0.7900880821572038,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch58",
+          "score": 0.5898908943276211,
+          "base_score": 0.659077416471961,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch18",
+          "score": 0.5584198113232504,
+          "base_score": 0.6066256114646764,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "dimension",
+          "promotion",
+          "store",
+          "store dimension",
+          "product"
+        ],
+        "semantic": [],
+        "merged": [
+          "dimension",
+          "promotion",
+          "store",
+          "store dimension",
+          "product"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "dimension_the_product",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48523313004001895,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.964587+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 15,
+      "title": "Segment 15 (pages 128-139)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch15",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch54",
+          "score": 0.6421247609756398,
+          "base_score": 0.6257634905149551,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch23",
+          "score": 0.5796097269348673,
+          "base_score": 0.7160162115581121,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch45",
+          "score": 0.5578014559240151,
+          "base_score": 0.6796690932066918,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch9",
+          "score": 0.5500475780850982,
+          "base_score": 0.750079296808497,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch13",
+          "score": 0.5437477310004236,
+          "base_score": 0.7395795516673727,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "surrogate",
+          "table",
+          "key",
+          "fact",
+          "fact table"
+        ],
+        "semantic": [],
+        "merged": [
+          "surrogate",
+          "table",
+          "key",
+          "fact",
+          "fact table"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "claim_order_fact",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.540250190753861,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.964905+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 16,
+      "title": "Segment 16 (pages 140-155)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch16",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch58",
+          "score": 0.7505803669833856,
+          "base_score": 0.7152529925913569,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch14",
+          "score": 0.677696424445759,
+          "base_score": 0.712827374076265,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch6",
+          "score": 0.5511854121412626,
+          "base_score": 0.6686423535687709,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch54",
+          "score": 0.539377819973731,
+          "base_score": 0.6132487475752659,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch18",
+          "score": 0.5205900476704445,
+          "base_score": 0.5435760053766667,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "inventory",
+          "product",
+          "dimension",
+          "table",
+          "fact"
+        ],
+        "semantic": [],
+        "merged": [
+          "inventory",
+          "product",
+          "dimension",
+          "table",
+          "fact"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "dimension_the_product",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.475659758449222,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.965230+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 17,
+      "title": "Segment 17 (pages 156-164)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch17",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch9",
+          "score": 0.6406814939407867,
+          "base_score": 0.817802489901311,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch41",
+          "score": 0.5492808615081539,
+          "base_score": 0.6654681025135899,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "business",
+          "matrix",
+          "bus",
+          "snapshot",
+          "processes"
+        ],
+        "semantic": [],
+        "merged": [
+          "business",
+          "matrix",
+          "bus",
+          "snapshot",
+          "processes"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "fact_table_tables",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48703210077837317,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.965540+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 18,
+      "title": "Segment 18 (pages 165-174)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch18",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch14",
+          "score": 0.5584198113232504,
+          "base_score": 0.6066256114646764,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch6",
+          "score": 0.5523504174966035,
+          "base_score": 0.6705840291610059,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch58",
+          "score": 0.528269287310332,
+          "base_score": 0.5563747381098125,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch16",
+          "score": 0.5205900476704445,
+          "base_score": 0.5435760053766667,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch2",
+          "score": 0.5025051599208614,
+          "base_score": 0.6708419332014357,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "conformed",
+          "conformed dimensions",
+          "dimensions",
+          "dimension",
+          "shrunken"
+        ],
+        "semantic": [],
+        "merged": [
+          "conformed",
+          "conformed dimensions",
+          "dimensions",
+          "dimension",
+          "shrunken"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "dimension_the_product",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4888609097201884,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.965851+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 19,
+      "title": "Segment 19 (pages 175-183)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch19",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch24",
+          "score": 0.5149888774305154,
+          "base_score": 0.6083147957175256,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "procurement",
+          "vendor",
+          "procurement transaction",
+          "fk vendor",
+          "purchase"
+        ],
+        "semantic": [],
+        "merged": [
+          "procurement",
+          "vendor",
+          "procurement transaction",
+          "fk vendor",
+          "purchase"
+        ]
+      },
+      "topic_id": 8,
+      "topic_name": "budget_procurement_line",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49985704930745645,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.966798+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 20,
+      "title": "Segment 20 (pages 184-192)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch20",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch10",
+          "score": 0.7846040966483592,
+          "base_score": 0.7719592086996461,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch53",
+          "score": 0.6931404799989712,
+          "base_score": 0.7385674666649521,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch55",
+          "score": 0.6107113087073712,
+          "base_score": 0.6937781071048779,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch54",
+          "score": 0.5835430271876818,
+          "base_score": 0.6484976379053956,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch59",
+          "score": 0.5444436871953622,
+          "base_score": 0.5833320712515296,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "type",
+          "attribute",
+          "dimension",
+          "department",
+          "product"
+        ],
+        "semantic": [],
+        "merged": [
+          "type",
+          "attribute",
+          "dimension",
+          "department",
+          "product"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_type_dimension",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5099515575744614,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.967802+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 21,
+      "title": "Segment 21 (pages 193-202)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch21",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch34",
+          "score": 0.5940139010016007,
+          "base_score": 0.665949094261927,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch37",
+          "score": 0.5705761647388041,
+          "base_score": 0.6268862004905994,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch30",
+          "score": 0.5580263610187238,
+          "base_score": 0.6800439350312064,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch10",
+          "score": 0.5548921801612404,
+          "base_score": 0.48037585582428965,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch35",
+          "score": 0.5469236113257497,
+          "base_score": 0.6615393522095829,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "dimension",
+          "mini dimension",
+          "mini",
+          "type",
+          "current"
+        ],
+        "semantic": [],
+        "merged": [
+          "dimension",
+          "mini dimension",
+          "mini",
+          "type",
+          "current"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "customer_account_dimension",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4669882727401282,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.968795+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 22,
+      "title": "Segment 22 (pages 203-214)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch22",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch38",
+          "score": 0.5847176682443858,
+          "base_score": 0.6504553729999022,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch31",
+          "score": 0.5003894300300729,
+          "base_score": 0.667315716716788,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "dimension",
+          "order",
+          "sales rep",
+          "customer",
+          "rep"
+        ],
+        "semantic": [],
+        "merged": [
+          "dimension",
+          "order",
+          "sales rep",
+          "customer",
+          "rep"
+        ]
+      },
+      "topic_id": 11,
+      "topic_name": "date_dimension_order",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.529395899062901,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.969634+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 23,
+      "title": "Segment 23 (pages 215-225)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch23",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch15",
+          "score": 0.5796097269348673,
+          "base_score": 0.7160162115581121,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch45",
+          "score": 0.530651619863378,
+          "base_score": 0.6344193664389634,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "order",
+          "order line",
+          "line",
+          "header",
+          "extended"
+        ],
+        "semantic": [],
+        "merged": [
+          "order",
+          "order line",
+          "line",
+          "header",
+          "extended"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "claim_order_fact",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4757827486664768,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.970161+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 24,
+      "title": "Segment 24 (pages 226-234)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch24",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch19",
+          "score": 0.5149888774305154,
+          "base_score": 0.6083147957175256,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "invoice",
+          "quantity",
+          "manufacturing",
+          "invoice line",
+          "fact"
+        ],
+        "semantic": [],
+        "merged": [
+          "invoice",
+          "quantity",
+          "manufacturing",
+          "invoice line",
+          "fact"
+        ]
+      },
+      "topic_id": 8,
+      "topic_name": "budget_procurement_line",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41032628564344953,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.970494+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 25,
+      "title": "Segment 25 (pages 235-243)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch25",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "ledger",
+          "general ledger",
+          "general",
+          "accounting",
+          "account"
+        ],
+        "semantic": [],
+        "merged": [
+          "ledger",
+          "general ledger",
+          "general",
+          "accounting",
+          "account"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3913524303736651,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:58:06.970819+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 26,
+      "title": "Segment 26 (pages 244-251)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch26",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "budget",
+          "budget line",
+          "line",
+          "line item",
+          "account"
+        ],
+        "semantic": [],
+        "merged": [
+          "budget",
+          "budget line",
+          "line",
+          "line item",
+          "account"
+        ]
+      },
+      "topic_id": 8,
+      "topic_name": "budget_procurement_line",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45181536435082087,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.971183+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 27,
+      "title": "Segment 27 (pages 252-259)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch27",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "organization",
+          "bridge",
+          "tree",
+          "bridge table",
+          "node"
+        ],
+        "semantic": [],
+        "merged": [
+          "organization",
+          "bridge",
+          "tree",
+          "bridge table",
+          "node"
+        ]
+      },
+      "topic_id": 9,
+      "topic_name": "employee_manager_organization",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3636791975759848,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.971518+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 28,
+      "title": "Segment 28 (pages 260-269)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch28",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "customer",
+          "crm",
+          "customers",
+          "customer dimension",
+          "data"
+        ],
+        "semantic": [],
+        "merged": [
+          "customer",
+          "crm",
+          "customers",
+          "customer dimension",
+          "data"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5122721385761875,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:58:06.971841+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 29,
+      "title": "Segment 29 (pages 270-278)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch29",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch30",
+          "score": 0.6379065913457751,
+          "base_score": 0.5274633665286728,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "customer",
+          "international",
+          "behavior",
+          "credit",
+          "customers"
+        ],
+        "semantic": [],
+        "merged": [
+          "customer",
+          "international",
+          "behavior",
+          "credit",
+          "customers"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "customer_account_dimension",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29711599864411664,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.972165+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 30,
+      "title": "Segment 30 (pages 279-286)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch30",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch29",
+          "score": 0.6379065913457751,
+          "base_score": 0.5274633665286728,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch21",
+          "score": 0.5580263610187238,
+          "base_score": 0.6800439350312064,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch37",
+          "score": 0.5327351434934597,
+          "base_score": 0.6378919058224329,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch34",
+          "score": 0.5247713546983866,
+          "base_score": 0.6246189244973112,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "customer",
+          "customers",
+          "behavior",
+          "study group",
+          "behavior study"
+        ],
+        "semantic": [],
+        "merged": [
+          "customer",
+          "customers",
+          "behavior",
+          "study group",
+          "behavior study"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "customer_account_dimension",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5089318650938487,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.972515+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 31,
+      "title": "Segment 31 (pages 287-296)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch31",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch43",
+          "score": 0.5952486336678843,
+          "base_score": 0.6680069820390664,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch44",
+          "score": 0.5850455722165926,
+          "base_score": 0.6510018796202468,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch22",
+          "score": 0.5003894300300729,
+          "base_score": 0.667315716716788,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "customer",
+          "transaction_fact",
+          "step",
+          "dimension",
+          "step dimension"
+        ],
+        "semantic": [],
+        "merged": [
+          "customer",
+          "transaction_fact",
+          "step",
+          "dimension",
+          "step dimension"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "session_page_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5336443608501467,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.972843+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 32,
+      "title": "Segment 32 (pages 297-305)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch32",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch33",
+          "score": 0.6492804752587404,
+          "base_score": 0.6654674587645675,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "employee",
+          "employee dimension",
+          "proﬁ le",
+          "le",
+          "employee proﬁ"
+        ],
+        "semantic": [],
+        "merged": [
+          "employee",
+          "employee dimension",
+          "proﬁ le",
+          "le",
+          "employee proﬁ"
+        ]
+      },
+      "topic_id": 9,
+      "topic_name": "employee_manager_organization",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4871662274875792,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.973213+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 33,
+      "title": "Segment 33 (pages 306-313)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch33",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch32",
+          "score": 0.6492804752587404,
+          "base_score": 0.6654674587645675,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "employee",
+          "manager",
+          "employee dimension",
+          "employee key",
+          "manager employee"
+        ],
+        "semantic": [],
+        "merged": [
+          "employee",
+          "manager",
+          "employee dimension",
+          "employee key",
+          "manager employee"
+        ]
+      },
+      "topic_id": 9,
+      "topic_name": "employee_manager_organization",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4394481738640301,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.973519+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 34,
+      "title": "Segment 34 (pages 314-324)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch34",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch35",
+          "score": 0.643755244986657,
+          "base_score": 0.7488513342370209,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch21",
+          "score": 0.5940139010016007,
+          "base_score": 0.665949094261927,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch37",
+          "score": 0.5895187754609827,
+          "base_score": 0.6584572183608972,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch30",
+          "score": 0.5247713546983866,
+          "base_score": 0.6246189244973112,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "account",
+          "account dimension",
+          "dimension",
+          "household",
+          "dimension account"
+        ],
+        "semantic": [],
+        "merged": [
+          "account",
+          "account dimension",
+          "dimension",
+          "household",
+          "dimension account"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "customer_account_dimension",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5223977770227518,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.973831+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 35,
+      "title": "Segment 35 (pages 325-332)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch35",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch34",
+          "score": 0.643755244986657,
+          "base_score": 0.7488513342370209,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch21",
+          "score": 0.5469236113257497,
+          "base_score": 0.6615393522095829,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch37",
+          "score": 0.5255821921730008,
+          "base_score": 0.6259703202883348,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "account",
+          "supertype",
+          "subtype",
+          "checking",
+          "table"
+        ],
+        "semantic": [],
+        "merged": [
+          "account",
+          "supertype",
+          "subtype",
+          "checking",
+          "table"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "customer_account_dimension",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48643114825432,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.974147+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 36,
+      "title": "Segment 36 (pages 333-342)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch36",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch50",
+          "score": 0.7084560272302445,
+          "base_score": 0.7640933787170742,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch8",
+          "score": 0.589960907642867,
+          "base_score": 0.7332681794047783,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch4",
+          "score": 0.5729451381866925,
+          "base_score": 0.7049085636444874,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch46",
+          "score": 0.5723862528394256,
+          "base_score": 0.7039770880657092,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch49",
+          "score": 0.5675788623816507,
+          "base_score": 0.6959647706360844,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "review",
+          "dimension",
+          "design",
+          "design review",
+          "design reviews"
+        ],
+        "semantic": [],
+        "merged": [
+          "review",
+          "dimension",
+          "design",
+          "design review",
+          "design reviews"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_business_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.522951001890446,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.974462+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 37,
+      "title": "Segment 37 (pages 343-351)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch37",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch34",
+          "score": 0.5895187754609827,
+          "base_score": 0.6584572183608972,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch21",
+          "score": 0.5705761647388041,
+          "base_score": 0.6268862004905994,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch30",
+          "score": 0.5327351434934597,
+          "base_score": 0.6378919058224329,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch35",
+          "score": 0.5255821921730008,
+          "base_score": 0.6259703202883348,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "dimension",
+          "service line",
+          "ight",
+          "segment",
+          "service"
+        ],
+        "semantic": [],
+        "merged": [
+          "dimension",
+          "service line",
+          "ight",
+          "segment",
+          "service"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "customer_account_dimension",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5186705123410607,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.974763+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 38,
+      "title": "Segment 38 (pages 352-359)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch38",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch22",
+          "score": 0.5847176682443858,
+          "base_score": 0.6504553729999022,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "key fk",
+          "dimension",
+          "fk",
+          "class",
+          "date"
+        ],
+        "semantic": [],
+        "merged": [
+          "key fk",
+          "dimension",
+          "fk",
+          "class",
+          "date"
+        ]
+      },
+      "topic_id": 11,
+      "topic_name": "date_dimension_order",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48396813756621715,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.975094+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 39,
+      "title": "Segment 39 (pages 360-367)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch39",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "applicant",
+          "student",
+          "applicant pipeline",
+          "application",
+          "admissions"
+        ],
+        "semantic": [],
+        "merged": [
+          "applicant",
+          "student",
+          "applicant pipeline",
+          "application",
+          "admissions"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48392465656926076,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:58:06.975402+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 40,
+      "title": "Segment 40 (pages 368-380)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch40",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "facility",
+          "key fk",
+          "fk",
+          "insurance",
+          "key"
+        ],
+        "semantic": [],
+        "merged": [
+          "facility",
+          "key fk",
+          "fk",
+          "insurance",
+          "key"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4295915804142762,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:58:06.975707+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 41,
+      "title": "Segment 41 (pages 381-388)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch41",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch9",
+          "score": 0.5908631414304643,
+          "base_score": 0.660697828310033,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch17",
+          "score": 0.5492808615081539,
+          "base_score": 0.6654681025135899,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "diagnosis",
+          "diagnosis group",
+          "key fk",
+          "fk",
+          "table"
+        ],
+        "semantic": [],
+        "merged": [
+          "diagnosis",
+          "diagnosis group",
+          "key fk",
+          "fk",
+          "table"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "fact_table_tables",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45503949006001926,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.976266+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 42,
+      "title": "Segment 42 (pages 389-398)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch42",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch43",
+          "score": 0.5828561397097738,
+          "base_score": 0.5547602328496231,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "session",
+          "page",
+          "visitor",
+          "web",
+          "page dimension"
+        ],
+        "semantic": [],
+        "merged": [
+          "session",
+          "page",
+          "visitor",
+          "web",
+          "page dimension"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "session_page_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2269235220136653,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.976618+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 43,
+      "title": "Segment 43 (pages 399-408)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch43",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch31",
+          "score": 0.5952486336678843,
+          "base_score": 0.6680069820390664,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch42",
+          "score": 0.5828561397097738,
+          "base_score": 0.5547602328496231,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch44",
+          "score": 0.5618713826177462,
+          "base_score": 0.6123782302888361,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch9",
+          "score": 0.523358873120597,
+          "base_score": 0.5865505028200427,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch13",
+          "score": 0.517227886951236,
+          "base_score": 0.5763321925377743,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "session",
+          "page",
+          "fact",
+          "table",
+          "dimension"
+        ],
+        "semantic": [],
+        "merged": [
+          "session",
+          "page",
+          "fact",
+          "table",
+          "dimension"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "session_page_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4857604685409683,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.976964+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 44,
+      "title": "Segment 44 (pages 409-418)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch44",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch31",
+          "score": 0.5850455722165926,
+          "base_score": 0.6510018796202468,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch43",
+          "score": 0.5618713826177462,
+          "base_score": 0.6123782302888361,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "policy",
+          "policyholder",
+          "policy transaction",
+          "dimension",
+          "covered"
+        ],
+        "semantic": [],
+        "merged": [
+          "policy",
+          "policyholder",
+          "policy transaction",
+          "dimension",
+          "covered"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "session_page_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49817817188770885,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.977280+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 45,
+      "title": "Segment 45 (pages 419-433)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch45",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch15",
+          "score": 0.5578014559240151,
+          "base_score": 0.6796690932066918,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch23",
+          "score": 0.530651619863378,
+          "base_score": 0.6344193664389634,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "claim",
+          "policy",
+          "policy transaction",
+          "fk claim",
+          "transaction"
+        ],
+        "semantic": [],
+        "merged": [
+          "claim",
+          "policy",
+          "policy transaction",
+          "fk claim",
+          "transaction"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "claim_order_fact",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5211406904129775,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.977589+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 46,
+      "title": "Segment 46 (pages 434-445)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch46",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch4",
+          "score": 0.669537936528618,
+          "base_score": 0.5801822751667444,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch48",
+          "score": 0.6303293737301987,
+          "base_score": 0.514834670502712,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch12",
+          "score": 0.6135282448298566,
+          "base_score": 0.6984730006423535,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch8",
+          "score": 0.6042184093092956,
+          "base_score": 0.6829566081080852,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch50",
+          "score": 0.5934676226441732,
+          "base_score": 0.7391127044069554,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "bi",
+          "dw bi",
+          "dw",
+          "project",
+          "business"
+        ],
+        "semantic": [],
+        "merged": [
+          "bi",
+          "dw bi",
+          "dw",
+          "project",
+          "business"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_business_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5701718231471417,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.977904+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 47,
+      "title": "Segment 47 (pages 446-454)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch47",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch8",
+          "score": 0.5742298009702118,
+          "base_score": 0.6329755942096124,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "architecture",
+          "business",
+          "requirements",
+          "technical architecture",
+          "business requirements"
+        ],
+        "semantic": [],
+        "merged": [
+          "architecture",
+          "business",
+          "requirements",
+          "technical architecture",
+          "business requirements"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_business_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3657600122370505,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.978226+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 48,
+      "title": "Segment 48 (pages 455-462)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch48",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch4",
+          "score": 0.7562484368624526,
+          "base_score": 0.7246997757231353,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch46",
+          "score": 0.6303293737301987,
+          "base_score": 0.514834670502712,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch7",
+          "score": 0.6159162763962412,
+          "base_score": 0.7024530532529947,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch8",
+          "score": 0.5582676490098932,
+          "base_score": 0.6804460816831553,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch36",
+          "score": 0.526273930698708,
+          "base_score": 0.6271232178311799,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "bi",
+          "dw bi",
+          "dw",
+          "bi application",
+          "application"
+        ],
+        "semantic": [],
+        "merged": [
+          "bi",
+          "dw bi",
+          "dw",
+          "bi application",
+          "application"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_business_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4712605078095692,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.978534+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 49,
+      "title": "Segment 49 (pages 463-473)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch49",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch50",
+          "score": 0.7905279540080938,
+          "base_score": 0.7818323042992039,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch8",
+          "score": 0.7390228856684472,
+          "base_score": 0.6959905237331262,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch36",
+          "score": 0.5675788623816507,
+          "base_score": 0.6959647706360844,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch1",
+          "score": 0.5535514155288053,
+          "base_score": 0.5985116184739347,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch3",
+          "score": 0.5498642339678175,
+          "base_score": 0.6307261042320768,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "modeling",
+          "model",
+          "dimensional",
+          "modeling process",
+          "dimensional modeling"
+        ],
+        "semantic": [],
+        "merged": [
+          "modeling",
+          "model",
+          "dimensional",
+          "modeling process",
+          "dimensional modeling"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_business_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4292168815264599,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.978848+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 50,
+      "title": "Segment 50 (pages 474-481)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch50",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch49",
+          "score": 0.7905279540080938,
+          "base_score": 0.7818323042992039,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch36",
+          "score": 0.7084560272302445,
+          "base_score": 0.7640933787170742,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch8",
+          "score": 0.7042805136996311,
+          "base_score": 0.757134189499385,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch12",
+          "score": 0.6074528666635418,
+          "base_score": 0.7624214444392363,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch46",
+          "score": 0.5934676226441732,
+          "base_score": 0.7391127044069554,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "model",
+          "dimensional",
+          "review",
+          "modeling",
+          "design"
+        ],
+        "semantic": [],
+        "merged": [
+          "model",
+          "dimensional",
+          "review",
+          "modeling",
+          "design"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_business_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5362583973272813,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.979170+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 51,
+      "title": "Segment 51 (pages 482-489)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch51",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch57",
+          "score": 0.6429487378984027,
+          "base_score": 0.6549145631640045,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch60",
+          "score": 0.5991415704732693,
+          "base_score": 0.7485692841221157,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch52",
+          "score": 0.5668928611383193,
+          "base_score": 0.6207473611564581,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "source",
+          "source data",
+          "data source",
+          "ling"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "source",
+          "source data",
+          "data source",
+          "ling"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "data_etl_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38554143739848235,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.979476+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 52,
+      "title": "Segment 52 (pages 490-497)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch52",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch57",
+          "score": 0.5907962644219711,
+          "base_score": 0.6605863666292111,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch51",
+          "score": 0.5668928611383193,
+          "base_score": 0.6207473611564581,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch60",
+          "score": 0.5059884300520482,
+          "base_score": 0.5933140500867469,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "error",
+          "error event",
+          "quality",
+          "data quality"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "error",
+          "error event",
+          "quality",
+          "data quality"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "data_etl_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3125879596519124,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.979776+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 53,
+      "title": "Segment 53 (pages 498-505)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch53",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch10",
+          "score": 0.7130262877920147,
+          "base_score": 0.7717104796533578,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch20",
+          "score": 0.6931404799989712,
+          "base_score": 0.7385674666649521,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch54",
+          "score": 0.660315863059309,
+          "base_score": 0.7764523643581076,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch55",
+          "score": 0.6580170583549536,
+          "base_score": 0.7726210231841819,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch3",
+          "score": 0.6059543531806578,
+          "base_score": 0.7599239219677631,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "type",
+          "dimension",
+          "scd",
+          "figure 19",
+          "type scd"
+        ],
+        "semantic": [],
+        "merged": [
+          "type",
+          "dimension",
+          "scd",
+          "figure 19",
+          "type scd"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_type_dimension",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5359989668853892,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.980099+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 54,
+      "title": "Segment 54 (pages 506-513)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch54",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch59",
+          "score": 0.7201925093200942,
+          "base_score": 0.6646065631525377,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch53",
+          "score": 0.660315863059309,
+          "base_score": 0.7764523643581076,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch15",
+          "score": 0.6421247609756398,
+          "base_score": 0.6257634905149551,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch55",
+          "score": 0.635554917592737,
+          "base_score": 0.7351841219138209,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch3",
+          "score": 0.6110567256005653,
+          "base_score": 0.7684278760009422,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "fact",
+          "table",
+          "fact table",
+          "dimension",
+          "surrogate"
+        ],
+        "semantic": [],
+        "merged": [
+          "fact",
+          "table",
+          "fact table",
+          "dimension",
+          "surrogate"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_type_dimension",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5382907205215535,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.980438+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 55,
+      "title": "Segment 55 (pages 514-521)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch55",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch53",
+          "score": 0.6580170583549536,
+          "base_score": 0.7726210231841819,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch56",
+          "score": 0.6429799145444339,
+          "base_score": 0.6549665242407233,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch54",
+          "score": 0.635554917592737,
+          "base_score": 0.7351841219138209,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch10",
+          "score": 0.6210159933480323,
+          "base_score": 0.7109525815059796,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch3",
+          "score": 0.616259119642701,
+          "base_score": 0.7030244586637608,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "dimension",
+          "etl",
+          "manager",
+          "data",
+          "dimension manager"
+        ],
+        "semantic": [],
+        "merged": [
+          "dimension",
+          "etl",
+          "manager",
+          "data",
+          "dimension manager"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_type_dimension",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5252955928112355,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.980746+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 56,
+      "title": "Segment 56 (pages 522-530)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch56",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch55",
+          "score": 0.6429799145444339,
+          "base_score": 0.6549665242407233,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch59",
+          "score": 0.5953917492782007,
+          "base_score": 0.6682455080562604,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch54",
+          "score": 0.5308171212257845,
+          "base_score": 0.5606211279689001,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch3",
+          "score": 0.5044922730622463,
+          "base_score": 0.5167463810296697,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "etl",
+          "data",
+          "table surrogate",
+          "compliance",
+          "table"
+        ],
+        "semantic": [],
+        "merged": [
+          "etl",
+          "data",
+          "table surrogate",
+          "compliance",
+          "table"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_type_dimension",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44541964462247086,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.981077+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 57,
+      "title": "Segment 57 (pages 531-539)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch57",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch51",
+          "score": 0.6429487378984027,
+          "base_score": 0.6549145631640045,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch52",
+          "score": 0.5907962644219711,
+          "base_score": 0.6605863666292111,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch60",
+          "score": 0.5146860000507594,
+          "base_score": 0.607810000084599,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "etl",
+          "data",
+          "speciﬁ cation",
+          "source",
+          "etl speciﬁ"
+        ],
+        "semantic": [],
+        "merged": [
+          "etl",
+          "data",
+          "speciﬁ cation",
+          "source",
+          "etl speciﬁ"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "data_etl_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3458138663941833,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.981400+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 58,
+      "title": "Segment 58 (pages 540-547)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch58",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch16",
+          "score": 0.7505803669833856,
+          "base_score": 0.7152529925913569,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch59",
+          "score": 0.6140936454255183,
+          "base_score": 0.579044964598086,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch54",
+          "score": 0.6003493516837586,
+          "base_score": 0.7148679670919785,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch14",
+          "score": 0.5898908943276211,
+          "base_score": 0.659077416471961,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch6",
+          "score": 0.5656771970385189,
+          "base_score": 0.6927953283975316,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "dimension",
+          "table",
+          "fact",
+          "historic",
+          "load"
+        ],
+        "semantic": [],
+        "merged": [
+          "dimension",
+          "table",
+          "fact",
+          "historic",
+          "load"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "dimension_the_product",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4853044043890809,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.981706+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 59,
+      "title": "Segment 59 (pages 548-555)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch59",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch54",
+          "score": 0.7201925093200942,
+          "base_score": 0.6646065631525377,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch58",
+          "score": 0.6140936454255183,
+          "base_score": 0.579044964598086,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch53",
+          "score": 0.6001080197193589,
+          "base_score": 0.6761059587915241,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch56",
+          "score": 0.5953917492782007,
+          "base_score": 0.6682455080562604,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch55",
+          "score": 0.5937387470593716,
+          "base_score": 0.6654905043582119,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "table",
+          "dimension",
+          "fact",
+          "incremental",
+          "load"
+        ],
+        "semantic": [],
+        "merged": [
+          "table",
+          "dimension",
+          "fact",
+          "incremental",
+          "load"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_type_dimension",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5064052949249169,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.982030+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 60,
+      "title": "Segment 60 (pages 556-564)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch60",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch51",
+          "score": 0.5991415704732693,
+          "base_score": 0.7485692841221157,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch57",
+          "score": 0.5146860000507594,
+          "base_score": 0.607810000084599,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch52",
+          "score": 0.5059884300520482,
+          "base_score": 0.5933140500867469,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "real time",
+          "real",
+          "partition",
+          "time partition",
+          "time"
+        ],
+        "semantic": [],
+        "merged": [
+          "real time",
+          "real",
+          "partition",
+          "time partition",
+          "time"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "data_etl_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40546882055099837,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.982332+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 61,
+      "title": "Segment 61 (pages 565-572)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch61",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch62",
+          "score": 0.8040043643033435,
+          "base_score": 0.8042929881246201,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch4",
+          "score": 0.5968088740879502,
+          "base_score": 0.6706073827391763,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch7",
+          "score": 0.5673986028542535,
+          "base_score": 0.6215902640163484,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch48",
+          "score": 0.5213981716614587,
+          "base_score": 0.6189969527690979,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch8",
+          "score": 0.5186532627197921,
+          "base_score": 0.6144221045329868,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "big data",
+          "data",
+          "big",
+          "caches",
+          "highway"
+        ],
+        "semantic": [],
+        "merged": [
+          "big data",
+          "data",
+          "big",
+          "caches",
+          "highway"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_business_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4392998242888119,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.982634+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 62,
+      "title": "Segment 62 (pages 573-581)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch62",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch61",
+          "score": 0.8040043643033435,
+          "base_score": 0.8042929881246201,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch4",
+          "score": 0.6204838597642526,
+          "base_score": 0.7100656921996802,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch7",
+          "score": 0.5450174107443677,
+          "base_score": 0.5842882771665387,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch8",
+          "score": 0.5388841654933351,
+          "base_score": 0.6481402758222251,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch1",
+          "score": 0.5075890657278253,
+          "base_score": 0.595981776213042,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "big data",
+          "data",
+          "big",
+          "governance",
+          "best"
+        ],
+        "semantic": [],
+        "merged": [
+          "big data",
+          "data",
+          "big",
+          "governance",
+          "best"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_business_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45003421823090495,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.982946+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 63,
+      "title": "Segment 63 (pages 582-589)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch63",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch64",
+          "score": 0.6551208005679102,
+          "base_score": 0.767793926872443,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch65",
+          "score": 0.6281146611485791,
+          "base_score": 0.7227836945068911,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "dimension",
+          "233",
+          "258",
+          "175",
+          "320"
+        ],
+        "semantic": [],
+        "merged": [
+          "dimension",
+          "233",
+          "258",
+          "175",
+          "320"
+        ]
+      },
+      "topic_id": 10,
+      "topic_name": "study_case_dimension",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.430531450293137,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.983252+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 64,
+      "title": "Segment 64 (pages 590-599)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch64",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch63",
+          "score": 0.6551208005679102,
+          "base_score": 0.767793926872443,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch65",
+          "score": 0.6137365593055503,
+          "base_score": 0.6988201914351764,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "case study",
+          "study",
+          "case",
+          "dimension",
+          "insurance case"
+        ],
+        "semantic": [],
+        "merged": [
+          "case study",
+          "study",
+          "case",
+          "dimension",
+          "insurance case"
+        ]
+      },
+      "topic_id": 10,
+      "topic_name": "study_case_dimension",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49797194160621167,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.983551+00:00"
+      }
+    },
+    {
+      "book": "The Data Warehouse Toolkit 3rd Edition",
+      "chapter": 65,
+      "title": "Segment 65 (pages 600-601)",
+      "chapter_id": "The Data Warehouse Toolkit 3rd Edition:ch65",
+      "cross_references": [
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch63",
+          "score": 0.6281146611485791,
+          "base_score": 0.7227836945068911,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Data Warehouse Toolkit 3rd Edition:ch64",
+          "score": 0.6137365593055503,
+          "base_score": 0.6988201914351764,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "162",
+          "scd",
+          "scd 56",
+          "dimension",
+          "56"
+        ],
+        "semantic": [],
+        "merged": [
+          "162",
+          "scd",
+          "scd 56",
+          "dimension",
+          "56"
+        ]
+      },
+      "topic_id": 10,
+      "topic_name": "study_case_dimension",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47449481499462187,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:58:06.983851+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

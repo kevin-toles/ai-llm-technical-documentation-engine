@@ -1,0 +1,199 @@
+{
+  "book": {
+    "title": "migrating-to-microservice-databases"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:01:56.996404",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "migrating-to-microservice-databases",
+      "chapter": 1,
+      "title": "Introduction",
+      "chapter_id": "migrating-to-microservice-databases:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "microservices",
+          "software",
+          "bugs",
+          "things",
+          "domain"
+        ],
+        "semantic": [],
+        "merged": [
+          "microservices",
+          "software",
+          "bugs",
+          "things",
+          "domain"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "microservices_software_bugs",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4730886018114008,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:56.990474+00:00"
+      }
+    },
+    {
+      "book": "migrating-to-microservice-databases",
+      "chapter": 2,
+      "title": "addresses the architectures associated with deployment. The zero downtime migrations presented in Chapter 3 are not exclusive to microservices, but they’re even more important in the context of distri",
+      "chapter_id": "migrating-to-microservice-databases:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "deployment",
+          "version",
+          "green",
+          "blue",
+          "proxy"
+        ],
+        "semantic": [],
+        "merged": [
+          "deployment",
+          "version",
+          "green",
+          "blue",
+          "proxy"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "deployment_version_green",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4707294035591801,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:56.990515+00:00"
+      }
+    },
+    {
+      "book": "migrating-to-microservice-databases",
+      "chapter": 3,
+      "title": "Canary Deployment The idea of routing 100% of the users to a new version all at once might scare some developers. If anything goes wrong, 100% of your users will be affected. Instead, we could try an",
+      "chapter_id": "migrating-to-microservice-databases:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "column",
+          "version",
+          "new column",
+          "writes",
+          "old"
+        ],
+        "semantic": [],
+        "merged": [
+          "column",
+          "version",
+          "new column",
+          "writes",
+          "old"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "column_version_new",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5507842304534739,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:56.990541+00:00"
+      }
+    },
+    {
+      "book": "migrating-to-microservice-databases",
+      "chapter": 4,
+      "title": "CRUD and CQRS",
+      "chapter_id": "migrating-to-microservice-databases:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "store",
+          "data store",
+          "cqrs",
+          "read"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "store",
+          "data store",
+          "cqrs",
+          "read"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "data_store_cqrs",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4781144944188259,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:56.990743+00:00"
+      }
+    },
+    {
+      "book": "migrating-to-microservice-databases",
+      "chapter": 5,
+      "title": "Notice that when you combine CQRS and event sourcing you get auditing for free: in any given moment of time, you can replay all the credit() and debit() operations to check whether the amount of money",
+      "chapter_id": "migrating-to-microservice-databases:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "database",
+          "sourcing",
+          "event sourcing",
+          "event"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "database",
+          "sourcing",
+          "event sourcing",
+          "event"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "data_database_event",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42370806583959053,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:56.990774+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

@@ -1,0 +1,178 @@
+{
+  "book": {
+    "title": "the-human-side-of-postmortems"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:02:25.103453",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "the-human-side-of-postmortems",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-10)",
+      "chapter_id": "the-human-side-of-postmortems:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "human",
+          "reilly",
+          "reilly media",
+          "media",
+          "postmortems"
+        ],
+        "semantic": [],
+        "merged": [
+          "human",
+          "reilly",
+          "reilly media",
+          "media",
+          "postmortems"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "human_outage_reilly",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.536158864656598,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:25.100402+00:00"
+      }
+    },
+    {
+      "book": "the-human-side-of-postmortems",
+      "chapter": 2,
+      "title": "Segment 2 (pages 11-18)",
+      "chapter_id": "the-human-side-of-postmortems:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "stress surface",
+          "surface",
+          "effects",
+          "effects stress",
+          "performance"
+        ],
+        "semantic": [],
+        "merged": [
+          "stress surface",
+          "surface",
+          "effects",
+          "effects stress",
+          "performance"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "stress_surface_effects",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5445370347468487,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:25.100434+00:00"
+      }
+    },
+    {
+      "book": "the-human-side-of-postmortems",
+      "chapter": 3,
+      "title": "Segment 3 (pages 19-26)",
+      "chapter_id": "the-human-side-of-postmortems:ch3",
+      "cross_references": [
+        {
+          "target": "the-human-side-of-postmortems:ch4",
+          "score": 0.5727065191200195,
+          "base_score": 0.7878441985333658,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "bias",
+          "thinking",
+          "biases",
+          "outcome",
+          "outcome bias"
+        ],
+        "semantic": [],
+        "merged": [
+          "bias",
+          "thinking",
+          "biases",
+          "outcome",
+          "outcome bias"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "bias_thinking_outage",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6123825026563177,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:25.100468+00:00"
+      }
+    },
+    {
+      "book": "the-human-side-of-postmortems",
+      "chapter": 4,
+      "title": "Segment 4 (pages 27-32)",
+      "chapter_id": "the-human-side-of-postmortems:ch4",
+      "cross_references": [
+        {
+          "target": "the-human-side-of-postmortems:ch3",
+          "score": 0.5727065191200195,
+          "base_score": 0.7878441985333658,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cognitive",
+          "biases",
+          "cognitive biases",
+          "reduce",
+          "thinking"
+        ],
+        "semantic": [],
+        "merged": [
+          "cognitive",
+          "biases",
+          "cognitive biases",
+          "reduce",
+          "thinking"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "cognitive_biases_reduce",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.635922651549889,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:25.100492+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

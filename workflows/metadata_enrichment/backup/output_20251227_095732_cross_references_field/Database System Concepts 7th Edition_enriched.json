@@ -1,0 +1,3669 @@
+{
+  "book": {
+    "title": "Database System Concepts 7th Edition"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:44:34.955211",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-24)",
+      "chapter_id": "Database System Concepts 7th Edition:ch1",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch2",
+          "score": 0.6501036972443703,
+          "base_score": 0.7594320879998764,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch3",
+          "score": 0.614710726875134,
+          "base_score": 0.700443804051149,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch59",
+          "score": 0.577480466099814,
+          "base_score": 0.6383933694256159,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch49",
+          "score": 0.5106920521223836,
+          "base_score": 0.6011534202039727,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch25",
+          "score": 0.5018828427359356,
+          "base_score": 0.5864714045598928,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "chapter",
+          "covers",
+          "database",
+          "chapter chapter",
+          "chapters"
+        ],
+        "semantic": [],
+        "merged": [
+          "chapter",
+          "covers",
+          "database",
+          "chapter chapter",
+          "chapters"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3777627863926477,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.842226+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 2,
+      "title": "Segment 2 (pages 25-46)",
+      "chapter_id": "Database System Concepts 7th Edition:ch2",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch3",
+          "score": 0.7077325168920633,
+          "base_score": 0.6438399091058198,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch1",
+          "score": 0.6501036972443703,
+          "base_score": 0.7594320879998764,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch53",
+          "score": 0.5879196134668859,
+          "base_score": 0.6557919483707357,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch49",
+          "score": 0.5228876500471444,
+          "base_score": 0.6214794167452408,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch47",
+          "score": 0.5188056126584942,
+          "base_score": 0.44800935443082385,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "database",
+          "data",
+          "users",
+          "information",
+          "database applications"
+        ],
+        "semantic": [],
+        "merged": [
+          "database",
+          "data",
+          "users",
+          "information",
+          "database applications"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37724861272010246,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.842645+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 3,
+      "title": "Segment 3 (pages 47-64)",
+      "chapter_id": "Database System Concepts 7th Edition:ch3",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch2",
+          "score": 0.7077325168920633,
+          "base_score": 0.6438399091058198,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch47",
+          "score": 0.6673089367768187,
+          "base_score": 0.5764672755804121,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch1",
+          "score": 0.614710726875134,
+          "base_score": 0.700443804051149,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch25",
+          "score": 0.5665984467846085,
+          "base_score": 0.6943307446410141,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch59",
+          "score": 0.5663304541100864,
+          "base_score": 0.6198100161094032,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "database",
+          "data",
+          "database systems",
+          "systems",
+          "users"
+        ],
+        "semantic": [],
+        "merged": [
+          "database",
+          "data",
+          "database systems",
+          "systems",
+          "users"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4018421099691833,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.842956+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 4,
+      "title": "Segment 4 (pages 66-86)",
+      "chapter_id": "Database System Concepts 7th Edition:ch4",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch5",
+          "score": 0.890183112586673,
+          "base_score": 0.789194076533344,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch20",
+          "score": 0.5535511371301512,
+          "base_score": 0.672585228550252,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch14",
+          "score": 0.5497177774430414,
+          "base_score": 0.6661962957384022,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch8",
+          "score": 0.5087554083890937,
+          "base_score": 0.5979256806484895,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch6",
+          "score": 0.5050462220978398,
+          "base_score": 0.5917437034963996,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "relation",
+          "relational",
+          "instructor",
+          "algebra",
+          "relational algebra"
+        ],
+        "semantic": [],
+        "merged": [
+          "relation",
+          "relational",
+          "instructor",
+          "algebra",
+          "relational algebra"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34728640374374153,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.843311+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 5,
+      "title": "Segment 5 (pages 87-109)",
+      "chapter_id": "Database System Concepts 7th Edition:ch5",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch4",
+          "score": 0.890183112586673,
+          "base_score": 0.789194076533344,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch37",
+          "score": 0.5014154965777605,
+          "base_score": 0.5856924942962675,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "relation",
+          "sql",
+          "relational",
+          "relational algebra",
+          "algebra"
+        ],
+        "semantic": [],
+        "merged": [
+          "relation",
+          "sql",
+          "relational",
+          "relational algebra",
+          "algebra"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33600496186294576,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.845812+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 6,
+      "title": "Segment 6 (pages 110-127)",
+      "chapter_id": "Database System Concepts 7th Edition:ch6",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch7",
+          "score": 0.6639573654781652,
+          "base_score": 0.6899289424636086,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch37",
+          "score": 0.5216247758988012,
+          "base_score": 0.619374626498002,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch8",
+          "score": 0.5201740564802301,
+          "base_score": 0.6169567608003835,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch4",
+          "score": 0.5050462220978398,
+          "base_score": 0.5917437034963996,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "select",
+          "clause",
+          "select course",
+          "query",
+          "course"
+        ],
+        "semantic": [],
+        "merged": [
+          "select",
+          "clause",
+          "select course",
+          "query",
+          "course"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2011154717780517,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.846158+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 7,
+      "title": "Segment 7 (pages 128-150)",
+      "chapter_id": "Database System Concepts 7th Edition:ch7",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch6",
+          "score": 0.6639573654781652,
+          "base_score": 0.6899289424636086,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "select",
+          "subquery",
+          "salary",
+          "sql",
+          "query"
+        ],
+        "semantic": [],
+        "merged": [
+          "select",
+          "subquery",
+          "salary",
+          "sql",
+          "query"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2174953856178611,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.846477+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 8,
+      "title": "Segment 8 (pages 151-172)",
+      "chapter_id": "Database System Concepts 7th Edition:ch8",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch37",
+          "score": 0.5502153484600739,
+          "base_score": 0.5929515066927158,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch6",
+          "score": 0.5201740564802301,
+          "base_score": 0.6169567608003835,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch14",
+          "score": 0.5125055376301425,
+          "base_score": 0.6041758960502376,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch4",
+          "score": 0.5087554083890937,
+          "base_score": 0.5979256806484895,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "join",
+          "natural",
+          "outer join",
+          "student",
+          "natural join"
+        ],
+        "semantic": [],
+        "merged": [
+          "join",
+          "natural",
+          "outer join",
+          "student",
+          "natural join"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2494861074892486,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.846782+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 9,
+      "title": "Segment 9 (pages 173-193)",
+      "chapter_id": "Database System Concepts 7th Edition:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "constraint",
+          "constraints",
+          "type",
+          "integrity",
+          "sql"
+        ],
+        "semantic": [],
+        "merged": [
+          "constraint",
+          "constraints",
+          "type",
+          "integrity",
+          "sql"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24501806655324654,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.847081+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 10,
+      "title": "Segment 10 (pages 194-212)",
+      "chapter_id": "Database System Concepts 7th Edition:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "authorization",
+          "granted",
+          "privileges",
+          "privilege",
+          "grant"
+        ],
+        "semantic": [],
+        "merged": [
+          "authorization",
+          "granted",
+          "privileges",
+          "privilege",
+          "grant"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26030018402272526,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.847389+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 11,
+      "title": "Segment 11 (pages 213-233)",
+      "chapter_id": "Database System Concepts 7th Edition:ch11",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch2",
+          "score": 0.5119166374929469,
+          "base_score": 0.5291203217475041,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch53",
+          "score": 0.5080089639662438,
+          "base_score": 0.5966816066104064,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sql",
+          "statements",
+          "database",
+          "embedded",
+          "jdbc"
+        ],
+        "semantic": [],
+        "merged": [
+          "sql",
+          "statements",
+          "database",
+          "embedded",
+          "jdbc"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3067716518305166,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.847688+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 12,
+      "title": "Segment 12 (pages 234-254)",
+      "chapter_id": "Database System Concepts 7th Edition:ch12",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "trigger",
+          "prereq",
+          "triggers",
+          "rank",
+          "recursive"
+        ],
+        "semantic": [],
+        "merged": [
+          "trigger",
+          "prereq",
+          "triggers",
+          "rank",
+          "recursive"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2831494476776831,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.847982+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 13,
+      "title": "Segment 13 (pages 255-273)",
+      "chapter_id": "Database System Concepts 7th Edition:ch13",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "color",
+          "item color",
+          "quantity",
+          "clothes",
+          "design"
+        ],
+        "semantic": [],
+        "merged": [
+          "color",
+          "item color",
+          "quantity",
+          "clothes",
+          "design"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24795079568945752,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.848273+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 14,
+      "title": "Segment 14 (pages 274-293)",
+      "chapter_id": "Database System Concepts 7th Edition:ch14",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch16",
+          "score": 0.7907470365911735,
+          "base_score": 0.6234672832075115,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch15",
+          "score": 0.7503514538937326,
+          "base_score": 0.7148714707752685,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch4",
+          "score": 0.5497177774430414,
+          "base_score": 0.6661962957384022,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch20",
+          "score": 0.5190926499248693,
+          "base_score": 0.6151544165414489,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch8",
+          "score": 0.5125055376301425,
+          "base_score": 0.6041758960502376,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "entity",
+          "entity set",
+          "relationship",
+          "relationship set",
+          "entity sets"
+        ],
+        "semantic": [],
+        "merged": [
+          "entity",
+          "entity set",
+          "relationship",
+          "relationship set",
+          "entity sets"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27086626843816725,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.848606+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 15,
+      "title": "Segment 15 (pages 294-312)",
+      "chapter_id": "Database System Concepts 7th Edition:ch15",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch14",
+          "score": 0.7503514538937326,
+          "base_score": 0.7148714707752685,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch16",
+          "score": 0.6213233374709592,
+          "base_score": 0.6188722291182653,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "entity",
+          "entity set",
+          "set",
+          "level entity",
+          "entity sets"
+        ],
+        "semantic": [],
+        "merged": [
+          "entity",
+          "entity set",
+          "set",
+          "level entity",
+          "entity sets"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3032200197679693,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.848905+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 16,
+      "title": "Segment 16 (pages 313-332)",
+      "chapter_id": "Database System Concepts 7th Edition:ch16",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch14",
+          "score": 0.7907470365911735,
+          "base_score": 0.6234672832075115,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch15",
+          "score": 0.6213233374709592,
+          "base_score": 0.6188722291182653,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "relationship",
+          "entity",
+          "diagram",
+          "entity set",
+          "relationship set"
+        ],
+        "semantic": [],
+        "merged": [
+          "relationship",
+          "entity",
+          "diagram",
+          "entity set",
+          "relationship set"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29358051206646474,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.849200+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 17,
+      "title": "Segment 17 (pages 333-355)",
+      "chapter_id": "Database System Concepts 7th Edition:ch17",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch18",
+          "score": 0.8441588351782989,
+          "base_score": 0.7124869475193871,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch19",
+          "score": 0.5721042821937082,
+          "base_score": 0.4177928512752281,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "functional",
+          "dependencies",
+          "functional dependencies",
+          "dependency",
+          "functional dependency"
+        ],
+        "semantic": [],
+        "merged": [
+          "functional",
+          "dependencies",
+          "functional dependencies",
+          "dependency",
+          "functional dependency"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2690507404377617,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.852778+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 18,
+      "title": "Segment 18 (pages 356-375)",
+      "chapter_id": "Database System Concepts 7th Edition:ch18",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch17",
+          "score": 0.8441588351782989,
+          "base_score": 0.7124869475193871,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch19",
+          "score": 0.5094022389657107,
+          "base_score": 0.3132894458952322,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "dependencies",
+          "dependency",
+          "functional",
+          "multivalued",
+          "functional dependencies"
+        ],
+        "semantic": [],
+        "merged": [
+          "dependencies",
+          "dependency",
+          "functional",
+          "multivalued",
+          "functional dependencies"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.20033463114871375,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.857314+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 19,
+      "title": "Segment 19 (pages 376-400)",
+      "chapter_id": "Database System Concepts 7th Edition:ch19",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch17",
+          "score": 0.5721042821937082,
+          "base_score": 0.4177928512752281,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch20",
+          "score": 0.5179263538863701,
+          "base_score": 0.5391365157365426,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch18",
+          "score": 0.5094022389657107,
+          "base_score": 0.3132894458952322,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "functional",
+          "dependencies",
+          "temporal",
+          "data",
+          "functional dependencies"
+        ],
+        "semantic": [],
+        "merged": [
+          "functional",
+          "dependencies",
+          "temporal",
+          "data",
+          "functional dependencies"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27190590509404294,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.857659+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 20,
+      "title": "Segment 20 (pages 401-419)",
+      "chapter_id": "Database System Concepts 7th Edition:ch20",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch4",
+          "score": 0.5535511371301512,
+          "base_score": 0.672585228550252,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch14",
+          "score": 0.5190926499248693,
+          "base_score": 0.6151544165414489,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch19",
+          "score": 0.5179263538863701,
+          "base_score": 0.5391365157365426,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "document",
+          "documents",
+          "keyword",
+          "data",
+          "object"
+        ],
+        "semantic": [],
+        "merged": [
+          "document",
+          "documents",
+          "keyword",
+          "data",
+          "object"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3119682893745052,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.858016+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 21,
+      "title": "Segment 21 (pages 420-443)",
+      "chapter_id": "Database System Concepts 7th Edition:ch21",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "web",
+          "application",
+          "server",
+          "data",
+          "user"
+        ],
+        "semantic": [],
+        "merged": [
+          "web",
+          "application",
+          "server",
+          "data",
+          "user"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2081298104816944,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.858634+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 22,
+      "title": "Segment 22 (pages 444-465)",
+      "chapter_id": "Database System Concepts 7th Edition:ch22",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "web",
+          "code",
+          "application",
+          "html",
+          "application server"
+        ],
+        "semantic": [],
+        "merged": [
+          "web",
+          "code",
+          "application",
+          "html",
+          "application server"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.18604576584970797,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.858950+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 23,
+      "title": "Segment 23 (pages 466-485)",
+      "chapter_id": "Database System Concepts 7th Edition:ch23",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "encryption",
+          "user",
+          "key",
+          "public key",
+          "public"
+        ],
+        "semantic": [],
+        "merged": [
+          "encryption",
+          "user",
+          "key",
+          "public key",
+          "public"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2922694421225841,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.859263+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 24,
+      "title": "Segment 24 (pages 486-509)",
+      "chapter_id": "Database System Concepts 7th Edition:ch24",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "big data",
+          "big",
+          "web",
+          "machines"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "big data",
+          "big",
+          "web",
+          "machines"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25662039002164483,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.859580+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 25,
+      "title": "Segment 25 (pages 510-530)",
+      "chapter_id": "Database System Concepts 7th Edition:ch25",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch3",
+          "score": 0.5665984467846085,
+          "base_score": 0.6943307446410141,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch49",
+          "score": 0.5231959459008454,
+          "base_score": 0.6219932431680756,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch51",
+          "score": 0.5180649753935217,
+          "base_score": 0.6134416256558696,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch48",
+          "score": 0.5149399154859035,
+          "base_score": 0.6082331924765058,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch59",
+          "score": 0.5140467495204651,
+          "base_score": 0.6067445825341085,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "map",
+          "reduce",
+          "word",
+          "function",
+          "map reduce"
+        ],
+        "semantic": [],
+        "merged": [
+          "map",
+          "reduce",
+          "word",
+          "function",
+          "map reduce"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4231618724801508,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.859906+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 26,
+      "title": "Segment 26 (pages 531-551)",
+      "chapter_id": "Database System Concepts 7th Edition:ch26",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch53",
+          "score": 0.51533706795728,
+          "base_score": 0.5348210391880592,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch3",
+          "score": 0.5079995851804733,
+          "base_score": 0.5225919012267147,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "stream",
+          "streams",
+          "streaming",
+          "window"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "stream",
+          "streams",
+          "streaming",
+          "window"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33426926497364023,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.860400+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 27,
+      "title": "Segment 27 (pages 552-572)",
+      "chapter_id": "Database System Concepts 7th Edition:ch27",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "color",
+          "clothes",
+          "clothes size",
+          "data",
+          "color clothes"
+        ],
+        "semantic": [],
+        "merged": [
+          "color",
+          "clothes",
+          "clothes size",
+          "data",
+          "color clothes"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31819922428084607,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.870994+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 28,
+      "title": "Segment 28 (pages 573-593)",
+      "chapter_id": "Database System Concepts 7th Edition:ch28",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "magnetic",
+          "storage",
+          "mining",
+          "classiﬁer"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "magnetic",
+          "storage",
+          "mining",
+          "classiﬁer"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.19778751511378706,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.871319+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 29,
+      "title": "Segment 29 (pages 594-616)",
+      "chapter_id": "Database System Concepts 7th Edition:ch29",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch35",
+          "score": 0.5322912820623241,
+          "base_score": 0.47048547010387365,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "disk",
+          "disks",
+          "blocks",
+          "block",
+          "magnetic"
+        ],
+        "semantic": [],
+        "merged": [
+          "disk",
+          "disks",
+          "blocks",
+          "block",
+          "magnetic"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2678172048675109,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.871649+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 30,
+      "title": "Segment 30 (pages 617-639)",
+      "chapter_id": "Database System Concepts 7th Edition:ch30",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch31",
+          "score": 0.5720930328150687,
+          "base_score": 0.5368217213584479,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch35",
+          "score": 0.50531090886005,
+          "base_score": 0.5181107740260094,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "block",
+          "record",
+          "record record",
+          "records",
+          "space"
+        ],
+        "semantic": [],
+        "merged": [
+          "block",
+          "record",
+          "record record",
+          "records",
+          "space"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3352181323755792,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.871991+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 31,
+      "title": "Segment 31 (pages 640-660)",
+      "chapter_id": "Database System Concepts 7th Edition:ch31",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch33",
+          "score": 0.6068760828218753,
+          "base_score": 0.47574585232217326,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch30",
+          "score": 0.5720930328150687,
+          "base_score": 0.5368217213584479,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch3",
+          "score": 0.5508601110627879,
+          "base_score": 0.6681001851046465,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch25",
+          "score": 0.5139744456852272,
+          "base_score": 0.6066240761420454,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch59",
+          "score": 0.5031686082470819,
+          "base_score": 0.5886143470784698,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "index",
+          "search",
+          "search key",
+          "record",
+          "records"
+        ],
+        "semantic": [],
+        "merged": [
+          "index",
+          "search",
+          "search key",
+          "record",
+          "records"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39137669069251735,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.872507+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 32,
+      "title": "Segment 32 (pages 661-678)",
+      "chapter_id": "Database System Concepts 7th Edition:ch32",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch33",
+          "score": 0.5613469345856767,
+          "base_score": 0.5189115576427945,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "search key",
+          "node",
+          "search",
+          "leaf",
+          "key"
+        ],
+        "semantic": [],
+        "merged": [
+          "search key",
+          "node",
+          "search",
+          "leaf",
+          "key"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2377446698909954,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.873002+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 33,
+      "title": "Segment 33 (pages 679-701)",
+      "chapter_id": "Database System Concepts 7th Edition:ch33",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch31",
+          "score": 0.6068760828218753,
+          "base_score": 0.47574585232217326,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch34",
+          "score": 0.5622607077556815,
+          "base_score": 0.40138689387851684,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch32",
+          "score": 0.5613469345856767,
+          "base_score": 0.5189115576427945,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tree",
+          "index",
+          "search",
+          "search key",
+          "trees"
+        ],
+        "semantic": [],
+        "merged": [
+          "tree",
+          "index",
+          "search",
+          "search key",
+          "trees"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30346281877990594,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.873606+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 34,
+      "title": "Segment 34 (pages 702-724)",
+      "chapter_id": "Database System Concepts 7th Edition:ch34",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch33",
+          "score": 0.5622607077556815,
+          "base_score": 0.40138689387851684,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tree",
+          "query",
+          "trees",
+          "index",
+          "cost"
+        ],
+        "semantic": [],
+        "merged": [
+          "tree",
+          "query",
+          "trees",
+          "index",
+          "cost"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23959888655745817,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.873935+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 35,
+      "title": "Segment 35 (pages 725-745)",
+      "chapter_id": "Database System Concepts 7th Edition:ch35",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch29",
+          "score": 0.5322912820623241,
+          "base_score": 0.47048547010387365,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch30",
+          "score": 0.50531090886005,
+          "base_score": 0.5181107740260094,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "block",
+          "join",
+          "blocks",
+          "block transfers",
+          "transfers"
+        ],
+        "semantic": [],
+        "merged": [
+          "block",
+          "join",
+          "blocks",
+          "block transfers",
+          "transfers"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3012712691031194,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.874303+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 36,
+      "title": "Segment 36 (pages 746-767)",
+      "chapter_id": "Database System Concepts 7th Edition:ch36",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "join",
+          "hash",
+          "pipelined",
+          "hash join",
+          "tuples"
+        ],
+        "semantic": [],
+        "merged": [
+          "join",
+          "hash",
+          "pipelined",
+          "hash join",
+          "tuples"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.292454372826979,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.874667+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 37,
+      "title": "Segment 37 (pages 768-790)",
+      "chapter_id": "Database System Concepts 7th Edition:ch37",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch8",
+          "score": 0.5502153484600739,
+          "base_score": 0.5929515066927158,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch6",
+          "score": 0.5216247758988012,
+          "base_score": 0.619374626498002,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch4",
+          "score": 0.5042386915632896,
+          "base_score": 0.5903978192721493,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch5",
+          "score": 0.5014154965777605,
+          "base_score": 0.5856924942962675,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "expressions",
+          "expression",
+          "join",
+          "title",
+          "πcourse"
+        ],
+        "semantic": [],
+        "merged": [
+          "expressions",
+          "expression",
+          "join",
+          "title",
+          "πcourse"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2613055624076933,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.875128+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 38,
+      "title": "Segment 38 (pages 791-809)",
+      "chapter_id": "Database System Concepts 7th Edition:ch38",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "join",
+          "join order",
+          "query",
+          "optimization",
+          "estimated"
+        ],
+        "semantic": [],
+        "merged": [
+          "join",
+          "join order",
+          "query",
+          "optimization",
+          "estimated"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.18558582487371333,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.875687+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 39,
+      "title": "Segment 39 (pages 810-831)",
+      "chapter_id": "Database System Concepts 7th Edition:ch39",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "query",
+          "optimization",
+          "query optimization",
+          "materialized",
+          "materialized view"
+        ],
+        "semantic": [],
+        "merged": [
+          "query",
+          "optimization",
+          "query optimization",
+          "materialized",
+          "materialized view"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2772075243564507,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.876149+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 40,
+      "title": "Segment 40 (pages 832-853)",
+      "chapter_id": "Database System Concepts 7th Edition:ch40",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch41",
+          "score": 0.6614215830918357,
+          "base_score": 0.6857026384863929,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch43",
+          "score": 0.6373665303184972,
+          "base_score": 0.645610883864162,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch47",
+          "score": 0.5995958884106546,
+          "base_score": 0.7493264806844244,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch44",
+          "score": 0.5976544530361211,
+          "base_score": 0.6720166809861277,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch45",
+          "score": 0.5898243568884871,
+          "base_score": 0.7330405948141452,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "transaction",
+          "transactions",
+          "schedule",
+          "committed",
+          "state"
+        ],
+        "semantic": [],
+        "merged": [
+          "transaction",
+          "transactions",
+          "schedule",
+          "committed",
+          "state"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3747306115465252,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.876635+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 41,
+      "title": "Segment 41 (pages 854-875)",
+      "chapter_id": "Database System Concepts 7th Edition:ch41",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch40",
+          "score": 0.6614215830918357,
+          "base_score": 0.6857026384863929,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch44",
+          "score": 0.6270424139666151,
+          "base_score": 0.628404023277692,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch42",
+          "score": 0.6211411379911714,
+          "base_score": 0.6185685633186191,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch55",
+          "score": 0.6173172751467544,
+          "base_score": 0.6121954585779239,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch43",
+          "score": 0.598379057684435,
+          "base_score": 0.5806317628073917,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "lock",
+          "transaction",
+          "transactions",
+          "item",
+          "data item"
+        ],
+        "semantic": [],
+        "merged": [
+          "lock",
+          "transaction",
+          "transactions",
+          "item",
+          "data item"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31541299568169534,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.877070+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 42,
+      "title": "Segment 42 (pages 876-896)",
+      "chapter_id": "Database System Concepts 7th Edition:ch42",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch44",
+          "score": 0.7150246540238568,
+          "base_score": 0.6559934709921423,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch41",
+          "score": 0.6211411379911714,
+          "base_score": 0.6185685633186191,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch43",
+          "score": 0.563659399612741,
+          "base_score": 0.522765666021235,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch54",
+          "score": 0.5221233265869099,
+          "base_score": 0.5461314702374425,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch40",
+          "score": 0.5111347918873266,
+          "base_score": 0.5278172457381369,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "transaction",
+          "ti",
+          "transaction ti",
+          "lock",
+          "locking"
+        ],
+        "semantic": [],
+        "merged": [
+          "transaction",
+          "ti",
+          "transaction ti",
+          "lock",
+          "locking"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3051537604977687,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.877670+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 43,
+      "title": "Segment 43 (pages 897-919)",
+      "chapter_id": "Database System Concepts 7th Edition:ch43",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch40",
+          "score": 0.6373665303184972,
+          "base_score": 0.645610883864162,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch41",
+          "score": 0.598379057684435,
+          "base_score": 0.5806317628073917,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch42",
+          "score": 0.563659399612741,
+          "base_score": 0.522765666021235,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch44",
+          "score": 0.5479869205817058,
+          "base_score": 0.5892374602287689,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch54",
+          "score": 0.5338057721924991,
+          "base_score": 0.5656022129134245,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "transaction",
+          "transactions",
+          "ti",
+          "read",
+          "snapshot"
+        ],
+        "semantic": [],
+        "merged": [
+          "transaction",
+          "transactions",
+          "ti",
+          "read",
+          "snapshot"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27997063668926153,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.878331+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 44,
+      "title": "Segment 44 (pages 920-938)",
+      "chapter_id": "Database System Concepts 7th Edition:ch44",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch42",
+          "score": 0.7150246540238568,
+          "base_score": 0.6559934709921423,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch41",
+          "score": 0.6270424139666151,
+          "base_score": 0.628404023277692,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch40",
+          "score": 0.5976544530361211,
+          "base_score": 0.6720166809861277,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch43",
+          "score": 0.5479869205817058,
+          "base_score": 0.5892374602287689,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch60",
+          "score": 0.5130435858577824,
+          "base_score": 0.5309985690222299,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "locking",
+          "phase locking",
+          "transaction",
+          "phase",
+          "lock"
+        ],
+        "semantic": [],
+        "merged": [
+          "locking",
+          "phase locking",
+          "transaction",
+          "phase",
+          "lock"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3133558615837645,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.879012+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 45,
+      "title": "Segment 45 (pages 939-957)",
+      "chapter_id": "Database System Concepts 7th Edition:ch45",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch46",
+          "score": 0.7931852767409772,
+          "base_score": 0.6275310167905175,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch47",
+          "score": 0.6498927853152832,
+          "base_score": 0.7590805681180646,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch40",
+          "score": 0.5898243568884871,
+          "base_score": 0.7330405948141452,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch43",
+          "score": 0.50981600056954,
+          "base_score": 0.5256192602084926,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "log",
+          "log record",
+          "record",
+          "log records",
+          "ti"
+        ],
+        "semantic": [],
+        "merged": [
+          "log",
+          "log record",
+          "record",
+          "log records",
+          "ti"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3747939525292455,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.879539+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 46,
+      "title": "Segment 46 (pages 958-977)",
+      "chapter_id": "Database System Concepts 7th Edition:ch46",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch45",
+          "score": 0.7931852767409772,
+          "base_score": 0.6275310167905175,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch47",
+          "score": 0.5795541644700092,
+          "base_score": 0.6418495333759412,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "log",
+          "log record",
+          "undo",
+          "log records",
+          "record"
+        ],
+        "semantic": [],
+        "merged": [
+          "log",
+          "log record",
+          "undo",
+          "log records",
+          "record"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2666469881862686,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.880124+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 47,
+      "title": "Segment 47 (pages 978-1001)",
+      "chapter_id": "Database System Concepts 7th Edition:ch47",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch3",
+          "score": 0.6673089367768187,
+          "base_score": 0.5764672755804121,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch45",
+          "score": 0.6498927853152832,
+          "base_score": 0.7590805681180646,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch40",
+          "score": 0.5995958884106546,
+          "base_score": 0.7493264806844244,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch46",
+          "score": 0.5795541644700092,
+          "base_score": 0.6418495333759412,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch60",
+          "score": 0.5546592721453477,
+          "base_score": 0.5077654535755796,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "parallel",
+          "data",
+          "systems",
+          "log",
+          "database"
+        ],
+        "semantic": [],
+        "merged": [
+          "parallel",
+          "data",
+          "systems",
+          "log",
+          "database"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3801550052257364,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.880628+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 48,
+      "title": "Segment 48 (pages 1002-1019)",
+      "chapter_id": "Database System Concepts 7th Edition:ch48",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch49",
+          "score": 0.5548228911867428,
+          "base_score": 0.6006307445704973,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch52",
+          "score": 0.5492102776396104,
+          "base_score": 0.5912763886586099,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch54",
+          "score": 0.5412857523448397,
+          "base_score": 0.5780688465006587,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch25",
+          "score": 0.5149399154859035,
+          "base_score": 0.6082331924765058,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "memory",
+          "shared",
+          "shared memory",
+          "nodes",
+          "processors"
+        ],
+        "semantic": [],
+        "merged": [
+          "memory",
+          "shared",
+          "shared memory",
+          "nodes",
+          "processors"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32876274317770804,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.897069+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 49,
+      "title": "Segment 49 (pages 1020-1042)",
+      "chapter_id": "Database System Concepts 7th Edition:ch49",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch3",
+          "score": 0.5654894688212017,
+          "base_score": 0.6924824480353362,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch48",
+          "score": 0.5548228911867428,
+          "base_score": 0.6006307445704973,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch25",
+          "score": 0.5231959459008454,
+          "base_score": 0.6219932431680756,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch51",
+          "score": 0.5230185280802254,
+          "base_score": 0.4550308801337091,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch2",
+          "score": 0.5228876500471444,
+          "base_score": 0.6214794167452408,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "partitioning",
+          "node",
+          "virtual",
+          "nodes",
+          "range partitioning"
+        ],
+        "semantic": [],
+        "merged": [
+          "partitioning",
+          "node",
+          "virtual",
+          "nodes",
+          "range partitioning"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3236255843507775,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.898007+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 50,
+      "title": "Segment 50 (pages 1043-1065)",
+      "chapter_id": "Database System Concepts 7th Edition:ch50",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch57",
+          "score": 0.5458358604680182,
+          "base_score": 0.6597264341133637,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "value stores",
+          "key value",
+          "data",
+          "stores",
+          "key"
+        ],
+        "semantic": [],
+        "merged": [
+          "value stores",
+          "key value",
+          "data",
+          "stores",
+          "key"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29024480537340064,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.898865+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 51,
+      "title": "Segment 51 (pages 1066-1084)",
+      "chapter_id": "Database System Concepts 7th Edition:ch51",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch52",
+          "score": 0.7162030385486028,
+          "base_score": 0.7770050642476714,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch49",
+          "score": 0.5230185280802254,
+          "base_score": 0.4550308801337091,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch53",
+          "score": 0.5196710587023214,
+          "base_score": 0.44945176450386903,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch25",
+          "score": 0.5180649753935217,
+          "base_score": 0.6134416256558696,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "join",
+          "parallel",
+          "node",
+          "partitioning",
+          "ni"
+        ],
+        "semantic": [],
+        "merged": [
+          "join",
+          "parallel",
+          "node",
+          "partitioning",
+          "ni"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35024877847951086,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.899826+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 52,
+      "title": "Segment 52 (pages 1085-1105)",
+      "chapter_id": "Database System Concepts 7th Edition:ch52",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch51",
+          "score": 0.7162030385486028,
+          "base_score": 0.7770050642476714,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch54",
+          "score": 0.5563227209317532,
+          "base_score": 0.5105378682195887,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch48",
+          "score": 0.5492102776396104,
+          "base_score": 0.5912763886586099,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch49",
+          "score": 0.51833078489709,
+          "base_score": 0.44721797482848324,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "parallel",
+          "operator",
+          "node",
+          "exchange",
+          "nodes"
+        ],
+        "semantic": [],
+        "merged": [
+          "parallel",
+          "operator",
+          "node",
+          "exchange",
+          "nodes"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30449236270414515,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.900646+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 53,
+      "title": "Segment 53 (pages 1106-1126)",
+      "chapter_id": "Database System Concepts 7th Edition:ch53",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch2",
+          "score": 0.5879196134668859,
+          "base_score": 0.6557919483707357,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch3",
+          "score": 0.5425875684355798,
+          "base_score": 0.5802385399852255,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch51",
+          "score": 0.5196710587023214,
+          "base_score": 0.44945176450386903,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch26",
+          "score": 0.51533706795728,
+          "base_score": 0.5348210391880592,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch11",
+          "score": 0.5080089639662438,
+          "base_score": 0.5966816066104064,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "parallel",
+          "query",
+          "join",
+          "processing"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "parallel",
+          "query",
+          "join",
+          "processing"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3676427568077669,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.901492+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 54,
+      "title": "Segment 54 (pages 1127-1146)",
+      "chapter_id": "Database System Concepts 7th Edition:ch54",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch52",
+          "score": 0.5563227209317532,
+          "base_score": 0.5105378682195887,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch48",
+          "score": 0.5412857523448397,
+          "base_score": 0.5780688465006587,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch56",
+          "score": 0.5408376592402631,
+          "base_score": 0.36568181301948616,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch43",
+          "score": 0.5338057721924991,
+          "base_score": 0.5656022129134245,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch40",
+          "score": 0.5271352365281616,
+          "base_score": 0.5544846534728619,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "node",
+          "coordinator",
+          "nodes",
+          "transaction",
+          "message"
+        ],
+        "semantic": [],
+        "merged": [
+          "node",
+          "coordinator",
+          "nodes",
+          "transaction",
+          "message"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2920897340018711,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.902313+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 55,
+      "title": "Segment 55 (pages 1147-1169)",
+      "chapter_id": "Database System Concepts 7th Edition:ch55",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch41",
+          "score": 0.6173172751467544,
+          "base_score": 0.6121954585779239,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch54",
+          "score": 0.5122295309524343,
+          "base_score": 0.5296418108466499,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch56",
+          "score": 0.5041331964220264,
+          "base_score": 0.5161479199626366,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "node",
+          "data item",
+          "data",
+          "item",
+          "replicas"
+        ],
+        "semantic": [],
+        "merged": [
+          "node",
+          "data item",
+          "data",
+          "item",
+          "replicas"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26140132532859833,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.903137+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 56,
+      "title": "Segment 56 (pages 1170-1191)",
+      "chapter_id": "Database System Concepts 7th Edition:ch56",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch54",
+          "score": 0.5408376592402631,
+          "base_score": 0.36568181301948616,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch55",
+          "score": 0.5041331964220264,
+          "base_score": 0.5161479199626366,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "nodes",
+          "node",
+          "coordinator",
+          "leader",
+          "majority"
+        ],
+        "semantic": [],
+        "merged": [
+          "nodes",
+          "node",
+          "coordinator",
+          "leader",
+          "majority"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29135272799805717,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.903980+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 57,
+      "title": "Segment 57 (pages 1192-1211)",
+      "chapter_id": "Database System Concepts 7th Edition:ch57",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch50",
+          "score": 0.5458358604680182,
+          "base_score": 0.6597264341133637,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tree",
+          "lsm",
+          "trees",
+          "lsm tree",
+          "merge"
+        ],
+        "semantic": [],
+        "merged": [
+          "tree",
+          "lsm",
+          "trees",
+          "lsm tree",
+          "merge"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29807593674336746,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.906288+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 58,
+      "title": "Segment 58 (pages 1212-1234)",
+      "chapter_id": "Database System Concepts 7th Edition:ch58",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "bucket",
+          "hash",
+          "bucket address",
+          "address table",
+          "bucket bucket"
+        ],
+        "semantic": [],
+        "merged": [
+          "bucket",
+          "hash",
+          "bucket address",
+          "address table",
+          "bucket bucket"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28431925515150547,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.907238+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 59,
+      "title": "Segment 59 (pages 1235-1254)",
+      "chapter_id": "Database System Concepts 7th Edition:ch59",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch1",
+          "score": 0.577480466099814,
+          "base_score": 0.6383933694256159,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch3",
+          "score": 0.5663304541100864,
+          "base_score": 0.6198100161094032,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch25",
+          "score": 0.5140467495204651,
+          "base_score": 0.6067445825341085,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch31",
+          "score": 0.5031686082470819,
+          "base_score": 0.5886143470784698,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tuning",
+          "database",
+          "performance",
+          "queries",
+          "query"
+        ],
+        "semantic": [],
+        "merged": [
+          "tuning",
+          "database",
+          "performance",
+          "queries",
+          "query"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35735124138450236,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.907622+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 60,
+      "title": "Segment 60 (pages 1255-1273)",
+      "chapter_id": "Database System Concepts 7th Edition:ch60",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch47",
+          "score": 0.5546592721453477,
+          "base_score": 0.5077654535755796,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch40",
+          "score": 0.5221816904345016,
+          "base_score": 0.5462287433167619,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch44",
+          "score": 0.5130435858577824,
+          "base_score": 0.5309985690222299,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "directory",
+          "database",
+          "transaction",
+          "tpc"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "directory",
+          "database",
+          "transaction",
+          "tpc"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2622973810003725,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.907993+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 61,
+      "title": "Segment 61 (pages 1274-1295)",
+      "chapter_id": "Database System Concepts 7th Edition:ch61",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch62",
+          "score": 0.663947005217873,
+          "base_score": 0.6899116753631216,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "blockchain",
+          "blockchains",
+          "block",
+          "bitcoin",
+          "blockchain databases"
+        ],
+        "semantic": [],
+        "merged": [
+          "blockchain",
+          "blockchains",
+          "block",
+          "bitcoin",
+          "blockchain databases"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34008233343717276,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.908339+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 62,
+      "title": "Segment 62 (pages 1296-1316)",
+      "chapter_id": "Database System Concepts 7th Edition:ch62",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch61",
+          "score": 0.663947005217873,
+          "base_score": 0.6899116753631216,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch40",
+          "score": 0.5758758695211281,
+          "base_score": 0.5431264492018802,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch41",
+          "score": 0.5256260403262822,
+          "base_score": 0.45937673387713707,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch42",
+          "score": 0.5057660072332062,
+          "base_score": 0.5188692713146028,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "blockchain",
+          "blockchains",
+          "transactions",
+          "transaction",
+          "smart"
+        ],
+        "semantic": [],
+        "merged": [
+          "blockchain",
+          "blockchains",
+          "transactions",
+          "transaction",
+          "smart"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3629330884235138,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.908734+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 63,
+      "title": "Segment 63 (pages 1317-1336)",
+      "chapter_id": "Database System Concepts 7th Edition:ch63",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch66",
+          "score": 0.545624942470346,
+          "base_score": 0.6593749041172434,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch65",
+          "score": 0.5381932256284312,
+          "base_score": 0.6469887093807186,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "1263",
+          "1253",
+          "511",
+          "962",
+          "1254"
+        ],
+        "semantic": [],
+        "merged": [
+          "1263",
+          "1253",
+          "511",
+          "962",
+          "1254"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2333753186867806,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.909065+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 64,
+      "title": "Segment 64 (pages 1337-1354)",
+      "chapter_id": "Database System Concepts 7th Edition:ch64",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "1195",
+          "1240",
+          "1202",
+          "1043",
+          "1019"
+        ],
+        "semantic": [],
+        "merged": [
+          "1195",
+          "1240",
+          "1202",
+          "1043",
+          "1019"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3748876334475019,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.909386+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 65,
+      "title": "Segment 65 (pages 1355-1371)",
+      "chapter_id": "Database System Concepts 7th Edition:ch65",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch63",
+          "score": 0.5381932256284312,
+          "base_score": 0.6469887093807186,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch66",
+          "score": 0.5119837059659352,
+          "base_score": 0.6033061766098919,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "689",
+          "341",
+          "114",
+          "691",
+          "695"
+        ],
+        "semantic": [],
+        "merged": [
+          "689",
+          "341",
+          "114",
+          "691",
+          "695"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23597114184970247,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.909693+00:00"
+      }
+    },
+    {
+      "book": "Database System Concepts 7th Edition",
+      "chapter": 66,
+      "title": "Segment 66 (pages 1372-1373)",
+      "chapter_id": "Database System Concepts 7th Edition:ch66",
+      "cross_references": [
+        {
+          "target": "Database System Concepts 7th Edition:ch63",
+          "score": 0.545624942470346,
+          "base_score": 0.6593749041172434,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Database System Concepts 7th Edition:ch65",
+          "score": 0.5119837059659352,
+          "base_score": 0.6033061766098919,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "779",
+          "1215 1216",
+          "1216",
+          "411",
+          "1215"
+        ],
+        "semantic": [],
+        "merged": [
+          "779",
+          "1215 1216",
+          "1216",
+          "411",
+          "1215"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2311002528046082,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:34.910042+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

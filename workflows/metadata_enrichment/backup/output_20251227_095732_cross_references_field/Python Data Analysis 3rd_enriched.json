@@ -1,0 +1,506 @@
+{
+  "book": {
+    "title": "Python Data Analysis 3rd"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:54:30.495277",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Python Data Analysis 3rd",
+      "chapter": 1,
+      "title": "Preliminaries",
+      "chapter_id": "Python Data Analysis 3rd:ch1",
+      "cross_references": [
+        {
+          "target": "Python Data Analysis 3rd:ch2",
+          "score": 0.6097456662431429,
+          "base_score": 0.6921687029978307,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "python",
+          "data analysis",
+          "analysis",
+          "book",
+          "language"
+        ],
+        "semantic": [],
+        "merged": [
+          "python",
+          "data analysis",
+          "analysis",
+          "book",
+          "language"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4578930014354663,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:30.486399+00:00"
+      }
+    },
+    {
+      "book": "Python Data Analysis 3rd",
+      "chapter": 2,
+      "title": "Python Language Basics, IPython, and Jupyter Notebooks",
+      "chapter_id": "Python Data Analysis 3rd:ch2",
+      "cross_references": [
+        {
+          "target": "Python Data Analysis 3rd:ch1",
+          "score": 0.6097456662431429,
+          "base_score": 0.6921687029978307,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "python",
+          "ipython",
+          "chapter python",
+          "jupyter",
+          "notebooks"
+        ],
+        "semantic": [],
+        "merged": [
+          "python",
+          "ipython",
+          "chapter python",
+          "jupyter",
+          "notebooks"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42611093475337564,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:30.486482+00:00"
+      }
+    },
+    {
+      "book": "Python Data Analysis 3rd",
+      "chapter": 3,
+      "title": "Built-In Data Structures, Functions, and Files",
+      "chapter_id": "Python Data Analysis 3rd:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "list",
+          "file",
+          "b_list",
+          "value",
+          "function"
+        ],
+        "semantic": [],
+        "merged": [
+          "list",
+          "file",
+          "b_list",
+          "value",
+          "function"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "in_array_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4099231821143628,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:30.486541+00:00"
+      }
+    },
+    {
+      "book": "Python Data Analysis 3rd",
+      "chapter": 4,
+      "title": "NumPy Basics: Arrays and Vectorized Computation",
+      "chapter_id": "Python Data Analysis 3rd:ch4",
+      "cross_references": [
+        {
+          "target": "Python Data Analysis 3rd:ch5",
+          "score": 0.5366551491214593,
+          "base_score": 0.5703511744616914,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "array",
+          "arr",
+          "numpy",
+          "np",
+          "np array"
+        ],
+        "semantic": [],
+        "merged": [
+          "array",
+          "arr",
+          "numpy",
+          "np",
+          "np array"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "in_array_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45723084809702513,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:30.486598+00:00"
+      }
+    },
+    {
+      "book": "Python Data Analysis 3rd",
+      "chapter": 5,
+      "title": "for much more)",
+      "chapter_id": "Python Data Analysis 3rd:ch5",
+      "cross_references": [
+        {
+          "target": "Python Data Analysis 3rd:ch4",
+          "score": 0.5366551491214593,
+          "base_score": 0.5703511744616914,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "array",
+          "compute",
+          "matrix",
+          "walks",
+          "square matrix"
+        ],
+        "semantic": [],
+        "merged": [
+          "array",
+          "compute",
+          "matrix",
+          "walks",
+          "square matrix"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "in_array_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35357546076983387,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:30.486654+00:00"
+      }
+    },
+    {
+      "book": "Python Data Analysis 3rd",
+      "chapter": 6,
+      "title": "Getting Started with pandas",
+      "chapter_id": "Python Data Analysis 3rd:ch6",
+      "cross_references": [
+        {
+          "target": "Python Data Analysis 3rd:ch7",
+          "score": 0.5787543422630466,
+          "base_score": 0.5479239037717444,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "series",
+          "obj2",
+          "pd series",
+          "index",
+          "pd"
+        ],
+        "semantic": [],
+        "merged": [
+          "series",
+          "obj2",
+          "pd series",
+          "index",
+          "pd"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45414624218830585,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:30.486710+00:00"
+      }
+    },
+    {
+      "book": "Python Data Analysis 3rd",
+      "chapter": 7,
+      "title": "A useful Series feature for many applications is that it automatically aligns by index label in arithmetic operations:",
+      "chapter_id": "Python Data Analysis 3rd:ch7",
+      "cross_references": [
+        {
+          "target": "Python Data Analysis 3rd:ch6",
+          "score": 0.5787543422630466,
+          "base_score": 0.5479239037717444,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "dataframe",
+          "index",
+          "columns",
+          "nan",
+          "pd"
+        ],
+        "semantic": [],
+        "merged": [
+          "dataframe",
+          "index",
+          "columns",
+          "nan",
+          "pd"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4261164005013515,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:30.486764+00:00"
+      }
+    },
+    {
+      "book": "Python Data Analysis 3rd",
+      "chapter": 8,
+      "title": "Plotting and Visualization",
+      "chapter_id": "Python Data Analysis 3rd:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "plot",
+          "matplotlib",
+          "ax",
+          "figure",
+          "legend"
+        ],
+        "semantic": [],
+        "merged": [
+          "plot",
+          "matplotlib",
+          "ax",
+          "figure",
+          "legend"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34253279170799744,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:30.486819+00:00"
+      }
+    },
+    {
+      "book": "Python Data Analysis 3rd",
+      "chapter": 9,
+      "title": "Bar Plots The plot.bar() and plot.barh() make vertical and horizontal bar plots, respec‐ tively. In this case, the Series or DataFrame index will be used as the x (bar) or y (barh) ticks (see Figure 9",
+      "chapter_id": "Python Data Analysis 3rd:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "plot",
+          "seaborn",
+          "bar",
+          "pandas seaborn",
+          "plotting pandas"
+        ],
+        "semantic": [],
+        "merged": [
+          "plot",
+          "seaborn",
+          "bar",
+          "pandas seaborn",
+          "plotting pandas"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37523929768925496,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:30.486873+00:00"
+      }
+    },
+    {
+      "book": "Python Data Analysis 3rd",
+      "chapter": 10,
+      "title": "Data Aggregation and Group Operations",
+      "chapter_id": "Python Data Analysis 3rd:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "2012",
+          "00",
+          "05",
+          "04",
+          "00 00"
+        ],
+        "semantic": [],
+        "merged": [
+          "2012",
+          "00",
+          "05",
+          "04",
+          "00 00"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4510216262947743,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:30.486927+00:00"
+      }
+    },
+    {
+      "book": "Python Data Analysis 3rd",
+      "chapter": 11,
+      "title": "Introduction to Modeling Libraries in Python",
+      "chapter_id": "Python Data Analysis 3rd:ch11",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "model",
+          "patsy",
+          "x0",
+          "x1",
+          "x0 x1"
+        ],
+        "semantic": [],
+        "merged": [
+          "model",
+          "patsy",
+          "x0",
+          "x1",
+          "x0 x1"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41305798284813405,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:30.486980+00:00"
+      }
+    },
+    {
+      "book": "Python Data Analysis 3rd",
+      "chapter": 12,
+      "title": "Data Analysis Examples",
+      "chapter_id": "Python Data Analysis 3rd:ch12",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "array",
+          "arr",
+          "non null",
+          "null object",
+          "null"
+        ],
+        "semantic": [],
+        "merged": [
+          "array",
+          "arr",
+          "non null",
+          "null object",
+          "null"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_in_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.370324468251576,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:30.487060+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

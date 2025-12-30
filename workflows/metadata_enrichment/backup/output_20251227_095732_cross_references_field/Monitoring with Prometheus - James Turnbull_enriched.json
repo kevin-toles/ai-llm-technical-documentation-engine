@@ -1,0 +1,659 @@
+{
+  "book": {
+    "title": "Monitoring with Prometheus - James Turnbull"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:52:41.504948",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Monitoring with Prometheus - James Turnbull",
+      "chapter": 1,
+      "title": "Introduction",
+      "chapter_id": "Monitoring with Prometheus - James Turnbull:ch1",
+      "cross_references": [
+        {
+          "target": "Monitoring with Prometheus - James Turnbull:ch2",
+          "score": 0.5323941506928956,
+          "base_score": 0.8132495104140853,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "monitoring",
+          "book",
+          "data",
+          "time",
+          "application"
+        ],
+        "semantic": [],
+        "merged": [
+          "monitoring",
+          "book",
+          "data",
+          "time",
+          "application"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6479413471332391,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:52:41.484572+00:00"
+      }
+    },
+    {
+      "book": "Monitoring with Prometheus - James Turnbull",
+      "chapter": 2,
+      "title": "Introduction to Prometheus",
+      "chapter_id": "Monitoring with Prometheus - James Turnbull:ch2",
+      "cross_references": [
+        {
+          "target": "Monitoring with Prometheus - James Turnbull:ch10",
+          "score": 0.6153867105745662,
+          "base_score": 0.775644517624277,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Monitoring with Prometheus - James Turnbull:ch1",
+          "score": 0.5323941506928956,
+          "base_score": 0.8132495104140853,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Monitoring with Prometheus - James Turnbull:ch5",
+          "score": 0.5277959104509151,
+          "base_score": 0.6296598507515252,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "time",
+          "chapter introduction",
+          "series",
+          "time series",
+          "introduction prometheus"
+        ],
+        "semantic": [],
+        "merged": [
+          "time",
+          "chapter introduction",
+          "series",
+          "time series",
+          "introduction prometheus"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "discovery_the_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6976203363843656,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:41.484853+00:00"
+      }
+    },
+    {
+      "book": "Monitoring with Prometheus - James Turnbull",
+      "chapter": 3,
+      "title": "Installation and Getting Started",
+      "chapter_id": "Monitoring with Prometheus - James Turnbull:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "server",
+          "configuration",
+          "prometheus server",
+          "installing",
+          "installing prometheus"
+        ],
+        "semantic": [],
+        "merged": [
+          "server",
+          "configuration",
+          "prometheus server",
+          "installing",
+          "installing prometheus"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6473102580666874,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:52:41.485018+00:00"
+      }
+    },
+    {
+      "book": "Monitoring with Prometheus - James Turnbull",
+      "chapter": 4,
+      "title": "Monitoring Nodes and Containers",
+      "chapter_id": "Monitoring with Prometheus - James Turnbull:ch4",
+      "cross_references": [
+        {
+          "target": "Monitoring with Prometheus - James Turnbull:ch8",
+          "score": 0.675404473045245,
+          "base_score": 0.8016000476680007,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Monitoring with Prometheus - James Turnbull:ch12",
+          "score": 0.5652336017969727,
+          "base_score": 0.6563417172806687,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Monitoring with Prometheus - James Turnbull:ch9",
+          "score": 0.5408660733750151,
+          "base_score": 0.6514434556250251,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Monitoring with Prometheus - James Turnbull:ch10",
+          "score": 0.5224502879036247,
+          "base_score": 0.7966764057653004,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "metric",
+          "node",
+          "node exporter",
+          "exporter",
+          "node_cpu"
+        ],
+        "semantic": [],
+        "merged": [
+          "metric",
+          "node",
+          "node exporter",
+          "exporter",
+          "node_cpu"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_metrics_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7117972699688753,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:41.485229+00:00"
+      }
+    },
+    {
+      "book": "Monitoring with Prometheus - James Turnbull",
+      "chapter": 5,
+      "title": "Service Discovery",
+      "chapter_id": "Monitoring with Prometheus - James Turnbull:ch5",
+      "cross_references": [
+        {
+          "target": "Monitoring with Prometheus - James Turnbull:ch10",
+          "score": 0.5315105521314537,
+          "base_score": 0.6358509202190895,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Monitoring with Prometheus - James Turnbull:ch2",
+          "score": 0.5277959104509151,
+          "base_score": 0.6296598507515252,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "discovery",
+          "service discovery",
+          "service",
+          "ec2",
+          "chapter service"
+        ],
+        "semantic": [],
+        "merged": [
+          "discovery",
+          "service discovery",
+          "service",
+          "ec2",
+          "chapter service"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "discovery_the_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6012819684844436,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:41.485394+00:00"
+      }
+    },
+    {
+      "book": "Monitoring with Prometheus - James Turnbull",
+      "chapter": 6,
+      "title": "Alerting and Alertmanager",
+      "chapter_id": "Monitoring with Prometheus - James Turnbull:ch6",
+      "cross_references": [
+        {
+          "target": "Monitoring with Prometheus - James Turnbull:ch7",
+          "score": 0.5314087278714532,
+          "base_score": 0.8116071390450146,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "alertmanager",
+          "alerting alertmanager",
+          "chapter alerting",
+          "alerting",
+          "alerts"
+        ],
+        "semantic": [],
+        "merged": [
+          "alertmanager",
+          "alerting alertmanager",
+          "chapter alerting",
+          "alerting",
+          "alerts"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6430766403240313,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:52:41.485652+00:00"
+      }
+    },
+    {
+      "book": "Monitoring with Prometheus - James Turnbull",
+      "chapter": 7,
+      "title": "Scaling and Reliability",
+      "chapter_id": "Monitoring with Prometheus - James Turnbull:ch7",
+      "cross_references": [
+        {
+          "target": "Monitoring with Prometheus - James Turnbull:ch12",
+          "score": 0.5620412120714268,
+          "base_score": 0.686735353452378,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Monitoring with Prometheus - James Turnbull:ch6",
+          "score": 0.5314087278714532,
+          "base_score": 0.8116071390450146,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "primary",
+          "cluster",
+          "server",
+          "worker",
+          "alertmanager"
+        ],
+        "semantic": [],
+        "merged": [
+          "primary",
+          "cluster",
+          "server",
+          "worker",
+          "alertmanager"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "kubernetes_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6101702734723579,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:41.486013+00:00"
+      }
+    },
+    {
+      "book": "Monitoring with Prometheus - James Turnbull",
+      "chapter": 8,
+      "title": "Instrumenting Applications",
+      "chapter_id": "Monitoring with Prometheus - James Turnbull:ch8",
+      "cross_references": [
+        {
+          "target": "Monitoring with Prometheus - James Turnbull:ch4",
+          "score": 0.675404473045245,
+          "base_score": 0.8016000476680007,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Monitoring with Prometheus - James Turnbull:ch9",
+          "score": 0.5094079147559266,
+          "base_score": 0.5990131912598777,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "application",
+          "metric",
+          "rails",
+          "business",
+          "business metrics"
+        ],
+        "semantic": [],
+        "merged": [
+          "application",
+          "metric",
+          "rails",
+          "business",
+          "business metrics"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_metrics_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6502749282515529,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:41.486252+00:00"
+      }
+    },
+    {
+      "book": "Monitoring with Prometheus - James Turnbull",
+      "chapter": 9,
+      "title": "Logging as Instrumentation",
+      "chapter_id": "Monitoring with Prometheus - James Turnbull:ch9",
+      "cross_references": [
+        {
+          "target": "Monitoring with Prometheus - James Turnbull:ch4",
+          "score": 0.5408660733750151,
+          "base_score": 0.6514434556250251,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Monitoring with Prometheus - James Turnbull:ch8",
+          "score": 0.5094079147559266,
+          "base_score": 0.5990131912598777,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "mtail",
+          "log",
+          "prog",
+          "program",
+          "rails mtail"
+        ],
+        "semantic": [],
+        "merged": [
+          "mtail",
+          "log",
+          "prog",
+          "program",
+          "rails mtail"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_metrics_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5371333187336977,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:41.486464+00:00"
+      }
+    },
+    {
+      "book": "Monitoring with Prometheus - James Turnbull",
+      "chapter": 10,
+      "title": "Probing",
+      "chapter_id": "Monitoring with Prometheus - James Turnbull:ch10",
+      "cross_references": [
+        {
+          "target": "Monitoring with Prometheus - James Turnbull:ch2",
+          "score": 0.6153867105745662,
+          "base_score": 0.775644517624277,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Monitoring with Prometheus - James Turnbull:ch5",
+          "score": 0.5315105521314537,
+          "base_score": 0.6358509202190895,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Monitoring with Prometheus - James Turnbull:ch4",
+          "score": 0.5224502879036247,
+          "base_score": 0.7966764057653004,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "exporter",
+          "blackbox exporter",
+          "blackbox",
+          "blackbox_exporter",
+          "download"
+        ],
+        "semantic": [],
+        "merged": [
+          "exporter",
+          "blackbox exporter",
+          "blackbox",
+          "blackbox_exporter",
+          "download"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "discovery_the_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6712232162884261,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:41.486701+00:00"
+      }
+    },
+    {
+      "book": "Monitoring with Prometheus - James Turnbull",
+      "chapter": 11,
+      "title": "Pushing Metrics and the Pushgateway",
+      "chapter_id": "Monitoring with Prometheus - James Turnbull:ch11",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "pushgateway",
+          "metrics pushgateway",
+          "pushing metrics",
+          "pushing",
+          "chapter 11"
+        ],
+        "semantic": [],
+        "merged": [
+          "pushgateway",
+          "metrics pushgateway",
+          "pushing metrics",
+          "pushing",
+          "chapter 11"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6045502160509295,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:52:41.486893+00:00"
+      }
+    },
+    {
+      "book": "Monitoring with Prometheus - James Turnbull",
+      "chapter": 12,
+      "title": "Monitoring a Stack - Kubernetes",
+      "chapter_id": "Monitoring with Prometheus - James Turnbull:ch12",
+      "cross_references": [
+        {
+          "target": "Monitoring with Prometheus - James Turnbull:ch4",
+          "score": 0.5652336017969727,
+          "base_score": 0.6563417172806687,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Monitoring with Prometheus - James Turnbull:ch7",
+          "score": 0.5620412120714268,
+          "base_score": 0.686735353452378,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "kubernetes",
+          "node",
+          "node exporter",
+          "exporter",
+          "service"
+        ],
+        "semantic": [],
+        "merged": [
+          "kubernetes",
+          "node",
+          "node exporter",
+          "exporter",
+          "service"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "kubernetes_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6444108592974072,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:41.487051+00:00"
+      }
+    },
+    {
+      "book": "Monitoring with Prometheus - James Turnbull",
+      "chapter": 13,
+      "title": "Monitoring a Stack - Tornado",
+      "chapter_id": "Monitoring with Prometheus - James Turnbull:ch13",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "mysql",
+          "redis",
+          "tornado",
+          "13",
+          "exporter"
+        ],
+        "semantic": [],
+        "merged": [
+          "mysql",
+          "redis",
+          "tornado",
+          "13",
+          "exporter"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5129369801704382,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:52:41.487228+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

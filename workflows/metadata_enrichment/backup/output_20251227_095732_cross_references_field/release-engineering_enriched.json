@@ -1,0 +1,104 @@
+{
+  "book": {
+    "title": "release-engineering"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:02:16.384049",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "release-engineering",
+      "chapter": 1,
+      "title": "Segment 1 (pages 3-11)",
+      "chapter_id": "release-engineering:ch1",
+      "cross_references": [
+        {
+          "target": "release-engineering:ch2",
+          "score": 0.6184900808208331,
+          "base_score": 0.5863723569236109,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "release",
+          "build",
+          "engineering",
+          "code",
+          "release engineering"
+        ],
+        "semantic": [],
+        "merged": [
+          "release",
+          "build",
+          "engineering",
+          "code",
+          "release engineering"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "release_build_engineering",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7931860880052007,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:16.381575+00:00"
+      }
+    },
+    {
+      "book": "release-engineering",
+      "chapter": 2,
+      "title": "Segment 2 (pages 12-19)",
+      "chapter_id": "release-engineering:ch2",
+      "cross_references": [
+        {
+          "target": "release-engineering:ch1",
+          "score": 0.6184900808208331,
+          "base_score": 0.5863723569236109,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "release",
+          "release engineering",
+          "engineering",
+          "mpm",
+          "build"
+        ],
+        "semantic": [],
+        "merged": [
+          "release",
+          "release engineering",
+          "engineering",
+          "mpm",
+          "build"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "release_engineering_mpm",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7931861394910824,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:16.381599+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

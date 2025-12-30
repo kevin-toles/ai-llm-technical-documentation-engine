@@ -1,0 +1,2274 @@
+{
+  "book": {
+    "title": "makinggames"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:01:42.204002",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "makinggames",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-8)",
+      "chapter_id": "makinggames:ch1",
+      "cross_references": [
+        {
+          "target": "makinggames:ch3",
+          "score": 0.7023698751355605,
+          "base_score": 0.7539497918926008,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch4",
+          "score": 0.5765632851671203,
+          "base_score": 0.636864734537793,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch19",
+          "score": 0.5127996448859236,
+          "base_score": 0.5305920007357985,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch6",
+          "score": 0.5035000554439214,
+          "base_score": 0.5150926849991283,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch42",
+          "score": 0.5021807101605401,
+          "base_score": 0.5869678502675668,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "book",
+          "games",
+          "pygame",
+          "python",
+          "computer games"
+        ],
+        "semantic": [],
+        "merged": [
+          "book",
+          "games",
+          "pygame",
+          "python",
+          "computer games"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_pygame_line",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4256149319811119,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.165650+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 2,
+      "title": "Segment 2 (pages 9-16)",
+      "chapter_id": "makinggames:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "drawing",
+          "source",
+          "source code",
+          "screen",
+          "board"
+        ],
+        "semantic": [],
+        "merged": [
+          "drawing",
+          "source",
+          "source code",
+          "screen",
+          "board"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "board_the_tile",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3504802902107181,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.165896+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 3,
+      "title": "Segment 3 (pages 17-24)",
+      "chapter_id": "makinggames:ch3",
+      "cross_references": [
+        {
+          "target": "makinggames:ch1",
+          "score": 0.7023698751355605,
+          "base_score": 0.7539497918926008,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch4",
+          "score": 0.5423087303107482,
+          "base_score": 0.6538478838512469,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "python",
+          "install",
+          "book",
+          "python pygame",
+          "installing"
+        ],
+        "semantic": [],
+        "merged": [
+          "python",
+          "install",
+          "book",
+          "python pygame",
+          "installing"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_pygame_line",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3271041465545374,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.166141+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 4,
+      "title": "Segment 4 (pages 25-33)",
+      "chapter_id": "makinggames:ch4",
+      "cross_references": [
+        {
+          "target": "makinggames:ch19",
+          "score": 0.5943889054830223,
+          "base_score": 0.6665741017309629,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch1",
+          "score": 0.5765632851671203,
+          "base_score": 0.636864734537793,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch3",
+          "score": 0.5423087303107482,
+          "base_score": 0.6538478838512469,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch20",
+          "score": 0.5231980991436357,
+          "base_score": 0.5479227578319854,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch6",
+          "score": 0.5135989748388243,
+          "base_score": 0.5319242173239664,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "event",
+          "pygame",
+          "function",
+          "pygame event",
+          "event objects"
+        ],
+        "semantic": [],
+        "merged": [
+          "event",
+          "pygame",
+          "function",
+          "pygame event",
+          "event objects"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_pygame_line",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4456689740850124,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.166361+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 5,
+      "title": "Segment 5 (pages 34-42)",
+      "chapter_id": "makinggames:ch5",
+      "cross_references": [
+        {
+          "target": "makinggames:ch10",
+          "score": 0.5597154202726122,
+          "base_score": 0.5161923671210205,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch37",
+          "score": 0.5361508710030403,
+          "base_score": 0.5695107109309929,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch38",
+          "score": 0.5253174091494263,
+          "base_score": 0.6255290152490437,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch24",
+          "score": 0.5051174674005058,
+          "base_score": 0.5918624456675097,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "color",
+          "pygame",
+          "draw",
+          "surface",
+          "object"
+        ],
+        "semantic": [],
+        "merged": [
+          "color",
+          "pygame",
+          "draw",
+          "surface",
+          "object"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "pygame_color_draw",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40328813583678963,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.166576+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 6,
+      "title": "Segment 6 (pages 43-50)",
+      "chapter_id": "makinggames:ch6",
+      "cross_references": [
+        {
+          "target": "makinggames:ch19",
+          "score": 0.5957858428459428,
+          "base_score": 0.6689023306691638,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch20",
+          "score": 0.5197697614512853,
+          "base_score": 0.542208861678068,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch4",
+          "score": 0.5135989748388243,
+          "base_score": 0.5319242173239664,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch1",
+          "score": 0.5035000554439214,
+          "base_score": 0.5150926849991283,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pygame",
+          "music",
+          "sound",
+          "mixer",
+          "pygame mixer"
+        ],
+        "semantic": [],
+        "merged": [
+          "pygame",
+          "music",
+          "sound",
+          "mixer",
+          "pygame mixer"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_pygame_line",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4365666163025851,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.166792+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 7,
+      "title": "Segment 7 (pages 51-59)",
+      "chapter_id": "makinggames:ch7",
+      "cross_references": [
+        {
+          "target": "makinggames:ch9",
+          "score": 0.601862859208475,
+          "base_score": 0.6790306912733843,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "boxx",
+          "boxx boxy",
+          "boxy",
+          "left",
+          "box"
+        ],
+        "semantic": [],
+        "merged": [
+          "boxx",
+          "boxx boxy",
+          "boxy",
+          "left",
+          "box"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_icons_boxx",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41266052926272534,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.167009+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 8,
+      "title": "Segment 8 (pages 60-68)",
+      "chapter_id": "makinggames:ch8",
+      "cross_references": [
+        {
+          "target": "makinggames:ch11",
+          "score": 0.514460293635571,
+          "base_score": 0.6074338227259517,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch20",
+          "score": 0.5112582403667386,
+          "base_score": 0.6020970672778976,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tuple",
+          "global",
+          "variables",
+          "variable",
+          "global variables"
+        ],
+        "semantic": [],
+        "merged": [
+          "tuple",
+          "global",
+          "variables",
+          "variable",
+          "global variables"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_pygame_line",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.474277454755083,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.167233+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 9,
+      "title": "Segment 9 (pages 69-77)",
+      "chapter_id": "makinggames:ch9",
+      "cross_references": [
+        {
+          "target": "makinggames:ch7",
+          "score": 0.601862859208475,
+          "base_score": 0.6790306912733843,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "icons",
+          "box",
+          "board",
+          "clicked",
+          "list"
+        ],
+        "semantic": [],
+        "merged": [
+          "icons",
+          "box",
+          "board",
+          "clicked",
+          "list"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_icons_boxx",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45911906078235293,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.167441+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 10,
+      "title": "Segment 10 (pages 78-86)",
+      "chapter_id": "makinggames:ch10",
+      "cross_references": [
+        {
+          "target": "makinggames:ch24",
+          "score": 0.5904814655358791,
+          "base_score": 0.734135775893132,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch5",
+          "score": 0.5597154202726122,
+          "base_score": 0.5161923671210205,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch38",
+          "score": 0.5450132641278486,
+          "base_score": 0.658355440213081,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "box",
+          "boxes",
+          "left",
+          "draw",
+          "color"
+        ],
+        "semantic": [],
+        "merged": [
+          "box",
+          "boxes",
+          "left",
+          "draw",
+          "color"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "pygame_color_draw",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46332932304345836,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.167645+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 11,
+      "title": "Segment 11 (pages 87-94)",
+      "chapter_id": "makinggames:ch11",
+      "cross_references": [
+        {
+          "target": "makinggames:ch8",
+          "score": 0.514460293635571,
+          "base_score": 0.6074338227259517,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch4",
+          "score": 0.5088282715611537,
+          "base_score": 0.5980471192685894,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "bb",
+          "ee",
+          "bb ee",
+          "oo",
+          "ddd"
+        ],
+        "semantic": [],
+        "merged": [
+          "bb",
+          "ee",
+          "bb ee",
+          "oo",
+          "ddd"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_pygame_line",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3862033428732946,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.167850+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 12,
+      "title": "Segment 12 (pages 95-102)",
+      "chapter_id": "makinggames:ch12",
+      "cross_references": [
+        {
+          "target": "makinggames:ch14",
+          "score": 0.5982125805432313,
+          "base_score": 0.6729468934979781,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch36",
+          "score": 0.5715001463145375,
+          "base_score": 0.6284261697834883,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch39",
+          "score": 0.5639585792880453,
+          "base_score": 0.6158568914060013,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch21",
+          "score": 0.5335070709939342,
+          "base_score": 0.5651043775824829,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "board",
+          "blanky",
+          "left",
+          "isvalidmove",
+          "len board"
+        ],
+        "semantic": [],
+        "merged": [
+          "board",
+          "blanky",
+          "left",
+          "isvalidmove",
+          "len board"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "board_the_tile",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43930321813666495,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.168080+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 13,
+      "title": "Segment 13 (pages 103-111)",
+      "chapter_id": "makinggames:ch13",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "event",
+          "pygame event",
+          "queue",
+          "events",
+          "slide"
+        ],
+        "semantic": [],
+        "merged": [
+          "event",
+          "pygame event",
+          "queue",
+          "events",
+          "slide"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48525819680172716,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:01:42.168281+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 14,
+      "title": "Segment 14 (pages 112-120)",
+      "chapter_id": "makinggames:ch14",
+      "cross_references": [
+        {
+          "target": "makinggames:ch12",
+          "score": 0.5982125805432313,
+          "base_score": 0.6729468934979781,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch36",
+          "score": 0.5857680355632714,
+          "base_score": 0.6522059851980448,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch39",
+          "score": 0.5588511301802201,
+          "base_score": 0.6073444762262928,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch35",
+          "score": 0.541937808219413,
+          "base_score": 0.5791556062916141,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch21",
+          "score": 0.5076011370753648,
+          "base_score": 0.5219278210515339,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "board",
+          "tile",
+          "coordinates",
+          "space",
+          "pixel"
+        ],
+        "semantic": [],
+        "merged": [
+          "board",
+          "tile",
+          "coordinates",
+          "space",
+          "pixel"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "board_the_tile",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41208013461205784,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.168485+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 15,
+      "title": "Segment 15 (pages 121-129)",
+      "chapter_id": "makinggames:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "time",
+          "pattern",
+          "memory",
+          "program",
+          "pygame"
+        ],
+        "semantic": [],
+        "merged": [
+          "time",
+          "pattern",
+          "memory",
+          "program",
+          "pygame"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4608639400669327,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:01:42.168706+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 16,
+      "title": "Segment 16 (pages 130-139)",
+      "chapter_id": "makinggames:ch16",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "button",
+          "pattern",
+          "click",
+          "buttons",
+          "player"
+        ],
+        "semantic": [],
+        "merged": [
+          "button",
+          "pattern",
+          "click",
+          "buttons",
+          "player"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47975351392598914,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:01:42.168912+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 17,
+      "title": "Segment 17 (pages 140-147)",
+      "chapter_id": "makinggames:ch17",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "alpha",
+          "loop",
+          "animation",
+          "color",
+          "line"
+        ],
+        "semantic": [],
+        "merged": [
+          "alpha",
+          "loop",
+          "animation",
+          "color",
+          "line"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37530779430857736,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:01:42.169133+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 18,
+      "title": "Segment 18 (pages 148-160)",
+      "chapter_id": "makinggames:ch18",
+      "cross_references": [
+        {
+          "target": "makinggames:ch19",
+          "score": 0.5829621153807981,
+          "base_score": 0.7216035256346635,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch20",
+          "score": 0.5217240170353387,
+          "base_score": 0.6195400283922311,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "head",
+          "wormcoords",
+          "wormcoords head",
+          "worm",
+          "head wormcoords"
+        ],
+        "semantic": [],
+        "merged": [
+          "head",
+          "wormcoords",
+          "wormcoords head",
+          "worm",
+          "head wormcoords"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_pygame_line",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46774027328970724,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.169343+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 19,
+      "title": "Segment 19 (pages 161-168)",
+      "chapter_id": "makinggames:ch19",
+      "cross_references": [
+        {
+          "target": "makinggames:ch6",
+          "score": 0.5957858428459428,
+          "base_score": 0.6689023306691638,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch4",
+          "score": 0.5943889054830223,
+          "base_score": 0.6665741017309629,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch18",
+          "score": 0.5829621153807981,
+          "base_score": 0.7216035256346635,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch20",
+          "score": 0.5694088017673619,
+          "base_score": 0.6249405955381957,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch1",
+          "score": 0.5127996448859236,
+          "base_score": 0.5305920007357985,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "displaysurf darkgray",
+          "darkgray",
+          "draw line",
+          "line displaysurf",
+          "pygame"
+        ],
+        "semantic": [],
+        "merged": [
+          "displaysurf darkgray",
+          "darkgray",
+          "draw line",
+          "line displaysurf",
+          "pygame"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_pygame_line",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4948249568922998,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.169556+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 20,
+      "title": "Segment 20 (pages 169-178)",
+      "chapter_id": "makinggames:ch20",
+      "cross_references": [
+        {
+          "target": "makinggames:ch19",
+          "score": 0.5694088017673619,
+          "base_score": 0.6249405955381957,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch4",
+          "score": 0.5231980991436357,
+          "base_score": 0.5479227578319854,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch18",
+          "score": 0.5217240170353387,
+          "base_score": 0.6195400283922311,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch6",
+          "score": 0.5197697614512853,
+          "base_score": 0.542208861678068,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch8",
+          "score": 0.5112582403667386,
+          "base_score": 0.6020970672778976,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "fallingpiece",
+          "board fallingpiece",
+          "isvalidposition",
+          "isvalidposition board",
+          "pygame"
+        ],
+        "semantic": [],
+        "merged": [
+          "fallingpiece",
+          "board fallingpiece",
+          "isvalidposition",
+          "isvalidposition board",
+          "pygame"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_pygame_line",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4806970042830075,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.169768+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 21,
+      "title": "Segment 21 (pages 179-188)",
+      "chapter_id": "makinggames:ch21",
+      "cross_references": [
+        {
+          "target": "makinggames:ch24",
+          "score": 0.5946261773150245,
+          "base_score": 0.5465991844139299,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch39",
+          "score": 0.5816802163565192,
+          "base_score": 0.6453929531867912,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch36",
+          "score": 0.5773183059705654,
+          "base_score": 0.638123102543535,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch22",
+          "score": 0.5376111285105906,
+          "base_score": 0.5719444734435768,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch12",
+          "score": 0.5335070709939342,
+          "base_score": 0.5651043775824829,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "piece",
+          "board",
+          "pixelx",
+          "pixely",
+          "pixelx pixely"
+        ],
+        "semantic": [],
+        "merged": [
+          "piece",
+          "board",
+          "pixelx",
+          "pixely",
+          "pixelx pixely"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "board_the_tile",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44610758392285227,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.169991+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 22,
+      "title": "Segment 22 (pages 189-197)",
+      "chapter_id": "makinggames:ch22",
+      "cross_references": [
+        {
+          "target": "makinggames:ch21",
+          "score": 0.5376111285105906,
+          "base_score": 0.5719444734435768,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch23",
+          "score": 0.5103647949502308,
+          "base_score": 0.6839413249170514,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "piece",
+          "fallingpiece",
+          "isvalidposition",
+          "falling",
+          "board fallingpiece"
+        ],
+        "semantic": [],
+        "merged": [
+          "piece",
+          "fallingpiece",
+          "isvalidposition",
+          "falling",
+          "board fallingpiece"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "board_the_tile",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38237664593692305,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.170220+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 23,
+      "title": "Segment 23 (pages 198-212)",
+      "chapter_id": "makinggames:ch23",
+      "cross_references": [
+        {
+          "target": "makinggames:ch22",
+          "score": 0.5103647949502308,
+          "base_score": 0.6839413249170514,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "piece",
+          "falling",
+          "board",
+          "falling piece",
+          "line"
+        ],
+        "semantic": [],
+        "merged": [
+          "piece",
+          "falling",
+          "board",
+          "falling piece",
+          "line"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3283727316263595,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:01:42.170430+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 24,
+      "title": "Segment 24 (pages 213-221)",
+      "chapter_id": "makinggames:ch24",
+      "cross_references": [
+        {
+          "target": "makinggames:ch21",
+          "score": 0.5946261773150245,
+          "base_score": 0.5465991844139299,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch10",
+          "score": 0.5904814655358791,
+          "base_score": 0.734135775893132,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch38",
+          "score": 0.577949396093144,
+          "base_score": 0.7132489934885733,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch5",
+          "score": 0.5051174674005058,
+          "base_score": 0.5918624456675097,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "squirrel",
+          "piece",
+          "pixelx",
+          "pixely",
+          "pixelx pixely"
+        ],
+        "semantic": [],
+        "merged": [
+          "squirrel",
+          "piece",
+          "pixelx",
+          "pixely",
+          "pixelx pixely"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "pygame_color_draw",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49399395619893083,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.170641+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 25,
+      "title": "Segment 25 (pages 222-229)",
+      "chapter_id": "makinggames:ch25",
+      "cross_references": [
+        {
+          "target": "makinggames:ch29",
+          "score": 0.5766241362853531,
+          "base_score": 0.7110402271422551,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch26",
+          "score": 0.5757972403955807,
+          "base_score": 0.7096620673259678,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "playerobj",
+          "cameray",
+          "camerax",
+          "sq",
+          "camerax cameray"
+        ],
+        "semantic": [],
+        "merged": [
+          "playerobj",
+          "cameray",
+          "camerax",
+          "sq",
+          "camerax cameray"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "squirrel_the_player",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4542386435638401,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.170853+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 26,
+      "title": "Segment 26 (pages 230-238)",
+      "chapter_id": "makinggames:ch26",
+      "cross_references": [
+        {
+          "target": "makinggames:ch29",
+          "score": 0.5939524050295755,
+          "base_score": 0.7399206750492925,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch25",
+          "score": 0.5757972403955807,
+          "base_score": 0.7096620673259678,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch27",
+          "score": 0.5622518700057885,
+          "base_score": 0.5204197833429808,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch28",
+          "score": 0.5231458359628833,
+          "base_score": 0.5478356525307315,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "squirrel",
+          "squirrels",
+          "grass",
+          "game world",
+          "game"
+        ],
+        "semantic": [],
+        "merged": [
+          "squirrel",
+          "squirrels",
+          "grass",
+          "game world",
+          "game"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "squirrel_the_player",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4727171717011997,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.171079+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 27,
+      "title": "Segment 27 (pages 239-248)",
+      "chapter_id": "makinggames:ch27",
+      "cross_references": [
+        {
+          "target": "makinggames:ch26",
+          "score": 0.5622518700057885,
+          "base_score": 0.5204197833429808,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "squirrel",
+          "player squirrel",
+          "player",
+          "grass",
+          "enemy"
+        ],
+        "semantic": [],
+        "merged": [
+          "squirrel",
+          "player squirrel",
+          "player",
+          "grass",
+          "enemy"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "squirrel_the_player",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28158481472078034,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.171292+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 28,
+      "title": "Segment 28 (pages 249-257)",
+      "chapter_id": "makinggames:ch28",
+      "cross_references": [
+        {
+          "target": "makinggames:ch26",
+          "score": 0.5231458359628833,
+          "base_score": 0.5478356525307315,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "math",
+          "math sin",
+          "sin",
+          "squirrel",
+          "sq"
+        ],
+        "semantic": [],
+        "merged": [
+          "math",
+          "math sin",
+          "sin",
+          "squirrel",
+          "sq"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "squirrel_the_player",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31265032347336696,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.171514+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 29,
+      "title": "Segment 29 (pages 258-265)",
+      "chapter_id": "makinggames:ch29",
+      "cross_references": [
+        {
+          "target": "makinggames:ch31",
+          "score": 0.6280988301678693,
+          "base_score": 0.602386939168671,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch26",
+          "score": 0.5939524050295755,
+          "base_score": 0.7399206750492925,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch25",
+          "score": 0.5766241362853531,
+          "base_score": 0.7110402271422551,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pygame image",
+          "image load",
+          "load",
+          "elif event",
+          "png"
+        ],
+        "semantic": [],
+        "merged": [
+          "pygame image",
+          "image load",
+          "load",
+          "elif event",
+          "png"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "squirrel_the_player",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4288418756288211,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.171727+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 30,
+      "title": "Segment 30 (pages 266-273)",
+      "chapter_id": "makinggames:ch30",
+      "cross_references": [
+        {
+          "target": "makinggames:ch34",
+          "score": 0.6380240749766354,
+          "base_score": 0.5276591725801066,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch32",
+          "score": 0.5243016328425815,
+          "base_score": 0.6238360547376358,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "mapobj",
+          "len",
+          "oldcharacter",
+          "mapobj oldcharacter",
+          "mapobjcopy"
+        ],
+        "semantic": [],
+        "merged": [
+          "mapobj",
+          "len",
+          "oldcharacter",
+          "mapobj oldcharacter",
+          "mapobjcopy"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "mapobj_the_map",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4185086660206152,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.171937+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 31,
+      "title": "Segment 31 (pages 274-281)",
+      "chapter_id": "makinggames:ch31",
+      "cross_references": [
+        {
+          "target": "makinggames:ch29",
+          "score": 0.6280988301678693,
+          "base_score": 0.602386939168671,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "image",
+          "image load",
+          "pygame image",
+          "load",
+          "png"
+        ],
+        "semantic": [],
+        "merged": [
+          "image",
+          "image load",
+          "pygame image",
+          "load",
+          "png"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4822143954923514,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:01:42.172160+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 32,
+      "title": "Segment 32 (pages 282-290)",
+      "chapter_id": "makinggames:ch32",
+      "cross_references": [
+        {
+          "target": "makinggames:ch30",
+          "score": 0.5243016328425815,
+          "base_score": 0.6238360547376358,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "map",
+          "wall",
+          "player",
+          "star",
+          "map object"
+        ],
+        "semantic": [],
+        "merged": [
+          "map",
+          "wall",
+          "player",
+          "star",
+          "map object"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "mapobj_the_map",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41980464638483206,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.172367+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 33,
+      "title": "Segment 33 (pages 291-299)",
+      "chapter_id": "makinggames:ch33",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "file",
+          "level",
+          "line",
+          "map",
+          "level file"
+        ],
+        "semantic": [],
+        "merged": [
+          "file",
+          "level",
+          "line",
+          "map",
+          "level file"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_pygame_line",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23239266338902687,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.172575+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 34,
+      "title": "Segment 34 (pages 300-307)",
+      "chapter_id": "makinggames:ch34",
+      "cross_references": [
+        {
+          "target": "makinggames:ch30",
+          "score": 0.6380240749766354,
+          "base_score": 0.5276591725801066,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "mapobj",
+          "mapobj oldcharacter",
+          "oldcharacter",
+          "star",
+          "stars"
+        ],
+        "semantic": [],
+        "merged": [
+          "mapobj",
+          "mapobj oldcharacter",
+          "oldcharacter",
+          "star",
+          "stars"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "mapobj_the_map",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31046863507391764,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.172780+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 35,
+      "title": "Segment 35 (pages 308-315)",
+      "chapter_id": "makinggames:ch35",
+      "cross_references": [
+        {
+          "target": "makinggames:ch14",
+          "score": 0.541937808219413,
+          "base_score": 0.5791556062916141,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch36",
+          "score": 0.531426321299407,
+          "base_score": 0.6357105354990117,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tile",
+          "tiles",
+          "white",
+          "black",
+          "new"
+        ],
+        "semantic": [],
+        "merged": [
+          "tile",
+          "tiles",
+          "white",
+          "black",
+          "new"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "board_the_tile",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4195768015906285,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.172989+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 36,
+      "title": "Segment 36 (pages 316-323)",
+      "chapter_id": "makinggames:ch36",
+      "cross_references": [
+        {
+          "target": "makinggames:ch39",
+          "score": 0.6143815194125544,
+          "base_score": 0.6998951249468499,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch14",
+          "score": 0.5857680355632714,
+          "base_score": 0.6522059851980448,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch21",
+          "score": 0.5773183059705654,
+          "base_score": 0.638123102543535,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch12",
+          "score": 0.5715001463145375,
+          "base_score": 0.6284261697834883,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch35",
+          "score": 0.531426321299407,
+          "base_score": 0.6357105354990117,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "board",
+          "xstart ystart",
+          "white_tile",
+          "ystart",
+          "xstart"
+        ],
+        "semantic": [],
+        "merged": [
+          "board",
+          "xstart ystart",
+          "white_tile",
+          "ystart",
+          "xstart"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "board_the_tile",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4913345295586098,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.173215+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 37,
+      "title": "Segment 37 (pages 324-331)",
+      "chapter_id": "makinggames:ch37",
+      "cross_references": [
+        {
+          "target": "makinggames:ch38",
+          "score": 0.5685830242950316,
+          "base_score": 0.6976383738250527,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch5",
+          "score": 0.5361508710030403,
+          "base_score": 0.5695107109309929,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pygame",
+          "collidepoint mousex",
+          "elif pygame",
+          "mousex",
+          "collidepoint"
+        ],
+        "semantic": [],
+        "merged": [
+          "pygame",
+          "collidepoint mousex",
+          "elif pygame",
+          "mousex",
+          "collidepoint"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "pygame_color_draw",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43286702228810986,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.173424+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 38,
+      "title": "Segment 38 (pages 332-339)",
+      "chapter_id": "makinggames:ch38",
+      "cross_references": [
+        {
+          "target": "makinggames:ch24",
+          "score": 0.577949396093144,
+          "base_score": 0.7132489934885733,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch37",
+          "score": 0.5685830242950316,
+          "base_score": 0.6976383738250527,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch10",
+          "score": 0.5450132641278486,
+          "base_score": 0.658355440213081,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch5",
+          "score": 0.5253174091494263,
+          "base_score": 0.6255290152490437,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "oldcolor",
+          "newcolor",
+          "board",
+          "board oldcolor",
+          "oldcolor newcolor"
+        ],
+        "semantic": [],
+        "merged": [
+          "oldcolor",
+          "newcolor",
+          "board",
+          "board oldcolor",
+          "oldcolor newcolor"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "pygame_color_draw",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4728995215333224,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.173633+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 39,
+      "title": "Segment 39 (pages 340-347)",
+      "chapter_id": "makinggames:ch39",
+      "cross_references": [
+        {
+          "target": "makinggames:ch36",
+          "score": 0.6143815194125544,
+          "base_score": 0.6998951249468499,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch21",
+          "score": 0.5816802163565192,
+          "base_score": 0.6453929531867912,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch12",
+          "score": 0.5639585792880453,
+          "base_score": 0.6158568914060013,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "makinggames:ch14",
+          "score": 0.5588511301802201,
+          "base_score": 0.6073444762262928,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "board",
+          "board tile",
+          "tile board",
+          "column",
+          "board column"
+        ],
+        "semantic": [],
+        "merged": [
+          "board",
+          "board tile",
+          "tile board",
+          "column",
+          "board column"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "board_the_tile",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5068675604890797,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.173841+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 40,
+      "title": "Segment 40 (pages 348-355)",
+      "chapter_id": "makinggames:ch40",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "getgemat",
+          "boardcopy",
+          "gem",
+          "pat",
+          "gems"
+        ],
+        "semantic": [],
+        "merged": [
+          "getgemat",
+          "boardcopy",
+          "gem",
+          "pat",
+          "gems"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "board_the_tile",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3681497099917711,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.174047+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 41,
+      "title": "Segment 41 (pages 356-363)",
+      "chapter_id": "makinggames:ch41",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "python",
+          "gem",
+          "programming",
+          "python programming",
+          "http"
+        ],
+        "semantic": [],
+        "merged": [
+          "python",
+          "gem",
+          "programming",
+          "python programming",
+          "http"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.503357790319592,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:01:42.174269+00:00"
+      }
+    },
+    {
+      "book": "makinggames",
+      "chapter": 42,
+      "title": "Segment 42 (pages 364-365)",
+      "chapter_id": "makinggames:ch42",
+      "cross_references": [
+        {
+          "target": "makinggames:ch1",
+          "score": 0.5021807101605401,
+          "base_score": 0.5869678502675668,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "inventwithpython com",
+          "inventwithpython",
+          "al",
+          "al inventwithpython",
+          "email"
+        ],
+        "semantic": [],
+        "merged": [
+          "inventwithpython com",
+          "inventwithpython",
+          "al",
+          "al inventwithpython",
+          "email"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_pygame_line",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35530801680897095,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:42.174483+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

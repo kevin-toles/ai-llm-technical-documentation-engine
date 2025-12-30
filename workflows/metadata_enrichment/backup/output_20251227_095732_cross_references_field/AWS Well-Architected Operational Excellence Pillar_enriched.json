@@ -1,0 +1,1315 @@
+{
+  "book": {
+    "title": "AWS Well-Architected Operational Excellence Pillar"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:38:39.999295",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "AWS Well-Architected Operational Excellence Pillar",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-8)",
+      "chapter_id": "AWS Well-Architected Operational Excellence Pillar:ch1",
+      "cross_references": [
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch19",
+          "score": 0.5634810551054383,
+          "base_score": 0.615061017768323,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch21",
+          "score": 0.5531747242265525,
+          "base_score": 0.6719578737109209,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch10",
+          "score": 0.5497404551613583,
+          "base_score": 0.5921600178615231,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch17",
+          "score": 0.5331785149746614,
+          "base_score": 0.6386308582911022,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch20",
+          "score": 0.5217216186006652,
+          "base_score": 0.5454619569270346,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ops11",
+          "ops05",
+          "ops04",
+          "bp02",
+          "ops10"
+        ],
+        "semantic": [],
+        "merged": [
+          "ops11",
+          "ops05",
+          "ops04",
+          "bp02",
+          "ops10"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "and_incident_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5748788408895907,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:39.985232+00:00"
+      }
+    },
+    {
+      "book": "AWS Well-Architected Operational Excellence Pillar",
+      "chapter": 2,
+      "title": "Segment 2 (pages 9-16)",
+      "chapter_id": "AWS Well-Architected Operational Excellence Pillar:ch2",
+      "cross_references": [
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch4",
+          "score": 0.5973777008336791,
+          "base_score": 0.7456295013894653,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch8",
+          "score": 0.5645232313478629,
+          "base_score": 0.6908720522464382,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch7",
+          "score": 0.5137942075823508,
+          "base_score": 0.606323679303918,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch6",
+          "score": 0.5036293014361782,
+          "base_score": 0.5893821690602971,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "business",
+          "needs",
+          "customer needs",
+          "customer",
+          "understanding"
+        ],
+        "semantic": [],
+        "merged": [
+          "business",
+          "needs",
+          "customer needs",
+          "customer",
+          "understanding"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_team",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.590102863633942,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:39.985386+00:00"
+      }
+    },
+    {
+      "book": "AWS Well-Architected Operational Excellence Pillar",
+      "chapter": 3,
+      "title": "Segment 3 (pages 17-24)",
+      "chapter_id": "AWS Well-Architected Operational Excellence Pillar:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "compliance",
+          "requirements",
+          "governance",
+          "governance requirements",
+          "compliance requirements"
+        ],
+        "semantic": [],
+        "merged": [
+          "compliance",
+          "requirements",
+          "governance",
+          "governance requirements",
+          "compliance requirements"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5785178147040259,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:38:39.985497+00:00"
+      }
+    },
+    {
+      "book": "AWS Well-Architected Operational Excellence Pillar",
+      "chapter": 4,
+      "title": "Segment 4 (pages 25-37)",
+      "chapter_id": "AWS Well-Architected Operational Excellence Pillar:ch4",
+      "cross_references": [
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch8",
+          "score": 0.688913499014819,
+          "base_score": 0.7315224983580317,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch7",
+          "score": 0.6593689973187135,
+          "base_score": 0.6822816621978557,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch2",
+          "score": 0.5973777008336791,
+          "base_score": 0.7456295013894653,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch6",
+          "score": 0.5179183869738794,
+          "base_score": 0.6131973116231324,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch5",
+          "score": 0.5084260937836982,
+          "base_score": 0.5973768229728303,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "application teams",
+          "teams",
+          "application",
+          "platform",
+          "team"
+        ],
+        "semantic": [],
+        "merged": [
+          "application teams",
+          "teams",
+          "application",
+          "platform",
+          "team"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_team",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5616744109852136,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:39.985602+00:00"
+      }
+    },
+    {
+      "book": "AWS Well-Architected Operational Excellence Pillar",
+      "chapter": 5,
+      "title": "Segment 5 (pages 38-46)",
+      "chapter_id": "AWS Well-Architected Operational Excellence Pillar:ch5",
+      "cross_references": [
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch6",
+          "score": 0.6042215570945411,
+          "base_score": 0.6829618544168277,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch4",
+          "score": 0.5084260937836982,
+          "base_score": 0.5973768229728303,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ownership",
+          "tagging",
+          "processes procedures",
+          "ops02",
+          "identiﬁed owners"
+        ],
+        "semantic": [],
+        "merged": [
+          "ownership",
+          "tagging",
+          "processes procedures",
+          "ops02",
+          "identiﬁed owners"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_team",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49709251545523025,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:39.985707+00:00"
+      }
+    },
+    {
+      "book": "AWS Well-Architected Operational Excellence Pillar",
+      "chapter": 6,
+      "title": "Segment 6 (pages 47-57)",
+      "chapter_id": "AWS Well-Architected Operational Excellence Pillar:ch6",
+      "cross_references": [
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch5",
+          "score": 0.6042215570945411,
+          "base_score": 0.6829618544168277,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch4",
+          "score": 0.5179183869738794,
+          "base_score": 0.6131973116231324,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch2",
+          "score": 0.5036293014361782,
+          "base_score": 0.5893821690602971,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "responsibilities",
+          "processes procedures",
+          "processes",
+          "procedures",
+          "responsibility"
+        ],
+        "semantic": [],
+        "merged": [
+          "responsibilities",
+          "processes procedures",
+          "processes",
+          "procedures",
+          "responsibility"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_team",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5307490756299678,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:39.985807+00:00"
+      }
+    },
+    {
+      "book": "AWS Well-Architected Operational Excellence Pillar",
+      "chapter": 7,
+      "title": "Segment 7 (pages 58-67)",
+      "chapter_id": "AWS Well-Architected Operational Excellence Pillar:ch7",
+      "cross_references": [
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch8",
+          "score": 0.6681372019059794,
+          "base_score": 0.6968953365099655,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch4",
+          "score": 0.6593689973187135,
+          "base_score": 0.6822816621978557,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch2",
+          "score": 0.5137942075823508,
+          "base_score": 0.606323679303918,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "teams",
+          "leadership",
+          "ops03",
+          "team",
+          "escalation"
+        ],
+        "semantic": [],
+        "merged": [
+          "teams",
+          "leadership",
+          "ops03",
+          "team",
+          "escalation"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_team",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5373171419063527,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:39.985905+00:00"
+      }
+    },
+    {
+      "book": "AWS Well-Architected Operational Excellence Pillar",
+      "chapter": 8,
+      "title": "Segment 8 (pages 68-77)",
+      "chapter_id": "AWS Well-Architected Operational Excellence Pillar:ch8",
+      "cross_references": [
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch4",
+          "score": 0.688913499014819,
+          "base_score": 0.7315224983580317,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch7",
+          "score": 0.6681372019059794,
+          "base_score": 0.6968953365099655,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch2",
+          "score": 0.5645232313478629,
+          "base_score": 0.6908720522464382,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "members",
+          "team",
+          "team members",
+          "organization",
+          "teams"
+        ],
+        "semantic": [],
+        "merged": [
+          "members",
+          "team",
+          "team members",
+          "organization",
+          "teams"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_team",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5564463684806144,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:39.986004+00:00"
+      }
+    },
+    {
+      "book": "AWS Well-Architected Operational Excellence Pillar",
+      "chapter": 9,
+      "title": "Segment 9 (pages 78-88)",
+      "chapter_id": "AWS Well-Architected Operational Excellence Pillar:ch9",
+      "cross_references": [
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch16",
+          "score": 0.6188027284134215,
+          "base_score": 0.7813378806890359,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch12",
+          "score": 0.5339111556338202,
+          "base_score": 0.6398519260563671,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch11",
+          "score": 0.5241865527514952,
+          "base_score": 0.6236442545858254,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "workload",
+          "kpis",
+          "business",
+          "observability",
+          "telemetry"
+        ],
+        "semantic": [],
+        "merged": [
+          "workload",
+          "kpis",
+          "business",
+          "observability",
+          "telemetry"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "and_to_your",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6264515898421057,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:39.986108+00:00"
+      }
+    },
+    {
+      "book": "AWS Well-Architected Operational Excellence Pillar",
+      "chapter": 10,
+      "title": "Segment 10 (pages 89-97)",
+      "chapter_id": "AWS Well-Architected Operational Excellence Pillar:ch10",
+      "cross_references": [
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch1",
+          "score": 0.5497404551613583,
+          "base_score": 0.5921600178615231,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch19",
+          "score": 0.5202656483379228,
+          "base_score": 0.617109413896538,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch21",
+          "score": 0.5146990445815885,
+          "base_score": 0.6078317409693141,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch18",
+          "score": 0.5069469411994896,
+          "base_score": 0.594911568665816,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "user",
+          "telemetry",
+          "ops04",
+          "real",
+          "ray"
+        ],
+        "semantic": [],
+        "merged": [
+          "user",
+          "telemetry",
+          "ops04",
+          "real",
+          "ray"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "and_incident_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4916973853748465,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:39.986218+00:00"
+      }
+    },
+    {
+      "book": "AWS Well-Architected Operational Excellence Pillar",
+      "chapter": 11,
+      "title": "Segment 11 (pages 98-105)",
+      "chapter_id": "AWS Well-Architected Operational Excellence Pillar:ch11",
+      "cross_references": [
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch14",
+          "score": 0.6541699330073949,
+          "base_score": 0.7662091476049173,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch12",
+          "score": 0.5814395503446702,
+          "base_score": 0.7190659172411171,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch16",
+          "score": 0.5406080452250602,
+          "base_score": 0.6510134087084336,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch9",
+          "score": 0.5241865527514952,
+          "base_score": 0.6236442545858254,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "test",
+          "conﬁguration",
+          "tests",
+          "software",
+          "changes"
+        ],
+        "semantic": [],
+        "merged": [
+          "test",
+          "conﬁguration",
+          "tests",
+          "software",
+          "changes"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "and_to_your",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5545804157692963,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:39.986344+00:00"
+      }
+    },
+    {
+      "book": "AWS Well-Architected Operational Excellence Pillar",
+      "chapter": 12,
+      "title": "Segment 12 (pages 106-113)",
+      "chapter_id": "AWS Well-Architected Operational Excellence Pillar:ch12",
+      "cross_references": [
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch11",
+          "score": 0.5814395503446702,
+          "base_score": 0.7190659172411171,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch16",
+          "score": 0.5723082601793108,
+          "base_score": 0.7038471002988513,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch14",
+          "score": 0.5623437088667745,
+          "base_score": 0.6872395147779575,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch9",
+          "score": 0.5339111556338202,
+          "base_score": 0.6398519260563671,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "patch",
+          "design standards",
+          "design",
+          "standards",
+          "patch management"
+        ],
+        "semantic": [],
+        "merged": [
+          "patch",
+          "design standards",
+          "design",
+          "standards",
+          "patch management"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "and_to_your",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5815943924865291,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:39.986448+00:00"
+      }
+    },
+    {
+      "book": "AWS Well-Architected Operational Excellence Pillar",
+      "chapter": 13,
+      "title": "Segment 13 (pages 114-121)",
+      "chapter_id": "AWS Well-Architected Operational Excellence Pillar:ch13",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "quality",
+          "code quality",
+          "test",
+          "improve code"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "quality",
+          "code quality",
+          "test",
+          "improve code"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "to_runbooks_code",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4294137906680094,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:39.986545+00:00"
+      }
+    },
+    {
+      "book": "AWS Well-Architected Operational Excellence Pillar",
+      "chapter": 14,
+      "title": "Segment 14 (pages 122-134)",
+      "chapter_id": "AWS Well-Architected Operational Excellence Pillar:ch14",
+      "cross_references": [
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch11",
+          "score": 0.6541699330073949,
+          "base_score": 0.7662091476049173,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch12",
+          "score": 0.5623437088667745,
+          "base_score": 0.6872395147779575,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "testing",
+          "test",
+          "deployment",
+          "rollback",
+          "deployments"
+        ],
+        "semantic": [],
+        "merged": [
+          "testing",
+          "test",
+          "deployment",
+          "rollback",
+          "deployments"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "and_to_your",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4913247535110266,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:39.987162+00:00"
+      }
+    },
+    {
+      "book": "AWS Well-Architected Operational Excellence Pillar",
+      "chapter": 15,
+      "title": "Segment 15 (pages 135-148)",
+      "chapter_id": "AWS Well-Architected Operational Excellence Pillar:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "playbooks",
+          "runbooks",
+          "runbook",
+          "orr",
+          "ops07"
+        ],
+        "semantic": [],
+        "merged": [
+          "playbooks",
+          "runbooks",
+          "runbook",
+          "orr",
+          "ops07"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "to_runbooks_code",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5998759498378693,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:39.987263+00:00"
+      }
+    },
+    {
+      "book": "AWS Well-Architected Operational Excellence Pillar",
+      "chapter": 16,
+      "title": "Segment 16 (pages 149-171)",
+      "chapter_id": "AWS Well-Architected Operational Excellence Pillar:ch16",
+      "cross_references": [
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch9",
+          "score": 0.6188027284134215,
+          "base_score": 0.7813378806890359,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch12",
+          "score": 0.5723082601793108,
+          "base_score": 0.7038471002988513,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch11",
+          "score": 0.5406080452250602,
+          "base_score": 0.6510134087084336,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cloudwatch",
+          "analyze",
+          "metrics",
+          "logs",
+          "ops08"
+        ],
+        "semantic": [],
+        "merged": [
+          "cloudwatch",
+          "analyze",
+          "metrics",
+          "logs",
+          "ops08"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "and_to_your",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.619138896490345,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:39.987380+00:00"
+      }
+    },
+    {
+      "book": "AWS Well-Architected Operational Excellence Pillar",
+      "chapter": 17,
+      "title": "Segment 17 (pages 172-182)",
+      "chapter_id": "AWS Well-Architected Operational Excellence Pillar:ch17",
+      "cross_references": [
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch21",
+          "score": 0.5995506758483752,
+          "base_score": 0.7492511264139585,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch18",
+          "score": 0.5724349893902037,
+          "base_score": 0.5373916489836729,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch19",
+          "score": 0.559489629840048,
+          "base_score": 0.6084086423260059,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch1",
+          "score": 0.5331785149746614,
+          "base_score": 0.6386308582911022,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch20",
+          "score": 0.5016288930052161,
+          "base_score": 0.5860481550086936,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "incident",
+          "response",
+          "operations",
+          "events",
+          "event"
+        ],
+        "semantic": [],
+        "merged": [
+          "incident",
+          "response",
+          "operations",
+          "events",
+          "event"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "and_incident_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5461968229124496,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:39.987491+00:00"
+      }
+    },
+    {
+      "book": "AWS Well-Architected Operational Excellence Pillar",
+      "chapter": 18,
+      "title": "Segment 18 (pages 183-195)",
+      "chapter_id": "AWS Well-Architected Operational Excellence Pillar:ch18",
+      "cross_references": [
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch19",
+          "score": 0.6379997521208931,
+          "base_score": 0.7392588461274143,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch17",
+          "score": 0.5724349893902037,
+          "base_score": 0.5373916489836729,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch21",
+          "score": 0.531381801938949,
+          "base_score": 0.635636336564915,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch10",
+          "score": 0.5069469411994896,
+          "base_score": 0.594911568665816,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "incident",
+          "incident manager",
+          "manager",
+          "dashboards",
+          "response"
+        ],
+        "semantic": [],
+        "merged": [
+          "incident",
+          "incident manager",
+          "manager",
+          "dashboards",
+          "response"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "and_incident_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5348084498702996,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:39.987596+00:00"
+      }
+    },
+    {
+      "book": "AWS Well-Architected Operational Excellence Pillar",
+      "chapter": 19,
+      "title": "Segment 19 (pages 196-203)",
+      "chapter_id": "AWS Well-Architected Operational Excellence Pillar:ch19",
+      "cross_references": [
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch18",
+          "score": 0.6379997521208931,
+          "base_score": 0.7392588461274143,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch1",
+          "score": 0.5634810551054383,
+          "base_score": 0.615061017768323,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch21",
+          "score": 0.560849893505903,
+          "base_score": 0.6847498225098383,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch17",
+          "score": 0.559489629840048,
+          "base_score": 0.6084086423260059,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch10",
+          "score": 0.5202656483379228,
+          "base_score": 0.617109413896538,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ops11",
+          "incident",
+          "architected",
+          "post incident",
+          "incident analysis"
+        ],
+        "semantic": [],
+        "merged": [
+          "ops11",
+          "incident",
+          "architected",
+          "post incident",
+          "incident analysis"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "and_incident_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5861553703888925,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:39.987699+00:00"
+      }
+    },
+    {
+      "book": "AWS Well-Architected Operational Excellence Pillar",
+      "chapter": 20,
+      "title": "Segment 20 (pages 204-211)",
+      "chapter_id": "AWS Well-Architected Operational Excellence Pillar:ch20",
+      "cross_references": [
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch21",
+          "score": 0.5365084615029861,
+          "base_score": 0.6441807691716435,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch1",
+          "score": 0.5217216186006652,
+          "base_score": 0.5454619569270346,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch17",
+          "score": 0.5016288930052161,
+          "base_score": 0.5860481550086936,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "feedback",
+          "feedback loops",
+          "loops",
+          "ops11",
+          "immediate feedback"
+        ],
+        "semantic": [],
+        "merged": [
+          "feedback",
+          "feedback loops",
+          "loops",
+          "ops11",
+          "immediate feedback"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "and_incident_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46793081115590823,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:39.987811+00:00"
+      }
+    },
+    {
+      "book": "AWS Well-Architected Operational Excellence Pillar",
+      "chapter": 21,
+      "title": "Segment 21 (pages 212-219)",
+      "chapter_id": "AWS Well-Architected Operational Excellence Pillar:ch21",
+      "cross_references": [
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch17",
+          "score": 0.5995506758483752,
+          "base_score": 0.7492511264139585,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch19",
+          "score": 0.560849893505903,
+          "base_score": 0.6847498225098383,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch1",
+          "score": 0.5531747242265525,
+          "base_score": 0.6719578737109209,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch20",
+          "score": 0.5365084615029861,
+          "base_score": 0.6441807691716435,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AWS Well-Architected Operational Excellence Pillar:ch18",
+          "score": 0.531381801938949,
+          "base_score": 0.635636336564915,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "share",
+          "lessons learned",
+          "lessons",
+          "share lessons",
+          "learned"
+        ],
+        "semantic": [],
+        "merged": [
+          "share",
+          "lessons learned",
+          "lessons",
+          "share lessons",
+          "learned"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "and_incident_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6282341970686204,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:38:39.987922+00:00"
+      }
+    },
+    {
+      "book": "AWS Well-Architected Operational Excellence Pillar",
+      "chapter": 22,
+      "title": "Segment 22 (pages 220-226)",
+      "chapter_id": "AWS Well-Architected Operational Excellence Pillar:ch22",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "web",
+          "amazon web",
+          "web services",
+          "services",
+          "amazon"
+        ],
+        "semantic": [],
+        "merged": [
+          "web",
+          "amazon web",
+          "web services",
+          "services",
+          "amazon"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.551144093633358,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:38:39.988022+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

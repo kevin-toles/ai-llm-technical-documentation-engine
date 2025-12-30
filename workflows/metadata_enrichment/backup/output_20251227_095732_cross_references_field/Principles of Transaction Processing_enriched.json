@@ -1,0 +1,2119 @@
+{
+  "book": {
+    "title": "Principles of Transaction Processing"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:53:42.627511",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-9)",
+      "chapter_id": "Principles of Transaction Processing:ch1",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch2",
+          "score": 0.5188898831984181,
+          "base_score": 0.5407423979232895,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "edition",
+          "2nd",
+          "2nd edition",
+          "transaction processing",
+          "database"
+        ],
+        "semantic": [],
+        "merged": [
+          "edition",
+          "2nd",
+          "2nd edition",
+          "transaction processing",
+          "database"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_transaction_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3540551266887385,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.602497+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 2,
+      "title": "Segment 2 (pages 10-17)",
+      "chapter_id": "Principles of Transaction Processing:ch2",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch31",
+          "score": 0.5977166469658441,
+          "base_score": 0.6721203375356661,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch35",
+          "score": 0.5610100817298651,
+          "base_score": 0.6109427288090344,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch30",
+          "score": 0.5407779444863325,
+          "base_score": 0.5772225000698136,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch1",
+          "score": 0.5188898831984181,
+          "base_score": 0.5407423979232895,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch38",
+          "score": 0.5123655433226474,
+          "base_score": 0.6039425722044123,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "transaction processing",
+          "processing",
+          "transaction",
+          "transactional middleware",
+          "middleware"
+        ],
+        "semantic": [],
+        "merged": [
+          "transaction processing",
+          "processing",
+          "transaction",
+          "transactional middleware",
+          "middleware"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_transaction_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4730554044346074,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.602717+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 3,
+      "title": "Segment 3 (pages 18-25)",
+      "chapter_id": "Principles of Transaction Processing:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "transaction",
+          "trademarks",
+          "registered",
+          "program",
+          "tp"
+        ],
+        "semantic": [],
+        "merged": [
+          "transaction",
+          "trademarks",
+          "registered",
+          "program",
+          "tp"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_transaction_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31512210819923164,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.602898+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 4,
+      "title": "Segment 4 (pages 26-33)",
+      "chapter_id": "Principles of Transaction Processing:ch4",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch13",
+          "score": 0.62740253144086,
+          "base_score": 0.7215968116606926,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch12",
+          "score": 0.5624014987176986,
+          "base_score": 0.6873358311961644,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch8",
+          "score": 0.5081541473384951,
+          "base_score": 0.5969235788974917,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "transaction",
+          "consistency",
+          "transaction program",
+          "transactions",
+          "user"
+        ],
+        "semantic": [],
+        "merged": [
+          "transaction",
+          "consistency",
+          "transaction program",
+          "transactions",
+          "user"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_server_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5005462571044266,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.603083+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 5,
+      "title": "Segment 5 (pages 34-42)",
+      "chapter_id": "Principles of Transaction Processing:ch5",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch26",
+          "score": 0.682524938767666,
+          "base_score": 0.6018272788984909,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch24",
+          "score": 0.5780176115419874,
+          "base_score": 0.7133626859033124,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch17",
+          "score": 0.5423171221949266,
+          "base_score": 0.5797877962508035,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch27",
+          "score": 0.5311454139472743,
+          "base_score": 0.6352423565787905,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "transaction",
+          "commit",
+          "tpc",
+          "transaction manager",
+          "manager"
+        ],
+        "semantic": [],
+        "merged": [
+          "transaction",
+          "commit",
+          "tpc",
+          "transaction manager",
+          "manager"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4214576677283023,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.603293+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 6,
+      "title": "Segment 6 (pages 43-50)",
+      "chapter_id": "Principles of Transaction Processing:ch6",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch37",
+          "score": 0.5255636575360684,
+          "base_score": 0.6259394292267806,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch36",
+          "score": 0.5085000850428795,
+          "base_score": 0.5975001417381325,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tp",
+          "systems",
+          "tp systems",
+          "batch",
+          "real time"
+        ],
+        "semantic": [],
+        "merged": [
+          "tp",
+          "systems",
+          "tp systems",
+          "batch",
+          "real time"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_transaction_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43020905600532,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.603485+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 7,
+      "title": "Segment 7 (pages 51-59)",
+      "chapter_id": "Principles of Transaction Processing:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "transaction",
+          "abort",
+          "payloanfromchecking",
+          "start",
+          "method"
+        ],
+        "semantic": [],
+        "merged": [
+          "transaction",
+          "abort",
+          "payloanfromchecking",
+          "start",
+          "method"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_server_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3726989625434682,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.603673+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 8,
+      "title": "Segment 8 (pages 60-67)",
+      "chapter_id": "Principles of Transaction Processing:ch8",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch4",
+          "score": 0.5081541473384951,
+          "base_score": 0.5969235788974917,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch13",
+          "score": 0.503225804713566,
+          "base_score": 0.58870967452261,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "threads",
+          "process",
+          "multithreaded",
+          "thread",
+          "multithreaded process"
+        ],
+        "semantic": [],
+        "merged": [
+          "threads",
+          "process",
+          "multithreaded",
+          "thread",
+          "multithreaded process"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_server_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4575440980786749,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.603855+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 9,
+      "title": "Segment 9 (pages 68-75)",
+      "chapter_id": "Principles of Transaction Processing:ch9",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch34",
+          "score": 0.5016883676165773,
+          "base_score": 0.41948061269429543,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "server",
+          "client",
+          "stub",
+          "rpc",
+          "paycreditcard"
+        ],
+        "semantic": [],
+        "merged": [
+          "server",
+          "client",
+          "stub",
+          "rpc",
+          "paycreditcard"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_server_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31383830254188577,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.604044+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 10,
+      "title": "Segment 10 (pages 76-84)",
+      "chapter_id": "Principles of Transaction Processing:ch10",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch14",
+          "score": 0.5111291987990331,
+          "base_score": 0.6018819979983885,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch13",
+          "score": 0.5036350339334698,
+          "base_score": 0.5153176491483755,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "session",
+          "server",
+          "state",
+          "user",
+          "id"
+        ],
+        "semantic": [],
+        "merged": [
+          "session",
+          "server",
+          "state",
+          "user",
+          "id"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_server_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4109764042841799,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.604246+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 11,
+      "title": "Segment 11 (pages 85-95)",
+      "chapter_id": "Principles of Transaction Processing:ch11",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch13",
+          "score": 0.7521522547171414,
+          "base_score": 0.5591426467507913,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch12",
+          "score": 0.5251276710006934,
+          "base_score": 0.5511387109270814,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "server",
+          "servers",
+          "request",
+          "transaction",
+          "server server"
+        ],
+        "semantic": [],
+        "merged": [
+          "server",
+          "servers",
+          "request",
+          "transaction",
+          "server server"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_server_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3671850204218195,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.604424+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 12,
+      "title": "Segment 12 (pages 96-104)",
+      "chapter_id": "Principles of Transaction Processing:ch12",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch13",
+          "score": 0.6801807319442016,
+          "base_score": 0.8095604791662618,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch4",
+          "score": 0.5624014987176986,
+          "base_score": 0.6873358311961644,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch11",
+          "score": 0.5251276710006934,
+          "base_score": 0.5511387109270814,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch14",
+          "score": 0.5080664591596645,
+          "base_score": 0.5227033578587001,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "web",
+          "end",
+          "web server",
+          "end program",
+          "request"
+        ],
+        "semantic": [],
+        "merged": [
+          "web",
+          "end",
+          "web server",
+          "end program",
+          "request"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_server_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45322180661899847,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.604602+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 13,
+      "title": "Segment 13 (pages 105-116)",
+      "chapter_id": "Principles of Transaction Processing:ch13",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch11",
+          "score": 0.7521522547171414,
+          "base_score": 0.5591426467507913,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch12",
+          "score": 0.6801807319442016,
+          "base_score": 0.8095604791662618,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch4",
+          "score": 0.62740253144086,
+          "base_score": 0.7215968116606926,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch34",
+          "score": 0.5487214765473454,
+          "base_score": 0.4978691275789091,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch14",
+          "score": 0.5383061759518214,
+          "base_score": 0.5731028858456282,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "transaction",
+          "request",
+          "server",
+          "servers",
+          "controller"
+        ],
+        "semantic": [],
+        "merged": [
+          "transaction",
+          "request",
+          "server",
+          "servers",
+          "controller"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_server_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47437985391107734,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.604783+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 14,
+      "title": "Segment 14 (pages 117-125)",
+      "chapter_id": "Principles of Transaction Processing:ch14",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch13",
+          "score": 0.5383061759518214,
+          "base_score": 0.5731028858456282,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch10",
+          "score": 0.5111291987990331,
+          "base_score": 0.6018819979983885,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch12",
+          "score": 0.5080664591596645,
+          "base_score": 0.5227033578587001,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "request",
+          "client",
+          "reply",
+          "queue",
+          "request queue"
+        ],
+        "semantic": [],
+        "merged": [
+          "request",
+          "client",
+          "reply",
+          "queue",
+          "request queue"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_server_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4110961883392278,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.604986+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 15,
+      "title": "Segment 15 (pages 126-138)",
+      "chapter_id": "Principles of Transaction Processing:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "queue",
+          "message",
+          "queue manager",
+          "messages",
+          "dequeue"
+        ],
+        "semantic": [],
+        "merged": [
+          "queue",
+          "message",
+          "queue manager",
+          "messages",
+          "dequeue"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36584074807631645,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:53:42.605163+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 16,
+      "title": "Segment 16 (pages 139-146)",
+      "chapter_id": "Principles of Transaction Processing:ch16",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch18",
+          "score": 0.6978318434506955,
+          "base_score": 0.62733878670354,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "business",
+          "business process",
+          "process",
+          "business processes",
+          "process deﬁ"
+        ],
+        "semantic": [],
+        "merged": [
+          "business",
+          "business process",
+          "process",
+          "business processes",
+          "process deﬁ"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_transaction_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3276198641603835,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.605396+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 17,
+      "title": "Segment 17 (pages 147-154)",
+      "chapter_id": "Principles of Transaction Processing:ch17",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch26",
+          "score": 0.5432617293700479,
+          "base_score": 0.5813621415426724,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch5",
+          "score": 0.5423171221949266,
+          "base_score": 0.5797877962508035,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch24",
+          "score": 0.5268388022614101,
+          "base_score": 0.6280646704356835,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "business process",
+          "business",
+          "process",
+          "step",
+          "transaction"
+        ],
+        "semantic": [],
+        "merged": [
+          "business process",
+          "business",
+          "process",
+          "step",
+          "transaction"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4414586648759031,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.605598+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 18,
+      "title": "Segment 18 (pages 155-163)",
+      "chapter_id": "Principles of Transaction Processing:ch18",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch16",
+          "score": 0.6978318434506955,
+          "base_score": 0.62733878670354,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "business process",
+          "business",
+          "process",
+          "service",
+          "lock"
+        ],
+        "semantic": [],
+        "merged": [
+          "business process",
+          "business",
+          "process",
+          "service",
+          "lock"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_transaction_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3660297339228896,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.605776+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 19,
+      "title": "Segment 19 (pages 164-171)",
+      "chapter_id": "Principles of Transaction Processing:ch19",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch20",
+          "score": 0.7874660542210351,
+          "base_score": 0.7767291379874395,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch29",
+          "score": 0.6571252273504755,
+          "base_score": 0.6785420455841258,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch22",
+          "score": 0.6551165063191106,
+          "base_score": 0.6751941771985176,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch21",
+          "score": 0.5922195539913414,
+          "base_score": 0.6629585159114949,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "lock",
+          "locks",
+          "data",
+          "locking",
+          "granularity"
+        ],
+        "semantic": [],
+        "merged": [
+          "lock",
+          "locks",
+          "data",
+          "locking",
+          "granularity"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "lock_data_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4237862544647732,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.605956+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 20,
+      "title": "Segment 20 (pages 172-181)",
+      "chapter_id": "Principles of Transaction Processing:ch20",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch19",
+          "score": 0.7874660542210351,
+          "base_score": 0.7767291379874395,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch22",
+          "score": 0.6237098350189378,
+          "base_score": 0.6228497250315632,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch29",
+          "score": 0.6075754970186908,
+          "base_score": 0.5959591616978182,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch21",
+          "score": 0.5980691484043819,
+          "base_score": 0.6727078399332289,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "lock",
+          "transaction",
+          "locks",
+          "decrement",
+          "data"
+        ],
+        "semantic": [],
+        "merged": [
+          "lock",
+          "transaction",
+          "locks",
+          "decrement",
+          "data"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "lock_data_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39377819730362335,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.606134+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 21,
+      "title": "Segment 21 (pages 182-189)",
+      "chapter_id": "Principles of Transaction Processing:ch21",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch20",
+          "score": 0.5980691484043819,
+          "base_score": 0.6727078399332289,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch19",
+          "score": 0.5922195539913414,
+          "base_score": 0.6629585159114949,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch29",
+          "score": 0.5822842184117794,
+          "base_score": 0.6463996232788916,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch22",
+          "score": 0.5709143110343851,
+          "base_score": 0.627449777649901,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "read",
+          "read committed",
+          "data",
+          "query",
+          "committed isolation"
+        ],
+        "semantic": [],
+        "merged": [
+          "read",
+          "read committed",
+          "data",
+          "query",
+          "committed isolation"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "lock_data_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.390360372770738,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.606326+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 22,
+      "title": "Segment 22 (pages 190-203)",
+      "chapter_id": "Principles of Transaction Processing:ch22",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch19",
+          "score": 0.6551165063191106,
+          "base_score": 0.6751941771985176,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch20",
+          "score": 0.6237098350189378,
+          "base_score": 0.6228497250315632,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch21",
+          "score": 0.5709143110343851,
+          "base_score": 0.627449777649901,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "lock",
+          "locks",
+          "key",
+          "tree",
+          "read"
+        ],
+        "semantic": [],
+        "merged": [
+          "lock",
+          "locks",
+          "key",
+          "tree",
+          "read"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "lock_data_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32826272580476296,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.606501+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 23,
+      "title": "Segment 23 (pages 204-214)",
+      "chapter_id": "Principles of Transaction Processing:ch23",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "server",
+          "failure",
+          "recovery",
+          "idempotent",
+          "non idempotent"
+        ],
+        "semantic": [],
+        "merged": [
+          "server",
+          "failure",
+          "recovery",
+          "idempotent",
+          "non idempotent"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35525204145443884,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:53:42.606689+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 24,
+      "title": "Segment 24 (pages 215-222)",
+      "chapter_id": "Principles of Transaction Processing:ch24",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch5",
+          "score": 0.5780176115419874,
+          "base_score": 0.7133626859033124,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch26",
+          "score": 0.5481132037535547,
+          "base_score": 0.6635220062559244,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch25",
+          "score": 0.5331417786628712,
+          "base_score": 0.47190296443811863,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch17",
+          "score": 0.5268388022614101,
+          "base_score": 0.6280646704356835,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "page",
+          "cache",
+          "stable",
+          "stable database",
+          "update"
+        ],
+        "semantic": [],
+        "merged": [
+          "page",
+          "cache",
+          "stable",
+          "stable database",
+          "update"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39978330004910045,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.606870+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 25,
+      "title": "Segment 25 (pages 223-235)",
+      "chapter_id": "Principles of Transaction Processing:ch25",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch24",
+          "score": 0.5331417786628712,
+          "base_score": 0.47190296443811863,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "page",
+          "log",
+          "record",
+          "update",
+          "lsn"
+        ],
+        "semantic": [],
+        "merged": [
+          "page",
+          "log",
+          "record",
+          "update",
+          "lsn"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3338733215899986,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.607041+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 26,
+      "title": "Segment 26 (pages 236-261)",
+      "chapter_id": "Principles of Transaction Processing:ch26",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch5",
+          "score": 0.682524938767666,
+          "base_score": 0.6018272788984909,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch24",
+          "score": 0.5481132037535547,
+          "base_score": 0.6635220062559244,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch17",
+          "score": 0.5432617293700479,
+          "base_score": 0.5813621415426724,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "commit",
+          "transaction",
+          "coordinator",
+          "participant",
+          "manager"
+        ],
+        "semantic": [],
+        "merged": [
+          "commit",
+          "transaction",
+          "coordinator",
+          "participant",
+          "manager"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37488489965791955,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.607238+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 27,
+      "title": "Segment 27 (pages 262-279)",
+      "chapter_id": "Principles of Transaction Processing:ch27",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch5",
+          "score": 0.5311454139472743,
+          "base_score": 0.6352423565787905,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "primary",
+          "replica",
+          "replicas",
+          "secondary",
+          "updates"
+        ],
+        "semantic": [],
+        "merged": [
+          "primary",
+          "replica",
+          "replicas",
+          "secondary",
+          "updates"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36401211665065664,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.607411+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 28,
+      "title": "Segment 28 (pages 280-292)",
+      "chapter_id": "Principles of Transaction Processing:ch28",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "version",
+          "vector",
+          "version vector",
+          "version id",
+          "replica"
+        ],
+        "semantic": [],
+        "merged": [
+          "version",
+          "vector",
+          "version vector",
+          "version id",
+          "replica"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3713889963324198,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.607582+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 29,
+      "title": "Segment 29 (pages 293-301)",
+      "chapter_id": "Principles of Transaction Processing:ch29",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch19",
+          "score": 0.6571252273504755,
+          "base_score": 0.6785420455841258,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch20",
+          "score": 0.6075754970186908,
+          "base_score": 0.5959591616978182,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch21",
+          "score": 0.5822842184117794,
+          "base_score": 0.6463996232788916,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data manager",
+          "manager",
+          "data",
+          "lock",
+          "page"
+        ],
+        "semantic": [],
+        "merged": [
+          "data manager",
+          "manager",
+          "data",
+          "lock",
+          "page"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "lock_data_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3909096005374117,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.607757+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 30,
+      "title": "Segment 30 (pages 302-315)",
+      "chapter_id": "Principles of Transaction Processing:ch30",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch35",
+          "score": 0.5924591986958964,
+          "base_score": 0.5707653311598273,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch31",
+          "score": 0.5691634575237627,
+          "base_score": 0.6245316884655305,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch2",
+          "score": 0.5407779444863325,
+          "base_score": 0.5772225000698136,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch32",
+          "score": 0.5112381244964782,
+          "base_score": 0.6020635408274636,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "transaction",
+          "wcf",
+          "transaction context",
+          "context",
+          "method"
+        ],
+        "semantic": [],
+        "merged": [
+          "transaction",
+          "wcf",
+          "transaction context",
+          "context",
+          "method"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_transaction_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3773050576822996,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.607937+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 31,
+      "title": "Segment 31 (pages 316-330)",
+      "chapter_id": "Principles of Transaction Processing:ch31",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch35",
+          "score": 0.6977467269594836,
+          "base_score": 0.7462445449324727,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch32",
+          "score": 0.6011744766906533,
+          "base_score": 0.6778833870770146,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch2",
+          "score": 0.5977166469658441,
+          "base_score": 0.6721203375356661,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch30",
+          "score": 0.5691634575237627,
+          "base_score": 0.6245316884655305,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch38",
+          "score": 0.5043852374267822,
+          "base_score": 0.5906420623779705,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "transaction",
+          "bean",
+          "ejb",
+          "spring",
+          "java"
+        ],
+        "semantic": [],
+        "merged": [
+          "transaction",
+          "bean",
+          "ejb",
+          "spring",
+          "java"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_transaction_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4320712868432531,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.608115+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 32,
+      "title": "Segment 32 (pages 331-340)",
+      "chapter_id": "Principles of Transaction Processing:ch32",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch35",
+          "score": 0.6329786531680739,
+          "base_score": 0.7308903478727158,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch31",
+          "score": 0.6011744766906533,
+          "base_score": 0.6778833870770146,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch30",
+          "score": 0.5112381244964782,
+          "base_score": 0.6020635408274636,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch36",
+          "score": 0.5077965573326527,
+          "base_score": 0.5963275955544213,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sql",
+          "java",
+          "stored",
+          "database",
+          "stored procedure"
+        ],
+        "semantic": [],
+        "merged": [
+          "sql",
+          "java",
+          "stored",
+          "database",
+          "stored procedure"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_transaction_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41061689588775624,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.608327+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 33,
+      "title": "Segment 33 (pages 341-349)",
+      "chapter_id": "Principles of Transaction Processing:ch33",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "cics",
+          "ims",
+          "region",
+          "data",
+          "entity"
+        ],
+        "semantic": [],
+        "merged": [
+          "cics",
+          "ims",
+          "region",
+          "data",
+          "entity"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_transaction_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.259742851563004,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.608502+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 34,
+      "title": "Segment 34 (pages 350-358)",
+      "chapter_id": "Principles of Transaction Processing:ch34",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch13",
+          "score": 0.5487214765473454,
+          "base_score": 0.4978691275789091,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch9",
+          "score": 0.5016883676165773,
+          "base_score": 0.41948061269429543,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "server",
+          "transaction",
+          "nonstop",
+          "acms",
+          "client"
+        ],
+        "semantic": [],
+        "merged": [
+          "server",
+          "transaction",
+          "nonstop",
+          "acms",
+          "client"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_server_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3907865070532632,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.608677+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 35,
+      "title": "Segment 35 (pages 359-367)",
+      "chapter_id": "Principles of Transaction Processing:ch35",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch31",
+          "score": 0.6977467269594836,
+          "base_score": 0.7462445449324727,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch32",
+          "score": 0.6329786531680739,
+          "base_score": 0.7308903478727158,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch30",
+          "score": 0.5924591986958964,
+          "base_score": 0.5707653311598273,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch2",
+          "score": 0.5610100817298651,
+          "base_score": 0.6109427288090344,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "transaction",
+          "ws",
+          "java",
+          "transaction service",
+          "context"
+        ],
+        "semantic": [],
+        "merged": [
+          "transaction",
+          "ws",
+          "java",
+          "transaction service",
+          "context"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_transaction_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4530467313912778,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.608860+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 36,
+      "title": "Segment 36 (pages 368-377)",
+      "chapter_id": "Principles of Transaction Processing:ch36",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch6",
+          "score": 0.5085000850428795,
+          "base_score": 0.5975001417381325,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch32",
+          "score": 0.5077965573326527,
+          "base_score": 0.5963275955544213,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "service",
+          "jcp",
+          "ibm",
+          "jcp java",
+          "language"
+        ],
+        "semantic": [],
+        "merged": [
+          "service",
+          "jcp",
+          "ibm",
+          "jcp java",
+          "language"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_transaction_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4150558144550844,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.609034+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 37,
+      "title": "Segment 37 (pages 378-388)",
+      "chapter_id": "Principles of Transaction Processing:ch37",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch6",
+          "score": 0.5255636575360684,
+          "base_score": 0.6259394292267806,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "http",
+          "http www",
+          "www",
+          "al",
+          "et al"
+        ],
+        "semantic": [],
+        "merged": [
+          "http",
+          "http www",
+          "www",
+          "al",
+          "et al"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_transaction_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40338198341380593,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.609217+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 38,
+      "title": "Segment 38 (pages 389-396)",
+      "chapter_id": "Principles of Transaction Processing:ch38",
+      "cross_references": [
+        {
+          "target": "Principles of Transaction Processing:ch2",
+          "score": 0.5123655433226474,
+          "base_score": 0.6039425722044123,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Principles of Transaction Processing:ch31",
+          "score": 0.5043852374267822,
+          "base_score": 0.5906420623779705,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "summary",
+          "145",
+          "introduction",
+          "328",
+          "70"
+        ],
+        "semantic": [],
+        "merged": [
+          "summary",
+          "145",
+          "introduction",
+          "328",
+          "70"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_transaction_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44949915711539673,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.609391+00:00"
+      }
+    },
+    {
+      "book": "Principles of Transaction Processing",
+      "chapter": 39,
+      "title": "Segment 39 (pages 397-397)",
+      "chapter_id": "Principles of Transaction Processing:ch39",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "services based",
+          "transactions 340",
+          "soa",
+          "ws transactions",
+          "ws"
+        ],
+        "semantic": [],
+        "merged": [
+          "services based",
+          "transactions 340",
+          "soa",
+          "ws transactions",
+          "ws"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_transaction_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29405306252184676,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:42.609570+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

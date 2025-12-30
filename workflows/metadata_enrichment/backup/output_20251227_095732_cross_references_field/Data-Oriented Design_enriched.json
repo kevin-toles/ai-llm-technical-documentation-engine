@@ -1,0 +1,467 @@
+{
+  "book": {
+    "title": "Data-Oriented Design"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:44:19.012553",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Data-Oriented Design",
+      "chapter": 1,
+      "title": "Data-Oriented Design",
+      "chapter_id": "Data-Oriented Design:ch1",
+      "cross_references": [
+        {
+          "target": "Data-Oriented Design:ch2",
+          "score": 0.5610062527521434,
+          "base_score": 0.6850104212535724,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Data-Oriented Design:ch10",
+          "score": 0.5316377024100619,
+          "base_score": 0.5619887632760291,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "design",
+          "chapter",
+          "oriented",
+          "chapter data",
+          "game"
+        ],
+        "semantic": [],
+        "merged": [
+          "design",
+          "chapter",
+          "oriented",
+          "chapter data",
+          "game"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5225229093798727,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:18.981519+00:00"
+      }
+    },
+    {
+      "book": "Data-Oriented Design",
+      "chapter": 2,
+      "title": "Relational Databases",
+      "chapter_id": "Data-Oriented Design:ch2",
+      "cross_references": [
+        {
+          "target": "Data-Oriented Design:ch1",
+          "score": 0.5610062527521434,
+          "base_score": 0.6850104212535724,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "table",
+          "key",
+          "room",
+          "primary",
+          "primary key"
+        ],
+        "semantic": [],
+        "merged": [
+          "table",
+          "key",
+          "room",
+          "primary",
+          "primary key"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47438762298046994,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:18.981751+00:00"
+      }
+    },
+    {
+      "book": "Data-Oriented Design",
+      "chapter": 3,
+      "title": "Existential Processing",
+      "chapter_id": "Data-Oriented Design:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "control",
+          "ﬂow",
+          "entity",
+          "state",
+          "processing"
+        ],
+        "semantic": [],
+        "merged": [
+          "control",
+          "ﬂow",
+          "entity",
+          "state",
+          "processing"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4234418773401526,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:44:18.981915+00:00"
+      }
+    },
+    {
+      "book": "Data-Oriented Design",
+      "chapter": 4,
+      "title": "Component Based",
+      "chapter_id": "Data-Oriented Design:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "component",
+          "components",
+          "class",
+          "player",
+          "component based"
+        ],
+        "semantic": [],
+        "merged": [
+          "component",
+          "components",
+          "class",
+          "player",
+          "component based"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41383167283547395,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:18.982052+00:00"
+      }
+    },
+    {
+      "book": "Data-Oriented Design",
+      "chapter": 5,
+      "title": "Hierarchical Level of",
+      "chapter_id": "Data-Oriented Design:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "player",
+          "level",
+          "game",
+          "hierarchical level",
+          "hierarchical"
+        ],
+        "semantic": [],
+        "merged": [
+          "player",
+          "level",
+          "game",
+          "hierarchical level",
+          "hierarchical"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39072153068506216,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:44:18.982185+00:00"
+      }
+    },
+    {
+      "book": "Data-Oriented Design",
+      "chapter": 6,
+      "title": "Searching",
+      "chapter_id": "Data-Oriented Design:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "search",
+          "key",
+          "binary",
+          "int",
+          "searching"
+        ],
+        "semantic": [],
+        "merged": [
+          "search",
+          "key",
+          "binary",
+          "int",
+          "searching"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.440673128665707,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:18.982402+00:00"
+      }
+    },
+    {
+      "book": "Data-Oriented Design",
+      "chapter": 7,
+      "title": "Sorting",
+      "chapter_id": "Data-Oriented Design:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "sort",
+          "sorting",
+          "sorts",
+          "radix",
+          "sorted"
+        ],
+        "semantic": [],
+        "merged": [
+          "sort",
+          "sorting",
+          "sorts",
+          "radix",
+          "sorted"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3218692946880539,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:18.982537+00:00"
+      }
+    },
+    {
+      "book": "Data-Oriented Design",
+      "chapter": 8,
+      "title": "Optimisations and",
+      "chapter_id": "Data-Oriented Design:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "optimisations",
+          "tables",
+          "optimisation",
+          "delta_time",
+          "table"
+        ],
+        "semantic": [],
+        "merged": [
+          "optimisations",
+          "tables",
+          "optimisation",
+          "delta_time",
+          "table"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.522619942254855,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:18.982696+00:00"
+      }
+    },
+    {
+      "book": "Data-Oriented Design",
+      "chapter": 9,
+      "title": "Helping the compiler",
+      "chapter_id": "Data-Oriented Design:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "cache",
+          "compiler",
+          "cache line",
+          "line",
+          "helping compiler"
+        ],
+        "semantic": [],
+        "merged": [
+          "cache",
+          "compiler",
+          "cache line",
+          "line",
+          "helping compiler"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3620269400039672,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:44:18.982872+00:00"
+      }
+    },
+    {
+      "book": "Data-Oriented Design",
+      "chapter": 10,
+      "title": "Maintenance and",
+      "chapter_id": "Data-Oriented Design:ch10",
+      "cross_references": [
+        {
+          "target": "Data-Oriented Design:ch11",
+          "score": 0.6215013616292606,
+          "base_score": 0.5001213170011487,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Data-Oriented Design:ch1",
+          "score": 0.5316377024100619,
+          "base_score": 0.5619887632760291,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "oriented",
+          "object oriented",
+          "object",
+          "code",
+          "data oriented"
+        ],
+        "semantic": [],
+        "merged": [
+          "oriented",
+          "object oriented",
+          "object",
+          "code",
+          "data oriented"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46675709676049043,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:18.983009+00:00"
+      }
+    },
+    {
+      "book": "Data-Oriented Design",
+      "chapter": 11,
+      "title": "What’s wrong?",
+      "chapter_id": "Data-Oriented Design:ch11",
+      "cross_references": [
+        {
+          "target": "Data-Oriented Design:ch10",
+          "score": 0.6215013616292606,
+          "base_score": 0.5001213170011487,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "virtual",
+          "class",
+          "object",
+          "object oriented",
+          "oriented"
+        ],
+        "semantic": [],
+        "merged": [
+          "virtual",
+          "class",
+          "object",
+          "object oriented",
+          "oriented"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46013258807022095,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:18.983145+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

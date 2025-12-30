@@ -1,0 +1,437 @@
+{
+  "book": {
+    "title": "Kubernetes Security - Liz Rice"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:49:33.351616",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Kubernetes Security - Liz Rice",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-8)",
+      "chapter_id": "Kubernetes Security - Liz Rice:ch1",
+      "cross_references": [
+        {
+          "target": "Kubernetes Security - Liz Rice:ch2",
+          "score": 0.6117342205933485,
+          "base_score": 0.8528903676555808,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Security - Liz Rice:ch6",
+          "score": 0.5944257758195927,
+          "base_score": 0.6666355522919136,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Security - Liz Rice:ch7",
+          "score": 0.5165715865563673,
+          "base_score": 0.6109526442606121,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Security - Liz Rice:ch5",
+          "score": 0.5011568043650968,
+          "base_score": 0.5852613406084947,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "security",
+          "kubernetes security",
+          "book",
+          "clusters",
+          "kubernetes clusters"
+        ],
+        "semantic": [],
+        "merged": [
+          "security",
+          "kubernetes security",
+          "book",
+          "clusters",
+          "kubernetes clusters"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_that",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6538421143576092,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:33.345859+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Security - Liz Rice",
+      "chapter": 2,
+      "title": "Segment 2 (pages 9-18)",
+      "chapter_id": "Kubernetes Security - Liz Rice:ch2",
+      "cross_references": [
+        {
+          "target": "Kubernetes Security - Liz Rice:ch1",
+          "score": 0.6117342205933485,
+          "base_score": 0.8528903676555808,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "chapter",
+          "security",
+          "kubernetes security",
+          "port",
+          "kubernetes cluster"
+        ],
+        "semantic": [],
+        "merged": [
+          "chapter",
+          "security",
+          "kubernetes security",
+          "port",
+          "kubernetes cluster"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_kubernetes",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6629431616098608,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:33.345932+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Security - Liz Rice",
+      "chapter": 3,
+      "title": "Segment 3 (pages 19-29)",
+      "chapter_id": "Kubernetes Security - Liz Rice:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "service",
+          "account",
+          "service account",
+          "token",
+          "access"
+        ],
+        "semantic": [],
+        "merged": [
+          "service",
+          "account",
+          "service account",
+          "token",
+          "access"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_kubernetes",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5376580282675318,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:33.345978+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Security - Liz Rice",
+      "chapter": 4,
+      "title": "Segment 4 (pages 30-39)",
+      "chapter_id": "Kubernetes Security - Liz Rice:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "role",
+          "authentication",
+          "identity",
+          "cluster",
+          "cluster role"
+        ],
+        "semantic": [],
+        "merged": [
+          "role",
+          "authentication",
+          "identity",
+          "cluster",
+          "cluster role"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_kubernetes",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5431856520051075,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:33.346020+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Security - Liz Rice",
+      "chapter": 5,
+      "title": "Segment 5 (pages 40-52)",
+      "chapter_id": "Kubernetes Security - Liz Rice:ch5",
+      "cross_references": [
+        {
+          "target": "Kubernetes Security - Liz Rice:ch6",
+          "score": 0.5179077611948525,
+          "base_score": 0.6131796019914209,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Security - Liz Rice:ch1",
+          "score": 0.5011568043650968,
+          "base_score": 0.5852613406084947,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "images",
+          "container",
+          "container images",
+          "image",
+          "list watch"
+        ],
+        "semantic": [],
+        "merged": [
+          "images",
+          "container",
+          "container images",
+          "image",
+          "list watch"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_that",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5942461854823284,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:33.346064+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Security - Liz Rice",
+      "chapter": 6,
+      "title": "Segment 6 (pages 53-60)",
+      "chapter_id": "Kubernetes Security - Liz Rice:ch6",
+      "cross_references": [
+        {
+          "target": "Kubernetes Security - Liz Rice:ch1",
+          "score": 0.5944257758195927,
+          "base_score": 0.6666355522919136,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Security - Liz Rice:ch8",
+          "score": 0.5339706128664027,
+          "base_score": 0.6399510214440045,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Security - Liz Rice:ch5",
+          "score": 0.5179077611948525,
+          "base_score": 0.6131796019914209,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "containers",
+          "security",
+          "running containers",
+          "containers securely",
+          "securely"
+        ],
+        "semantic": [],
+        "merged": [
+          "containers",
+          "security",
+          "running containers",
+          "containers securely",
+          "securely"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_that",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6349858566716199,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:33.346108+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Security - Liz Rice",
+      "chapter": 7,
+      "title": "Segment 7 (pages 61-69)",
+      "chapter_id": "Kubernetes Security - Liz Rice:ch7",
+      "cross_references": [
+        {
+          "target": "Kubernetes Security - Liz Rice:ch1",
+          "score": 0.5165715865563673,
+          "base_score": 0.6109526442606121,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "network",
+          "traffic",
+          "network policies",
+          "policies",
+          "network policy"
+        ],
+        "semantic": [],
+        "merged": [
+          "network",
+          "traffic",
+          "network policies",
+          "policies",
+          "network policy"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_that",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5924890286818709,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:33.346150+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Security - Liz Rice",
+      "chapter": 8,
+      "title": "Segment 8 (pages 70-78)",
+      "chapter_id": "Kubernetes Security - Liz Rice:ch8",
+      "cross_references": [
+        {
+          "target": "Kubernetes Security - Liz Rice:ch6",
+          "score": 0.5339706128664027,
+          "base_score": 0.6399510214440045,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "secrets",
+          "secret",
+          "passing",
+          "environment",
+          "passing secrets"
+        ],
+        "semantic": [],
+        "merged": [
+          "secrets",
+          "secret",
+          "passing",
+          "environment",
+          "passing secrets"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_that",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5751645220080824,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:33.346190+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Security - Liz Rice",
+      "chapter": 9,
+      "title": "Segment 9 (pages 79-85)",
+      "chapter_id": "Kubernetes Security - Liz Rice:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "container",
+          "network",
+          "runtime",
+          "protection",
+          "runtime protection"
+        ],
+        "semantic": [],
+        "merged": [
+          "container",
+          "network",
+          "runtime",
+          "protection",
+          "runtime protection"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_that",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49427736697609653,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:33.346232+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

@@ -1,0 +1,199 @@
+{
+  "book": {
+    "title": "everything-is-distributed"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:01:11.904732",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "everything-is-distributed",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-9)",
+      "chapter_id": "everything-is-distributed:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "distributed",
+          "distributed systems",
+          "systems",
+          "testing",
+          "software"
+        ],
+        "semantic": [],
+        "merged": [
+          "distributed",
+          "distributed systems",
+          "systems",
+          "testing",
+          "software"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "distributed_systems_testing",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49898390099088885,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:11.885094+00:00"
+      }
+    },
+    {
+      "book": "everything-is-distributed",
+      "chapter": 2,
+      "title": "Segment 2 (pages 10-18)",
+      "chapter_id": "everything-is-distributed:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "distributed",
+          "run",
+          "systems",
+          "software",
+          "aws"
+        ],
+        "semantic": [],
+        "merged": [
+          "distributed",
+          "run",
+          "systems",
+          "software",
+          "aws"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "distributed_run_systems",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5402593798184642,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:11.885216+00:00"
+      }
+    },
+    {
+      "book": "everything-is-distributed",
+      "chapter": 3,
+      "title": "Segment 3 (pages 19-28)",
+      "chapter_id": "everything-is-distributed:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "devops",
+          "reilly",
+          "promise",
+          "promise theory",
+          "theory"
+        ],
+        "semantic": [],
+        "merged": [
+          "devops",
+          "reilly",
+          "promise",
+          "promise theory",
+          "theory"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "devops_reilly_promise",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5194000896742638,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:11.885245+00:00"
+      }
+    },
+    {
+      "book": "everything-is-distributed",
+      "chapter": 4,
+      "title": "Segment 4 (pages 29-37)",
+      "chapter_id": "everything-is-distributed:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "performance",
+          "site",
+          "user",
+          "user experience",
+          "experience"
+        ],
+        "semantic": [],
+        "merged": [
+          "performance",
+          "site",
+          "user",
+          "user experience",
+          "experience"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "performance_site_user",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4100207293263137,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:11.885272+00:00"
+      }
+    },
+    {
+      "book": "everything-is-distributed",
+      "chapter": 5,
+      "title": "Segment 5 (pages 38-38)",
+      "chapter_id": "everything-is-distributed:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "conversation",
+          "grown years",
+          "invited",
+          "mobile developers",
+          "ago started"
+        ],
+        "semantic": [],
+        "merged": [
+          "conversation",
+          "grown years",
+          "invited",
+          "mobile developers",
+          "ago started"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "conversation_stake_invited",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4689308549440785,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:11.885338+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

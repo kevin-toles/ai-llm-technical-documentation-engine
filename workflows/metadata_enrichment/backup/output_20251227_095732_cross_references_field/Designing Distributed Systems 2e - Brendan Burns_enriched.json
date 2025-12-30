@@ -1,0 +1,697 @@
+{
+  "book": {
+    "title": "Designing Distributed Systems 2e - Brendan Burns"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:45:07.020972",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Designing Distributed Systems 2e - Brendan Burns",
+      "chapter": 1,
+      "title": "Introduction",
+      "chapter_id": "Designing Distributed Systems 2e - Brendan Burns:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "patterns",
+          "distributed",
+          "distributed systems",
+          "systems",
+          "development"
+        ],
+        "semantic": [],
+        "merged": [
+          "patterns",
+          "distributed",
+          "distributed systems",
+          "systems",
+          "development"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_work",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3238041369619919,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:07.007607+00:00"
+      }
+    },
+    {
+      "book": "Designing Distributed Systems 2e - Brendan Burns",
+      "chapter": 2,
+      "title": "Important Distributed System",
+      "chapter_id": "Designing Distributed Systems 2e - Brendan Burns:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "distributed systems",
+          "distributed",
+          "consistency",
+          "application"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "distributed systems",
+          "distributed",
+          "consistency",
+          "application"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_work",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34312081736325234,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:07.007727+00:00"
+      }
+    },
+    {
+      "book": "Designing Distributed Systems 2e - Brendan Burns",
+      "chapter": 3,
+      "title": "The Sidecar Pattern",
+      "chapter_id": "Designing Distributed Systems 2e - Brendan Burns:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "container",
+          "sidecar",
+          "application",
+          "application container",
+          "sidecar container"
+        ],
+        "semantic": [],
+        "merged": [
+          "container",
+          "sidecar",
+          "application",
+          "application container",
+          "sidecar container"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_container_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30137485982844575,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:07.007806+00:00"
+      }
+    },
+    {
+      "book": "Designing Distributed Systems 2e - Brendan Burns",
+      "chapter": 4,
+      "title": "Ambassadors",
+      "chapter_id": "Designing Distributed Systems 2e - Brendan Burns:ch4",
+      "cross_references": [
+        {
+          "target": "Designing Distributed Systems 2e - Brendan Burns:ch7",
+          "score": 0.5891799590449843,
+          "base_score": 0.6578925243342331,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Distributed Systems 2e - Brendan Burns:ch6",
+          "score": 0.5212904001673315,
+          "base_score": 0.5447432595381452,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ambassador",
+          "sharded",
+          "service",
+          "redis",
+          "sharded service"
+        ],
+        "semantic": [],
+        "merged": [
+          "ambassador",
+          "sharded",
+          "service",
+          "redis",
+          "sharded service"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_container_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3966756634423781,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:07.007907+00:00"
+      }
+    },
+    {
+      "book": "Designing Distributed Systems 2e - Brendan Burns",
+      "chapter": 5,
+      "title": "Adapters",
+      "chapter_id": "Designing Distributed Systems 2e - Brendan Burns:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "adapter",
+          "container",
+          "adapter pattern",
+          "adapter container",
+          "monitoring"
+        ],
+        "semantic": [],
+        "merged": [
+          "adapter",
+          "container",
+          "adapter pattern",
+          "adapter container",
+          "monitoring"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_container_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3217824458230233,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:07.007982+00:00"
+      }
+    },
+    {
+      "book": "Designing Distributed Systems 2e - Brendan Burns",
+      "chapter": 6,
+      "title": "Replicated Load-Balanced",
+      "chapter_id": "Designing Distributed Systems 2e - Brendan Burns:ch6",
+      "cross_references": [
+        {
+          "target": "Designing Distributed Systems 2e - Brendan Burns:ch4",
+          "score": 0.5212904001673315,
+          "base_score": 0.5447432595381452,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "service",
+          "replicated",
+          "varnish",
+          "cache",
+          "layer"
+        ],
+        "semantic": [],
+        "merged": [
+          "service",
+          "replicated",
+          "varnish",
+          "cache",
+          "layer"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_container_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3227000040953749,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:07.008066+00:00"
+      }
+    },
+    {
+      "book": "Designing Distributed Systems 2e - Brendan Burns",
+      "chapter": 7,
+      "title": "Sharded Services",
+      "chapter_id": "Designing Distributed Systems 2e - Brendan Burns:ch7",
+      "cross_references": [
+        {
+          "target": "Designing Distributed Systems 2e - Brendan Burns:ch4",
+          "score": 0.5891799590449843,
+          "base_score": 0.6578925243342331,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sharded",
+          "cache",
+          "shard",
+          "sharding",
+          "sharding function"
+        ],
+        "semantic": [],
+        "merged": [
+          "sharded",
+          "cache",
+          "shard",
+          "sharding",
+          "sharding function"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_container_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.373161452803561,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:07.008139+00:00"
+      }
+    },
+    {
+      "book": "Designing Distributed Systems 2e - Brendan Burns",
+      "chapter": 8,
+      "title": "Scatter/Gather",
+      "chapter_id": "Designing Distributed Systems 2e - Brendan Burns:ch8",
+      "cross_references": [
+        {
+          "target": "Designing Distributed Systems 2e - Brendan Burns:ch13",
+          "score": 0.5080876983504549,
+          "base_score": 0.5968128305840915,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "scatter",
+          "scatter gather",
+          "gather",
+          "leaf",
+          "gather pattern"
+        ],
+        "semantic": [],
+        "merged": [
+          "scatter",
+          "scatter gather",
+          "gather",
+          "leaf",
+          "gather pattern"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_work",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40139126314862705,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:07.008209+00:00"
+      }
+    },
+    {
+      "book": "Designing Distributed Systems 2e - Brendan Burns",
+      "chapter": 9,
+      "title": "Functions and Event-Driven",
+      "chapter_id": "Designing Distributed Systems 2e - Brendan Burns:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "faas",
+          "event",
+          "function",
+          "service",
+          "user"
+        ],
+        "semantic": [],
+        "merged": [
+          "faas",
+          "event",
+          "function",
+          "service",
+          "user"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_work",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34568590634009144,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:07.008280+00:00"
+      }
+    },
+    {
+      "book": "Designing Distributed Systems 2e - Brendan Burns",
+      "chapter": 10,
+      "title": "Ownership Election",
+      "chapter_id": "Designing Distributed Systems 2e - Brendan Burns:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "lock",
+          "ttl",
+          "locked",
+          "locks",
+          "unlocked"
+        ],
+        "semantic": [],
+        "merged": [
+          "lock",
+          "ttl",
+          "locked",
+          "locks",
+          "unlocked"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_work",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.18986721689986846,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:07.008349+00:00"
+      }
+    },
+    {
+      "book": "Designing Distributed Systems 2e - Brendan Burns",
+      "chapter": 11,
+      "title": "Work Queue Systems",
+      "chapter_id": "Designing Distributed Systems 2e - Brendan Burns:ch11",
+      "cross_references": [
+        {
+          "target": "Designing Distributed Systems 2e - Brendan Burns:ch12",
+          "score": 0.7375166687925678,
+          "base_score": 0.6934801622733273,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Distributed Systems 2e - Brendan Burns:ch13",
+          "score": 0.5493740253217099,
+          "base_score": 0.5915493014621089,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "work",
+          "work queue",
+          "queue",
+          "work item",
+          "item"
+        ],
+        "semantic": [],
+        "merged": [
+          "work",
+          "work queue",
+          "queue",
+          "work item",
+          "item"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_work",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38661705088061243,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:07.008421+00:00"
+      }
+    },
+    {
+      "book": "Designing Distributed Systems 2e - Brendan Burns",
+      "chapter": 12,
+      "title": "Event-Driven Batch",
+      "chapter_id": "Designing Distributed Systems 2e - Brendan Burns:ch12",
+      "cross_references": [
+        {
+          "target": "Designing Distributed Systems 2e - Brendan Burns:ch11",
+          "score": 0.7375166687925678,
+          "base_score": 0.6934801622733273,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Distributed Systems 2e - Brendan Burns:ch13",
+          "score": 0.6313021993424355,
+          "base_score": 0.7280962581633182,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "work",
+          "queue",
+          "work queue",
+          "queues",
+          "work queues"
+        ],
+        "semantic": [],
+        "merged": [
+          "work",
+          "queue",
+          "work queue",
+          "queues",
+          "work queues"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_work",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3759102055267273,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:07.008502+00:00"
+      }
+    },
+    {
+      "book": "Designing Distributed Systems 2e - Brendan Burns",
+      "chapter": 13,
+      "title": "Coordinated Batch",
+      "chapter_id": "Designing Distributed Systems 2e - Brendan Burns:ch13",
+      "cross_references": [
+        {
+          "target": "Designing Distributed Systems 2e - Brendan Burns:ch12",
+          "score": 0.6313021993424355,
+          "base_score": 0.7280962581633182,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Distributed Systems 2e - Brendan Burns:ch11",
+          "score": 0.5493740253217099,
+          "base_score": 0.5915493014621089,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Distributed Systems 2e - Brendan Burns:ch8",
+          "score": 0.5080876983504549,
+          "base_score": 0.5968128305840915,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "work",
+          "reduce",
+          "output",
+          "reduce pattern",
+          "batch"
+        ],
+        "semantic": [],
+        "merged": [
+          "work",
+          "reduce",
+          "output",
+          "reduce pattern",
+          "batch"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_work",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3835687230396864,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:07.008584+00:00"
+      }
+    },
+    {
+      "book": "Designing Distributed Systems 2e - Brendan Burns",
+      "chapter": 14,
+      "title": "Monitoring and",
+      "chapter_id": "Designing Distributed Systems 2e - Brendan Burns:ch14",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "logging",
+          "request",
+          "requests",
+          "logs",
+          "metrics"
+        ],
+        "semantic": [],
+        "merged": [
+          "logging",
+          "request",
+          "requests",
+          "logs",
+          "metrics"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_work",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26373328214237685,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:07.008655+00:00"
+      }
+    },
+    {
+      "book": "Designing Distributed Systems 2e - Brendan Burns",
+      "chapter": 15,
+      "title": "AI Inference and Serving",
+      "chapter_id": "Designing Distributed Systems 2e - Brendan Burns:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "model",
+          "models",
+          "ai",
+          "inference",
+          "prompt"
+        ],
+        "semantic": [],
+        "merged": [
+          "model",
+          "models",
+          "ai",
+          "inference",
+          "prompt"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_work",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27107419029973395,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:07.008725+00:00"
+      }
+    },
+    {
+      "book": "Designing Distributed Systems 2e - Brendan Burns",
+      "chapter": 16,
+      "title": "Common Failure Patterns",
+      "chapter_id": "Designing Distributed Systems 2e - Brendan Burns:ch16",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "hands",
+          "monitoring",
+          "hands deploying",
+          "hands implementing",
+          "implementing"
+        ],
+        "semantic": [],
+        "merged": [
+          "hands",
+          "monitoring",
+          "hands deploying",
+          "hands implementing",
+          "implementing"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_work",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2954339588681326,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:07.008794+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

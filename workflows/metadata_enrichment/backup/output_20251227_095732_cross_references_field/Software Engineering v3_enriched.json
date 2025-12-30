@@ -1,0 +1,2655 @@
+{
+  "book": {
+    "title": "Software Engineering v3"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:56:56.176469",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Software Engineering v3",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-24)",
+      "chapter_id": "Software Engineering v3:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "problems reading",
+          "research problems",
+          "reading",
+          "summary research",
+          "peter"
+        ],
+        "semantic": [],
+        "merged": [
+          "problems reading",
+          "research problems",
+          "reading",
+          "summary research",
+          "peter"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "security_and_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.279054923334905,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.125379+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 2,
+      "title": "Segment 2 (pages 25-45)",
+      "chapter_id": "Software Engineering v3:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "27",
+          "18",
+          "22",
+          "introduction",
+          "security engineering"
+        ],
+        "semantic": [],
+        "merged": [
+          "27",
+          "18",
+          "22",
+          "introduction",
+          "security engineering"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "security_and_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30653170624132103,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.125705+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 3,
+      "title": "Segment 3 (pages 46-65)",
+      "chapter_id": "Software Engineering v3:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "security engineering",
+          "engineering",
+          "chapter security",
+          "safety",
+          "things"
+        ],
+        "semantic": [],
+        "merged": [
+          "security engineering",
+          "engineering",
+          "chapter security",
+          "safety",
+          "things"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3038069603255152,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.125980+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 4,
+      "title": "Segment 4 (pages 66-86)",
+      "chapter_id": "Software Engineering v3:ch4",
+      "cross_references": [
+        {
+          "target": "Software Engineering v3:ch47",
+          "score": 0.6146624313500831,
+          "base_score": 0.7003633115093978,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Engineering v3:ch5",
+          "score": 0.5117091947589524,
+          "base_score": 0.6028486579315873,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Engineering v3:ch48",
+          "score": 0.5115616969172513,
+          "base_score": 0.6026028281954188,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "chinese",
+          "nsa",
+          "china",
+          "russian",
+          "used"
+        ],
+        "semantic": [],
+        "merged": [
+          "chinese",
+          "nsa",
+          "china",
+          "russian",
+          "used"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3240269756545368,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.126271+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 5,
+      "title": "Segment 5 (pages 87-109)",
+      "chapter_id": "Software Engineering v3:ch5",
+      "cross_references": [
+        {
+          "target": "Software Engineering v3:ch47",
+          "score": 0.5249818572049035,
+          "base_score": 0.6249697620081724,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Engineering v3:ch4",
+          "score": 0.5117091947589524,
+          "base_score": 0.6028486579315873,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "infected",
+          "malware",
+          "email",
+          "spam",
+          "harassment"
+        ],
+        "semantic": [],
+        "merged": [
+          "infected",
+          "malware",
+          "email",
+          "spam",
+          "harassment"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3476819268061616,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.126543+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 6,
+      "title": "Segment 6 (pages 110-132)",
+      "chapter_id": "Software Engineering v3:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "people",
+          "cognitive",
+          "psychology",
+          "social",
+          "use"
+        ],
+        "semantic": [],
+        "merged": [
+          "people",
+          "cognitive",
+          "psychology",
+          "social",
+          "use"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33686175489683373,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:56:56.126833+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 7,
+      "title": "Segment 7 (pages 133-151)",
+      "chapter_id": "Software Engineering v3:ch7",
+      "cross_references": [
+        {
+          "target": "Software Engineering v3:ch8",
+          "score": 0.5485075242977002,
+          "base_score": 0.497512540496167,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Engineering v3:ch25",
+          "score": 0.5355636013433102,
+          "base_score": 0.5685319281647762,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "passwords",
+          "password",
+          "email",
+          "account",
+          "password recovery"
+        ],
+        "semantic": [],
+        "merged": [
+          "passwords",
+          "password",
+          "email",
+          "account",
+          "password recovery"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32562342684613604,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.127103+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 8,
+      "title": "Segment 8 (pages 152-172)",
+      "chapter_id": "Software Engineering v3:ch8",
+      "cross_references": [
+        {
+          "target": "Software Engineering v3:ch7",
+          "score": 0.5485075242977002,
+          "base_score": 0.497512540496167,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Engineering v3:ch25",
+          "score": 0.5031976150039085,
+          "base_score": 0.5886626916731807,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "password",
+          "passwords",
+          "password managers",
+          "key",
+          "user"
+        ],
+        "semantic": [],
+        "merged": [
+          "password",
+          "passwords",
+          "password managers",
+          "key",
+          "user"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26001313821334804,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.127380+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 9,
+      "title": "Segment 9 (pages 173-192)",
+      "chapter_id": "Software Engineering v3:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "protocol",
+          "key",
+          "protocols",
+          "alice",
+          "keys"
+        ],
+        "semantic": [],
+        "merged": [
+          "protocol",
+          "key",
+          "protocols",
+          "alice",
+          "keys"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25426368907273844,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.127646+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 10,
+      "title": "Segment 10 (pages 193-210)",
+      "chapter_id": "Software Engineering v3:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "ciphertext",
+          "key",
+          "cipher",
+          "plaintext",
+          "function"
+        ],
+        "semantic": [],
+        "merged": [
+          "ciphertext",
+          "key",
+          "cipher",
+          "plaintext",
+          "function"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "key_the_block",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.19054726646954698,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.127933+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 11,
+      "title": "Segment 11 (pages 211-232)",
+      "chapter_id": "Software Engineering v3:ch11",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "cipher",
+          "block",
+          "block cipher",
+          "bit",
+          "key"
+        ],
+        "semantic": [],
+        "merged": [
+          "cipher",
+          "block",
+          "block cipher",
+          "bit",
+          "key"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "key_the_block",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2279787549080576,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.128197+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 12,
+      "title": "Segment 12 (pages 233-253)",
+      "chapter_id": "Software Engineering v3:ch12",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "key",
+          "public key",
+          "public",
+          "signature",
+          "keys"
+        ],
+        "semantic": [],
+        "merged": [
+          "key",
+          "public key",
+          "public",
+          "signature",
+          "keys"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "key_the_block",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.18549890811855826,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.128461+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 13,
+      "title": "Segment 13 (pages 254-273)",
+      "chapter_id": "Software Engineering v3:ch13",
+      "cross_references": [
+        {
+          "target": "Software Engineering v3:ch19",
+          "score": 0.5227877732563802,
+          "base_score": 0.45464628876063373,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Engineering v3:ch18",
+          "score": 0.5066159957880326,
+          "base_score": 0.5943599929800543,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "access",
+          "access control",
+          "control",
+          "access controls",
+          "operating access"
+        ],
+        "semantic": [],
+        "merged": [
+          "access",
+          "access control",
+          "control",
+          "access controls",
+          "operating access"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2623919638958256,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.128750+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 14,
+      "title": "Segment 14 (pages 274-294)",
+      "chapter_id": "Software Engineering v3:ch14",
+      "cross_references": [
+        {
+          "target": "Software Engineering v3:ch36",
+          "score": 0.6622422388115173,
+          "base_score": 0.779662990611788,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Engineering v3:ch19",
+          "score": 0.5053226849731957,
+          "base_score": 0.5181304008812521,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "enclave",
+          "attacks",
+          "memory",
+          "access",
+          "sgx"
+        ],
+        "semantic": [],
+        "merged": [
+          "enclave",
+          "attacks",
+          "memory",
+          "access",
+          "sgx"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30104481217764384,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.129014+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 15,
+      "title": "Segment 15 (pages 295-313)",
+      "chapter_id": "Software Engineering v3:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "naming",
+          "names",
+          "bank",
+          "number",
+          "card"
+        ],
+        "semantic": [],
+        "merged": [
+          "naming",
+          "names",
+          "bank",
+          "number",
+          "card"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3422784943630675,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:56:56.129274+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 16,
+      "title": "Segment 16 (pages 314-335)",
+      "chapter_id": "Software Engineering v3:ch16",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "price",
+          "prices",
+          "market",
+          "auction",
+          "bid"
+        ],
+        "semantic": [],
+        "merged": [
+          "price",
+          "prices",
+          "market",
+          "auction",
+          "bid"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_data_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2550072735353861,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.129536+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 17,
+      "title": "Segment 17 (pages 336-357)",
+      "chapter_id": "Software Engineering v3:ch17",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "economics",
+          "economics security",
+          "security dependability",
+          "dependability",
+          "security economics"
+        ],
+        "semantic": [],
+        "merged": [
+          "economics",
+          "economics security",
+          "security dependability",
+          "dependability",
+          "security economics"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24587299086023542,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:56:56.129822+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 18,
+      "title": "Segment 18 (pages 358-376)",
+      "chapter_id": "Software Engineering v3:ch18",
+      "cross_references": [
+        {
+          "target": "Software Engineering v3:ch19",
+          "score": 0.5215718578065978,
+          "base_score": 0.5452123556035889,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Engineering v3:ch13",
+          "score": 0.5066159957880326,
+          "base_score": 0.5943599929800543,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "security policy",
+          "policy",
+          "multilevel",
+          "multilevel security",
+          "secret"
+        ],
+        "semantic": [],
+        "merged": [
+          "security policy",
+          "policy",
+          "multilevel",
+          "multilevel security",
+          "secret"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3446190093792923,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.130089+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 19,
+      "title": "Segment 19 (pages 377-399)",
+      "chapter_id": "Software Engineering v3:ch19",
+      "cross_references": [
+        {
+          "target": "Software Engineering v3:ch13",
+          "score": 0.5227877732563802,
+          "base_score": 0.45464628876063373,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Engineering v3:ch18",
+          "score": 0.5215718578065978,
+          "base_score": 0.5452123556035889,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Engineering v3:ch14",
+          "score": 0.5053226849731957,
+          "base_score": 0.5181304008812521,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "access",
+          "patient",
+          "records",
+          "secret",
+          "access control"
+        ],
+        "semantic": [],
+        "merged": [
+          "access",
+          "patient",
+          "records",
+          "secret",
+          "access control"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34249480045406294,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.130354+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 20,
+      "title": "Segment 20 (pages 400-417)",
+      "chapter_id": "Software Engineering v3:ch20",
+      "cross_references": [
+        {
+          "target": "Software Engineering v3:ch21",
+          "score": 0.750984807195818,
+          "base_score": 0.7159270596120775,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Engineering v3:ch49",
+          "score": 0.6038479476642853,
+          "base_score": 0.5897465794404756,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Engineering v3:ch22",
+          "score": 0.577044520048395,
+          "base_score": 0.6376667926732509,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "health",
+          "data",
+          "records",
+          "privacy",
+          "health record"
+        ],
+        "semantic": [],
+        "merged": [
+          "health",
+          "data",
+          "records",
+          "privacy",
+          "health record"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_data_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32128016126236886,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.130635+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 21,
+      "title": "Segment 21 (pages 418-436)",
+      "chapter_id": "Software Engineering v3:ch21",
+      "cross_references": [
+        {
+          "target": "Software Engineering v3:ch20",
+          "score": 0.750984807195818,
+          "base_score": 0.7159270596120775,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Engineering v3:ch49",
+          "score": 0.6589586570703818,
+          "base_score": 0.6815977617839697,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Engineering v3:ch22",
+          "score": 0.6297228774610116,
+          "base_score": 0.7254640550276119,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "query",
+          "privacy",
+          "queries",
+          "records"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "query",
+          "privacy",
+          "queries",
+          "records"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_data_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29488883700263036,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.130919+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 22,
+      "title": "Segment 22 (pages 437-458)",
+      "chapter_id": "Software Engineering v3:ch22",
+      "cross_references": [
+        {
+          "target": "Software Engineering v3:ch21",
+          "score": 0.6297228774610116,
+          "base_score": 0.7254640550276119,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Engineering v3:ch49",
+          "score": 0.5965388406221248,
+          "base_score": 0.6701573269628006,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Engineering v3:ch20",
+          "score": 0.577044520048395,
+          "base_score": 0.6376667926732509,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "bank",
+          "internal",
+          "bookkeeping",
+          "controls"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "bank",
+          "internal",
+          "bookkeeping",
+          "controls"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_data_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3191408054651989,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.131185+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 23,
+      "title": "Segment 23 (pages 459-478)",
+      "chapter_id": "Software Engineering v3:ch23",
+      "cross_references": [
+        {
+          "target": "Software Engineering v3:ch25",
+          "score": 0.5274428403998757,
+          "base_score": 0.46240473399979287,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "bank",
+          "banks",
+          "pin",
+          "atm",
+          "cards"
+        ],
+        "semantic": [],
+        "merged": [
+          "bank",
+          "banks",
+          "pin",
+          "atm",
+          "cards"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27520605344135796,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.131447+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 24,
+      "title": "Segment 24 (pages 479-499)",
+      "chapter_id": "Software Engineering v3:ch24",
+      "cross_references": [
+        {
+          "target": "Software Engineering v3:ch25",
+          "score": 0.5266664554133249,
+          "base_score": 0.5537033516148009,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "card",
+          "cards",
+          "merchant",
+          "bank",
+          "mag strip"
+        ],
+        "semantic": [],
+        "merged": [
+          "card",
+          "cards",
+          "merchant",
+          "bank",
+          "mag strip"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.172970272920112,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.131740+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 25,
+      "title": "Segment 25 (pages 500-518)",
+      "chapter_id": "Software Engineering v3:ch25",
+      "cross_references": [
+        {
+          "target": "Software Engineering v3:ch7",
+          "score": 0.5355636013433102,
+          "base_score": 0.5685319281647762,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Engineering v3:ch23",
+          "score": 0.5274428403998757,
+          "base_score": 0.46240473399979287,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Engineering v3:ch24",
+          "score": 0.5266664554133249,
+          "base_score": 0.5537033516148009,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Engineering v3:ch8",
+          "score": 0.5031976150039085,
+          "base_score": 0.5886626916731807,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "bank",
+          "payment",
+          "banks",
+          "account",
+          "payments"
+        ],
+        "semantic": [],
+        "merged": [
+          "bank",
+          "payment",
+          "banks",
+          "account",
+          "payments"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3284738858273742,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.132005+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 26,
+      "title": "Segment 26 (pages 519-536)",
+      "chapter_id": "Software Engineering v3:ch26",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "alarms",
+          "locks",
+          "alarm",
+          "locks alarms",
+          "13 locks"
+        ],
+        "semantic": [],
+        "merged": [
+          "alarms",
+          "locks",
+          "alarm",
+          "locks alarms",
+          "13 locks"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2905387157198686,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.132268+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 27,
+      "title": "Segment 27 (pages 537-558)",
+      "chapter_id": "Software Engineering v3:ch27",
+      "cross_references": [
+        {
+          "target": "Software Engineering v3:ch28",
+          "score": 0.5698997831547629,
+          "base_score": 0.6257588978505306,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "meters",
+          "meter",
+          "truck",
+          "smart",
+          "smart meters"
+        ],
+        "semantic": [],
+        "merged": [
+          "meters",
+          "meter",
+          "truck",
+          "smart",
+          "smart meters"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23585191766623642,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.132531+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 28,
+      "title": "Segment 28 (pages 559-576)",
+      "chapter_id": "Software Engineering v3:ch28",
+      "cross_references": [
+        {
+          "target": "Software Engineering v3:ch27",
+          "score": 0.5698997831547629,
+          "base_score": 0.6257588978505306,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "meter",
+          "nuclear",
+          "postage",
+          "weapons",
+          "postal"
+        ],
+        "semantic": [],
+        "merged": [
+          "meter",
+          "nuclear",
+          "postage",
+          "weapons",
+          "postal"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30313014264842636,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.132813+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 29,
+      "title": "Segment 29 (pages 577-598)",
+      "chapter_id": "Software Engineering v3:ch29",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "printing",
+          "nuclear",
+          "security printing",
+          "seals",
+          "16 security"
+        ],
+        "semantic": [],
+        "merged": [
+          "printing",
+          "nuclear",
+          "security printing",
+          "seals",
+          "16 security"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3369125961264709,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.133137+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 30,
+      "title": "Segment 30 (pages 599-617)",
+      "chapter_id": "Software Engineering v3:ch30",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "seals",
+          "recognition",
+          "face recognition",
+          "seal",
+          "face"
+        ],
+        "semantic": [],
+        "merged": [
+          "seals",
+          "recognition",
+          "face recognition",
+          "seal",
+          "face"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.269989118764838,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.133404+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 31,
+      "title": "Segment 31 (pages 618-636)",
+      "chapter_id": "Software Engineering v3:ch31",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "fingerprint",
+          "fingerprints",
+          "prints",
+          "iris",
+          "recognition"
+        ],
+        "semantic": [],
+        "merged": [
+          "fingerprint",
+          "fingerprints",
+          "prints",
+          "iris",
+          "recognition"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27675097336335563,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.133689+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 32,
+      "title": "Segment 32 (pages 637-655)",
+      "chapter_id": "Software Engineering v3:ch32",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "memory",
+          "chip",
+          "pay tv",
+          "attacks",
+          "tv"
+        ],
+        "semantic": [],
+        "merged": [
+          "memory",
+          "chip",
+          "pay tv",
+          "attacks",
+          "tv"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38523526795845603,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.133952+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 33,
+      "title": "Segment 33 (pages 656-675)",
+      "chapter_id": "Software Engineering v3:ch33",
+      "cross_references": [
+        {
+          "target": "Software Engineering v3:ch55",
+          "score": 0.5104157613670437,
+          "base_score": 0.6006929356117395,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "chip",
+          "chips",
+          "memory",
+          "security chips",
+          "key"
+        ],
+        "semantic": [],
+        "merged": [
+          "chip",
+          "chips",
+          "memory",
+          "security chips",
+          "key"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27331270713416067,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.134218+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 34,
+      "title": "Segment 34 (pages 676-697)",
+      "chapter_id": "Software Engineering v3:ch34",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "attacks",
+          "cache",
+          "timing",
+          "rf",
+          "equipment"
+        ],
+        "semantic": [],
+        "merged": [
+          "attacks",
+          "cache",
+          "timing",
+          "rf",
+          "equipment"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3530621251199111,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:56:56.134481+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 35,
+      "title": "Segment 35 (pages 698-716)",
+      "chapter_id": "Software Engineering v3:ch35",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "key",
+          "hsm",
+          "pin",
+          "keys",
+          "signal"
+        ],
+        "semantic": [],
+        "merged": [
+          "key",
+          "hsm",
+          "pin",
+          "keys",
+          "signal"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31394476248868575,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.134762+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 36,
+      "title": "Segment 36 (pages 717-734)",
+      "chapter_id": "Software Engineering v3:ch36",
+      "cross_references": [
+        {
+          "target": "Software Engineering v3:ch14",
+          "score": 0.6622422388115173,
+          "base_score": 0.779662990611788,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "bitcoin",
+          "blockchain",
+          "exchanges",
+          "cryptocurrency",
+          "sgx"
+        ],
+        "semantic": [],
+        "merged": [
+          "bitcoin",
+          "blockchain",
+          "exchanges",
+          "cryptocurrency",
+          "sgx"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3601639201314883,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.135024+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 37,
+      "title": "Segment 37 (pages 735-757)",
+      "chapter_id": "Software Engineering v3:ch37",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "network",
+          "network attack",
+          "21 network",
+          "21",
+          "mail"
+        ],
+        "semantic": [],
+        "merged": [
+          "network",
+          "network attack",
+          "21 network",
+          "21",
+          "mail"
+        ]
+      },
+      "topic_id": 8,
+      "topic_name": "pp_anderson_rj",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3257601019317585,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.135286+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 38,
+      "title": "Segment 38 (pages 758-779)",
+      "chapter_id": "Software Engineering v3:ch38",
+      "cross_references": [
+        {
+          "target": "Software Engineering v3:ch39",
+          "score": 0.5259646605428465,
+          "base_score": 0.45994110090474416,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "phone",
+          "attacks",
+          "phone companies",
+          "network",
+          "attacks phone"
+        ],
+        "semantic": [],
+        "merged": [
+          "phone",
+          "attacks",
+          "phone companies",
+          "network",
+          "attacks phone"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35386101762665445,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.135548+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 39,
+      "title": "Segment 39 (pages 780-800)",
+      "chapter_id": "Software Engineering v3:ch39",
+      "cross_references": [
+        {
+          "target": "Software Engineering v3:ch38",
+          "score": 0.5259646605428465,
+          "base_score": 0.45994110090474416,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "phone",
+          "mobile",
+          "phones",
+          "imsi",
+          "network"
+        ],
+        "semantic": [],
+        "merged": [
+          "phone",
+          "mobile",
+          "phones",
+          "imsi",
+          "network"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34799173516945836,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.135830+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 40,
+      "title": "Segment 40 (pages 801-820)",
+      "chapter_id": "Software Engineering v3:ch40",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "apps",
+          "app",
+          "apple",
+          "android",
+          "traffic"
+        ],
+        "semantic": [],
+        "merged": [
+          "apps",
+          "app",
+          "apple",
+          "android",
+          "traffic"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32131368326204945,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:56:56.136091+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 41,
+      "title": "Segment 41 (pages 821-840)",
+      "chapter_id": "Software Engineering v3:ch41",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "jamming",
+          "radar",
+          "radars",
+          "frequency",
+          "signal"
+        ],
+        "semantic": [],
+        "merged": [
+          "jamming",
+          "radar",
+          "radars",
+          "frequency",
+          "signal"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.20449054639270417,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.136348+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 42,
+      "title": "Segment 42 (pages 841-859)",
+      "chapter_id": "Software Engineering v3:ch42",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "software",
+          "copyright",
+          "license",
+          "free software",
+          "firms like"
+        ],
+        "semantic": [],
+        "merged": [
+          "software",
+          "copyright",
+          "license",
+          "free software",
+          "firms like"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3303212547161498,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.136618+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 43,
+      "title": "Segment 43 (pages 860-881)",
+      "chapter_id": "Software Engineering v3:ch43",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "dvd",
+          "music",
+          "video",
+          "set box",
+          "control words"
+        ],
+        "semantic": [],
+        "merged": [
+          "dvd",
+          "music",
+          "video",
+          "set box",
+          "control words"
+        ]
+      },
+      "topic_id": 9,
+      "topic_name": "the_to_copyright",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21577009329651856,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.136897+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 44,
+      "title": "Segment 44 (pages 882-900)",
+      "chapter_id": "Software Engineering v3:ch44",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "copyright",
+          "marking",
+          "mark",
+          "copyright marking",
+          "marked"
+        ],
+        "semantic": [],
+        "merged": [
+          "copyright",
+          "marking",
+          "mark",
+          "copyright marking",
+          "marked"
+        ]
+      },
+      "topic_id": 9,
+      "topic_name": "the_to_copyright",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.269134171975555,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.137165+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 45,
+      "title": "Segment 45 (pages 901-920)",
+      "chapter_id": "Software Engineering v3:ch45",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "car",
+          "ml",
+          "section",
+          "people",
+          "driver"
+        ],
+        "semantic": [],
+        "merged": [
+          "car",
+          "ml",
+          "section",
+          "people",
+          "driver"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21730481503968732,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:56:56.137428+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 46,
+      "title": "Segment 46 (pages 921-942)",
+      "chapter_id": "Software Engineering v3:ch46",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "vote",
+          "voting",
+          "ballot",
+          "elections",
+          "voter"
+        ],
+        "semantic": [],
+        "merged": [
+          "vote",
+          "voting",
+          "ballot",
+          "elections",
+          "voter"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2879158956993859,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.137707+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 47,
+      "title": "Segment 47 (pages 943-963)",
+      "chapter_id": "Software Engineering v3:ch47",
+      "cross_references": [
+        {
+          "target": "Software Engineering v3:ch4",
+          "score": 0.6146624313500831,
+          "base_score": 0.7003633115093978,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Engineering v3:ch48",
+          "score": 0.5912118558353024,
+          "base_score": 0.6612790189847633,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Engineering v3:ch5",
+          "score": 0.5249818572049035,
+          "base_score": 0.6249697620081724,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "traffic",
+          "intelligence",
+          "nsa",
+          "records"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "traffic",
+          "intelligence",
+          "nsa",
+          "records"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3466120923173366,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.137977+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 48,
+      "title": "Segment 48 (pages 964-986)",
+      "chapter_id": "Software Engineering v3:ch48",
+      "cross_references": [
+        {
+          "target": "Software Engineering v3:ch47",
+          "score": 0.5912118558353024,
+          "base_score": 0.6612790189847633,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Engineering v3:ch4",
+          "score": 0.5115616969172513,
+          "base_score": 0.6026028281954188,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "uk",
+          "police",
+          "material",
+          "data",
+          "law"
+        ],
+        "semantic": [],
+        "merged": [
+          "uk",
+          "police",
+          "material",
+          "data",
+          "law"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3322735624238644,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.138240+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 49,
+      "title": "Segment 49 (pages 987-1007)",
+      "chapter_id": "Software Engineering v3:ch49",
+      "cross_references": [
+        {
+          "target": "Software Engineering v3:ch21",
+          "score": 0.6589586570703818,
+          "base_score": 0.6815977617839697,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Engineering v3:ch20",
+          "score": 0.6038479476642853,
+          "base_score": 0.5897465794404756,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Engineering v3:ch22",
+          "score": 0.5965388406221248,
+          "base_score": 0.6701573269628006,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "data protection",
+          "safety",
+          "privacy",
+          "protection"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "data protection",
+          "safety",
+          "privacy",
+          "protection"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_data_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3546769706619516,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.138507+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 50,
+      "title": "Segment 50 (pages 1008-1027)",
+      "chapter_id": "Software Engineering v3:ch50",
+      "cross_references": [
+        {
+          "target": "Software Engineering v3:ch51",
+          "score": 0.5842663435353002,
+          "base_score": 0.4380629535112145,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "development",
+          "27 secure",
+          "chapter 27",
+          "systems development",
+          "27"
+        ],
+        "semantic": [],
+        "merged": [
+          "development",
+          "27 secure",
+          "chapter 27",
+          "systems development",
+          "27"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29694721510202393,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.138795+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 51,
+      "title": "Segment 51 (pages 1028-1046)",
+      "chapter_id": "Software Engineering v3:ch51",
+      "cross_references": [
+        {
+          "target": "Software Engineering v3:ch50",
+          "score": 0.5842663435353002,
+          "base_score": 0.4380629535112145,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "chapter 27",
+          "27 secure",
+          "systems development",
+          "people",
+          "secure systems"
+        ],
+        "semantic": [],
+        "merged": [
+          "chapter 27",
+          "27 secure",
+          "systems development",
+          "people",
+          "secure systems"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30892195173100884,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.139063+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 52,
+      "title": "Segment 52 (pages 1047-1067)",
+      "chapter_id": "Software Engineering v3:ch52",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "products",
+          "evaluated",
+          "evaluation",
+          "safety",
+          "eal4"
+        ],
+        "semantic": [],
+        "merged": [
+          "products",
+          "evaluated",
+          "evaluation",
+          "safety",
+          "eal4"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36716936619334983,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.139327+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 53,
+      "title": "Segment 53 (pages 1068-1090)",
+      "chapter_id": "Software Engineering v3:ch53",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "safety",
+          "safety security",
+          "car",
+          "testing",
+          "28"
+        ],
+        "semantic": [],
+        "merged": [
+          "safety",
+          "safety security",
+          "car",
+          "testing",
+          "28"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.14117956144653196,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.139591+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 54,
+      "title": "Segment 54 (pages 1091-1110)",
+      "chapter_id": "Software Engineering v3:ch54",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "pp",
+          "rj",
+          "rj anderson",
+          "anderson",
+          "www"
+        ],
+        "semantic": [],
+        "merged": [
+          "pp",
+          "rj",
+          "rj anderson",
+          "anderson",
+          "www"
+        ]
+      },
+      "topic_id": 8,
+      "topic_name": "pp_anderson_rj",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36280532474993005,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.139880+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 55,
+      "title": "Segment 55 (pages 1111-1130)",
+      "chapter_id": "Software Engineering v3:ch55",
+      "cross_references": [
+        {
+          "target": "Software Engineering v3:ch33",
+          "score": 0.5104157613670437,
+          "base_score": 0.6006929356117395,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pp",
+          "journal",
+          "http",
+          "www",
+          "oct"
+        ],
+        "semantic": [],
+        "merged": [
+          "pp",
+          "journal",
+          "http",
+          "www",
+          "oct"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3180778604046307,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.140146+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 56,
+      "title": "Segment 56 (pages 1131-1149)",
+      "chapter_id": "Software Engineering v3:ch56",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "pp",
+          "lncs",
+          "springer lncs",
+          "springer",
+          "ieee"
+        ],
+        "semantic": [],
+        "merged": [
+          "pp",
+          "lncs",
+          "springer lncs",
+          "springer",
+          "ieee"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3073465022988493,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:56:56.140410+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 57,
+      "title": "Segment 57 (pages 1150-1172)",
+      "chapter_id": "Software Engineering v3:ch57",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "pp",
+          "www",
+          "http",
+          "ieee",
+          "acm"
+        ],
+        "semantic": [],
+        "merged": [
+          "pp",
+          "www",
+          "http",
+          "ieee",
+          "acm"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35260560195901464,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:56:56.140696+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 58,
+      "title": "Segment 58 (pages 1173-1191)",
+      "chapter_id": "Software Engineering v3:ch58",
+      "cross_references": [
+        {
+          "target": "Software Engineering v3:ch59",
+          "score": 0.5740182276704547,
+          "base_score": 0.7066970461174245,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Engineering v3:ch60",
+          "score": 0.503766384054403,
+          "base_score": 0.5896106400906718,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "408",
+          "146",
+          "161",
+          "differential",
+          "446"
+        ],
+        "semantic": [],
+        "merged": [
+          "408",
+          "146",
+          "161",
+          "differential",
+          "446"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "security_and_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2794770132133036,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.141577+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 59,
+      "title": "Segment 59 (pages 1192-1210)",
+      "chapter_id": "Software Engineering v3:ch59",
+      "cross_references": [
+        {
+          "target": "Software Engineering v3:ch58",
+          "score": 0.5740182276704547,
+          "base_score": 0.7066970461174245,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Engineering v3:ch60",
+          "score": 0.5656074110885461,
+          "base_score": 0.6186049444068361,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "320",
+          "750",
+          "key",
+          "730",
+          "81"
+        ],
+        "semantic": [],
+        "merged": [
+          "320",
+          "750",
+          "key",
+          "730",
+          "81"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "security_and_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30181721142863105,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.141892+00:00"
+      }
+    },
+    {
+      "book": "Software Engineering v3",
+      "chapter": 60,
+      "title": "Segment 60 (pages 1211-1212)",
+      "chapter_id": "Software Engineering v3:ch60",
+      "cross_references": [
+        {
+          "target": "Software Engineering v3:ch59",
+          "score": 0.5656074110885461,
+          "base_score": 0.6186049444068361,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Software Engineering v3:ch58",
+          "score": 0.503766384054403,
+          "base_score": 0.5896106400906718,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "729",
+          "728",
+          "727",
+          "730",
+          "329"
+        ],
+        "semantic": [],
+        "merged": [
+          "729",
+          "728",
+          "727",
+          "730",
+          "329"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "security_and_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3399725734174341,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:56.142164+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

@@ -1,0 +1,815 @@
+{
+  "book": {
+    "title": "Cloud Native DevOps with Kubernetes - John Arundel"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:43:13.126851",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Cloud Native DevOps with Kubernetes - John Arundel",
+      "chapter": 1,
+      "title": "Revolution in the Cloud",
+      "chapter_id": "Cloud Native DevOps with Kubernetes - John Arundel:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "cloud",
+          "software",
+          "cloud native",
+          "native",
+          "systems"
+        ],
+        "semantic": [],
+        "merged": [
+          "cloud",
+          "software",
+          "cloud native",
+          "native",
+          "systems"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4364882471560092,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:13.000726+00:00"
+      }
+    },
+    {
+      "book": "Cloud Native DevOps with Kubernetes - John Arundel",
+      "chapter": 2,
+      "title": "First Steps with Kubernetes",
+      "chapter_id": "Cloud Native DevOps with Kubernetes - John Arundel:ch2",
+      "cross_references": [
+        {
+          "target": "Cloud Native DevOps with Kubernetes - John Arundel:ch9",
+          "score": 0.6911528812181956,
+          "base_score": 0.735254802030326,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Cloud Native DevOps with Kubernetes - John Arundel:ch3",
+          "score": 0.6427323291087018,
+          "base_score": 0.8212205485145031,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Cloud Native DevOps with Kubernetes - John Arundel:ch4",
+          "score": 0.6063292237670664,
+          "base_score": 0.7605487062784441,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Cloud Native DevOps with Kubernetes - John Arundel:ch10",
+          "score": 0.5146013957477549,
+          "base_score": 0.5335949188388508,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "container",
+          "docker",
+          "image",
+          "container image",
+          "running"
+        ],
+        "semantic": [],
+        "merged": [
+          "container",
+          "docker",
+          "image",
+          "container image",
+          "running"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_container_kubernetes",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5383528095966023,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:13.000886+00:00"
+      }
+    },
+    {
+      "book": "Cloud Native DevOps with Kubernetes - John Arundel",
+      "chapter": 3,
+      "title": "If you already have access to a Kubernetes cluster, that’s great, and if you like, you can use it for the rest of the examples in this chapter",
+      "chapter_id": "Cloud Native DevOps with Kubernetes - John Arundel:ch3",
+      "cross_references": [
+        {
+          "target": "Cloud Native DevOps with Kubernetes - John Arundel:ch2",
+          "score": 0.6427323291087018,
+          "base_score": 0.8212205485145031,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Cloud Native DevOps with Kubernetes - John Arundel:ch4",
+          "score": 0.6364600444210001,
+          "base_score": 0.8107667407016668,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Cloud Native DevOps with Kubernetes - John Arundel:ch9",
+          "score": 0.5899882803647168,
+          "base_score": 0.7333138006078614,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cluster",
+          "managed",
+          "plane",
+          "control plane",
+          "clusters"
+        ],
+        "semantic": [],
+        "merged": [
+          "cluster",
+          "managed",
+          "plane",
+          "control plane",
+          "clusters"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_container_kubernetes",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5854489974086458,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:13.000965+00:00"
+      }
+    },
+    {
+      "book": "Cloud Native DevOps with Kubernetes - John Arundel",
+      "chapter": 4,
+      "title": "Working with Kubernetes Objects",
+      "chapter_id": "Cloud Native DevOps with Kubernetes - John Arundel:ch4",
+      "cross_references": [
+        {
+          "target": "Cloud Native DevOps with Kubernetes - John Arundel:ch3",
+          "score": 0.6364600444210001,
+          "base_score": 0.8107667407016668,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Cloud Native DevOps with Kubernetes - John Arundel:ch2",
+          "score": 0.6063292237670664,
+          "base_score": 0.7605487062784441,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Cloud Native DevOps with Kubernetes - John Arundel:ch9",
+          "score": 0.5890100672726845,
+          "base_score": 0.7316834454544742,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "demo",
+          "deployment",
+          "794889fc8d",
+          "demo 794889fc8d",
+          "pod"
+        ],
+        "semantic": [],
+        "merged": [
+          "demo",
+          "deployment",
+          "794889fc8d",
+          "demo 794889fc8d",
+          "pod"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_container_kubernetes",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6215123385451095,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:13.001058+00:00"
+      }
+    },
+    {
+      "book": "Cloud Native DevOps with Kubernetes - John Arundel",
+      "chapter": 5,
+      "title": ")",
+      "chapter_id": "Cloud Native DevOps with Kubernetes - John Arundel:ch5",
+      "cross_references": [
+        {
+          "target": "Cloud Native DevOps with Kubernetes - John Arundel:ch14",
+          "score": 0.7605233391492973,
+          "base_score": 0.8508722319154953,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Cloud Native DevOps with Kubernetes - John Arundel:ch15",
+          "score": 0.5385381868781242,
+          "base_score": 0.6475636447968736,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "helm",
+          "chart",
+          "charts",
+          "helm chart",
+          "install"
+        ],
+        "semantic": [],
+        "merged": [
+          "helm",
+          "chart",
+          "charts",
+          "helm chart",
+          "install"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_helm",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5447562020567918,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:13.001133+00:00"
+      }
+    },
+    {
+      "book": "Cloud Native DevOps with Kubernetes - John Arundel",
+      "chapter": 6,
+      "title": "Managing Resources",
+      "chapter_id": "Cloud Native DevOps with Kubernetes - John Arundel:ch6",
+      "cross_references": [
+        {
+          "target": "Cloud Native DevOps with Kubernetes - John Arundel:ch8",
+          "score": 0.6040879603708461,
+          "base_score": 0.7568132672847434,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Cloud Native DevOps with Kubernetes - John Arundel:ch7",
+          "score": 0.5012894238711612,
+          "base_score": 0.8354823731186019,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "resource",
+          "probe",
+          "namespace",
+          "readiness",
+          "limits"
+        ],
+        "semantic": [],
+        "merged": [
+          "resource",
+          "probe",
+          "namespace",
+          "readiness",
+          "limits"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5958461164304435,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:13.001218+00:00"
+      }
+    },
+    {
+      "book": "Cloud Native DevOps with Kubernetes - John Arundel",
+      "chapter": 7,
+      "title": "Setting the optimal resource requests and limits is something of an art, and the answer will be different for every kind of workload. Some containers may be idle most of the time, occasionally spiking",
+      "chapter_id": "Cloud Native DevOps with Kubernetes - John Arundel:ch7",
+      "cross_references": [
+        {
+          "target": "Cloud Native DevOps with Kubernetes - John Arundel:ch6",
+          "score": 0.5012894238711612,
+          "base_score": 0.8354823731186019,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "nodes",
+          "node",
+          "pods",
+          "preemptible",
+          "preemptible nodes"
+        ],
+        "semantic": [],
+        "merged": [
+          "nodes",
+          "node",
+          "pods",
+          "preemptible",
+          "preemptible nodes"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5084968585449046,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:13.001308+00:00"
+      }
+    },
+    {
+      "book": "Cloud Native DevOps with Kubernetes - John Arundel",
+      "chapter": 8,
+      "title": "Operating Clusters",
+      "chapter_id": "Cloud Native DevOps with Kubernetes - John Arundel:ch8",
+      "cross_references": [
+        {
+          "target": "Cloud Native DevOps with Kubernetes - John Arundel:ch6",
+          "score": 0.6040879603708461,
+          "base_score": 0.7568132672847434,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "kubectl",
+          "cluster",
+          "nodes",
+          "run",
+          "clusters"
+        ],
+        "semantic": [],
+        "merged": [
+          "kubectl",
+          "cluster",
+          "nodes",
+          "run",
+          "clusters"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5222419980726866,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:13.001385+00:00"
+      }
+    },
+    {
+      "book": "Cloud Native DevOps with Kubernetes - John Arundel",
+      "chapter": 9,
+      "title": "Running Containers",
+      "chapter_id": "Cloud Native DevOps with Kubernetes - John Arundel:ch9",
+      "cross_references": [
+        {
+          "target": "Cloud Native DevOps with Kubernetes - John Arundel:ch2",
+          "score": 0.6911528812181956,
+          "base_score": 0.735254802030326,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Cloud Native DevOps with Kubernetes - John Arundel:ch10",
+          "score": 0.6490589103982596,
+          "base_score": 0.6650981839970994,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Cloud Native DevOps with Kubernetes - John Arundel:ch3",
+          "score": 0.5899882803647168,
+          "base_score": 0.7333138006078614,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Cloud Native DevOps with Kubernetes - John Arundel:ch4",
+          "score": 0.5890100672726845,
+          "base_score": 0.7316834454544742,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "image",
+          "container",
+          "containers",
+          "chapter running",
+          "tag"
+        ],
+        "semantic": [],
+        "merged": [
+          "image",
+          "container",
+          "containers",
+          "chapter running",
+          "tag"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_container_kubernetes",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5719454932328747,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:13.001502+00:00"
+      }
+    },
+    {
+      "book": "Cloud Native DevOps with Kubernetes - John Arundel",
+      "chapter": 10,
+      "title": "for more about these",
+      "chapter_id": "Cloud Native DevOps with Kubernetes - John Arundel:ch10",
+      "cross_references": [
+        {
+          "target": "Cloud Native DevOps with Kubernetes - John Arundel:ch9",
+          "score": 0.6490589103982596,
+          "base_score": 0.6650981839970994,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Cloud Native DevOps with Kubernetes - John Arundel:ch2",
+          "score": 0.5146013957477549,
+          "base_score": 0.5335949188388508,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "root",
+          "volume",
+          "containers",
+          "run root",
+          "container"
+        ],
+        "semantic": [],
+        "merged": [
+          "root",
+          "volume",
+          "containers",
+          "run root",
+          "container"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_container_kubernetes",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.468528081915838,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:13.001593+00:00"
+      }
+    },
+    {
+      "book": "Cloud Native DevOps with Kubernetes - John Arundel",
+      "chapter": 11,
+      "title": "Managing Pods",
+      "chapter_id": "Cloud Native DevOps with Kubernetes - John Arundel:ch11",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "pod",
+          "secrets",
+          "secret",
+          "config",
+          "configmap"
+        ],
+        "semantic": [],
+        "merged": [
+          "pod",
+          "secrets",
+          "secret",
+          "config",
+          "configmap"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5319643207314165,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:13.001666+00:00"
+      }
+    },
+    {
+      "book": "Cloud Native DevOps with Kubernetes - John Arundel",
+      "chapter": 12,
+      "title": "Security, Backups, and Cluster Health",
+      "chapter_id": "Cloud Native DevOps with Kubernetes - John Arundel:ch12",
+      "cross_references": [
+        {
+          "target": "Cloud Native DevOps with Kubernetes - John Arundel:ch13",
+          "score": 0.5176199429037496,
+          "base_score": 0.7886258307655085,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "roles",
+          "role",
+          "cluster",
+          "access",
+          "rbac"
+        ],
+        "semantic": [],
+        "merged": [
+          "roles",
+          "role",
+          "cluster",
+          "access",
+          "rbac"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.475647934728215,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:13.001762+00:00"
+      }
+    },
+    {
+      "book": "Cloud Native DevOps with Kubernetes - John Arundel",
+      "chapter": 13,
+      "title": "and in “GitOps” on page 266",
+      "chapter_id": "Cloud Native DevOps with Kubernetes - John Arundel:ch13",
+      "cross_references": [
+        {
+          "target": "Cloud Native DevOps with Kubernetes - John Arundel:ch12",
+          "score": 0.5176199429037496,
+          "base_score": 0.7886258307655085,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cluster",
+          "security",
+          "velero",
+          "backups",
+          "chapter 11"
+        ],
+        "semantic": [],
+        "merged": [
+          "cluster",
+          "security",
+          "velero",
+          "backups",
+          "chapter 11"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.520729591368604,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:13.001845+00:00"
+      }
+    },
+    {
+      "book": "Cloud Native DevOps with Kubernetes - John Arundel",
+      "chapter": 14,
+      "title": "Deploying Kubernetes Applications",
+      "chapter_id": "Cloud Native DevOps with Kubernetes - John Arundel:ch14",
+      "cross_references": [
+        {
+          "target": "Cloud Native DevOps with Kubernetes - John Arundel:ch5",
+          "score": 0.7605233391492973,
+          "base_score": 0.8508722319154953,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Cloud Native DevOps with Kubernetes - John Arundel:ch15",
+          "score": 0.5213541484447686,
+          "base_score": 0.618923580741281,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "values",
+          "helm",
+          "yaml",
+          "chart",
+          "values yaml"
+        ],
+        "semantic": [],
+        "merged": [
+          "values",
+          "helm",
+          "yaml",
+          "chart",
+          "values yaml"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_helm",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4897739964522583,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:13.001918+00:00"
+      }
+    },
+    {
+      "book": "Cloud Native DevOps with Kubernetes - John Arundel",
+      "chapter": 15,
+      "title": "Development Workflow",
+      "chapter_id": "Cloud Native DevOps with Kubernetes - John Arundel:ch15",
+      "cross_references": [
+        {
+          "target": "Cloud Native DevOps with Kubernetes - John Arundel:ch5",
+          "score": 0.5385381868781242,
+          "base_score": 0.6475636447968736,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Cloud Native DevOps with Kubernetes - John Arundel:ch14",
+          "score": 0.5213541484447686,
+          "base_score": 0.618923580741281,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "build",
+          "cloud build",
+          "pipeline",
+          "cloud",
+          "flux"
+        ],
+        "semantic": [],
+        "merged": [
+          "build",
+          "cloud build",
+          "pipeline",
+          "cloud",
+          "flux"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_helm",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5389816111875678,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:13.001990+00:00"
+      }
+    },
+    {
+      "book": "Cloud Native DevOps with Kubernetes - John Arundel",
+      "chapter": 16,
+      "title": "about metrics in the context of Kubernetes, including what kinds you should focus on, and what you should do with them. For now, let’s complete our survey of observability with a look at tracing",
+      "chapter_id": "Cloud Native DevOps with Kubernetes - John Arundel:ch16",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "metrics",
+          "monitoring",
+          "data",
+          "service",
+          "16"
+        ],
+        "semantic": [],
+        "merged": [
+          "metrics",
+          "monitoring",
+          "data",
+          "service",
+          "16"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3832501618454762,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:13.002062+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

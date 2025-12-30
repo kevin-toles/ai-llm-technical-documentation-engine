@@ -1,0 +1,162 @@
+{
+  "book": {
+    "title": "hadoop-what-you-need-to-know"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:01:26.567904",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "hadoop-what-you-need-to-know",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-11)",
+      "chapter_id": "hadoop-what-you-need-to-know:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "ecosystem",
+          "hadoop need",
+          "core",
+          "need know",
+          "enterprise"
+        ],
+        "semantic": [],
+        "merged": [
+          "ecosystem",
+          "hadoop need",
+          "core",
+          "need know",
+          "enterprise"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "hadoop_data_ecosystem",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6872676794692792,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:26.563985+00:00"
+      }
+    },
+    {
+      "book": "hadoop-what-you-need-to-know",
+      "chapter": 2,
+      "title": "Segment 2 (pages 12-23)",
+      "chapter_id": "hadoop-what-you-need-to-know:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "schema",
+          "process",
+          "number computers",
+          "database",
+          "figure"
+        ],
+        "semantic": [],
+        "merged": [
+          "schema",
+          "process",
+          "number computers",
+          "database",
+          "figure"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_hadoop_schema",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.751770008732084,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:26.564038+00:00"
+      }
+    },
+    {
+      "book": "hadoop-what-you-need-to-know",
+      "chapter": 3,
+      "title": "Segment 3 (pages 24-34)",
+      "chapter_id": "hadoop-what-you-need-to-know:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "file",
+          "hdfs",
+          "map",
+          "reduce",
+          "distributed"
+        ],
+        "semantic": [],
+        "merged": [
+          "file",
+          "hdfs",
+          "map",
+          "reduce",
+          "distributed"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "data_file_hdfs",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7180490320517074,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:26.564077+00:00"
+      }
+    },
+    {
+      "book": "hadoop-what-you-need-to-know",
+      "chapter": 4,
+      "title": "Segment 4 (pages 35-40)",
+      "chapter_id": "hadoop-what-you-need-to-know:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "batch",
+          "map",
+          "large",
+          "disk",
+          "streaming"
+        ],
+        "semantic": [],
+        "merged": [
+          "batch",
+          "map",
+          "large",
+          "disk",
+          "streaming"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "data_mapreduce_batch",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7382334616037205,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:26.564099+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

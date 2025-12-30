@@ -1,0 +1,4401 @@
+{
+  "book": {
+    "title": "Agile Testing"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:39:44.827313",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Agile Testing",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-9)",
+      "chapter_id": "Agile Testing:ch1",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch4",
+          "score": 0.7570050614578742,
+          "base_score": 0.7259608167155045,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch5",
+          "score": 0.710371875564392,
+          "base_score": 0.6482388402263675,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch7",
+          "score": 0.6852029688698337,
+          "base_score": 0.7253382814497228,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch8",
+          "score": 0.6623991805726649,
+          "base_score": 0.7799245602137007,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch6",
+          "score": 0.6370485950363649,
+          "base_score": 0.7376735843198674,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "agile",
+          "book",
+          "lisa janet",
+          "agile testing",
+          "53446"
+        ],
+        "semantic": [],
+        "merged": [
+          "agile",
+          "book",
+          "lisa janet",
+          "agile testing",
+          "53446"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "agile_team_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5781654720383396,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.665817+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 2,
+      "title": "Segment 2 (pages 10-17)",
+      "chapter_id": "Agile Testing:ch2",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch14",
+          "score": 0.6448586674646809,
+          "base_score": 0.7506903717003941,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch16",
+          "score": 0.5160030368663807,
+          "base_score": 0.6100050614439678,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "metrics",
+          "cultural",
+          "summary",
+          "foreword",
+          "tests"
+        ],
+        "semantic": [],
+        "merged": [
+          "metrics",
+          "cultural",
+          "summary",
+          "foreword",
+          "tests"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "metrics_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5958445059648888,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.666227+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 3,
+      "title": "Segment 3 (pages 18-25)",
+      "chapter_id": "Agile Testing:ch3",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch1",
+          "score": 0.5277483324311092,
+          "base_score": 0.712913887385182,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch6",
+          "score": 0.5008897877281328,
+          "base_score": 0.7607422388061471,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "success factor",
+          "factor",
+          "agile",
+          "lisa janet",
+          "products"
+        ],
+        "semantic": [],
+        "merged": [
+          "success factor",
+          "factor",
+          "agile",
+          "lisa janet",
+          "products"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6086000270535887,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:39:44.666852+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 4,
+      "title": "Segment 4 (pages 26-35)",
+      "chapter_id": "Agile Testing:ch4",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch1",
+          "score": 0.7570050614578742,
+          "base_score": 0.7259608167155045,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch5",
+          "score": 0.7175118288787045,
+          "base_score": 0.6601387624168884,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch7",
+          "score": 0.695453601643648,
+          "base_score": 0.74242266940608,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch13",
+          "score": 0.6717029451627133,
+          "base_score": 0.7028382419378555,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch11",
+          "score": 0.6272589483255728,
+          "base_score": 0.6287649138759547,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "agile",
+          "agile testing",
+          "book",
+          "cid chapter",
+          "teams"
+        ],
+        "semantic": [],
+        "merged": [
+          "agile",
+          "agile testing",
+          "book",
+          "cid chapter",
+          "teams"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "agile_team_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49295974507393114,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.667226+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 5,
+      "title": "Segment 5 (pages 36-43)",
+      "chapter_id": "Agile Testing:ch5",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch4",
+          "score": 0.7175118288787045,
+          "base_score": 0.6601387624168884,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch1",
+          "score": 0.710371875564392,
+          "base_score": 0.6482388402263675,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch7",
+          "score": 0.6130254887361317,
+          "base_score": 0.6050424812268863,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch8",
+          "score": 0.591633838385113,
+          "base_score": 0.6619823232344475,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch6",
+          "score": 0.564939803350504,
+          "base_score": 0.6174922648434324,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "thanks",
+          "agile",
+          "book",
+          "agile testing",
+          "mike thomas"
+        ],
+        "semantic": [],
+        "merged": [
+          "thanks",
+          "agile",
+          "book",
+          "agile testing",
+          "mike thomas"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "agile_team_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5006546148202748,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.667555+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 6,
+      "title": "Segment 6 (pages 44-51)",
+      "chapter_id": "Agile Testing:ch6",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch8",
+          "score": 0.755616737878999,
+          "base_score": 0.8426945631316649,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch12",
+          "score": 0.6762463489686311,
+          "base_score": 0.7104105816143852,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch7",
+          "score": 0.6542045108642189,
+          "base_score": 0.7662667773662908,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch1",
+          "score": 0.6370485950363649,
+          "base_score": 0.7376735843198674,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch11",
+          "score": 0.6044212361733707,
+          "base_score": 0.6832946528815438,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "agile",
+          "delivering",
+          "quality",
+          "testers",
+          "agile teams"
+        ],
+        "semantic": [],
+        "merged": [
+          "agile",
+          "delivering",
+          "quality",
+          "testers",
+          "agile teams"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "agile_team_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5830524048818828,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.667931+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 7,
+      "title": "Segment 7 (pages 52-59)",
+      "chapter_id": "Agile Testing:ch7",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch4",
+          "score": 0.695453601643648,
+          "base_score": 0.74242266940608,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch1",
+          "score": 0.6852029688698337,
+          "base_score": 0.7253382814497228,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch13",
+          "score": 0.666568743514175,
+          "base_score": 0.6942812391902917,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch8",
+          "score": 0.656885390839637,
+          "base_score": 0.7707349106586543,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch6",
+          "score": 0.6542045108642189,
+          "base_score": 0.7662667773662908,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "agile",
+          "testing different",
+          "agile team",
+          "projects",
+          "agile testing"
+        ],
+        "semantic": [],
+        "merged": [
+          "agile",
+          "testing different",
+          "agile team",
+          "projects",
+          "agile testing"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "agile_team_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5493410064977702,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.668292+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 8,
+      "title": "Segment 8 (pages 60-67)",
+      "chapter_id": "Agile Testing:ch8",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch6",
+          "score": 0.755616737878999,
+          "base_score": 0.8426945631316649,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch9",
+          "score": 0.6987898075719026,
+          "base_score": 0.6289353935722185,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch13",
+          "score": 0.6765045118276533,
+          "base_score": 0.7108408530460888,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch1",
+          "score": 0.6623991805726649,
+          "base_score": 0.7799245602137007,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch7",
+          "score": 0.656885390839637,
+          "base_score": 0.7707349106586543,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "agile",
+          "agile testers",
+          "testers",
+          "tester",
+          "principles agile"
+        ],
+        "semantic": [],
+        "merged": [
+          "agile",
+          "agile testers",
+          "testers",
+          "tester",
+          "principles agile"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "agile_team_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5794447218095391,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.668650+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 9,
+      "title": "Segment 9 (pages 68-77)",
+      "chapter_id": "Agile Testing:ch9",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch8",
+          "score": 0.6987898075719026,
+          "base_score": 0.6289353935722185,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch13",
+          "score": 0.6314431868025612,
+          "base_score": 0.6357386446709352,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch12",
+          "score": 0.6065006920506356,
+          "base_score": 0.5941678200843927,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch6",
+          "score": 0.5966014836687148,
+          "base_score": 0.5776691394478579,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch7",
+          "score": 0.5960358516530152,
+          "base_score": 0.576726419421692,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "agile",
+          "agile testers",
+          "testers",
+          "agile team",
+          "courage"
+        ],
+        "semantic": [],
+        "merged": [
+          "agile",
+          "agile testers",
+          "testers",
+          "agile team",
+          "courage"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "agile_team_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4444248979506527,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.670139+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 10,
+      "title": "Segment 10 (pages 78-86)",
+      "chapter_id": "Agile Testing:ch10",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch11",
+          "score": 0.7325711026991112,
+          "base_score": 0.8042851711651854,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch12",
+          "score": 0.6787216576923049,
+          "base_score": 0.7145360961538415,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch13",
+          "score": 0.6317443358145958,
+          "base_score": 0.636240559690993,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch8",
+          "score": 0.6283124760443828,
+          "base_score": 0.7231133859998973,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch4",
+          "score": 0.622360123290366,
+          "base_score": 0.6206002054839435,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "agile",
+          "teams",
+          "culture",
+          "development",
+          "organization"
+        ],
+        "semantic": [],
+        "merged": [
+          "agile",
+          "teams",
+          "culture",
+          "development",
+          "organization"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "agile_team_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5213430053850728,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.670496+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 11,
+      "title": "Segment 11 (pages 87-94)",
+      "chapter_id": "Agile Testing:ch11",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch10",
+          "score": 0.7325711026991112,
+          "base_score": 0.8042851711651854,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch12",
+          "score": 0.6924535225458431,
+          "base_score": 0.7374225375764052,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch13",
+          "score": 0.6737825785379855,
+          "base_score": 0.7063042975633091,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch4",
+          "score": 0.6272589483255728,
+          "base_score": 0.6287649138759547,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch8",
+          "score": 0.61629972652536,
+          "base_score": 0.7030921368015259,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "agile",
+          "teams",
+          "barriers",
+          "transition",
+          "adoption"
+        ],
+        "semantic": [],
+        "merged": [
+          "agile",
+          "teams",
+          "barriers",
+          "transition",
+          "adoption"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "agile_team_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5234848046701733,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.670820+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 12,
+      "title": "Segment 12 (pages 95-104)",
+      "chapter_id": "Agile Testing:ch12",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch11",
+          "score": 0.6924535225458431,
+          "base_score": 0.7374225375764052,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch10",
+          "score": 0.6787216576923049,
+          "base_score": 0.7145360961538415,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch6",
+          "score": 0.6762463489686311,
+          "base_score": 0.7104105816143852,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch13",
+          "score": 0.6661831963210038,
+          "base_score": 0.6936386605350063,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch8",
+          "score": 0.6550231965245219,
+          "base_score": 0.6750386608742032,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "testers",
+          "agile",
+          "teams",
+          "training",
+          "managers"
+        ],
+        "semantic": [],
+        "merged": [
+          "testers",
+          "agile",
+          "teams",
+          "training",
+          "managers"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "agile_team_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5268820595194724,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.671151+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 13,
+      "title": "Segment 13 (pages 105-114)",
+      "chapter_id": "Agile Testing:ch13",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch8",
+          "score": 0.6765045118276533,
+          "base_score": 0.7108408530460888,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch11",
+          "score": 0.6737825785379855,
+          "base_score": 0.7063042975633091,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch4",
+          "score": 0.6717029451627133,
+          "base_score": 0.7028382419378555,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch7",
+          "score": 0.666568743514175,
+          "base_score": 0.6942812391902917,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch12",
+          "score": 0.6661831963210038,
+          "base_score": 0.6936386605350063,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "agile team",
+          "agile",
+          "tester",
+          "teams",
+          "project"
+        ],
+        "semantic": [],
+        "merged": [
+          "agile team",
+          "agile",
+          "tester",
+          "teams",
+          "project"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "agile_team_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5528051428985532,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.671471+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 14,
+      "title": "Segment 14 (pages 115-122)",
+      "chapter_id": "Agile Testing:ch14",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch2",
+          "score": 0.6448586674646809,
+          "base_score": 0.7506903717003941,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch16",
+          "score": 0.5024252052362873,
+          "base_score": 0.5873753420604788,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "metrics",
+          "measure",
+          "track",
+          "number",
+          "defect"
+        ],
+        "semantic": [],
+        "merged": [
+          "metrics",
+          "measure",
+          "track",
+          "number",
+          "defect"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "metrics_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5269699574057373,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.671788+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 15,
+      "title": "Segment 15 (pages 123-130)",
+      "chapter_id": "Agile Testing:ch15",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch56",
+          "score": 0.6027942572015358,
+          "base_score": 0.6805830212618189,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch55",
+          "score": 0.5591523531103514,
+          "base_score": 0.6078465144431782,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "defect",
+          "tracking",
+          "defect tracking",
+          "dts",
+          "bug"
+        ],
+        "semantic": [],
+        "merged": [
+          "defect",
+          "tracking",
+          "defect tracking",
+          "dts",
+          "bug"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "bug_bugs_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37132907720937547,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.672144+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 16,
+      "title": "Segment 16 (pages 131-138)",
+      "chapter_id": "Agile Testing:ch16",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch2",
+          "score": 0.5160030368663807,
+          "base_score": 0.6100050614439678,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch14",
+          "score": 0.5024252052362873,
+          "base_score": 0.5873753420604788,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "models",
+          "quality",
+          "standards",
+          "processes",
+          "quality models"
+        ],
+        "semantic": [],
+        "merged": [
+          "models",
+          "quality",
+          "standards",
+          "processes",
+          "quality models"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "metrics_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4451561556072598,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.672464+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 17,
+      "title": "Segment 17 (pages 139-148)",
+      "chapter_id": "Agile Testing:ch17",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch34",
+          "score": 0.6460015860014552,
+          "base_score": 0.7525952359283512,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch18",
+          "score": 0.6241482583045983,
+          "base_score": 0.7161730231002563,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch64",
+          "score": 0.6185939679662288,
+          "base_score": 0.7069158725363072,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch23",
+          "score": 0.5978591618468047,
+          "base_score": 0.7107176506970554,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch35",
+          "score": 0.5590558963059393,
+          "base_score": 0.6076857531024915,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "quadrants",
+          "tests",
+          "testing quadrants",
+          "facing",
+          "facing tests"
+        ],
+        "semantic": [],
+        "merged": [
+          "quadrants",
+          "tests",
+          "testing quadrants",
+          "facing",
+          "facing tests"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_tests_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5712220888517152,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.672835+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 18,
+      "title": "Segment 18 (pages 149-157)",
+      "chapter_id": "Agile Testing:ch18",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch31",
+          "score": 0.6362013353500193,
+          "base_score": 0.6436688922500323,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch17",
+          "score": 0.6241482583045983,
+          "base_score": 0.7161730231002563,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch34",
+          "score": 0.6240797495692996,
+          "base_score": 0.623466249282166,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch20",
+          "score": 0.5371447975791007,
+          "base_score": 0.6095270435842155,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch35",
+          "score": 0.5333361904218039,
+          "base_score": 0.6388936507030065,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tests",
+          "unit",
+          "technology facing",
+          "technology",
+          "tests support"
+        ],
+        "semantic": [],
+        "merged": [
+          "tests",
+          "unit",
+          "technology facing",
+          "technology",
+          "tests support"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_tests_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5069424480260434,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.674365+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 19,
+      "title": "Segment 19 (pages 158-165)",
+      "chapter_id": "Agile Testing:ch19",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch20",
+          "score": 0.5942556762110704,
+          "base_score": 0.6663520529443766,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch27",
+          "score": 0.5797602114387708,
+          "base_score": 0.6421929449905439,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch25",
+          "score": 0.5778701795411005,
+          "base_score": 0.6390428918277602,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch37",
+          "score": 0.5735157920149052,
+          "base_score": 0.6317855792841012,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch67",
+          "score": 0.5622286218855883,
+          "base_score": 0.612973629068573,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tests",
+          "unit",
+          "unit tests",
+          "test process",
+          "build"
+        ],
+        "semantic": [],
+        "merged": [
+          "tests",
+          "unit",
+          "unit tests",
+          "test process",
+          "build"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "tests_test_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5020266670560881,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.674733+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 20,
+      "title": "Segment 20 (pages 166-174)",
+      "chapter_id": "Agile Testing:ch20",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch27",
+          "score": 0.6751114782756934,
+          "base_score": 0.5894715114118698,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch43",
+          "score": 0.6275234940744675,
+          "base_score": 0.7217984160500384,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch38",
+          "score": 0.6220159592548625,
+          "base_score": 0.7126191913506967,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch19",
+          "score": 0.5942556762110704,
+          "base_score": 0.6663520529443766,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch37",
+          "score": 0.5861154155121313,
+          "base_score": 0.652784951779478,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tests",
+          "facing tests",
+          "facing",
+          "technology facing",
+          "technology"
+        ],
+        "semantic": [],
+        "merged": [
+          "tests",
+          "facing tests",
+          "facing",
+          "technology facing",
+          "technology"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "tests_test_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5226513663891019,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.675757+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 21,
+      "title": "Segment 21 (pages 175-182)",
+      "chapter_id": "Agile Testing:ch21",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch53",
+          "score": 0.6828209312555897,
+          "base_score": 0.8139608113519088,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch48",
+          "score": 0.6001369801555717,
+          "base_score": 0.676154226185212,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch22",
+          "score": 0.5896854433272694,
+          "base_score": 0.8161424055454489,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch23",
+          "score": 0.5693319085369201,
+          "base_score": 0.7822198475615335,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "story",
+          "tests",
+          "fit",
+          "fit test",
+          "business"
+        ],
+        "semantic": [],
+        "merged": [
+          "story",
+          "tests",
+          "fit",
+          "fit test",
+          "business"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "tests_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5941832545141775,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.676144+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 22,
+      "title": "Segment 22 (pages 183-191)",
+      "chapter_id": "Agile Testing:ch22",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch21",
+          "score": 0.5896854433272694,
+          "base_score": 0.8161424055454489,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch64",
+          "score": 0.5234551640731875,
+          "base_score": 0.7057586067886459,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "customer tests",
+          "story",
+          "customer",
+          "tests",
+          "cid"
+        ],
+        "semantic": [],
+        "merged": [
+          "customer tests",
+          "story",
+          "customer",
+          "tests",
+          "cid"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5609338196806727,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:39:44.676472+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 23,
+      "title": "Segment 23 (pages 192-200)",
+      "chapter_id": "Agile Testing:ch23",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch27",
+          "score": 0.7670755334044133,
+          "base_score": 0.611792555674022,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch17",
+          "score": 0.5978591618468047,
+          "base_score": 0.7107176506970554,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch21",
+          "score": 0.5693319085369201,
+          "base_score": 0.7822198475615335,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch20",
+          "score": 0.5595497806571951,
+          "base_score": 0.6468686820477061,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "business facing",
+          "facing",
+          "facing tests",
+          "tests",
+          "business"
+        ],
+        "semantic": [],
+        "merged": [
+          "business facing",
+          "facing",
+          "facing tests",
+          "tests",
+          "business"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6303554808444906,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:39:44.676798+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 24,
+      "title": "Segment 24 (pages 201-208)",
+      "chapter_id": "Agile Testing:ch24",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch25",
+          "score": 0.5436099654552841,
+          "base_score": 0.7393499424254735,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tools",
+          "tests",
+          "teams customers",
+          "teams",
+          "customers"
+        ],
+        "semantic": [],
+        "merged": [
+          "tools",
+          "tests",
+          "teams customers",
+          "teams",
+          "customers"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5789357065197298,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:39:44.677147+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 25,
+      "title": "Segment 25 (pages 209-216)",
+      "chapter_id": "Agile Testing:ch25",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch43",
+          "score": 0.6836042606164738,
+          "base_score": 0.7226737676941231,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch40",
+          "score": 0.634903215570106,
+          "base_score": 0.64150535928351,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch38",
+          "score": 0.6315703715088048,
+          "base_score": 0.728543211773934,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch67",
+          "score": 0.6207254917840507,
+          "base_score": 0.710468412232677,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch26",
+          "score": 0.6158305026189823,
+          "base_score": 0.702310096957563,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tools",
+          "gui",
+          "tests",
+          "web",
+          "fit"
+        ],
+        "semantic": [],
+        "merged": [
+          "tools",
+          "gui",
+          "tests",
+          "web",
+          "fit"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "tests_test_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5622196580406392,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.677485+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 26,
+      "title": "Segment 26 (pages 217-224)",
+      "chapter_id": "Agile Testing:ch26",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch43",
+          "score": 0.6559864155239253,
+          "base_score": 0.7692366184658015,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch25",
+          "score": 0.6158305026189823,
+          "base_score": 0.702310096957563,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch38",
+          "score": 0.6043187427859061,
+          "base_score": 0.6831238305691028,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch20",
+          "score": 0.5818411658785465,
+          "base_score": 0.6456612023901701,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch40",
+          "score": 0.5780768312077799,
+          "base_score": 0.6393873112722257,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tests",
+          "strategies writing",
+          "operate",
+          "writing",
+          "strategies"
+        ],
+        "semantic": [],
+        "merged": [
+          "tests",
+          "strategies writing",
+          "operate",
+          "writing",
+          "strategies"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "tests_test_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4785696151776422,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.677840+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 27,
+      "title": "Segment 27 (pages 225-233)",
+      "chapter_id": "Agile Testing:ch27",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch23",
+          "score": 0.7670755334044133,
+          "base_score": 0.611792555674022,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch20",
+          "score": 0.6751114782756934,
+          "base_score": 0.5894715114118698,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch39",
+          "score": 0.602501119616424,
+          "base_score": 0.680094458619966,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch25",
+          "score": 0.5921765720611534,
+          "base_score": 0.6628868793611815,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch67",
+          "score": 0.5869565822273892,
+          "base_score": 0.6541868963049079,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tests",
+          "facing tests",
+          "business facing",
+          "facing",
+          "business"
+        ],
+        "semantic": [],
+        "merged": [
+          "tests",
+          "facing tests",
+          "business facing",
+          "facing",
+          "business"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "tests_test_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46598440240259187,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.678210+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 28,
+      "title": "Segment 28 (pages 234-242)",
+      "chapter_id": "Agile Testing:ch28",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch29",
+          "score": 0.5184586211030358,
+          "base_score": 0.6974310351717263,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "exploratory",
+          "exploratory testing",
+          "exploratory tester",
+          "tester",
+          "testing exploratory"
+        ],
+        "semantic": [],
+        "merged": [
+          "exploratory",
+          "exploratory testing",
+          "exploratory tester",
+          "tester",
+          "testing exploratory"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5459034264770419,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:39:44.678544+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 29,
+      "title": "Segment 29 (pages 243-250)",
+      "chapter_id": "Agile Testing:ch29",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch39",
+          "score": 0.5396730755187028,
+          "base_score": 0.6494551258645047,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch27",
+          "score": 0.5375843727175366,
+          "base_score": 0.6459739545292276,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch44",
+          "score": 0.5371392928028642,
+          "base_score": 0.6452321546714403,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch40",
+          "score": 0.5333370088328512,
+          "base_score": 0.6388950147214187,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch37",
+          "score": 0.5285228946892722,
+          "base_score": 0.6308714911487869,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "based testing",
+          "session based",
+          "exploratory testing",
+          "session",
+          "exploratory"
+        ],
+        "semantic": [],
+        "merged": [
+          "based testing",
+          "session based",
+          "exploratory testing",
+          "session",
+          "exploratory"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "tests_test_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5067032030199194,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.678916+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 30,
+      "title": "Segment 30 (pages 251-258)",
+      "chapter_id": "Agile Testing:ch30",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "reports",
+          "tools",
+          "exploratory",
+          "exploratory testing"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "reports",
+          "tools",
+          "exploratory",
+          "exploratory testing"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4637546625829932,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:39:44.679285+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 31,
+      "title": "Segment 31 (pages 259-266)",
+      "chapter_id": "Agile Testing:ch31",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch18",
+          "score": 0.6362013353500193,
+          "base_score": 0.6436688922500323,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch17",
+          "score": 0.539714899606613,
+          "base_score": 0.6495248326776883,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch34",
+          "score": 0.5133336868015418,
+          "base_score": 0.6055561446692362,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "performance",
+          "ility",
+          "performance testing",
+          "technology facing",
+          "technology"
+        ],
+        "semantic": [],
+        "merged": [
+          "performance",
+          "ility",
+          "performance testing",
+          "technology facing",
+          "technology"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_tests_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5279225888662553,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.679646+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 32,
+      "title": "Segment 32 (pages 267-274)",
+      "chapter_id": "Agile Testing:ch32",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch20",
+          "score": 0.5298485648590665,
+          "base_score": 0.5590068673577033,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch38",
+          "score": 0.526412602786979,
+          "base_score": 0.5532802639042242,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch43",
+          "score": 0.5244659076823356,
+          "base_score": 0.5500357720631519,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch19",
+          "score": 0.5218457351421175,
+          "base_score": 0.5456688178294552,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch41",
+          "score": 0.5184075813816749,
+          "base_score": 0.5399385615620508,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "security",
+          "security testing",
+          "application",
+          "tests",
+          "injection"
+        ],
+        "semantic": [],
+        "merged": [
+          "security",
+          "security testing",
+          "application",
+          "tests",
+          "injection"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "tests_test_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47328838092957776,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.680007+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 33,
+      "title": "Segment 33 (pages 275-282)",
+      "chapter_id": "Agile Testing:ch33",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch68",
+          "score": 0.5089488550707927,
+          "base_score": 0.5982480917846544,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch66",
+          "score": 0.508902922872737,
+          "base_score": 0.5981715381212283,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "performance",
+          "load",
+          "performance load",
+          "load stress",
+          "stress"
+        ],
+        "semantic": [],
+        "merged": [
+          "performance",
+          "load",
+          "performance load",
+          "load stress",
+          "stress"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "tests_test_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4410278030055816,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.680357+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 34,
+      "title": "Segment 34 (pages 283-290)",
+      "chapter_id": "Agile Testing:ch34",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch17",
+          "score": 0.6460015860014552,
+          "base_score": 0.7525952359283512,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch18",
+          "score": 0.6240797495692996,
+          "base_score": 0.623466249282166,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch64",
+          "score": 0.6126439501240459,
+          "base_score": 0.696999176132669,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch35",
+          "score": 0.5617617266271682,
+          "base_score": 0.6862695443786136,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch19",
+          "score": 0.5605932082136749,
+          "base_score": 0.6486077279751723,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tests",
+          "unit",
+          "unit tests",
+          "login",
+          "page"
+        ],
+        "semantic": [],
+        "merged": [
+          "tests",
+          "unit",
+          "unit tests",
+          "login",
+          "page"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_tests_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5533272616601294,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.680684+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 35,
+      "title": "Segment 35 (pages 291-298)",
+      "chapter_id": "Agile Testing:ch35",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch34",
+          "score": 0.5617617266271682,
+          "base_score": 0.6862695443786136,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch17",
+          "score": 0.5590558963059393,
+          "base_score": 0.6076857531024915,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch18",
+          "score": 0.5333361904218039,
+          "base_score": 0.6388936507030065,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "simulator",
+          "summary testing",
+          "quadrants",
+          "embedded",
+          "data"
+        ],
+        "semantic": [],
+        "merged": [
+          "simulator",
+          "summary testing",
+          "quadrants",
+          "embedded",
+          "data"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_tests_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4631495108780835,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.681066+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 36,
+      "title": "Segment 36 (pages 299-306)",
+      "chapter_id": "Agile Testing:ch36",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch37",
+          "score": 0.7290773350453766,
+          "base_score": 0.7984622250756277,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch39",
+          "score": 0.7041270935131512,
+          "base_score": 0.7568784891885852,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch40",
+          "score": 0.6119408740424439,
+          "base_score": 0.6032347900707398,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch20",
+          "score": 0.559786139099186,
+          "base_score": 0.6089028244245691,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch27",
+          "score": 0.5511641791309073,
+          "base_score": 0.5945328911441048,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tests",
+          "automated",
+          "regression",
+          "automate",
+          "safety net"
+        ],
+        "semantic": [],
+        "merged": [
+          "tests",
+          "automated",
+          "regression",
+          "automate",
+          "safety net"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "tests_test_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4455118881145436,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.682237+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 37,
+      "title": "Segment 37 (pages 307-314)",
+      "chapter_id": "Agile Testing:ch37",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch40",
+          "score": 0.8289042345515484,
+          "base_score": 0.6870626131414695,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch38",
+          "score": 0.7370657805507265,
+          "base_score": 0.6927286818702583,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch36",
+          "score": 0.7290773350453766,
+          "base_score": 0.7984622250756277,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch41",
+          "score": 0.7248958840209992,
+          "base_score": 0.6724455209873796,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch39",
+          "score": 0.6963077081776053,
+          "base_score": 0.7438461802960088,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "automate tests",
+          "tests",
+          "automate",
+          "automation",
+          "test automation"
+        ],
+        "semantic": [],
+        "merged": [
+          "automate tests",
+          "tests",
+          "automate",
+          "automation",
+          "test automation"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "tests_test_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5445290408844554,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.682612+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 38,
+      "title": "Segment 38 (pages 315-322)",
+      "chapter_id": "Agile Testing:ch38",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch43",
+          "score": 0.7809395664387553,
+          "base_score": 0.7658516583503063,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch40",
+          "score": 0.7466913705111606,
+          "base_score": 0.7087713318043153,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch37",
+          "score": 0.7370657805507265,
+          "base_score": 0.6927286818702583,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch41",
+          "score": 0.7246606830164318,
+          "base_score": 0.6720535193131005,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch44",
+          "score": 0.713551295918759,
+          "base_score": 0.7725854931979317,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "automation",
+          "pyramid",
+          "test automation",
+          "tests",
+          "layer"
+        ],
+        "semantic": [],
+        "merged": [
+          "automation",
+          "pyramid",
+          "test automation",
+          "tests",
+          "layer"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "tests_test_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5701831799448948,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.682983+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 39,
+      "title": "Segment 39 (pages 323-330)",
+      "chapter_id": "Agile Testing:ch39",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch36",
+          "score": 0.7041270935131512,
+          "base_score": 0.7568784891885852,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch37",
+          "score": 0.6963077081776053,
+          "base_score": 0.7438461802960088,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch40",
+          "score": 0.6896711248363774,
+          "base_score": 0.732785208060629,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch41",
+          "score": 0.6735103444229096,
+          "base_score": 0.7058505740381826,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch38",
+          "score": 0.6718259828884606,
+          "base_score": 0.7030433048141009,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "automation",
+          "automated",
+          "tests",
+          "automating",
+          "testing gui"
+        ],
+        "semantic": [],
+        "merged": [
+          "automation",
+          "automated",
+          "tests",
+          "automating",
+          "testing gui"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "tests_test_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.528049122695343,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.683399+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 40,
+      "title": "Segment 40 (pages 331-340)",
+      "chapter_id": "Agile Testing:ch40",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch37",
+          "score": 0.8289042345515484,
+          "base_score": 0.6870626131414695,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch41",
+          "score": 0.8011053542007893,
+          "base_score": 0.799461304620363,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch38",
+          "score": 0.7466913705111606,
+          "base_score": 0.7087713318043153,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch43",
+          "score": 0.736100722144477,
+          "base_score": 0.6911202511931759,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch39",
+          "score": 0.6896711248363774,
+          "base_score": 0.732785208060629,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "automation",
+          "test automation",
+          "tests",
+          "automate",
+          "gui"
+        ],
+        "semantic": [],
+        "merged": [
+          "automation",
+          "test automation",
+          "tests",
+          "automate",
+          "gui"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "tests_test_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5340433918225841,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.683801+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 41,
+      "title": "Segment 41 (pages 341-348)",
+      "chapter_id": "Agile Testing:ch41",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch40",
+          "score": 0.8011053542007893,
+          "base_score": 0.799461304620363,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch43",
+          "score": 0.7320162922024894,
+          "base_score": 0.6843128679565299,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch37",
+          "score": 0.7248958840209992,
+          "base_score": 0.6724455209873796,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch38",
+          "score": 0.7246606830164318,
+          "base_score": 0.6720535193131005,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch44",
+          "score": 0.7034995484334619,
+          "base_score": 0.7558325807224364,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tests",
+          "tool",
+          "automation",
+          "principles test",
+          "test automation"
+        ],
+        "semantic": [],
+        "merged": [
+          "tests",
+          "tool",
+          "automation",
+          "principles test",
+          "test automation"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "tests_test_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5460043321352427,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.684210+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 42,
+      "title": "Segment 42 (pages 349-356)",
+      "chapter_id": "Agile Testing:ch42",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "database",
+          "data ﬁxture",
+          "ﬁxture",
+          "test data"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "database",
+          "data ﬁxture",
+          "ﬁxture",
+          "test data"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35912331864883096,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:39:44.684576+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 43,
+      "title": "Segment 43 (pages 357-365)",
+      "chapter_id": "Agile Testing:ch43",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch38",
+          "score": 0.7809395664387553,
+          "base_score": 0.7658516583503063,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch40",
+          "score": 0.736100722144477,
+          "base_score": 0.6911202511931759,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch41",
+          "score": 0.7320162922024894,
+          "base_score": 0.6843128679565299,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch37",
+          "score": 0.6957102940441329,
+          "base_score": 0.6238028710259357,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch25",
+          "score": 0.6836042606164738,
+          "base_score": 0.7226737676941231,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "test automation",
+          "automation",
+          "tests",
+          "tools",
+          "source"
+        ],
+        "semantic": [],
+        "merged": [
+          "test automation",
+          "automation",
+          "tests",
+          "tools",
+          "source"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "tests_test_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5409628792524984,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.684942+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 44,
+      "title": "Segment 44 (pages 366-373)",
+      "chapter_id": "Agile Testing:ch44",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch38",
+          "score": 0.713551295918759,
+          "base_score": 0.7725854931979317,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch41",
+          "score": 0.7034995484334619,
+          "base_score": 0.7558325807224364,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch37",
+          "score": 0.6947444252858747,
+          "base_score": 0.741240708809791,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch40",
+          "score": 0.6754272638097236,
+          "base_score": 0.7090454396828727,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch43",
+          "score": 0.659353408608089,
+          "base_score": 0.6822556810134817,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cid",
+          "agile",
+          "test automation",
+          "automation",
+          "cid use"
+        ],
+        "semantic": [],
+        "merged": [
+          "cid",
+          "agile",
+          "test automation",
+          "automation",
+          "cid use"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "tests_test_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5891089084444983,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.685377+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 45,
+      "title": "Segment 45 (pages 374-382)",
+      "chapter_id": "Agile Testing:ch45",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch50",
+          "score": 0.7066068744681666,
+          "base_score": 0.6419638383993252,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch49",
+          "score": 0.6441249008651821,
+          "base_score": 0.6568748347753037,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch52",
+          "score": 0.6021145483834024,
+          "base_score": 0.5868575806390041,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch51",
+          "score": 0.5975009394518019,
+          "base_score": 0.6717608250122624,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "size",
+          "sizing",
+          "stories",
+          "story",
+          "planning"
+        ],
+        "semantic": [],
+        "merged": [
+          "size",
+          "sizing",
+          "stories",
+          "story",
+          "planning"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_iteration_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3918056603131105,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.685766+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 46,
+      "title": "Segment 46 (pages 383-392)",
+      "chapter_id": "Agile Testing:ch46",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch59",
+          "score": 0.6654555651603012,
+          "base_score": 0.6924259419338353,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch62",
+          "score": 0.5921277460691007,
+          "base_score": 0.6628055027077604,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch61",
+          "score": 0.567849776784483,
+          "base_score": 0.6223422205667309,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "planning",
+          "release",
+          "test planning",
+          "time",
+          "need"
+        ],
+        "semantic": [],
+        "merged": [
+          "planning",
+          "release",
+          "test planning",
+          "time",
+          "need"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "release_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5438149114917551,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.686137+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 47,
+      "title": "Segment 47 (pages 393-400)",
+      "chapter_id": "Agile Testing:ch47",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "test matrix",
+          "matrix",
+          "test plan",
+          "test results",
+          "sample test"
+        ],
+        "semantic": [],
+        "merged": [
+          "test matrix",
+          "matrix",
+          "test plan",
+          "test results",
+          "sample test"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.505668710659898,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:39:44.686461+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 48,
+      "title": "Segment 48 (pages 401-408)",
+      "chapter_id": "Agile Testing:ch48",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch21",
+          "score": 0.6001369801555717,
+          "base_score": 0.676154226185212,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch53",
+          "score": 0.5400703104488922,
+          "base_score": 0.5760431100074129,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tests",
+          "coverage",
+          "number",
+          "code coverage",
+          "passing"
+        ],
+        "semantic": [],
+        "merged": [
+          "tests",
+          "coverage",
+          "number",
+          "code coverage",
+          "passing"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "tests_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5007747548734137,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.686777+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 49,
+      "title": "Segment 49 (pages 409-416)",
+      "chapter_id": "Agile Testing:ch49",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch52",
+          "score": 0.659316425006138,
+          "base_score": 0.6821940416768967,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch51",
+          "score": 0.6522366100231525,
+          "base_score": 0.8370610167052541,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch45",
+          "score": 0.6441249008651821,
+          "base_score": 0.6568748347753037,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch57",
+          "score": 0.6083707220405944,
+          "base_score": 0.6898771293269166,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch58",
+          "score": 0.5866433199417453,
+          "base_score": 0.6536647924955016,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "planning",
+          "iteration",
+          "stories",
+          "iteration planning",
+          "planning meeting"
+        ],
+        "semantic": [],
+        "merged": [
+          "planning",
+          "iteration",
+          "stories",
+          "iteration planning",
+          "planning meeting"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_iteration_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.518631351658104,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.687116+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 50,
+      "title": "Segment 50 (pages 417-424)",
+      "chapter_id": "Agile Testing:ch50",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch45",
+          "score": 0.7066068744681666,
+          "base_score": 0.6419638383993252,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch52",
+          "score": 0.6083426197023186,
+          "base_score": 0.4781900804562454,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch49",
+          "score": 0.5732250011277488,
+          "base_score": 0.5387083352129146,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch51",
+          "score": 0.5589550329451607,
+          "base_score": 0.6075176475011937,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch58",
+          "score": 0.5230460084928845,
+          "base_score": 0.5476692734140667,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "stories",
+          "story",
+          "iteration",
+          "size",
+          "ﬂesh"
+        ],
+        "semantic": [],
+        "merged": [
+          "stories",
+          "story",
+          "iteration",
+          "size",
+          "ﬂesh"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_iteration_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3724227430765575,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.687435+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 51,
+      "title": "Segment 51 (pages 425-434)",
+      "chapter_id": "Agile Testing:ch51",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch49",
+          "score": 0.6522366100231525,
+          "base_score": 0.8370610167052541,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch52",
+          "score": 0.6431078481113506,
+          "base_score": 0.6551797468522511,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch45",
+          "score": 0.5975009394518019,
+          "base_score": 0.6717608250122624,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch57",
+          "score": 0.5690022675963875,
+          "base_score": 0.6983371126606458,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch58",
+          "score": 0.5604124591653744,
+          "base_score": 0.6840207652756239,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cards",
+          "task",
+          "task cards",
+          "cost",
+          "story"
+        ],
+        "semantic": [],
+        "merged": [
+          "cards",
+          "task",
+          "task cards",
+          "cost",
+          "story"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_iteration_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.549846764904506,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.687749+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 52,
+      "title": "Segment 52 (pages 435-442)",
+      "chapter_id": "Agile Testing:ch52",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch49",
+          "score": 0.659316425006138,
+          "base_score": 0.6821940416768967,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch51",
+          "score": 0.6431078481113506,
+          "base_score": 0.6551797468522511,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch50",
+          "score": 0.6083426197023186,
+          "base_score": 0.4781900804562454,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch45",
+          "score": 0.6021145483834024,
+          "base_score": 0.5868575806390041,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch57",
+          "score": 0.572591805037286,
+          "base_score": 0.6302456009880693,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "stories",
+          "story",
+          "iteration",
+          "high level",
+          "task cards"
+        ],
+        "semantic": [],
+        "merged": [
+          "stories",
+          "story",
+          "iteration",
+          "high level",
+          "task cards"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_iteration_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5032558305507225,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.688076+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 53,
+      "title": "Segment 53 (pages 443-450)",
+      "chapter_id": "Agile Testing:ch53",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch21",
+          "score": 0.6828209312555897,
+          "base_score": 0.8139608113519088,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch48",
+          "score": 0.5400703104488922,
+          "base_score": 0.5760431100074129,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "high level",
+          "tests",
+          "level tests",
+          "high",
+          "level"
+        ],
+        "semantic": [],
+        "merged": [
+          "high level",
+          "tests",
+          "level tests",
+          "high",
+          "level"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "tests_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5234862269138743,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.688394+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 54,
+      "title": "Segment 54 (pages 451-458)",
+      "chapter_id": "Agile Testing:ch54",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "tammy",
+          "patty",
+          "story",
+          "coding testing",
+          "coding"
+        ],
+        "semantic": [],
+        "merged": [
+          "tammy",
+          "patty",
+          "story",
+          "coding testing",
+          "coding"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42550440191556615,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:39:44.688754+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 55,
+      "title": "Segment 55 (pages 459-468)",
+      "chapter_id": "Agile Testing:ch55",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch56",
+          "score": 0.6488666341752697,
+          "base_score": 0.6647777236254495,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch15",
+          "score": 0.5591523531103514,
+          "base_score": 0.6078465144431782,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "bugs",
+          "bug",
+          "log",
+          "ﬁx",
+          "log bug"
+        ],
+        "semantic": [],
+        "merged": [
+          "bugs",
+          "bug",
+          "log",
+          "ﬁx",
+          "log bug"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "bug_bugs_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4502854033676017,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.689121+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 56,
+      "title": "Segment 56 (pages 469-476)",
+      "chapter_id": "Agile Testing:ch56",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch55",
+          "score": 0.6488666341752697,
+          "base_score": 0.6647777236254495,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch15",
+          "score": 0.6027942572015358,
+          "base_score": 0.6805830212618189,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "bug",
+          "build",
+          "bug report",
+          "bugs",
+          "communication"
+        ],
+        "semantic": [],
+        "merged": [
+          "bug",
+          "build",
+          "bug report",
+          "bugs",
+          "communication"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "bug_bugs_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.532737161995275,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.689440+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 57,
+      "title": "Segment 57 (pages 477-484)",
+      "chapter_id": "Agile Testing:ch57",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch49",
+          "score": 0.6083707220405944,
+          "base_score": 0.6898771293269166,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch52",
+          "score": 0.572591805037286,
+          "base_score": 0.6302456009880693,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch51",
+          "score": 0.5690022675963875,
+          "base_score": 0.6983371126606458,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch58",
+          "score": 0.5671170334821812,
+          "base_score": 0.6211209817295613,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cid",
+          "coding",
+          "iteration",
+          "metrics",
+          "cid coding"
+        ],
+        "semantic": [],
+        "merged": [
+          "cid",
+          "coding",
+          "iteration",
+          "metrics",
+          "cid coding"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_iteration_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.488414835341863,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.689759+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 58,
+      "title": "Segment 58 (pages 485-492)",
+      "chapter_id": "Agile Testing:ch58",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch49",
+          "score": 0.5866433199417453,
+          "base_score": 0.6536647924955016,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch57",
+          "score": 0.5671170334821812,
+          "base_score": 0.6211209817295613,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch51",
+          "score": 0.5604124591653744,
+          "base_score": 0.6840207652756239,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch50",
+          "score": 0.5230460084928845,
+          "base_score": 0.5476692734140667,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch52",
+          "score": 0.5183830676642793,
+          "base_score": 0.5398977053663914,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "iteration",
+          "items",
+          "retrospectives",
+          "stop",
+          "start stop"
+        ],
+        "semantic": [],
+        "merged": [
+          "iteration",
+          "items",
+          "retrospectives",
+          "stop",
+          "start stop"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_iteration_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4818912709527274,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.690093+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 59,
+      "title": "Segment 59 (pages 493-502)",
+      "chapter_id": "Agile Testing:ch59",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch46",
+          "score": 0.6654555651603012,
+          "base_score": 0.6924259419338353,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch62",
+          "score": 0.6427433557024607,
+          "base_score": 0.7471648520966937,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch61",
+          "score": 0.5890631133872838,
+          "base_score": 0.6576977815713989,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "end game",
+          "game",
+          "staging",
+          "release",
+          "time"
+        ],
+        "semantic": [],
+        "merged": [
+          "end game",
+          "game",
+          "staging",
+          "release",
+          "time"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "release_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5448325791633061,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.690433+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 60,
+      "title": "Segment 60 (pages 503-511)",
+      "chapter_id": "Agile Testing:ch60",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "release",
+          "uat",
+          "staging",
+          "production",
+          "database"
+        ],
+        "semantic": [],
+        "merged": [
+          "release",
+          "uat",
+          "staging",
+          "production",
+          "database"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42783515071580264,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:39:44.690755+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 61,
+      "title": "Segment 61 (pages 512-519)",
+      "chapter_id": "Agile Testing:ch61",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch62",
+          "score": 0.6059614117843896,
+          "base_score": 0.6858616122332418,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch59",
+          "score": 0.5890631133872838,
+          "base_score": 0.6576977815713989,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch46",
+          "score": 0.567849776784483,
+          "base_score": 0.6223422205667309,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "release",
+          "criteria",
+          "production support",
+          "releases",
+          "production"
+        ],
+        "semantic": [],
+        "merged": [
+          "release",
+          "criteria",
+          "production support",
+          "releases",
+          "production"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "release_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45266064205905077,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.691094+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 62,
+      "title": "Segment 62 (pages 520-527)",
+      "chapter_id": "Agile Testing:ch62",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch59",
+          "score": 0.6427433557024607,
+          "base_score": 0.7471648520966937,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch61",
+          "score": 0.6059614117843896,
+          "base_score": 0.6858616122332418,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch46",
+          "score": 0.5921277460691007,
+          "base_score": 0.6628055027077604,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cid",
+          "success factors",
+          "release",
+          "factors",
+          "cid key"
+        ],
+        "semantic": [],
+        "merged": [
+          "cid",
+          "success factors",
+          "release",
+          "factors",
+          "cid key"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "release_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5317171942989477,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.691415+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 63,
+      "title": "Segment 63 (pages 528-535)",
+      "chapter_id": "Agile Testing:ch63",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "agile",
+          "code",
+          "feedback",
+          "tests",
+          "story"
+        ],
+        "semantic": [],
+        "merged": [
+          "agile",
+          "code",
+          "feedback",
+          "tests",
+          "story"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5162330612570035,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:39:44.691737+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 64,
+      "title": "Segment 64 (pages 536-543)",
+      "chapter_id": "Agile Testing:ch64",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch17",
+          "score": 0.6185939679662288,
+          "base_score": 0.7069158725363072,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch34",
+          "score": 0.6126439501240459,
+          "base_score": 0.696999176132669,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch18",
+          "score": 0.5245248943708932,
+          "base_score": 0.550134083210748,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch22",
+          "score": 0.5234551640731875,
+          "base_score": 0.7057586067886459,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "story",
+          "tests",
+          "behavior",
+          "verify",
+          "development"
+        ],
+        "semantic": [],
+        "merged": [
+          "story",
+          "tests",
+          "behavior",
+          "verify",
+          "development"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_tests_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5085742429269773,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.692069+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 65,
+      "title": "Segment 65 (pages 544-551)",
+      "chapter_id": "Agile Testing:ch65",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch1",
+          "score": 0.5577289678848977,
+          "base_score": 0.6795482798081629,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch6",
+          "score": 0.5313236125804652,
+          "base_score": 0.6355393543007753,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch8",
+          "score": 0.5183367376176566,
+          "base_score": 0.6138945626960944,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "com",
+          "http",
+          "www",
+          "html",
+          "pdf"
+        ],
+        "semantic": [],
+        "merged": [
+          "com",
+          "http",
+          "www",
+          "html",
+          "pdf"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "agile_team_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5200192556275275,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.692390+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 66,
+      "title": "Segment 66 (pages 552-559)",
+      "chapter_id": "Agile Testing:ch66",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch68",
+          "score": 0.6237909034286521,
+          "base_score": 0.78965150571442,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch67",
+          "score": 0.5898386104440886,
+          "base_score": 0.6589902766660736,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch25",
+          "score": 0.568418984386535,
+          "base_score": 0.6232908999034844,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch69",
+          "score": 0.5674623604538458,
+          "base_score": 0.6957706007564096,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch43",
+          "score": 0.5454626336806068,
+          "base_score": 0.5850303153936038,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tests",
+          "212",
+          "470",
+          "406",
+          "475"
+        ],
+        "semantic": [],
+        "merged": [
+          "tests",
+          "212",
+          "470",
+          "406",
+          "475"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "tests_test_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49024524510745765,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.692727+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 67,
+      "title": "Segment 67 (pages 560-567)",
+      "chapter_id": "Agile Testing:ch67",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch68",
+          "score": 0.653007890158115,
+          "base_score": 0.7642724095227842,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch25",
+          "score": 0.6207254917840507,
+          "base_score": 0.710468412232677,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch66",
+          "score": 0.5898386104440886,
+          "base_score": 0.6589902766660736,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch27",
+          "score": 0.5869565822273892,
+          "base_score": 0.6541868963049079,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch38",
+          "score": 0.5761434311818687,
+          "base_score": 0.6361649778957071,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "overview",
+          "434",
+          "tests",
+          "deﬁnition",
+          "237"
+        ],
+        "semantic": [],
+        "merged": [
+          "overview",
+          "434",
+          "tests",
+          "deﬁnition",
+          "237"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "tests_test_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4711886212591115,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.693087+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 68,
+      "title": "Segment 68 (pages 568-575)",
+      "chapter_id": "Agile Testing:ch68",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch67",
+          "score": 0.653007890158115,
+          "base_score": 0.7642724095227842,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch66",
+          "score": 0.6237909034286521,
+          "base_score": 0.78965150571442,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch43",
+          "score": 0.6204816218928516,
+          "base_score": 0.7100619624140119,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch25",
+          "score": 0.5799214212615247,
+          "base_score": 0.642461628028467,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch69",
+          "score": 0.5725940369019756,
+          "base_score": 0.7043233948366261,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "overview",
+          "179",
+          "126",
+          "tools",
+          "165"
+        ],
+        "semantic": [],
+        "merged": [
+          "overview",
+          "179",
+          "126",
+          "tools",
+          "165"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "tests_test_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5163123299994848,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.693438+00:00"
+      }
+    },
+    {
+      "book": "Agile Testing",
+      "chapter": 69,
+      "title": "Segment 69 (pages 576-577)",
+      "chapter_id": "Agile Testing:ch69",
+      "cross_references": [
+        {
+          "target": "Agile Testing:ch68",
+          "score": 0.5725940369019756,
+          "base_score": 0.7043233948366261,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch66",
+          "score": 0.5674623604538458,
+          "base_score": 0.6957706007564096,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Agile Testing:ch26",
+          "score": 0.5063144595818366,
+          "base_score": 0.5938574326363945,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "398",
+          "compared",
+          "online",
+          "development compared",
+          "12 13"
+        ],
+        "semantic": [],
+        "merged": [
+          "398",
+          "compared",
+          "online",
+          "development compared",
+          "12 13"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "tests_test_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4847258624964827,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:44.693753+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

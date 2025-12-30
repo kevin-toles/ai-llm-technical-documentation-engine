@@ -1,0 +1,1447 @@
+{
+  "book": {
+    "title": "More Effective C++"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:52:47.168740",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "More Effective C++",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-8)",
+      "chapter_id": "More Effective C++:ch1",
+      "cross_references": [
+        {
+          "target": "More Effective C++:ch30",
+          "score": 0.5884542946669552,
+          "base_score": 0.7307571577782587,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "More Effective C++:ch3",
+          "score": 0.5753729963933083,
+          "base_score": 0.7089549939888472,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "effective",
+          "improve",
+          "ways improve",
+          "improve programs",
+          "designs"
+        ],
+        "semantic": [],
+        "merged": [
+          "effective",
+          "improve",
+          "ways improve",
+          "improve programs",
+          "designs"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_auto_ptr_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3736713702924058,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:47.147558+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 2,
+      "title": "Segment 2 (pages 9-16)",
+      "chapter_id": "More Effective C++:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "item",
+          "item item",
+          "column",
+          "report",
+          "book"
+        ],
+        "semantic": [],
+        "merged": [
+          "item",
+          "item item",
+          "column",
+          "report",
+          "book"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "gameobject_the_function",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4442361108714166,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:47.147720+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 3,
+      "title": "Segment 3 (pages 17-24)",
+      "chapter_id": "More Effective C++:ch3",
+      "cross_references": [
+        {
+          "target": "More Effective C++:ch1",
+          "score": 0.5753729963933083,
+          "base_score": 0.7089549939888472,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "More Effective C++:ch30",
+          "score": 0.567200258303335,
+          "base_score": 0.6953337638388917,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "features",
+          "type",
+          "language",
+          "bool",
+          "items"
+        ],
+        "semantic": [],
+        "merged": [
+          "features",
+          "type",
+          "language",
+          "bool",
+          "items"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_auto_ptr_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3753895605756218,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:47.147912+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 4,
+      "title": "Segment 4 (pages 25-32)",
+      "chapter_id": "More Effective C++:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "cast",
+          "casts",
+          "const_cast",
+          "references",
+          "casting"
+        ],
+        "semantic": [],
+        "merged": [
+          "cast",
+          "casts",
+          "const_cast",
+          "references",
+          "casting"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "to_the_string",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3994215940934831,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:47.148060+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 5,
+      "title": "Segment 5 (pages 33-40)",
+      "chapter_id": "More Effective C++:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "array",
+          "equipmentpiece",
+          "objects",
+          "array array",
+          "bst"
+        ],
+        "semantic": [],
+        "merged": [
+          "array",
+          "equipmentpiece",
+          "objects",
+          "array array",
+          "bst"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "gameobject_the_function",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30474865490563097,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:47.148207+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 6,
+      "title": "Segment 6 (pages 41-51)",
+      "chapter_id": "More Effective C++:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "int",
+          "array int",
+          "array",
+          "conversion",
+          "implicit"
+        ],
+        "semantic": [],
+        "merged": [
+          "int",
+          "array int",
+          "array",
+          "conversion",
+          "implicit"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33372649110638014,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:52:47.148353+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 7,
+      "title": "Segment 7 (pages 52-60)",
+      "chapter_id": "More Effective C++:ch7",
+      "cross_references": [
+        {
+          "target": "More Effective C++:ch24",
+          "score": 0.5299876091852964,
+          "base_score": 0.55923860790142,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "operator",
+          "new",
+          "operator new",
+          "new operator",
+          "memory"
+        ],
+        "semantic": [],
+        "merged": [
+          "operator",
+          "new",
+          "operator new",
+          "new operator",
+          "memory"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "to_the_string",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3887782656947278,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:47.148501+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 8,
+      "title": "Segment 8 (pages 61-75)",
+      "chapter_id": "More Effective C++:ch8",
+      "cross_references": [
+        {
+          "target": "More Effective C++:ch9",
+          "score": 0.5403057346307809,
+          "base_score": 0.6147952720036824,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "bookentry",
+          "exception",
+          "auto_ptr",
+          "exceptions",
+          "thrown"
+        ],
+        "semantic": [],
+        "merged": [
+          "bookentry",
+          "exception",
+          "auto_ptr",
+          "exceptions",
+          "thrown"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3424590542284967,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:52:47.148666+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 9,
+      "title": "Segment 9 (pages 76-97)",
+      "chapter_id": "More Effective C++:ch9",
+      "cross_references": [
+        {
+          "target": "More Effective C++:ch8",
+          "score": 0.5403057346307809,
+          "base_score": 0.6147952720036824,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "exception",
+          "exceptions",
+          "catch",
+          "throw",
+          "thrown"
+        ],
+        "semantic": [],
+        "merged": [
+          "exception",
+          "exceptions",
+          "catch",
+          "throw",
+          "thrown"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30847061753995614,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:52:47.148848+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 10,
+      "title": "Segment 10 (pages 98-107)",
+      "chapter_id": "More Effective C++:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "string",
+          "largeobject",
+          "data",
+          "program",
+          "const"
+        ],
+        "semantic": [],
+        "merged": [
+          "string",
+          "largeobject",
+          "data",
+          "program",
+          "const"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_auto_ptr_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31688795228829636,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:47.148996+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 11,
+      "title": "Segment 11 (pages 108-115)",
+      "chapter_id": "More Effective C++:ch11",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "evaluation",
+          "lazy evaluation",
+          "lazy",
+          "m3",
+          "computations"
+        ],
+        "semantic": [],
+        "merged": [
+          "evaluation",
+          "lazy evaluation",
+          "lazy",
+          "m3",
+          "computations"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "operator_heap_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25515816431362515,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:47.149141+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 12,
+      "title": "Segment 12 (pages 116-123)",
+      "chapter_id": "More Effective C++:ch12",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "temporary",
+          "object",
+          "temporary objects",
+          "objects",
+          "return"
+        ],
+        "semantic": [],
+        "merged": [
+          "temporary",
+          "object",
+          "temporary objects",
+          "objects",
+          "return"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "to_the_string",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39887703949909425,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:47.149286+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 13,
+      "title": "Segment 13 (pages 124-132)",
+      "chapter_id": "More Effective C++:ch13",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "c1",
+          "virtual",
+          "c2",
+          "vtbl",
+          "versions"
+        ],
+        "semantic": [],
+        "merged": [
+          "c1",
+          "virtual",
+          "c2",
+          "vtbl",
+          "versions"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "to_the_string",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3799521118464026,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:47.149434+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 14,
+      "title": "Segment 14 (pages 133-140)",
+      "chapter_id": "More Effective C++:ch14",
+      "cross_references": [
+        {
+          "target": "More Effective C++:ch29",
+          "score": 0.5100158258889355,
+          "base_score": 0.6000263764815592,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "virtual",
+          "virtual base",
+          "virtual functions",
+          "base",
+          "virtual function"
+        ],
+        "semantic": [],
+        "merged": [
+          "virtual",
+          "virtual base",
+          "virtual functions",
+          "base",
+          "virtual function"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_class_printer",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3698200489100628,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:47.149584+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 15,
+      "title": "Segment 15 (pages 141-151)",
+      "chapter_id": "More Effective C++:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "printer",
+          "virtual",
+          "virtual copy",
+          "theprinter",
+          "copy"
+        ],
+        "semantic": [],
+        "merged": [
+          "printer",
+          "virtual",
+          "virtual copy",
+          "theprinter",
+          "copy"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_class_printer",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3485275556944152,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:47.149729+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 16,
+      "title": "Segment 16 (pages 152-161)",
+      "chapter_id": "More Effective C++:ch16",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "printer",
+          "counted printer",
+          "counted",
+          "printer printer",
+          "class printer"
+        ],
+        "semantic": [],
+        "merged": [
+          "printer",
+          "counted printer",
+          "counted",
+          "printer printer",
+          "class printer"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_class_printer",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31496484598993896,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:47.149889+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 17,
+      "title": "Segment 17 (pages 162-169)",
+      "chapter_id": "More Effective C++:ch17",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "heap",
+          "upnumber",
+          "object",
+          "objects",
+          "heap based"
+        ],
+        "semantic": [],
+        "merged": [
+          "heap",
+          "upnumber",
+          "object",
+          "objects",
+          "heap based"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "operator_heap_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3342401120742426,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:47.150039+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 18,
+      "title": "Segment 18 (pages 170-177)",
+      "chapter_id": "More Effective C++:ch18",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "operator new",
+          "operator",
+          "new",
+          "smart",
+          "heaptracked"
+        ],
+        "semantic": [],
+        "merged": [
+          "operator new",
+          "operator",
+          "new",
+          "smart",
+          "heaptracked"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3945402406303084,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:52:47.150187+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 19,
+      "title": "Segment 19 (pages 178-189)",
+      "chapter_id": "More Effective C++:ch19",
+      "cross_references": [
+        {
+          "target": "More Effective C++:ch20",
+          "score": 0.6157558237630953,
+          "base_score": 0.609593039605159,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "More Effective C++:ch22",
+          "score": 0.552323468630585,
+          "base_score": 0.6705391143843085,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "smart",
+          "auto_ptr",
+          "smart pointer",
+          "pointer",
+          "smart pointers"
+        ],
+        "semantic": [],
+        "merged": [
+          "smart",
+          "auto_ptr",
+          "smart pointer",
+          "pointer",
+          "smart pointers"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "to_the_string",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3718996037459402,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:47.150335+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 20,
+      "title": "Segment 20 (pages 190-199)",
+      "chapter_id": "More Effective C++:ch20",
+      "cross_references": [
+        {
+          "target": "More Effective C++:ch19",
+          "score": 0.6157558237630953,
+          "base_score": 0.609593039605159,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "More Effective C++:ch22",
+          "score": 0.5298197554115169,
+          "base_score": 0.6330329256858616,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "smartptr",
+          "smart",
+          "pointer",
+          "const",
+          "cd"
+        ],
+        "semantic": [],
+        "merged": [
+          "smartptr",
+          "smart",
+          "pointer",
+          "const",
+          "cd"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "to_the_string",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36987547558484246,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:47.150480+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 21,
+      "title": "Segment 21 (pages 200-215)",
+      "chapter_id": "More Effective C++:ch21",
+      "cross_references": [
+        {
+          "target": "More Effective C++:ch23",
+          "score": 0.6746261046812861,
+          "base_score": 0.7077101744688101,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "More Effective C++:ch24",
+          "score": 0.5390466171834289,
+          "base_score": 0.5743369545649742,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "More Effective C++:ch22",
+          "score": 0.5298315055486165,
+          "base_score": 0.4663858425810275,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "string",
+          "stringvalue",
+          "reference",
+          "value",
+          "reference counting"
+        ],
+        "semantic": [],
+        "merged": [
+          "string",
+          "stringvalue",
+          "reference",
+          "value",
+          "reference counting"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "to_the_string",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3591443102273866,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:47.150632+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 22,
+      "title": "Segment 22 (pages 216-223)",
+      "chapter_id": "More Effective C++:ch22",
+      "cross_references": [
+        {
+          "target": "More Effective C++:ch19",
+          "score": 0.552323468630585,
+          "base_score": 0.6705391143843085,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "More Effective C++:ch21",
+          "score": 0.5298315055486165,
+          "base_score": 0.4663858425810275,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "More Effective C++:ch20",
+          "score": 0.5298197554115169,
+          "base_score": 0.6330329256858616,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "More Effective C++:ch23",
+          "score": 0.5119101755973022,
+          "base_score": 0.6031836259955037,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "rcptr",
+          "stringvalue",
+          "string",
+          "const rcptr",
+          "rcptr operator"
+        ],
+        "semantic": [],
+        "merged": [
+          "rcptr",
+          "stringvalue",
+          "string",
+          "const rcptr",
+          "rcptr operator"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "to_the_string",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41508322899501693,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:47.150780+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 23,
+      "title": "Segment 23 (pages 224-233)",
+      "chapter_id": "More Effective C++:ch23",
+      "cross_references": [
+        {
+          "target": "More Effective C++:ch21",
+          "score": 0.6746261046812861,
+          "base_score": 0.7077101744688101,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "More Effective C++:ch22",
+          "score": 0.5119101755973022,
+          "base_score": 0.6031836259955037,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "reference counting",
+          "reference",
+          "counting",
+          "class",
+          "widget"
+        ],
+        "semantic": [],
+        "merged": [
+          "reference counting",
+          "reference",
+          "counting",
+          "class",
+          "widget"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "to_the_string",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4017352058650717,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:47.150964+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 24,
+      "title": "Segment 24 (pages 234-241)",
+      "chapter_id": "More Effective C++:ch24",
+      "cross_references": [
+        {
+          "target": "More Effective C++:ch21",
+          "score": 0.5390466171834289,
+          "base_score": 0.5743369545649742,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "More Effective C++:ch7",
+          "score": 0.5299876091852964,
+          "base_score": 0.55923860790142,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "charproxy",
+          "operator",
+          "string",
+          "const",
+          "lvalue"
+        ],
+        "semantic": [],
+        "merged": [
+          "charproxy",
+          "operator",
+          "string",
+          "const",
+          "lvalue"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "to_the_string",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38388294865368977,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:47.151112+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 25,
+      "title": "Segment 25 (pages 242-261)",
+      "chapter_id": "More Effective C++:ch25",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "gameobject",
+          "collide",
+          "spaceship",
+          "function",
+          "virtual"
+        ],
+        "semantic": [],
+        "merged": [
+          "gameobject",
+          "collide",
+          "spaceship",
+          "function",
+          "virtual"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "gameobject_the_function",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3332404229652722,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:47.151291+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 26,
+      "title": "Segment 26 (pages 262-270)",
+      "chapter_id": "More Effective C++:ch26",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "gameobject",
+          "processing",
+          "gameobject spaceship",
+          "processing functions",
+          "spaceship"
+        ],
+        "semantic": [],
+        "merged": [
+          "gameobject",
+          "processing",
+          "gameobject spaceship",
+          "processing functions",
+          "spaceship"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_class_printer",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3311154107433066,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:47.151445+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 27,
+      "title": "Segment 27 (pages 271-284)",
+      "chapter_id": "More Effective C++:ch27",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "animal",
+          "lizard",
+          "class",
+          "abstract",
+          "classes"
+        ],
+        "semantic": [],
+        "merged": [
+          "animal",
+          "lizard",
+          "class",
+          "abstract",
+          "classes"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_class_printer",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34624841057578787,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:47.151596+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 28,
+      "title": "Segment 28 (pages 285-292)",
+      "chapter_id": "More Effective C++:ch28",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "extern",
+          "main",
+          "drawline",
+          "function",
+          "program"
+        ],
+        "semantic": [],
+        "merged": [
+          "extern",
+          "main",
+          "drawline",
+          "function",
+          "program"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_class_printer",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35891734644718903,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:47.151746+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 29,
+      "title": "Segment 29 (pages 293-301)",
+      "chapter_id": "More Effective C++:ch29",
+      "cross_references": [
+        {
+          "target": "More Effective C++:ch14",
+          "score": 0.5100158258889355,
+          "base_score": 0.6000263764815592,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "library",
+          "stl",
+          "standard",
+          "iterator",
+          "standard library"
+        ],
+        "semantic": [],
+        "merged": [
+          "library",
+          "stl",
+          "standard",
+          "iterator",
+          "standard library"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_class_printer",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37688978562572956,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:47.151919+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 30,
+      "title": "Segment 30 (pages 302-311)",
+      "chapter_id": "More Effective C++:ch30",
+      "cross_references": [
+        {
+          "target": "More Effective C++:ch1",
+          "score": 0.5884542946669552,
+          "base_score": 0.7307571577782587,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "More Effective C++:ch3",
+          "score": 0.567200258303335,
+          "base_score": 0.6953337638388917,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "auto_ptr",
+          "auto_ptr auto_ptr",
+          "inline auto_ptr",
+          "inline",
+          "books"
+        ],
+        "semantic": [],
+        "merged": [
+          "auto_ptr",
+          "auto_ptr auto_ptr",
+          "inline auto_ptr",
+          "inline",
+          "books"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_auto_ptr_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29796433141805384,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:47.152071+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 31,
+      "title": "Segment 31 (pages 312-319)",
+      "chapter_id": "More Effective C++:ch31",
+      "cross_references": [
+        {
+          "target": "More Effective C++:ch32",
+          "score": 0.5907926497885972,
+          "base_score": 0.6605803422402546,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "98",
+          "270",
+          "74",
+          "258",
+          "118"
+        ],
+        "semantic": [],
+        "merged": [
+          "98",
+          "270",
+          "74",
+          "258",
+          "118"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "operator_heap_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43488419306177045,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:47.152218+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 32,
+      "title": "Segment 32 (pages 320-329)",
+      "chapter_id": "More Effective C++:ch32",
+      "cross_references": [
+        {
+          "target": "More Effective C++:ch31",
+          "score": 0.5907926497885972,
+          "base_score": 0.6605803422402546,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "37",
+          "279",
+          "type",
+          "90",
+          "118"
+        ],
+        "semantic": [],
+        "merged": [
+          "37",
+          "279",
+          "type",
+          "90",
+          "118"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "operator_heap_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44826953569309275,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:47.152361+00:00"
+      }
+    },
+    {
+      "book": "More Effective C++",
+      "chapter": 33,
+      "title": "Segment 33 (pages 330-335)",
+      "chapter_id": "More Effective C++:ch33",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "operator",
+          "smartptr",
+          "210",
+          "string",
+          "46"
+        ],
+        "semantic": [],
+        "merged": [
+          "operator",
+          "smartptr",
+          "210",
+          "string",
+          "46"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "operator_heap_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3060840326117648,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:47.152508+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

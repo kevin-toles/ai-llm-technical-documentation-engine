@@ -1,0 +1,252 @@
+{
+  "book": {
+    "title": "microservices-vs-service-oriented-architecture"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:01:50.722513",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "microservices-vs-service-oriented-architecture",
+      "chapter": 1,
+      "title": "Segment 1 (pages 5-17)",
+      "chapter_id": "microservices-vs-service-oriented-architecture:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "contract",
+          "service based",
+          "contracts",
+          "changes",
+          "based"
+        ],
+        "semantic": [],
+        "merged": [
+          "contract",
+          "service based",
+          "contracts",
+          "changes",
+          "based"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "service_contract_contracts",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7448559767724313,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:50.714033+00:00"
+      }
+    },
+    {
+      "book": "microservices-vs-service-oriented-architecture",
+      "chapter": 2,
+      "title": "Segment 2 (pages 18-28)",
+      "chapter_id": "microservices-vs-service-oriented-architecture:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "services",
+          "service based",
+          "architectures",
+          "based architectures",
+          "business"
+        ],
+        "semantic": [],
+        "merged": [
+          "services",
+          "service based",
+          "architectures",
+          "based architectures",
+          "business"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "services_service_architectures",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7128579332519854,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:50.714098+00:00"
+      }
+    },
+    {
+      "book": "microservices-vs-service-oriented-architecture",
+      "chapter": 3,
+      "title": "Segment 3 (pages 29-36)",
+      "chapter_id": "microservices-vs-service-oriented-architecture:ch3",
+      "cross_references": [
+        {
+          "target": "microservices-vs-service-oriented-architecture:ch4",
+          "score": 0.5923932242771353,
+          "base_score": 0.6632479663878179,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sharing",
+          "services",
+          "granularity",
+          "component sharing",
+          "microservices architecture"
+        ],
+        "semantic": [],
+        "merged": [
+          "sharing",
+          "services",
+          "granularity",
+          "component sharing",
+          "microservices architecture"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "service_choreography_architecture",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6993688171013636,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:50.714143+00:00"
+      }
+    },
+    {
+      "book": "microservices-vs-service-oriented-architecture",
+      "chapter": 4,
+      "title": "Segment 4 (pages 37-44)",
+      "chapter_id": "microservices-vs-service-oriented-architecture:ch4",
+      "cross_references": [
+        {
+          "target": "microservices-vs-service-oriented-architecture:ch3",
+          "score": 0.5923932242771353,
+          "base_score": 0.6632479663878179,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "choreography",
+          "service choreography",
+          "service orchestration",
+          "orchestration",
+          "services"
+        ],
+        "semantic": [],
+        "merged": [
+          "choreography",
+          "service choreography",
+          "service orchestration",
+          "orchestration",
+          "services"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "service_choreography_architecture",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6863849275968005,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:50.714176+00:00"
+      }
+    },
+    {
+      "book": "microservices-vs-service-oriented-architecture",
+      "chapter": 5,
+      "title": "Segment 5 (pages 45-53)",
+      "chapter_id": "microservices-vs-service-oriented-architecture:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "protocol",
+          "access",
+          "protocols",
+          "remote access",
+          "access protocols"
+        ],
+        "semantic": [],
+        "merged": [
+          "protocol",
+          "access",
+          "protocols",
+          "remote access",
+          "access protocols"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "protocol_access_protocols",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7140511485372932,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:50.714207+00:00"
+      }
+    },
+    {
+      "book": "microservices-vs-service-oriented-architecture",
+      "chapter": 6,
+      "title": "Segment 6 (pages 54-57)",
+      "chapter_id": "microservices-vs-service-oriented-architecture:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "reilly",
+          "video",
+          "reilly video",
+          "author",
+          "information"
+        ],
+        "semantic": [],
+        "merged": [
+          "reilly",
+          "video",
+          "reilly video",
+          "author",
+          "information"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "reilly_video_information",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7070138172092375,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:50.714253+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

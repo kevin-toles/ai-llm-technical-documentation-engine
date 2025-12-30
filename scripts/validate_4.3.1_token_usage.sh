@@ -19,16 +19,19 @@ PASSED=0
 FAILED=0
 
 pass() {
-    echo -e "Testing: $1...\t\t\t  \033[32mPASS\033[0m"
+    local message="$1"
+    echo -e "Testing: $message...\t\t\t  \033[32mPASS\033[0m"
     PASSED=$((PASSED + 1))
+    return 0
 }
-
 fail() {
-    echo -e "Testing: $1...\t\t\t  \033[31mFAIL\033[0m"
-    echo "  Error: $2"
+    local message="$1"
+    local error="$2"
+    echo -e "Testing: $message...\t\t\t  \033[31mFAIL\033[0m"
+    echo "  Error: $error" >&2
     FAILED=$((FAILED + 1))
+    return 0
 }
-
 # =============================================================================
 # Extract token counts from most recent API logs
 # =============================================================================
@@ -38,7 +41,7 @@ echo ""
 # Find the 5 most recent API call logs (from the Chapter 1 run)
 LATEST_LOGS=$(ls -t "$API_LOG_DIR"/*.json 2>/dev/null | head -5)
 
-if [ -z "$LATEST_LOGS" ]; then
+if [[ -z "$LATEST_LOGS" ]]; then
     echo "ERROR: No API logs found in $API_LOG_DIR"
     exit 1
 fi
@@ -59,7 +62,7 @@ for log in $LATEST_LOGS; do
     
     # Phase 1 calls typically have higher input (full chapter text)
     # Phase 2 calls have targeted content
-    if [ "$INPUT" -gt 2500 ]; then
+    if [[ "$INPUT" -gt 2500 ]]; then
         PHASE1_TOKENS=$((PHASE1_TOKENS + TOTAL))
     else
         PHASE2_TOKENS=$((PHASE2_TOKENS + TOTAL))
@@ -80,7 +83,7 @@ echo ""
 # =============================================================================
 # Test 1: Phase 1 tokens < 15,000
 # =============================================================================
-if [ "$PHASE1_TOKENS" -lt 15000 ]; then
+if [[ "$PHASE1_TOKENS" -lt 15000 ]]; then
     pass "Phase 1 < 15,000 ($PHASE1_TOKENS)"
 else
     fail "Phase 1 < 15,000" "Actual: $PHASE1_TOKENS"
@@ -89,7 +92,7 @@ fi
 # =============================================================================
 # Test 2: Phase 2 tokens < 60,000
 # =============================================================================
-if [ "$PHASE2_TOKENS" -lt 60000 ]; then
+if [[ "$PHASE2_TOKENS" -lt 60000 ]]; then
     pass "Phase 2 < 60,000 ($PHASE2_TOKENS)"
 else
     fail "Phase 2 < 60,000" "Actual: $PHASE2_TOKENS"
@@ -98,7 +101,7 @@ fi
 # =============================================================================
 # Test 3: Total tokens < 75,000 per chapter
 # =============================================================================
-if [ "$TOTAL_TOKENS" -lt 75000 ]; then
+if [[ "$TOTAL_TOKENS" -lt 75000 ]]; then
     pass "Total < 75,000 ($TOTAL_TOKENS)"
 else
     fail "Total < 75,000" "Actual: $TOTAL_TOKENS"
@@ -118,7 +121,7 @@ echo "Two-phase approach (actual):          $TOTAL_TOKENS tokens"
 echo "Reduction:                            ${SAVINGS}%"
 echo ""
 
-if [ "$SAVINGS" -gt 50 ]; then
+if [[ "$SAVINGS" -gt 50 ]]; then
     pass ">50% reduction (${SAVINGS}%)"
 else
     fail ">50% reduction" "Only ${SAVINGS}% savings"
@@ -128,7 +131,7 @@ fi
 # Test 5: API logs exist and have token data
 # =============================================================================
 LOG_COUNT=$(ls "$API_LOG_DIR"/*.json 2>/dev/null | wc -l | tr -d ' ')
-if [ "$LOG_COUNT" -gt 0 ]; then
+if [[ "$LOG_COUNT" -gt 0 ]]; then
     pass "API logs exist ($LOG_COUNT files)"
 else
     fail "API logs exist" "No log files found"
@@ -137,7 +140,7 @@ fi
 # =============================================================================
 # Test 6: Token counts are reasonable (not zero, not astronomical)
 # =============================================================================
-if [ "$TOTAL_TOKENS" -gt 100 ] && [ "$TOTAL_TOKENS" -lt 1000000 ]; then
+if [[ "$TOTAL_TOKENS" -gt 100 ]] && [[ "$TOTAL_TOKENS" -lt 1000000 ]]; then
     pass "Token counts reasonable"
 else
     fail "Token counts reasonable" "Total: $TOTAL_TOKENS"
@@ -154,7 +157,7 @@ echo "Passed: $PASSED"
 echo "Failed: $FAILED"
 echo ""
 
-if [ $FAILED -eq 0 ]; then
+if [[ $FAILED -eq 0 ]]; then
     echo "✓ All WBS 4.3.1 validation tests passed!"
     echo ""
     echo "Token Efficiency Summary:"

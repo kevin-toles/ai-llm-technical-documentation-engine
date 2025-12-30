@@ -1,0 +1,505 @@
+{
+  "book": {
+    "title": "Cloud-Native Observability with OpenTelemetry - Alex Boten"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:43:22.223940",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Cloud-Native Observability with OpenTelemetry - Alex Boten",
+      "chapter": 1,
+      "title": "The History and Concepts of Observability",
+      "chapter_id": "Cloud-Native Observability with OpenTelemetry - Alex Boten:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "telemetry",
+          "opencensus",
+          "opentracing",
+          "telemetry data",
+          "opentelemetry"
+        ],
+        "semantic": [],
+        "merged": [
+          "telemetry",
+          "opencensus",
+          "opentracing",
+          "telemetry data",
+          "opentelemetry"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4047825148486797,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:22.204871+00:00"
+      }
+    },
+    {
+      "book": "Cloud-Native Observability with OpenTelemetry - Alex Boten",
+      "chapter": 2,
+      "title": "OpenTelemetry Signals – Traces, Metrics, and Logs",
+      "chapter_id": "Cloud-Native Observability with OpenTelemetry - Alex Boten:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "metric",
+          "information",
+          "trace",
+          "data points",
+          "logs"
+        ],
+        "semantic": [],
+        "merged": [
+          "metric",
+          "information",
+          "trace",
+          "data points",
+          "logs"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_collector_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.58980241212554,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:22.205052+00:00"
+      }
+    },
+    {
+      "book": "Cloud-Native Observability with OpenTelemetry - Alex Boten",
+      "chapter": 3,
+      "title": "Auto-Instrumentation",
+      "chapter_id": "Cloud-Native Observability with OpenTelemetry - Alex Boten:ch3",
+      "cross_references": [
+        {
+          "target": "Cloud-Native Observability with OpenTelemetry - Alex Boten:ch7",
+          "score": 0.6239933375661653,
+          "base_score": 0.754274610229323,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "instrumentation",
+          "libraries",
+          "instrumentation libraries",
+          "auto instrumentation",
+          "auto"
+        ],
+        "semantic": [],
+        "merged": [
+          "instrumentation",
+          "libraries",
+          "instrumentation libraries",
+          "auto instrumentation",
+          "auto"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4914803596336299,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:22.205166+00:00"
+      }
+    },
+    {
+      "book": "Cloud-Native Observability with OpenTelemetry - Alex Boten",
+      "chapter": 4,
+      "title": "Distributed Tracing – Tracing Code Execution",
+      "chapter_id": "Cloud-Native Observability with OpenTelemetry - Alex Boten:ch4",
+      "cross_references": [
+        {
+          "target": "Cloud-Native Observability with OpenTelemetry - Alex Boten:ch6",
+          "score": 0.5418434326730103,
+          "base_score": 0.6530723877883504,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "span",
+          "tracer start_as_current_span",
+          "tracer",
+          "trace",
+          "span_id"
+        ],
+        "semantic": [],
+        "merged": [
+          "span",
+          "tracer start_as_current_span",
+          "tracer",
+          "trace",
+          "span_id"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "span_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.513598176017072,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:22.205235+00:00"
+      }
+    },
+    {
+      "book": "Cloud-Native Observability with OpenTelemetry - Alex Boten",
+      "chapter": 5,
+      "title": "Metrics – Recording Measurements",
+      "chapter_id": "Cloud-Native Observability with OpenTelemetry - Alex Boten:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "metric",
+          "metrics",
+          "description",
+          "requests",
+          "opentelemetry"
+        ],
+        "semantic": [],
+        "merged": [
+          "metric",
+          "metrics",
+          "description",
+          "requests",
+          "opentelemetry"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5493604173894946,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:22.205292+00:00"
+      }
+    },
+    {
+      "book": "Cloud-Native Observability with OpenTelemetry - Alex Boten",
+      "chapter": 6,
+      "title": "Logging – Capturing Events",
+      "chapter_id": "Cloud-Native Observability with OpenTelemetry - Alex Boten:ch6",
+      "cross_references": [
+        {
+          "target": "Cloud-Native Observability with OpenTelemetry - Alex Boten:ch4",
+          "score": 0.5418434326730103,
+          "base_score": 0.6530723877883504,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "log",
+          "logging",
+          "log line",
+          "opentelemetry",
+          "logger"
+        ],
+        "semantic": [],
+        "merged": [
+          "log",
+          "logging",
+          "log line",
+          "opentelemetry",
+          "logger"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "span_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5517662427500821,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:22.205348+00:00"
+      }
+    },
+    {
+      "book": "Cloud-Native Observability with OpenTelemetry - Alex Boten",
+      "chapter": 7,
+      "title": "Instrumentation Libraries",
+      "chapter_id": "Cloud-Native Observability with OpenTelemetry - Alex Boten:ch7",
+      "cross_references": [
+        {
+          "target": "Cloud-Native Observability with OpenTelemetry - Alex Boten:ch3",
+          "score": 0.6239933375661653,
+          "base_score": 0.754274610229323,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Cloud-Native Observability with OpenTelemetry - Alex Boten:ch8",
+          "score": 0.5140096856343338,
+          "base_score": 0.6066828093905564,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "instrumentation",
+          "opentelemetry",
+          "instrumentation libraries",
+          "opentelemetry instrumentation",
+          "libraries"
+        ],
+        "semantic": [],
+        "merged": [
+          "instrumentation",
+          "opentelemetry",
+          "instrumentation libraries",
+          "opentelemetry instrumentation",
+          "libraries"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_instrumentation_opentelemetry",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5291424072102905,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:22.205425+00:00"
+      }
+    },
+    {
+      "book": "Cloud-Native Observability with OpenTelemetry - Alex Boten",
+      "chapter": 8,
+      "title": "OpenTelemetry Collector",
+      "chapter_id": "Cloud-Native Observability with OpenTelemetry - Alex Boten:ch8",
+      "cross_references": [
+        {
+          "target": "Cloud-Native Observability with OpenTelemetry - Alex Boten:ch7",
+          "score": 0.5140096856343338,
+          "base_score": 0.6066828093905564,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "collector",
+          "processor",
+          "processors",
+          "config",
+          "otlp"
+        ],
+        "semantic": [],
+        "merged": [
+          "collector",
+          "processor",
+          "processors",
+          "config",
+          "otlp"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_instrumentation_opentelemetry",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4952855401057615,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:22.205482+00:00"
+      }
+    },
+    {
+      "book": "Cloud-Native Observability with OpenTelemetry - Alex Boten",
+      "chapter": 9,
+      "title": "Deploying the Collector",
+      "chapter_id": "Cloud-Native Observability with OpenTelemetry - Alex Boten:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "collector",
+          "sidecar",
+          "agent",
+          "pod",
+          "helm"
+        ],
+        "semantic": [],
+        "merged": [
+          "collector",
+          "sidecar",
+          "agent",
+          "pod",
+          "helm"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_collector_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46629393870824126,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:22.205536+00:00"
+      }
+    },
+    {
+      "book": "Cloud-Native Observability with OpenTelemetry - Alex Boten",
+      "chapter": 10,
+      "title": "Configuring Backends",
+      "chapter_id": "Cloud-Native Observability with OpenTelemetry - Alex Boten:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "zipkin",
+          "collector",
+          "opentelemetry",
+          "backends",
+          "jaeger"
+        ],
+        "semantic": [],
+        "merged": [
+          "zipkin",
+          "collector",
+          "opentelemetry",
+          "backends",
+          "jaeger"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5636084711685913,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:22.205589+00:00"
+      }
+    },
+    {
+      "book": "Cloud-Native Observability with OpenTelemetry - Alex Boten",
+      "chapter": 11,
+      "title": "Diagnosing Problems",
+      "chapter_id": "Cloud-Native Observability with OpenTelemetry - Alex Boten:ch11",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "figure 11",
+          "11",
+          "grocery store",
+          "grocery",
+          "store"
+        ],
+        "semantic": [],
+        "merged": [
+          "figure 11",
+          "11",
+          "grocery store",
+          "grocery",
+          "store"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_collector_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40335244722582186,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:43:22.205654+00:00"
+      }
+    },
+    {
+      "book": "Cloud-Native Observability with OpenTelemetry - Alex Boten",
+      "chapter": 12,
+      "title": "Sampling",
+      "chapter_id": "Cloud-Native Observability with OpenTelemetry - Alex Boten:ch12",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "sampling",
+          "sample",
+          "tail sampling",
+          "tail",
+          "sampled"
+        ],
+        "semantic": [],
+        "merged": [
+          "sampling",
+          "sample",
+          "tail sampling",
+          "tail",
+          "sampled"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4411940239901397,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:43:22.205725+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

@@ -1,0 +1,2707 @@
+{
+  "book": {
+    "title": "MongoDB The Definitive Guide"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:52:34.618966",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-10)",
+      "chapter_id": "MongoDB The Definitive Guide:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "introduction",
+          "indexes",
+          "55",
+          "57",
+          "expressions"
+        ],
+        "semantic": [],
+        "merged": [
+          "introduction",
+          "indexes",
+          "55",
+          "57",
+          "expressions"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4745836831521488,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:52:34.598080+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 2,
+      "title": "Segment 2 (pages 11-18)",
+      "chapter_id": "MongoDB The Definitive Guide:ch2",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch30",
+          "score": 0.5461789965365613,
+          "base_score": 0.5862242534868614,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch53",
+          "score": 0.512167751833578,
+          "base_score": 0.6036129197226301,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch28",
+          "score": 0.5105387330816301,
+          "base_score": 0.6008978884693835,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "chapter",
+          "replication",
+          "covers",
+          "275",
+          "replica"
+        ],
+        "semantic": [],
+        "merged": [
+          "chapter",
+          "replication",
+          "covers",
+          "275",
+          "replica"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "set_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38608284288311956,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.598340+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 3,
+      "title": "Segment 3 (pages 19-28)",
+      "chapter_id": "MongoDB The Definitive Guide:ch3",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch4",
+          "score": 0.5462492039182246,
+          "base_score": 0.5863412657896336,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "book",
+          "mongodb",
+          "code",
+          "relational",
+          "features"
+        ],
+        "semantic": [],
+        "merged": [
+          "book",
+          "mongodb",
+          "code",
+          "relational",
+          "features"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35525405947207256,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.598579+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 4,
+      "title": "Segment 4 (pages 29-36)",
+      "chapter_id": "MongoDB The Definitive Guide:ch4",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch25",
+          "score": 0.5676392625612444,
+          "base_score": 0.6960654376020741,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch3",
+          "score": 0.5462492039182246,
+          "base_score": 0.5863412657896336,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch51",
+          "score": 0.5355991947854012,
+          "base_score": 0.6426653246423353,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch45",
+          "score": 0.5111725935283489,
+          "base_score": 0.5278802484731742,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "collection",
+          "blog",
+          "collections",
+          "mongodb",
+          "database"
+        ],
+        "semantic": [],
+        "merged": [
+          "collection",
+          "blog",
+          "collections",
+          "mongodb",
+          "database"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4351973332300467,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.598838+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 5,
+      "title": "Segment 5 (pages 37-44)",
+      "chapter_id": "MongoDB The Definitive Guide:ch5",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch8",
+          "score": 0.5313009272116389,
+          "base_score": 0.5614274712786573,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "document",
+          "value",
+          "key",
+          "data types",
+          "objectid"
+        ],
+        "semantic": [],
+        "merged": [
+          "document",
+          "value",
+          "key",
+          "data types",
+          "objectid"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3436513925899349,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.599087+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 6,
+      "title": "Segment 6 (pages 45-54)",
+      "chapter_id": "MongoDB The Definitive Guide:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "shell",
+          "js",
+          "src mongo",
+          "src",
+          "mongo"
+        ],
+        "semantic": [],
+        "merged": [
+          "shell",
+          "js",
+          "src mongo",
+          "src",
+          "mongo"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30969812324060236,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:52:34.599323+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 7,
+      "title": "Segment 7 (pages 55-62)",
+      "chapter_id": "MongoDB The Definitive Guide:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "joe",
+          "updating",
+          "findone",
+          "findone _id",
+          "_id objectid"
+        ],
+        "semantic": [],
+        "merged": [
+          "joe",
+          "updating",
+          "findone",
+          "findone _id",
+          "_id objectid"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3630544806767402,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:52:34.599556+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 8,
+      "title": "Segment 8 (pages 63-70)",
+      "chapter_id": "MongoDB The Definitive Guide:ch8",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch5",
+          "score": 0.5313009272116389,
+          "base_score": 0.5614274712786573,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "joe",
+          "_id objectid",
+          "objectid",
+          "blog",
+          "4b2d75476cc613d5ee930164"
+        ],
+        "semantic": [],
+        "merged": [
+          "joe",
+          "_id objectid",
+          "objectid",
+          "blog",
+          "4b2d75476cc613d5ee930164"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28590744256430145,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.599809+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 9,
+      "title": "Segment 9 (pages 71-80)",
+      "chapter_id": "MongoDB The Definitive Guide:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "ps",
+          "joe",
+          "query",
+          "status",
+          "key value"
+        ],
+        "semantic": [],
+        "merged": [
+          "ps",
+          "joe",
+          "query",
+          "status",
+          "key value"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26879908168056116,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.600049+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 10,
+      "title": "Segment 10 (pages 81-92)",
+      "chapter_id": "MongoDB The Definitive Guide:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "skip",
+          "query",
+          "document",
+          "var",
+          "limit"
+        ],
+        "semantic": [],
+        "merged": [
+          "skip",
+          "query",
+          "document",
+          "var",
+          "limit"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "index_query_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25235793560224884,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.600283+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 11,
+      "title": "Segment 11 (pages 93-102)",
+      "chapter_id": "MongoDB The Definitive Guide:ch11",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch12",
+          "score": 0.6301671352084584,
+          "base_score": 0.6336118920140972,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch16",
+          "score": 0.5745542953032935,
+          "base_score": 0.6335164180980817,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch13",
+          "score": 0.5313215416401023,
+          "base_score": 0.5614618286594297,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "index",
+          "username",
+          "query",
+          "user101",
+          "queries"
+        ],
+        "semantic": [],
+        "merged": [
+          "index",
+          "username",
+          "query",
+          "user101",
+          "queries"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "index_username_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35413334277564,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.600560+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 12,
+      "title": "Segment 12 (pages 103-111)",
+      "chapter_id": "MongoDB The Definitive Guide:ch12",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch14",
+          "score": 0.6694380914350833,
+          "base_score": 0.7916560783177312,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch16",
+          "score": 0.6429951858615501,
+          "base_score": 0.7475845690285094,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch11",
+          "score": 0.6301671352084584,
+          "base_score": 0.6336118920140972,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch13",
+          "score": 0.545210523400653,
+          "base_score": 0.5846101315936808,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "index",
+          "sort",
+          "order",
+          "age",
+          "query"
+        ],
+        "semantic": [],
+        "merged": [
+          "index",
+          "sort",
+          "order",
+          "age",
+          "query"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "index_username_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3625711679507927,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.600815+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 13,
+      "title": "Segment 13 (pages 112-121)",
+      "chapter_id": "MongoDB The Definitive Guide:ch13",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch14",
+          "score": 0.5485767549270003,
+          "base_score": 0.6642945915450005,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch12",
+          "score": 0.545210523400653,
+          "base_score": 0.5846101315936808,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch11",
+          "score": 0.5313215416401023,
+          "base_score": 0.5614618286594297,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch16",
+          "score": 0.5105286362745507,
+          "base_score": 0.5268069863835104,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "class_id",
+          "9903",
+          "student_id",
+          "index",
+          "stage"
+        ],
+        "semantic": [],
+        "merged": [
+          "class_id",
+          "9903",
+          "student_id",
+          "index",
+          "stage"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "index_username_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3299551015342762,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.601060+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 14,
+      "title": "Segment 14 (pages 122-133)",
+      "chapter_id": "MongoDB The Definitive Guide:ch14",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch12",
+          "score": 0.6694380914350833,
+          "base_score": 0.7916560783177312,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch13",
+          "score": 0.5485767549270003,
+          "base_score": 0.6642945915450005,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch16",
+          "score": 0.5371734912352192,
+          "base_score": 0.6452891520586986,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "username",
+          "age",
+          "false",
+          "2742",
+          "47"
+        ],
+        "semantic": [],
+        "merged": [
+          "username",
+          "age",
+          "false",
+          "2742",
+          "47"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "index_username_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3493549245553414,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.601299+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 15,
+      "title": "Segment 15 (pages 134-142)",
+      "chapter_id": "MongoDB The Definitive Guide:ch15",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch17",
+          "score": 0.5593070737892445,
+          "base_score": 0.6081043822413333,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "index",
+          "use index",
+          "query",
+          "loc",
+          "explain"
+        ],
+        "semantic": [],
+        "merged": [
+          "index",
+          "use index",
+          "query",
+          "loc",
+          "explain"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "index_query_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41368173901825117,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.601537+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 16,
+      "title": "Segment 16 (pages 143-154)",
+      "chapter_id": "MongoDB The Definitive Guide:ch16",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch12",
+          "score": 0.6429951858615501,
+          "base_score": 0.7475845690285094,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch11",
+          "score": 0.5745542953032935,
+          "base_score": 0.6335164180980817,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch14",
+          "score": 0.5371734912352192,
+          "base_score": 0.6452891520586986,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch13",
+          "score": 0.5105286362745507,
+          "base_score": 0.5268069863835104,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "index",
+          "unique index",
+          "unique",
+          "key",
+          "collection"
+        ],
+        "semantic": [],
+        "merged": [
+          "index",
+          "unique index",
+          "unique",
+          "key",
+          "collection"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "index_username_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40582976014414873,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.601776+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 17,
+      "title": "Segment 17 (pages 155-162)",
+      "chapter_id": "MongoDB The Definitive Guide:ch17",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch15",
+          "score": 0.5593070737892445,
+          "base_score": 0.6081043822413333,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "2dsphere",
+          "geospatial",
+          "index",
+          "geometries",
+          "2dsphere index"
+        ],
+        "semantic": [],
+        "merged": [
+          "2dsphere",
+          "geospatial",
+          "index",
+          "geometries",
+          "2dsphere index"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "index_query_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.311163372624835,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.602023+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 18,
+      "title": "Segment 18 (pages 163-172)",
+      "chapter_id": "MongoDB The Definitive Guide:ch18",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "crater",
+          "text",
+          "title",
+          "lunar",
+          "impact crater"
+        ],
+        "semantic": [],
+        "merged": [
+          "crater",
+          "text",
+          "title",
+          "lunar",
+          "impact crater"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "index_query_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2484615364878138,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.602259+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 19,
+      "title": "Segment 19 (pages 173-182)",
+      "chapter_id": "MongoDB The Definitive Guide:ch19",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "capped",
+          "gridfs",
+          "capped collection",
+          "files",
+          "collection"
+        ],
+        "semantic": [],
+        "merged": [
+          "capped",
+          "gridfs",
+          "capped collection",
+          "files",
+          "collection"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3740796409450238,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:52:34.602496+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 20,
+      "title": "Segment 20 (pages 183-190)",
+      "chapter_id": "MongoDB The Definitive Guide:ch20",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch23",
+          "score": 0.6043261956141848,
+          "base_score": 0.6831362519495671,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch22",
+          "score": 0.5881334085930976,
+          "base_score": 0.6561482735810885,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "project",
+          "stage",
+          "pipeline",
+          "founded_year",
+          "stages"
+        ],
+        "semantic": [],
+        "merged": [
+          "project",
+          "stage",
+          "pipeline",
+          "founded_year",
+          "stages"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3896642887004908,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.602750+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 21,
+      "title": "Segment 21 (pages 191-201)",
+      "chapter_id": "MongoDB The Definitive Guide:ch21",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch22",
+          "score": 0.6385312093201967,
+          "base_score": 0.7401446081262536,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "funding_rounds",
+          "permalink",
+          "financial_org",
+          "null",
+          "investments"
+        ],
+        "semantic": [],
+        "merged": [
+          "funding_rounds",
+          "permalink",
+          "financial_org",
+          "null",
+          "investments"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.256247335188042,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.603004+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 22,
+      "title": "Segment 22 (pages 202-209)",
+      "chapter_id": "MongoDB The Definitive Guide:ch22",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch21",
+          "score": 0.6385312093201967,
+          "base_score": 0.7401446081262536,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch20",
+          "score": 0.5881334085930976,
+          "base_score": 0.6561482735810885,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch23",
+          "score": 0.5838917112818078,
+          "base_score": 0.5564861854696798,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "funding_rounds",
+          "greylock",
+          "project",
+          "companies",
+          "rounds"
+        ],
+        "semantic": [],
+        "merged": [
+          "funding_rounds",
+          "greylock",
+          "project",
+          "companies",
+          "rounds"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29354102791487574,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.603242+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 23,
+      "title": "Segment 23 (pages 210-220)",
+      "chapter_id": "MongoDB The Definitive Guide:ch23",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch20",
+          "score": 0.6043261956141848,
+          "base_score": 0.6831362519495671,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch22",
+          "score": 0.5838917112818078,
+          "base_score": 0.5564861854696798,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "group",
+          "funding_rounds",
+          "companies",
+          "group stage",
+          "stage"
+        ],
+        "semantic": [],
+        "merged": [
+          "group",
+          "funding_rounds",
+          "companies",
+          "group stage",
+          "stage"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2913101759470011,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.603477+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 24,
+      "title": "Segment 24 (pages 221-228)",
+      "chapter_id": "MongoDB The Definitive Guide:ch24",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch49",
+          "score": 0.5029854753188382,
+          "base_score": 0.5883091255313969,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "transaction",
+          "session",
+          "transactions",
+          "api",
+          "commit"
+        ],
+        "semantic": [],
+        "merged": [
+          "transaction",
+          "session",
+          "transactions",
+          "api",
+          "commit"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3654393820184184,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.603714+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 25,
+      "title": "Segment 25 (pages 229-236)",
+      "chapter_id": "MongoDB The Definitive Guide:ch25",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch4",
+          "score": 0.5676392625612444,
+          "base_score": 0.6960654376020741,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch51",
+          "score": 0.5449264393129795,
+          "base_score": 0.584136658114225,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch49",
+          "score": 0.5066207593487844,
+          "base_score": 0.5202938581738998,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "pattern",
+          "queries",
+          "reference",
+          "documents"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "pattern",
+          "queries",
+          "reference",
+          "documents"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40210131592430326,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.603978+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 26,
+      "title": "Segment 26 (pages 237-244)",
+      "chapter_id": "MongoDB The Definitive Guide:ch26",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "user",
+          "collections",
+          "data",
+          "documents",
+          "read"
+        ],
+        "semantic": [],
+        "merged": [
+          "user",
+          "collections",
+          "data",
+          "documents",
+          "read"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27180067983022727,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:52:34.604217+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 27,
+      "title": "Segment 27 (pages 245-257)",
+      "chapter_id": "MongoDB The Definitive Guide:ch27",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch30",
+          "score": 0.5453647824174638,
+          "base_score": 0.6232270183148205,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "replica",
+          "replica set",
+          "set",
+          "primary",
+          "initiate replica"
+        ],
+        "semantic": [],
+        "merged": [
+          "replica",
+          "replica set",
+          "set",
+          "primary",
+          "initiate replica"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34517562582558486,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:52:34.604475+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 28,
+      "title": "Segment 28 (pages 258-267)",
+      "chapter_id": "MongoDB The Definitive Guide:ch28",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch31",
+          "score": 0.6481141497042976,
+          "base_score": 0.544475963792877,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch29",
+          "score": 0.6182694901808327,
+          "base_score": 0.49473486458710203,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch30",
+          "score": 0.5967754192287629,
+          "base_score": 0.5779590320479381,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch2",
+          "score": 0.5105387330816301,
+          "base_score": 0.6008978884693835,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "members",
+          "set",
+          "primary",
+          "member",
+          "priority"
+        ],
+        "semantic": [],
+        "merged": [
+          "members",
+          "set",
+          "primary",
+          "member",
+          "priority"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "set_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28042586081991766,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.604721+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 29,
+      "title": "Segment 29 (pages 268-277)",
+      "chapter_id": "MongoDB The Definitive Guide:ch29",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch28",
+          "score": 0.6182694901808327,
+          "base_score": 0.49473486458710203,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch31",
+          "score": 0.6070921448812721,
+          "base_score": 0.47610595575450104,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "member",
+          "sync",
+          "members",
+          "data",
+          "set"
+        ],
+        "semantic": [],
+        "merged": [
+          "member",
+          "sync",
+          "members",
+          "data",
+          "set"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "set_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.20279029637316218,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.604986+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 30,
+      "title": "Segment 30 (pages 278-287)",
+      "chapter_id": "MongoDB The Definitive Guide:ch30",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch28",
+          "score": 0.5967754192287629,
+          "base_score": 0.5779590320479381,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch2",
+          "score": 0.5461789965365613,
+          "base_score": 0.5862242534868614,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch27",
+          "score": 0.5453647824174638,
+          "base_score": 0.6232270183148205,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch31",
+          "score": 0.5224043902126291,
+          "base_score": 0.546599909613641,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "primary",
+          "write",
+          "writes",
+          "set",
+          "replica"
+        ],
+        "semantic": [],
+        "merged": [
+          "primary",
+          "write",
+          "writes",
+          "set",
+          "replica"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "set_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3569615287098562,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.605226+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 31,
+      "title": "Segment 31 (pages 288-297)",
+      "chapter_id": "MongoDB The Definitive Guide:ch31",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch28",
+          "score": 0.6481141497042976,
+          "base_score": 0.544475963792877,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch29",
+          "score": 0.6070921448812721,
+          "base_score": 0.47610595575450104,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch30",
+          "score": 0.5224043902126291,
+          "base_score": 0.546599909613641,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "set",
+          "members",
+          "member",
+          "secondary",
+          "read"
+        ],
+        "semantic": [],
+        "merged": [
+          "set",
+          "members",
+          "member",
+          "secondary",
+          "read"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "set_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21499655634528156,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.605474+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 32,
+      "title": "Segment 32 (pages 298-308)",
+      "chapter_id": "MongoDB The Definitive Guide:ch32",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "member",
+          "2019 11",
+          "02",
+          "11 02t20",
+          "02t20 02"
+        ],
+        "semantic": [],
+        "merged": [
+          "member",
+          "2019 11",
+          "02",
+          "11 02t20",
+          "02t20 02"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21151352533772275,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.605722+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 33,
+      "title": "Segment 33 (pages 309-318)",
+      "chapter_id": "MongoDB The Definitive Guide:ch33",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch35",
+          "score": 0.637497106087778,
+          "base_score": 0.8124951768129632,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch38",
+          "score": 0.6292362954850403,
+          "base_score": 0.7246530850676598,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch36",
+          "score": 0.5957252757369802,
+          "base_score": 0.7428754595616337,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch37",
+          "score": 0.5519238703446557,
+          "base_score": 0.6698731172410928,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "shards",
+          "cluster",
+          "sharding",
+          "mbp",
+          "single machine"
+        ],
+        "semantic": [],
+        "merged": [
+          "shards",
+          "cluster",
+          "sharding",
+          "mbp",
+          "single machine"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "shard_the_key",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3924158119014769,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.605979+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 34,
+      "title": "Segment 34 (pages 319-328)",
+      "chapter_id": "MongoDB The Definitive Guide:ch34",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch40",
+          "score": 0.5193757424764325,
+          "base_score": 0.6156262374607208,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "mongos",
+          "config servers",
+          "config",
+          "mbp",
+          "servers"
+        ],
+        "semantic": [],
+        "merged": [
+          "mongos",
+          "config servers",
+          "config",
+          "mbp",
+          "servers"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3864528671943152,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.606215+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 35,
+      "title": "Segment 35 (pages 329-338)",
+      "chapter_id": "MongoDB The Definitive Guide:ch35",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch36",
+          "score": 0.7137506520219374,
+          "base_score": 0.7729177533698957,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch37",
+          "score": 0.6611669448346144,
+          "base_score": 0.685278241391024,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch38",
+          "score": 0.6433933717166782,
+          "base_score": 0.7482482121203896,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch33",
+          "score": 0.637497106087778,
+          "base_score": 0.8124951768129632,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "chunk",
+          "shard",
+          "split",
+          "chunks",
+          "shard key"
+        ],
+        "semantic": [],
+        "merged": [
+          "chunk",
+          "shard",
+          "split",
+          "chunks",
+          "shard key"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "shard_the_key",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4452116725075527,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.606458+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 36,
+      "title": "Segment 36 (pages 339-347)",
+      "chapter_id": "MongoDB The Definitive Guide:ch36",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch37",
+          "score": 0.7799342765838629,
+          "base_score": 0.7641761752588191,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch35",
+          "score": 0.7137506520219374,
+          "base_score": 0.7729177533698957,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch38",
+          "score": 0.6680587650472036,
+          "base_score": 0.7893572010045986,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch33",
+          "score": 0.5957252757369802,
+          "base_score": 0.7428754595616337,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "shard",
+          "shard key",
+          "distributed",
+          "key",
+          "randomly"
+        ],
+        "semantic": [],
+        "merged": [
+          "shard",
+          "shard key",
+          "distributed",
+          "key",
+          "randomly"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "shard_the_key",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4286277719894257,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.606699+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 37,
+      "title": "Segment 37 (pages 348-355)",
+      "chapter_id": "MongoDB The Definitive Guide:ch37",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch36",
+          "score": 0.7799342765838629,
+          "base_score": 0.7641761752588191,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch35",
+          "score": 0.6611669448346144,
+          "base_score": 0.685278241391024,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch38",
+          "score": 0.6497543912996571,
+          "base_score": 0.7588499114253544,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch33",
+          "score": 0.5519238703446557,
+          "base_score": 0.6698731172410928,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "shard",
+          "shard key",
+          "key",
+          "ascending",
+          "hashed"
+        ],
+        "semantic": [],
+        "merged": [
+          "shard",
+          "shard key",
+          "key",
+          "ascending",
+          "hashed"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "shard_the_key",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3559330516747297,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.606945+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 38,
+      "title": "Segment 38 (pages 356-364)",
+      "chapter_id": "MongoDB The Definitive Guide:ch38",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch36",
+          "score": 0.6680587650472036,
+          "base_score": 0.7893572010045986,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch37",
+          "score": 0.6497543912996571,
+          "base_score": 0.7588499114253544,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch35",
+          "score": 0.6433933717166782,
+          "base_score": 0.7482482121203896,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch33",
+          "score": 0.6292362954850403,
+          "base_score": 0.7246530850676598,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "shard",
+          "shards",
+          "localhost",
+          "shard01",
+          "imdbid"
+        ],
+        "semantic": [],
+        "merged": [
+          "shard",
+          "shards",
+          "localhost",
+          "shard01",
+          "imdbid"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "shard_the_key",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4432683762158046,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.607179+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 39,
+      "title": "Segment 39 (pages 365-377)",
+      "chapter_id": "MongoDB The Definitive Guide:ch39",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "connections",
+          "mongos",
+          "mongod mongos",
+          "outgoing",
+          "mongos instance"
+        ],
+        "semantic": [],
+        "merged": [
+          "connections",
+          "mongos",
+          "mongod mongos",
+          "outgoing",
+          "mongos instance"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.309989693849646,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.607415+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 40,
+      "title": "Segment 40 (pages 378-390)",
+      "chapter_id": "MongoDB The Definitive Guide:ch40",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch34",
+          "score": 0.5193757424764325,
+          "base_score": 0.6156262374607208,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "chunks",
+          "shard",
+          "numberlong",
+          "jumbo",
+          "chunk"
+        ],
+        "semantic": [],
+        "merged": [
+          "chunks",
+          "shard",
+          "numberlong",
+          "jumbo",
+          "chunk"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33630446474478853,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.607647+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 41,
+      "title": "Segment 41 (pages 391-401)",
+      "chapter_id": "MongoDB The Definitive Guide:ch41",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "operations",
+          "slow operations",
+          "slow",
+          "foo",
+          "killed"
+        ],
+        "semantic": [],
+        "merged": [
+          "operations",
+          "slow operations",
+          "slow",
+          "foo",
+          "killed"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3357794452691488,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.607906+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 42,
+      "title": "Segment 42 (pages 402-410)",
+      "chapter_id": "MongoDB The Definitive Guide:ch42",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "pages",
+          "eviction",
+          "cache",
+          "page",
+          "calls"
+        ],
+        "semantic": [],
+        "merged": [
+          "pages",
+          "eviction",
+          "cache",
+          "page",
+          "calls"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25703679086466336,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.608175+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 43,
+      "title": "Segment 43 (pages 411-419)",
+      "chapter_id": "MongoDB The Definitive Guide:ch43",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch46",
+          "score": 0.5142784222819,
+          "base_score": 0.6071307038031668,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "authentication",
+          "ca",
+          "certificates",
+          "509",
+          "certificate"
+        ],
+        "semantic": [],
+        "merged": [
+          "authentication",
+          "ca",
+          "certificates",
+          "509",
+          "certificate"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "mongodb_ca_host",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3259352149630054,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.608434+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 44,
+      "title": "Segment 44 (pages 420-427)",
+      "chapter_id": "MongoDB The Definitive Guide:ch44",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "ca",
+          "host",
+          "openssl",
+          "signing",
+          "pem"
+        ],
+        "semantic": [],
+        "merged": [
+          "ca",
+          "host",
+          "openssl",
+          "signing",
+          "pem"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "mongodb_ca_host",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31789512110787,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.608680+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 45,
+      "title": "Segment 45 (pages 428-439)",
+      "chapter_id": "MongoDB The Definitive Guide:ch45",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch49",
+          "score": 0.5360118172490801,
+          "base_score": 0.6433530287484668,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch48",
+          "score": 0.5313006860388089,
+          "base_score": 0.6355011433980149,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch4",
+          "score": 0.5111725935283489,
+          "base_score": 0.5278802484731742,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "concern",
+          "write concern",
+          "write",
+          "journal",
+          "mongodb"
+        ],
+        "semantic": [],
+        "merged": [
+          "concern",
+          "write concern",
+          "write",
+          "journal",
+          "mongodb"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.379890235883119,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.608940+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 46,
+      "title": "Segment 46 (pages 440-450)",
+      "chapter_id": "MongoDB The Definitive Guide:ch46",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch43",
+          "score": 0.5142784222819,
+          "base_score": 0.6071307038031668,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "memory",
+          "mongodb",
+          "page",
+          "mapped memory",
+          "resident"
+        ],
+        "semantic": [],
+        "merged": [
+          "memory",
+          "mongodb",
+          "page",
+          "mapped memory",
+          "resident"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "mongodb_ca_host",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3360390398034884,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.609179+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 47,
+      "title": "Segment 47 (pages 451-458)",
+      "chapter_id": "MongoDB The Definitive Guide:ch47",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch49",
+          "score": 0.5182761406339802,
+          "base_score": 0.6137935677233003,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch50",
+          "score": 0.5055409268365683,
+          "base_score": 0.5925682113942804,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "working set",
+          "working",
+          "set",
+          "figure 22",
+          "gb"
+        ],
+        "semantic": [],
+        "merged": [
+          "working set",
+          "working",
+          "set",
+          "figure 22",
+          "gb"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3640100991551366,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.609416+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 48,
+      "title": "Segment 48 (pages 459-470)",
+      "chapter_id": "MongoDB The Definitive Guide:ch48",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch49",
+          "score": 0.5613915408040347,
+          "base_score": 0.6115784939326505,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch45",
+          "score": 0.5313006860388089,
+          "base_score": 0.6355011433980149,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch51",
+          "score": 0.5012066143209726,
+          "base_score": 0.5112702831275469,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "backup",
+          "restore",
+          "snapshot",
+          "data",
+          "mongodump"
+        ],
+        "semantic": [],
+        "merged": [
+          "backup",
+          "restore",
+          "snapshot",
+          "data",
+          "mongodump"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3487104353172734,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.609656+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 49,
+      "title": "Segment 49 (pages 471-480)",
+      "chapter_id": "MongoDB The Definitive Guide:ch49",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch48",
+          "score": 0.5613915408040347,
+          "base_score": 0.6115784939326505,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch51",
+          "score": 0.5469789182604178,
+          "base_score": 0.5875574563599555,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch45",
+          "score": 0.5360118172490801,
+          "base_score": 0.6433530287484668,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch47",
+          "score": 0.5182761406339802,
+          "base_score": 0.6137935677233003,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch25",
+          "score": 0.5066207593487844,
+          "base_score": 0.5202938581738998,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "disk",
+          "memory",
+          "data",
+          "disks",
+          "operating"
+        ],
+        "semantic": [],
+        "merged": [
+          "disk",
+          "memory",
+          "data",
+          "disks",
+          "operating"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38089967774044087,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.609906+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 50,
+      "title": "Segment 50 (pages 481-490)",
+      "chapter_id": "MongoDB The Definitive Guide:ch50",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch47",
+          "score": 0.5055409268365683,
+          "base_score": 0.5925682113942804,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "mongodb",
+          "connections",
+          "server",
+          "program files",
+          "spawn"
+        ],
+        "semantic": [],
+        "merged": [
+          "mongodb",
+          "connections",
+          "server",
+          "program files",
+          "spawn"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3591413320358522,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.610145+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 51,
+      "title": "Segment 51 (pages 491-499)",
+      "chapter_id": "MongoDB The Definitive Guide:ch51",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch49",
+          "score": 0.5469789182604178,
+          "base_score": 0.5875574563599555,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch25",
+          "score": 0.5449264393129795,
+          "base_score": 0.584136658114225,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch4",
+          "score": 0.5355991947854012,
+          "base_score": 0.6426653246423353,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "MongoDB The Definitive Guide:ch48",
+          "score": 0.5012066143209726,
+          "base_score": 0.5112702831275469,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "bson",
+          "false",
+          "file",
+          "data",
+          "true"
+        ],
+        "semantic": [],
+        "merged": [
+          "bson",
+          "false",
+          "file",
+          "data",
+          "true"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3763803933607137,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.610381+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 52,
+      "title": "Segment 52 (pages 500-508)",
+      "chapter_id": "MongoDB The Definitive Guide:ch52",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "method",
+          "238",
+          "benefits",
+          "104",
+          "command"
+        ],
+        "semantic": [],
+        "merged": [
+          "method",
+          "238",
+          "benefits",
+          "104",
+          "command"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.22660437647280235,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:52:34.610616+00:00"
+      }
+    },
+    {
+      "book": "MongoDB The Definitive Guide",
+      "chapter": 53,
+      "title": "Segment 53 (pages 509-514)",
+      "chapter_id": "MongoDB The Definitive Guide:ch53",
+      "cross_references": [
+        {
+          "target": "MongoDB The Definitive Guide:ch2",
+          "score": 0.512167751833578,
+          "base_score": 0.6036129197226301,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sh",
+          "356",
+          "294",
+          "37",
+          "sharding"
+        ],
+        "semantic": [],
+        "merged": [
+          "sh",
+          "356",
+          "294",
+          "37",
+          "sharding"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "set_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.20099659966597616,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:52:34.610855+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

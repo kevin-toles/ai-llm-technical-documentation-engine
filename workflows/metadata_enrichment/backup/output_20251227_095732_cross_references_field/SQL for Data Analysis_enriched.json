@@ -1,0 +1,2152 @@
+{
+  "book": {
+    "title": "SQL for Data Analysis"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:55:45.747142",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-10)",
+      "chapter_id": "SQL for Data Analysis:ch1",
+      "cross_references": [
+        {
+          "target": "SQL for Data Analysis:ch2",
+          "score": 0.7120914268356126,
+          "base_score": 0.6511047590117351,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch3",
+          "score": 0.6489017454598535,
+          "base_score": 0.5457886233854701,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch5",
+          "score": 0.5760364807438878,
+          "base_score": 0.6359867271657388,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch4",
+          "score": 0.549562800036085,
+          "base_score": 0.5918639259860676,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch38",
+          "score": 0.5409943240598781,
+          "base_score": 0.5775831326923895,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "experiments",
+          "analysis",
+          "sql data",
+          "data",
+          "data analysis"
+        ],
+        "semantic": [],
+        "merged": [
+          "experiments",
+          "analysis",
+          "sql data",
+          "data",
+          "data analysis"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_of_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3678160959750733,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.694403+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 2,
+      "title": "Segment 2 (pages 11-19)",
+      "chapter_id": "SQL for Data Analysis:ch2",
+      "cross_references": [
+        {
+          "target": "SQL for Data Analysis:ch3",
+          "score": 0.7794900749826097,
+          "base_score": 0.6047056805265718,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch1",
+          "score": 0.7120914268356126,
+          "base_score": 0.6511047590117351,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch38",
+          "score": 0.6053337019282008,
+          "base_score": 0.5922228365470013,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch5",
+          "score": 0.5674050479115652,
+          "base_score": 0.6216010057785346,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch4",
+          "score": 0.564354058010001,
+          "base_score": 0.6165160226092611,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data analysis",
+          "data",
+          "analysis",
+          "sql",
+          "practitioners"
+        ],
+        "semantic": [],
+        "merged": [
+          "data analysis",
+          "data",
+          "analysis",
+          "sql",
+          "practitioners"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_of_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36640766861712193,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.694654+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 3,
+      "title": "Segment 3 (pages 20-27)",
+      "chapter_id": "SQL for Data Analysis:ch3",
+      "cross_references": [
+        {
+          "target": "SQL for Data Analysis:ch2",
+          "score": 0.7794900749826097,
+          "base_score": 0.6047056805265718,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch1",
+          "score": 0.6489017454598535,
+          "base_score": 0.5457886233854701,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch4",
+          "score": 0.5428342136741682,
+          "base_score": 0.580649615382873,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch5",
+          "score": 0.5233526974473932,
+          "base_score": 0.5481804216715812,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "sql",
+          "data analysis",
+          "database",
+          "analysis"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "sql",
+          "data analysis",
+          "database",
+          "analysis"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_of_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26040559812854225,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.694835+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 4,
+      "title": "Segment 4 (pages 28-35)",
+      "chapter_id": "SQL for Data Analysis:ch4",
+      "cross_references": [
+        {
+          "target": "SQL for Data Analysis:ch5",
+          "score": 0.5968065279743069,
+          "base_score": 0.6706034725497707,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch2",
+          "score": 0.564354058010001,
+          "base_score": 0.6165160226092611,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch1",
+          "score": 0.549562800036085,
+          "base_score": 0.5918639259860676,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch3",
+          "score": 0.5428342136741682,
+          "base_score": 0.580649615382873,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch38",
+          "score": 0.5147299017909773,
+          "base_score": 0.5338090955775548,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "store",
+          "databases",
+          "store databases",
+          "data stores"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "store",
+          "databases",
+          "store databases",
+          "data stores"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_of_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3145578729737581,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.695044+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 5,
+      "title": "Segment 5 (pages 36-43)",
+      "chapter_id": "SQL for Data Analysis:ch5",
+      "cross_references": [
+        {
+          "target": "SQL for Data Analysis:ch4",
+          "score": 0.5968065279743069,
+          "base_score": 0.6706034725497707,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch1",
+          "score": 0.5760364807438878,
+          "base_score": 0.6359867271657388,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch2",
+          "score": 0.5674050479115652,
+          "base_score": 0.6216010057785346,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch9",
+          "score": 0.5277702034732774,
+          "base_score": 0.5555429317147216,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch3",
+          "score": 0.5233526974473932,
+          "base_score": 0.5481804216715812,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "types",
+          "data types",
+          "data type",
+          "database data"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "types",
+          "data types",
+          "data type",
+          "database data"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_of_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3472755756749508,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.695232+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 6,
+      "title": "Segment 6 (pages 44-51)",
+      "chapter_id": "SQL for Data Analysis:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "bins",
+          "orders",
+          "bin",
+          "values",
+          "data"
+        ],
+        "semantic": [],
+        "merged": [
+          "bins",
+          "orders",
+          "bin",
+          "values",
+          "data"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_earthquakes",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2441143643550146,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.695418+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 7,
+      "title": "Segment 7 (pages 52-60)",
+      "chapter_id": "SQL for Data Analysis:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "type",
+          "data type",
+          "case",
+          "case statements"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "type",
+          "data type",
+          "case",
+          "case statements"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "sales_sales_month_stores",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3319951133134699,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.695598+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 8,
+      "title": "Segment 8 (pages 61-69)",
+      "chapter_id": "SQL for Data Analysis:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "nulls",
+          "null",
+          "values",
+          "missing"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "nulls",
+          "null",
+          "values",
+          "missing"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21361653135048556,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:55:45.695939+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 9,
+      "title": "Segment 9 (pages 70-81)",
+      "chapter_id": "SQL for Data Analysis:ch9",
+      "cross_references": [
+        {
+          "target": "SQL for Data Analysis:ch2",
+          "score": 0.5476405054838382,
+          "base_score": 0.5886601017323229,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch5",
+          "score": 0.5277702034732774,
+          "base_score": 0.5555429317147216,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch4",
+          "score": 0.5063723578841198,
+          "base_score": 0.5198798557327923,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "time",
+          "time zone",
+          "zone",
+          "data",
+          "date"
+        ],
+        "semantic": [],
+        "merged": [
+          "time",
+          "time zone",
+          "zone",
+          "data",
+          "date"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_of_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33400808190208797,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.696557+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 10,
+      "title": "Segment 10 (pages 82-89)",
+      "chapter_id": "SQL for Data Analysis:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "date 2020",
+          "date",
+          "dates",
+          "days",
+          "2020"
+        ],
+        "semantic": [],
+        "merged": [
+          "date 2020",
+          "date",
+          "dates",
+          "days",
+          "2020"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2175940229822196,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:55:45.697048+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 11,
+      "title": "Segment 11 (pages 90-105)",
+      "chapter_id": "SQL for Data Analysis:ch11",
+      "cross_references": [
+        {
+          "target": "SQL for Data Analysis:ch12",
+          "score": 0.6179798595136976,
+          "base_score": 0.4942521468085437,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch14",
+          "score": 0.5446275116673231,
+          "base_score": 0.6577125194455385,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "clothing",
+          "clothing stores",
+          "stores",
+          "kind_of_business",
+          "men"
+        ],
+        "semantic": [],
+        "merged": [
+          "clothing",
+          "clothing stores",
+          "stores",
+          "kind_of_business",
+          "men"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "sales_sales_month_stores",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2854729264156813,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.697582+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 12,
+      "title": "Segment 12 (pages 106-114)",
+      "chapter_id": "SQL for Data Analysis:ch12",
+      "cross_references": [
+        {
+          "target": "SQL for Data Analysis:ch11",
+          "score": 0.6179798595136976,
+          "base_score": 0.4942521468085437,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch13",
+          "score": 0.5598372982206149,
+          "base_score": 0.5163954970343583,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch14",
+          "score": 0.5254210185910811,
+          "base_score": 0.45903503098513526,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sales",
+          "sales_month",
+          "kind_of_business",
+          "clothing",
+          "clothing stores"
+        ],
+        "semantic": [],
+        "merged": [
+          "sales",
+          "sales_month",
+          "kind_of_business",
+          "clothing",
+          "clothing stores"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "sales_sales_month_stores",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3143800138228702,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.699068+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 13,
+      "title": "Segment 13 (pages 115-122)",
+      "chapter_id": "SQL for Data Analysis:ch13",
+      "cross_references": [
+        {
+          "target": "SQL for Data Analysis:ch14",
+          "score": 0.6091036750347276,
+          "base_score": 0.4794585060102604,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch12",
+          "score": 0.5598372982206149,
+          "base_score": 0.5163954970343583,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sales_month",
+          "sales",
+          "01",
+          "retail_sales",
+          "11"
+        ],
+        "semantic": [],
+        "merged": [
+          "sales_month",
+          "sales",
+          "01",
+          "retail_sales",
+          "11"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "sales_sales_month_stores",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2660432638769612,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.699280+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 14,
+      "title": "Segment 14 (pages 123-132)",
+      "chapter_id": "SQL for Data Analysis:ch14",
+      "cross_references": [
+        {
+          "target": "SQL for Data Analysis:ch13",
+          "score": 0.6091036750347276,
+          "base_score": 0.4794585060102604,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch11",
+          "score": 0.5446275116673231,
+          "base_score": 0.6577125194455385,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch12",
+          "score": 0.5254210185910811,
+          "base_score": 0.45903503098513526,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sales_month",
+          "book stores",
+          "sales",
+          "lag",
+          "01"
+        ],
+        "semantic": [],
+        "merged": [
+          "sales_month",
+          "book stores",
+          "sales",
+          "lag",
+          "01"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "sales_sales_month_stores",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.20764069094703466,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.699466+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 15,
+      "title": "Segment 15 (pages 133-142)",
+      "chapter_id": "SQL for Data Analysis:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "cohort",
+          "cohort analysis",
+          "analysis",
+          "time",
+          "behavior"
+        ],
+        "semantic": [],
+        "merged": [
+          "cohort",
+          "cohort analysis",
+          "analysis",
+          "time",
+          "behavior"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_to_user_id",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3136583725031628,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.699645+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 16,
+      "title": "Segment 16 (pages 143-150)",
+      "chapter_id": "SQL for Data Analysis:ch16",
+      "cross_references": [
+        {
+          "target": "SQL for Data Analysis:ch17",
+          "score": 0.8789476662124366,
+          "base_score": 0.7704683325762831,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch18",
+          "score": 0.747648201264788,
+          "base_score": 0.7103660497270277,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch19",
+          "score": 0.7259414234683619,
+          "base_score": 0.7932357057806031,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch20",
+          "score": 0.6725940510522628,
+          "base_score": 0.5852757993728188,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch21",
+          "score": 0.5623972689335894,
+          "base_score": 0.6132547074819082,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "id_bioguide",
+          "cohort_retained",
+          "period",
+          "first_term",
+          "term_start"
+        ],
+        "semantic": [],
+        "merged": [
+          "id_bioguide",
+          "cohort_retained",
+          "period",
+          "first_term",
+          "term_start"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "id_bioguide_as_term_start",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3478245198577297,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.699830+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 17,
+      "title": "Segment 17 (pages 151-158)",
+      "chapter_id": "SQL for Data Analysis:ch17",
+      "cross_references": [
+        {
+          "target": "SQL for Data Analysis:ch16",
+          "score": 0.8789476662124366,
+          "base_score": 0.7704683325762831,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch20",
+          "score": 0.7989543473579651,
+          "base_score": 0.7958762932156562,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch19",
+          "score": 0.7605047888649853,
+          "base_score": 0.8508413147749755,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch18",
+          "score": 0.7312644016510275,
+          "base_score": 0.8021073360850457,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch21",
+          "score": 0.6635521276515984,
+          "base_score": 0.78184613867859,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "id_bioguide",
+          "cohort_retained",
+          "first_term",
+          "term_start",
+          "legislators_terms"
+        ],
+        "semantic": [],
+        "merged": [
+          "id_bioguide",
+          "cohort_retained",
+          "first_term",
+          "term_start",
+          "legislators_terms"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "id_bioguide_as_term_start",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3201784515627911,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.700034+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 18,
+      "title": "Segment 18 (pages 159-166)",
+      "chapter_id": "SQL for Data Analysis:ch18",
+      "cross_references": [
+        {
+          "target": "SQL for Data Analysis:ch16",
+          "score": 0.747648201264788,
+          "base_score": 0.7103660497270277,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch17",
+          "score": 0.7312644016510275,
+          "base_score": 0.8021073360850457,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch19",
+          "score": 0.7040869353446536,
+          "base_score": 0.8494041515003485,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch20",
+          "score": 0.694823104832927,
+          "base_score": 0.8339644339808041,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch21",
+          "score": 0.6850916600251686,
+          "base_score": 0.817745359301207,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "id_bioguide",
+          "gender",
+          "first_state",
+          "cohort_retained",
+          "period"
+        ],
+        "semantic": [],
+        "merged": [
+          "id_bioguide",
+          "gender",
+          "first_state",
+          "cohort_retained",
+          "period"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "id_bioguide_as_term_start",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30082848569912957,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.700212+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 19,
+      "title": "Segment 19 (pages 167-174)",
+      "chapter_id": "SQL for Data Analysis:ch19",
+      "cross_references": [
+        {
+          "target": "SQL for Data Analysis:ch17",
+          "score": 0.7605047888649853,
+          "base_score": 0.8508413147749755,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch16",
+          "score": 0.7259414234683619,
+          "base_score": 0.7932357057806031,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch20",
+          "score": 0.7093778877422284,
+          "base_score": 0.765629812903714,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch18",
+          "score": 0.7040869353446536,
+          "base_score": 0.8494041515003485,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch21",
+          "score": 0.674104682143167,
+          "base_score": 0.7994337294978708,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "id_bioguide",
+          "term_start",
+          "2000",
+          "count distinct",
+          "distinct"
+        ],
+        "semantic": [],
+        "merged": [
+          "id_bioguide",
+          "term_start",
+          "2000",
+          "count distinct",
+          "distinct"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "id_bioguide_as_term_start",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3296317322774322,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.700395+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 20,
+      "title": "Segment 20 (pages 175-183)",
+      "chapter_id": "SQL for Data Analysis:ch20",
+      "cross_references": [
+        {
+          "target": "SQL for Data Analysis:ch17",
+          "score": 0.7989543473579651,
+          "base_score": 0.7958762932156562,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch19",
+          "score": 0.7093778877422284,
+          "base_score": 0.765629812903714,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch18",
+          "score": 0.694823104832927,
+          "base_score": 0.8339644339808041,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch21",
+          "score": 0.6853233630001577,
+          "base_score": 0.8181315309261887,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch16",
+          "score": 0.6725940510522628,
+          "base_score": 0.5852757993728188,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "id_bioguide",
+          "first_term",
+          "term_start",
+          "cohort_century",
+          "century"
+        ],
+        "semantic": [],
+        "merged": [
+          "id_bioguide",
+          "first_term",
+          "term_start",
+          "cohort_century",
+          "century"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "id_bioguide_as_term_start",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.289445848739352,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.700573+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 21,
+      "title": "Segment 21 (pages 184-194)",
+      "chapter_id": "SQL for Data Analysis:ch21",
+      "cross_references": [
+        {
+          "target": "SQL for Data Analysis:ch20",
+          "score": 0.6853233630001577,
+          "base_score": 0.8181315309261887,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch18",
+          "score": 0.6850916600251686,
+          "base_score": 0.817745359301207,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch19",
+          "score": 0.674104682143167,
+          "base_score": 0.7994337294978708,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch17",
+          "score": 0.6635521276515984,
+          "base_score": 0.78184613867859,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch16",
+          "score": 0.5623972689335894,
+          "base_score": 0.6132547074819082,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "id_bioguide",
+          "date",
+          "text",
+          "legislators",
+          "text analysis"
+        ],
+        "semantic": [],
+        "merged": [
+          "id_bioguide",
+          "date",
+          "text",
+          "legislators",
+          "text analysis"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "id_bioguide_as_term_start",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30359042603375136,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.700753+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 22,
+      "title": "Segment 22 (pages 195-202)",
+      "chapter_id": "SQL for Data Analysis:ch22",
+      "cross_references": [
+        {
+          "target": "SQL for Data Analysis:ch23",
+          "score": 0.7753172005559438,
+          "base_score": 0.5977508898154619,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch27",
+          "score": 0.5735998504685286,
+          "base_score": 0.7059997507808808,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch26",
+          "score": 0.5584755219448537,
+          "base_score": 0.6067184625006821,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "split_part",
+          "sighting_report",
+          "occurred",
+          "split_part split_part",
+          "split_part sighting_report"
+        ],
+        "semantic": [],
+        "merged": [
+          "split_part",
+          "sighting_report",
+          "occurred",
+          "split_part split_part",
+          "split_part sighting_report"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_split_part_as",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32989272964563293,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.700937+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 23,
+      "title": "Segment 23 (pages 203-210)",
+      "chapter_id": "SQL for Data Analysis:ch23",
+      "cross_references": [
+        {
+          "target": "SQL for Data Analysis:ch22",
+          "score": 0.7753172005559438,
+          "base_score": 0.5977508898154619,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "split_part",
+          "split_part split_part",
+          "sighting_report",
+          "split_part sighting_report",
+          "reported"
+        ],
+        "semantic": [],
+        "merged": [
+          "split_part",
+          "split_part split_part",
+          "sighting_report",
+          "split_part sighting_report",
+          "reported"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_split_part_as",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26598950261292853,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.701129+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 24,
+      "title": "Segment 24 (pages 211-218)",
+      "chapter_id": "SQL for Data Analysis:ch24",
+      "cross_references": [
+        {
+          "target": "SQL for Data Analysis:ch26",
+          "score": 0.5231402320070878,
+          "base_score": 0.6219003866784798,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "description",
+          "first_word",
+          "description like",
+          "ilike",
+          "lower description"
+        ],
+        "semantic": [],
+        "merged": [
+          "description",
+          "first_word",
+          "description like",
+          "ilike",
+          "lower description"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_split_part_as",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2505900858583286,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.701308+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 25,
+      "title": "Segment 25 (pages 219-227)",
+      "chapter_id": "SQL for Data Analysis:ch25",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "match",
+          "pattern",
+          "car",
+          "character",
+          "regex"
+        ],
+        "semantic": [],
+        "merged": [
+          "match",
+          "pattern",
+          "car",
+          "character",
+          "regex"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_split_part_as",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2486219747505915,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.701484+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 26,
+      "title": "Segment 26 (pages 228-238)",
+      "chapter_id": "SQL for Data Analysis:ch26",
+      "cross_references": [
+        {
+          "target": "SQL for Data Analysis:ch22",
+          "score": 0.5584755219448537,
+          "base_score": 0.6067184625006821,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch27",
+          "score": 0.5482254986443696,
+          "base_score": 0.6637091644072827,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch24",
+          "score": 0.5231402320070878,
+          "base_score": 0.6219003866784798,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "duration",
+          "split_part",
+          "shape",
+          "reports",
+          "regexp_matches"
+        ],
+        "semantic": [],
+        "merged": [
+          "duration",
+          "split_part",
+          "shape",
+          "reports",
+          "regexp_matches"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_split_part_as",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2740438627274698,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.701661+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 27,
+      "title": "Segment 27 (pages 239-246)",
+      "chapter_id": "SQL for Data Analysis:ch27",
+      "cross_references": [
+        {
+          "target": "SQL for Data Analysis:ch22",
+          "score": 0.5735998504685286,
+          "base_score": 0.7059997507808808,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch26",
+          "score": 0.5482254986443696,
+          "base_score": 0.6637091644072827,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "anomaly",
+          "sql",
+          "detection",
+          "processing"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "anomaly",
+          "sql",
+          "detection",
+          "processing"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_split_part_as",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33193215421954825,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.701840+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 28,
+      "title": "Segment 28 (pages 247-256)",
+      "chapter_id": "SQL for Data Analysis:ch28",
+      "cross_references": [
+        {
+          "target": "SQL for Data Analysis:ch30",
+          "score": 0.6541325683525065,
+          "base_score": 0.6735542805875109,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch29",
+          "score": 0.5231188667167622,
+          "base_score": 0.5477907037871963,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch31",
+          "score": 0.5099978292016301,
+          "base_score": 0.5259223079286427,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "mag",
+          "mag null",
+          "place",
+          "earthquakes",
+          "percentile"
+        ],
+        "semantic": [],
+        "merged": [
+          "mag",
+          "mag null",
+          "place",
+          "earthquakes",
+          "percentile"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_earthquakes",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26200375273764787,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.702031+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 29,
+      "title": "Segment 29 (pages 257-265)",
+      "chapter_id": "SQL for Data Analysis:ch29",
+      "cross_references": [
+        {
+          "target": "SQL for Data Analysis:ch30",
+          "score": 0.5659644856362223,
+          "base_score": 0.6192000686529631,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch28",
+          "score": 0.5231188667167622,
+          "base_score": 0.5477907037871963,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "plot",
+          "box",
+          "scatter",
+          "earthquakes",
+          "graph"
+        ],
+        "semantic": [],
+        "merged": [
+          "plot",
+          "box",
+          "scatter",
+          "earthquakes",
+          "graph"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_earthquakes",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.17015724130801033,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.702209+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 30,
+      "title": "Segment 30 (pages 266-275)",
+      "chapter_id": "SQL for Data Analysis:ch30",
+      "cross_references": [
+        {
+          "target": "SQL for Data Analysis:ch28",
+          "score": 0.6541325683525065,
+          "base_score": 0.6735542805875109,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch29",
+          "score": 0.5659644856362223,
+          "base_score": 0.6192000686529631,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "earthquakes",
+          "place",
+          "count earthquakes",
+          "time",
+          "earthquakes earthquakes"
+        ],
+        "semantic": [],
+        "merged": [
+          "earthquakes",
+          "place",
+          "count earthquakes",
+          "time",
+          "earthquakes earthquakes"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_earthquakes",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2555862023680283,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.702389+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 31,
+      "title": "Segment 31 (pages 276-285)",
+      "chapter_id": "SQL for Data Analysis:ch31",
+      "cross_references": [
+        {
+          "target": "SQL for Data Analysis:ch28",
+          "score": 0.5099978292016301,
+          "base_score": 0.5259223079286427,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "values",
+          "data",
+          "outliers",
+          "mag",
+          "experiment"
+        ],
+        "semantic": [],
+        "merged": [
+          "values",
+          "data",
+          "outliers",
+          "mag",
+          "experiment"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_earthquakes",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.304305384894357,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.702606+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 32,
+      "title": "Segment 32 (pages 286-295)",
+      "chapter_id": "SQL for Data Analysis:ch32",
+      "cross_references": [
+        {
+          "target": "SQL for Data Analysis:ch33",
+          "score": 0.5376753701453341,
+          "base_score": 0.572051542834816,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "user_id",
+          "variant",
+          "onboarding",
+          "users",
+          "experiment"
+        ],
+        "semantic": [],
+        "merged": [
+          "user_id",
+          "variant",
+          "onboarding",
+          "users",
+          "experiment"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_to_user_id",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24217470920981982,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.702783+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 33,
+      "title": "Segment 33 (pages 296-306)",
+      "chapter_id": "SQL for Data Analysis:ch33",
+      "cross_references": [
+        {
+          "target": "SQL for Data Analysis:ch32",
+          "score": 0.5376753701453341,
+          "base_score": 0.572051542834816,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "logic",
+          "data",
+          "user_id",
+          "complex",
+          "etl"
+        ],
+        "semantic": [],
+        "merged": [
+          "logic",
+          "data",
+          "user_id",
+          "complex",
+          "etl"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_to_user_id",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2880790443563811,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.703002+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 34,
+      "title": "Segment 34 (pages 307-315)",
+      "chapter_id": "SQL for Data Analysis:ch34",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "query",
+          "sql",
+          "formatting",
+          "makes"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "query",
+          "sql",
+          "formatting",
+          "makes"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_of_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30280246212129336,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.703179+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 35,
+      "title": "Segment 35 (pages 316-324)",
+      "chapter_id": "SQL for Data Analysis:ch35",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "global_sales",
+          "genre",
+          "publisher",
+          "platform",
+          "query"
+        ],
+        "semantic": [],
+        "merged": [
+          "global_sales",
+          "genre",
+          "publisher",
+          "platform",
+          "query"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2974128290739866,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:55:45.703351+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 36,
+      "title": "Segment 36 (pages 325-332)",
+      "chapter_id": "SQL for Data Analysis:ch36",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "sample",
+          "data",
+          "state",
+          "terms",
+          "values"
+        ],
+        "semantic": [],
+        "merged": [
+          "sample",
+          "data",
+          "state",
+          "terms",
+          "values"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_earthquakes",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.261148116267144,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.703524+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 37,
+      "title": "Segment 37 (pages 333-340)",
+      "chapter_id": "SQL for Data Analysis:ch37",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "term_start",
+          "lag",
+          "term_start lag",
+          "lag term_start",
+          "customer_id"
+        ],
+        "semantic": [],
+        "merged": [
+          "term_start",
+          "lag",
+          "term_start lag",
+          "lag term_start",
+          "customer_id"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_to_user_id",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3296674946241922,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.703700+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 38,
+      "title": "Segment 38 (pages 341-349)",
+      "chapter_id": "SQL for Data Analysis:ch38",
+      "cross_references": [
+        {
+          "target": "SQL for Data Analysis:ch2",
+          "score": 0.6053337019282008,
+          "base_score": 0.5922228365470013,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch1",
+          "score": 0.5409943240598781,
+          "base_score": 0.5775831326923895,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "SQL for Data Analysis:ch4",
+          "score": 0.5147299017909773,
+          "base_score": 0.5338090955775548,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "sql",
+          "296",
+          "data sets",
+          "sets"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "sql",
+          "296",
+          "data sets",
+          "sets"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_of_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2826471988502815,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.703907+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 39,
+      "title": "Segment 39 (pages 350-357)",
+      "chapter_id": "SQL for Data Analysis:ch39",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "function",
+          "versus",
+          "time",
+          "176"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "function",
+          "versus",
+          "time",
+          "176"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3363823757474801,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:55:45.704096+00:00"
+      }
+    },
+    {
+      "book": "SQL for Data Analysis",
+      "chapter": 40,
+      "title": "Segment 40 (pages 358-359)",
+      "chapter_id": "SQL for Data Analysis:ch40",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "green",
+          "green magpie",
+          "magpie",
+          "species",
+          "bird"
+        ],
+        "semantic": [],
+        "merged": [
+          "green",
+          "green magpie",
+          "magpie",
+          "species",
+          "bird"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_earthquakes",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.09193167203080264,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:45.704272+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

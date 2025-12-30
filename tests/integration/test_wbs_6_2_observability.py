@@ -38,7 +38,7 @@ class TestPrometheusMetrics:
     def test_metrics_collector_class_exists(self):
         """MetricsCollector class exists."""
         from workflows.shared.clients.metrics import MetricsCollector
-        assert MetricsCollector is not None
+        assert MetricsCollector
 
     def test_metrics_has_increment_counter(self):
         """MetricsCollector has increment_counter method."""
@@ -133,7 +133,7 @@ class TestTraceSpans:
         from workflows.shared.clients.metrics import create_span
         
         with create_span("my_operation") as span:
-            pass
+            assert span  # Span created successfully
         
         assert span.operation_name == "my_operation"
 
@@ -142,7 +142,7 @@ class TestTraceSpans:
         from workflows.shared.clients.metrics import create_span
         
         with create_span("search", attributes={"query": "DDD", "domain": "ai-ml"}) as span:
-            pass
+            assert span  # Span created successfully
         
         assert span.attributes["query"] == "DDD"
         assert span.attributes["domain"] == "ai-ml"
@@ -153,7 +153,7 @@ class TestTraceSpans:
         
         with create_span("parent_op") as parent:
             with create_span("child_op", parent=parent) as child:
-                pass
+                assert child  # Child span created successfully
         
         assert child.parent_id == parent.span_id
 
@@ -169,7 +169,7 @@ class TestPerformanceLogging:
     def test_performance_logger_exists(self):
         """Performance logger exists."""
         from workflows.shared.clients.metrics import PerformanceLogger
-        assert PerformanceLogger is not None
+        assert PerformanceLogger
 
     def test_performance_logger_has_log_timing(self):
         """PerformanceLogger has log_timing method."""
@@ -199,7 +199,7 @@ class TestPerformanceLogging:
         try:
             log_data = json.loads(log_text)
             assert log_data["operation"] == "search"
-            assert log_data["duration_ms"] == 150.5
+            assert log_data["duration_ms"] == pytest.approx(150.5)
         except json.JSONDecodeError:
             # If not JSON, check for structured format
             assert "search" in log_text

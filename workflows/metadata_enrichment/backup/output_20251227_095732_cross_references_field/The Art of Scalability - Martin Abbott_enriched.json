@@ -1,0 +1,2801 @@
+{
+  "book": {
+    "title": "The Art of Scalability - Martin Abbott"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:57:52.656588",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-9)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch1",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch4",
+          "score": 0.5654836253955073,
+          "base_score": 0.6924727089925122,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch51",
+          "score": 0.5115819445088977,
+          "base_score": 0.6026365741814962,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "art scalability",
+          "book",
+          "scalability",
+          "abbott",
+          "fisher"
+        ],
+        "semantic": [],
+        "merged": [
+          "art scalability",
+          "book",
+          "scalability",
+          "abbott",
+          "fisher"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35623634948848154,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.601742+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 2,
+      "title": "Segment 2 (pages 10-17)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch2",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch19",
+          "score": 0.5219748394494405,
+          "base_score": 0.6199580657490673,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch22",
+          "score": 0.5044373149165009,
+          "base_score": 0.516654784120094,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "chapter",
+          "fault",
+          "management",
+          "design",
+          "fault isolation"
+        ],
+        "semantic": [],
+        "merged": [
+          "chapter",
+          "fault",
+          "management",
+          "design",
+          "fault isolation"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3811658743729081,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.602071+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 3,
+      "title": "Segment 3 (pages 18-25)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch3",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch55",
+          "score": 0.6358234751459433,
+          "base_score": 0.7356317178358314,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch38",
+          "score": 0.6309865192920928,
+          "base_score": 0.7275701247460806,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cube",
+          "scale cube",
+          "axis akf",
+          "akf",
+          "axis"
+        ],
+        "semantic": [],
+        "merged": [
+          "cube",
+          "scale cube",
+          "axis akf",
+          "akf",
+          "axis"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "axis_splits_split",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3220324767118479,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.602334+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 4,
+      "title": "Segment 4 (pages 26-33)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch4",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch51",
+          "score": 0.7806304295139538,
+          "base_score": 0.7653364301423038,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch1",
+          "score": 0.5654836253955073,
+          "base_score": 0.6924727089925122,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch16",
+          "score": 0.5650094775488673,
+          "base_score": 0.6176083885073714,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch8",
+          "score": 0.5393794205847482,
+          "base_score": 0.6489657009745803,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch5",
+          "score": 0.5056515592276699,
+          "base_score": 0.5927525987127831,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "technology",
+          "processes",
+          "scale",
+          "people process",
+          "platforms"
+        ],
+        "semantic": [],
+        "merged": [
+          "technology",
+          "processes",
+          "scale",
+          "people process",
+          "platforms"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37871555659386763,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.602596+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 5,
+      "title": "Segment 5 (pages 34-41)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch5",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch51",
+          "score": 0.5868871966498164,
+          "base_score": 0.6540712536756198,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch8",
+          "score": 0.5366447058908341,
+          "base_score": 0.6444078431513902,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch6",
+          "score": 0.522381616781247,
+          "base_score": 0.5465619538946709,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch4",
+          "score": 0.5056515592276699,
+          "base_score": 0.5927525987127831,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "organization",
+          "people",
+          "output",
+          "structure",
+          "interface"
+        ],
+        "semantic": [],
+        "merged": [
+          "organization",
+          "people",
+          "output",
+          "structure",
+          "interface"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35503694400708047,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.602860+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 6,
+      "title": "Segment 6 (pages 42-49)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch6",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch9",
+          "score": 0.5295073152468732,
+          "base_score": 0.632512192078122,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch8",
+          "score": 0.5290057895999821,
+          "base_score": 0.6316763159999702,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch5",
+          "score": 0.522381616781247,
+          "base_score": 0.5465619538946709,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch51",
+          "score": 0.5191543743236826,
+          "base_score": 0.615257290539471,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch15",
+          "score": 0.5006985370665079,
+          "base_score": 0.5844975617775131,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "leadership",
+          "management",
+          "management leadership",
+          "organization",
+          "ensuring"
+        ],
+        "semantic": [],
+        "merged": [
+          "leadership",
+          "management",
+          "management leadership",
+          "organization",
+          "ensuring"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3534032536144648,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.603140+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 7,
+      "title": "Segment 7 (pages 50-58)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch7",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch8",
+          "score": 0.5996461103851849,
+          "base_score": 0.5827435173086415,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "responsible",
+          "chief",
+          "company",
+          "officer",
+          "team responsible"
+        ],
+        "semantic": [],
+        "merged": [
+          "responsible",
+          "chief",
+          "company",
+          "officer",
+          "team responsible"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3328218894840076,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.603402+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 8,
+      "title": "Segment 8 (pages 59-67)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch8",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch7",
+          "score": 0.5996461103851849,
+          "base_score": 0.5827435173086415,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch51",
+          "score": 0.5671086816382965,
+          "base_score": 0.6951811360638276,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch4",
+          "score": 0.5393794205847482,
+          "base_score": 0.6489657009745803,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch5",
+          "score": 0.5366447058908341,
+          "base_score": 0.6444078431513902,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch6",
+          "score": 0.5290057895999821,
+          "base_score": 0.6316763159999702,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "engineer",
+          "cto",
+          "responsible",
+          "company",
+          "product"
+        ],
+        "semantic": [],
+        "merged": [
+          "engineer",
+          "cto",
+          "responsible",
+          "company",
+          "product"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4129596786071113,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.603664+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 9,
+      "title": "Segment 9 (pages 68-81)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch9",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch51",
+          "score": 0.5302436999294687,
+          "base_score": 0.6337394998824478,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch6",
+          "score": 0.5295073152468732,
+          "base_score": 0.632512192078122,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch10",
+          "score": 0.5070382417281387,
+          "base_score": 0.5950637362135646,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "team",
+          "team size",
+          "size",
+          "managers",
+          "team members"
+        ],
+        "semantic": [],
+        "merged": [
+          "team",
+          "team size",
+          "size",
+          "managers",
+          "team members"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3486790053191011,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.603935+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 10,
+      "title": "Segment 10 (pages 82-89)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch10",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch9",
+          "score": 0.5070382417281387,
+          "base_score": 0.5950637362135646,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "functional",
+          "structure",
+          "matrix",
+          "project",
+          "organizational"
+        ],
+        "semantic": [],
+        "merged": [
+          "functional",
+          "structure",
+          "matrix",
+          "project",
+          "organizational"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31837626528875806,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.604192+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 11,
+      "title": "Segment 11 (pages 90-97)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch11",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch12",
+          "score": 0.5020986378627231,
+          "base_score": 0.5868310631045385,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch14",
+          "score": 0.5002591909557245,
+          "base_score": 0.5837653182595408,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "leadership",
+          "influence",
+          "person",
+          "born",
+          "behaviors"
+        ],
+        "semantic": [],
+        "merged": [
+          "leadership",
+          "influence",
+          "person",
+          "born",
+          "behaviors"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2592752562049284,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.604445+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 12,
+      "title": "Segment 12 (pages 98-107)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch12",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch11",
+          "score": 0.5020986378627231,
+          "base_score": 0.5868310631045385,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "mission",
+          "vision",
+          "leader",
+          "statement",
+          "leaders"
+        ],
+        "semantic": [],
+        "merged": [
+          "mission",
+          "vision",
+          "leader",
+          "statement",
+          "leaders"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.15753438057645042,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.604694+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 13,
+      "title": "Segment 13 (pages 108-115)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch13",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "vision",
+          "johnny",
+          "goals",
+          "mission",
+          "mission goals"
+        ],
+        "semantic": [],
+        "merged": [
+          "vision",
+          "johnny",
+          "goals",
+          "mission",
+          "mission goals"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2793031278517719,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.604963+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 14,
+      "title": "Segment 14 (pages 116-123)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch14",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch11",
+          "score": 0.5002591909557245,
+          "base_score": 0.5837653182595408,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "team",
+          "talent",
+          "completion",
+          "managers",
+          "coach"
+        ],
+        "semantic": [],
+        "merged": [
+          "team",
+          "talent",
+          "completion",
+          "managers",
+          "coach"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2303498119152324,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.605217+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 15,
+      "title": "Segment 15 (pages 124-131)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch15",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch6",
+          "score": 0.5006985370665079,
+          "base_score": 0.5844975617775131,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "measurement",
+          "time",
+          "cost",
+          "goal",
+          "measuring"
+        ],
+        "semantic": [],
+        "merged": [
+          "measurement",
+          "time",
+          "cost",
+          "goal",
+          "measuring"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3488464046640164,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.605468+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 16,
+      "title": "Segment 16 (pages 132-139)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch16",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch4",
+          "score": 0.5650094775488673,
+          "base_score": 0.6176083885073714,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch51",
+          "score": 0.5283986356559998,
+          "base_score": 0.5565903186859256,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch17",
+          "score": 0.5266887921098018,
+          "base_score": 0.5537405794422623,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "business",
+          "technology",
+          "business executives",
+          "executives",
+          "technology business"
+        ],
+        "semantic": [],
+        "merged": [
+          "business",
+          "technology",
+          "business executives",
+          "executives",
+          "technology business"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3352858027469398,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.605727+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 17,
+      "title": "Segment 17 (pages 140-147)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch17",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch16",
+          "score": 0.5266887921098018,
+          "base_score": 0.5537405794422623,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "business",
+          "business case",
+          "outage",
+          "staff",
+          "downtime"
+        ],
+        "semantic": [],
+        "merged": [
+          "business",
+          "business case",
+          "outage",
+          "staff",
+          "downtime"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35635553460321434,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.605999+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 18,
+      "title": "Segment 18 (pages 148-159)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch18",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch51",
+          "score": 0.5163487872602043,
+          "base_score": 0.6939146454336738,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "process",
+          "right",
+          "right process",
+          "right time",
+          "processes"
+        ],
+        "semantic": [],
+        "merged": [
+          "process",
+          "right",
+          "right process",
+          "right time",
+          "processes"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3842607733152887,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.606255+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 19,
+      "title": "Segment 19 (pages 160-172)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch19",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch20",
+          "score": 0.6237214117712786,
+          "base_score": 0.7154616122113902,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch2",
+          "score": 0.5219748394494405,
+          "base_score": 0.6199580657490673,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "incidents",
+          "incident",
+          "problem",
+          "problems",
+          "root"
+        ],
+        "semantic": [],
+        "merged": [
+          "incidents",
+          "incident",
+          "problem",
+          "problems",
+          "root"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29925944410887817,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.606508+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 20,
+      "title": "Segment 20 (pages 173-186)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch20",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch19",
+          "score": 0.6237214117712786,
+          "base_score": 0.7154616122113902,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch21",
+          "score": 0.601678089647432,
+          "base_score": 0.5861301494123866,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "crisis",
+          "crisis manager",
+          "incident",
+          "manager",
+          "crisis management"
+        ],
+        "semantic": [],
+        "merged": [
+          "crisis",
+          "crisis manager",
+          "incident",
+          "manager",
+          "crisis management"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28299491607063854,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.606771+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 21,
+      "title": "Segment 21 (pages 187-194)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch21",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch20",
+          "score": 0.601678089647432,
+          "base_score": 0.5861301494123866,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "crisis",
+          "resolution",
+          "crisis manager",
+          "escalations",
+          "crisis resolution"
+        ],
+        "semantic": [],
+        "merged": [
+          "crisis",
+          "resolution",
+          "crisis manager",
+          "escalations",
+          "crisis resolution"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2816451178034393,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.607054+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 22,
+      "title": "Segment 22 (pages 195-208)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch22",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch2",
+          "score": 0.5044373149165009,
+          "base_score": 0.516654784120094,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "change",
+          "change management",
+          "process",
+          "management",
+          "management process"
+        ],
+        "semantic": [],
+        "merged": [
+          "change",
+          "change management",
+          "process",
+          "management",
+          "management process"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2937897216728306,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.607321+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 23,
+      "title": "Segment 23 (pages 209-216)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch23",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch24",
+          "score": 0.524367971623221,
+          "base_score": 0.623946619372035,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "headroom",
+          "headroom application",
+          "application",
+          "growth",
+          "12 months"
+        ],
+        "semantic": [],
+        "merged": [
+          "headroom",
+          "headroom application",
+          "application",
+          "growth",
+          "12 months"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3583956972673834,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.607588+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 24,
+      "title": "Segment 24 (pages 217-227)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch24",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch23",
+          "score": 0.524367971623221,
+          "base_score": 0.623946619372035,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "principles",
+          "johnny",
+          "maximum",
+          "themes",
+          "team"
+        ],
+        "semantic": [],
+        "merged": [
+          "principles",
+          "johnny",
+          "maximum",
+          "themes",
+          "team"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2995845633348249,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.607856+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 25,
+      "title": "Segment 25 (pages 228-236)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch25",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch32",
+          "score": 0.5398482341083675,
+          "base_score": 0.6497470568472791,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "design",
+          "systems",
+          "data",
+          "scale",
+          "state"
+        ],
+        "semantic": [],
+        "merged": [
+          "design",
+          "systems",
+          "data",
+          "scale",
+          "state"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2950775512706016,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.608142+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 26,
+      "title": "Segment 26 (pages 237-249)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch26",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch27",
+          "score": 0.8000819935086372,
+          "base_score": 0.6390255447366175,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "jad",
+          "feature",
+          "design",
+          "arb",
+          "team"
+        ],
+        "semantic": [],
+        "merged": [
+          "jad",
+          "feature",
+          "design",
+          "arb",
+          "team"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30368207725716506,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.608412+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 27,
+      "title": "Segment 27 (pages 250-258)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch27",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch26",
+          "score": 0.8000819935086372,
+          "base_score": 0.6390255447366175,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "arb",
+          "jad",
+          "jad team",
+          "feature",
+          "design"
+        ],
+        "semantic": [],
+        "merged": [
+          "arb",
+          "jad",
+          "jad team",
+          "feature",
+          "design"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2447229425456696,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.608670+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 28,
+      "title": "Segment 28 (pages 259-269)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch28",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "build",
+          "buy",
+          "build versus",
+          "versus buy",
+          "versus"
+        ],
+        "semantic": [],
+        "merged": [
+          "build",
+          "buy",
+          "build versus",
+          "versus buy",
+          "versus"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.310048557866717,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.608944+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 29,
+      "title": "Segment 29 (pages 270-278)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch29",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch30",
+          "score": 0.5471190271320953,
+          "base_score": 0.5877909711460847,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "risk",
+          "action",
+          "assessment",
+          "score",
+          "determining risk"
+        ],
+        "semantic": [],
+        "merged": [
+          "risk",
+          "action",
+          "assessment",
+          "score",
+          "determining risk"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3286622944567611,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.609211+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 30,
+      "title": "Segment 30 (pages 279-286)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch30",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch29",
+          "score": 0.5471190271320953,
+          "base_score": 0.5877909711460847,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "risk",
+          "acute",
+          "acute risk",
+          "risk assessment",
+          "risk management"
+        ],
+        "semantic": [],
+        "merged": [
+          "risk",
+          "acute",
+          "acute risk",
+          "risk assessment",
+          "risk management"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.19237123990058974,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.609469+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 31,
+      "title": "Segment 31 (pages 287-299)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch31",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "stress",
+          "testing",
+          "stress testing",
+          "performance",
+          "load"
+        ],
+        "semantic": [],
+        "merged": [
+          "stress",
+          "testing",
+          "stress testing",
+          "performance",
+          "load"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26313895566417445,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:57:52.609762+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 32,
+      "title": "Segment 32 (pages 300-311)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch32",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch25",
+          "score": 0.5398482341083675,
+          "base_score": 0.6497470568472791,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "barrier",
+          "barrier conditions",
+          "conditions",
+          "rollback",
+          "roll"
+        ],
+        "semantic": [],
+        "merged": [
+          "barrier",
+          "barrier conditions",
+          "conditions",
+          "rollback",
+          "roll"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36118667515157926,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.610054+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 33,
+      "title": "Segment 33 (pages 312-320)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch33",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch34",
+          "score": 0.5862031214942358,
+          "base_score": 0.5603385358237265,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "feature",
+          "project",
+          "quality",
+          "scope",
+          "speed"
+        ],
+        "semantic": [],
+        "merged": [
+          "feature",
+          "project",
+          "quality",
+          "scope",
+          "speed"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2778322999725842,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.610305+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 34,
+      "title": "Segment 34 (pages 321-328)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch34",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch33",
+          "score": 0.5862031214942358,
+          "base_score": 0.5603385358237265,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "quality speed",
+          "cost quality",
+          "speed",
+          "quality",
+          "tradeoff"
+        ],
+        "semantic": [],
+        "merged": [
+          "quality speed",
+          "cost quality",
+          "speed",
+          "quality",
+          "tradeoff"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28606630548402534,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.610558+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 35,
+      "title": "Segment 35 (pages 329-336)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch35",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "providers",
+          "provider",
+          "tad",
+          "solution",
+          "tad taa"
+        ],
+        "semantic": [],
+        "merged": [
+          "providers",
+          "provider",
+          "tad",
+          "solution",
+          "tad taa"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2989994071314023,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.610811+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 36,
+      "title": "Segment 36 (pages 337-344)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch36",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch37",
+          "score": 0.5002510350861635,
+          "base_score": 0.6670850584769392,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "fault",
+          "swim",
+          "isolation",
+          "fault isolation",
+          "swim lane"
+        ],
+        "semantic": [],
+        "merged": [
+          "fault",
+          "swim",
+          "isolation",
+          "fault isolation",
+          "swim lane"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27392188795846306,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.611079+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 37,
+      "title": "Segment 37 (pages 345-354)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch37",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch36",
+          "score": 0.5002510350861635,
+          "base_score": 0.6670850584769392,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "swim",
+          "lane",
+          "swim lane",
+          "swim lanes",
+          "lanes"
+        ],
+        "semantic": [],
+        "merged": [
+          "swim",
+          "lane",
+          "swim lane",
+          "swim lanes",
+          "lanes"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2430367521249726,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:57:52.611334+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 38,
+      "title": "Segment 38 (pages 355-378)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch38",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch39",
+          "score": 0.9965250645726692,
+          "base_score": 0.7442084409544485,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch55",
+          "score": 0.6417097806933822,
+          "base_score": 0.7454422270815629,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch3",
+          "score": 0.6309865192920928,
+          "base_score": 0.7275701247460806,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "axis",
+          "axis split",
+          "split",
+          "splits",
+          "axis splits"
+        ],
+        "semantic": [],
+        "merged": [
+          "axis",
+          "axis split",
+          "split",
+          "splits",
+          "axis splits"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "axis_splits_split",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30386189750256676,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.611614+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 39,
+      "title": "Segment 39 (pages 379-402)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch39",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch38",
+          "score": 0.9965250645726692,
+          "base_score": 0.7442084409544485,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch55",
+          "score": 0.5184964112971662,
+          "base_score": 0.540086611421203,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "axis",
+          "splits",
+          "split",
+          "axis splits",
+          "axis split"
+        ],
+        "semantic": [],
+        "merged": [
+          "axis",
+          "splits",
+          "split",
+          "axis splits",
+          "axis split"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "axis_splits_split",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25003646743995595,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.611863+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 40,
+      "title": "Segment 40 (pages 403-410)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch40",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch41",
+          "score": 0.5810906855077029,
+          "base_score": 0.6444104017720974,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch44",
+          "score": 0.5093394574820649,
+          "base_score": 0.5248250217293674,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cache",
+          "data",
+          "object",
+          "application",
+          "data cache"
+        ],
+        "semantic": [],
+        "merged": [
+          "cache",
+          "data",
+          "object",
+          "application",
+          "data cache"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_data_is",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.15024064372434545,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.612135+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 41,
+      "title": "Segment 41 (pages 411-418)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch41",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch40",
+          "score": 0.5810906855077029,
+          "base_score": 0.6444104017720974,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "proxy",
+          "cache",
+          "caching",
+          "reverse proxy",
+          "reverse"
+        ],
+        "semantic": [],
+        "merged": [
+          "proxy",
+          "cache",
+          "caching",
+          "reverse proxy",
+          "reverse"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_data_is",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.14436100185853415,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.612388+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 42,
+      "title": "Segment 42 (pages 419-426)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch42",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch43",
+          "score": 0.5566077363494867,
+          "base_score": 0.6776795605824777,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "calls",
+          "synchronous",
+          "asynchronous",
+          "asynchronous calls",
+          "method"
+        ],
+        "semantic": [],
+        "merged": [
+          "calls",
+          "synchronous",
+          "asynchronous",
+          "asynchronous calls",
+          "method"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28211844654465423,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.612643+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 43,
+      "title": "Segment 43 (pages 427-434)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch43",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch42",
+          "score": 0.5566077363494867,
+          "base_score": 0.6776795605824777,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "session",
+          "state",
+          "user",
+          "session data",
+          "stateful"
+        ],
+        "semantic": [],
+        "merged": [
+          "session",
+          "state",
+          "user",
+          "session data",
+          "stateful"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2300105703505468,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.612894+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 44,
+      "title": "Segment 44 (pages 435-445)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch44",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch45",
+          "score": 0.5604527057648168,
+          "base_score": 0.5174211762746947,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch40",
+          "score": 0.5093394574820649,
+          "base_score": 0.5248250217293674,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "value",
+          "value data",
+          "storage",
+          "costs"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "value",
+          "value data",
+          "storage",
+          "costs"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_data_is",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2184340118789796,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.613165+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 45,
+      "title": "Segment 45 (pages 446-453)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch45",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch44",
+          "score": 0.5604527057648168,
+          "base_score": 0.5174211762746947,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "value",
+          "data",
+          "map",
+          "key value",
+          "reduce"
+        ],
+        "semantic": [],
+        "merged": [
+          "value",
+          "data",
+          "map",
+          "key value",
+          "reduce"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_data_is",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2714502853306401,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.613418+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 46,
+      "title": "Segment 46 (pages 454-464)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch46",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch47",
+          "score": 0.5697499795962401,
+          "base_score": 0.5329166326604002,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch48",
+          "score": 0.5285729809124661,
+          "base_score": 0.46428830152077677,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cloud",
+          "clouds",
+          "computing",
+          "clouds grids",
+          "grids"
+        ],
+        "semantic": [],
+        "merged": [
+          "cloud",
+          "clouds",
+          "computing",
+          "clouds grids",
+          "grids"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "cloud_computing_grid",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23650486869597484,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.613672+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 47,
+      "title": "Segment 47 (pages 465-474)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch47",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch48",
+          "score": 0.6749776577593442,
+          "base_score": 0.7082960962655735,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch46",
+          "score": 0.5697499795962401,
+          "base_score": 0.5329166326604002,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cloud",
+          "cloud computing",
+          "computing",
+          "environments",
+          "cons"
+        ],
+        "semantic": [],
+        "merged": [
+          "cloud",
+          "cloud computing",
+          "computing",
+          "environments",
+          "cons"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "cloud_computing_grid",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2836849327131754,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.613944+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 48,
+      "title": "Segment 48 (pages 475-490)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch48",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch47",
+          "score": 0.6749776577593442,
+          "base_score": 0.7082960962655735,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch46",
+          "score": 0.5285729809124661,
+          "base_score": 0.46428830152077677,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "grid",
+          "computing",
+          "grid computing",
+          "cloud",
+          "computing infrastructure"
+        ],
+        "semantic": [],
+        "merged": [
+          "grid",
+          "computing",
+          "grid computing",
+          "cloud",
+          "computing infrastructure"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "cloud_computing_grid",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24005875774049315,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.614199+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 49,
+      "title": "Segment 49 (pages 491-509)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch49",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "problem",
+          "monitoring",
+          "question",
+          "question problem",
+          "monitors"
+        ],
+        "semantic": [],
+        "merged": [
+          "problem",
+          "monitoring",
+          "question",
+          "question problem",
+          "monitors"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_data_is",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32346853856951713,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.614453+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 50,
+      "title": "Segment 50 (pages 510-526)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch50",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data centers",
+          "centers",
+          "data",
+          "data center",
+          "center"
+        ],
+        "semantic": [],
+        "merged": [
+          "data centers",
+          "centers",
+          "data",
+          "data center",
+          "center"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32122391489135255,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.614705+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 51,
+      "title": "Segment 51 (pages 527-535)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch51",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch4",
+          "score": 0.7806304295139538,
+          "base_score": 0.7653364301423038,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch5",
+          "score": 0.5868871966498164,
+          "base_score": 0.6540712536756198,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch8",
+          "score": 0.5671086816382965,
+          "base_score": 0.6951811360638276,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch9",
+          "score": 0.5302436999294687,
+          "base_score": 0.6337394998824478,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch16",
+          "score": 0.5283986356559998,
+          "base_score": 0.5565903186859256,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "processes",
+          "people",
+          "technology",
+          "people process",
+          "process"
+        ],
+        "semantic": [],
+        "merged": [
+          "processes",
+          "people",
+          "technology",
+          "people process",
+          "process"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.432970517266486,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.614982+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 52,
+      "title": "Segment 52 (pages 536-545)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch52",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "availability",
+          "site",
+          "outage",
+          "calculating",
+          "measurement"
+        ],
+        "semantic": [],
+        "merged": [
+          "availability",
+          "site",
+          "outage",
+          "calculating",
+          "measurement"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.20852332365789347,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.615238+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 53,
+      "title": "Segment 53 (pages 546-553)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch53",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "requests second",
+          "server",
+          "requests",
+          "usage",
+          "second server"
+        ],
+        "semantic": [],
+        "merged": [
+          "requests second",
+          "server",
+          "requests",
+          "usage",
+          "second server"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3269111903663568,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.615496+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 54,
+      "title": "Segment 54 (pages 554-561)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch54",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "tests",
+          "upload",
+          "test",
+          "results",
+          "report"
+        ],
+        "semantic": [],
+        "merged": [
+          "tests",
+          "upload",
+          "test",
+          "results",
+          "report"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23351018865662362,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:57:52.615753+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 55,
+      "title": "Segment 55 (pages 562-569)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch55",
+      "cross_references": [
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch38",
+          "score": 0.6417097806933822,
+          "base_score": 0.7454422270815629,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch3",
+          "score": 0.6358234751459433,
+          "base_score": 0.7356317178358314,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Art of Scalability - Martin Abbott:ch39",
+          "score": 0.5184964112971662,
+          "base_score": 0.540086611421203,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "axis",
+          "202",
+          "344",
+          "372",
+          "vs"
+        ],
+        "semantic": [],
+        "merged": [
+          "axis",
+          "202",
+          "344",
+          "372",
+          "vs"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "axis_splits_split",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3254193021265513,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.616020+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 56,
+      "title": "Segment 56 (pages 570-577)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch56",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "218",
+          "68",
+          "99",
+          "249",
+          "time 99"
+        ],
+        "semantic": [],
+        "merged": [
+          "218",
+          "68",
+          "99",
+          "249",
+          "time 99"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35004095692665343,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:57:52.616273+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 57,
+      "title": "Segment 57 (pages 578-586)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch57",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "145",
+          "265",
+          "34",
+          "35",
+          "38"
+        ],
+        "semantic": [],
+        "merged": [
+          "145",
+          "265",
+          "34",
+          "35",
+          "38"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3293802044118259,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:57:52.616904+00:00"
+      }
+    },
+    {
+      "book": "The Art of Scalability - Martin Abbott",
+      "chapter": 58,
+      "title": "Segment 58 (pages 587-592)",
+      "chapter_id": "The Art of Scalability - Martin Abbott:ch58",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "informit",
+          "informit com",
+          "online",
+          "safari",
+          "books"
+        ],
+        "semantic": [],
+        "merged": [
+          "informit",
+          "informit com",
+          "online",
+          "safari",
+          "books"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21008559570549054,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:52.617225+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

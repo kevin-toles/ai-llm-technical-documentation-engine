@@ -1,0 +1,3348 @@
+{
+  "book": {
+    "title": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:45:49.980841",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-10)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch1",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch3",
+          "score": 0.6722016361716491,
+          "base_score": 0.5846217745717961,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch7",
+          "score": 0.5239755445295675,
+          "base_score": 0.4566259075492793,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch5",
+          "score": 0.513024657903653,
+          "base_score": 0.5309670224320144,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "systems",
+          "research",
+          "distributed",
+          "maarten",
+          "distributed systems"
+        ],
+        "semantic": [],
+        "merged": [
+          "systems",
+          "research",
+          "distributed",
+          "maarten",
+          "distributed systems"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "object_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2706983515106021,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.907981+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 2,
+      "title": "Segment 2 (pages 11-18)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch2",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch61",
+          "score": 0.5349099182859243,
+          "base_score": 0.5674424564024663,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch36",
+          "score": 0.5096477107556997,
+          "base_score": 0.5994128512594995,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "14",
+          "11",
+          "10",
+          "systems",
+          "distributed"
+        ],
+        "semantic": [],
+        "merged": [
+          "14",
+          "11",
+          "10",
+          "systems",
+          "distributed"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_process",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3815302049212496,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.908355+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 3,
+      "title": "Segment 3 (pages 19-26)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch3",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch1",
+          "score": 0.6722016361716491,
+          "base_score": 0.5846217745717961,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch7",
+          "score": 0.6711320788456074,
+          "base_score": 0.7018867980760124,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch5",
+          "score": 0.6184261565837295,
+          "base_score": 0.7066361868988082,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch6",
+          "score": 0.599114691350192,
+          "base_score": 0.6744504115095793,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch9",
+          "score": 0.5637012796849931,
+          "base_score": 0.653787847094036,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "distributed",
+          "distributed systems",
+          "systems",
+          "transparency",
+          "resources"
+        ],
+        "semantic": [],
+        "merged": [
+          "distributed",
+          "distributed systems",
+          "systems",
+          "transparency",
+          "resources"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "object_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4355069992003181,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.908694+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 4,
+      "title": "Segment 4 (pages 27-34)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch4",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch3",
+          "score": 0.5514036897913425,
+          "base_score": 0.6690061496522374,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch49",
+          "score": 0.5304564363906442,
+          "base_score": 0.6340940606510737,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch5",
+          "score": 0.5237125750871269,
+          "base_score": 0.6228542918118782,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "scalability",
+          "users",
+          "service",
+          "problems",
+          "web"
+        ],
+        "semantic": [],
+        "merged": [
+          "scalability",
+          "users",
+          "service",
+          "problems",
+          "web"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "object_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39164078754150855,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.909006+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 5,
+      "title": "Segment 5 (pages 35-42)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch5",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch3",
+          "score": 0.6184261565837295,
+          "base_score": 0.7066361868988082,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch7",
+          "score": 0.5839657311035116,
+          "base_score": 0.6492021444317785,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch6",
+          "score": 0.5388909921476474,
+          "base_score": 0.5740775795053381,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch4",
+          "score": 0.5237125750871269,
+          "base_score": 0.6228542918118782,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch1",
+          "score": 0.513024657903653,
+          "base_score": 0.5309670224320144,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "transaction",
+          "transactions",
+          "systems",
+          "computing",
+          "grid"
+        ],
+        "semantic": [],
+        "merged": [
+          "transaction",
+          "transactions",
+          "systems",
+          "computing",
+          "grid"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "object_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4321554494656313,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.909364+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 6,
+      "title": "Segment 6 (pages 43-50)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch6",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch3",
+          "score": 0.599114691350192,
+          "base_score": 0.6744504115095793,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch5",
+          "score": 0.5388909921476474,
+          "base_score": 0.5740775795053381,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch7",
+          "score": 0.5065537387659893,
+          "base_score": 0.5201821572025749,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pervasive",
+          "sensor",
+          "systems",
+          "sensor networks",
+          "networks"
+        ],
+        "semantic": [],
+        "merged": [
+          "pervasive",
+          "sensor",
+          "systems",
+          "sensor networks",
+          "networks"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "object_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3541099910495936,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.909702+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 7,
+      "title": "Segment 7 (pages 51-58)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch7",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch3",
+          "score": 0.6711320788456074,
+          "base_score": 0.7018867980760124,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch5",
+          "score": 0.5839657311035116,
+          "base_score": 0.6492021444317785,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch49",
+          "score": 0.5245800596808426,
+          "base_score": 0.6243000994680712,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch1",
+          "score": 0.5239755445295675,
+          "base_score": 0.4566259075492793,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch6",
+          "score": 0.5065537387659893,
+          "base_score": 0.5201821572025749,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "architectures",
+          "software components",
+          "software",
+          "distributed",
+          "systems"
+        ],
+        "semantic": [],
+        "merged": [
+          "architectures",
+          "software components",
+          "software",
+          "distributed",
+          "systems"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "object_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3990506699479888,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.910017+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 8,
+      "title": "Segment 8 (pages 59-69)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch8",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch13",
+          "score": 0.5108485743518548,
+          "base_score": 0.6014142905864246,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "node",
+          "data",
+          "peer",
+          "partial",
+          "nodes"
+        ],
+        "semantic": [],
+        "merged": [
+          "node",
+          "data",
+          "peer",
+          "partial",
+          "nodes"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_message",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.399342842368267,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.910324+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 9,
+      "title": "Segment 9 (pages 70-78)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch9",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch3",
+          "score": 0.5637012796849931,
+          "base_score": 0.653787847094036,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "systems",
+          "middleware",
+          "distributed systems",
+          "distributed",
+          "edge"
+        ],
+        "semantic": [],
+        "merged": [
+          "systems",
+          "middleware",
+          "distributed systems",
+          "distributed",
+          "edge"
+        ]
+      },
+      "topic_id": 10,
+      "topic_name": "to_of_cluster",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4121783402100816,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.910652+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 10,
+      "title": "Segment 10 (pages 79-86)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "server",
+          "origin server",
+          "origin",
+          "component",
+          "replica"
+        ],
+        "semantic": [],
+        "merged": [
+          "server",
+          "origin server",
+          "origin",
+          "component",
+          "replica"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "object_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2934857525642747,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.910963+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 11,
+      "title": "Segment 11 (pages 87-94)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch11",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "threads",
+          "thread",
+          "user level",
+          "level threads",
+          "user"
+        ],
+        "semantic": [],
+        "merged": [
+          "threads",
+          "thread",
+          "user level",
+          "level threads",
+          "user"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3921693965876748,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:49.911268+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 12,
+      "title": "Segment 12 (pages 95-103)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch12",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "server",
+          "file server",
+          "application",
+          "file",
+          "interface"
+        ],
+        "semantic": [],
+        "merged": [
+          "server",
+          "file server",
+          "application",
+          "file",
+          "interface"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35414819364652395,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:49.911597+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 13,
+      "title": "Segment 13 (pages 104-111)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch13",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch17",
+          "score": 0.5146278994850502,
+          "base_score": 0.5336390917343428,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch8",
+          "score": 0.5108485743518548,
+          "base_score": 0.6014142905864246,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "server",
+          "client",
+          "request",
+          "file",
+          "end point"
+        ],
+        "semantic": [],
+        "merged": [
+          "server",
+          "client",
+          "request",
+          "file",
+          "end point"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_message",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3999996074690515,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.911908+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 14,
+      "title": "Segment 14 (pages 112-121)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch14",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "slice",
+          "server cluster",
+          "cluster",
+          "server",
+          "clusters"
+        ],
+        "semantic": [],
+        "merged": [
+          "slice",
+          "server cluster",
+          "cluster",
+          "server",
+          "clusters"
+        ]
+      },
+      "topic_id": 10,
+      "topic_name": "to_of_cluster",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3451804666870522,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.912212+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 15,
+      "title": "Segment 15 (pages 122-131)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "migration",
+          "code",
+          "code migration",
+          "migrating",
+          "target"
+        ],
+        "semantic": [],
+        "merged": [
+          "migration",
+          "code",
+          "code migration",
+          "migrating",
+          "target"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_message",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32375842012765155,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.912534+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 16,
+      "title": "Segment 16 (pages 132-144)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch16",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "layer",
+          "protocols",
+          "communication",
+          "transport",
+          "middleware"
+        ],
+        "semantic": [],
+        "merged": [
+          "layer",
+          "protocols",
+          "communication",
+          "transport",
+          "middleware"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42258100337386956,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:49.912838+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 17,
+      "title": "Segment 17 (pages 145-152)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch17",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch13",
+          "score": 0.5146278994850502,
+          "base_score": 0.5336390917343428,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "stub",
+          "server",
+          "procedure",
+          "server stub",
+          "parameters"
+        ],
+        "semantic": [],
+        "merged": [
+          "stub",
+          "server",
+          "procedure",
+          "server stub",
+          "parameters"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_message",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33489044635721804,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.913169+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 18,
+      "title": "Segment 18 (pages 153-175)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch18",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "queue",
+          "message",
+          "queuing",
+          "message queuing",
+          "queue manager"
+        ],
+        "semantic": [],
+        "merged": [
+          "queue",
+          "message",
+          "queuing",
+          "message queuing",
+          "queue manager"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_message",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3217667166909224,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.913493+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 19,
+      "title": "Segment 19 (pages 176-184)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch19",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "stream",
+          "streams",
+          "audio",
+          "audio stream",
+          "data streams"
+        ],
+        "semantic": [],
+        "merged": [
+          "stream",
+          "streams",
+          "audio",
+          "audio stream",
+          "data streams"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "object_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32546144463497273,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.913878+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 20,
+      "title": "Segment 20 (pages 185-192)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch20",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "node",
+          "nodes",
+          "tree",
+          "parent",
+          "updates"
+        ],
+        "semantic": [],
+        "merged": [
+          "node",
+          "nodes",
+          "tree",
+          "parent",
+          "updates"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3346983522793587,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:49.914204+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 21,
+      "title": "Segment 21 (pages 193-200)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch21",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "entity",
+          "access point",
+          "address",
+          "access",
+          "point"
+        ],
+        "semantic": [],
+        "merged": [
+          "entity",
+          "access point",
+          "address",
+          "access",
+          "point"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4280874868403932,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:49.914533+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 22,
+      "title": "Segment 22 (pages 201-210)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch22",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch23",
+          "score": 0.5744588965840871,
+          "base_score": 0.5407648276401453,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "node",
+          "address",
+          "home",
+          "entity",
+          "mobile"
+        ],
+        "semantic": [],
+        "merged": [
+          "node",
+          "address",
+          "home",
+          "entity",
+          "mobile"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "node_name_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3111008069281399,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.914841+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 23,
+      "title": "Segment 23 (pages 211-221)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch23",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch22",
+          "score": 0.5744588965840871,
+          "base_score": 0.5407648276401453,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch26",
+          "score": 0.5426243180793725,
+          "base_score": 0.4877071967989542,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch25",
+          "score": 0.5132231424248268,
+          "base_score": 0.531297829967304,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "node",
+          "directory",
+          "directory node",
+          "entity",
+          "leaf"
+        ],
+        "semantic": [],
+        "merged": [
+          "node",
+          "directory",
+          "directory node",
+          "entity",
+          "leaf"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "node_name_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2848180975615204,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.915156+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 24,
+      "title": "Segment 24 (pages 222-233)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch24",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch25",
+          "score": 0.5475098941148745,
+          "base_score": 0.6625164901914575,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "nl",
+          "cs",
+          "vu",
+          "server",
+          "vu nl"
+        ],
+        "semantic": [],
+        "merged": [
+          "nl",
+          "cs",
+          "vu",
+          "server",
+          "vu nl"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "node_name_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37419467638825915,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.915505+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 25,
+      "title": "Segment 25 (pages 234-241)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch25",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch26",
+          "score": 0.5551752839764641,
+          "base_score": 0.6012180658866993,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch24",
+          "score": 0.5475098941148745,
+          "base_score": 0.6625164901914575,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch23",
+          "score": 0.5132231424248268,
+          "base_score": 0.531297829967304,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "directory",
+          "naming",
+          "attribute",
+          "ldap",
+          "attributes"
+        ],
+        "semantic": [],
+        "merged": [
+          "directory",
+          "naming",
+          "attribute",
+          "ldap",
+          "attributes"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "node_name_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3218678058315548,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.915855+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 26,
+      "title": "Segment 26 (pages 242-249)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch26",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch25",
+          "score": 0.5551752839764641,
+          "base_score": 0.6012180658866993,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch23",
+          "score": 0.5426243180793725,
+          "base_score": 0.4877071967989542,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "node",
+          "attribute",
+          "nodes",
+          "semantic",
+          "entity"
+        ],
+        "semantic": [],
+        "merged": [
+          "node",
+          "attribute",
+          "nodes",
+          "semantic",
+          "entity"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "node_name_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23555522339800797,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.916182+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 27,
+      "title": "Segment 27 (pages 250-257)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch27",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch28",
+          "score": 0.6066085005165696,
+          "base_score": 0.47529988181333027,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "clock",
+          "time",
+          "clocks",
+          "tal",
+          "input"
+        ],
+        "semantic": [],
+        "merged": [
+          "clock",
+          "time",
+          "clocks",
+          "tal",
+          "input"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_process",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2756814213164786,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.916511+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 28,
+      "title": "Segment 28 (pages 258-265)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch28",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch27",
+          "score": 0.6066085005165696,
+          "base_score": 0.47529988181333027,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "clock",
+          "time",
+          "clocks",
+          "value",
+          "time daemon"
+        ],
+        "semantic": [],
+        "merged": [
+          "clock",
+          "time",
+          "clocks",
+          "value",
+          "time daemon"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_process",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21047633461925383,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.916813+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 29,
+      "title": "Segment 29 (pages 266-273)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch29",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch39",
+          "score": 0.584277277842505,
+          "base_score": 0.6497213889967677,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch41",
+          "score": 0.5430226269279109,
+          "base_score": 0.4883710448798516,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch30",
+          "score": 0.5315151957929352,
+          "base_score": 0.5617845855808179,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "lj",
+          "pi",
+          "process",
+          "message",
+          "permission"
+        ],
+        "semantic": [],
+        "merged": [
+          "lj",
+          "pi",
+          "process",
+          "message",
+          "permission"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_process",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34732916416795656,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.917121+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 30,
+      "title": "Segment 30 (pages 274-282)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch30",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch29",
+          "score": 0.5315151957929352,
+          "base_score": 0.5617845855808179,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "process",
+          "resource",
+          "ring",
+          "algorithm",
+          "nodes"
+        ],
+        "semantic": [],
+        "merged": [
+          "process",
+          "resource",
+          "ring",
+          "algorithm",
+          "nodes"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_process",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3409016765830229,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.917425+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 31,
+      "title": "Segment 31 (pages 283-291)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch31",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "election",
+          "election message",
+          "coordinator",
+          "algorithms",
+          "process"
+        ],
+        "semantic": [],
+        "merged": [
+          "election",
+          "election message",
+          "coordinator",
+          "algorithms",
+          "process"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_process",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23508229391764915,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.917745+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 32,
+      "title": "Segment 32 (pages 292-304)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch32",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch55",
+          "score": 0.543877349755227,
+          "base_score": 0.6564622495920449,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch54",
+          "score": 0.5382420762854462,
+          "base_score": 0.6470701271424104,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "consistency",
+          "data",
+          "consistency models",
+          "deviation",
+          "models"
+        ],
+        "semantic": [],
+        "merged": [
+          "consistency",
+          "data",
+          "consistency models",
+          "deviation",
+          "models"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "to_the_file",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40359847762235856,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.918055+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 33,
+      "title": "Segment 33 (pages 305-314)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch33",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "write",
+          "consistency",
+          "read",
+          "write operation",
+          "performed"
+        ],
+        "semantic": [],
+        "merged": [
+          "write",
+          "consistency",
+          "read",
+          "write operation",
+          "performed"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_process",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34086105424668894,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.918374+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 34,
+      "title": "Segment 34 (pages 315-324)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch34",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "server",
+          "client",
+          "replica servers",
+          "updates",
+          "replica"
+        ],
+        "semantic": [],
+        "merged": [
+          "server",
+          "client",
+          "replica servers",
+          "updates",
+          "replica"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "to_the_file",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27375267504713985,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.918701+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 35,
+      "title": "Segment 35 (pages 325-338)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch35",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "write",
+          "writes",
+          "primary",
+          "write operations",
+          "server"
+        ],
+        "semantic": [],
+        "merged": [
+          "write",
+          "writes",
+          "primary",
+          "write operations",
+          "server"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_process",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36895655529578225,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.919040+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 36,
+      "title": "Segment 36 (pages 339-346)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch36",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch61",
+          "score": 0.5908715819562794,
+          "base_score": 0.7347859699271323,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch38",
+          "score": 0.5260463292211892,
+          "base_score": 0.5526698079612412,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch37",
+          "score": 0.5172492699745476,
+          "base_score": 0.612082116624246,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch2",
+          "score": 0.5096477107556997,
+          "base_score": 0.5994128512594995,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "failure",
+          "failures",
+          "server",
+          "omission",
+          "fault"
+        ],
+        "semantic": [],
+        "merged": [
+          "failure",
+          "failures",
+          "server",
+          "omission",
+          "fault"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_process",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37762487526640826,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.919358+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 37,
+      "title": "Segment 37 (pages 347-355)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch37",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch36",
+          "score": 0.5172492699745476,
+          "base_score": 0.612082116624246,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch61",
+          "score": 0.5052786009091098,
+          "base_score": 0.592131001515183,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "processes",
+          "faulty",
+          "group",
+          "process",
+          "nonfaulty"
+        ],
+        "semantic": [],
+        "merged": [
+          "processes",
+          "faulty",
+          "group",
+          "process",
+          "nonfaulty"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_process",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35782475034929406,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.919685+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 38,
+      "title": "Segment 38 (pages 356-366)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch38",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch36",
+          "score": 0.5260463292211892,
+          "base_score": 0.5526698079612412,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "message",
+          "server",
+          "receivers",
+          "client",
+          "request"
+        ],
+        "semantic": [],
+        "merged": [
+          "message",
+          "server",
+          "receivers",
+          "client",
+          "request"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_process",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3037269575506789,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.919996+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 39,
+      "title": "Segment 39 (pages 367-379)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch39",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch29",
+          "score": 0.584277277842505,
+          "base_score": 0.6497213889967677,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch41",
+          "score": 0.5139707915270011,
+          "base_score": 0.532543911804261,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "message",
+          "coordinator",
+          "delivered",
+          "participant",
+          "messages"
+        ],
+        "semantic": [],
+        "merged": [
+          "message",
+          "coordinator",
+          "delivered",
+          "participant",
+          "messages"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_process",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37346425279341905,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.920305+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 40,
+      "title": "Segment 40 (pages 380-388)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch40",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "state",
+          "checkpoint",
+          "checkpointing",
+          "recovery",
+          "precommit"
+        ],
+        "semantic": [],
+        "merged": [
+          "state",
+          "checkpoint",
+          "checkpointing",
+          "recovery",
+          "precommit"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_process",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2338149719993154,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.920630+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 41,
+      "title": "Segment 41 (pages 389-398)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch41",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch29",
+          "score": 0.5430226269279109,
+          "base_score": 0.4883710448798516,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch39",
+          "score": 0.5139707915270011,
+          "base_score": 0.532543911804261,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "dep",
+          "process",
+          "message",
+          "logging",
+          "security"
+        ],
+        "semantic": [],
+        "merged": [
+          "dep",
+          "process",
+          "message",
+          "logging",
+          "security"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_process",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28397388596287293,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.920937+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 42,
+      "title": "Segment 42 (pages 399-407)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch42",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "security",
+          "domain",
+          "globus",
+          "security policy",
+          "policy"
+        ],
+        "semantic": [],
+        "merged": [
+          "security",
+          "domain",
+          "globus",
+          "security policy",
+          "policy"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "object_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25420173395931456,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.921239+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 43,
+      "title": "Segment 43 (pages 408-415)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch43",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "bit",
+          "key",
+          "encryption",
+          "decryption",
+          "message"
+        ],
+        "semantic": [],
+        "merged": [
+          "bit",
+          "key",
+          "encryption",
+          "decryption",
+          "message"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "key_bob_alice",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.20656536823412866,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.921565+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 44,
+      "title": "Segment 44 (pages 416-429)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch44",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch47",
+          "score": 0.5811243925278504,
+          "base_score": 0.6444665801390098,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "bob",
+          "alice",
+          "key",
+          "challenge",
+          "kdc"
+        ],
+        "semantic": [],
+        "merged": [
+          "bob",
+          "alice",
+          "key",
+          "challenge",
+          "kdc"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "key_bob_alice",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.281860958548766,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.921869+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 45,
+      "title": "Segment 45 (pages 430-437)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch45",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "matrix",
+          "tgs",
+          "reference monitor",
+          "object",
+          "monitor"
+        ],
+        "semantic": [],
+        "merged": [
+          "matrix",
+          "tgs",
+          "reference monitor",
+          "object",
+          "monitor"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "key_bob_alice",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27031942476043225,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.922181+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 46,
+      "title": "Segment 46 (pages 438-445)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch46",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "downloaded",
+          "program",
+          "malicious",
+          "agent",
+          "java"
+        ],
+        "semantic": [],
+        "merged": [
+          "downloaded",
+          "program",
+          "malicious",
+          "agent",
+          "java"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2594370125158105,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:49.923369+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 47,
+      "title": "Segment 47 (pages 446-453)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch47",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch44",
+          "score": 0.5811243925278504,
+          "base_score": 0.6444665801390098,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "key",
+          "public",
+          "public key",
+          "secret",
+          "secret key"
+        ],
+        "semantic": [],
+        "merged": [
+          "key",
+          "public",
+          "public key",
+          "secret",
+          "secret key"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "key_bob_alice",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27102759706228424,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.923731+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 48,
+      "title": "Segment 48 (pages 454-461)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch48",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "rights",
+          "bob",
+          "capability",
+          "alice",
+          "certificate"
+        ],
+        "semantic": [],
+        "merged": [
+          "rights",
+          "bob",
+          "capability",
+          "alice",
+          "certificate"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25688569459402905,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:49.924063+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 49,
+      "title": "Segment 49 (pages 462-482)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch49",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch51",
+          "score": 0.8477311975435475,
+          "base_score": 0.7184408847948014,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch50",
+          "score": 0.6208973181270548,
+          "base_score": 0.6181621968784248,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch3",
+          "score": 0.550209989986617,
+          "base_score": 0.667016649977695,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch4",
+          "score": 0.5304564363906442,
+          "base_score": 0.6340940606510737,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch7",
+          "score": 0.5245800596808426,
+          "base_score": 0.6243000994680712,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "object",
+          "objects",
+          "remote object",
+          "remote",
+          "server"
+        ],
+        "semantic": [],
+        "merged": [
+          "object",
+          "objects",
+          "remote object",
+          "remote",
+          "server"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "object_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4075579596380988,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.924388+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 50,
+      "title": "Segment 50 (pages 483-498)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch50",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch49",
+          "score": 0.6208973181270548,
+          "base_score": 0.6181621968784248,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch51",
+          "score": 0.6092088869514993,
+          "base_score": 0.5986814782524988,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "object",
+          "object based",
+          "corba",
+          "objects",
+          "replicated object"
+        ],
+        "semantic": [],
+        "merged": [
+          "object",
+          "object based",
+          "corba",
+          "objects",
+          "replicated object"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "object_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35738174292494473,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.924731+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 51,
+      "title": "Segment 51 (pages 499-509)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch51",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch49",
+          "score": 0.8477311975435475,
+          "base_score": 0.7184408847948014,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch50",
+          "score": 0.6092088869514993,
+          "base_score": 0.5986814782524988,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch3",
+          "score": 0.5416890843706544,
+          "base_score": 0.6528151406177574,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "object",
+          "objects",
+          "remote object",
+          "remote",
+          "globe"
+        ],
+        "semantic": [],
+        "merged": [
+          "object",
+          "objects",
+          "remote object",
+          "remote",
+          "globe"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "object_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3895354520655628,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.925049+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 52,
+      "title": "Segment 52 (pages 510-517)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch52",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch56",
+          "score": 0.8282704153575532,
+          "base_score": 0.6860062478181441,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch53",
+          "score": 0.6534527275049126,
+          "base_score": 0.6724212125081876,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch54",
+          "score": 0.508602045002009,
+          "base_score": 0.6810034083366816,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "file",
+          "nfs",
+          "file systems",
+          "chunk",
+          "server"
+        ],
+        "semantic": [],
+        "merged": [
+          "file",
+          "nfs",
+          "file systems",
+          "chunk",
+          "server"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "file_nfs_server",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4274463865658399,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.925409+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 53,
+      "title": "Segment 53 (pages 518-530)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch53",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch52",
+          "score": 0.6534527275049126,
+          "base_score": 0.6724212125081876,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch56",
+          "score": 0.5488962907464205,
+          "base_score": 0.4981604845773677,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "file",
+          "file handle",
+          "mount",
+          "directory",
+          "nfs"
+        ],
+        "semantic": [],
+        "merged": [
+          "file",
+          "file handle",
+          "mount",
+          "directory",
+          "nfs"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "file_nfs_server",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.327984810030807,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.925795+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 54,
+      "title": "Segment 54 (pages 531-544)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch54",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch55",
+          "score": 0.5596423326615434,
+          "base_score": 0.6086631470284981,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch32",
+          "score": 0.5382420762854462,
+          "base_score": 0.6470701271424104,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch52",
+          "score": 0.508602045002009,
+          "base_score": 0.6810034083366816,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "file",
+          "client",
+          "server",
+          "clients",
+          "opens"
+        ],
+        "semantic": [],
+        "merged": [
+          "file",
+          "client",
+          "server",
+          "clients",
+          "opens"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "to_the_file",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39241119250649636,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.926129+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 55,
+      "title": "Segment 55 (pages 545-553)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch55",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch54",
+          "score": 0.5596423326615434,
+          "base_score": 0.6086631470284981,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch32",
+          "score": 0.543877349755227,
+          "base_score": 0.6564622495920449,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "file",
+          "files",
+          "peer",
+          "replicating files",
+          "replication"
+        ],
+        "semantic": [],
+        "merged": [
+          "file",
+          "files",
+          "peer",
+          "replicating files",
+          "replication"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "to_the_file",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32093642455248705,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.926458+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 56,
+      "title": "Segment 56 (pages 554-563)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch56",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch52",
+          "score": 0.8282704153575532,
+          "base_score": 0.6860062478181441,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch53",
+          "score": 0.5488962907464205,
+          "base_score": 0.4981604845773677,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sfs",
+          "file",
+          "nfs",
+          "file systems",
+          "server"
+        ],
+        "semantic": [],
+        "merged": [
+          "sfs",
+          "file",
+          "nfs",
+          "file systems",
+          "server"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "file_nfs_server",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3086066076845555,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.926796+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 57,
+      "title": "Segment 57 (pages 564-573)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch57",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch59",
+          "score": 0.6545033799383034,
+          "base_score": 0.6741722998971724,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch58",
+          "score": 0.5747624751205531,
+          "base_score": 0.6338633844601812,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "web",
+          "document",
+          "web services",
+          "services",
+          "web service"
+        ],
+        "semantic": [],
+        "merged": [
+          "web",
+          "document",
+          "web services",
+          "services",
+          "web service"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "web_document_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34973353905683396,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.927112+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 58,
+      "title": "Segment 58 (pages 574-584)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch58",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch57",
+          "score": 0.5747624751205531,
+          "base_score": 0.6338633844601812,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch59",
+          "score": 0.5515617262996662,
+          "base_score": 0.5951954697587027,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "http",
+          "server",
+          "request",
+          "document",
+          "client"
+        ],
+        "semantic": [],
+        "merged": [
+          "http",
+          "server",
+          "request",
+          "document",
+          "client"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "web_document_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25254037497731535,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.927428+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 59,
+      "title": "Segment 59 (pages 585-592)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch59",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch57",
+          "score": 0.6545033799383034,
+          "base_score": 0.6741722998971724,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch58",
+          "score": 0.5515617262996662,
+          "base_score": 0.5951954697587027,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "document",
+          "web",
+          "documents",
+          "proxy",
+          "web proxy"
+        ],
+        "semantic": [],
+        "merged": [
+          "document",
+          "web",
+          "documents",
+          "proxy",
+          "web proxy"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "web_document_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27445093676642424,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.927769+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 60,
+      "title": "Segment 60 (pages 593-601)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch60",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "server",
+          "edge",
+          "origin server",
+          "origin",
+          "edge server"
+        ],
+        "semantic": [],
+        "merged": [
+          "server",
+          "edge",
+          "origin server",
+          "origin",
+          "edge server"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "to_the_file",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33539268673215955,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.928108+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 61,
+      "title": "Segment 61 (pages 602-610)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch61",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch36",
+          "score": 0.5908715819562794,
+          "base_score": 0.7347859699271323,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch2",
+          "score": 0.5349099182859243,
+          "base_score": 0.5674424564024663,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch37",
+          "score": 0.5052786009091098,
+          "base_score": 0.592131001515183,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "web",
+          "coordination",
+          "systems",
+          "based systems",
+          "based"
+        ],
+        "semantic": [],
+        "merged": [
+          "web",
+          "coordination",
+          "systems",
+          "based systems",
+          "based"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_process",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38818410860915153,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.928421+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 62,
+      "title": "Segment 62 (pages 611-618)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch62",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch63",
+          "score": 0.5517875554099521,
+          "base_score": 0.6696459256832534,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch65",
+          "score": 0.5266198798653514,
+          "base_score": 0.5536257257015116,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tuple",
+          "data",
+          "item",
+          "data item",
+          "published"
+        ],
+        "semantic": [],
+        "merged": [
+          "tuple",
+          "data",
+          "item",
+          "data item",
+          "published"
+        ]
+      },
+      "topic_id": 8,
+      "topic_name": "data_systems_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3560693751891912,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.928751+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 63,
+      "title": "Segment 63 (pages 619-626)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch63",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch65",
+          "score": 0.5647163493525079,
+          "base_score": 0.6911939155875133,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch62",
+          "score": 0.5517875554099521,
+          "base_score": 0.6696459256832534,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "events",
+          "subscriptions",
+          "composite events",
+          "composite",
+          "event"
+        ],
+        "semantic": [],
+        "merged": [
+          "events",
+          "subscriptions",
+          "composite events",
+          "composite",
+          "event"
+        ]
+      },
+      "topic_id": 8,
+      "topic_name": "data_systems_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3948591379752197,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.929077+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 64,
+      "title": "Segment 64 (pages 627-634)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch64",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "tuple",
+          "tuple instance",
+          "instance",
+          "tuples",
+          "template"
+        ],
+        "semantic": [],
+        "merged": [
+          "tuple",
+          "tuple instance",
+          "instance",
+          "tuples",
+          "template"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3453068678427349,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:49.929382+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 65,
+      "title": "Segment 65 (pages 635-645)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch65",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch63",
+          "score": 0.5647163493525079,
+          "base_score": 0.6911939155875133,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch62",
+          "score": 0.5266198798653514,
+          "base_score": 0.5536257257015116,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "systems",
+          "subscribers",
+          "book",
+          "published",
+          "coordination based"
+        ],
+        "semantic": [],
+        "merged": [
+          "systems",
+          "subscribers",
+          "book",
+          "published",
+          "coordination based"
+        ]
+      },
+      "topic_id": 8,
+      "topic_name": "data_systems_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4356092756167303,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.929715+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 66,
+      "title": "Segment 66 (pages 646-687)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch66",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "proc",
+          "acm",
+          "ieee",
+          "systems",
+          "peer"
+        ],
+        "semantic": [],
+        "merged": [
+          "proc",
+          "acm",
+          "ieee",
+          "systems",
+          "peer"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43912984494657287,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:49.930031+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 67,
+      "title": "Segment 67 (pages 688-695)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch67",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch68",
+          "score": 0.6258583204440731,
+          "base_score": 0.6264305340734551,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch69",
+          "score": 0.5526446468308157,
+          "base_score": 0.6710744113846928,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "object",
+          "file",
+          "java",
+          "529",
+          "directory"
+        ],
+        "semantic": [],
+        "merged": [
+          "object",
+          "file",
+          "java",
+          "529",
+          "directory"
+        ]
+      },
+      "topic_id": 9,
+      "topic_name": "see_system_file",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2989716885805912,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.930451+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 68,
+      "title": "Segment 68 (pages 696-703)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch68",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch67",
+          "score": 0.6258583204440731,
+          "base_score": 0.6264305340734551,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch69",
+          "score": 0.5270682723358184,
+          "base_score": 0.6284471205596974,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "object",
+          "network file",
+          "secure",
+          "file",
+          "311"
+        ],
+        "semantic": [],
+        "merged": [
+          "object",
+          "network file",
+          "secure",
+          "file",
+          "311"
+        ]
+      },
+      "topic_id": 9,
+      "topic_name": "see_system_file",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3378523783059575,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.930807+00:00"
+      }
+    },
+    {
+      "book": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum",
+      "chapter": 69,
+      "title": "Segment 69 (pages 704-705)",
+      "chapter_id": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch69",
+      "cross_references": [
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch67",
+          "score": 0.5526446468308157,
+          "base_score": 0.6710744113846928,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Distributed Systems Principles and Paradigms 2nd Edition - Tanenbaum:ch68",
+          "score": 0.5270682723358184,
+          "base_score": 0.6284471205596974,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "web",
+          "universal",
+          "uniform resource",
+          "uniform",
+          "web services"
+        ],
+        "semantic": [],
+        "merged": [
+          "web",
+          "universal",
+          "uniform resource",
+          "uniform",
+          "web services"
+        ]
+      },
+      "topic_id": 9,
+      "topic_name": "see_system_file",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3278036926221805,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:49.931131+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

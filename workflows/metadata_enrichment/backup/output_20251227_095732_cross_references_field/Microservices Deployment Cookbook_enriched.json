@@ -1,0 +1,357 @@
+{
+  "book": {
+    "title": "Microservices Deployment Cookbook"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:51:37.549681",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Microservices Deployment Cookbook",
+      "chapter": 1,
+      "title": "Building\tMicroservices with\tJava",
+      "chapter_id": "Microservices Deployment Cookbook:ch1",
+      "cross_references": [
+        {
+          "target": "Microservices Deployment Cookbook:ch2",
+          "score": 0.5376645682734636,
+          "base_score": 0.646107613789106,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "com packt",
+          "packt microservices",
+          "microservices",
+          "microservices geolocation",
+          "packt"
+        ],
+        "semantic": [],
+        "merged": [
+          "com packt",
+          "packt microservices",
+          "microservices",
+          "microservices geolocation",
+          "packt"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_geolocation",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5081069693322553,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:37.541736+00:00"
+      }
+    },
+    {
+      "book": "Microservices Deployment Cookbook",
+      "chapter": 2,
+      "title": "Containerizing Microservices\twith\tDocker",
+      "chapter_id": "Microservices Deployment Cookbook:ch2",
+      "cross_references": [
+        {
+          "target": "Microservices Deployment Cookbook:ch1",
+          "score": 0.5376645682734636,
+          "base_score": 0.646107613789106,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "docker",
+          "image",
+          "hub",
+          "docker hub",
+          "docker machine"
+        ],
+        "semantic": [],
+        "merged": [
+          "docker",
+          "image",
+          "hub",
+          "docker hub",
+          "docker machine"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_geolocation",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49624866778287263,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:37.541817+00:00"
+      }
+    },
+    {
+      "book": "Microservices Deployment Cookbook",
+      "chapter": 3,
+      "title": "Deploying\tMicroservices on\tMesos",
+      "chapter_id": "Microservices Deployment Cookbook:ch3",
+      "cross_references": [
+        {
+          "target": "Microservices Deployment Cookbook:ch4",
+          "score": 0.6074848758722309,
+          "base_score": 0.7624747931203848,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Microservices Deployment Cookbook:ch8",
+          "score": 0.5804560483331391,
+          "base_score": 0.6433526731478245,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "mesos",
+          "marathon",
+          "docker",
+          "cluster",
+          "mesos cluster"
+        ],
+        "semantic": [],
+        "merged": [
+          "mesos",
+          "marathon",
+          "docker",
+          "cluster",
+          "mesos cluster"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5874451352005388,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:37.541862+00:00"
+      }
+    },
+    {
+      "book": "Microservices Deployment Cookbook",
+      "chapter": 4,
+      "title": "Deploying\tMicroservices on\tKubernetes",
+      "chapter_id": "Microservices Deployment Cookbook:ch4",
+      "cross_references": [
+        {
+          "target": "Microservices Deployment Cookbook:ch3",
+          "score": 0.6074848758722309,
+          "base_score": 0.7624747931203848,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "kubernetes",
+          "kubectl",
+          "dashboard",
+          "pod",
+          "pods"
+        ],
+        "semantic": [],
+        "merged": [
+          "kubernetes",
+          "kubectl",
+          "dashboard",
+          "pod",
+          "pods"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5404121590546495,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:37.541923+00:00"
+      }
+    },
+    {
+      "book": "Microservices Deployment Cookbook",
+      "chapter": 5,
+      "title": "Service\tDiscovery\tand Load\tBalancing\tMicroservices",
+      "chapter_id": "Microservices Deployment Cookbook:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "consul",
+          "load",
+          "zookeeper",
+          "lb",
+          "service"
+        ],
+        "semantic": [],
+        "merged": [
+          "consul",
+          "load",
+          "zookeeper",
+          "lb",
+          "service"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_geolocation",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.532713569447187,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:37.541965+00:00"
+      }
+    },
+    {
+      "book": "Microservices Deployment Cookbook",
+      "chapter": 6,
+      "title": "Monitoring\tMicroservices",
+      "chapter_id": "Microservices Deployment Cookbook:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "metrics",
+          "graphite",
+          "metric",
+          "codahale",
+          "grafana"
+        ],
+        "semantic": [],
+        "merged": [
+          "metrics",
+          "graphite",
+          "metric",
+          "codahale",
+          "grafana"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_geolocation",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42420537188007906,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:37.542005+00:00"
+      }
+    },
+    {
+      "book": "Microservices Deployment Cookbook",
+      "chapter": 7,
+      "title": "Building\tAsynchronous Streaming\tSystems\twith\tKafka\tand Spark",
+      "chapter_id": "Microservices Deployment Cookbook:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "kafka",
+          "topic",
+          "streams",
+          "kafka streams",
+          "messages"
+        ],
+        "semantic": [],
+        "merged": [
+          "kafka",
+          "topic",
+          "streams",
+          "kafka streams",
+          "messages"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4595782354090172,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:37.542046+00:00"
+      }
+    },
+    {
+      "book": "Microservices Deployment Cookbook",
+      "chapter": 8,
+      "title": "More\tClustering Frameworks\t-\tDC/OS,\tDocker Swarm,\tand\tYARN",
+      "chapter_id": "Microservices Deployment Cookbook:ch8",
+      "cross_references": [
+        {
+          "target": "Microservices Deployment Cookbook:ch3",
+          "score": 0.5804560483331391,
+          "base_score": 0.6433526731478245,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "swarm",
+          "cluster",
+          "dc os",
+          "dc",
+          "os"
+        ],
+        "semantic": [],
+        "merged": [
+          "swarm",
+          "cluster",
+          "dc os",
+          "dc",
+          "os"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5197067129423076,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:51:37.542088+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

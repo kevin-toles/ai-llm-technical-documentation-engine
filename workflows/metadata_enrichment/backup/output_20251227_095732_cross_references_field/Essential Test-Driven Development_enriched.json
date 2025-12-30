@@ -1,0 +1,357 @@
+{
+  "book": {
+    "title": "Essential Test-Driven Development"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:46:13.309033",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Essential Test-Driven Development",
+      "chapter": 1,
+      "title": "Thinking Test-Driven",
+      "chapter_id": "Essential Test-Driven Development:ch1",
+      "cross_references": [
+        {
+          "target": "Essential Test-Driven Development:ch2",
+          "score": 0.6715798324473544,
+          "base_score": 0.702633054078924,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tests",
+          "ai",
+          "driven",
+          "write",
+          "test driven"
+        ],
+        "semantic": [],
+        "merged": [
+          "tests",
+          "ai",
+          "driven",
+          "write",
+          "test driven"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_test_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5768422333766032,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:46:13.283878+00:00"
+      }
+    },
+    {
+      "book": "Essential Test-Driven Development",
+      "chapter": 2,
+      "title": "Basic Moves",
+      "chapter_id": "Essential Test-Driven Development:ch2",
+      "cross_references": [
+        {
+          "target": "Essential Test-Driven Development:ch1",
+          "score": 0.6715798324473544,
+          "base_score": 0.702633054078924,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "write",
+          "tests",
+          "implementation",
+          "write test",
+          "writing"
+        ],
+        "semantic": [],
+        "merged": [
+          "write",
+          "tests",
+          "implementation",
+          "write test",
+          "writing"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_test_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5615286114320845,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:46:13.283967+00:00"
+      }
+    },
+    {
+      "book": "Essential Test-Driven Development",
+      "chapter": 3,
+      "title": "Build upon Existing Behavior",
+      "chapter_id": "Essential Test-Driven Development:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "tests",
+          "trackergroup",
+          "string",
+          "allids",
+          "new trackergroup"
+        ],
+        "semantic": [],
+        "merged": [
+          "tests",
+          "trackergroup",
+          "string",
+          "allids",
+          "new trackergroup"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44405860109784356,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:46:13.284028+00:00"
+      }
+    },
+    {
+      "book": "Essential Test-Driven Development",
+      "chapter": 4,
+      "title": "Exceptional Behaviors",
+      "chapter_id": "Essential Test-Driven Development:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "exception",
+          "thrown",
+          "throwing",
+          "message",
+          "external"
+        ],
+        "semantic": [],
+        "merged": [
+          "exception",
+          "thrown",
+          "throwing",
+          "message",
+          "external"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40314590672602246,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:46:13.284090+00:00"
+      }
+    },
+    {
+      "book": "Essential Test-Driven Development",
+      "chapter": 5,
+      "title": "Sustaining a Test-Driven Practice",
+      "chapter_id": "Essential Test-Driven Development:ch5",
+      "cross_references": [
+        {
+          "target": "Essential Test-Driven Development:ch7",
+          "score": 0.5409476461143268,
+          "base_score": 0.5775053361164706,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Essential Test-Driven Development:ch8",
+          "score": 0.5036184228949229,
+          "base_score": 0.5893640381582048,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tests",
+          "smell",
+          "board",
+          "ship",
+          "behavior"
+        ],
+        "semantic": [],
+        "merged": [
+          "tests",
+          "smell",
+          "board",
+          "ship",
+          "behavior"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_test",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5457231186914537,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:46:13.284134+00:00"
+      }
+    },
+    {
+      "book": "Essential Test-Driven Development",
+      "chapter": 6,
+      "title": "Test Doubles",
+      "chapter_id": "Essential Test-Driven Development:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "mock",
+          "doubles",
+          "test doubles",
+          "external",
+          "dependency"
+        ],
+        "semantic": [],
+        "merged": [
+          "mock",
+          "doubles",
+          "test doubles",
+          "external",
+          "dependency"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_test_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48088936376205593,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:46:13.284187+00:00"
+      }
+    },
+    {
+      "book": "Essential Test-Driven Development",
+      "chapter": 7,
+      "title": "Testing Legacy Code",
+      "chapter_id": "Essential Test-Driven Development:ch7",
+      "cross_references": [
+        {
+          "target": "Essential Test-Driven Development:ch5",
+          "score": 0.5409476461143268,
+          "base_score": 0.5775053361164706,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "characterization",
+          "legacy code",
+          "legacy",
+          "tests",
+          "characterization tests"
+        ],
+        "semantic": [],
+        "merged": [
+          "characterization",
+          "legacy code",
+          "legacy",
+          "tests",
+          "characterization tests"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_test",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5117096092469149,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:46:13.284244+00:00"
+      }
+    },
+    {
+      "book": "Essential Test-Driven Development",
+      "chapter": 8,
+      "title": "The Black Swans",
+      "chapter_id": "Essential Test-Driven Development:ch8",
+      "cross_references": [
+        {
+          "target": "Essential Test-Driven Development:ch5",
+          "score": 0.5036184228949229,
+          "base_score": 0.5893640381582048,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "black",
+          "black swan",
+          "swan",
+          "user",
+          "user story"
+        ],
+        "semantic": [],
+        "merged": [
+          "black",
+          "black swan",
+          "swan",
+          "user",
+          "user story"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_test",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5279954752168228,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:46:13.284281+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

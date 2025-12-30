@@ -1,0 +1,2810 @@
+{
+  "book": {
+    "title": "Programming in Python 3"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:54:07.934460",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Programming in Python 3",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-9)",
+      "chapter_id": "Programming in Python 3:ch1",
+      "cross_references": [
+        {
+          "target": "Programming in Python 3:ch27",
+          "score": 0.5218907028445859,
+          "base_score": 0.6198178380743099,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Programming in Python 3:ch3",
+          "score": 0.5089257465371233,
+          "base_score": 0.5982095775618722,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "programming",
+          "data types",
+          "types",
+          "collection",
+          "classes"
+        ],
+        "semantic": [],
+        "merged": [
+          "programming",
+          "data types",
+          "types",
+          "collection",
+          "classes"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "module_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35782951816512154,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.880993+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 2,
+      "title": "Segment 2 (pages 10-18)",
+      "chapter_id": "Programming in Python 3:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "python",
+          "python3",
+          "bin",
+          "install",
+          "book"
+        ],
+        "semantic": [],
+        "merged": [
+          "python",
+          "python3",
+          "bin",
+          "install",
+          "book"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3696862930742297,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:54:07.881339+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 3,
+      "title": "Segment 3 (pages 19-26)",
+      "chapter_id": "Programming in Python 3:ch3",
+      "cross_references": [
+        {
+          "target": "Programming in Python 3:ch27",
+          "score": 0.5304990936541526,
+          "base_score": 0.6341651560902544,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Programming in Python 3:ch1",
+          "score": 0.5089257465371233,
+          "base_score": 0.5982095775618722,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "python",
+          "python programs",
+          "interpreter",
+          "programs",
+          "running python"
+        ],
+        "semantic": [],
+        "merged": [
+          "python",
+          "python programs",
+          "interpreter",
+          "programs",
+          "running python"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "module_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33866100361748874,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.881671+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 4,
+      "title": "Segment 4 (pages 27-35)",
+      "chapter_id": "Programming in Python 3:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "object",
+          "types",
+          "lists",
+          "data types"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "object",
+          "types",
+          "lists",
+          "data types"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3732214017587949,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:54:07.881957+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 5,
+      "title": "Segment 5 (pages 36-44)",
+      "chapter_id": "Programming in Python 3:ch5",
+      "cross_references": [
+        {
+          "target": "Programming in Python 3:ch19",
+          "score": 0.5448261045954441,
+          "base_score": 0.49137684099240686,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "suite",
+          "exception",
+          "statement",
+          "python",
+          "boolean"
+        ],
+        "semantic": [],
+        "merged": [
+          "suite",
+          "exception",
+          "statement",
+          "python",
+          "boolean"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "the_exception_is",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32601338986941686,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.882236+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 6,
+      "title": "Segment 6 (pages 45-54)",
+      "chapter_id": "Programming in Python 3:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "enter",
+          "line",
+          "number",
+          "user",
+          "int line"
+        ],
+        "semantic": [],
+        "merged": [
+          "enter",
+          "line",
+          "number",
+          "user",
+          "int line"
+        ]
+      },
+      "topic_id": 8,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33455571884553703,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.882534+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 7,
+      "title": "Segment 7 (pages 55-62)",
+      "chapter_id": "Programming in Python 3:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "python",
+          "list",
+          "types",
+          "chapter learn",
+          "item"
+        ],
+        "semantic": [],
+        "merged": [
+          "python",
+          "list",
+          "types",
+          "chapter learn",
+          "item"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35953820042246903,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:54:07.882814+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 8,
+      "title": "Segment 8 (pages 63-75)",
+      "chapter_id": "Programming in Python 3:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "math",
+          "decimal",
+          "float",
+          "returns",
+          "ﬂoating point"
+        ],
+        "semantic": [],
+        "merged": [
+          "math",
+          "decimal",
+          "float",
+          "returns",
+          "ﬂoating point"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_bytes_math",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2670768438752248,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.883103+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 9,
+      "title": "Segment 9 (pages 76-86)",
+      "chapter_id": "Programming in Python 3:ch9",
+      "cross_references": [
+        {
+          "target": "Programming in Python 3:ch10",
+          "score": 0.5216441562827383,
+          "base_score": 0.4527402604712305,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "str",
+          "string",
+          "returns",
+          "character",
+          "returns true"
+        ],
+        "semantic": [],
+        "merged": [
+          "str",
+          "string",
+          "returns",
+          "character",
+          "returns true"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "match_the_module",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3110857964263518,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.883384+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 10,
+      "title": "Segment 10 (pages 87-95)",
+      "chapter_id": "Programming in Python 3:ch10",
+      "cross_references": [
+        {
+          "target": "Programming in Python 3:ch9",
+          "score": 0.5216441562827383,
+          "base_score": 0.4527402604712305,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "format",
+          "string",
+          "str format",
+          "str",
+          "ﬁeld"
+        ],
+        "semantic": [],
+        "merged": [
+          "format",
+          "string",
+          "str format",
+          "str",
+          "ﬁeld"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "match_the_module",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2809032323245805,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.883679+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 11,
+      "title": "Segment 11 (pages 96-103)",
+      "chapter_id": "Programming in Python 3:ch11",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "unicode",
+          "character",
+          "ucs",
+          "utf",
+          "format"
+        ],
+        "semantic": [],
+        "merged": [
+          "unicode",
+          "character",
+          "ucs",
+          "utf",
+          "format"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_bytes_math",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.292305012668079,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.883954+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 12,
+      "title": "Segment 12 (pages 104-111)",
+      "chapter_id": "Programming in Python 3:ch12",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "field",
+          "print_line",
+          "ﬁelds",
+          "quotes",
+          "quoted"
+        ],
+        "semantic": [],
+        "merged": [
+          "field",
+          "print_line",
+          "ﬁelds",
+          "quotes",
+          "quoted"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_bytes_math",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2878612359122028,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.884236+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 13,
+      "title": "Segment 13 (pages 112-119)",
+      "chapter_id": "Programming in Python 3:ch13",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "tuple",
+          "tuples",
+          "types",
+          "strings",
+          "python"
+        ],
+        "semantic": [],
+        "merged": [
+          "tuple",
+          "tuples",
+          "types",
+          "strings",
+          "python"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "the_exception_is",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35969875757276215,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.884520+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 14,
+      "title": "Segment 14 (pages 120-128)",
+      "chapter_id": "Programming in Python 3:ch14",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "list",
+          "slice",
+          "items",
+          "item",
+          "items list"
+        ],
+        "semantic": [],
+        "merged": [
+          "list",
+          "slice",
+          "items",
+          "item",
+          "items list"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_function_list",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2642531795089563,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.884800+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 15,
+      "title": "Segment 15 (pages 129-138)",
+      "chapter_id": "Programming in Python 3:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "key",
+          "set",
+          "dict",
+          "frozenset",
+          "items"
+        ],
+        "semantic": [],
+        "merged": [
+          "key",
+          "set",
+          "dict",
+          "frozenset",
+          "items"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_function_list",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2906131734557088,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.885075+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 16,
+      "title": "Segment 16 (pages 139-146)",
+      "chapter_id": "Programming in Python 3:ch16",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "dictionary",
+          "key",
+          "word",
+          "site",
+          "item"
+        ],
+        "semantic": [],
+        "merged": [
+          "dictionary",
+          "key",
+          "word",
+          "site",
+          "item"
+        ]
+      },
+      "topic_id": 8,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32495290300411145,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.885352+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 17,
+      "title": "Segment 17 (pages 147-155)",
+      "chapter_id": "Programming in Python 3:ch17",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "iterator",
+          "returns",
+          "iterable",
+          "item",
+          "items"
+        ],
+        "semantic": [],
+        "merged": [
+          "iterator",
+          "returns",
+          "iterable",
+          "item",
+          "items"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_function_list",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.265341828271894,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.885681+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 18,
+      "title": "Segment 18 (pages 156-165)",
+      "chapter_id": "Programming in Python 3:ch18",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "frequencies",
+          "user",
+          "statistics",
+          "modes",
+          "numbers"
+        ],
+        "semantic": [],
+        "merged": [
+          "frequencies",
+          "user",
+          "statistics",
+          "modes",
+          "numbers"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_function_list",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.273767801074682,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.885957+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 19,
+      "title": "Segment 19 (pages 166-176)",
+      "chapter_id": "Programming in Python 3:ch19",
+      "cross_references": [
+        {
+          "target": "Programming in Python 3:ch5",
+          "score": 0.5448261045954441,
+          "base_score": 0.49137684099240686,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "exception",
+          "suite",
+          "clause",
+          "loop",
+          "exceptions"
+        ],
+        "semantic": [],
+        "merged": [
+          "exception",
+          "suite",
+          "clause",
+          "loop",
+          "exceptions"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "the_exception_is",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.347877065842898,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.886234+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 20,
+      "title": "Segment 20 (pages 177-185)",
+      "chapter_id": "Programming in Python 3:ch20",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "exception",
+          "letters",
+          "exceptions",
+          "function",
+          "custom exception"
+        ],
+        "semantic": [],
+        "merged": [
+          "exception",
+          "letters",
+          "exceptions",
+          "function",
+          "custom exception"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21052501807639667,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:54:07.886524+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 21,
+      "title": "Segment 21 (pages 186-194)",
+      "chapter_id": "Programming in Python 3:ch21",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "positional",
+          "positional arguments",
+          "arguments",
+          "function",
+          "lambda"
+        ],
+        "semantic": [],
+        "merged": [
+          "positional",
+          "positional arguments",
+          "arguments",
+          "function",
+          "lambda"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_function_list",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2817238773171833,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.886805+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 22,
+      "title": "Segment 22 (pages 195-203)",
+      "chapter_id": "Programming in Python 3:ch22",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "information",
+          "html",
+          "dd elete",
+          "dd",
+          "elete"
+        ],
+        "semantic": [],
+        "merged": [
+          "information",
+          "html",
+          "dd elete",
+          "dd",
+          "elete"
+        ]
+      },
+      "topic_id": 9,
+      "topic_name": "incident_the_narrative",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23502819580567336,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.887080+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 23,
+      "title": "Segment 23 (pages 204-212)",
+      "chapter_id": "Programming in Python 3:ch23",
+      "cross_references": [
+        {
+          "target": "Programming in Python 3:ch25",
+          "score": 0.5921432095615066,
+          "base_score": 0.570238682602511,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Programming in Python 3:ch27",
+          "score": 0.5592250053549902,
+          "base_score": 0.6079676015175762,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Programming in Python 3:ch24",
+          "score": 0.5310133444983995,
+          "base_score": 0.5609481667565918,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "import",
+          "modules",
+          "package",
+          "module",
+          "packages"
+        ],
+        "semantic": [],
+        "merged": [
+          "import",
+          "modules",
+          "package",
+          "module",
+          "packages"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "module_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35879798307889904,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.887366+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 24,
+      "title": "Segment 24 (pages 213-220)",
+      "chapter_id": "Programming in Python 3:ch24",
+      "cross_references": [
+        {
+          "target": "Programming in Python 3:ch45",
+          "score": 0.5831057058741158,
+          "base_score": 0.6477687690494522,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Programming in Python 3:ch25",
+          "score": 0.573566634101497,
+          "base_score": 0.6318703160950876,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Programming in Python 3:ch23",
+          "score": 0.5310133444983995,
+          "base_score": 0.5609481667565918,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "module",
+          "add_rectangle",
+          "textutil",
+          "column",
+          "row column"
+        ],
+        "semantic": [],
+        "merged": [
+          "module",
+          "add_rectangle",
+          "textutil",
+          "column",
+          "row column"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "module_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3471405804909552,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.887685+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 25,
+      "title": "Segment 25 (pages 221-228)",
+      "chapter_id": "Programming in Python 3:ch25",
+      "cross_references": [
+        {
+          "target": "Programming in Python 3:ch23",
+          "score": 0.5921432095615066,
+          "base_score": 0.570238682602511,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Programming in Python 3:ch27",
+          "score": 0.5819045848126396,
+          "base_score": 0.6457669006136587,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Programming in Python 3:ch24",
+          "score": 0.573566634101497,
+          "base_score": 0.6318703160950876,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Programming in Python 3:ch45",
+          "score": 0.5663440047271808,
+          "base_score": 0.6198326004712272,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "module",
+          "datetime",
+          "heap",
+          "module provides",
+          "modules"
+        ],
+        "semantic": [],
+        "merged": [
+          "module",
+          "datetime",
+          "heap",
+          "module provides",
+          "modules"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "module_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37812669120077935,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.887969+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 26,
+      "title": "Segment 26 (pages 229-237)",
+      "chapter_id": "Programming in Python 3:ch26",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "os",
+          "xml",
+          "path",
+          "module",
+          "ﬁle"
+        ],
+        "semantic": [],
+        "merged": [
+          "os",
+          "xml",
+          "path",
+          "module",
+          "ﬁle"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3322283839540374,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:54:07.888254+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 27,
+      "title": "Segment 27 (pages 238-247)",
+      "chapter_id": "Programming in Python 3:ch27",
+      "cross_references": [
+        {
+          "target": "Programming in Python 3:ch25",
+          "score": 0.5819045848126396,
+          "base_score": 0.6457669006136587,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Programming in Python 3:ch23",
+          "score": 0.5592250053549902,
+          "base_score": 0.6079676015175762,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Programming in Python 3:ch3",
+          "score": 0.5304990936541526,
+          "base_score": 0.6341651560902544,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Programming in Python 3:ch1",
+          "score": 0.5218907028445859,
+          "base_score": 0.6198178380743099,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "class",
+          "circle",
+          "modules",
+          "oriented",
+          "object oriented"
+        ],
+        "semantic": [],
+        "merged": [
+          "class",
+          "circle",
+          "modules",
+          "oriented",
+          "object oriented"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "module_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35931392243599247,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.888557+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 28,
+      "title": "Segment 28 (pages 248-262)",
+      "chapter_id": "Programming in Python 3:ch28",
+      "cross_references": [
+        {
+          "target": "Programming in Python 3:ch29",
+          "score": 0.5544512125374434,
+          "base_score": 0.6000112801549984,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Programming in Python 3:ch38",
+          "score": 0.5215786212372937,
+          "base_score": 0.5452236279880822,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "self",
+          "radius",
+          "method",
+          "circle",
+          "__value"
+        ],
+        "semantic": [],
+        "merged": [
+          "self",
+          "radius",
+          "method",
+          "circle",
+          "__value"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "self_class_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3352249392684598,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.888838+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 29,
+      "title": "Segment 29 (pages 263-277)",
+      "chapter_id": "Programming in Python 3:ch29",
+      "cross_references": [
+        {
+          "target": "Programming in Python 3:ch28",
+          "score": 0.5544512125374434,
+          "base_score": 0.6000112801549984,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "self",
+          "fuzzybool",
+          "self __background",
+          "__background",
+          "image"
+        ],
+        "semantic": [],
+        "merged": [
+          "self",
+          "fuzzybool",
+          "self __background",
+          "__background",
+          "image"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "self_class_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30961659304174927,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.889121+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 30,
+      "title": "Segment 30 (pages 278-291)",
+      "chapter_id": "Programming in Python 3:ch30",
+      "cross_references": [
+        {
+          "target": "Programming in Python 3:ch37",
+          "score": 0.5005542301840108,
+          "base_score": 0.5842570503066846,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "self",
+          "__list",
+          "self __list",
+          "key",
+          "self __keys"
+        ],
+        "semantic": [],
+        "merged": [
+          "self",
+          "__list",
+          "self __list",
+          "key",
+          "self __keys"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_function_list",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2804795888409175,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.889402+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 31,
+      "title": "Segment 31 (pages 292-301)",
+      "chapter_id": "Programming in Python 3:ch31",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "xml",
+          "incident",
+          "binary",
+          "reader",
+          "data"
+        ],
+        "semantic": [],
+        "merged": [
+          "xml",
+          "incident",
+          "binary",
+          "reader",
+          "data"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_function_list",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2669735251000389,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.889689+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 32,
+      "title": "Segment 32 (pages 302-312)",
+      "chapter_id": "Programming in Python 3:ch32",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "bytes",
+          "bytes bytearray",
+          "bytearray",
+          "byte",
+          "bit"
+        ],
+        "semantic": [],
+        "merged": [
+          "bytes",
+          "bytes bytearray",
+          "bytearray",
+          "byte",
+          "bit"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_bytes_math",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2878113014511054,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.889968+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 33,
+      "title": "Segment 33 (pages 313-329)",
+      "chapter_id": "Programming in Python 3:ch33",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "incident",
+          "narrative",
+          "element",
+          "airport",
+          "xml"
+        ],
+        "semantic": [],
+        "merged": [
+          "incident",
+          "narrative",
+          "element",
+          "airport",
+          "xml"
+        ]
+      },
+      "topic_id": 9,
+      "topic_name": "incident_the_narrative",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24713304004035527,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.890244+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 34,
+      "title": "Segment 34 (pages 330-340)",
+      "chapter_id": "Programming in Python 3:ch34",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "self",
+          "__fh",
+          "self __fh",
+          "record",
+          "byte"
+        ],
+        "semantic": [],
+        "merged": [
+          "self",
+          "__fh",
+          "self __fh",
+          "record",
+          "byte"
+        ]
+      },
+      "topic_id": 9,
+      "topic_name": "incident_the_narrative",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25054377141147494,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.890544+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 35,
+      "title": "Segment 35 (pages 341-350)",
+      "chapter_id": "Programming in Python 3:ch35",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "bike",
+          "bikestock",
+          "record",
+          "bikestock bike",
+          "binaryrecordfile"
+        ],
+        "semantic": [],
+        "merged": [
+          "bike",
+          "bikestock",
+          "record",
+          "bikestock bike",
+          "binaryrecordfile"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "self_class_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2380877190251001,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.890826+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 36,
+      "title": "Segment 36 (pages 351-358)",
+      "chapter_id": "Programming in Python 3:ch36",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "exec",
+          "get_file_type",
+          "context",
+          "obj",
+          "module"
+        ],
+        "semantic": [],
+        "merged": [
+          "exec",
+          "get_file_type",
+          "context",
+          "obj",
+          "module"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3214482323939485,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:54:07.891103+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 37,
+      "title": "Segment 37 (pages 359-371)",
+      "chapter_id": "Programming in Python 3:ch37",
+      "cross_references": [
+        {
+          "target": "Programming in Python 3:ch30",
+          "score": 0.5005542301840108,
+          "base_score": 0.5842570503066846,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "function",
+          "wrapper",
+          "result",
+          "result function",
+          "args kwargs"
+        ],
+        "semantic": [],
+        "merged": [
+          "function",
+          "wrapper",
+          "result",
+          "result function",
+          "args kwargs"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_function_list",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31773695544852854,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.892293+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 38,
+      "title": "Segment 38 (pages 372-381)",
+      "chapter_id": "Programming in Python 3:ch38",
+      "cross_references": [
+        {
+          "target": "Programming in Python 3:ch28",
+          "score": 0.5215786212372937,
+          "base_score": 0.5452236279880822,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "attribute",
+          "__getattr__",
+          "context",
+          "self",
+          "context managers"
+        ],
+        "semantic": [],
+        "merged": [
+          "attribute",
+          "__getattr__",
+          "context",
+          "self",
+          "context managers"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "self_class_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29452784343784516,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.894118+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 39,
+      "title": "Segment 39 (pages 382-389)",
+      "chapter_id": "Programming in Python 3:ch39",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "self",
+          "instance",
+          "descriptor",
+          "class",
+          "attribute_name"
+        ],
+        "semantic": [],
+        "merged": [
+          "self",
+          "instance",
+          "descriptor",
+          "class",
+          "attribute_name"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30676444977101813,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:54:07.895412+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 40,
+      "title": "Segment 40 (pages 390-401)",
+      "chapter_id": "Programming in Python 3:ch40",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "undo",
+          "class",
+          "self",
+          "abc",
+          "metaclass"
+        ],
+        "semantic": [],
+        "merged": [
+          "undo",
+          "class",
+          "self",
+          "abc",
+          "metaclass"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "self_class_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2744821239334845,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.895999+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 41,
+      "title": "Segment 41 (pages 402-409)",
+      "chapter_id": "Programming in Python 3:ch41",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "function",
+          "iterable",
+          "functools",
+          "functools reduce",
+          "reduce"
+        ],
+        "semantic": [],
+        "merged": [
+          "function",
+          "iterable",
+          "functools",
+          "functools reduce",
+          "reduce"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2984861139727399,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:54:07.896314+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 42,
+      "title": "Segment 42 (pages 410-418)",
+      "chapter_id": "Programming in Python 3:ch42",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "pipeline",
+          "coroutine",
+          "receiver",
+          "get_files",
+          "reporter"
+        ],
+        "semantic": [],
+        "merged": [
+          "pipeline",
+          "coroutine",
+          "receiver",
+          "get_files",
+          "reporter"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "match_the_module",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28142970471408546,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.896632+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 43,
+      "title": "Segment 43 (pages 419-426)",
+      "chapter_id": "Programming in Python 3:ch43",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "py line",
+          "line",
+          "blocks py",
+          "blocks",
+          "file blocks"
+        ],
+        "semantic": [],
+        "merged": [
+          "py line",
+          "line",
+          "blocks py",
+          "blocks",
+          "file blocks"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3539873522599788,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:54:07.896917+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 44,
+      "title": "Segment 44 (pages 427-434)",
+      "chapter_id": "Programming in Python 3:ch44",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "pdb",
+          "program",
+          "bug",
+          "run",
+          "set_trace"
+        ],
+        "semantic": [],
+        "merged": [
+          "pdb",
+          "program",
+          "bug",
+          "run",
+          "set_trace"
+        ]
+      },
+      "topic_id": 8,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.19734208485250887,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.897201+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 45,
+      "title": "Segment 45 (pages 435-445)",
+      "chapter_id": "Programming in Python 3:ch45",
+      "cross_references": [
+        {
+          "target": "Programming in Python 3:ch24",
+          "score": 0.5831057058741158,
+          "base_score": 0.6477687690494522,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Programming in Python 3:ch25",
+          "score": 0.5663440047271808,
+          "base_score": 0.6198326004712272,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "000",
+          "test",
+          "unittest",
+          "module",
+          "1000"
+        ],
+        "semantic": [],
+        "merged": [
+          "000",
+          "test",
+          "unittest",
+          "module",
+          "1000"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "module_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3255305223180979,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.897493+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 46,
+      "title": "Segment 46 (pages 446-457)",
+      "chapter_id": "Programming in Python 3:ch46",
+      "cross_references": [
+        {
+          "target": "Programming in Python 3:ch47",
+          "score": 0.625255077592753,
+          "base_score": 0.625425129321255,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "queue",
+          "processes",
+          "work",
+          "threads",
+          "thread"
+        ],
+        "semantic": [],
+        "merged": [
+          "queue",
+          "processes",
+          "work",
+          "threads",
+          "thread"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "the_license_server",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2792804821909654,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.897773+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 47,
+      "title": "Segment 47 (pages 458-465)",
+      "chapter_id": "Programming in Python 3:ch47",
+      "cross_references": [
+        {
+          "target": "Programming in Python 3:ch46",
+          "score": 0.625255077592753,
+          "base_score": 0.625425129321255,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "queue",
+          "md5_from_filename",
+          "lock",
+          "thread",
+          "threading"
+        ],
+        "semantic": [],
+        "merged": [
+          "queue",
+          "md5_from_filename",
+          "lock",
+          "thread",
+          "threading"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "the_license_server",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2704252440976862,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.898053+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 48,
+      "title": "Segment 48 (pages 466-474)",
+      "chapter_id": "Programming in Python 3:ch48",
+      "cross_references": [
+        {
+          "target": "Programming in Python 3:ch49",
+          "score": 0.6695410839633155,
+          "base_score": 0.4214573621610814,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "server",
+          "license",
+          "car",
+          "mileage",
+          "cars"
+        ],
+        "semantic": [],
+        "merged": [
+          "server",
+          "license",
+          "car",
+          "mileage",
+          "cars"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "the_license_server",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.144672089229142,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.898330+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 49,
+      "title": "Segment 49 (pages 475-482)",
+      "chapter_id": "Programming in Python 3:ch49",
+      "cross_references": [
+        {
+          "target": "Programming in Python 3:ch48",
+          "score": 0.6695410839633155,
+          "base_score": 0.4214573621610814,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "license",
+          "car",
+          "lock",
+          "cars",
+          "mileage"
+        ],
+        "semantic": [],
+        "merged": [
+          "license",
+          "car",
+          "lock",
+          "cars",
+          "mileage"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "the_license_server",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.20495144793799575,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.898614+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 50,
+      "title": "Segment 50 (pages 483-495)",
+      "chapter_id": "Programming in Python 3:ch50",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "db",
+          "director",
+          "cursor",
+          "title",
+          "dvds"
+        ],
+        "semantic": [],
+        "merged": [
+          "db",
+          "director",
+          "cursor",
+          "title",
+          "dvds"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26625622486549544,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:54:07.898911+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 51,
+      "title": "Segment 51 (pages 496-507)",
+      "chapter_id": "Programming in Python 3:ch51",
+      "cross_references": [
+        {
+          "target": "Programming in Python 3:ch52",
+          "score": 0.5952460742246386,
+          "base_score": 0.5754101237077311,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "match",
+          "matches",
+          "regex",
+          "expression",
+          "jet"
+        ],
+        "semantic": [],
+        "merged": [
+          "match",
+          "matches",
+          "regex",
+          "expression",
+          "jet"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "match_the_module",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32882962237676205,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.899187+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 52,
+      "title": "Segment 52 (pages 508-517)",
+      "chapter_id": "Programming in Python 3:ch52",
+      "cross_references": [
+        {
+          "target": "Programming in Python 3:ch51",
+          "score": 0.5952460742246386,
+          "base_score": 0.5754101237077311,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "match",
+          "regex",
+          "group",
+          "capture",
+          "regex matches"
+        ],
+        "semantic": [],
+        "merged": [
+          "match",
+          "regex",
+          "group",
+          "capture",
+          "regex matches"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "match_the_module",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23363888114569076,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.900218+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 53,
+      "title": "Segment 53 (pages 518-525)",
+      "chapter_id": "Programming in Python 3:ch53",
+      "cross_references": [
+        {
+          "target": "Programming in Python 3:ch56",
+          "score": 0.58638324577053,
+          "base_score": 0.653231335543476,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Programming in Python 3:ch57",
+          "score": 0.5471886562972299,
+          "base_score": 0.5879070197546423,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Programming in Python 3:ch54",
+          "score": 0.5307980817417143,
+          "base_score": 0.5605893954954497,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Programming in Python 3:ch55",
+          "score": 0.5243890932715731,
+          "base_score": 0.5499077480452146,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "bnf",
+          "parser",
+          "parsing",
+          "terms",
+          "nonterminals"
+        ],
+        "semantic": [],
+        "merged": [
+          "bnf",
+          "parser",
+          "parsing",
+          "terms",
+          "nonterminals"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "parser_the_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3725622837261051,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.901046+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 54,
+      "title": "Segment 54 (pages 526-540)",
+      "chapter_id": "Programming in Python 3:ch54",
+      "cross_references": [
+        {
+          "target": "Programming in Python 3:ch53",
+          "score": 0.5307980817417143,
+          "base_score": 0.5605893954954497,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Programming in Python 3:ch56",
+          "score": 0.5125824265750814,
+          "base_score": 0.5302299702177282,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "block",
+          "data",
+          "parser",
+          "blocks",
+          "line"
+        ],
+        "semantic": [],
+        "merged": [
+          "block",
+          "data",
+          "parser",
+          "blocks",
+          "line"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "parser_the_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3646164531622782,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.902302+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 55,
+      "title": "Segment 55 (pages 541-554)",
+      "chapter_id": "Programming in Python 3:ch55",
+      "cross_references": [
+        {
+          "target": "Programming in Python 3:ch56",
+          "score": 0.5449502613420003,
+          "base_score": 0.5841763614959263,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Programming in Python 3:ch53",
+          "score": 0.5243890932715731,
+          "base_score": 0.5499077480452146,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "parser",
+          "parser element",
+          "element",
+          "elements",
+          "parser elements"
+        ],
+        "semantic": [],
+        "merged": [
+          "parser",
+          "parser element",
+          "element",
+          "elements",
+          "parser elements"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "parser_the_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2614078904684854,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.903120+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 56,
+      "title": "Segment 56 (pages 555-568)",
+      "chapter_id": "Programming in Python 3:ch56",
+      "cross_references": [
+        {
+          "target": "Programming in Python 3:ch53",
+          "score": 0.58638324577053,
+          "base_score": 0.653231335543476,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Programming in Python 3:ch57",
+          "score": 0.5564187626258499,
+          "base_score": 0.6032905303023425,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Programming in Python 3:ch55",
+          "score": 0.5449502613420003,
+          "base_score": 0.5841763614959263,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Programming in Python 3:ch54",
+          "score": 0.5125824265750814,
+          "base_score": 0.5302299702177282,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "token",
+          "lexer",
+          "ply",
+          "tokens",
+          "parser"
+        ],
+        "semantic": [],
+        "merged": [
+          "token",
+          "lexer",
+          "ply",
+          "tokens",
+          "parser"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "parser_the_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3565298806296545,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.903432+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 57,
+      "title": "Segment 57 (pages 569-580)",
+      "chapter_id": "Programming in Python 3:ch57",
+      "cross_references": [
+        {
+          "target": "Programming in Python 3:ch56",
+          "score": 0.5564187626258499,
+          "base_score": 0.6032905303023425,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Programming in Python 3:ch53",
+          "score": 0.5471886562972299,
+          "base_score": 0.5879070197546423,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "gui",
+          "ply",
+          "tk",
+          "bnf",
+          "window"
+        ],
+        "semantic": [],
+        "merged": [
+          "gui",
+          "ply",
+          "tk",
+          "bnf",
+          "window"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "parser_the_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2993143788228937,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.903748+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 58,
+      "title": "Segment 58 (pages 581-597)",
+      "chapter_id": "Programming in Python 3:ch58",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "self",
+          "tkinter",
+          "parent",
+          "bookmarks",
+          "self parent"
+        ],
+        "semantic": [],
+        "merged": [
+          "self",
+          "tkinter",
+          "parent",
+          "bookmarks",
+          "self parent"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.14961768656127855,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:54:07.904030+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 59,
+      "title": "Segment 59 (pages 598-607)",
+      "chapter_id": "Programming in Python 3:ch59",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "frame",
+          "253",
+          "tkinter",
+          "operator",
+          "augmented"
+        ],
+        "semantic": [],
+        "merged": [
+          "frame",
+          "253",
+          "tkinter",
+          "operator",
+          "augmented"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1871707235535067,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:54:07.904317+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 60,
+      "title": "Segment 60 (pages 608-615)",
+      "chapter_id": "Programming in Python 3:ch60",
+      "cross_references": [
+        {
+          "target": "Programming in Python 3:ch63",
+          "score": 0.7346354615058182,
+          "base_score": 0.6886781501287444,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Programming in Python 3:ch62",
+          "score": 0.6725338540217727,
+          "base_score": 0.7042230900362878,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Programming in Python 3:ch61",
+          "score": 0.6150938466296146,
+          "base_score": 0.6084897443826911,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "type",
+          "module",
+          "481",
+          "482",
+          "py example"
+        ],
+        "semantic": [],
+        "merged": [
+          "type",
+          "module",
+          "481",
+          "482",
+          "py example"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "match_the_module",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36311200773942187,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.905011+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 61,
+      "title": "Segment 61 (pages 616-623)",
+      "chapter_id": "Programming in Python 3:ch61",
+      "cross_references": [
+        {
+          "target": "Programming in Python 3:ch60",
+          "score": 0.6150938466296146,
+          "base_score": 0.6084897443826911,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Programming in Python 3:ch62",
+          "score": 0.57940327411337,
+          "base_score": 0.5490054568556166,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Programming in Python 3:ch63",
+          "score": 0.5752228043320056,
+          "base_score": 0.5420380072200093,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "type",
+          "module",
+          "115",
+          "118",
+          "str type"
+        ],
+        "semantic": [],
+        "merged": [
+          "type",
+          "module",
+          "115",
+          "118",
+          "str type"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "match_the_module",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2776642854108336,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.905340+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 62,
+      "title": "Segment 62 (pages 624-631)",
+      "chapter_id": "Programming in Python 3:ch62",
+      "cross_references": [
+        {
+          "target": "Programming in Python 3:ch60",
+          "score": 0.6725338540217727,
+          "base_score": 0.7042230900362878,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Programming in Python 3:ch63",
+          "score": 0.655084123461345,
+          "base_score": 0.6751402057689084,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Programming in Python 3:ch61",
+          "score": 0.57940327411337,
+          "base_score": 0.5490054568556166,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "module",
+          "503",
+          "502",
+          "type",
+          "253"
+        ],
+        "semantic": [],
+        "merged": [
+          "module",
+          "503",
+          "502",
+          "type",
+          "253"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "match_the_module",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39937627620646277,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.905663+00:00"
+      }
+    },
+    {
+      "book": "Programming in Python 3",
+      "chapter": 63,
+      "title": "Segment 63 (pages 632-636)",
+      "chapter_id": "Programming in Python 3:ch63",
+      "cross_references": [
+        {
+          "target": "Programming in Python 3:ch60",
+          "score": 0.7346354615058182,
+          "base_score": 0.6886781501287444,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Programming in Python 3:ch62",
+          "score": 0.655084123461345,
+          "base_score": 0.6751402057689084,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Programming in Python 3:ch61",
+          "score": 0.5752228043320056,
+          "base_score": 0.5420380072200093,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "module",
+          "xml",
+          "type",
+          "75",
+          "py example"
+        ],
+        "semantic": [],
+        "merged": [
+          "module",
+          "xml",
+          "type",
+          "75",
+          "py example"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "match_the_module",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.383008267162597,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:07.905953+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

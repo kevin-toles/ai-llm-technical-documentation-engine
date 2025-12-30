@@ -15,25 +15,26 @@ run_test() {
     local result="$2"
     local expected="$3"
     
-    if [ "$result" = "$expected" ]; then
+    if [[ "$result" == "$expected" ]]; then
         echo "✓ $name"
         TESTS_PASSED=$((TESTS_PASSED + 1))
     else
-        echo "✗ $name (expected: $expected, got: $result)"
+        echo "✗ $name (expected: $expected, got: $result)" >&2
         TESTS_FAILED=$((TESTS_FAILED + 1))
     fi
+    return 0
 }
 
 # Find any guideline MD file (either GUIDELINES_*.md or *_guideline.md pattern)
 # Prefer GUIDELINES_* pattern, then fall back to *_guideline.md
 MD_FILE=$(ls -1 "$OUTPUT_DIR"/GUIDELINES_*.md 2>/dev/null | head -1)
-if [ -z "$MD_FILE" ]; then
+if [[ -z "$MD_FILE" ]]; then
     MD_FILE=$(ls -1 "$OUTPUT_DIR"/*_guideline.md 2>/dev/null | head -1)
 fi
 
 echo ""
 echo "1. Checking output file exists..."
-if [ -n "$MD_FILE" ] && [ -f "$MD_FILE" ]; then
+if [[ -n "$MD_FILE" ]] && [[ -f "$MD_FILE" ]]; then
     run_test "MD file exists" "true" "true"
     echo "   Found: $MD_FILE"
 else
@@ -45,7 +46,7 @@ fi
 echo ""
 echo "2. Checking file size..."
 SIZE=$(stat -f%z "$MD_FILE" 2>/dev/null || stat --format=%s "$MD_FILE")
-if [ "$SIZE" -gt 10000 ]; then
+if [[ "$SIZE" -gt 10000 ]]; then
     run_test "File size > 10KB" "true" "true"
     echo "   Size: $SIZE bytes"
 else
@@ -55,7 +56,7 @@ fi
 echo ""
 echo "3. Counting chapter headers..."
 CHAPTER_COUNT=$(grep -c "^## Chapter" "$MD_FILE" || echo "0")
-if [ "$CHAPTER_COUNT" -ge 1 ]; then
+if [[ "$CHAPTER_COUNT" -ge 1 ]]; then
     run_test "Has chapter headers" "true" "true"
     echo "   Found: $CHAPTER_COUNT chapter headers"
 else
@@ -65,7 +66,7 @@ fi
 echo ""
 echo "4. Checking for Chapter Summary sections..."
 SUMMARY_COUNT=$(grep -c "### Chapter Summary" "$MD_FILE" || echo "0")
-if [ "$SUMMARY_COUNT" -ge 1 ]; then
+if [[ "$SUMMARY_COUNT" -ge 1 ]]; then
     run_test "Has Chapter Summary sections" "true" "true"
     echo "   Found: $SUMMARY_COUNT summaries"
 else
@@ -75,7 +76,7 @@ fi
 echo ""
 echo "5. Checking footnote references..."
 FOOTNOTE_REFS=$(grep -c "\[\^[0-9]\+\]" "$MD_FILE" || echo "0")
-if [ "$FOOTNOTE_REFS" -ge 1 ]; then
+if [[ "$FOOTNOTE_REFS" -ge 1 ]]; then
     run_test "Has footnote references" "true" "true"
     echo "   Found: $FOOTNOTE_REFS footnote references"
 else
@@ -85,7 +86,7 @@ fi
 echo ""
 echo "6. Checking footnote definitions..."
 FOOTNOTE_DEFS=$(grep -c "^\[\^[0-9]\+\]:" "$MD_FILE" || echo "0")
-if [ "$FOOTNOTE_DEFS" -ge 1 ]; then
+if [[ "$FOOTNOTE_DEFS" -ge 1 ]]; then
     run_test "Has footnote definitions" "true" "true"
     echo "   Found: $FOOTNOTE_DEFS footnote definitions"
 else
@@ -95,7 +96,7 @@ fi
 echo ""
 echo "7. Checking for code annotations..."
 ANNOTATION_COUNT=$(grep -ci "annotation:" "$MD_FILE" || echo "0")
-if [ "$ANNOTATION_COUNT" -ge 1 ]; then
+if [[ "$ANNOTATION_COUNT" -ge 1 ]]; then
     run_test "Has code annotations" "true" "true"
     echo "   Found: $ANNOTATION_COUNT annotations"
 else
@@ -105,7 +106,7 @@ fi
 echo ""
 echo "8. Checking for code blocks..."
 CODE_BLOCKS=$(grep -c '^\`\`\`' "$MD_FILE" || echo "0")
-if [ "$CODE_BLOCKS" -ge 2 ]; then
+if [[ "$CODE_BLOCKS" -ge 2 ]]; then
     run_test "Has code blocks" "true" "true"
     echo "   Found: $((CODE_BLOCKS / 2)) code blocks (approx)"
 else
@@ -115,7 +116,7 @@ fi
 echo ""
 echo "9. Checking for concept breakdowns..."
 CONCEPT_COUNT=$(grep -c "#### \*\*" "$MD_FILE" || echo "0")
-if [ "$CONCEPT_COUNT" -ge 1 ]; then
+if [[ "$CONCEPT_COUNT" -ge 1 ]]; then
     run_test "Has concept breakdowns" "true" "true"
     echo "   Found: $CONCEPT_COUNT concepts"
 else
@@ -133,7 +134,7 @@ echo "=== Summary ==="
 echo "Tests passed: $TESTS_PASSED"
 echo "Tests failed: $TESTS_FAILED"
 
-if [ "$TESTS_FAILED" -eq 0 ]; then
+if [[ "$TESTS_FAILED" -eq 0 ]]; then
     echo ""
     echo "=== WBS 2.2.1 PASSED ==="
     exit 0

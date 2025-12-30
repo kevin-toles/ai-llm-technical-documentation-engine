@@ -1,0 +1,304 @@
+{
+  "book": {
+    "title": "Readings in Database Systems"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:54:54.402446",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Readings in Database Systems",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-8)",
+      "chapter_id": "Readings in Database Systems:ch1",
+      "cross_references": [
+        {
+          "target": "Readings in Database Systems:ch6",
+          "score": 0.6340443879061609,
+          "base_score": 0.7710263607959824,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "readings database",
+          "edition",
+          "readings",
+          "database systems",
+          "edition 2015"
+        ],
+        "semantic": [],
+        "merged": [
+          "readings database",
+          "edition",
+          "readings",
+          "database systems",
+          "edition 2015"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6184158875902838,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:54.396515+00:00"
+      }
+    },
+    {
+      "book": "Readings in Database Systems",
+      "chapter": 2,
+      "title": "Segment 2 (pages 9-18)",
+      "chapter_id": "Readings in Database Systems:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "mapreduce",
+          "warehouse",
+          "data warehouse",
+          "post",
+          "aries"
+        ],
+        "semantic": [],
+        "merged": [
+          "mapreduce",
+          "warehouse",
+          "data warehouse",
+          "post",
+          "aries"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5773898329306884,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:54:54.396585+00:00"
+      }
+    },
+    {
+      "book": "Readings in Database Systems",
+      "chapter": 3,
+      "title": "Segment 3 (pages 19-26)",
+      "chapter_id": "Readings in Database Systems:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "isolation",
+          "weak",
+          "weak isolation",
+          "serializable",
+          "operators"
+        ],
+        "semantic": [],
+        "merged": [
+          "isolation",
+          "weak",
+          "weak isolation",
+          "serializable",
+          "operators"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4586264463347246,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:54.396623+00:00"
+      }
+    },
+    {
+      "book": "Readings in Database Systems",
+      "chapter": 4,
+      "title": "Segment 4 (pages 27-35)",
+      "chapter_id": "Readings in Database Systems:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "like",
+          "language",
+          "paper",
+          "queries",
+          "web"
+        ],
+        "semantic": [],
+        "merged": [
+          "like",
+          "language",
+          "paper",
+          "queries",
+          "web"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4903901101557159,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:54:54.396659+00:00"
+      }
+    },
+    {
+      "book": "Readings in Database Systems",
+      "chapter": 5,
+      "title": "Segment 5 (pages 36-44)",
+      "chapter_id": "Readings in Database Systems:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "analytics",
+          "data science",
+          "transformation",
+          "data set",
+          "science"
+        ],
+        "semantic": [],
+        "merged": [
+          "analytics",
+          "data science",
+          "transformation",
+          "data set",
+          "science"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46127330481757756,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:54:54.396695+00:00"
+      }
+    },
+    {
+      "book": "Readings in Database Systems",
+      "chapter": 6,
+      "title": "Segment 6 (pages 45-52)",
+      "chapter_id": "Readings in Database Systems:ch6",
+      "cross_references": [
+        {
+          "target": "Readings in Database Systems:ch1",
+          "score": 0.6340443879061609,
+          "base_score": 0.7710263607959824,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Readings in Database Systems:ch7",
+          "score": 0.5486891942074426,
+          "base_score": 0.5904079162716636,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "hellerstein",
+          "database systems",
+          "acm",
+          "readings",
+          "readings database"
+        ],
+        "semantic": [],
+        "merged": [
+          "hellerstein",
+          "database systems",
+          "acm",
+          "readings",
+          "readings database"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "systems_acm_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6234196135230029,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:54.396733+00:00"
+      }
+    },
+    {
+      "book": "Readings in Database Systems",
+      "chapter": 7,
+      "title": "Segment 7 (pages 53-54)",
+      "chapter_id": "Readings in Database Systems:ch7",
+      "cross_references": [
+        {
+          "target": "Readings in Database Systems:ch6",
+          "score": 0.5486891942074426,
+          "base_score": 0.5904079162716636,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "acm",
+          "stonebraker",
+          "replicated data",
+          "replicated",
+          "sigmod"
+        ],
+        "semantic": [],
+        "merged": [
+          "acm",
+          "stonebraker",
+          "replicated data",
+          "replicated",
+          "sigmod"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "systems_acm_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5434628095063009,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:54:54.396790+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

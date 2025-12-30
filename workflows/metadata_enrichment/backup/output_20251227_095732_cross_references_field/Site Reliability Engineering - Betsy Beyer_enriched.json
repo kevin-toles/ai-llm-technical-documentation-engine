@@ -1,0 +1,1847 @@
+{
+  "book": {
+    "title": "Site Reliability Engineering - Betsy Beyer"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:56:31.276813",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 1,
+      "title": "Introduction",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch1",
+      "cross_references": [
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch11",
+          "score": 0.7001100794995903,
+          "base_score": 0.7501834658326504,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch18",
+          "score": 0.6500078773968894,
+          "base_score": 0.6666797956614823,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch30",
+          "score": 0.6380630884079435,
+          "base_score": 0.6467718140132391,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch32",
+          "score": 0.5990828076102404,
+          "base_score": 0.5818046793504006,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch9",
+          "score": 0.5898722639712346,
+          "base_score": 0.6590463658779836,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sre",
+          "development",
+          "team",
+          "sre team",
+          "hiring"
+        ],
+        "semantic": [],
+        "merged": [
+          "sre",
+          "development",
+          "team",
+          "sre team",
+          "hiring"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.484726210788224,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.219077+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 2,
+      "title": "The Production Environment at Google, from the Viewpoint of an SRE",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "server",
+          "borg",
+          "shakespeare",
+          "google",
+          "hardware"
+        ],
+        "semantic": [],
+        "merged": [
+          "server",
+          "borg",
+          "shakespeare",
+          "google",
+          "hardware"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "consensus_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3470480434413447,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.219288+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 3,
+      "title": "Embracing Risk",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch3",
+      "cross_references": [
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch33",
+          "score": 0.571551985434484,
+          "base_score": 0.7025866423908067,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch27",
+          "score": 0.5287370008727106,
+          "base_score": 0.631228334787851,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch11",
+          "score": 0.52869471959787,
+          "base_score": 0.63115786599645,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch1",
+          "score": 0.5020674548643999,
+          "base_score": 0.5867790914406665,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "service",
+          "risk",
+          "risk tolerance",
+          "tolerance",
+          "99"
+        ],
+        "semantic": [],
+        "merged": [
+          "service",
+          "risk",
+          "risk tolerance",
+          "tolerance",
+          "99"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4162879114146702,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.219453+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 4,
+      "title": "Service Level Objectives",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "service",
+          "slos",
+          "sli",
+          "users",
+          "service level"
+        ],
+        "semantic": [],
+        "merged": [
+          "service",
+          "slos",
+          "sli",
+          "users",
+          "service level"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3530262554568688,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.219611+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 5,
+      "title": "Eliminating Toil",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "toil",
+          "work",
+          "engineering",
+          "time spent",
+          "toil toil"
+        ],
+        "semantic": [],
+        "merged": [
+          "toil",
+          "work",
+          "engineering",
+          "time spent",
+          "toil toil"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3124837996097648,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.219765+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 6,
+      "title": "Monitoring Distributed Systems",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "monitoring",
+          "box",
+          "box monitoring",
+          "alerting",
+          "white"
+        ],
+        "semantic": [],
+        "merged": [
+          "monitoring",
+          "box",
+          "box monitoring",
+          "alerting",
+          "white"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47382094353348936,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.219944+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 7,
+      "title": "The Evolution of Automation at Google",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch7",
+      "cross_references": [
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch34",
+          "score": 0.5372193449841746,
+          "base_score": 0.6453655749736242,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch1",
+          "score": 0.5226557675569891,
+          "base_score": 0.6210929459283151,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch9",
+          "score": 0.500245692353538,
+          "base_score": 0.5837428205892301,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "automation",
+          "cluster",
+          "turnup",
+          "time",
+          "machines"
+        ],
+        "semantic": [],
+        "merged": [
+          "automation",
+          "cluster",
+          "turnup",
+          "time",
+          "machines"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41092307701417013,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.220115+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 8,
+      "title": "Release Engineering",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch8",
+      "cross_references": [
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch9",
+          "score": 0.515239707424138,
+          "base_score": 0.6087328457068968,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch27",
+          "score": 0.5053940724612425,
+          "base_score": 0.5923234541020708,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "release",
+          "build",
+          "release engineers",
+          "configuration",
+          "engineers"
+        ],
+        "semantic": [],
+        "merged": [
+          "release",
+          "build",
+          "release engineers",
+          "configuration",
+          "engineers"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33433819996321035,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.220278+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 9,
+      "title": "Simplicity",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch9",
+      "cross_references": [
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch18",
+          "score": 0.6756429331049347,
+          "base_score": 0.7094048885082245,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch1",
+          "score": 0.5898722639712346,
+          "base_score": 0.6590463658779836,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch32",
+          "score": 0.5839389396826551,
+          "base_score": 0.6491574920636844,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch11",
+          "score": 0.5666395511419369,
+          "base_score": 0.6203251778291541,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch30",
+          "score": 0.5395577347052667,
+          "base_score": 0.5751888171013703,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "systems",
+          "software",
+          "chapter",
+          "reliable",
+          "sre"
+        ],
+        "semantic": [],
+        "merged": [
+          "systems",
+          "software",
+          "chapter",
+          "reliable",
+          "sre"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45158280465273076,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.220446+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 10,
+      "title": "Practical Alerting from Time-Series Data",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "var",
+          "webserver",
+          "time series",
+          "job webserver",
+          "borgmon"
+        ],
+        "semantic": [],
+        "merged": [
+          "var",
+          "webserver",
+          "time series",
+          "job webserver",
+          "borgmon"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30502305677005603,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.220601+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 11,
+      "title": "Being On-Call",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch11",
+      "cross_references": [
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch1",
+          "score": 0.7001100794995903,
+          "base_score": 0.7501834658326504,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch30",
+          "score": 0.6234829107009005,
+          "base_score": 0.6224715178348341,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch32",
+          "score": 0.6055019829433728,
+          "base_score": 0.5925033049056214,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch31",
+          "score": 0.6011186773408612,
+          "base_score": 0.4661501765204829,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch29",
+          "score": 0.5915683910796345,
+          "base_score": 0.6618732443919836,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "teams",
+          "sre",
+          "team",
+          "work",
+          "sre teams"
+        ],
+        "semantic": [],
+        "merged": [
+          "teams",
+          "sre",
+          "team",
+          "work",
+          "sre teams"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5056929885676196,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.220817+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 12,
+      "title": "Effective Troubleshooting",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch12",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "app",
+          "problem",
+          "troubleshooting",
+          "problems",
+          "report"
+        ],
+        "semantic": [],
+        "merged": [
+          "app",
+          "problem",
+          "troubleshooting",
+          "problems",
+          "report"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_to_incident",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26745715914863827,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.220973+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 13,
+      "title": "Emergency Response",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch13",
+      "cross_references": [
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch15",
+          "score": 0.5084918036560144,
+          "base_score": 0.5234122653526168,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch14",
+          "score": 0.5072860098947094,
+          "base_score": 0.521402609083775,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "incident",
+          "outage",
+          "systems",
+          "engineers",
+          "turndown"
+        ],
+        "semantic": [],
+        "merged": [
+          "incident",
+          "outage",
+          "systems",
+          "engineers",
+          "turndown"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_to_incident",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3601292946195068,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.221148+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 14,
+      "title": "Managing Incidents",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch14",
+      "cross_references": [
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch15",
+          "score": 0.5090816219685717,
+          "base_score": 0.5243952958735453,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch13",
+          "score": 0.5072860098947094,
+          "base_score": 0.521402609083775,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "incident",
+          "incident management",
+          "management",
+          "document",
+          "incident document"
+        ],
+        "semantic": [],
+        "merged": [
+          "incident",
+          "incident management",
+          "management",
+          "document",
+          "incident document"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_to_incident",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34877648792444726,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.221317+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 15,
+      "title": "Postmortem Culture: Learning from Failure",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch15",
+      "cross_references": [
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch14",
+          "score": 0.5090816219685717,
+          "base_score": 0.5243952958735453,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch13",
+          "score": 0.5084918036560144,
+          "base_score": 0.5234122653526168,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "postmortem",
+          "postmortems",
+          "incident",
+          "culture",
+          "blameless"
+        ],
+        "semantic": [],
+        "merged": [
+          "postmortem",
+          "postmortems",
+          "incident",
+          "culture",
+          "blameless"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_to_incident",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30708532881199435,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.221500+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 16,
+      "title": "Tracking Outages",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch16",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "outalator",
+          "alerts",
+          "teams",
+          "network",
+          "cause network"
+        ],
+        "semantic": [],
+        "merged": [
+          "outalator",
+          "alerts",
+          "teams",
+          "network",
+          "cause network"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36895747711888427,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.221655+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 17,
+      "title": "Testing for Reliability",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch17",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "test",
+          "tests",
+          "testing",
+          "release",
+          "coverage"
+        ],
+        "semantic": [],
+        "merged": [
+          "test",
+          "tests",
+          "testing",
+          "release",
+          "coverage"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34569560479188893,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.221807+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 18,
+      "title": "Software Engineering in SRE",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch18",
+      "cross_references": [
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch9",
+          "score": 0.6756429331049347,
+          "base_score": 0.7094048885082245,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch1",
+          "score": 0.6500078773968894,
+          "base_score": 0.6666797956614823,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch34",
+          "score": 0.5981152049952716,
+          "base_score": 0.7468586749921193,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch11",
+          "score": 0.5724529160889763,
+          "base_score": 0.630014119407553,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch32",
+          "score": 0.5558986374317875,
+          "base_score": 0.602423654978905,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "software development",
+          "auxon",
+          "software",
+          "sre",
+          "development"
+        ],
+        "semantic": [],
+        "merged": [
+          "software development",
+          "auxon",
+          "software",
+          "sre",
+          "development"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42782853175363744,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.221969+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 19,
+      "title": "Load Balancing at the Frontend",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch19",
+      "cross_references": [
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch20",
+          "score": 0.5087569448492761,
+          "base_score": 0.5979282414154602,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "load",
+          "balancing",
+          "load balancing",
+          "dns",
+          "ip"
+        ],
+        "semantic": [],
+        "merged": [
+          "load",
+          "balancing",
+          "load balancing",
+          "dns",
+          "ip"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_requests",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23412565506211577,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.222166+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 20,
+      "title": "Load Balancing in the Datacenter",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch20",
+      "cross_references": [
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch21",
+          "score": 0.7262735574464798,
+          "base_score": 0.7937892624107997,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch22",
+          "score": 0.5187966039052492,
+          "base_score": 0.6146610065087487,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch19",
+          "score": 0.5087569448492761,
+          "base_score": 0.5979282414154602,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "backend",
+          "backend tasks",
+          "client",
+          "tasks",
+          "backend task"
+        ],
+        "semantic": [],
+        "merged": [
+          "backend",
+          "backend tasks",
+          "client",
+          "tasks",
+          "backend task"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_requests",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3299073955712646,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.222324+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 21,
+      "title": "Handling Overload",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch21",
+      "cross_references": [
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch20",
+          "score": 0.7262735574464798,
+          "base_score": 0.7937892624107997,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch22",
+          "score": 0.6325675812749154,
+          "base_score": 0.6376126354581925,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "backend",
+          "requests",
+          "request",
+          "overloaded",
+          "client"
+        ],
+        "semantic": [],
+        "merged": [
+          "backend",
+          "requests",
+          "request",
+          "overloaded",
+          "client"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_requests",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2703852862912602,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.222478+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 22,
+      "title": "Addressing Cascading Failures",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch22",
+      "cross_references": [
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch21",
+          "score": 0.6325675812749154,
+          "base_score": 0.6376126354581925,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch20",
+          "score": 0.5187966039052492,
+          "base_score": 0.6146610065087487,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "requests",
+          "server",
+          "request",
+          "deadline",
+          "servers"
+        ],
+        "semantic": [],
+        "merged": [
+          "requests",
+          "server",
+          "request",
+          "deadline",
+          "servers"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_requests",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3124007605987467,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.222630+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 23,
+      "title": "Managing Critical State: Distributed Consensus for Reliability",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch23",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "consensus",
+          "distributed consensus",
+          "leader",
+          "distributed",
+          "replicas"
+        ],
+        "semantic": [],
+        "merged": [
+          "consensus",
+          "distributed consensus",
+          "leader",
+          "distributed",
+          "replicas"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "consensus_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3710732150590394,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.222782+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 24,
+      "title": "Distributed Periodic Scheduling with Cron",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch24",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "cron",
+          "cron job",
+          "launch",
+          "cron jobs",
+          "job"
+        ],
+        "semantic": [],
+        "merged": [
+          "cron",
+          "cron job",
+          "launch",
+          "cron jobs",
+          "job"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_requests",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35180140927053083,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.222944+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 25,
+      "title": "Data Processing Pipelines",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch25",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "pipeline",
+          "pipelines",
+          "workflow",
+          "pattern",
+          "task master"
+        ],
+        "semantic": [],
+        "merged": [
+          "pipeline",
+          "pipelines",
+          "workflow",
+          "pattern",
+          "task master"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_requests",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.255884913820696,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.223113+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 26,
+      "title": "Data Integrity: What You Read Is What You Wrote",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch26",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "deletion",
+          "recovery",
+          "integrity",
+          "data deletion"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "deletion",
+          "recovery",
+          "integrity",
+          "data deletion"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33415893567348437,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:56:31.223268+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 27,
+      "title": "Reliable Product Launches at Scale",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch27",
+      "cross_references": [
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch18",
+          "score": 0.544040247784061,
+          "base_score": 0.6567337463067683,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch11",
+          "score": 0.5410346073178017,
+          "base_score": 0.6517243455296695,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch33",
+          "score": 0.5382659363177008,
+          "base_score": 0.6471098938628346,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch1",
+          "score": 0.530681477232636,
+          "base_score": 0.6344691287210601,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch3",
+          "score": 0.5287370008727106,
+          "base_score": 0.631228334787851,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "launch",
+          "launches",
+          "new",
+          "checklist",
+          "launch process"
+        ],
+        "semantic": [],
+        "merged": [
+          "launch",
+          "launches",
+          "new",
+          "checklist",
+          "launch process"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43999768494922614,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.223427+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 28,
+      "title": "Accelerating SREs to On-Call and Beyond",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch28",
+      "cross_references": [
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch30",
+          "score": 0.5970899100378293,
+          "base_score": 0.5784831833963823,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch32",
+          "score": 0.5652568270435552,
+          "base_score": 0.5254280450725919,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch11",
+          "score": 0.5408897149276322,
+          "base_score": 0.4848161915460537,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch31",
+          "score": 0.5402139260955025,
+          "base_score": 0.4836898768258374,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch1",
+          "score": 0.5200026613654251,
+          "base_score": 0.45000443560904174,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "learning",
+          "sre",
+          "team",
+          "student",
+          "learning checklist"
+        ],
+        "semantic": [],
+        "merged": [
+          "learning",
+          "sre",
+          "team",
+          "student",
+          "learning checklist"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3271569884291927,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.223583+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 29,
+      "title": "Dealing with Interrupts",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch29",
+      "cross_references": [
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch11",
+          "score": 0.5915683910796345,
+          "base_score": 0.6618732443919836,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch30",
+          "score": 0.5326755461769479,
+          "base_score": 0.6377925769615799,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "interrupts",
+          "tickets",
+          "interrupt",
+          "person",
+          "work"
+        ],
+        "semantic": [],
+        "merged": [
+          "interrupts",
+          "tickets",
+          "interrupt",
+          "person",
+          "work"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3906207910796861,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.223734+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 30,
+      "title": "Embedding an SRE to Recover from Operational Overload",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch30",
+      "cross_references": [
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch32",
+          "score": 0.6951522815509354,
+          "base_score": 0.6228728502039399,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch1",
+          "score": 0.6380630884079435,
+          "base_score": 0.6467718140132391,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch11",
+          "score": 0.6234829107009005,
+          "base_score": 0.6224715178348341,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch28",
+          "score": 0.5970899100378293,
+          "base_score": 0.5784831833963823,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch31",
+          "score": 0.5776581907848797,
+          "base_score": 0.5460969846414663,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "team",
+          "ops",
+          "sre",
+          "ops mode",
+          "service"
+        ],
+        "semantic": [],
+        "merged": [
+          "team",
+          "ops",
+          "sre",
+          "ops mode",
+          "service"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43004705424522327,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.223892+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 31,
+      "title": "Communication and Collaboration in SRE",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch31",
+      "cross_references": [
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch11",
+          "score": 0.6011186773408612,
+          "base_score": 0.4661501765204829,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch30",
+          "score": 0.5776581907848797,
+          "base_score": 0.5460969846414663,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch1",
+          "score": 0.5450728278464969,
+          "base_score": 0.4917880464108283,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch28",
+          "score": 0.5402139260955025,
+          "base_score": 0.4836898768258374,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sre",
+          "team",
+          "teams",
+          "product development",
+          "product"
+        ],
+        "semantic": [],
+        "merged": [
+          "sre",
+          "team",
+          "teams",
+          "product development",
+          "product"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3463884647788903,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.224054+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 32,
+      "title": "The Evolving SRE Engagement Model",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch32",
+      "cross_references": [
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch30",
+          "score": 0.6951522815509354,
+          "base_score": 0.6228728502039399,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch11",
+          "score": 0.6055019829433728,
+          "base_score": 0.5925033049056214,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch1",
+          "score": 0.5990828076102404,
+          "base_score": 0.5818046793504006,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch9",
+          "score": 0.5839389396826551,
+          "base_score": 0.6491574920636844,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch28",
+          "score": 0.5652568270435552,
+          "base_score": 0.5254280450725919,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sre",
+          "service",
+          "production",
+          "prr",
+          "team"
+        ],
+        "semantic": [],
+        "merged": [
+          "sre",
+          "service",
+          "production",
+          "prr",
+          "team"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42108273357825665,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.224209+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 33,
+      "title": "Lessons Learned from Other Industries",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch33",
+      "cross_references": [
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch1",
+          "score": 0.5734864360303054,
+          "base_score": 0.7058107267171756,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch3",
+          "score": 0.571551985434484,
+          "base_score": 0.7025866423908067,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch11",
+          "score": 0.5644294912446376,
+          "base_score": 0.6907158187410627,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch34",
+          "score": 0.5426770353236747,
+          "base_score": 0.6544617255394579,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch27",
+          "score": 0.5382659363177008,
+          "base_score": 0.6471098938628346,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "industries",
+          "industry",
+          "nuclear",
+          "reliability",
+          "engineer google"
+        ],
+        "semantic": [],
+        "merged": [
+          "industries",
+          "industry",
+          "nuclear",
+          "reliability",
+          "engineer google"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4474273732601996,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.224364+00:00"
+      }
+    },
+    {
+      "book": "Site Reliability Engineering - Betsy Beyer",
+      "chapter": 34,
+      "title": "Conclusion",
+      "chapter_id": "Site Reliability Engineering - Betsy Beyer:ch34",
+      "cross_references": [
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch18",
+          "score": 0.5981152049952716,
+          "base_score": 0.7468586749921193,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch1",
+          "score": 0.5494225793648208,
+          "base_score": 0.6657042989413678,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch33",
+          "score": 0.5426770353236747,
+          "base_score": 0.6544617255394579,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch7",
+          "score": 0.5372193449841746,
+          "base_score": 0.6453655749736242,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Site Reliability Engineering - Betsy Beyer:ch9",
+          "score": 0.5356838340224733,
+          "base_score": 0.6428063900374555,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "distributed",
+          "consensus",
+          "distributed consensus",
+          "data integrity",
+          "load"
+        ],
+        "semantic": [],
+        "merged": [
+          "distributed",
+          "consensus",
+          "distributed consensus",
+          "data integrity",
+          "load"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4256947882141394,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:31.224520+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

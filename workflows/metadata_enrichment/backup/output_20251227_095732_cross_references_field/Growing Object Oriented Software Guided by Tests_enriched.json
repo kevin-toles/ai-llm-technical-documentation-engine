@@ -1,0 +1,2592 @@
+{
+  "book": {
+    "title": "Growing Object Oriented Software Guided by Tests"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:48:17.419703",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-8)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch1",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch3",
+          "score": 0.6001981970525312,
+          "base_score": 0.6762562543468111,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "book",
+          "software",
+          "growing",
+          "growing object",
+          "software guided"
+        ],
+        "semantic": [],
+        "merged": [
+          "book",
+          "software",
+          "growing",
+          "growing object",
+          "software guided"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35628718595670605,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.380649+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 2,
+      "title": "Segment 2 (pages 9-16)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch2",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch3",
+          "score": 0.6526926702073209,
+          "base_score": 0.5521068312979157,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch4",
+          "score": 0.5302860877538753,
+          "base_score": 0.4671434795897922,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "chapter",
+          "test driven",
+          "testing",
+          "driven",
+          "driven development"
+        ],
+        "semantic": [],
+        "merged": [
+          "chapter",
+          "test driven",
+          "testing",
+          "driven",
+          "driven development"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3131206975011101,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.380921+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 3,
+      "title": "Segment 3 (pages 17-24)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch3",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch4",
+          "score": 0.7992659552517519,
+          "base_score": 0.7963956397053009,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch2",
+          "score": 0.6526926702073209,
+          "base_score": 0.5521068312979157,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch1",
+          "score": 0.6001981970525312,
+          "base_score": 0.6762562543468111,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch7",
+          "score": 0.5722205876039457,
+          "base_score": 0.7037009793399095,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch8",
+          "score": 0.5444342268810566,
+          "base_score": 0.6573903781350944,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "test driven",
+          "development",
+          "driven",
+          "book",
+          "driven development"
+        ],
+        "semantic": [],
+        "merged": [
+          "test driven",
+          "development",
+          "driven",
+          "book",
+          "driven development"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31847993317699136,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.381131+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 4,
+      "title": "Segment 4 (pages 25-32)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch4",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch3",
+          "score": 0.7992659552517519,
+          "base_score": 0.7963956397053009,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch8",
+          "score": 0.5779317921756213,
+          "base_score": 0.7132196536260355,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch5",
+          "score": 0.5372952845127504,
+          "base_score": 0.645492140854584,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch2",
+          "score": 0.5302860877538753,
+          "base_score": 0.4671434795897922,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch9",
+          "score": 0.5293907844876335,
+          "base_score": 0.5582439000719819,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "test driven",
+          "code",
+          "development",
+          "driven",
+          "tdd"
+        ],
+        "semantic": [],
+        "merged": [
+          "test driven",
+          "code",
+          "development",
+          "driven",
+          "tdd"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29079207471382296,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.381366+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 5,
+      "title": "Segment 5 (pages 33-41)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch5",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch8",
+          "score": 0.6948498290485581,
+          "base_score": 0.6223687626999777,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch7",
+          "score": 0.6454177791303249,
+          "base_score": 0.7516222244764674,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch4",
+          "score": 0.5372952845127504,
+          "base_score": 0.645492140854584,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch3",
+          "score": 0.5332795366628155,
+          "base_score": 0.6387992277713591,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "acceptance",
+          "acceptance tests",
+          "tests",
+          "end",
+          "game"
+        ],
+        "semantic": [],
+        "merged": [
+          "acceptance",
+          "acceptance tests",
+          "tests",
+          "end",
+          "game"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.357260376230039,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.381573+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 6,
+      "title": "Segment 6 (pages 42-52)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch6",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch42",
+          "score": 0.6692114627733979,
+          "base_score": 0.5796381522413775,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch44",
+          "score": 0.5188591495566165,
+          "base_score": 0.6147652492610276,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "objects",
+          "object",
+          "mock",
+          "mock objects",
+          "junit"
+        ],
+        "semantic": [],
+        "merged": [
+          "objects",
+          "object",
+          "mock",
+          "mock objects",
+          "junit"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_test_objects",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4165711467580372,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.381779+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 7,
+      "title": "Segment 7 (pages 53-60)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch7",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch5",
+          "score": 0.6454177791303249,
+          "base_score": 0.7516222244764674,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch3",
+          "score": 0.5722205876039457,
+          "base_score": 0.7037009793399095,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch8",
+          "score": 0.5508974464975647,
+          "base_score": 0.6681624108292744,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch4",
+          "score": 0.5279153843556047,
+          "base_score": 0.6298589739260079,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "deploy",
+          "end",
+          "build deploy",
+          "walking skeleton",
+          "skeleton"
+        ],
+        "semantic": [],
+        "merged": [
+          "deploy",
+          "end",
+          "build deploy",
+          "walking skeleton",
+          "skeleton"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3264694239545358,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.381995+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 8,
+      "title": "Segment 8 (pages 61-68)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch8",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch5",
+          "score": 0.6948498290485581,
+          "base_score": 0.6223687626999777,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch4",
+          "score": 0.5779317921756213,
+          "base_score": 0.7132196536260355,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch7",
+          "score": 0.5508974464975647,
+          "base_score": 0.6681624108292744,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch3",
+          "score": 0.5444342268810566,
+          "base_score": 0.6573903781350944,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "acceptance tests",
+          "acceptance",
+          "tests",
+          "start",
+          "progress"
+        ],
+        "semantic": [],
+        "merged": [
+          "acceptance tests",
+          "acceptance",
+          "tests",
+          "start",
+          "progress"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3483984997107435,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.382213+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 9,
+      "title": "Segment 9 (pages 69-76)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch9",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch4",
+          "score": 0.5293907844876335,
+          "base_score": 0.5582439000719819,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch31",
+          "score": 0.5055046956855287,
+          "base_score": 0.5925078261425478,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "object",
+          "objects",
+          "code difﬁcult",
+          "difﬁcult"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "object",
+          "objects",
+          "code difﬁcult",
+          "difﬁcult"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38502095345878434,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.382430+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 10,
+      "title": "Segment 10 (pages 77-84)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "object",
+          "peers",
+          "objects",
+          "simpler",
+          "notiﬁcations"
+        ],
+        "semantic": [],
+        "merged": [
+          "object",
+          "peers",
+          "objects",
+          "simpler",
+          "notiﬁcations"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23971240033972802,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:48:17.382638+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 11,
+      "title": "Segment 11 (pages 85-92)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch11",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch24",
+          "score": 0.5287887024618649,
+          "base_score": 0.5572404300290341,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch18",
+          "score": 0.5053205721763651,
+          "base_score": 0.5922009536272751,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch25",
+          "score": 0.5047985902461727,
+          "base_score": 0.517256909669547,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "object",
+          "objects",
+          "new",
+          "service",
+          "implementation"
+        ],
+        "semantic": [],
+        "merged": [
+          "object",
+          "objects",
+          "new",
+          "service",
+          "implementation"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_auction_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4079781300118487,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.382893+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 12,
+      "title": "Segment 12 (pages 93-101)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch12",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "party",
+          "party code",
+          "code",
+          "external",
+          "adapter"
+        ],
+        "semantic": [],
+        "merged": [
+          "party",
+          "party code",
+          "code",
+          "external",
+          "adapter"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.27372432722691237,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.383099+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 13,
+      "title": "Segment 13 (pages 102-110)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch13",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch20",
+          "score": 0.6733669221799263,
+          "base_score": 0.7056115369665439,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch16",
+          "score": 0.6042773420430465,
+          "base_score": 0.5904622367384108,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch26",
+          "score": 0.5709351491631326,
+          "base_score": 0.6274845078644802,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch18",
+          "score": 0.5680973064058001,
+          "base_score": 0.5301621773430003,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch19",
+          "score": 0.5389758436245897,
+          "base_score": 0.5742189986335755,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "auction",
+          "skeleton",
+          "sniper",
+          "walking",
+          "walking skeleton"
+        ],
+        "semantic": [],
+        "merged": [
+          "auction",
+          "skeleton",
+          "sniper",
+          "walking",
+          "walking skeleton"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_auction_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2663773857292994,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.383402+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 14,
+      "title": "Segment 14 (pages 111-119)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch14",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch15",
+          "score": 0.6096149919671257,
+          "base_score": 0.691950912537802,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch26",
+          "score": 0.5799823249650292,
+          "base_score": 0.5499705416083821,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch17",
+          "score": 0.5718195242888947,
+          "base_score": 0.7030325404814911,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch18",
+          "score": 0.5396660894475223,
+          "base_score": 0.5753694083384631,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch16",
+          "score": 0.5320319831318898,
+          "base_score": 0.562645897812409,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "chat",
+          "auction",
+          "thread",
+          "driver",
+          "application"
+        ],
+        "semantic": [],
+        "merged": [
+          "chat",
+          "auction",
+          "thread",
+          "driver",
+          "application"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_auction_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44162627778641844,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.383668+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 15,
+      "title": "Segment 15 (pages 120-127)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch15",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch14",
+          "score": 0.6096149919671257,
+          "base_score": 0.691950912537802,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch19",
+          "score": 0.5580887194919825,
+          "base_score": 0.5134811991533041,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch26",
+          "score": 0.5509690595150281,
+          "base_score": 0.5016150991917134,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch18",
+          "score": 0.5453427417237704,
+          "base_score": 0.5848304954655432,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch17",
+          "score": 0.5339204522610531,
+          "base_score": 0.6398674204350886,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "main",
+          "connection",
+          "sniper",
+          "chat",
+          "jframe"
+        ],
+        "semantic": [],
+        "merged": [
+          "main",
+          "connection",
+          "sniper",
+          "chat",
+          "jframe"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_auction_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4389936257962758,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.383906+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 16,
+      "title": "Segment 16 (pages 128-136)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch16",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch18",
+          "score": 0.7514619025470909,
+          "base_score": 0.7167222185308657,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch20",
+          "score": 0.6556036075469011,
+          "base_score": 0.6760060125781684,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch21",
+          "score": 0.6045442707577688,
+          "base_score": 0.6834997105222074,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch13",
+          "score": 0.6042773420430465,
+          "base_score": 0.5904622367384108,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch24",
+          "score": 0.5940091817710795,
+          "base_score": 0.6659412288777252,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "auction",
+          "sniper",
+          "price",
+          "bid",
+          "sniperid"
+        ],
+        "semantic": [],
+        "merged": [
+          "auction",
+          "sniper",
+          "price",
+          "bid",
+          "sniperid"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_auction_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43023656576422664,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.384120+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 17,
+      "title": "Segment 17 (pages 137-145)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch17",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch29",
+          "score": 0.6610536642166157,
+          "base_score": 0.6850894403610261,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch14",
+          "score": 0.5718195242888947,
+          "base_score": 0.7030325404814911,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch19",
+          "score": 0.5539796290921503,
+          "base_score": 0.5992253077461763,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch15",
+          "score": 0.5339204522610531,
+          "base_score": 0.6398674204350886,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch18",
+          "score": 0.5278296829403959,
+          "base_score": 0.6297161382339932,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "message",
+          "message message",
+          "event",
+          "public",
+          "auctioneventlistener"
+        ],
+        "semantic": [],
+        "merged": [
+          "message",
+          "message message",
+          "event",
+          "public",
+          "auctioneventlistener"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_auction_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.44354338681641126,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.384326+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 18,
+      "title": "Segment 18 (pages 146-153)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch18",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch16",
+          "score": 0.7514619025470909,
+          "base_score": 0.7167222185308657,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch21",
+          "score": 0.6646747398361389,
+          "base_score": 0.6911245663935649,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch20",
+          "score": 0.6291639518858265,
+          "base_score": 0.631939919809711,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch27",
+          "score": 0.6045454678075515,
+          "base_score": 0.5909091130125859,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch24",
+          "score": 0.5698575172802448,
+          "base_score": 0.6256884547263339,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sniperlistener",
+          "bid",
+          "auctionsniper",
+          "auction",
+          "sniper"
+        ],
+        "semantic": [],
+        "merged": [
+          "sniperlistener",
+          "bid",
+          "auctionsniper",
+          "auction",
+          "sniper"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_auction_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46165554347783044,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.384537+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 19,
+      "title": "Segment 19 (pages 154-161)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch19",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch26",
+          "score": 0.8527534210326712,
+          "base_score": 0.885541416006833,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch24",
+          "score": 0.5834770246774976,
+          "base_score": 0.5557950411291628,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch21",
+          "score": 0.5809027348851172,
+          "base_score": 0.6440971507344545,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch29",
+          "score": 0.5773234153785075,
+          "base_score": 0.5455390256308459,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch15",
+          "score": 0.5580887194919825,
+          "base_score": 0.5134811991533041,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "chat",
+          "connection",
+          "string",
+          "public",
+          "auction"
+        ],
+        "semantic": [],
+        "merged": [
+          "chat",
+          "connection",
+          "string",
+          "public",
+          "auction"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_auction_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3084846626382867,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.384775+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 20,
+      "title": "Segment 20 (pages 162-171)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch20",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch13",
+          "score": 0.6733669221799263,
+          "base_score": 0.7056115369665439,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch16",
+          "score": 0.6556036075469011,
+          "base_score": 0.6760060125781684,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch21",
+          "score": 0.6417878280946814,
+          "base_score": 0.7455723060837283,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch18",
+          "score": 0.6291639518858265,
+          "base_score": 0.631939919809711,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch19",
+          "score": 0.5482852134747854,
+          "base_score": 0.5897346150505682,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sniper",
+          "wins",
+          "auction",
+          "sniper wins",
+          "14 sniper"
+        ],
+        "semantic": [],
+        "merged": [
+          "sniper",
+          "wins",
+          "auction",
+          "sniper wins",
+          "14 sniper"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_auction_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3418027835392947,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.385001+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 21,
+      "title": "Segment 21 (pages 172-180)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch21",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch18",
+          "score": 0.6646747398361389,
+          "base_score": 0.6911245663935649,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch20",
+          "score": 0.6417878280946814,
+          "base_score": 0.7455723060837283,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch23",
+          "score": 0.6374111572112807,
+          "base_score": 0.7382778546113937,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch29",
+          "score": 0.6129508476454409,
+          "base_score": 0.6975106720016608,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch16",
+          "score": 0.6045442707577688,
+          "base_score": 0.6834997105222074,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sniperlistener",
+          "int",
+          "sniper",
+          "public",
+          "lastprice"
+        ],
+        "semantic": [],
+        "merged": [
+          "sniperlistener",
+          "int",
+          "sniper",
+          "public",
+          "lastprice"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_auction_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38842676217362937,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.385211+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 22,
+      "title": "Segment 22 (pages 181-189)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch22",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch27",
+          "score": 0.5945885128945315,
+          "base_score": 0.7409808548242192,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch23",
+          "score": 0.5643985221944838,
+          "base_score": 0.5239975369908063,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch21",
+          "score": 0.5513830133505809,
+          "base_score": 0.5023050222509683,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sniperstate",
+          "snipersnapshot",
+          "column",
+          "public",
+          "int"
+        ],
+        "semantic": [],
+        "merged": [
+          "sniperstate",
+          "snipersnapshot",
+          "column",
+          "public",
+          "int"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_auction_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3276130492802983,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.385414+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 23,
+      "title": "Segment 23 (pages 190-197)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch23",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch21",
+          "score": 0.6374111572112807,
+          "base_score": 0.7382778546113937,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch29",
+          "score": 0.6190863486164913,
+          "base_score": 0.7077365069534114,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch22",
+          "score": 0.5643985221944838,
+          "base_score": 0.5239975369908063,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch16",
+          "score": 0.5501038540633336,
+          "base_score": 0.6668397567722227,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch18",
+          "score": 0.5313421719559045,
+          "base_score": 0.6355702865931742,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "joining",
+          "sniperstate",
+          "text",
+          "public",
+          "public sniperstate"
+        ],
+        "semantic": [],
+        "merged": [
+          "joining",
+          "sniperstate",
+          "text",
+          "public",
+          "public sniperstate"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_auction_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4284605637976191,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.385621+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 24,
+      "title": "Segment 24 (pages 198-206)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch24",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch16",
+          "score": 0.5940091817710795,
+          "base_score": 0.6659412288777252,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch19",
+          "score": 0.5834770246774976,
+          "base_score": 0.5557950411291628,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch26",
+          "score": 0.5774077918898061,
+          "base_score": 0.5456796531496768,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch18",
+          "score": 0.5698575172802448,
+          "base_score": 0.6256884547263339,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch21",
+          "score": 0.5294487663777117,
+          "base_score": 0.6324146106295194,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "auction",
+          "items",
+          "multiple items",
+          "connection",
+          "new"
+        ],
+        "semantic": [],
+        "merged": [
+          "auction",
+          "items",
+          "multiple items",
+          "connection",
+          "new"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_auction_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4003844194340205,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.385834+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 25,
+      "title": "Segment 25 (pages 207-214)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch25",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch28",
+          "score": 0.5330204320947599,
+          "base_score": 0.6383673868245998,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch24",
+          "score": 0.506959239428711,
+          "base_score": 0.5208579916404443,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch11",
+          "score": 0.5047985902461727,
+          "base_score": 0.517256909669547,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "new",
+          "mainwindow",
+          "userrequestlistener",
+          "text ﬁeld",
+          "button"
+        ],
+        "semantic": [],
+        "merged": [
+          "new",
+          "mainwindow",
+          "userrequestlistener",
+          "text ﬁeld",
+          "button"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_auction_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30990408262270797,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.386052+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 26,
+      "title": "Segment 26 (pages 215-223)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch26",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch19",
+          "score": 0.8527534210326712,
+          "base_score": 0.885541416006833,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch14",
+          "score": 0.5799823249650292,
+          "base_score": 0.5499705416083821,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch24",
+          "score": 0.5774077918898061,
+          "base_score": 0.5456796531496768,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch13",
+          "score": 0.5709351491631326,
+          "base_score": 0.6274845078644802,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch15",
+          "score": 0.5509690595150281,
+          "base_score": 0.5016150991917134,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "auction",
+          "itemid",
+          "connection",
+          "chat",
+          "auctionhouse"
+        ],
+        "semantic": [],
+        "merged": [
+          "auction",
+          "itemid",
+          "connection",
+          "chat",
+          "auctionhouse"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_auction_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32288498253156706,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.386258+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 27,
+      "title": "Segment 27 (pages 224-231)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch27",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch18",
+          "score": 0.6045454678075515,
+          "base_score": 0.5909091130125859,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch22",
+          "score": 0.5945885128945315,
+          "base_score": 0.7409808548242192,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch21",
+          "score": 0.5493797513899114,
+          "base_score": 0.5915588449091115,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch20",
+          "score": 0.5432237658882563,
+          "base_score": 0.48870627648042725,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch19",
+          "score": 0.5193883966656279,
+          "base_score": 0.5415732537019724,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "auction",
+          "sniper",
+          "portfolio",
+          "application",
+          "stop price"
+        ],
+        "semantic": [],
+        "merged": [
+          "auction",
+          "sniper",
+          "portfolio",
+          "application",
+          "stop price"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_auction_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3133477340614321,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.386464+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 28,
+      "title": "Segment 28 (pages 232-239)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch28",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch25",
+          "score": 0.5330204320947599,
+          "base_score": 0.6383673868245998,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch16",
+          "score": 0.5230248997112359,
+          "base_score": 0.45504149951872663,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "stop price",
+          "stop",
+          "item",
+          "price",
+          "bid"
+        ],
+        "semantic": [],
+        "merged": [
+          "stop price",
+          "stop",
+          "item",
+          "price",
+          "bid"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_auction_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3001318142374695,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.386665+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 29,
+      "title": "Segment 29 (pages 240-247)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch29",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch17",
+          "score": 0.6610536642166157,
+          "base_score": 0.6850894403610261,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch23",
+          "score": 0.6190863486164913,
+          "base_score": 0.7077365069534114,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch21",
+          "score": 0.6129508476454409,
+          "base_score": 0.6975106720016608,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch19",
+          "score": 0.5773234153785075,
+          "base_score": 0.5455390256308459,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch16",
+          "score": 0.5731902899051623,
+          "base_score": 0.705317149841937,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "message",
+          "auctionfailed",
+          "public",
+          "string",
+          "failed"
+        ],
+        "semantic": [],
+        "merged": [
+          "message",
+          "auctionfailed",
+          "public",
+          "string",
+          "failed"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_auction_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41942783177980153,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.386867+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 30,
+      "title": "Segment 30 (pages 248-257)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch30",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "receiver",
+          "code",
+          "date",
+          "clock",
+          "acceptrequest"
+        ],
+        "semantic": [],
+        "merged": [
+          "receiver",
+          "code",
+          "date",
+          "clock",
+          "acceptrequest"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37275662523844083,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:48:17.387077+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 31,
+      "title": "Segment 31 (pages 258-265)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch31",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch9",
+          "score": 0.5055046956855287,
+          "base_score": 0.5925078261425478,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "logging",
+          "messageprocessor",
+          "importednotifier",
+          "locationfinder",
+          "domesticnotifier"
+        ],
+        "semantic": [],
+        "merged": [
+          "logging",
+          "messageprocessor",
+          "importednotifier",
+          "locationfinder",
+          "domesticnotifier"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3709654294598156,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.387280+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 32,
+      "title": "Segment 32 (pages 266-274)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch32",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch33",
+          "score": 0.5832438089008191,
+          "base_score": 0.5554063481680318,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch35",
+          "score": 0.5479566841177941,
+          "base_score": 0.5891870661222494,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "tests",
+          "listening",
+          "listening tests",
+          "test code"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "tests",
+          "listening",
+          "listening tests",
+          "test code"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_test_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4069698651209633,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.387481+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 33,
+      "title": "Segment 33 (pages 275-286)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch33",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch32",
+          "score": 0.5832438089008191,
+          "base_score": 0.5554063481680318,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch35",
+          "score": 0.5151877364210552,
+          "base_score": 0.6086462273684252,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "builder",
+          "code",
+          "test code",
+          "new",
+          "values"
+        ],
+        "semantic": [],
+        "merged": [
+          "builder",
+          "code",
+          "test code",
+          "new",
+          "values"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_test_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40239041584536184,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.387681+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 34,
+      "title": "Segment 34 (pages 287-294)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch34",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "void reportstotalsalesoforderedproducts",
+          "reportstotalsalesoforderedproducts",
+          "tests",
+          "builders",
+          "withline"
+        ],
+        "semantic": [],
+        "merged": [
+          "void reportstotalsalesoforderedproducts",
+          "reportstotalsalesoforderedproducts",
+          "tests",
+          "builders",
+          "withline"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_test_tests",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4267779612695147,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.387897+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 35,
+      "title": "Segment 35 (pages 295-302)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch35",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch32",
+          "score": 0.5479566841177941,
+          "base_score": 0.5891870661222494,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch33",
+          "score": 0.5151877364210552,
+          "base_score": 0.6086462273684252,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "object",
+          "parts",
+          "tests",
+          "behavior",
+          "value"
+        ],
+        "semantic": [],
+        "merged": [
+          "object",
+          "parts",
+          "tests",
+          "behavior",
+          "value"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_test_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41974505149419983,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.388100+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 36,
+      "title": "Segment 36 (pages 303-310)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch36",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "auctionsearcher",
+          "searchlistener",
+          "new auctionsearcher",
+          "auctionsearcher searchlistener",
+          "stub_auction1"
+        ],
+        "semantic": [],
+        "merged": [
+          "auctionsearcher",
+          "searchlistener",
+          "new auctionsearcher",
+          "auctionsearcher searchlistener",
+          "stub_auction1"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4477550265191002,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:48:17.388303+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 37,
+      "title": "Segment 37 (pages 311-321)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch37",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch38",
+          "score": 0.5847496894256189,
+          "base_score": 0.7245828157093649,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "database",
+          "persistence",
+          "persistent",
+          "addcustomer",
+          "persistent state"
+        ],
+        "semantic": [],
+        "merged": [
+          "database",
+          "persistence",
+          "persistent",
+          "addcustomer",
+          "persistent state"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_test_tests",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3445867035735605,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.388503+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 38,
+      "title": "Segment 38 (pages 322-330)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch38",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch37",
+          "score": 0.5847496894256189,
+          "base_score": 0.7245828157093649,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "threads",
+          "builder",
+          "auctionsearch",
+          "search",
+          "executor"
+        ],
+        "semantic": [],
+        "merged": [
+          "threads",
+          "builder",
+          "auctionsearch",
+          "search",
+          "executor"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_test_tests",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34298530885848905,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.388699+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 39,
+      "title": "Segment 39 (pages 331-338)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch39",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch40",
+          "score": 0.5189918097823577,
+          "base_score": 0.6149863496372627,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "threads",
+          "stress",
+          "synchronization",
+          "thread",
+          "stress test"
+        ],
+        "semantic": [],
+        "merged": [
+          "threads",
+          "stress",
+          "synchronization",
+          "thread",
+          "stress test"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_test_for",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36237484368760975,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.388908+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 40,
+      "title": "Segment 40 (pages 339-346)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch40",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch41",
+          "score": 0.5505015820605109,
+          "base_score": 0.6675026367675181,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch39",
+          "score": 0.5189918097823577,
+          "base_score": 0.6149863496372627,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "asynchronous",
+          "asynchronous code",
+          "testing asynchronous",
+          "wait",
+          "activity"
+        ],
+        "semantic": [],
+        "merged": [
+          "asynchronous",
+          "asynchronous code",
+          "testing asynchronous",
+          "wait",
+          "activity"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_test_for",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3752542299212251,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.389111+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 41,
+      "title": "Segment 41 (pages 347-354)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch41",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch40",
+          "score": 0.5505015820605109,
+          "base_score": 0.6675026367675181,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "state",
+          "holding",
+          "buy",
+          "buy forstock",
+          "oftype buy"
+        ],
+        "semantic": [],
+        "merged": [
+          "state",
+          "holding",
+          "buy",
+          "buy forstock",
+          "oftype buy"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_test_for",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38017727156638437,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.389310+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 42,
+      "title": "Segment 42 (pages 355-362)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch42",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch6",
+          "score": 0.6692114627733979,
+          "base_score": 0.5796381522413775,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "objects",
+          "expectations",
+          "mock",
+          "blocks",
+          "mock objects"
+        ],
+        "semantic": [],
+        "merged": [
+          "objects",
+          "expectations",
+          "mock",
+          "blocks",
+          "mock objects"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_test_objects",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38938351574846763,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.389507+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 43,
+      "title": "Segment 43 (pages 363-370)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch43",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "invocation",
+          "matchers",
+          "matcher",
+          "sequence",
+          "invocation expected"
+        ],
+        "semantic": [],
+        "merged": [
+          "invocation",
+          "matchers",
+          "matcher",
+          "sequence",
+          "invocation expected"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_test_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2901095030430746,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.389706+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 44,
+      "title": "Segment 44 (pages 371-379)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch44",
+      "cross_references": [
+        {
+          "target": "Growing Object Oriented Software Guided by Tests:ch6",
+          "score": 0.5188591495566165,
+          "base_score": 0.6147652492610276,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "340",
+          "jmock",
+          "class",
+          "hamcrest",
+          "292"
+        ],
+        "semantic": [],
+        "merged": [
+          "340",
+          "jmock",
+          "class",
+          "hamcrest",
+          "292"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_test_objects",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3475008874553023,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:17.389912+00:00"
+      }
+    },
+    {
+      "book": "Growing Object Oriented Software Guided by Tests",
+      "chapter": 45,
+      "title": "Segment 45 (pages 380-385)",
+      "chapter_id": "Growing Object Oriented Software Guided by Tests:ch45",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "class",
+          "157",
+          "313",
+          "245",
+          "338"
+        ],
+        "semantic": [],
+        "merged": [
+          "class",
+          "157",
+          "313",
+          "245",
+          "338"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3867605610252159,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:48:17.390106+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

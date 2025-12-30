@@ -1,0 +1,311 @@
+{
+  "book": {
+    "title": "Threat Modeling"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:59:55.074297",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Threat Modeling",
+      "chapter": 1,
+      "title": "and beyond should be valuable to all readers, including the seasoned secu‐ rity practitioner who already understands why threat modeling is a crucial activity and has command of the principles of secu",
+      "chapter_id": "Threat Modeling:ch1",
+      "cross_references": [
+        {
+          "target": "Threat Modeling:ch5",
+          "score": 0.558184074950637,
+          "base_score": 0.7636401249177284,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Threat Modeling:ch4",
+          "score": 0.5512957395189128,
+          "base_score": 0.8447521584574471,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "threat modeling",
+          "development",
+          "team",
+          "teams",
+          "impact"
+        ],
+        "semantic": [],
+        "merged": [
+          "threat modeling",
+          "development",
+          "team",
+          "teams",
+          "impact"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "threat_modeling_security",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7527071662093698,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:55.069038+00:00"
+      }
+    },
+    {
+      "book": "Threat Modeling",
+      "chapter": 2,
+      "title": "DREAD is an acronym for:",
+      "chapter_id": "Threat Modeling:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "actor",
+          "rights",
+          "user",
+          "operation",
+          "operations"
+        ],
+        "semantic": [],
+        "merged": [
+          "actor",
+          "rights",
+          "user",
+          "operation",
+          "operations"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "actor_rights_access",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49365183389172396,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:55.069109+00:00"
+      }
+    },
+    {
+      "book": "Threat Modeling",
+      "chapter": 3,
+      "title": "we discuss how to construct abstract representations of a system’s design to identify security or privacy concerns. In later chapters, we will introduce specific threat modeling methodologies that bui",
+      "chapter_id": "Threat Modeling:ch3",
+      "cross_references": [
+        {
+          "target": "Threat Modeling:ch6",
+          "score": 0.5244134502561073,
+          "base_score": 0.7073557504268456,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "model",
+          "threat modeling",
+          "flow",
+          "data flow",
+          "models"
+        ],
+        "semantic": [],
+        "merged": [
+          "model",
+          "threat modeling",
+          "flow",
+          "data flow",
+          "models"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "threat_modeling_model",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7138333185369605,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:55.069146+00:00"
+      }
+    },
+    {
+      "book": "Threat Modeling",
+      "chapter": 4,
+      "title": "Automated Threat Modeling",
+      "chapter_id": "Threat Modeling:ch4",
+      "cross_references": [
+        {
+          "target": "Threat Modeling:ch6",
+          "score": 0.6284309840989816,
+          "base_score": 0.7233108994242285,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Threat Modeling:ch1",
+          "score": 0.5512957395189128,
+          "base_score": 0.8447521584574471,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "threat modeling",
+          "code",
+          "modeling code",
+          "chapter automated",
+          "automated threat"
+        ],
+        "semantic": [],
+        "merged": [
+          "threat modeling",
+          "code",
+          "modeling code",
+          "chapter automated",
+          "automated threat"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "threat_modeling_code",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7321858919162079,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:55.069179+00:00"
+      }
+    },
+    {
+      "book": "Threat Modeling",
+      "chapter": 5,
+      "title": "Continuous Threat Modeling",
+      "chapter_id": "Threat Modeling:ch5",
+      "cross_references": [
+        {
+          "target": "Threat Modeling:ch6",
+          "score": 0.681759269684572,
+          "base_score": 0.6918210050298422,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Threat Modeling:ch1",
+          "score": 0.558184074950637,
+          "base_score": 0.7636401249177284,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "threat modeling",
+          "team",
+          "continuous",
+          "continuous threat",
+          "model"
+        ],
+        "semantic": [],
+        "merged": [
+          "threat modeling",
+          "team",
+          "continuous",
+          "continuous threat",
+          "model"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "threat_team_modeling",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.69826285349651,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:55.069212+00:00"
+      }
+    },
+    {
+      "book": "Threat Modeling",
+      "chapter": 6,
+      "title": "Own Your Role as a Threat Modeling Champion",
+      "chapter_id": "Threat Modeling:ch6",
+      "cross_references": [
+        {
+          "target": "Threat Modeling:ch5",
+          "score": 0.681759269684572,
+          "base_score": 0.6918210050298422,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Threat Modeling:ch4",
+          "score": 0.6284309840989816,
+          "base_score": 0.7233108994242285,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Threat Modeling:ch3",
+          "score": 0.5244134502561073,
+          "base_score": 0.7073557504268456,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "threat modeling",
+          "model",
+          "threat model",
+          "continuous",
+          "continuous threat"
+        ],
+        "semantic": [],
+        "merged": [
+          "threat modeling",
+          "model",
+          "threat model",
+          "continuous",
+          "continuous threat"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "threat_modeling_code",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7077470178067348,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:55.069246+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

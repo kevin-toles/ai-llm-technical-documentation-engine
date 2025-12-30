@@ -1,0 +1,1329 @@
+{
+  "book": {
+    "title": "PostgreSQL 14 Internals"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:53:13.917284",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "PostgreSQL 14 Internals",
+      "chapter": 1,
+      "title": "Introduction",
+      "chapter_id": "PostgreSQL 14 Internals:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "tables",
+          "objects",
+          "database",
+          "tablespace",
+          "data"
+        ],
+        "semantic": [],
+        "merged": [
+          "tables",
+          "objects",
+          "database",
+          "tablespace",
+          "data"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_buffer_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36808006566733326,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:13.883543+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL 14 Internals",
+      "chapter": 2,
+      "title": "Isolation",
+      "chapter_id": "PostgreSQL 14 Internals:ch2",
+      "cross_references": [
+        {
+          "target": "PostgreSQL 14 Internals:ch12",
+          "score": 0.5110924842175072,
+          "base_score": 0.5277467329551045,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "transaction",
+          "read",
+          "isolation",
+          "repeatable",
+          "isolation level"
+        ],
+        "semantic": [],
+        "merged": [
+          "transaction",
+          "read",
+          "isolation",
+          "repeatable",
+          "isolation level"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_transaction_locks",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2805411767633076,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:13.883774+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL 14 Internals",
+      "chapter": 3,
+      "title": "Pages and Tuples",
+      "chapter_id": "PostgreSQL 14 Internals:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "transaction",
+          "xmax",
+          "pages tuples",
+          "chapter pages",
+          "xmin"
+        ],
+        "semantic": [],
+        "merged": [
+          "transaction",
+          "xmax",
+          "pages tuples",
+          "chapter pages",
+          "xmin"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "the_transaction_is",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40440115031139107,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:13.883913+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL 14 Internals",
+      "chapter": 4,
+      "title": "Snapshots",
+      "chapter_id": "PostgreSQL 14 Internals:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "snapshot",
+          "transaction",
+          "horizon",
+          "transactions",
+          "creation"
+        ],
+        "semantic": [],
+        "merged": [
+          "snapshot",
+          "transaction",
+          "horizon",
+          "transactions",
+          "creation"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_transaction_locks",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29833383612426917,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:13.884047+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL 14 Internals",
+      "chapter": 5,
+      "title": "Page Pruning and HOT Updates",
+      "chapter_id": "PostgreSQL 14 Internals:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "hot",
+          "pruning",
+          "page pruning",
+          "page",
+          "heap_page hot"
+        ],
+        "semantic": [],
+        "merged": [
+          "hot",
+          "pruning",
+          "page pruning",
+          "page",
+          "heap_page hot"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "vac_vacuum_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3969747054258463,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:13.884178+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL 14 Internals",
+      "chapter": 6,
+      "title": "Vacuum and Autovacuum",
+      "chapter_id": "PostgreSQL 14 Internals:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "vacuum",
+          "autovacuum",
+          "vac",
+          "vacuum autovacuum",
+          "chapter vacuum"
+        ],
+        "semantic": [],
+        "merged": [
+          "vacuum",
+          "autovacuum",
+          "vac",
+          "vacuum autovacuum",
+          "chapter vacuum"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "vac_vacuum_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34208736814151924,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:13.884311+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL 14 Internals",
+      "chapter": 7,
+      "title": "Freezing",
+      "chapter_id": "PostgreSQL 14 Internals:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "freezing",
+          "age",
+          "tfreeze",
+          "freeze",
+          "map"
+        ],
+        "semantic": [],
+        "merged": [
+          "freezing",
+          "age",
+          "tfreeze",
+          "freeze",
+          "map"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "the_transaction_is",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36891683704018585,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:13.884481+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL 14 Internals",
+      "chapter": 8,
+      "title": "Rebuilding Tables and Indexes",
+      "chapter_id": "PostgreSQL 14 Internals:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "vac",
+          "processed",
+          "id",
+          "pg_size_pretty",
+          "select id"
+        ],
+        "semantic": [],
+        "merged": [
+          "vac",
+          "processed",
+          "id",
+          "pg_size_pretty",
+          "select id"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "vac_vacuum_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31008458520691984,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:13.884614+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL 14 Internals",
+      "chapter": 9,
+      "title": "Buffer Cache",
+      "chapter_id": "PostgreSQL 14 Internals:ch9",
+      "cross_references": [
+        {
+          "target": "PostgreSQL 14 Internals:ch10",
+          "score": 0.5650114792285026,
+          "base_score": 0.691685798714171,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "PostgreSQL 14 Internals:ch15",
+          "score": 0.5589405810874478,
+          "base_score": 0.6815676351457465,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "buffer",
+          "cache",
+          "buffer cache",
+          "page",
+          "chapter buffer"
+        ],
+        "semantic": [],
+        "merged": [
+          "buffer",
+          "cache",
+          "buffer cache",
+          "page",
+          "chapter buffer"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_buffer_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3845718236897277,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:13.884751+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL 14 Internals",
+      "chapter": 10,
+      "title": "Write-Ahead Log",
+      "chapter_id": "PostgreSQL 14 Internals:ch10",
+      "cross_references": [
+        {
+          "target": "PostgreSQL 14 Internals:ch9",
+          "score": 0.5650114792285026,
+          "base_score": 0.691685798714171,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "PostgreSQL 14 Internals:ch15",
+          "score": 0.5267985392032734,
+          "base_score": 0.627997565338789,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "checkpoint",
+          "entries",
+          "disk",
+          "files",
+          "checkpoints"
+        ],
+        "semantic": [],
+        "merged": [
+          "checkpoint",
+          "entries",
+          "disk",
+          "files",
+          "checkpoints"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_buffer_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37814144806770805,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:13.884883+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL 14 Internals",
+      "chapter": 11,
+      "title": "WAL Modes",
+      "chapter_id": "PostgreSQL 14 Internals:ch11",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "pg_current_wal_insert_lsn",
+          "entries",
+          "16391",
+          "prev",
+          "rmgr"
+        ],
+        "semantic": [],
+        "merged": [
+          "pg_current_wal_insert_lsn",
+          "entries",
+          "16391",
+          "prev",
+          "rmgr"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_transaction_locks",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2923334520494941,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:13.885013+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL 14 Internals",
+      "chapter": 12,
+      "title": "Relation-Level Locks",
+      "chapter_id": "PostgreSQL 14 Internals:ch12",
+      "cross_references": [
+        {
+          "target": "PostgreSQL 14 Internals:ch13",
+          "score": 0.7751485165485947,
+          "base_score": 0.7561999085333722,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "PostgreSQL 14 Internals:ch14",
+          "score": 0.6796714845148346,
+          "base_score": 0.7161191408580576,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "PostgreSQL 14 Internals:ch2",
+          "score": 0.5110924842175072,
+          "base_score": 0.5277467329551045,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "locks",
+          "lock",
+          "transaction",
+          "mode",
+          "12"
+        ],
+        "semantic": [],
+        "merged": [
+          "locks",
+          "lock",
+          "transaction",
+          "mode",
+          "12"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_transaction_locks",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32923390587780654,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:13.885149+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL 14 Internals",
+      "chapter": 13,
+      "title": "Row-Level Locks",
+      "chapter_id": "PostgreSQL 14 Internals:ch13",
+      "cross_references": [
+        {
+          "target": "PostgreSQL 14 Internals:ch12",
+          "score": 0.7751485165485947,
+          "base_score": 0.7561999085333722,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "PostgreSQL 14 Internals:ch14",
+          "score": 0.6075557304994854,
+          "base_score": 0.5959262174991424,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "locks",
+          "transaction",
+          "row level",
+          "lock",
+          "row"
+        ],
+        "semantic": [],
+        "merged": [
+          "locks",
+          "transaction",
+          "row level",
+          "lock",
+          "row"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_transaction_locks",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31106390247986065,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:13.885322+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL 14 Internals",
+      "chapter": 14,
+      "title": "Miscellaneous Locks",
+      "chapter_id": "PostgreSQL 14 Internals:ch14",
+      "cross_references": [
+        {
+          "target": "PostgreSQL 14 Internals:ch12",
+          "score": 0.6796714845148346,
+          "base_score": 0.7161191408580576,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "PostgreSQL 14 Internals:ch13",
+          "score": 0.6075557304994854,
+          "base_score": 0.5959262174991424,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "locks",
+          "predicate",
+          "predicate locks",
+          "lock",
+          "locktype"
+        ],
+        "semantic": [],
+        "merged": [
+          "locks",
+          "predicate",
+          "predicate locks",
+          "lock",
+          "locktype"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_transaction_locks",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3596274007071823,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:13.885505+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL 14 Internals",
+      "chapter": 15,
+      "title": "Locks on Memory Structures",
+      "chapter_id": "PostgreSQL 14 Internals:ch15",
+      "cross_references": [
+        {
+          "target": "PostgreSQL 14 Internals:ch9",
+          "score": 0.5589405810874478,
+          "base_score": 0.6815676351457465,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "PostgreSQL 14 Internals:ch10",
+          "score": 0.5267985392032734,
+          "base_score": 0.627997565338789,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "wait",
+          "waits",
+          "lightweight",
+          "lock",
+          "event"
+        ],
+        "semantic": [],
+        "merged": [
+          "wait",
+          "waits",
+          "lightweight",
+          "lock",
+          "event"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "the_buffer_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40675407352294657,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:13.885637+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL 14 Internals",
+      "chapter": 16,
+      "title": "Query Execution Stages",
+      "chapter_id": "PostgreSQL 14 Internals:ch16",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "plan",
+          "query",
+          "tree",
+          "plans",
+          "parse tree"
+        ],
+        "semantic": [],
+        "merged": [
+          "plan",
+          "query",
+          "tree",
+          "plans",
+          "parse tree"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_of_range",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.28981396296672335,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:13.885769+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL 14 Internals",
+      "chapter": 17,
+      "title": "Statistics",
+      "chapter_id": "PostgreSQL 14 Internals:ch17",
+      "cross_references": [
+        {
+          "target": "PostgreSQL 14 Internals:ch29",
+          "score": 0.5202837238112689,
+          "base_score": 0.6171395396854482,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "statistics",
+          "departure_airport",
+          "flights",
+          "explain select",
+          "pg_stats"
+        ],
+        "semantic": [],
+        "merged": [
+          "statistics",
+          "departure_airport",
+          "flights",
+          "explain select",
+          "pg_stats"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_of_range",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3226701912128048,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:13.885904+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL 14 Internals",
+      "chapter": 18,
+      "title": "Table Access Methods",
+      "chapter_id": "PostgreSQL 14 Internals:ch18",
+      "cross_references": [
+        {
+          "target": "PostgreSQL 14 Internals:ch20",
+          "score": 0.5892578666486882,
+          "base_score": 0.6580223703404062,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "parallel",
+          "cost",
+          "workers",
+          "seq scan",
+          "seq"
+        ],
+        "semantic": [],
+        "merged": [
+          "parallel",
+          "cost",
+          "workers",
+          "seq scan",
+          "seq"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_rows_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3632195993463536,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:13.886038+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL 14 Internals",
+      "chapter": 19,
+      "title": "Index Access Methods",
+      "chapter_id": "PostgreSQL 14 Internals:ch19",
+      "cross_references": [
+        {
+          "target": "PostgreSQL 14 Internals:ch28",
+          "score": 0.5777768131764068,
+          "base_score": 0.6388872812199373,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "PostgreSQL 14 Internals:ch26",
+          "score": 0.5135430364973337,
+          "base_score": 0.4392383941622229,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "index",
+          "access method",
+          "operator",
+          "access",
+          "method"
+        ],
+        "semantic": [],
+        "merged": [
+          "index",
+          "access method",
+          "operator",
+          "access",
+          "method"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "index_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.294099657522257,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:13.886169+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL 14 Internals",
+      "chapter": 20,
+      "title": "Index Scans",
+      "chapter_id": "PostgreSQL 14 Internals:ch20",
+      "cross_references": [
+        {
+          "target": "PostgreSQL 14 Internals:ch18",
+          "score": 0.5892578666486882,
+          "base_score": 0.6580223703404062,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "index",
+          "scan",
+          "bitmap",
+          "cost",
+          "index scan"
+        ],
+        "semantic": [],
+        "merged": [
+          "index",
+          "scan",
+          "bitmap",
+          "cost",
+          "index scan"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_rows_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4026550472206394,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:13.886300+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL 14 Internals",
+      "chapter": 21,
+      "title": "Nested Loop",
+      "chapter_id": "PostgreSQL 14 Internals:ch21",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "rows",
+          "join",
+          "rows width",
+          "loop",
+          "nested"
+        ],
+        "semantic": [],
+        "merged": [
+          "rows",
+          "join",
+          "rows width",
+          "loop",
+          "nested"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_rows_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.22790298390862923,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:13.886446+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL 14 Internals",
+      "chapter": 22,
+      "title": "Hashing",
+      "chapter_id": "PostgreSQL 14 Internals:ch22",
+      "cross_references": [
+        {
+          "target": "PostgreSQL 14 Internals:ch24",
+          "score": 0.5392034468351943,
+          "base_score": 0.5745983373179164,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "hash",
+          "join",
+          "hash table",
+          "hash join",
+          "parallel"
+        ],
+        "semantic": [],
+        "merged": [
+          "hash",
+          "join",
+          "hash table",
+          "hash join",
+          "parallel"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_rows_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34559694367798305,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:13.886577+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL 14 Internals",
+      "chapter": 23,
+      "title": "Sorting and Merging",
+      "chapter_id": "PostgreSQL 14 Internals:ch23",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "sort",
+          "sorting",
+          "merge",
+          "sort key",
+          "sorted"
+        ],
+        "semantic": [],
+        "merged": [
+          "sort",
+          "sorting",
+          "merge",
+          "sort key",
+          "sorted"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_rows_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3299563247993925,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:13.886705+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL 14 Internals",
+      "chapter": 24,
+      "title": "Hash",
+      "chapter_id": "PostgreSQL 14 Internals:ch24",
+      "cross_references": [
+        {
+          "target": "PostgreSQL 14 Internals:ch22",
+          "score": 0.5392034468351943,
+          "base_score": 0.5745983373179164,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "hash",
+          "hash index",
+          "t_n_idx",
+          "get_raw_page t_n_idx",
+          "index"
+        ],
+        "semantic": [],
+        "merged": [
+          "hash",
+          "hash index",
+          "t_n_idx",
+          "get_raw_page t_n_idx",
+          "index"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_rows_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3634141880200563,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:13.886854+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL 14 Internals",
+      "chapter": 25,
+      "title": "B-tree",
+      "chapter_id": "PostgreSQL 14 Internals:ch25",
+      "cross_references": [
+        {
+          "target": "PostgreSQL 14 Internals:ch28",
+          "score": 0.5250539940970136,
+          "base_score": 0.5510159160876154,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "PostgreSQL 14 Internals:ch26",
+          "score": 0.5183917786806749,
+          "base_score": 0.5399122237270507,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "index",
+          "capacity",
+          "tickets",
+          "book_ref",
+          "passenger_name"
+        ],
+        "semantic": [],
+        "merged": [
+          "index",
+          "capacity",
+          "tickets",
+          "book_ref",
+          "passenger_name"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "index_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2948533050433742,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:13.886985+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL 14 Internals",
+      "chapter": 26,
+      "title": "GiST",
+      "chapter_id": "PostgreSQL 14 Internals:ch26",
+      "cross_references": [
+        {
+          "target": "PostgreSQL 14 Internals:ch28",
+          "score": 0.5502850187114634,
+          "base_score": 0.593067623778365,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "PostgreSQL 14 Internals:ch27",
+          "score": 0.5487266455696639,
+          "base_score": 0.5904703352086991,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "PostgreSQL 14 Internals:ch25",
+          "score": 0.5183917786806749,
+          "base_score": 0.5399122237270507,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "PostgreSQL 14 Internals:ch19",
+          "score": 0.5135430364973337,
+          "base_score": 0.4392383941622229,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "index",
+          "operator",
+          "class",
+          "tree",
+          "points"
+        ],
+        "semantic": [],
+        "merged": [
+          "index",
+          "operator",
+          "class",
+          "tree",
+          "points"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "index_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3200461985147191,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:13.887119+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL 14 Internals",
+      "chapter": 27,
+      "title": "SP-GiST",
+      "chapter_id": "PostgreSQL 14 Internals:ch27",
+      "cross_references": [
+        {
+          "target": "PostgreSQL 14 Internals:ch26",
+          "score": 0.5487266455696639,
+          "base_score": 0.5904703352086991,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "nodes",
+          "node",
+          "leaf",
+          "tree",
+          "spgist"
+        ],
+        "semantic": [],
+        "merged": [
+          "nodes",
+          "node",
+          "leaf",
+          "tree",
+          "spgist"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "index_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3174636491786561,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:13.887247+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL 14 Internals",
+      "chapter": 28,
+      "title": "GIN",
+      "chapter_id": "PostgreSQL 14 Internals:ch28",
+      "cross_references": [
+        {
+          "target": "PostgreSQL 14 Internals:ch19",
+          "score": 0.5777768131764068,
+          "base_score": 0.6388872812199373,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "PostgreSQL 14 Internals:ch26",
+          "score": 0.5502850187114634,
+          "base_score": 0.593067623778365,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "PostgreSQL 14 Internals:ch25",
+          "score": 0.5250539940970136,
+          "base_score": 0.5510159160876154,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "index",
+          "search",
+          "days_of_week",
+          "lexemes",
+          "gin"
+        ],
+        "semantic": [],
+        "merged": [
+          "index",
+          "search",
+          "days_of_week",
+          "lexemes",
+          "gin"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "index_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34885870629928634,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:13.887404+00:00"
+      }
+    },
+    {
+      "book": "PostgreSQL 14 Internals",
+      "chapter": 29,
+      "title": "BRIN",
+      "chapter_id": "PostgreSQL 14 Internals:ch29",
+      "cross_references": [
+        {
+          "target": "PostgreSQL 14 Internals:ch17",
+          "score": 0.5202837238112689,
+          "base_score": 0.6171395396854482,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "range",
+          "flights_bi",
+          "summary",
+          "index",
+          "brin"
+        ],
+        "semantic": [],
+        "merged": [
+          "range",
+          "flights_bi",
+          "summary",
+          "index",
+          "brin"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_of_range",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3266256110744974,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:53:13.887534+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

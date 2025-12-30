@@ -1,0 +1,2775 @@
+{
+  "book": {
+    "title": "Game Programming Gems 3"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:47:15.908092",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-15)",
+      "chapter_id": "Game Programming Gems 3:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "time",
+          "scheduler",
+          "frame",
+          "task",
+          "tasks"
+        ],
+        "semantic": [],
+        "merged": [
+          "time",
+          "scheduler",
+          "frame",
+          "task",
+          "tasks"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "time_game_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.20967752094403255,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.862592+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 2,
+      "title": "Segment 2 (pages 16-26)",
+      "chapter_id": "Game Programming Gems 3:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "task",
+          "framework",
+          "audio visual",
+          "visual",
+          "layer"
+        ],
+        "semantic": [],
+        "merged": [
+          "task",
+          "framework",
+          "audio visual",
+          "visual",
+          "layer"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "game_the_server",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.19041607374690508,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.862979+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 3,
+      "title": "Segment 3 (pages 27-35)",
+      "chapter_id": "Game Programming Gems 3:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "macro",
+          "trick",
+          "macro trick",
+          "macros",
+          "assert"
+        ],
+        "semantic": [],
+        "merged": [
+          "macro",
+          "trick",
+          "macro trick",
+          "macros",
+          "assert"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.17356899159514325,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:47:15.863309+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 4,
+      "title": "Segment 4 (pages 36-45)",
+      "chapter_id": "Game Programming Gems 3:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "function",
+          "code",
+          "binding",
+          "creature",
+          "function binding"
+        ],
+        "semantic": [],
+        "merged": [
+          "function",
+          "code",
+          "binding",
+          "creature",
+          "function binding"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1492765156366832,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.863610+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 5,
+      "title": "Segment 5 (pages 46-58)",
+      "chapter_id": "Game Programming Gems 3:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "allocator",
+          "pointer",
+          "smart",
+          "smart pointer",
+          "allocate"
+        ],
+        "semantic": [],
+        "merged": [
+          "allocator",
+          "pointer",
+          "smart",
+          "smart pointer",
+          "allocate"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1655460252620148,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.863900+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 6,
+      "title": "Segment 6 (pages 59-68)",
+      "chapter_id": "Game Programming Gems 3:ch6",
+      "cross_references": [
+        {
+          "target": "Game Programming Gems 3:ch55",
+          "score": 0.5012725999267744,
+          "base_score": 0.5113802591372167,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "save",
+          "class",
+          "object",
+          "data",
+          "list"
+        ],
+        "semantic": [],
+        "merged": [
+          "save",
+          "class",
+          "object",
+          "data",
+          "list"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.15323987802147687,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.864261+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 7,
+      "title": "Segment 7 (pages 69-84)",
+      "chapter_id": "Game Programming Gems 3:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "floating point",
+          "uml",
+          "floating",
+          "exceptions",
+          "diagram"
+        ],
+        "semantic": [],
+        "merged": [
+          "floating point",
+          "uml",
+          "floating",
+          "exceptions",
+          "diagram"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.11439069703122973,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.864560+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 8,
+      "title": "Segment 8 (pages 85-92)",
+      "chapter_id": "Game Programming Gems 3:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data file",
+          "custom data",
+          "lex",
+          "yacc",
+          "data"
+        ],
+        "semantic": [],
+        "merged": [
+          "data file",
+          "custom data",
+          "lex",
+          "yacc",
+          "data"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.16081969602171076,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:47:15.864863+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 9,
+      "title": "Segment 9 (pages 93-101)",
+      "chapter_id": "Game Programming Gems 3:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "characters",
+          "byte",
+          "character",
+          "double",
+          "single byte"
+        ],
+        "semantic": [],
+        "merged": [
+          "characters",
+          "byte",
+          "character",
+          "double",
+          "single byte"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "time_game_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1092472648682967,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.865194+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 10,
+      "title": "Segment 10 (pages 102-110)",
+      "chapter_id": "Game Programming Gems 3:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "game",
+          "testing",
+          "localization",
+          "language",
+          "market"
+        ],
+        "semantic": [],
+        "merged": [
+          "game",
+          "testing",
+          "localization",
+          "language",
+          "market"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "time_game_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.11926080883335705,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.865512+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 11,
+      "title": "Segment 11 (pages 111-118)",
+      "chapter_id": "Game Programming Gems 3:ch11",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "user",
+          "input",
+          "user interface",
+          "game",
+          "interface"
+        ],
+        "semantic": [],
+        "merged": [
+          "user",
+          "input",
+          "user interface",
+          "game",
+          "interface"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "time_game_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2230274330993371,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.865802+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 12,
+      "title": "Segment 12 (pages 119-128)",
+      "chapter_id": "Game Programming Gems 3:ch12",
+      "cross_references": [
+        {
+          "target": "Game Programming Gems 3:ch13",
+          "score": 0.5399729012088188,
+          "base_score": 0.6499548353480313,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pie",
+          "menus",
+          "pie menus",
+          "menu",
+          "pie menu"
+        ],
+        "semantic": [],
+        "merged": [
+          "pie",
+          "menus",
+          "pie menus",
+          "menu",
+          "pie menu"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.12931296096625414,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.866092+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 13,
+      "title": "Segment 13 (pages 129-137)",
+      "chapter_id": "Game Programming Gems 3:ch13",
+      "cross_references": [
+        {
+          "target": "Game Programming Gems 3:ch12",
+          "score": 0.5399729012088188,
+          "base_score": 0.6499548353480313,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "policy",
+          "log",
+          "logging",
+          "flag",
+          "boolean"
+        ],
+        "semantic": [],
+        "merged": [
+          "policy",
+          "log",
+          "logging",
+          "flag",
+          "boolean"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.18387224780368083,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.866413+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 14,
+      "title": "Segment 14 (pages 138-145)",
+      "chapter_id": "Game Programming Gems 3:ch14",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "switch",
+          "journaling",
+          "journal",
+          "switchbox",
+          "services"
+        ],
+        "semantic": [],
+        "merged": [
+          "switch",
+          "journaling",
+          "journal",
+          "switchbox",
+          "services"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.12381172352856627,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.866704+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 15,
+      "title": "Segment 15 (pages 146-155)",
+      "chapter_id": "Game Programming Gems 3:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "profile",
+          "profiling",
+          "profile tree",
+          "tree",
+          "sample"
+        ],
+        "semantic": [],
+        "merged": [
+          "profile",
+          "profiling",
+          "profile tree",
+          "tree",
+          "sample"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.14811066129921435,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:47:15.866993+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 16,
+      "title": "Segment 16 (pages 156-165)",
+      "chapter_id": "Game Programming Gems 3:ch16",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "intersection",
+          "point",
+          "range",
+          "random",
+          "floating point"
+        ],
+        "semantic": [],
+        "merged": [
+          "intersection",
+          "point",
+          "range",
+          "random",
+          "floating point"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "of_range_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1811336245149725,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.867324+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 17,
+      "title": "Segment 17 (pages 166-173)",
+      "chapter_id": "Game Programming Gems 3:ch17",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "ranges",
+          "range",
+          "64",
+          "bit",
+          "values"
+        ],
+        "semantic": [],
+        "merged": [
+          "ranges",
+          "range",
+          "64",
+          "bit",
+          "values"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "of_range_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.18151935531330518,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.867615+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 18,
+      "title": "Segment 18 (pages 174-181)",
+      "chapter_id": "Game Programming Gems 3:ch18",
+      "cross_references": [
+        {
+          "target": "Game Programming Gems 3:ch19",
+          "score": 0.5448765803375544,
+          "base_score": 0.658127633895924,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "error",
+          "sin",
+          "table",
+          "sin_table",
+          "range"
+        ],
+        "semantic": [],
+        "merged": [
+          "error",
+          "sin",
+          "table",
+          "sin_table",
+          "range"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "of_range_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.13295901688314135,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.867928+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 19,
+      "title": "Segment 19 (pages 182-189)",
+      "chapter_id": "Game Programming Gems 3:ch19",
+      "cross_references": [
+        {
+          "target": "Game Programming Gems 3:ch18",
+          "score": 0.5448765803375544,
+          "base_score": 0.658127633895924,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "yaw",
+          "quaternion",
+          "yaw pitch",
+          "pitch",
+          "store"
+        ],
+        "semantic": [],
+        "merged": [
+          "yaw",
+          "quaternion",
+          "yaw pitch",
+          "pitch",
+          "store"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "of_range_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1511683986432388,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.868256+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 20,
+      "title": "Segment 20 (pages 190-197)",
+      "chapter_id": "Game Programming Gems 3:ch20",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "bone",
+          "parent",
+          "rotation",
+          "effector",
+          "world"
+        ],
+        "semantic": [],
+        "merged": [
+          "bone",
+          "parent",
+          "rotation",
+          "effector",
+          "world"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "bone_the_vertex",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1835440531487292,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.868547+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 21,
+      "title": "Segment 21 (pages 198-207)",
+      "chapter_id": "Game Programming Gems 3:ch21",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "cell",
+          "cells",
+          "water",
+          "mass",
+          "flow"
+        ],
+        "semantic": [],
+        "merged": [
+          "cell",
+          "cells",
+          "water",
+          "mass",
+          "flow"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.19831136334051927,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:47:15.868856+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 22,
+      "title": "Segment 22 (pages 208-217)",
+      "chapter_id": "Game Programming Gems 3:ch22",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "cell",
+          "update rates",
+          "heat",
+          "rates",
+          "update"
+        ],
+        "semantic": [],
+        "merged": [
+          "cell",
+          "update rates",
+          "heat",
+          "rates",
+          "update"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.09867572323561709,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:47:15.869183+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 23,
+      "title": "Segment 23 (pages 218-225)",
+      "chapter_id": "Game Programming Gems 3:ch23",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "friction",
+          "dynamic friction",
+          "dynamic",
+          "block",
+          "velocity"
+        ],
+        "semantic": [],
+        "merged": [
+          "friction",
+          "dynamic friction",
+          "dynamic",
+          "block",
+          "velocity"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "path_the_finding",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1417431954541066,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.869475+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 24,
+      "title": "Segment 24 (pages 226-233)",
+      "chapter_id": "Game Programming Gems 3:ch24",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "action",
+          "rules",
+          "rule",
+          "actor",
+          "action states"
+        ],
+        "semantic": [],
+        "merged": [
+          "action",
+          "rules",
+          "rule",
+          "actor",
+          "action states"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1643903910097375,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.869760+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 25,
+      "title": "Segment 25 (pages 234-242)",
+      "chapter_id": "Game Programming Gems 3:ch25",
+      "cross_references": [
+        {
+          "target": "Game Programming Gems 3:ch26",
+          "score": 0.6681016207196774,
+          "base_score": 0.6968360345327955,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Game Programming Gems 3:ch33",
+          "score": 0.6653730646733065,
+          "base_score": 0.5732408220745584,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Game Programming Gems 3:ch28",
+          "score": 0.5075189482305201,
+          "base_score": 0.42919824705086695,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "areas",
+          "path",
+          "path finding",
+          "area",
+          "finding"
+        ],
+        "semantic": [],
+        "merged": [
+          "areas",
+          "path",
+          "path finding",
+          "area",
+          "finding"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "path_the_finding",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.18428278487026928,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.870050+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 26,
+      "title": "Segment 26 (pages 243-252)",
+      "chapter_id": "Game Programming Gems 3:ch26",
+      "cross_references": [
+        {
+          "target": "Game Programming Gems 3:ch25",
+          "score": 0.6681016207196774,
+          "base_score": 0.6968360345327955,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Game Programming Gems 3:ch32",
+          "score": 0.5023457871742566,
+          "base_score": 0.587242978623761,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Game Programming Gems 3:ch28",
+          "score": 0.500475992844093,
+          "base_score": 0.4174599880734885,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "area",
+          "areas",
+          "fsm",
+          "character",
+          "portal"
+        ],
+        "semantic": [],
+        "merged": [
+          "area",
+          "areas",
+          "fsm",
+          "character",
+          "portal"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "path_the_finding",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.20513766303491476,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.870354+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 27,
+      "title": "Segment 27 (pages 253-260)",
+      "chapter_id": "Game Programming Gems 3:ch27",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "state",
+          "function",
+          "function pointers",
+          "state functions",
+          "state objects"
+        ],
+        "semantic": [],
+        "merged": [
+          "state",
+          "function",
+          "function pointers",
+          "state functions",
+          "state objects"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.20418258425160427,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.870653+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 28,
+      "title": "Segment 28 (pages 261-270)",
+      "chapter_id": "Game Programming Gems 3:ch28",
+      "cross_references": [
+        {
+          "target": "Game Programming Gems 3:ch25",
+          "score": 0.5075189482305201,
+          "base_score": 0.42919824705086695,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Game Programming Gems 3:ch26",
+          "score": 0.500475992844093,
+          "base_score": 0.4174599880734885,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "hull",
+          "convex",
+          "convex hull",
+          "areas",
+          "area"
+        ],
+        "semantic": [],
+        "merged": [
+          "hull",
+          "convex",
+          "convex hull",
+          "areas",
+          "area"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "path_the_finding",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1775332613206096,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.870941+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 29,
+      "title": "Segment 29 (pages 271-278)",
+      "chapter_id": "Game Programming Gems 3:ch29",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "choke",
+          "points",
+          "choke point",
+          "container",
+          "point"
+        ],
+        "semantic": [],
+        "merged": [
+          "choke",
+          "points",
+          "choke point",
+          "container",
+          "point"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "path_the_finding",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.17843620000198787,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.871283+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 30,
+      "title": "Segment 30 (pages 279-287)",
+      "chapter_id": "Game Programming Gems 3:ch30",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "trigger",
+          "conditions",
+          "extensible trigger",
+          "triggers",
+          "player"
+        ],
+        "semantic": [],
+        "merged": [
+          "trigger",
+          "conditions",
+          "extensible trigger",
+          "triggers",
+          "player"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1707886972946289,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.871573+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 31,
+      "title": "Segment 31 (pages 288-295)",
+      "chapter_id": "Game Programming Gems 3:ch31",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "tactical",
+          "path",
+          "tactical path",
+          "paths",
+          "cost function"
+        ],
+        "semantic": [],
+        "merged": [
+          "tactical",
+          "path",
+          "tactical path",
+          "paths",
+          "cost function"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "path_the_finding",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.15697995231606243,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.871861+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 32,
+      "title": "Segment 32 (pages 296-313)",
+      "chapter_id": "Game Programming Gems 3:ch32",
+      "cross_references": [
+        {
+          "target": "Game Programming Gems 3:ch26",
+          "score": 0.5023457871742566,
+          "base_score": 0.587242978623761,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "creature",
+          "nav",
+          "nav mesh",
+          "mesh",
+          "creatures"
+        ],
+        "semantic": [],
+        "merged": [
+          "creature",
+          "nav",
+          "nav mesh",
+          "mesh",
+          "creatures"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "path_the_finding",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.18643739707484988,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.872156+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 33,
+      "title": "Segment 33 (pages 314-325)",
+      "chapter_id": "Game Programming Gems 3:ch33",
+      "cross_references": [
+        {
+          "target": "Game Programming Gems 3:ch25",
+          "score": 0.6653730646733065,
+          "base_score": 0.5732408220745584,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "path finding",
+          "path",
+          "collision",
+          "finding",
+          "finding space"
+        ],
+        "semantic": [],
+        "merged": [
+          "path finding",
+          "path",
+          "collision",
+          "finding",
+          "finding space"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "path_the_finding",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.183912640975736,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.872445+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 34,
+      "title": "Segment 34 (pages 326-336)",
+      "chapter_id": "Game Programming Gems 3:ch34",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "vertices",
+          "vertex",
+          "normals",
+          "triangle",
+          "edge"
+        ],
+        "semantic": [],
+        "merged": [
+          "vertices",
+          "vertex",
+          "normals",
+          "triangle",
+          "edge"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "bone_the_vertex",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1844351808126202,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.872733+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 35,
+      "title": "Segment 35 (pages 337-346)",
+      "chapter_id": "Game Programming Gems 3:ch35",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "plp",
+          "control",
+          "primitives",
+          "visibility",
+          "algorithms"
+        ],
+        "semantic": [],
+        "merged": [
+          "plp",
+          "control",
+          "primitives",
+          "visibility",
+          "algorithms"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_texture_map",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.17555075657839972,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.873023+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 36,
+      "title": "Segment 36 (pages 347-355)",
+      "chapter_id": "Game Programming Gems 3:ch36",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "triangle",
+          "strip",
+          "triangle strip",
+          "strips",
+          "triangle strips"
+        ],
+        "semantic": [],
+        "merged": [
+          "triangle",
+          "strip",
+          "triangle strip",
+          "strips",
+          "triangle strips"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_texture_map",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.18413217802314455,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.873322+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 37,
+      "title": "Segment 37 (pages 356-366)",
+      "chapter_id": "Game Programming Gems 3:ch37",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "edge",
+          "polygon",
+          "half edge",
+          "vertex",
+          "half"
+        ],
+        "semantic": [],
+        "merged": [
+          "edge",
+          "polygon",
+          "half edge",
+          "vertex",
+          "half"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.13516482285672843,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:47:15.873613+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 38,
+      "title": "Segment 38 (pages 367-374)",
+      "chapter_id": "Game Programming Gems 3:ch38",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "subdivision",
+          "subdivision surfaces",
+          "surfaces",
+          "faces",
+          "vertex"
+        ],
+        "semantic": [],
+        "merged": [
+          "subdivision",
+          "subdivision surfaces",
+          "surfaces",
+          "faces",
+          "vertex"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "bone_the_vertex",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2085096317168922,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.873902+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 39,
+      "title": "Segment 39 (pages 375-382)",
+      "chapter_id": "Game Programming Gems 3:ch39",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "bone",
+          "weights",
+          "bones",
+          "vertex",
+          "link"
+        ],
+        "semantic": [],
+        "merged": [
+          "bone",
+          "weights",
+          "bones",
+          "vertex",
+          "link"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "bone_the_vertex",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.10422288906419795,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.874196+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 40,
+      "title": "Segment 40 (pages 383-392)",
+      "chapter_id": "Game Programming Gems 3:ch40",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "animation",
+          "foot",
+          "modifier",
+          "animations",
+          "leg"
+        ],
+        "semantic": [],
+        "merged": [
+          "animation",
+          "foot",
+          "modifier",
+          "animations",
+          "leg"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.15571703199981898,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:47:15.874481+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 41,
+      "title": "Segment 41 (pages 393-400)",
+      "chapter_id": "Game Programming Gems 3:ch41",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "shader",
+          "vertex",
+          "vertex shader",
+          "symbol",
+          "compiler"
+        ],
+        "semantic": [],
+        "merged": [
+          "shader",
+          "vertex",
+          "vertex shader",
+          "symbol",
+          "compiler"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_texture_map",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2018590210185554,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.874778+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 42,
+      "title": "Segment 42 (pages 401-412)",
+      "chapter_id": "Game Programming Gems 3:ch42",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "texture",
+          "billboard",
+          "depth",
+          "pixel",
+          "cell"
+        ],
+        "semantic": [],
+        "merged": [
+          "texture",
+          "billboard",
+          "depth",
+          "pixel",
+          "cell"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_texture_map",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.19110485650442377,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.875064+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 43,
+      "title": "Segment 43 (pages 413-421)",
+      "chapter_id": "Game Programming Gems 3:ch43",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "normal",
+          "model",
+          "map",
+          "normal map",
+          "low resolution"
+        ],
+        "semantic": [],
+        "merged": [
+          "normal",
+          "model",
+          "map",
+          "normal map",
+          "low resolution"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_texture_map",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.14328231969783917,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.875373+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 44,
+      "title": "Segment 44 (pages 422-430)",
+      "chapter_id": "Game Programming Gems 3:ch44",
+      "cross_references": [
+        {
+          "target": "Game Programming Gems 3:ch48",
+          "score": 0.5437850141905405,
+          "base_score": 0.58223428291016,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "terrain",
+          "sun",
+          "horizon",
+          "radiance",
+          "texture"
+        ],
+        "semantic": [],
+        "merged": [
+          "terrain",
+          "sun",
+          "horizon",
+          "radiance",
+          "texture"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_texture_map",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1610709813715496,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.875662+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 45,
+      "title": "Segment 45 (pages 431-439)",
+      "chapter_id": "Game Programming Gems 3:ch45",
+      "cross_references": [
+        {
+          "target": "Game Programming Gems 3:ch48",
+          "score": 0.5150514470156166,
+          "base_score": 0.6084190783593609,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cube",
+          "cube map",
+          "map",
+          "maps",
+          "cube maps"
+        ],
+        "semantic": [],
+        "merged": [
+          "cube",
+          "cube map",
+          "map",
+          "maps",
+          "cube maps"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_texture_map",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.18794213167693552,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.875950+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 46,
+      "title": "Segment 46 (pages 440-447)",
+      "chapter_id": "Game Programming Gems 3:ch46",
+      "cross_references": [
+        {
+          "target": "Game Programming Gems 3:ch47",
+          "score": 0.5077203254824667,
+          "base_score": 0.6795338758041112,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "procedural",
+          "texture",
+          "textures",
+          "procedural textures",
+          "texturing"
+        ],
+        "semantic": [],
+        "merged": [
+          "procedural",
+          "texture",
+          "textures",
+          "procedural textures",
+          "texturing"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21328601116587054,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:47:15.876255+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 47,
+      "title": "Segment 47 (pages 448-455)",
+      "chapter_id": "Game Programming Gems 3:ch47",
+      "cross_references": [
+        {
+          "target": "Game Programming Gems 3:ch46",
+          "score": 0.5077203254824667,
+          "base_score": 0.6795338758041112,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "textures",
+          "texture",
+          "blend",
+          "alpha",
+          "alpha blend"
+        ],
+        "semantic": [],
+        "merged": [
+          "textures",
+          "texture",
+          "blend",
+          "alpha",
+          "alpha blend"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1902530346985425,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:47:15.876549+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 48,
+      "title": "Segment 48 (pages 456-465)",
+      "chapter_id": "Game Programming Gems 3:ch48",
+      "cross_references": [
+        {
+          "target": "Game Programming Gems 3:ch44",
+          "score": 0.5437850141905405,
+          "base_score": 0.58223428291016,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Game Programming Gems 3:ch45",
+          "score": 0.5150514470156166,
+          "base_score": 0.6084190783593609,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pixel",
+          "texture",
+          "light",
+          "specular",
+          "lighting"
+        ],
+        "semantic": [],
+        "merged": [
+          "pixel",
+          "texture",
+          "light",
+          "specular",
+          "lighting"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_texture_map",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.14455404910441585,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.876871+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 49,
+      "title": "Segment 49 (pages 466-476)",
+      "chapter_id": "Game Programming Gems 3:ch49",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "shading",
+          "client",
+          "shading models",
+          "models",
+          "ndf"
+        ],
+        "semantic": [],
+        "merged": [
+          "shading",
+          "client",
+          "shading models",
+          "models",
+          "ndf"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_texture_map",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2055302860659447,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.877200+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 50,
+      "title": "Segment 50 (pages 477-487)",
+      "chapter_id": "Game Programming Gems 3:ch50",
+      "cross_references": [
+        {
+          "target": "Game Programming Gems 3:ch59",
+          "score": 0.6146228839006761,
+          "base_score": 0.6077048065011269,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Game Programming Gems 3:ch51",
+          "score": 0.608609539691181,
+          "base_score": 0.5976825661519684,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Game Programming Gems 3:ch53",
+          "score": 0.5340747295645096,
+          "base_score": 0.5660504752001085,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "game",
+          "server",
+          "turn",
+          "turns",
+          "game state"
+        ],
+        "semantic": [],
+        "merged": [
+          "game",
+          "server",
+          "turn",
+          "turns",
+          "game state"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "game_the_server",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.15762362494711085,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.877497+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 51,
+      "title": "Segment 51 (pages 488-496)",
+      "chapter_id": "Game Programming Gems 3:ch51",
+      "cross_references": [
+        {
+          "target": "Game Programming Gems 3:ch50",
+          "score": 0.608609539691181,
+          "base_score": 0.5976825661519684,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Game Programming Gems 3:ch54",
+          "score": 0.5658810015205926,
+          "base_score": 0.5264683358676543,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Game Programming Gems 3:ch53",
+          "score": 0.5575287321398357,
+          "base_score": 0.5125478868997262,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Game Programming Gems 3:ch59",
+          "score": 0.5000716284377587,
+          "base_score": 0.41678604739626446,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "simulation",
+          "game",
+          "server",
+          "game simulation",
+          "client"
+        ],
+        "semantic": [],
+        "merged": [
+          "simulation",
+          "game",
+          "server",
+          "game simulation",
+          "client"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "game_the_server",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.176480813300655,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.877793+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 52,
+      "title": "Segment 52 (pages 497-504)",
+      "chapter_id": "Game Programming Gems 3:ch52",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "simulation",
+          "diagram",
+          "simulation objects",
+          "objects",
+          "class diagram"
+        ],
+        "semantic": [],
+        "merged": [
+          "simulation",
+          "diagram",
+          "simulation objects",
+          "objects",
+          "class diagram"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.18330776677639105,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.878086+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 53,
+      "title": "Segment 53 (pages 505-512)",
+      "chapter_id": "Game Programming Gems 3:ch53",
+      "cross_references": [
+        {
+          "target": "Game Programming Gems 3:ch54",
+          "score": 0.6465375756630705,
+          "base_score": 0.6608959594384509,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Game Programming Gems 3:ch51",
+          "score": 0.5575287321398357,
+          "base_score": 0.5125478868997262,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Game Programming Gems 3:ch58",
+          "score": 0.5521628874203033,
+          "base_score": 0.5036048123671722,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Game Programming Gems 3:ch50",
+          "score": 0.5340747295645096,
+          "base_score": 0.5660504752001085,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "client",
+          "message",
+          "network",
+          "server",
+          "data"
+        ],
+        "semantic": [],
+        "merged": [
+          "client",
+          "message",
+          "network",
+          "server",
+          "data"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "game_the_server",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.17621999338193367,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.878388+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 54,
+      "title": "Segment 54 (pages 513-523)",
+      "chapter_id": "Game Programming Gems 3:ch54",
+      "cross_references": [
+        {
+          "target": "Game Programming Gems 3:ch53",
+          "score": 0.6465375756630705,
+          "base_score": 0.6608959594384509,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Game Programming Gems 3:ch51",
+          "score": 0.5658810015205926,
+          "base_score": 0.5264683358676543,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "server",
+          "serializer",
+          "client",
+          "sphere",
+          "objects"
+        ],
+        "semantic": [],
+        "merged": [
+          "server",
+          "serializer",
+          "client",
+          "sphere",
+          "objects"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "game_the_server",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.17149977516819778,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.879361+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 55,
+      "title": "Segment 55 (pages 524-531)",
+      "chapter_id": "Game Programming Gems 3:ch55",
+      "cross_references": [
+        {
+          "target": "Game Programming Gems 3:ch6",
+          "score": 0.5012725999267744,
+          "base_score": 0.5113802591372167,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "template",
+          "stl",
+          "containers",
+          "class",
+          "type"
+        ],
+        "semantic": [],
+        "merged": [
+          "template",
+          "stl",
+          "containers",
+          "class",
+          "type"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_class_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.15474299104647793,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.879673+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 56,
+      "title": "Segment 56 (pages 532-540)",
+      "chapter_id": "Game Programming Gems 3:ch56",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "packet",
+          "encryption",
+          "secure",
+          "sa",
+          "secure packet"
+        ],
+        "semantic": [],
+        "merged": [
+          "packet",
+          "encryption",
+          "secure",
+          "sa",
+          "secure packet"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "game_the_server",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1281694291667787,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.879979+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 57,
+      "title": "Segment 57 (pages 541-549)",
+      "chapter_id": "Game Programming Gems 3:ch57",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "packet",
+          "packets",
+          "message",
+          "udp",
+          "directplay"
+        ],
+        "semantic": [],
+        "merged": [
+          "packet",
+          "packets",
+          "message",
+          "udp",
+          "directplay"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "game_the_server",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.12391557399783948,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.880281+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 58,
+      "title": "Segment 58 (pages 550-557)",
+      "chapter_id": "Game Programming Gems 3:ch58",
+      "cross_references": [
+        {
+          "target": "Game Programming Gems 3:ch53",
+          "score": 0.5521628874203033,
+          "base_score": 0.5036048123671722,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "directplay",
+          "voice",
+          "message",
+          "server",
+          "group"
+        ],
+        "semantic": [],
+        "merged": [
+          "directplay",
+          "voice",
+          "message",
+          "server",
+          "group"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "game_the_server",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.13757281541447614,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.880724+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 59,
+      "title": "Segment 59 (pages 558-566)",
+      "chapter_id": "Game Programming Gems 3:ch59",
+      "cross_references": [
+        {
+          "target": "Game Programming Gems 3:ch50",
+          "score": 0.6146228839006761,
+          "base_score": 0.6077048065011269,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Game Programming Gems 3:ch51",
+          "score": 0.5000716284377587,
+          "base_score": 0.41678604739626446,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "wireless",
+          "java",
+          "devices",
+          "server",
+          "game"
+        ],
+        "semantic": [],
+        "merged": [
+          "wireless",
+          "java",
+          "devices",
+          "server",
+          "game"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "game_the_server",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.16040084761065992,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.881070+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 60,
+      "title": "Segment 60 (pages 567-574)",
+      "chapter_id": "Game Programming Gems 3:ch60",
+      "cross_references": [
+        {
+          "target": "Game Programming Gems 3:ch65",
+          "score": 0.5305906785264074,
+          "base_score": 0.46765113087734567,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "audio",
+          "ogg",
+          "quality",
+          "sound",
+          "files"
+        ],
+        "semantic": [],
+        "merged": [
+          "audio",
+          "ogg",
+          "quality",
+          "sound",
+          "files"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "sound_audio_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.15400702436641672,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.881403+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 61,
+      "title": "Segment 61 (pages 575-584)",
+      "chapter_id": "Game Programming Gems 3:ch61",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "audio",
+          "source",
+          "listener",
+          "3d audio",
+          "3d"
+        ],
+        "semantic": [],
+        "merged": [
+          "audio",
+          "source",
+          "listener",
+          "3d audio",
+          "3d"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "sound_audio_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.19973921091283614,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.881709+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 62,
+      "title": "Segment 62 (pages 585-592)",
+      "chapter_id": "Game Programming Gems 3:ch62",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "filter",
+          "pass",
+          "filters",
+          "pass filters",
+          "high pass"
+        ],
+        "semantic": [],
+        "merged": [
+          "filter",
+          "pass",
+          "filters",
+          "pass filters",
+          "high pass"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "sound_audio_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.07341771290973827,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.882009+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 63,
+      "title": "Segment 63 (pages 593-601)",
+      "chapter_id": "Game Programming Gems 3:ch63",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "speech",
+          "signal",
+          "oscillator",
+          "reflection",
+          "reflection coefficients"
+        ],
+        "semantic": [],
+        "merged": [
+          "speech",
+          "signal",
+          "oscillator",
+          "reflection",
+          "reflection coefficients"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "sound_audio_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1262358686199678,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.882331+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 64,
+      "title": "Segment 64 (pages 602-609)",
+      "chapter_id": "Game Programming Gems 3:ch64",
+      "cross_references": [
+        {
+          "target": "Game Programming Gems 3:ch65",
+          "score": 0.6053247646698268,
+          "base_score": 0.5922079411163781,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sound",
+          "noise",
+          "sounds",
+          "random",
+          "wind"
+        ],
+        "semantic": [],
+        "merged": [
+          "sound",
+          "noise",
+          "sounds",
+          "random",
+          "wind"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "sound_audio_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.14765442978313081,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.882630+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 65,
+      "title": "Segment 65 (pages 610-617)",
+      "chapter_id": "Game Programming Gems 3:ch65",
+      "cross_references": [
+        {
+          "target": "Game Programming Gems 3:ch64",
+          "score": 0.6053247646698268,
+          "base_score": 0.5922079411163781,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Game Programming Gems 3:ch60",
+          "score": 0.5305906785264074,
+          "base_score": 0.46765113087734567,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "patch",
+          "audio",
+          "modulation",
+          "sound",
+          "noise"
+        ],
+        "semantic": [],
+        "merged": [
+          "patch",
+          "audio",
+          "modulation",
+          "sound",
+          "noise"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "sound_audio_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.22370177971343802,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.882924+00:00"
+      }
+    },
+    {
+      "book": "Game Programming Gems 3",
+      "chapter": 66,
+      "title": "Segment 66 (pages 618-618)",
+      "chapter_id": "Game Programming Gems 3:ch66",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "available online",
+          "online",
+          "www",
+          "available",
+          "online http"
+        ],
+        "semantic": [],
+        "merged": [
+          "available online",
+          "online",
+          "www",
+          "available",
+          "online http"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "sound_audio_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.12313752970894458,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:47:15.883246+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

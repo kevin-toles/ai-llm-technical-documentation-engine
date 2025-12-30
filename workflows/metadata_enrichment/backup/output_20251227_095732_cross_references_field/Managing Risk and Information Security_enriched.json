@@ -1,0 +1,1062 @@
+{
+  "book": {
+    "title": "Managing Risk and Information Security"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:50:53.243387",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Managing Risk and Information Security",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-10)",
+      "chapter_id": "Managing Risk and Information Security:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "apress",
+          "source code",
+          "source",
+          "license"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "apress",
+          "source code",
+          "source",
+          "license"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "information_security_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32360929117784015,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:53.228917+00:00"
+      }
+    },
+    {
+      "book": "Managing Risk and Information Security",
+      "chapter": 2,
+      "title": "Segment 2 (pages 11-21)",
+      "chapter_id": "Managing Risk and Information Security:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "malcolm",
+          "security malcolm",
+          "risk information",
+          "managing",
+          "malcolm harkins"
+        ],
+        "semantic": [],
+        "merged": [
+          "malcolm",
+          "security malcolm",
+          "risk information",
+          "managing",
+          "malcolm harkins"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42687604170366916,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:53.229069+00:00"
+      }
+    },
+    {
+      "book": "Managing Risk and Information Security",
+      "chapter": 3,
+      "title": "Segment 3 (pages 22-30)",
+      "chapter_id": "Managing Risk and Information Security:ch3",
+      "cross_references": [
+        {
+          "target": "Managing Risk and Information Security:ch23",
+          "score": 0.5517282065688501,
+          "base_score": 0.6695470109480837,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "chief",
+          "officer",
+          "intel",
+          "privacy",
+          "malcolm"
+        ],
+        "semantic": [],
+        "merged": [
+          "chief",
+          "officer",
+          "intel",
+          "privacy",
+          "malcolm"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "information_security_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4817060901890976,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:53.229215+00:00"
+      }
+    },
+    {
+      "book": "Managing Risk and Information Security",
+      "chapter": 4,
+      "title": "Segment 4 (pages 31-38)",
+      "chapter_id": "Managing Risk and Information Security:ch4",
+      "cross_references": [
+        {
+          "target": "Managing Risk and Information Security:ch6",
+          "score": 0.6136553963190323,
+          "base_score": 0.7727589938650539,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing Risk and Information Security:ch11",
+          "score": 0.5162935914184686,
+          "base_score": 0.610489319030781,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing Risk and Information Security:ch12",
+          "score": 0.5015807661976902,
+          "base_score": 0.5859679436628171,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "business",
+          "personal information",
+          "personal",
+          "businesses",
+          "privacy"
+        ],
+        "semantic": [],
+        "merged": [
+          "business",
+          "personal information",
+          "personal",
+          "businesses",
+          "privacy"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5340965971168175,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:53.229328+00:00"
+      }
+    },
+    {
+      "book": "Managing Risk and Information Security",
+      "chapter": 5,
+      "title": "Segment 5 (pages 39-47)",
+      "chapter_id": "Managing Risk and Information Security:ch5",
+      "cross_references": [
+        {
+          "target": "Managing Risk and Information Security:ch6",
+          "score": 0.5873472017643402,
+          "base_score": 0.5622453362739004,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "perception",
+          "misperception risk",
+          "misperception",
+          "organization",
+          "misperceive"
+        ],
+        "semantic": [],
+        "merged": [
+          "perception",
+          "misperception risk",
+          "misperception",
+          "organization",
+          "misperceive"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47821956784992414,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:53.229446+00:00"
+      }
+    },
+    {
+      "book": "Managing Risk and Information Security",
+      "chapter": 6,
+      "title": "Segment 6 (pages 48-55)",
+      "chapter_id": "Managing Risk and Information Security:ch6",
+      "cross_references": [
+        {
+          "target": "Managing Risk and Information Security:ch4",
+          "score": 0.6136553963190323,
+          "base_score": 0.7727589938650539,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing Risk and Information Security:ch5",
+          "score": 0.5873472017643402,
+          "base_score": 0.5622453362739004,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing Risk and Information Security:ch11",
+          "score": 0.5367156193499879,
+          "base_score": 0.6445260322499798,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing Risk and Information Security:ch12",
+          "score": 0.5200915770627601,
+          "base_score": 0.6168192951046002,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "misperception",
+          "misperception risk",
+          "chapter misperception",
+          "risks",
+          "misperceive risk"
+        ],
+        "semantic": [],
+        "merged": [
+          "misperception",
+          "misperception risk",
+          "chapter misperception",
+          "risks",
+          "misperceive risk"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.592195270723678,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:53.229559+00:00"
+      }
+    },
+    {
+      "book": "Managing Risk and Information Security",
+      "chapter": 7,
+      "title": "Segment 7 (pages 56-66)",
+      "chapter_id": "Managing Risk and Information Security:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "governance",
+          "partnerships",
+          "internal",
+          "interpret",
+          "internal partnerships"
+        ],
+        "semantic": [],
+        "merged": [
+          "governance",
+          "partnerships",
+          "internal",
+          "interpret",
+          "internal partnerships"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5818121083413783,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:50:53.229693+00:00"
+      }
+    },
+    {
+      "book": "Managing Risk and Information Security",
+      "chapter": 8,
+      "title": "Segment 8 (pages 67-74)",
+      "chapter_id": "Managing Risk and Information Security:ch8",
+      "cross_references": [
+        {
+          "target": "Managing Risk and Information Security:ch9",
+          "score": 0.5121386371433488,
+          "base_score": 0.6035643952389148,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "group",
+          "team",
+          "business group",
+          "business",
+          "security team"
+        ],
+        "semantic": [],
+        "merged": [
+          "group",
+          "team",
+          "business group",
+          "business",
+          "security team"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "information_security_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5351008353549126,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:53.229812+00:00"
+      }
+    },
+    {
+      "book": "Managing Risk and Information Security",
+      "chapter": 9,
+      "title": "Segment 9 (pages 75-82)",
+      "chapter_id": "Managing Risk and Information Security:ch9",
+      "cross_references": [
+        {
+          "target": "Managing Risk and Information Security:ch10",
+          "score": 0.6270430047166303,
+          "base_score": 0.7593573888134314,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing Risk and Information Security:ch8",
+          "score": 0.5121386371433488,
+          "base_score": 0.6035643952389148,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sharing",
+          "sharing information",
+          "information sharing",
+          "share",
+          "partnerships"
+        ],
+        "semantic": [],
+        "merged": [
+          "sharing",
+          "sharing information",
+          "information sharing",
+          "share",
+          "partnerships"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "information_security_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5462383395080499,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:53.229922+00:00"
+      }
+    },
+    {
+      "book": "Managing Risk and Information Security",
+      "chapter": 10,
+      "title": "Segment 10 (pages 83-90)",
+      "chapter_id": "Managing Risk and Information Security:ch10",
+      "cross_references": [
+        {
+          "target": "Managing Risk and Information Security:ch9",
+          "score": 0.6270430047166303,
+          "base_score": 0.7593573888134314,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sharing",
+          "communities",
+          "sharing information",
+          "community",
+          "information sharing"
+        ],
+        "semantic": [],
+        "merged": [
+          "sharing",
+          "communities",
+          "sharing information",
+          "community",
+          "information sharing"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4896818868269439,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:50:53.230037+00:00"
+      }
+    },
+    {
+      "book": "Managing Risk and Information Security",
+      "chapter": 11,
+      "title": "Segment 11 (pages 91-99)",
+      "chapter_id": "Managing Risk and Information Security:ch11",
+      "cross_references": [
+        {
+          "target": "Managing Risk and Information Security:ch12",
+          "score": 0.5650799229119532,
+          "base_score": 0.617725797445848,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing Risk and Information Security:ch6",
+          "score": 0.5367156193499879,
+          "base_score": 0.6445260322499798,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing Risk and Information Security:ch4",
+          "score": 0.5162935914184686,
+          "base_score": 0.610489319030781,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "security awareness",
+          "behavior",
+          "awareness",
+          "employees",
+          "employee"
+        ],
+        "semantic": [],
+        "merged": [
+          "security awareness",
+          "behavior",
+          "awareness",
+          "employees",
+          "employee"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5102055477745923,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:53.230143+00:00"
+      }
+    },
+    {
+      "book": "Managing Risk and Information Security",
+      "chapter": 12,
+      "title": "Segment 12 (pages 100-107)",
+      "chapter_id": "Managing Risk and Information Security:ch12",
+      "cross_references": [
+        {
+          "target": "Managing Risk and Information Security:ch11",
+          "score": 0.5650799229119532,
+          "base_score": 0.617725797445848,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing Risk and Information Security:ch6",
+          "score": 0.5200915770627601,
+          "base_score": 0.6168192951046002,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing Risk and Information Security:ch4",
+          "score": 0.5015807661976902,
+          "base_score": 0.5859679436628171,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "devices",
+          "insider",
+          "employees",
+          "users",
+          "social media"
+        ],
+        "semantic": [],
+        "merged": [
+          "devices",
+          "insider",
+          "employees",
+          "users",
+          "social media"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_of_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46463345770401615,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:53.230265+00:00"
+      }
+    },
+    {
+      "book": "Managing Risk and Information Security",
+      "chapter": 13,
+      "title": "Segment 13 (pages 108-115)",
+      "chapter_id": "Managing Risk and Information Security:ch13",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "threat",
+          "threats",
+          "emerging threats",
+          "chapter emerging",
+          "vulnerabilities reality"
+        ],
+        "semantic": [],
+        "merged": [
+          "threat",
+          "threats",
+          "emerging threats",
+          "chapter emerging",
+          "vulnerabilities reality"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4637895890125863,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:50:53.230369+00:00"
+      }
+    },
+    {
+      "book": "Managing Risk and Information Security",
+      "chapter": 14,
+      "title": "Segment 14 (pages 116-123)",
+      "chapter_id": "Managing Risk and Information Security:ch14",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "attackers",
+          "attack",
+          "attacks",
+          "malware",
+          "users"
+        ],
+        "semantic": [],
+        "merged": [
+          "attackers",
+          "attack",
+          "attacks",
+          "malware",
+          "users"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4667954189837669,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:50:53.230468+00:00"
+      }
+    },
+    {
+      "book": "Managing Risk and Information Security",
+      "chapter": 15,
+      "title": "Segment 15 (pages 124-138)",
+      "chapter_id": "Managing Risk and Information Security:ch15",
+      "cross_references": [
+        {
+          "target": "Managing Risk and Information Security:ch16",
+          "score": 0.5770519934112152,
+          "base_score": 0.7117533223520252,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "access",
+          "architecture",
+          "security architecture",
+          "business agility",
+          "agility"
+        ],
+        "semantic": [],
+        "merged": [
+          "access",
+          "architecture",
+          "security architecture",
+          "business agility",
+          "agility"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "access_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5343038667279079,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:53.230571+00:00"
+      }
+    },
+    {
+      "book": "Managing Risk and Information Security",
+      "chapter": 16,
+      "title": "Segment 16 (pages 139-147)",
+      "chapter_id": "Managing Risk and Information Security:ch16",
+      "cross_references": [
+        {
+          "target": "Managing Risk and Information Security:ch15",
+          "score": 0.5770519934112152,
+          "base_score": 0.7117533223520252,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Managing Risk and Information Security:ch17",
+          "score": 0.5220162690409526,
+          "base_score": 0.5459530409941802,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "devices",
+          "users",
+          "user",
+          "data",
+          "capabilities"
+        ],
+        "semantic": [],
+        "merged": [
+          "devices",
+          "users",
+          "user",
+          "data",
+          "capabilities"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "access_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4795438170196266,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:53.230675+00:00"
+      }
+    },
+    {
+      "book": "Managing Risk and Information Security",
+      "chapter": 17,
+      "title": "Segment 17 (pages 148-155)",
+      "chapter_id": "Managing Risk and Information Security:ch17",
+      "cross_references": [
+        {
+          "target": "Managing Risk and Information Security:ch16",
+          "score": 0.5220162690409526,
+          "base_score": 0.5459530409941802,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "hardware",
+          "security capabilities",
+          "capabilities",
+          "future emerging",
+          "looking future"
+        ],
+        "semantic": [],
+        "merged": [
+          "hardware",
+          "security capabilities",
+          "capabilities",
+          "future emerging",
+          "looking future"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "access_to_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46201684564532775,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:53.230777+00:00"
+      }
+    },
+    {
+      "book": "Managing Risk and Information Security",
+      "chapter": 18,
+      "title": "Segment 18 (pages 156-163)",
+      "chapter_id": "Managing Risk and Information Security:ch18",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "responsibility",
+          "corporate social",
+          "social responsibility",
+          "social",
+          "security privacy"
+        ],
+        "semantic": [],
+        "merged": [
+          "responsibility",
+          "corporate social",
+          "social responsibility",
+          "social",
+          "security privacy"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4485047205398766,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:53.230880+00:00"
+      }
+    },
+    {
+      "book": "Managing Risk and Information Security",
+      "chapter": 19,
+      "title": "Segment 19 (pages 164-171)",
+      "chapter_id": "Managing Risk and Information Security:ch19",
+      "cross_references": [
+        {
+          "target": "Managing Risk and Information Security:ch20",
+          "score": 0.7015988517237588,
+          "base_score": 0.7526647528729313,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "organization",
+          "business",
+          "cisos",
+          "need",
+          "people"
+        ],
+        "semantic": [],
+        "merged": [
+          "organization",
+          "business",
+          "cisos",
+          "need",
+          "people"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5936679451085627,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:53.230983+00:00"
+      }
+    },
+    {
+      "book": "Managing Risk and Information Security",
+      "chapter": 20,
+      "title": "Segment 20 (pages 172-183)",
+      "chapter_id": "Managing Risk and Information Security:ch20",
+      "cross_references": [
+        {
+          "target": "Managing Risk and Information Security:ch19",
+          "score": 0.7015988517237588,
+          "base_score": 0.7526647528729313,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "skills",
+          "manager",
+          "organization",
+          "senior",
+          "need"
+        ],
+        "semantic": [],
+        "merged": [
+          "skills",
+          "manager",
+          "organization",
+          "senior",
+          "need"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5141921418518123,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:53.231085+00:00"
+      }
+    },
+    {
+      "book": "Managing Risk and Information Security",
+      "chapter": 21,
+      "title": "Segment 21 (pages 184-192)",
+      "chapter_id": "Managing Risk and Information Security:ch21",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "senior",
+          "senior manager",
+          "communication",
+          "chapter 11",
+          "11 performance"
+        ],
+        "semantic": [],
+        "merged": [
+          "senior",
+          "senior manager",
+          "communication",
+          "chapter 11",
+          "11 performance"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.16505406885456556,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:53.231197+00:00"
+      }
+    },
+    {
+      "book": "Managing Risk and Information Security",
+      "chapter": 22,
+      "title": "Segment 22 (pages 193-202)",
+      "chapter_id": "Managing Risk and Information Security:ch22",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "http",
+          "http www",
+          "www",
+          "com",
+          "intel"
+        ],
+        "semantic": [],
+        "merged": [
+          "http",
+          "http www",
+          "www",
+          "com",
+          "intel"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.501316349048485,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:50:53.231300+00:00"
+      }
+    },
+    {
+      "book": "Managing Risk and Information Security",
+      "chapter": 23,
+      "title": "Segment 23 (pages 203-208)",
+      "chapter_id": "Managing Risk and Information Security:ch23",
+      "cross_references": [
+        {
+          "target": "Managing Risk and Information Security:ch3",
+          "score": 0.5517282065688501,
+          "base_score": 0.6695470109480837,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "offi cer",
+          "offi",
+          "cer",
+          "115",
+          "32"
+        ],
+        "semantic": [],
+        "merged": [
+          "offi cer",
+          "offi",
+          "cer",
+          "115",
+          "32"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "information_security_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5279512957738973,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:53.231402+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

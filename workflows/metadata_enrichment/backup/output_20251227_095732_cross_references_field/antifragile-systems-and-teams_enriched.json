@@ -1,0 +1,125 @@
+{
+  "book": {
+    "title": "antifragile-systems-and-teams"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:00:27.013129",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "antifragile-systems-and-teams",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-10)",
+      "chapter_id": "antifragile-systems-and-teams:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "systems",
+          "antifragile systems",
+          "systems teams",
+          "antifragile",
+          "teams"
+        ],
+        "semantic": [],
+        "merged": [
+          "systems",
+          "antifragile systems",
+          "systems teams",
+          "antifragile",
+          "teams"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "systems_antifragile_robust",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.688591464792292,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:27.001533+00:00"
+      }
+    },
+    {
+      "book": "antifragile-systems-and-teams",
+      "chapter": 2,
+      "title": "Segment 2 (pages 11-18)",
+      "chapter_id": "antifragile-systems-and-teams:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "software",
+          "organizations",
+          "downside",
+          "production",
+          "deploy"
+        ],
+        "semantic": [],
+        "merged": [
+          "software",
+          "organizations",
+          "downside",
+          "production",
+          "deploy"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "software_organizations_downside",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6386235866553929,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:27.001591+00:00"
+      }
+    },
+    {
+      "book": "antifragile-systems-and-teams",
+      "chapter": 3,
+      "title": "Segment 3 (pages 19-20)",
+      "chapter_id": "antifragile-systems-and-teams:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "frastructure teams",
+          "teams 17",
+          "mission",
+          "author dave",
+          "author"
+        ],
+        "semantic": [],
+        "merged": [
+          "frastructure teams",
+          "teams 17",
+          "mission",
+          "author dave",
+          "author"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "17_years_author",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6105126968287661,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:27.001609+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

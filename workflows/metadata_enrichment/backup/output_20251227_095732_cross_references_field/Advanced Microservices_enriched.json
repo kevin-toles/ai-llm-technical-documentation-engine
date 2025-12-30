@@ -1,0 +1,904 @@
+{
+  "book": {
+    "title": "Advanced Microservices"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:39:34.689014",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Advanced Microservices",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-8)",
+      "chapter_id": "Advanced Microservices:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "chapter",
+          "apress",
+          "apress com",
+          "rights",
+          "www apress"
+        ],
+        "semantic": [],
+        "merged": [
+          "chapter",
+          "apress",
+          "apress com",
+          "rights",
+          "www apress"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21405006002914398,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:34.682573+00:00"
+      }
+    },
+    {
+      "book": "Advanced Microservices",
+      "chapter": 2,
+      "title": "Segment 2 (pages 9-17)",
+      "chapter_id": "Advanced Microservices:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "service",
+          "api",
+          "language",
+          "book",
+          "business"
+        ],
+        "semantic": [],
+        "merged": [
+          "service",
+          "api",
+          "language",
+          "book",
+          "business"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42420720292828146,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:34.682783+00:00"
+      }
+    },
+    {
+      "book": "Advanced Microservices",
+      "chapter": 3,
+      "title": "Segment 3 (pages 18-25)",
+      "chapter_id": "Advanced Microservices:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "photo",
+          "ip",
+          "user",
+          "timeline",
+          "ip addresses"
+        ],
+        "semantic": [],
+        "merged": [
+          "photo",
+          "ip",
+          "user",
+          "timeline",
+          "ip addresses"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25769335119881914,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:34.682899+00:00"
+      }
+    },
+    {
+      "book": "Advanced Microservices",
+      "chapter": 4,
+      "title": "Segment 4 (pages 26-34)",
+      "chapter_id": "Advanced Microservices:ch4",
+      "cross_references": [
+        {
+          "target": "Advanced Microservices:ch16",
+          "score": 0.5183906135870165,
+          "base_score": 0.6139843559783609,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Advanced Microservices:ch5",
+          "score": 0.5088372518956977,
+          "base_score": 0.5980620864928297,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "api",
+          "http api",
+          "api design",
+          "http",
+          "design"
+        ],
+        "semantic": [],
+        "merged": [
+          "api",
+          "http api",
+          "api design",
+          "http",
+          "design"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3498437620381481,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:34.683017+00:00"
+      }
+    },
+    {
+      "book": "Advanced Microservices",
+      "chapter": 5,
+      "title": "Segment 5 (pages 35-42)",
+      "chapter_id": "Advanced Microservices:ch5",
+      "cross_references": [
+        {
+          "target": "Advanced Microservices:ch6",
+          "score": 0.52494596114581,
+          "base_score": 0.5508358611689426,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Advanced Microservices:ch4",
+          "score": 0.5088372518956977,
+          "base_score": 0.5980620864928297,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Advanced Microservices:ch16",
+          "score": 0.5026087132241647,
+          "base_score": 0.5876811887069411,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "resource",
+          "v1",
+          "zoos",
+          "animals",
+          "v1 zoos"
+        ],
+        "semantic": [],
+        "merged": [
+          "resource",
+          "v1",
+          "zoos",
+          "animals",
+          "v1 zoos"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37016303261904754,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:34.683161+00:00"
+      }
+    },
+    {
+      "book": "Advanced Microservices",
+      "chapter": 6,
+      "title": "Segment 6 (pages 43-50)",
+      "chapter_id": "Advanced Microservices:ch6",
+      "cross_references": [
+        {
+          "target": "Advanced Microservices:ch5",
+          "score": 0.52494596114581,
+          "base_score": 0.5508358611689426,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "consumer",
+          "content",
+          "data",
+          "resource",
+          "accept"
+        ],
+        "semantic": [],
+        "merged": [
+          "consumer",
+          "content",
+          "data",
+          "resource",
+          "accept"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3474109119956157,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:34.683271+00:00"
+      }
+    },
+    {
+      "book": "Advanced Microservices",
+      "chapter": 7,
+      "title": "Segment 7 (pages 51-58)",
+      "chapter_id": "Advanced Microservices:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "error",
+          "attribute",
+          "ids",
+          "example",
+          "errors"
+        ],
+        "semantic": [],
+        "merged": [
+          "error",
+          "attribute",
+          "ids",
+          "example",
+          "errors"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29037581716490846,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:34.683372+00:00"
+      }
+    },
+    {
+      "book": "Advanced Microservices",
+      "chapter": 8,
+      "title": "Segment 8 (pages 59-66)",
+      "chapter_id": "Advanced Microservices:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "rpc",
+          "json rpc",
+          "json",
+          "example json",
+          "api"
+        ],
+        "semantic": [],
+        "merged": [
+          "rpc",
+          "json rpc",
+          "json",
+          "example json",
+          "api"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3463006601158925,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:34.683470+00:00"
+      }
+    },
+    {
+      "book": "Advanced Microservices",
+      "chapter": 9,
+      "title": "Segment 9 (pages 67-77)",
+      "chapter_id": "Advanced Microservices:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "run",
+          "docker",
+          "image",
+          "command",
+          "running"
+        ],
+        "semantic": [],
+        "merged": [
+          "run",
+          "docker",
+          "image",
+          "command",
+          "running"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23698612392855967,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:39:34.683567+00:00"
+      }
+    },
+    {
+      "book": "Advanced Microservices",
+      "chapter": 10,
+      "title": "Segment 10 (pages 78-85)",
+      "chapter_id": "Advanced Microservices:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "build",
+          "tests",
+          "run",
+          "pipeline",
+          "jenkins"
+        ],
+        "semantic": [],
+        "merged": [
+          "build",
+          "tests",
+          "run",
+          "pipeline",
+          "jenkins"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23515673811708834,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:39:34.683669+00:00"
+      }
+    },
+    {
+      "book": "Advanced Microservices",
+      "chapter": 11,
+      "title": "Segment 11 (pages 86-96)",
+      "chapter_id": "Advanced Microservices:ch11",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "discovery",
+          "discovery service",
+          "service",
+          "service discovery",
+          "provider"
+        ],
+        "semantic": [],
+        "merged": [
+          "discovery",
+          "discovery service",
+          "service",
+          "service discovery",
+          "provider"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_discovery_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34071996560743023,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:34.683769+00:00"
+      }
+    },
+    {
+      "book": "Advanced Microservices",
+      "chapter": 12,
+      "title": "Segment 12 (pages 97-107)",
+      "chapter_id": "Advanced Microservices:ch12",
+      "cross_references": [
+        {
+          "target": "Advanced Microservices:ch18",
+          "score": 0.5071689104679065,
+          "base_score": 0.5952815174465108,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "postgres",
+          "data",
+          "team_id",
+          "table",
+          "employee"
+        ],
+        "semantic": [],
+        "merged": [
+          "postgres",
+          "data",
+          "team_id",
+          "table",
+          "employee"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_discovery_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3236991392473901,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:34.683868+00:00"
+      }
+    },
+    {
+      "book": "Advanced Microservices",
+      "chapter": 13,
+      "title": "Segment 13 (pages 108-117)",
+      "chapter_id": "Advanced Microservices:ch13",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "redis",
+          "commands",
+          "mongo",
+          "key",
+          "run"
+        ],
+        "semantic": [],
+        "merged": [
+          "redis",
+          "commands",
+          "mongo",
+          "key",
+          "run"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21643991092460946,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:34.683964+00:00"
+      }
+    },
+    {
+      "book": "Advanced Microservices",
+      "chapter": 14,
+      "title": "Segment 14 (pages 118-125)",
+      "chapter_id": "Advanced Microservices:ch14",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "key",
+          "redis",
+          "cache",
+          "keys",
+          "data"
+        ],
+        "semantic": [],
+        "merged": [
+          "key",
+          "redis",
+          "cache",
+          "keys",
+          "data"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "key_redis_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2616780252172753,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:34.684074+00:00"
+      }
+    },
+    {
+      "book": "Advanced Microservices",
+      "chapter": 15,
+      "title": "Segment 15 (pages 126-135)",
+      "chapter_id": "Advanced Microservices:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "version",
+          "data",
+          "es",
+          "versioning",
+          "search"
+        ],
+        "semantic": [],
+        "merged": [
+          "version",
+          "data",
+          "es",
+          "versioning",
+          "search"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26266222253730964,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:39:34.684172+00:00"
+      }
+    },
+    {
+      "book": "Advanced Microservices",
+      "chapter": 16,
+      "title": "Segment 16 (pages 136-143)",
+      "chapter_id": "Advanced Microservices:ch16",
+      "cross_references": [
+        {
+          "target": "Advanced Microservices:ch4",
+          "score": 0.5183906135870165,
+          "base_score": 0.6139843559783609,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Advanced Microservices:ch5",
+          "score": 0.5026087132241647,
+          "base_score": 0.5876811887069411,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "consumer",
+          "permissions",
+          "user",
+          "consumers",
+          "access"
+        ],
+        "semantic": [],
+        "merged": [
+          "consumer",
+          "permissions",
+          "user",
+          "consumers",
+          "access"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3071171676666435,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:34.684273+00:00"
+      }
+    },
+    {
+      "book": "Advanced Microservices",
+      "chapter": 17,
+      "title": "Segment 17 (pages 144-152)",
+      "chapter_id": "Advanced Microservices:ch17",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "logs",
+          "log",
+          "logstash",
+          "data",
+          "grafana"
+        ],
+        "semantic": [],
+        "merged": [
+          "logs",
+          "log",
+          "logstash",
+          "data",
+          "grafana"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35419980736968254,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:34.684370+00:00"
+      }
+    },
+    {
+      "book": "Advanced Microservices",
+      "chapter": 18,
+      "title": "Segment 18 (pages 153-160)",
+      "chapter_id": "Advanced Microservices:ch18",
+      "cross_references": [
+        {
+          "target": "Advanced Microservices:ch12",
+          "score": 0.5071689104679065,
+          "base_score": 0.5952815174465108,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "count",
+          "service_name",
+          "service_name http",
+          "timing",
+          "stats"
+        ],
+        "semantic": [],
+        "merged": [
+          "count",
+          "service_name",
+          "service_name http",
+          "timing",
+          "stats"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_discovery_service",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3765618166766263,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:34.684469+00:00"
+      }
+    },
+    {
+      "book": "Advanced Microservices",
+      "chapter": 19,
+      "title": "Segment 19 (pages 161-168)",
+      "chapter_id": "Advanced Microservices:ch19",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "documentation",
+          "developers",
+          "chapter documentation",
+          "description",
+          "developer"
+        ],
+        "semantic": [],
+        "merged": [
+          "documentation",
+          "developers",
+          "chapter documentation",
+          "description",
+          "developer"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2848764452050915,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:34.684566+00:00"
+      }
+    },
+    {
+      "book": "Advanced Microservices",
+      "chapter": 20,
+      "title": "Segment 20 (pages 169-176)",
+      "chapter_id": "Advanced Microservices:ch20",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "jq",
+          "issues",
+          "curl",
+          "grille issues",
+          "grille"
+        ],
+        "semantic": [],
+        "merged": [
+          "jq",
+          "issues",
+          "curl",
+          "grille issues",
+          "grille"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36195941626541567,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:34.684662+00:00"
+      }
+    },
+    {
+      "book": "Advanced Microservices",
+      "chapter": 21,
+      "title": "Segment 21 (pages 177-186)",
+      "chapter_id": "Advanced Microservices:ch21",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "https",
+          "org",
+          "com",
+          "https www",
+          "org https"
+        ],
+        "semantic": [],
+        "merged": [
+          "https",
+          "org",
+          "com",
+          "https www",
+          "org https"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4104993718821795,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:34.684757+00:00"
+      }
+    },
+    {
+      "book": "Advanced Microservices",
+      "chapter": 22,
+      "title": "Segment 22 (pages 187-193)",
+      "chapter_id": "Advanced Microservices:ch22",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "163",
+          "107",
+          "template",
+          "152",
+          "85"
+        ],
+        "semantic": [],
+        "merged": [
+          "163",
+          "107",
+          "template",
+          "152",
+          "85"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "key_redis_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3359127172681218,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:39:34.685102+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

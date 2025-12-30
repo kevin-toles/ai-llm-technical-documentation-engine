@@ -1,0 +1,104 @@
+{
+  "book": {
+    "title": "Security-Focused Guide for AI Code Assistant Instructions _ OpenSSF Best Practices Working Group"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:56:00.006369",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Security-Focused Guide for AI Code Assistant Instructions _ OpenSSF Best Practices Working Group",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-10)",
+      "chapter_id": "Security-Focused Guide for AI Code Assistant Instructions _ OpenSSF Best Practices Working Group:ch1",
+      "cross_references": [
+        {
+          "target": "Security-Focused Guide for AI Code Assistant Instructions _ OpenSSF Best Practices Working Group:ch2",
+          "score": 0.6321671952310022,
+          "base_score": 0.7678977063373846,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "security",
+          "ai",
+          "use",
+          "instructions"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "security",
+          "ai",
+          "use",
+          "instructions"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "code_security_ai",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.8839488531686923,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:00.001439+00:00"
+      }
+    },
+    {
+      "book": "Security-Focused Guide for AI Code Assistant Instructions _ OpenSSF Best Practices Working Group",
+      "chapter": 2,
+      "title": "Segment 2 (pages 11-17)",
+      "chapter_id": "Security-Focused Guide for AI Code Assistant Instructions _ OpenSSF Best Practices Working Group:ch2",
+      "cross_references": [
+        {
+          "target": "Security-Focused Guide for AI Code Assistant Instructions _ OpenSSF Best Practices Working Group:ch1",
+          "score": 0.6321671952310022,
+          "base_score": 0.7678977063373846,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "llm",
+          "security",
+          "ai",
+          "generated"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "llm",
+          "security",
+          "ai",
+          "generated"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "code_llm_security",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.8839488316404881,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:56:00.001498+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

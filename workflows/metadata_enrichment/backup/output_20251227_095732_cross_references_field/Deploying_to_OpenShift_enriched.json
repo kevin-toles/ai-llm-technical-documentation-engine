@@ -1,0 +1,643 @@
+{
+  "book": {
+    "title": "Deploying_to_OpenShift"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:44:39.263996",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Deploying_to_OpenShift",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-10)",
+      "chapter_id": "Deploying_to_OpenShift:ch1",
+      "cross_references": [
+        {
+          "target": "Deploying_to_OpenShift:ch5",
+          "score": 0.6685141917031766,
+          "base_score": 0.6975236528386277,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Deploying_to_OpenShift:ch3",
+          "score": 0.5442243340405385,
+          "base_score": 0.6570405567342309,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Deploying_to_OpenShift:ch12",
+          "score": 0.5390613154263638,
+          "base_score": 0.8243614516365322,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "deploying",
+          "summary",
+          "image",
+          "build",
+          "reilly"
+        ],
+        "semantic": [],
+        "merged": [
+          "deploying",
+          "summary",
+          "image",
+          "build",
+          "reilly"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_image",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.549924735554489,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:39.254795+00:00"
+      }
+    },
+    {
+      "book": "Deploying_to_OpenShift",
+      "chapter": 2,
+      "title": "Segment 2 (pages 11-19)",
+      "chapter_id": "Deploying_to_OpenShift:ch2",
+      "cross_references": [
+        {
+          "target": "Deploying_to_OpenShift:ch3",
+          "score": 0.5274440397765905,
+          "base_score": 0.8049993255535768,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "openshift",
+          "cloud",
+          "hat",
+          "red hat",
+          "red"
+        ],
+        "semantic": [],
+        "merged": [
+          "openshift",
+          "cloud",
+          "hat",
+          "red hat",
+          "red"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5487938045139604,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:44:39.254891+00:00"
+      }
+    },
+    {
+      "book": "Deploying_to_OpenShift",
+      "chapter": 3,
+      "title": "Segment 3 (pages 20-30)",
+      "chapter_id": "Deploying_to_OpenShift:ch3",
+      "cross_references": [
+        {
+          "target": "Deploying_to_OpenShift:ch5",
+          "score": 0.5737466925671625,
+          "base_score": 0.7062444876119376,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Deploying_to_OpenShift:ch4",
+          "score": 0.5544508775519297,
+          "base_score": 0.6740847959198828,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Deploying_to_OpenShift:ch1",
+          "score": 0.5442243340405385,
+          "base_score": 0.6570405567342309,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Deploying_to_OpenShift:ch8",
+          "score": 0.5296822640772533,
+          "base_score": 0.6328037734620887,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Deploying_to_OpenShift:ch2",
+          "score": 0.5274440397765905,
+          "base_score": 0.8049993255535768,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "minishift",
+          "openshift",
+          "cluster",
+          "openshift cluster",
+          "vm"
+        ],
+        "semantic": [],
+        "merged": [
+          "minishift",
+          "openshift",
+          "cluster",
+          "openshift cluster",
+          "vm"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_image",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5631664326525953,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:39.254958+00:00"
+      }
+    },
+    {
+      "book": "Deploying_to_OpenShift",
+      "chapter": 4,
+      "title": "Segment 4 (pages 31-43)",
+      "chapter_id": "Deploying_to_OpenShift:ch4",
+      "cross_references": [
+        {
+          "target": "Deploying_to_OpenShift:ch3",
+          "score": 0.5544508775519297,
+          "base_score": 0.6740847959198828,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Deploying_to_OpenShift:ch5",
+          "score": 0.5338629619108856,
+          "base_score": 0.6397716031848092,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "project",
+          "command line",
+          "line",
+          "command",
+          "oc"
+        ],
+        "semantic": [],
+        "merged": [
+          "project",
+          "command line",
+          "line",
+          "command",
+          "oc"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_image",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47936269763527356,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:39.255020+00:00"
+      }
+    },
+    {
+      "book": "Deploying_to_OpenShift",
+      "chapter": 5,
+      "title": "Segment 5 (pages 44-88)",
+      "chapter_id": "Deploying_to_OpenShift:ch5",
+      "cross_references": [
+        {
+          "target": "Deploying_to_OpenShift:ch1",
+          "score": 0.6685141917031766,
+          "base_score": 0.6975236528386277,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Deploying_to_OpenShift:ch3",
+          "score": 0.5737466925671625,
+          "base_score": 0.7062444876119376,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Deploying_to_OpenShift:ch4",
+          "score": 0.5338629619108856,
+          "base_score": 0.6397716031848092,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Deploying_to_OpenShift:ch8",
+          "score": 0.5169186388956412,
+          "base_score": 0.6115310648260687,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "image",
+          "build",
+          "s2i",
+          "source",
+          "builder"
+        ],
+        "semantic": [],
+        "merged": [
+          "image",
+          "build",
+          "s2i",
+          "source",
+          "builder"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_image",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5700806895346116,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:39.255080+00:00"
+      }
+    },
+    {
+      "book": "Deploying_to_OpenShift",
+      "chapter": 6,
+      "title": "Segment 6 (pages 89-100)",
+      "chapter_id": "Deploying_to_OpenShift:ch6",
+      "cross_references": [
+        {
+          "target": "Deploying_to_OpenShift:ch12",
+          "score": 0.6085191725850322,
+          "base_score": 0.6901245469009796,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "build",
+          "git",
+          "source",
+          "repository",
+          "git repository"
+        ],
+        "semantic": [],
+        "merged": [
+          "build",
+          "git",
+          "source",
+          "repository",
+          "git repository"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "build_the_oc",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45246790285602667,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:39.255154+00:00"
+      }
+    },
+    {
+      "book": "Deploying_to_OpenShift",
+      "chapter": 7,
+      "title": "Segment 7 (pages 101-108)",
+      "chapter_id": "Deploying_to_OpenShift:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "file",
+          "oc",
+          "map",
+          "config map",
+          "secret"
+        ],
+        "semantic": [],
+        "merged": [
+          "file",
+          "oc",
+          "map",
+          "config map",
+          "secret"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_image",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35721066414474534,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:39.255218+00:00"
+      }
+    },
+    {
+      "book": "Deploying_to_OpenShift",
+      "chapter": 8,
+      "title": "Segment 8 (pages 109-118)",
+      "chapter_id": "Deploying_to_OpenShift:ch8",
+      "cross_references": [
+        {
+          "target": "Deploying_to_OpenShift:ch3",
+          "score": 0.5296822640772533,
+          "base_score": 0.6328037734620887,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Deploying_to_OpenShift:ch5",
+          "score": 0.5169186388956412,
+          "base_score": 0.6115310648260687,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "address",
+          "port",
+          "ip address",
+          "ip",
+          "application"
+        ],
+        "semantic": [],
+        "merged": [
+          "address",
+          "port",
+          "ip address",
+          "ip",
+          "application"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_image",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5007915632048386,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:39.255280+00:00"
+      }
+    },
+    {
+      "book": "Deploying_to_OpenShift",
+      "chapter": 9,
+      "title": "Segment 9 (pages 119-130)",
+      "chapter_id": "Deploying_to_OpenShift:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "volume",
+          "persistent",
+          "persistent volume",
+          "claim",
+          "cpu"
+        ],
+        "semantic": [],
+        "merged": [
+          "volume",
+          "persistent",
+          "persistent volume",
+          "claim",
+          "cpu"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5085939163008631,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:44:39.255339+00:00"
+      }
+    },
+    {
+      "book": "Deploying_to_OpenShift",
+      "chapter": 10,
+      "title": "Segment 10 (pages 131-141)",
+      "chapter_id": "Deploying_to_OpenShift:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "probe",
+          "deployment",
+          "application",
+          "instances",
+          "hook"
+        ],
+        "semantic": [],
+        "merged": [
+          "probe",
+          "deployment",
+          "application",
+          "instances",
+          "hook"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_image",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3377794952848366,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:39.255440+00:00"
+      }
+    },
+    {
+      "book": "Deploying_to_OpenShift",
+      "chapter": 11,
+      "title": "Segment 11 (pages 142-152)",
+      "chapter_id": "Deploying_to_OpenShift:ch11",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "logs",
+          "application",
+          "debug",
+          "run",
+          "container"
+        ],
+        "semantic": [],
+        "merged": [
+          "logs",
+          "application",
+          "debug",
+          "run",
+          "container"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_image",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3998254827687797,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:39.255501+00:00"
+      }
+    },
+    {
+      "book": "Deploying_to_OpenShift",
+      "chapter": 12,
+      "title": "Segment 12 (pages 153-160)",
+      "chapter_id": "Deploying_to_OpenShift:ch12",
+      "cross_references": [
+        {
+          "target": "Deploying_to_OpenShift:ch6",
+          "score": 0.6085191725850322,
+          "base_score": 0.6901245469009796,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Deploying_to_OpenShift:ch1",
+          "score": 0.5390613154263638,
+          "base_score": 0.8243614516365322,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "oc",
+          "command",
+          "overview",
+          "build",
+          "strategy"
+        ],
+        "semantic": [],
+        "merged": [
+          "oc",
+          "command",
+          "overview",
+          "build",
+          "strategy"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "build_the_oc",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.569275728176771,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:39.255563+00:00"
+      }
+    },
+    {
+      "book": "Deploying_to_OpenShift",
+      "chapter": 13,
+      "title": "Segment 13 (pages 161-162)",
+      "chapter_id": "Deploying_to_OpenShift:ch13",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "cockatoo",
+          "crested cockatoo",
+          "sulphur crested",
+          "sulphur",
+          "crested"
+        ],
+        "semantic": [],
+        "merged": [
+          "cockatoo",
+          "crested cockatoo",
+          "sulphur crested",
+          "sulphur",
+          "crested"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "build_the_oc",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2135927409395872,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:39.255621+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

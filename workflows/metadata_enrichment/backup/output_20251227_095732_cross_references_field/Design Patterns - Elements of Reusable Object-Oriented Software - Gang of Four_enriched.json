@@ -1,0 +1,252 @@
+{
+  "book": {
+    "title": "Design Patterns - Elements of Reusable Object-Oriented Software - Gang of Four"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:44:41.696943",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Design Patterns - Elements of Reusable Object-Oriented Software - Gang of Four",
+      "chapter": 1,
+      "title": "Introduction",
+      "chapter_id": "Design Patterns - Elements of Reusable Object-Oriented Software - Gang of Four:ch1",
+      "cross_references": [
+        {
+          "target": "Design Patterns - Elements of Reusable Object-Oriented Software - Gang of Four:ch6",
+          "score": 0.9014323830021599,
+          "base_score": 0.8079428605591554,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "design",
+          "design patterns",
+          "design pattern",
+          "object oriented",
+          "oriented"
+        ],
+        "semantic": [],
+        "merged": [
+          "design",
+          "design patterns",
+          "design pattern",
+          "object oriented",
+          "oriented"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "design_object_patterns",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6138615605688179,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:41.679142+00:00"
+      }
+    },
+    {
+      "book": "Design Patterns - Elements of Reusable Object-Oriented Software - Gang of Four",
+      "chapter": 2,
+      "title": "A Case Study: Designing a Document Editor",
+      "chapter_id": "Design Patterns - Elements of Reusable Object-Oriented Software - Gang of Four:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "glyph",
+          "window",
+          "glyphs",
+          "lexi",
+          "different"
+        ],
+        "semantic": [],
+        "merged": [
+          "glyph",
+          "window",
+          "glyphs",
+          "lexi",
+          "different"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "glyph_window_class",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4911863617982078,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:41.679207+00:00"
+      }
+    },
+    {
+      "book": "Design Patterns - Elements of Reusable Object-Oriented Software - Gang of Four",
+      "chapter": 3,
+      "title": "Creational Patterns",
+      "chapter_id": "Design Patterns - Elements of Reusable Object-Oriented Software - Gang of Four:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "create",
+          "method",
+          "product",
+          "prototype",
+          "factory method"
+        ],
+        "semantic": [],
+        "merged": [
+          "create",
+          "method",
+          "product",
+          "prototype",
+          "factory method"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "class_factory_create",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.520035112814441,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:41.679238+00:00"
+      }
+    },
+    {
+      "book": "Design Patterns - Elements of Reusable Object-Oriented Software - Gang of Four",
+      "chapter": 4,
+      "title": "Structural Patterns",
+      "chapter_id": "Design Patterns - Elements of Reusable Object-Oriented Software - Gang of Four:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "component",
+          "subsystem",
+          "adapter",
+          "composite",
+          "component class"
+        ],
+        "semantic": [],
+        "merged": [
+          "component",
+          "subsystem",
+          "adapter",
+          "composite",
+          "component class"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "class_interface_object",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5712177647034771,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:41.679266+00:00"
+      }
+    },
+    {
+      "book": "Design Patterns - Elements of Reusable Object-Oriented Software - Gang of Four",
+      "chapter": 5,
+      "title": "Behavioral Patterns",
+      "chapter_id": "Design Patterns - Elements of Reusable Object-Oriented Software - Gang of Four:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "iterator",
+          "request",
+          "iteration",
+          "operation",
+          "receiver"
+        ],
+        "semantic": [],
+        "merged": [
+          "iterator",
+          "request",
+          "iteration",
+          "operation",
+          "receiver"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "iterator_object_request",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5481538106967878,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:41.679315+00:00"
+      }
+    },
+    {
+      "book": "Design Patterns - Elements of Reusable Object-Oriented Software - Gang of Four",
+      "chapter": 6,
+      "title": "Conclusion",
+      "chapter_id": "Design Patterns - Elements of Reusable Object-Oriented Software - Gang of Four:ch6",
+      "cross_references": [
+        {
+          "target": "Design Patterns - Elements of Reusable Object-Oriented Software - Gang of Four:ch1",
+          "score": 0.9014323830021599,
+          "base_score": 0.8079428605591554,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "participant",
+          "design",
+          "object oriented",
+          "oriented",
+          "design patterns"
+        ],
+        "semantic": [],
+        "merged": [
+          "participant",
+          "design",
+          "object oriented",
+          "oriented",
+          "design patterns"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "design_object_patterns",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.565938438487263,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:44:41.679373+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

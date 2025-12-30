@@ -1,0 +1,819 @@
+{
+  "book": {
+    "title": "Refactoring - Martin Fowler"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:55:07.142746",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Refactoring - Martin Fowler",
+      "chapter": 1,
+      "title": "Refactoring, a First Example",
+      "chapter_id": "Refactoring - Martin Fowler:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "movie",
+          "rental",
+          "result",
+          "getdaysrented",
+          "frequentrenterpoints"
+        ],
+        "semantic": [],
+        "merged": [
+          "movie",
+          "rental",
+          "result",
+          "getdaysrented",
+          "frequentrenterpoints"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_method_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2598257055624383,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:07.135880+00:00"
+      }
+    },
+    {
+      "book": "Refactoring - Martin Fowler",
+      "chapter": 2,
+      "title": "Principles in Refactoring",
+      "chapter_id": "Refactoring - Martin Fowler:ch2",
+      "cross_references": [
+        {
+          "target": "Refactoring - Martin Fowler:ch15",
+          "score": 0.6558039723444202,
+          "base_score": 0.676339953907367,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring - Martin Fowler:ch14",
+          "score": 0.6097741548206398,
+          "base_score": 0.6922161839603256,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring - Martin Fowler:ch13",
+          "score": 0.6021097847863255,
+          "base_score": 0.5868496413105425,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring - Martin Fowler:ch5",
+          "score": 0.5319062933645695,
+          "base_score": 0.562436414866875,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "refactoring",
+          "software",
+          "refactor",
+          "design",
+          "understand"
+        ],
+        "semantic": [],
+        "merged": [
+          "refactoring",
+          "software",
+          "refactor",
+          "design",
+          "understand"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "refactoring_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46350198026376854,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:07.135973+00:00"
+      }
+    },
+    {
+      "book": "Refactoring - Martin Fowler",
+      "chapter": 3,
+      "title": "Bad Smells in Code",
+      "chapter_id": "Refactoring - Martin Fowler:ch3",
+      "cross_references": [
+        {
+          "target": "Refactoring - Martin Fowler:ch6",
+          "score": 0.6418377580184025,
+          "base_score": 0.7456555226232633,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring - Martin Fowler:ch11",
+          "score": 0.5881325045374725,
+          "base_score": 0.6561467668217134,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring - Martin Fowler:ch7",
+          "score": 0.5163970071872629,
+          "base_score": 0.4439950119787715,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring - Martin Fowler:ch8",
+          "score": 0.5070184624545453,
+          "base_score": 0.42836410409090875,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "method",
+          "class",
+          "extract",
+          "extract class",
+          "classes"
+        ],
+        "semantic": [],
+        "merged": [
+          "method",
+          "class",
+          "extract",
+          "extract class",
+          "classes"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_method_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4340568607111736,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:07.136048+00:00"
+      }
+    },
+    {
+      "book": "Refactoring - Martin Fowler",
+      "chapter": 4,
+      "title": "Building Tests",
+      "chapter_id": "Refactoring - Martin Fowler:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "tests",
+          "test",
+          "run",
+          "run tests",
+          "testing"
+        ],
+        "semantic": [],
+        "merged": [
+          "tests",
+          "test",
+          "run",
+          "run tests",
+          "testing"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "refactoring_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3782138026192853,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:07.136115+00:00"
+      }
+    },
+    {
+      "book": "Refactoring - Martin Fowler",
+      "chapter": 5,
+      "title": "Toward a Catalog of Refactorings",
+      "chapter_id": "Refactoring - Martin Fowler:ch5",
+      "cross_references": [
+        {
+          "target": "Refactoring - Martin Fowler:ch15",
+          "score": 0.5358342410857185,
+          "base_score": 0.5689829944021234,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring - Martin Fowler:ch2",
+          "score": 0.5319062933645695,
+          "base_score": 0.562436414866875,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "refactorings",
+          "examples",
+          "refactoring",
+          "use refactorings",
+          "illustrate"
+        ],
+        "semantic": [],
+        "merged": [
+          "refactorings",
+          "examples",
+          "refactoring",
+          "use refactorings",
+          "illustrate"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "refactoring_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4108634748338675,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:07.136184+00:00"
+      }
+    },
+    {
+      "book": "Refactoring - Martin Fowler",
+      "chapter": 6,
+      "title": "Composing Methods",
+      "chapter_id": "Refactoring - Martin Fowler:ch6",
+      "cross_references": [
+        {
+          "target": "Refactoring - Martin Fowler:ch3",
+          "score": 0.6418377580184025,
+          "base_score": 0.7456555226232633,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring - Martin Fowler:ch10",
+          "score": 0.5444888181459546,
+          "base_score": 0.583407289502517,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "method",
+          "baseprice",
+          "temp",
+          "variables",
+          "_itemprice"
+        ],
+        "semantic": [],
+        "merged": [
+          "method",
+          "baseprice",
+          "temp",
+          "variables",
+          "_itemprice"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_method_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4740231693682176,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:07.136253+00:00"
+      }
+    },
+    {
+      "book": "Refactoring - Martin Fowler",
+      "chapter": 7,
+      "title": "Moving Features Between Objects",
+      "chapter_id": "Refactoring - Martin Fowler:ch7",
+      "cross_references": [
+        {
+          "target": "Refactoring - Martin Fowler:ch11",
+          "score": 0.5808720350713574,
+          "base_score": 0.5514533917855957,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring - Martin Fowler:ch8",
+          "score": 0.5630261835516757,
+          "base_score": 0.5217103059194595,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring - Martin Fowler:ch3",
+          "score": 0.5163970071872629,
+          "base_score": 0.4439950119787715,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "class",
+          "method",
+          "source",
+          "methods",
+          "person"
+        ],
+        "semantic": [],
+        "merged": [
+          "class",
+          "method",
+          "source",
+          "methods",
+          "person"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_method_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4079079237010015,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:07.136321+00:00"
+      }
+    },
+    {
+      "book": "Refactoring - Martin Fowler",
+      "chapter": 8,
+      "title": "Organizing Data",
+      "chapter_id": "Refactoring - Martin Fowler:ch8",
+      "cross_references": [
+        {
+          "target": "Refactoring - Martin Fowler:ch7",
+          "score": 0.5630261835516757,
+          "base_score": 0.5217103059194595,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring - Martin Fowler:ch10",
+          "score": 0.5289451987021507,
+          "base_score": 0.557501257096177,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring - Martin Fowler:ch3",
+          "score": 0.5070184624545453,
+          "base_score": 0.42836410409090875,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "type",
+          "class",
+          "type code",
+          "method",
+          "customer"
+        ],
+        "semantic": [],
+        "merged": [
+          "type",
+          "class",
+          "type code",
+          "method",
+          "customer"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_method_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40576204098812824,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:07.136390+00:00"
+      }
+    },
+    {
+      "book": "Refactoring - Martin Fowler",
+      "chapter": 9,
+      "title": "Simplifying Conditional Expressions",
+      "chapter_id": "Refactoring - Martin Fowler:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "null",
+          "conditional",
+          "condition",
+          "return",
+          "customer"
+        ],
+        "semantic": [],
+        "merged": [
+          "null",
+          "conditional",
+          "condition",
+          "return",
+          "customer"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_method_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37283986203754416,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:07.136456+00:00"
+      }
+    },
+    {
+      "book": "Refactoring - Martin Fowler",
+      "chapter": 10,
+      "title": "Making Method Calls Simpler",
+      "chapter_id": "Refactoring - Martin Fowler:ch10",
+      "cross_references": [
+        {
+          "target": "Refactoring - Martin Fowler:ch6",
+          "score": 0.5444888181459546,
+          "base_score": 0.583407289502517,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring - Martin Fowler:ch8",
+          "score": 0.5289451987021507,
+          "base_score": 0.557501257096177,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "method",
+          "parameter",
+          "new",
+          "old method",
+          "callers"
+        ],
+        "semantic": [],
+        "merged": [
+          "method",
+          "parameter",
+          "new",
+          "old method",
+          "callers"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_method_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49579611021880793,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:07.136524+00:00"
+      }
+    },
+    {
+      "book": "Refactoring - Martin Fowler",
+      "chapter": 11,
+      "title": "Dealing with Generalization",
+      "chapter_id": "Refactoring - Martin Fowler:ch11",
+      "cross_references": [
+        {
+          "target": "Refactoring - Martin Fowler:ch3",
+          "score": 0.5881325045374725,
+          "base_score": 0.6561467668217134,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring - Martin Fowler:ch7",
+          "score": 0.5808720350713574,
+          "base_score": 0.5514533917855957,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring - Martin Fowler:ch12",
+          "score": 0.5125522194065907,
+          "base_score": 0.6042536990109846,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "method",
+          "superclass",
+          "methods",
+          "acustomer",
+          "subclass"
+        ],
+        "semantic": [],
+        "merged": [
+          "method",
+          "superclass",
+          "methods",
+          "acustomer",
+          "subclass"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_method_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3999615061967093,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:07.136592+00:00"
+      }
+    },
+    {
+      "book": "Refactoring - Martin Fowler",
+      "chapter": 12,
+      "title": "Big Refactorings",
+      "chapter_id": "Refactoring - Martin Fowler:ch12",
+      "cross_references": [
+        {
+          "target": "Refactoring - Martin Fowler:ch11",
+          "score": 0.5125522194065907,
+          "base_score": 0.6042536990109846,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "domain",
+          "logic",
+          "presentation",
+          "domain logic",
+          "hierarchy"
+        ],
+        "semantic": [],
+        "merged": [
+          "domain",
+          "logic",
+          "presentation",
+          "domain logic",
+          "hierarchy"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_method_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42911205525664314,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:07.136659+00:00"
+      }
+    },
+    {
+      "book": "Refactoring - Martin Fowler",
+      "chapter": 13,
+      "title": "Refactoring, Reuse, and Reality",
+      "chapter_id": "Refactoring - Martin Fowler:ch13",
+      "cross_references": [
+        {
+          "target": "Refactoring - Martin Fowler:ch14",
+          "score": 0.6205912474111018,
+          "base_score": 0.617652079018503,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring - Martin Fowler:ch2",
+          "score": 0.6021097847863255,
+          "base_score": 0.5868496413105425,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring - Martin Fowler:ch15",
+          "score": 0.5481033602801874,
+          "base_score": 0.5894315263929049,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "refactoring",
+          "program",
+          "software",
+          "research",
+          "applied"
+        ],
+        "semantic": [],
+        "merged": [
+          "refactoring",
+          "program",
+          "software",
+          "research",
+          "applied"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "refactoring_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.378656973334113,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:07.136728+00:00"
+      }
+    },
+    {
+      "book": "Refactoring - Martin Fowler",
+      "chapter": 14,
+      "title": "Refactoring Tools",
+      "chapter_id": "Refactoring - Martin Fowler:ch14",
+      "cross_references": [
+        {
+          "target": "Refactoring - Martin Fowler:ch13",
+          "score": 0.6205912474111018,
+          "base_score": 0.617652079018503,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring - Martin Fowler:ch2",
+          "score": 0.6097741548206398,
+          "base_score": 0.6922161839603256,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring - Martin Fowler:ch15",
+          "score": 0.5695603860778233,
+          "base_score": 0.6251932360556314,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "refactoring",
+          "tool",
+          "refactoring tool",
+          "tools",
+          "program"
+        ],
+        "semantic": [],
+        "merged": [
+          "refactoring",
+          "tool",
+          "refactoring tool",
+          "tools",
+          "program"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "refactoring_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46848036130000953,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:07.136817+00:00"
+      }
+    },
+    {
+      "book": "Refactoring - Martin Fowler",
+      "chapter": 15,
+      "title": "Putting It All Together",
+      "chapter_id": "Refactoring - Martin Fowler:ch15",
+      "cross_references": [
+        {
+          "target": "Refactoring - Martin Fowler:ch2",
+          "score": 0.6558039723444202,
+          "base_score": 0.676339953907367,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring - Martin Fowler:ch14",
+          "score": 0.5695603860778233,
+          "base_score": 0.6251932360556314,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring - Martin Fowler:ch13",
+          "score": 0.5481033602801874,
+          "base_score": 0.5894315263929049,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Refactoring - Martin Fowler:ch5",
+          "score": 0.5358342410857185,
+          "base_score": 0.5689829944021234,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "refactoring",
+          "design",
+          "premium",
+          "oriented",
+          "individual"
+        ],
+        "semantic": [],
+        "merged": [
+          "refactoring",
+          "design",
+          "premium",
+          "oriented",
+          "individual"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "refactoring_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45077386713622686,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:55:07.136888+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

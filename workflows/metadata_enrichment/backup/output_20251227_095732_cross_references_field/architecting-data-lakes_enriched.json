@@ -1,0 +1,215 @@
+{
+  "book": {
+    "title": "architecting-data-lakes"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:00:29.512262",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "architecting-data-lakes",
+      "chapter": 1,
+      "title": "Overview",
+      "chapter_id": "architecting-data-lakes:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "warehouses data",
+          "warehouses",
+          "data warehouses",
+          "differences data",
+          "differences"
+        ],
+        "semantic": [],
+        "merged": [
+          "warehouses data",
+          "warehouses",
+          "data warehouses",
+          "differences data",
+          "differences"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "data_lake_lakes",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7890978430457198,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:29.501622+00:00"
+      }
+    },
+    {
+      "book": "architecting-data-lakes",
+      "chapter": 2,
+      "title": "Designing Your Data Lake",
+      "chapter_id": "architecting-data-lakes:ch2",
+      "cross_references": [
+        {
+          "target": "architecting-data-lakes:ch5",
+          "score": 0.5063618875823294,
+          "base_score": 0.7698624052298081,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "processing",
+          "zone",
+          "storage",
+          "large",
+          "need"
+        ],
+        "semantic": [],
+        "merged": [
+          "processing",
+          "zone",
+          "storage",
+          "large",
+          "need"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_processing_zone",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7480305351467892,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:29.501663+00:00"
+      }
+    },
+    {
+      "book": "architecting-data-lakes",
+      "chapter": 3,
+      "title": "Curating the Data Lake",
+      "chapter_id": "architecting-data-lakes:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "ingestion",
+          "management platform",
+          "managed ingestion",
+          "platform",
+          "managed"
+        ],
+        "semantic": [],
+        "merged": [
+          "ingestion",
+          "management platform",
+          "managed ingestion",
+          "platform",
+          "managed"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "data_lake_ingestion",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.715332454547194,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:29.501689+00:00"
+      }
+    },
+    {
+      "book": "architecting-data-lakes",
+      "chapter": 4,
+      "title": "Deriving Value from the Data Lake",
+      "chapter_id": "architecting-data-lakes:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "self service",
+          "self",
+          "datasets",
+          "service",
+          "customer"
+        ],
+        "semantic": [],
+        "merged": [
+          "self service",
+          "self",
+          "datasets",
+          "service",
+          "customer"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "data_users_self",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7148194341434172,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:29.501717+00:00"
+      }
+    },
+    {
+      "book": "architecting-data-lakes",
+      "chapter": 5,
+      "title": "Looking Ahead",
+      "chapter_id": "architecting-data-lakes:ch5",
+      "cross_references": [
+        {
+          "target": "architecting-data-lakes:ch2",
+          "score": 0.5063618875823294,
+          "base_score": 0.7698624052298081,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "plan",
+          "need",
+          "amazon",
+          "think",
+          "stakeholders"
+        ],
+        "semantic": [],
+        "merged": [
+          "plan",
+          "need",
+          "amazon",
+          "think",
+          "stakeholders"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "data_lake_business",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7801045910297046,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:29.501742+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

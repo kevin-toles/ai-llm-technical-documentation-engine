@@ -76,7 +76,7 @@ class TestTopicClustererBasicFunctionality:
         """TopicClusterer module should be importable."""
         # TDD RED: Module doesn't exist yet
         from workflows.metadata_enrichment.scripts.topic_clusterer import TopicClusterer
-        assert TopicClusterer is not None
+        assert TopicClusterer
 
     def test_topic_clusterer_instantiation_default_config(self):
         """TopicClusterer should instantiate with default configuration."""
@@ -84,7 +84,7 @@ class TestTopicClustererBasicFunctionality:
         
         clusterer = TopicClusterer()
         
-        assert clusterer is not None
+        assert clusterer
         assert hasattr(clusterer, 'embedding_model')
         assert clusterer.embedding_model == "all-MiniLM-L6-v2"
 
@@ -422,7 +422,7 @@ class TestIntegrationWithEnrichment:
         ]
         
         clusterer = TopicClusterer()
-        results = clusterer.cluster_chapters(corpus, index)
+        _results = clusterer.cluster_chapters(corpus, index)
         
         # Python chapters should have same topic (or both outliers)
         topic_py1 = clusterer.get_topic_for_chapter(0).topic_id

@@ -1,0 +1,2351 @@
+{
+  "book": {
+    "title": "Clean Code A Handbook of Agile Software Craftsmanship"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:42:49.216746",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-9)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "agile",
+          "agile software",
+          "software",
+          "robert",
+          "development"
+        ],
+        "semantic": [],
+        "merged": [
+          "agile",
+          "agile software",
+          "software",
+          "robert",
+          "development"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "code_the_clean",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1858058784329696,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.275151+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 2,
+      "title": "Segment 2 (pages 10-17)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "conclusion",
+          "bibliography",
+          "288",
+          "287",
+          "187"
+        ],
+        "semantic": [],
+        "merged": [
+          "conclusion",
+          "bibliography",
+          "288",
+          "287",
+          "187"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "string_argsexception_args",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29216670159077374,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.275475+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 3,
+      "title": "Segment 3 (pages 18-25)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "software",
+          "thinking",
+          "code",
+          "architecture",
+          "product"
+        ],
+        "semantic": [],
+        "merged": [
+          "software",
+          "thinking",
+          "code",
+          "architecture",
+          "product"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "code_the_clean",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.15578911136717305,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.275717+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 4,
+      "title": "Segment 4 (pages 26-33)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch4",
+      "cross_references": [
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch6",
+          "score": 0.7084471790185711,
+          "base_score": 0.6450310126499995,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch5",
+          "score": 0.574853294548187,
+          "base_score": 0.42237453853269274,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "case studies",
+          "studies",
+          "clean code",
+          "clean"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "case studies",
+          "studies",
+          "clean code",
+          "clean"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "code_the_clean",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.20484185916426179,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.275985+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 5,
+      "title": "Segment 5 (pages 34-42)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch5",
+      "cross_references": [
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch6",
+          "score": 0.5872346665082221,
+          "base_score": 0.4430101584660845,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch4",
+          "score": 0.574853294548187,
+          "base_score": 0.42237453853269274,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "clean code",
+          "clean",
+          "bad code",
+          "bad"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "clean code",
+          "clean",
+          "bad code",
+          "bad"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "code_the_clean",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.18372186379164276,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.276231+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 6,
+      "title": "Segment 6 (pages 43-50)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch6",
+      "cross_references": [
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch4",
+          "score": 0.7084471790185711,
+          "base_score": 0.6450310126499995,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch5",
+          "score": 0.5872346665082221,
+          "base_score": 0.4430101584660845,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "clean",
+          "write",
+          "read",
+          "clean code"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "clean",
+          "write",
+          "read",
+          "clean code"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "code_the_clean",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24198028514165024,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.276459+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 7,
+      "title": "Segment 7 (pages 51-58)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "names",
+          "meaningful",
+          "named",
+          "problem",
+          "chapter meaningful"
+        ],
+        "semantic": [],
+        "merged": [
+          "names",
+          "meaningful",
+          "named",
+          "problem",
+          "chapter meaningful"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "function_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2015045464510121,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.276685+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 8,
+      "title": "Segment 8 (pages 59-68)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch8",
+      "cross_references": [
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch14",
+          "score": 0.5673662156023155,
+          "base_score": 0.6956103593371925,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "function",
+          "functions",
+          "append",
+          "wikipage",
+          "abstraction"
+        ],
+        "semantic": [],
+        "merged": [
+          "function",
+          "functions",
+          "append",
+          "wikipage",
+          "abstraction"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_test_function",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.265019991766675,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.276911+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 9,
+      "title": "Segment 9 (pages 69-76)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "function",
+          "arguments",
+          "argument",
+          "stringbuffer",
+          "function arguments"
+        ],
+        "semantic": [],
+        "merged": [
+          "function",
+          "arguments",
+          "argument",
+          "stringbuffer",
+          "function arguments"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "function_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23153101839768717,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.277138+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 10,
+      "title": "Segment 10 (pages 77-87)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch10",
+      "cross_references": [
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch16",
+          "score": 0.5036908052793458,
+          "base_score": 0.42281800879890985,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "comments",
+          "exception",
+          "pagedata",
+          "throws exception",
+          "error"
+        ],
+        "semantic": [],
+        "merged": [
+          "comments",
+          "exception",
+          "pagedata",
+          "throws exception",
+          "error"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "exception_you_that",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26468060098603646,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.277379+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 11,
+      "title": "Segment 11 (pages 88-95)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch11",
+      "cross_references": [
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch12",
+          "score": 0.6591338172143094,
+          "base_score": 0.6541119175794046,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "comments",
+          "comment",
+          "chapter comments",
+          "bad comments",
+          "misleading"
+        ],
+        "semantic": [],
+        "merged": [
+          "comments",
+          "comment",
+          "chapter comments",
+          "bad comments",
+          "misleading"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21973064608026924,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:42:49.277622+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 12,
+      "title": "Segment 12 (pages 96-103)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch12",
+      "cross_references": [
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch11",
+          "score": 0.6591338172143094,
+          "base_score": 0.6541119175794046,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "comment",
+          "comments",
+          "code",
+          "chapter comments",
+          "bad comments"
+        ],
+        "semantic": [],
+        "merged": [
+          "comment",
+          "comments",
+          "code",
+          "chapter comments",
+          "bad comments"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3164618977661735,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:42:49.277877+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 13,
+      "title": "Segment 13 (pages 104-111)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch13",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "crossedout",
+          "private static",
+          "lines",
+          "vertical",
+          "formatting"
+        ],
+        "semantic": [],
+        "merged": [
+          "crossedout",
+          "private static",
+          "lines",
+          "vertical",
+          "formatting"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24194197244833812,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:42:49.278104+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 14,
+      "title": "Segment 14 (pages 112-120)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch14",
+      "cross_references": [
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch8",
+          "score": 0.5673662156023155,
+          "base_score": 0.6956103593371925,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "context",
+          "public",
+          "fitnesseexpediter",
+          "fitnessecontext context",
+          "fitnessecontext"
+        ],
+        "semantic": [],
+        "merged": [
+          "context",
+          "public",
+          "fitnesseexpediter",
+          "fitnessecontext context",
+          "fitnessecontext"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_test_function",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25727280398122265,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.278352+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 15,
+      "title": "Segment 15 (pages 121-130)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "data structures",
+          "structures",
+          "objects",
+          "shape"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "data structures",
+          "structures",
+          "objects",
+          "shape"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "class_public_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2954473813814081,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.278584+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 16,
+      "title": "Segment 16 (pages 131-138)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch16",
+      "cross_references": [
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch10",
+          "score": 0.5036908052793458,
+          "base_score": 0.42281800879890985,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "handle",
+          "exceptions",
+          "error",
+          "exception",
+          "throw"
+        ],
+        "semantic": [],
+        "merged": [
+          "handle",
+          "exceptions",
+          "error",
+          "exception",
+          "throw"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "exception_you_that",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21721965721705078,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.278818+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 17,
+      "title": "Segment 17 (pages 139-146)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch17",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "null",
+          "p2",
+          "p1",
+          "map",
+          "code"
+        ],
+        "semantic": [],
+        "merged": [
+          "null",
+          "p2",
+          "p1",
+          "map",
+          "code"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "exception_you_that",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1980197590316735,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.279046+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 18,
+      "title": "Segment 18 (pages 147-155)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch18",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "tests",
+          "production code",
+          "code",
+          "production",
+          "test"
+        ],
+        "semantic": [],
+        "merged": [
+          "tests",
+          "production code",
+          "code",
+          "production",
+          "test"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2522589289791834,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:42:49.279285+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 19,
+      "title": "Segment 19 (pages 156-164)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch19",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "hw",
+          "test",
+          "tests",
+          "listing",
+          "test public"
+        ],
+        "semantic": [],
+        "merged": [
+          "hw",
+          "test",
+          "tests",
+          "listing",
+          "test public"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_test_function",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2951417053324869,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.279511+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 20,
+      "title": "Segment 20 (pages 165-172)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch20",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "classes",
+          "classes small",
+          "small",
+          "cohesive",
+          "class"
+        ],
+        "semantic": [],
+        "merged": [
+          "classes",
+          "classes small",
+          "small",
+          "cohesive",
+          "class"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "class_public_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30513318521040705,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.279737+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 21,
+      "title": "Segment 21 (pages 173-181)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch21",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "column",
+          "sql",
+          "string",
+          "columns",
+          "column columns"
+        ],
+        "semantic": [],
+        "merged": [
+          "column",
+          "sql",
+          "string",
+          "columns",
+          "column columns"
+        ]
+      },
+      "topic_id": 7,
+      "topic_name": "class_public_data",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2914775987738106,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.279973+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 22,
+      "title": "Segment 22 (pages 182-190)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch22",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "construction",
+          "public abstract",
+          "abstract",
+          "abstract void",
+          "abstract string"
+        ],
+        "semantic": [],
+        "merged": [
+          "construction",
+          "public abstract",
+          "abstract",
+          "abstract void",
+          "abstract string"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "code_the_clean",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1510960253042507,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.280197+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 23,
+      "title": "Segment 23 (pages 191-198)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch23",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "bank",
+          "persistence",
+          "proxy",
+          "spring",
+          "java"
+        ],
+        "semantic": [],
+        "merged": [
+          "bank",
+          "persistence",
+          "proxy",
+          "spring",
+          "java"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.22391119743840637,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:42:49.280442+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 24,
+      "title": "Segment 24 (pages 199-206)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch24",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "design",
+          "vacationpolicy",
+          "designs",
+          "rules",
+          "code"
+        ],
+        "semantic": [],
+        "merged": [
+          "design",
+          "vacationpolicy",
+          "designs",
+          "rules",
+          "code"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "code_the_clean",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.19102399101803094,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.280669+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 25,
+      "title": "Segment 25 (pages 207-214)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch25",
+      "cross_references": [
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch26",
+          "score": 0.5987938147707299,
+          "base_score": 0.5813230246178831,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch41",
+          "score": 0.5223929407398823,
+          "base_score": 0.5465808271590631,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "concurrency",
+          "concurrent",
+          "code",
+          "thread",
+          "related"
+        ],
+        "semantic": [],
+        "merged": [
+          "concurrency",
+          "concurrent",
+          "code",
+          "thread",
+          "related"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_thread_code",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24959066932040477,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.280900+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 26,
+      "title": "Segment 26 (pages 215-222)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch26",
+      "cross_references": [
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch25",
+          "score": 0.5987938147707299,
+          "base_score": 0.5813230246178831,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch39",
+          "score": 0.5586244375714453,
+          "base_score": 0.6069666552116681,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch41",
+          "score": 0.554421621632634,
+          "base_score": 0.5073693693877234,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch40",
+          "score": 0.5117619436578958,
+          "base_score": 0.4362699060964931,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "threaded code",
+          "threaded",
+          "thread",
+          "threads"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "threaded code",
+          "threaded",
+          "thread",
+          "threads"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_thread_code",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24426933610658025,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.281133+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 27,
+      "title": "Segment 27 (pages 223-230)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch27",
+      "cross_references": [
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch30",
+          "score": 0.7994578486296724,
+          "base_score": 0.7967154620018347,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch31",
+          "score": 0.6262737662927368,
+          "base_score": 0.7937896104878946,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch28",
+          "score": 0.6212100636186755,
+          "base_score": 0.7853501060311258,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "argsexception",
+          "marshalers",
+          "arg",
+          "string",
+          "errorcode"
+        ],
+        "semantic": [],
+        "merged": [
+          "argsexception",
+          "marshalers",
+          "arg",
+          "string",
+          "errorcode"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "string_argsexception_args",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31250895904997184,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.281390+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 28,
+      "title": "Segment 28 (pages 231-242)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch28",
+      "cross_references": [
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch30",
+          "score": 0.7134555533481219,
+          "base_score": 0.8650185148394625,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch31",
+          "score": 0.6227958237794287,
+          "base_score": 0.7879930396323811,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch27",
+          "score": 0.6212100636186755,
+          "base_score": 0.7853501060311258,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch29",
+          "score": 0.5134477580226526,
+          "base_score": 0.6890795967044211,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "character",
+          "argchar",
+          "private",
+          "args",
+          "boolean"
+        ],
+        "semantic": [],
+        "merged": [
+          "character",
+          "argchar",
+          "private",
+          "args",
+          "boolean"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "string_argsexception_args",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32876379909582826,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.281619+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 29,
+      "title": "Segment 29 (pages 243-254)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch29",
+      "cross_references": [
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch28",
+          "score": 0.5134477580226526,
+          "base_score": 0.6890795967044211,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "argchar",
+          "argumentmarshaler",
+          "private",
+          "char",
+          "argsexception"
+        ],
+        "semantic": [],
+        "merged": [
+          "argchar",
+          "argumentmarshaler",
+          "private",
+          "char",
+          "argsexception"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30416765995517503,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:42:49.281842+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 30,
+      "title": "Segment 30 (pages 255-277)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch30",
+      "cross_references": [
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch27",
+          "score": 0.7994578486296724,
+          "base_score": 0.7967154620018347,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch28",
+          "score": 0.7134555533481219,
+          "base_score": 0.8650185148394625,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch31",
+          "score": 0.6705217547720702,
+          "base_score": 0.8675362579534502,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "argsexception",
+          "args",
+          "errorcode",
+          "string",
+          "throws"
+        ],
+        "semantic": [],
+        "merged": [
+          "argsexception",
+          "args",
+          "errorcode",
+          "string",
+          "throws"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "string_argsexception_args",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3152280226048635,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.282123+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 31,
+      "title": "Segment 31 (pages 278-286)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch31",
+      "cross_references": [
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch30",
+          "score": 0.6705217547720702,
+          "base_score": 0.8675362579534502,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch27",
+          "score": 0.6262737662927368,
+          "base_score": 0.7937896104878946,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch28",
+          "score": 0.6227958237794287,
+          "base_score": 0.7879930396323811,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "failure",
+          "comparisoncompactor",
+          "string failure",
+          "new comparisoncompactor",
+          "failure new"
+        ],
+        "semantic": [],
+        "merged": [
+          "failure",
+          "comparisoncompactor",
+          "string failure",
+          "new comparisoncompactor",
+          "failure new"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "string_argsexception_args",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3081581406445628,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.282389+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 32,
+      "title": "Segment 32 (pages 287-295)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch32",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "expected",
+          "actual",
+          "suffixlength",
+          "length",
+          "prefixlength"
+        ],
+        "semantic": [],
+        "merged": [
+          "expected",
+          "actual",
+          "suffixlength",
+          "length",
+          "prefixlength"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "string_argsexception_args",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2238338072618494,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.282614+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 33,
+      "title": "Segment 33 (pages 296-305)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch33",
+      "cross_references": [
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch48",
+          "score": 0.5660051726870238,
+          "base_score": 0.4076276687640873,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch44",
+          "score": 0.5562434693265716,
+          "base_score": 0.6770724488776194,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch46",
+          "score": 0.50483130229063,
+          "base_score": 0.5913855038177166,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "daydate",
+          "line",
+          "_makedate",
+          "month",
+          "year"
+        ],
+        "semantic": [],
+        "merged": [
+          "daydate",
+          "line",
+          "_makedate",
+          "month",
+          "year"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "int_assertequals_serialdate",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3222002256945061,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.282841+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 34,
+      "title": "Segment 34 (pages 306-313)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch34",
+      "cross_references": [
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch47",
+          "score": 0.57161511868043,
+          "base_score": 0.5360251978007167,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch48",
+          "score": 0.5668399953396921,
+          "base_score": 0.5280666588994869,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "daydate",
+          "lines",
+          "index",
+          "day",
+          "method"
+        ],
+        "semantic": [],
+        "merged": [
+          "daydate",
+          "lines",
+          "index",
+          "day",
+          "method"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "int_assertequals_serialdate",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25386678018535686,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.283068+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 35,
+      "title": "Segment 35 (pages 314-322)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch35",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "derivatives",
+          "code",
+          "concepts",
+          "level",
+          "base"
+        ],
+        "semantic": [],
+        "merged": [
+          "derivatives",
+          "code",
+          "concepts",
+          "level",
+          "base"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30782414390710355,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:42:49.283303+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 36,
+      "title": "Segment 36 (pages 323-330)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch36",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "function",
+          "functions",
+          "hourlyreporter",
+          "variables",
+          "date"
+        ],
+        "semantic": [],
+        "merged": [
+          "function",
+          "functions",
+          "hourlyreporter",
+          "variables",
+          "date"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "function_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23967268885194584,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.283527+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 37,
+      "title": "Segment 37 (pages 331-338)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch37",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "abstraction",
+          "imports",
+          "levels",
+          "level",
+          "tag"
+        ],
+        "semantic": [],
+        "merged": [
+          "abstraction",
+          "imports",
+          "levels",
+          "level",
+          "tag"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "function_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21453425261569717,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.283817+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 38,
+      "title": "Segment 38 (pages 339-346)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch38",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "names",
+          "tenthsworked",
+          "money",
+          "straighttime",
+          "overtime"
+        ],
+        "semantic": [],
+        "merged": [
+          "names",
+          "tenthsworked",
+          "money",
+          "straighttime",
+          "overtime"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "int_assertequals_serialdate",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.22119987230320654,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.284054+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 39,
+      "title": "Segment 39 (pages 347-354)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch39",
+      "cross_references": [
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch42",
+          "score": 0.5858936115986296,
+          "base_score": 0.6524152785903086,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch26",
+          "score": 0.5586244375714453,
+          "base_score": 0.6069666552116681,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "threads",
+          "runnable",
+          "server",
+          "number possible",
+          "requestprocessor"
+        ],
+        "semantic": [],
+        "merged": [
+          "threads",
+          "runnable",
+          "server",
+          "number possible",
+          "requestprocessor"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_thread_code",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.19359267175283779,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.284349+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 40,
+      "title": "Segment 40 (pages 355-365)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch40",
+      "cross_references": [
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch26",
+          "score": 0.5117619436578958,
+          "base_score": 0.4362699060964931,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch41",
+          "score": 0.5006674825225458,
+          "base_score": 0.41777913753757634,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "thread",
+          "value",
+          "stack",
+          "threads",
+          "iterator"
+        ],
+        "semantic": [],
+        "merged": [
+          "thread",
+          "value",
+          "stack",
+          "threads",
+          "iterator"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_thread_code",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2640853248345636,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.284576+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 41,
+      "title": "Segment 41 (pages 366-373)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch41",
+      "cross_references": [
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch26",
+          "score": 0.554421621632634,
+          "base_score": 0.5073693693877234,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch25",
+          "score": 0.5223929407398823,
+          "base_score": 0.5465808271590631,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch40",
+          "score": 0.5006674825225458,
+          "base_score": 0.41777913753757634,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "thread",
+          "threads",
+          "resource",
+          "resources",
+          "broken"
+        ],
+        "semantic": [],
+        "merged": [
+          "thread",
+          "threads",
+          "resource",
+          "resources",
+          "broken"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_thread_code",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.12866396471803,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.284846+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 42,
+      "title": "Segment 42 (pages 374-381)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch42",
+      "cross_references": [
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch39",
+          "score": 0.5858936115986296,
+          "base_score": 0.6524152785903086,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "socket",
+          "message",
+          "printf server",
+          "server",
+          "printf"
+        ],
+        "semantic": [],
+        "merged": [
+          "socket",
+          "message",
+          "printf server",
+          "server",
+          "printf"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "the_thread_code",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2211814355498474,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.285088+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 43,
+      "title": "Segment 43 (pages 382-396)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch43",
+      "cross_references": [
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch48",
+          "score": 0.5514957854886561,
+          "base_score": 0.5950855684070193,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "serialdate",
+          "final int",
+          "final",
+          "date",
+          "int"
+        ],
+        "semantic": [],
+        "merged": [
+          "serialdate",
+          "final int",
+          "final",
+          "date",
+          "int"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "int_assertequals_serialdate",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2001577385437423,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.285342+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 44,
+      "title": "Segment 44 (pages 397-404)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch44",
+      "cross_references": [
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch46",
+          "score": 0.6066869580480736,
+          "base_score": 0.594478263413456,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch33",
+          "score": 0.5562434693265716,
+          "base_score": 0.6770724488776194,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch45",
+          "score": 0.5189454342481179,
+          "base_score": 0.5408349830061223,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "serialdate",
+          "final",
+          "monthconstants",
+          "assertequals",
+          "constant"
+        ],
+        "semantic": [],
+        "merged": [
+          "serialdate",
+          "final",
+          "monthconstants",
+          "assertequals",
+          "constant"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "int_assertequals_serialdate",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2935424563355941,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.285586+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 45,
+      "title": "Segment 45 (pages 405-412)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch45",
+      "cross_references": [
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch44",
+          "score": 0.5189454342481179,
+          "base_score": 0.5408349830061223,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "2006",
+          "assertequals",
+          "april 2006",
+          "april",
+          "2006 getnearestdayofweek"
+        ],
+        "semantic": [],
+        "merged": [
+          "2006",
+          "assertequals",
+          "april 2006",
+          "april",
+          "2006 getnearestdayofweek"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "int_assertequals_serialdate",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3142503970689322,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.285866+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 46,
+      "title": "Segment 46 (pages 413-420)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch46",
+      "cross_references": [
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch44",
+          "score": 0.6066869580480736,
+          "base_score": 0.594478263413456,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch33",
+          "score": 0.50483130229063,
+          "base_score": 0.5913855038177166,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "serialdate",
+          "serial",
+          "final",
+          "specified",
+          "toserial"
+        ],
+        "semantic": [],
+        "merged": [
+          "serialdate",
+          "serial",
+          "final",
+          "specified",
+          "toserial"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "int_assertequals_serialdate",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2697652363414816,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.286114+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 47,
+      "title": "Segment 47 (pages 421-429)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch47",
+      "cross_references": [
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch48",
+          "score": 0.6346968916325862,
+          "base_score": 0.5221138670066914,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch34",
+          "score": 0.57161511868043,
+          "base_score": 0.5360251978007167,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "day",
+          "index",
+          "int",
+          "toint",
+          "month"
+        ],
+        "semantic": [],
+        "merged": [
+          "day",
+          "index",
+          "int",
+          "toint",
+          "month"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "int_assertequals_serialdate",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2422610097783342,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.286364+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 48,
+      "title": "Segment 48 (pages 430-438)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch48",
+      "cross_references": [
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch47",
+          "score": 0.6346968916325862,
+          "base_score": 0.5221138670066914,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch34",
+          "score": 0.5668399953396921,
+          "base_score": 0.5280666588994869,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch33",
+          "score": 0.5660051726870238,
+          "base_score": 0.4076276687640873,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch43",
+          "score": 0.5514957854886561,
+          "base_score": 0.5950855684070193,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "int",
+          "year",
+          "month",
+          "day",
+          "daydate"
+        ],
+        "semantic": [],
+        "merged": [
+          "int",
+          "year",
+          "month",
+          "day",
+          "daydate"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "int_assertequals_serialdate",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2521203206585514,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.286591+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 49,
+      "title": "Segment 49 (pages 439-446)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch49",
+      "cross_references": [
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch50",
+          "score": 0.5713943860122955,
+          "base_score": 0.6282499026130851,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tests",
+          "client",
+          "code",
+          "290",
+          "291"
+        ],
+        "semantic": [],
+        "merged": [
+          "tests",
+          "client",
+          "code",
+          "290",
+          "291"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "function_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3104056965685403,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.286824+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 50,
+      "title": "Segment 50 (pages 447-454)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch50",
+      "cross_references": [
+        {
+          "target": "Clean Code A Handbook of Agile Software Craftsmanship:ch49",
+          "score": 0.5713943860122955,
+          "base_score": 0.6282499026130851,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "48",
+          "programming",
+          "19",
+          "288"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "48",
+          "programming",
+          "19",
+          "288"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "function_the_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34983732209385027,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:42:49.287047+00:00"
+      }
+    },
+    {
+      "book": "Clean Code A Handbook of Agile Software Craftsmanship",
+      "chapter": 51,
+      "title": "Segment 51 (pages 455-462)",
+      "chapter_id": "Clean Code A Handbook of Agile Software Craftsmanship:ch51",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "319",
+          "132",
+          "spring",
+          "268"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "319",
+          "132",
+          "spring",
+          "268"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.341708145163247,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:42:49.287280+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

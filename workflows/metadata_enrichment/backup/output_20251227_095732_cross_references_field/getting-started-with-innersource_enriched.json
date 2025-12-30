@@ -1,0 +1,125 @@
+{
+  "book": {
+    "title": "getting-started-with-innersource"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:01:21.852568",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "getting-started-with-innersource",
+      "chapter": 1,
+      "title": "Segment 1 (pages 3-11)",
+      "chapter_id": "getting-started-with-innersource:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "projects",
+          "source projects",
+          "work",
+          "development",
+          "major"
+        ],
+        "semantic": [],
+        "merged": [
+          "projects",
+          "source projects",
+          "work",
+          "development",
+          "major"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "source_open_projects",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7724203008495255,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:21.825773+00:00"
+      }
+    },
+    {
+      "book": "getting-started-with-innersource",
+      "chapter": 2,
+      "title": "Segment 2 (pages 12-19)",
+      "chapter_id": "getting-started-with-innersource:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "js",
+          "node js",
+          "node",
+          "github",
+          "tools"
+        ],
+        "semantic": [],
+        "merged": [
+          "js",
+          "node js",
+          "node",
+          "github",
+          "tools"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "open_source_js",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7581624716540348,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:21.825813+00:00"
+      }
+    },
+    {
+      "book": "getting-started-with-innersource",
+      "chapter": 3,
+      "title": "Segment 3 (pages 20-22)",
+      "chapter_id": "getting-started-with-innersource:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "members",
+          "legal",
+          "contributions",
+          "incorporated",
+          "dealing"
+        ],
+        "semantic": [],
+        "merged": [
+          "members",
+          "legal",
+          "contributions",
+          "incorporated",
+          "dealing"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "code_team_contributions",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7366721195681171,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:21.825830+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

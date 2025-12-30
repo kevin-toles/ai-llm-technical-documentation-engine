@@ -1,0 +1,3302 @@
+{
+  "book": {
+    "title": "The Site Reliability Workbook - Betsy Beyer"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:59:33.301953",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-9)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch1",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch5",
+          "score": 0.6128749491836142,
+          "base_score": 0.771458248639357,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch6",
+          "score": 0.5777973426658234,
+          "base_score": 0.6389214970356315,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch23",
+          "score": 0.5545088755124047,
+          "base_score": 0.6741814591873412,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch19",
+          "score": 0.552348059598427,
+          "base_score": 0.6705800993307116,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch44",
+          "score": 0.5262555355948906,
+          "base_score": 0.6270925593248177,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "workbook",
+          "reliability",
+          "reliability workbook",
+          "practical",
+          "site reliability"
+        ],
+        "semantic": [],
+        "merged": [
+          "workbook",
+          "reliability",
+          "reliability workbook",
+          "practical",
+          "site reliability"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4400214466835015,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.278439+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 2,
+      "title": "Segment 2 (pages 10-17)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch2",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch15",
+          "score": 0.5619207903288383,
+          "base_score": 0.6124605764739898,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch53",
+          "score": 0.5080448422565136,
+          "base_score": 0.5967414037608559,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "toil",
+          "phase",
+          "101",
+          "103",
+          "375"
+        ],
+        "semantic": [],
+        "merged": [
+          "toil",
+          "phase",
+          "101",
+          "103",
+          "375"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3815937795808459,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.278750+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 3,
+      "title": "Segment 3 (pages 18-27)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch3",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch50",
+          "score": 0.5939656684400332,
+          "base_score": 0.6658687066593146,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch55",
+          "score": 0.554026186940158,
+          "base_score": 0.5993029041595226,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch44",
+          "score": 0.5494156292301905,
+          "base_score": 0.5916186413095768,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch45",
+          "score": 0.5388320958485426,
+          "base_score": 0.5739794190068304,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch48",
+          "score": 0.5370034285141193,
+          "base_score": 0.5709316401161247,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sre",
+          "book",
+          "sre book",
+          "427",
+          "424"
+        ],
+        "semantic": [],
+        "merged": [
+          "sre",
+          "book",
+          "sre book",
+          "427",
+          "424"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38090049777644824,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.279104+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 4,
+      "title": "Segment 4 (pages 28-35)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "alex",
+          "dave",
+          "press",
+          "richard",
+          "matey"
+        ],
+        "semantic": [],
+        "merged": [
+          "alex",
+          "dave",
+          "press",
+          "richard",
+          "matey"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.08096311359141042,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.279419+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 5,
+      "title": "Segment 5 (pages 36-44)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch5",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch48",
+          "score": 0.7329600146907038,
+          "base_score": 0.6858857387702206,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch44",
+          "score": 0.6940548572718255,
+          "base_score": 0.7400914287863758,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch1",
+          "score": 0.6128749491836142,
+          "base_score": 0.771458248639357,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch19",
+          "score": 0.6043965621590233,
+          "base_score": 0.6832535295242981,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch20",
+          "score": 0.5974282658937417,
+          "base_score": 0.6716397024154953,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "devops",
+          "sre",
+          "devops sre",
+          "product",
+          "product development"
+        ],
+        "semantic": [],
+        "merged": [
+          "devops",
+          "sre",
+          "devops sre",
+          "product",
+          "product development"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4032931188623417,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.279697+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 6,
+      "title": "Segment 6 (pages 45-54)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch6",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch8",
+          "score": 0.6624530343973353,
+          "base_score": 0.6874217239955587,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch10",
+          "score": 0.6616125314079092,
+          "base_score": 0.6860208856798488,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch9",
+          "score": 0.6490355658442437,
+          "base_score": 0.5460116573594538,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch7",
+          "score": 0.5969357853531185,
+          "base_score": 0.6708189015144569,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch1",
+          "score": 0.5777973426658234,
+          "base_score": 0.6389214970356315,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "slos",
+          "service",
+          "reliability",
+          "slo",
+          "level reliability"
+        ],
+        "semantic": [],
+        "merged": [
+          "slos",
+          "service",
+          "reliability",
+          "slo",
+          "level reliability"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42977429911781156,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.279973+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 7,
+      "title": "Segment 7 (pages 55-67)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch7",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch8",
+          "score": 0.7032768614956358,
+          "base_score": 0.47768365804828194,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch6",
+          "score": 0.5969357853531185,
+          "base_score": 0.6708189015144569,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch13",
+          "score": 0.5399564749174318,
+          "base_score": 0.4832607915290531,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch10",
+          "score": 0.5267674542083184,
+          "base_score": 0.627945757013864,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch12",
+          "score": 0.5024405922775442,
+          "base_score": 0.5133269130551663,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "budget",
+          "error budget",
+          "slo",
+          "error",
+          "slis"
+        ],
+        "semantic": [],
+        "merged": [
+          "budget",
+          "error budget",
+          "slo",
+          "error",
+          "slis"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36802590744028557,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.280227+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 8,
+      "title": "Segment 8 (pages 68-75)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch8",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch7",
+          "score": 0.7032768614956358,
+          "base_score": 0.47768365804828194,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch6",
+          "score": 0.6624530343973353,
+          "base_score": 0.6874217239955587,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch13",
+          "score": 0.6074514519409995,
+          "base_score": 0.5957524199016658,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch10",
+          "score": 0.5527339106002449,
+          "base_score": 0.5971491102596674,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch12",
+          "score": 0.5425975381226634,
+          "base_score": 0.5802551561303649,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "slo",
+          "error",
+          "slos",
+          "budget",
+          "error budget"
+        ],
+        "semantic": [],
+        "merged": [
+          "slo",
+          "error",
+          "slos",
+          "budget",
+          "error budget"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3551350885686588,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.280477+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 9,
+      "title": "Segment 9 (pages 76-83)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch9",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch6",
+          "score": 0.6490355658442437,
+          "base_score": 0.5460116573594538,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch10",
+          "score": 0.6004387716782758,
+          "base_score": 0.5840646194637928,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch55",
+          "score": 0.5743980890912271,
+          "base_score": 0.7073301484853787,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch8",
+          "score": 0.5380940914934234,
+          "base_score": 0.4801568191557057,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch54",
+          "score": 0.5002608075084677,
+          "base_score": 0.5837680125141128,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "evernote",
+          "slos",
+          "service",
+          "slo",
+          "quality service"
+        ],
+        "semantic": [],
+        "merged": [
+          "evernote",
+          "slos",
+          "service",
+          "slo",
+          "quality service"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.404653332722105,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.280747+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 10,
+      "title": "Segment 10 (pages 84-91)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch10",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch6",
+          "score": 0.6616125314079092,
+          "base_score": 0.6860208856798488,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch9",
+          "score": 0.6004387716782758,
+          "base_score": 0.5840646194637928,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch8",
+          "score": 0.5527339106002449,
+          "base_score": 0.5971491102596674,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch7",
+          "score": 0.5267674542083184,
+          "base_score": 0.627945757013864,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch55",
+          "score": 0.5183334191090626,
+          "base_score": 0.6138890318484376,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "valet",
+          "valet data",
+          "slos",
+          "service",
+          "data"
+        ],
+        "semantic": [],
+        "merged": [
+          "valet",
+          "valet data",
+          "slos",
+          "service",
+          "data"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3998488868734781,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.280993+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 11,
+      "title": "Segment 11 (pages 92-99)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch11",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch12",
+          "score": 0.5095763349968496,
+          "base_score": 0.599293891661416,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "logs",
+          "data",
+          "metrics",
+          "monitoring",
+          "based"
+        ],
+        "semantic": [],
+        "merged": [
+          "logs",
+          "data",
+          "metrics",
+          "monitoring",
+          "based"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31143019900207713,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.281235+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 12,
+      "title": "Segment 12 (pages 100-111)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch12",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch13",
+          "score": 0.5898378872516726,
+          "base_score": 0.5663964787527878,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch8",
+          "score": 0.5425975381226634,
+          "base_score": 0.5802551561303649,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch22",
+          "score": 0.5371489067241141,
+          "base_score": 0.6452481778735235,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch14",
+          "score": 0.5316255111516834,
+          "base_score": 0.636042518586139,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch53",
+          "score": 0.5226988941672046,
+          "base_score": 0.6211648236120076,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "alerting",
+          "alert",
+          "error rate",
+          "error",
+          "rate"
+        ],
+        "semantic": [],
+        "merged": [
+          "alerting",
+          "alert",
+          "error rate",
+          "error",
+          "rate"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36954322303280657,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.281480+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 13,
+      "title": "Segment 13 (pages 112-120)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch13",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch8",
+          "score": 0.6074514519409995,
+          "base_score": 0.5957524199016658,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch12",
+          "score": 0.5898378872516726,
+          "base_score": 0.5663964787527878,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch7",
+          "score": 0.5399564749174318,
+          "base_score": 0.4832607915290531,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "burn",
+          "burn rate",
+          "rate",
+          "budget",
+          "error"
+        ],
+        "semantic": [],
+        "merged": [
+          "burn",
+          "burn rate",
+          "rate",
+          "budget",
+          "error"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2879782671146079,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.281735+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 14,
+      "title": "Segment 14 (pages 121-129)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch14",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch15",
+          "score": 0.5536441908622438,
+          "base_score": 0.38702603238945404,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch12",
+          "score": 0.5316255111516834,
+          "base_score": 0.636042518586139,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "toil",
+          "time",
+          "toil reduction",
+          "reduction",
+          "team"
+        ],
+        "semantic": [],
+        "merged": [
+          "toil",
+          "time",
+          "toil reduction",
+          "reduction",
+          "team"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34878177443462244,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.281980+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 15,
+      "title": "Segment 15 (pages 130-137)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch15",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch2",
+          "score": 0.5619207903288383,
+          "base_score": 0.6124605764739898,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch14",
+          "score": 0.5536441908622438,
+          "base_score": 0.38702603238945404,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "toil",
+          "toil reduction",
+          "toil management",
+          "reduction",
+          "management strategies"
+        ],
+        "semantic": [],
+        "merged": [
+          "toil",
+          "toil reduction",
+          "toil management",
+          "reduction",
+          "management strategies"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38153372494668913,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.282229+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 16,
+      "title": "Segment 16 (pages 138-147)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch16",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch17",
+          "score": 0.5845273042018848,
+          "base_score": 0.650138099595734,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "repair",
+          "card",
+          "line",
+          "line card",
+          "datacenter"
+        ],
+        "semantic": [],
+        "merged": [
+          "repair",
+          "card",
+          "line",
+          "line card",
+          "datacenter"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.30162376585676715,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.282479+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 17,
+      "title": "Segment 17 (pages 148-155)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch17",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch16",
+          "score": 0.5845273042018848,
+          "base_score": 0.650138099595734,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "automation",
+          "repair",
+          "memory",
+          "repair automation",
+          "memory errors"
+        ],
+        "semantic": [],
+        "merged": [
+          "automation",
+          "repair",
+          "memory",
+          "repair automation",
+          "memory errors"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32095855399503054,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.282742+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 18,
+      "title": "Segment 18 (pages 156-164)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch18",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "users",
+          "toil",
+          "moira",
+          "decommissioning",
+          "archiving"
+        ],
+        "semantic": [],
+        "merged": [
+          "users",
+          "toil",
+          "moira",
+          "decommissioning",
+          "archiving"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3062404244664749,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.282994+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 19,
+      "title": "Segment 19 (pages 165-174)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch19",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch44",
+          "score": 0.613452641917056,
+          "base_score": 0.6983469957876858,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch5",
+          "score": 0.6043965621590233,
+          "base_score": 0.6832535295242981,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch47",
+          "score": 0.5969546685869479,
+          "base_score": 0.6708503735708391,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch45",
+          "score": 0.5954236517962668,
+          "base_score": 0.668298678919704,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch51",
+          "score": 0.5919665967738919,
+          "base_score": 0.662536920549079,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sres",
+          "simplicity",
+          "sre",
+          "platform",
+          "teams"
+        ],
+        "semantic": [],
+        "merged": [
+          "sres",
+          "simplicity",
+          "sre",
+          "platform",
+          "teams"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43718595943663224,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.283250+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 20,
+      "title": "Segment 20 (pages 175-184)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch20",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch45",
+          "score": 0.7363481728664516,
+          "base_score": 0.6915326690631336,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch47",
+          "score": 0.7324373929134521,
+          "base_score": 0.685014702474801,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch48",
+          "score": 0.7165558199895441,
+          "base_score": 0.6585454142682877,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch44",
+          "score": 0.6711361198230525,
+          "base_score": 0.701893533038421,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch46",
+          "score": 0.6555501634578342,
+          "base_score": 0.6759169390963904,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sre",
+          "team",
+          "sre team",
+          "mountain view",
+          "mountain"
+        ],
+        "semantic": [],
+        "merged": [
+          "sre",
+          "team",
+          "sre team",
+          "mountain view",
+          "mountain"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4644884002096256,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.283505+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 21,
+      "title": "Segment 21 (pages 185-193)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch21",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch20",
+          "score": 0.599701036240782,
+          "base_score": 0.675427652993896,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch23",
+          "score": 0.5976977141500484,
+          "base_score": 0.6720887828426731,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch47",
+          "score": 0.5672428072040494,
+          "base_score": 0.6213306045993415,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch22",
+          "score": 0.5556571075078138,
+          "base_score": 0.6020211051056157,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch43",
+          "score": 0.5550007294236893,
+          "base_score": 0.6009271416320747,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "bugs",
+          "team",
+          "new bugs",
+          "production",
+          "pager"
+        ],
+        "semantic": [],
+        "merged": [
+          "bugs",
+          "team",
+          "new bugs",
+          "production",
+          "pager"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42476561726778306,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.283765+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 22,
+      "title": "Segment 22 (pages 194-201)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch22",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch21",
+          "score": 0.5556571075078138,
+          "base_score": 0.6020211051056157,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch12",
+          "score": 0.5371489067241141,
+          "base_score": 0.6452481778735235,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch23",
+          "score": 0.5348964927649492,
+          "base_score": 0.6414941546082488,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "bug",
+          "bugs",
+          "paging",
+          "alerts",
+          "pages"
+        ],
+        "semantic": [],
+        "merged": [
+          "bug",
+          "bugs",
+          "paging",
+          "alerts",
+          "pages"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3910167168136085,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.284008+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 23,
+      "title": "Segment 23 (pages 202-211)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch23",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch25",
+          "score": 0.6940562997181398,
+          "base_score": 0.6210462138159472,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch21",
+          "score": 0.5976977141500484,
+          "base_score": 0.6720887828426731,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch20",
+          "score": 0.5825637825108076,
+          "base_score": 0.6468655634439388,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch24",
+          "score": 0.5689218724558898,
+          "base_score": 0.6241290466857421,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch43",
+          "score": 0.5669683805154804,
+          "base_score": 0.6208732267850597,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "incident",
+          "incident response",
+          "response",
+          "team",
+          "ol"
+        ],
+        "semantic": [],
+        "merged": [
+          "incident",
+          "incident response",
+          "response",
+          "team",
+          "ol"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4367453504280416,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.284281+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 24,
+      "title": "Segment 24 (pages 212-219)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch24",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch25",
+          "score": 0.5758543782570636,
+          "base_score": 0.635683223021032,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch23",
+          "score": 0.5689218724558898,
+          "base_score": 0.6241290466857421,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "incident",
+          "root",
+          "root cause",
+          "zara",
+          "cause"
+        ],
+        "semantic": [],
+        "merged": [
+          "incident",
+          "root",
+          "root cause",
+          "zara",
+          "cause"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3196241754858079,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.284522+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 25,
+      "title": "Segment 25 (pages 220-227)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch25",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch23",
+          "score": 0.6940562997181398,
+          "base_score": 0.6210462138159472,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch24",
+          "score": 0.5758543782570636,
+          "base_score": 0.635683223021032,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch21",
+          "score": 0.5496351188037378,
+          "base_score": 0.666058531339563,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "incident",
+          "incident response",
+          "response",
+          "pagerduty",
+          "response training"
+        ],
+        "semantic": [],
+        "merged": [
+          "incident",
+          "incident response",
+          "response",
+          "pagerduty",
+          "response training"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34224000870660604,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.284790+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 26,
+      "title": "Segment 26 (pages 228-235)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch26",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch27",
+          "score": 0.6568258784191872,
+          "base_score": 0.6780431306986452,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "postmortem",
+          "satellite",
+          "satellite machines",
+          "satellites",
+          "diskerase"
+        ],
+        "semantic": [],
+        "merged": [
+          "postmortem",
+          "satellite",
+          "satellite machines",
+          "satellites",
+          "diskerase"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2915694320521935,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.285036+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 27,
+      "title": "Segment 27 (pages 236-243)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch27",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch26",
+          "score": 0.6568258784191872,
+          "base_score": 0.6780431306986452,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "satellite",
+          "redacted",
+          "satellites",
+          "value redacted",
+          "value"
+        ],
+        "semantic": [],
+        "merged": [
+          "satellite",
+          "redacted",
+          "satellites",
+          "value redacted",
+          "value"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31716867463604353,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.285282+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 28,
+      "title": "Segment 28 (pages 244-251)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch28",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch29",
+          "score": 0.5041069203141613,
+          "base_score": 0.5161041264495281,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "postmortem",
+          "postmortem culture",
+          "postmortems",
+          "culture",
+          "culture learning"
+        ],
+        "semantic": [],
+        "merged": [
+          "postmortem",
+          "postmortem culture",
+          "postmortems",
+          "culture",
+          "culture learning"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25614244839913514,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.285529+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 29,
+      "title": "Segment 29 (pages 252-260)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch29",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch28",
+          "score": 0.5041069203141613,
+          "base_score": 0.5161041264495281,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "postmortem",
+          "maglev",
+          "templates",
+          "packet",
+          "load"
+        ],
+        "semantic": [],
+        "merged": [
+          "postmortem",
+          "maglev",
+          "templates",
+          "packet",
+          "load"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25203117924057533,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.285778+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 30,
+      "title": "Segment 30 (pages 261-270)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch30",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch54",
+          "score": 0.528608246303943,
+          "base_score": 0.6310137438399049,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "gfe",
+          "backend",
+          "backends",
+          "niantic",
+          "load"
+        ],
+        "semantic": [],
+        "merged": [
+          "gfe",
+          "backend",
+          "backends",
+          "niantic",
+          "load"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2868820203286395,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.286018+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 31,
+      "title": "Segment 31 (pages 271-279)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch31",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "load",
+          "load shedding",
+          "shedding",
+          "autoscaling",
+          "load balancing"
+        ],
+        "semantic": [],
+        "merged": [
+          "load",
+          "load shedding",
+          "shedding",
+          "autoscaling",
+          "load balancing"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.22730983781666578,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.286259+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 32,
+      "title": "Segment 32 (pages 280-288)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch32",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "click",
+          "query",
+          "log",
+          "query_id",
+          "logs"
+        ],
+        "semantic": [],
+        "merged": [
+          "click",
+          "query",
+          "log",
+          "query_id",
+          "logs"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.17146378155782935,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.286499+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 33,
+      "title": "Segment 33 (pages 289-297)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch33",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch34",
+          "score": 0.6690375170118266,
+          "base_score": 0.19839586168637757,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch35",
+          "score": 0.5708863322625369,
+          "base_score": 0.41576293472327586,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch53",
+          "score": 0.5382251035318071,
+          "base_score": 0.3613275535053927,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data",
+          "pipeline",
+          "data processing",
+          "pipelines",
+          "processing"
+        ],
+        "semantic": [],
+        "merged": [
+          "data",
+          "pipeline",
+          "data processing",
+          "pipelines",
+          "processing"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.249965801088603,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.286855+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 34,
+      "title": "Segment 34 (pages 298-306)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch34",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch33",
+          "score": 0.6690375170118266,
+          "base_score": 0.19839586168637757,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch35",
+          "score": 0.5824763137447556,
+          "base_score": 0.4350795705269737,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch53",
+          "score": 0.5263496026615552,
+          "base_score": 0.3415350520549729,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch36",
+          "score": 0.5014586017663679,
+          "base_score": 0.4190976696106132,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pipeline",
+          "data",
+          "pipelines",
+          "processing",
+          "data processing"
+        ],
+        "semantic": [],
+        "merged": [
+          "pipeline",
+          "data",
+          "pipelines",
+          "processing",
+          "data processing"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24879467298415153,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.287147+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 35,
+      "title": "Segment 35 (pages 307-314)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch35",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch36",
+          "score": 0.6055523774640286,
+          "base_score": 0.5925872957733811,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch34",
+          "score": 0.5824763137447556,
+          "base_score": 0.4350795705269737,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch33",
+          "score": 0.5708863322625369,
+          "base_score": 0.41576293472327586,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pipeline",
+          "pipelines",
+          "data",
+          "pipeline requirements",
+          "13"
+        ],
+        "semantic": [],
+        "merged": [
+          "pipeline",
+          "pipelines",
+          "data",
+          "pipeline requirements",
+          "13"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.296981906691022,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.287405+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 36,
+      "title": "Segment 36 (pages 315-326)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch36",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch35",
+          "score": 0.6055523774640286,
+          "base_score": 0.5925872957733811,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch53",
+          "score": 0.5718460200250026,
+          "base_score": 0.6290026259675969,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch34",
+          "score": 0.5014586017663679,
+          "base_score": 0.4190976696106132,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "delivery",
+          "event",
+          "data",
+          "event delivery",
+          "pipeline"
+        ],
+        "semantic": [],
+        "merged": [
+          "delivery",
+          "event",
+          "data",
+          "event delivery",
+          "pipeline"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3529646857273175,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.287761+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 37,
+      "title": "Segment 37 (pages 327-335)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch37",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "configuration",
+          "mechanics",
+          "cpu usage",
+          "autoscaler",
+          "component"
+        ],
+        "semantic": [],
+        "merged": [
+          "configuration",
+          "mechanics",
+          "cpu usage",
+          "autoscaler",
+          "component"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35359375128034287,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.288034+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 38,
+      "title": "Segment 38 (pages 336-345)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch38",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch39",
+          "score": 0.549616081069522,
+          "base_score": 0.5919527277084625,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "configuration",
+          "user",
+          "questions",
+          "users",
+          "centric"
+        ],
+        "semantic": [],
+        "merged": [
+          "configuration",
+          "user",
+          "questions",
+          "users",
+          "centric"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "configuration_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23687150602206927,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.288302+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 39,
+      "title": "Segment 39 (pages 346-353)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch39",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch40",
+          "score": 0.5867661409687628,
+          "base_score": 0.5612769016146048,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch38",
+          "score": 0.549616081069522,
+          "base_score": 0.5919527277084625,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch41",
+          "score": 0.501561511888343,
+          "base_score": 0.5859358531472383,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "configuration",
+          "language",
+          "configuration language",
+          "languages",
+          "config"
+        ],
+        "semantic": [],
+        "merged": [
+          "configuration",
+          "language",
+          "configuration language",
+          "languages",
+          "config"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "configuration_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.29244237055373934,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.288551+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 40,
+      "title": "Segment 40 (pages 354-361)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch40",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch39",
+          "score": 0.5867661409687628,
+          "base_score": 0.5612769016146048,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch41",
+          "score": 0.5204716517412549,
+          "base_score": 0.5433786788280174,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "templates",
+          "configuration",
+          "jsonnet",
+          "config",
+          "yaml"
+        ],
+        "semantic": [],
+        "merged": [
+          "templates",
+          "configuration",
+          "jsonnet",
+          "config",
+          "yaml"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "configuration_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.19379453159468712,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.288822+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 41,
+      "title": "Segment 41 (pages 362-371)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch41",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch40",
+          "score": 0.5204716517412549,
+          "base_score": 0.5433786788280174,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch39",
+          "score": 0.501561511888343,
+          "base_score": 0.5859358531472383,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "jsonnet",
+          "release",
+          "canary",
+          "releases",
+          "canarying"
+        ],
+        "semantic": [],
+        "merged": [
+          "jsonnet",
+          "release",
+          "canary",
+          "releases",
+          "canarying"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "configuration_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21147057579451006,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.289068+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 42,
+      "title": "Segment 42 (pages 372-384)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch42",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "canary",
+          "deployment",
+          "canary deployment",
+          "canary process",
+          "population"
+        ],
+        "semantic": [],
+        "merged": [
+          "canary",
+          "deployment",
+          "canary deployment",
+          "canary process",
+          "population"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31034193320258957,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.289311+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 43,
+      "title": "Segment 43 (pages 385-402)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch43",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch20",
+          "score": 0.574299217654139,
+          "base_score": 0.6330912886828244,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch23",
+          "score": 0.5669683805154804,
+          "base_score": 0.6208732267850597,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch21",
+          "score": 0.5550007294236893,
+          "base_score": 0.6009271416320747,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch45",
+          "score": 0.5337150743835126,
+          "base_score": 0.565451049898447,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch46",
+          "score": 0.5264192956669985,
+          "base_score": 0.5532914187042568,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "team",
+          "overload",
+          "team members",
+          "members",
+          "work"
+        ],
+        "semantic": [],
+        "merged": [
+          "team",
+          "overload",
+          "team members",
+          "members",
+          "work"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3461298009517533,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.289559+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 44,
+      "title": "Segment 44 (pages 403-410)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch44",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch48",
+          "score": 0.7904510475065981,
+          "base_score": 0.7817041267967112,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch45",
+          "score": 0.7218460238672993,
+          "base_score": 0.7864100397788322,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch5",
+          "score": 0.6940548572718255,
+          "base_score": 0.7400914287863758,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch47",
+          "score": 0.6862387605678557,
+          "base_score": 0.7270646009464262,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch20",
+          "score": 0.6711361198230525,
+          "base_score": 0.701893533038421,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sre",
+          "team",
+          "engagement",
+          "developer",
+          "product"
+        ],
+        "semantic": [],
+        "merged": [
+          "sre",
+          "team",
+          "engagement",
+          "developer",
+          "product"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43536449285914847,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.289838+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 45,
+      "title": "Segment 45 (pages 411-419)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch45",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch47",
+          "score": 0.7750626183486983,
+          "base_score": 0.756056744866878,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch48",
+          "score": 0.7588815318983683,
+          "base_score": 0.7290882674496613,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch20",
+          "score": 0.7363481728664516,
+          "base_score": 0.6915326690631336,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch44",
+          "score": 0.7218460238672993,
+          "base_score": 0.7864100397788322,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch46",
+          "score": 0.664076093995922,
+          "base_score": 0.6901268233265367,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sre",
+          "team",
+          "abuse",
+          "cat",
+          "sre team"
+        ],
+        "semantic": [],
+        "merged": [
+          "sre",
+          "team",
+          "abuse",
+          "cat",
+          "sre team"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43360655928268516,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.290282+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 46,
+      "title": "Segment 46 (pages 420-428)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch46",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch48",
+          "score": 0.6695048662223329,
+          "base_score": 0.6991747770372214,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch44",
+          "score": 0.6683180221056724,
+          "base_score": 0.697196703509454,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch45",
+          "score": 0.664076093995922,
+          "base_score": 0.6901268233265367,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch49",
+          "score": 0.6601640330499026,
+          "base_score": 0.6836067217498376,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch20",
+          "score": 0.6555501634578342,
+          "base_score": 0.6759169390963904,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sre",
+          "customer",
+          "customers",
+          "slos",
+          "team"
+        ],
+        "semantic": [],
+        "merged": [
+          "sre",
+          "customer",
+          "customers",
+          "slos",
+          "team"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37488758466138067,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.290554+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 47,
+      "title": "Segment 47 (pages 429-438)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch47",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch45",
+          "score": 0.7750626183486983,
+          "base_score": 0.756056744866878,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch48",
+          "score": 0.7441486174081233,
+          "base_score": 0.7045334099659198,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch20",
+          "score": 0.7324373929134521,
+          "base_score": 0.685014702474801,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch44",
+          "score": 0.6862387605678557,
+          "base_score": 0.7270646009464262,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch46",
+          "score": 0.6422002923122707,
+          "base_score": 0.6536671538537846,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sre",
+          "team",
+          "sre team",
+          "organization",
+          "lifecycles"
+        ],
+        "semantic": [],
+        "merged": [
+          "sre",
+          "team",
+          "sre team",
+          "organization",
+          "lifecycles"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4404599032403123,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.290825+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 48,
+      "title": "Segment 48 (pages 439-446)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch48",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch44",
+          "score": 0.7904510475065981,
+          "base_score": 0.7817041267967112,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch45",
+          "score": 0.7588815318983683,
+          "base_score": 0.7290882674496613,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch49",
+          "score": 0.7530709438144935,
+          "base_score": 0.7194039539765367,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch47",
+          "score": 0.7441486174081233,
+          "base_score": 0.7045334099659198,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch5",
+          "score": 0.7329600146907038,
+          "base_score": 0.6858857387702206,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "team",
+          "sre",
+          "sre team",
+          "product development",
+          "product"
+        ],
+        "semantic": [],
+        "merged": [
+          "team",
+          "sre",
+          "sre team",
+          "product development",
+          "product"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38287120414935666,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.291088+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 49,
+      "title": "Segment 49 (pages 447-454)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch49",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch48",
+          "score": 0.7530709438144935,
+          "base_score": 0.7194039539765367,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch46",
+          "score": 0.6601640330499026,
+          "base_score": 0.6836067217498376,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch47",
+          "score": 0.6232746873743857,
+          "base_score": 0.6221244789573095,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch45",
+          "score": 0.6189855124494519,
+          "base_score": 0.61497585408242,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch44",
+          "score": 0.6184958485433547,
+          "base_score": 0.614159747572258,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sre",
+          "team",
+          "office",
+          "teams",
+          "product development"
+        ],
+        "semantic": [],
+        "merged": [
+          "sre",
+          "team",
+          "office",
+          "teams",
+          "product development"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3027639632129246,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.291345+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 50,
+      "title": "Segment 50 (pages 455-463)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch50",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch48",
+          "score": 0.6039624803755631,
+          "base_score": 0.6825300598851978,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch3",
+          "score": 0.5939656684400332,
+          "base_score": 0.6658687066593146,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch44",
+          "score": 0.5685693256013183,
+          "base_score": 0.6235414685947898,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch46",
+          "score": 0.5523167578612782,
+          "base_score": 0.596453855694723,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch45",
+          "score": 0.548369135531478,
+          "base_score": 0.5898744851450559,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "change",
+          "change management",
+          "organizational change",
+          "sre",
+          "management"
+        ],
+        "semantic": [],
+        "merged": [
+          "change",
+          "change management",
+          "organizational change",
+          "sre",
+          "management"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35680120943792953,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.291600+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 51,
+      "title": "Segment 51 (pages 464-472)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch51",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch46",
+          "score": 0.6077135952613459,
+          "base_score": 0.688781918028169,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch44",
+          "score": 0.5986933490582542,
+          "base_score": 0.6737481743563496,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch5",
+          "score": 0.5962632361199193,
+          "base_score": 0.6696979861257913,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch19",
+          "score": 0.5919665967738919,
+          "base_score": 0.662536920549079,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch45",
+          "score": 0.5846422462066785,
+          "base_score": 0.6503296696037233,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "building",
+          "software",
+          "common",
+          "adoption",
+          "sre"
+        ],
+        "semantic": [],
+        "merged": [
+          "building",
+          "software",
+          "common",
+          "adoption",
+          "sre"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.396940077250687,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.291868+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 52,
+      "title": "Segment 52 (pages 473-484)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch52",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch19",
+          "score": 0.5240017701314693,
+          "base_score": 0.6233362835524489,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch5",
+          "score": 0.5053528630369938,
+          "base_score": 0.5922547717283229,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "budget",
+          "count",
+          "error",
+          "error budget",
+          "000"
+        ],
+        "semantic": [],
+        "merged": [
+          "budget",
+          "count",
+          "error",
+          "error budget",
+          "000"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3298170824541227,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.292114+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 53,
+      "title": "Segment 53 (pages 485-493)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch53",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch55",
+          "score": 0.5868440761662643,
+          "base_score": 0.653999386203033,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch36",
+          "score": 0.5718460200250026,
+          "base_score": 0.6290026259675969,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch33",
+          "score": 0.5382251035318071,
+          "base_score": 0.3613275535053927,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch34",
+          "score": 0.5263496026615552,
+          "base_score": 0.3415350520549729,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch12",
+          "score": 0.5226988941672046,
+          "base_score": 0.6211648236120076,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "data processing",
+          "processing",
+          "data",
+          "processing pipeline",
+          "case study"
+        ],
+        "semantic": [],
+        "merged": [
+          "data processing",
+          "processing",
+          "data",
+          "processing pipeline",
+          "case study"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45238337016937147,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.292371+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 54,
+      "title": "Segment 54 (pages 494-501)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch54",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch55",
+          "score": 0.7858093921838237,
+          "base_score": 0.6152378758619285,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch30",
+          "score": 0.528608246303943,
+          "base_score": 0.6310137438399049,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch53",
+          "score": 0.5172595929121879,
+          "base_score": 0.5380252474462391,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch9",
+          "score": 0.5002608075084677,
+          "base_score": 0.5837680125141128,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "case study",
+          "study",
+          "case",
+          "sre",
+          "gclb"
+        ],
+        "semantic": [],
+        "merged": [
+          "case study",
+          "study",
+          "case",
+          "sre",
+          "gclb"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3626378966168487,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.292629+00:00"
+      }
+    },
+    {
+      "book": "The Site Reliability Workbook - Betsy Beyer",
+      "chapter": 55,
+      "title": "Segment 55 (pages 502-508)",
+      "chapter_id": "The Site Reliability Workbook - Betsy Beyer:ch55",
+      "cross_references": [
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch54",
+          "score": 0.7858093921838237,
+          "base_score": 0.6152378758619285,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch53",
+          "score": 0.5868440761662643,
+          "base_score": 0.653999386203033,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch19",
+          "score": 0.5854941342506661,
+          "base_score": 0.6517494830103693,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch47",
+          "score": 0.5744731929032105,
+          "base_score": 0.6333812474312769,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "The Site Reliability Workbook - Betsy Beyer:ch9",
+          "score": 0.5743980890912271,
+          "base_score": 0.7073301484853787,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "sre",
+          "study",
+          "case study",
+          "case",
+          "home depot"
+        ],
+        "semantic": [],
+        "merged": [
+          "sre",
+          "study",
+          "case study",
+          "case",
+          "home depot"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4492642721692635,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:59:33.292898+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

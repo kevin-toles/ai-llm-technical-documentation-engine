@@ -1,0 +1,1989 @@
+{
+  "book": {
+    "title": "Kubernetes Patterns - Bilgin Ibryam Roland Huss"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:49:29.118009",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-10)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch1",
+      "cross_references": [
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch2",
+          "score": 0.7729598139947684,
+          "base_score": 0.8715996899912807,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch3",
+          "score": 0.6313318451697416,
+          "base_score": 0.8022197419495694,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch6",
+          "score": 0.5055485037610882,
+          "base_score": 0.5925808396018135,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch36",
+          "score": 0.5013371600753689,
+          "base_score": 0.5855619334589481,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "problem",
+          "discussion",
+          "information",
+          "solution",
+          "patterns"
+        ],
+        "semantic": [],
+        "merged": [
+          "problem",
+          "discussion",
+          "information",
+          "solution",
+          "patterns"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_configuration_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.566809168084438,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:29.086073+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 2,
+      "title": "Segment 2 (pages 11-21)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch2",
+      "cross_references": [
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch1",
+          "score": 0.7729598139947684,
+          "base_score": 0.8715996899912807,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch3",
+          "score": 0.6256666274002298,
+          "base_score": 0.7927777123337164,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch23",
+          "score": 0.5125834528451184,
+          "base_score": 0.6043057547418641,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch22",
+          "score": 0.5117713050718741,
+          "base_score": 0.6029521751197902,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "patterns",
+          "book",
+          "problem",
+          "kubernetes",
+          "patterns book"
+        ],
+        "semantic": [],
+        "merged": [
+          "patterns",
+          "book",
+          "problem",
+          "kubernetes",
+          "patterns book"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_configuration_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5467680733314345,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:29.086307+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 3,
+      "title": "Segment 3 (pages 22-33)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch3",
+      "cross_references": [
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch1",
+          "score": 0.6313318451697416,
+          "base_score": 0.8022197419495694,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch2",
+          "score": 0.6256666274002298,
+          "base_score": 0.7927777123337164,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch36",
+          "score": 0.5591261667990723,
+          "base_score": 0.6078028705910465,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch22",
+          "score": 0.5157326298838761,
+          "base_score": 0.5354803090657195,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch6",
+          "score": 0.5052941286572922,
+          "base_score": 0.592156881095487,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "containers",
+          "container",
+          "distributed",
+          "container image",
+          "image"
+        ],
+        "semantic": [],
+        "merged": [
+          "containers",
+          "container",
+          "distributed",
+          "container image",
+          "image"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_configuration_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5494110030598996,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:29.086508+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 4,
+      "title": "Segment 4 (pages 34-43)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch4",
+      "cross_references": [
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch17",
+          "score": 0.522278838300421,
+          "base_score": 0.6204647305007016,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "namespace",
+          "runtime",
+          "dependencies",
+          "labels",
+          "application"
+        ],
+        "semantic": [],
+        "merged": [
+          "namespace",
+          "runtime",
+          "dependencies",
+          "labels",
+          "application"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "service_the_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4902032305729006,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:29.086686+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 5,
+      "title": "Segment 5 (pages 44-51)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch5",
+      "cross_references": [
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch9",
+          "score": 0.6188278422639485,
+          "base_score": 0.7813797371065807,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch10",
+          "score": 0.52599220619531,
+          "base_score": 0.6266536769921832,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "memory",
+          "limits",
+          "cpu",
+          "requests limits",
+          "requests"
+        ],
+        "semantic": [],
+        "merged": [
+          "memory",
+          "limits",
+          "cpu",
+          "requests limits",
+          "requests"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "node_the_nodes",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48507095931102956,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:29.086866+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 6,
+      "title": "Segment 6 (pages 52-66)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch6",
+      "cross_references": [
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch1",
+          "score": 0.5055485037610882,
+          "base_score": 0.5925808396018135,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch3",
+          "score": 0.5052941286572922,
+          "base_score": 0.592156881095487,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "deployment",
+          "update",
+          "rollout",
+          "strategies",
+          "new"
+        ],
+        "semantic": [],
+        "merged": [
+          "deployment",
+          "update",
+          "rollout",
+          "strategies",
+          "new"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_configuration_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5030248468303412,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:29.087042+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 7,
+      "title": "Segment 7 (pages 67-77)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "health",
+          "check",
+          "liveness",
+          "readiness",
+          "health check"
+        ],
+        "semantic": [],
+        "merged": [
+          "health",
+          "check",
+          "liveness",
+          "readiness",
+          "health check"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_job_health",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4161688691880843,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:29.087214+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 8,
+      "title": "Segment 8 (pages 78-86)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch8",
+      "cross_references": [
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch11",
+          "score": 0.5520523042383586,
+          "base_score": 0.6700871737305976,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "lifecycle",
+          "hooks",
+          "container",
+          "lifecycle hooks",
+          "poststart"
+        ],
+        "semantic": [],
+        "merged": [
+          "lifecycle",
+          "hooks",
+          "container",
+          "lifecycle hooks",
+          "poststart"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_job_health",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5094266998614689,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:29.087455+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 9,
+      "title": "Segment 9 (pages 87-95)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch9",
+      "cross_references": [
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch10",
+          "score": 0.7207073463208016,
+          "base_score": 0.6654646248203835,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch12",
+          "score": 0.6260367038570267,
+          "base_score": 0.7576802207140922,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch5",
+          "score": 0.6188278422639485,
+          "base_score": 0.7813797371065807,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch35",
+          "score": 0.5046152324318166,
+          "base_score": 0.6743587207196944,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "node",
+          "nodes",
+          "affinity",
+          "pod",
+          "pods"
+        ],
+        "semantic": [],
+        "merged": [
+          "node",
+          "nodes",
+          "affinity",
+          "pod",
+          "pods"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "node_the_nodes",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5698431514897352,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:29.087633+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 10,
+      "title": "Segment 10 (pages 96-103)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch10",
+      "cross_references": [
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch9",
+          "score": 0.7207073463208016,
+          "base_score": 0.6654646248203835,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch12",
+          "score": 0.5341195962562016,
+          "base_score": 0.6044850413793836,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch5",
+          "score": 0.52599220619531,
+          "base_score": 0.6266536769921832,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "node",
+          "taints",
+          "nodes",
+          "pods",
+          "scheduling"
+        ],
+        "semantic": [],
+        "merged": [
+          "node",
+          "taints",
+          "nodes",
+          "pods",
+          "scheduling"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "node_the_nodes",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5039999297829667,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:29.087805+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 11,
+      "title": "Segment 11 (pages 104-112)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch11",
+      "cross_references": [
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch8",
+          "score": 0.5520523042383586,
+          "base_score": 0.6700871737305976,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "job",
+          "work",
+          "pods",
+          "successfully",
+          "completion"
+        ],
+        "semantic": [],
+        "merged": [
+          "job",
+          "work",
+          "pods",
+          "successfully",
+          "completion"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "the_job_health",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49706656269058624,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:29.087981+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 12,
+      "title": "Segment 12 (pages 113-122)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch12",
+      "cross_references": [
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch9",
+          "score": 0.6260367038570267,
+          "base_score": 0.7576802207140922,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch10",
+          "score": 0.5341195962562016,
+          "base_score": 0.6044850413793836,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "daemonset",
+          "node",
+          "nodes",
+          "run",
+          "pods"
+        ],
+        "semantic": [],
+        "merged": [
+          "daemonset",
+          "node",
+          "nodes",
+          "run",
+          "pods"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5550737754578555,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:29.088169+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 13,
+      "title": "Segment 13 (pages 123-130)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch13",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "singleton",
+          "active",
+          "lock",
+          "instance",
+          "instances"
+        ],
+        "semantic": [],
+        "merged": [
+          "singleton",
+          "active",
+          "lock",
+          "instance",
+          "instances"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5690910900399049,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:29.088370+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 14,
+      "title": "Segment 14 (pages 131-140)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch14",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "replicaset",
+          "pods",
+          "stateless",
+          "pod",
+          "storage"
+        ],
+        "semantic": [],
+        "merged": [
+          "replicaset",
+          "pods",
+          "stateless",
+          "pod",
+          "storage"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5299951635189694,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:29.088545+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 15,
+      "title": "Segment 15 (pages 141-149)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch15",
+      "cross_references": [
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch33",
+          "score": 0.5358057215900027,
+          "base_score": 0.6430095359833379,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch34",
+          "score": 0.5232431255762325,
+          "base_score": 0.6220718759603875,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "stateful",
+          "stateful application",
+          "stateful applications",
+          "identity",
+          "storage"
+        ],
+        "semantic": [],
+        "merged": [
+          "stateful",
+          "stateful application",
+          "stateful applications",
+          "identity",
+          "storage"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_scaling_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5495934452835924,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:29.088722+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 16,
+      "title": "Segment 16 (pages 150-167)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch16",
+      "cross_references": [
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch17",
+          "score": 0.6393894277975399,
+          "base_score": 0.8156490463292332,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "service",
+          "ip",
+          "port",
+          "discovery",
+          "ip address"
+        ],
+        "semantic": [],
+        "merged": [
+          "service",
+          "ip",
+          "port",
+          "discovery",
+          "ip address"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "service_the_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5329091249896164,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:29.088895+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 17,
+      "title": "Segment 17 (pages 168-178)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch17",
+      "cross_references": [
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch16",
+          "score": 0.6393894277975399,
+          "base_score": 0.8156490463292332,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch4",
+          "score": 0.522278838300421,
+          "base_score": 0.6204647305007016,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "metadata",
+          "pod",
+          "downward",
+          "downward api",
+          "fieldref"
+        ],
+        "semantic": [],
+        "merged": [
+          "metadata",
+          "pod",
+          "downward",
+          "downward api",
+          "fieldref"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "service_the_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5953036746594145,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:29.089068+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 18,
+      "title": "Segment 18 (pages 179-187)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch18",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "init",
+          "init container",
+          "init containers",
+          "container",
+          "containers"
+        ],
+        "semantic": [],
+        "merged": [
+          "init",
+          "init container",
+          "init containers",
+          "container",
+          "containers"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5805277535433928,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:29.089245+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 19,
+      "title": "Segment 19 (pages 188-196)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch19",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "container",
+          "adapter",
+          "sidecar",
+          "log",
+          "main"
+        ],
+        "semantic": [],
+        "merged": [
+          "container",
+          "adapter",
+          "sidecar",
+          "log",
+          "main"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49436001639309707,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:29.089437+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 20,
+      "title": "Segment 20 (pages 197-205)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch20",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "ambassador",
+          "random",
+          "random generator",
+          "generator",
+          "env"
+        ],
+        "semantic": [],
+        "merged": [
+          "ambassador",
+          "random",
+          "random generator",
+          "generator",
+          "env"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45306745653533126,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:29.089611+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 21,
+      "title": "Segment 21 (pages 206-215)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch21",
+      "cross_references": [
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch23",
+          "score": 0.5469867481591061,
+          "base_score": 0.6616445802651767,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch22",
+          "score": 0.5418040054709629,
+          "base_score": 0.6530066757849382,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "variables",
+          "environment variables",
+          "environment",
+          "configmap",
+          "config"
+        ],
+        "semantic": [],
+        "merged": [
+          "variables",
+          "environment variables",
+          "environment",
+          "configmap",
+          "config"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_configuration_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45577529663981725,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:29.089785+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 22,
+      "title": "Segment 22 (pages 216-225)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch22",
+      "cross_references": [
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch23",
+          "score": 0.6537636140206904,
+          "base_score": 0.7655319492937432,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch21",
+          "score": 0.5418040054709629,
+          "base_score": 0.6530066757849382,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch3",
+          "score": 0.5157326298838761,
+          "base_score": 0.5354803090657195,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch2",
+          "score": 0.5117713050718741,
+          "base_score": 0.6029521751197902,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "configuration",
+          "configuration data",
+          "data",
+          "image",
+          "immutable"
+        ],
+        "semantic": [],
+        "merged": [
+          "configuration",
+          "configuration data",
+          "data",
+          "image",
+          "immutable"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_configuration_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5315466587795122,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:29.089957+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 23,
+      "title": "Segment 23 (pages 226-234)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch23",
+      "cross_references": [
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch22",
+          "score": 0.6537636140206904,
+          "base_score": 0.7655319492937432,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch36",
+          "score": 0.5622374786675778,
+          "base_score": 0.687062464445963,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch21",
+          "score": 0.5469867481591061,
+          "base_score": 0.6616445802651767,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch2",
+          "score": 0.5125834528451184,
+          "base_score": 0.6043057547418641,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "configuration",
+          "template",
+          "configuration template",
+          "init",
+          "init container"
+        ],
+        "semantic": [],
+        "merged": [
+          "configuration",
+          "template",
+          "configuration template",
+          "init",
+          "init container"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_configuration_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4960683358866656,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:29.090131+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 24,
+      "title": "Segment 24 (pages 235-243)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch24",
+      "cross_references": [
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch28",
+          "score": 0.5897909027241637,
+          "base_score": 0.7329848378736061,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch29",
+          "score": 0.5079455177623701,
+          "base_score": 0.5965758629372835,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "container",
+          "root",
+          "user",
+          "privileges",
+          "capabilities"
+        ],
+        "semantic": [],
+        "merged": [
+          "container",
+          "root",
+          "user",
+          "privileges",
+          "capabilities"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5341173184015375,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:29.090305+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 25,
+      "title": "Segment 25 (pages 244-257)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch25",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "networkpolicy",
+          "egress",
+          "ingress",
+          "podselector",
+          "pods"
+        ],
+        "semantic": [],
+        "merged": [
+          "networkpolicy",
+          "egress",
+          "ingress",
+          "podselector",
+          "pods"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.584075255762899,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:29.090485+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 26,
+      "title": "Segment 26 (pages 258-266)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch26",
+      "cross_references": [
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch29",
+          "score": 0.505806366126407,
+          "base_score": 0.5930106102106782,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch28",
+          "score": 0.5000528715411122,
+          "base_score": 0.5834214525685204,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "istio",
+          "sealedsecret",
+          "cluster",
+          "secret",
+          "authorizationpolicy"
+        ],
+        "semantic": [],
+        "merged": [
+          "istio",
+          "sealedsecret",
+          "cluster",
+          "secret",
+          "authorizationpolicy"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41241922415287735,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:29.090657+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 27,
+      "title": "Segment 27 (pages 267-277)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch27",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "secret",
+          "vault",
+          "csi",
+          "secrets",
+          "secret manager"
+        ],
+        "semantic": [],
+        "merged": [
+          "secret",
+          "vault",
+          "csi",
+          "secrets",
+          "secret manager"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32405173229756973,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:29.090828+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 28,
+      "title": "Segment 28 (pages 278-288)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch28",
+      "cross_references": [
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch24",
+          "score": 0.5897909027241637,
+          "base_score": 0.7329848378736061,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch29",
+          "score": 0.5778363076533785,
+          "base_score": 0.7130605127556309,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch26",
+          "score": 0.5000528715411122,
+          "base_score": 0.5834214525685204,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "api",
+          "token",
+          "api server",
+          "kubernetes",
+          "server"
+        ],
+        "semantic": [],
+        "merged": [
+          "api",
+          "token",
+          "api server",
+          "kubernetes",
+          "server"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5135394030993559,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:29.091002+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 29,
+      "title": "Segment 29 (pages 289-301)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch29",
+      "cross_references": [
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch28",
+          "score": 0.5778363076533785,
+          "base_score": 0.7130605127556309,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch24",
+          "score": 0.5079455177623701,
+          "base_score": 0.5965758629372835,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch26",
+          "score": 0.505806366126407,
+          "base_score": 0.5930106102106782,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "rbac",
+          "role",
+          "clusterrole",
+          "rbac authorization",
+          "authorization k8s"
+        ],
+        "semantic": [],
+        "merged": [
+          "rbac",
+          "role",
+          "clusterrole",
+          "rbac authorization",
+          "authorization k8s"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_to_in",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4783561180801169,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:29.091173+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 30,
+      "title": "Segment 30 (pages 302-315)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch30",
+      "cross_references": [
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch31",
+          "score": 0.648574334070912,
+          "base_score": 0.756883149377446,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch32",
+          "score": 0.532833313064421,
+          "base_score": 0.6380555217740351,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "controller",
+          "configmap",
+          "controllers",
+          "27",
+          "kubernetes"
+        ],
+        "semantic": [],
+        "merged": [
+          "controller",
+          "configmap",
+          "controllers",
+          "27",
+          "kubernetes"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "controller_the_custom",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4982516022507532,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:29.091354+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 31,
+      "title": "Segment 31 (pages 316-324)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch31",
+      "cross_references": [
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch32",
+          "score": 0.6706179549258318,
+          "base_score": 0.7936225174689787,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch30",
+          "score": 0.648574334070912,
+          "base_score": 0.756883149377446,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "custom",
+          "crd",
+          "custom resources",
+          "controller",
+          "resources"
+        ],
+        "semantic": [],
+        "merged": [
+          "custom",
+          "crd",
+          "custom resources",
+          "controller",
+          "resources"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "controller_the_custom",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5203042834621133,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:29.091526+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 32,
+      "title": "Segment 32 (pages 325-334)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch32",
+      "cross_references": [
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch31",
+          "score": 0.6706179549258318,
+          "base_score": 0.7936225174689787,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch30",
+          "score": 0.532833313064421,
+          "base_score": 0.6380555217740351,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "operator",
+          "custom",
+          "api",
+          "metacontroller",
+          "crds"
+        ],
+        "semantic": [],
+        "merged": [
+          "operator",
+          "custom",
+          "api",
+          "metacontroller",
+          "crds"
+        ]
+      },
+      "topic_id": 6,
+      "topic_name": "controller_the_custom",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5257890163983582,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:29.091700+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 33,
+      "title": "Segment 33 (pages 335-342)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch33",
+      "cross_references": [
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch34",
+          "score": 0.6392016190954051,
+          "base_score": 0.6486693651590085,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch35",
+          "score": 0.6135842054685599,
+          "base_score": 0.7726403424475997,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch15",
+          "score": 0.5358057215900027,
+          "base_score": 0.6430095359833379,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "hpa",
+          "number",
+          "metrics",
+          "replicas",
+          "cpu"
+        ],
+        "semantic": [],
+        "merged": [
+          "hpa",
+          "number",
+          "metrics",
+          "replicas",
+          "cpu"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_scaling_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5726384718445784,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:29.091885+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 34,
+      "title": "Segment 34 (pages 343-350)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch34",
+      "cross_references": [
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch33",
+          "score": 0.6392016190954051,
+          "base_score": 0.6486693651590085,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch35",
+          "score": 0.6027951420035803,
+          "base_score": 0.6805844959318931,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch15",
+          "score": 0.5232431255762325,
+          "base_score": 0.6220718759603875,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "keda",
+          "knative",
+          "metrics",
+          "scaling",
+          "hpa"
+        ],
+        "semantic": [],
+        "merged": [
+          "keda",
+          "knative",
+          "metrics",
+          "scaling",
+          "hpa"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_scaling_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4767766526314199,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:29.092068+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 35,
+      "title": "Segment 35 (pages 351-360)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch35",
+      "cross_references": [
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch33",
+          "score": 0.6135842054685599,
+          "base_score": 0.7726403424475997,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch34",
+          "score": 0.6027951420035803,
+          "base_score": 0.6805844959318931,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch9",
+          "score": 0.5046152324318166,
+          "base_score": 0.6743587207196944,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "vpa",
+          "scaling",
+          "pods",
+          "vertical",
+          "node"
+        ],
+        "semantic": [],
+        "merged": [
+          "vpa",
+          "scaling",
+          "pods",
+          "vertical",
+          "node"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_scaling_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5140329443516091,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:29.092317+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 36,
+      "title": "Segment 36 (pages 361-368)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch36",
+      "cross_references": [
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch23",
+          "score": 0.5622374786675778,
+          "base_score": 0.687062464445963,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch3",
+          "score": 0.5591261667990723,
+          "base_score": 0.6078028705910465,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch1",
+          "score": 0.5013371600753689,
+          "base_score": 0.5855619334589481,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "images",
+          "build",
+          "container images",
+          "builder",
+          "container"
+        ],
+        "semantic": [],
+        "merged": [
+          "images",
+          "build",
+          "container images",
+          "builder",
+          "container"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_configuration_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5050687221291571,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:49:29.092517+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 37,
+      "title": "Segment 37 (pages 369-380)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch37",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "build",
+          "image",
+          "source",
+          "s2i",
+          "s2i build"
+        ],
+        "semantic": [],
+        "merged": [
+          "build",
+          "image",
+          "source",
+          "s2i",
+          "s2i build"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3661416324143599,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:29.092691+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 38,
+      "title": "Segment 38 (pages 381-389)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch38",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "discovery",
+          "service discovery",
+          "configuration",
+          "applications",
+          "service"
+        ],
+        "semantic": [],
+        "merged": [
+          "discovery",
+          "service discovery",
+          "configuration",
+          "applications",
+          "service"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5778698797741136,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:29.092875+00:00"
+      }
+    },
+    {
+      "book": "Kubernetes Patterns - Bilgin Ibryam Roland Huss",
+      "chapter": 39,
+      "title": "Segment 39 (pages 390-394)",
+      "chapter_id": "Kubernetes Patterns - Bilgin Ibryam Roland Huss:ch39",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "red",
+          "crested",
+          "red crested",
+          "service",
+          "duck"
+        ],
+        "semantic": [],
+        "merged": [
+          "red",
+          "crested",
+          "red crested",
+          "service",
+          "duck"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5035566054818105,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:49:29.093053+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

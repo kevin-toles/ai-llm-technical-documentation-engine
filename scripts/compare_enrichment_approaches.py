@@ -235,8 +235,8 @@ Return the top {top_k} most conceptually relevant chapters with reasoning."""
 
 def _parse_ai_response(
     response: Dict[str, Any],
-    corpus: List[Dict[str, Any]],
-    top_k: int
+    _corpus: List[Dict[str, Any]],
+    _top_k: int
 ) -> List[Dict[str, Any]]:
     """Parse the AI agent response into cross-references."""
     # This would parse actual LLM response
@@ -482,7 +482,7 @@ def print_comparison_extended(
     print("CROSS-REFERENCE COMPARISON: Statistical vs AI Agent")
     print("="*80)
     
-    print(f"\n📖 SOURCE CHAPTER:")
+    print("\n📖 SOURCE CHAPTER:")
     print(f"   Book: {source.get('book_name', 'Unknown')}")
     print(f"   Title: {source.get('title', 'Unknown')[:60]}...")
     print(f"   Concepts: {source.get('concepts', [])[:5]}")
@@ -491,7 +491,7 @@ def print_comparison_extended(
     print("\n" + "-"*80)
     print("OPTION C: TF-IDF with PRODUCTION THRESHOLD (0.7)")
     print("-"*80)
-    print(f"Settings: threshold=0.7, top_n=5, ngram_range=(1,3), max_features=1000")
+    print("Settings: threshold=0.7, top_n=5, ngram_range=(1,3), max_features=1000")
     
     if not option_c_production:
         print("\n⚠️  NO RESULTS - Nothing meets 70% similarity threshold!")
@@ -565,7 +565,7 @@ def print_comparison_extended(
     c_with_reasoning = sum(1 for r in option_c_relaxed if r.get("reasoning"))
     a_with_reasoning = sum(1 for r in option_a_results if r.get("reasoning"))
     
-    print(f"\n📝 Results with reasoning:")
+    print("\n📝 Results with reasoning:")
     print(f"   Option C: {c_with_reasoning}/{len(option_c_relaxed)}")
     print(f"   Option A: {a_with_reasoning}/{len(option_a_results)}")
 
@@ -580,7 +580,7 @@ def print_comparison(
     print("CROSS-REFERENCE COMPARISON: Statistical vs AI Agent")
     print("="*80)
     
-    print(f"\n📖 SOURCE CHAPTER:")
+    print("\n📖 SOURCE CHAPTER:")
     print(f"   Book: {source.get('book_name', 'Unknown')}")
     print(f"   Title: {source.get('title', 'Unknown')[:60]}...")
     print(f"   Concepts: {source.get('concepts', [])[:5]}")
@@ -639,7 +639,7 @@ def print_comparison(
     c_with_reasoning = sum(1 for r in option_c_results if r.get("reasoning"))
     a_with_reasoning = sum(1 for r in option_a_results if r.get("reasoning"))
     
-    print(f"\n📝 Results with reasoning:")
+    print("\n📝 Results with reasoning:")
     print(f"   Option C: {c_with_reasoning}/{len(option_c_results)}")
     print(f"   Option A: {a_with_reasoning}/{len(option_a_results)}")
 

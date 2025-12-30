@@ -1,0 +1,318 @@
+{
+  "book": {
+    "title": "beyond-the-twelve-factor-app"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:00:37.354716",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "beyond-the-twelve-factor-app",
+      "chapter": 1,
+      "title": "Segment 1 (pages 3-12)",
+      "chapter_id": "beyond-the-twelve-factor-app:ch1",
+      "cross_references": [
+        {
+          "target": "beyond-the-twelve-factor-app:ch7",
+          "score": 0.6499124147581361,
+          "base_score": 0.7591132838561527,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "beyond-the-twelve-factor-app:ch6",
+          "score": 0.5299147028888433,
+          "base_score": 0.6331911714814056,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "factors",
+          "build",
+          "book",
+          "new",
+          "12 factors"
+        ],
+        "semantic": [],
+        "merged": [
+          "factors",
+          "build",
+          "book",
+          "new",
+          "12 factors"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_cloud_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6100815558043715,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:37.343521+00:00"
+      }
+    },
+    {
+      "book": "beyond-the-twelve-factor-app",
+      "chapter": 2,
+      "title": "Segment 2 (pages 13-22)",
+      "chapter_id": "beyond-the-twelve-factor-app:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "api",
+          "multiple",
+          "teams",
+          "codebase",
+          "services"
+        ],
+        "semantic": [],
+        "merged": [
+          "api",
+          "multiple",
+          "teams",
+          "codebase",
+          "services"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "to_the_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4106244971737838,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:37.343565+00:00"
+      }
+    },
+    {
+      "book": "beyond-the-twelve-factor-app",
+      "chapter": 3,
+      "title": "Segment 3 (pages 23-34)",
+      "chapter_id": "beyond-the-twelve-factor-app:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "release",
+          "artifact",
+          "configuration",
+          "run",
+          "build"
+        ],
+        "semantic": [],
+        "merged": [
+          "release",
+          "artifact",
+          "configuration",
+          "run",
+          "build"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5278452154715918,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:00:37.343599+00:00"
+      }
+    },
+    {
+      "book": "beyond-the-twelve-factor-app",
+      "chapter": 4,
+      "title": "Segment 4 (pages 35-43)",
+      "chapter_id": "beyond-the-twelve-factor-app:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "backing",
+          "backing services",
+          "services",
+          "resource",
+          "backing service"
+        ],
+        "semantic": [],
+        "merged": [
+          "backing",
+          "backing services",
+          "services",
+          "resource",
+          "backing service"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_cloud_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4876028160588886,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:37.343631+00:00"
+      }
+    },
+    {
+      "book": "beyond-the-twelve-factor-app",
+      "chapter": 5,
+      "title": "Segment 5 (pages 44-52)",
+      "chapter_id": "beyond-the-twelve-factor-app:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "port",
+          "change",
+          "environments",
+          "production",
+          "port binding"
+        ],
+        "semantic": [],
+        "merged": [
+          "port",
+          "change",
+          "environments",
+          "production",
+          "port binding"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "to_the_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5850297881892599,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:37.343663+00:00"
+      }
+    },
+    {
+      "book": "beyond-the-twelve-factor-app",
+      "chapter": 6,
+      "title": "Segment 6 (pages 53-63)",
+      "chapter_id": "beyond-the-twelve-factor-app:ch6",
+      "cross_references": [
+        {
+          "target": "beyond-the-twelve-factor-app:ch1",
+          "score": 0.5299147028888433,
+          "base_score": 0.6331911714814056,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "beyond-the-twelve-factor-app:ch7",
+          "score": 0.5023641692893144,
+          "base_score": 0.5872736154821906,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "stateless",
+          "process",
+          "processes",
+          "telemetry",
+          "stateless process"
+        ],
+        "semantic": [],
+        "merged": [
+          "stateless",
+          "process",
+          "processes",
+          "telemetry",
+          "stateless process"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_cloud_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5941072468819674,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:37.343695+00:00"
+      }
+    },
+    {
+      "book": "beyond-the-twelve-factor-app",
+      "chapter": 7,
+      "title": "Segment 7 (pages 64-72)",
+      "chapter_id": "beyond-the-twelve-factor-app:ch7",
+      "cross_references": [
+        {
+          "target": "beyond-the-twelve-factor-app:ch1",
+          "score": 0.6499124147581361,
+          "base_score": 0.7591132838561527,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "beyond-the-twelve-factor-app:ch6",
+          "score": 0.5023641692893144,
+          "base_score": 0.5872736154821906,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "build",
+          "cloud need",
+          "native cloud",
+          "decision",
+          "build cloud"
+        ],
+        "semantic": [],
+        "merged": [
+          "build",
+          "cloud need",
+          "native cloud",
+          "decision",
+          "build cloud"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_cloud_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5749594474083847,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:37.343728+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

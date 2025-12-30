@@ -1,0 +1,547 @@
+{
+  "book": {
+    "title": "Infrastructure as Code 2nd Edition - Kief Morris"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:48:55.240212",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Infrastructure as Code 2nd Edition - Kief Morris",
+      "chapter": 1,
+      "title": "What is Infrastructure as Code?",
+      "chapter_id": "Infrastructure as Code 2nd Edition - Kief Morris:ch1",
+      "cross_references": [
+        {
+          "target": "Infrastructure as Code 2nd Edition - Kief Morris:ch2",
+          "score": 0.7231338971874027,
+          "base_score": 0.7885564953123378,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Infrastructure as Code 2nd Edition - Kief Morris:ch3",
+          "score": 0.6006897083517462,
+          "base_score": 0.6770754398455028,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Infrastructure as Code 2nd Edition - Kief Morris:ch4",
+          "score": 0.5984399342754319,
+          "base_score": 0.6733258163849789,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Infrastructure as Code 2nd Edition - Kief Morris:ch9",
+          "score": 0.5622303510928354,
+          "base_score": 0.6870505851547257,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "infrastructure code",
+          "automation",
+          "age",
+          "cloud",
+          "make"
+        ],
+        "semantic": [],
+        "merged": [
+          "infrastructure code",
+          "automation",
+          "age",
+          "cloud",
+          "make"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "to_infrastructure_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5917924584101192,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:55.234974+00:00"
+      }
+    },
+    {
+      "book": "Infrastructure as Code 2nd Edition - Kief Morris",
+      "chapter": 2,
+      "title": "Principles of Cloud Age Infrastructure",
+      "chapter_id": "Infrastructure as Code 2nd Edition - Kief Morris:ch2",
+      "cross_references": [
+        {
+          "target": "Infrastructure as Code 2nd Edition - Kief Morris:ch1",
+          "score": 0.7231338971874027,
+          "base_score": 0.7885564953123378,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Infrastructure as Code 2nd Edition - Kief Morris:ch3",
+          "score": 0.6132180411734685,
+          "base_score": 0.6979559945483733,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "cloud",
+          "make",
+          "configuration",
+          "drift",
+          "configuration drift"
+        ],
+        "semantic": [],
+        "merged": [
+          "cloud",
+          "make",
+          "configuration",
+          "drift",
+          "configuration drift"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "to_infrastructure_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5724625382859523,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:55.235058+00:00"
+      }
+    },
+    {
+      "book": "Infrastructure as Code 2nd Edition - Kief Morris",
+      "chapter": 3,
+      "title": "Infrastructure Platforms",
+      "chapter_id": "Infrastructure as Code 2nd Edition - Kief Morris:ch3",
+      "cross_references": [
+        {
+          "target": "Infrastructure as Code 2nd Edition - Kief Morris:ch2",
+          "score": 0.6132180411734685,
+          "base_score": 0.6979559945483733,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Infrastructure as Code 2nd Edition - Kief Morris:ch1",
+          "score": 0.6006897083517462,
+          "base_score": 0.6770754398455028,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Infrastructure as Code 2nd Edition - Kief Morris:ch4",
+          "score": 0.5691227496179404,
+          "base_score": 0.6985379160299008,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "storage",
+          "cloud",
+          "platforms",
+          "platform",
+          "compute"
+        ],
+        "semantic": [],
+        "merged": [
+          "storage",
+          "cloud",
+          "platforms",
+          "platform",
+          "compute"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "to_infrastructure_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6019244720095889,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:55.235109+00:00"
+      }
+    },
+    {
+      "book": "Infrastructure as Code 2nd Edition - Kief Morris",
+      "chapter": 4,
+      "title": "Core Practice: Define everything as code",
+      "chapter_id": "Infrastructure as Code 2nd Edition - Kief Morris:ch4",
+      "cross_references": [
+        {
+          "target": "Infrastructure as Code 2nd Edition - Kief Morris:ch1",
+          "score": 0.5984399342754319,
+          "base_score": 0.6733258163849789,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Infrastructure as Code 2nd Edition - Kief Morris:ch3",
+          "score": 0.5691227496179404,
+          "base_score": 0.6985379160299008,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "languages",
+          "infrastructure code",
+          "declarative",
+          "tool",
+          "infrastructure coding"
+        ],
+        "semantic": [],
+        "merged": [
+          "languages",
+          "infrastructure code",
+          "declarative",
+          "tool",
+          "infrastructure coding"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "to_infrastructure_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6064628014504163,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:55.235157+00:00"
+      }
+    },
+    {
+      "book": "Infrastructure as Code 2nd Edition - Kief Morris",
+      "chapter": 5,
+      "title": "Building Infrastructure Stacks as Code",
+      "chapter_id": "Infrastructure as Code 2nd Edition - Kief Morris:ch5",
+      "cross_references": [
+        {
+          "target": "Infrastructure as Code 2nd Edition - Kief Morris:ch8",
+          "score": 0.640279882165903,
+          "base_score": 0.7430590628690976,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Infrastructure as Code 2nd Edition - Kief Morris:ch7",
+          "score": 0.6316571745075188,
+          "base_score": 0.7286878834384571,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Infrastructure as Code 2nd Edition - Kief Morris:ch6",
+          "score": 0.5215840694167941,
+          "base_score": 0.5452327082872495,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "stack",
+          "monolithic stack",
+          "monolithic",
+          "stacks",
+          "infrastructure stack"
+        ],
+        "semantic": [],
+        "merged": [
+          "stack",
+          "monolithic stack",
+          "monolithic",
+          "stacks",
+          "infrastructure stack"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "stack_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6551386417384737,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:55.235205+00:00"
+      }
+    },
+    {
+      "book": "Infrastructure as Code 2nd Edition - Kief Morris",
+      "chapter": 6,
+      "title": "Using Modules to Share Stack Code",
+      "chapter_id": "Infrastructure as Code 2nd Edition - Kief Morris:ch6",
+      "cross_references": [
+        {
+          "target": "Infrastructure as Code 2nd Edition - Kief Morris:ch8",
+          "score": 0.5268580028494307,
+          "base_score": 0.5540225973416439,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Infrastructure as Code 2nd Edition - Kief Morris:ch5",
+          "score": 0.5215840694167941,
+          "base_score": 0.5452327082872495,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "module",
+          "stack",
+          "entity",
+          "facade",
+          "entity module"
+        ],
+        "semantic": [],
+        "merged": [
+          "module",
+          "stack",
+          "entity",
+          "facade",
+          "entity module"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "stack_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46327869805531374,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:55.235251+00:00"
+      }
+    },
+    {
+      "book": "Infrastructure as Code 2nd Edition - Kief Morris",
+      "chapter": 7,
+      "title": "Building Environments With Stacks",
+      "chapter_id": "Infrastructure as Code 2nd Edition - Kief Morris:ch7",
+      "cross_references": [
+        {
+          "target": "Infrastructure as Code 2nd Edition - Kief Morris:ch5",
+          "score": 0.6316571745075188,
+          "base_score": 0.7286878834384571,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Infrastructure as Code 2nd Edition - Kief Morris:ch8",
+          "score": 0.5807586174439234,
+          "base_score": 0.6438569549991315,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "stack",
+          "environment",
+          "environments",
+          "multiple",
+          "project"
+        ],
+        "semantic": [],
+        "merged": [
+          "stack",
+          "environment",
+          "environments",
+          "multiple",
+          "project"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "stack_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5706760302190381,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:55.235297+00:00"
+      }
+    },
+    {
+      "book": "Infrastructure as Code 2nd Edition - Kief Morris",
+      "chapter": 8,
+      "title": "Configuring Stacks",
+      "chapter_id": "Infrastructure as Code 2nd Edition - Kief Morris:ch8",
+      "cross_references": [
+        {
+          "target": "Infrastructure as Code 2nd Edition - Kief Morris:ch5",
+          "score": 0.640279882165903,
+          "base_score": 0.7430590628690976,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Infrastructure as Code 2nd Edition - Kief Morris:ch7",
+          "score": 0.5807586174439234,
+          "base_score": 0.6438569549991315,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Infrastructure as Code 2nd Edition - Kief Morris:ch6",
+          "score": 0.5268580028494307,
+          "base_score": 0.5540225973416439,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "stack",
+          "values",
+          "parameter",
+          "parameters",
+          "configuration"
+        ],
+        "semantic": [],
+        "merged": [
+          "stack",
+          "values",
+          "parameter",
+          "parameters",
+          "configuration"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "stack_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5746321806689417,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:55.235346+00:00"
+      }
+    },
+    {
+      "book": "Infrastructure as Code 2nd Edition - Kief Morris",
+      "chapter": 9,
+      "title": "Core Practice: Continuously validate all work in progress",
+      "chapter_id": "Infrastructure as Code 2nd Edition - Kief Morris:ch9",
+      "cross_references": [
+        {
+          "target": "Infrastructure as Code 2nd Edition - Kief Morris:ch1",
+          "score": 0.5622303510928354,
+          "base_score": 0.6870505851547257,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "testing",
+          "tests",
+          "test",
+          "production",
+          "run"
+        ],
+        "semantic": [],
+        "merged": [
+          "testing",
+          "tests",
+          "test",
+          "production",
+          "run"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "to_infrastructure_the",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5317809310695527,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:48:55.235395+00:00"
+      }
+    },
+    {
+      "book": "Infrastructure as Code 2nd Edition - Kief Morris",
+      "chapter": 10,
+      "title": "Testing Infrastructure Stacks",
+      "chapter_id": "Infrastructure as Code 2nd Edition - Kief Morris:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "stack",
+          "test",
+          "test stack",
+          "instance",
+          "persistent test"
+        ],
+        "semantic": [],
+        "merged": [
+          "stack",
+          "test",
+          "test stack",
+          "instance",
+          "persistent test"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5685064575280121,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:48:55.235443+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

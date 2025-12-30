@@ -1,0 +1,252 @@
+{
+  "book": {
+    "title": "unikernels"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:02:27.771615",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "unikernels",
+      "chapter": 1,
+      "title": "Segment 1 (pages 4-12)",
+      "chapter_id": "unikernels:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "unikernels new",
+          "problems",
+          "new technology",
+          "new",
+          "technology"
+        ],
+        "semantic": [],
+        "merged": [
+          "unikernels new",
+          "problems",
+          "new technology",
+          "new",
+          "technology"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "unikernels_problems_cloud",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6308474960491096,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:27.767439+00:00"
+      }
+    },
+    {
+      "book": "unikernels",
+      "chapter": 2,
+      "title": "Segment 2 (pages 13-21)",
+      "chapter_id": "unikernels:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "security",
+          "need",
+          "secure",
+          "workload",
+          "container"
+        ],
+        "semantic": [],
+        "merged": [
+          "security",
+          "need",
+          "secure",
+          "workload",
+          "container"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "security_need_secure",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47045181268445235,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:27.767493+00:00"
+      }
+    },
+    {
+      "book": "unikernels",
+      "chapter": 3,
+      "title": "Segment 3 (pages 22-29)",
+      "chapter_id": "unikernels:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "functions",
+          "code",
+          "operating",
+          "needs",
+          "development"
+        ],
+        "semantic": [],
+        "merged": [
+          "functions",
+          "code",
+          "operating",
+          "needs",
+          "development"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "functions_code_operating",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5769722933717758,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:27.767523+00:00"
+      }
+    },
+    {
+      "book": "unikernels",
+      "chapter": 4,
+      "title": "Segment 4 (pages 30-38)",
+      "chapter_id": "unikernels:ch4",
+      "cross_references": [
+        {
+          "target": "unikernels:ch5",
+          "score": 0.6044059822905716,
+          "base_score": 0.6832692297435453,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "project",
+          "projects",
+          "team",
+          "website",
+          "unikernel projects"
+        ],
+        "semantic": [],
+        "merged": [
+          "project",
+          "projects",
+          "team",
+          "website",
+          "unikernel projects"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "unikernel_project_unikernels",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6505658624453047,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:27.767563+00:00"
+      }
+    },
+    {
+      "book": "unikernels",
+      "chapter": 5,
+      "title": "Segment 5 (pages 39-47)",
+      "chapter_id": "unikernels:ch5",
+      "cross_references": [
+        {
+          "target": "unikernels:ch4",
+          "score": 0.6044059822905716,
+          "base_score": 0.6832692297435453,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "project",
+          "multiple",
+          "hypervisor",
+          "source",
+          "xen"
+        ],
+        "semantic": [],
+        "merged": [
+          "project",
+          "multiple",
+          "hypervisor",
+          "source",
+          "xen"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "unikernel_project_unikernels",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5809016762038058,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:27.767594+00:00"
+      }
+    },
+    {
+      "book": "unikernels",
+      "chapter": 6,
+      "title": "Segment 6 (pages 48-53)",
+      "chapter_id": "unikernels:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "orchestration",
+          "orchestration layer",
+          "service",
+          "layer",
+          "request"
+        ],
+        "semantic": [],
+        "merged": [
+          "orchestration",
+          "orchestration layer",
+          "service",
+          "layer",
+          "request"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "orchestration_service_layer",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5259421499618234,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:02:27.767621+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

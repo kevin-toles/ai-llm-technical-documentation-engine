@@ -1,0 +1,818 @@
+{
+  "book": {
+    "title": "AntiPatterns"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:40:00.906281",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "AntiPatterns",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-12)",
+      "chapter_id": "AntiPatterns:ch1",
+      "cross_references": [
+        {
+          "target": "AntiPatterns:ch5",
+          "score": 0.6562602293629923,
+          "base_score": 0.7696929748642465,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AntiPatterns:ch4",
+          "score": 0.6360612614762311,
+          "base_score": 0.6434354357937184,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AntiPatterns:ch7",
+          "score": 0.5255200460375854,
+          "base_score": 0.6258667433959757,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AntiPatterns:ch12",
+          "score": 0.5136173834198973,
+          "base_score": 0.6060289723664956,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "antipatterns",
+          "patterns",
+          "design",
+          "pattern",
+          "patterns antipatterns"
+        ],
+        "semantic": [],
+        "merged": [
+          "antipatterns",
+          "patterns",
+          "design",
+          "pattern",
+          "patterns antipatterns"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5195500330160026,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:00.895440+00:00"
+      }
+    },
+    {
+      "book": "AntiPatterns",
+      "chapter": 2,
+      "title": "Segment 2 (pages 13-21)",
+      "chapter_id": "AntiPatterns:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "forces",
+          "primal",
+          "force",
+          "performance",
+          "management change"
+        ],
+        "semantic": [],
+        "merged": [
+          "forces",
+          "primal",
+          "force",
+          "performance",
+          "management change"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_software",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4807741069694582,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:00.895554+00:00"
+      }
+    },
+    {
+      "book": "AntiPatterns",
+      "chapter": 3,
+      "title": "Segment 3 (pages 22-29)",
+      "chapter_id": "AntiPatterns:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "level",
+          "application",
+          "application level",
+          "levels",
+          "applications"
+        ],
+        "semantic": [],
+        "merged": [
+          "level",
+          "application",
+          "application level",
+          "levels",
+          "applications"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43137788671418176,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:00.895641+00:00"
+      }
+    },
+    {
+      "book": "AntiPatterns",
+      "chapter": 4,
+      "title": "Segment 4 (pages 30-37)",
+      "chapter_id": "AntiPatterns:ch4",
+      "cross_references": [
+        {
+          "target": "AntiPatterns:ch1",
+          "score": 0.6360612614762311,
+          "base_score": 0.6434354357937184,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "pattern",
+          "patterns",
+          "solution",
+          "section",
+          "template"
+        ],
+        "semantic": [],
+        "merged": [
+          "pattern",
+          "patterns",
+          "solution",
+          "section",
+          "template"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4039958955593821,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:00.895727+00:00"
+      }
+    },
+    {
+      "book": "AntiPatterns",
+      "chapter": 5,
+      "title": "Segment 5 (pages 38-47)",
+      "chapter_id": "AntiPatterns:ch5",
+      "cross_references": [
+        {
+          "target": "AntiPatterns:ch1",
+          "score": 0.6562602293629923,
+          "base_score": 0.7696929748642465,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "antipatterns",
+          "antipattern",
+          "refactoring",
+          "blob",
+          "development antipatterns"
+        ],
+        "semantic": [],
+        "merged": [
+          "antipatterns",
+          "antipattern",
+          "refactoring",
+          "blob",
+          "development antipatterns"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42141682600461516,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:00.895811+00:00"
+      }
+    },
+    {
+      "book": "AntiPatterns",
+      "chapter": 6,
+      "title": "Segment 6 (pages 48-55)",
+      "chapter_id": "AntiPatterns:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "lava",
+          "lava flow",
+          "flow",
+          "code",
+          "architecture"
+        ],
+        "semantic": [],
+        "merged": [
+          "lava",
+          "lava flow",
+          "flow",
+          "code",
+          "architecture"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49346919012552615,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:40:00.895892+00:00"
+      }
+    },
+    {
+      "book": "AntiPatterns",
+      "chapter": 7,
+      "title": "Segment 7 (pages 56-65)",
+      "chapter_id": "AntiPatterns:ch7",
+      "cross_references": [
+        {
+          "target": "AntiPatterns:ch1",
+          "score": 0.5255200460375854,
+          "base_score": 0.6258667433959757,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "vendor",
+          "database",
+          "golden hammer",
+          "golden",
+          "hammer"
+        ],
+        "semantic": [],
+        "merged": [
+          "vendor",
+          "database",
+          "golden hammer",
+          "golden",
+          "hammer"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.48845791014952966,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:00.895976+00:00"
+      }
+    },
+    {
+      "book": "AntiPatterns",
+      "chapter": 8,
+      "title": "Segment 8 (pages 66-73)",
+      "chapter_id": "AntiPatterns:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "null",
+          "spaghetti",
+          "int",
+          "spaghetti code"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "null",
+          "spaghetti",
+          "int",
+          "spaghetti code"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_software",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.46176568337874013,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:00.896059+00:00"
+      }
+    },
+    {
+      "book": "AntiPatterns",
+      "chapter": 9,
+      "title": "Segment 9 (pages 74-81)",
+      "chapter_id": "AntiPatterns:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "code",
+          "existing software",
+          "interfaces",
+          "cut paste",
+          "bug"
+        ],
+        "semantic": [],
+        "merged": [
+          "code",
+          "existing software",
+          "interfaces",
+          "cut paste",
+          "bug"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_software",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41501246289803423,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:00.896139+00:00"
+      }
+    },
+    {
+      "book": "AntiPatterns",
+      "chapter": 10,
+      "title": "Segment 10 (pages 82-89)",
+      "chapter_id": "AntiPatterns:ch10",
+      "cross_references": [
+        {
+          "target": "AntiPatterns:ch11",
+          "score": 0.5305062760659073,
+          "base_score": 0.6341771267765122,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "enterprise",
+          "systems",
+          "stovepipe",
+          "enterprise systems",
+          "standards"
+        ],
+        "semantic": [],
+        "merged": [
+          "enterprise",
+          "systems",
+          "stovepipe",
+          "enterprise systems",
+          "standards"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4373025025454313,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:00.896222+00:00"
+      }
+    },
+    {
+      "book": "AntiPatterns",
+      "chapter": 11,
+      "title": "Segment 11 (pages 90-97)",
+      "chapter_id": "AntiPatterns:ch11",
+      "cross_references": [
+        {
+          "target": "AntiPatterns:ch10",
+          "score": 0.5305062760659073,
+          "base_score": 0.6341771267765122,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "layer",
+          "isolation",
+          "isolation layer",
+          "product",
+          "infrastructure"
+        ],
+        "semantic": [],
+        "merged": [
+          "layer",
+          "isolation",
+          "isolation layer",
+          "product",
+          "infrastructure"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4364656379149997,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:00.896305+00:00"
+      }
+    },
+    {
+      "book": "AntiPatterns",
+      "chapter": 12,
+      "title": "Segment 12 (pages 98-105)",
+      "chapter_id": "AntiPatterns:ch12",
+      "cross_references": [
+        {
+          "target": "AntiPatterns:ch13",
+          "score": 0.5435533435246955,
+          "base_score": 0.5818481651337517,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AntiPatterns:ch1",
+          "score": 0.5136173834198973,
+          "base_score": 0.6060289723664956,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "architecture",
+          "implication",
+          "architecture implication",
+          "implication antipattern",
+          "meeting"
+        ],
+        "semantic": [],
+        "merged": [
+          "architecture",
+          "implication",
+          "architecture implication",
+          "implication antipattern",
+          "meeting"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5263935057016237,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:00.896389+00:00"
+      }
+    },
+    {
+      "book": "AntiPatterns",
+      "chapter": 13,
+      "title": "Segment 13 (pages 106-113)",
+      "chapter_id": "AntiPatterns:ch13",
+      "cross_references": [
+        {
+          "target": "AntiPatterns:ch12",
+          "score": 0.5435533435246955,
+          "base_score": 0.5818481651337517,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "query",
+          "design",
+          "mining",
+          "process",
+          "architecture"
+        ],
+        "semantic": [],
+        "merged": [
+          "query",
+          "design",
+          "mining",
+          "process",
+          "architecture"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.42963535280283915,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:00.896471+00:00"
+      }
+    },
+    {
+      "book": "AntiPatterns",
+      "chapter": 14,
+      "title": "Segment 14 (pages 114-126)",
+      "chapter_id": "AntiPatterns:ch14",
+      "cross_references": [
+        {
+          "target": "AntiPatterns:ch17",
+          "score": 0.6057965775913398,
+          "base_score": 0.7596609626522329,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AntiPatterns:ch16",
+          "score": 0.592884483462107,
+          "base_score": 0.6640667316961043,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "plan",
+          "project",
+          "detailitis",
+          "analysis",
+          "detailitis plan"
+        ],
+        "semantic": [],
+        "merged": [
+          "plan",
+          "project",
+          "detailitis",
+          "analysis",
+          "detailitis plan"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_software",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5092522269752515,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:00.896562+00:00"
+      }
+    },
+    {
+      "book": "AntiPatterns",
+      "chapter": 15,
+      "title": "Segment 15 (pages 127-134)",
+      "chapter_id": "AntiPatterns:ch15",
+      "cross_references": [
+        {
+          "target": "AntiPatterns:ch16",
+          "score": 0.5218541164702866,
+          "base_score": 0.5456827867097369,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "corncob",
+          "manager",
+          "management",
+          "irrational",
+          "person"
+        ],
+        "semantic": [],
+        "merged": [
+          "corncob",
+          "manager",
+          "management",
+          "irrational",
+          "person"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_software",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40976294414324355,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:00.896644+00:00"
+      }
+    },
+    {
+      "book": "AntiPatterns",
+      "chapter": 16,
+      "title": "Segment 16 (pages 135-143)",
+      "chapter_id": "AntiPatterns:ch16",
+      "cross_references": [
+        {
+          "target": "AntiPatterns:ch14",
+          "score": 0.592884483462107,
+          "base_score": 0.6640667316961043,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "AntiPatterns:ch15",
+          "score": 0.5218541164702866,
+          "base_score": 0.5456827867097369,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "project",
+          "management",
+          "risk management",
+          "development",
+          "staff"
+        ],
+        "semantic": [],
+        "merged": [
+          "project",
+          "management",
+          "risk management",
+          "development",
+          "staff"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_software",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3971889355950286,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:00.896735+00:00"
+      }
+    },
+    {
+      "book": "AntiPatterns",
+      "chapter": 17,
+      "title": "Segment 17 (pages 144-151)",
+      "chapter_id": "AntiPatterns:ch17",
+      "cross_references": [
+        {
+          "target": "AntiPatterns:ch14",
+          "score": 0.6057965775913398,
+          "base_score": 0.7596609626522329,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "template section",
+          "section",
+          "antipattern template",
+          "template",
+          "antipattern"
+        ],
+        "semantic": [],
+        "merged": [
+          "template section",
+          "section",
+          "antipattern template",
+          "template",
+          "antipattern"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_of_software",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5236988789149405,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:00.896821+00:00"
+      }
+    },
+    {
+      "book": "AntiPatterns",
+      "chapter": 18,
+      "title": "Segment 18 (pages 152-157)",
+      "chapter_id": "AntiPatterns:ch18",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "1997",
+          "1996",
+          "conference",
+          "object",
+          "john"
+        ],
+        "semantic": [],
+        "merged": [
+          "1997",
+          "1996",
+          "conference",
+          "object",
+          "john"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_and_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39205197496172156,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:40:00.896911+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

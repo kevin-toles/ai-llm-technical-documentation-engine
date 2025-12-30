@@ -549,9 +549,9 @@ class FakeMetadataExtractionClient:
     async def extract_metadata(
         self,
         text: str,
-        title: str | None = None,
-        book_title: str | None = None,
-        options: MetadataExtractionOptions | None = None,
+        _title: str | None = None,
+        _book_title: str | None = None,
+        _options: MetadataExtractionOptions | None = None,
     ) -> MetadataExtractionResult:
         """Return pre-configured or default response.
 
@@ -560,6 +560,9 @@ class FakeMetadataExtractionClient:
             - AC-4.3: Default empty response
             - AC-4.4: No network calls
         """
+        import asyncio
+        await asyncio.sleep(0)  # Yield to event loop to make async meaningful
+        
         self._call_count += 1
         text_hash = hashlib.md5(text.encode()).hexdigest()
 
@@ -571,6 +574,8 @@ class FakeMetadataExtractionClient:
 
     async def health_check(self) -> bool:
         """Always returns True for fake client."""
+        import asyncio
+        await asyncio.sleep(0)  # Yield to event loop to make async meaningful
         return True
 
     async def __aenter__(self) -> "FakeMetadataExtractionClient":

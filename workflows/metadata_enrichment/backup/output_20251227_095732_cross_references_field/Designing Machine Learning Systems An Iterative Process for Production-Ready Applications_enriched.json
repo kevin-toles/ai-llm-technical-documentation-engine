@@ -1,0 +1,2694 @@
+{
+  "book": {
+    "title": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:45:21.905627",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 1,
+      "title": "Segment 1 (pages 2-9)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch1",
+      "cross_references": [
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch2",
+          "score": 0.6326438646714729,
+          "base_score": 0.7303323670450474,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch7",
+          "score": 0.5721187411496215,
+          "base_score": 0.629457161175295,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch3",
+          "score": 0.5651432269869763,
+          "base_score": 0.5252387116449604,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch45",
+          "score": 0.5483935824537437,
+          "base_score": 0.5899152300154987,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch9",
+          "score": 0.5211932311261782,
+          "base_score": 0.5445813111362229,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "book",
+          "ml",
+          "machine learning",
+          "machine",
+          "learning"
+        ],
+        "semantic": [],
+        "merged": [
+          "book",
+          "ml",
+          "machine learning",
+          "machine",
+          "learning"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_ml",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35702178052921263,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.838763+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 2,
+      "title": "Segment 2 (pages 10-17)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch2",
+      "cross_references": [
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch1",
+          "score": 0.6326438646714729,
+          "base_score": 0.7303323670450474,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch9",
+          "score": 0.5468457658719339,
+          "base_score": 0.6614096097865565,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch7",
+          "score": 0.5380718260936658,
+          "base_score": 0.6467863768227762,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch45",
+          "score": 0.5304152424204468,
+          "base_score": 0.634025404034078,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "book",
+          "permission",
+          "books",
+          "require permission",
+          "does require"
+        ],
+        "semantic": [],
+        "merged": [
+          "book",
+          "permission",
+          "books",
+          "require permission",
+          "does require"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_ml",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3562744005840986,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.839113+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 3,
+      "title": "Segment 3 (pages 18-25)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch3",
+      "cross_references": [
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch1",
+          "score": 0.5651432269869763,
+          "base_score": 0.5252387116449604,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch9",
+          "score": 0.5317017604427339,
+          "base_score": 0.5620955266638157,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch4",
+          "score": 0.5018588899782519,
+          "base_score": 0.5123574092230124,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ml",
+          "learn",
+          "patterns",
+          "listing",
+          "learning"
+        ],
+        "semantic": [],
+        "merged": [
+          "ml",
+          "learn",
+          "patterns",
+          "listing",
+          "learning"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_ml",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3424652351106745,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.839390+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 4,
+      "title": "Segment 4 (pages 26-33)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch4",
+      "cross_references": [
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch9",
+          "score": 0.587314317936424,
+          "base_score": 0.6547831224866325,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch6",
+          "score": 0.5268881849596728,
+          "base_score": 0.6281469749327879,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch7",
+          "score": 0.5099241639514096,
+          "base_score": 0.5257995325116085,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch3",
+          "score": 0.5018588899782519,
+          "base_score": 0.5123574092230124,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ml",
+          "enterprise",
+          "applications",
+          "customers",
+          "use cases"
+        ],
+        "semantic": [],
+        "merged": [
+          "ml",
+          "enterprise",
+          "applications",
+          "customers",
+          "use cases"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_ml",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3720136853634336,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.839636+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 5,
+      "title": "Segment 5 (pages 34-41)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "latency",
+          "throughput",
+          "queries",
+          "ms",
+          "restaurants"
+        ],
+        "semantic": [],
+        "merged": [
+          "latency",
+          "throughput",
+          "queries",
+          "ms",
+          "restaurants"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "to_the_model",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2868696647148894,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.839876+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 6,
+      "title": "Segment 6 (pages 42-49)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch6",
+      "cross_references": [
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch44",
+          "score": 0.8366229441532372,
+          "base_score": 0.477704906922062,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch48",
+          "score": 0.8031108870104181,
+          "base_score": 0.421851478350697,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch25",
+          "score": 0.6731306823494753,
+          "base_score": 0.45521780391579203,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch30",
+          "score": 0.6691229542904475,
+          "base_score": 0.4485382571507459,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch38",
+          "score": 0.6512378419574398,
+          "base_score": 0.418729736595733,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "oreil",
+          "ly",
+          "oreil ly",
+          "https oreil",
+          "https"
+        ],
+        "semantic": [],
+        "merged": [
+          "oreil",
+          "ly",
+          "oreil ly",
+          "https oreil",
+          "https"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_ml",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36609592342385516,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.840125+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 7,
+      "title": "Segment 7 (pages 50-57)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch7",
+      "cross_references": [
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch45",
+          "score": 0.6000553724835376,
+          "base_score": 0.6760182133984886,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch1",
+          "score": 0.5721187411496215,
+          "base_score": 0.629457161175295,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch2",
+          "score": 0.5380718260936658,
+          "base_score": 0.6467863768227762,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch9",
+          "score": 0.5100488440033817,
+          "base_score": 0.5260073325982288,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch4",
+          "score": 0.5099241639514096,
+          "base_score": 0.5257995325116085,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "business",
+          "ml",
+          "metrics",
+          "business metrics",
+          "objectives"
+        ],
+        "semantic": [],
+        "merged": [
+          "business",
+          "ml",
+          "metrics",
+          "business metrics",
+          "objectives"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_ml",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35631375053421277,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.840377+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 8,
+      "title": "Segment 8 (pages 58-71)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "classification",
+          "model",
+          "ml",
+          "problem",
+          "multiclass classification"
+        ],
+        "semantic": [],
+        "merged": [
+          "classification",
+          "model",
+          "ml",
+          "problem",
+          "multiclass classification"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3704520782875791,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:21.840618+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 9,
+      "title": "Segment 9 (pages 72-79)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch9",
+      "cross_references": [
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch4",
+          "score": 0.587314317936424,
+          "base_score": 0.6547831224866325,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch45",
+          "score": 0.5868999131452775,
+          "base_score": 0.5614998552421291,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch2",
+          "score": 0.5468457658719339,
+          "base_score": 0.6614096097865565,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch3",
+          "score": 0.5317017604427339,
+          "base_score": 0.5620955266638157,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch1",
+          "score": 0.5211932311261782,
+          "base_score": 0.5445813111362229,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ml",
+          "pareto",
+          "systems",
+          "ll",
+          "chapter"
+        ],
+        "semantic": [],
+        "merged": [
+          "ml",
+          "pareto",
+          "systems",
+          "ll",
+          "chapter"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_ml",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.36140198125085915,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.840857+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 10,
+      "title": "Segment 10 (pages 80-87)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "accessing",
+          "major",
+          "row",
+          "row major",
+          "csv"
+        ],
+        "semantic": [],
+        "merged": [
+          "accessing",
+          "major",
+          "row",
+          "row major",
+          "csv"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2263863284646909,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:21.841095+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 11,
+      "title": "Segment 11 (pages 88-98)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch11",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "document",
+          "relational",
+          "model",
+          "data model",
+          "graph"
+        ],
+        "semantic": [],
+        "merged": [
+          "document",
+          "relational",
+          "model",
+          "data model",
+          "graph"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_ml",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26931601883158957,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.841338+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 12,
+      "title": "Segment 12 (pages 99-107)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch12",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "service",
+          "services",
+          "data passing",
+          "passing",
+          "price"
+        ],
+        "semantic": [],
+        "merged": [
+          "service",
+          "services",
+          "data passing",
+          "passing",
+          "price"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23659036101284875,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.841572+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 13,
+      "title": "Segment 13 (pages 108-117)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch13",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "sampling",
+          "computation",
+          "stream",
+          "processing",
+          "real"
+        ],
+        "semantic": [],
+        "merged": [
+          "sampling",
+          "computation",
+          "stream",
+          "processing",
+          "real"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25719924846520026,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.841822+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 14,
+      "title": "Segment 14 (pages 118-125)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch14",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "labels",
+          "natural labels",
+          "natural",
+          "tasks",
+          "feedback"
+        ],
+        "semantic": [],
+        "merged": [
+          "labels",
+          "natural labels",
+          "natural",
+          "tasks",
+          "feedback"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.25047712724276705,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.842056+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 15,
+      "title": "Segment 15 (pages 126-134)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "class",
+          "model",
+          "samples",
+          "labels",
+          "labeled"
+        ],
+        "semantic": [],
+        "merged": [
+          "class",
+          "model",
+          "samples",
+          "labels",
+          "labeled"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.253451300743703,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.842307+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 16,
+      "title": "Segment 16 (pages 135-142)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch16",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "positive",
+          "class",
+          "positive class",
+          "recall",
+          "f1"
+        ],
+        "semantic": [],
+        "merged": [
+          "positive",
+          "class",
+          "positive class",
+          "recall",
+          "f1"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_ml",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.13473808734713275,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.842594+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 17,
+      "title": "Segment 17 (pages 143-150)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch17",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "class",
+          "loss",
+          "classes",
+          "minority",
+          "instances"
+        ],
+        "semantic": [],
+        "merged": [
+          "class",
+          "loss",
+          "classes",
+          "minority",
+          "instances"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_ml",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.18223402210026596,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.842844+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 18,
+      "title": "Segment 18 (pages 151-158)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch18",
+      "cross_references": [
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch33",
+          "score": 0.6614201431884066,
+          "base_score": 0.4079224608695665,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch30",
+          "score": 0.6329466308441483,
+          "base_score": 0.3882443847402472,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch25",
+          "score": 0.6282175121463454,
+          "base_score": 0.38036252024390904,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch6",
+          "score": 0.6178268716286326,
+          "base_score": 0.36304478604772095,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch38",
+          "score": 0.6134516585738994,
+          "base_score": 0.35575276428983227,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "https oreil",
+          "ly",
+          "oreil",
+          "oreil ly",
+          "https"
+        ],
+        "semantic": [],
+        "merged": [
+          "https oreil",
+          "ly",
+          "oreil",
+          "oreil ly",
+          "https"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3103765811926674,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.843144+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 19,
+      "title": "Segment 19 (pages 159-167)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch19",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "missing",
+          "values",
+          "missing values",
+          "variable",
+          "age"
+        ],
+        "semantic": [],
+        "merged": [
+          "missing",
+          "values",
+          "missing values",
+          "variable",
+          "age"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_ml",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24364746777250954,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.843413+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 20,
+      "title": "Segment 20 (pages 168-178)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch20",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "feature",
+          "split",
+          "features",
+          "model",
+          "feature importance"
+        ],
+        "semantic": [],
+        "merged": [
+          "feature",
+          "split",
+          "features",
+          "model",
+          "feature importance"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "to_the_model",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.21500246851163685,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.843653+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 21,
+      "title": "Segment 21 (pages 179-186)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch21",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "model",
+          "neural network",
+          "neural",
+          "network",
+          "models"
+        ],
+        "semantic": [],
+        "merged": [
+          "model",
+          "neural network",
+          "neural",
+          "network",
+          "models"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "model_oreil_ly",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37599915485962804,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.843891+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 22,
+      "title": "Segment 22 (pages 187-194)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch22",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "model",
+          "debugging",
+          "models",
+          "train",
+          "experiments"
+        ],
+        "semantic": [],
+        "merged": [
+          "model",
+          "debugging",
+          "models",
+          "train",
+          "experiments"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2917500227979364,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:21.844125+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 23,
+      "title": "Segment 23 (pages 195-202)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch23",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "model",
+          "gradient",
+          "parallelism",
+          "machines",
+          "split"
+        ],
+        "semantic": [],
+        "merged": [
+          "model",
+          "gradient",
+          "parallelism",
+          "machines",
+          "split"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "to_the_model",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.35386336074813574,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.844387+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 24,
+      "title": "Segment 24 (pages 203-210)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch24",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "model",
+          "calibrated",
+          "ad",
+          "probability",
+          "model performs"
+        ],
+        "semantic": [],
+        "merged": [
+          "model",
+          "calibrated",
+          "ad",
+          "probability",
+          "model performs"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_ml",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.26059178474089956,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.844624+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 25,
+      "title": "Segment 25 (pages 211-218)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch25",
+      "cross_references": [
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch30",
+          "score": 0.7321267922243898,
+          "base_score": 0.5535446537073164,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch6",
+          "score": 0.6731306823494753,
+          "base_score": 0.45521780391579203,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch38",
+          "score": 0.6492928078818859,
+          "base_score": 0.4154880131364765,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch18",
+          "score": 0.6282175121463454,
+          "base_score": 0.38036252024390904,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch44",
+          "score": 0.5919468385430549,
+          "base_score": 0.31991139757175824,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "oreil",
+          "ly",
+          "https oreil",
+          "oreil ly",
+          "https"
+        ],
+        "semantic": [],
+        "merged": [
+          "oreil",
+          "ly",
+          "https oreil",
+          "oreil ly",
+          "https"
+        ]
+      },
+      "topic_id": 5,
+      "topic_name": "model_oreil_ly",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3588015195481815,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.844891+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 26,
+      "title": "Segment 26 (pages 219-228)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch26",
+      "cross_references": [
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch27",
+          "score": 0.5394163903069616,
+          "base_score": 0.6490273171782694,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "batch features",
+          "prediction",
+          "batch",
+          "online prediction",
+          "online"
+        ],
+        "semantic": [],
+        "merged": [
+          "batch features",
+          "prediction",
+          "batch",
+          "online prediction",
+          "online"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "to_the_model",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3930000353656067,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.845183+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 27,
+      "title": "Segment 27 (pages 229-236)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch27",
+      "cross_references": [
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch26",
+          "score": 0.5394163903069616,
+          "base_score": 0.6490273171782694,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch38",
+          "score": 0.5069148891706546,
+          "base_score": 0.5948581486177578,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "recommendations",
+          "netflix",
+          "ic",
+          "horror",
+          "ic ti"
+        ],
+        "semantic": [],
+        "merged": [
+          "recommendations",
+          "netflix",
+          "ic",
+          "horror",
+          "ic ti"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "to_the_model",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3798198811080637,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.845474+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 28,
+      "title": "Segment 28 (pages 237-244)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch28",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "model compression",
+          "compression",
+          "model",
+          "quantization",
+          "xnor"
+        ],
+        "semantic": [],
+        "merged": [
+          "model compression",
+          "compression",
+          "model",
+          "quantization",
+          "xnor"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "to_the_model",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3122249347574745,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.845745+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 29,
+      "title": "Segment 29 (pages 245-256)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch29",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "hardware",
+          "run",
+          "hardware backend",
+          "backend",
+          "computation"
+        ],
+        "semantic": [],
+        "merged": [
+          "hardware",
+          "run",
+          "hardware backend",
+          "backend",
+          "computation"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "to_the_model",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33395517786523293,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.846000+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 30,
+      "title": "Segment 30 (pages 257-264)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch30",
+      "cross_references": [
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch38",
+          "score": 0.7617857777848399,
+          "base_score": 0.6029762963080665,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch25",
+          "score": 0.7321267922243898,
+          "base_score": 0.5535446537073164,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch44",
+          "score": 0.6834171613519453,
+          "base_score": 0.4723619355865756,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch6",
+          "score": 0.6691229542904475,
+          "base_score": 0.4485382571507459,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch18",
+          "score": 0.6329466308441483,
+          "base_score": 0.3882443847402472,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "oreil",
+          "ly",
+          "oreil ly",
+          "https oreil",
+          "https"
+        ],
+        "semantic": [],
+        "merged": [
+          "oreil",
+          "ly",
+          "oreil ly",
+          "https oreil",
+          "https"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4100905759221667,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:21.846310+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 31,
+      "title": "Segment 31 (pages 265-272)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch31",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "feedback",
+          "degenerate",
+          "degenerate feedback",
+          "model",
+          "loops"
+        ],
+        "semantic": [],
+        "merged": [
+          "feedback",
+          "degenerate",
+          "degenerate feedback",
+          "model",
+          "loops"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3635987994260707,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.846558+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 32,
+      "title": "Segment 32 (pages 273-280)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch32",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "distribution",
+          "shift",
+          "shifts",
+          "covariate",
+          "input distribution"
+        ],
+        "semantic": [],
+        "merged": [
+          "distribution",
+          "shift",
+          "shifts",
+          "covariate",
+          "input distribution"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.23635546289898304,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:21.846798+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 33,
+      "title": "Segment 33 (pages 281-289)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch33",
+      "cross_references": [
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch18",
+          "score": 0.6614201431884066,
+          "base_score": 0.4079224608695665,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch6",
+          "score": 0.535989252667979,
+          "base_score": 0.448870976668854,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "oreil",
+          "ly",
+          "oreil ly",
+          "https oreil",
+          "monitoring"
+        ],
+        "semantic": [],
+        "merged": [
+          "oreil",
+          "ly",
+          "oreil ly",
+          "https oreil",
+          "monitoring"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "the_to_of",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33276771445452974,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.847042+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 34,
+      "title": "Segment 34 (pages 290-297)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch34",
+      "cross_references": [
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch38",
+          "score": 0.5766229634483325,
+          "base_score": 0.7110382724138875,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch35",
+          "score": 0.5182492733074222,
+          "base_score": 0.5396747147716296,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "continual learning",
+          "continual",
+          "learning",
+          "model",
+          "training"
+        ],
+        "semantic": [],
+        "merged": [
+          "continual learning",
+          "continual",
+          "learning",
+          "model",
+          "training"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "to_the_model",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.33742055698675877,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.847333+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 35,
+      "title": "Segment 35 (pages 298-306)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch35",
+      "cross_references": [
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch34",
+          "score": 0.5182492733074222,
+          "base_score": 0.5396747147716296,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "model",
+          "updated",
+          "update",
+          "tree",
+          "models"
+        ],
+        "semantic": [],
+        "merged": [
+          "model",
+          "updated",
+          "update",
+          "tree",
+          "models"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "to_the_model",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.343864529152117,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.847571+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 36,
+      "title": "Segment 36 (pages 307-316)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch36",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "model",
+          "gain",
+          "test",
+          "fresher data",
+          "performance gain"
+        ],
+        "semantic": [],
+        "merged": [
+          "model",
+          "gain",
+          "test",
+          "fresher data",
+          "performance gain"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3513179246231288,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:21.847812+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 37,
+      "title": "Segment 37 (pages 317-324)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch37",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "bandits",
+          "contextual bandits",
+          "contextual",
+          "route",
+          "route traffic"
+        ],
+        "semantic": [],
+        "merged": [
+          "bandits",
+          "contextual bandits",
+          "contextual",
+          "route",
+          "route traffic"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "to_the_model",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.24239542619203938,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.848053+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 38,
+      "title": "Segment 38 (pages 325-333)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch38",
+      "cross_references": [
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch30",
+          "score": 0.7617857777848399,
+          "base_score": 0.6029762963080665,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch44",
+          "score": 0.6619682335149887,
+          "base_score": 0.4366137225249811,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch6",
+          "score": 0.6512378419574398,
+          "base_score": 0.418729736595733,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch25",
+          "score": 0.6492928078818859,
+          "base_score": 0.4154880131364765,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch18",
+          "score": 0.6134516585738994,
+          "base_score": 0.35575276428983227,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "https oreil",
+          "ly",
+          "oreil ly",
+          "oreil",
+          "https"
+        ],
+        "semantic": [],
+        "merged": [
+          "https oreil",
+          "ly",
+          "oreil ly",
+          "oreil",
+          "https"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "to_the_model",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38525776647402055,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.848375+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 39,
+      "title": "Segment 39 (pages 334-341)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch39",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "compute",
+          "unit",
+          "compute unit",
+          "cloud",
+          "flops"
+        ],
+        "semantic": [],
+        "merged": [
+          "compute",
+          "unit",
+          "compute unit",
+          "cloud",
+          "flops"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "to_the_model",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.22196122123893514,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.848626+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 40,
+      "title": "Segment 40 (pages 342-350)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch40",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "cloud",
+          "dev",
+          "cloud dev",
+          "environment",
+          "instances"
+        ],
+        "semantic": [],
+        "merged": [
+          "cloud",
+          "dev",
+          "cloud dev",
+          "environment",
+          "instances"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "to_the_model",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2062041476215942,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.848869+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 41,
+      "title": "Segment 41 (pages 351-358)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch41",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "workflow",
+          "schedulers",
+          "run",
+          "resources",
+          "workflows"
+        ],
+        "semantic": [],
+        "merged": [
+          "workflow",
+          "schedulers",
+          "run",
+          "resources",
+          "workflows"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.306773711876059,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:45:21.849110+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 42,
+      "title": "Segment 42 (pages 359-366)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch42",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "self",
+          "model",
+          "self self",
+          "self data",
+          "deployment"
+        ],
+        "semantic": [],
+        "merged": [
+          "self",
+          "model",
+          "self self",
+          "self data",
+          "deployment"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "to_the_model",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.22313126946292006,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.849361+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 43,
+      "title": "Segment 43 (pages 367-374)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch43",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "feature",
+          "store",
+          "feature store",
+          "vendor",
+          "stores"
+        ],
+        "semantic": [],
+        "merged": [
+          "feature",
+          "store",
+          "feature store",
+          "vendor",
+          "stores"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "to_the_model",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3768588799896768,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.849600+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 44,
+      "title": "Segment 44 (pages 375-382)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch44",
+      "cross_references": [
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch6",
+          "score": 0.8366229441532372,
+          "base_score": 0.477704906922062,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch48",
+          "score": 0.6963140189842514,
+          "base_score": 0.24385669830708565,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch30",
+          "score": 0.6834171613519453,
+          "base_score": 0.4723619355865756,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch38",
+          "score": 0.6619682335149887,
+          "base_score": 0.4366137225249811,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch25",
+          "score": 0.5919468385430549,
+          "base_score": 0.31991139757175824,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "https",
+          "oreil",
+          "oreil ly",
+          "https oreil",
+          "ly"
+        ],
+        "semantic": [],
+        "merged": [
+          "https",
+          "oreil",
+          "oreil ly",
+          "https oreil",
+          "ly"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_ml",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34797783701639606,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.849997+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 45,
+      "title": "Segment 45 (pages 383-391)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch45",
+      "cross_references": [
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch7",
+          "score": 0.6000553724835376,
+          "base_score": 0.6760182133984886,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch9",
+          "score": 0.5868999131452775,
+          "base_score": 0.5614998552421291,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch1",
+          "score": 0.5483935824537437,
+          "base_score": 0.5899152300154987,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch2",
+          "score": 0.5304152424204468,
+          "base_score": 0.634025404034078,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch44",
+          "score": 0.5002522047254033,
+          "base_score": 0.5837536745423388,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ml",
+          "systems",
+          "scientists",
+          "data scientists",
+          "team"
+        ],
+        "semantic": [],
+        "merged": [
+          "ml",
+          "systems",
+          "scientists",
+          "data scientists",
+          "team"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_ml",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38609746565251585,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.850275+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 46,
+      "title": "Segment 46 (pages 392-399)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch46",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "schools",
+          "ofqual",
+          "grades",
+          "students",
+          "school"
+        ],
+        "semantic": [],
+        "merged": [
+          "schools",
+          "ofqual",
+          "grades",
+          "students",
+          "school"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_ml",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.1350038187963577,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.850516+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 47,
+      "title": "Segment 47 (pages 400-407)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch47",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "model",
+          "cards",
+          "model cards",
+          "accuracy",
+          "information"
+        ],
+        "semantic": [],
+        "merged": [
+          "model",
+          "cards",
+          "model cards",
+          "accuracy",
+          "information"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_ml",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2709633829022003,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.850756+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 48,
+      "title": "Segment 48 (pages 408-416)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch48",
+      "cross_references": [
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch6",
+          "score": 0.8031108870104181,
+          "base_score": 0.421851478350697,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch44",
+          "score": 0.6963140189842514,
+          "base_score": 0.24385669830708565,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch25",
+          "score": 0.5368917339283064,
+          "base_score": 0.22815288988051047,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch30",
+          "score": 0.5194386044802228,
+          "base_score": 0.19906434080037128,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch38",
+          "score": 0.5011935664628668,
+          "base_score": 0.16865594410477802,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "oreil ly",
+          "https oreil",
+          "ly",
+          "oreil",
+          "https"
+        ],
+        "semantic": [],
+        "merged": [
+          "oreil ly",
+          "https oreil",
+          "ly",
+          "oreil",
+          "https"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_ml",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.18778578676867616,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.851004+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 49,
+      "title": "Segment 49 (pages 417-424)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch49",
+      "cross_references": [
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch50",
+          "score": 0.6773681928231096,
+          "base_score": 0.8048729139644417,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch53",
+          "score": 0.6061386587191666,
+          "base_score": 0.6861570237912035,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch51",
+          "score": 0.5863608317298018,
+          "base_score": 0.727268052883003,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch52",
+          "score": 0.5824694331993407,
+          "base_score": 0.6467083145914938,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "versus",
+          "data sources",
+          "data distribution",
+          "cloud",
+          "shift"
+        ],
+        "semantic": [],
+        "merged": [
+          "versus",
+          "data sources",
+          "data distribution",
+          "cloud",
+          "shift"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "versus_data_prediction",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3486317608585033,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.851271+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 50,
+      "title": "Segment 50 (pages 425-432)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch50",
+      "cross_references": [
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch49",
+          "score": 0.6773681928231096,
+          "base_score": 0.8048729139644417,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch53",
+          "score": 0.5778551796884838,
+          "base_score": 0.6390178920733989,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch51",
+          "score": 0.5680341040493587,
+          "base_score": 0.6967235067489311,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch52",
+          "score": 0.5482558267501845,
+          "base_score": 0.5896856371762333,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "versus",
+          "private data",
+          "public cloud",
+          "private",
+          "features"
+        ],
+        "semantic": [],
+        "merged": [
+          "versus",
+          "private data",
+          "public cloud",
+          "private",
+          "features"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "versus_data_prediction",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34241049580739613,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.851511+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 51,
+      "title": "Segment 51 (pages 433-440)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch51",
+      "cross_references": [
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch49",
+          "score": 0.5863608317298018,
+          "base_score": 0.727268052883003,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch50",
+          "score": 0.5680341040493587,
+          "base_score": 0.6967235067489311,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch52",
+          "score": 0.5336487623577651,
+          "base_score": 0.6394146039296085,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch53",
+          "score": 0.5175148122824998,
+          "base_score": 0.6125246871374996,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "ml",
+          "iteration",
+          "optimize ml",
+          "ml optimize",
+          "evaluating ml"
+        ],
+        "semantic": [],
+        "merged": [
+          "ml",
+          "iteration",
+          "optimize ml",
+          "ml optimize",
+          "evaluating ml"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "versus_data_prediction",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39653779277218226,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.851751+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 52,
+      "title": "Segment 52 (pages 441-448)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch52",
+      "cross_references": [
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch53",
+          "score": 0.6224299577032034,
+          "base_score": 0.7133091887645983,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch49",
+          "score": 0.5824694331993407,
+          "base_score": 0.6467083145914938,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch50",
+          "score": 0.5482558267501845,
+          "base_score": 0.5896856371762333,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch51",
+          "score": 0.5336487623577651,
+          "base_score": 0.6394146039296085,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "versus",
+          "prediction",
+          "prediction versus",
+          "versus online",
+          "batch"
+        ],
+        "semantic": [],
+        "merged": [
+          "versus",
+          "prediction",
+          "prediction versus",
+          "versus online",
+          "batch"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "versus_data_prediction",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.37007530869334126,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.851991+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 53,
+      "title": "Segment 53 (pages 449-456)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch53",
+      "cross_references": [
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch52",
+          "score": 0.6224299577032034,
+          "base_score": 0.7133091887645983,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch49",
+          "score": 0.6061386587191666,
+          "base_score": 0.6861570237912035,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch50",
+          "score": 0.5778551796884838,
+          "base_score": 0.6390178920733989,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch51",
+          "score": 0.5175148122824998,
+          "base_score": 0.6125246871374996,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "versus",
+          "stateless retraining",
+          "training stateless",
+          "stateless",
+          "retraining"
+        ],
+        "semantic": [],
+        "merged": [
+          "versus",
+          "stateless retraining",
+          "training stateless",
+          "stateless",
+          "retraining"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "versus_data_prediction",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31336221897468847,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.852242+00:00"
+      }
+    },
+    {
+      "book": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications",
+      "chapter": 54,
+      "title": "Segment 54 (pages 457-461)",
+      "chapter_id": "Designing Machine Learning Systems An Iterative Process for Production-Ready Applications:ch54",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "workflow management",
+          "science workflow",
+          "workflow",
+          "data science",
+          "management"
+        ],
+        "semantic": [],
+        "merged": [
+          "workflow management",
+          "science workflow",
+          "workflow",
+          "data science",
+          "management"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_to_ml",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2577306721900064,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:45:21.852483+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

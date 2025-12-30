@@ -1,0 +1,475 @@
+{
+  "book": {
+    "title": "Streaming Systems - Tyler Akidau"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:57:14.922977",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Streaming Systems - Tyler Akidau",
+      "chapter": 1,
+      "title": "Streaming 101",
+      "chapter_id": "Streaming Systems - Tyler Akidau:ch1",
+      "cross_references": [
+        {
+          "target": "Streaming Systems - Tyler Akidau:ch2",
+          "score": 0.5008464813700871,
+          "base_score": 0.6680774689501453,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "processing",
+          "unbounded",
+          "event",
+          "windowing",
+          "processing time"
+        ],
+        "semantic": [],
+        "merged": [
+          "processing",
+          "unbounded",
+          "event",
+          "windowing",
+          "processing time"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6450070668075499,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:57:14.898517+00:00"
+      }
+    },
+    {
+      "book": "Streaming Systems - Tyler Akidau",
+      "chapter": 2,
+      "title": "The What, Where, When, and How of Data Processing",
+      "chapter_id": "Streaming Systems - Tyler Akidau:ch2",
+      "cross_references": [
+        {
+          "target": "Streaming Systems - Tyler Akidau:ch6",
+          "score": 0.5356028088863588,
+          "base_score": 0.6426713481439315,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Streaming Systems - Tyler Akidau:ch3",
+          "score": 0.5295345144479432,
+          "base_score": 0.5968432383656196,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Streaming Systems - Tyler Akidau:ch4",
+          "score": 0.5072055349501792,
+          "base_score": 0.678675891583632,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Streaming Systems - Tyler Akidau:ch1",
+          "score": 0.5008464813700871,
+          "base_score": 0.6680774689501453,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "watermark",
+          "window",
+          "processing",
+          "late",
+          "event"
+        ],
+        "semantic": [],
+        "merged": [
+          "watermark",
+          "window",
+          "processing",
+          "late",
+          "event"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6185263798309,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:14.898616+00:00"
+      }
+    },
+    {
+      "book": "Streaming Systems - Tyler Akidau",
+      "chapter": 3,
+      "title": "Watermarks",
+      "chapter_id": "Streaming Systems - Tyler Akidau:ch3",
+      "cross_references": [
+        {
+          "target": "Streaming Systems - Tyler Akidau:ch2",
+          "score": 0.5295345144479432,
+          "base_score": 0.5968432383656196,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "watermark",
+          "time watermark",
+          "event",
+          "processing",
+          "messages"
+        ],
+        "semantic": [],
+        "merged": [
+          "watermark",
+          "time watermark",
+          "event",
+          "processing",
+          "messages"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_watermark_that",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5275511564256976,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:14.898684+00:00"
+      }
+    },
+    {
+      "book": "Streaming Systems - Tyler Akidau",
+      "chapter": 4,
+      "title": "Advanced Windowing",
+      "chapter_id": "Streaming Systems - Tyler Akidau:ch4",
+      "cross_references": [
+        {
+          "target": "Streaming Systems - Tyler Akidau:ch2",
+          "score": 0.5072055349501792,
+          "base_score": 0.678675891583632,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "windowing",
+          "time windowing",
+          "processing",
+          "processing time",
+          "window"
+        ],
+        "semantic": [],
+        "merged": [
+          "windowing",
+          "time windowing",
+          "processing",
+          "processing time",
+          "window"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4786975949241984,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:57:14.898732+00:00"
+      }
+    },
+    {
+      "book": "Streaming Systems - Tyler Akidau",
+      "chapter": 5,
+      "title": "Exactly-Once and Side Effects",
+      "chapter_id": "Streaming Systems - Tyler Akidau:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "dataflow",
+          "record",
+          "records",
+          "exactly",
+          "ids"
+        ],
+        "semantic": [],
+        "merged": [
+          "dataflow",
+          "record",
+          "records",
+          "exactly",
+          "ids"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_watermark_that",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5949227027114404,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:14.898828+00:00"
+      }
+    },
+    {
+      "book": "Streaming Systems - Tyler Akidau",
+      "chapter": 6,
+      "title": "Streams and Tables",
+      "chapter_id": "Streaming Systems - Tyler Akidau:ch6",
+      "cross_references": [
+        {
+          "target": "Streaming Systems - Tyler Akidau:ch10",
+          "score": 0.6833794205761531,
+          "base_score": 0.6032514152459694,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Streaming Systems - Tyler Akidau:ch8",
+          "score": 0.6178688840395502,
+          "base_score": 0.6131148067325837,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Streaming Systems - Tyler Akidau:ch2",
+          "score": 0.5356028088863588,
+          "base_score": 0.6426713481439315,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "table",
+          "tables",
+          "streams",
+          "streams tables",
+          "stream"
+        ],
+        "semantic": [],
+        "merged": [
+          "table",
+          "tables",
+          "streams",
+          "streams tables",
+          "stream"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.6031895624611433,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:14.898889+00:00"
+      }
+    },
+    {
+      "book": "Streaming Systems - Tyler Akidau",
+      "chapter": 7,
+      "title": "The Practicalities of Persistent State",
+      "chapter_id": "Streaming Systems - Tyler Akidau:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "visit",
+          "impression",
+          "impressions",
+          "goal",
+          "attribution"
+        ],
+        "semantic": [],
+        "merged": [
+          "visit",
+          "impression",
+          "impressions",
+          "goal",
+          "attribution"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5587289723567606,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:57:14.898951+00:00"
+      }
+    },
+    {
+      "book": "Streaming Systems - Tyler Akidau",
+      "chapter": 8,
+      "title": "Streaming SQL",
+      "chapter_id": "Streaming Systems - Tyler Akidau:ch8",
+      "cross_references": [
+        {
+          "target": "Streaming Systems - Tyler Akidau:ch6",
+          "score": 0.6178688840395502,
+          "base_score": 0.6131148067325837,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "table",
+          "stream",
+          "relation",
+          "time varying",
+          "sql"
+        ],
+        "semantic": [],
+        "merged": [
+          "table",
+          "stream",
+          "relation",
+          "time varying",
+          "sql"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5243486897984337,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:14.899026+00:00"
+      }
+    },
+    {
+      "book": "Streaming Systems - Tyler Akidau",
+      "chapter": 9,
+      "title": "Streaming Joins",
+      "chapter_id": "Streaming Systems - Tyler Akidau:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "12",
+          "null",
+          "left",
+          "undo",
+          "num"
+        ],
+        "semantic": [],
+        "merged": [
+          "12",
+          "null",
+          "left",
+          "undo",
+          "num"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5218057173075432,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:14.899071+00:00"
+      }
+    },
+    {
+      "book": "Streaming Systems - Tyler Akidau",
+      "chapter": 10,
+      "title": "The Evolution of Large-Scale Data Processing",
+      "chapter_id": "Streaming Systems - Tyler Akidau:ch10",
+      "cross_references": [
+        {
+          "target": "Streaming Systems - Tyler Akidau:ch6",
+          "score": 0.6833794205761531,
+          "base_score": 0.6032514152459694,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "processing",
+          "streaming",
+          "tables",
+          "streams tables",
+          "streams"
+        ],
+        "semantic": [],
+        "merged": [
+          "processing",
+          "streaming",
+          "tables",
+          "streams tables",
+          "streams"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_of_and",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5405306556781786,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:57:14.899118+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

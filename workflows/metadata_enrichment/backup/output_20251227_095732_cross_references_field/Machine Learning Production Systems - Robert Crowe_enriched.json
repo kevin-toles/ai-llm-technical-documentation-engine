@@ -1,0 +1,896 @@
+{
+  "book": {
+    "title": "Machine Learning Production Systems - Robert Crowe"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T08:50:33.487432",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "Machine Learning Production Systems - Robert Crowe",
+      "chapter": 1,
+      "title": "Introduction to Machine",
+      "chapter_id": "Machine Learning Production Systems - Robert Crowe:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "training",
+          "new",
+          "model training",
+          "pipeline",
+          "production"
+        ],
+        "semantic": [],
+        "merged": [
+          "training",
+          "new",
+          "model training",
+          "pipeline",
+          "production"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4816042517029625,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:50:33.479834+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Production Systems - Robert Crowe",
+      "chapter": 2,
+      "title": "Collecting, Labeling, and",
+      "chapter_id": "Machine Learning Production Systems - Robert Crowe:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "changes",
+          "tfdv",
+          "labeling",
+          "data changes",
+          "drift"
+        ],
+        "semantic": [],
+        "merged": [
+          "changes",
+          "tfdv",
+          "labeling",
+          "data changes",
+          "drift"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3630012708057365,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:33.479953+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Production Systems - Robert Crowe",
+      "chapter": 3,
+      "title": "Feature Engineering and",
+      "chapter_id": "Machine Learning Production Systems - Robert Crowe:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "feature",
+          "features",
+          "selection",
+          "engineering",
+          "feature selection"
+        ],
+        "semantic": [],
+        "merged": [
+          "feature",
+          "features",
+          "selection",
+          "engineering",
+          "feature selection"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3534009194920274,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:50:33.480061+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Production Systems - Robert Crowe",
+      "chapter": 4,
+      "title": "Data Journey and Data",
+      "chapter_id": "Machine Learning Production Systems - Robert Crowe:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "warehouse",
+          "data warehouse",
+          "schema",
+          "warehouses",
+          "data warehouses"
+        ],
+        "semantic": [],
+        "merged": [
+          "warehouse",
+          "data warehouse",
+          "schema",
+          "warehouses",
+          "data warehouses"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.43802465703092464,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:33.480166+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Production Systems - Robert Crowe",
+      "chapter": 5,
+      "title": "Advanced Labeling,",
+      "chapter_id": "Machine Learning Production Systems - Robert Crowe:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "unlabeled",
+          "labeling",
+          "augmentation",
+          "labeled",
+          "data augmentation"
+        ],
+        "semantic": [],
+        "merged": [
+          "unlabeled",
+          "labeling",
+          "augmentation",
+          "labeled",
+          "data augmentation"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32190027006222893,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:33.480269+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Production Systems - Robert Crowe",
+      "chapter": 6,
+      "title": "Model Resource Management",
+      "chapter_id": "Machine Learning Production Systems - Robert Crowe:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "student",
+          "quantization",
+          "teacher",
+          "student model",
+          "distillation"
+        ],
+        "semantic": [],
+        "merged": [
+          "student",
+          "quantization",
+          "teacher",
+          "student model",
+          "distillation"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "model_the_models",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45781510712886936,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:33.480391+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Production Systems - Robert Crowe",
+      "chapter": 7,
+      "title": "High-Performance Modeling",
+      "chapter_id": "Machine Learning Production Systems - Robert Crowe:ch7",
+      "cross_references": [
+        {
+          "target": "Machine Learning Production Systems - Robert Crowe:ch13",
+          "score": 0.5021533362239433,
+          "base_score": 0.5869222270399055,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "parallelism",
+          "training",
+          "model parallelism",
+          "distributed training",
+          "workers"
+        ],
+        "semantic": [],
+        "merged": [
+          "parallelism",
+          "training",
+          "model parallelism",
+          "distributed training",
+          "workers"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_model_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41585926677078217,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:33.480496+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Production Systems - Robert Crowe",
+      "chapter": 8,
+      "title": "Model Analysis",
+      "chapter_id": "Machine Learning Production Systems - Robert Crowe:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "analysis",
+          "tfma",
+          "robustness",
+          "performance",
+          "model performance"
+        ],
+        "semantic": [],
+        "merged": [
+          "analysis",
+          "tfma",
+          "robustness",
+          "performance",
+          "model performance"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "model_the_your",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4047218898110406,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:33.480598+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Production Systems - Robert Crowe",
+      "chapter": 9,
+      "title": "Interpretability",
+      "chapter_id": "Machine Learning Production Systems - Robert Crowe:ch9",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "feature",
+          "interpretable",
+          "value",
+          "linear",
+          "shap"
+        ],
+        "semantic": [],
+        "merged": [
+          "feature",
+          "interpretable",
+          "value",
+          "linear",
+          "shap"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.34915017002511733,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:50:33.480712+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Production Systems - Robert Crowe",
+      "chapter": 10,
+      "title": "Neural Architecture Search",
+      "chapter_id": "Machine Learning Production Systems - Robert Crowe:ch10",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "search",
+          "automl",
+          "architecture",
+          "nas",
+          "search space"
+        ],
+        "semantic": [],
+        "merged": [
+          "search",
+          "automl",
+          "architecture",
+          "nas",
+          "search space"
+        ]
+      },
+      "topic_id": 3,
+      "topic_name": "model_the_your",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.40752413033407087,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:33.480812+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Production Systems - Robert Crowe",
+      "chapter": 11,
+      "title": "Introduction to Model",
+      "chapter_id": "Machine Learning Production Systems - Robert Crowe:ch11",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "serving",
+          "model serving",
+          "latency",
+          "prediction",
+          "prediction latency"
+        ],
+        "semantic": [],
+        "merged": [
+          "serving",
+          "model serving",
+          "latency",
+          "prediction",
+          "prediction latency"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5021628021746862,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:50:33.480913+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Production Systems - Robert Crowe",
+      "chapter": 12,
+      "title": "Model Serving Patterns",
+      "chapter_id": "Machine Learning Production Systems - Robert Crowe:ch12",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "real time",
+          "real",
+          "time",
+          "predictions",
+          "batch"
+        ],
+        "semantic": [],
+        "merged": [
+          "real time",
+          "real",
+          "time",
+          "predictions",
+          "batch"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.49107091248842993,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:50:33.481012+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Production Systems - Robert Crowe",
+      "chapter": 13,
+      "title": "Model Serving Infrastructure",
+      "chapter_id": "Machine Learning Production Systems - Robert Crowe:ch13",
+      "cross_references": [
+        {
+          "target": "Machine Learning Production Systems - Robert Crowe:ch14",
+          "score": 0.5327926404974402,
+          "base_score": 0.6379877341624003,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "Machine Learning Production Systems - Robert Crowe:ch7",
+          "score": 0.5021533362239433,
+          "base_score": 0.5869222270399055,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "container",
+          "containers",
+          "kubernetes",
+          "docker",
+          "server"
+        ],
+        "semantic": [],
+        "merged": [
+          "container",
+          "containers",
+          "kubernetes",
+          "docker",
+          "server"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_model_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.45476560036928837,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:33.481114+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Production Systems - Robert Crowe",
+      "chapter": 14,
+      "title": "Model Serving Examples",
+      "chapter_id": "Machine Learning Production Systems - Robert Crowe:ch14",
+      "cross_references": [
+        {
+          "target": "Machine Learning Production Systems - Robert Crowe:ch13",
+          "score": 0.5327926404974402,
+          "base_score": 0.6379877341624003,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "tf serving",
+          "tf",
+          "serving",
+          "07",
+          "07 26"
+        ],
+        "semantic": [],
+        "merged": [
+          "tf serving",
+          "tf",
+          "serving",
+          "07",
+          "07 26"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "the_model_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4558737583143109,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:33.481216+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Production Systems - Robert Crowe",
+      "chapter": 15,
+      "title": "Model Management and",
+      "chapter_id": "Machine Learning Production Systems - Robert Crowe:ch15",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "component",
+          "components",
+          "pipeline",
+          "tfx",
+          "custom"
+        ],
+        "semantic": [],
+        "merged": [
+          "component",
+          "components",
+          "pipeline",
+          "tfx",
+          "custom"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.41774359153335533,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:50:33.481320+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Production Systems - Robert Crowe",
+      "chapter": 16,
+      "title": "Model Monitoring and",
+      "chapter_id": "Machine Learning Production Systems - Robert Crowe:ch16",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "monitoring",
+          "drift",
+          "monitor",
+          "data drift",
+          "changes"
+        ],
+        "semantic": [],
+        "merged": [
+          "monitoring",
+          "drift",
+          "monitor",
+          "data drift",
+          "changes"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4369421182417096,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:50:33.481434+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Production Systems - Robert Crowe",
+      "chapter": 17,
+      "title": "Privacy and Legal",
+      "chapter_id": "Machine Learning Production Systems - Robert Crowe:ch17",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "privacy",
+          "data privacy",
+          "personal",
+          "users",
+          "personal data"
+        ],
+        "semantic": [],
+        "merged": [
+          "privacy",
+          "data privacy",
+          "personal",
+          "users",
+          "personal data"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "data_the_to",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3324994059133164,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:33.481536+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Production Systems - Robert Crowe",
+      "chapter": 18,
+      "title": "Orchestrating Machine",
+      "chapter_id": "Machine Learning Production Systems - Robert Crowe:ch18",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "kubeflow pipelines",
+          "pipelines",
+          "pipeline",
+          "kubeflow",
+          "tfx"
+        ],
+        "semantic": [],
+        "merged": [
+          "kubeflow pipelines",
+          "pipelines",
+          "pipeline",
+          "kubeflow",
+          "tfx"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.38013624788431405,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:50:33.481644+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Production Systems - Robert Crowe",
+      "chapter": 19,
+      "title": "Advanced TFX",
+      "chapter_id": "Machine Learning Production Systems - Robert Crowe:ch19",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "component",
+          "components",
+          "tfx",
+          "custom",
+          "tfx components"
+        ],
+        "semantic": [],
+        "merged": [
+          "component",
+          "components",
+          "tfx",
+          "custom",
+          "tfx components"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.2713961497757027,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:50:33.481747+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Production Systems - Robert Crowe",
+      "chapter": 20,
+      "title": "ML Pipelines for Computer",
+      "chapter_id": "Machine Learning Production Systems - Robert Crowe:ch20",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "pipeline",
+          "image",
+          "serving_model_dir",
+          "tf",
+          "save"
+        ],
+        "semantic": [],
+        "merged": [
+          "pipeline",
+          "image",
+          "serving_model_dir",
+          "tf",
+          "save"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "model_the_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3955873391597268,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:33.481849+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Production Systems - Robert Crowe",
+      "chapter": 21,
+      "title": "ML Pipelines for Natural",
+      "chapter_id": "Machine Learning Production Systems - Robert Crowe:ch21",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "endpoint",
+          "region",
+          "project_id",
+          "project_id region",
+          "ai"
+        ],
+        "semantic": [],
+        "merged": [
+          "endpoint",
+          "region",
+          "project_id",
+          "project_id region",
+          "ai"
+        ]
+      },
+      "topic_id": 4,
+      "topic_name": "model_the_we",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.31326810041736863,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:33.481951+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Production Systems - Robert Crowe",
+      "chapter": 22,
+      "title": "Generative AI",
+      "chapter_id": "Machine Learning Production Systems - Robert Crowe:ch22",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "generative",
+          "fine",
+          "generative model",
+          "prompt",
+          "genai"
+        ],
+        "semantic": [],
+        "merged": [
+          "generative",
+          "fine",
+          "generative model",
+          "prompt",
+          "genai"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "model_the_models",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.4088407075525789,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T16:50:33.482051+00:00"
+      }
+    },
+    {
+      "book": "Machine Learning Production Systems - Robert Crowe",
+      "chapter": 23,
+      "title": "The Future of Machine",
+      "chapter_id": "Machine Learning Production Systems - Robert Crowe:ch23",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "pipelines",
+          "tensorflow",
+          "analysis",
+          "data preprocessing",
+          "making model"
+        ],
+        "semantic": [],
+        "merged": [
+          "pipelines",
+          "tensorflow",
+          "analysis",
+          "data preprocessing",
+          "making model"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5190936185212167,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T16:50:33.482153+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

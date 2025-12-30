@@ -160,7 +160,7 @@ class TestSemanticThreshold:
         
         try:
             from enrich_metadata_per_book import SEMANTIC_SIMILARITY_THRESHOLD
-            assert SEMANTIC_SIMILARITY_THRESHOLD == 0.3
+            assert SEMANTIC_SIMILARITY_THRESHOLD == pytest.approx(0.3)
         except (ImportError, AttributeError):
             pytest.fail("SEMANTIC_SIMILARITY_THRESHOLD constant not found")
 
@@ -173,7 +173,7 @@ class TestSemanticThreshold:
         
         try:
             from enrich_metadata_per_book import TFIDF_SIMILARITY_THRESHOLD
-            assert TFIDF_SIMILARITY_THRESHOLD == 0.7
+            assert TFIDF_SIMILARITY_THRESHOLD == pytest.approx(0.7)
         except (ImportError, AttributeError):
             # May not exist as a named constant - check function default
             pass

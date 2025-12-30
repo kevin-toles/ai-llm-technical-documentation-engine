@@ -1,0 +1,125 @@
+{
+  "book": {
+    "title": "evolving-architectures-of-fintech"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:01:14.241161",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "evolving-architectures-of-fintech",
+      "chapter": 1,
+      "title": "Segment 1 (pages 3-11)",
+      "chapter_id": "evolving-architectures-of-fintech:ch1",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "fintech",
+          "global",
+          "goldberg",
+          "platforms",
+          "complexities"
+        ],
+        "semantic": [],
+        "merged": [
+          "fintech",
+          "global",
+          "goldberg",
+          "platforms",
+          "complexities"
+        ]
+      },
+      "topic_id": 2,
+      "topic_name": "fintech_financial_services",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7917932214826168,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:14.236831+00:00"
+      }
+    },
+    {
+      "book": "evolving-architectures-of-fintech",
+      "chapter": 2,
+      "title": "Segment 2 (pages 12-19)",
+      "chapter_id": "evolving-architectures-of-fintech:ch2",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "newman",
+          "business",
+          "governance",
+          "frohwein",
+          "richards"
+        ],
+        "semantic": [],
+        "merged": [
+          "newman",
+          "business",
+          "governance",
+          "frohwein",
+          "richards"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "says_newman_services",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.8094705197294504,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:14.236860+00:00"
+      }
+    },
+    {
+      "book": "evolving-architectures-of-fintech",
+      "chapter": 3,
+      "title": "Segment 3 (pages 20-21)",
+      "chapter_id": "evolving-architectures-of-fintech:ch3",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "chasm",
+          "profitability",
+          "understanding",
+          "services companies",
+          "companies"
+        ],
+        "semantic": [],
+        "merged": [
+          "chasm",
+          "profitability",
+          "understanding",
+          "services companies",
+          "companies"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "understanding_profitability_chasm",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.7415346122818637,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:01:14.236877+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}

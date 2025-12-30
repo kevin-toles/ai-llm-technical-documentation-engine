@@ -1,0 +1,407 @@
+{
+  "book": {
+    "title": "building-reactive-microservices-in-java"
+  },
+  "enrichment_provenance": {
+    "method": "msep",
+    "timestamp": "2025-12-27T09:00:41.227455",
+    "gateway_url": "http://localhost:8080"
+  },
+  "chapters": [
+    {
+      "book": "building-reactive-microservices-in-java",
+      "chapter": 1,
+      "title": "Segment 1 (pages 1-9)",
+      "chapter_id": "building-reactive-microservices-in-java:ch1",
+      "cross_references": [
+        {
+          "target": "building-reactive-microservices-in-java:ch2",
+          "score": 0.5025517821994543,
+          "base_score": 0.763512229591683,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "building reactive",
+          "microservices java",
+          "systems",
+          "building",
+          "java"
+        ],
+        "semantic": [],
+        "merged": [
+          "building reactive",
+          "microservices java",
+          "systems",
+          "building",
+          "java"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "openshift_the_reactive",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5685296189824738,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:41.215663+00:00"
+      }
+    },
+    {
+      "book": "building-reactive-microservices-in-java",
+      "chapter": 2,
+      "title": "Segment 2 (pages 10-20)",
+      "chapter_id": "building-reactive-microservices-in-java:ch2",
+      "cross_references": [
+        {
+          "target": "building-reactive-microservices-in-java:ch9",
+          "score": 0.614759172486167,
+          "base_score": 0.7005245467362041,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "building-reactive-microservices-in-java:ch3",
+          "score": 0.6119576675503915,
+          "base_score": 0.6958553718432451,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "building-reactive-microservices-in-java:ch1",
+          "score": 0.5025517821994543,
+          "base_score": 0.763512229591683,
+          "topic_boost": 0.0,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "vert",
+          "asynchronous",
+          "systems",
+          "understanding",
+          "understanding reactive"
+        ],
+        "semantic": [],
+        "merged": [
+          "vert",
+          "asynchronous",
+          "systems",
+          "understanding",
+          "understanding reactive"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_vert_message",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5376292968448845,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:41.215739+00:00"
+      }
+    },
+    {
+      "book": "building-reactive-microservices-in-java",
+      "chapter": 3,
+      "title": "Segment 3 (pages 21-31)",
+      "chapter_id": "building-reactive-microservices-in-java:ch3",
+      "cross_references": [
+        {
+          "target": "building-reactive-microservices-in-java:ch2",
+          "score": 0.6119576675503915,
+          "base_score": 0.6958553718432451,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "building-reactive-microservices-in-java:ch9",
+          "score": 0.5807127495325666,
+          "base_score": 0.6437805084802036,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "vert",
+          "rxjava",
+          "maven",
+          "http",
+          "server"
+        ],
+        "semantic": [],
+        "merged": [
+          "vert",
+          "rxjava",
+          "maven",
+          "http",
+          "server"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_vert_message",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5688424285043419,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:41.215786+00:00"
+      }
+    },
+    {
+      "book": "building-reactive-microservices-in-java",
+      "chapter": 4,
+      "title": "Segment 4 (pages 32-42)",
+      "chapter_id": "building-reactive-microservices-in-java:ch4",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "message",
+          "hello",
+          "jsonobject",
+          "luke",
+          "leia"
+        ],
+        "semantic": [],
+        "merged": [
+          "message",
+          "hello",
+          "jsonobject",
+          "luke",
+          "leia"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_vert_message",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.32804471652776934,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:41.215843+00:00"
+      }
+    },
+    {
+      "book": "building-reactive-microservices-in-java",
+      "chapter": 5,
+      "title": "Segment 5 (pages 43-53)",
+      "chapter_id": "building-reactive-microservices-in-java:ch5",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "service",
+          "discovery",
+          "service discovery",
+          "server",
+          "microservice"
+        ],
+        "semantic": [],
+        "merged": [
+          "service",
+          "discovery",
+          "service discovery",
+          "server",
+          "microservice"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5819056680303726,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:00:41.215886+00:00"
+      }
+    },
+    {
+      "book": "building-reactive-microservices-in-java",
+      "chapter": 6,
+      "title": "Segment 6 (pages 54-62)",
+      "chapter_id": "building-reactive-microservices-in-java:ch6",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "circuit",
+          "breaker",
+          "circuit breaker",
+          "state",
+          "failures"
+        ],
+        "semantic": [],
+        "merged": [
+          "circuit",
+          "breaker",
+          "circuit breaker",
+          "state",
+          "failures"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.47767161191071367,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:00:41.215939+00:00"
+      }
+    },
+    {
+      "book": "building-reactive-microservices-in-java",
+      "chapter": 7,
+      "title": "Segment 7 (pages 63-72)",
+      "chapter_id": "building-reactive-microservices-in-java:ch7",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "openshift",
+          "minishift",
+          "microservice",
+          "deploying",
+          "chapter deploying"
+        ],
+        "semantic": [],
+        "merged": [
+          "openshift",
+          "minishift",
+          "microservice",
+          "deploying",
+          "chapter deploying"
+        ]
+      },
+      "topic_id": 1,
+      "topic_name": "openshift_the_reactive",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.3759068040467721,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:41.215981+00:00"
+      }
+    },
+    {
+      "book": "building-reactive-microservices-in-java",
+      "chapter": 8,
+      "title": "Segment 8 (pages 73-81)",
+      "chapter_id": "building-reactive-microservices-in-java:ch8",
+      "cross_references": [],
+      "keywords": {
+        "tfidf": [
+          "openshift",
+          "microservice",
+          "systems",
+          "microservice systems",
+          "hello"
+        ],
+        "semantic": [],
+        "merged": [
+          "openshift",
+          "microservice",
+          "systems",
+          "microservice systems",
+          "hello"
+        ]
+      },
+      "topic_id": null,
+      "topic_name": null,
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.39399685779167154,
+        "topic_boost": 0.0,
+        "timestamp": "2025-12-27T17:00:41.216024+00:00"
+      }
+    },
+    {
+      "book": "building-reactive-microservices-in-java",
+      "chapter": 9,
+      "title": "Segment 9 (pages 82-83)",
+      "chapter_id": "building-reactive-microservices-in-java:ch9",
+      "cross_references": [
+        {
+          "target": "building-reactive-microservices-in-java:ch2",
+          "score": 0.614759172486167,
+          "base_score": 0.7005245467362041,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        },
+        {
+          "target": "building-reactive-microservices-in-java:ch3",
+          "score": 0.5807127495325666,
+          "base_score": 0.6437805084802036,
+          "topic_boost": 0.15,
+          "method": "multi-signal"
+        }
+      ],
+      "keywords": {
+        "tfidf": [
+          "vert",
+          "used backbone",
+          "versatility",
+          "gateways currently",
+          "gateways"
+        ],
+        "semantic": [],
+        "merged": [
+          "vert",
+          "used backbone",
+          "versatility",
+          "gateways currently",
+          "gateways"
+        ]
+      },
+      "topic_id": 0,
+      "topic_name": "the_vert_message",
+      "graph_relationships": [],
+      "provenance": {
+        "methods_used": [
+          "sbert",
+          "tfidf",
+          "bertopic"
+        ],
+        "sbert_score": 0.5189109950604871,
+        "topic_boost": 0.15,
+        "timestamp": "2025-12-27T17:00:41.216067+00:00"
+      }
+    }
+  ],
+  "metadata": {},
+  "pages": []
+}
