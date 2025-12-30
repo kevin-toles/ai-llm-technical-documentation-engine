@@ -37,7 +37,7 @@ class TestModelCaching:
     def test_cache_class_exists(self):
         """ResultCache class exists."""
         from workflows.shared.clients.cache import ResultCache
-        assert ResultCache is not None
+        assert ResultCache  # Class exists and is truthy
 
     def test_cache_has_get_method(self):
         """Cache has get method."""

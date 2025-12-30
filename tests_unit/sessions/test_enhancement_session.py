@@ -10,6 +10,8 @@ Reference:
 - Comp_Static_Analysis_Report #38: Session expiration handling
 """
 
+import asyncio
+
 import pytest
 from datetime import datetime, timezone, timedelta
 from unittest.mock import AsyncMock, MagicMock, patch
@@ -28,7 +30,7 @@ class TestEnhancementSessionInstantiation:
 
         session = EnhancementSession()
 
-        assert session is not None
+        assert session  # Instance created successfully
         assert session._session_id is None  # Not created yet
         assert session._ttl_seconds > 0
 
@@ -83,7 +85,7 @@ class TestEnhancementSessionContextManager:
             new_callable=AsyncMock
         ) as mock_delete:
             async with EnhancementSession() as session:
-                pass
+                pass  # Context manager test - no operations needed inside
 
             mock_delete.assert_called_once_with("sess_xyz")
 
@@ -103,7 +105,7 @@ class TestEnhancementSessionContextManager:
         ):
             # Should not raise
             async with EnhancementSession() as session:
-                pass
+                pass  # Testing graceful exit - no operations needed
 
             assert session._session_id == "sess_fail"
 
@@ -195,7 +197,7 @@ class TestEnhancementSessionEnhance:
             new_callable=AsyncMock
         ):
             async with EnhancementSession() as session:
-                result = await session.enhance("Test prompt", max_tokens=100)
+                _result = await session.enhance("Test prompt", max_tokens=100)
 
             mock_call.assert_called_once()
             call_kwargs = mock_call.call_args
@@ -244,8 +246,10 @@ class TestEnhancementSessionExpiry:
         create_call_count = [0]
 
         async def mock_create(*args, **kwargs):
+            # Must be async to mock async method
             result = create_calls[create_call_count[0]]
             create_call_count[0] += 1
+            await asyncio.sleep(0)  # Yield to event loop
             return result
 
         with patch.object(
@@ -301,7 +305,9 @@ class TestEnhancementSessionIntegration:
         call_count = [0]
 
         async def mock_completion(*args, **kwargs):
+            # Must be async to mock async method
             call_count[0] += 1
+            await asyncio.sleep(0)  # Yield to event loop
             return {
                 "choices": [{"message": {"content": f"Response {call_count[0]}"}}],
                 "model": "test", "usage": {"prompt_tokens": 1, "completion_tokens": 1, "total_tokens": 2}

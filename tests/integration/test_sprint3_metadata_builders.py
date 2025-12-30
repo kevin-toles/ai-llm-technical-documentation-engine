@@ -68,7 +68,7 @@ class TestMetadataBuilderModule:
         """
         from workflows.llm_enhancement.scripts.builders.metadata_builder import MetadataBuilder
         
-        assert MetadataBuilder is not None
+        assert MetadataBuilder  # Class exists and is truthy
         assert hasattr(MetadataBuilder, '__name__')
 
 

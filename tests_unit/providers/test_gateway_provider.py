@@ -33,7 +33,7 @@ class TestGatewayProviderInstantiation:
 
         provider = GatewayProvider()
 
-        assert provider is not None
+        assert provider  # Instance created successfully
         assert provider.provider_name == "gateway"
         assert isinstance(provider.model_name, str)
 
@@ -144,7 +144,7 @@ class TestGatewayProviderCall:
 
             # Verify messages format was used
             mock_call.assert_called_once()
-            call_args = mock_call.call_args
+            _call_args = mock_call.call_args  # Unused but retained for debugging
             # Implementation should pass messages=[{"role": "user", "content": "Hello"}]
 
 

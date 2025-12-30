@@ -594,7 +594,7 @@ class TestMetadataExtraction:
             from workflows.metadata_extraction.scripts.adapters.statistical_extractor import (
                 StatisticalExtractor,
             )
-            assert StatisticalExtractor is not None
+            assert StatisticalExtractor  # Class exists and is truthy
         except ImportError as e:
             pytest.fail(f"Failed to import StatisticalExtractor: {e}")
 

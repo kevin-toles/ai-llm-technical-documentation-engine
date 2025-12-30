@@ -42,6 +42,43 @@ def sanitize_filename(title: str) -> Optional[str]:
     return sanitized if sanitized else None
 
 
+def _extract_metadata_title(metadata: dict) -> tuple[str, str]:
+    """Extract title from PDF metadata if valid.
+    
+    Returns:
+        Tuple of (title or None, confidence level)
+    """
+    if not metadata or not metadata.get('title'):
+        return None, 'low'
+    
+    title = metadata['title'].strip()
+    if title and len(title) > 3 and not title.startswith('/'):
+        return title, 'high'
+    return None, 'low'
+
+
+def _extract_first_page_title(doc) -> tuple[str, str]:
+    """Extract title from first page text if valid.
+    
+    Returns:
+        Tuple of (title or None, confidence level)
+    """
+    if len(doc) == 0:
+        return None, 'low'
+    
+    first_page = doc[0]
+    text = first_page.get_text()
+    lines = [line.strip() for line in text.split('\n') if line.strip()]
+    
+    if not lines:
+        return None, 'low'
+    
+    potential_title = ' '.join(lines[:2])
+    if 5 < len(potential_title) < 200:
+        return potential_title, 'medium'
+    return None, 'low'
+
+
 def extract_title_from_pdf(pdf_path: Path) -> dict:
     """Extract title and other metadata from a PDF file."""
     result = {
@@ -58,35 +95,24 @@ def extract_title_from_pdf(pdf_path: Path) -> dict:
     try:
         doc = fitz.open(pdf_path)
         
-        # Get metadata title
-        metadata = doc.metadata
-        if metadata and metadata.get('title'):
-            title = metadata['title'].strip()
-            if title and len(title) > 3 and not title.startswith('/'):
-                result['metadata_title'] = title
-                result['confidence'] = 'high'
-        
-        # If no metadata title, try to extract from first page
-        if not result['metadata_title'] and len(doc) > 0:
-            first_page = doc[0]
-            text = first_page.get_text()
-            
-            # Get first non-empty lines (potential title)
-            lines = [l.strip() for l in text.split('\n') if l.strip()]
-            if lines:
-                # Take first 1-3 lines as potential title
-                potential_title = ' '.join(lines[:2])
-                if len(potential_title) > 5 and len(potential_title) < 200:
-                    result['first_page_text'] = potential_title
-                    result['confidence'] = 'medium'
+        # Try metadata title first
+        title, confidence = _extract_metadata_title(doc.metadata)
+        if title:
+            result['metadata_title'] = title
+            result['confidence'] = confidence
+        else:
+            # Fall back to first page text
+            title, confidence = _extract_first_page_title(doc)
+            if title:
+                result['first_page_text'] = title
+                result['confidence'] = confidence
         
         doc.close()
         
-        # Determine suggested title
-        if result['metadata_title']:
-            result['suggested_title'] = sanitize_filename(result['metadata_title'])
-        elif result['first_page_text']:
-            result['suggested_title'] = sanitize_filename(result['first_page_text'])
+        # Set suggested title from best source
+        source_title = result['metadata_title'] or result['first_page_text']
+        if source_title:
+            result['suggested_title'] = sanitize_filename(source_title)
         
     except Exception as e:
         result['error'] = str(e)
@@ -117,6 +143,110 @@ def is_messy_filename(filename: str) -> bool:
     return False
 
 
+def _process_single_pdf(pdf_path: Path) -> dict | None:
+    """Process a single PDF file for rename suggestion.
+    
+    Returns:
+        Suggestion dict if file needs renaming, None if already clean
+    """
+    filename = pdf_path.name
+    
+    # Check if filename looks messy
+    if not is_messy_filename(filename):
+        return None
+    
+    # Extract metadata
+    info = extract_title_from_pdf(pdf_path)
+    
+    if not info['suggested_title']:
+        return {
+            'original': filename,
+            'suggested': None,
+            'confidence': 'none',
+            'source': 'manual_needed'
+        }
+    
+    new_filename = info['suggested_title'] + '.pdf'
+    
+    # Don't suggest if same as original
+    if new_filename.lower() == filename.lower():
+        return None
+    
+    return {
+        'original': filename,
+        'suggested': new_filename,
+        'confidence': info['confidence'],
+        'source': 'metadata' if info['metadata_title'] else 'first_page'
+    }
+
+
+def _print_suggestions_summary(suggestions: list, needs_rename: list, already_clean: list) -> None:
+    """Print summary of rename suggestions."""
+    print("=" * 80)
+    print("RENAME SUGGESTIONS SUMMARY")
+    print("=" * 80)
+    print(f"\n✅ Already clean filenames: {len(already_clean)}")
+    print(f"🔄 Need renaming: {len(needs_rename)}")
+    print(f"   - Auto-suggested: {len([s for s in suggestions if s['suggested']])}")
+    print(f"   - Manual needed: {len([s for s in needs_rename if not s.get('suggested')])}")
+
+
+def _print_suggestions_by_confidence(suggestions: list, needs_rename: list) -> None:
+    """Print suggestions grouped by confidence level."""
+    print("\n" + "=" * 80)
+    print("HIGH CONFIDENCE RENAMES (from PDF metadata)")
+    print("=" * 80)
+    for s in [s for s in suggestions if s['confidence'] == 'high']:
+        print(f"\n📄 {s['original']}")
+        print(f"   → {s['suggested']}")
+    
+    print("\n" + "=" * 80)
+    print("MEDIUM CONFIDENCE RENAMES (from first page text)")
+    print("=" * 80)
+    for s in [s for s in suggestions if s['confidence'] == 'medium']:
+        print(f"\n📄 {s['original']}")
+        print(f"   → {s['suggested']}")
+    
+    print("\n" + "=" * 80)
+    print("MANUAL REVIEW NEEDED (no title found)")
+    print("=" * 80)
+    for s in [s for s in needs_rename if not s.get('suggested')]:
+        print(f"\n❓ {s['original']}")
+
+
+def _save_suggestions_to_json(
+    output_file: str, books_dir: str, already_clean: list, 
+    suggestions: list, manual: list
+) -> None:
+    """Save suggestions to JSON file."""
+    output_path = Path(output_file)
+    output_data = {
+        'generated_at': datetime.now().isoformat(),
+        'source_directory': str(books_dir),
+        'already_clean': already_clean,
+        'suggestions': suggestions,
+        'manual_needed': manual
+    }
+    with open(output_path, 'w') as f:
+        json.dump(output_data, f, indent=2)
+    print(f"\n💾 Saved suggestions to: {output_file}")
+
+
+def _print_shell_commands(books_dir: str, suggestions: list) -> None:
+    """Print shell commands for renaming files."""
+    print("\n" + "=" * 80)
+    print("SHELL COMMANDS TO EXECUTE (copy and review)")
+    print("=" * 80)
+    print(f"\ncd '{books_dir}'")
+    
+    for s in suggestions:
+        if s['suggested']:
+            # Escape single quotes in filenames
+            orig = s['original'].replace("'", "'\\''")
+            new = s['suggested'].replace("'", "'\\''")
+            print(f"mv '{orig}' '{new}'")
+
+
 def generate_rename_suggestions(books_dir: str, output_file: str = None) -> list:
     """Generate rename suggestions for all PDFs in a directory."""
     books_path = Path(books_dir)
@@ -133,96 +263,23 @@ def generate_rename_suggestions(books_dir: str, output_file: str = None) -> list
     already_clean = []
     
     for pdf_path in sorted(pdf_files):
-        filename = pdf_path.name
-        
-        # Check if filename looks messy
-        if not is_messy_filename(filename):
-            already_clean.append(filename)
-            continue
-        
-        # Extract metadata
-        info = extract_title_from_pdf(pdf_path)
-        
-        if info['suggested_title']:
-            new_filename = info['suggested_title'] + '.pdf'
-            
-            # Don't suggest if same as original
-            if new_filename.lower() != filename.lower():
-                suggestion = {
-                    'original': filename,
-                    'suggested': new_filename,
-                    'confidence': info['confidence'],
-                    'source': 'metadata' if info['metadata_title'] else 'first_page'
-                }
-                suggestions.append(suggestion)
-                needs_rename.append(suggestion)
+        result = _process_single_pdf(pdf_path)
+        if result is None:
+            already_clean.append(pdf_path.name)
         else:
-            needs_rename.append({
-                'original': filename,
-                'suggested': None,
-                'confidence': 'none',
-                'source': 'manual_needed'
-            })
+            needs_rename.append(result)
+            if result['suggested']:
+                suggestions.append(result)
     
-    # Print summary
-    print("=" * 80)
-    print("RENAME SUGGESTIONS SUMMARY")
-    print("=" * 80)
-    print(f"\n✅ Already clean filenames: {len(already_clean)}")
-    print(f"🔄 Need renaming: {len(needs_rename)}")
-    print(f"   - Auto-suggested: {len([s for s in suggestions if s['suggested']])}")
-    print(f"   - Manual needed: {len([s for s in needs_rename if not s.get('suggested')])}")
+    _print_suggestions_summary(suggestions, needs_rename, already_clean)
+    _print_suggestions_by_confidence(suggestions, needs_rename)
     
-    # Print suggestions grouped by confidence
-    print("\n" + "=" * 80)
-    print("HIGH CONFIDENCE RENAMES (from PDF metadata)")
-    print("=" * 80)
-    high_conf = [s for s in suggestions if s['confidence'] == 'high']
-    for s in high_conf:
-        print(f"\n📄 {s['original']}")
-        print(f"   → {s['suggested']}")
-    
-    print("\n" + "=" * 80)
-    print("MEDIUM CONFIDENCE RENAMES (from first page text)")
-    print("=" * 80)
-    med_conf = [s for s in suggestions if s['confidence'] == 'medium']
-    for s in med_conf:
-        print(f"\n📄 {s['original']}")
-        print(f"   → {s['suggested']}")
-    
-    print("\n" + "=" * 80)
-    print("MANUAL REVIEW NEEDED (no title found)")
-    print("=" * 80)
     manual = [s for s in needs_rename if not s.get('suggested')]
-    for s in manual:
-        print(f"\n❓ {s['original']}")
     
-    # Save to JSON for later use
     if output_file:
-        output_path = Path(output_file)
-        output_data = {
-            'generated_at': datetime.now().isoformat(),
-            'source_directory': str(books_dir),
-            'already_clean': already_clean,
-            'suggestions': suggestions,
-            'manual_needed': manual
-        }
-        with open(output_path, 'w') as f:
-            json.dump(output_data, f, indent=2)
-        print(f"\n💾 Saved suggestions to: {output_file}")
+        _save_suggestions_to_json(output_file, books_dir, already_clean, suggestions, manual)
     
-    # Generate shell commands
-    print("\n" + "=" * 80)
-    print("SHELL COMMANDS TO EXECUTE (copy and review)")
-    print("=" * 80)
-    print(f"\ncd '{books_dir}'")
-    
-    for s in suggestions:
-        if s['suggested']:
-            # Escape single quotes in filenames
-            orig = s['original'].replace("'", "'\\''")
-            new = s['suggested'].replace("'", "'\\''")
-            print(f"mv '{orig}' '{new}'")
+    _print_shell_commands(books_dir, suggestions)
     
     return suggestions
 

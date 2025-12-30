@@ -406,6 +406,7 @@ class TestNonHTTPRequests:
     def mock_app(self):
         """Create a mock ASGI app."""
         async def app(scope, receive, send):
+            # No-op mock - intentionally empty to simulate minimal ASGI app
             pass
         return app
 
