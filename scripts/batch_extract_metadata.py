@@ -274,6 +274,33 @@ def _save_report(
         json.dump(report, f, indent=2)
 
 
+def _handle_successful_extraction(
+    book: Path,
+    result: Dict[str, Any],
+    successful: List[str]
+) -> None:
+    """Handle successful extraction result."""
+    successful.append(book.name)
+    metrics = result.get("metrics", {})
+    print(f"         ✅ Complete: {metrics.get('chapters', 0)} chapters | "
+          f"{metrics.get('keywords', 0):,} keywords (unique) | "
+          f"{metrics.get('concepts', 0):,} concepts (unique)")
+
+
+def _handle_failed_extraction(
+    book: Path,
+    result: Dict[str, Any],
+    failed: List[Dict[str, str]]
+) -> None:
+    """Handle failed extraction result."""
+    error_msg = result['stderr'][:200] if result['stderr'] else 'Unknown error'
+    print(f"         ❌ Failed: {error_msg}")
+    failed.append({
+        "book": book.name,
+        "error": result["stderr"][:500] if result["stderr"] else "Unknown error"
+    })
+
+
 def _run_extraction_loop(
     books: List[Path],
     script_path: Path,
@@ -288,18 +315,9 @@ def _run_extraction_loop(
         result = _process_single_book(book, script_path, use_orchestrator)
         
         if result["success"]:
-            successful.append(book.name)
-            metrics = result.get("metrics", {})
-            print(f"         ✅ Complete: {metrics.get('chapters', 0)} chapters | "
-                  f"{metrics.get('keywords', 0):,} keywords (unique) | "
-                  f"{metrics.get('concepts', 0):,} concepts (unique)")
+            _handle_successful_extraction(book, result, successful)
         else:
-            error_msg = result['stderr'][:200] if result['stderr'] else 'Unknown error'
-            print(f"         ❌ Failed: {error_msg}")
-            failed.append({
-                "book": book.name,
-                "error": result["stderr"][:500] if result["stderr"] else "Unknown error"
-            })
+            _handle_failed_extraction(book, result, failed)
     
     return successful, failed
 

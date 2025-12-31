@@ -179,6 +179,15 @@ class GatewaySearchClient:
         response.raise_for_status()
         return response.json()
 
+    def _is_last_attempt(self, attempt: int) -> bool:
+        """Check if this is the last retry attempt."""
+        return attempt >= self._max_retries - 1
+
+    def _handle_timeout(self, e: httpx.TimeoutException, attempt: int) -> None:
+        """Handle timeout exception, raise if last attempt."""
+        if self._is_last_attempt(attempt):
+            raise GatewaySearchTimeoutError(f"Gateway request timed out: {e}") from e
+
     async def _execute_tool(
         self,
         tool_name: str,
@@ -193,13 +202,10 @@ class GatewaySearchClient:
                 result = await self._attempt_tool_execution(client, payload)
                 if result is not None:
                     return result
-
-                if attempt >= self._max_retries - 1:
+                if self._is_last_attempt(attempt):
                     raise GatewaySearchAPIError("Gateway returned retryable status", 503)
-
             except httpx.TimeoutException as e:
-                if attempt >= self._max_retries - 1:
-                    raise GatewaySearchTimeoutError(f"Gateway request timed out: {e}") from e
+                self._handle_timeout(e, attempt)
             except httpx.ConnectError as e:
                 raise GatewaySearchConnectionError(f"Failed to connect to gateway: {e}") from e
             except httpx.HTTPStatusError as e:

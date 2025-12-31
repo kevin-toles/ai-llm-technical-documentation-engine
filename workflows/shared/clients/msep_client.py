@@ -576,6 +576,20 @@ class MSEPClient:
         response.raise_for_status()
         return response.json()  # type: ignore[no-any-return]
 
+    def _handle_timeout(self, e: httpx.TimeoutException, attempt: int, endpoint: str) -> None:
+        """Handle timeout, raise if max retries exceeded."""
+        if attempt >= self.max_retries:
+            raise MSEPTimeoutError(
+                f"Request to {endpoint} timed out after {self.max_retries + 1} attempts"
+            ) from e
+
+    def _handle_connect_error(self, e: httpx.ConnectError, attempt: int) -> None:
+        """Handle connection error, raise if max retries exceeded."""
+        if attempt >= self.max_retries:
+            raise MSEPConnectionError(
+                f"Connection to {self.base_url} failed after {self.max_retries + 1} attempts"
+            ) from e
+
     async def _post(
         self,
         endpoint: str,
@@ -588,19 +602,10 @@ class MSEPClient:
         for attempt in range(self.max_retries + 1):
             try:
                 return await self._execute_single_request(endpoint, json)
-
             except httpx.TimeoutException as e:
-                if attempt >= self.max_retries:
-                    raise MSEPTimeoutError(
-                        f"Request to {endpoint} timed out after {self.max_retries + 1} attempts"
-                    ) from e
-
+                self._handle_timeout(e, attempt, endpoint)
             except httpx.ConnectError as e:
-                if attempt >= self.max_retries:
-                    raise MSEPConnectionError(
-                        f"Connection to {self.base_url} failed after {self.max_retries + 1} attempts"
-                    ) from e
-
+                self._handle_connect_error(e, attempt)
             except httpx.HTTPStatusError as e:
                 self._handle_http_error(e, attempt, endpoint)
 

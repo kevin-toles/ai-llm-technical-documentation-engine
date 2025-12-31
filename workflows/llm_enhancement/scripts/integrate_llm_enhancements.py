@@ -881,18 +881,8 @@ def _print_completion_summary(
     logger.info("="*66)
 
 
-def main():
-    """Main entry point. Refactored to reduce cognitive complexity."""
-    print("="*66)
-    print("Comprehensive LLM Enhancement with All Companion Books")
-    print("="*66)
-    
-    logger.info("="*66)
-    logger.info("Starting LLM Enhancement Workflow")
-    logger.info("="*66)
-    
-    _display_cache_status()
-    
+def _load_companion_data() -> dict:
+    """Load companion book data and display summary."""
     print("\nLoading companion book JSON files from Textbooks_JSON:")
     logger.info("Loading companion book JSON files from Textbooks_JSON:")
     companion_data = load_companion_books()
@@ -902,6 +892,44 @@ def main():
     logger.info(f"Successfully loaded {total_books} companion books with {total_pages} total pages")
     print(f"\n📚 Successfully loaded {total_books} companion books with {total_pages} total pages")
     print(f"Using {os.getenv('LLM_PROVIDER', 'anthropic').upper()} for comprehensive analysis")
+    return companion_data
+
+
+def _apply_chapter_limit(all_chapters: list) -> list:
+    """Apply --chapters limit if specified."""
+    if CLI_ARGS and CLI_ARGS.chapters:
+        original_count = len(all_chapters)
+        all_chapters = all_chapters[:CLI_ARGS.chapters]
+        print(f"📊 Limiting to {len(all_chapters)} chapters (of {original_count}) per --chapters flag")
+        logger.info(f"Limiting to {len(all_chapters)} chapters (of {original_count}) per --chapters flag")
+    return all_chapters
+
+
+def _save_enhanced_document(enhanced_document: str, enhanced_file: Path) -> int:
+    """Save enhanced document to file, return exit code."""
+    try:
+        with open(enhanced_file, 'w', encoding='utf-8') as f:
+            f.write(enhanced_document)
+        logger.info(f"✓ Enhanced version saved to: {enhanced_file}")
+        return 0
+    except Exception as e:
+        logger.error(f"✗ Failed to save enhanced version: {e}")
+        logger.debug(traceback.format_exc())
+        print(f"ERROR: Failed to save enhanced version: {e}")
+        return 1
+
+
+def main():
+    """Main entry point. Refactored to reduce cognitive complexity."""
+    print("="*66)
+    print("Comprehensive LLM Enhancement with All Companion Books")
+    print("="*66)
+    logger.info("="*66)
+    logger.info("Starting LLM Enhancement Workflow")
+    logger.info("="*66)
+    
+    _display_cache_status()
+    companion_data = _load_companion_data()
     
     content, exit_code = _load_and_validate_guidelines()
     if exit_code != 0:
@@ -918,11 +946,7 @@ def main():
     if exit_code != 0:
         return exit_code
     
-    if CLI_ARGS and CLI_ARGS.chapters:
-        original_count = len(all_chapters)
-        all_chapters = all_chapters[:CLI_ARGS.chapters]
-        print(f"📊 Limiting to {len(all_chapters)} chapters (of {original_count}) per --chapters flag")
-        logger.info(f"Limiting to {len(all_chapters)} chapters (of {original_count}) per --chapters flag")
+    all_chapters = _apply_chapter_limit(all_chapters)
     
     exit_code = _test_first_chapter(orchestrator, chapters_content, all_chapters[0])
     if exit_code != 0:
@@ -936,22 +960,13 @@ def main():
     enhanced_content, chapters_with_cross_refs, failed_chapters, exit_code = _process_all_chapters(
         header, chapters_content, all_chapters, companion_data
     )
-    
     if exit_code != 0:
         return exit_code
     
-    enhanced_document = header + enhanced_content
     enhanced_file = _determine_output_path()
-    
-    try:
-        with open(enhanced_file, 'w', encoding='utf-8') as f:
-            f.write(enhanced_document)
-        logger.info(f"✓ Enhanced version saved to: {enhanced_file}")
-    except Exception as e:
-        logger.error(f"✗ Failed to save enhanced version: {e}")
-        logger.debug(traceback.format_exc())
-        print(f"ERROR: Failed to save enhanced version: {e}")
-        return 1
+    exit_code = _save_enhanced_document(header + enhanced_content, enhanced_file)
+    if exit_code != 0:
+        return exit_code
     
     _print_completion_summary(all_chapters, chapters_with_cross_refs, failed_chapters, enhanced_file)
     return 0

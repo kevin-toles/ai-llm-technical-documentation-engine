@@ -313,6 +313,25 @@ class MetadataExtractionClient:
             and attempt < self._max_retries
         )
 
+    def _raise_api_error(self, e: httpx.HTTPStatusError) -> None:
+        """Raise MetadataClientAPIError from HTTP status error."""
+        raise MetadataClientAPIError(
+            str(e),
+            e.response.status_code,
+            e.response.json() if e.response.content else None,
+        ) from e
+
+    async def _handle_http_status_error(
+        self, e: httpx.HTTPStatusError, attempt: int
+    ) -> bool:
+        """Handle HTTP status error. Returns True if retrying, raises otherwise."""
+        if self._should_retry_http_error(e, attempt):
+            delay = DEFAULT_RETRY_BASE_DELAY * (2 ** attempt)
+            await asyncio.sleep(delay)
+            return True
+        self._raise_api_error(e)
+        return False  # Never reached but satisfies type checker
+
     async def extract_metadata(
         self,
         text: str,
@@ -335,15 +354,7 @@ class MetadataExtractionClient:
             except httpx.TimeoutException as e:
                 raise MetadataClientTimeoutError(str(e)) from e
             except httpx.HTTPStatusError as e:
-                if self._should_retry_http_error(e, attempt):
-                    delay = DEFAULT_RETRY_BASE_DELAY * (2 ** attempt)
-                    await asyncio.sleep(delay)
-                    continue
-                raise MetadataClientAPIError(
-                    str(e),
-                    e.response.status_code,
-                    e.response.json() if e.response.content else None,
-                ) from e
+                await self._handle_http_status_error(e, attempt)
 
         raise MetadataClientError("Max retries exceeded in extract_metadata")
 
