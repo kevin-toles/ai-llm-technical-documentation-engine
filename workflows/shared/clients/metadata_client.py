@@ -47,7 +47,7 @@ ENDPOINT_HEALTH: Final[str] = "/api/v1/health"
 RETRYABLE_STATUS_CODES: Final[frozenset[int]] = frozenset({502, 503, 504})
 
 # Error message for uninitialized client (S1192 compliance)
-_CLIENT_NOT_INITIALIZED_ERROR: Final[str] = _CLIENT_NOT_INITIALIZED_ERROR
+_CLIENT_NOT_INITIALIZED_ERROR: Final[str] = "Client not initialized. Use async context manager."
 
 
 # =============================================================================
