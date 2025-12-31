@@ -32,7 +32,7 @@ if [[ -f "$OUTPUT" ]]; then
     run_test "Output file exists" "true" "true"
 else
     run_test "Output file exists" "false" "true"
-    echo "ERROR: Output missing - run extraction first"
+    echo "ERROR: Output missing - run extraction first" >&2
     exit 1
 fi
 
