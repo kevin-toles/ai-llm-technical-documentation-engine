@@ -191,6 +191,23 @@ def _apply_filters(books: List[Path], args: argparse.Namespace) -> List[Path]:
     return books
 
 
+def _extract_chapters_count(line: str, re_module) -> int:
+    """Extract chapters count from output line."""
+    match = re_module.search(r'(\d+)\s+chapters', line)
+    return int(match.group(1)) if match else 0
+
+
+def _extract_book_totals(line: str, re_module) -> tuple[int, int]:
+    """Extract keywords and concepts counts from book totals line."""
+    match = re_module.search(r'([\d,]+)\s+keywords.*?([\d,]+)\s+concepts', line)
+    if match:
+        return (
+            int(match.group(1).replace(',', '')),
+            int(match.group(2).replace(',', ''))
+        )
+    return 0, 0
+
+
 def _parse_extraction_output(stdout: str) -> Dict[str, int]:
     """Parse extraction stdout for metrics."""
     import re
@@ -198,21 +215,19 @@ def _parse_extraction_output(stdout: str) -> Dict[str, int]:
     result = {"chapters": 0, "keywords": 0, "concepts": 0}
     
     for line in stdout.strip().split('\n'):
-        if "chapters" in line.lower() and "collected" in line.lower():
-            match = re.search(r'(\d+)\s+chapters', line)
-            if match:
-                result["chapters"] = int(match.group(1))
+        line_lower = line.lower()
+        
+        if "chapters" in line_lower and "collected" in line_lower:
+            result["chapters"] = _extract_chapters_count(line, re)
         
         if "Book totals (unique)" in line:
-            match = re.search(r'([\d,]+)\s+keywords.*?([\d,]+)\s+concepts', line)
-            if match:
-                result["keywords"] = int(match.group(1).replace(',', ''))
-                result["concepts"] = int(match.group(2).replace(',', ''))
+            kw, concepts = _extract_book_totals(line, re)
+            result["keywords"] = kw
+            result["concepts"] = concepts
         
-        if ("Batch extraction complete" in line or "Per-chapter extraction complete" in line):
-            match = re.search(r'(\d+)\s+chapters processed', line)
-            if match and result["chapters"] == 0:
-                result["chapters"] = int(match.group(1))
+        if "extraction complete" in line_lower and "chapters processed" in line_lower:
+            if result["chapters"] == 0:
+                result["chapters"] = _extract_chapters_count(line, re)
     
     return result
 
@@ -259,10 +274,62 @@ def _save_report(
         json.dump(report, f, indent=2)
 
 
+def _run_extraction_loop(
+    books: List[Path],
+    script_path: Path,
+    use_orchestrator: bool
+) -> tuple[List[str], List[Dict[str, str]]]:
+    """Run extraction on all books, return (successful, failed) lists."""
+    successful: List[str] = []
+    failed: List[Dict[str, str]] = []
+    
+    for idx, book in enumerate(books, 1):
+        print(f"[{idx:3d}/{len(books)}] Processing: {book.name}")
+        result = _process_single_book(book, script_path, use_orchestrator)
+        
+        if result["success"]:
+            successful.append(book.name)
+            metrics = result.get("metrics", {})
+            print(f"         ✅ Complete: {metrics.get('chapters', 0)} chapters | "
+                  f"{metrics.get('keywords', 0):,} keywords (unique) | "
+                  f"{metrics.get('concepts', 0):,} concepts (unique)")
+        else:
+            error_msg = result['stderr'][:200] if result['stderr'] else 'Unknown error'
+            print(f"         ❌ Failed: {error_msg}")
+            failed.append({
+                "book": book.name,
+                "error": result["stderr"][:500] if result["stderr"] else "Unknown error"
+            })
+    
+    return successful, failed
+
+
+def _print_extraction_summary(
+    start_time: datetime,
+    end_time: datetime,
+    successful: List[str],
+    failed: List[Dict[str, str]],
+    output_dir: Path
+) -> None:
+    """Print extraction completion summary."""
+    duration = end_time - start_time
+    print("\n" + "=" * 80)
+    print("EXTRACTION COMPLETE")
+    print("=" * 80)
+    print(f"Duration:    {duration}")
+    print(f"Successful:  {len(successful)} books")
+    print(f"Failed:      {len(failed)} books")
+    print(f"Output dir:  {output_dir}")
+    
+    if failed:
+        print("\n❌ FAILED BOOKS:")
+        for f in failed:
+            print(f"  - {f['book']}: {f['error'][:100]}")
+
+
 def main():
     args = _parse_args()
     
-    # Configuration
     input_dir = METADATA_EXTRACTION_CONFIG["input_dir"]
     output_dir = METADATA_EXTRACTION_CONFIG["output_dir"]
     script_path = METADATA_EXTRACTION_CONFIG["script"]
@@ -296,47 +363,13 @@ def main():
         return
     
     output_dir.mkdir(parents=True, exist_ok=True)
-    
     start_time = datetime.now()
-    successful: List[str] = []
-    failed: List[Dict[str, str]] = []
-    
     print(f"\n🚀 Starting extraction at {start_time.strftime('%Y-%m-%d %H:%M:%S')}\n")
     
-    for idx, book in enumerate(books, 1):
-        print(f"[{idx:3d}/{len(books)}] Processing: {book.name}")
-        
-        result = _process_single_book(book, script_path, args.use_orchestrator)
-        
-        if result["success"]:
-            successful.append(book.name)
-            metrics = result.get("metrics", {})
-            print(f"         ✅ Complete: {metrics.get('chapters', 0)} chapters | "
-                  f"{metrics.get('keywords', 0):,} keywords (unique) | "
-                  f"{metrics.get('concepts', 0):,} concepts (unique)")
-        else:
-            error_msg = result['stderr'][:200] if result['stderr'] else 'Unknown error'
-            print(f"         ❌ Failed: {error_msg}")
-            failed.append({
-                "book": book.name,
-                "error": result["stderr"][:500] if result["stderr"] else "Unknown error"
-            })
-    
+    successful, failed = _run_extraction_loop(books, script_path, args.use_orchestrator)
     end_time = datetime.now()
-    duration = end_time - start_time
     
-    print("\n" + "=" * 80)
-    print("EXTRACTION COMPLETE")
-    print("=" * 80)
-    print(f"Duration:    {duration}")
-    print(f"Successful:  {len(successful)} books")
-    print(f"Failed:      {len(failed)} books")
-    print(f"Output dir:  {output_dir}")
-    
-    if failed:
-        print("\n❌ FAILED BOOKS:")
-        for f in failed:
-            print(f"  - {f['book']}: {f['error'][:100]}")
+    _print_extraction_summary(start_time, end_time, successful, failed, output_dir)
     
     reports_dir = METADATA_EXTRACTION_CONFIG["reports_dir"]
     reports_dir.mkdir(parents=True, exist_ok=True)

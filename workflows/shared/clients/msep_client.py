@@ -568,6 +568,14 @@ class MSEPClient:
             response_body=response_body,
         ) from e
 
+    async def _execute_single_request(
+        self, endpoint: str, json_data: dict[str, Any]
+    ) -> dict[str, Any] | None:
+        """Execute a single request, return None if retryable error occurred."""
+        response = await self._client.post(endpoint, json=json_data)
+        response.raise_for_status()
+        return response.json()  # type: ignore[no-any-return]
+
     async def _post(
         self,
         endpoint: str,
@@ -577,38 +585,28 @@ class MSEPClient:
         if self._client is None:
             raise MSEPClientError(_CLIENT_NOT_INITIALIZED_ERROR)
 
-        last_exception: Optional[Exception] = None
-
         for attempt in range(self.max_retries + 1):
             try:
-                response = await self._client.post(endpoint, json=json)
-                response.raise_for_status()
-                return response.json()  # type: ignore[no-any-return]
+                return await self._execute_single_request(endpoint, json)
 
             except httpx.TimeoutException as e:
-                last_exception = e
                 if attempt >= self.max_retries:
                     raise MSEPTimeoutError(
                         f"Request to {endpoint} timed out after {self.max_retries + 1} attempts"
                     ) from e
 
             except httpx.ConnectError as e:
-                last_exception = e
                 if attempt >= self.max_retries:
                     raise MSEPConnectionError(
                         f"Connection to {self.base_url} failed after {self.max_retries + 1} attempts"
                     ) from e
 
             except httpx.HTTPStatusError as e:
-                if not self._handle_http_error(e, attempt, endpoint):
-                    continue
-                last_exception = e
+                self._handle_http_error(e, attempt, endpoint)
 
             await self._wait_before_retry(attempt)
 
-        raise MSEPClientError(
-            f"Request failed after {self.max_retries + 1} attempts"
-        ) from last_exception
+        raise MSEPClientError(f"Request failed after {self.max_retries + 1} attempts")
 
     async def _wait_before_retry(self, attempt: int) -> None:
         """Wait with exponential backoff before retry.

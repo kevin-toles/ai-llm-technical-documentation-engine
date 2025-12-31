@@ -304,6 +304,15 @@ class MetadataExtractionClient:
         response.raise_for_status()
         return self._parse_response(response.json())
 
+    def _should_retry_http_error(
+        self, e: httpx.HTTPStatusError, attempt: int
+    ) -> bool:
+        """Check if HTTP error should be retried."""
+        return (
+            e.response.status_code in RETRYABLE_STATUS_CODES
+            and attempt < self._max_retries
+        )
+
     async def extract_metadata(
         self,
         text: str,
@@ -317,7 +326,6 @@ class MetadataExtractionClient:
 
         opts = options or MetadataExtractionOptions()
         payload = self._build_extraction_payload(text, title, book_title, opts)
-        last_exception: httpx.HTTPStatusError | None = None
 
         for attempt in range(self._max_retries + 1):
             try:
@@ -327,8 +335,7 @@ class MetadataExtractionClient:
             except httpx.TimeoutException as e:
                 raise MetadataClientTimeoutError(str(e)) from e
             except httpx.HTTPStatusError as e:
-                if e.response.status_code in RETRYABLE_STATUS_CODES and attempt < self._max_retries:
-                    last_exception = e
+                if self._should_retry_http_error(e, attempt):
                     delay = DEFAULT_RETRY_BASE_DELAY * (2 ** attempt)
                     await asyncio.sleep(delay)
                     continue
@@ -338,14 +345,7 @@ class MetadataExtractionClient:
                     e.response.json() if e.response.content else None,
                 ) from e
 
-        if last_exception is not None:
-            raise MetadataClientAPIError(
-                str(last_exception),
-                last_exception.response.status_code,
-                last_exception.response.json() if last_exception.response.content else None,
-            ) from last_exception
-
-        raise MetadataClientError("Unexpected error in extract_metadata")
+        raise MetadataClientError("Max retries exceeded in extract_metadata")
 
     def _parse_response(self, data: dict[str, Any]) -> MetadataExtractionResult:
         """Parse API response to MetadataExtractionResult."""

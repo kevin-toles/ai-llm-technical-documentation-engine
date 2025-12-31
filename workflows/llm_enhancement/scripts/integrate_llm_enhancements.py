@@ -807,17 +807,8 @@ def _save_partial_results(header: str, enhanced_content: str, chapters_with_cros
     logger.info(f"Saved partial results to: {partial_file}")
 
 
-def main():
-    """Main entry point. Refactored to reduce cognitive complexity."""
-    print("="*66)
-    print("Comprehensive LLM Enhancement with All Companion Books")
-    print("="*66)
-    
-    logger.info("="*66)
-    logger.info("Starting LLM Enhancement Workflow")
-    logger.info("="*66)
-    
-    # Display cache status
+def _display_cache_status() -> None:
+    """Display LLM cache status."""
     cache_stats = get_cache_stats()
     if cache_stats.get("enabled"):
         print(f"\n💾 LLM Cache: ENABLED (TTL: {cache_stats.get('ttl_days', 30)} days)")
@@ -826,68 +817,15 @@ def main():
         print("   Cache hits save ~$0.30 per phase!")
     else:
         print("\n⚠️  LLM Cache: DISABLED (all calls will hit API)")
+
+
+def _determine_output_path() -> Path:
+    """Determine output file path based on CLI args and source."""
+    if CLI_ARGS and CLI_ARGS.output:
+        enhanced_file = Path(CLI_ARGS.output)
+        enhanced_file.parent.mkdir(parents=True, exist_ok=True)
+        return enhanced_file
     
-    # Load companion book data
-    print("\nLoading companion book JSON files from Textbooks_JSON:")
-    logger.info("Loading companion book JSON files from Textbooks_JSON:")
-    companion_data = load_companion_books()
-    
-    total_books = len(companion_data)
-    total_pages = sum(len(book_data.get('pages', [])) for book_data in companion_data.values())
-    logger.info(f"Successfully loaded {total_books} companion books with {total_pages} total pages")
-    print(f"\n📚 Successfully loaded {total_books} companion books with {total_pages} total pages")
-    print(f"Using {os.getenv('LLM_PROVIDER', 'anthropic').upper()} for comprehensive analysis")
-    
-    # Load guidelines
-    content, exit_code = _load_and_validate_guidelines()
-    if exit_code != 0:
-        return exit_code
-    
-    # Initialize orchestrator
-    print("\nInitializing LLM orchestrator (this validates book metadata loading)...")
-    orchestrator = get_or_create_orchestrator()
-    
-    # Perform all critical checks
-    exit_code = _perform_critical_checks(companion_data, orchestrator)
-    if exit_code != 0:
-        return exit_code
-    
-    # Extract chapters
-    header, chapters_content, all_chapters, exit_code = _extract_chapters_from_content(content)
-    if exit_code != 0:
-        return exit_code
-    
-    # Limit chapters if --chapters flag provided
-    if CLI_ARGS and CLI_ARGS.chapters:
-        original_count = len(all_chapters)
-        all_chapters = all_chapters[:CLI_ARGS.chapters]
-        print(f"📊 Limiting to {len(all_chapters)} chapters (of {original_count}) per --chapters flag")
-        logger.info(f"Limiting to {len(all_chapters)} chapters (of {original_count}) per --chapters flag")
-    
-    # Test first chapter
-    exit_code = _test_first_chapter(orchestrator, chapters_content, all_chapters[0])
-    if exit_code != 0:
-        return exit_code
-    
-    # All critical checks passed
-    print("\n✅ ALL CRITICAL CHECKS PASSED")
-    print(f"🚀 Proceeding with full enhancement of {len(all_chapters)} chapters...")
-    logger.info("✅ ALL CRITICAL CHECKS PASSED - Proceeding with full enhancement")
-    
-    print("🔄 Processing ALL chapters with LLM enhancement...")
-    
-    # Process all chapters
-    enhanced_content, chapters_with_cross_refs, failed_chapters, exit_code = _process_all_chapters(
-        header, chapters_content, all_chapters, companion_data
-    )
-    
-    if exit_code != 0:
-        return exit_code
-    
-    # Reconstruct the full document
-    enhanced_document = header + enhanced_content
-    
-    # Determine output filename from source (aggregate or guideline)
     if AGGREGATE_DATA:
         source_name = AGGREGATE_DATA.get("project", {}).get("id", "unknown")
         if not source_name or source_name == "unknown":
@@ -895,30 +833,20 @@ def main():
     else:
         source_name = GUIDELINES_FILE.stem.replace("_guideline", "")
     
-    # Use --output path if provided, otherwise generate default
-    if CLI_ARGS and CLI_ARGS.output:
-        enhanced_file = Path(CLI_ARGS.output)
-        enhanced_file.parent.mkdir(parents=True, exist_ok=True)
-    else:
-        # Sanitize filename
-        safe_name = source_name.replace(" ", "_").replace("/", "_")
-        output_filename = f"{safe_name}_LLM_ENHANCED.md"
-        
-        output_dir = REPO_ROOT / "workflows" / "llm_enhancement" / "output"
-        output_dir.mkdir(parents=True, exist_ok=True)
-        enhanced_file = output_dir / output_filename
-    
-    try:
-        # Save enhanced version
-        with open(enhanced_file, 'w', encoding='utf-8') as f:
-            f.write(enhanced_document)
-        logger.info(f"✓ Enhanced version saved to: {enhanced_file}")
-    except Exception as e:
-        logger.error(f"✗ Failed to save enhanced version: {e}")
-        logger.debug(traceback.format_exc())
-        print(f"ERROR: Failed to save enhanced version: {e}")
-        return 1
-    
+    safe_name = source_name.replace(" ", "_").replace("/", "_")
+    output_filename = f"{safe_name}_LLM_ENHANCED.md"
+    output_dir = REPO_ROOT / "workflows" / "llm_enhancement" / "output"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    return output_dir / output_filename
+
+
+def _print_completion_summary(
+    all_chapters: list,
+    chapters_with_cross_refs: int,
+    failed_chapters: list,
+    enhanced_file: Path
+) -> None:
+    """Print enhancement completion summary."""
     print(f"\n{'='*70}")
     print("✅ Enhancement complete!")
     print(f"{'='*70}")
@@ -939,7 +867,6 @@ def main():
     print(f"\nModel used: {os.getenv('ANTHROPIC_MODEL', 'claude-sonnet-4-5-20250929')}")
     print(f"Provider: {os.getenv('LLM_PROVIDER', 'anthropic').upper()}")
     
-    # Show final cache stats
     final_cache_stats = get_cache_stats()
     if final_cache_stats.get("enabled"):
         print("\n💾 Cache Status After Run:")
@@ -952,7 +879,81 @@ def main():
     logger.info(f"Model: {os.getenv('ANTHROPIC_MODEL', 'claude-sonnet-4-5-20250929')}")
     logger.info(f"Provider: {os.getenv('LLM_PROVIDER', 'anthropic').upper()}")
     logger.info("="*66)
+
+
+def main():
+    """Main entry point. Refactored to reduce cognitive complexity."""
+    print("="*66)
+    print("Comprehensive LLM Enhancement with All Companion Books")
+    print("="*66)
     
+    logger.info("="*66)
+    logger.info("Starting LLM Enhancement Workflow")
+    logger.info("="*66)
+    
+    _display_cache_status()
+    
+    print("\nLoading companion book JSON files from Textbooks_JSON:")
+    logger.info("Loading companion book JSON files from Textbooks_JSON:")
+    companion_data = load_companion_books()
+    
+    total_books = len(companion_data)
+    total_pages = sum(len(book_data.get('pages', [])) for book_data in companion_data.values())
+    logger.info(f"Successfully loaded {total_books} companion books with {total_pages} total pages")
+    print(f"\n📚 Successfully loaded {total_books} companion books with {total_pages} total pages")
+    print(f"Using {os.getenv('LLM_PROVIDER', 'anthropic').upper()} for comprehensive analysis")
+    
+    content, exit_code = _load_and_validate_guidelines()
+    if exit_code != 0:
+        return exit_code
+    
+    print("\nInitializing LLM orchestrator (this validates book metadata loading)...")
+    orchestrator = get_or_create_orchestrator()
+    
+    exit_code = _perform_critical_checks(companion_data, orchestrator)
+    if exit_code != 0:
+        return exit_code
+    
+    header, chapters_content, all_chapters, exit_code = _extract_chapters_from_content(content)
+    if exit_code != 0:
+        return exit_code
+    
+    if CLI_ARGS and CLI_ARGS.chapters:
+        original_count = len(all_chapters)
+        all_chapters = all_chapters[:CLI_ARGS.chapters]
+        print(f"📊 Limiting to {len(all_chapters)} chapters (of {original_count}) per --chapters flag")
+        logger.info(f"Limiting to {len(all_chapters)} chapters (of {original_count}) per --chapters flag")
+    
+    exit_code = _test_first_chapter(orchestrator, chapters_content, all_chapters[0])
+    if exit_code != 0:
+        return exit_code
+    
+    print("\n✅ ALL CRITICAL CHECKS PASSED")
+    print(f"🚀 Proceeding with full enhancement of {len(all_chapters)} chapters...")
+    logger.info("✅ ALL CRITICAL CHECKS PASSED - Proceeding with full enhancement")
+    print("🔄 Processing ALL chapters with LLM enhancement...")
+    
+    enhanced_content, chapters_with_cross_refs, failed_chapters, exit_code = _process_all_chapters(
+        header, chapters_content, all_chapters, companion_data
+    )
+    
+    if exit_code != 0:
+        return exit_code
+    
+    enhanced_document = header + enhanced_content
+    enhanced_file = _determine_output_path()
+    
+    try:
+        with open(enhanced_file, 'w', encoding='utf-8') as f:
+            f.write(enhanced_document)
+        logger.info(f"✓ Enhanced version saved to: {enhanced_file}")
+    except Exception as e:
+        logger.error(f"✗ Failed to save enhanced version: {e}")
+        logger.debug(traceback.format_exc())
+        print(f"ERROR: Failed to save enhanced version: {e}")
+        return 1
+    
+    _print_completion_summary(all_chapters, chapters_with_cross_refs, failed_chapters, enhanced_file)
     return 0
 
 if __name__ == "__main__":
