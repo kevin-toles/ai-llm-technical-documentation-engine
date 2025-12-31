@@ -111,7 +111,7 @@ class TestEndToEndJsonGeneration:
             json_dest = test_output_dir / expected_json.name
             expected_md.rename(md_dest)
             expected_json.rename(json_dest)
-            print(f"\nFiles moved to test output directory:")
+            print("\nFiles moved to test output directory:")
             print(f"  MD:   {md_dest}")
             print(f"  JSON: {json_dest}")
     
@@ -191,7 +191,7 @@ class TestEndToEndJsonGeneration:
         md_size_kb = md_file.stat().st_size / 1024
         json_size_kb = json_file.stat().st_size / 1024
         
-        print(f"\nFile sizes:")
+        print("\nFile sizes:")
         print(f"  MD:   {md_size_kb:.1f} KB")
         print(f"  JSON: {json_size_kb:.1f} KB")
         print(f"  Ratio: {json_size_kb/md_size_kb*100:.1f}%")
@@ -234,7 +234,7 @@ class TestEndToEndJsonGeneration:
             json_data = json.load(f)
         json_chapters = len(json_data["chapters"])
         
-        print(f"\nChapter counts:")
+        print("\nChapter counts:")
         print(f"  MD:   {md_chapters}")
         print(f"  JSON: {json_chapters}")
         
