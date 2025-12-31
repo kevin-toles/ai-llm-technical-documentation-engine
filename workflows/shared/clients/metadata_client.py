@@ -46,6 +46,9 @@ ENDPOINT_HEALTH: Final[str] = "/api/v1/health"
 # HTTP status codes that trigger retry (5xx server errors)
 RETRYABLE_STATUS_CODES: Final[frozenset[int]] = frozenset({502, 503, 504})
 
+# Error message for uninitialized client (S1192 compliance)
+_CLIENT_NOT_INITIALIZED_ERROR: Final[str] = _CLIENT_NOT_INITIALIZED_ERROR
+
 
 # =============================================================================
 # Custom Exceptions (Anti-Pattern #7/#13)
@@ -298,7 +301,7 @@ class MetadataExtractionClient:
     ) -> MetadataExtractionResult | None:
         """Attempt a single extraction request, return None if retryable error."""
         if self._http_client is None:
-            raise MetadataClientError("Client not initialized. Use async context manager.")
+            raise MetadataClientError(_CLIENT_NOT_INITIALIZED_ERROR)
 
         response = await self._http_client.post(ENDPOINT_EXTRACT, json=payload)
         response.raise_for_status()
@@ -341,7 +344,7 @@ class MetadataExtractionClient:
     ) -> MetadataExtractionResult:
         """Extract metadata from text via orchestrator."""
         if self._http_client is None:
-            raise MetadataClientError("Client not initialized. Use async context manager.")
+            raise MetadataClientError(_CLIENT_NOT_INITIALIZED_ERROR)
 
         opts = options or MetadataExtractionOptions()
         payload = self._build_extraction_payload(text, title, book_title, opts)
@@ -451,7 +454,7 @@ class MetadataExtractionClient:
             MetadataClientAPIError: If API returns error.
         """
         if self._http_client is None:
-            raise MetadataClientError("Client not initialized. Use async context manager.")
+            raise MetadataClientError(_CLIENT_NOT_INITIALIZED_ERROR)
 
         opts = options or MetadataExtractionOptions()
         payload = {
