@@ -39,7 +39,7 @@ if [[ -n "$MD_FILE" ]] && [[ -f "$MD_FILE" ]]; then
     echo "   Found: $MD_FILE"
 else
     run_test "MD file exists" "false" "true"
-    echo "ERROR: No guideline MD file found in $OUTPUT_DIR"
+    echo "ERROR: No guideline MD file found in $OUTPUT_DIR" >&2
     exit 1
 fi
 
