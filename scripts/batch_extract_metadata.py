@@ -137,7 +137,8 @@ def run_metadata_extraction(
         }
 
 
-def main():
+def _parse_args() -> argparse.Namespace:
+    """Parse command line arguments."""
     parser = argparse.ArgumentParser(
         description="Batch metadata extraction - simulates front-end workflow"
     )
@@ -162,38 +163,11 @@ def main():
         default=None,
         help="Maximum number of books to process (for testing)"
     )
-    
-    args = parser.parse_args()
-    
-    # Configuration
-    input_dir = METADATA_EXTRACTION_CONFIG["input_dir"]
-    output_dir = METADATA_EXTRACTION_CONFIG["output_dir"]
-    script_path = METADATA_EXTRACTION_CONFIG["script"]
-    
-    log("=" * 80)
-    log("BATCH METADATA EXTRACTION")
-    log("=" * 80)
-    log(f"Input directory:  {input_dir}")
-    log(f"Output directory: {output_dir}")
-    log(f"Script:           {script_path}")
-    log(f"Use orchestrator: {args.use_orchestrator}")
-    log("=" * 80)
-    
-    # Validate script exists
-    if not script_path.exists():
-        print(f"❌ Script not found: {script_path}")
-        sys.exit(1)
-    
-    # Discover books
-    books = discover_books(input_dir)
-    
-    if not books:
-        print("❌ No books found to process")
-        sys.exit(1)
-    
-    print(f"\n📚 Found {len(books)} books to process")
-    
-    # Apply resume-from filter if specified
+    return parser.parse_args()
+
+
+def _apply_filters(books: List[Path], args: argparse.Namespace) -> List[Path]:
+    """Apply resume-from and max-books filters to book list."""
     if args.resume_from:
         found_start = False
         filtered_books = []
@@ -210,12 +184,110 @@ def main():
         books = filtered_books
         print(f"📌 Resuming from '{args.resume_from}' ({len(books)} books remaining)")
     
-    # Apply max-books limit if specified
     if args.max_books:
         books = books[:args.max_books]
         print(f"📌 Limited to first {args.max_books} books")
     
-    # Dry run - just list files
+    return books
+
+
+def _parse_extraction_output(stdout: str) -> Dict[str, int]:
+    """Parse extraction stdout for metrics."""
+    import re
+    
+    result = {"chapters": 0, "keywords": 0, "concepts": 0}
+    
+    for line in stdout.strip().split('\n'):
+        if "chapters" in line.lower() and "collected" in line.lower():
+            match = re.search(r'(\d+)\s+chapters', line)
+            if match:
+                result["chapters"] = int(match.group(1))
+        
+        if "Book totals (unique)" in line:
+            match = re.search(r'([\d,]+)\s+keywords.*?([\d,]+)\s+concepts', line)
+            if match:
+                result["keywords"] = int(match.group(1).replace(',', ''))
+                result["concepts"] = int(match.group(2).replace(',', ''))
+        
+        if ("Batch extraction complete" in line or "Per-chapter extraction complete" in line):
+            match = re.search(r'(\d+)\s+chapters processed', line)
+            if match and result["chapters"] == 0:
+                result["chapters"] = int(match.group(1))
+    
+    return result
+
+
+def _process_single_book(
+    book: Path, 
+    script_path: Path, 
+    use_orchestrator: bool
+) -> Dict[str, Any]:
+    """Process a single book and return result with metrics."""
+    result = run_metadata_extraction(book, script_path, use_orchestrator)
+    
+    if result["success"] and result["stdout"]:
+        metrics = _parse_extraction_output(result["stdout"])
+        result["metrics"] = metrics
+    
+    return result
+
+
+def _save_report(
+    report_path: Path,
+    start_time: datetime,
+    end_time: datetime,
+    books: List[Path],
+    successful: List[str],
+    failed: List[Dict[str, str]],
+    use_orchestrator: bool
+) -> None:
+    """Save extraction report to JSON file."""
+    duration = end_time - start_time
+    report = {
+        "started_at": start_time.isoformat(),
+        "completed_at": end_time.isoformat(),
+        "duration_seconds": duration.total_seconds(),
+        "total_books": len(books),
+        "successful_count": len(successful),
+        "failed_count": len(failed),
+        "successful": successful,
+        "failed": failed,
+        "use_orchestrator": use_orchestrator
+    }
+    
+    with open(report_path, "w") as f:
+        json.dump(report, f, indent=2)
+
+
+def main():
+    args = _parse_args()
+    
+    # Configuration
+    input_dir = METADATA_EXTRACTION_CONFIG["input_dir"]
+    output_dir = METADATA_EXTRACTION_CONFIG["output_dir"]
+    script_path = METADATA_EXTRACTION_CONFIG["script"]
+    
+    log("=" * 80)
+    log("BATCH METADATA EXTRACTION")
+    log("=" * 80)
+    log(f"Input directory:  {input_dir}")
+    log(f"Output directory: {output_dir}")
+    log(f"Script:           {script_path}")
+    log(f"Use orchestrator: {args.use_orchestrator}")
+    log("=" * 80)
+    
+    if not script_path.exists():
+        print(f"❌ Script not found: {script_path}")
+        sys.exit(1)
+    
+    books = discover_books(input_dir)
+    if not books:
+        print("❌ No books found to process")
+        sys.exit(1)
+    
+    print(f"\n📚 Found {len(books)} books to process")
+    books = _apply_filters(books, args)
+    
     if args.dry_run:
         print("\n🔍 DRY RUN - Files that would be processed:")
         for i, book in enumerate(books, 1):
@@ -223,63 +295,33 @@ def main():
         print(f"\nTotal: {len(books)} books")
         return
     
-    # Ensure output directory exists
     output_dir.mkdir(parents=True, exist_ok=True)
     
-    # Process books
     start_time = datetime.now()
-    successful = []
-    failed = []
+    successful: List[str] = []
+    failed: List[Dict[str, str]] = []
     
     print(f"\n🚀 Starting extraction at {start_time.strftime('%Y-%m-%d %H:%M:%S')}\n")
     
     for idx, book in enumerate(books, 1):
         print(f"[{idx:3d}/{len(books)}] Processing: {book.name}")
         
-        result = run_metadata_extraction(book, script_path, args.use_orchestrator)
+        result = _process_single_book(book, script_path, args.use_orchestrator)
         
         if result["success"]:
             successful.append(book.name)
-            
-            # Parse output for detailed info
-            if result["stdout"]:
-                lines = result["stdout"].strip().split('\n')
-                total_chapters = 0
-                keywords_extracted = 0
-                concepts_extracted = 0
-                
-                import re
-                for line in lines:
-                    # Find total chapters detected
-                    # e.g., "✅ Collected 16 chapters with text content"
-                    if "chapters" in line.lower() and "collected" in line.lower():
-                        match = re.search(r'(\d+)\s+chapters', line)
-                        if match:
-                            total_chapters = int(match.group(1))
-                    
-                    # Look for unique book totals line (preferred)
-                    # e.g., "📊 Book totals (unique): 1,687 keywords | 45 concepts"
-                    if "Book totals (unique)" in line:
-                        match = re.search(r'([\d,]+)\s+keywords.*?([\d,]+)\s+concepts', line)
-                        if match:
-                            keywords_extracted = int(match.group(1).replace(',', ''))
-                            concepts_extracted = int(match.group(2).replace(',', ''))
-                    
-                    # Also capture batch summary for chapter count
-                    if "Batch extraction complete" in line or "Per-chapter extraction complete" in line:
-                        match = re.search(r'(\d+)\s+chapters processed', line)
-                        if match and total_chapters == 0:
-                            total_chapters = int(match.group(1))
-                
-                print(f"         ✅ Complete: {total_chapters} chapters | {keywords_extracted:,} keywords (unique) | {concepts_extracted:,} concepts (unique)")
+            metrics = result.get("metrics", {})
+            print(f"         ✅ Complete: {metrics.get('chapters', 0)} chapters | "
+                  f"{metrics.get('keywords', 0):,} keywords (unique) | "
+                  f"{metrics.get('concepts', 0):,} concepts (unique)")
         else:
-            print(f"         ❌ Failed: {result['stderr'][:200] if result['stderr'] else 'Unknown error'}")
+            error_msg = result['stderr'][:200] if result['stderr'] else 'Unknown error'
+            print(f"         ❌ Failed: {error_msg}")
             failed.append({
                 "book": book.name,
                 "error": result["stderr"][:500] if result["stderr"] else "Unknown error"
             })
     
-    # Summary
     end_time = datetime.now()
     duration = end_time - start_time
     
@@ -296,24 +338,10 @@ def main():
         for f in failed:
             print(f"  - {f['book']}: {f['error'][:100]}")
     
-    # Save run report to dedicated reports directory
     reports_dir = METADATA_EXTRACTION_CONFIG["reports_dir"]
     reports_dir.mkdir(parents=True, exist_ok=True)
     report_path = reports_dir / f"extraction_report_{start_time.strftime('%Y%m%d_%H%M%S')}.json"
-    report = {
-        "started_at": start_time.isoformat(),
-        "completed_at": end_time.isoformat(),
-        "duration_seconds": duration.total_seconds(),
-        "total_books": len(books),
-        "successful_count": len(successful),
-        "failed_count": len(failed),
-        "successful": successful,
-        "failed": failed,
-        "use_orchestrator": args.use_orchestrator
-    }
-    
-    with open(report_path, "w") as f:
-        json.dump(report, f, indent=2)
+    _save_report(report_path, start_time, end_time, books, successful, failed, args.use_orchestrator)
     
     print(f"\n📄 Report saved: {report_path}")
     

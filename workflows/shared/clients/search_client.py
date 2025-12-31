@@ -200,6 +200,48 @@ class SemanticSearchClient:
             raise RuntimeError(_CLIENT_NOT_INITIALIZED_ERROR)
         return self._client
 
+    def _handle_error_response(self, response: Any) -> None:
+        """Raise appropriate error for HTTP error responses."""
+        try:
+            error_body = response.json()
+        except Exception:
+            error_body = {"detail": response.text}
+        raise SearchAPIError(
+            f"Search service error: {response.status_code}",
+            status_code=response.status_code,
+            response_body=error_body,
+        )
+
+    def _wrap_exception(self, e: Exception) -> Exception:
+        """Wrap exception in appropriate SearchError type."""
+        if isinstance(e, httpx.TimeoutException):
+            return SearchTimeoutError(f"Request timed out: {e}")
+        if isinstance(e, httpx.ConnectError):
+            return SearchConnectionError(f"Connection failed: {e}")
+        return SearchError(f"Unexpected error: {e}")
+
+    async def _attempt_request(
+        self,
+        client: Any,
+        method: str,
+        endpoint: str,
+        json_data: Optional[dict],
+    ) -> Optional[dict]:
+        """Attempt a single request, return response or None if retryable."""
+        response = await client.request(
+            method=method,
+            url=endpoint,
+            json=json_data,
+        )
+
+        if self._is_retryable_status(response.status_code):
+            return None
+
+        if response.status_code >= 400:
+            self._handle_error_response(response)
+
+        return response.json()
+
     async def _request_with_retry(
         self,
         method: str,
@@ -227,58 +269,18 @@ class SemanticSearchClient:
 
         for attempt in range(self.max_retries):
             try:
-                response = await client.request(
-                    method=method,
-                    url=endpoint,
-                    json=json_data,
-                )
-
-                # Check for retryable status codes
-                if self._is_retryable_status(response.status_code):
-                    if attempt < self.max_retries - 1:
-                        delay = self.retry_delay * (2 ** attempt)  # Exponential backoff
-                        await asyncio.sleep(delay)
-                        continue
-
-                # Handle error responses
-                if response.status_code >= 400:
-                    try:
-                        error_body = response.json()
-                    except Exception:
-                        error_body = {"detail": response.text}
-                    raise SearchAPIError(
-                        f"Search service error: {response.status_code}",
-                        status_code=response.status_code,
-                        response_body=error_body,
-                    )
-
-                return response.json()
-
-            except httpx.TimeoutException as e:
-                last_exception = SearchTimeoutError(f"Request timed out: {e}")
-                if attempt < self.max_retries - 1:
-                    delay = self.retry_delay * (2 ** attempt)
-                    await asyncio.sleep(delay)
-                    continue
-
-            except httpx.ConnectError as e:
-                last_exception = SearchConnectionError(f"Connection failed: {e}")
-                if attempt < self.max_retries - 1:
-                    delay = self.retry_delay * (2 ** attempt)
-                    await asyncio.sleep(delay)
-                    continue
-
+                result = await self._attempt_request(client, method, endpoint, json_data)
+                if result is not None:
+                    return result
             except SearchAPIError:
                 raise
-
             except Exception as e:
-                last_exception = SearchError(f"Unexpected error: {e}")
-                if attempt < self.max_retries - 1:
-                    delay = self.retry_delay * (2 ** attempt)
-                    await asyncio.sleep(delay)
-                    continue
+                last_exception = self._wrap_exception(e)
 
-        # All retries exhausted
+            if attempt < self.max_retries - 1:
+                delay = self.retry_delay * (2 ** attempt)
+                await asyncio.sleep(delay)
+
         if last_exception is not None:
             raise last_exception
         raise SearchError("Request failed after all retries")

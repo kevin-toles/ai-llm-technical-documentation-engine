@@ -270,6 +270,40 @@ class MetadataExtractionClient:
             await self._http_client.aclose()
             self._http_client = None
 
+    def _build_extraction_payload(
+        self,
+        text: str,
+        title: str | None,
+        book_title: str | None,
+        options: MetadataExtractionOptions,
+    ) -> dict:
+        """Build payload for extraction API request."""
+        return {
+            "text": text,
+            "title": title,
+            "book_title": book_title,
+            "options": {
+                "min_keyword_confidence": options.min_keyword_confidence,
+                "min_concept_confidence": options.min_concept_confidence,
+                "enable_summary": options.enable_summary,
+                "summary_ratio": options.summary_ratio,
+                "validate_dictionary": options.validate_dictionary,
+                "filter_noise": options.filter_noise,
+            },
+        }
+
+    async def _attempt_extraction(
+        self,
+        payload: dict,
+    ) -> MetadataExtractionResult | None:
+        """Attempt a single extraction request, return None if retryable error."""
+        if self._http_client is None:
+            raise MetadataClientError("Client not initialized. Use async context manager.")
+
+        response = await self._http_client.post(ENDPOINT_EXTRACT, json=payload)
+        response.raise_for_status()
+        return self._parse_response(response.json())
+
     async def extract_metadata(
         self,
         text: str,
@@ -277,72 +311,33 @@ class MetadataExtractionClient:
         book_title: str | None = None,
         options: MetadataExtractionOptions | None = None,
     ) -> MetadataExtractionResult:
-        """Extract metadata from text via orchestrator.
-
-        AC Reference:
-            - AC-3.4: Retry logic with exponential backoff on 5xx errors
-
-        Args:
-            text: Text to extract metadata from.
-            title: Optional chapter title.
-            book_title: Optional book title.
-            options: Extraction options.
-
-        Returns:
-            MetadataExtractionResult with keywords, concepts, etc.
-
-        Raises:
-            MetadataClientConnectionError: If cannot connect.
-            MetadataClientTimeoutError: If request times out.
-            MetadataClientAPIError: If API returns error after retries.
-        """
+        """Extract metadata from text via orchestrator."""
         if self._http_client is None:
             raise MetadataClientError("Client not initialized. Use async context manager.")
 
         opts = options or MetadataExtractionOptions()
-        payload = {
-            "text": text,
-            "title": title,
-            "book_title": book_title,
-            "options": {
-                # No top_k limits - extract ALL, filter/dedupe downstream
-                "min_keyword_confidence": opts.min_keyword_confidence,
-                "min_concept_confidence": opts.min_concept_confidence,
-                "enable_summary": opts.enable_summary,
-                "summary_ratio": opts.summary_ratio,
-                "validate_dictionary": opts.validate_dictionary,
-                "filter_noise": opts.filter_noise,
-            },
-        }
-
+        payload = self._build_extraction_payload(text, title, book_title, opts)
         last_exception: httpx.HTTPStatusError | None = None
 
         for attempt in range(self._max_retries + 1):
             try:
-                response = await self._http_client.post(ENDPOINT_EXTRACT, json=payload)
-                response.raise_for_status()
-                return self._parse_response(response.json())
+                return await self._attempt_extraction(payload)
             except httpx.ConnectError as e:
                 raise MetadataClientConnectionError(str(e)) from e
             except httpx.TimeoutException as e:
                 raise MetadataClientTimeoutError(str(e)) from e
             except httpx.HTTPStatusError as e:
-                # Only retry on 5xx server errors (AC-3.4)
-                if e.response.status_code in RETRYABLE_STATUS_CODES:
+                if e.response.status_code in RETRYABLE_STATUS_CODES and attempt < self._max_retries:
                     last_exception = e
-                    if attempt < self._max_retries:
-                        # Exponential backoff: 0.5s, 1s, 2s, ...
-                        delay = DEFAULT_RETRY_BASE_DELAY * (2 ** attempt)
-                        await asyncio.sleep(delay)
-                        continue
-                # Non-retryable error (4xx) or max retries exceeded
+                    delay = DEFAULT_RETRY_BASE_DELAY * (2 ** attempt)
+                    await asyncio.sleep(delay)
+                    continue
                 raise MetadataClientAPIError(
                     str(e),
                     e.response.status_code,
                     e.response.json() if e.response.content else None,
                 ) from e
 
-        # Should only reach here if all retries exhausted
         if last_exception is not None:
             raise MetadataClientAPIError(
                 str(last_exception),
@@ -350,7 +345,6 @@ class MetadataExtractionClient:
                 last_exception.response.json() if last_exception.response.content else None,
             ) from last_exception
 
-        # Fallback (should never reach)
         raise MetadataClientError("Unexpected error in extract_metadata")
 
     def _parse_response(self, data: dict[str, Any]) -> MetadataExtractionResult:

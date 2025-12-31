@@ -717,50 +717,25 @@ class UniversalMetadataGenerator:
             keywords=[],
             concepts=[]
         )
-    
-    def generate_metadata(
+
+    def _collect_all_chapter_texts(
         self,
-        chapters: List[Tuple[int, str, int, int]]
-    ) -> List[ChapterMetadata]:
-        """
-        Generate metadata for all chapters.
-        
-        When orchestrator mode is enabled, uses batch extraction to process
-        all chapters in a single HTTP request for improved performance.
-        
-        Args:
-            chapters: List of (chapter_num, title, start_page, end_page) tuples
-            
-        Returns:
-            List of ChapterMetadata objects
-            
-        Raises:
-            ValueError: If chapters have overlapping page ranges
-        """
-        # Validate chapters for overlaps (exception hierarchy - PY 32425)
-        self._validate_chapter_ranges(chapters)
-        
-        total_chapters = len(chapters)
-        
-        # Phase 1: Collect all chapter texts
-        print(f"\n📖 Collecting text from {total_chapters} chapters...")
+        chapters: List[Tuple[int, str, int, int]],
+        max_chapter_text: int = 100000
+    ) -> Tuple[List[Dict[str, Any]], Dict[str, Tuple[int, str, int, int]]]:
+        """Collect text content from all chapters."""
         chapters_data = []
-        chapter_info = {}  # Maps chapter_id to (ch_num, title, start_page, end_page)
-        
-        MAX_CHAPTER_TEXT = 100000  # 100K chars (~50-60 pages of text)
+        chapter_info = {}
+        total_chapters = len(chapters)
         
         for idx, (ch_num, title, start_page, end_page) in enumerate(chapters, start=1):
             chapter_id = f"ch_{ch_num}"
             chapter_info[chapter_id] = (ch_num, title, start_page, end_page)
             
-            # Collect text from chapter pages
-            chapter_text, pages_found = self._collect_chapter_text(start_page, end_page)
+            chapter_text, _ = self._collect_chapter_text(start_page, end_page)
             
-            # Truncate large chapters
-            if len(chapter_text) > MAX_CHAPTER_TEXT:
-                chapter_text = chapter_text[:MAX_CHAPTER_TEXT]
-            
-            _page_count = pages_found if pages_found > 0 else (end_page - start_page + 1)
+            if len(chapter_text) > max_chapter_text:
+                chapter_text = chapter_text[:max_chapter_text]
             
             if chapter_text and chapter_text.strip():
                 chapters_data.append({
@@ -775,78 +750,96 @@ class UniversalMetadataGenerator:
             else:
                 print(f"  [{idx}/{total_chapters}] Chapter {ch_num}: (no text content)")
         
+        return chapters_data, chapter_info
+
+    def _build_metadata_from_batch(
+        self,
+        chapters_data: List[Dict[str, Any]],
+        chapter_info: Dict[str, Tuple[int, str, int, int]],
+        batch_results: Dict[str, Tuple]
+    ) -> List[ChapterMetadata]:
+        """Build ChapterMetadata list from batch extraction results."""
+        metadata_list = []
+        
+        for ch_data in chapters_data:
+            chapter_id = ch_data['id']
+            ch_num, title, start_page, end_page = chapter_info[chapter_id]
+            
+            if chapter_id in batch_results:
+                keywords, concepts, summary = batch_results[chapter_id]
+                print(f"  ✓ Chapter {ch_num}: {len(keywords)} keywords, {len(concepts)} concepts")
+            else:
+                keywords, concepts, summary = [], [], ""
+                print(f"  ⚠ Chapter {ch_num}: no results")
+            
+            if not summary:
+                summary = self.generate_summary(ch_data['text'], title, ch_num)
+            
+            metadata_list.append(ChapterMetadata(
+                chapter_number=ch_num,
+                title=title,
+                start_page=start_page,
+                end_page=end_page,
+                summary=summary,
+                keywords=keywords,
+                concepts=concepts,
+            ))
+        
+        return metadata_list
+
+    def _log_batch_completion(self, metadata_list: List[ChapterMetadata]) -> None:
+        """Log batch extraction completion with stats."""
+        all_keywords = {kw for m in metadata_list for kw in m.keywords}
+        all_concepts = {c for m in metadata_list for c in m.concepts}
+        
+        print(f"\n✅ Batch extraction complete: {len(metadata_list)} chapters processed")
+        print(f"📊 Book totals (unique): {len(all_keywords):,} keywords | {len(all_concepts):,} concepts")
+        
+        logger.info(
+            f"Book extraction complete: book='{self.book_name}' "
+            f"chapters={len(metadata_list)} "
+            f"unique_keywords={len(all_keywords)} "
+            f"unique_concepts={len(all_concepts)} "
+            f"mode=batch"
+        )
+    
+    def generate_metadata(
+        self,
+        chapters: List[Tuple[int, str, int, int]]
+    ) -> List[ChapterMetadata]:
+        """
+        Generate metadata for all chapters.
+        
+        When orchestrator mode is enabled, uses batch extraction to process
+        all chapters in a single HTTP request for improved performance.
+        """
+        self._validate_chapter_ranges(chapters)
+        
+        print(f"\n📖 Collecting text from {len(chapters)} chapters...")
+        chapters_data, chapter_info = self._collect_all_chapter_texts(chapters)
         print(f"\n✅ Collected {len(chapters_data)} chapters with text content")
         
-        # Phase 2: Extract metadata (batch or per-chapter)
         metadata_list = []
         
         if self._use_orchestrator and chapters_data:
-            # Try batch extraction first
             print(f"\n🚀 Using BATCH orchestrator extraction for {len(chapters_data)} chapters...")
             try:
-                batch_results = self._extract_batch_via_orchestrator(
-                    chapters_data
-                )
-                
-                # Build metadata from batch results
-                for ch_data in chapters_data:
-                    chapter_id = ch_data['id']
-                    ch_num, title, start_page, end_page = chapter_info[chapter_id]
-                    
-                    if chapter_id in batch_results:
-                        keywords, concepts, summary = batch_results[chapter_id]
-                        print(f"  ✓ Chapter {ch_num}: {len(keywords)} keywords, {len(concepts)} concepts")
-                    else:
-                        keywords, concepts, summary = [], [], ""
-                        print(f"  ⚠ Chapter {ch_num}: no results")
-                    
-                    # Generate summary if not provided
-                    if not summary:
-                        summary = self.generate_summary(ch_data['text'], title, ch_num)
-                    
-                    metadata_list.append(ChapterMetadata(
-                        chapter_number=ch_num,
-                        title=title,
-                        start_page=start_page,
-                        end_page=end_page,
-                        summary=summary,
-                        keywords=keywords,
-                        concepts=concepts,
-                    ))
-                
-                # Calculate unique totals across all chapters
-                all_keywords = set()
-                all_concepts = set()
-                for m in metadata_list:
-                    all_keywords.update(m.keywords)
-                    all_concepts.update(m.concepts)
-                
-                print(f"\n✅ Batch extraction complete: {len(metadata_list)} chapters processed")
-                print(f"📊 Book totals (unique): {len(all_keywords):,} keywords | {len(all_concepts):,} concepts")
-                
-                # Log book-level summary for analysis
-                logger.info(
-                    f"Book extraction complete: book='{self.book_name}' "
-                    f"chapters={len(metadata_list)} "
-                    f"unique_keywords={len(all_keywords)} "
-                    f"unique_concepts={len(all_concepts)} "
-                    f"mode=batch"
-                )
-                
+                batch_results = self._extract_batch_via_orchestrator(chapters_data)
+                metadata_list = self._build_metadata_from_batch(chapters_data, chapter_info, batch_results)
+                self._log_batch_completion(metadata_list)
             except Exception as e:
                 print(f"\n⚠️ Batch extraction failed: {e}")
                 print("   Falling back to per-chapter extraction...")
                 metadata_list = self._generate_metadata_per_chapter(chapters_data, chapter_info)
         else:
-            # Per-chapter extraction (local or orchestrator per-chapter)
             mode = "orchestrator" if self._use_orchestrator else "local"
             print(f"\n🔄 Using per-chapter {mode} extraction...")
             metadata_list = self._generate_metadata_per_chapter(chapters_data, chapter_info)
         
         # Add fallback entries for chapters without text
+        existing_ids = {f"ch_{m.chapter_number}" for m in metadata_list}
         for ch_num, title, start_page, end_page in chapters:
-            chapter_id = f"ch_{ch_num}"
-            if chapter_id not in [f"ch_{m.chapter_number}" for m in metadata_list]:
+            if f"ch_{ch_num}" not in existing_ids:
                 metadata_list.append(self._create_fallback_metadata(
                     ch_num, title, start_page, end_page
                 ))

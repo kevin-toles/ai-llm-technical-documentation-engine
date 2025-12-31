@@ -283,6 +283,25 @@ class OrchestratorClient:
     # Pattern: POST /v1/search (Code-Orchestrator-Service API)
     # =========================================================================
 
+    def _build_cache_key(
+        self, query: str, domain: Optional[str], top_k: int, threshold: float
+    ) -> str:
+        """Build cache key for search query."""
+        return f"search:{query}:{domain or ''}:{top_k}:{threshold}"
+
+    def _check_cache(
+        self, cache_key: str, skip_cache: bool, start_time: float
+    ) -> Optional[list[dict[str, Any]]]:
+        """Check cache for results, return None if not cached."""
+        if self.cache and not skip_cache:
+            cached = self.cache.get(cache_key)
+            if cached is not None:
+                if self.metrics:
+                    self.metrics.increment_counter("orchestrator_cache_hits_total")
+                self._record_timing(start_time, "search")
+                return cached
+        return None
+
     async def search(
         self,
         query: str,
@@ -291,67 +310,25 @@ class OrchestratorClient:
         threshold: float = SEMANTIC_SIMILARITY_THRESHOLD,
         skip_cache: bool = False,
     ) -> list[dict[str, Any]]:
-        """
-        Search for semantically similar content via Code-Orchestrator-Service.
-
-        Reference: Code-Orchestrator-Service/docs/ARCHITECTURE.md - POST /api/v1/search
-
-        Args:
-            query: Search query text
-            domain: Optional domain filter (e.g., "ai-ml", "architecture")
-            top_k: Maximum number of results to return (default: 5)
-            threshold: Minimum similarity threshold (default: 0.3)
-            skip_cache: If True, bypass cache (WBS 6.1.2)
-
-        Returns:
-            List of search result dicts with keys:
-            - id: Unique result identifier
-            - content: Matched content text
-            - metadata: Dict with source, chapter, title info
-            - score: Similarity score (0.0-1.0)
-
-        Raises:
-            ValueError: If query is empty
-            OrchestratorTimeoutError: On request timeout
-            OrchestratorConnectionError: On connection failure
-            OrchestratorAPIError: On 4xx API errors (not 5xx - those degrade gracefully)
-        """
+        """Search for semantically similar content via Code-Orchestrator-Service."""
         import time
         start_time = time.time()
 
-        # Track request count (WBS 6.2.1)
         if self.metrics:
             self.metrics.increment_counter("orchestrator_requests_total")
 
-        # Validate query - Pattern: Input validation
         if not query or not query.strip():
             raise ValueError("query must not be empty")
 
-        # WBS 6.1.2: Check cache first
-        cache_key = f"search:{query}:{domain or ''}:{top_k}:{threshold}"
-        if self.cache and not skip_cache:
-            cached = self.cache.get(cache_key)
-            if cached is not None:
-                # Track cache hit (WBS 6.2.1)
-                if self.metrics:
-                    self.metrics.increment_counter("orchestrator_cache_hits_total")
-                self._record_timing(start_time, "search")
-                return cached
+        cache_key = self._build_cache_key(query, domain, top_k, threshold)
+        cached = self._check_cache(cache_key, skip_cache, start_time)
+        if cached is not None:
+            return cached
 
-        # Build request payload
-        payload: dict[str, Any] = {
-            "query": query,
-            "top_k": top_k,
-            "threshold": threshold,
-        }
-
-        # Add optional domain filter
+        payload: dict[str, Any] = {"query": query, "top_k": top_k, "threshold": threshold}
         if domain is not None:
             payload["domain"] = domain
 
-        # Make request with error handling and retry
-        # Pattern: Timeout handling for graceful degradation (GUIDELINES p. 2145)
-        # Pattern: Retry with exponential backoff (CODING_PATTERNS §2.3)
         try:
             response = await self._request_with_retry(
                 method="POST",
@@ -359,23 +336,17 @@ class OrchestratorClient:
                 json_data=payload,
             )
         except OrchestratorAPIError as e:
-            # Graceful degradation: return empty on 5xx (service unavailable)
             if e.status_code and e.status_code >= 500:
                 self._record_timing(start_time, "search")
                 return []
-            raise  # Re-raise 4xx errors
+            raise
 
-        # Extract results from response
-        # Code-Orchestrator-Service returns {"results": [...], "total": int}
         results = response.get("results", [])
 
-        # WBS 6.1.2: Store in cache
         if self.cache:
             self.cache.set(cache_key, results)
 
-        # WBS 6.2: Record timing
         self._record_timing(start_time, "search")
-
         return results
 
     def _record_timing(self, start_time: float, operation: str) -> None:
@@ -422,6 +393,48 @@ class OrchestratorClient:
             results.append(r)
         return results
 
+    def _handle_error_response(self, response: Any) -> None:
+        """Raise appropriate error for HTTP error responses."""
+        try:
+            error_body = response.json()
+        except Exception:
+            error_body = {"detail": response.text}
+        raise OrchestratorAPIError(
+            f"Orchestrator service error: {response.status_code}",
+            status_code=response.status_code,
+            response_body=error_body,
+        )
+
+    def _wrap_exception(self, e: Exception) -> Exception:
+        """Wrap exception in appropriate OrchestratorError type."""
+        if isinstance(e, httpx.TimeoutException):
+            return OrchestratorTimeoutError(f"Request timed out: {e}")
+        if isinstance(e, httpx.ConnectError):
+            return OrchestratorConnectionError(f"Connection failed: {e}")
+        return OrchestratorClientError(f"Unexpected error: {e}")
+
+    async def _attempt_request(
+        self,
+        client: Any,
+        method: str,
+        endpoint: str,
+        json_data: Optional[dict],
+    ) -> Optional[dict]:
+        """Attempt a single request, return response or None if retryable."""
+        response = await client.request(
+            method=method,
+            url=endpoint,
+            json=json_data,
+        )
+
+        if self._is_retryable_status(response.status_code):
+            return None
+
+        if response.status_code >= 400:
+            self._handle_error_response(response)
+
+        return response.json()
+
     async def _request_with_retry(
         self,
         method: str,
@@ -432,81 +445,24 @@ class OrchestratorClient:
         Make HTTP request with exponential backoff retry logic.
 
         WBS 5.1.2: Retry logic for transient failures (503, 429, 502, 504).
-        Pattern: Exponential backoff (CODING_PATTERNS §2.3)
-        Reference: GUIDELINES p. 466 (fail fast then retry at higher level)
-
-        Args:
-            method: HTTP method (GET, POST, etc.)
-            endpoint: API endpoint path
-            json_data: Optional JSON request body
-
-        Returns:
-            JSON response as dictionary
-
-        Raises:
-            OrchestratorTimeoutError: If all retry attempts time out
-            OrchestratorConnectionError: If unable to connect to service
-            OrchestratorAPIError: If service returns an error response
         """
         client = self._ensure_client()
         last_exception: Optional[Exception] = None
 
         for attempt in range(self.max_retries):
             try:
-                response = await client.request(
-                    method=method,
-                    url=endpoint,
-                    json=json_data,
-                )
-
-                # Check for retryable status codes
-                if self._is_retryable_status(response.status_code):
-                    if attempt < self.max_retries - 1:
-                        delay = self.retry_delay * (2**attempt)  # Exponential backoff
-                        await asyncio.sleep(delay)
-                        continue
-
-                # Handle error responses
-                if response.status_code >= 400:
-                    try:
-                        error_body = response.json()
-                    except Exception:
-                        error_body = {"detail": response.text}
-                    raise OrchestratorAPIError(
-                        f"Orchestrator service error: {response.status_code}",
-                        status_code=response.status_code,
-                        response_body=error_body,
-                    )
-
-                return response.json()
-
-            except httpx.TimeoutException as e:
-                last_exception = OrchestratorTimeoutError(f"Request timed out: {e}")
-                if attempt < self.max_retries - 1:
-                    delay = self.retry_delay * (2**attempt)
-                    await asyncio.sleep(delay)
-                    continue
-
-            except httpx.ConnectError as e:
-                last_exception = OrchestratorConnectionError(
-                    f"Connection failed: {e}"
-                )
-                if attempt < self.max_retries - 1:
-                    delay = self.retry_delay * (2**attempt)
-                    await asyncio.sleep(delay)
-                    continue
-
+                result = await self._attempt_request(client, method, endpoint, json_data)
+                if result is not None:
+                    return result
             except OrchestratorAPIError:
                 raise
-
             except Exception as e:
-                last_exception = OrchestratorClientError(f"Unexpected error: {e}")
-                if attempt < self.max_retries - 1:
-                    delay = self.retry_delay * (2**attempt)
-                    await asyncio.sleep(delay)
-                    continue
+                last_exception = self._wrap_exception(e)
 
-        # All retries exhausted
+            if attempt < self.max_retries - 1:
+                delay = self.retry_delay * (2**attempt)
+                await asyncio.sleep(delay)
+
         if last_exception is not None:
             raise last_exception
         raise OrchestratorClientError("Request failed after all retries")

@@ -165,52 +165,41 @@ class GatewaySearchClient:
             raise GatewaySearchError(_CLIENT_NOT_INITIALIZED_ERROR)
         return self._client
 
+    async def _attempt_tool_execution(
+        self,
+        client: httpx.AsyncClient,
+        payload: dict[str, Any],
+    ) -> dict[str, Any] | None:
+        """Attempt single tool execution, return None if retryable."""
+        response = await client.post("/v1/tools/execute", json=payload)
+
+        if response.status_code in self.RETRYABLE_STATUS_CODES:
+            return None
+
+        response.raise_for_status()
+        return response.json()
+
     async def _execute_tool(
         self,
         tool_name: str,
         arguments: dict[str, Any],
     ) -> dict[str, Any]:
-        """
-        Execute a Gateway tool.
-
-        Args:
-            tool_name: Tool name (e.g., "search_corpus")
-            arguments: Tool arguments
-
-        Returns:
-            Tool execution result
-
-        Raises:
-            GatewaySearchError: If tool execution fails
-        """
+        """Execute a Gateway tool with retry logic."""
         client = self._ensure_client()
-
-        payload = {
-            "name": tool_name,
-            "arguments": arguments,
-        }
+        payload = {"name": tool_name, "arguments": arguments}
 
         for attempt in range(self._max_retries):
             try:
-                response = await client.post("/v1/tools/execute", json=payload)
+                result = await self._attempt_tool_execution(client, payload)
+                if result is not None:
+                    return result
 
-                if response.status_code in self.RETRYABLE_STATUS_CODES:
-                    if attempt < self._max_retries - 1:
-                        await asyncio.sleep(self._retry_delay * (2 ** attempt))
-                        continue
-                    raise GatewaySearchAPIError(
-                        f"Gateway returned {response.status_code}",
-                        response.status_code,
-                    )
-
-                response.raise_for_status()
-                return response.json()
+                if attempt >= self._max_retries - 1:
+                    raise GatewaySearchAPIError("Gateway returned retryable status", 503)
 
             except httpx.TimeoutException as e:
-                if attempt < self._max_retries - 1:
-                    await asyncio.sleep(self._retry_delay * (2 ** attempt))
-                    continue
-                raise GatewaySearchTimeoutError(f"Gateway request timed out: {e}") from e
+                if attempt >= self._max_retries - 1:
+                    raise GatewaySearchTimeoutError(f"Gateway request timed out: {e}") from e
             except httpx.ConnectError as e:
                 raise GatewaySearchConnectionError(f"Failed to connect to gateway: {e}") from e
             except httpx.HTTPStatusError as e:
@@ -219,6 +208,8 @@ class GatewaySearchClient:
                     e.response.status_code,
                     e.response.json() if e.response.content else None,
                 ) from e
+
+            await asyncio.sleep(self._retry_delay * (2 ** attempt))
 
         raise GatewaySearchError("Max retries exceeded")
 

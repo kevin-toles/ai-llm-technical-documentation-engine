@@ -146,23 +146,32 @@ class ChapterSegmenter:
         """
         Pass A: Regex-based chapter detection with YAKE validation.
         
-        Refactored: CC 12 → <10 using service layer.
-        
-        Enhanced: Two-phase detection:
+        Two-phase detection:
         1. First collect all dedicated chapter title pages (authoritative)
         2. Then collect regex chapters that don't conflict with title pages
-        
-        This ensures title pages take precedence over chapter references.
-        
-        Returns:
-            List of chapters or None if detection failed
         """
-        title_page_candidates = []
-        regex_candidates = []
-        title_page_numbers = set()  # Chapter numbers found on title pages
+        # Phase 1: Collect title page chapters (authoritative)
+        title_page_candidates = self._find_title_page_chapters(pages, page_texts, page_numbers)
         
-        # Phase 1: Collect all title page chapters (these are authoritative)
-        for i, (page, text, page_num) in enumerate(zip(pages, page_texts, page_numbers)):
+        if title_page_candidates:
+            return ChapterBuilder.build_from_regex(title_page_candidates, page_numbers)
+        
+        # Phase 2: Fall back to general regex detection
+        regex_candidates = self._find_regex_chapters(pages, page_texts, page_numbers)
+        
+        if not regex_candidates:
+            return None
+        
+        return ChapterBuilder.build_from_regex(regex_candidates, page_numbers)
+
+    def _find_title_page_chapters(
+        self, pages: List[Dict], page_texts: List[str], page_numbers: List[int]
+    ) -> List[Tuple]:
+        """Find chapters from dedicated title pages."""
+        candidates = []
+        seen_numbers = set()
+        
+        for page, text, page_num in zip(pages, page_texts, page_numbers):
             if PageFilter.is_too_short(text, min_length=100):
                 continue
             
@@ -173,17 +182,20 @@ class ChapterSegmenter:
             title_page_match = self.regex_matcher.is_chapter_title_page(text)
             if title_page_match:
                 chapter_num, title = title_page_match
-                if chapter_num not in title_page_numbers:
-                    title_page_numbers.add(chapter_num)
-                    title_page_candidates.append((page_num, chapter_num, title, "chapter_title"))
+                if chapter_num not in seen_numbers:
+                    seen_numbers.add(chapter_num)
+                    candidates.append((page_num, chapter_num, title, "chapter_title"))
         
-        # If we found title page chapters, use only those (they're the real chapters)
-        if title_page_candidates:
-            return ChapterBuilder.build_from_regex(title_page_candidates, page_numbers)
-        
-        # Phase 2: No title pages found - fall back to general regex detection
+        return candidates
+
+    def _find_regex_chapters(
+        self, pages: List[Dict], page_texts: List[str], page_numbers: List[int]
+    ) -> List[Tuple]:
+        """Find chapters using regex markers with YAKE validation."""
+        candidates = []
         seen_numbers = set()
-        for i, (page, text, page_num) in enumerate(zip(pages, page_texts, page_numbers)):
+        
+        for page, text, page_num in zip(pages, page_texts, page_numbers):
             if PageFilter.is_too_short(text, min_length=100):
                 continue
             
@@ -197,7 +209,6 @@ class ChapterSegmenter:
             
             chapter_num, title, pattern_type = marker
             
-            # Require substantial content and YAKE validation for regex chapters
             if not PageFilter.has_substantial_content(text):
                 continue
             
@@ -208,12 +219,9 @@ class ChapterSegmenter:
                 continue
             
             seen_numbers.add(chapter_num)
-            regex_candidates.append((page_num, chapter_num, title, pattern_type))
+            candidates.append((page_num, chapter_num, title, pattern_type))
         
-        if not regex_candidates:
-            return None
-        
-        return ChapterBuilder.build_from_regex(regex_candidates, page_numbers)
+        return candidates
     
     def _pass_b_topic_shift(self, page_texts: List[str], page_numbers: List[int]) -> Optional[List[Chapter]]:
         """

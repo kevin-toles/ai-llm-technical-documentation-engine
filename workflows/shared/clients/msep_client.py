@@ -552,25 +552,28 @@ class MSEPClient:
         result_data = response_data.get("result", {})
         return EnrichedMetadataResponse.from_dict(result_data)
 
+    def _handle_http_error(
+        self, e: httpx.HTTPStatusError, attempt: int, endpoint: str
+    ) -> bool:
+        """Handle HTTP status error, return True if should retry."""
+        status_code = e.response.status_code
+        
+        if status_code in self.RETRYABLE_STATUS_CODES and attempt < self.max_retries:
+            return True
+        
+        response_body = self._safe_parse_json(e.response)
+        raise MSEPAPIError(
+            f"MSEP API error: {status_code}",
+            status_code=status_code,
+            response_body=response_body,
+        ) from e
+
     async def _post(
         self,
         endpoint: str,
         json: dict[str, Any],
     ) -> dict[str, Any]:
-        """Execute POST request with retry logic.
-
-        Args:
-            endpoint: API endpoint path.
-            json: Request body as dict.
-
-        Returns:
-            Parsed JSON response.
-
-        Raises:
-            MSEPTimeoutError: Request timed out after retries.
-            MSEPConnectionError: Unable to connect after retries.
-            MSEPAPIError: API returned non-retryable error.
-        """
+        """Execute POST request with retry logic."""
         if self._client is None:
             raise MSEPClientError(_CLIENT_NOT_INITIALIZED_ERROR)
 
@@ -584,41 +587,25 @@ class MSEPClient:
 
             except httpx.TimeoutException as e:
                 last_exception = e
-                if attempt < self.max_retries:
-                    await self._wait_before_retry(attempt)
-                    continue
-                raise MSEPTimeoutError(
-                    f"Request to {endpoint} timed out after {self.max_retries + 1} attempts"
-                ) from e
+                if attempt >= self.max_retries:
+                    raise MSEPTimeoutError(
+                        f"Request to {endpoint} timed out after {self.max_retries + 1} attempts"
+                    ) from e
 
             except httpx.ConnectError as e:
                 last_exception = e
-                if attempt < self.max_retries:
-                    await self._wait_before_retry(attempt)
-                    continue
-                raise MSEPConnectionError(
-                    f"Connection to {self.base_url} failed after {self.max_retries + 1} attempts"
-                ) from e
+                if attempt >= self.max_retries:
+                    raise MSEPConnectionError(
+                        f"Connection to {self.base_url} failed after {self.max_retries + 1} attempts"
+                    ) from e
 
             except httpx.HTTPStatusError as e:
-                status_code = e.response.status_code
-                response_body = self._safe_parse_json(e.response)
+                if not self._handle_http_error(e, attempt, endpoint):
+                    continue
+                last_exception = e
 
-                # Only retry on retryable status codes
-                if status_code in self.RETRYABLE_STATUS_CODES:
-                    last_exception = e
-                    if attempt < self.max_retries:
-                        await self._wait_before_retry(attempt)
-                        continue
+            await self._wait_before_retry(attempt)
 
-                # Don't retry 4xx client errors
-                raise MSEPAPIError(
-                    f"MSEP API error: {e.response.status_code}",
-                    status_code=status_code,
-                    response_body=response_body,
-                ) from e
-
-        # Should not reach here, but handle edge case
         raise MSEPClientError(
             f"Request failed after {self.max_retries + 1} attempts"
         ) from last_exception
