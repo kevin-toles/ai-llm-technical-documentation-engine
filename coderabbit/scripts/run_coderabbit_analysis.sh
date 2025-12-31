@@ -14,7 +14,7 @@ echo "🔍 Analysis Type: $ANALYSIS_TYPE"
 echo "📁 Working Directory: $(pwd)"
 
 # Check for emergency disable flag
-if [ "$DISABLE_FILTERING" = "true" ]; then
+if [[ "$DISABLE_FILTERING" = "true" ]]; then
     echo "🚨 EMERGENCY MODE: All filtering disabled"
     ANALYSIS_TYPE="audit-emergency"
 fi
@@ -63,7 +63,7 @@ case "$ANALYSIS_TYPE" in
     "audit"|"audit-emergency")
         echo "🔒 Running Comprehensive Security Audit (Tier 2: Weekly)"
         echo "📋 Applied Filters: Ultra-safe directories ONLY"
-        if [ "$ANALYSIS_TYPE" = "audit-emergency" ]; then
+        if [[ "$ANALYSIS_TYPE" = "audit-emergency" ]]; then
             echo "🚨 EMERGENCY: NO FILTERING APPLIED"
             EXCLUSIONS=""
         else
@@ -79,7 +79,7 @@ case "$ANALYSIS_TYPE" in
         python3 "$SCRIPT_DIR/local_coderabbit.py" --path "$PROJECT_ROOT" --format both
         
         # Generate audit report
-        if [ -f "$SCRIPT_DIR/coderabbit_audit_generator.py" ]; then
+        if [[ -f "$SCRIPT_DIR/coderabbit_audit_generator.py" ]]; then
             echo "📋 Generating comprehensive audit report..."
             python3 "$SCRIPT_DIR/coderabbit_audit_generator.py"
         fi
@@ -90,7 +90,7 @@ esac
 echo "==========================================="
 echo "📊 Analysis Complete!"
 
-if [ -f "$CODERABBIT_DIR/reports/coderabbit/analysis_results.json" ]; then
+if [[ -f "$CODERABBIT_DIR/reports/coderabbit/analysis_results.json" ]]; then
     echo "📋 Results Summary:"
     python3 -c "
 import json
