@@ -68,7 +68,7 @@ else
 fi
 
 # Skip deployment tests if requested
-if [ "$SKIP_UP" = true ]; then
+if [[ "$SKIP_UP" = true ]]; then
     echo ""
     echo "=== Skipping deployment tests (--skip-up flag) ==="
     echo ""
@@ -93,7 +93,7 @@ WAIT_TIME=0
 MAX_WAIT=60
 while [ $WAIT_TIME -lt $MAX_WAIT ]; do
     HEALTHY_COUNT=$(docker-compose -f docker-compose.integration.yml ps 2>/dev/null | grep -c "healthy" || echo "0")
-    if [ "$HEALTHY_COUNT" -ge 5 ]; then
+    if [[ "$HEALTHY_COUNT" -ge 5 ]]; then
         echo "   ✓ $HEALTHY_COUNT services healthy after ${WAIT_TIME}s"
         break
     fi
@@ -102,7 +102,7 @@ while [ $WAIT_TIME -lt $MAX_WAIT ]; do
     WAIT_TIME=$((WAIT_TIME + 10))
 done
 
-if [ "$HEALTHY_COUNT" -lt 5 ]; then
+if [[ "$HEALTHY_COUNT" -lt 5 ]]; then
     echo "   ✗ Only $HEALTHY_COUNT services healthy after ${MAX_WAIT}s"
     echo ""
     echo "Container status:"
@@ -123,7 +123,7 @@ for endpoint in "http://localhost:8080/health" "http://localhost:8081/health" "h
     fi
 done
 
-if [ "$ENDPOINTS_OK" = false ]; then
+if [[ "$ENDPOINTS_OK" = false ]]; then
     echo "   ⚠ Some endpoints not responding (may need more startup time)"
 fi
 
