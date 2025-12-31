@@ -34,6 +34,8 @@ from pathlib import Path
 from typing import Any
 from unittest.mock import AsyncMock, patch
 
+import aiofiles
+
 import pytest
 
 # Add project root to path
@@ -77,7 +79,7 @@ def sample_book_metadata() -> dict[str, Any]:
 
 @pytest.mark.integration
 @pytest.mark.fallback
-class TestMSE74_GracefulDegradation:
+class TestMSE74GracefulDegradation:
     """
     MSE-7.4: Graceful Degradation Tests.
 
@@ -107,8 +109,8 @@ class TestMSE74_GracefulDegradation:
         input_path = tmp_path / "test_metadata.json"
         output_path = tmp_path / "test_enriched.json"
 
-        with open(input_path, "w", encoding="utf-8") as f:
-            json.dump(sample_book_metadata, f)
+        async with aiofiles.open(input_path, "w", encoding="utf-8") as f:
+            await f.write(json.dumps(sample_book_metadata))
 
         with patch(
             "workflows.metadata_enrichment.scripts.enrich_metadata_per_book.MSEPClient"
@@ -167,8 +169,8 @@ class TestMSE74_GracefulDegradation:
         input_path = tmp_path / "test_metadata.json"
         output_path = tmp_path / "test_enriched.json"
 
-        with open(input_path, "w", encoding="utf-8") as f:
-            json.dump(sample_book_metadata, f)
+        async with aiofiles.open(input_path, "w", encoding="utf-8") as f:
+            await f.write(json.dumps(sample_book_metadata))
 
         with patch(
             "workflows.metadata_enrichment.scripts.enrich_metadata_per_book.MSEPClient"
@@ -261,8 +263,9 @@ class TestMSE74_GracefulDegradation:
         # Verify output was created by fallback
         assert output_path.exists(), "Fallback should produce output file"
 
-        with open(output_path, encoding="utf-8") as f:
-            output_data = json.load(f)
+        async with aiofiles.open(output_path, encoding="utf-8") as f:
+            content = await f.read()
+            output_data = json.loads(content)
 
         assert "chapters" in output_data
         # Fallback uses local provenance
@@ -288,8 +291,8 @@ class TestMSE74_GracefulDegradation:
         input_path = tmp_path / "test_metadata.json"
         output_path = tmp_path / "test_enriched.json"
 
-        with open(input_path, "w", encoding="utf-8") as f:
-            json.dump(sample_book_metadata, f)
+        async with aiofiles.open(input_path, "w", encoding="utf-8") as f:
+            await f.write(json.dumps(sample_book_metadata))
 
         with patch(
             "workflows.metadata_enrichment.scripts.enrich_metadata_per_book.MSEPClient"
@@ -317,7 +320,7 @@ class TestMSE74_GracefulDegradation:
 
 @pytest.mark.integration
 @pytest.mark.fallback
-class TestMSE74_ServiceUnavailableScenarios:
+class TestMSE74ServiceUnavailableScenarios:
     """
     Additional fallback scenarios for service unavailability.
     """
@@ -341,14 +344,15 @@ class TestMSE74_ServiceUnavailableScenarios:
         input_path = tmp_path / "test_metadata.json"
         output_path = tmp_path / "test_enriched.json"
 
-        with open(input_path, "w", encoding="utf-8") as f:
-            json.dump(sample_book_metadata, f)
+        async with aiofiles.open(input_path, "w", encoding="utf-8") as f:
+            await f.write(json.dumps(sample_book_metadata))
 
         call_count = 0
 
         async def mock_enrich(*args: Any, **kwargs: Any) -> None:
             nonlocal call_count
             call_count += 1
+            await asyncio.sleep(0)  # Make async meaningful
             raise MSEPConnectionError("Connection refused")
 
         with patch(
@@ -438,8 +442,9 @@ class TestMSE74_ServiceUnavailableScenarios:
         mock_local.assert_called_once_with(input_path, output_path)
 
         # Verify structure was preserved
-        with open(output_path, encoding="utf-8") as f:
-            output_data = json.load(f)
+        async with aiofiles.open(output_path, encoding="utf-8") as f:
+            content = await f.read()
+            output_data = json.loads(content)
 
         assert output_data.get("custom_field") == "should_be_preserved"
         assert output_data["chapters"][0].get("extra_data") == {"key": "value"}

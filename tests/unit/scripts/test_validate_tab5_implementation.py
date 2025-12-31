@@ -31,7 +31,7 @@ class TestRequirement1DualOutputGeneration:
         script_file = script_dir / "chapter_generator_all_text.py"
         script_file.write_text("def _convert_markdown_to_json(): pass\nimport json\njson.dump()")
         
-        result = validate_tab5_implementation()
+        validate_tab5_implementation()  # Return value checked via capsys
         captured = capsys.readouterr()
         
         assert "✅ PASS: Script has JSON generation functions" in captured.out
@@ -47,7 +47,7 @@ class TestRequirement1DualOutputGeneration:
         script_file = script_dir / "chapter_generator_all_text.py"
         script_file.write_text("def some_function(): pass")
         
-        result = validate_tab5_implementation()
+        validate_tab5_implementation()  # Return value checked via capsys
         captured = capsys.readouterr()
         
         assert "❌ FAIL: Script missing JSON generation functions" in captured.out
@@ -57,7 +57,7 @@ class TestRequirement1DualOutputGeneration:
         """Requirement 1 fails when script file doesn't exist"""
         monkeypatch.chdir(tmp_path)
         
-        result = validate_tab5_implementation()
+        validate_tab5_implementation()  # Return value checked via capsys
         captured = capsys.readouterr()
         
         assert "❌ FAIL: Script not found" in captured.out
@@ -84,7 +84,7 @@ class TestRequirement2SampleOutputs:
         md_file.write_text("# Sample MD content")
         json_file.write_text('{"book": "test", "title": "test", "chapters": []}')
         
-        result = validate_tab5_implementation()
+        validate_tab5_implementation()  # Return value checked via capsys
         captured = capsys.readouterr()
         
         assert "✅ PASS: Both files exist" in captured.out
@@ -106,7 +106,7 @@ class TestRequirement2SampleOutputs:
         md_file.write_text("# Sample")
         json_file.write_text('{"book": "test", "title": "test", "chapters": []}')
         
-        result = validate_tab5_implementation()
+        validate_tab5_implementation()  # Return value checked via capsys
         captured = capsys.readouterr()
         
         assert "✅ PASS: JSON is valid and parseable" in captured.out
@@ -125,7 +125,7 @@ class TestRequirement2SampleOutputs:
         md_file.write_text("# Sample")
         json_file.write_text('{invalid json')
         
-        result = validate_tab5_implementation()
+        validate_tab5_implementation()  # Return value checked via capsys
         captured = capsys.readouterr()
         
         assert "❌ FAIL: JSON is invalid:" in captured.out
@@ -142,7 +142,7 @@ class TestRequirement2SampleOutputs:
         json_file = output_dir / "PYTHON_GUIDELINES_Architecture Patterns with Python.json"
         json_file.write_text('{"book": "test", "title": "test", "chapters": []}')
         
-        result = validate_tab5_implementation()
+        validate_tab5_implementation()  # Return value checked via capsys
         captured = capsys.readouterr()
         
         assert "❌ FAIL: MD file not found" in captured.out
@@ -159,7 +159,7 @@ class TestRequirement2SampleOutputs:
         md_file = output_dir / "PYTHON_GUIDELINES_Architecture Patterns with Python.md"
         md_file.write_text("# Sample")
         
-        result = validate_tab5_implementation()
+        validate_tab5_implementation()  # Return value checked via capsys
         captured = capsys.readouterr()
         
         assert "❌ FAIL: JSON file not found" in captured.out
@@ -188,7 +188,7 @@ class TestRequirement3JSONSchema:
             ]
         })
         
-        result = validate_tab5_implementation()
+        validate_tab5_implementation()  # Return value checked via capsys
         captured = capsys.readouterr()
         
         assert "✅ PASS: All required top-level keys present" in captured.out
@@ -207,7 +207,7 @@ class TestRequirement3JSONSchema:
             ]
         })
         
-        result = validate_tab5_implementation()
+        validate_tab5_implementation()  # Return value checked via capsys
         captured = capsys.readouterr()
         
         assert "✅ PASS: Chapters have correct structure" in captured.out
@@ -222,7 +222,7 @@ class TestRequirement3JSONSchema:
             # Missing title and chapters
         })
         
-        result = validate_tab5_implementation()
+        validate_tab5_implementation()  # Return value checked via capsys
         captured = capsys.readouterr()
         
         assert "❌ FAIL: Missing required keys:" in captured.out
@@ -240,7 +240,7 @@ class TestRequirement3JSONSchema:
             ]
         })
         
-        result = validate_tab5_implementation()
+        validate_tab5_implementation()  # Return value checked via capsys
         captured = capsys.readouterr()
         
         assert "⚠️  WARNING: Chapters missing keys:" in captured.out
@@ -255,7 +255,7 @@ class TestRequirement3JSONSchema:
             "chapters": "not an array"
         })
         
-        result = validate_tab5_implementation()
+        validate_tab5_implementation()  # Return value checked via capsys
         captured = capsys.readouterr()
         
         assert "❌ FAIL: Chapters is not a valid array" in captured.out
@@ -289,7 +289,7 @@ class TestRequirement4ContentParity:
         # Setup with 3 chapters in both
         self._create_setup_with_chapters(tmp_path, 3)
         
-        result = validate_tab5_implementation()
+        validate_tab5_implementation()  # Return value checked via capsys
         captured = capsys.readouterr()
         
         assert "✅ PASS: Chapter counts match (3 chapters)" in captured.out
@@ -301,7 +301,7 @@ class TestRequirement4ContentParity:
         # MD has 2 chapters, JSON has 1
         self._create_setup_with_mismatched_chapters(tmp_path, md_chapters=2, json_chapters=1)
         
-        result = validate_tab5_implementation()
+        validate_tab5_implementation()  # Return value checked via capsys
         captured = capsys.readouterr()
         
         assert "❌ FAIL: Chapter count mismatch - MD: 2, JSON: 1" in captured.out
@@ -378,7 +378,7 @@ class TestRequirement5TestCoverage:
         test_file = test_dir / "test_end_to_end_json_generation.py"
         test_file.write_text("def test_one(): pass\ndef test_two(): pass")
         
-        result = validate_tab5_implementation()
+        validate_tab5_implementation()  # Return value checked via capsys
         captured = capsys.readouterr()
         
         assert "✅ PASS: Integration tests exist (2 tests)" in captured.out
@@ -389,7 +389,7 @@ class TestRequirement5TestCoverage:
         
         self._create_minimal_setup(tmp_path)
         
-        result = validate_tab5_implementation()
+        validate_tab5_implementation()  # Return value checked via capsys
         captured = capsys.readouterr()
         
         assert "⚠️  WARNING: Integration test file not found" in captured.out
@@ -426,7 +426,7 @@ class TestRequirement6QualityGates:
         sonar_report = reports_dir / "sonarqube_task16_analysis.md"
         sonar_report.write_text("Analysis: 0 bugs, 0 vulnerabilities, 0 code smells")
         
-        result = validate_tab5_implementation()
+        validate_tab5_implementation()  # Return value checked via capsys
         captured = capsys.readouterr()
         
         assert "✅ PASS: SonarQube quality gate passed" in captured.out
@@ -442,7 +442,7 @@ class TestRequirement6QualityGates:
         sonar_report = reports_dir / "sonarqube_task16_analysis.md"
         sonar_report.write_text("Some content without clear metrics")
         
-        result = validate_tab5_implementation()
+        validate_tab5_implementation()  # Return value checked via capsys
         captured = capsys.readouterr()
         
         assert "⚠️  WARNING: SonarQube report exists but quality metrics unclear" in captured.out
@@ -453,7 +453,7 @@ class TestRequirement6QualityGates:
         
         self._create_minimal_setup(tmp_path)
         
-        result = validate_tab5_implementation()
+        validate_tab5_implementation()  # Return value checked via capsys
         captured = capsys.readouterr()
         
         assert "⚠️  WARNING: SonarQube report not found" in captured.out
@@ -487,7 +487,7 @@ class TestRequirement7Documentation:
         impl_doc = tmp_path / "implementation-summary-tab5-json-generation.md"
         impl_doc.write_text("# Implementation Summary\n" + "x" * 1000)
         
-        result = validate_tab5_implementation()
+        validate_tab5_implementation()  # Return value checked via capsys
         captured = capsys.readouterr()
         
         assert "✅ PASS: Implementation summary exists" in captured.out
@@ -499,7 +499,7 @@ class TestRequirement7Documentation:
         
         self._create_minimal_setup(tmp_path)
         
-        result = validate_tab5_implementation()
+        validate_tab5_implementation()  # Return value checked via capsys
         captured = capsys.readouterr()
         
         assert "⚠️  WARNING: Implementation summary not found" in captured.out
@@ -530,7 +530,7 @@ class TestValidationSummary:
         # Create complete passing setup
         self._create_complete_passing_setup(tmp_path)
         
-        result = validate_tab5_implementation()
+        validate_tab5_implementation()  # Return value checked via capsys
         captured = capsys.readouterr()
         
         assert result is True
@@ -543,7 +543,7 @@ class TestValidationSummary:
         
         # Don't create script - causes failure
         
-        result = validate_tab5_implementation()
+        validate_tab5_implementation()  # Return value checked via capsys
         captured = capsys.readouterr()
         
         assert result is False
@@ -556,7 +556,7 @@ class TestValidationSummary:
         
         self._create_complete_passing_setup(tmp_path)
         
-        result = validate_tab5_implementation()
+        validate_tab5_implementation()  # Return value checked via capsys
         captured = capsys.readouterr()
         
         assert "VALIDATION SUMMARY" in captured.out

@@ -306,7 +306,7 @@ class TestRemainingS1192Issues:
         
         # Constant should be defined
         assert 'OPENAI_CHAT_COMPLETIONS_URL' in llm_evaluation_content, (
-            f"Missing constant OPENAI_CHAT_COMPLETIONS_URL for duplicated literal (S1192)."
+            "Missing constant OPENAI_CHAT_COMPLETIONS_URL for duplicated literal (S1192)."
         )
         
         # Literal should appear at most once (in constant definition)
@@ -326,7 +326,7 @@ class TestRemainingS1192Issues:
         
         # Constant should be defined
         assert 'EVALUATION_SYSTEM_PROMPT' in llm_evaluation_content, (
-            f"Missing constant EVALUATION_SYSTEM_PROMPT for duplicated system prompt (S1192)."
+            "Missing constant EVALUATION_SYSTEM_PROMPT for duplicated system prompt (S1192)."
         )
         
         # Full prompt should appear at most once (in constant definition)
@@ -345,7 +345,7 @@ class TestRemainingS1192Issues:
         
         # Constant should be defined
         assert 'ERROR_FAILED_TO_PARSE_JSON' in llm_evaluation_content, (
-            f"Missing constant ERROR_FAILED_TO_PARSE_JSON for duplicated literal (S1192)."
+            "Missing constant ERROR_FAILED_TO_PARSE_JSON for duplicated literal (S1192)."
         )
         
         # Literal should appear at most once (in constant definition)
@@ -364,7 +364,7 @@ class TestRemainingS1192Issues:
         
         # Constant should be defined
         assert 'ERROR_RATE_LIMITED' in llm_evaluation_content, (
-            f"Missing constant ERROR_RATE_LIMITED for duplicated literal (S1192)."
+            "Missing constant ERROR_RATE_LIMITED for duplicated literal (S1192)."
         )
         
         # Literal should appear at most once (in constant definition)
@@ -383,7 +383,7 @@ class TestRemainingS1192Issues:
         
         # Constant should be defined  
         assert 'ERROR_AUTH_FAILED' in llm_evaluation_content, (
-            f"Missing constant ERROR_AUTH_FAILED for duplicated literal (S1192)."
+            "Missing constant ERROR_AUTH_FAILED for duplicated literal (S1192)."
         )
         
         # Literal should appear at most once (in constant definition)
@@ -402,7 +402,7 @@ class TestRemainingS1192Issues:
         
         # Constant should be defined
         assert 'KEYWORD_STATIC_ANALYSIS' in llm_evaluation_content, (
-            f"Missing constant KEYWORD_STATIC_ANALYSIS for duplicated literal (S1192)."
+            "Missing constant KEYWORD_STATIC_ANALYSIS for duplicated literal (S1192)."
         )
         
         # Literal should appear at most once (in constant definition)

@@ -9,9 +9,11 @@ Reference Documents:
 TDD Phase: RED - Tests written before implementation
 """
 
+import asyncio
+
+import httpx
 import pytest
 from unittest.mock import AsyncMock, MagicMock, patch
-import httpx
 
 
 class TestLLMGatewayClientInstantiation:
@@ -24,7 +26,7 @@ class TestLLMGatewayClientInstantiation:
         client = LLMGatewayClient()
 
         assert client.base_url == "http://localhost:8080"
-        assert client.timeout == 30.0
+        assert client.timeout == pytest.approx(30.0)
         assert client._client is None  # Lazy initialization
 
     def test_client_instantiates_with_custom_config(self):
@@ -38,7 +40,7 @@ class TestLLMGatewayClientInstantiation:
         )
 
         assert client.base_url == "http://llm-gateway:8080"
-        assert client.timeout == 60.0
+        assert client.timeout == pytest.approx(60.0)
         assert client.max_connections == 20
 
     def test_client_instantiates_from_env(self):
@@ -55,7 +57,7 @@ class TestLLMGatewayClientInstantiation:
             client = LLMGatewayClient()
 
             assert client.base_url == "http://gateway.local:8080"
-            assert client.timeout == 45.0
+            assert client.timeout == pytest.approx(45.0)
 
 
 class TestLLMGatewayClientContextManager:
@@ -228,6 +230,7 @@ class TestLLMGatewayClientRetryLogic:
         async def mock_post(*args, **kwargs):
             nonlocal call_count
             call_count += 1
+            await asyncio.sleep(0)  # Make async meaningful
             if call_count < 3:
                 # First two calls return 503
                 response = MagicMock()
@@ -280,6 +283,7 @@ class TestLLMGatewayClientRetryLogic:
         async def mock_post(*args, **kwargs):
             nonlocal call_count
             call_count += 1
+            await asyncio.sleep(0)  # Make async meaningful
             if call_count < 2:
                 response = MagicMock()
                 response.status_code = 429
@@ -327,6 +331,7 @@ class TestLLMGatewayClientRetryLogic:
         async def mock_post(*args, **kwargs):
             nonlocal call_count
             call_count += 1
+            await asyncio.sleep(0)  # Make async meaningful
             response = MagicMock()
             response.status_code = 400
             response.json.return_value = {"error": "Bad Request"}
@@ -370,6 +375,7 @@ class TestLLMGatewayClientRetryLogic:
         async def mock_post(*args, **kwargs):
             nonlocal call_count
             call_count += 1
+            await asyncio.sleep(0)  # Make async meaningful
             response = MagicMock()
             response.status_code = 503
             response.json.return_value = {"error": "Service Unavailable"}
@@ -410,6 +416,7 @@ class TestLLMGatewayClientRetryLogic:
 
         async def mock_post(*args, **kwargs):
             import time
+            await asyncio.sleep(0)  # Make async meaningful
             call_times.append(time.time())
             response = MagicMock()
             response.status_code = 503

@@ -31,7 +31,7 @@ class TestSemanticSearchClientInstantiation:
         client = SemanticSearchClient()
 
         assert client.base_url == "http://localhost:8081"
-        assert client.timeout == 30.0
+        assert client.timeout == pytest.approx(30.0)
         assert client._client is None  # Lazy initialization
 
     def test_client_instantiates_with_custom_config(self):
@@ -45,7 +45,7 @@ class TestSemanticSearchClientInstantiation:
         )
 
         assert client.base_url == "http://semantic-search:8081"
-        assert client.timeout == 60.0
+        assert client.timeout == pytest.approx(60.0)
         assert client.max_connections == 20
 
     def test_client_instantiates_from_env(self):
@@ -62,7 +62,7 @@ class TestSemanticSearchClientInstantiation:
             client = SemanticSearchClient()
 
             assert client.base_url == "http://search.local:8081"
-            assert client.timeout == 45.0
+            assert client.timeout == pytest.approx(45.0)
 
     def test_client_has_retry_config(self):
         """Client should have retry configuration."""
@@ -71,7 +71,7 @@ class TestSemanticSearchClientInstantiation:
         client = SemanticSearchClient(max_retries=5, retry_delay=2.0)
 
         assert client.max_retries == 5
-        assert client.retry_delay == 2.0
+        assert client.retry_delay == pytest.approx(2.0)
 
 
 class TestSemanticSearchClientContextManager:
@@ -202,7 +202,7 @@ class TestSemanticSearchClientSearchMethod:
 
         assert len(results) == 2
         assert results[0]["id"] == 1
-        assert results[0]["score"] == 0.95
+        assert results[0]["score"] == pytest.approx(0.95)
         assert "payload" in results[0]
 
     @pytest.mark.asyncio

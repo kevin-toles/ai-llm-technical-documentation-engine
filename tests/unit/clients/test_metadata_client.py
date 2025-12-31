@@ -96,7 +96,7 @@ class TestAsyncContextManager:
         from workflows.shared.clients.metadata_client import MetadataExtractionClient
 
         async with MetadataExtractionClient() as client:
-            assert client is not None
+            assert client
 
     @pytest.mark.asyncio
     async def test_client_has_aenter(self) -> None:
@@ -414,7 +414,7 @@ class TestHealthCheck:
                 return_value=mock_response,
             ):
                 result = await client.health_check()
-                assert result is True
+                assert result == True
 
     @pytest.mark.asyncio
     async def test_health_check_returns_false_when_service_down(self) -> None:
@@ -434,7 +434,7 @@ class TestHealthCheck:
                 return_value=mock_response,
             ):
                 result = await client.health_check()
-                assert result is False
+                assert result == False
 
     @pytest.mark.asyncio
     async def test_health_check_returns_false_on_connection_error(self) -> None:
@@ -452,7 +452,7 @@ class TestHealthCheck:
                 side_effect=httpx.ConnectError("Connection refused"),
             ):
                 result = await client.health_check()
-                assert result is False
+                assert result == False
 
     @pytest.mark.asyncio
     async def test_health_check_returns_false_on_timeout(self) -> None:
@@ -470,7 +470,7 @@ class TestHealthCheck:
                 side_effect=httpx.TimeoutException("Timeout"),
             ):
                 result = await client.health_check()
-                assert result is False
+                assert result == False
 
     @pytest.mark.asyncio
     async def test_health_check_never_raises_exceptions(self) -> None:
@@ -495,7 +495,7 @@ class TestHealthCheck:
                 ):
                     # Should NOT raise, should return False
                     result = await client.health_check()
-                    assert result is False
+                    assert result == False
 
     @pytest.mark.asyncio
     async def test_health_check_returns_false_without_context_manager(self) -> None:
@@ -505,7 +505,7 @@ class TestHealthCheck:
         client = MetadataExtractionClient()
         # Not using async with, so _http_client is None
         result = await client.health_check()
-        assert result is False
+        assert result == False
 
 
 # =============================================================================
@@ -563,7 +563,7 @@ class TestExtractMetadataWithMocks:
                 assert len(result.keywords) == 1
                 assert result.keywords[0].term == "python"
                 assert result.keywords[0].score == pytest.approx(0.9)
-                assert result.keywords[0].is_technical is True
+                assert result.keywords[0].is_technical == True
                 assert len(result.concepts) == 1
                 assert result.concepts[0].name == "Machine Learning"
                 assert result.summary == "Test summary"
@@ -685,7 +685,7 @@ class TestExtractMetadataWithMocks:
                 call_args = mock_post.call_args
                 payload = call_args.kwargs.get("json") or call_args[1].get("json")
                 assert payload["options"]["min_keyword_confidence"] == pytest.approx(0.5)
-                assert payload["options"]["filter_noise"] is False
+                assert payload["options"]["filter_noise"] == False
 
 
 # =============================================================================
@@ -752,7 +752,7 @@ class TestFakeMetadataExtractionClient:
 
         client = FakeMetadataExtractionClient()
         result = await client.health_check()
-        assert result is True
+        assert result == True
 
     @pytest.mark.asyncio
     async def test_fake_client_async_context_manager(self) -> None:
@@ -760,9 +760,9 @@ class TestFakeMetadataExtractionClient:
         from workflows.shared.clients.metadata_client import FakeMetadataExtractionClient
 
         async with FakeMetadataExtractionClient() as client:
-            assert client is not None
+            assert client
             result = await client.extract_metadata("test")
-            assert result is not None
+            assert result
 
     def test_fake_client_tracks_call_count(self) -> None:
         """FakeClient tracks number of calls."""

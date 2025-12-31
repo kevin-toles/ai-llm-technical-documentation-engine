@@ -71,7 +71,7 @@ class TestTaxonomyStructureValidation:
         # This will fail until validator is implemented
         try:
             from scripts.taxonomy_validation_services import TaxonomyStructureValidator
-        except (ImportError, ModuleNotFoundError):
+        except ImportError:
             pytest.skip("Validation services not implemented yet")
         
         # Invalid taxonomy (missing 'tiers')
@@ -92,7 +92,7 @@ class TestTaxonomyStructureValidation:
         """
         try:
             from scripts.taxonomy_validation_services import TaxonomyStructureValidator
-        except (ImportError, ModuleNotFoundError):
+        except ImportError:
             pytest.skip("Validation services not implemented yet")
         
         # Invalid tier (missing 'priority')
@@ -123,7 +123,7 @@ class TestTierCategorizationValidation:
         """
         try:
             from scripts.taxonomy_validation_services import TierCategorizationValidator
-        except (ImportError, ModuleNotFoundError):
+        except ImportError:
             pytest.skip("Validation services not implemented yet")
         
         # Missing 'practices' tier
@@ -149,7 +149,7 @@ class TestTierCategorizationValidation:
         """
         try:
             from scripts.taxonomy_validation_services import TierCategorizationValidator
-        except (ImportError, ModuleNotFoundError):
+        except ImportError:
             pytest.skip("Validation services not implemented yet")
         
         # Invalid priority order
@@ -179,7 +179,7 @@ class TestConceptDeduplicationValidation:
         """
         try:
             from scripts.taxonomy_validation_services import ConceptDeduplicationValidator
-        except (ImportError, ModuleNotFoundError):
+        except ImportError:
             pytest.skip("Validation services not implemented yet")
         
         # Duplicate concept in architecture tier
@@ -210,7 +210,7 @@ class TestConceptDeduplicationValidation:
         """
         try:
             from scripts.taxonomy_validation_services import ConceptDeduplicationValidator
-        except (ImportError, ModuleNotFoundError):
+        except ImportError:
             pytest.skip("Validation services not implemented yet")
         
         # Same concept in different tiers (VALID)
@@ -248,7 +248,7 @@ class TestValidationOrchestrator:
         """
         try:
             from scripts.taxonomy_validation_services import TaxonomyValidationOrchestrator
-        except (ImportError, ModuleNotFoundError):
+        except ImportError:
             pytest.skip("Orchestrator not implemented yet")
         
         # Create valid taxonomy
@@ -278,7 +278,7 @@ class TestValidationIntegration:
         """
         try:
             from scripts.validate_taxonomy_generation import validate_taxonomy
-        except (ImportError, ModuleNotFoundError):
+        except ImportError:
             pytest.skip("Validation script not implemented yet")
         
         # Check if any taxonomy files exist

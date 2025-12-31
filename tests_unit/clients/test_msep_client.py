@@ -54,7 +54,7 @@ class TestMSEPClientInstantiation:
 
         client = MSEPClient()
 
-        assert client.timeout == 30.0
+        assert client.timeout == pytest.approx(30.0)
         assert client._client is None  # Lazy initialization (connection pooling)
 
     def test_client_instantiates_with_custom_config(self) -> None:
@@ -68,7 +68,7 @@ class TestMSEPClientInstantiation:
         )
 
         assert client.base_url == "http://ai-agents:8082"
-        assert client.timeout == 60.0
+        assert client.timeout == pytest.approx(60.0)
         assert client.max_connections == 20
 
     def test_client_instantiates_from_env(self) -> None:
@@ -90,7 +90,7 @@ class TestMSEPClientInstantiation:
         client = MSEPClient(max_retries=5, retry_delay=2.0)
 
         assert client.max_retries == 5
-        assert client.retry_delay == 2.0
+        assert client.retry_delay == pytest.approx(2.0)
 
 
 # =============================================================================
@@ -262,7 +262,7 @@ class TestMSEPClientEnrichMetadata:
         assert payload["chapter_index"][0]["chapter"] == 1
         assert payload["chapter_index"][0]["title"] == "Chapter 1"
         assert payload["chapter_index"][0]["id"] == "ch1"
-        assert payload["config"]["threshold"] == 0.5
+        assert payload["config"]["threshold"] == pytest.approx(0.5)
         assert payload["config"]["top_k"] == 10
 
     @pytest.mark.asyncio
@@ -462,6 +462,7 @@ class TestMSEPClientRetry:
         async def mock_post(*args, **kwargs):
             nonlocal call_count
             call_count += 1
+            await asyncio.sleep(0)  # Make async meaningful
             if call_count < 3:
                 raise httpx.TimeoutException("Timeout")
             # Success on 3rd attempt
@@ -496,6 +497,7 @@ class TestMSEPClientRetry:
         async def mock_post(*args, **kwargs):
             nonlocal call_count
             call_count += 1
+            await asyncio.sleep(0)  # Make async meaningful
             mock_resp = MagicMock()
             if call_count < 2:
                 mock_resp.status_code = 503
@@ -536,6 +538,7 @@ class TestMSEPClientRetry:
         async def mock_post(*args, **kwargs):
             nonlocal call_count
             call_count += 1
+            await asyncio.sleep(0)  # Make async meaningful
             mock_resp = MagicMock()
             mock_resp.status_code = 400
             mock_resp.json.return_value = {"detail": "Bad Request"}
@@ -643,9 +646,9 @@ class TestRequestDataclasses:
         assert is_dataclass(MSEPConfig)
 
         config = MSEPConfig()
-        assert config.threshold == 0.45
+        assert config.threshold == pytest.approx(0.45)
         assert config.top_k == 5
-        assert config.timeout == 30.0
+        assert config.timeout == pytest.approx(30.0)
 
     def test_msep_config_to_dict(self) -> None:
         """MSEPConfig.to_dict should produce correct JSON structure."""
@@ -654,7 +657,7 @@ class TestRequestDataclasses:
         config = MSEPConfig(threshold=0.6, top_k=10)
         result = config.to_dict()
 
-        assert result["threshold"] == 0.6
+        assert result["threshold"] == pytest.approx(0.6)
         assert result["top_k"] == 10
         assert "enable_hybrid_search" in result
 
@@ -746,10 +749,10 @@ class TestResponseDataclasses:
         assert response.chapters[0].keywords.semantic == ["architecture"]
         assert response.chapters[0].keywords.merged == ["pattern", "architecture"]
         assert response.chapters[0].provenance.methods_used == ["sbert", "topic_boost"]
-        assert response.chapters[0].provenance.sbert_score == 0.85
+        assert response.chapters[0].provenance.sbert_score == pytest.approx(0.85)
         assert len(response.chapters[0].cross_references) == 1
         assert response.chapters[0].cross_references[0].target == "Book2_Ch3"
-        assert response.processing_time_ms == 150.5
+        assert response.processing_time_ms == pytest.approx(150.5)
         assert response.total_cross_references == 1
 
 

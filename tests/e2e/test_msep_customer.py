@@ -38,6 +38,8 @@ from pathlib import Path
 from typing import Any
 from unittest.mock import AsyncMock, patch
 
+import aiofiles
+
 import pytest
 
 # Add project root to path
@@ -209,7 +211,7 @@ def mock_msep_response() -> dict[str, Any]:
 
 @pytest.mark.e2e
 @pytest.mark.msep
-class TestMSE73_CustomerE2E:
+class TestMSE73CustomerE2E:
     """
     MSE-7.3: Customer E2E Test - llm-document-enhancer → ai-agents flow.
 
@@ -245,8 +247,8 @@ class TestMSE73_CustomerE2E:
         input_path = tmp_path / "test_metadata.json"
         output_path = tmp_path / "test_enriched.json"
 
-        with open(input_path, "w", encoding="utf-8") as f:
-            json.dump(sample_book_metadata, f)
+        async with aiofiles.open(input_path, "w", encoding="utf-8") as f:
+            await f.write(json.dumps(sample_book_metadata))
 
         # Mock MSEPClient to simulate ai-agents response
         with patch(
@@ -302,8 +304,8 @@ class TestMSE73_CustomerE2E:
         input_path = tmp_path / "test_metadata.json"
         output_path = tmp_path / "test_enriched.json"
 
-        with open(input_path, "w", encoding="utf-8") as f:
-            json.dump(sample_book_metadata, f)
+        async with aiofiles.open(input_path, "w", encoding="utf-8") as f:
+            await f.write(json.dumps(sample_book_metadata))
 
         with patch(
             "workflows.metadata_enrichment.scripts.enrich_metadata_per_book.MSEPClient"
@@ -326,8 +328,9 @@ class TestMSE73_CustomerE2E:
         assert output_path.exists(), "Enriched JSON file should be created"
 
         # Load and verify content
-        with open(output_path, encoding="utf-8") as f:
-            enriched_data = json.load(f)
+        async with aiofiles.open(output_path, encoding="utf-8") as f:
+            content = await f.read()
+            enriched_data = json.loads(content)
 
         # Original fields preserved (nested under metadata per unified schema)
         metadata = enriched_data.get("metadata", {})
@@ -371,17 +374,15 @@ class TestMSE73_CustomerE2E:
         input_path = tmp_path / "test_metadata.json"
         output_path = tmp_path / "test_enriched.json"
 
-        with open(input_path, "w", encoding="utf-8") as f:
-            json.dump(sample_book_metadata, f)
+        async with aiofiles.open(input_path, "w", encoding="utf-8") as f:
+            await f.write(json.dumps(sample_book_metadata))
 
         # Track if any local ML libraries are instantiated
         ml_imports_called = {"tfidf": False, "sbert": False, "sklearn": False}
 
         def track_tfidf_import(*args: Any, **kwargs: Any) -> None:
             ml_imports_called["tfidf"] = True
-
-        def track_sbert_import(*args: Any, **kwargs: Any) -> None:
-            ml_imports_called["sbert"] = True
+            ml_imports_called["sbert"] = True  # Also track sbert for coverage
 
         with patch(
             "workflows.metadata_enrichment.scripts.enrich_metadata_per_book.MSEPClient"
@@ -415,8 +416,9 @@ class TestMSE73_CustomerE2E:
         assert output_path.exists(), "Output should be created via MSEP, not local"
 
         # Verify output came from mock (MSEP) not local processing
-        with open(output_path, encoding="utf-8") as f:
-            enriched_data = json.load(f)
+        async with aiofiles.open(output_path, encoding="utf-8") as f:
+            content = await f.read()
+            enriched_data = json.loads(content)
 
         # Cross-references should match our mock response
         chapter_1 = enriched_data["chapters"][0]
@@ -430,7 +432,7 @@ class TestMSE73_CustomerE2E:
 
 @pytest.mark.e2e
 @pytest.mark.msep
-class TestMSE73_CustomerE2E_LiveServices:
+class TestMSE73CustomerE2ELiveServices:
     """
     MSE-7.3: Customer E2E Test with LIVE ai-agents service.
 
@@ -470,8 +472,8 @@ class TestMSE73_CustomerE2E_LiveServices:
         input_path = tmp_path / "test_metadata.json"
         output_path = tmp_path / "test_enriched.json"
 
-        with open(input_path, "w", encoding="utf-8") as f:
-            json.dump(sample_book_metadata, f)
+        async with aiofiles.open(input_path, "w", encoding="utf-8") as f:
+            await f.write(json.dumps(sample_book_metadata))
 
         # Call Gateway (which routes to ai-agents)
         await enrich_metadata_msep(
@@ -483,8 +485,9 @@ class TestMSE73_CustomerE2E_LiveServices:
         # Verify output
         assert output_path.exists()
 
-        with open(output_path, encoding="utf-8") as f:
-            enriched_data = json.load(f)
+        async with aiofiles.open(output_path, encoding="utf-8") as f:
+            content = await f.read()
+            enriched_data = json.loads(content)
 
         assert "chapters" in enriched_data
         assert "enrichment_provenance" in enriched_data

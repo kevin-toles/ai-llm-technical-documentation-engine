@@ -32,6 +32,7 @@ from pathlib import Path
 from typing import Any
 from unittest.mock import AsyncMock, MagicMock, patch
 
+import aiofiles
 import pytest
 
 # Add project root to path
@@ -44,7 +45,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 # =============================================================================
 
 
-class TestMSE62_UseMSEPFlag:
+class TestMSE62UseMSEPFlag:
     """
     AC-6.2.1: `enrich_metadata_per_book.py` uses `MSEPClient` when `--use-msep` flag.
 
@@ -114,7 +115,7 @@ class TestMSE62_UseMSEPFlag:
         assert args.use_msep is False
 
 
-class TestMSE62_MSEPClientIntegration:
+class TestMSE62MSEPClientIntegration:
     """
     AC-6.2.1: enrich_metadata_per_book.py routes to MSEPClient.
 
@@ -168,8 +169,8 @@ class TestMSE62_MSEPClientIntegration:
         input_path = tmp_path / "test_metadata.json"
         output_path = tmp_path / "test_enriched.json"
 
-        with open(input_path, "w", encoding="utf-8") as f:
-            json.dump(input_data, f)
+        async with aiofiles.open(input_path, "w", encoding="utf-8") as f:
+            await f.write(json.dumps(input_data))
 
         # Mock MSEP response
         mock_response = EnrichedMetadataResponse(
@@ -226,7 +227,7 @@ class TestMSE62_MSEPClientIntegration:
             assert "corpus" in call_kwargs.kwargs or len(call_kwargs.args) >= 1
 
 
-class TestMSE62_Fallback:
+class TestMSE62Fallback:
     """
     AC-6.2.2: Fallback to existing local enrichment when ai-agents unavailable.
 
@@ -260,8 +261,8 @@ class TestMSE62_Fallback:
         input_path = tmp_path / "test_metadata.json"
         output_path = tmp_path / "test_enriched.json"
 
-        with open(input_path, "w", encoding="utf-8") as f:
-            json.dump(input_data, f)
+        async with aiofiles.open(input_path, "w", encoding="utf-8") as f:
+            await f.write(json.dumps(input_data))
 
         # Patch MSEPClient to raise connection error
         with patch(
@@ -311,8 +312,8 @@ class TestMSE62_Fallback:
         input_path = tmp_path / "test_metadata.json"
         output_path = tmp_path / "test_enriched.json"
 
-        with open(input_path, "w", encoding="utf-8") as f:
-            json.dump(input_data, f)
+        async with aiofiles.open(input_path, "w", encoding="utf-8") as f:
+            await f.write(json.dumps(input_data))
 
         with patch(
             "workflows.metadata_enrichment.scripts.enrich_metadata_per_book.MSEPClient"
@@ -363,8 +364,8 @@ class TestMSE62_Fallback:
         input_path = tmp_path / "test_metadata.json"
         output_path = tmp_path / "test_enriched.json"
 
-        with open(input_path, "w", encoding="utf-8") as f:
-            json.dump(input_data, f)
+        async with aiofiles.open(input_path, "w", encoding="utf-8") as f:
+            await f.write(json.dumps(input_data))
 
         with patch(
             "workflows.metadata_enrichment.scripts.enrich_metadata_per_book.MSEPClient"
@@ -399,7 +400,7 @@ class TestMSE62_Fallback:
 # =============================================================================
 
 
-class TestMSE63_OutputFile:
+class TestMSE63OutputFile:
     """
     AC-6.3.1: Writes `{book}_enriched.json` with MSEP results.
     """
@@ -433,8 +434,8 @@ class TestMSE63_OutputFile:
         input_path = tmp_path / "test_metadata.json"
         output_path = tmp_path / "test_enriched.json"
 
-        with open(input_path, "w", encoding="utf-8") as f:
-            json.dump(input_data, f)
+        async with aiofiles.open(input_path, "w", encoding="utf-8") as f:
+            await f.write(json.dumps(input_data))
 
         mock_response = EnrichedMetadataResponse(
             chapters=[
@@ -478,13 +479,14 @@ class TestMSE63_OutputFile:
         assert output_path.exists()
 
         # Verify JSON content
-        with open(output_path, encoding="utf-8") as f:
-            output_data = json.load(f)
+        async with aiofiles.open(output_path, encoding="utf-8") as f:
+            content = await f.read()
+            output_data = json.loads(content)
 
         assert "chapters" in output_data
 
 
-class TestMSE63_MetadataPreservation:
+class TestMSE63MetadataPreservation:
     """
     AC-6.3.2: Preserves existing metadata structure.
 
@@ -524,8 +526,8 @@ class TestMSE63_MetadataPreservation:
         input_path = tmp_path / "test_metadata.json"
         output_path = tmp_path / "test_enriched.json"
 
-        with open(input_path, "w", encoding="utf-8") as f:
-            json.dump(input_data, f)
+        async with aiofiles.open(input_path, "w", encoding="utf-8") as f:
+            await f.write(json.dumps(input_data))
 
         mock_response = EnrichedMetadataResponse(
             chapters=[
@@ -565,8 +567,9 @@ class TestMSE63_MetadataPreservation:
                 msep_url="http://localhost:8082",
             )
 
-        with open(output_path, encoding="utf-8") as f:
-            output_data = json.load(f)
+        async with aiofiles.open(output_path, encoding="utf-8") as f:
+            content = await f.read()
+            output_data = json.loads(content)
 
         # Book-level fields preserved
         assert output_data.get("book_title") == "Test Book"
@@ -581,7 +584,7 @@ class TestMSE63_MetadataPreservation:
         assert chapter.get("end_page") == 25
 
 
-class TestMSE63_Provenance:
+class TestMSE63Provenance:
     """
     AC-6.3.3: Adds provenance to output JSON.
 
@@ -617,8 +620,8 @@ class TestMSE63_Provenance:
         input_path = tmp_path / "test_metadata.json"
         output_path = tmp_path / "test_enriched.json"
 
-        with open(input_path, "w", encoding="utf-8") as f:
-            json.dump(input_data, f)
+        async with aiofiles.open(input_path, "w", encoding="utf-8") as f:
+            await f.write(json.dumps(input_data))
 
         mock_response = EnrichedMetadataResponse(
             chapters=[
@@ -658,8 +661,9 @@ class TestMSE63_Provenance:
                 msep_url="http://localhost:8082",
             )
 
-        with open(output_path, encoding="utf-8") as f:
-            output_data = json.load(f)
+        async with aiofiles.open(output_path, encoding="utf-8") as f:
+            content = await f.read()
+            output_data = json.loads(content)
 
         # Top-level provenance
         assert "enrichment_provenance" in output_data
@@ -697,8 +701,8 @@ class TestMSE63_Provenance:
         input_path = tmp_path / "test_metadata.json"
         output_path = tmp_path / "test_enriched.json"
 
-        with open(input_path, "w", encoding="utf-8") as f:
-            json.dump(input_data, f)
+        async with aiofiles.open(input_path, "w", encoding="utf-8") as f:
+            await f.write(json.dumps(input_data))
 
         mock_response = EnrichedMetadataResponse(
             chapters=[
@@ -746,8 +750,9 @@ class TestMSE63_Provenance:
                 msep_url="http://localhost:8082",
             )
 
-        with open(output_path, encoding="utf-8") as f:
-            output_data = json.load(f)
+        async with aiofiles.open(output_path, encoding="utf-8") as f:
+            content = await f.read()
+            output_data = json.loads(content)
 
         # Chapter should have cross_references from MSEP
         chapter = output_data["chapters"][0]
