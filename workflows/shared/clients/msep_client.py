@@ -563,7 +563,7 @@ class MSEPClient:
         
         response_body = self._safe_parse_json(e.response)
         raise MSEPAPIError(
-            f"MSEP API error: {status_code}",
+            f"MSEP API error on {endpoint}: {status_code}",
             status_code=status_code,
             response_body=response_body,
         ) from e
