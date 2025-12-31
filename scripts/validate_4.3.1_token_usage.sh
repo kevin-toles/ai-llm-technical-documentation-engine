@@ -42,7 +42,7 @@ echo ""
 LATEST_LOGS=$(ls -t "$API_LOG_DIR"/*.json 2>/dev/null | head -5)
 
 if [[ -z "$LATEST_LOGS" ]]; then
-    echo "ERROR: No API logs found in $API_LOG_DIR"
+    echo "ERROR: No API logs found in $API_LOG_DIR" >&2
     exit 1
 fi
 
