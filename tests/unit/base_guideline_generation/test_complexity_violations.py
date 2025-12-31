@@ -415,12 +415,9 @@ class TestComplexityRefactoringNoRegressions:
         # Create test using existing function (should work before and after refactoring)
         # This is a smoke test - actual file I/O tested elsewhere
         try:
-            result = target_module._write_output_file(sample_docs, "test_book", sample_footnotes)
-            
-            # If function completes without error, pipeline is functional
-            # (Actual file verification requires integration test with real paths)
-            # NOTE: Function returns None on success, so we verify no exception was raised
-            assert result is None or result, "Pipeline completed successfully"
+            # Function returns None on success, so we just verify no exception is raised
+            target_module._write_output_file(sample_docs, "test_book", sample_footnotes)
+            # If we reach here, pipeline is functional
         except Exception as e:
             # If refactoring broke pipeline, this will catch it
             pytest.fail(f"Pipeline Pattern refactoring broke _write_output_file: {e}")
