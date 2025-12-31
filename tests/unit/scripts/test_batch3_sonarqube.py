@@ -302,7 +302,7 @@ class TestS3776CognitiveComplexity:
         
         # Count how many high-level operations are in main()
         # A well-structured main() should have low complexity with delegation
-        main_match = re.search(r'def main\(\):(.*?)(?=\ndef |\nif __name__|$)', enrichment_content, re.DOTALL)
+        main_match = re.search(r'def main\(\):(.+?)(?=\ndef |\nif __name__|$)', enrichment_content, re.DOTALL)
         
         assert main_match is not None, "main() function not found"
         main_body = main_match.group(1)
@@ -349,7 +349,7 @@ class TestS3776CognitiveComplexity:
         # Alternative: count complexity in specific functions
         # Look for print_comparison_report and check its complexity
         report_match = re.search(
-            r'def print_comparison_report\([^)]*\):(.*?)(?=\ndef |\nclass |$)', 
+            r'def print_comparison_report\([^)]*\):(.+?)(?=\ndef |\nclass |$)', 
             pipeline_content, 
             re.DOTALL
         )
