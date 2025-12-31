@@ -35,6 +35,47 @@ from datetime import datetime
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 
 
+# =============================================================================
+# Test Helpers - extracted for complexity reduction
+# =============================================================================
+
+# Section header mappings for LLM response parsing
+_SECTION_HEADERS = {
+    "### Enhanced Summary": "enhanced_summary",
+    "### Key Takeaways": "key_takeaways",
+    "### Best Practices": "best_practices",
+    "### Common Pitfalls": "common_pitfalls",
+}
+
+
+def _parse_llm_response_helper(response: str) -> Dict[str, Any]:
+    """Parse LLM markdown response into structured sections."""
+    sections = {}
+    lines = response.strip().split('\n')
+    current_section = None
+    current_content = []
+    
+    for line in lines:
+        matched_header = None
+        for header, section_name in _SECTION_HEADERS.items():
+            if line.startswith(header):
+                matched_header = section_name
+                break
+        
+        if matched_header:
+            if current_section:
+                sections[current_section] = '\n'.join(current_content).strip()
+            current_section = matched_header
+            current_content = []
+        elif current_section:
+            current_content.append(line)
+    
+    if current_section:
+        sections[current_section] = '\n'.join(current_content).strip()
+    
+    return sections
+
+
 class TestLLMEnhancementScript:
     """Tests for Tab 7 LLM enhancement script structure and loading."""
     
@@ -339,48 +380,8 @@ Domain modeling translates business requirements into code structures.
   - Solution: Split into smaller aggregates with clear boundaries
 """
         
-        # Utility function to test (will be in implementation)
-        def parse_llm_response(response: str) -> Dict[str, Any]:
-            """Helper function that should exist in implementation."""
-            sections = {}
-            
-            # Simple parsing logic (implementation can be more sophisticated)
-            lines = response.strip().split('\n')
-            current_section = None
-            current_content = []
-            
-            for line in lines:
-                if line.startswith('### Enhanced Summary'):
-                    if current_section:
-                        sections[current_section] = '\n'.join(current_content).strip()
-                    current_section = 'enhanced_summary'
-                    current_content = []
-                elif line.startswith('### Key Takeaways'):
-                    if current_section:
-                        sections[current_section] = '\n'.join(current_content).strip()
-                    current_section = 'key_takeaways'
-                    current_content = []
-                elif line.startswith('### Best Practices'):
-                    if current_section:
-                        sections[current_section] = '\n'.join(current_content).strip()
-                    current_section = 'best_practices'
-                    current_content = []
-                elif line.startswith('### Common Pitfalls'):
-                    if current_section:
-                        sections[current_section] = '\n'.join(current_content).strip()
-                    current_section = 'common_pitfalls'
-                    current_content = []
-                elif current_section:
-                    current_content.append(line)
-            
-            # Add last section
-            if current_section:
-                sections[current_section] = '\n'.join(current_content).strip()
-            
-            return sections
-        
-        # Test parsing
-        parsed = parse_llm_response(sample_response)
+        # Test parsing using extracted helper
+        parsed = _parse_llm_response_helper(sample_response)
         
         # Verify all sections extracted
         assert "enhanced_summary" in parsed, "Should extract enhanced summary"

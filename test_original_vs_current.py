@@ -158,6 +158,53 @@ class JSONBookRepository:
         self._metadata_cache: Dict[str, BookMetadata] = {}
         self._load_books()
     
+    def _extract_pages(self, data: Dict) -> List:
+        """Extract pages from book data, handling different structures."""
+        pages = data.get('pages', [])
+        if not pages:
+            pages = data.get('segments', [])
+        return pages
+    
+    def _extract_chapters(self, data: Dict, pages: List) -> List:
+        """Extract chapters from book data."""
+        if 'chapters' in data:
+            return data['chapters']
+        
+        seen_chapters = set()
+        chapters = []
+        for page in pages:
+            ch = page.get('chapter', page.get('title', ''))
+            if ch and ch not in seen_chapters:
+                chapters.append(ch)
+                seen_chapters.add(ch)
+        return chapters
+    
+    def _load_single_book(self, json_file: Path) -> None:
+        """Load a single JSON book into cache."""
+        try:
+            with open(json_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            
+            book_name = json_file.stem
+            self._books_cache[book_name] = data
+            
+            pages = self._extract_pages(data)
+            chapters = self._extract_chapters(data, pages)
+            
+            metadata = BookMetadata(
+                title=book_name,
+                file_name=book_name,
+                total_pages=len(pages),
+                chapters=chapters,
+                domain="",
+                concepts_covered=self._extract_concepts_from_book(data)
+            )
+            self._metadata_cache[book_name] = metadata
+            print(f"  ✓ {book_name}: {len(pages)} pages, {len(chapters)} chapters")
+            
+        except Exception as e:
+            print(f"  ❌ Error loading {json_file.name}: {e}")
+    
     def _load_books(self) -> None:
         """Load all JSON books into cache."""
         print(f"\n📚 Loading companion books from: {self._directory}")
@@ -167,47 +214,7 @@ class JSONBookRepository:
             return
         
         for json_file in self._directory.glob("*.json"):
-            try:
-                with open(json_file, 'r', encoding='utf-8') as f:
-                    data = json.load(f)
-                
-                book_name = json_file.stem
-                self._books_cache[book_name] = data
-                
-                # Handle different JSON structures
-                pages = data.get('pages', [])
-                if not pages:
-                    # Try segments structure
-                    segments = data.get('segments', [])
-                    if segments:
-                        pages = segments
-                
-                # Extract chapters
-                chapters = []
-                if 'chapters' in data:
-                    chapters = data['chapters']
-                elif pages:
-                    # Extract from page data
-                    seen_chapters = set()
-                    for page in pages:
-                        ch = page.get('chapter', page.get('title', ''))
-                        if ch and ch not in seen_chapters:
-                            chapters.append(ch)
-                            seen_chapters.add(ch)
-                
-                metadata = BookMetadata(
-                    title=book_name,
-                    file_name=book_name,
-                    total_pages=len(pages),
-                    chapters=chapters,
-                    domain="",
-                    concepts_covered=self._extract_concepts_from_book(data)
-                )
-                self._metadata_cache[book_name] = metadata
-                print(f"  ✓ {book_name}: {len(pages)} pages, {len(chapters)} chapters")
-                
-            except Exception as e:
-                print(f"  ❌ Error loading {json_file.name}: {e}")
+            self._load_single_book(json_file)
     
     def _extract_concepts_from_book(self, book_data: Dict) -> Set[str]:
         """Extract concepts covered in the book."""

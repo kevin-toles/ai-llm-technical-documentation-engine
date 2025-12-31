@@ -262,84 +262,26 @@ def process_single_book(
 # Main Processing Logic
 # ============================================================================
 
-def main() -> int:
-    """Main entry point for book processing.
-    
-    Returns:
-        Exit code (0 for success, 1 for failure)
-    """
+def _parse_args() -> argparse.Namespace:
+    """Parse command-line arguments."""
     parser = argparse.ArgumentParser(
         description="Process books with empty chapters through ChapterSegmenter"
     )
-    parser.add_argument(
-        "--single",
-        action="store_true",
-        help="Process only the first test book (Architecture Patterns with Python)"
-    )
-    parser.add_argument(
-        "--all",
-        action="store_true",
-        help="Process all 12 books with empty chapters"
-    )
-    parser.add_argument(
-        "--dry-run",
-        action="store_true",
-        help="Show what would be processed without writing files"
-    )
-    parser.add_argument(
-        "--source-dir",
-        type=Path,
-        default=_AI_PLATFORM_DATA_BOOKS,
-        help="Directory containing source book JSONs"
-    )
-    parser.add_argument(
-        "--output-dir",
-        type=Path,
-        default=_TEST_FIXTURES_DIR,
-        help="Directory to write processed books"
-    )
-    
-    args = parser.parse_args()
-    
-    # Validate source directory
-    if not args.source_dir.exists():
-        print(f"Error: Source directory not found: {args.source_dir}")
-        print("Expected ai-platform-data/books/raw/ as sibling repo")
-        return 1
-    
-    # Determine books to process
-    if args.single:
-        books_to_process = BOOKS_WITH_EMPTY_CHAPTERS[:1]
-    elif args.all:
-        books_to_process = BOOKS_WITH_EMPTY_CHAPTERS
-    else:
-        parser.print_help()
-        return 1
-    
-    print(f"{'[DRY RUN] ' if args.dry_run else ''}Processing {len(books_to_process)} books...")
-    print(f"Source: {args.source_dir}")
-    print(f"Output: {args.output_dir}")
-    print()
-    
-    # Initialize ChapterSegmenter
-    config = ChapterSegmentationConfig()
-    segmenter = ChapterSegmenter(config)
-    
-    # Process books
-    results: List[ProcessingResult] = []
-    for book_name in books_to_process:
-        print(f"Processing: {book_name}...")
-        result = process_single_book(
-            book_name=book_name,
-            segmenter=segmenter,
-            source_dir=args.source_dir,
-            output_dir=args.output_dir,
-            dry_run=args.dry_run
-        )
-        results.append(result)
-        print(f"  {result}")
-    
-    # Print summary
+    parser.add_argument("--single", action="store_true",
+        help="Process only the first test book (Architecture Patterns with Python)")
+    parser.add_argument("--all", action="store_true",
+        help="Process all 12 books with empty chapters")
+    parser.add_argument("--dry-run", action="store_true",
+        help="Show what would be processed without writing files")
+    parser.add_argument("--source-dir", type=Path, default=_AI_PLATFORM_DATA_BOOKS,
+        help="Directory containing source book JSONs")
+    parser.add_argument("--output-dir", type=Path, default=_TEST_FIXTURES_DIR,
+        help="Directory to write processed books")
+    return parser.parse_args()
+
+
+def _print_summary(results: List[ProcessingResult]) -> int:
+    """Print processing summary and return exit code."""
     print()
     print("=" * 60)
     print("SUMMARY")
@@ -351,7 +293,6 @@ def main() -> int:
     print(f"Books processed: {success_count}/{len(results)}")
     print(f"Total chapters detected: {total_chapters}")
     
-    # Detection method breakdown
     all_methods: Dict[str, int] = {}
     for r in results:
         if r.success and r.detection_methods:
@@ -363,7 +304,6 @@ def main() -> int:
         for method, count in sorted(all_methods.items()):
             print(f"  - {method}: {count} books")
     
-    # Check for failures
     failures = [r for r in results if not r.success]
     if failures:
         print("\nFailures:")
@@ -373,6 +313,46 @@ def main() -> int:
     
     print("\n✅ All books processed successfully!")
     return 0
+
+
+def main() -> int:
+    """Main entry point for book processing."""
+    args = _parse_args()
+    
+    if not args.source_dir.exists():
+        print(f"Error: Source directory not found: {args.source_dir}")
+        print("Expected ai-platform-data/books/raw/ as sibling repo")
+        return 1
+    
+    if args.single:
+        books_to_process = BOOKS_WITH_EMPTY_CHAPTERS[:1]
+    elif args.all:
+        books_to_process = BOOKS_WITH_EMPTY_CHAPTERS
+    else:
+        # Re-create parser to print help
+        parser = argparse.ArgumentParser()
+        parser.print_help()
+        return 1
+    
+    print(f"{'[DRY RUN] ' if args.dry_run else ''}Processing {len(books_to_process)} books...")
+    print(f"Source: {args.source_dir}")
+    print(f"Output: {args.output_dir}")
+    print()
+    
+    config = ChapterSegmentationConfig()
+    segmenter = ChapterSegmenter(config)
+    
+    results: List[ProcessingResult] = []
+    for book_name in books_to_process:
+        print(f"Processing: {book_name}...")
+        result = process_single_book(
+            book_name=book_name, segmenter=segmenter,
+            source_dir=args.source_dir, output_dir=args.output_dir,
+            dry_run=args.dry_run)
+        results.append(result)
+        print(f"  {result}")
+    
+    return _print_summary(results)
 
 
 if __name__ == "__main__":

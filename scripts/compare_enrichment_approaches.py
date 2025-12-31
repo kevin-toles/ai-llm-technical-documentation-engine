@@ -392,50 +392,29 @@ def _generate_reasoning(
 # COMPARISON RUNNER
 # =============================================================================
 
-def load_test_data() -> Tuple[Dict[str, Any], List[Dict[str, Any]]]:
-    """
-    Load test data from AI-ML taxonomy.
-    
-    Uses: Taxonomies/AI-ML_taxonomy_20251128.json
-    """
-    # Use the AI-ML taxonomy as specified
-    taxonomy_path = Path("/Users/kevintoles/POC/textbooks/Taxonomies/AI-ML_taxonomy_20251128.json")
-    metadata_dir = PROJECT_ROOT / "workflows/metadata_extraction/output"
-    
-    # Load taxonomy to get the official book list
-    with open(taxonomy_path, encoding='utf-8') as f:
-        taxonomy = json.load(f)
-    
-    # Get books from the architecture tier (highest priority)
-    architecture_books = taxonomy["tiers"]["architecture"]["books"]
-    print(f"📖 Using AI-ML taxonomy with {len(architecture_books)} architecture-tier books")
-    
-    # Load source book: "Building LLM Powered Applications" (priority 4, good for cross-refs)
-    source_book_name = "Building LLM Powered Applications"
-    source_path = metadata_dir / f"{source_book_name}_metadata.json"
-    
-    if not source_path.exists():
-        # Fallback to AI Agents and Applications
-        source_book_name = "AI Agents and Applications"
-        source_path = metadata_dir / f"{source_book_name}_metadata.json"
-    
-    with open(source_path, encoding='utf-8') as f:
-        source_chapters = json.load(f)
-    
-    # Pick a chapter that discusses chunking/RAG (good for false positive testing)
-    source_chapter = None
+def _find_source_chapter(
+    source_chapters: List[Dict[str, Any]],
+    source_book_name: str,
+) -> Dict[str, Any]:
+    """Find a source chapter suitable for cross-reference testing."""
     for ch in source_chapters:
         ch_text = (ch.get("title", "") + " " + ch.get("summary", "")).lower()
         if any(term in ch_text for term in ["chunk", "rag", "retrieval", "embedding", "vector"]):
-            source_chapter = ch
-            source_chapter["book_name"] = source_book_name
-            break
+            result = dict(ch)
+            result["book_name"] = source_book_name
+            return result
     
-    if not source_chapter:
-        source_chapter = source_chapters[0] if source_chapters else {}
-        source_chapter["book_name"] = source_book_name
-    
-    # Build corpus from ALL books in the taxonomy (architecture tier)
+    result = dict(source_chapters[0]) if source_chapters else {}
+    result["book_name"] = source_book_name
+    return result
+
+
+def _load_corpus_from_taxonomy(
+    architecture_books: List[Dict[str, Any]],
+    metadata_dir: Path,
+    source_book_name: str,
+) -> List[Dict[str, Any]]:
+    """Load corpus chapters from all architecture-tier books."""
     corpus = []
     books_loaded = set()
     
@@ -443,11 +422,9 @@ def load_test_data() -> Tuple[Dict[str, Any], List[Dict[str, Any]]]:
         book_file = book_info["name"]
         book_name = book_file.replace(".json", "")
         
-        # Skip source book
         if book_name == source_book_name:
             continue
         
-        # Try to find metadata file
         metadata_path = metadata_dir / f"{book_name}_metadata.json"
         if not metadata_path.exists():
             print(f"  ⚠️  Skipping {book_name} - metadata not found")
@@ -457,7 +434,6 @@ def load_test_data() -> Tuple[Dict[str, Any], List[Dict[str, Any]]]:
             with open(metadata_path, encoding='utf-8') as f:
                 chapters = json.load(f)
             
-            # Add chapters to corpus (limit to first 10 per book for performance)
             for ch in chapters[:10]:
                 ch["book_name"] = book_name
                 corpus.append(ch)
@@ -467,6 +443,32 @@ def load_test_data() -> Tuple[Dict[str, Any], List[Dict[str, Any]]]:
             print(f"  ⚠️  Error loading {book_name}: {e}")
     
     print(f"📚 Loaded {len(corpus)} chapters from {len(books_loaded)} books")
+    return corpus
+
+
+def load_test_data() -> Tuple[Dict[str, Any], List[Dict[str, Any]]]:
+    """Load test data from AI-ML taxonomy."""
+    taxonomy_path = Path("/Users/kevintoles/POC/textbooks/Taxonomies/AI-ML_taxonomy_20251128.json")
+    metadata_dir = PROJECT_ROOT / "workflows/metadata_extraction/output"
+    
+    with open(taxonomy_path, encoding='utf-8') as f:
+        taxonomy = json.load(f)
+    
+    architecture_books = taxonomy["tiers"]["architecture"]["books"]
+    print(f"📖 Using AI-ML taxonomy with {len(architecture_books)} architecture-tier books")
+    
+    source_book_name = "Building LLM Powered Applications"
+    source_path = metadata_dir / f"{source_book_name}_metadata.json"
+    
+    if not source_path.exists():
+        source_book_name = "AI Agents and Applications"
+        source_path = metadata_dir / f"{source_book_name}_metadata.json"
+    
+    with open(source_path, encoding='utf-8') as f:
+        source_chapters = json.load(f)
+    
+    source_chapter = _find_source_chapter(source_chapters, source_book_name)
+    corpus = _load_corpus_from_taxonomy(architecture_books, metadata_dir, source_book_name)
     
     return source_chapter, corpus
 

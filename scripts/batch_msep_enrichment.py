@@ -68,47 +68,32 @@ class BatchStats:
 # MSEP Client
 # =============================================================================
 
-async def call_msep(
-    session: aiohttp.ClientSession,
+def _get_chapter_text(chapter: dict[str, Any]) -> str:
+    """Extract text content from a chapter dict."""
+    text = (
+        chapter.get("summary", "") or 
+        chapter.get("text", "") or 
+        chapter.get("content", "") or
+        ""
+    )
+    if not text:
+        text = f"{chapter.get('title', '')} {chapter.get('description', '')}"
+    return text
+
+
+def _build_msep_payload(
     book_title: str,
     chapters: list[dict[str, Any]],
 ) -> dict[str, Any]:
-    """Call MSEP via Gateway API.
-    
-    Args:
-        session: aiohttp session
-        book_title: Title of the book
-        chapters: List of chapter dicts with text content
-        
-    Returns:
-        Dict with enrichment results or error
-    """
-    url = f"{GATEWAY_URL}/v1/tools/execute"
-    
-    # Build corpus and chapter index
+    """Build payload for MSEP API call."""
     corpus = []
     chapter_index = []
     
     for i, chapter in enumerate(chapters):
-        # Get chapter text - try different field names
-        # Metadata files use "summary", source files might use "text" or "content"
-        text = (
-            chapter.get("summary", "") or 
-            chapter.get("text", "") or 
-            chapter.get("content", "") or
-            ""
-        )
-        
-        # Preserve original summary separately
+        text = _get_chapter_text(chapter)
         original_summary = chapter.get("summary", "")
-        
-        if not text:
-            # Try to build text from other fields
-            text = f"{chapter.get('title', '')} {chapter.get('description', '')}"
-        
         corpus.append(text)
         
-        # Get chapter number and title
         ch_num = chapter.get("chapter_number", i + 1)
         ch_title = chapter.get("title", f"Chapter {ch_num}")
         
@@ -119,32 +104,40 @@ async def call_msep(
             "summary": original_summary,
         })
     
-    payload = {
+    return {
         "name": "enrich_metadata",
-        "arguments": {
-            "corpus": corpus,
-            "chapter_index": chapter_index,
-        },
+        "arguments": {"corpus": corpus, "chapter_index": chapter_index},
     }
+
+
+def _parse_msep_response(data: Any) -> dict[str, Any]:
+    """Parse MSEP response into standard format."""
+    if isinstance(data, list):
+        return {"success": True, "result": {"chapters": data}}
+    if isinstance(data, dict):
+        result = data.get("result", data)
+        if isinstance(result, list):
+            return {"success": True, "result": {"chapters": result}}
+        return {"success": True, "result": result}
+    return {"success": False, "error": f"Unexpected response type: {type(data)}"}
+
+
+async def call_msep(
+    session: aiohttp.ClientSession,
+    book_title: str,
+    chapters: list[dict[str, Any]],
+) -> dict[str, Any]:
+    """Call MSEP via Gateway API."""
+    url = f"{GATEWAY_URL}/v1/tools/execute"
+    payload = _build_msep_payload(book_title, chapters)
     
     try:
         async with session.post(url, json=payload) as response:
             if response.status == 200:
                 data = await response.json()
-                # Handle various response formats
-                if isinstance(data, list):
-                    # Direct list of enriched chapters
-                    return {"success": True, "result": {"chapters": data}}
-                elif isinstance(data, dict):
-                    result = data.get("result", data)
-                    if isinstance(result, list):
-                        return {"success": True, "result": {"chapters": result}}
-                    return {"success": True, "result": result}
-                else:
-                    return {"success": False, "error": f"Unexpected response type: {type(data)}"}
-            else:
-                error_text = await response.text()
-                return {"success": False, "error": f"HTTP {response.status}: {error_text[:200]}"}
+                return _parse_msep_response(data)
+            error_text = await response.text()
+            return {"success": False, "error": f"HTTP {response.status}: {error_text[:200]}"}
     except asyncio.TimeoutError:
         return {"success": False, "error": "Request timeout"}
     except Exception as e:

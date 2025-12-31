@@ -706,6 +706,66 @@ class TestPhase4LLMEnhancement:
 # Full Pipeline Integration Test
 # =============================================================================
 
+def _check_infrastructure_health(gateway_url: str, semantic_search_url: str) -> bool:
+    """Check if infrastructure services are healthy."""
+    try:
+        gateway_health = httpx.get(f"{gateway_url}/health", timeout=5.0)
+        search_health = httpx.get(f"{semantic_search_url}/health", timeout=5.0)
+        return gateway_health.status_code == 200 and search_health.status_code == 200
+    except httpx.ConnectError:
+        return False
+
+
+def _run_enrichment_phase(
+    gateway_url: str, semantic_search_url: str, query: str
+) -> tuple[bool, bool]:
+    """Run Phase 3 enrichment, return (enrichment_passed, gateway_routing)."""
+    try:
+        search_response = httpx.post(
+            f"{gateway_url}/v1/tools/execute",
+            json={"name": "search_corpus", "arguments": {"query": query, "top_k": 5}},
+            timeout=PIPELINE_PHASE_TIMEOUT
+        )
+        if search_response.status_code == 200:
+            return True, True
+        if search_response.status_code == 404:
+            direct_response = httpx.post(
+                f"{semantic_search_url}/v1/search/hybrid",
+                json={"query": query, "limit": 5, "alpha": 0.7, "include_graph": False},
+                timeout=PIPELINE_PHASE_TIMEOUT
+            )
+            if direct_response.status_code in [200, 503]:
+                return True, False
+    except httpx.ConnectError:
+        pass
+    return False, False
+
+
+def _run_enhancement_phase(gateway_url: str, sample_data: dict) -> tuple[bool, bool]:
+    """Run Phase 4 enhancement, return (enhancement_passed, gateway_routing)."""
+    try:
+        chapter = sample_data["chapters"][0]
+        cross_ref_response = httpx.post(
+            f"{gateway_url}/v1/tools/execute",
+            json={
+                "name": "cross_reference",
+                "arguments": {
+                    "book": sample_data["title"],
+                    "chapter": 1,
+                    "title": chapter["title"],
+                    "tier": chapter.get("tier", 1),
+                    "keywords": chapter.get("keywords", [])
+                }
+            },
+            timeout=PIPELINE_PHASE_TIMEOUT * 2
+        )
+        if cross_ref_response.status_code == 200:
+            return True, True
+    except (httpx.ConnectError, httpx.ReadTimeout):
+        pass
+    return False, False
+
+
 @pytest.mark.e2e
 @pytest.mark.pipeline
 class TestFullPipelineIntegration:
@@ -726,9 +786,6 @@ class TestFullPipelineIntegration:
     ):
         """
         Full pipeline simulation: PDF → JSON → Guideline → Enrichment → Enhancement.
-        
-        This simulates what happens when a user triggers document enhancement
-        from the frontend.
         """
         results = {
             "phase0_infrastructure": False,
@@ -740,89 +797,44 @@ class TestFullPipelineIntegration:
         }
         
         # Phase 0: Check infrastructure
-        try:
-            gateway_health = httpx.get(f"{gateway_url}/health", timeout=5.0)
-            search_health = httpx.get(f"{semantic_search_url}/health", timeout=5.0)
-            
-            if gateway_health.status_code == 200 and search_health.status_code == 200:
-                results["phase0_infrastructure"] = True
-        except httpx.ConnectError:
+        results["phase0_infrastructure"] = _check_infrastructure_health(
+            gateway_url, semantic_search_url
+        )
+        if not results["phase0_infrastructure"]:
             pytest.skip("Infrastructure not available")
         
-        # Phase 1 & 2: Validate input data (from fixtures)
-        if sample_pdf_json and len(sample_pdf_json.get("chapters", [])) > 0:
-            results["phase1_pdf_json"] = True
+        # Phase 1 & 2: Validate input data
+        results["phase1_pdf_json"] = bool(
+            sample_pdf_json and len(sample_pdf_json.get("chapters", [])) > 0
+        )
+        results["phase2_guideline"] = bool(
+            sample_guideline and len(sample_guideline.get("chapters", [])) > 0
+        )
         
-        if sample_guideline and len(sample_guideline.get("chapters", [])) > 0:
-            results["phase2_guideline"] = True
+        # Phase 3: Metadata enrichment
+        chapter = sample_pdf_json["chapters"][0]
+        query = " ".join(chapter.get("keywords", ["domain modeling"]))
+        enrichment_ok, gw_routing = _run_enrichment_phase(
+            gateway_url, semantic_search_url, query
+        )
+        results["phase3_enrichment"] = enrichment_ok
+        if gw_routing:
+            results["gateway_routing"] = True
         
-        # Phase 3: Metadata enrichment via semantic search
-        try:
-            # Use first chapter's keywords for search
-            chapter = sample_pdf_json["chapters"][0]
-            query = " ".join(chapter.get("keywords", ["domain modeling"]))
-            
-            # Search via Gateway tool
-            search_response = httpx.post(
-                f"{gateway_url}/v1/tools/execute",
-                json={
-                    "name": "search_corpus",
-                    "arguments": {"query": query, "top_k": 5}
-                },
-                timeout=PIPELINE_PHASE_TIMEOUT
-            )
-            
-            if search_response.status_code == 200:
-                results["phase3_enrichment"] = True
-                results["gateway_routing"] = True
-            elif search_response.status_code == 404:
-                # Fallback to direct semantic search
-                direct_response = httpx.post(
-                    f"{semantic_search_url}/v1/search/hybrid",
-                    json={"query": query, "limit": 5, "alpha": 0.7, "include_graph": False},
-                    timeout=PIPELINE_PHASE_TIMEOUT
-                )
-                if direct_response.status_code in [200, 503]:
-                    results["phase3_enrichment"] = True
-                    
-        except httpx.ConnectError:
-            pass
+        # Phase 4: LLM Enhancement
+        enhancement_ok, gw_routing = _run_enhancement_phase(gateway_url, sample_pdf_json)
+        results["phase4_enhancement"] = enhancement_ok
+        if gw_routing:
+            results["gateway_routing"] = True
         
-        # Phase 4: LLM Enhancement via cross-reference
-        try:
-            # Try cross_reference through Gateway
-            cross_ref_response = httpx.post(
-                f"{gateway_url}/v1/tools/execute",
-                json={
-                    "name": "cross_reference",
-                    "arguments": {
-                        "book": sample_pdf_json["title"],
-                        "chapter": 1,
-                        "title": sample_pdf_json["chapters"][0]["title"],
-                        "tier": sample_pdf_json["chapters"][0].get("tier", 1),
-                        "keywords": sample_pdf_json["chapters"][0].get("keywords", [])
-                    }
-                },
-                timeout=PIPELINE_PHASE_TIMEOUT * 2
-            )
-            
-            if cross_ref_response.status_code == 200:
-                results["phase4_enhancement"] = True
-                results["gateway_routing"] = True
-                
-        except (httpx.ConnectError, httpx.ReadTimeout):
-            pass
-        
-        # Report results
-        passed_phases = sum(1 for v in results.values() if v)
-        total_phases = len(results)
-        
-        # At minimum, infrastructure and input validation should pass
+        # Assertions
         assert results["phase0_infrastructure"], "Phase 0 (Infrastructure) failed"
         assert results["phase1_pdf_json"], "Phase 1 (PDF→JSON) validation failed"
         assert results["phase2_guideline"], "Phase 2 (Guideline) validation failed"
         
         # Log pipeline status
+        passed_phases = sum(1 for v in results.values() if v)
+        total_phases = len(results)
         print(f"\n{'='*60}")
         print("FULL PIPELINE INTEGRATION RESULTS")
         print(f"{'='*60}")
