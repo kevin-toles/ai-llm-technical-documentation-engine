@@ -5,9 +5,12 @@
 
 set -e
 
-echo "========================================"
+# Constants for repeated strings
+SEPARATOR="========================================"
+
+echo "$SEPARATOR"
 echo "WBS 4.2.1 Validation: Two-Phase Orchestrator"
-echo "========================================"
+echo "$SEPARATOR"
 echo ""
 
 PROJECT_ROOT="/Users/kevintoles/POC/llm-document-enhancer"
@@ -125,19 +128,20 @@ fi
 # Test 7: Token count logged (check API logs)
 # =============================================================================
 API_LOG_DIR="$PROJECT_ROOT/logs/llm_api"
+TEST_TOKEN_COUNT="Token count logged"
 if [[ -d "$API_LOG_DIR" ]]; then
     LATEST_API_LOG=$(ls -t "$API_LOG_DIR"/*.json 2>/dev/null | head -1)
     if [[ -n "$LATEST_API_LOG" ]]; then
         if jq -e '.response.output_tokens' "$LATEST_API_LOG" > /dev/null 2>&1; then
-            pass "Token count logged"
+            pass "$TEST_TOKEN_COUNT"
         else
-            fail "Token count logged" "No token count in API log"
+            fail "$TEST_TOKEN_COUNT" "No token count in API log"
         fi
     else
-        fail "Token count logged" "No API log files"
+        fail "$TEST_TOKEN_COUNT" "No API log files"
     fi
 else
-    fail "Token count logged" "API log directory not found"
+    fail "$TEST_TOKEN_COUNT" "API log directory not found"
 fi
 
 # =============================================================================
@@ -171,9 +175,9 @@ fi
 # Summary
 # =============================================================================
 echo ""
-echo "========================================"
+echo "$SEPARATOR"
 echo "Validation Summary"
-echo "========================================"
+echo "$SEPARATOR"
 echo "Passed: $PASSED"
 echo "Failed: $FAILED"
 echo ""
