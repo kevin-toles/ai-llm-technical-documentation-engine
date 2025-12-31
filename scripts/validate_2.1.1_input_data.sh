@@ -9,6 +9,9 @@ INPUT_DIR="workflows/base_guideline_generation/input"
 JSON_FILE="$INPUT_DIR/test_book.json"
 MANIFEST="$INPUT_DIR/book_manifest.json"
 
+# Constants for repeated values
+EXPECTED_NON_EMPTY=$EXPECTED_NON_EMPTY
+
 TESTS_PASSED=0
 TESTS_FAILED=0
 
@@ -63,7 +66,7 @@ if [[ -n "$AUTHOR" ]]; then
     run_test "Manifest has author" "true" "true"
     echo "   Author: $AUTHOR"
 else
-    run_test "Manifest has author" "empty" "non-empty"
+    run_test "Manifest has author" "empty" $EXPECTED_NON_EMPTY
 fi
 
 echo ""
@@ -73,7 +76,7 @@ if [[ -n "$TITLE" ]]; then
     run_test "Manifest has title" "true" "true"
     echo "   Title: $TITLE"
 else
-    run_test "Manifest has title" "empty" "non-empty"
+    run_test "Manifest has title" "empty" $EXPECTED_NON_EMPTY
 fi
 
 echo ""
@@ -83,7 +86,7 @@ if [[ -n "$TIER" ]]; then
     run_test "Manifest has tier" "true" "true"
     echo "   Tier: $TIER"
 else
-    run_test "Manifest has tier" "empty" "non-empty"
+    run_test "Manifest has tier" "empty" $EXPECTED_NON_EMPTY
 fi
 
 echo ""
@@ -100,7 +103,7 @@ if [[ -n "$JSON_SOURCE" ]]; then
         run_test "JSON source file exists" "false" "true"
     fi
 else
-    run_test "Manifest has json_source" "empty" "non-empty"
+    run_test "Manifest has json_source" "empty" $EXPECTED_NON_EMPTY
 fi
 
 echo ""
