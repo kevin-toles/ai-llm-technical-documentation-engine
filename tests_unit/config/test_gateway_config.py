@@ -21,14 +21,14 @@ class TestGatewayConfig:
             "DOC_ENHANCER_USE_GATEWAY",
             "DOC_ENHANCER_SESSION_TTL",
         ]
-        with patch.dict(os.environ, {k: "" for k in env_vars_to_clear}, clear=False):
+        with patch.dict(os.environ, dict.fromkeys(env_vars_to_clear, ""), clear=False):
             # Need to reimport to pick up new env
             from config.settings import GatewayConfig
             
             config = GatewayConfig()
             
             assert config.gateway_url == "http://localhost:8080"
-            assert config.timeout == 30.0
+            assert config.timeout == pytest.approx(30.0)
             assert config.use_gateway is False
             assert config.session_ttl == 3600
 
@@ -46,7 +46,7 @@ class TestGatewayConfig:
             config = GatewayConfig()
             
             assert config.gateway_url == "http://gateway:9000"
-            assert config.timeout == 60.0
+            assert config.timeout == pytest.approx(60.0)
             assert config.use_gateway is True
             assert config.session_ttl == 7200
 
