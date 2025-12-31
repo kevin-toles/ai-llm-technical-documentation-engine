@@ -287,7 +287,7 @@ class TestSimilarityEnhancement:
             target_tier=3
         )
         
-        assert threshold == 0.5, \
+        assert threshold == pytest.approx(0.5), \
             "Cross-tier (Tier 1 → Tier 3) should use 0.5 threshold"
         
         # Same tier should use standard threshold
@@ -296,7 +296,7 @@ class TestSimilarityEnhancement:
             target_tier=1
         )
         
-        assert same_tier_threshold == 0.7, \
+        assert same_tier_threshold == pytest.approx(0.7), \
             "Same tier should use standard 0.7 threshold"
 
 
