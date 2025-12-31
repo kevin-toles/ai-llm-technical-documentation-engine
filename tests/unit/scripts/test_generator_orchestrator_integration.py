@@ -21,7 +21,8 @@ from unittest.mock import AsyncMock, MagicMock, patch
 import pytest
 
 if TYPE_CHECKING:
-    pass
+    # Import types for static analysis only
+    ...
 
 
 # =============================================================================
@@ -165,15 +166,9 @@ class TestAC12CLIFlag:
 
     def test_argparse_includes_use_orchestrator_flag(self) -> None:
         """AC-1.2: argparse includes --use-orchestrator flag."""
-        import argparse
-
-        from workflows.metadata_extraction.scripts.generate_metadata_universal import main
-
-        # Create parser and check flag exists
-        # We need to import the module and check its main function creates the flag
-        # For now, just verify the flag is documented
-        # This will fail until we add the flag
-        pass  # Will be implemented in GREEN phase
+        # Placeholder for GREEN phase implementation
+        # Import is present to ensure module loads correctly
+        from workflows.metadata_extraction.scripts.generate_metadata_universal import main  # noqa: F401
 
 
 # =============================================================================
@@ -200,7 +195,7 @@ class TestAC51OrchestratorMode:
             chapters = [(1, "Test Chapter", 1, 2)]
 
             # Run extraction
-            metadata = generator.generate_metadata(chapters)
+            generator.generate_metadata(chapters)
 
             # Verify client was used
             assert mock_extraction_client.extract_metadata.called

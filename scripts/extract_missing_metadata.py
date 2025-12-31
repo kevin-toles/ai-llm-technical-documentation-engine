@@ -114,7 +114,7 @@ def main():
         result = run_extraction(book, args.use_orchestrator)
         
         if result["success"]:
-            log(f"         ✓ Success")
+            log("         ✓ Success")
             successful.append(book.name)
         else:
             error_msg = result["stderr"][:200] if result["stderr"] else "Unknown error"

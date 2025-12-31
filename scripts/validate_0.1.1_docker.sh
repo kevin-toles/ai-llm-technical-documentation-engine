@@ -18,7 +18,7 @@ set -e
 cd /Users/kevintoles/POC/llm-document-enhancer
 
 SKIP_UP=false
-if [ "$1" == "--skip-up" ]; then
+if [[ "$1" == "--skip-up" ]]; then
     SKIP_UP=true
 fi
 
@@ -29,7 +29,7 @@ echo ""
 
 # Test 1: File exists
 echo "1. Checking file exists..."
-if test -f docker-compose.integration.yml; then
+if [[ -f docker-compose.integration.yml ]]; then
     echo "   ✓ File exists ($(ls -la docker-compose.integration.yml | awk '{print $5}') bytes)"
 else
     echo "   ✗ File missing: docker-compose.integration.yml"
@@ -49,7 +49,7 @@ fi
 # Test 3: Service count
 echo "3. Counting services..."
 SERVICE_COUNT=$(docker-compose -f docker-compose.integration.yml config --services | wc -l | tr -d ' ')
-if [ "$SERVICE_COUNT" -ge 5 ]; then
+if [[ "$SERVICE_COUNT" -ge 5 ]]; then
     echo "   ✓ $SERVICE_COUNT services defined (minimum: 5)"
     docker-compose -f docker-compose.integration.yml config --services | sed 's/^/     - /'
 else
@@ -60,7 +60,7 @@ fi
 # Test 4: Network defined
 echo "4. Checking network definition..."
 NETWORK_COUNT=$(grep -c "integration-network" docker-compose.integration.yml || echo "0")
-if [ "$NETWORK_COUNT" -ge 1 ]; then
+if [[ "$NETWORK_COUNT" -ge 1 ]]; then
     echo "   ✓ Network 'integration-network' defined ($NETWORK_COUNT references)"
 else
     echo "   ✗ Network 'integration-network' not defined"

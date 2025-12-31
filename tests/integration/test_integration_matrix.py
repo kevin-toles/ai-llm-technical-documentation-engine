@@ -173,7 +173,7 @@ class TestIT001ServiceStartsModelsLoad:
         # Test that client can be initialized
         client = OrchestratorClient(base_url="http://localhost:8083")
         assert client.base_url == "http://localhost:8083"
-        assert client.timeout == 30.0
+        assert client.timeout == pytest.approx(30.0)
 
 
 # =============================================================================
@@ -408,7 +408,7 @@ class TestIT005CrossBookReferencesProduced:
             SEMANTIC_SIMILARITY_THRESHOLD,
         )
         
-        assert SEMANTIC_SIMILARITY_THRESHOLD == 0.3
+        assert SEMANTIC_SIMILARITY_THRESHOLD == pytest.approx(0.3)
         assert SEMANTIC_SIMILARITY_THRESHOLD < 0.7  # Lower than TF-IDF
 
     def test_orchestrator_flag_enables_semantic_search(self):
@@ -655,7 +655,7 @@ class TestMVPAcceptanceCriteria:
         
         # 0.3 is achievable with semantic embeddings
         # 0.7 was impossible with TF-IDF
-        assert SEMANTIC_SIMILARITY_THRESHOLD == 0.3
+        assert SEMANTIC_SIMILARITY_THRESHOLD == pytest.approx(0.3)
 
     @pytest.mark.asyncio
     async def test_cross_book_references_producible(self):

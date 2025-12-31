@@ -73,7 +73,7 @@ class TestSearchViaGateway:
             mock_client_class.return_value = mock_client
             
             async with GatewaySearchClient(gateway_url="http://localhost:8080") as client:
-                results = await client.search("domain driven design", limit=5)
+                await client.search("domain driven design", limit=5)
             
             # Verify Gateway was called, NOT semantic-search directly
             mock_client.post.assert_called()
@@ -127,7 +127,7 @@ class TestSearchViaGateway:
             mock_client_class.return_value = mock_client
             
             async with GatewaySearchClient(gateway_url="http://localhost:8080") as client:
-                results = await client.hybrid_search(
+                await client.hybrid_search(
                     query="microservices architecture",
                     focus_areas=["design", "patterns"],
                     limit=10
@@ -172,7 +172,7 @@ class TestSearchViaGateway:
             mock_client_class.return_value = mock_client
             
             async with GatewaySearchClient(gateway_url="http://localhost:8080") as client:
-                embeddings = await client.embed("domain driven design")
+                await client.embed("domain driven design")
             
             # Should route through Gateway
             mock_client.post.assert_called()

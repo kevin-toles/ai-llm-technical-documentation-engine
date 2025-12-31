@@ -411,7 +411,7 @@ def main():
     # Get key concepts from taxonomy for this book
     book_role = taxonomy.get(input_book_name)
     if book_role:
-        print(f"\n📊 Book role in taxonomy:")
+        print("\n📊 Book role in taxonomy:")
         print(f"  Tier: {book_role.tier.value}")
         print(f"  Priority: {book_role.priority}")
         print(f"  Cascades to: {book_role.cascades_to}")

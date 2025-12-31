@@ -137,7 +137,7 @@ class TestOutputNamingConvention:
         
         # This test is marked to fail initially (RED phase)
         # The actual output path will be checked after implementation
-        input_path = Path("Test Book_metadata.json")
+        _input_path = Path("Test Book_metadata.json")
         expected_output = Path("Test Book_metadata_enriched.json")
         old_convention = Path("Test Book_enriched.json")
         

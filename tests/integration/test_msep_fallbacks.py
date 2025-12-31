@@ -222,8 +222,8 @@ class TestMSE74GracefulDegradation:
         input_path = tmp_path / "test_metadata.json"
         output_path = tmp_path / "test_enriched.json"
 
-        with open(input_path, "w", encoding="utf-8") as f:
-            json.dump(sample_book_metadata, f)
+        async with aiofiles.open(input_path, "w", encoding="utf-8") as f:
+            await f.write(json.dumps(sample_book_metadata))
 
         with (
             patch(
@@ -399,8 +399,8 @@ class TestMSE74ServiceUnavailableScenarios:
         input_path = tmp_path / "test_metadata.json"
         output_path = tmp_path / "test_enriched.json"
 
-        with open(input_path, "w", encoding="utf-8") as f:
-            json.dump(sample_book_metadata, f)
+        async with aiofiles.open(input_path, "w", encoding="utf-8") as f:
+            await f.write(json.dumps(sample_book_metadata))
 
         with (
             patch(

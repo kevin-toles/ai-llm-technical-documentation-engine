@@ -113,7 +113,7 @@ def batch_convert(input_dir: Path, output_dir: Path, dry_run: bool = False) -> d
     print(f"📚 Total:      {total}")
     
     if results["failed"]:
-        print(f"\n❌ Failed files:")
+        print("\n❌ Failed files:")
         for f in results["failed"]:
             print(f"   - {f}")
     

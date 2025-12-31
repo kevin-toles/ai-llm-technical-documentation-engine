@@ -496,11 +496,11 @@ class TestValidationSummary:
         
         print(f"\n📦 Factory Default: {'✅ gateway' if factory_ok else '❌ NOT gateway'}")
         print(f"🔗 Client URL: {'✅ :8080' if client_ok else '❌ NOT :8080'}")
-        print(f"\n🏥 Service Health:")
+        print("\n🏥 Service Health:")
         for name, status in service_status.items():
             print(f"   {name}: {status}")
         
         print("\n" + "=" * 70)
         
-        # This test always passes - it's informational
-        assert True
+        # This test is informational - it reports routing status
+        # No assertion needed as it's a diagnostic test

@@ -160,7 +160,7 @@ class TestSaveMetadataWrite:
         output_path = tmp_path / "deep" / "nested" / "path" / "metadata.json"
 
         generator = UniversalMetadataGenerator(json_file)
-        result = generator.save_metadata(sample_metadata_list, output_path)
+        generator.save_metadata(sample_metadata_list, output_path)
 
         assert output_path.exists()
         assert output_path.parent.exists()

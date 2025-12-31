@@ -760,7 +760,7 @@ class UniversalMetadataGenerator:
             if len(chapter_text) > MAX_CHAPTER_TEXT:
                 chapter_text = chapter_text[:MAX_CHAPTER_TEXT]
             
-            page_count = pages_found if pages_found > 0 else (end_page - start_page + 1)
+            _page_count = pages_found if pages_found > 0 else (end_page - start_page + 1)
             
             if chapter_text and chapter_text.strip():
                 chapters_data.append({
@@ -833,7 +833,7 @@ class UniversalMetadataGenerator:
                     f"mode=batch"
                 )
                 
-            except (MetadataClientError, Exception) as e:
+            except Exception as e:
                 print(f"\n⚠️ Batch extraction failed: {e}")
                 print("   Falling back to per-chapter extraction...")
                 metadata_list = self._generate_metadata_per_chapter(chapters_data, chapter_info)

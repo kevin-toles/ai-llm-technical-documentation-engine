@@ -22,7 +22,7 @@ echo "╚═══════════════════════�
 echo ""
 
 echo "1. Checking .env.integration exists..."
-test -f .env.integration && echo "   ✓ File exists" || (echo "   ✗ Missing" && exit 1)
+[[ -f .env.integration ]] && echo "   ✓ File exists" || (echo "   ✗ Missing" && exit 1)
 
 echo "2. Checking required variables..."
 for VAR in "SEMANTIC_SEARCH_URL=http://localhost:8081" \
@@ -37,7 +37,7 @@ grep -qE "^(OPENAI_API_KEY|ANTHROPIC_API_KEY)=.{10,}" .env.integration && echo "
 
 echo "4. Testing source..."
 source .env.integration
-[ "$SEMANTIC_SEARCH_URL" = "http://localhost:8081" ] && echo "   ✓ Variables load correctly" || exit 1
+[[ "$SEMANTIC_SEARCH_URL" == "http://localhost:8081" ]] && echo "   ✓ Variables load correctly" || exit 1
 
 echo ""
 echo "╔══════════════════════════════════════════════════════════════════════════╗"

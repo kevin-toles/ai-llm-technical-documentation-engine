@@ -789,6 +789,61 @@ async def run_enrichment_with_orchestrator(
     }
 
 
+def _try_orchestrator_keywords(combined_text: str, top_n: int) -> Optional[List[Dict[str, Any]]]:
+    """
+    Try to extract keywords via orchestrator if available and configured.
+    
+    Returns:
+        List of keyword dicts if successful, None if unavailable or failed.
+    """
+    if not METADATA_CLIENT_AVAILABLE or get_extraction_settings is None:
+        return None
+    
+    settings = get_extraction_settings()
+    if not settings.use_orchestrator_extraction:
+        return None
+    
+    try:
+        import asyncio
+        result = asyncio.run(_extract_keywords_via_orchestrator(combined_text, top_n))
+        return result if result else None
+    except Exception as e:
+        if not settings.fallback_on_error:
+            raise
+        print(f"  Warning: Orchestrator extraction failed, falling back to local: {e}")
+        return None
+
+
+def _extract_keywords_fallback(combined_text: str, top_n: int) -> List[Tuple[str, float]]:
+    """
+    Extract keywords using StatisticalExtractor or simple word frequency fallback.
+    
+    Returns:
+        List of (keyword, score) tuples.
+    """
+    extractor = get_statistical_extractor()
+    if extractor:
+        return extractor.extract_keywords(combined_text, top_n=top_n)
+    
+    # Fallback: simple word frequency if StatisticalExtractor unavailable
+    from collections import Counter
+    words = combined_text.lower().split()
+    word_counts = Counter(words)
+    return [(word, count) for word, count in word_counts.most_common(top_n)]
+
+
+def _format_keywords_output(keywords_with_scores: List[Tuple[str, float]]) -> List[Dict[str, Any]]:
+    """Format keyword results per output schema."""
+    return [
+        {
+            "term": keyword,
+            "score": round(float(score), 3),
+            "source": "cross_book_yake"
+        }
+        for keyword, score in keywords_with_scores
+    ]
+
+
 def rescore_keywords_cross_book(
     current_chapter_text: str,
     related_chapters_texts: List[str],
@@ -811,47 +866,16 @@ def rescore_keywords_cross_book(
         - score: TF-IDF score (higher is better) or YAKE score
         - source: "orchestrator_tfidf" or "cross_book_yake"
     """
-    # Combine current chapter with related chapter contexts
     combined_text = current_chapter_text + " " + " ".join(related_chapters_texts)
     
-    # CME-1.0: Try orchestrator first if available and configured
-    if METADATA_CLIENT_AVAILABLE and get_extraction_settings is not None:
-        settings = get_extraction_settings()
-        if settings.use_orchestrator_extraction:
-            try:
-                import asyncio
-                result = asyncio.run(_extract_keywords_via_orchestrator(combined_text, top_n))
-                if result:
-                    return result
-            except Exception as e:
-                if not settings.fallback_on_error:
-                    raise
-                print(f"  Warning: Orchestrator extraction failed, falling back to local: {e}")
+    # Try orchestrator first
+    orchestrator_result = _try_orchestrator_keywords(combined_text, top_n)
+    if orchestrator_result:
+        return orchestrator_result
     
-    # Fallback: Extract keywords using YAKE via StatisticalExtractor (lazy loaded)
-    extractor = get_statistical_extractor()
-    if extractor:
-        keywords_with_scores = extractor.extract_keywords(
-            combined_text,
-            top_n=top_n
-        )
-    else:
-        # Fallback: simple word frequency if StatisticalExtractor unavailable
-        from collections import Counter
-        words = combined_text.lower().split()
-        word_counts = Counter(words)
-        keywords_with_scores = [(word, count) for word, count in word_counts.most_common(top_n)]
-    
-    # Format output per schema
-    keywords_enriched = []
-    for keyword, score in keywords_with_scores:
-        keywords_enriched.append({
-            "term": keyword,
-            "score": round(float(score), 3),
-            "source": "cross_book_yake"
-        })
-    
-    return keywords_enriched
+    # Fallback to local extraction
+    keywords_with_scores = _extract_keywords_fallback(combined_text, top_n)
+    return _format_keywords_output(keywords_with_scores)
 
 
 async def _extract_keywords_via_orchestrator(text: str, top_n: int = 10) -> List[Dict[str, Any]]:
@@ -888,6 +912,55 @@ async def _extract_keywords_via_orchestrator(text: str, top_n: int = 10) -> List
     return keywords_enriched
 
 
+def _try_orchestrator_concepts(combined_text: str, top_n: int) -> Optional[List[Dict[str, Any]]]:
+    """
+    Try to extract concepts via orchestrator if available and configured.
+    
+    Returns:
+        List of concept dicts if successful, None if unavailable or failed.
+    """
+    if not METADATA_CLIENT_AVAILABLE or get_extraction_settings is None:
+        return None
+    
+    settings = get_extraction_settings()
+    if not settings.use_orchestrator_extraction:
+        return None
+    
+    try:
+        import asyncio
+        result = asyncio.run(_extract_concepts_via_orchestrator(combined_text, top_n))
+        return result if result else None
+    except Exception as e:
+        if not settings.fallback_on_error:
+            raise
+        print(f"  Warning: Orchestrator concept extraction failed, falling back to local: {e}")
+        return None
+
+
+def _extract_concepts_fallback(combined_text: str, top_n: int) -> List[str]:
+    """
+    Extract concepts using StatisticalExtractor or simple phrase extraction fallback.
+    
+    Returns:
+        List of concept strings.
+    """
+    extractor = get_statistical_extractor()
+    if extractor:
+        return extractor.extract_concepts(combined_text, top_n=top_n)
+    
+    # Fallback: simple noun phrase extraction if StatisticalExtractor unavailable
+    import re
+    from collections import Counter
+    phrases = re.findall(r'\b[a-z]+(?:\s+[a-z]+){1,2}\b', combined_text.lower())
+    phrase_counts = Counter(phrases)
+    return [phrase for phrase, _ in phrase_counts.most_common(top_n)]
+
+
+def _format_concepts_output(concepts: List[str]) -> List[Dict[str, Any]]:
+    """Format concept results per output schema."""
+    return [{"concept": concept, "source": "cross_book_summa"} for concept in concepts]
+
+
 def extract_concepts_cross_book(
     current_chapter_text: str,
     related_chapters_texts: List[str],
@@ -909,45 +982,16 @@ def extract_concepts_cross_book(
         - concept: Concept phrase string
         - source: "orchestrator_concept" or "cross_book_summa"
     """
-    # Combine current chapter with related chapter contexts
     combined_text = current_chapter_text + " " + " ".join(related_chapters_texts)
     
-    # CME-1.0: Try orchestrator first if available and configured
-    if METADATA_CLIENT_AVAILABLE and get_extraction_settings is not None:
-        settings = get_extraction_settings()
-        if settings.use_orchestrator_extraction:
-            try:
-                import asyncio
-                result = asyncio.run(_extract_concepts_via_orchestrator(combined_text, top_n))
-                if result:
-                    return result
-            except Exception as e:
-                if not settings.fallback_on_error:
-                    raise
-                print(f"  Warning: Orchestrator concept extraction failed, falling back to local: {e}")
+    # Try orchestrator first
+    orchestrator_result = _try_orchestrator_concepts(combined_text, top_n)
+    if orchestrator_result:
+        return orchestrator_result
     
-    # Fallback: Extract concepts using Summa via StatisticalExtractor (lazy loaded)
-    extractor = get_statistical_extractor()
-    if extractor:
-        concepts = extractor.extract_concepts(combined_text, top_n=top_n)
-    else:
-        # Fallback: simple noun phrase extraction if StatisticalExtractor unavailable
-        import re
-        # Extract multi-word phrases (simple heuristic)
-        phrases = re.findall(r'\b[a-z]+(?:\s+[a-z]+){1,2}\b', combined_text.lower())
-        from collections import Counter
-        phrase_counts = Counter(phrases)
-        concepts = [phrase for phrase, _ in phrase_counts.most_common(top_n)]
-    
-    # Format output per schema
-    concepts_enriched = []
-    for concept in concepts:
-        concepts_enriched.append({
-            "concept": concept,
-            "source": "cross_book_summa"
-        })
-    
-    return concepts_enriched
+    # Fallback to local extraction
+    concepts = _extract_concepts_fallback(combined_text, top_n)
+    return _format_concepts_output(concepts)
 
 
 async def _extract_concepts_via_orchestrator(text: str, top_n: int = 10) -> List[Dict[str, Any]]:
@@ -1264,6 +1308,92 @@ def enrich_metadata_local(
     print("  ⚠️  Run with --use-msep when ai-agents is available for full enrichment")
 
 
+async def _load_book_data_from_path(input_path: Path) -> Tuple[List[Dict[str, Any]], str]:
+    """
+    Load book metadata from JSON file.
+    
+    Returns:
+        Tuple of (chapters list, book_title string)
+    """
+    async with aiofiles.open(input_path, encoding='utf-8') as f:
+        content = await f.read()
+        book_data = json.loads(content)
+    
+    if isinstance(book_data, list):
+        return book_data, input_path.stem.replace("_metadata", "")
+    return (
+        book_data.get("chapters", []),
+        book_data.get("book_title", input_path.stem.replace("_metadata", ""))
+    )
+
+
+def _build_chapter_query(chapter: Dict[str, Any], chapter_num: int) -> str:
+    """Build search query text from chapter fields."""
+    query_parts = [
+        chapter.get("title", f"Chapter {chapter_num}"),
+        chapter.get("summary", "")[:500],
+        " ".join(chapter.get("keywords", [])[:10]),
+        " ".join(chapter.get("concepts", [])[:5])
+    ]
+    return " ".join(filter(None, query_parts))
+
+
+def _filter_similar_chapters(
+    results: List[Dict[str, Any]],
+    chapter_title: str,
+    max_results: int = 5
+) -> List[Dict[str, Any]]:
+    """Filter search results to exclude self-matches and format output."""
+    similar_chapters = []
+    for r in results:
+        payload = r.get("payload", {})
+        result_title = payload.get("title", "")
+        
+        if result_title == chapter_title:
+            continue
+        
+        similar_chapters.append({
+            "chapter_id": payload.get("chapter_number", payload.get("chapter_id", 0)),
+            "title": result_title,
+            "score": round(r.get("score", 0.0), 4),
+            "book": payload.get("book_title", payload.get("book_id", ""))
+        })
+        
+        if len(similar_chapters) >= max_results:
+            break
+    
+    return similar_chapters
+
+
+async def _enrich_chapter_semantic(
+    client: Any,
+    chapter: Dict[str, Any],
+    idx: int,
+    total_chapters: int
+) -> Dict[str, Any]:
+    """Enrich a single chapter with semantic search results."""
+    chapter_num = chapter.get("chapter_number", idx + 1)
+    chapter_title = chapter.get("title", f"Chapter {chapter_num}")
+    query_text = _build_chapter_query(chapter, chapter_num)
+    
+    try:
+        results = await client.search(query=query_text, limit=6, collection="chapters")
+        similar_chapters = _filter_similar_chapters(results, chapter_title)
+        
+        # Progress output
+        if idx < 3 or idx == total_chapters - 1:
+            top_scores = [f"{s['score']:.3f}" for s in similar_chapters[:3]]
+            print(f"  Chapter {chapter_num}: {len(similar_chapters)} similar, scores={top_scores}")
+        elif idx == 3:
+            print(f"  ... (processing {total_chapters - 4} more chapters)")
+            
+    except Exception as e:
+        print(f"  ⚠️  Chapter {chapter_num} search failed: {e}")
+        similar_chapters = []
+    
+    return {**chapter, "similar_chapters": similar_chapters, "similarity_source": "semantic_search"}
+
+
 async def enrich_metadata_semantic(
     input_path: Path,
     output_path: Path,
@@ -1274,136 +1404,33 @@ async def enrich_metadata_semantic(
     
     Reference: WBS 3.2.4 - Integrate Search Client into Metadata Enrichment
     Pattern: Remote API integration via SemanticSearchClient
-    
-    Workflow:
-    1. Load book metadata (from WBS 3.1.1 output)
-    2. For each chapter, call semantic search API
-    3. Store similarity results with source="semantic_search"
-    4. Save enriched metadata JSON output
-    
-    Args:
-        input_path: Path to book metadata JSON (WBS 3.1.1 output)
-        output_path: Path for enriched metadata JSON output
-        semantic_search_url: URL of semantic search service
-        
-    Output Schema:
-        {
-            "book_title": str,
-            "total_chapters": int,
-            "enrichment_metadata": {
-                "generated": ISO timestamp,
-                "method": "semantic_search",
-                "mode": "remote_api",
-                "semantic_search_url": str
-            },
-            "chapters": [
-                {
-                    ... (all original fields preserved),
-                    "semantic_similar": [...],
-                    "similarity_source": "semantic_search"
-                }
-            ]
-        }
     """
     print("\n📊 WBS 3.2.4: Semantic Search Enrichment (Remote API)")
     print(f"Input: {input_path.name}")
     print(f"Semantic Search URL: {semantic_search_url}")
     
-    # 1. Load book metadata
     if not input_path.exists():
         raise FileNotFoundError(f"Input file not found: {input_path}")
     
-    async with aiofiles.open(input_path, encoding='utf-8') as f:
-        content = await f.read()
-        book_data = json.loads(content)
-    
-    # Handle both formats: list of chapters or {chapters: [...]}
-    if isinstance(book_data, list):
-        chapters = book_data
-        book_title = input_path.stem.replace("_metadata", "")
-    else:
-        chapters = book_data.get("chapters", [])
-        book_title = book_data.get("book_title", input_path.stem.replace("_metadata", ""))
-    
+    chapters, book_title = await _load_book_data_from_path(input_path)
     print(f"\nBook: {book_title}")
     print(f"Chapters: {len(chapters)}")
     
-    # 2. Connect to semantic search service and enrich each chapter
     print("\nConnecting to semantic search service...")
     enriched_chapters = []
     
     async with SemanticSearchClient(base_url=semantic_search_url) as client:
-        # Test connection with health check
         try:
             health = await client.health_check()
             print(f"  Service status: {health.get('status', 'unknown')}")
         except Exception as e:
             print(f"  ⚠️  Health check failed: {e}")
-            print("  Continuing with enrichment...")
         
         print("\nEnriching chapters with semantic search...")
-        
         for idx, chapter in enumerate(chapters):
-            chapter_num = chapter.get("chapter_number", idx + 1)
-            chapter_title = chapter.get("title", f"Chapter {chapter_num}")
-            
-            # Build query from chapter content
-            query_parts = [
-                chapter_title,
-                chapter.get("summary", "")[:500],  # Limit summary length
-                " ".join(chapter.get("keywords", [])[:10]),
-                " ".join(chapter.get("concepts", [])[:5])
-            ]
-            query_text = " ".join(filter(None, query_parts))
-            
-            try:
-                # Call semantic search API
-                results = await client.search(
-                    query=query_text,
-                    limit=6,  # Get 6 to filter out self-matches
-                    collection="chapters"
-                )
-                
-                # Filter to top 5, excluding self-matches
-                similar_chapters = []
-                for r in results:
-                    payload = r.get("payload", {})
-                    result_title = payload.get("title", "")
-                    
-                    # Skip if it's the same chapter (self-match)
-                    if result_title == chapter_title:
-                        continue
-                    
-                    similar_chapters.append({
-                        "chapter_id": payload.get("chapter_number", payload.get("chapter_id", 0)),
-                        "title": result_title,
-                        "score": round(r.get("score", 0.0), 4),
-                        "book": payload.get("book_title", payload.get("book_id", ""))
-                    })
-                    
-                    if len(similar_chapters) >= 5:
-                        break
-                
-                # Progress output
-                if idx < 3 or idx == len(chapters) - 1:
-                    top_scores = [f"{s['score']:.3f}" for s in similar_chapters[:3]]
-                    print(f"  Chapter {chapter_num}: {len(similar_chapters)} similar, scores={top_scores}")
-                elif idx == 3:
-                    print(f"  ... (processing {len(chapters) - 4} more chapters)")
-                
-            except Exception as e:
-                print(f"  ⚠️  Chapter {chapter_num} search failed: {e}")
-                similar_chapters = []
-            
-            # Build enriched chapter
-            enriched_chapter = {
-                **chapter,
-                "similar_chapters": similar_chapters,
-                "similarity_source": "semantic_search"
-            }
-            enriched_chapters.append(enriched_chapter)
+            enriched = await _enrich_chapter_semantic(client, chapter, idx, len(chapters))
+            enriched_chapters.append(enriched)
     
-    # 3. Build enriched metadata output
     enriched_metadata = {
         "book_title": book_title,
         "total_chapters": len(enriched_chapters),
@@ -1412,26 +1439,19 @@ async def enrich_metadata_semantic(
             "method": "semantic_search",
             "mode": "remote_api",
             "semantic_search_url": semantic_search_url,
-            "libraries": {
-                "httpx": "async HTTP client",
-                "semantic-search-service": "all-mpnet-base-v2"
-            }
+            "libraries": {"httpx": "async HTTP client", "semantic-search-service": "all-mpnet-base-v2"}
         },
         "chapters": enriched_chapters
     }
     
-    # 4. Save enriched metadata
     output_path.parent.mkdir(parents=True, exist_ok=True)
     async with aiofiles.open(output_path, 'w', encoding='utf-8') as f:
         await f.write(json.dumps(enriched_metadata, indent=2, ensure_ascii=False))
     
-    # Report
     size_kb = output_path.stat().st_size / 1024
     print(f"\n✅ Enriched metadata saved: {output_path.name}")
     print(f"  File size: {size_kb:.1f} KB")
     print(f"  Chapters enriched: {len(enriched_chapters)}")
-    print("  Similarity source: semantic_search (remote API)")
-    print("  NO LLM calls made ✓")
 
 
 # =============================================================================
@@ -1650,6 +1670,100 @@ import logging
 _logger = logging.getLogger(__name__)
 
 
+def _build_msep_corpus(
+    chapters: List[Dict[str, Any]], book_title: str
+) -> Tuple[List[str], List[ChapterMeta]]:
+    """Build corpus and chapter index for MSEP API from chapters."""
+    corpus: List[str] = []
+    chapter_index: List[ChapterMeta] = []
+
+    for idx, chapter in enumerate(chapters):
+        chapter_num = chapter.get("chapter_number", idx + 1)
+        chapter_title = chapter.get("title", f"Chapter {chapter_num}")
+
+        content_parts = []
+        for field in ["title", "summary", "content"]:
+            if chapter.get(field):
+                content_parts.append(chapter[field])
+        if chapter.get("keywords"):
+            content_parts.append(" ".join(chapter["keywords"]))
+
+        chapter_text = " ".join(content_parts) if content_parts else f"Chapter {chapter_num}"
+        corpus.append(chapter_text)
+        chapter_index.append(ChapterMeta(book=book_title, chapter=chapter_num, title=chapter_title))
+
+    return corpus, chapter_index
+
+
+def _parse_cross_reference_target(target: str, default_book: str) -> Tuple[str, int]:
+    """Parse MSEP target format 'Book:ch5' into book and chapter number."""
+    target_parts = target.rsplit(":ch", 1)
+    if len(target_parts) == 2:
+        return target_parts[0], int(target_parts[1])
+    return default_book, 0
+
+
+def _merge_msep_chapter(
+    chapter: Dict[str, Any],
+    msep_chapter: Any,
+    book_title: str
+) -> Dict[str, Any]:
+    """Merge MSEP enrichment data into a chapter."""
+    enriched = chapter.copy()
+
+    similar_chapters = []
+    for xr in msep_chapter.cross_references:
+        target_book, target_chapter = _parse_cross_reference_target(xr.target, book_title)
+        similar_chapters.append({
+            "book": target_book,
+            "chapter": target_chapter,
+            "title": "",
+            "score": round(xr.score, 3),
+            "base_score": round(xr.base_score, 3),
+            "topic_boost": round(xr.topic_boost, 3),
+            "method": xr.method,
+        })
+
+    enriched["similar_chapters"] = similar_chapters
+    enriched["enriched_keywords"] = {
+        "tfidf": msep_chapter.keywords.tfidf,
+        "semantic": msep_chapter.keywords.semantic,
+        "merged": msep_chapter.keywords.merged,
+    }
+    enriched["topic_id"] = msep_chapter.topic_id
+    enriched["chapter_provenance"] = {
+        "methods_used": msep_chapter.provenance.methods_used,
+        "sbert_score": msep_chapter.provenance.sbert_score,
+        "topic_boost": msep_chapter.provenance.topic_boost,
+        "timestamp": msep_chapter.provenance.timestamp,
+    }
+    return enriched
+
+
+def _merge_msep_response(
+    chapters: List[Dict[str, Any]],
+    enriched_response: Any,
+    book_title: str
+) -> List[Dict[str, Any]]:
+    """Merge MSEP response with original chapters."""
+    enriched_chapters = []
+    chapter_map = {ec.chapter_id: ec for ec in enriched_response.chapters}
+
+    for idx, chapter in enumerate(chapters):
+        chapter_num = chapter.get("chapter_number", idx + 1)
+        chapter_id = f"{book_title}:ch{chapter_num}"
+        msep_chapter = chapter_map.get(chapter_id)
+
+        if msep_chapter:
+            enriched = _merge_msep_chapter(chapter, msep_chapter, book_title)
+        else:
+            enriched = {**chapter, "similar_chapters": []}
+
+        enriched_chapters.append(enriched)
+
+    return enriched_chapters
+
+
 async def enrich_metadata_msep(
     input_path: Path,
     output_path: Path,
@@ -1658,90 +1772,24 @@ async def enrich_metadata_msep(
     """
     MSEP-based enrichment - uses ai-agents MSEP endpoint for enrichment.
 
-    Kitchen Brigade Pattern:
-    - llm-document-enhancer is CUSTOMER only
-    - Delegates ALL enrichment logic to ai-agents (EXPEDITOR)
-    - NO local ML processing
-
-    WBS References:
-    - AC-6.2.1: Uses MSEPClient when --use-msep flag
-    - AC-6.2.2: Fallback to local enrichment when ai-agents unavailable
-    - AC-6.3.1: Writes {book}_enriched.json with MSEP results
-    - AC-6.3.2: Preserves existing metadata structure
-    - AC-6.3.3: Adds provenance to output JSON
-
-    Anti-Patterns Avoided (CODING_PATTERNS):
-    - §3.3: Always provide fallback, log it, document behavior
-    - S1172: No unused parameters
-    - S3776: Cognitive complexity < 15
-
-    Args:
-        input_path: Path to book metadata JSON (WBS 3.1.1 output)
-        output_path: Path for enriched metadata JSON output
-        msep_url: URL of ai-agents MSEP service (default: http://localhost:8082)
-
-    Raises:
-        FileNotFoundError: If input file doesn't exist
+    Kitchen Brigade Pattern: llm-document-enhancer delegates ALL enrichment
+    logic to ai-agents (EXPEDITOR). NO local ML processing.
     """
     print("\n📊 WBS MSE-6.2: MSEP Enrichment (ai-agents API)")
     print(f"Input: {input_path.name}")
     print(f"MSEP URL: {msep_url}")
 
-    # 1. Load book metadata
     if not input_path.exists():
         raise FileNotFoundError(f"Input file not found: {input_path}")
 
+    chapters, book_title = await _load_book_data_from_path(input_path)
     async with aiofiles.open(input_path, encoding="utf-8") as f:
-        content = await f.read()
-        book_data = json.loads(content)
-
-    # Handle both formats: list of chapters or {chapters: [...]}
-    if isinstance(book_data, list):
-        chapters = book_data
-        book_title = input_path.stem.replace("_metadata", "")
-        original_book_data: Dict[str, Any] = {"chapters": chapters}
-    else:
-        chapters = book_data.get("chapters", [])
-        book_title = book_data.get(
-            "book_title", input_path.stem.replace("_metadata", "")
-        )
-        original_book_data = book_data
+        original_book_data = json.loads(await f.read())
 
     print(f"\nBook: {book_title}")
     print(f"Chapters: {len(chapters)}")
 
-    # 2. Build corpus and chapter_index for MSEP API
-    corpus: list[str] = []
-    chapter_index: list[ChapterMeta] = []
-
-    for idx, chapter in enumerate(chapters):
-        chapter_num = chapter.get("chapter_number", idx + 1)
-        chapter_title = chapter.get("title", f"Chapter {chapter_num}")
-
-        # Build chapter content from available fields
-        content_parts = []
-        if chapter.get("title"):
-            content_parts.append(chapter["title"])
-        if chapter.get("summary"):
-            content_parts.append(chapter["summary"])
-        if chapter.get("content"):
-            content_parts.append(chapter["content"])
-        if chapter.get("keywords"):
-            content_parts.append(" ".join(chapter["keywords"]))
-
-        chapter_text = " ".join(content_parts) if content_parts else f"Chapter {chapter_num}"
-        corpus.append(chapter_text)
-
-        chapter_index.append(
-            ChapterMeta(
-                book=book_title,
-                chapter=chapter_num,
-                title=chapter_title,
-            )
-        )
-
-    # 3. Call MSEP API with fallback on error
-    enriched_response: Optional[EnrichedMetadataResponse] = None
+    corpus, chapter_index = _build_msep_corpus(chapters, book_title)
 
     try:
         print("\nConnecting to ai-agents MSEP service...")
@@ -1754,128 +1802,48 @@ async def enrich_metadata_msep(
         print(f"✅ MSEP enrichment complete: {enriched_response.total_cross_references} cross-references")
 
     except (MSEPConnectionError, MSEPTimeoutError) as e:
-        # AC-6.2.2: Fallback to local enrichment when ai-agents unavailable
-        # Per CODING_PATTERNS §3.3: Log the fallback
-        _logger.warning(
-            f"MSEP service unavailable ({type(e).__name__}: {e}). "
-            "Falling back to local enrichment."
-        )
+        _logger.warning(f"MSEP service unavailable ({type(e).__name__}: {e}). Falling back to local enrichment.")
         print(f"\n⚠️ MSEP service unavailable: {e}")
         print("  Falling back to local enrichment...")
-
-        # Fallback to existing local enrichment
         enrich_metadata_local(input_path, output_path)
         return
 
     except MSEPAPIError as e:
-        # API errors (400, 422) should fail fast - not retry
         _logger.error(f"MSEP API error: {e}")
         raise
 
-    # 4. Merge MSEP response with original metadata (AC-6.3.2)
-    # Output format follows unified schema: book_enriched_chapters.schema.json
-    enriched_chapters = []
+    enriched_chapters = _merge_msep_response(chapters, enriched_response, book_title)
 
-    for idx, chapter in enumerate(chapters):
-        enriched_chapter = chapter.copy()  # Preserve all original fields
-
-        # Find matching enriched chapter from response
-        # MSEP returns chapter_id as "{book}:ch{chapter}" format
-        chapter_num = chapter.get('chapter_number', idx + 1)
-        chapter_id = f"{book_title}:ch{chapter_num}"
-        msep_chapter = None
-
-        for ec in enriched_response.chapters:
-            if ec.chapter_id == chapter_id:
-                msep_chapter = ec
-                break
-
-        if msep_chapter:
-            # Convert MSEP cross_references to unified similar_chapters format
-            # MSEP target format: "Book:ch5" -> {book: "Book", chapter: 5, ...}
-            similar_chapters = []
-            for xr in msep_chapter.cross_references:
-                # Parse target format "Book:ch5"
-                target_parts = xr.target.rsplit(":ch", 1)
-                target_book = target_parts[0] if len(target_parts) == 2 else book_title
-                target_chapter = int(target_parts[1]) if len(target_parts) == 2 else 0
-                
-                similar_chapters.append({
-                    "book": target_book,
-                    "chapter": target_chapter,
-                    "title": "",  # MSEP doesn't provide target title
-                    "score": round(xr.score, 3),
-                    "base_score": round(xr.base_score, 3),
-                    "topic_boost": round(xr.topic_boost, 3),
-                    "method": xr.method,
-                })
-            
-            enriched_chapter["similar_chapters"] = similar_chapters
-            enriched_chapter["enriched_keywords"] = {
-                "tfidf": msep_chapter.keywords.tfidf,
-                "semantic": msep_chapter.keywords.semantic,
-                "merged": msep_chapter.keywords.merged,
-            }
-            enriched_chapter["topic_id"] = msep_chapter.topic_id
-            enriched_chapter["chapter_provenance"] = {
-                "methods_used": msep_chapter.provenance.methods_used,
-                "sbert_score": msep_chapter.provenance.sbert_score,
-                "topic_boost": msep_chapter.provenance.topic_boost,
-                "timestamp": msep_chapter.provenance.timestamp,
-            }
-        else:
-            # No MSEP data for this chapter - add empty similar_chapters
-            enriched_chapter["similar_chapters"] = []
-
-        enriched_chapters.append(enriched_chapter)
-
-    # 5. Build output with provenance (AC-6.3.1, AC-6.3.3)
-    # Output format follows unified schema: book_enriched_chapters.schema.json
     enriched_metadata: Dict[str, Any] = {
-        "metadata": {
-            "title": book_title,
-            "source_file": input_path.name,
-        },
+        "metadata": {"title": book_title, "source_file": input_path.name},
         "chapters": enriched_chapters,
         "total_chapters": len(enriched_chapters),
     }
-    
-    # Preserve any existing metadata from original book data
+
     if isinstance(original_book_data, dict):
         for key in ["author", "publisher", "isbn", "total_pages"]:
             if key in original_book_data:
                 enriched_metadata["metadata"][key] = original_book_data[key]
 
-    # Add top-level provenance
     enriched_metadata["enrichment_provenance"] = build_enrichment_provenance(
         input_path=input_path,
         taxonomy_path=None,
         enrichment_method=ENRICHMENT_METHOD_MSEP,
         model_version="ai-agents-msep-v1",
     )
+    enriched_metadata["enrichment_provenance"]["processing_time_ms"] = enriched_response.processing_time_ms
+    enriched_metadata["enrichment_provenance"]["total_similar_chapters"] = enriched_response.total_cross_references
 
-    # Add MSEP-specific metadata (using unified field names)
-    enriched_metadata["enrichment_provenance"]["processing_time_ms"] = (
-        enriched_response.processing_time_ms
-    )
-    enriched_metadata["enrichment_provenance"]["total_similar_chapters"] = (
-        enriched_response.total_cross_references
-    )
-
-    # 6. Write output
     output_path.parent.mkdir(parents=True, exist_ok=True)
     async with aiofiles.open(output_path, "w", encoding="utf-8") as f:
         await f.write(json.dumps(enriched_metadata, indent=2, ensure_ascii=False))
 
-    # Report
     size_kb = output_path.stat().st_size / 1024
     print(f"\n✅ Enriched metadata saved: {output_path.name}")
     print(f"  File size: {size_kb:.1f} KB")
     print(f"  Chapters enriched: {len(enriched_chapters)}")
     print(f"  Cross-references: {enriched_response.total_cross_references}")
     print(f"  Processing time: {enriched_response.processing_time_ms:.1f}ms")
-    print("  Similarity source: msep")
-    print("  NO local ML processing ✓")
 
 
 def main():

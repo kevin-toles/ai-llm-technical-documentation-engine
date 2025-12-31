@@ -388,9 +388,9 @@ class TestPhase1And2InputValidation:
         assert len(sample_guideline["chapters"]) >= 1, "No chapters"
         
         for chapter in sample_guideline["chapters"]:
-            assert "number" in chapter, f"Chapter missing number"
-            assert "title" in chapter, f"Chapter missing title"
-            assert "key_concepts" in chapter, f"Chapter missing key_concepts"
+            assert "number" in chapter, "Chapter missing number"
+            assert "title" in chapter, "Chapter missing title"
+            assert "key_concepts" in chapter, "Chapter missing key_concepts"
 
     def test_gate2_guideline_tiers(self, sample_guideline):
         """

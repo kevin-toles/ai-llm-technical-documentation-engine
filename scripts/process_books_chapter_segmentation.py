@@ -218,7 +218,7 @@ def process_single_book(
             book_name=book_name,
             success=True,
             chapters_count=len(existing_chapters),
-            detection_methods=set(ch.get("detection_method", "unknown") for ch in existing_chapters),
+            detection_methods={ch.get("detection_method", "unknown") for ch in existing_chapters},
             error="Already has chapters (skipped)"
         )
     
@@ -240,16 +240,15 @@ def process_single_book(
         )
     
     # Save output (unless dry run)
-    if not dry_run:
-        if not save_processed_book(book_data, chapters, output_path):
-            return ProcessingResult(
-                book_name=book_name,
-                success=False,
-                error="Failed to save output"
-            )
+    if not dry_run and not save_processed_book(book_data, chapters, output_path):
+        return ProcessingResult(
+            book_name=book_name,
+            success=False,
+            error="Failed to save output"
+        )
     
     # Collect detection methods
-    detection_methods = set(ch.get("detection_method", "unknown") for ch in chapters)
+    detection_methods = {ch.get("detection_method", "unknown") for ch in chapters}
     
     return ProcessingResult(
         book_name=book_name,
