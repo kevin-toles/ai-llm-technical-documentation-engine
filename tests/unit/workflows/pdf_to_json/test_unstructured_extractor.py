@@ -204,7 +204,7 @@ class TestUnstructuredExtractorExtraction:
     def test_extract_from_pdf_returns_elements(self, sample_pdf_path, mock_partition_elements, mock_unstructured_elements_raw):
         """Verify extraction returns list of ExtractedElement objects."""
         with patch(f'{MODULE_PATH}.UNSTRUCTURED_AVAILABLE', True):
-            with patch(f'{MODULE_PATH}.partition_pdf', return_value=mock_partition_elements) as mock_partition:
+            with patch(f'{MODULE_PATH}.partition_pdf', return_value=mock_partition_elements):
                 extractor = UnstructuredExtractor()
                 elements = extractor.extract_from_pdf(sample_pdf_path)
         
