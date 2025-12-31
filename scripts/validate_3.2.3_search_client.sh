@@ -105,7 +105,7 @@ async def test():
         return 'OK' if isinstance(results, list) else 'FAIL'
 
 print(asyncio.run(test()))
-" 2>/dev/null || echo "ERROR")
+" 2>/dev/null || echo "ERROR" >&2)
 
 if [[ "$SEARCH_RESULT" = "OK" ]]; then
     echo "   ✓ search() returns list of results"
