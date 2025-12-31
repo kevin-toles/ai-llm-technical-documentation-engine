@@ -6,9 +6,12 @@
 
 set -e
 
-echo "=========================================="
+# Constants for repeated strings
+SEPARATOR="=========================================="
+
+echo "$SEPARATOR"
 echo "WBS 1.1.1 Validation: Input Preparation"
-echo "=========================================="
+echo "$SEPARATOR"
 
 MANIFEST="/Users/kevintoles/POC/textbooks/test_manifest.json"
 PDF_DIR="/Users/kevintoles/POC/textbooks/PDF"
@@ -101,9 +104,9 @@ fi
 # Summary
 # -----------------------------------------------------------------------------
 echo ""
-echo "=========================================="
+echo "$SEPARATOR"
 echo "WBS 1.1.1 Validation Summary"
-echo "=========================================="
+echo "$SEPARATOR"
 echo "Passed: $PASSED"
 echo "Failed: $FAILED"
 echo ""
