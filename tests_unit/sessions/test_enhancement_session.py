@@ -84,7 +84,7 @@ class TestEnhancementSessionContextManager:
             EnhancementSession, "_delete_gateway_session",
             new_callable=AsyncMock
         ) as mock_delete:
-            async with EnhancementSession() as session:
+            async with EnhancementSession():
                 pass  # Context manager test - no operations needed inside
 
             mock_delete.assert_called_once_with("sess_xyz")
