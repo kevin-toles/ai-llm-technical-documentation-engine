@@ -18,6 +18,69 @@ This document tracks all implementation changes, their rationale, and git commit
 
 ---
 
+## 2026-01-01
+
+### CL-041: Archive Cleanup and Extraction Reports
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2026-01-01 |
+| **WBS Item** | Maintenance |
+| **Change Type** | Chore |
+| **Summary** | Removed archived sprint documentation and added extraction reports for metadata analysis. |
+| **Files Changed** | Archived docs removed, extraction reports added |
+| **Rationale** | Clean up obsolete documentation and add analysis artifacts |
+| **Git Commit** | `43351765` |
+
+---
+
+## 2025-12-31
+
+### CL-040.1: SonarCloud Code Quality Fixes (25+ Issues)
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2025-12-31 |
+| **WBS Item** | Code Quality |
+| **Change Type** | Fix |
+| **Summary** | Comprehensive SonarCloud code quality fixes across Python, Shell, CSS, and HTML files. Fixed 25+ issues including duplicate literals, unused variables, regex patterns, and accessibility concerns. |
+| **Files Changed** | Multiple (see breakdown below) |
+| **Rationale** | Improve code quality metrics and eliminate SonarCloud warnings |
+| **Git Commits** | `db13cffc` through `c110ae67` (25+ commits) |
+
+**Issues Fixed by Category:**
+
+| Rule | Description | Files Fixed |
+|------|-------------|-------------|
+| **S1192** | Extract duplicate string literals to constants | `validate_1.1.1_input.sh`, `validate_2.1.1_input_data.sh`, `validate_4.2.1_orchestrator.sh`, `metadata_client.py` |
+| **S6019** | Use greedy quantifier `.*` instead of reluctant `.*?` | Multiple regex patterns, `test_batch3_sonarqube.py` |
+| **S1656** | Remove self-assignment | Various Python files |
+| **S7924** | Improve contrast ratio for accessibility | `style.css` (.tier-btn-remove) |
+| **S7785** | Replace async IIFE with direct call | `index.html` |
+| **S7688** | Use `[[` instead of `[` for shell conditionals | `run_coderabbit_analysis.sh`, `validate_0.1.1_docker.sh` |
+| **S7677** | Redirect error messages to stderr | `validate_1.2.1_pdf_json.sh`, `validate_2.2.1_guideline.sh`, `validate_3.2.3_search_client.sh`, `validate_4.3.1_token_usage.sh` |
+| **S1481** | Remove unused variables | `test_unstructured_extractor.py`, `test_enhancement_session.py` |
+| **S3699** | Don't use return value from None-returning function | `test_complexity_violations.py` |
+| **S3457** | Remove unnecessary f-string prefix | `test_end_to_end_json_generation.py` |
+| **S1244** | Use `pytest.approx` for float comparisons | `test_tier_relationship_engine.py`, `test_gateway_config.py` |
+| **S7519** | Use `dict.fromkeys` instead of comprehension | `test_gateway_config.py` |
+| **S1066** | Merge nested if statements | `convert_pdf_to_json.py` |
+| **S6476** | Use uppercase AS in Dockerfile | `Dockerfile` |
+| **S1172** | Use endpoint parameter in error message | `msep_client.py` |
+| **S3776** | Reduce cognitive complexity | `enrich_metadata_semantic.py`, `msep.py` (Batches 7-9) |
+| **S5713** | Remove redundant exception | Various files |
+| **S7493** | Use async file operations | Various files |
+| **S5914** | Remove const boolean | Various files |
+| **S108/S2772** | Handle empty blocks | Various files |
+
+**Quality Metrics (After):**
+- Reliability: A
+- Security: A  
+- Maintainability: A
+- Code Smells: Significantly reduced
+
+---
+
 ## 2025-12-20
 
 ### CL-040: CME-1.0 Complete - Configurable Metadata Extraction ✅
