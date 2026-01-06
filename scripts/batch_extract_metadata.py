@@ -101,17 +101,12 @@ def run_metadata_extraction(
     if use_orchestrator:
         cmd.append("--use-orchestrator")
     
-    # Dynamic timeout based on file size (large books like Code Complete need more time)
-    # Base: 5 min for small books, +5 min per MB over 1MB
-    file_size_mb = book_path.stat().st_size / (1024 * 1024)
-    timeout_seconds = max(300, int(300 + (file_size_mb - 1) * 300))  # 5-20 min range
-    
     try:
+        # No timeout - let extraction complete (serialized via asyncio.Lock)
         result = subprocess.run(
             cmd,
             capture_output=True,
-            text=True,
-            timeout=timeout_seconds  # Dynamic timeout based on file size
+            text=True
         )
         
         return {
@@ -121,13 +116,6 @@ def run_metadata_extraction(
             "stderr": result.stderr
         }
         
-    except subprocess.TimeoutExpired:
-        return {
-            "success": False,
-            "returncode": -1,
-            "stdout": "",
-            "stderr": "Timeout: Extraction took longer than 5 minutes"
-        }
     except Exception as e:
         return {
             "success": False,
