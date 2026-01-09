@@ -18,6 +18,80 @@ This document tracks all implementation changes, their rationale, and git commit
 
 ---
 
+## 2026-01-07
+
+### CL-042: Data Migration to ai-platform-data (Canonical Location)
+
+| Field | Value |
+|-------|-------|
+| **Date/Time** | 2026-01-07 |
+| **WBS Item** | Data Architecture |
+| **Change Type** | Migration, Documentation |
+| **Summary** | Migrated enriched metadata files to ai-platform-data as the canonical data location. The llm-document-enhancer remains the PROCESSOR while ai-platform-data is the STORAGE. |
+| **Files Changed** | Documentation only (data copied, not moved) |
+| **Rationale** | Centralize all data in ai-platform-data repository for Neo4j ↔ Qdrant bridging |
+| **Git Commit** | N/A (data migration) |
+
+**Migration Details:**
+
+| From | To | Files |
+|------|----|-------|
+| `workflows/metadata_extraction/output/*_metadata.json` | `ai-platform-data/books/metadata/` | 256 files |
+| `workflows/metadata_enrichment/output/*_enriched.json` | `ai-platform-data/books/enriched/` | 256 files |
+
+**Role Clarification:**
+
+| Repository | Role | Owns |
+|------------|------|------|
+| **llm-document-enhancer** | Processor | Extraction/enrichment pipelines |
+| **ai-platform-data** | Storage | Canonical data, Neo4j seeding, Qdrant indexing |
+
+**Workflow After Migration:**
+```bash
+# 1. Run enrichment in llm-document-enhancer
+cd /Users/kevintoles/POC/llm-document-enhancer
+poetry run python -m workflows.metadata_enrichment.run
+
+# 2. Copy to canonical location
+cp workflows/metadata_enrichment/output/*_enriched.json \
+   /Users/kevintoles/POC/ai-platform-data/books/enriched/
+
+# 3. Re-seed Neo4j with bridge
+cd /Users/kevintoles/POC/ai-platform-data
+poetry run python scripts/seed_neo4j.py --clear
+```
+
+**Enriched Metadata Format (output by this service):**
+
+```json
+{
+  "chapters": [{
+    "topic_id": 42,
+    "topic_name": "code_quality_craftsmanship",
+    "keywords": {
+      "tfidf": [...],
+      "semantic": [...],
+      "merged": [...]
+    },
+    "similar_chapters": [{
+      "target": "refactoring_xyz98765_ch003",
+      "score": 0.87,
+      "method": "sbert_with_topic_boost"
+    }],
+    "provenance": {
+      "methods_used": ["tfidf", "sbert", "bertopic"],
+      "sbert_score": 0.92
+    }
+  }]
+}
+```
+
+**Cross-Reference:**
+- ai-platform-data/TECHNICAL_CHANGE_LOG.md: CL-021
+- ai-platform-data/docs/NEO4J_SEEDING_GUIDE.md: v2.0.0
+
+---
+
 ## 2026-01-01
 
 ### CL-041: Archive Cleanup and Extraction Reports

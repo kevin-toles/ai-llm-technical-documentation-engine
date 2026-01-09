@@ -3,7 +3,7 @@
 Pydantic Settings for metadata extraction configuration.
 
 AC Reference:
-- AC-1.3: Default behavior uses StatisticalExtractor (use_orchestrator_extraction=False)
+- AC-1.3: Default behavior uses Code-Orchestrator (use_orchestrator_extraction=True)
 - AC-1.4: EXTRACTION_* env vars override defaults
 
 Anti-Patterns Avoided:

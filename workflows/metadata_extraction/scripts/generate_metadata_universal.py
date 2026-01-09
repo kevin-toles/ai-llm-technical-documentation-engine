@@ -1188,8 +1188,12 @@ Examples:
         print(f"❌ Error: File not found: {json_path}")
         sys.exit(1)
     
-    # Prepare optional arguments
-    kwargs = {'domain': args.domain}
+    # Prepare optional arguments - MUST include use_orchestrator!
+    kwargs = {
+        'domain': args.domain,
+        'use_orchestrator': use_orchestrator,  # Pass the resolved mode
+        'fallback_on_error': args.fallback_on_error,
+    }
     if args.keywords_file:
         kwargs['keywords_file'] = Path(args.keywords_file)
     if args.patterns_file:
